@@ -1,14 +1,14 @@
 ---
 title: Office 对话框 API 最佳做法和规则
 description: '提供适用于 SPA 应用程序的Office API 的规则和最佳做法，例如 SPA (应用程序的最佳实践) '
-ms.date: 07/19/2021
+ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: c994625a662b2eed31f139819f4a1d7cf8418c6a
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: eef26157381303c67939f4ad33d2054f482bd07a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671215"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773760"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
@@ -35,13 +35,13 @@ ms.locfileid: "53671215"
 
 由于不赞成重叠 UI 元素，因此除非应用场景需要，否则请勿从任务窗格打开对话框。 考虑如何使用任务窗格区域时，请注意任务窗格中可以有选项卡。 有关选项卡式任务窗格的示例，请参阅 Excel外接程序[JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)示例。
 
-### <a name="designing-a-dialog-box-ui"></a>设计对话框 UI
+### <a name="design-a-dialog-box-ui"></a>设计对话框 UI
 
 有关对话框设计中的最佳实践，请参阅加载项中的Office[对话框](../design/dialog-boxes.md)。
 
-### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>使用 Office 网页版处理弹出窗口阻止程序
+### <a name="handle-pop-up-blockers-with-office-on-the-web"></a>使用设置来处理弹出窗口阻止Office web 版
 
-尝试使用对话框时Office web 版可能会导致浏览器的弹出窗口阻止程序阻止对话框。 Office web 版一项功能，可使加载项的对话框成为浏览器弹出窗口阻止程序中的例外。 当代码调用 `displayDialogAsync` 方法时，Office web 版将打开类似于下面的提示。
+尝试使用对话框时Office web 版可能会导致浏览器的弹出窗口阻止程序阻止对话框。 如果发生这种情况，Office web 版将打开类似于下面的提示。
 
 ![Screenshot showing the prompt with a brief description and Allow and Ignore buttons that an add-in can generate to avoid in-browser pop-up blockers](../images/dialog-prompt-before-open.png)
 
@@ -53,7 +53,7 @@ ms.locfileid: "53671215"
 
 Office 会自动向传递给 `_host_info` 的 URL 添加查询参数 `displayDialogAsync`。 它附加到自定义查询参数（如果有）之后。 它未追加到对话框导航到的任何后续 URL。 Microsoft 可能会更改此值的内容，或将其完全删除，因此代码不应读取它。 相同的值将添加到对话框的会话存储 (，即 [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) 。 同样，*代码不得对此值执行读取和写入操作*。
 
-### <a name="opening-another-dialog-immediately-after-closing-one"></a>在关闭另一个对话框后立即打开另一个对话框
+### <a name="open-another-dialog-immediately-after-closing-one"></a>在关闭另一个对话框后立即打开另一个对话框
 
 不能从给定主机页打开多个对话框，因此代码应在打开的对话框中调用 [Dialog.close，](/javascript/api/office/office.dialog#close__) 然后再调用以打开另一 `displayDialogAsync` 个对话框。 `close`方法是异步的。 因此，如果在调用 后立即调用 ，则第一个对话框在尝试打开第二个对话框Office `displayDialogAsync` `close` 可能未完全关闭。 如果发生这种情况，Office返回[12007](dialog-handle-errors-events.md#12007)错误："操作失败，因为此外接程序已具有活动对话框。"
 
@@ -123,7 +123,7 @@ function openFirstDialog() {
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>有关 SBA 和 Office 对话框 API 的问题
 
-The Office dialog box is in a new window with its own instance of the JavaScript engine， and and hence it's own complete execution context. 如果传递路由，则基本页面及其所有初始化和引导代码将在此新上下文中再次运行，并且任何变量都设置为对话框中的初始值。 因此，此技术在"框"窗口中下载并启动应用程序的第二个实例，这部分抵消了 SPA 的用途。 此外，在对话框窗口中更改变量的代码不会更改相同变量的任务窗格版本。 同样，对话框窗口具有其自己的会话存储 ([Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性) ，任务窗格中的代码无法访问该存储。 对话框和被调用的主机页看起来与服务器有 `displayDialogAsync` 两个不同的客户端。  (有关主机页的提醒， [请参阅从主机](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)页 .) 
+The Office dialog box is in a new window with its own instance of the JavaScript engine， and and hence it's own complete execution context. 如果传递路由，则基本页面及其所有初始化和引导代码将在此新上下文中再次运行，并且任何变量都设置为对话框中的初始值。 因此，此技术在"框"窗口中下载并启动应用程序的第二个实例，这部分抵消了 SPA 的用途。 此外，在对话框窗口中更改变量的代码不会更改相同变量的任务窗格版本。 同样，对话框窗口具有其自己的会话存储 ([Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性) ，这无法从任务窗格中的代码访问。 对话框和被调用的主机页看起来与服务器有 `displayDialogAsync` 两个不同的客户端。  (有关主机页的提醒， [请参阅从主机](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)页 .) 
 
 因此，如果将路由传递给方法，则实际上没有 SPA;你将具有同一 SPA 的两 `displayDialogAsync` *个实例*。 此外，任务窗格实例中的大部分代码绝不会用于该实例，并且对话框实例中的大部分代码也绝不会用于该实例。 这相当于相同捆绑包中拥有两个 SPA。
 

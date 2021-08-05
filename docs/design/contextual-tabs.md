@@ -3,12 +3,12 @@ title: 在加载项中Office上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到Office外接程序。
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 8696a9a7815b39ddd0100b70f7f9eaa94b1f4a89
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5f8b2a6810a7457d3f9c44f236c42e5d24efa040
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671532"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774019"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>在加载项中Office上下文选项卡
 
@@ -22,7 +22,7 @@ ms.locfileid: "53671532"
 [!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
-> 自定义上下文选项卡当前仅在以下Excel且仅在以下平台和内部版本上受支持：
+> 自定义上下文选项卡当前仅在 Excel且仅在这些平台和内部版本上受支持。
 >
 > - Excel订阅Windows (Microsoft 365版本) 版本 2102 (内部版本 13801.20294) 或更高版本。
 > - Excel 网页版
@@ -66,7 +66,6 @@ ms.locfileid: "53671532"
 > JSON blob 的属性和子属性 (和键名称) 的结构大致与清单 XML 中 [CustomTab](../reference/manifest/customtab.md) 元素及其后代元素的结构平行。
 
 我们将分步构造上下文选项卡 JSON blob 的示例。 上下文选项卡 JSON 的完整架构位于[上的dynamic-ribbon.schema.js。](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json) 如果你使用 Visual Studio Code，可以使用此文件获取IntelliSense并验证 JSON。 有关详细信息，请参阅使用[JSON 架构Visual Studio Code JSON 编辑 JSON。](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
-
 
 1. 首先，创建包含名为 和 的两个数组属性的 JSON `actions` 字符串 `tabs` 。 `actions`数组是上下文选项卡上的控件可以执行的所有函数的规范。数组 `tabs` 定义一个或多个上下文选项卡，*最多 20 个*。
 
@@ -163,12 +162,12 @@ ms.locfileid: "53671532"
 
     - 除 之外的所有属性 `enabled` 都是必需的。
     - `type` 指定控件的类型。 值可以是"Button"、"Menu"或"MobileButton"。
-    - `id` 可以是最多 125 个字符。 
+    - `id` 可以是最多 125 个字符。
     - `actionId` 必须是数组中定义的操作 `actions` ID。  (请参阅本节的步骤 1。) 
     - `label` 是用作按钮标签的用户友好字符串。
     - `superTip` 表示工具提示的丰富形式。 和 `title` `description` 属性都是必需的。
     - `icon` 指定按钮的图标。 前面有关组图标的备注也适用于此处。
-    - `enabled` (可选) 指定在上下文选项卡启动时是否启用按钮。 如果不存在，则默认为 `true` 。 
+    - `enabled` (可选) 指定在上下文选项卡启动时是否启用按钮。 如果不存在，则默认为 `true` 。
 
     ```json
     {
@@ -193,7 +192,7 @@ ms.locfileid: "53671532"
         ]
     }
     ```
- 
+
 下面是 JSON blob 的完整示例。
 
 ```json
@@ -532,7 +531,7 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 
 #### <a name="use-noncontextual-tabs-or-controls"></a>使用非上下文选项卡或控件
 
-有一个清单元素 [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md)，旨在创建外接程序中的回退体验，该体验在外接程序在不支持自定义上下文选项卡的应用程序或平台上运行时实现自定义上下文选项卡。 
+有一个清单元素 [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md)，旨在创建外接程序中的回退体验，该体验在外接程序在不支持自定义上下文选项卡的应用程序或平台上运行时实现自定义上下文选项卡。
 
 使用此元素的最简单策略是，在清单中定义一个或多个自定义核心选项卡 (即，与外接程序中的自定义上下文选项卡的功能区自定义项重复的非上下文自定义选项卡) 。 但添加 `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 为 [CustomTab](../reference/manifest/customtab.md)的第一个子元素。 这样做的效果如下：
 

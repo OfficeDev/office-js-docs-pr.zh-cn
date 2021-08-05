@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: 了解加载项平台的隐私Office安全方面。
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: fd2fbecf8af8b0e76073735ba21c140214948363
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0ff3e77dcbd9f51ee4ac3c1b5d923a2db2bfbc05
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349152"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773270"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -72,7 +72,7 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 ## <a name="optional-connected-experiences"></a>可选连接体验
 
-最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于Office外接程序，禁用"可选连接体验"设置的影响是用户无法再通过这些客户端访问外接程序或 Office Store。 但是，某些被视为必需或业务关键型的 Microsoft 加载项，以及组织的 IT 管理员通过集中部署部署的 [加载项仍将可用](../publish/centralized-deployment.md) 。 此外，无论设置的状态如何，加载项和应用商店Outlook 网页版都可用。
+最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于Office外接程序，禁用"可选连接体验"设置的影响是用户无法再通过这些客户端访问外接程序或 Office Store。 但是，某些被视为必需或业务关键型的 Microsoft 加载项，以及组织的 IT 管理员通过集中部署部署的 [加载项仍将可用](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) 。 此外，无论设置的状态如何，加载项和应用商店Outlook 网页版都可用。
 
 有关特定Outlook，请参阅隐私、权限和安全性[Outlook外接程序](../outlook/privacy-and-security.md#optional-connected-experiences)。
 

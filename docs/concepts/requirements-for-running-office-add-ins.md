@@ -1,14 +1,14 @@
 ---
 title: 运行 Office 加载项的要求
 description: 了解最终用户在加载项中运行所需的客户端和Office要求。
-ms.date: 03/18/2020
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 2aa5b2ffadffb86052ea55e06b1c0c49742543e6
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: f432eab8404b210bbe2bc2734f81873e80bc6397
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349131"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773228"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -29,7 +29,7 @@ ms.locfileid: "53349131"
 > [!TIP]
 > 在 Visual Studio 中开发和调试加载项时，Visual Studio 使用 IIS Express 在本地部署并运行加载项的网页文件，无需使用其他 Web 服务器。
 
-对于内容和任务窗格外接程序，在受支持的 Office 客户端应用程序（Excel、PowerPoint、Project 或 Word）中，您还需要 SharePoint 上的应用程序目录来上载外接程序的 XML[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)清单文件，或者您需要使用集中部署外接程序。 [](../publish/centralized-deployment.md)
+对于内容和任务窗格外接程序，在受支持的 Office 客户端应用程序（Excel、PowerPoint、Project 或 Word）中，您还需要 SharePoint 上的应用程序目录来上载外接程序的 XML[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)清单文件，或者您需要使用集成应用程序部署外接程序。 [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
 
 若要测试和运行 Outlook 外接程序，用户的 Outlook 电子邮件帐户必须驻留在 Exchange 2013 或更高版本上，这可以通过 Microsoft 365、Exchange Online 或本地安装获得。 用户或管理员在该服务器上安装 Outlook 外接程序的清单文件。
 
@@ -87,5 +87,5 @@ Outlook作为加载项的一部分分发的 Mac Microsoft 365支持Outlook加载
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项平台概述](../overview/office-add-ins.md)
-- [Office 客户端应用程序和 Office 加载项的平台可用性](../overview/office-add-in-availability.md)
+- [Office 客户端应用程序和平台的 Office 加载项可用性](../overview/office-add-in-availability.md)
 - [Office 加载项使用的浏览器](browsers-used-by-office-web-add-ins.md)

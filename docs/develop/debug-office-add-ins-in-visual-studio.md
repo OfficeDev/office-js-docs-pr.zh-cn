@@ -1,14 +1,14 @@
 ---
 title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
-ms.date: 12/31/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2b260ab83c513419cb32bbe3f02900e3fc4f4b41
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 44a3d56a276d70e24a3b466e16dd24d264f6555d
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349936"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773816"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
@@ -31,7 +31,7 @@ ms.locfileid: "53349936"
 
 ### <a name="add-in-project-properties"></a>外接程序项目属性
 
-打开外接程序项目的“**属性**”窗口以查看项目属性：
+打开 **加载项** 项目的"属性"窗口，查看项目属性。
 
 1. 在“**解决方案资源管理器**”中，选择外接程序项目（*而不是* Web 应用程序项目）。
 
@@ -57,7 +57,7 @@ ms.locfileid: "53349936"
 
 ### <a name="web-application-project-properties"></a>Web 应用程序项目属性
 
-打开 Web 应用程序项目的“**属性**”窗口以查看项目属性：
+打开 **Web** 应用程序项目的"属性"窗口，查看项目属性。
 
 1. 在 **"解决方案资源管理器"** 中，选择 Web 应用程序项目。
 

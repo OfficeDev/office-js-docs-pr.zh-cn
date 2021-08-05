@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的 Fluent UI React
 description: 了解如何在Fluent外接程序React UI Office UI。
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: a71c1a0de64d99a9e52c4ca2a7a948b9c33eb9ed
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 8018c27a50aa4aca96aae5fd8fb2b62261a694a0
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076299"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773536"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>在Fluent外接程序React UI Office UI
 
@@ -36,7 +36,7 @@ FluentUI React 是官方开源 JavaScript 前端框架，旨在构建无缝适�
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Word`
 
-![Screenshot showing the prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-word-react.png)
+![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图。](../images/yo-office-word-react.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -133,7 +133,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 ## <a name="add-the-react-component-to-your-add-in"></a>将 React 组件添加到加载项
 
-通过打开 **src\components\App.tsx** 并完成下列步骤，将组件 `ButtonPrimaryExample` 添加到加载项：
+通过 `ButtonPrimaryExample` 打开 **src\components\App.tsx** 并完成以下步骤，将组件添加到外接程序。
 
 1. 添加下面导入语句，以`ButtonPrimaryExample`从 **Button.tsx** 中引用。
 

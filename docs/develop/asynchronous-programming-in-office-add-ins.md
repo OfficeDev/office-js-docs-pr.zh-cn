@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的异步编程
 description: 了解 javaScript Office如何在加载项Office异步编程。
-ms.date: 09/08/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1663f15d1b9f4191fc1f0c21f0532b5e23fdade6
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 6408d1efc99f38468b371247156d84f1a4ac4b99
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671385"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773942"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -26,7 +26,7 @@ API 中所有异步方法的名称以"Async"结尾，如 `Document.getSelectedDa
 
 在富客户端和 Web 客户端中支持此异步设计是 Office 加载项开发模型"写入一次，跨平台运行"设计目标的一部分。例如，可以使用将在 Excel 2013 和 Excel 网页版中运行的单一基本代码创建一个内容应用程序或任务窗格加载项。
 
-## <a name="writing-the-callback-function-for-an-async-method"></a>编写"Async"方法的回调函数
+## <a name="write-the-callback-function-for-an-async-method"></a>为"Async"方法编写回调函数
 
 作为 callback 参数传递给"Async"方法的回调函数必须声明一个参数，当执行回调函数时，外接程序运行时将使用该参数提供对[AsyncResult](/javascript/api/office/office.asyncresult)对象的访问。  可以编写：
 
@@ -36,7 +36,7 @@ API 中所有异步方法的名称以"Async"结尾，如 `Document.getSelectedDa
 
 如果您打算只使用一次代码，则可以使用匿名函数，这是因为该函数没有名称，您不能在代码的其他部分引用此代码。如果您打算重复将回调函数用于多个"Async"方法，则可以使用命名函数。
 
-### <a name="writing-an-anonymous-callback-function"></a>编写匿名回调函数
+### <a name="write-an-anonymous-callback-function"></a>编写匿名回调函数
 
 以下匿名回调函数声明一个名为 的参数，该参数在回调返回时从 `result` [AsyncResult.value](/javascript/api/office/office.asyncresult#value) 属性检索数据。
 
@@ -69,7 +69,7 @@ function write(message){
 
 有关使用 方法的信息，请参阅在文档或电子表格中的活动选定内容中读取 `getSelectedDataAsync` [和写入数据](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。 
 
-### <a name="writing-a-named-callback-function"></a>编写命名回调函数
+### <a name="write-a-named-callback-function"></a>编写命名回调函数
 
 或者，您可以编写命名函数，并在其名称传递给"Async"方法的 _callback_ 参数。 例如，可以重写前一个示例，将名为 `writeDataCallback` 的函数作为 _callback_ 参数进行传递，如下所示。
 
@@ -101,7 +101,7 @@ function write(message){
 
 ## <a name="asynchronous-programming-patterns"></a>异步编程模式
 
-JavaScript API Office两种类型的异步编程模式：
+JavaScript API Office两种类型的异步编程模式。
 
 - 使用嵌套回调
 - 使用承诺模式
@@ -142,7 +142,7 @@ function write(message){
 
 以下各节显示如何使用匿名函数或命名函数用于异步方法中的嵌套回调。
 
-#### <a name="using-anonymous-functions-for-nested-callbacks"></a>将匿名函数用于嵌套回调
+#### <a name="use-anonymous-functions-for-nested-callbacks"></a>将匿名函数用于嵌套回调
 
 在下面的示例中，两个匿名函数内嵌声明，并作为嵌套回调传入 `getByIdAsync` 和 `getDataAsync` 方法。 由于这两个函数简单且为内嵌，因此实现的意图很清晰。
 
@@ -163,7 +163,7 @@ function write(message){
 }
 ```
 
-#### <a name="using-named-functions-for-nested-callbacks"></a>将命名函数用于嵌套回调
+#### <a name="use-named-functions-for-nested-callbacks"></a>将命名函数用于嵌套回调
 
 在复杂实现中，使用命名函数对于提高代码的可读性、可维护性和可重用性可能会有帮助。 在下面的示例中，上一节中的示例中的两个匿名函数已被重写为名为 和 `deleteAllData` 的函数 `showResult` 。 然后，这些命名函数将按名称 `getByIdAsync` `deleteAllDataValuesAsync` 作为回调传递到 和 方法中。
 
@@ -194,7 +194,7 @@ function write(message){
 
 JavaScript API Office JavaScript API 提供了[Office.select](/javascript/api/office#Office_select_expression__callback_)方法，以支持用于处理现有绑定对象的承诺模式。 返回到 方法的承诺对象仅支持可以直接从 Binding 对象访问的四种方法 `Office.select` [](/javascript/api/office/office.binding)：getDataAsync、setDataAsync、addHandlerAsync[](/javascript/api/office/office.binding#setDataAsync_data__options__callback_)和[removeHandlerAsync](/javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_)。 [](/javascript/api/office/office.binding#getDataAsync_options__callback_) [](/javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_)
 
-与绑定一起使用的承诺模式采用以下形式：
+使用绑定的承诺模式采用此形式。
 
 **Office.select (** _selectorExpression_， _onError_ **) .**_BindingObjectAsyncMethod_
 
@@ -232,9 +232,9 @@ function addBindingDataChangedEventHandler() {
 > [!IMPORTANT]
 > `Binding`方法返回的对象承诺 `Office.select` 仅提供对对象的四个方法 `Binding` 的访问。 如果需要访问对象的其他任何成员，则必须使用 属性和方法检索 `Binding` `Document.bindings` `Bindings.getByIdAsync` `Bindings.getAllAsync` `Binding` 对象。 例如，如果需要访问对象的任何属性 (、 、 或 属性) ，或者需要访问 `Binding` `document` `id` `type` [MatrixBinding](/javascript/api/office/office.matrixbinding) 或 [TableBinding](/javascript/api/office/office.tablebinding) `getByIdAsync` `getAllAsync` 对象的属性 `Binding` ，则必须使用 或 方法检索对象。
 
-## <a name="passing-optional-parameters-to-asynchronous-methods"></a>向异步方法传递可选参数
+## <a name="pass-optional-parameters-to-asynchronous-methods"></a>将可选参数传递给异步方法
 
-所有"异步"方法的常用语法都遵循此模式：
+所有"Async"方法的常见语法都遵循此模式。
 
  _AsyncMethod_ `(`_RequiredParameters_`, [`_OptionalParameters_`],`_CallbackFunction_`);`
 
@@ -242,7 +242,7 @@ function addBindingDataChangedEventHandler() {
 
 可以创建包含可选参数内嵌的 JSON 对象，或者创建对象，并作为 options 参数进行 `options` 传递。 
 
-### <a name="passing-optional-parameters-inline"></a>传递可选参数内嵌
+### <a name="pass-optional-parameters-inline"></a>内联传递可选参数
 
 例如，用可选参数内嵌调用 [Document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) 方法的语法类似如下：
 
@@ -273,7 +273,7 @@ function write(message){
 > [!NOTE]
 > 可以任何顺序在 JSON 对象中指定可选参数，只要指定正确的参数名称即可。
 
-### <a name="passing-optional-parameters-in-an-options-object"></a>在 options 对象中传递可选参数
+### <a name="pass-optional-parameters-in-an-options-object"></a>在 options 对象中传递可选参数
 
 或者，也可以创建一个名为 的对象，该对象与方法调用分开指定可选参数，然后将该对象 `options` `options` 作为 _options_ 参数传递。
 

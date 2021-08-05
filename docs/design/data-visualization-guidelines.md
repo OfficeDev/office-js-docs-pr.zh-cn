@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的数据可视化样式指南
 description: 获取有关如何在加载项中可视化数据Office一些好的做法。
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: aebd0ea8731d099615141e203cc03b2972128c9a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 353406742bf247b7b9d2700f731de8a70f7b4928
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076348"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773634"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
@@ -24,7 +24,7 @@ ms.locfileid: "53076348"
 
 ### <a name="chart-titles"></a>图表标题
 
-请遵循图表标题的以下准则：
+遵循图表标题的以下指南。
 
 - 使图表标题便于阅读。设定其位置以创建相对于其余图表的清晰视觉对象层次结构。
 - 一般情况下，使用句子大写（大写第一个字词）。若要创建对比度或强化层次结构，可以全部使用大写，但应谨慎使用全部大写。
@@ -69,7 +69,6 @@ ms.locfileid: "53076348"
 - 存在缩放或值的更改
 
 请确保图例增强数据墨迹，但不会影响其显示效果。放置图例：
-
 
 - 如果图表上方的所有图例项大小合适，则默认情况下会在绘图区上方左对齐。
 - 在绘图区的右上角，如果图表上方的所有图例项大小均不合适，请在必要时确保其可滚动。

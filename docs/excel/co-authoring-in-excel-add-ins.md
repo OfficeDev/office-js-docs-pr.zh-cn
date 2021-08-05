@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel 加载项共同创作
 description: 了解如何共同Excel存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中的工作簿。
-ms.date: 07/23/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6901df106f9b70bc0265d78757ec7416380fc76c
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 6923b003417e78432975fa78fb5423b055bd02bf
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671483"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774159"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 
@@ -48,7 +48,7 @@ Excel 外接程序可以读取工作簿内容（通过隐藏工作表和设置�
 
 例如，在数据验证应用场景下，通常通过显示 UI 来响应事件。 本地用户或合著者（远程）通过绑定更改工作簿内容时，会运行前面部分中所述的 [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) 事件。 如果事件的事件处理程序显示 UI，用户将看到与他们在工作簿中处理的更改无关的 `BindingDataChanged` UI，从而导致较差的用户体验。 在外接程序中使用事件时，请避免显示 UI。
 
-## <a name="avoiding-table-row-coauthoring-conflicts"></a>避免表行共同授权冲突
+## <a name="avoid-table-row-coauthoring-conflicts"></a>避免表行共同授权冲突
 
 对 API 的调用可能导致共同授权冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 是一个已知问题。 如果您预计外接程序将在其他用户编辑外接程序的工作簿时运行，我们不建议使用该 API (特别是当他们编辑表) 下的任何区域时。 以下指南应该有助于避免方法问题 (并避免触发要求用户刷新Excel的黄色 `TableRowCollection.add`) 。
 

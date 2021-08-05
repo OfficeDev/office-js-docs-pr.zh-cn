@@ -1,14 +1,14 @@
 ---
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: 了解如何在 Office 中转换加载项Visual Studio TypeScript。
-ms.date: 09/01/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2932c94052735436ce1357966832528679e6900d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 33378fa1270d4ff43a9c8219f6c68675974834f3
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349978"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773879"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
@@ -30,7 +30,7 @@ ms.locfileid: "53349978"
 - TypeScript SDK 版本 2.3 或更高版本（适用于 Visual Studio 2019）
 
     > [!TIP]
-    > 在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”选项卡，然后向下滚动到“SDK、库和框架”部分。 在该部分中，确保至少选择一个“TypeScript SDK”组件（版本 2.3 或更高版本）。 如果一个“TypeScript SDK”组件都没有选择，则选择最新可用版本的 SDK，然后选择“修改”按钮以[安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)。 
+    > 在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”选项卡，然后向下滚动到“SDK、库和框架”部分。 在该部分中，确保至少选择一个“TypeScript SDK”组件（版本 2.3 或更高版本）。 如果未选择任何 **TypeScript SDK** 组件，请选择 SDK 的最新可用版本，然后选择"修改"[以安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)。
 
 - Excel 2016 或更高版本
 
@@ -61,7 +61,7 @@ ms.locfileid: "53349978"
     > [!NOTE]
     > 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。
 
-6. 在 **Home.ts** 中，找到 `Office.initialize = function (reason) {` 行并在其后面紧接着添加一行以填充全局 `window.Promise`，如下所示：
+6. 在 **Home.ts** 中，找到 行，并紧接着添加一行以 `Office.initialize = function (reason) {` 填充全局 `window.Promise` ，如下所示。
 
     ```TypeScript
     Office.initialize = function (reason) {

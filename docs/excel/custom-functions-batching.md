@@ -1,16 +1,16 @@
 ---
-ms.date: 07/10/2019
+ms.date: 07/08/2021
 description: 将自定义函数集体进行批处理，以减少对远程服务的网络调用。
 title: 对远程服务的自定义函数调用进行批处理
 localization_priority: Normal
-ms.openlocfilehash: 0729e06df5f6e26f9726e1de0dcdaac0f101b18d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: fa02a88646ca373a463aefaa51076c35c3df08cf
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349649"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774173"
 ---
-# <a name="batching-custom-function-calls-for-a-remote-service"></a>对远程服务的自定义函数调用进行批处理
+# <a name="batch-custom-function-calls-for-a-remote-service"></a>批处理远程服务的自定义函数调用
 
 如果自定义函数调用远程服务，可以使用批处理模式来减少对远程服务的网络调用次数。 为了减少网络往返，你可以将所有调用批处理为对 Web 服务的单个调用。 当重新计算电子表格时，此方法非常合适。
 
@@ -216,6 +216,7 @@ function pause(ms: number) {
 - 将代码放入远程服务。
 
 ## <a name="next-steps"></a>后续步骤
+
 了解可以在自定义函数中使用的[各种参数](custom-functions-parameter-options.md)。 或者查阅[通过自定义函数进行 Web 调用](custom-functions-web-reqs.md)后面的基础知识。
 
 ## <a name="see-also"></a>另请参阅

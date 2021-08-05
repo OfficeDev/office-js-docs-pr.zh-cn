@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的本地化
 description: 使用 Office JavaScript API 确定区域设置，并基于 Office 应用程序区域设置显示字符串，或者根据数据区域设置解释或显示数据。
-ms.date: 02/23/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 009a413426b5971e89b2a7a1aa2c233300e25529
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 8f23e124cd930f6a3c7c1cd6e0f7a3f24156ccd1
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671229"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773487"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -16,7 +16,7 @@ ms.locfileid: "53671229"
 
 ## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>使用 JavaScript API 确定区域设置特定的字符串
 
-JavaScript API Office两个属性支持显示或解释与应用程序和数据区域设置一Office值：
+JavaScript API Office提供了两个属性，这些属性支持显示或解释与应用程序Office设置一致的值。
 
 - [Context.displayLanguage][displayLanguage]指定 (应用程序) 用户界面区域设置Office语言。 以下示例验证应用程序是否Office en-US 或 fr-FR 区域设置，并显示区域设置特定的问候语。
 
@@ -39,7 +39,7 @@ JavaScript API Office两个属性支持显示或解释与应用程序和数据�
     }
     ```
 
-- [Context.contentLanguage][contentLanguage] 指定数据的区域设置（或语言）。展开上一个代码示例，不检查 [displayLanguage] 属性，而是为 `myLanguage` 分配 [contentLanguage] 属性值，并使用相同代码的其余部分根据数据的区域设置显示问候语：
+- [Context.contentLanguage][contentLanguage] 指定数据的区域设置（或语言）。 扩展最后一个代码示例，而不是检查 [displayLanguage] 属性，分配 `myLanguage` [contentLanguage] 属性的值，并使用相同代码的其余部分基于数据区域设置显示问候语。
 
     ```js
     var myLanguage = Office.context.contentLanguage;
@@ -47,11 +47,9 @@ JavaScript API Office两个属性支持显示或解释与应用程序和数据�
 
 ## <a name="control-localization-from-the-manifest"></a>通过清单控制本地化
 
-
 每个 Office 外接程序在其清单中指定一个 [DefaultLocale] 元素和区域设置。 默认情况下，Office外接程序平台和 Office 客户端应用程序将[]Description、DisplayName、IconUrl、HighResolutionIconUrl 和[] [SourceLocation]元素的值应用于所有区域设置。 [] [] 可以通过为每个其他区域设置的上述五个元素中的任意一个指定 [Override] 子元素来选择支持将特定值用于特定的区域设置。 [DefaultLocale] 元素和 `Locale` 元素的 [] 属性的值根据 [RFC 3066]（“用于语言标识的标记”）指定。 表 1 描述了这些元素的本地化支持。
 
 *表 1.本地化支持*
-
 
 |**Element**|**本地化支持**|
 |:-----|:-----|
@@ -62,15 +60,12 @@ JavaScript API Office两个属性支持显示或解释与应用程序和数据�
 |[Resources] **重要说明：** 此元素仅适用于使用加载项清单版本 1.1 的情况。   |指定的每个区域设置中的用户都可以看到专门针对相应区域设置为加载项创建的字符串和图标资源。 |
 |[SourceLocation]   |指定的每个区域设置中的用户都可以看到专门针对该区域设置为该加载项设计的网页。 |
 
-
 > [!NOTE]
 > 可以仅为 Office 支持的语言环境对说明和显示名称进行本地化。 有关当前版本的 Office 的语言和区域设置列表，请参阅 [Office 2013 中的语言标识符和 OptionState ID 值](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))。
-
 
 ### <a name="examples"></a>示例
 
 例如，Office 加载项可以将 [DefaultLocale] 指定为 `en-us`。对于 [DisplayName] 元素，加载项可以为区域设置 `fr-fr` 指定 [Override] 子元素，如下所示。
-
 
 ```xml
 <DefaultLocale>en-us</DefaultLocale>
@@ -86,9 +81,9 @@ JavaScript API Office两个属性支持显示或解释与应用程序和数据�
 这意味着，加载项默认情况下采用 `en-us` 区域设置。除非客户端计算机的区域设置为 `fr-fr`（此时用户将看到法语的显示名称“Lecteur vidéo”），否则对于所有区域设置，用户都将看到英文显示名称“Video player”。
 
 > [!NOTE]
-> 每种语言只可指定单一的覆盖，包括对于默认区域设置的覆盖。 例如，如果默认区域设置为 `en-us`，则无法也指定 `en-us` 的覆盖。 
+> 每种语言只可指定单一的覆盖，包括对于默认区域设置的覆盖。 例如，如果默认区域设置为 `en-us`，则无法也指定 `en-us` 的覆盖。
 
-以下示例对 [Description] 元素应用区域设置覆盖。它首先指定默认区域设置 `en-us` 和英文说明，然后指定 [Override] 语句，其中包含 `fr-fr` 区域设置的法语说明：
+以下示例对 Description 元素应用区域 [设置] 替代。 它首先指定默认区域设置和英语说明，然后指定 Override 语句，该语句具有区域 `en-us` 设置法语[] `fr-fr` 说明。
 
 ```xml
 <DefaultLocale>en-us</DefaultLocale>
@@ -104,8 +99,7 @@ JavaScript API Office两个属性支持显示或解释与应用程序和数据�
 
 也就是说，加载项默认采用 `en-us` 区域设置。除非客户端计算机的区域设置为 `fr-fr`（此时用户将看到法语说明），否则对于所有区域设置，用户都将看到 `DefaultValue` 属性中的英文说明。
 
-在以下示例中，加载项指定更适合 `fr-fr` 区域设置和区域性的不同图像。默认情况下，用户看到的是图像 DefaultLogo.png，客户端计算机的区域设置为 `fr-fr` 时除外。此时，用户将看到图像 FrenchLogo.png。 
-
+在以下示例中，加载项指定更适合 `fr-fr` 区域设置和区域性的不同图像。默认情况下，用户看到的是图像 DefaultLogo.png，客户端计算机的区域设置为 `fr-fr` 时除外。此时，用户将看到图像 FrenchLogo.png。
 
 ```xml
 <!-- Replace "domain" with a real web server name and path. -->
@@ -124,11 +118,9 @@ JavaScript API Office两个属性支持显示或解释与应用程序和数据�
  ...
 ```
 
-
 对于 [SourceLocation] 元素，支持其他区域设置意味着为每个指定的区域设置提供单独的源 HTML 文件。指定的每个区域设置中的用户都可以看到为相应区域设置设计的自定义网页。
 
 对于 Outlook 加载项，[SourceLocation] 元素还与外形规格保持一致。这样一来，就可以为每个相应外形规格提供不同的本地化源 HTML 文件。可以在每个适用的 settings 元素（[DesktopSettings]、[TabletSettings] 或 [PhoneSettings]）中指定一个或多个 [Override] 子元素。下面的示例展示了用于台式机、平板电脑和智能手机外形规格的 settings 元素，每个都有一个用于默认区域设置的 HTML 文件，以及另一个用于法语区域设置的 HTML 文件。
-
 
 ```xml
 <DesktopSettings>
@@ -253,9 +245,7 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 
 可以使用[contentLanguage]属性获取 Office 应用程序的数据区域设置。 基于此值，可以正确地解读或显示日期/时间字符串。 例如，`jp-JP` 区域设置将数据/时间值表示为 `yyyy/MM/dd`，而 `fr-FR` 区域设置则表示为 `dd/MM/yyyy`。
 
-
 ## <a name="use-ajax-for-globalization-and-localization"></a>将 Ajax 用于全球化和本地化
-
 
 如果使用 Visual Studio 创建 Office 外接程序，.NET Framework 和 Ajax 会提供用于全球化和本地化客户端脚本文件的方法。
 
@@ -263,10 +253,9 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 
 可将本地化的资源字符串直接包含在独立的 JavaScript 文件中，以便为不同区域设置提供客户端脚本文件，这些文件在浏览器中设置或由用户提供。为每个受支持的区域设置创建单独的脚本文件。在每个脚本文件中，包括一个 JSON 格式的对象，其中包含用于该区域设置的资源字符串。在浏览器中运行脚本时，会应用本地化的值。
 
-
 ## <a name="example-build-a-localized-office-add-in"></a>示例：生成本地化 Office 加载项
 
-本节提供示例，演示如何本地化 Office 外接程序描述、显示名称和 UI。 
+本节提供示例，演示如何本地化 Office 外接程序描述、显示名称和 UI。
 
 > [!NOTE]
 > 若要下载 Visual Studio 2019，请参阅 Visual Studio [IDE 页面](https://visualstudio.microsoft.com/vs/)。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。
@@ -294,16 +283,15 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 
 4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。**Home.html** 文件在 Visual Studio 中打开。
 
-
 ### <a name="localize-the-text-used-in-your-add-in"></a>本地化加载项中使用的文本
 
-您要本地化为另一种语言的文本出现在两个区域中：
+要本地化为另一种语言的文本将显示在两个区域。
 
--  **加载项显示名称和说明**。这是受应用程序清单文件中的条目控制的。
+- **加载项显示名称和说明**。这是受应用程序清单文件中的条目控制的。
 
--  **加载项 UI**。 可以通过使用 JavaScript 代码本地化在加载项 UI 中出现的字符串（例如，通过使用包含已本地化的字符串的单独资源文件）。
+- **加载项 UI**。 可以通过使用 JavaScript 代码本地化在加载项 UI 中出现的字符串（例如，通过使用包含已本地化的字符串的单独资源文件）。
 
-要本地化加载项显示名称和说明，请执行以下操作：
+#### <a name="localize-the-add-in-display-name-and-description"></a>本地化外接程序的显示名称和说明
 
 1. 在“解决方案资源管理器”中，展开“WorldReadyAddIn”、“WorldReadyAddInManifest”，然后选择“WorldReadyAddIn.xml”。
 
@@ -323,7 +311,7 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 
 3. 例如，如果您将 Office 2013 的显示语言从英语切换到西班牙语，然后运行加载项，加载项的显示名称和说明将用本地化文本显示。
 
-若要设计加载项 UI 的布局，请执行以下操作：
+#### <a name="lay-out-the-add-in-ui"></a>布局外接程序 UI
 
 1. 在 Visual Studio 的“解决方案资源管理器”中，选择“Home.html”。
 
@@ -355,13 +343,13 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 
 ### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>添加包含本地化后字符串的资源文件
 
-JavaScript 资源文件包含加载项 UI 使用的字符串。 示例加载项 UI 的 HTML 中包含用于显示问候语的 `<h1>` 元素以及用于向用户介绍加载项的 `<p>` 元素。 
+JavaScript 资源文件包含加载项 UI 使用的字符串。 示例加载项 UI 的 HTML 中包含用于显示问候语的 `<h1>` 元素以及用于向用户介绍加载项的 `<p>` 元素。
 
 若要为标题和段落启用本地化字符串，您需要将字符串放在一个单独的资源文件中。资源文件会创建一个 JavaScript 对象，对每组本地化字符串来说，它都包含一个单独的 JavaScript 对象表示法 (JSON) 对象。资源文件也提供为给定区域设置找回适当 JSON 对象的方法。
 
-若要为加载项项目添加资源文件：
+### <a name="add-the-resource-file-to-the-add-in-project"></a>将资源文件添加到加载项项目
 
-1. 在 Visual Studio 的“解决方案资源管理器”中，右键单击“WorldReadyAddInWeb”项目并选择“添加” > “新项目”。 
+1. 在 Visual Studio 的“解决方案资源管理器”中，右键单击“WorldReadyAddInWeb”项目并选择“添加” > “新项目”。
 
 2. 在“添加新项目”对话框中，选择“JavaScript 文件”。
 
@@ -480,8 +468,6 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 
 若要测试本地化的外接程序，请更改用于在应用程序Office或编辑的语言，然后运行您的外接程序。
 
-若要更改加载项中的显示或编辑语言，请执行以下操作：
-
 1. 在 Word 中，选择“文件” > “选项” > “语言”。 下图显示打开了“语言”选项卡的“Word 选项”对话框。
 
     *图 2：“Word 选项”对话框中的“语言”选项*
@@ -497,7 +483,6 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 5. 在 Word 中选择“开始” > “显示任务窗格”。
 
 运行后，外接程序 UI 中的字符串会更改以匹配应用程序使用的语言，如下图所示。
-
 
 *图 3. 使用本地化文本的加载项 UI*
 

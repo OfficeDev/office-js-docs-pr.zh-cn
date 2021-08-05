@@ -1,16 +1,16 @@
 ---
 title: 使用应用程序专用 API 模型
 description: 了解 Excel、OneNote 和 Word 加载项基于承诺的 API 模型。
-ms.date: 09/08/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 5cf1d088dfa883e5df9eaba25e395857cfce9f5c
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 568494dc0b92f1a4f9c6556b169293e68ae0bce9
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350062"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773494"
 ---
-# <a name="using-the-application-specific-api-model"></a>使用应用程序专用 API 模型
+# <a name="application-specific-api-model"></a>特定于应用程序的 API 模型
 
 本文介绍如何使用 API 模型在 Excel、Word 和 OneNote 中构建加载项。 本文介绍核心概念，这些概念是使用基于承诺的 API 的基础。
 
@@ -225,7 +225,7 @@ Excel.run(function (ctx) {
 
 ### <a name="some-properties-cannot-be-set-directly"></a>某些属性不能直接设置
 
-尽管可写的属性，但某些属性不能设置。 这些属性是必须将设置为单个对象的父属性的一部分。 这是因为父属性依赖于具有特定逻辑关系的子属性。 必须使用对象文字表示法设置这些父属性来设置整个对象，而不是设置该对象的单个子问题。 PageLayout [中可找到此示例](/javascript/api/excel/excel.pagelayout)。 必须 `zoom` 单个 PageLayoutZoomOptions [每个对象设置](/javascript/api/excel/excel.pagelayoutzoomoptions) ，如下所示：
+尽管可写的属性，但某些属性不能设置。 这些属性是必须将设置为单个对象的父属性的一部分。 这是因为父属性依赖于具有特定逻辑关系的子属性。 必须使用对象文字表示法设置这些父属性来设置整个对象，而不是设置该对象的单个子问题。 PageLayout [中可找到此示例](/javascript/api/excel/excel.pagelayout)。 必须使用 `zoom` 单个 [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) 对象设置该属性，如下所示。
 
 ```js
 // PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
@@ -234,7 +234,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 在上一示例中，***无法*** 直接分配为值`zoom`：`sheet.pageLayout.zoom.scale = 200;`。 该语句会引发错误， `zoom` 加载错误。 即使 `zoom` ，该比例也会生效。 所有上下文操作 `zoom`、刷新加载项中的代理对象并覆盖本地设置的值。
 
-此行为与 [Range.format](application-specific-api-model.md#scalar-and-navigation-properties) 等 [导航属性](/javascript/api/excel/excel.range#format)。 您可以使用对象 `format` 设置对象属性，如下所示：
+此行为与 [Range.format](application-specific-api-model.md#scalar-and-navigation-properties) 等 [导航属性](/javascript/api/excel/excel.range#format)。 可以使用 `format` 对象导航设置 的属性，如下所示。
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.
@@ -245,8 +245,6 @@ range.format.font.size = 10;
 
 - 只读属性：可通过导航设置子项目。
 - 可写的属性：无法通过导航设置子项目（必须设置为初始父对象分配的一部分）。
-
-
 
 ## <a name="42ornullobject-methods-and-properties"></a>&#42;OrNullObject 方法与属性
 

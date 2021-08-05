@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的资源限制和性能优化
 description: 了解加载项平台的资源Office，包括 CPU 和内存。
-ms.date: 07/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 750f10880249a9c9a8720f870f4bc5ea4e576e8e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 27c5acf98bb43d53b165ad268b3800373888d335
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671273"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773214"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -71,9 +71,9 @@ ms.locfileid: "53671273"
 - 重新启动外接程序。
 - 取消有关超出该阈值的后续警报。理想的情况是，用户应当从文档中删除该外接程序；继续使用该外接程序可能会遇到更多性能和稳定性问题。  
 
-## <a name="verifying-resource-usage-issues-in-the-telemetry-log"></a>验证遥测日志中的资源使用率问题
+## <a name="verify-resource-usage-issues-in-the-telemetry-log"></a>验证遥测日志中的资源使用率问题
 
-Office 提供了遥测日志，以保留本地计算机上运行的 Office 解决方案的某些事件（加载、打开、关闭和错误）的记录，包括 Office 外接程序中的资源使用率问题。如果您已设置遥测日志，则可以使用 Excel 在您的本地驱动器中的以下默认位置打开遥测日志：
+Office 提供了遥测日志，以保留本地计算机上运行的 Office 解决方案的某些事件（加载、打开、关闭和错误）的记录，包括 Office 外接程序中的资源使用率问题。 如果已设置遥测日志，可以使用Excel本地驱动器上的以下默认位置打开遥测日志。
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 

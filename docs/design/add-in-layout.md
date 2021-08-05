@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的布局准则
 description: 获取在加载项中如何Office窗格或对话框的指南。
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c004171333ee3ded54a36efe227fcd1714935a59
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 14c788613fe3ac11436c32c5b7457f379b4a72fe
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349362"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773193"
 ---
 # <a name="layout"></a>布局
 

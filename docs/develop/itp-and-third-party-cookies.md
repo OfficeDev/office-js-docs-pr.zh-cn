@@ -1,20 +1,20 @@
 ---
 title: 开发Office外接程序以使用第三方 Cookie 时与 ITP 一起使用
 description: 使用第三方 cookie 时Office ITP 和加载项
-ms.date: 03/12/2021
+ms.date: 07/8/2021
 localization_priority: Normal
-ms.openlocfilehash: dbc23e4ead0abc94ffa173ffc22919342c4fca6d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 6a9452f24cb1cbd76c4f6cc3f39fab1f9310ec97
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349859"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773473"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>开发Office外接程序以使用第三方 Cookie 时与 ITP 一起使用
 
 如果您的Office外接程序需要第三方 Cookie，则加载外接程序的浏览器运行时使用智能跟踪防护 (ITP) 时，将阻止这些 Cookie。 你可能会使用第三方 Cookie 对用户进行身份验证，或者用于存储设置等其他方案。
 
-如果您的Office和网站必须依赖第三方 Cookie，请使用以下步骤来使用 ITP：
+如果您的Office和网站必须依赖第三方 Cookie，请使用以下步骤来使用 ITP。
 
 1. 设置[OAuth 2.0](https://tools.ietf.org/html/rfc6749)授权，以便验证域 (在这种情况下，需要 cookie 的第三) 将授权令牌转发到   您的网站。 使用令牌通过服务器集 Secure 和 HttpOnly Cookie 建立第一 [方登录会话](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies)。
 2. 使用[存储 Access API，](https://webkit.org/blog/8124/introducing-storage-access-api/)以便第三方可以请求获取访问其第一方   Cookie 的权限。 Mac 和 Office 上当前版本的 Office web 版都支持此 API。

@@ -1,26 +1,24 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: 了解如何解决加载项中的Office错误。
-ms.date: 09/08/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: dc186e942d129d4a7ae1ce2a326d0e5a0e1629e1
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 1593dd5aa5ae690d4a44f1a7527dce2c6dfcbd87
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348627"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774306"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
-有时，您的用户在使用您开发的 Office 外接程序时可能会遇到问题。例如，外接程序无法加载或无法访问。使用本文中的信息有助于解决您的用户在使用 Office 外接程序时遇到的常见问题。 
+有时，您的用户在使用您开发的 Office 外接程序时可能会遇到问题。例如，外接程序无法加载或无法访问。使用本文中的信息有助于解决您的用户在使用 Office 外接程序时遇到的常见问题。
 
 还可以使用 [Fiddler](https://www.telerik.com/fiddler) 发现和调试加载项问题。
 
 ## <a name="common-errors-and-troubleshooting-steps"></a>常见错误和故障排除步骤
 
 下表列出了用户可能遇到的常见错误消息以及用户可以采取以解决这些错误的步骤。
-
-
 
 |**错误消息**|**解决方案**|
 |:-----|:-----|
@@ -40,20 +38,16 @@ ms.locfileid: "53348627"
 
 ## <a name="outlook-add-in-doesnt-work-correctly"></a>Outlook 外接程序不能正常工作
 
-如果在 Windows 上运行并[使用 Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) 的 Outlook 加载项不能正常工作，请尝试在 Internet Explorer 中启用脚本调试。 
-
+如果在 Windows 上运行并[使用 Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) 的 Outlook 加载项不能正常工作，请尝试在 Internet Explorer 中启用脚本调试。
 
 - 转到工具> **Internet 选项**  >  **高级**。
-
 - 在“浏览”下，取消选中“禁用脚本调试 (Internet Explorer)”和“禁用脚本调试 (其他)”。
 
 我们建议您仅在解决问题时取消选中这些设置。如果您将其保持未选中状态，您在浏览时将会收到提示。解决此问题后，再次选中“禁用脚本调试 (Internet Explorer)”和“禁用脚本调试 (其他)”。
 
-
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>外接程序在 Office 2013 中无法激活
 
 如果用户执行以下步骤时外接程序未激活。
-
 
 1. 使用 Microsoft 帐户在 Office 2013 中登录。
 

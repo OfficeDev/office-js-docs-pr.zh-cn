@@ -1,14 +1,14 @@
 ---
 title: 获取或设置 Outlook 加载项中的约会时间
 description: 了解如何在 Outlook 加载项中获取或设置约会开始和结束时间。
-ms.date: 10/31/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 883b2be75348b72ac3c6b11bf558f7ac27aa2b8d
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: eadce9b540a9b3b8a03186340fff4511d42dd35a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671329"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774342"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置时间
 
@@ -38,7 +38,7 @@ item.start.getAsync
 item.end.getAsync
 ```
 
-与 JavaScript API 中的大多数异步Office一样 **，getAsync** 和 **setAsync** 采用可选输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
+与 JavaScript API 中的大多数异步Office一样 **，getAsync** 和 **setAsync** 采用可选输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
 
 
 ## <a name="get-the-start-or-end-time"></a>获取开始或结束时间

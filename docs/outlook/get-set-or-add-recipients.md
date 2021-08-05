@@ -3,12 +3,12 @@ title: 在 Outlook 加载项中获取或修改收件人
 description: 了解如何在 Outlook 加载项中获取、设置或添加邮件或约会的收件人。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 23e523c773b90fc02ed68151ea3c0cc6641b94ee
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 9a98fbc78e98cbaaf99c60625dd7f6a725c57c0f
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53670249"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773081"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取、设置或添加收件人
 
@@ -32,7 +32,7 @@ item.cc.getAsync
 
 这些属性只在撰写窗体（而非阅读窗体）中可进行写入访问。
 
-与 JavaScript API 中的大多数异步方法一样，Office、、和 `getAsync` `setAsync` `addAsync` 采用可选输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
+与 JavaScript API 中的大多数异步方法一样，Office、、和 `getAsync` `setAsync` `addAsync` 采用可选输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
 
 
 ## <a name="get-recipients"></a>获取收件人

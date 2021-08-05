@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 如何创建 (或将 Office 后端的 ASP.NET Office) 外接程序转换为使用单一登录 (SSO) 的分步指南。
-ms.date: 06/15/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c5c23445b6a4fec5f4be620ce9a4878f3aa69922
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 5052856d5f29241c5e25669c8b6451b73aef5ec5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349971"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773886"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
@@ -35,7 +35,7 @@ ms.locfileid: "53349971"
 在 [Office Add-in ASPNET SSO](https://github.com/officedev/office-add-in-aspnet-sso) 处克隆或下载存储库。
 
 > [!NOTE]
-> 示例项目有两个版本：
+> 示例有两个版本。
 >
 > * **Before** 文件夹是初学者项目。未直接连接到 SSO 或授权的外接程序的 UI 和其他方面已经完成。本文后续章节将引导你完成此过程。
 > * 如果完成了本文中的过程，该示例的 **已完成** 版本会与所生成的加载项类似，只不过完成的项目具有对本文文本冗余的代码注释。 若要使用已完成的版本，请按照本文中的说明进行操作即可，但需要将“Before”替换为“Complete”，并跳过 **编写客户端代码** 和 **编写服务器端代码** 部分。
@@ -90,7 +90,7 @@ ms.locfileid: "53349971"
     * `08e18876-6177-487e-b8b5-cf950c1e598c`（Office 网页版）
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Outlook 网页版）
 
-    对于每个 ID，执行以下步骤：
+    对于每个 ID，请执行以下步骤。
 
     a. 选择“**添加客户端应用程序**”按钮，然后在打开的面板中，将“客户端 ID”设置为相应的 GUID 并勾选 `api://localhost:44355/$App ID GUID$/access_as_user` 框。
 
@@ -121,7 +121,7 @@ ms.locfileid: "53349971"
 
 1. 返回到"**解决方案资源管理器** (，选择"不要右键) "Office-Add-in-ASPNET-SSO-WebAPI"项目。  随后将打开“**属性**”窗格。 确保“**已启用 SSL**”为“**True**”。 验证“**SSL URL**”是否为 `http://localhost:44355/`。
 
-1. 在“Web.config”中，使用先前复制的值。 将“**ida:ClientID**”和“**ida:Audience**”均设置为“**应用程序(客户端) ID**”，并将“**ida:Password**”设置为客户端密码。 此外，将 **ida：Domain** 设置为 (末尾没有正斜杠 `http://localhost:44355` "/") 。 
+1. 在“Web.config”中，使用先前复制的值。 将“**ida:ClientID**”和“**ida:Audience**”均设置为“**应用程序(客户端) ID**”，并将“**ida:Password**”设置为客户端密码。 此外，将 **ida：Domain** 设置为 (末尾没有正斜杠 `http://localhost:44355` "/") 。
 
     > [!NOTE]
     > 当其他应用程序（如 Office 客户端应用程序 (例如 PowerPoint、Word、Excel) ）寻求应用程序的授权访问权限时，Application (客户端) **ID** 是"受众"值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
@@ -150,7 +150,7 @@ ms.locfileid: "53349971"
 
 ### <a name="setup-for-single-tenant"></a>单租户设置
 
-如果在注册该加载项时，“**受支持的帐户类型**”选择了“仅限此组织目录中的帐户”，则需要执行以下额外的设置步骤：
+如果在注册外接程序时为"支持的帐户类型"选择了"仅此组织目录中的帐户"，则需要执行这些额外的设置步骤。
 
 1. 返回 Azure 门户，并打开加载项注册界面的“**概述**”边栏选项卡。 复制“**目录(租户) ID**”。
 
@@ -160,7 +160,7 @@ ms.locfileid: "53349971"
 
 ## <a name="code-the-client-side"></a>编写客户端代码
 
-1. 打开 **Scripts** 文件夹中的 HomeES6.js 文件。 其中已存在一些代码：
+1. 打开 **Scripts** 文件夹中的 HomeES6.js 文件。 其中已包含一些代码。
 
     * 有一些填充代码用于向全局窗口对象分配 Office.Promise 对象，以便在 Office 为 UI 使用 Internet Explorer 时可运行该加载项。 （有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。）
     * 针对 `Office.initialize` 方法的分配，反过来又将一个处理程序分配给 `getGraphAccessTokenButton` 按钮的 Click 事件。
@@ -168,7 +168,8 @@ ms.locfileid: "53349971"
     * `logErrors` 方法，用于记录最终用户不应看到的控制台错误。
     * 一些代码实现了加载项在 SSO 不受支持或有错误的情况下使用的回退授权系统。
 
-1. 在针对 `Office.initialize` 的分配下面，添加下面的代码。 对于此代码，请注意以下事项。
+1. 在针对 `Office.initialize` 的分配下面，添加下面的代码。 关于此代码，请注意以下几点：
+
 
     * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `retryGetAccessToken` 用于确保用户不会重复循环失败的尝试来获取令牌。
     * `getGraphData` 函数通过 ES6 `async` 关键字进行定义。 使用 ES6 语法可以使 Office 加载项中的 SSO API 更易于使用。 此文件是该解决方案中唯一会使用 Internet Explorer 不支持的语法的文件。 我们在文件名中放入“ES6”作为提醒用途。 该解决方案使用 tsc 转译器将此文件转译为 ES5，以便在 Office 为 UI 使用 Internet Explorer 时可运行加载项。 （请查看项目根目录中的 tsconfig.json 文件。）
@@ -439,7 +440,7 @@ ms.locfileid: "53349971"
     };
     ```
 
-1. 将 `TODO 2` 替换为以下代码。关于此代码，请注意以下几点：
+1. 将 `TODO 2` 替换为以下代码。 关于此代码，请注意以下几点：
 
     * 调用的是方法 `UseOAuthBearerAuthentication`，而不是更常见的 `UseWindowsAzureActiveDirectoryBearerAuthentication`，因为后者与 Azure AD V2 终结点不兼容。
     * 传递到 方法的 URL 是 OWIN 中间件获取获取密钥的说明，以验证从 Office 应用程序收到的启动令牌上的签名。 此 URL 的 Authority 区段来自 web.config。它可能是“common”字符串，而对于单租户加载项，则是一个 GUID。
@@ -526,7 +527,7 @@ ms.locfileid: "53349971"
     string[] graphScopes = { "https://graph.microsoft.com/Files.Read.All" };
     ```
 
-1. 将 `TODO 3` 替换为下列代码。关于此代码，请注意以下几点：
+1. 将 `TODO 3` 替换为以下代码。关于此代码，请注意以下几点：
 
     * `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` 方法将首先查找内存中的 MSAL 缓存，获取匹配的访问令牌。 仅当不存在任何令牌时，该方法才会通过 Azure AD V2 终结点启动代理流。
     * 任何不属于类型 `MsalServiceException` 的异常都是有意不捕获的，这样才能作为 `500 Server Error` 消息传播到客户端。

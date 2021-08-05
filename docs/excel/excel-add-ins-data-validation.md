@@ -3,12 +3,12 @@ title: 向特定 Excel 范围添加数据验证
 description: 了解 Excel JavaScript API 如何允许外接程序向工作簿中的表、列、行和其他区域添加自动数据验证。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a6a92aeae309912eff2ecebb2897a6a64a3e9966
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 2579473800a20ba864b42b8a18b8023dff826c5e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671159"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774152"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>向特定 Excel 范围添加数据验证
 
@@ -45,7 +45,7 @@ Excel JavaScript 库提供的 API 可支持使用外接程序来向表格、列�
 
 以下是一个创建验证规则的示例。 对于此代码，请注意以下事项。
 
-- `operator` 是二进制运算符“GreaterThan”。 每当使用二进制运算符时，用户试图在单元格中输入的值是左操作数，`formula1` 中指定的值是右操作数。 所以这个规则的含义是，只有大于 0 的整数才是有效的。 
+- `operator` 是二进制运算符“GreaterThan”。 每当使用二进制运算符时，用户试图在单元格中输入的值是左操作数，`formula1` 中指定的值是右操作数。 所以这个规则的含义是，只有大于 0 的整数才是有效的。
 - `formula1` 是一个硬编码数字。 如果在编码时不知道该值是什么，也可以使用 Excel 公式（作为字符串）来计算该值。 例如，“=A3”和“=SUM(A4,B5)”也可以是 `formula1` 的值。
 
 ```js
@@ -114,7 +114,7 @@ Excel.run(function (context) {
 使用 `DataValidationRule` 对象中的 `list` 属性来指定只有来自某个有限列表的值才是有效值。 示例如下。 对于此代码，请注意以下事项。
 
 - 它假定有一个名为“"Names”的工作表，且范围“A1:A3”内的值均为姓名。
-- `source` 属性指定一个有效值列表。 该字符串参数会指向一个包含姓名的范围。 此外，也可以分配一个逗号分隔的列表；例如：“Sue, Ricky, Liz”。 
+- `source` 属性指定一个有效值列表。 该字符串参数会指向一个包含姓名的范围。 此外，也可以分配一个逗号分隔的列表；例如：“Sue, Ricky, Liz”。
 - `inCellDropDown` 属性指定当用户选择某个单元格时是否在该单元格中显示下拉控件。 如果设置为 `true`，则显示下拉控件并附带来自 `source` 的值的列表。
 
 ```js

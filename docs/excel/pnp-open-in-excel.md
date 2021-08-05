@@ -3,12 +3,12 @@ title: 从Excel打开加载项并嵌入Office加载项
 description: 从Excel打开"加载项"，并嵌入Office加载项。
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 18f40b0030f4132a413a879e8b3419af49984b45
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a7998d1f15f40a549f8ff9ddd9745d6bf9b8ab6d
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349376"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773137"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>从Excel打开加载项并嵌入Office加载项
 
@@ -115,6 +115,7 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
 ### <a name="upload-a-file-to-onedrive"></a>Upload文件OneDrive
 
 1. 在 Visual Studio 2019 中打开 **graph-tutorial.sln** 解决方案，PrivateSettings.config **文件。**
+
 1. 将新的作用域 **Files.ReadWrite**   添加到 **ida：AppScopes** 项，以便它类似于以下代码。
 
     ```xml

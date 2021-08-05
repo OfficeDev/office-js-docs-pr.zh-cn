@@ -3,12 +3,12 @@ title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 1836d84a387afbef415dddd305adcb4eb7687552
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 958086793e423c8e8d0a12dcf38d5035063115e0
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671406"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773613"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
@@ -38,7 +38,7 @@ ms.locfileid: "53671406"
 
 ## <a name="shared-runtime-required"></a>需要共享运行时
 
-本文介绍的 API 和清单标记，需要加载项清单指定它们应使用共享运行时。 为此，请执行下列步骤。
+本文介绍的 API 和清单标记，需要加载项清单指定它们应使用共享运行时。 为此，请执行以下步骤。
 
 1. 在清单中的 [Runtimes](../reference/manifest/runtimes.md) 元素中，添加以下子元素：`<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`。 （如果清单中尚无 `<Runtimes>` 元素，请在 `VersionOverrides` 部分中的 `<Host>` 元素下将其创建为第一个子元素。）
 2. 在清单的 [Resources.Urls](../reference/manifest/resources.md) 部分中，添加以下子元素：`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`，其中 `{MyDomain}` 是加载项的域，`{path-to-start-page}` 是加载项的起始页路径；例如，`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`。
@@ -170,7 +170,7 @@ function enableChartFormat() {
 
 ## <a name="best-practice-test-for-control-status-errors"></a>最佳做法：测试控件状态错误
 
-在某些情况下，调用 `requestUpdate` 后，功能区不会重画，因此控件的可单击状态不会发生更改。 因此，加载项的最佳做法是跟踪其控件的状态。 加载项应符合以下规则：
+在某些情况下，调用 `requestUpdate` 后，功能区不会重画，因此控件的可单击状态不会发生更改。 因此，加载项的最佳做法是跟踪其控件的状态。 外接程序应符合以下规则。
 
 1. 每当调用 `requestUpdate` 时，代码都应记录自定义按钮和菜单项的预期状态。
 2. 单击自定义控件时，处理程序中的第一个代码应检查该按钮是否应为可单击按钮。 如果不是，则该代码应报告或记录错误，然后再次尝试将按钮设置为预期状态。

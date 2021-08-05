@@ -1,14 +1,14 @@
 ---
 title: 从任务窗格附加调试器
 description: 了解如何从任务窗格附加调试器
-ms.date: 06/17/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: f5a63e9912e2a7d8ac400fc9abba116abfedbbeb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 930c5db7a9e1a0499a759d70e0bc94e64c5b7ae5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077195"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774313"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>从任务窗格附加调试器
 
@@ -22,14 +22,14 @@ ms.locfileid: "53077195"
 
 !["附加调试器"菜单的屏幕截图。](../images/attach-debugger.png)
 
-选择“**附加调试器**”。此操作将启动“**Visual Studio 实时调试器**”对话框，如下图所示。 
+选择“**附加调试器**”。此操作将启动“**Visual Studio 实时调试器**”对话框，如下图所示。
 
 !["JIT Visual Studio"对话框的屏幕截图。](../images/visual-studio-debugger.png)
 
 Visual Studio 中的“解决方案资源管理器”**** 会显示代码文件。   可以在要使用 Visual Studio 调试的代码行处设置断点。
 
 > [!NOTE]
-> 如果你没有看到“个性”菜单，则可以使用 Visual Studio 调试加载项。 确保你的任务窗格加载项已在 Office 中打开，然后按照以下步骤操作：
+> 如果你没有看到“个性”菜单，则可以使用 Visual Studio 调试加载项。 确保任务窗格加载项在加载项Office，然后按照以下步骤操作。
 >
 > 1. 在 Visual Studio 中，依次选择“**调试**” > “**附加到进程**”。
 > 2. 在“**可用进程**”中，选择“所有可用 `Iexplore.exe` 进程”或“所有可用 `MicrosoftEdge*.exe` 进程”（具体取决于 [加载项是使用 Internet Explorer 还是 Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md)），然后选择“附加”按钮。

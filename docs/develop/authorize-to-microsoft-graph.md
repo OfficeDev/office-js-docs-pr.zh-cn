@@ -1,14 +1,14 @@
 ---
 title: 使用 SSO 对 Microsoft Graph 授权
 description: 了解加载项Office SSO 加载项如何使用单一登录 (SSO) 从 Microsoft Graph。
-ms.date: 02/09/2021
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: a7a0b179d2038fb9e8e70ea073278303bf2ac6cb
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: e8e2946b6e6bc1cd49d18453065b52758d099a25
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671371"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773921"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>使用 SSO 对 Microsoft Graph 授权
 
@@ -67,7 +67,7 @@ ms.locfileid: "53671371"
 
 ## <a name="distributing-sso-enabled-add-ins-in-microsoft-appsource"></a>在 Microsoft AppSource 中分发支持 SSO 的加载项
 
-当Microsoft 365从[AppSource](https://appsource.microsoft.com)获取加载项时，管理员可以通过集中式部署重新分发它，并授予加载项[](../publish/centralized-deployment.md)管理员同意以访问 Microsoft Graph作用域。 但是，最终用户也可以直接从 AppSource 获取加载项，在这种情况下，用户必须同意加载项。 这可以创建一个潜在的性能问题，我们提供了一个解决方案。
+当Microsoft 365从[AppSource](https://appsource.microsoft.com)获取加载项时，管理员可以通过集成应用重新分发它，并授予加载项管理员同意[](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)以访问 Microsoft Graph范围。 但是，最终用户也可以直接从 AppSource 获取加载项，在这种情况下，用户必须同意加载项。 这可以创建一个潜在的性能问题，我们提供了一个解决方案。
 
 如果你的代码在 调用 中传递 了 选项，例如 ，Office 如果 `allowConsentPrompt` `getAccessToken` Azure AD 向 Office报告尚未向加载项授予同意，则 Office 可以提示用户同意。 `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );` 但是，出于安全Office，仅提示用户同意 Azure AD `profile` 作用域。 *Office无法提示同意任何 Microsoft Graph范围，* 甚至不会 `User.Read` 。 这意味着，如果用户同意提示，Office返回启动令牌。 但是，尝试交换启动令牌以将访问令牌交换到 Microsoft Graph 将失败，并出现错误 AADSTS65001，这意味着尚未授予 (同意 Microsoft Graph 作用域) 。
 

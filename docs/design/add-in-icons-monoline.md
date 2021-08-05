@@ -3,12 +3,12 @@ title: 单声道样式图标指南Office加载项
 description: 在加载项中使用单Office图标的指南。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: a59574f1f49ccb8b7b6fd485d08f83e39d760a48
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0e8bf4f39ddbad457df7d033a08836825d9e1d3f
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349341"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773277"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>单声道样式图标指南Office加载项
 
@@ -27,7 +27,7 @@ Monoline 样式的目标是具有一致、清晰且可访问的图标，以通�
 - 受图标Windows启发。
 - 可供所有用户访问。
 
-#### <a name="conveying-meaning"></a>传达含义
+#### <a name="convey-meaning"></a>传达含义
 
 - 使用描述性元素（如页面）表示文档或信封来表示邮件。
 - 使用相同的元素来表示同一概念，即邮件始终由信封而不是标记表示。
@@ -132,7 +132,7 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 ##### <a name="best-practices-for-fills"></a>填充最佳做法
 
-###### <a name="dos"></a>Dos：
+###### <a name="dos"></a>推荐做法
 
 - 填充具有已定义边界的任何元素，并且自然具有填充。
 - 使用单独的形状创建背景填充。
@@ -140,7 +140,7 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 - 保持重叠元素之间的像素分隔。
 - 在多个对象之间填充。
 
-###### <a name="donts"></a>请勿：
+###### <a name="donts"></a>注意事项
 
 - 不要填充无法自然填充的对象;例如，一个平剪纸。
 - 不要填充方括号。
@@ -170,7 +170,7 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 最常见情况是让元素将深灰色独立版与背景填充一同使用。
 
-使用彩色 Fill 时，它应始终具有相应的"轮廓"颜色。 例如，蓝色填充只能与蓝色边框一同使用。 但是此一般规则有两个例外：
+使用彩色 Fill 时，它应始终具有相应的"轮廓"颜色。 例如，蓝色填充只能与蓝色边框一同使用。 但此一般规则有两个例外。
 
 - 背景填充可以与任何单独的颜色一同使用。
 - 浅灰色填充可以与两种不同的大纲颜色一同使用：深灰色或中灰色。

@@ -1,14 +1,14 @@
 ---
 title: 在 Outlook 加载项中添加和删除附件
 description: 可以使用各种附件 API 来管理文件或Outlook附加到用户正在撰写的项目的项目。
-ms.date: 02/24/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 0ba142bb1e8fb5f324d2bb6460bc8325a4800d2d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 87076965d600cbbcfe88d6711ea3acfb2b3c1fdd
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348585"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774453"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>在邮件撰写窗体中管理项目的Outlook
 
@@ -26,7 +26,7 @@ JavaScript API Office JavaScript API 提供了多个 API，可用于在用户撰
 
 如果有任务依赖于要完成的操作，则应在回调方法中执行这些任务。 此回调方法是可选的，在附件上载完成时调用此方法。 此回调方法使用 [AsyncResult](/javascript/api/office/office.asyncresult) 对象作为输出参数，提供添加附件操作的任何状态、错误和返回值。 如果此回调需要任何额外参数，则可以在可选的 `options.asyncContext` 参数中指定它们。 `options.asyncContext` 可以是回调方法所期望的任何类型。
 
-例如，可以定义为包含一个或多个键值对的 `options.asyncContext` JSON 对象。 有关向 Office 外接程序平台中的异步方法传递可选参数的更多示例，Office外接程序中的异步[编程](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)。以下示例演示如何使用 参数将 `asyncContext` 2 个参数传递给回调方法。
+例如，可以定义为包含一个或多个键值对的 `options.asyncContext` JSON 对象。 有关向 Office 外接程序平台中的异步方法传递可选参数的更多示例，Office外接程序中的异步[编程](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods)。以下示例演示如何使用 参数将 `asyncContext` 2 个参数传递给回调方法。
 
 ```js
 var options = { asyncContext: { var1: 1, var2: 2}};

@@ -1,15 +1,15 @@
 ---
 title: 使用 JavaScript API 查找Excel单元格
 description: 了解如何使用 JavaScript API Excel查找特殊单元格，例如包含公式、错误或数字的单元格。
-ms.date: 04/02/2021
+ms.date: 07/08/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 00bc87a350cc31eb17d579298d79bfde41d03d35
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f1562351b045b5c8df1edb3c22f651883a836ad9
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671124"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773627"
 ---
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>使用 JavaScript API 查找Excel单元格
 

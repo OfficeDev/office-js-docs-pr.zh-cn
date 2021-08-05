@@ -1,14 +1,14 @@
 ---
 title: 在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 description: 在清单中，使用 VersionOverrides 定义用于 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 44d1ab5e650aedd416ed255b8c84d9d8c2551e65
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 461e58e63be73619d46cd0552467187b7eab5071
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329952"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773893"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 
@@ -18,7 +18,7 @@ ms.locfileid: "52329952"
 - 向功能区中添加按钮或下拉列表按钮。
 - 将单个菜单项（每一个都包含可选的子菜单）添加到特定上下文（快捷方式）菜单中。
 - 在选择你的外接程序命令时执行操作。可以：
-  - 显示一个或多个任务窗格外接程序，让用户与其进行交互。 在任务窗格加载项内，可以显示使用 Fluent UI 创建自定义 UI 的 HTML。
+  - 显示一个或多个任务窗格外接程序，让用户与其进行交互。 在任务窗格加载项内，可以显示使用自定义 UI Fluent UI 的 HTML。
 
      *或者*
 
@@ -203,7 +203,7 @@ ms.locfileid: "52329952"
 
 ## <a name="step-6-add-extensionpoint-elements"></a>第 6 步：添加 ExtensionPoint 元素
 
-**ExtensionPoint** 元素定义外接程序命令应在 Office UI 中的哪个位置出现。可以使用以下 **xsi:type** 值定义 **ExtensionPoint** 元素：
+**ExtensionPoint** 元素定义外接程序命令应在 Office UI 中的哪个位置出现。 可以使用这些 **xsi：type** 值定义 **ExtensionPoint** 元素。
 
 - **PrimaryCommandSurface**，它是指 Office 中的功能区。
 

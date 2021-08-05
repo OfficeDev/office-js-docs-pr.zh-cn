@@ -3,12 +3,12 @@ title: 在 Outlook 加载项的正文中插入数据
 description: 了解如何将数据插入到 Outlook 加载项的邮件或约会的正文中。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: c2370de0a60521196f048e15a1eee9302ddba2ef
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 575718baa6a54f4e2e8c6ddd4e582254e1607fa8
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671784"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773130"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时将数据插入到正文中
 
@@ -29,7 +29,7 @@ ms.locfileid: "53671784"
 
 2.  如果你要插入的数据是 HTML 并且 **getTypeAsync** 返回该项目的文本类型，请将你的数据重新组织为文本并插入 **Office。MailboxEnums.BodyType.Text** 为 _coercionType_。 如果只需插入具有文本强制类型的 HTML 数据，应用程序就会将 HTML 标记显示为文本。 如果您尝试插入 HTML 数据，Office.MailboxEnums.BodyType.Htm **l** 为 _coercionType，_ 将发生错误。
 
-除了 _coercionType_，与 Office JavaScript API 中的大多数异步方法一样 **，getTypeAsync、prependAsync** 和 **setSelectedDataAsync** 采用其他可选输入参数。  有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
+除了 _coercionType_，与 Office JavaScript API 中的大多数异步方法一样 **，getTypeAsync、prependAsync** 和 **setSelectedDataAsync** 采用其他可选输入参数。  有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
 
 
 ## <a name="insert-data-at-the-current-cursor-position"></a>在当前光标位置插入数据

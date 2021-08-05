@@ -1,16 +1,16 @@
 ---
 title: Office 外接程序的颜色准则
 description: 了解如何在加载项的 UI Office颜色。
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 8a1fc8103ae945afdcaea45e5a9b2dd0954f893f
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a472dfd02787d68a5ce11a198d580aefe37ce315
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349194"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773221"
 ---
-# <a name="color"></a>颜色
+# <a name="color-guidelines-for-office-add-ins"></a>Office 外接程序的颜色准则
 
 颜色通常用于强调品牌和强化可视化层次结构。 它可以帮助标识接口，也可以指导客户完成体验。 在 Office 中，颜色用于相同目标，但应有目的地最小限度地应用它。 它不会过度使用客户内容。 即使每个 Office 应用程序被标上了自己的主色，但还是很少用到。
 

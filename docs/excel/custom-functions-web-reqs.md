@@ -1,14 +1,14 @@
 ---
-ms.date: 03/15/2021
+ms.date: 07/08/2021
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
 localization_priority: Normal
-ms.openlocfilehash: 60f09b791b13d34a4a7f307bb9677c9fcc72ee97
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: aaaee865c95c2edb568f73df91fd1a8f2ff659de
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349595"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773354"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -51,8 +51,8 @@ function webRequest() {
 }
 ```
 
->[!NOTE]
->使用 `Fetch` 可以避免嵌套回调，在某些情况下可能优于 XHR。
+> [!NOTE]
+> 使用 `Fetch` 可以避免嵌套回调，在某些情况下可能优于 XHR。
 
 ### <a name="xhr-example"></a>XHR 示例
 
@@ -131,7 +131,7 @@ function increment(incrementBy, invocation) {
 }
 ```
 
-## <a name="canceling-a-function"></a>取消函数
+## <a name="cancel-a-function"></a>取消函数
 
 Excel在下列情况下取消函数的执行。
 
@@ -143,7 +143,7 @@ Excel在下列情况下取消函数的执行。
 
 请注意，还有一类函数被称为可取消函数，它们与流式处理函数 _无_ 关。 只有返回一个值的异步自定义函数是可取消的。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
 
-### <a name="using-an-invocation-parameter"></a>使用调用参数
+### <a name="use-an-invocation-parameter"></a>使用调用参数
 
 默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 参数提供有关单元格 (如地址和内容) 并允许 `invocation` 你使用 `setResult` 和 `onCanceled` 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
 

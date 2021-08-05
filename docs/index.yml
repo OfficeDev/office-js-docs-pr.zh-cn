@@ -85,9 +85,9 @@ conceptualContent:
         - url: publish/publish.md
           itemType: deploy
           text: 探索部署选项
-        - url: publish/centralized-deployment.md
+        - url: /microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps
           itemType: deploy
-          text: 了解集中部署
+          text: 在集成Microsoft 365 应用版门户中测试并部署合作伙伴部署的应用
     - title: 发布
       links:
         - url: /office/dev/store

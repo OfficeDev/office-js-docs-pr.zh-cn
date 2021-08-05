@@ -1,14 +1,14 @@
 ---
 title: 避免在循环中使用 context.sync
 description: 了解如何使用拆分循环和相关对象模式避免在循环中调用 context.sync。
-ms.date: 07/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 64cfd5cd350746ba07e1a98986a4bd7811431475
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 85230378f40be06c7f3385f5dde88ecaba503cb5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349138"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773249"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>避免在循环中使用 context.sync
 
@@ -42,7 +42,7 @@ ms.locfileid: "53349138"
 在最简单的情况下，您只写入集合对象的成员，而不是读取它们的属性。 例如，以下代码在 Word 文档中以黄色突出显示每个"the"实例。
 
 > [!NOTE]
-> 通常，在应用程序方法的结束"}"字符（如 、等）之前 (一个 `context.sync` `run` `Excel.run` `Word.run` 最终) 。 这是因为该方法在（并且仅在存在尚未同步的已排队命令）时执行最后一项操作时进行隐藏 `run` `context.sync` 调用。 隐藏此调用这一事实可能会令人困惑，因此，我们通常建议添加显式 `context.sync` 。 但是，鉴于本文将调用最小化，添加一个完全不必要的最终 ，实际上会更 `context.sync` 令人困惑 `context.sync` 。 因此，在本文中，当 末尾没有未同步的命令时，我们会不进行介绍 `run` 。
+> 通常，最佳做法是，将最终文本放在应用程序方法的结束"}"字符之前 (，如 、等 `context.sync` `run` `Excel.run` `Word.run` ) 。 这是因为该方法在（并且仅在存在尚未同步的已排队命令）时执行最后一项操作时进行隐藏 `run` `context.sync` 调用。 隐藏此调用这一事实可能会令人困惑，因此，我们通常建议添加显式 `context.sync` 。 但是，鉴于本文将调用最小化，添加一个完全不必要的最终 ，实际上会更 `context.sync` 令人困惑 `context.sync` 。 因此，在本文中，当 末尾没有未同步的命令时，我们会不进行介绍 `run` 。
 
 ```javascript
 Word.run(async function (context) {
@@ -75,13 +75,13 @@ Word.run(async function (context) {
 前面的代码在文档中使用 200 个实例的 Word on Windows 完成前一Windows。 但是，当在取消注释循环后将循环中的行注释掉且同一行时，该操作只需 `await context.sync();` 1/10 秒。 在Word web 版 (Edge 作为浏览器) 时，循环内同步需要 3 秒钟，在循环后同步只需 6/10 秒，大约快五倍。 在包含 2000 个""实例的文档中，在 (Word web 版) 80 秒（循环内同步）中，在循环后仅同步 4 秒，大约快 20 倍。
 
 > [!NOTE]
-> 值得一提的是，如果同步同时运行（只需从 的前面删除 关键字，就可以完成同步，循环内部同步版本能否更快地 `await` 执行 `context.sync()` ）。 这会使运行时启动同步，然后立即启动循环的下一次迭代，而无需等待同步完成。 但是，这不是一个比完全退出循环好的解决方案，原因 `context.sync` 如下：
+> 值得一提的是，如果同步同时运行（只需从 的前面删除 关键字，就可以完成同步，循环内部同步版本能否更快地 `await` 执行 `context.sync()` ）。 这会使运行时启动同步，然后立即启动循环的下一次迭代，而无需等待同步完成。 但是，由于这些原因，这不是一个比完全退出循环 `context.sync` 好的解决方案。
 >
 > - 与同步批处理作业中的命令排入队列一样，批处理作业本身在 Office 中排入队列，Office在队列中支持不超过 50 个批处理作业。 其他任何操作都会引发错误。 因此，如果循环中迭代次数超过 50 次，则有可能超出队列大小。 迭代次数越大，发生迭代的可能性越大。 
 > - "并发"并不意味着同时进行。 执行多个同步操作比执行一个同步操作要长。
 > - 不保证并发操作按其开始的顺序完成。 在上一示例中，"the"一词的突出显示顺序无关紧要，但在一些方案中，必须按顺序处理集合中的项目。
 
-## <a name="reading-values-from-the-document-with-the-split-loop-pattern"></a>使用拆分循环模式从文档读取值
+## <a name="read-values-from-the-document-with-the-split-loop-pattern"></a>使用拆分循环模式读取文档中的值
 
 当代码在处理每个集合项时必须读取集合项的属性时，避免在循环内运行 `context.sync` 将更具挑战性。  假设您的代码需要对 Word 文档中的所有内容控件进行重新访问，并记录与每个控件关联的第一段的文本。 编程方法可能会引导你循环访问控件、加载每个 (第一个) 段落的属性、调用 以用文档中的文本填充代理段落对象，然后记录它 `text` `context.sync` 。 示例如下。
 
@@ -132,9 +132,9 @@ Word.run(async (context) => {
 3. 第一个循环之后，调用 `context.sync` 以使用任何加载的属性填充代理对象。
 4. 按照 第二个循环操作，循环访问第一个循环中创建的数组并 `context.sync` 读取加载的属性。
 
-## <a name="processing-objects-in-the-document-with-the-correlated-objects-pattern"></a>使用相关对象模式处理文档中的对象
+## <a name="process-objects-in-the-document-with-the-correlated-objects-pattern"></a>使用相关对象模式处理文档中的对象
 
-让我们考虑一个更复杂的方案，其中处理集合中的项需要不在项目本身内的数据。 方案设想一个 Word 外接程序，该外接程序对从具有一些样本文本的模板创建的文档进行操作。 分散在文本中是以下占位符字符串的一个或多个实例："{Coordinator}"、"{Coordinatory}"和"{Manager}"。 外接程序将每个占位符替换为某人的姓名。 对于本文，外接程序的 UI 不十分重要。 例如，它可以有一个包含三个文本框的任务窗格，每个文本框都标记有一个占位符。 用户在每个文本框中输入一个名称，然后 **按"替换** "按钮。 按钮的处理程序创建一个数组，该数组将名称映射到占位符，然后用分配的名称替换每个占位符。 
+让我们考虑一个更复杂的方案，其中处理集合中的项需要不在项目本身内的数据。 方案设想一个 Word 外接程序，该外接程序对从具有一些样本文本的模板创建的文档进行操作。 分散在文本中是以下占位符字符串的一个或多个实例："{Coordinator}"、"{Coordinatory}"和"{Manager}"。 外接程序将每个占位符替换为某人的姓名。 对于本文，外接程序的 UI 不十分重要。 例如，它可以有一个包含三个文本框的任务窗格，每个文本框都标记有一个占位符。 用户在每个文本框中输入一个名称，然后 **按"替换** "按钮。 按钮的处理程序创建一个数组，该数组将名称映射到占位符，然后用分配的名称替换每个占位符。
 
 你无需实际通过此 UI 生成外接程序来试验代码。 可以使用 Script Lab[工具](../overview/explore-with-script-lab.md)构建重要代码的原型。 使用以下赋值语句创建映射数组。
 
@@ -202,13 +202,13 @@ Word.run(async (context) => {
 });
 ```
 
-请注意，代码使用拆分循环模式：
+请注意，代码使用拆分循环模式。
 
 - 上例中的外部循环已拆分为两个。  (第二个循环有一个内部循环，这是预期的，因为代码将循环遍历一组作业 (或占位符) 并且该循环将在此集合中迭代匹配的范围。) 
 - 每个主 `context.sync` 循环后都有 一个 ，但在任何 `context.sync` 循环内没有。
 - 第二个主要循环循环访问第一个循环中创建的数组。
 
-但是，第一个循环中创建的数组并不只包含一个 Office 对象，正如第一个循环使用拆分循环模式读取文档中[的值一样](#reading-values-from-the-document-with-the-split-loop-pattern)。 这是因为处理 Word Range 对象所需的某些信息不在 Range 对象本身中，而是来自 `jobMapping` 数组。
+但是，第一个循环中创建的数组并不只包含一个 Office 对象，正如第一个循环使用拆分循环模式读取文档中[的值一样](#read-values-from-the-document-with-the-split-loop-pattern)。 这是因为处理 Word Range 对象所需的某些信息不在 Range 对象本身中，而是来自 `jobMapping` 数组。
 
 因此，第一个循环中创建的数组中的对象是具有两个属性的自定义对象。 第一个数组是匹配特定职务 (（即占位符字符串) ）的 Word 范围数组，第二个字符串提供分配给该工作的人的姓名。 这使得最后一个循环易于编写且易于阅读，因为处理给定区域所需的全部信息都包含在包含该范围的同一自定义对象中。 应替换 _**correlatedObject**.rangesMatchingJob.items[j]_ 的名称是同一对象的另一个属性 _**：correlatedObject**.personAssignedToJob_。
 

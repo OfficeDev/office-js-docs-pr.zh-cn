@@ -1,21 +1,20 @@
 ---
 title: 随文档自动打开任务窗格
 description: 了解如何配置Office打开文档时自动打开的加载项。
-ms.date: 05/24/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 7801e9797de5b8f45315484a7b7a3fd5289f35a9
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 53776d41aff2446267b637dcf0b33ffe379b803c
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350020"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773907"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
 可以在加载项中添加按钮，在 Office 功能区中添加按钮，Office UI 扩展Office 应用 UI。 当用户单击命令按钮时，会执行一个操作，如打开任务窗格。
 
 某些情况下，需要在文档打开时自动打开一个任务窗格，而无需进行显式用户交互。 可以使用 Addincommand 1.1 要求集中引入的 AutoOpen 任务窗格功能，以在情况需要时自动打开一个任务窗格。
-
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>AutoOpen 功能与插入任务窗格有何不同？
 
@@ -30,7 +29,6 @@ ms.locfileid: "53350020"
 |**产品**|**平台**|
 |:-----------|:------------|
 |<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|所有产品的支持平台：<ul><li>Windows 桌面版 Office（内部版本 16.0.8121.1000+）</li><li>Mac 版 Office（生成号 15.34.17051500 及更高版本）</li><li>Office 网页版</li></ul>|
-
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -48,9 +46,7 @@ ms.locfileid: "53350020"
 
 - 请勿使用此功能来固定多个任务窗格。只能设置一个外接程序窗格随文档自动打开。  
 
-## <a name="implementation"></a>实现
-
-要实现 Autoopen 功能，请执行以下操作：
+## <a name="implement-the-autoopen-feature"></a>实现 Autoopen 功能
 
 - 指定要自动打开的任务窗格。
 - 标记要自动打开任务窗格的文档。
@@ -75,7 +71,6 @@ ms.locfileid: "53350020"
 
 可以通过下面的两种方法之一，将文档标记为触发自动打开功能。 选择最适合自己应用场景的备选方法。  
 
-
 #### <a name="tag-the-document-on-the-client-side"></a>在客户端上标记文档
 
 使用 Office.js [settings.set](/javascript/api/office/office.settings) 方法将 **Office.AutoShowTaskpaneWithDocument** 设置为“**true**”，如以下示例所示。
@@ -91,7 +86,7 @@ Office.context.document.settings.saveAsync();
 
 可以使用 Open XML 来创建或修改文档，并添加适当的 Open Office XML 标记来触发 Autoopen 功能。有关演示如何执行此操作的示例，请参阅 [Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin)。
 
-向文档添加两个 Open XML 部件：
+向文档中添加两个 Open XML 部件。
 
 - 一个 `webextension` 部件
 - 一个 `taskpane` 部件

@@ -1,14 +1,14 @@
 ---
 title: 在 Office 网页版中旁加载 Office 加载项进行测试
 description: 通过旁Office在Office web 版外接程序中测试外接程序。
-ms.date: 04/14/2021
+ms.date: 08/02/2021
 localization_priority: Normal
-ms.openlocfilehash: e7a5efb7bf49c96f4b31f4f811e4c2fd4720694a
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348634"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773648"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
@@ -99,7 +99,7 @@ ms.locfileid: "53348634"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的外接程序
 
-可以通过清除浏览器的缓存来删除以前旁加载的外接程序。 如果您更改外接程序的清单 (例如，更新图标的文件名或外接程序命令) 的文本，您可能需要清除[Office](clear-cache.md)缓存，然后使用更新后的清单重新旁加载外接程序。 执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。
+可以通过清除浏览器的缓存来删除以前旁加载的外接程序。 如果您更改外接程序的清单 (例如，更新图标的文件名或外接程序命令文本) ，您可能需要清除浏览器的缓存，然后使用更新后的清单重新旁加载外接程序。 这样，Office web 版清单描述的外接程序呈现。
 
 ## <a name="see-also"></a>另请参阅
 

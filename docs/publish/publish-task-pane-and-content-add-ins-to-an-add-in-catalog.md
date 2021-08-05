@@ -1,27 +1,28 @@
 ---
 title: 将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 description: 为使组织内的用户可访问 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的应用程序目录中。
-ms.date: 02/09/2021
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 737448a498741ec0327939dc9e562fc04d78a8e5
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 7af7b951ebe6b2523ed0b8644cc7f115f0082889
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234175"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773060"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 
 应用程序目录是 SharePoint Web 应用程序或 SharePoint Online 租户中的专用网站集，用于托管 Office 和 SharePoint 加载项的文档库。若要向组织用户分发 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的应用程序目录。如果管理员将应用程序目录注册为受信任的目录，用户就可以通过 Office 客户端应用程序中的插入 UI 插入加载项。
 
 > [!IMPORTANT]
+>
 > - SharePoint 上的应用程序目录不支持在[加载项清单](../develop/add-in-manifests.md)的 `VersionOverrides` 节点中实现的加载项功能（如加载项命令）。
-> - 如果你面向云或混合环境，我们建议你通过 [Microsoft 365](../publish/centralized-deployment.md) 管理中心使用集中部署来发布加载项。
+> - 如果你面向的是云或混合环境，我们建议你通过 Microsoft 365 管理中心集成应用来[](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)发布你的外接程序。
 > - Mac 版 Office 不支持 SharePoint 上的应用程序目录。 若要向 Mac 客户端部署 Office 加载项，必须将其提交到 [AppSource](/office/dev/store/submit-to-the-office-store)。
 
 ## <a name="create-an-app-catalog"></a>创建应用程序目录
 
-完成以下部分之一中的步骤，以使用本地 SharePoint Server 或 Microsoft 365 创建应用程序目录。
+完成以下部分之一中的步骤，以使用本地 SharePoint Server 或 Microsoft 365。
 
 ### <a name="to-create-an-app-catalog-for-on-premises-sharepoint-server"></a>为本地 SharePoint Server 创建应用程序目录
 
@@ -29,22 +30,22 @@ ms.locfileid: "50234175"
 
 创建应用程序目录后，请按照相关步骤[发布 Office 加载项](#publish-an-office-add-in)。
 
-### <a name="to-create-an-app-catalog-on-microsoft-365"></a>在 Microsoft 365 上创建应用目录
+### <a name="to-create-an-app-catalog-on-microsoft-365"></a>若要在应用程序上创建应用程序Microsoft 365
 
-若要创建 SharePoint 应用程序目录，请按照"创建应用程序目录" [网站集中的说明操作](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection)。 创建应用程序目录后，请按照下一节中的步骤发布 Office 外接程序。
+若要创建SharePoint目录，请按照创建应用程序目录网站[集 中的说明操作](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection)。 创建应用程序目录后，请按照下一节中的步骤发布Office外接程序。
 
 ## <a name="publish-an-office-add-in"></a>发布 Office 加载项
 
 完成以下部分之一中的步骤，将 Office 加载项发布到 Microsoft 365 或本地 SharePoint Server 上的应用程序目录。
 
-### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-microsoft-365"></a>将 Office 加载项发布到 Microsoft 365 上的 SharePoint 应用程序目录
+### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-microsoft-365"></a>将Office加载项发布到SharePoint应用程序目录Microsoft 365
 
 1. 转到[新的 SharePoint 管理中心的“活动站点”页面](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true)，然后使用在组织中具有[管理员权限](/sharepoint/sharepoint-admin-role)的帐户进行登录。
 
     > [!NOTE]
-    > 如果你有 Microsoft 365 Germany，请登录到 [Microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=848041)管理中心，然后浏览到 SharePoint 管理中心并打开"更多功能"页。 <br>如果你拥有由世纪 (中国) 运营的 [Microsoft 365，请登录到 Microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=850627)管理中心，然后浏览到 SharePoint 管理中心并打开"更多功能"页。
+    > 如果你已Microsoft 365德国，请登录到 Microsoft 365 管理中心[，然后](https://go.microsoft.com/fwlink/p/?linkid=848041)浏览到 SharePoint 管理中心并打开更多功能页面。 <br>如果Microsoft 365由世纪 (中国) 运营，请登录到[Microsoft 365 管理中心，](https://go.microsoft.com/fwlink/p/?linkid=850627)然后浏览到 SharePoint 管理中心并打开更多功能页面。
 
-1. 通过在 URL 列中选择应用程序目录网站的 URL，打开它。
+1. 通过在"URL"列中选择应用程序目录网站的 URL 打开它。
 
     > [!NOTE]
     > 如果刚刚在上一部分中创建了应用程序目录网站，可能需要几分钟时间才能完成网站设置。
@@ -93,4 +94,4 @@ ms.locfileid: "50234175"
 1. 在“Office 加载项”对话框中，选择“**我的组织**”选项卡。此时将列出 Office 加载项。
 1. 选择 Office 加载项，然后选择“**添加**”。
 
-或者，管理员可以使用组策略在 SharePoint 上指定应用目录。 相关策略设置在 [Microsoft 365 应用版、Office 2019 和 Office 2016 的管理模板文件 (ADMX/ADML)](https://www.microsoft.com/download/details.aspx?id=49030) 中提供，位于用户 **配置\策略\管理模板\Microsoft Office 2016\安全设置\信任中心\受信任目录下**。
+或者，管理员可以使用组策略在 SharePoint 上指定应用目录。 相关策略设置在 [Microsoft 365 应用版、Office 2019 和 Office 2016 的管理模板文件 (ADMX/ADML)](https://www.microsoft.com/download/details.aspx?id=49030)中提供，位于"**用户配置\策略\管理模板\Microsoft Office 2016\安全 设置\信任中心\受信任的目录"下**。

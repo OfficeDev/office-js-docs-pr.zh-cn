@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 06/16/2021
+ms.date: 08/03/2021
 localization_priority: Normal
-ms.openlocfilehash: fa39a934c0678f2ac3f59c08b488486dd8396c6c
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 561498f11114b560975155fa3561043a5c392aed
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671826"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774362"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -42,9 +42,9 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 可使用 Onsend 功能生成集成了 `ItemSend` 同步事件的 Outlook 加载项。 此事件检测到用户正在按“**发送**”按钮（或现有会议的“**发送更新**”按钮），并且如果验证失败，则可用于阻止该项目发送。 例如，当用户触发邮件发送事件时，使用 Onsend 功能的 Outlook 加载项可以执行以下操作：
 
-- 读取和验证电子邮件内容
-- 验证邮件是否包含主题行
-- 设置预先确定的收件人
+- 读取并验证电子邮件内容。
+- 验证邮件是否包含主题行。
+- 设置预先确定的收件人。
 
 触发发送事件时，Outlook客户端进行验证，外接程序最多需要 5 分钟才能退出。如果验证失败，将阻止发送项目，并且信息栏中会显示一条错误消息，提示用户采取操作。
 
@@ -53,17 +53,9 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 以下屏幕截图显示了通知发件人添加主题的信息栏。
 
-<br/>
-
 ![屏幕截图显示一条错误消息，提示用户输入缺失的主题行。](../images/block-on-send-subject-cc-inforbar.png)
 
-<br/>
-
-<br/>
-
 以下屏幕截图显示了一个信息栏，通知发件人已找到禁止使用的词语。
-
-<br/>
 
 ![Screenshot showing an error message telling the user that blocked words were found.](../images/block-on-send-body.png)
 
@@ -71,7 +63,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 Onsend 功能目前具有以下限制。
 
-- **Append-on-send** 功能 &ndash; 如果调用 [body。AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) 在 Onsend 处理程序中返回错误。
+- **附加 Onsend** 功能 如果在 Onsend 处理程序中调用 &ndash; [item.body.AppendOnSendAsync，](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) 将返回错误。
 - **AppSource** &ndash; 无法在 [AppSource](https://appsource.microsoft.com) 中发布使用 Onsend 功能的 Outlook 加载项，因为它们将无法通过 AppSource 验证。 使用 Onsend 功能的加载项应由管理员部署。
 - **清单**&ndash; - 每个加载项仅支持一个 `ItemSend` 事件。 如果清单中有两个或多个 `ItemSend` 事件，则该清单将无法通过验证。
 - **性能** &ndash; 多次往返到托管加载项的 Web 服务器可能会影响加载项的性能。创建需要多个基于邮件或会议操作的加载项时，请考虑性能影响。
@@ -81,9 +73,11 @@ Onsend 功能目前具有以下限制。
 
 ### <a name="mailbox-typemode-limitations"></a>邮箱类型/模式限制
 
-只有 Outlook 网页版、Windows 版和 Mac 版中的用户邮箱支持 Onsend 功能。 除了外接程序未按 Outlook 外接程序概述页的"可用于外接程序的邮箱项目[](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)"部分所述激活外接程序的情况之外，脱机模式当前不支持此功能。
+只有 Outlook 网页版、Windows 版和 Mac 版中的用户邮箱支持 Onsend 功能。 除了外接程序未按 Outlook 外接程序概述页的"可用于外接程序的邮箱项目[](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)"部分所述激活的情况之外，该功能当前不支持脱机模式（该模式可用）。
 
-Outlook不支持的邮箱方案启用 Onss onsed 功能，则不允许发送。 但是，如果Outlook加载项无法激活，则 Ons ons ons 外接程序将不会运行，并且邮件将会发送。
+如果Outlook加载项无法激活，则 Ons ons-send 外接程序不会运行，并且邮件将会发送。
+
+但是，如果 Ons onss 功能已启用且可用，但邮箱方案不受支持，Outlook将不允许发送。
 
 ## <a name="multiple-on-send-add-ins"></a>多个 Onsend 加载项
 
@@ -284,13 +278,16 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-对于安装了使用 Onsend 功能的 Windows 版 Outlook 加载项的任何用户，系统会为其运行该加载项。 但是，如果用户需要运行该加载项来满足合规性标准，则必须在每台适用的计算机上将组策略“**无法加载 Web 扩展时禁用发送**”设置为“**已启用**”。
+对于安装了使用 Onsend 功能的 Windows 版 Outlook 加载项的任何用户，系统会为其运行该加载项。 但是，如果用户需要运行外接程序以满足合规性标准，则必须在每个适用计算机上将组策略"无法加载 **Web** 外接程序时阻止发送"设置为"已启用"。 
 
 若要设置邮箱策略，管理员可以下载管理模板工具 [](https://www.microsoft.com/download/details.aspx?id=49030)，然后通过运行本地组策略编辑器 **gpedit.msc** 来访问最新的管理模板。
 
+> [!NOTE]
+> 在旧版管理模板工具中，策略名称是"无法加载 Web 扩展时 **禁用发送"。** 如果需要，在稍后的步骤中替换此名称。
+
 #### <a name="what-the-policy-does"></a>策略的用途
 
-出于合规性原因，管理员可能需要在用户具有可供运行的最新 Onsend 加载项前，确保其无法发送邮件或会议项目。 管理员必须启用组策略“**无法加载 Web 扩展时禁用发送**”，以便所有加载项都从 Exchange 进行更新，并可用于在发送时验证每封邮件或每个会议项目是否符合预期的规则和规定。
+出于合规性原因，管理员可能需要在用户具有可供运行的最新 Onsend 加载项前，确保其无法发送邮件或会议项目。 管理员必须启用组策略"在无法加载 **Web** 外接程序时阻止发送"，以便从 Exchange 更新所有外接程序，并可用于验证每封邮件或会议项目在发送时是否满足预期的规则和法规。
 
 |策略状态|结果|
 |---|---|
@@ -299,14 +296,14 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 #### <a name="manage-the-on-send-policy"></a>管理 Onsend 策略
 
-默认情况下，Onsend 策略处于禁用状态。 管理员可以通过确保用户的组策略设置“**无法加载 Web 扩展时禁用发送**”设置为“**已启用**”来启用 Onsend 策略。 若为用户禁用策略，管理员应将其设置为“**已禁用**”。 若要管理此策略设置，可以执行以下操作：
+默认情况下，Onsend 策略处于禁用状态。 管理员可通过确保用户的组策略设置"无法加载 **Web** 外接程序时阻止发送"设置为"已启用"来启用 Onss ons **策略**。 若为用户禁用策略，管理员应将其设置为“**已禁用**”。 若要管理此策略设置，可以执行以下操作：
 
 1. 下载最新的[管理模板工具](https://www.microsoft.com/download/details.aspx?id=49030)。
 1. 打开 **gpedit.msc (本地组策略**) 。
-1. 导航到 **“用户配置”>“管理模板”>“Microsoft Outlook 2016”>“安全性”>“信任中心”**。
-1. 选择“**无法加载 Web 扩展时禁用发送**”设置。
+1. 导航到 **用户配置**  >  **管理模板**   >  **Microsoft Outlook 2016**  >  **安全**  >  **信任中心**。
+1. 选择"当 Web 加载项无法加载时 **阻止发送"** 设置。
 1. 打开链接以编辑策略设置。
-1. 在“**无法加载 Web 扩展时禁用发送**”对话框窗口中，根据需要选择“**已启用**”或“**已禁用**”，然后选择“**确定**”或“**应用**”以使更新生效。
+1. 在"**无法加载 Web** 加载项时阻止发送"对话框窗口中，根据需要选择"启用"或"禁用"，然后选择"**确定**"或"应用"使更新生效。
 
 ### <a name="mac"></a>[Mac](#tab/unix)
 
@@ -338,7 +335,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-but-no-add-ins-are-installed"></a>用户邮箱启用了 Onsend 加载项功能，但未安装任何加载项
 
-在这种场景中，用户将能够在不执行任何加载项的情况下发送邮件或会议项目。
+在此方案中，用户将能够在不执行任何外接程序的情况下发送邮件和会议项目。
 
 ### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-and-add-ins-that-supports-on-send-are-installed-and-enabled"></a>用户邮箱启用了 Onsend 加载项功能，并且安装并启用了支持 Onsend 的加载项
 
@@ -447,8 +444,6 @@ Ons ons ons an add-ins are processing an item， the user can edit the item by a
 </Hosts>
 ```
 
-<br/>
-
 Onsend API 需要 `VersionOverrides v1_1`。 以下显示如何在清单中添加 `VersionOverrides` 节点。
 
 ```xml
@@ -462,6 +457,7 @@ Onsend API 需要 `VersionOverrides v1_1`。 以下显示如何在清单中添�
 
 > [!NOTE]
 > 有关详细信息，请参阅：
+>
 > - [Outlook 外接程序清单](manifests.md)
 > - [Office 加载项 XML 清单](../develop/add-in-manifests.md)
 

@@ -1,14 +1,14 @@
 ---
 title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
-ms.date: 09/23/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6fcd1dd077dd6b3204d154e35e4c968ba9585a54
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d191b2d7ac6135600bd6875ef7fbbced55caec8b
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348641"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774033"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 
@@ -61,7 +61,6 @@ ms.locfileid: "53348641"
 2. 在 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\` 下添加 `RuntimeLogging` 注册表项。
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
-
 
 3. 将 **RuntimeLogging** 项的默认值设置为你想要在其中写入日志的文件的完整路径。 有关示例，请参阅 [EnableRuntimeLogging.zip](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/raw/master/Tools/RuntimeLogging/EnableRuntimeLogging.zip)。
 

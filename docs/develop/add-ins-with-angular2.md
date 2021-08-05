@@ -1,14 +1,14 @@
 ---
 title: 使用 Angular 开发 Office 加载项
 description: 使用 Angular 创建一Office外接程序作为单个页面应用程序。
-ms.date: 05/03/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e12f3e2d4733613fb542cf2be4e0ff6648ab8475
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: e0d30b7cb2f3d5489f5dae9e257c0cfc115a955e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350083"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773501"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -76,7 +76,7 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-## <a name="using-the-office-dialog-api-with-angular"></a>将 Office 对话框 API 与 Angular 结合使用
+## <a name="use-the-office-dialog-api-with-angular"></a>将Office对话框 API 与 Angular
 
 Office 加载项对话框 API 可使加载项打开非模态对话框中的页面，该页面可与主页面交换信息，这在任务窗格中是典型操作。
 
@@ -102,19 +102,19 @@ export class MyComponent {
 }
 ```
 
-## <a name="using-observable"></a>使用 Observable 对象
+## <a name="use-observable"></a>使用可观察
 
 Angular 使用 RxJS (Reactive Extensions for JavaScript)，而 RxJS 引入了 `Observable` 和 `Observer` 对象来实现异步处理。本部分简要介绍了如何使用 `Observables`；有关详细信息，请参阅官方 [RxJS](https://rxjs-dev.firebaseapp.com/) 文档。
 
 `Observable` 在某种程度上类似一个 `Promise` 对象 - 它立即从异步调用返回，但它可能在以后才能进行解析。不过，`Promise` 是一个值（可以是一个数组对象），而 `Observable` 是对象数组（可能仅有一个成员）。这可使代码调用 `Observable` 对象上的 [数组方法](https://www.w3schools.com/jsref/jsref_obj_array.asp)，如 `concat`、`map` 和 `filter`。
 
-### <a name="pushing-instead-of-pulling"></a>使用“推送”代替“拉取”
+### <a name="push-instead-of-pull"></a>推送而不是下拉
 
 代码“拉取” `Promise` 对象（通过将其分配到变量），而 `Observable` 对象将其值“推送”到 *订阅* `Observable` 的对象。订阅服务器是 `Observer` 对象。推送体系结构的优势是，随着时间的推移，新成员可以添加到 `Observable` 数组。添加了新成员后，订阅 `Observable` 的所有 `Observer` 对象都将收到一条通知。
 
 `Observer` 被配置为使用一个函数处理每个新对象（称为“next”对象）。（它还被配置为响应一个错误和一个完成通知。参阅下一部分的一个示例。）为此，与 `Promise` 对象相比，`Observable` 对象的使用范围更广。例如，除了从 AJAX 调用返回 `Observable`（即返回 `Promise` 的方式）以外，还可从事件处理程序返回 `Observable`，例如文本框的“已更改”事件处理程序。用户每次在框中输入文本时，所有已订阅的 `Observer` 对象将使用最新文本和/或输入的应用程序的当前状态立即做出反应。
 
-### <a name="waiting-until-all-asynchronous-calls-have-completed"></a>等待所有异步调用完成
+### <a name="wait-until-all-asynchronous-calls-have-completed"></a>等待所有异步调用完成
 
 如果想要确保仅当一组 `Promise` 对象的每个成员解析后运行撤消，请使用 `Promise.all()` 方法。
 

@@ -1,14 +1,14 @@
 ---
 title: 确认 Office 加载项与已有的COM 加载项兼容
 description: 启用你的Office加载项和等效 COM 加载项之间的兼容性。
-ms.date: 07/08/2021
+ms.date: 08/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 85e5d8cc06aa599862c92b59a26c744f28ca2d22
-ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
+ms.openlocfilehash: 616da7b722a8e7645d801aec211d9579a880f93e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "53418683"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774264"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>确认 Office 加载项与已有的COM 加载项兼容
 
@@ -20,13 +20,17 @@ ms.locfileid: "53418683"
 > 当连接到订阅订阅时，以下平台和应用程序Microsoft 365此功能。 COM 加载项无法安装在任何其他平台上，因此在这些平台上，将忽略本文稍后讨论的清单 `EquivalentAddins` 元素。
 >
 > - Excel版本 1904 PowerPoint更高版本Windows (、Word 和) 
+> - Outlook支持Windows (版本 2102 或更高版本) 2102 Exchange版本
+>   - Exchange Online
+>   - Exchange 2019 年累积更新 10 ([KB5003612](https://support.microsoft.com/topic/cumulative-update-10-for-exchange-server-2019-kb5003612-b1434cad-3fbc-4dc3-844d-82568e8d4344)) 
+>   - Exchange 2016 累积更新 21 或更高版本 ([KB5003611](https://support.microsoft.com/topic/cumulative-update-21-for-exchange-server-2016-kb5003611-b7ba1656-abba-4a0b-9be9-dac45095d969)) 
 
 ## <a name="specify-an-equivalent-com-add-in"></a>指定等效的 COM 加载项
 
 ### <a name="manifest"></a>清单
 
 > [!IMPORTANT]
-> 适用于 Excel、PowerPoint 和 Word。 Outlook即将推出支持。
+> 适用于 Excel、Outlook、PowerPoint 和 Word。
 
 若要在加载项Office COM 加载项之间实现兼容性，请确定加载项清单中等效的 COM Office加载项。 [](add-in-manifests.md) 然后Office加载项Windows COM 加载项，而不是Office加载项（如果两者均已安装）。
 
@@ -45,7 +49,7 @@ ms.locfileid: "53418683"
 ```
 
 > [!TIP]
-> 有关 COM 加载项和 XLL UDF 兼容性的信息，请参阅使自定义函数与 [XLL 用户定义函数兼容](../excel/make-custom-functions-compatible-with-xll-udf.md)。
+> 有关 COM 加载项和 XLL UDF 兼容性的信息，请参阅使自定义函数与 [XLL 用户定义函数兼容](../excel/make-custom-functions-compatible-with-xll-udf.md)。 不适用于Outlook。
 
 ### <a name="group-policy"></a>组策略
 

@@ -1,20 +1,18 @@
 ---
 title: Office 外接程序的语音准则
-description: 了解编写用户帮助和其他 Office 外接程序字符串的最佳做法。
-ms.date: 03/19/2019
+description: 了解为外接程序编写用户帮助和其他字符串Office最佳实践。
+ms.date: 07/08/2019
 localization_priority: Normal
-ms.openlocfilehash: a70bdf62c76f4b935f7a378b70f1584a6823106a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5bfc671d2462ef2c0b9eaba967744094b512965a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608451"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774054"
 ---
 # <a name="voice-guidelines"></a>语音准则
 
-在设计 Office 外接程序时，请考虑你在 UI 文本和元素中使用的语音。尽量与 Office UI 的语音和语调保持一致，即口语化、有趣且用户可访问。 
-
-要使文本与 Office 语音的准则相符，请执行以下操作：
+在设计 Office 外接程序时，请考虑你在 UI 文本和元素中使用的语音。尽量与 Office UI 的语音和语调保持一致，即口语化、有趣且用户可访问。
 
 - **使用自然的风格。** 写下您说话的方式。避免使用行话和技术性太强的单词和短语。使用用户熟悉的术语。
 - **使用简单、直白的语言。** 在文本中使用短的单词和句子，使用主动语态。

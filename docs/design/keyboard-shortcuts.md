@@ -1,14 +1,14 @@
 ---
 title: 加载项中的Office快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）Office加载项。
-ms.date: 06/02/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 75a7de576368e85436b4d97a4561d609b654642e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: fa675e9ddc607feabbea0f79456e0775666b8d96
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671399"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773529"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到Office加载项
 
@@ -19,7 +19,7 @@ ms.locfileid: "53671399"
 > [!NOTE]
 > 若要从已启用键盘快捷方式的加载项的工作版本开始，请克隆并运行键盘快捷方式[Excel示例](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)。 准备好向自己的加载项添加键盘快捷方式后，请继续阅读本文。
 
-向加载项添加键盘快捷方式有三个步骤：
+向加载项添加键盘快捷方式有三个步骤。
 
 1. [配置加载项的清单](#configure-the-manifest)。
 1. [创建或编辑快捷方式 JSON 文件](#create-or-edit-the-shortcuts-json-file) 以定义操作及其键盘快捷方式。
@@ -48,8 +48,7 @@ ms.locfileid: "53671399"
 
 在项目中创建 JSON 文件。 确保文件的路径与为 `Url` [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素的 属性指定的位置相匹配。 此文件将描述键盘快捷方式以及这些快捷方式将调用的操作。
 
-1. 在 JSON 文件中，有两个数组。 actions 数组将包含定义要调用的操作的对象，快捷方式数组将包含将键组合映射到操作的对象。 下面是一个示例：
-
+1. 在 JSON 文件中，有两个数组。 actions 数组将包含定义要调用的操作的对象，快捷方式数组将包含将键组合映射到操作的对象。 下面是一个示例。
     ```json
     {
         "actions": [
@@ -170,7 +169,7 @@ ms.locfileid: "53671399"
 - 属性名称 `action` 、 `key` 和 `default` 是必需的。
 - 该属性的值 `action` 是一个字符串，并且必须与 action 对象 `id` 中的某个属性匹配。
 - 该属性 `default` 可以是字符 A - Z、-z、0 - 9 和标点符号"-"、"_"和"+"的任意组合。  (根据惯例，这些属性中不使用小写字母。) 
-- 该属性 `default` 必须至少包含 Alt、Ctrl、Shift 和一个 (键的名称) 一个修饰符键。 
+- 该属性 `default` 必须至少包含 Alt、Ctrl、Shift 和一个 (键的名称) 一个修饰符键。
 - Shift 不能用作唯一的修改键。 将 Shift 与 Alt 或 Ctrl 组合使用。
 - 对于 Mac，我们还支持 Command 修饰符键。
 - 对于 Mac，Alt 映射到 Option 键。 例如Windows命令映射到 Ctrl 键。
@@ -209,11 +208,11 @@ ms.locfileid: "53671399"
 
 ![插图显示具有单个快捷方式的两个不同操作的冲突模式。](../images/add-in-shortcut-conflict-modal.png)
 
-用户可以选择键盘快捷方式将执行的操作。 做出选择后，保存首选项，供将来使用同一快捷方式。 快捷方式首选项按用户、平台保存。 如果用户希望更改其首选项，他们可以从"告诉我"搜索框中调用"重置Office外接程序快捷方式首选项"命令。  调用命令可清除用户的所有加载项快捷方式首选项，并且用户下次尝试使用冲突快捷方式时，会再次看到冲突对话框提示：
+用户可以选择键盘快捷方式将执行的操作。 做出选择后，保存首选项，供将来使用同一快捷方式。 快捷方式首选项按用户、平台保存。 如果用户希望更改其首选项，他们可以从"告诉我"搜索框中调用"重置Office外接程序快捷方式首选项"命令。  调用命令可清除用户的所有加载项快捷方式首选项，并且用户下次尝试使用冲突快捷方式时，会再次看到冲突对话框提示。
 
 !["告诉我"搜索框显示在Excel快捷方式首选项Office重置操作。](../images/add-in-reset-shortcuts-action.png)
 
-为了获得最佳用户体验，我们建议您尽量减少与以下Excel冲突：
+为了获得最佳用户体验，我们建议您尽量减少与这些Excel冲突。
 
 - 请仅使用以下模式的键盘快捷方式： **Ctrl+Shift+Alt+* x***，其中 *x* 是一些其他键。
 - 如果您需要更多键盘快捷方式，请检查Excel[键盘](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)快捷方式的列表，并避免在外接程序中使用它们。

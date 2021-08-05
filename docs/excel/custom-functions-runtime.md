@@ -1,14 +1,14 @@
 ---
-ms.date: 09/25/2020
+ms.date: 07/08/2021
 description: 了解Excel窗格及其特定 JavaScript 运行时的自定义函数。
 title: 无 UI 的运行时Excel自定义函数
 localization_priority: Normal
-ms.openlocfilehash: aa2cf2632ddf9eb1ad1eb202b031ee2ca686af01
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8e08f4accd33e405beb5fab618e92dd28abf2246
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349621"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774180"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>无 UI 的运行时Excel自定义函数
 
@@ -20,7 +20,7 @@ ms.locfileid: "53349621"
 
 此 JavaScript 运行时提供对命名空间中的 API 的访问权限，无 UI 自定义函数和任务窗格可以使用这些 API `OfficeRuntime` 来存储数据。
 
-## <a name="requesting-external-data"></a>请求外部数据
+## <a name="request-external-data"></a>请求外部数据
 
 在无 UI 自定义函数中，可以使用提取等 API 或[XmlHttpRequest (XHR) （](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)一种发布 HTTP 请求以与服务器交互的标准 Web API）请求外部数据。 [](https://developer.mozilla.org/docs/Web/API/Fetch_API)
 
@@ -28,7 +28,7 @@ ms.locfileid: "53349621"
 
 简单的 CORS 实现无法使用 Cookie，并且仅支持 GET、HEAD、POST (简单) 。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 还可以在简单 `Content-Type` CORS 中使用标头，只要内容类型为 、 或 `application/x-www-form-urlencoded` `text/plain` `multipart/form-data` 。
 
-## <a name="storing-and-accessing-data"></a>存储和访问数据
+## <a name="store-and-access-data"></a>存储和访问数据
 
 在无 UI 自定义函数中，可以使用 对象存储和访问 `OfficeRuntime.storage` 数据。 `Storage` 是一个持续、未加密的键值存储系统，可提供 [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage)的替代项，而无 UI 自定义函数不能使用它。 `Storage` 每个域提供 10 MB 的数据。 域可以由多个加载项共享。
 
@@ -69,6 +69,7 @@ function StoreValue(key, value) {
 如果加载项仅使用无 UI 自定义函数，请注意，不能通过无 UI 自定义函数访问文档对象模型 (DOM) 或使用 jQuery 等依赖于 DOM 的库。
 
 ## <a name="next-steps"></a>后续步骤
+
 了解如何调试 [无 UI 自定义函数](custom-functions-debugging.md)。
 
 ## <a name="see-also"></a>另请参阅

@@ -1,14 +1,14 @@
 ---
 title: 绑定到文档或电子表格中的区域
 description: 了解如何使用绑定以确保通过标识符一致地访问文档或电子表格的特定区域或元素。
-ms.date: 06/20/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 213118f6acba1ee7aaabca7b4e524b9a3f75dd49
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 9db35168274b599b93a6688d1318103c48edee55
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671364"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773900"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
@@ -24,7 +24,7 @@ ms.locfileid: "53671364"
 
 ## <a name="binding-types"></a>绑定类型
 
-有 [三种不同类型的绑定][Office。使用] [addFromSelectionAsync、addFromPromptAsync]或 [addFromNamedItemAsync]方法创建绑定时，使用 _bindingType_ 参数指定的 BindingType： []
+有 [三种不同类型的绑定][Office。使用] [addFromSelectionAsync、addFromPromptAsync]或 [addFromNamedItemAsync]方法创建绑定时，使用 _bindingType_ 参数指定的 BindingType。 []
 
 1. **[文本绑定][TextBinding]** - 绑定到可以文本形式表示的文档区域。
 
@@ -243,7 +243,6 @@ function write(message){
 }
 ```
 
-
 > [!NOTE]
 > 如果方法承诺成功返回 Binding 对象，则该对象仅公开该对象的以下四个方法 `select` []：getDataAsync、setDataAsync、addHandlerAsync[]和[removeHandlerAsync。] [] [] 如果承诺无法返回 Binding 对象，则回调可用于 `onError` 访问[asyncResult].error 对象获取详细信息。如果你需要调用 Binding 对象的成员，而不是方法返回的[Binding]对象承诺公开的四个方法，请通过使用 `select` [Document.bindings]属性和 Bindings 来使用[getByIdAsync]方法。[用于检索] [Binding]对象的 getByIdAsync 方法。
 
@@ -285,7 +284,7 @@ function write(message){
 }
 ```
 
-`myBinding` 是包含文档中的现有文本绑定的变量。也可以使用 [Office.select] 按照其 ID 访问绑定，并启动对 [getDataAsync] 方法的调用，如下所示： 
+`myBinding` 是包含文档中的现有文本绑定的变量。也可以使用 [Office.select] 按照其 ID 访问绑定，并启动对 [getDataAsync] 方法的调用，如下所示：
 
 ```js
 Office.select("bindings#myBindingID").getDataAsync

@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
 description: 了解如何创建使用 Office 单一登录的基于 Node.js 的 Office 加载项
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 7b4fe01b58fcb9a8fa03b1e1d728bb1a2bf0e19c
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4d92b5b7249540ada274bb0aa310cf894a7be6bc
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349957"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773865"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 Node.js Office 加载项
 
@@ -40,10 +40,11 @@ ms.locfileid: "53349957"
 1. 克隆或下载 [Office 外接程序 NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso) 中的存储库。
 
     > [!NOTE]
-    > 示例有三个版本：  
+    > 示例有三个版本：
+    >
     > * Begin 文件夹是初学者项目。 未直接连接到 SSO 或授权的外接程序的 UI 和其他方面已经完成。 本文后续章节将引导你完成此过程。
     > * 如果完成了本文中的过程，该示例的 **已完成** 版本会与所生成的加载项类似，只不过完成的项目具有对本文文本冗余的代码注释。 若要使用已完成的版本，请按照本文中的说明操作，但将"Begin"替换为"Completed"，并跳过编写客户端代码和编写 **服务器端** 代码部分。
-    > * **SSOAutoSetup** 版本是一个完整示例，可自动执行大多数步骤以在 Azure AD 中注册加载项并对其进行配置。 如果想要快速查看使用 SSO 的加载项，请使用此版本。 按照文件夹自述文件中的步骤操作即可。 我们建议你在某些时候完成本文中的手动注册和设置步骤，以更好地了解 Azure AD 与加载项之间的关系。 
+    > * **SSOAutoSetup** 版本是一个完整示例，可自动执行大多数步骤以在 Azure AD 中注册加载项并对其进行配置。 如果想要快速查看使用 SSO 的加载项，请使用此版本。 按照文件夹自述文件中的步骤操作即可。 我们建议你在某些时候完成本文中的手动注册和设置步骤，以更好地了解 Azure AD 与加载项之间的关系。
 
 1. 打开 Begin 文件夹中 **的命令** 提示符。
 
@@ -61,7 +62,7 @@ ms.locfileid: "53349957"
 
     * 将“名称”设置为“`Office-Add-in-NodeJS-SSO`”。
     * 将“**受支持的帐户类型**”设置为“**任何组织目录中的帐户和个人 Microsoft 帐户**”（例如，Skype、Xbox、Outlook.com）。
-    * 将应用程序类型设置为 **Web，** 然后将" **重定向 URI"** 设置为 ` https://localhost:44355/dialog.html` 。
+    * 将应用程序类型设置为 **Web，** 然后将" **重定向 URI"** 设置为 `https://localhost:44355/dialog.html` 。
     * 选择“**注册**”。
 
 1. 在 **Office-Add-in-NodeJS-SSO** 页面上，复制并保存“**应用程序（客户端）ID**”和“**目录（租户）ID**”的值。 你将在后面的过程中使用它们。
@@ -105,7 +106,7 @@ ms.locfileid: "53349957"
     - `08e18876-6177-487e-b8b5-cf950c1e598c`（Office 网页版）
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Outlook 网页版）
 
-    对于每个 ID，执行以下步骤：
+    对于每个 ID，请执行以下步骤。
 
     a. 选择“**添加客户端应用程序**”按钮，然后在打开的面板中，将“客户端 ID”设置为相应的 GUID 并勾选 `api://localhost:44355/$App ID GUID$/access_as_user` 框。
 
@@ -154,8 +155,8 @@ ms.locfileid: "53349957"
 
 1. 将标记中的 *两处* 占位符“$application_GUID here$”均替换为在注册加载项时复制的应用程序 ID。 由于 ID 并不包含“$”符号，因此请勿包含它们。 这是用于 中"用户"和"CLIENT_ID访问群体"的相同 ID。ENV 文件。
 
-    > [!NOTE]
-    > **资源** 值是注册加载项时设置的 **应用程序 ID URI**。 仅在通过 AppSource 销售加载项时，才使用 **作用域** 部分生成许可对话框。
+   > [!NOTE]
+   > **资源** 值是注册加载项时设置的 **应用程序 ID URI**。 仅在通过 AppSource 销售加载项时，才使用 **作用域** 部分生成许可对话框。
 
 ## <a name="code-the-client-side"></a>编写客户端代码
 
@@ -163,8 +164,8 @@ ms.locfileid: "53349957"
 
 1. 在代码编辑器中，打开文件 `public\javascripts\ssoAuthES6.js`。 它已经具有确保即使在 Internet Explorer 11 中也支持 Promise 的代码，并且具有 `Office.onReady` 调用，可将处理程序分配给加载项的唯一按钮。
 
-    > [!NOTE]
-    > 顾名思义，ssoAuthES6.js 使用 JavaScript ES6 语法，因为使用 `async` 和 `await` 可以最好地显示 SSO API 本质的简单性。 启动 localhost 服务器时，此文件将转换为 ES5 语法，以便在 Internet Explorer 11 中运行该示例。 
+   > [!NOTE]
+   > 顾名思义，ssoAuthES6.js 使用 JavaScript ES6 语法，因为使用 `async` 和 `await` 可以最好地显示 SSO API 本质的简单性。 启动 localhost 服务器时，此文件将转换为 ES5 语法，以便在 Internet Explorer 11 中运行该示例。
 
 1. 在 Office.onReady 方法下方添加以下代码。
 
@@ -193,7 +194,7 @@ ms.locfileid: "53349957"
     }
     ```
 
-1. 将 `TODO 1` 替换为以下代码。关于此代码，请注意以下几点：
+1. 将 `TODO 1` 替换为以下代码。 关于此代码，请注意以下几点：
 
     - `OfficeRuntime.auth.getAccessToken` 指示 Office 从 Azure AD 获取引导令牌。 引导令牌类似于 ID令 牌，但是它具有值为 `access-as-user` 的 `scp`（作用域）属性。 Web 应用程序可将此类令牌与 Microsoft Graph 的访问令牌进行交换。
     - 将选项设置为 true 意味着如果当前没有用户登录Office，Office将打开弹出窗口 `allowSignInPrompt` 登录提示。
@@ -332,6 +333,7 @@ ms.locfileid: "53349957"
 
 1. 在极少数情况下，Office 缓存的引导令牌在 Office 验证时未过期，但是会在到达 Azure AD 进行交换时过期。 Azure AD 将以错误 **AADSTS500133** 做出响应。 在这种情况下，加载项应仅以递归方式调用 `getGraphData`。 由于缓存的引导令牌现在已过期，Office 将从 Azure AD 获取一个新令牌。 因此， `TODO 8` 将 替换为以下内容：
 
+
     ```javascript
     if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
     {
@@ -348,7 +350,7 @@ ms.locfileid: "53349957"
 1. 在 `handleAADErrors` 方法中更改 `if` 结构，以使其：
 
     - 在调用 `getGraphData` 之前递增计数器。
-    - 执行测试以确保尚未对 `getGraphData` 进行第二次调用。 
+    - 执行测试以确保尚未对 `getGraphData` 进行第二次调用。
 
     因此，`if` 结构的最终版本应如下所示：
 
@@ -398,7 +400,7 @@ ms.locfileid: "53349957"
     }
     ```
 
-1. 将 `TODO 10` 替换为以下代码。 关于此代码，请注意以下几点： 
+1. 将 `TODO 10` 替换为以下代码。 关于此代码，请注意以下几点：
 
     - 此对象是 `$.ajax` 方法的参数。
     - `/getuserdata` 是你在后续步骤中创建的加载项服务器上的 Express 路由。 它将调用 Microsoft Graph 终结点，并在其调用中包含访问令牌。 
@@ -414,7 +416,7 @@ ms.locfileid: "53349957"
 
 1. 将 `TODO11` 替换为以下代码。 关于此代码，请注意以下几点：
 
-    - `writeFileNamesToOfficeDocument` 会将来自 Graph 的数据插入到 Office 文档中。 它在 `public\javascripts\document.js` 文件中定义。 
+    - `writeFileNamesToOfficeDocument` 会将来自 Graph 的数据插入到 Office 文档中。 它在 `public\javascripts\document.js` 文件中定义。
     - 如果 `writeFileNamesToOfficeDocument` 返回错误，它将以“无法将文件名添加到文档中”开头。
 
     ```javascript
@@ -460,11 +462,11 @@ ms.locfileid: "53349957"
     } 
     ```
 
-1. 将 `TODO 13` 替换为以下代码。关于此代码，请注意以下几点： 
+1. 将 `TODO 13` 替换为下面的代码。 关于此代码，请注意以下几点：
 
-    - 这是一个长 `else` 块的开头，但是结尾 `}` 尚未结束，因为你将向其添加更多代码。 
+    - 这是一个长 `else` 块的开头，但是结尾 `}` 尚未结束，因为你将向其添加更多代码。
     - `authorization` 字符串是“持有者”，后跟引导令牌，因此 `else` 块的第一行将令牌分配给 `jwt`。 （“JWT”代表“JSON Web 令牌”。）
-    - 两个 `process.env.*` 值是你配置加载项时分配的常量。 
+    - 两个 `process.env.*` 值是你配置加载项时分配的常量。
     - `requested_token_use` 窗体参数设置为“on_behalf_of”。 它告知 Azure AD 加载项正在使用“代理流”请求 Microsoft Graph 访问令牌。 通过验证分配给 `assertion` 窗体参数的引导令牌是否具有设置为 `access-as-user` 的 `scp` 属性，Azure 将对此做出响应。
     - `scope` 窗体参数设置为“Files.Read.All”，这是加载项唯一需要的 Microsoft Graph 作用域。
 
@@ -565,9 +567,9 @@ ms.locfileid: "53349957"
 
 1. 请确保 OneDrive 中有一些文件，以便可以验证结果。
 
-1. 在 `\Begin` 文件夹的根目录中打开命令提示符。 
+1. 在 `\Begin` 文件夹的根目录中打开命令提示符。
 
-1. 运行命令 `npm start`。 
+1. 运行命令 `npm start`。
 
 1. 需要将加载项旁加载到 Office 应用程序（Excel、Word 或 PowerPoint），以便对其进行测试。 说明取决于你的平台。 在[旁加载 Office 加载项以供测试](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)中有指向说明的链接。
 

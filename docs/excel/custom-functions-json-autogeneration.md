@@ -1,14 +1,14 @@
 ---
-ms.date: 03/15/2021
+ms.date: 07/08/2021
 description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
-ms.openlocfilehash: e31059de78e9daedc31c9b0a8605b5352fd0ed94
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: b4ae61ab46de7dadb9280e731d65715adaf64630
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178046"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774166"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -20,7 +20,7 @@ ms.locfileid: "51178046"
 
 可以使用 JavaScript 中的 [@param](#param) 标记或从 TypeScript 中的[函数类型](https://www.typescriptlang.org/docs/handbook/functions.html)提供函数参数类型。 有关详细信息，请参阅 [@param](#param) 标记和[类型](#types)部分。
 
-### <a name="adding-a-description-to-a-function"></a>为函数添加说明
+### <a name="add-a-description-to-a-function"></a>向函数添加说明
 
 当用户需要帮助来了解自定义函数的功能时，将向用户显示用作帮助文本的说明。 说明不需要任何特定标记。 只需在 JSDoc 注释中输入简短的文本说明即可。 一般来说，说明位于 JSDoc 注释部分的开头，但无论位于何处，它都有用。
 
@@ -36,10 +36,9 @@ ms.locfileid: "51178046"
  */
 ```
 
-
 ## <a name="jsdoc-tags"></a>JSDoc 标记
 
-以下 JSDoc 标记在 Excel 自定义函数中受支持。
+以下 JSDoc 标记在自定义Excel中受支持。
 
 * [@cancelable](#cancelable)
 * [@customfunction](#customfunction) id name
@@ -69,7 +68,7 @@ ms.locfileid: "51178046"
 
 语法：@customfunction _id_ _name_
 
-此标记指示 JavaScript/TypeScript 函数是 Excel 自定义函数。 需要为自定义函数创建元数据。
+此标记指示 JavaScript/TypeScript 函数是一个Excel函数。 需要为自定义函数创建元数据。
 
 下面显示了此标记的示例。
 
@@ -120,7 +119,7 @@ ms.locfileid: "51178046"
 
 ### <a name="description"></a>说明
 
-Excel 中的用户在输入函数时会显示说明，并指定函数的功能。 说明不需要任何特定标记。 通过在 JSDoc 注释中添加一个短语来描述函数的功能，为自定义函数添加说明。 默认情况下，JSDoc 注释部分中未标记的任何文本都是该函数的说明。
+在用户输入函数Excel向用户显示说明，并指定函数的功能。 说明不需要任何特定标记。 通过在 JSDoc 注释中添加一个短语来描述函数的功能，为自定义函数添加说明。 默认情况下，JSDoc 注释部分中未标记的任何文本都是该函数的说明。
 
 在以下示例中，短语“对两个数字求和的函数”是 id 属性为 `ADD` 的自定义函数的相关说明。
 
@@ -161,9 +160,7 @@ JavaScript 语法：@param {type} name _description_
 * `name` 指定该标记@param参数。 这是必需的。
 * `description` 为函数参数提供显示在 Excel 中的说明。 可选。
 
-若要将自定义函数参数表示为可选，请执行以下操作：
-
-* 为参数名称加上方括号。 例如：`@param {string} [text] Optional text`。
+若要将自定义函数参数表示为可选，请用方括号将参数名称括起。 例如，`@param {string} [text] Optional text`。
 
 > [!NOTE]
 > 可选参数的默认值为 `null`。

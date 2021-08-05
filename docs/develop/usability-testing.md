@@ -1,18 +1,18 @@
 ---
 title: Office 加载项的可用性测试
 description: 了解如何使用真实用户测试外接程序设计。
-ms.date: 03/19/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 5de29a15a9e382b990985765eaad801b1b54f364
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4f797033343fd20d814cba1fd67ad8eb21b246b3
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349691"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773340"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office 加载项的可用性测试
 
-出色的外接程序设计会考虑到用户行为。因为自己的预想会影响设计决策，所以务必要通过实际用户测试设计来确保客户可正常使用外接程序。 
+出色的外接程序设计会考虑到用户行为。因为自己的预想会影响设计决策，所以务必要通过实际用户测试设计来确保客户可正常使用外接程序。
 
 可以使用不同方法运行可用性测试。 对于许多外接程序开发人员而言，远程、未经审阅的可用性研究最为节省时间且最具有成本效益。 多个热门测试服务使这一点变得简单;下面是一些示例。
 
@@ -20,23 +20,23 @@ ms.locfileid: "53349691"
 - [Optimalworkshop.com](https://www.Optimalworkshop.com)
 - [Userzoom.com](https://www.Userzoom.com)
 
-这些测试服务可帮助你简化测试计划的创建并且不需要寻找参与者或审阅测试。 
+这些测试服务可帮助你简化测试计划的创建并且不需要寻找参与者或审阅测试。
 
 你只需五名参与者即可发现设计中的大多数可用性问题。在整个开发周期内定期进行小型测试，以确保产品以用户为中心。
 
 > [!NOTE]
 > 建议跨多个平台测试加载项的可用性。若要[将加载项发布到 AppSource](/office/dev/store/submit-to-appsource-via-partner-center)，加载项必须适用于[支持已定义方法的所有平台](../overview/office-add-in-availability.md)。
 
-## <a name="1---sign-up-for-a-testing-service"></a>1. 注册测试服务
+## <a name="1-sign-up-for-a-testing-service"></a>1. 注册测试服务
 
 有关详细信息，请参阅[选择联机工具进行未加管制的远程用户测试](https://www.nngroup.com/articles/unmoderated-user-testing-tools/)。
 
 ## <a name="2-develop-your-research-questions"></a>2.制定研究问题
- 
+
 研究问题定义研究的目标并指导测试计划。这些问题将帮助你确定要招募的参与者及其要执行的任务。将研究问题尽可能地具体化。还可以尽量回答较为宽泛的问题。
- 
+
 下面是研究问题的一些示例。
-  
+
 **具体**
 
 - 用户是否注意到了登陆页面上的“免费试用版”链接？
@@ -103,7 +103,7 @@ ms.locfileid: "53349691"
 有关详细信息，请参阅[编写出色任务](https://help.usertesting.com/hc/articles/115003371651-Writing-great-tasks)。
 
 ## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6.创建用于匹配任务和问题的原型
- 
+
 可以测试实时加载项，或者可以测试原型。 注意，如果要测试实时加载项，则需要筛选出已安装 Office、愿意安装加载项且愿意注册帐户的参与者（除非你具有可以向参与者提供的登录凭据）。然后需要确保他们成功安装加载项。
 
 通常，逐步指导用户如何安装外接程序需要大约 5 分钟。以下是简洁明了的安装步骤示例。请根据测试的具体情况调整步骤。
@@ -131,15 +131,14 @@ ms.locfileid: "53349691"
 
 ## <a name="9-analyze-results"></a>9.分析结果
 
-在这一部分中，你将尝试分析所收集到的数据。在观看测试视频时，记录用户遇到的问题和成功之处。避免尝试在查看所有结果后才解释数据的含义。 
+在这一部分中，你将尝试分析所收集到的数据。在观看测试视频时，记录用户遇到的问题和成功之处。避免尝试在查看所有结果后才解释数据的含义。
 
 单个参与者具有可用性问题不足以作为更改设计的依据。两个或更多参与者遇到同一问题则表明普通人群中的其他用户也会遇到此问题。
 
 通常，要谨慎对待使用数据作出结论的方式。不要陷入尝试将数据匹配特定叙述的困境；对数据实际证明、驳斥或者无法提供任何相关见解的内容实事求是。保持开放的心态；用户行为经常会违背设计人员的预期。
 
-
 ## <a name="see-also"></a>另请参阅
 
-- [如何执行可用性测试](https://whatpixel.com/howto-conduct-usability-testing/)
-- [用户测试的最佳做法](https://help.usertesting.com/hc/articles/115003370231-Best-practices-for-UserTesting)  
-- [最小化偏差](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)
+- [如何执行可用性测试](https://whatpixel.com/howto-conduct-usability-testing/)  
+- [用户测试的最佳做法](https://help.usertesting.com/hc/en-us/articles/115003370231-Best-practices-for-UserTesting)  
+- [最小化偏差](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  

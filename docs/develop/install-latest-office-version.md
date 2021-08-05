@@ -1,22 +1,20 @@
 ---
 title: 安装最新版本 Office
 description: 与如何选择获取最新版 Office 相关的信息。
-ms.date: 07/07/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: d72012e3c2e642c74d8573c4d9bb3b29a8fc0274
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 76ca1a91ff30d1310ddbfc38d7a2ced682d2b47e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076018"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773767"
 ---
 # <a name="install-the-latest-version-of-office"></a>安装最新版本 Office
 
 新开发人员功能（包括仍处于预览阶段的功能）会先向选择获取最新版 Office 的订阅者提供。
 
-## <a name="opt-in-to-getting-the-latest-builds"></a>选择获取最新版
-
-若要选择获取最新版 Office，请执行以下操作：
+## <a name="opt-in-to-getting-the-latest-builds-of-office"></a>选择获取最新版Office
 
 - 如果你是预览体验成员Microsoft 365 家庭版个人或大学订阅者，请参阅成为预览体验成员Office[订阅者](https://insider.office.com)。
 - 如果你是客户，请参阅Microsoft 365 商业应用版[客户安装首次发布Microsoft 365 商业应用版版本](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)。
@@ -25,9 +23,7 @@ ms.locfileid: "53076018"
   - 选择“帮助”菜单上的“检查更新”。
   - 选中“Microsoft 自动更新”框，以加入 Office 预览体验成员计划。
 
-## <a name="get-the-latest-build"></a>获取最新版
-
-若要获取最新版 Office，请执行以下操作：
+## <a name="get-the-latest-build-of-office"></a>获取最新版Office
 
 1. 下载 [Office 部署工具](https://www.microsoft.com/download/details.aspx?id=49117)。
 2. 运行该工具。这会提取以下两个文件：Setup.exe 和 configuration.xml。
@@ -42,8 +38,6 @@ ms.locfileid: "53076018"
 ![显示具有预览体验成员标签Office信息的屏幕截图。](../images/office-insiders-label.png)
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Office JavaScript API 要求集对应的最低 Office 内部版本
-
-若要了解 API 要求集对应的各个平台的最低产品内部版本，请参阅以下资源：
 
 - [Excel JavaScript API 要求集](../reference/requirement-sets/excel-api-requirement-sets.md)
 - [OneNote JavaScript API 要求集](../reference/requirement-sets/onenote-api-requirement-sets.md)

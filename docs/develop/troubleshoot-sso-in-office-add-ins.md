@@ -1,14 +1,14 @@
 ---
 title: 排查单一登录 (SSO) 错误消息
 description: 有关如何解决加载项中单一登录 (SSO) 问题Office处理特殊条件或错误的指导。
-ms.date: 02/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 3d6f78802c51035664f7d12aa787c89aa62057d9
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: daddd5e1565fa870755b2368aba031b5768987a4
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590930"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773739"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>排查单一登录 (SSO) 错误消息
 
@@ -28,6 +28,7 @@ ms.locfileid: "52590930"
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>导致 getAccessToken 生成错误的原因和处理方法
 
 有关此部分中介绍的错误处理示例，请参阅：
+
 - [Office-Add-in-ASPNET-SSO 中的 HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
 - [ssoAuthES6.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
 
@@ -81,8 +82,8 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 
 - 如果在开发过程中发生此错误，请确保加载项注册和加载项清单指定 `profile` 权限（和 `openid` 权限 - 如果你使用的是 MSAL.NET）。 如需了解更多信息，请参阅[向 Azure AD v2.0 终结点注册加载项](register-sso-add-in-aad-v2.md)。
 - 在生产中，有几种情况可能导致此错误。 其中一些是：
-    - 用户具有 Microsoft 帐户标识。
-    - 使用 MSA 时，某些会导致其他 13xxx 错误Microsoft 365 教育版或工作帐户导致 13007 错误。
+  - 用户具有 Microsoft 帐户标识。
+  - 使用 MSA 时，某些会导致其他 13xxx 错误Microsoft 365 教育版或工作帐户导致 13007 错误。
 
   对于所有这些情况，代码应回退到用户身份验证备用系统。
 
@@ -96,7 +97,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 
 ### <a name="13012"></a>13012
 
-存在几种可能的原因：
+有几种可能的原因。
 
 - 加载项在不支持 `getAccessToken` API的平台上运行。 例如，在 iPad 上它不受支持。 另请参阅 [标识 API 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
 - `forMSGraphAccess` 选项在调用中传递给 `getAccessToken`，并且用户从 AppSource 获得了加载项。 在此方案中，对于所需的 Microsoft Graph 范围（权限），租户管理员未向加载项授予许可。 撤回具有 `allowConsentPrompt` 的 `getAccessToken` 将无法解决此问题，因为允许 Office 提示用户仅同意 AAD `profile` 范围。
@@ -118,6 +119,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Azure Active Directory 服务器端错误
 
 有关此部分中介绍的错误处理示例，请参阅：
+
 - [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
 - [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
 
@@ -125,7 +127,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 
 在 AAD 和 Microsoft 365 中的某些标识配置中，某些可通过 Microsoft Graph 访问的资源可能需要多重身份验证 (MFA) ，即使用户的 Microsoft 365 租赁不需要。 通过代表流收到对 MFA 保护资源的令牌请求时，AAD 会向加载项 Web 服务返回包含 `claims` 属性的 JSON 消息。 claims 属性指明需要进一步执行哪几重身份验证。
 
-代码应对此 `claims` 属性进行测试。 根据加载项的体系结构，你可以在客户端进行测试，也可以在服务器端进行测试并将其中继到客户端。 客户端需要此信息，因为 Office 处理 SSO 加载项的身份验证。如果从服务器端进行中继，则发送到客户端的消息可以是错误（如 `500 Server Error` 或 `401 Unauthorized`），也可以是成功响应的正文部分（如 `200 OK`）。 无论属于上述哪种情况，代码对加载项 Web API 的客户端 AJAX 调用的（失败或成功）回调都应测试此响应是否有错。 
+代码应对此 `claims` 属性进行测试。 根据加载项的体系结构，你可以在客户端进行测试，也可以在服务器端进行测试并将其中继到客户端。 客户端需要此信息，因为 Office 处理 SSO 加载项的身份验证。如果从服务器端进行中继，则发送到客户端的消息可以是错误（如 `500 Server Error` 或 `401 Unauthorized`），也可以是成功响应的正文部分（如 `200 OK`）。 无论属于上述哪种情况，代码对加载项 Web API 的客户端 AJAX 调用的（失败或成功）回调都应测试此响应是否有错。
 
 无论体系结构如何，如果声明值从 AAD 发送，则代码应调用 并传递 `getAccessToken` 参数中的 `authChallenge: CLAIMS-STRING-HERE` `options` 选项。 如果 AAD 看到此字符串，它会先提示用户进行多重身份验证，再返回将在代表流中接受的新访问令牌。
 

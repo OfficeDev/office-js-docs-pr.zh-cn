@@ -1,18 +1,18 @@
 ---
-title: Office外接程序中的 Fabric Core
+title: Office 加载项中的 Fabric Core
 description: 大致了解如何在加载项中Office Fabric Core 和 Fabric UI 组件。
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e93efaea55841cc3bb6fa79ea1d1bbcaa76a4d05
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: e8455cbdf37d80545c9e9fc957a75152db5c7841
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330198"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773606"
 ---
-# <a name="fabric-core-in-office-add-ins"></a>Office外接程序中的 Fabric Core
+# <a name="fabric-core-in-office-add-ins"></a>Office 加载项中的 Fabric Core
 
-Fabric Core 是 CSS 类和 SASS mixin 的开源集合，旨在用于非 React *Office* 外接程序。Fabric Core 包含 Fluent UI 设计语言的基本元素，如图标、颜色、字样和网格。 Fabric Core 与框架无关，因此可用于任何单页应用程序或任何服务器端 Web UI 框架。  (出于历史原因，它被称为"Fabric Core"，而不是"Fluent Core"。) 
+Fabric Core 是 CSS 类和 SASS mixin 的开源集合，旨在用于非 React *Office* 外接程序。Fabric Core 包含 UI 设计Fluent的基本元素，如图标、颜色、字样和网格。 Fabric Core 与框架无关，因此可用于任何单页应用程序或任何服务器端 Web UI 框架。  (历史原因，它被称为"Fabric Core"，而不是"Fluent Core"。) 
 
 如果外接程序的 UI 不是基于React的，则您还可以使用一组非React组件。 请参阅[使用Office UI Fabric JS 组件](#use-office-ui-fabric-js-components)。
 
@@ -20,8 +20,6 @@ Fabric Core 是 CSS 类和 SASS mixin 的开源集合，旨在用于非 React *O
 > 本文介绍了 Fabric Core 在加载项Office的使用。但它还用于各种应用Microsoft 365扩展。 有关详细信息，请参阅[Fabric Core](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core)和开源存储库Office UI Fabric [Core。](https://github.com/OfficeDev/office-ui-fabric-core)
 
 ## <a name="use-fabric-core-icons-fonts-colors"></a>使用 Fabric Core：图标、字体、颜色
-
-开始使用 Fabric Core：
 
 1. 向页面上的 HTML 添加 CDN 参考。  
 
@@ -37,7 +35,7 @@ Fabric Core 是 CSS 类和 SASS mixin 的开源集合，旨在用于非 React *O
     <i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>
     ```
 
-    有关更详细的说明，请参阅 [Fluent UI 图标](https://developer.microsoft.com/fluentui#/styles/web/icons)。 若要查找 Fabric Core 中可用的更多图标，请使用该页面上的搜索功能。 找到要在外接程序中使用的图标后，请务必在图标名称前加上前缀 `ms-Icon--`。
+    有关更详细的说明，请参阅Fluent [UI 图标](https://developer.microsoft.com/fluentui#/styles/web/icons)。 若要查找 Fabric Core 中可用的更多图标，请使用该页面上的搜索功能。 找到要在外接程序中使用的图标后，请务必在图标名称前加上前缀 `ms-Icon--`。
 
     有关 Fabric Core 中可用的字体大小和颜色的信息，请参阅 Colors[](https://developer.microsoft.com/fluentui#/styles/web/typography)中的版式和颜色[目录](https://developer.microsoft.com/fluentui#/styles/web/colors)。
 

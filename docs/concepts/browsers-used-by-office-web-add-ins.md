@@ -3,12 +3,12 @@ title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
 ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 1a6d1a6b0c1443b4c90fc38042a268c40c50de4c
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: e27cc608f1180c3e89a29480b11d777d744fdd55
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661122"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773326"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -52,7 +52,7 @@ Office外接程序是 Web 应用程序，在 Office web 版 中运行时，使�
 <sup>4</sup>必须安装可嵌入的 WebView2 控件Office嵌入它，并且它不会自动随 Edge 一起安装。 它随 Microsoft 365版本 2101 或更高版本一起安装。 如果你拥有早期版本的 Microsoft 365，请按照在 WebView2 /嵌入 Web Microsoft Edge安装[控件的说明...使用 Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)。
 
 > [!IMPORTANT]
-> Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何外接程序的用户具有使用 Internet Explorer 11 的平台，则要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项：
+> Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何外接程序用户具有使用 Internet Explorer 11 的平台，则要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项。
 >
 > - 在 ECMAScript 2015 (（也称为 ES6) 或更高版本 JavaScript）中编写代码，或在 TypeScript 中编写代码，然后使用编译器（如 [#A0](https://babeljs.io/) 或 [tsc）](https://www.typescriptlang.org/index.html)将代码编译为 ES5 JavaScript。
 > - 在 ECMAScript 2015 或更高版本的 JavaScript[](https://en.wikipedia.org/wiki/Polyfill_(programming))中编写，但也加载填充库（如[core-js，](https://github.com/zloirock/core-js)它使 IE 能够运行代码）。

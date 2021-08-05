@@ -1,14 +1,14 @@
 ---
 title: 在幻灯片中添加和删除PowerPoint
 description: 了解如何添加和删除幻灯片，并指定新幻灯片的主控母版和版式。
-ms.date: 06/02/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fd1f3c805483050776cc5b71c9e7a9fb61610b07
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 7fbfd24da7bf552adfe96437187ae0128c513574
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348410"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774047"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>在幻灯片中添加和删除PowerPoint
 
@@ -17,7 +17,7 @@ ms.locfileid: "53348410"
 > [!IMPORTANT]
 > 用于添加幻灯片的 API 为预览 [版](../reference/requirement-sets/powerpoint-preview-apis.md) ，不适用于生产加载项。用于删除 *幻灯片的* API 已发布。
 
-添加幻灯片的 API 主要用于以下方案：演示文稿中幻灯片母版和版式的标识在编码时已知，或在运行时可在数据源中找到。 在这种情况下，您或客户必须创建和维护一个数据源，该数据源将选择条件 (如幻灯片母版和版式的名称或图像与幻灯片母版和版式) 的 ID 相关联。 这些 API 还可用于以下方案：用户可以插入使用默认幻灯片母版和母版的默认版式的幻灯片，以及用户可以选择现有幻灯片并使用同一幻灯片母版和版式创建新幻灯片 (但内容不相同) 。 有关详细信息 [，](#selecting-which-slide-master-and-layout-to-use) 请参阅选择使用哪个幻灯片母版和版式。
+添加幻灯片的 API 主要用于以下方案：演示文稿中幻灯片母版和版式的标识在编码时已知，或在运行时可在数据源中找到。 在这种情况下，您或客户必须创建和维护一个数据源，该数据源将选择条件 (如幻灯片母版和版式的名称或图像与幻灯片母版和版式) 的 ID 相关联。 这些 API 还可用于以下方案：用户可以插入使用默认幻灯片母版和母版的默认版式的幻灯片，以及用户可以选择现有幻灯片并使用同一幻灯片母版和版式创建新幻灯片 (但内容不相同) 。 有关详细信息 [，](#select-which-slide-master-and-layout-to-use) 请参阅选择使用哪个幻灯片母版和版式。
 
 ## <a name="add-a-slide-with-slidecollectionadd-preview"></a>使用 SlideCollection.add 添加幻灯片 (预览) 
 
@@ -35,9 +35,9 @@ async function addSlide() {
 }
 ```
 
-### <a name="selecting-which-slide-master-and-layout-to-use"></a>选择要使用的幻灯片母版和版式
+### <a name="select-which-slide-master-and-layout-to-use"></a>选择要使用的幻灯片母版和版式
 
-使用 [AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) 参数可控制新幻灯片使用哪个幻灯片母版以及使用母版中的哪个版式。 示例如下。 对于此代码，请注意以下事项。
+使用 [AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) 参数可控制新幻灯片使用哪个幻灯片母版以及使用母版中的哪个版式。 示例如下。 关于此代码，请注意以下几点：
 
 - 可以包括 对象的一个或两个 `AddSlideOptions` 属性。
 - 如果同时使用这两个属性，则指定的布局必须属于指定的母版，否则将引发错误。

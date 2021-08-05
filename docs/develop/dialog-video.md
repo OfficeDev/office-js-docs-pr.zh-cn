@@ -1,14 +1,14 @@
 ---
 title: 使用 Office 对话框播放视频
 description: 了解如何在"开始"对话框中打开Office视频
-ms.date: 01/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2519b2f105503a0479eee07d885a1543f5455343
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4704b31cb698e2986360e5aff692ed6469fd0eb5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349880"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773480"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>使用Office对话框显示视频
 
@@ -17,7 +17,7 @@ ms.locfileid: "53349880"
 > [!NOTE]
 > 本文认为你已熟悉使用 Office 对话框的基础知识，如在 Office 外接程序中使用 Office 对话框[API 中所述](dialog-api-in-office-add-ins.md)。
 
-若要使用对话框 API 在对话框中Office视频，请按照以下步骤操作：
+若要使用对话框 API 在对话框中Office视频，请按照以下步骤操作。
 
 1. 创建包含 iframe 且不包含其他内容的页面。 页面必须与主机页在同一域中。 有关主机页的提醒，请参阅从主机页 [打开对话框](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)。 在 `src` iframe 的 属性中，指向联机视频的 URL。 视频 URL 必须使用 HTTPS 协议。 本文将此页面称为"video.dialogbox.html"。 下面是一个标注示例。
 
