@@ -4,12 +4,12 @@ description: 在本教程中，你将创建一个 Excel 外接程序，其中包
 ms.date: 07/07/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 56e8a31f8d33756ca1668e2fa1468d10d1ad4821
-ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
+ms.openlocfilehash: fbc03603cd3b3d546fbb83526d4654b35a124393
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "53418711"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773655"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -26,11 +26,11 @@ ms.locfileid: "53418711"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Windows 版 Excel （版本 1904 或更高版本，关联至 Microsoft 365 订阅）或 Excel 网页版
+* Windows 版 Excel （版本 1904 或更高版本，关联至 Microsoft 365 订阅）或 Excel 网页版
 
 ## <a name="create-a-custom-functions-project"></a>创建自定义函数项目
 
- 首先，创建代码项目以构建自定义函数加载项。 [Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)将使用一些预生成的自定义函数（你可以试用这些函数）来设置你的项目。如果已运行自定义函数快速启动并生成了项目，请继续使用该项目，然后改为跳到[此步骤](#create-a-custom-function-that-requests-data-from-the-web)。
+ 首先，创建代码项目，构建自定义函数加载项。 [Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)将使用一些预生成的自定义函数（可以试用这些函数）来设置项目。如果已运行自定义函数快速启动并生成了项目，请继续使用该项目，然后改为跳到[此步骤](#create-a-custom-function-that-requests-data-from-the-web)。
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
@@ -95,7 +95,7 @@ npm run start:web
 
 创建的自定义函数项目中包含一些预生成的自定义函数，这些函数在 **./src/functions/functions.js** 文件中定义。 **./manifest.xml** 文件指定所有自定义函数均属于 `CONTOSO` 命名空间。 你将使用 CONTOSO 命名空间来访问 Excel 中的自定义函数。
 
-接下来，通过完成以下步骤来试用 `ADD` 自定义函数。
+接下来，通过完成以下步骤，尝试使用 `ADD` 自定义函数。
 
 1. 在 Excel 中，转至任意单元格并输入 `=CONTOSO`。 请注意，自动完成菜单将显示 `CONTOSO` 命名空间中所有函数的列表。
 
@@ -154,7 +154,6 @@ npm run start:web
 1. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择“**starcount**”加载项进行注册。
     ![ Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项。](../images/list-starcount.png)
 
-
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
 1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![ Excel 网页版中“插入”功能区的屏幕截图，突出显示“我的加载项”按钮。](../images/excel-cf-online-register-add-in-1.png)
@@ -165,11 +164,9 @@ npm run start:web
 
 1. 依次选择文件“manifest.xml”，“打开”，然后选择“上载”。
 
----
+5. 尝试使用新函数。 在单元格 **B1** 中，键入文本 **=CONTOSO.GETSTARCOUNT("OfficeDev&quot;, &quot;Excel-Custom-Functions")**，然后按 Enter。 你会看到，单元格 **B1** 中的结果便是 [Excel-Custom-Functions Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)所获得的星星的当前数目。
 
-<ol start="5&quot;>
-<li> 尝试使用新函数。 在单元格 <strong>B1</strong> 中，键入文本 <strong>=CONTOSO.GETSTARCOUNT(&quot;OfficeDev&quot;, &quot;Excel-Custom-Functions")</strong>，然后按 Enter。 你会看到，单元格 <strong>B1</strong> 中的结果便是 [Excel-Custom-Functions Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)所获得的星星的当前数目。</li>
-</ol>
+---
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>创建流式处理异步自定义函数
 

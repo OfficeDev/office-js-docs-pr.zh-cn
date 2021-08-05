@@ -1,14 +1,14 @@
 ---
 title: 使用 Windows 上的 Microsoft Edge WebView2 （基于 Chromium）调试加载项
 description: 了解如何在 VS 代码中使用适用于 Microsoft Edge 扩展的调试器来调试使用 Microsoft Edge WebView2（基于 Chromium）的 Office 加载项。
-ms.date: 01/29/2021
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 6a62718147fbb5d2e8a6819066425737d853cbf0
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 3a79c9f02aba91d29b3af15a5a3c9113079bc197
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350174"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773641"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>使用 Windows 上的 Microsoft Edge Chromium WebView2 调试加载项
 
@@ -25,8 +25,9 @@ ms.locfileid: "53350174"
 
 1. 使用 [ 适用于 Office 加载项的 Yeoman 生成器 ](https://github.com/OfficeDev/generator-office) 创建项目。可以使用我们的任何一个快速入门指南，例如 [Outlook 加载项快速入门 ](../quickstarts/outlook-quickstart.md)，以做到这一点。
 
-    > [!TIP]
-    > 如果没有使用基于 Yeoman 生成器的加载项，需要调整一个注册表项。 在你的项目根目录下，在命令行中运行以下命令： `office-add-in-debugging start <your manifest path>`。
+> [!TIP]
+> 如果没有使用基于 Yeoman 生成器的加载项，需要调整一个注册表项。 项目根文件夹下，在命令行中运行以下命令： 。
+ `office-add-in-debugging start <your manifest path>`
 
 1. 在 VS 代码中打开项目。 在 VS 代码中，选择 **CTRL + SHIFT + X** 打开扩展栏。 搜索“适用于 Microsoft Edge 的调试器”扩展并安装。
 
@@ -50,13 +51,13 @@ ms.locfileid: "53350174"
 
 1. 在主机应用程序（如 Excel）中，你的加载项现在可以使用了。 选择 **显示任务窗格** 或运行其他加载项命令。 此时将出现一个对话框，内容是：
 
-    > WebView 停止加载。
-    > 要调试 webview，请使用适用于 Microsoft Edge 扩展的 Microsoft 调试器将 VS 代码附加到 webview 实例，然后单击“确定”以继续。 要防止今后出现此对话框，单击“取消”。
+   > WebView 停止加载。
+   > 要调试 webview，请使用适用于 Microsoft Edge 扩展的 Microsoft 调试器将 VS 代码附加到 webview 实例，然后单击“确定”以继续。 要防止今后出现此对话框，单击“取消”。
 
-    选择“**确定**”。
+   选择“**确定**”。
 
-    > [!NOTE]
-    > 如果选择“**取消**”，则当加载项的此实例正在运行时，将不会再次显示该对话框。 但如果重新启动加载项，则会再次看到该对话框。
+   > [!NOTE]
+   > 如果选择“**取消**”，则当加载项的此实例正在运行时，将不会再次显示该对话框。 但如果重新启动加载项，则会再次看到该对话框。
 
 1. 现在可以在你的项目代码中设置断点并进行调试。
 

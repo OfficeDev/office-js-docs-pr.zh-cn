@@ -1,14 +1,14 @@
 ---
 title: 开发 Office 加载项
 description: Office 加载项开发简介。
-ms.date: 10/14/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 03a693e29f5aa52156a2ebfc7b6ed782323bb2b7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b2fa3e630fbcfb013f4458f7b8f9f564d0fed3f1
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076116"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773795"
 ---
 # <a name="develop-office-add-ins"></a>开发 Office 加载项
 
@@ -17,7 +17,7 @@ ms.locfileid: "53076116"
 
 所有 Office 加载项均基于 Office 加载项平台构建。 无论构建任何加载项，你都需要了解应用程序和平台可用性、Office JavaScript API 编程模式、如何在清单文件中指定加载项的设置和功能、如何设计 UI 和用户体验等重要概念。 本文档的“**开发生命周期**” > “**开发**”部分在此介绍了这类核心开发概念。 在浏览与所构建的加载项（例如 [Excel](../excel/index.yml)）相对应的应用程序特定文档之前，请先查看此处的信息。
 
-## <a name="creating-an-office-add-in"></a>创建 Office 加载项
+## <a name="create-an-office-add-in"></a>创建 Office 加载项
 
 你可通过适用于 Office 加载项的 Yeoman 生成器或 Visual Studio 来创建 Office 加载项。
 
@@ -41,7 +41,7 @@ Visual Studio 可用于创建适用于 Excel、Outlook、Word 和 PowerPoint 的
 
 [!include[Yeoman vs Visual Studio comparison](../includes/yeoman-generator-recommendation.md)]
 
-## <a name="understanding-the-two-parts-of-an-office-add-in"></a>了解 Office 加载项的两个部分
+## <a name="understand-the-two-parts-of-an-office-add-in"></a>了解 Office 加载项的两个部分
 
 Office 加载项由两部分组成：
 
@@ -51,7 +51,7 @@ Office 加载项由两部分组成：
 
 这些 Web 应用程序可使用 Office JavaScript API 来与其中正在运行加载项的 Office 文档中的内容进行交互。你的加载项还可执行 Web 应用程序通常可实现的其他操作，例如调用外部 Web 服务和简化用户身份验证等等。
 
-### <a name="defining-an-add-ins-settings-and-capabilities"></a>定义加载项的设置和功能
+### <a name="define-an-add-ins-settings-and-capabilities"></a>定义加载项的设置和功能
 
 Office 加载项的清单是一个 XML 文件，它定义了加载项的设置和功能。 你需配置清单来指定如下内容：
 
@@ -65,11 +65,11 @@ Office 加载项的清单是一个 XML 文件，它定义了加载项的设置�
 
 有关清单的详细信息，请参阅 [Office 加载项 XML 清单](add-in-manifests.md)。
 
-### <a name="interacting-with-content-in-an-office-document"></a>与 Office 文档中的内容交互
+### <a name="interact-with-content-in-an-office-document"></a>与 Office 文档中的内容交互
 
 Office 加载项可使用 Office JavaScript API 来与其中在运行加载项的 Office 文档中的内容进行交互。
 
-#### <a name="accessing-the-office-javascript-api-library"></a>访问 Office JavaScript API 库
+#### <a name="access-the-office-javascript-api-library"></a>访问 Office JavaScript API 库
 
 [!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 
@@ -81,7 +81,7 @@ Office 加载项可使用 Office JavaScript API 来与其中在运行加载项�
 
 [!include[information about the Office JS API requirement sets](../includes/office-js-requirement-sets.md)]
 
-#### <a name="exploring-apis-with-script-lab"></a>使用 Script Lab 了解 API
+#### <a name="explore-apis-with-script-lab"></a>使用 Script Lab 了解 API
 
 Script Lab 是一款加载项，在 Excel 或 Word 等 Office 程序中工作时，你可用它来了解 Office JavaScript API 和运行代码片段。 该工具通过 [AppSource](https://appsource.microsoft.com/product/office/WA104380862) 免费提供，随附在你的开发工具包中，在你建立希望加载项中拥有的功能原型和验证该功能时非常有用。 在 Script Lab 中，你可访问内置示例库以快速试用 API，甚至还可将示例用作你自己的代码的起点。
 
@@ -91,7 +91,7 @@ Script Lab 是一款加载项，在 Excel 或 Word 等 Office 程序中工作时
 
 有关 Script Lab 的详细信息，请参阅[使用 Script Lab 了解 Office JavaScript API](../overview/explore-with-script-lab.md)。
 
-## <a name="extending-the-office-ui"></a>扩展 Office UI
+## <a name="extend-the-office-ui"></a>扩展 Office UI
 
 Office 加载项可使用加载项命令和 HTML 容器（如任务窗格、内容加载项或对话框）来扩展 Office UI。
 
