@@ -320,8 +320,6 @@ items:
             href: /office/dev/store/submit-to-the-office-store
           - name: AppSource 验证策略
             href: /legal/marketplace/certification-policies
-          - name: 通过集中部署发布加载项
-            href: publish/centralized-deployment.md
           - name: 将加载项发布到 SharePoint 应用目录
             href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
       - name: 参考

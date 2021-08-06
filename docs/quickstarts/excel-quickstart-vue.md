@@ -1,17 +1,17 @@
 ---
 title: 使用 Vue 生成 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 和 Vue 生成简单的 Excel 任务窗格加载项。
-ms.date: 06/16/2021
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: ec216e84e9aa4bc7eabec4b20c7a2dd271ca1718
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1686f9d9537718eb5ba56fa9ea7f0b4ccb7d65ec
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076614"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774439"
 ---
-# <a name="build-an-excel-task-pane-add-in-using-vue"></a>使用 Vue 生成 Excel 任务窗格加载项
+# <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>使用 Vue 生成 Excel 任务窗格加载项
 
 本文将逐步介绍如何使用 Vue 和 Excel JavaScript API 生成 Excel 任务加载项。
 
@@ -20,21 +20,21 @@ ms.locfileid: "53076614"
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- 全局安装 [Vue CLI](https://cli.vuejs.org/)。
+- 全局安装 [Vue CLI](https://cli.vuejs.org/)。 在终端运行以下命令。
 
   ```command&nbsp;line
   npm install -g @vue/cli
   ```
 
-## <a name="generate-a-new-vue-app"></a>生成新 Vue 应用程序
+## <a name="generate-a-new-vue-app"></a>生成新 Vue 应用
 
-使用 Vue CLI 生成新的 Vue 应用。从终端运行以下命令。
+若要生成新的 Vue 应用，请使用 Vue CLI。
 
 ```command&nbsp;line
 vue create my-add-in
 ```
 
-然后选择“Vue 3”的 `Default` 预设（如果愿意，可以选择使用“Vue 2”）。
+然后，选择`Default` 预设"Vue 3"（如果愿意，请选择"Vue 2"）。
 
 ## <a name="generate-the-manifest-file"></a>生成清单文件
 
@@ -46,16 +46,16 @@ vue create my-add-in
     cd my-add-in
     ```
 
-2. 通过运行以下命令，使用 Yeoman 生成器生成加载项清单文件：
+1. 使用 Yeoman 生成器生成加载项清单文件。
 
     ```command&nbsp;line
     yo office
     ```
 
     > [!NOTE]
-    > 运行该`yo office`命令时，可能会收到有关 Yeoman 和 Office 加载项 CLI 工具的数据收集策略的提示。 根据你的需要，使用提供的信息来响应提示。 如果在对第二条提示的响应中选择“**退出**”，则在准备好创建加载项项目时，需要再次运行 `yo office` 命令。
+    > 运行该`yo office`命令时，可能会收到有关 Yeoman 和 Office 加载项 CLI 工具的数据收集策略的提示。 根据需要，使用提供的信息来响应提示。 如果在对第二条提示的响应中选择“**退出**”，则在准备好创建加载项项目时，需要再次运行 `yo office` 命令。
 
-    出现提示时，请提供以下信息来创建加载项项目：
+    出现提示时，请提供以下信息以创建加载项项目。
 
     - **选择项目类型:** `Office Add-in project containing the manifest only`
     - **要如何命名加载项?** `My Office Add-in`
@@ -63,7 +63,7 @@ vue create my-add-in
 
     ![项目类型设置为“仅清单” 的 Yeoman Office 加载项生成器命令行界面屏幕截图。](../images/yo-office-manifest-only-vue.png)
 
-完成向导后，会创建一个 `My Office Add-in` 文件夹，其中包含一个 `manifest.xml` 文件。 你将在本快速入门结束时使用该清单旁加载和测试你的加载项。
+完成后，向导创建一个 **My Office 加载项** 文件夹，其中包含一个 **manifest.xml** 文件。 使用该清单旁加载和测试加载项。
 
 > [!TIP]
 > 创建加载项项目后，可忽略 Yeoman 生成器提供的 *后续步骤* 指南。 本文中的分步说明提供了完成本教程所需的全部指南。
@@ -72,7 +72,7 @@ vue create my-add-in
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1. 要为应用启用 HTTPS，请使用以下内容在 Vue 项目的根文件夹中创建一个 `vue.config.js` 文件：
+1. 为应用启用 HTTPS。 在 Vue 项目的根文件夹中，创建包含以下内容的 **vue.config.js** 文件。
 
     ```js
     var fs = require("fs");
@@ -90,21 +90,34 @@ vue create my-add-in
     }
     ```
 
-2. 在终端中，运行以下命令以安装加载项证书。
+1. 安装加载项的证书。
 
    ```command&nbsp;line
    npx office-addin-dev-certs install
    ```
 
+## <a name="explore-the-project"></a>浏览项目
+
+使用 Yeoman 生成器创建的加载项项目，包含适合于基础任务窗格加载项的示例代码。 如果想要浏览加载项项目的主要组件，请在代码编辑器中打开项目并检查下面列出的文件。 准备好试用加载项时，请转至下一部分。
+
+- 项目根目录中的 **manifest.xml** 文件定义加载项的设置和功能。 有关 **manifest.xml** 文件的详细信息，请参阅 [ Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
+- **./src/App.vue** 文件包含任务窗格的 HTML 标记、应用于任务窗格中内容的 CSS，以及有助于在任务窗格和 Excel 之间进行交互的 Office JavaScript API 代码。
+
 ## <a name="update-the-app"></a>更新应用
 
-1. 打开 `public/index.html` 文件，在紧靠 `</head>` 标记的前面添加以下 `<script>` 标记：
+1. 打开 **./public/index.html** 文件，并在`</head>`标记前面添加以下`<script>`标记。
 
    ```html
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-2. 打开 `src/main.js`，将内容替换为以下代码：
+1. 打开 **manifest.xml**，并在`<Resources>`标记中查找`<bt:Urls>`标记。 找到 ID 为`Taskpane.Url`的`<bt:Url>`标记，并更新其`DefaultValue`属性。 新`DefaultValue`是`https://localhost:3000/index.html`。 整个更新后的标记应与以下行匹配。
+
+   ```html
+   <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
+   ```
+
+1. 打开 **./src/main.js** 并将内容替换为以下代码。
 
    ```js
    import { createApp } from 'vue'
@@ -115,7 +128,7 @@ vue create my-add-in
    });
    ```
 
-3. 打开 `src/App.vue`，将文件内容替换为以下代码：
+1. 打开 **./src/App.vue** ，并将文件内容替换为以下代码。
 
    ```html
    <template>
@@ -186,29 +199,35 @@ vue create my-add-in
 
 ## <a name="start-the-dev-server"></a>启动开发人员服务器
 
-1. 通过终端运行下面的命令，以启动开发人员服务器。
+1. 安装依赖项。
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. 启动开发人员服务器。
 
    ```command&nbsp;line
    npm run serve
    ```
 
-2. 在 Web 浏览器中，导航到 `https://localhost:3000`（请注意 `https`）。 如果 `https://localhost:3000` 上的页面空白但没有任何证书错误，这表示它正常工作。 Office 初始化后装载 Vue 应用，因此它仅显示 Excel 环境中的内容。
+1. 在 Web 浏览器中，导航到 `https://localhost:3000`（请注意 `https`）。 如果 `https://localhost:3000` 上的页面空白，并且没有任何证书错误，则表示正常工作。 Office 初始化后装载 Vue 应用，因此它仅显示 Excel 环境中的内容。
 
 ## <a name="try-it-out"></a>试用
 
-1. 请按照运行加载项和在 Excel 中旁加载加载项时所用平台对应的说明操作。
+1. 在 Excel 中运行加载项并旁加载加载项。 请按照所用平台对应的说明操作：
 
    - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
    - Web 浏览器：[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
    - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
+1. 在 Excel 中打开加载项任务窗格。 在“**主页**”选项卡上，选择“**显示任务窗格**”按钮。
 
    ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮。](../images/excel-quickstart-addin-2a.png)
 
-3. 选择工作表中的任何一系列单元格。
+1. 选择工作表中的任何一系列单元格。
 
-4. 在任务窗格中，选择“**设置颜色**”按钮，将选定区域的颜色设置为绿色。
+1. 将选定区域的颜色设置为绿色。 在外接程序的任务窗格中，选择“**设置颜色**”按钮。
 
    ![Excel 屏幕截图，其中加载项任务窗格处于打开状态。](../images/excel-quickstart-addin-2c.png)
 
@@ -221,8 +240,8 @@ vue create my-add-in
 
 ## <a name="see-also"></a>另请参阅
 
-* [Office 加载项平台概述](../overview/office-add-ins.md)
-* [开发 Office 加载项](../develop/develop-overview.md)
-* [Excel 加载项中的 Word JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
-* [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
+- [Office 加载项平台概述](../overview/office-add-ins.md)
+- [开发 Office 加载项](../develop/develop-overview.md)
+- [Excel 加载项中的 Word JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
+- [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+- [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)

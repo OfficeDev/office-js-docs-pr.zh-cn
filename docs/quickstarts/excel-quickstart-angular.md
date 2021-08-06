@@ -1,17 +1,17 @@
 ---
 title: 使用 Angular 生成 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 和 Angular 生成简单的 Excel 任务窗格加载项。
-ms.date: 11/09/2020
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d843a74b3542df8dbc462ae2876179de7b42a2d2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 433c78a00604b29b93c3a774b5f21416075f5ff1
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076929"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774334"
 ---
-# <a name="build-an-excel-task-pane-add-in-using-angular"></a>使用 Angular 生成 Excel 任务窗格加载项
+# <a name="use-angular-to-build-an-excel-task-pane-add-in"></a>使用 Angular 生成 Excel 任务窗格加载项
 
 本文将逐步介绍如何使用 Angular 和 Excel JavaScript API 生成 Excel 任务加载项。
 
@@ -39,7 +39,7 @@ ms.locfileid: "53076929"
 
 使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。 如果想要浏览加载项项目的主要组件，请在代码编辑器中打开项目并检查下面列出的文件。 准备好试用加载项时，请转至下一部分。
 
-- 项目根目录中的 **manifest.xml** 文件定义加载项的设置和功能。
+- 项目根目录中的 **manifest.xml** 文件定义加载项的设置和功能。 有关 **manifest.xml** 文件的详细信息，请参阅 [ Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 - **./src/taskpane/app/app.component.html** 文件包含组成任务窗格的 HTML。
 - **./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。
 - **./src/taskpane/app/app.component.ts** 文件包含用于加快任务窗格与 Excel 之间的交互的 Office JavaScript API 代码。
@@ -52,15 +52,15 @@ ms.locfileid: "53076929"
     cd "My Office Add-in"
     ```
 
-2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
-3. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
+1. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
     ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮。](../images/excel-quickstart-addin-3b.png)
 
-4. 选择工作表中的任何一系列单元格。
+1. 选择工作表中的任何一系列单元格。
 
-5. 在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。
+1. 在任务窗格的底部，选择“**运行**”链接，价格选定范围的颜色设为黄色。
 
     ![Excel 的屏幕截图，其中“加载项”任务窗格处于打开状态，并且“加载项”任务窗格中突出显示“运行”按钮。](../images/excel-quickstart-addin-3c.png)
 
@@ -73,8 +73,8 @@ ms.locfileid: "53076929"
 
 ## <a name="see-also"></a>另请参阅
 
-* [Office 加载项平台概述](../overview/office-add-ins.md)
-* [开发 Office 加载项](../develop/develop-overview.md)
-* [Excel 加载项中的 Word JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
-* [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
+- [Office 加载项平台概述](../overview/office-add-ins.md)
+- [开发 Office 加载项](../develop/develop-overview.md)
+- [Excel 加载项中的 Word JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
+- [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+- [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)

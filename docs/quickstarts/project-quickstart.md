@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Project 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Project 任务窗格加载项。
-ms.date: 06/07/2021
+ms.date: 08/04/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 3589572c022e4fe3dc75cd25e5d378a3dab0c8b7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 43ad1218324e0399a93fe120450ceb75dd0bac43
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076572"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773074"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -96,7 +96,13 @@ Office.context.document.getSelectedTaskAsync(
     cd "My Office Add-in"
     ```
 
-2. 启动本地 Web 服务器。
+1. 安装项目的依赖项。
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. 启动本地 Web 服务器。
 
     > [!NOTE]
     > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
@@ -107,13 +113,13 @@ Office.context.document.getSelectedTaskAsync(
     npm run dev-server
     ```
 
-3. 在 Project 中，创建一个简单的项目计划。
+1. 在 Project 中，创建一个简单的项目计划。
 
-4. 按照[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)中的说明，在 Project 中加载你的加载项。
+1. 按照[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)中的说明，在 Project 中加载你的加载项。
 
-5. 在项目中选择单个任务。
+1. 在项目中选择单个任务。
 
-6. 在任务窗格的底部，选择“**运行**”链接以重命名所选任务并向所选任务添加备注。
+1. 在任务窗格的底部，选择“**运行**”链接以重命名所选任务并向所选任务添加备注。
 
     ![加载了任务窗格加载项的 Project 应用程序的屏幕截图。](../images/project-quickstart-addin-1.png)
 

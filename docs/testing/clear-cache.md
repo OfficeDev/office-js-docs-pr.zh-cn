@@ -1,20 +1,23 @@
 ---
 title: 清除 Office 缓存
 description: 了解如何清除计算机上的 Office 缓存。
-ms.date: 05/22/2020
+ms.date: 08/02/2021
 localization_priority: Priority
-ms.openlocfilehash: 3ead54f3479fdc912f916705fe84645f16392784
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8ae2408b2dbf36a0e5ebbdd863b8ddb49717a144
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350195"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773067"
 ---
 # <a name="clear-the-office-cache"></a>清除 Office 缓存
 
 你可以通过清除计算机上的 Office 缓存来删除以前在 Windows、Mac 或 iOS 上旁加载的加载项。
 
 此外，如果你对加载项的清单进行了更改（例如，更新图标的文件名或加载项命令的文本），则应清除 Office 缓存，然后使用更新后的清单重新旁加载此加载项。执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。
+
+> [!NOTE]
+> 若要从 Excel、OneNote、PowerPoint 或 Word 网页版中删除旁加载的加载项，请参阅 [在 Office 网页版中旁加载 Office 加载项以进行测试：删除旁加载的加载项](sideload-office-add-ins-for-testing.md#remove-a-sideloaded-add-in)。
 
 ## <a name="clear-the-office-cache-on-windows"></a>清除 Windows 上的 Office 缓存
 

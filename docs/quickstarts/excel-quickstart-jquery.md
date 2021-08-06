@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格加载项。
-ms.date: 1/19/2021
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 09abf03c5e345c61a4e98226930d79120c95949b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6f1ce6d14d1a9840011294028db3c7db5faa2e83
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076635"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774446"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
@@ -36,7 +36,7 @@ ms.locfileid: "53076635"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Excel`
 
-![Yeoman Office 外接程序生成器命令行界面的屏幕截图](../images/yo-office-excel.png)
+![Yeoman Office 加载项生成器命令行界面的屏幕截图。](../images/yo-office-excel.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -176,7 +176,7 @@ ms.locfileid: "53076635"
 
 ### <a name="update-the-manifest"></a>更新清单
 
-1. 在 **解决方案资源管理器** 中，转到 **ExcelWebAddIn1** 加载项项目并打开 **ExcelWebAddIn1Manifest** 目录。 此目录包含清单文件，即 **ExcelWebAddIn1.xml**。 此文件定义了加载项设置和功能。 请参阅上一节 [探索Visual Studio 解决方案](#explore-the-visual-studio-solution) ，详细了解由 Visual Studio 解决方案创建的两个项目。 
+1. 在 **解决方案资源管理器** 中，转到 **ExcelWebAddIn1** 加载项项目并打开 **ExcelWebAddIn1Manifest** 目录。 此目录包含清单文件，即 **ExcelWebAddIn1.xml**。 此文件定义了加载项设置和功能。 请参阅上一节 [探索Visual Studio 解决方案](#explore-the-visual-studio-solution) ，详细了解由 Visual Studio 解决方案创建的两个项目。
 
 2. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
 
@@ -202,13 +202,13 @@ ms.locfileid: "53076635"
 
 2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
-    ![Excel 主页菜单的屏幕截图，其中突出显示“显示任务窗格”按钮。](../images/excel-quickstart-addin-2a.png)
+    ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮。](../images/excel-quickstart-addin-2a.png)
 
 3. 选择工作表中的任何一系列单元格。
 
 4. 在任务窗格中，选择“**设置颜色**”按钮，将选定区域的颜色设置为绿色。
 
-    ![Excel 屏幕截图，其中加载项任务窗格打开。](../images/excel-quickstart-addin-2c.png)
+    ![Excel 屏幕截图，其中加载项任务窗格处于打开状态。](../images/excel-quickstart-addin-2c.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
@@ -220,8 +220,8 @@ ms.locfileid: "53076635"
 
 ## <a name="see-also"></a>另请参阅
 
-* [Office 加载项平台概述](../overview/office-add-ins.md)
-* [开发 Office 加载项](../develop/develop-overview.md)
-* [Excel 加载项中的 Word JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
-* [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
+- [Office 加载项平台概述](../overview/office-add-ins.md)
+- [开发 Office 加载项](../develop/develop-overview.md)
+- [Excel 加载项中的 Word JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
+- [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+- [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)

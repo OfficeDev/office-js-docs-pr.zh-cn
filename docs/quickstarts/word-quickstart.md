@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Word 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Word 任务窗格加载项。
-ms.date: 10/14/2020
+ms.date: 08/04/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: cbd10af6f1d811790e537b8d8a0ad509adae37e2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e236ba45bdb41e70dcd99ced88d761ff381d91cc
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076866"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774411"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 
@@ -57,7 +57,13 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
     cd "My Office Add-in"
     ```
 
-2. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
+1. 安装项目的依赖项。
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
 
     > [!NOTE]
     > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
@@ -83,11 +89,11 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
         若要使用加载项，请在 Word 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 
-3. 在 Word 中，打开新的文档，依次选择“**主页**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
+1. 在 Word 中，打开新的文档，依次选择“**主页**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
     ![显示突出显示“显示任务窗格”按钮的 Word 应用程序屏幕截图。](../images/word-quickstart-addin-2b.png)
 
-4. 在任务窗格底部，选择“**运行**”链接，以将文本“Hello World”以蓝色字体添加到文档中。
+1. 在任务窗格底部，选择“**运行**”链接，以将文本“Hello World”以蓝色字体添加到文档中。
 
     ![加载了任务窗格加载项的 Word 应用程序的屏幕截图。](../images/word-quickstart-addin-1c.png)
 
@@ -321,5 +327,5 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 - [开发 Office 加载项](../develop/develop-overview.md)
 - [Word 加载项概述](../word/word-add-ins-programming-overview.md)
 - 
-  [Word 加载项代码示例](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+  [Word 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Word)
 - [Word JavaScript API 参考](../reference/overview/word-add-ins-reference-overview.md)

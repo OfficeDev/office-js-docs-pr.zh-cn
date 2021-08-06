@@ -1,14 +1,14 @@
 ---
 title: 使用 Office 对话框 API 进行身份验证和授权
 description: 了解如何使用 Office 对话框 API 使用户能够登录到 Google、Facebook、Microsoft 365 以及受 Microsoft 标识平台保护的其他服务。
-ms.date: 07/19/2021
+ms.date: 07/22/2021
 localization_priority: Priority
-ms.openlocfilehash: 706e4f50cea0ae15ff6b7b0f12e18821d18f768d
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: ae96e9dc14302fc245744d644f8b68e54ca066f6
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671378"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773508"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
@@ -25,21 +25,22 @@ ms.locfileid: "53671378"
   - 没有与任务窗格共享的执行环境。
   - 它没有与任务窗格共享相同的会话存储（[Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性）。
 - 对话框中打开的第一个页面必须与任务窗格位于同一域中，包括协议、子域和端口（如果有）。
-- 该对话框可以使用 [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) 方法将信息发送回任务窗格。 （建议仅从与任务窗格托管在同一域中的页面，包括协议、子域、端口）调用此方法。 否则，调用方法和处理消息的方式会出现复杂情况。 有关详细信息，请参阅[向主机运行时跨域消息传递](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。）
+- 该对话框可以使用 [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) 方法将信息发送回任务窗格。 建议仅从与任务窗格托管在同一域中的页面调用此方法，包括协议、子域、端口。 否则，调用方法和处理消息的方式会出现复杂情况。 有关详细信息，请参阅[向主机运行时间跨域消息传递](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。
 
-如果该对话框不是 iframe（默认为否）, 则它可以打开身份提供程序的登录页面。 如下所示，该 Office 对话框的特征对你如何使用身份验证或授权库（例如 MSAL 和护照）有一定影响。
+
+默认情况下，对话框在全新的 Web 视图控件打开，而不是 iframe 中打开。 这可确保它可以打开标识提供程序的登录页面。 如下所示，该 Office 对话框的特征对如何使用身份验证或授权库（例如 MSAL 和护照）有一定影响。
 
 > [!NOTE]
 > 可通过以下方式配置要在浮动 iframe 中打开的对话框：只需在对 `displayDialogAsync` 的调用中传递 `displayInIframe: true` 选项。 使用对话框 API 登录时, 请 *不要* 这样做。
 
 ## <a name="authentication-flow-with-the-office-dialog-box"></a>使用 Office 对话框的身份验证流程
 
-下面是一个简单的典型身份验证流程。 图示后提供了详细信息。
+下面是一个典型的身份验证流程。
 
 ![显示任务窗格与对话框浏览器进程的关系的图示。](../images/taskpane-dialog-processes.gif)
 
-1. 对话框中打开的第一个页面托管在加载项域（即与任务窗格相同的域）中的一个页面（或其他资源）。 此页面可以显示简单的 UI，提示用户“请稍候，正在重定向到可以登录 *NAME-OF-PROVIDER* 的页面。” 此页面中的代码使用传递给对话框的信息（如[向对话框传递信息](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)中所述）构造身份提供程序的登录页 URL，或者硬编码到加载项的配置文件中，例如 web.config 文件。
-2. 然后，对话框窗口重定向到登录页。 URL 包含一个查询参数，用于告知身份提供程序在用户登录后将对话框窗口重定向到特定页面。 在本文中，我们将此页面称为 **redirectPage.html**。 *建议此页与主机窗口位于同一域中*。 在此页上，登录尝试的结果可以通过调用 `messageParent` 传递到任务窗格。
+1. 对话框中打开的第一个页面托管在加载项域（即与任务窗格相同的域）中的一个页面（或其他资源）。 此页面可以显示 UI，提示用户“请稍候，正在重定向到可以登录 *NAME-OF-PROVIDER* 的页面。” 此页面中的代码使用传递给对话框的信息（如[向对话框传递信息](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)中所述）构造身份提供程序的登录页 URL，或者硬编码到加载项的配置文件中，例如 web.config 文件。
+2. 然后，对话框窗口重定向到登录页。 URL 包含一个查询参数，用于告知身份提供程序在用户登录后将对话框窗口重定向到特定页面。 在本文中，我们将此页面称为 **redirectPage.html**。 在此页上，登录尝试的结果可以通过调用 `messageParent` 传递到任务窗格。 *建议此页与主机窗口位于同一域中*。
 3. 身份提供程序的服务处理来自对话框窗口的传入 GET 请求。 如果用户已经登录，它会立即将窗口重定向到 **redirectPage.html**，并包括用户数据作为查询参数。 如果用户尚未登录，提供程序的登录页会显示在窗口中，以便用户登录。 对于大多数提供程序，如果用户无法成功登录，提供程序会在对话框窗口中显示错误页面，而不会重定向到 **redirectPage.html**。 用户必须通过选择右上角的 **X** 来关闭窗口。 如果用户成功登录，则对话框窗口会重定向到 **redirectPage.html**，并包括用户数据会作为查询参数。
 4. 当 **redirectPage.html** 页面打开时，它会调用 `messageParent` 向任务窗格页报告登录是否成功，而且还会视情况报告用户数据或错误数据。 其他可能的消息包括传递访问令牌或告知任务窗格信息位于存储中。
 5. `DialogMessageReceived` 事件在任务窗格页中触发，其处理程序关闭对话框窗口，并可能对消息进行进一步处理。
@@ -77,13 +78,13 @@ Office 对话框和任务窗格在不同的浏览器、JavaScript 运行时实�
 或者，加载项的对话框浏览器实例可以直接调用库的交互式方法。 该方法返回令牌时，代码必须将令牌显式存储在任务窗格的浏览器可检索到的位置，例如本地存储\*或服务器端数据库。 另一种选择是使用 `messageParent` 方法将令牌传递到任务窗格。 仅当交互式方法将访问令牌存储在代码可以读取的位置时，才可以使用此替代选项。 有时，库的交互式方法设计为将令牌存储到代码无法访问的对象的私有属性中。
 
 > [!NOTE]
-> \*有一个 bug 将影响你的令牌处理策略。 如果加载项正使用 Safari 或 Microsoft 浏览器在 **Office 网页版** 上运行，则对话框和任务窗格不共享同一本地存储，因此该存储无法用于在它们之间通信。
+> \*有一个 bug 将影响你的令牌处理策略。 如果加载项正使用 Safari 或 Edge 浏览器在 **Office 网页版** 上运行，则对话框和任务窗格不共享同一本地存储，因此该存储无法在它们之间通信。
 
 ### <a name="you-usually-cannot-use-the-librarys-auth-context-object"></a>通常无法使用库的“身份验证上下文”对象
 
 通常情况下，与身份验证相关的库有一种方法，该方法既能够以交互方式获取令牌，也会创建方法返回的“身份验证上下文”对象。 令牌是对象的一个属性（可能是私有属性，并且无法直接从代码中访问）。 该对象具有从资源中获取数据的方法。 这些方法将令牌包括在其对资源提供程序（例如 Google、Microsoft Graph、Facebook 等）进行的 HTTP 请求中。
 
-这些身份验证上下文对象和创建它们的方法在 Office 加载项中不可用。由于登录发生在 Office 对话框的浏览器实例中，因此必须在该处创建对象。 但对资源的数据调用位于任务窗格浏览器实例中，因此无法将对象从一个实例获取到另一个实例。 例如，你无法通过 `messageParent` 传递对象，因为 `messageParent` 只能传递字符串值。 无法可靠地将包含方法的 JavaScript 对象字符串化。
+这些身份验证上下文对象和创建它们的方法在 Office 加载项中不可用。由于登录发生在 Office 对话框的浏览器实例中，因此必须在该处创建对象。 但对资源的数据调用位于任务窗格浏览器实例中，因此无法将对象从一个实例获取到另一个实例。 例如，无法通过 `messageParent` 传递对象，因为 `messageParent` 只能传递字符串值。 无法可靠地将包含方法的 JavaScript 对象字符串化。
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>如何将库与 Office 对话框 API 结合使用
 
@@ -97,7 +98,7 @@ Office 对话框和任务窗格在不同的浏览器、JavaScript 运行时实�
 - [Outlook 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)：与上面的加载项一样，但 Office 应用程序为 Outlook。
 - [Office 加载项 Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)：一个基于 NodeJS 的加载项（Excel、Word 或 PowerPoint），它使用 msal.js 库和隐式流进行登录并获取 Microsoft Graph 数据的访问令牌。
 
+## <a name="see-also"></a>另请参阅
 
-有关详细信息，请参阅：
 - [在 Office 加载项中授权外部服务](auth-external-add-ins.md)
 - [在 Office 加载项中使用对话框 API](dialog-api-in-office-add-ins.md)

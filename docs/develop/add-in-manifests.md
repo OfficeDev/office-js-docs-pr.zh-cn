@@ -1,14 +1,14 @@
 ---
 title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
-ms.date: 03/18/2020
+ms.date: 07/08/2020
 localization_priority: Priority
-ms.openlocfilehash: 7975d05f37d0318bb016c82cc5a7428f56d7fc30
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: aac1133c36eda13f4bf806331d2ebee5114e7ee1
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671392"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773515"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -38,7 +38,6 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 
 > [!NOTE]
 > 还存在强制性命令，其中元素必须出现在其父元素中。 有关详细信息，请参阅[如何查找清单元素的正确顺序](manifest-element-ordering.md)。
-
 
 ### <a name="required-elements-by-office-add-in-type"></a>Office 加载项类型的必需元素
 
@@ -101,7 +100,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="hosting-requirements"></a>托管要求
 
-所有图像 URI（如用于[外接程序命令][]的 URI）都必须支持缓存。 托管图像的服务器不得在 HTTP 响应中返回指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 标头。
+所有图像 URI，[如用于加载项命令的 URI][]都必须支持缓存。 托管图像的服务器不得在 HTTP 响应中返回指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 标头。
 
 所有 URL（如 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中指定的源文件位置）都应 **受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
@@ -120,12 +119,12 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](../reference/manifest/appdomains.md) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果加载项尝试转至该列表的域中的 URL，则它将在 Office 网页版和桌面版中的任务窗口中打开。 如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
 
 > [!NOTE]
-> 该行为有两个例外情况：
+> 该行为有两个例外情况。
 >
 > - 它仅适用于外接程序的根窗格。如果外接程序页面中嵌入有 iframe，则可以将该 iframe 定向到任何 URL，不论它是否列在 **AppDomains** 中，即使在桌面版 Office 中也是如此。
 > - 使用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displayDialogAsync_startAddress__options__callback_) API 打开对话框时，传递到方法的 URL 必须与外接程序位于相同的域，但是之后对话框可以定向到任意 URL，无论其是否列入 **AppDomains** 甚至桌面 Office 中。
 
-以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序页面。 它还指定 **AppDomains** 元素列表内 [AppDomain](../reference/manifest/appdomain.md) 元素中的 `https://www.northwindtraders.com` 域。 如果加载项转到 `www.northwindtraders.com` 域中的页面，此页面会在加载项窗格中打开，即使是在 Office 桌面版中，也不例外。
+以下 XML 清单示例在 `https://www.contoso.com` 域中托管其主加载项页，如 **SourceLocation** 元素中指定。它还指定 **AppDomains** 元素列表中的 [AppDomain](../reference/manifest/appdomain.md) 元素中的`https://www.northwindtraders.com`域。如果加载项转到`www.northwindtraders.com`域中的页面，则该页面将在加载项窗格中打开，在 Office 桌面中也是如此。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -496,7 +495,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 ## <a name="see-also"></a>另请参阅
 
 * [如何查找清单元素的正确顺序](manifest-element-ordering.md)
-* [在清单中创建加载项命令][加载项命令]
+* [在清单中创建外接程序命令][create-addin-commands.md]
 * [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)
 * [Office 外接程序的本地化](localization.md)
 * [Office 外接程序清单的架构参考](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
@@ -504,5 +503,3 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 * [标识等效的 COM 加载项](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [在加载项中请求获取 API 使用权限](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
 * [验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)
-
-[加载项命令]: create-addin-commands.md

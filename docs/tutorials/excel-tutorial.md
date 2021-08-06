@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
-description: 在本教程中，你将学习如何构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 05/12/2021
+description: 构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
+ms.date: 07/08/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: f169499e343d2fc7fac89f407b78717536add4fc
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 2441d5fa266ba0e10e64e2af55d6679a6c77af9f
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077237"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774145"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -54,25 +54,25 @@ ms.locfileid: "53077237"
 
 1. 在代码编辑器中打开项目。
 
-2. 打开 **./src/taskpane/taskpane.html** 文件。  此文件含有任务窗格的 HTML 标记。
+1. 打开 **./src/taskpane/taskpane.html** 文件。  此文件含有任务窗格的 HTML 标记。
 
-3. 找到 `<main>` 元素并删除在开始 `<main>` 标记后和关闭 `</main>` 标记前出现的所有行。
+1. 找到 `<main>` 元素并删除在开始 `<main>` 标记后和关闭 `</main>` 标记前出现的所有行。
 
-4. 打开 `<main>` 标记后立即添加下列标记：
+1. 打开 `<main>` 标记后立即添加下列标记：
 
     ```html
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-5. 打开 **./src/taskpane/taskpane.js** 文件。 此文件包含用于加快任务窗格与 Office 客户端应用程序之间的交互的 Office JavaScript API 代码。
+1. 打开 **./src/taskpane/taskpane.js** 文件。 此文件包含用于加快任务窗格与 Office 客户端应用程序之间的交互的 Office JavaScript API 代码。
 
-6. 执行以下操作，删除对 `run` 按钮和 `run()` 函数的所有引用：
+1. 执行以下操作，删除对 `run` 按钮和 `run()` 函数的所有引用：
 
     - 查找并删除行 `document.getElementById("run").onclick = run;`。
 
     - 查找并删除整个 `run()` 函数。
 
-7. 在 `Office.onReady` 方法调用中，找到行 `if (info.host === Office.HostType.Excel) {` 并紧接着行添加下列代码。 注意：
+1. 在 `Office.onReady` 方法调用中，找到行 `if (info.host === Office.HostType.Excel) {` 并紧接着行添加下列代码。 注意：
 
     - 此代码的第一部分确定用户的 Excel 版本是否支持某一版本的 Excel.js，其中包含此系列教程所使用全部 API。在生产性加载项中，使用条件块的文本块隐藏或启用调用不受支持的 API 的UI。这将使用户仍然能够使用其版本 Excel 所支持加载项的某些部分。
 
@@ -88,7 +88,7 @@ ms.locfileid: "53077237"
     document.getElementById("create-table").onclick = createTable;
     ```
 
-8. 将以下函数添加到文件结尾。 注意：
+1. 将以下函数添加到文件结尾。 注意：
 
     - Excel.js 业务逻辑将添加到传递给 `Excel.run` 的函数。 此逻辑不立即执行。 相反，它会被添加到挂起的命令队列中。
 
@@ -117,7 +117,7 @@ ms.locfileid: "53077237"
     }
     ```
 
-9. 在 `createTable()` 函数中，将 `TODO1` 替换为以下代码。 注意：
+1. 在 `createTable()` 函数中，将 `TODO1` 替换为以下代码。 注意：
 
     - 此代码通过使用工作表的表格集合的 `add` 方法来创建表格，即使是空的，也始终存在。 这是创建 Excel.js 对象的标准方式。 没有类构造函数 API，切勿使用 `new` 运算符创建 Excel 对象。 相反，请添加到父集合对象。
 
@@ -131,7 +131,7 @@ ms.locfileid: "53077237"
     expensesTable.name = "ExpensesTable";
     ```
 
-10. 在 `createTable()` 函数中，将 `TODO2` 替换为以下代码。 注意：
+1. 在 `createTable()` 函数中，将 `TODO2` 替换为以下代码。 注意：
 
     - 范围的单元格值是通过一组数组进行设置。
 
@@ -152,7 +152,7 @@ ms.locfileid: "53077237"
     ]);
     ```
 
-11. 在 `createTable()` 函数中，将 `TODO3` 替换为以下代码。 注意：
+1. 在 `createTable()` 函数中，将 `TODO3` 替换为以下代码。 注意：
 
     - 此代码将从零开始编制的索引传递给表格的列集合的 `getItemAt` 方法，以获取对“金额”列的引用。
 
@@ -169,7 +169,7 @@ ms.locfileid: "53077237"
     expensesTable.getRange().format.autofitRows();
     ```
 
-12. 验证是否已保存了对项目所做的所有更改。
+1. 验证是否已保存了对项目所做的所有更改。
 
 ### <a name="test-the-add-in"></a>测试加载项
 
@@ -199,11 +199,11 @@ ms.locfileid: "53077237"
 
         若要使用加载项，请在 Excel 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 
-2. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
+1. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
     ![Excel 主页菜单的屏幕截图，突出显示“显示任务窗格”按钮。](../images/excel-quickstart-addin-3b.png)
 
-3. 在任务窗格中，选择“**创建表**”按钮。
+1. 在任务窗格中，选择“**创建表**”按钮。
 
     ![Excel 的屏幕截图，显示带有“创建表格”按钮的加载项任务窗格，以及工作表中填充了“日期”、“商家”、“类别”和“金额”数据的表格。](../images/excel-tutorial-create-table-2.png)
 
@@ -215,21 +215,21 @@ ms.locfileid: "53077237"
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 定位 `<button>` 按钮的 `create-table` 元素，并在行后添加下列标记：
+1. 查找`create-table`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class=&quot;ms-Button&quot; id=&quot;filter-table&quot;>Filter Table</button><br/><br/>
     ```
 
-3. 打开 **./src/taskpane/taskpane.js** 文件。
+1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `create-table` 按钮的行，并在该行后添加以下代码：
+1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `create-table` 按钮的行，并在行后添加虾类代码。
 
     ```js
     document.getElementById(&quot;filter-table").onclick = filterTable;
     ```
 
-5. 将以下函数添加到文件末端：
+1. 将以下函数添加到文件结尾。
 
     ```js
     function filterTable() {
@@ -249,7 +249,7 @@ ms.locfileid: "53077237"
     }
     ```
 
-6. 在 `filterTable()` 函数中，将 `TODO1` 替换为以下代码。 注意：
+1. 在 `filterTable()` 函数中，将 `TODO1` 替换为以下代码。 注意：
 
    - 代码先将列名称传递给 `getItem` 方法（而不是像 `getItemAt` 方法一样将列索引传递给 `createTable` 方法），获取对需要筛选的列的引用。 由于用户可以移动表格列，因此给定索引处的列可能会在表格创建后更改。 所以，更安全的做法是，使用列名称获取对列的引用。 上一教程安全地使用了 `getItemAt`，因为是在与创建表格完全相同的方法中使用了它，所以用户没有机会移动列。
 
@@ -266,21 +266,21 @@ ms.locfileid: "53077237"
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 定位 `<button>` 按钮的 `filter-table` 元素，并在行后添加下列标记：
+1. 查找`filter-table`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
     ```
 
-3. 打开 **./src/taskpane/taskpane.js** 文件。
+1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `filter-table` 按钮的行，并在该行后添加以下代码：
+1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `filter-table` 按钮的行，并在行后添加虾类代码。
 
     ```js
     document.getElementById("sort-table").onclick = sortTable;
     ```
 
-5. 将以下函数添加到文件末端：
+1. 将以下函数添加到文件结尾。
 
     ```js
     function sortTable() {
@@ -299,7 +299,7 @@ ms.locfileid: "53077237"
     }
     ```
 
-6. 在 `sortTable()` 函数中，将 `TODO1` 替换为以下代码。 注意：
+1. 在 `sortTable()` 函数中，将 `TODO1` 替换为以下代码。 注意：
 
    - 此代码创建一组 `SortField` 对象，其中只有一个成员，因为加载项只对“商家”列进行了排序。
 
@@ -320,17 +320,17 @@ ms.locfileid: "53077237"
     expensesTable.sort.apply(sortFields);
     ```
 
-7. 验证是否已保存了对项目所做的所有更改。
+1. 验证是否已保存了对项目所做的所有更改。
 
 ### <a name="test-the-add-in"></a>测试加载项
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. 如果加载项任务窗格已在 Excel 中打开，转至 **Home** 选项卡并选中功能区中的“**显示任务窗格**”以打开。
+1. 如果加载项任务窗格已在 Excel 中打开，转至 **Home** 选项卡并选中功能区中的“**显示任务窗格**”以打开。
 
-3. 如果之前在此教程中添加的表格未在打开的工作表中出现，选择任务窗格中的“**创建表**”按钮。
+1. 如果之前在此教程中添加的表格未在打开的工作表中出现，选择任务窗格中的“**创建表**”按钮。
 
-4. 选择“**筛选表**”按钮和“**排序表**”按钮（按顺序和倒序中的任一顺序排序皆可）。
+1. 选择“**筛选表**”按钮和“**排序表**”按钮（按顺序和倒序中的任一顺序排序皆可）。
 
     ![Excel 的屏幕截图，其中“加载项”任务窗格中显示“筛选表”和“排序表”按钮。](../images/excel-tutorial-filter-and-sort-table-2.png)
 
@@ -342,21 +342,21 @@ ms.locfileid: "53077237"
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 定位 `<button>` 按钮的 `sort-table` 元素，并在行后添加下列标记： 
+1. 查找`sort-table`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class=&quot;ms-Button&quot; id=&quot;create-chart&quot;>Create Chart</button><br/><br/>
     ```
 
-3. 打开 **./src/taskpane/taskpane.js** 文件。
+1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `sort-table` 按钮的行，并在该行后添加以下代码：
+1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `sort-table` 按钮的行，并在行后添加虾类代码。
 
     ```js
     document.getElementById(&quot;create-chart").onclick = createChart;
     ```
 
-5. 将以下函数添加到文件末端：
+1. 将以下函数添加到文件结尾。
 
     ```js
     function createChart() {
@@ -379,7 +379,7 @@ ms.locfileid: "53077237"
     }
     ```
 
-6. 在 `createChart()` 函数中，将 `TODO1` 替换为以下代码。 请注意，为了排除标题行，此代码使用 `Table.getDataBodyRange` 方法（而不是 `getRange` 方法），获取要绘制成图表的数据的范围。
+1. 在 `createChart()` 函数中，将 `TODO1` 替换为以下代码。 请注意，为了排除标题行，此代码使用 `Table.getDataBodyRange` 方法（而不是 `getRange` 方法），获取要绘制成图表的数据的范围。
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -387,7 +387,7 @@ ms.locfileid: "53077237"
     var dataRange = expensesTable.getDataBodyRange();
     ```
 
-7. 在 `createChart()` 函数中，将 `TODO2` 替换为以下代码。 请注意以下参数：
+1. 在 `createChart()` 函数中，将 `TODO2` 替换为以下代码。 请注意以下参数。
 
    - `add` 方法的第一个参数指定图表类型。有几十种类型。
 
@@ -399,7 +399,7 @@ ms.locfileid: "53077237"
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
-8. 在 `createChart()` 函数中，将 `TODO3` 替换为以下代码。 此代码的大部分内容非常直观明了。 注意：
+1. 在 `createChart()` 函数中，将 `TODO3` 替换为以下代码。 此代码的大部分内容非常直观明了。 注意：
 
    - `setPosition` 方法的参数指定应包含图表的工作表区域的左上角和右下角单元格。 Excel 可以调整行宽等设置，以便图表能够适应所提供的空间。
 
@@ -415,17 +415,17 @@ ms.locfileid: "53077237"
     chart.series.getItemAt(0).name = 'Value in \u20AC';
     ```
 
-9. 验证是否已保存了对项目所做的所有更改。
+1. 验证是否已保存了对项目所做的所有更改。
 
 ### <a name="test-the-add-in"></a>测试加载项
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. 如果加载项任务窗格已在 Excel 中打开，转至 **Home** 选项卡并选中功能区中的“**显示任务窗格**”以打开。
+1. 如果加载项任务窗格已在 Excel 中打开，转至 **Home** 选项卡并选中功能区中的“**显示任务窗格**”以打开。
 
-3. 如果之前在此教程中添加的表格未在打开的工作表中出现，选择任务窗格中的“**创建表**”按钮，随后选择“**筛选表**”按钮和“**排序表**”按钮（按顺序和倒序中的任一顺序排序皆可）。
+1. 如果之前在此教程中添加的表格未在打开的工作表中出现，选择任务窗格中的“**创建表**”按钮，随后选择“**筛选表**”按钮和“**排序表**”按钮（按顺序和倒序中的任一顺序排序皆可）。
 
-4. 选择 **“创建图表”** 按钮。 此时，图表创建完成，其中仅包含筛选出的行中的数据。 底部数据点上的标签按图表的排序顺序进行排序，即按商家名称的字母倒序排序。
+1. 选择 **“创建图表”** 按钮。 此时，图表创建完成，其中仅包含筛选出的行中的数据。 底部数据点上的标签按图表的排序顺序进行排序，即按商家名称的字母倒序排序。
 
     ![Excel 的屏幕截图，在“加载项”任务窗格中显示“创建图表”按钮，工作表中显示杂货和教育费用数据的图表。](../images/excel-tutorial-create-chart-2.png)
 
@@ -437,21 +437,21 @@ ms.locfileid: "53077237"
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 定位 `<button>` 按钮的 `create-chart` 元素，并在行后添加下列标记：
+1. 查找`create-chart`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class=&quot;ms-Button&quot; id=&quot;freeze-header&quot;>Freeze Header</button><br/><br/>
     ```
 
-3. 打开 **./src/taskpane/taskpane.js** 文件。
+1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-4. 在 `Office.onReady` 方法调用中，找到用于将单击处理程序分配到 `create-chart` 按钮的行，并在该行后添加以下代码：
+1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `create-chart` 按钮的行，并在行后添加虾类代码。
 
     ```js
     document.getElementById(&quot;freeze-header").onclick = freezeHeader;
     ```
 
-5. 将以下函数添加到文件末端：
+1. 将以下函数添加到文件结尾。
 
     ```js
     function freezeHeader() {
@@ -470,7 +470,7 @@ ms.locfileid: "53077237"
     }
     ```
 
-6. 在 `freezeHeader()` 函数中，将 `TODO1` 替换为以下代码。 注意：
+1. 在 `freezeHeader()` 函数中，将 `TODO1` 替换为以下代码。 注意：
 
    - `Worksheet.freezePanes` 集合是工作表中的一组窗格，在工作表滚动时就地固定或冻结。
 
@@ -481,21 +481,21 @@ ms.locfileid: "53077237"
     currentWorksheet.freezePanes.freezeRows(1);
     ```
 
-7. 验证是否已保存了对项目所做的所有更改。
+1. 验证是否已保存了对项目所做的所有更改。
 
 ### <a name="test-the-add-in"></a>测试加载项
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. 如果加载项任务窗格已在 Excel 中打开，转至 **Home** 选项卡并选中功能区中的“**显示任务窗格**”以打开。
+1. 如果加载项任务窗格已在 Excel 中打开，转至 **Home** 选项卡并选中功能区中的“**显示任务窗格**”以打开。
 
-3. 如果之前在此教程中添加的表格出现在此工作表中，将其删除。
+1. 如果之前在此教程中添加的表格出现在此工作表中，将其删除。
 
-4. 在任务窗格中，选择“**创建表**”按钮。
+1. 在任务窗格中，选择“**创建表**”按钮。
 
-5. 在任务窗格中，选择“**冻结标题**”按钮。
+1. 在任务窗格中，选择“**冻结标题**”按钮。
 
-6. 尽量向下滚动工作表，直到在上面的行不可见时表格标题在顶部依然可见。
+1. 尽量向下滚动工作表，直到在上面的行不可见时表格标题在顶部依然可见。
 
     ![显示带有冻结表格标题的 Excel 工作表的屏幕截图。](../images/excel-tutorial-freeze-header-2.png)
 
@@ -507,7 +507,7 @@ ms.locfileid: "53077237"
 
 1. 打开清单文件 **./manifest.xml**。
 
-2. 查找 `<Control>` 元素。 此元素定义了“主页”功能区上一直用于启动加载项的“显示任务窗格”按钮。 将向“主页”功能区上的相同组添加第二个按钮。 在结束 `</Control>` 标记和结束 `</Group>` 标记之间，添加以下标记。
+1. 查找 `<Control>` 元素。 此元素定义了“主页”功能区上一直用于启动加载项的“显示任务窗格”按钮。 将向“主页”功能区上的相同组添加第二个按钮。 在结束 `</Control>` 标记和结束 `</Group>` 标记之间，添加以下标记。
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -527,19 +527,19 @@ ms.locfileid: "53077237"
     </Control>
     ```
 
-3. 在刚添加至清单文件的 XML 内，将 `TODO1` 替换为字符串，以便向按钮提供在此清单文件内唯一的 ID。 由于按钮将启用和禁用工作表保护，因此请使用“ToggleProtection”。 完成时，`Control` 元素的开始标记如下所示：
+1. 在刚添加至清单文件的 XML 内，将 `TODO1` 替换为字符串，以便向按钮提供在此清单文件内唯一的 ID。 由于按钮将启用和禁用工作表保护，因此请使用“ToggleProtection”。 完成时，`Control` 元素的开始标记如下所示：
 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-4. 接下来的三个 `TODO` 设置资源 ID，或 `resid`。 资源是字符串（最大长度为 32 个字符），这三个字符串将在后续步骤中创建。 现在，需要向资源提供 ID。 虽然按钮标签应名为“切换保护”，但此字符串的 *ID* 应为“ProtectionButtonLabel”。因此 `Label` 元素的样式如下：
+1. 接下来的三个 `TODO` 设置资源 ID，或 `resid`。 资源是字符串（最大长度为 32 个字符），这三个字符串将在后续步骤中创建。 现在，需要向资源提供 ID。 虽然按钮标签应名为“切换保护”，但此字符串的 *ID* 应为“ProtectionButtonLabel”。因此 `Label` 元素的样式如下：
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. `SuperTip` 元素定义了按钮的工具提示。 由于工具提示标题应与按钮标签相同，因此使用完全相同的资源 ID，即“ProtectionButtonLabel”。 工具提示说明为“单击即可启用和禁用工作表保护”。 不过，`resid` 应为“ProtectionButtonToolTip”。 完成后，`SuperTip` 元素如下所示：
+1. `SuperTip` 元素定义了按钮的工具提示。 由于工具提示标题应与按钮标签相同，因此使用完全相同的资源 ID，即“ProtectionButtonLabel”。 工具提示说明为“单击即可启用和禁用工作表保护”。 不过，`resid` 应为“ProtectionButtonToolTip”。 完成后，`SuperTip` 元素如下所示：
 
     ```xml
     <Supertip>
@@ -551,13 +551,13 @@ ms.locfileid: "53077237"
    > [!NOTE]
    > 在生产加载项中，不建议对两个不同的按钮使用相同的图标；但为了简单起见，本教程将采用这样的做法。 因此，新 `Icon` 中的 `Control` 标记直接就是现有 `Icon` 中 `Control` 元素的副本。
 
-6. 虽然原始 `Control` 元素内的 `Action` 元素的类型设置为 `ShowTaskpane`，但新按钮不会要打开任务窗格，而是要运行在后续步骤中创建的自定义函数。 因此，将 `TODO5` 替换为 `ExecuteFunction`，即触发自定义函数的按钮的操作类型。 `Action` 元素的开始标记如下所示：
+1. 虽然原始 `Control` 元素内的 `Action` 元素的类型设置为 `ShowTaskpane`，但新按钮不会要打开任务窗格，而是要运行在后续步骤中创建的自定义函数。 因此，将 `TODO5` 替换为 `ExecuteFunction`，即触发自定义函数的按钮的操作类型。 `Action` 元素的开始标记如下所示：
 
     ```xml
     <Action xsi:type="ExecuteFunction">
     ```
 
-7. 原始 `Action` 元素的子元素指定任务窗格 ID，以及应当在任务窗格中打开的页面 URL。 不过，`Action` 类型的 `ExecuteFunction` 元素只有一个子元素，用于命名控件执行的函数。 此函数（名为 `toggleProtection`）将在后续步骤中创建。 因此，将 `TODO6` 替换为以下标记：
+1. 原始 `Action` 元素的子元素指定任务窗格 ID，以及应当在任务窗格中打开的页面 URL。 不过，`ExecuteFunction` 类型的 `Action` 元素只有一个单独子元素，用于命名控件执行的函数。 此函数（名为 `toggleProtection`）将在后续步骤中创建。 因此，将 `TODO6` 替换为以下标记。
 
     ```xml
     <FunctionName>toggleProtection</FunctionName>
@@ -583,27 +583,27 @@ ms.locfileid: "53077237"
     </Control>
     ```
 
-8. 向下滚动到清单的 `Resources` 部分。
+1. 向下滚动到清单的 `Resources` 部分。
 
-9. 将下列标记添加为 `bt:ShortStrings` 元素的子级。
+1. 将下列标记添加为 `bt:ShortStrings` 元素的子级。
 
     ```xml
     <bt:String id="ProtectionButtonLabel" DefaultValue="Toggle Worksheet Protection" />
     ```
 
-10. 将下列标记添加为 `bt:LongStrings` 元素的子级。
+1. 将下列标记添加为 `bt:LongStrings` 元素的子级。
 
     ```xml
     <bt:String id="ProtectionButtonToolTip" DefaultValue="Click to protect or unprotect the current worksheet." />
     ```
 
-11. 保存文件。
+1. 保存文件。
 
 ### <a name="create-the-function-that-protects-the-sheet"></a>创建工作表保护函数
 
 1. 打开文件 **.\commands\commands.js**。
 
-2. 紧接着 `action` 函数添加下列函数。 注意，我们向函数和函数调用 `args.completed` 的最后一行指定了 `args` 参数。 **ExecuteFunction** 类型的所有加载项命令都必须满足这项要求。 它会指示 Office 客户端应用程序，函数已完成，且 UI 可以再次变得可响应。
+1. 紧接着 `action` 函数添加下列函数。 注意，我们向函数和函数调用 `args.completed` 的最后一行指定了 `args` 参数。 **ExecuteFunction** 类型的所有加载项命令都必须满足这项要求。 它会指示 Office 客户端应用程序，函数已完成，且 UI 可以再次变得可响应。
 
     ```js
     function toggleProtection(args) {
@@ -623,13 +623,13 @@ ms.locfileid: "53077237"
     }
     ```
 
-3. 添加下列行至文件结尾：
+1. 添加下列行至文件结尾：
 
     ```js
     g.toggleProtection = toggleProtection;
     ```
 
-4. 在 `toggleProtection` 函数中，将 `TODO1` 替换为以下代码。 此代码使用处于标准切换模式的工作表对象 protection 属性。 `TODO2` 将在下一部分中进行介绍。
+1. 在 `toggleProtection` 函数中，将 `TODO1` 替换为以下代码。 此代码使用处于标准切换模式的工作表对象 protection 属性。 `TODO2` 将在下一部分中进行介绍。
 
     ```js
     var sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -646,13 +646,13 @@ ms.locfileid: "53077237"
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>添加代码以将文档属性提取到任务窗格的脚本对象
 
-在此教程中创建的各函数内，通过对命令进行排队来 *写入* Office 文档。 每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。 但是在上一步中添加的代码调用的是 `sheet.protection.protected property` ， 这与之前编写的函数明显不同，因为 `sheet` 对象只是任务窗格脚本中的代理对象。 代理对象并不了解文档的实际保护状态，因此它的 `protection.protected` 属性无法有实值。 为避免出现异常错误，必须首先从文档中获取保护状态并使用它来设置值 `sheet.protection.protected`。 此提取过程分为三步：
+在此教程中创建的各函数内，通过对命令进行排队来 *写入* Office 文档。 每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。 但是在上一步中添加的代码调用的是 `sheet.protection.protected property` ， 这与之前编写的函数明显不同，因为 `sheet` 对象只是任务窗格脚本中的代理对象。 代理对象并不了解文档的实际保护状态，因此它的 `protection.protected` 属性无法有实值。 为避免出现异常错误，必须首先从文档中获取保护状态并使用它来设置值 `sheet.protection.protected`。 此获取过程分为三步。
 
    1. 将命令排入队列，以加载（即提取）代码需要读取的属性。
 
-   2. 调用上下文对象的 `sync`方法，从而向文档发送已排入队列的命令以供执行，并返回请求获取的信息。
+   1. 调用上下文对象的 `sync`方法，从而向文档发送已排入队列的命令以供执行，并返回请求获取的信息。
 
-   3. 由于 `sync` 是异步方法，因此请先确保它已完成，然后代码才能调用已提取的属性。
+   1. 由于 `sync` 是异步方法，因此请先确保它已完成，然后代码才能调用已提取的属性。
 
 只要代码需要从 Office 文档 *读取* 信息，就必须完成这些步骤。
 
@@ -674,11 +674,11 @@ ms.locfileid: "53077237"
         //        does not run until the toggle logic has been queued.
     ```
 
-2. 由于不能在同一取消分支代码路径中有两个 `return` 语句，因此请删除 `return context.sync();` 末尾的最后一行代码 `Excel.run`。 新的最后一行代码 `context.sync`将在后续步骤中添加。
+1. 由于不能在同一取消分支代码路径中有两个 `return` 语句，因此请删除 `return context.sync();` 末尾的最后一行代码 `Excel.run`。 新的最后一行代码 `context.sync`将在后续步骤中添加。
 
-3. 剪切并粘贴 `toggleProtection` 函数中的 `if ... else` 结构，以替换 `TODO3`。
+1. 剪切并粘贴 `toggleProtection` 函数中的 `if ... else` 结构，以替换 `TODO3`。
 
-4. 将 `TODO4` 替换为以下代码。注意：
+1. 将 `TODO4` 替换为以下代码。注意：
 
    - 将 `sync` 方法传递到 `then` 函数可确保它不会在 `sheet.protection.unprotect()` 或 `sheet.protection.protect()` 已排入队列前运行。
 
@@ -718,28 +718,29 @@ ms.locfileid: "53077237"
     }
     ```
 
-5. 验证是否已保存了对项目所做的所有更改。
+1. 验证是否已保存了对项目所做的所有更改。
 
 ### <a name="test-the-add-in"></a>测试加载项
 
 1. 关闭包括 Excel 在内的所有 Office 应用。
 
-2. 通过删除缓存文件夹内容（全部文件和子文件夹）删除 Office 缓存。若要完全清楚客户端应用程序中的旧版加载项，必须执行此项操作。
+1. 通过删除缓存文件夹内容（全部文件和子文件夹）删除 Office 缓存。若要完全清楚客户端应用程序中的旧版加载项，必须执行此项操作。
 
     - 对于 Windows：`%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`。
 
     - 对于 Mac：`~/Library/Containers/com.Microsoft.OsfWebHost/Data/`。
 
       > [!NOTE]
-      > 如果文件夹不存在，查看下列文件夹，如果找到，删除文件夹的内容：
+      > 如果文件夹不存在，请检查是否存在以下文件夹，如果找到，请删除文件夹的内容。
+      >
       >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/`，其中，`{host}` 是 Office 应用程序（例如 `Excel`）
       >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/`，其中，`{host}` 是 Office 应用程序（例如 `Excel`）
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
-3. 如果本地 web 服务器已在运行，通过关闭节点命令窗口以停止。
+1. 如果本地 web 服务器已在运行，通过关闭节点命令窗口以停止。
 
-4. 因为清单文件已更新，必须使用已更新的清单文件，重新旁加载加载项。 启动本地 Web 服务器并旁加载你的加载项：
+1. 因为清单文件已更新，必须使用已更新的清单文件，重新旁加载加载项。 启动本地 Web 服务器并旁加载你的加载项：
 
     - 若要在 Excel 中测试加载项，请在项目的根目录中运行以下命令。 这将启动本地的 Web 服务器 (如果尚未运行的话), 并使用加载的加载项打开 Excel。
 
@@ -755,13 +756,13 @@ ms.locfileid: "53077237"
 
         若要使用加载项，请在 Excel 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 
-5. 在 Excel 的 **Home** 选项卡上，选择“**切换工作表保护**”按钮。 请注意，功能区上的大部分控件都处于禁用状态（灰显），如下面的屏幕截图所示。
+1. 在 Excel 的 **Home** 选项卡上，选择“**切换工作表保护**”按钮。 请注意，功能区上的大部分控件都处于禁用状态（灰显），如下面的屏幕截图所示。
 
     ![突出显示并启用“切换工作表保护”按钮的 Excel 功能区屏幕截图。 大多数其他按钮显示为灰色并已禁用。](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
-6. 选择要更改其内容的单元格。Excel 将显示一条错误信息，说明工作表处于受保护状态。
+1. 选择要更改其内容的单元格。Excel 将显示一条错误信息，说明工作表处于受保护状态。
 
-7. 再次选择“**切换工作表保护**”按钮，此时控件重新启用，可以再次更改单元格值。
+1. 再次选择“**切换工作表保护**”按钮，此时控件重新启用，可以再次更改单元格值。
 
 ## <a name="open-a-dialog"></a>打开对话框
 
@@ -771,9 +772,9 @@ ms.locfileid: "53077237"
 
 1. 在项目根目录下的 **./src** 文件夹中，新建文件夹“**dialogs**”。
 
-2. 在 **./src/dialogs** 文件夹中，新建文件“**popup.html**”。
+1. 在 **./src/dialogs** 文件夹中，新建文件“**popup.html**”。
 
-3. 将以下标记添加到 **popup.html** 中。注意：
+1. 将以下标记添加到 **popup.html** 中。注意：
 
    - 此页面包含可供用户输入用户名的 `<input>` 字段，并包含将此名称发送到将在其中显示的任务窗格的按钮。
 
@@ -804,9 +805,9 @@ ms.locfileid: "53077237"
     </html>
     ```
 
-4. 在 **./src/dialogs** 文件夹中，新建文件“**popup.js**”。
+1. 在 **./src/dialogs** 文件夹中，新建文件“**popup.js**”。
 
-5. 将下面的代码添加到 **popup.js** 中。 关于此代码，请注意以下几点：
+1. 将下面的代码添加到 **popup.js** 中。 对于此代码，请注意以下事项。
 
    - *每个调用 Office.JS 库中的 API 的页面均必须首先确保该库已完成初始化。* 执行此操作的最佳方法是调用 `Office.onReady()` 方法。 如果加载项具有其自己的初始化任务，则代码应位于链接至 `Office.onReady()` 调用的 `then()` 方法中。 必须在调用 Office.js 之前运行 `Office.onReady()` 调用；因此，作业位于由页面加载的脚本文件中，如同本示例中一样。
 
@@ -826,13 +827,13 @@ ms.locfileid: "53077237"
     }());
     ```
 
-6. 使用以下代码替换 `TODO1`。你将在下一步中创建 `sendStringToParentPage` 函数。
+1. 使用以下代码替换 `TODO1`。你将在下一步中创建 `sendStringToParentPage` 函数。
 
     ```js
     document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
-7. 将 `TODO2` 替换为以下代码。 `messageParent` 方法将它的参数传递到父页面（在此示例中，为任务窗格中的页面）。 参数必须是字符串，其中包括任何可以序列化为字符串的内容（例如 XML 或 JSON），或者任何可以转换为字符串的类型。
+1. 将 `TODO2` 替换为以下代码。 `messageParent` 方法将它的参数传递到父页面（在此示例中，为任务窗格中的页面）。 参数必须是字符串，其中包括任何可以序列化为字符串的内容（例如 XML 或 JSON），或者任何可以转换为字符串的类型。
 
     ```js
     function sendStringToParentPage() {
@@ -854,7 +855,7 @@ ms.locfileid: "53077237"
     popup: "./src/dialogs/popup.js"
     ```
 
-    完成此操作之后，新的 `entry` 对象将与此类似：
+    完成此操作之后，新的 `entry` 对象将与此类似。
 
     ```js
     entry: {
@@ -865,7 +866,7 @@ ms.locfileid: "53077237"
     },
     ```
   
-2. 在 `config` 对象中找到 `plugins` 数组，并添加下列对象至数组的结尾。
+1. 在 `config` 对象中找到 `plugins` 数组，并添加下列对象至数组的结尾。
 
     ```js
     new HtmlWebpackPlugin({
@@ -875,7 +876,7 @@ ms.locfileid: "53077237"
     })
     ```
 
-    完成此操作之后，新的 `plugins` 数组将与此类似：
+    完成此操作之后，新的 `plugins` 数组将与此类似。
 
     ```js
     plugins: [
@@ -904,9 +905,9 @@ ms.locfileid: "53077237"
     ],
     ```
 
-3. 如果本地 web 服务器正在运行，通过关闭节点命令窗口以停止。
+1. 如果本地 web 服务器正在运行，通过关闭节点命令窗口以停止。
 
-4. 运行以下命令以重建项目。
+1. 运行以下命令以重建项目。
 
     ```command&nbsp;line
     npm run build
@@ -916,33 +917,33 @@ ms.locfileid: "53077237"
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
-2. 定位 `<button>` 按钮的 `freeze-header` 元素，并在行后添加下列标记：
+1. 查找`freeze-header`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>
     ```
 
-3. 对话框会提示用户输入用户名，并将用户名传递到任务窗格。 任务窗格将在标签中显示用户名。 紧接着刚添加的 `button`，添加下列标记：
+1. 对话框会提示用户输入用户名，并将用户名传递到任务窗格。 任务窗格将在标签中显示用户名。 紧接着刚添加的 `button`，添加下列标记。
 
     ```html
     <label id="user-name"></label><br/><br/>
     ```
 
-4. 打开 **./src/taskpane/taskpane.js** 文件。
+1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-5. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `freeze-header` 按钮的行，并在行后添加虾类代码。 将在后续步骤中创建 `openDialog` 方法。
+1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `freeze-header` 按钮的行，并在行后添加虾类代码。 将在后续步骤中创建 `openDialog` 方法。
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;
     ```
 
-6. 添加下列声明至文件结尾。此变量用于保留父页面执行文本中的对象，以用作对话框页面执行文本的中间对象。
+1. 添加下列声明至文件结尾。此变量用于保留父页面执行文本中的对象，以用作对话框页面执行文本的中间对象。
 
     ```js
     var dialog = null;
     ```
 
-7. 添加下列函数至文件结尾（`dialog` 声明后）。 关于此代码，请务必注意它 *不* 包含的内容，即不含 `Excel.run` 调用。 这是因为用于打开对话框的 API 跨所有 Office 应用程序共享，所以它属于 Office JavaScript 通用 API，而非 Excel 专用 API。
+1. 添加下列函数至文件结尾（`dialog` 声明后）。 关于此代码，请务必注意它 *不* 包含的内容，即不含 `Excel.run` 调用。 这是因为用于打开对话框的 API 跨所有 Office 应用程序共享，所以它属于 Office JavaScript 通用 API，而非 Excel 专用 API。
 
     ```js
     function openDialog() {
@@ -950,7 +951,7 @@ ms.locfileid: "53077237"
     }
     ```
 
-8. 将 `TODO1` 替换为以下代码。注意：
+1. 将 `TODO1` 替换为以下代码。注意：
 
    - `displayDialogAsync` 方法在屏幕中央打开对话框。
 
@@ -984,7 +985,7 @@ ms.locfileid: "53077237"
     }
     ```
 
-2. 在 `openDialog` 函数后面添加以下函数。
+1. 在 `openDialog` 函数后面添加以下函数。
 
     ```js
     function processMessage(arg) {
@@ -993,27 +994,27 @@ ms.locfileid: "53077237"
     }
     ```
 
-3. 验证是否已保存了对项目所做的所有更改。
+1. 验证是否已保存了对项目所做的所有更改。
 
 ### <a name="test-the-add-in"></a>测试加载项
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-2. 如果加载项任务窗格已在 Excel 中打开，转至 **Home** 选项卡并选中功能区中的“**显示任务窗格**”以打开。
+1. 如果加载项任务窗格已在 Excel 中打开，转至 **Home** 选项卡并选中功能区中的“**显示任务窗格**”以打开。
 
-3. 选择任务窗格中的“打开对话框”按钮。
+1. 选择任务窗格中的“打开对话框”按钮。
 
-4. 对话框打开时，拖动它并调整其大小。请注意，可与工作表进行交互，然后按任务窗格中的其他按钮，但无法从同一任务窗格页面中启动第二个对话框。
+1. 对话框打开时，拖动它并调整其大小。请注意，可与工作表进行交互，然后按任务窗格中的其他按钮，但无法从同一任务窗格页面中启动第二个对话框。
 
-5. 在对话框中，输入名称并选择“**确定**”。 此时，用户名显示在任务窗格上，且对话框关闭。
+1. 在对话框中，输入名称并选择“**确定**”。 此时，用户名显示在任务窗格上，且对话框关闭。
 
-6. （可选）注释掉 `processMessage` 函数中的代码行 `dialog.close();`。 然后，重复执行此部分的步骤。 这样一来，对话框便会继续处于打开状态，可供用户更改用户名。 按右上角的“X”按钮，可手动关闭对话框。
+1. （可选）注释掉 `processMessage` 函数中的代码行 `dialog.close();`。 然后，重复执行此部分的步骤。 这样一来，对话框便会继续处于打开状态，可供用户更改用户名。 按右上角的“X”按钮，可手动关闭对话框。
 
     ![Excel 的屏幕截图，在“加载项”任务窗格中显示“打开”对话框按钮，并在工作表上显示对话框。](../images/excel-tutorial-dialog-open-2.png)
 
 ## <a name="next-steps"></a>后续步骤
 
-在本教程中，你已创建与 Excel 工作簿中的表格、图表、工作表和对话框进行交互的 Excel 任务窗格加载项。 若要了解有关构建 Excel 加载项的详细信息，请继续阅读以下文章：
+在本教程中，你已创建与 Excel 工作簿中的表格、图表、工作表和对话框进行交互的 Excel 任务窗格加载项。 若要了解有关构建 Excel 加载项的详细信息，请继续阅读以下文章。
 
 > [!div class="nextstepaction"]
 > [Excel 加载项概述](../excel/excel-add-ins-overview.md)

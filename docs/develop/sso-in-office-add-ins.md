@@ -1,17 +1,16 @@
 ---
 title: 为 Office 加载项启用单一登录
 description: 了解如何使用常用的 Microsoft 个人、工作或教育帐户来为 Office 加载项启用单一登录。
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: a776b434f42428cfc65b23a67f9ba6518028f677
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f24cfb2bb9fa90f566a2730d7a289371084a2abc
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671497"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773746"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>为 Office 加载项启用单一登录
-
 
 用户可以使用自己的个人 Microsoft 帐户/Microsoft 365 教育版或工作帐户，登录 Office（在线、移动和桌面平台）。可以利用这一点，使用单点登录 (SSO) 将用户授权给加载项，让用户无需登录第二次。
 
@@ -22,8 +21,6 @@ ms.locfileid: "53671497"
 如果使用的是 **Outlook** 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
 *不应* 依赖 SSO 作为加载项的唯一身份验证方法。 应实现备用身份验证系统，在某些错误情况下，加载项可以返回到该系统。 可以使用包含用户表和身份验证的系统，也可以利用其中某个社交登录提供者。 有关如何使用 Office 插件进行此操作的详细信息，请参见[授权 Office 加载项中的外部服务](auth-external-add-ins.md)。 对于 *Outlook*，建议使用回退系统。 有关详细信息，请参阅[应用场景：在 Outlook 外接程序中对服务实现单一登录](../outlook/implement-sso-in-outlook-add-in.md)。 有关使用 Azure Active Directory 作为回退系统的示例，请参阅 [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) 和 [Office 加载项 ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)。
-
-
 
 ## <a name="how-sso-works-at-runtime"></a>运行时 SSO 的工作方式
 
@@ -63,7 +60,7 @@ ms.locfileid: "53671497"
 
 ### <a name="configure-the-add-in"></a>配置加载项
 
-向外接程序清单添加新标记：
+向加载项清单添加新标记。
 
 - **WebApplicationInfo** - 下列元素的父元素。
 - **ID** - 加载项的客户端 ID。这是在注册加载项时获得的应用程序 ID。 请参阅[向 Azure AD v2.0 端点注册使用 SSO 的 Office 加载项](register-sso-add-in-aad-v2.md)。
@@ -103,7 +100,6 @@ ms.locfileid: "53671497"
 
 > [!NOTE]
 > 此示例只显式处理一种错误。 有关更详细的错误处理的示例，请参阅 [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) 和 [Office 加载项 ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)。
-
 
 ```js
 async function getGraphData() {

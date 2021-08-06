@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的身份验证和授权概述
 description: 要求用户在 Web 应用程序和 Office 加载项中对登录进行身份验证。
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 6759d35e9460c4e72bad8cca187b0b429c140487
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 8c1330b4739929f0c7d4a2b3fda16ea38ad76fd7
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671194"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774194"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office 加载项中的身份验证和授权概述
 
@@ -41,7 +41,7 @@ Web 应用程序和 Office 加载项默认允许匿名访问，但你可要求�
 
 代码从令牌中提取所需的声明后，它将使用该值在你保留的用户表或用户数据库中查找用户。 使用数据库来用户用户首选项或用户帐户状态等用户相关信息。 由于你在使用 SSO，因此你的用户不单独登录到你的加载项，你无需存储用户的密码。
 
-在开始使用 SSO 实现用户身份验证之前，请确保你完全熟悉[为 Office 加载项启用单一登录](sso-in-office-add-ins.md)一文。另请注意下述示例：
+在开始使用 SSO 急性用户身份验证之前，请确保完全了解[为 Office 加载项启用单一登录](sso-in-office-add-ins.md)。另请注意下述示例。
 
 - [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)，特别是文件 [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)。
 - [Office 加载项 ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)。
@@ -54,17 +54,17 @@ Web 应用程序和 Office 加载项默认允许匿名访问，但你可要求�
 
 在代码获取令牌后，它会在 **代理** 流中使用该令牌来获取第二个令牌，即到 Microsoft Graph 的访问令牌。
 
-在开始实现 Office SSO 之前，请确保你完全熟悉下面两篇文章：
+在开始使用 Office SSO 之前，请确保完全了解下面两篇文章。
 
 - [为 Office 加载项启用单一登录](sso-in-office-add-ins.md)
 - [使用 SSO 对 Microsoft Graph 授权](authorize-to-microsoft-graph.md)
 
-你还应至少阅读此处所列的其中一篇演示文章。 即使你不执行这些步骤，也可在其中了解有关如何实现 Office SSO 和 **代理** 流的宝贵信息。 
+你还应至少阅读此处所列的其中一篇演示文章。 即使你不执行这些步骤，也可在其中了解有关如何实现 Office SSO 和 **代理** 流的宝贵信息。
 
 - [创建使用单一登录的 ASP.NET Office 加载项](create-sso-office-add-ins-aspnet.md)
 - [创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)
 
-另请注意下述示例：
+另请参阅以下内容。
 
 - [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
 - [Office 加载项 ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
