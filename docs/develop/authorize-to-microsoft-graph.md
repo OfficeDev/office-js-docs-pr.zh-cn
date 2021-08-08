@@ -3,12 +3,12 @@ title: 使用 SSO 对 Microsoft Graph 授权
 description: 了解加载项Office SSO 加载项如何使用单一登录 (SSO) 从 Microsoft Graph。
 ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: e8e2946b6e6bc1cd49d18453065b52758d099a25
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: a4302d05d796b53f6db602dcd12f8c03469fc240927b2bc326ffa9f07a5d8954
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773921"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081231"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>使用 SSO 对 Microsoft Graph 授权
 

@@ -3,12 +3,12 @@ title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: 了解如何在 Office 中转换加载项Visual Studio TypeScript。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 33378fa1270d4ff43a9c8219f6c68675974834f3
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 5733bd950ce2a6cb1d667828db4966be979baadb388c6c195a9f5878e0f58d98
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773879"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081171"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 

@@ -3,12 +3,12 @@ title: Office 对话框 API 最佳做法和规则
 description: '提供适用于 SPA 应用程序的Office API 的规则和最佳做法，例如 SPA (应用程序的最佳实践) '
 ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: eef26157381303c67939f4ad33d2054f482bd07a
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: ace62bb3e023381f6cebc34c2226d33b6f84287beaf4ec7b5d5e77ddeabc3c9e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773760"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080803"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
@@ -27,7 +27,7 @@ ms.locfileid: "53773760"
 - 对话框中Office两个 API：
   - [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_)函数。
   - `Office.context.requirements.isSetSupported` (有关详细信息，请参阅指定 Office[应用程序和 API](specify-office-hosts-and-api-requirements.md)要求 。) 
-- 通常，应该从与加载项本身完全相同的域中的页面调用 [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) 函数，但这不是强制性的。 有关详细信息，请参阅 [跨域消息传递到主机运行时](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。
+- 通常，应该从与加载项本身完全相同的域中的页面调用 [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) 函数，但这不是强制性的。 有关详细信息，请参阅[向主机运行时间跨域消息传递](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。
 
 ## <a name="best-practices"></a>最佳做法
 

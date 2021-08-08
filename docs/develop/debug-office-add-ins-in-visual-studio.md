@@ -3,12 +3,12 @@ title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 44a3d56a276d70e24a3b466e16dd24d264f6555d
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 5164829d3d66ee05d1fa21bf4a4ccfdc00b719ed0a5b6ce247044f9c2760fb45
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773816"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081000"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 

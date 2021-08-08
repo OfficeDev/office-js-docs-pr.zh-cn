@@ -3,12 +3,12 @@ title: 使用 Angular 开发 Office 加载项
 description: 使用 Angular 创建一Office外接程序作为单个页面应用程序。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e0d30b7cb2f3d5489f5dae9e257c0cfc115a955e
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: cf8cd32fcf85eeb59c191e17d2cdc8f4c9722fed18c9715c376b75eff1156899
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773501"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081421"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 

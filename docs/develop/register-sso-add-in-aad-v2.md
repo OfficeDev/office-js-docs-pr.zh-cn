@@ -1,14 +1,14 @@
 ---
 title: 向 Azure AD v2.0 端点注册使用 SSO 的 Office 加载项。
-description: 了解如何使用 Azure AD v2.0 终结点注册 Office 外接程序。
+description: 了解如何使用 Azure AD v2.0 Office注册加载项。
 ms.date: 04/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 8bcd72bd6f2d56c5f97d2d4f153d6791d111452e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c7ae397fba0bf92e5ef2ef8795ef12cd2036ed65fac5e18c19521b342998f03f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609372"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080193"
 ---
 # <a name="register-an-office-add-in-that-uses-sso-with-the-azure-ad-v20-endpoint"></a>向 Azure AD v2.0 端点注册使用 SSO 的 Office 加载项。
 

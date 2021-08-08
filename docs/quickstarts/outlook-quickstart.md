@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Outlook 加载项
 description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗格加载项。
-ms.date: 06/10/2021
+ms.date: 08/04/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 75a2b4d5a3ec995971b6cca1e47c77572d274555
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c435fe78255513fb50001e99cfeb476959aafb28
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076600"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774425"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -27,7 +27,7 @@ ms.locfileid: "53076600"
 
 - [Node.js](https://nodejs.org/)（最新的 [LTS](https://nodejs.org/about/releases) 版本）
 
-- 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令：
+- 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令。
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -58,6 +58,12 @@ ms.locfileid: "53076600"
 
     ```command&nbsp;line
     cd "My Office Add-in&quot;
+    ```
+
+1. 安装项目的依赖项。
+
+     ```command&nbsp;line
+    npm install
     ```
 
 ### <a name=&quot;explore-the-project&quot;></a>浏览项目

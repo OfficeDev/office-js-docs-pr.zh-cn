@@ -1,26 +1,26 @@
 ---
 ms.date: 05/11/2020
-description: 从 Office Excel 外接程序中的自定义函数返回多个结果。
+description: 在加载项中返回自定义函数Office Excel结果。
 title: 从自定义函数返回多个结果
 localization_priority: Normal
-ms.openlocfilehash: e25965277fbbe1c39007f79f401bf62b25760488
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1ae808a7bc77d7dad2f7764d6b0065fa2aa91cd7eab27bd7c8697a3d87731153
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609648"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079681"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>从自定义函数返回多个结果
 
-您可以从自定义函数返回多个结果，这些结果将返回到相邻的单元格。 此行为称为 "spilling"。 当您的自定义函数返回结果数组时，它被称为动态数组公式。 有关 Excel 中动态数组公式的详细信息，请参阅[动态数组和溢出的数组行为](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)。
+可以从自定义函数返回多个结果，这些结果将返回到相邻单元格。 此行为称为溢出。 当自定义函数返回结果数组时，它称为动态数组公式。 有关动态数组公式中Excel，请参阅动态[数组和溢出的数组行为](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)。
 
-下图显示了函数如何 `SORT` 扩散到相邻的单元格中。 您的自定义函数还可以返回如下所示的多个结果。
+下图显示了该函数 `SORT` 如何溢出到相邻的单元格中。 自定义函数也可以返回如下所示的多个结果。
 
-![将多个结果显示为多个单元格的 "排序" 函数的屏幕截图。](../images/dynamic-array-spill.png)
+![显示多个结果到多个单元格的"SORT"函数的屏幕截图。](../images/dynamic-array-spill.png)
 
-若要创建一个动态数组公式的自定义函数，它必须返回一个二维值数组。 如果结果溢出到已有值的相邻单元格，则公式将显示 `#SPILL!` 错误。
+若要创建作为动态数组公式的自定义函数，它必须返回值的二维数组。 如果结果溢出到已有值的相邻单元格中，则公式将显示 `#SPILL!` 错误。
 
-下面的示例演示如何返回泼溅的动态数组。
+以下示例演示如何返回向下溢出的动态数组。
 
 ```javascript
 /**
@@ -33,7 +33,7 @@ function spillDown() {
 }
 ```
 
-下面的示例演示如何返回一个靠右的动态数组。 
+以下示例演示如何返回向右溢出的动态数组。 
 
 ```javascript
 /**
@@ -46,7 +46,7 @@ function spillRight() {
 }
 ```
 
-下面的示例演示如何返回一个动态数组，该数组同时扩散到右侧和右侧。
+以下示例演示如何返回向下和向右溢出的动态数组。
 
 ```javascript
 /**
@@ -66,4 +66,4 @@ function spillRectangle() {
 ## <a name="see-also"></a>另请参阅
 
 - [动态数组和溢出的数组行为](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
-- [Excel 自定义函数的选项](custom-functions-parameter-options.md)
+- [自定义Excel选项](custom-functions-parameter-options.md)

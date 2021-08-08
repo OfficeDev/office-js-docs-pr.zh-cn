@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用动作
 description: 获取有关在加载项中使用切换、运动或动画Office最佳做法。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 94b421a04d4dc91aa7ab97abd8569e0b590786ae
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: fa89a63681acb8767e755eaaa514e6514e201af3d2b6bfaf23fa1be74a725efc
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076292"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081581"
 ---
 # <a name="using-motion-in-office-add-ins"></a>在 Office 加载项中使用动作
 

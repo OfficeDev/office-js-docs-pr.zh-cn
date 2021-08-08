@@ -3,12 +3,12 @@ title: 如何查找清单元素的正确顺序
 description: 了解如何查找在父元素中放置子元素的正确顺序。
 ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 2ee80167a76861209e814dc6c272720feb3a9cf1
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: e435add4b47984880ba4dc0d17f8a81c04af6ba7e9c2d499296a5679f15ef029
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173911"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080424"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>如何查找清单元素的正确顺序
 
@@ -19,14 +19,14 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
 例如，在 `<OfficeApp>` 元素中，`<Id>`、`<Version>`、`<ProviderName>` 必须按此顺序出现。 如果添加了 `<AlternateId>` 元素，则其必须位于 `<Id>` 和 `<Version>` 元素之间。 如果任何元素的顺序出错，清单将无效并且你的外接程序将无法加载。
 
 > [!NOTE]
-> 当元素顺序有误时 [，office-addin-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) 中的验证程序会使用相同的错误消息，因为元素位于错误的父元素下。 该错误消息会提示子元素不是父元素的有效子级。 如果出现此类错误，而子元素的参考文档却指示它对父级 *是* 有效的，则问题很可能是子级的放置顺序出现了错误。
+> 如果 [元素的顺序不正确，则 office-addin-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) 中的验证程序会使用同一错误消息，因为元素位于错误的父元素下。 该错误消息会提示子元素不是父元素的有效子级。 如果出现此类错误，而子元素的参考文档却指示它对父级 *是* 有效的，则问题很可能是子级的放置顺序出现了错误。
 
-以下各节按清单元素的显示顺序显示这些元素。 根据元素的属性是 、还是不同， `type` `<OfficeApp>` 存在 `TaskPaneApp` `ContentApp` 差异 `MailApp` 。 若要阻止这些部分变得过于不工作，将高度复杂的元素分为 `<VersionOverrides>` 单独的部分。
+以下各节按清单元素必须出现的顺序显示这些元素。 根据 元素的 属性是 、还是 ， `type` `<OfficeApp>` `TaskPaneApp` `ContentApp` 存在差异 `MailApp` 。 若要阻止这些部分变得不太简单，将高度复杂的 `<VersionOverrides>` 元素分为单独的部分。
 
 > [!Note]
-> 并非所有显示的元素都是强制性的。 如果在 `minOccurs` 架构中某个元素的值为 **0，** 则此元素是可选的。 [](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)
+> 并非所有显示的元素都是强制性的。 如果在 `minOccurs` 架构中，元素的值为 **0，** 则元素是可选的。 [](/openspecs/office_file_formats/ms-owemxml/4e112d0a-c8ab-46a6-8a6c-2a1c1d1299e3)
 
-## <a name="basic-task-pane-add-in-element-ordering"></a>基本任务窗格加载项元素排序
+## <a name="basic-task-pane-add-in-element-ordering"></a>基本任务窗格外接程序元素排序
 
 ```xml
 <OfficeApp xsi:type="TaskPaneApp">
@@ -67,7 +67,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
     <ExtendedOverrides>
 ```
 
-\*有关 [VersionOverrides 的子元素的排序，请参阅 VersionOverrides](#task-pane-add-in-element-ordering-within-versionoverrides) 中的任务窗格加载项元素排序。
+\*有关 VersionOverrides 的子元素的排序，请参阅[Task pane add-in element ordering within VersionOverrides。](#task-pane-add-in-element-ordering-within-versionoverrides)
 
 ## <a name="basic-mail-add-in-element-ordering"></a>基本邮件外接程序元素排序
 
@@ -110,9 +110,9 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
     <VersionOverrides>*
 ```
 
-\*有关 VersionOverrides 的子元素排序，请参阅 [VersionOverrides Ver. 1.0](#mail-add-in-element-ordering-within-versionoverrides-ver-10) 中的 Mail 加载项元素排序和 [VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) 中的邮件外接程序元素排序。
+\*有关 VersionOverrides 的子元素排序，请参阅 [Mail add-in element ordering within VersionOverrides Ver. 1.0](#mail-add-in-element-ordering-within-versionoverrides-ver-10) 和 [Mail add-in element ordering within VersionOverrides Ver. 1.1（ VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) 中的 Mail 外接程序元素排序）。
 
-## <a name="basic-content-add-in-element-ordering"></a>基本内容加载项元素排序
+## <a name="basic-content-add-in-element-ordering"></a>基本内容外接程序元素排序
 
 ```xml
 <OfficeApp xsi:type="ContentApp">
@@ -149,7 +149,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
     <VersionOverrides>*
 ```
 
-\*有关 [VersionOverrides 的子元素的排序，请参阅 VersionOverrides](#content-add-in-element-ordering-within-versionoverrides) 中的内容加载项元素排序。
+\*有关 [VersionOverrides 的子元素排序，请参阅 VersionOverrides](#content-add-in-element-ordering-within-versionoverrides) 中的内容外接程序元素排序。
 
 ## <a name="task-pane-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 中的任务窗格加载项元素排序
 
@@ -395,7 +395,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
     <VersionOverrides>*
 ```
 
-\* 具有值而不是值的 VersionOverrides 可以嵌套在 `type` `VersionOverridesV1_1` 外部 `VersionOverridesV1_0` VersionOverrides 的末尾。 有关 [中元素的排序，请参阅 VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) 中的 Mail 加载项元素排序 `VersionOverridesV1_1` 。
+\* 具有值的 VersionOverrides（而不是 ）可以嵌套在外部 `type` `VersionOverridesV1_1` `VersionOverridesV1_0` VersionOverrides 的末尾。 有关 [中元素的排序，请参阅 Mail add-in element ordering within VersionOverrides Ver. 1.1（ VersionOverrides Ver. 1.1）](#mail-add-in-element-ordering-within-versionoverrides-ver-11) 中的元素排序 `VersionOverridesV1_1` 。
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>VersionOverrides Ver 中的邮件外接程序元素排序。 1.1
 
@@ -499,7 +499,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
             <Scope>
 ```
 
-## <a name="content-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 中的内容加载项元素排序
+## <a name="content-add-in-element-ordering-within-versionoverrides"></a>VersionOverrides 中的内容外接程序元素排序
 
 ```xml
 <VersionOverrides>
@@ -512,5 +512,5 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
 
 ## <a name="see-also"></a>另请参阅
 
-- [对 v1.1 (Office 外接程序清单) ](../develop/add-in-manifests.md)
+- [Office v1.1 (外接程序清单) ](../develop/add-in-manifests.md)
 - [官方架构定义](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

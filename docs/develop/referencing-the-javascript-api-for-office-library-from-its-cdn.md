@@ -3,12 +3,12 @@ title: 参考 Office JavaScript API 库
 description: 了解如何在外接程序Office JavaScript API 库和类型定义。
 ms.date: 02/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 04f97412c07cb39f5b2f753c3ce14e56e87c3de5
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 5348e1acab35e01dc6c467d20a65721fb98722d47c729edeb65a2efe4a8c45f8
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349754"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080253"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>参考 Office JavaScript API 库
 

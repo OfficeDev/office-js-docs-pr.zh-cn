@@ -3,12 +3,12 @@ title: 将邮件从主机页传递到对话框的替代方法
 description: 了解在 messageChild 方法不受支持时使用的解决方法。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: d664178a804b206e02634326cc27699fc6ceb0f7
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 1dd603a144aa14a1456b15a67ffd2563028dfc333561e853f518dde1af06f899
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773382"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080289"
 ---
 # <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>将邮件从主机页传递到对话框的替代方法
 

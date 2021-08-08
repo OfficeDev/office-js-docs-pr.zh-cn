@@ -3,12 +3,12 @@ title: Office 加载项的版式准则
 description: 了解在外接程序中Office字样和字号。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 187267c20d119ca1b3d103f32a5fd665dc903a5a
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 8cc17a25ed33fc34dd7a44622baacc620304402931de87eeadee903db5f135b0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330001"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082305"
 ---
 # <a name="typography"></a>版式
 

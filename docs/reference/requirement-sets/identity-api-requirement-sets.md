@@ -4,16 +4,16 @@ description: 加载项的标识 API 要求Office信息。
 ms.date: 01/26/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 40f9154b06b0e373ac367b0dcc24cbfc05be4856
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: b4ca583126eb70351fd7b9162cc6ee77a686e8b269219ba298a91f498f6a4b0a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671427"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079086"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
-要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity API 要求集、Office要求集的客户端应用程序，以及该标识 API 要求集Office版本号。
 
@@ -44,5 +44,5 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 ## <a name="see-also"></a>另请参阅
 
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

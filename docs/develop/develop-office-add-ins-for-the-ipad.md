@@ -3,12 +3,12 @@ title: 在iPad 中加载项的特殊要求
 description: 了解创建在 Office 上运行的加载项的一iPad。
 ms.date: 09/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 04ee1a4bea8b9f27189bf67368f883cd3b91ab3e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f494cfbb85b6e59b9f26a2b00917e07f44623f1d094656ca104fb85d0faeb2af
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671357"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080957"
 ---
 # <a name="special-requirements-for-add-ins-on-the-ipad"></a>在iPad 中加载项的特殊要求
 

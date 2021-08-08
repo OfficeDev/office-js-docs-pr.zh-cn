@@ -3,12 +3,12 @@ title: Office 加载项中的异步编程
 description: 了解 javaScript Office如何在加载项Office异步编程。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6408d1efc99f38468b371247156d84f1a4ac4b99
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 0e16cf86c57d6020ecf63d077cd4e55b11059d2587ab2ef5c5e3f51fb5da3885
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773942"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081397"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 

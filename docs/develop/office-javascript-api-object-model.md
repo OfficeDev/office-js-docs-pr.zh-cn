@@ -3,12 +3,12 @@ title: 常见 JavaScript API 对象模型
 description: 了解 JavaScript Office API 对象模型
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: dd30f5e5be70f58fec9eb4c84c0491397792950b
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: e5624c59604ab81e19293b2af023e6519860011f54c41430602a2aa0a227eeb1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774208"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080356"
 ---
 # <a name="common-javascript-api-object-model"></a>常见 JavaScript API 对象模型
 

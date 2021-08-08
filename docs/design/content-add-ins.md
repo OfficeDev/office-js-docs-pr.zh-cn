@@ -3,12 +3,12 @@ title: 内容 Office 加载项
 description: 内容加载项是指可以直接嵌入 Excel 或 PowerPoint 文档的图面，用户可以通过它访问界面控件，运行代码以修改文档或显示数据源中的数据。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 9f7ccd4cfaed5132debb7017caaf3b9da733850d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: d0f4bd42a3048c6bd17c92d976f0e62c2cd5d1200c9609d808b3ab73f3aa803a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076355"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082166"
 ---
 # <a name="content-office-add-ins"></a>内容 Office 加载项
 
@@ -55,7 +55,7 @@ ms.locfileid: "53076355"
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 客户端应用程序和 Office 加载项的平台可用性](../overview/office-add-in-availability.md)
+- [Office 客户端应用程序和平台的 Office 加载项可用性](../overview/office-add-in-availability.md)
 - [Office 加载项中的 Fabric Core](fabric-core.md)
 - [适用于 Office 加载项的 UX 设计模式](../design/ux-design-pattern-templates.md)
 - [在加载项中请求获取 API 使用权限](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

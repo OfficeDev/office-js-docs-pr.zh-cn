@@ -3,12 +3,12 @@ title: 设计 Office 加载项的 UI
 description: 了解 Office 加载项视觉设计的最佳做法。
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 7c43a491de9ae3204ca77db45c64cbdf6404969d
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: abf5f2c92d268bc7e0fa1f19bd1a2d02226986feb7070525d310122f484c5f5d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773200"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082637"
 ---
 # <a name="design-the-ui-of-office-add-ins"></a>设计 Office 加载项的 UI
 
@@ -22,7 +22,7 @@ Office 应用程序遵循一组常规交互原则。应用程序共享内容并�
 
 若要打造积极的加载项体验，请遵循 Office 设计原则。
 
-- **对 Office 进行明确设计。** 加载项的功能、外观和感受必须和谐地完善 Office 体验。加载项应该让人感觉就像安装在本机一样。它们应无缝融入 iPad 版 Word 或 PowerPoint 网页版。设计良好的加载项将恰当地融合体验、平台和 Office 应用程序。在适当的位置应用文档和 UI 主题。请考虑使用[ Fluent UI 网页版 ](https://developer.microsoft.com/fluentui#/get-started/web)作为设计语言和工具集。Fluent UI 网页版有两种风格。
+- **对 Office 进行明确设计。** 加载项的功能、外观和感受必须和谐地完善 Office 体验。加载项应该让人感觉就像安装在本机一样。它们应无缝融入 iPad 版 Word 或 PowerPoint 网页版。设计良好的加载项将恰当地融合体验、平台和 Office 应用程序。在适当的位置应用文档和 UI 主题。请考虑使用 [ Fluent UI 网页版](https://developer.microsoft.com/fluentui#/get-started/web)作为设计语言和工具集。Fluent UI 网页版有两种风格。
 
   - **对于非响应式 UI：** 使用 **Fabric Core**，它是 CSS 类和 Sass 混合的开源集合，让你能够访问颜色、动画、字体、图标和网格。 （因为历史原因称为“Fabric Core”，而不是“Fluent Core”。）若要开始使用，请参阅 [Office 加载项中的 Fabric Core](fabric-core.md)。
   - **对于响应式 UI：** 使用 **Fluent UI React**，它是响应式前端框架，旨在构建无缝适应各种 Microsoft 产品的体验。 它提供了可靠、最新、可访问的基于反应的组件，这些组件可以使用 CSS-in-JS 进行高度定制。 若要开始使用，请参阅 [Office 加载项中的 Fluent UI React](using-office-ui-fabric-react.md)。

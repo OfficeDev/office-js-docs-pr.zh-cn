@@ -1,16 +1,16 @@
 ---
-title: Excel 外接程序中的空值和 null 值
-description: 了解如何在 Excel 对象模型方法和属性中使用空值。
+title: Excel 加载项中的空白和 null 值
+description: 了解如何在对象模型方法和属性中Excel空值。
 ms.date: 09/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 3f38569f7342bb88c52ce424db426bfa7939be5e
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 94603209a6f8d12d184583cd513108aadde956de049fe76d3bf02e04dbf609d3
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47409384"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079371"
 ---
-# <a name="blank-and-null-values-in-excel-add-ins"></a>Excel 外接程序中的空值和 null 值
+# <a name="blank-and-null-values-in-excel-add-ins"></a>Excel 加载项中的空白和 null 值
 
 `null` 和空字符串在 Excel JavaScript API 中具有特殊含义。 它们用于表示空单元格、无格式或默认值。 本节详细介绍了在获取和设置属性时如何使用 `null` 和空字符串。
 

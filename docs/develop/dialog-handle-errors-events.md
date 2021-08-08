@@ -3,12 +3,12 @@ title: 处理 Office 对话框中的错误和事件
 description: 了解如何在打开和使用"设置"对话框时捕获Office错误。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 86b8e6f3ff6dba72245d70551846884901ec597a
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 50b439f9d3d20af97d78ea51db66a96c219b32d64140531ee1d51e1149feaffc
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774299"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080789"
 ---
 # <a name="handle-errors-and-events-in-the-office-dialog-box"></a>处理"事件"对话框中Office和事件
 

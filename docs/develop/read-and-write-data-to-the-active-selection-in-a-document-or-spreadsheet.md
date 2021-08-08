@@ -3,12 +3,12 @@ title: 对文档或电子表格中的活动选择执行数据读取和写入操�
 description: 了解如何在 Word 文档或电子表格的活动选定内容中读取和写入Excel数据。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: bf4d1256a41d4150d81cd33f876a14791e93e483
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 19cd1edad3835403355e07cdfcd4a43cb2aa9c9b7746823e2fd31aea319b9bf2
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671187"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080265"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>对文档或电子表格中的活动选择执行数据读取和写入操作
 

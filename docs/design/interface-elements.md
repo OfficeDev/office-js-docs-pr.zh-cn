@@ -3,12 +3,12 @@ title: Office 加载项的 Office UI 元素
 description: 大致了解加载项中不同类型的 UI Office。
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 5d0a1576d850f2291c28e6bb39554cbb0403f50b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b09530aa25e7383e189520e7f1030a5f35b94ab4348fe4bad40773092cd5e08b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076327"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081774"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Office 加载项的 Office UI 元素
 

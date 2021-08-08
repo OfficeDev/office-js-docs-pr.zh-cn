@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在加载项中Office的基础知识。
 ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: cf806434fa5357fec554639f161fa0780b884e9a
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 6108051b9fd229804bb8c6a3ac25bb036ab072f03bc649139338361d0cc2ba89
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773774"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080873"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -85,7 +85,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 > [!NOTE]
 >
-> - 为清楚起见，在此部分中，我们将消息称为以主机页为目标，但严格来说，消息将进入任务窗格 (中的 *JavaScript* 运行时或托管函数文件) 的运行时。 [](../reference/manifest/functionfile.md) 这种区别仅在跨域邮件的情况下十分明显。 有关详细信息，请参阅 [跨域消息传递到主机运行时](#cross-domain-messaging-to-the-host-runtime)。
+> - 为清楚起见，在此部分中，我们将消息称为以主机页为目标，但严格来说，消息将进入任务窗格 (中的 *JavaScript* 运行时或托管函数文件) 的运行时。 [](../reference/manifest/functionfile.md) 这种区别仅在跨域邮件的情况下十分明显。 有关详细信息，请参阅[向主机运行时间跨域消息传递](#cross-domain-messaging-to-the-host-runtime)。
 > - 除非 JavaScript API 库已加载到任务窗格中，否则该Office无法与主机页进行通信。  (与使用 JavaScript API Office的任何页面一样，页面的脚本必须初始化外接程序。 有关详细信息，请参阅[Initialize your Office Add-in](initialize-add-in.md).) 
 
 对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) 函数向主机页发送字符串消息。 该字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何可以序列化为字符串或转换为字符串的字符串。 示例如下。

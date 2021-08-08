@@ -3,12 +3,12 @@ title: Office 加载项的本地化
 description: 使用 Office JavaScript API 确定区域设置，并基于 Office 应用程序区域设置显示字符串，或者根据数据区域设置解释或显示数据。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 8f23e124cd930f6a3c7c1cd6e0f7a3f24156ccd1
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: fc9d6a9c36ceabf96ee484eb4879074be8eecef76a561570cbde08458671ee3c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773487"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080503"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -277,7 +277,7 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 
 1. 选择“**创建新项目**”。
 
-2. 使用搜索框，输入“**加载项**”。 选择“**Word Web 外接程序**”，然后选择“**下一步**”。
+2. 使用搜索框，输入 **外接程序**。 选择“**Word Web 外接程序**”，然后选择“**下一步**”。
 
 3. 将项目命名 **为 WorldReadyAddIn，** 然后选择"**创建"。**
 

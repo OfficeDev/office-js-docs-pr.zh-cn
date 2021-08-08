@@ -3,12 +3,12 @@ title: 在 Office 加载项中授权外部服务
 description: 获得对非 Microsoft 数据的授权，如 Google、Facebook、LinkedIn、SalesForce 和使用 OAuth 2.0、授权代码和隐式流的 GitHub。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 4927837caf96268421cfbc79ce3859b9dc4043f9
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 761a61c03a67c3dc582556deff89fe918ebe2d597c4c239fac7e55976e4fbf0c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773935"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081354"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>在 Office 加载项中授权外部服务
 

@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的导航模式
-description: 了解使用命令栏、选项卡栏和后退按钮的最佳实践，以设计 Office 外接程序的导航。
+description: 了解使用命令栏、选项卡栏和后退按钮的最佳实践，以设计加载项Office导航。
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: 3bb350ede78bef684899f26e4818eba440677541
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 42f217d240f1c66c69ad94d59f501a73e6d9a85d1dc24e94b5bb5307a808a6eb
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132030"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081735"
 ---
 # <a name="navigation-patterns"></a>导航模式
 
@@ -23,18 +23,18 @@ ms.locfileid: "49132030"
 
 ## <a name="command-bar"></a>命令栏
 
-命令栏是任务窗格中的一个图面，其中驻留了在其驻留的窗口、面板或父区域的内容上运行的命令。 可选功能包括汉堡菜单访问点、搜索和侧命令。
+CommandBar 是任务窗格中的一个图面，其中包含对它所在的窗口、面板或父区域的内容进行操作的命令。 可选功能包括汉堡菜单访问点、搜索和侧命令。
 
-![图示显示在 "Office 桌面应用程序" 任务窗格中的命令栏。 本示例将一个命令栏显示在包含汉堡菜单和搜索的外接程序名称的正下方。](../images/add-in-command-bar.png)
+![显示桌面应用程序任务窗格中Office栏的图示。 此示例显示紧接在外接程序名称下方的命令栏，其中包括汉堡包菜单和搜索。](../images/add-in-command-bar.png)
 
 ## <a name="tab-bar"></a>选项卡栏
 
-选项卡栏显示了使用垂直堆叠文本和图标的按钮的导航。 使用选项卡栏提供导航（使用简短的描述性标题的选项卡）。
+选项卡栏显示使用具有垂直堆叠文本和图标的按钮的导航。 使用选项卡栏提供导航（使用简短的描述性标题的选项卡）。
 
-![图示显示在 "Office 桌面应用程序" 任务窗格中的选项卡栏。 本示例在外接姓名下方显示一个选项卡栏，其中包含 "主页"、"设置"、"收藏夹" 和 "帐户" 选项卡。](../images/add-in-tab-bar.png)
+![插图显示桌面应用程序任务Office内的选项卡栏。 本示例显示紧接在加载项名称下方的选项卡栏，其选项卡具有"Home"、"设置"、"Favorites"和"Account"选项卡。](../images/add-in-tab-bar.png)
 
 ## <a name="back-button"></a>“返回”按钮
 
-"后退" 按钮允许用户从深化导航操作中恢复。 此模式有助于确保用户遵循一系列有序的步骤。
+"后退"按钮允许用户从向下钻取导航操作中恢复。 此模式有助于确保用户遵循一系列有序的步骤。
 
-![显示 Office 桌面应用程序任务窗格中的 "后退" 按钮的图示。 本示例显示一个 "后退" 按钮，该按钮位于加载项名称的左上角。](../images/add-in-back-button.png)
+![插图显示桌面应用程序任务Office内的后退按钮。 本示例在加载项名称的下方左上方显示一个后退按钮。](../images/add-in-back-button.png)

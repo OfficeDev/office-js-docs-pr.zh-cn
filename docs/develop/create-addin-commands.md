@@ -3,12 +3,12 @@ title: 在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 description: 在清单中，使用 VersionOverrides 定义用于 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 461e58e63be73619d46cd0552467187b7eab5071
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: af5a87ed087c3c8df474feb445cd006bdebba493d12d1e90c787dab6437e808a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773893"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081147"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 

@@ -3,12 +3,12 @@ title: Office 加载项的可用性测试
 description: 了解如何使用真实用户测试外接程序设计。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 4f797033343fd20d814cba1fd67ad8eb21b246b3
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: e054f8402bed25ed27d549f5fb1af73aad3919aa53f88047278d1d94b4d00392
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773340"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079871"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office 加载项的可用性测试
 

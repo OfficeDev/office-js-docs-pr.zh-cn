@@ -3,12 +3,12 @@ title: Office 加载项中的 Fluent UI React
 description: 了解如何在Fluent外接程序React UI Office UI。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 8018c27a50aa4aca96aae5fd8fb2b62261a694a0
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 1137fd2465af6c09a42a14babe8ca2898e864c743cfd73e0263ad39ff085bf3f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773536"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081562"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>在Fluent外接程序React UI Office UI
 

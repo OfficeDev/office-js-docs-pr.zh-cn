@@ -3,12 +3,12 @@ title: 在 Visual Studio 2019 中获取 JavaScript IntelliSense
 description: 了解如何使用 JSDoc 为 JavaScript IntelliSense、对象、参数和返回值创建属性。
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 6135649ce80e496d5e195b0ddb0dcb64172d41f5
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 35c3563573cb9edfbe975504b4b04330bbd1a0422c5141ee9f4141db7a478807
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076053"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080654"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>在 Visual Studio 2019 中获取 JavaScript IntelliSense
 

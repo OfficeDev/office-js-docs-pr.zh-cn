@@ -3,12 +3,12 @@ title: 随文档自动打开任务窗格
 description: 了解如何配置Office打开文档时自动打开的加载项。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 53776d41aff2446267b637dcf0b33ffe379b803c
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: a9683f63b82232f8f5697007692b359ae06b7650e96866a2425e2d900ded4d8a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773907"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081207"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 

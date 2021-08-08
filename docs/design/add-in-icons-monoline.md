@@ -3,12 +3,12 @@ title: 单声道样式图标指南Office加载项
 description: 在加载项中使用单Office图标的指南。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 0e8bf4f39ddbad457df7d033a08836825d9e1d3f
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 15077c9dd798b2cb633d7ce200a8cefc4e9605d312ebab48fe2ce814b7479c11
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773277"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082397"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>单声道样式图标指南Office加载项
 

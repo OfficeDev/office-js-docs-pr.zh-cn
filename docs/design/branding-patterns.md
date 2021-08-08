@@ -3,12 +3,12 @@ title: Office 外接程序的品牌模式设计准则
 description: 了解如何打造外接程序Office品牌，同时与外接程序的可视化设计保持Office。
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: b42d3a722e4f8805e8c03d2e1a5db528a66f1202
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e02e5139ed6ccc556661a610610d0ce51437a0893fb8df99ec7bfc49e7947ec6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076369"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082178"
 ---
 # <a name="branding-patterns"></a>品牌模式
 

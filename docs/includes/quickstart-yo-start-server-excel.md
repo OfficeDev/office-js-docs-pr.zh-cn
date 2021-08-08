@@ -11,6 +11,12 @@
 > npm run dev-server
 > ```
 
+- 在项目的根目录中安装外接程序的依赖项。
+
+     ```command&nbsp;line
+    npm install
+    ```
+
 - 若要在 Excel 中测试加载项，请在项目的根目录中运行以下命令。 这将启动本地的 Web 服务器 (如果尚未运行的话), 并使用加载的加载项打开 Excel。
 
     ```command&nbsp;line
