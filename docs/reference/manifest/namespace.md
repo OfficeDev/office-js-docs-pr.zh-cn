@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Namespace 元素
-description: Namespace 元素定义自定义函数在 Excel 中使用的命名空间。
+description: Namespace 元素定义自定义函数在自定义函数中Excel。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 342f5ebcafa861838956f1033f8597cf05e60215
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 3f20e744839d5791797642a9019f546922efd710367d5f23446241eebad0e48f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771255"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089674"
 ---
 # <a name="namespace-element"></a>Namespace 元素
 

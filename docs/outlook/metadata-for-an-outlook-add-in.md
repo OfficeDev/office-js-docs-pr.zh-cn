@@ -3,12 +3,12 @@ title: 获取和设置 Outlook 加载项中的元数据
 description: 可以使用以下漫游设置或自定义属性，管理 Outlook 加载项中的自定义数据。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: ceed27cc5c0d479ac67a0497e78e971498365e6f
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 0ed30c48a07f76b6bc3a969ad064f1b66d96b90b569bb62e9a34eb16fc836648
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671770"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57091648"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>获取和设置 Outlook 加载项的元数据
 

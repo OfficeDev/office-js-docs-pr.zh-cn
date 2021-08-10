@@ -3,12 +3,12 @@ title: Office.context.mailbox.item - 预览要求集
 description: Outlook项目对象模型的邮箱 API 预览要求集版本。
 ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 1f3359eeccffee3fba5ec2aee50b5e2284a35712
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5a056325576e891cff36e2ffbb3081d16756b93057190e1078b92cd3d1543c9b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671301"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088855"
 ---
 # <a name="item-mailbox-preview-requirement-set"></a>项目 (邮箱预览要求集) 
 
@@ -44,7 +44,7 @@ ms.locfileid: "53671301"
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#categories) | [Categories](/javascript/api/outlook/office.categories) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
 | cc | ReadItem | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#cc) | [收件人](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#cc) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| conversationId | ReadItem | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#conversationId) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| conversationId | ReadItem | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#conversationId) | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#conversationId) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | dateTimeCreated | ReadItem | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#dateTimeCreated) | 日期 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#dateTimeCreated) | 日期 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -61,9 +61,9 @@ ms.locfileid: "53671301"
 | internetMessageId | ReadItem | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#internetMessageId) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | isAllDayEvent | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#isAllDayEvent) | [IsAllDayEvent](/javascript/api/outlook/office.isalldayevent) | [预览](outlook-requirement-set-preview.md) |
 | | | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#isAllDayEvent) | Boolean | [预览](outlook-requirement-set-preview.md) |
-| itemClass | ReadItem | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#itemClass) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| itemClass | ReadItem | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#itemClass) | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#itemClass) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| itemId | ReadItem | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#itemId) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| itemId | ReadItem | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#itemId) | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#itemId) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | itemType | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#itemType) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#itemType) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -71,7 +71,7 @@ ms.locfileid: "53671301"
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#itemType) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | 位置 | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#location) | [位置](/javascript/api/outlook/office.location) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#location) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#location)<br> (会议请求)  | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#location)<br> (会议请求)  | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | normalizedSubject | ReadItem | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#normalizedSubject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#normalizedSubject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | notificationMessages | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#notificationMessages) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
@@ -90,17 +90,17 @@ ms.locfileid: "53671301"
 | sender | ReadItem | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#sender) | [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | sensitivity | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#sensitivity) | [Sensitivity](/javascript/api/outlook/office.sensitivity) | [预览](outlook-requirement-set-preview.md) |
 | | | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#sensitivity) | [MailboxEnums.AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype) | [预览](outlook-requirement-set-preview.md) |
-| seriesId | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#seriesId) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#seriesId) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#seriesId) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#seriesId) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| seriesId | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#seriesId) | 字符串 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#seriesId) | 字符串 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#seriesId) | 字符串 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#seriesId) | 字符串 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | sessionData | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#sessionData) | [SessionData](/javascript/api/outlook/office.sessiondata) | [预览](outlook-requirement-set-preview.md) |
 | | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#sessionData) | [SessionData](/javascript/api/outlook/office.sessiondata) | [预览](outlook-requirement-set-preview.md) |
 | start | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#start) | [Time](/javascript/api/outlook/office.time) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#start) | 日期 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#start)<br> (会议请求)  | 日期 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | subject | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#subject) | [主题](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#subject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#subject) | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#subject) | [主题](/javascript/api/outlook/office.subject) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#subject) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | 更改为 | ReadItem | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#to) | [收件人](/javascript/api/outlook/office.recipients) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |

@@ -3,12 +3,12 @@ title: 在 Outlook 加载项中获取或修改收件人
 description: 了解如何在 Outlook 加载项中获取、设置或添加邮件或约会的收件人。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 9a98fbc78e98cbaaf99c60625dd7f6a725c57c0f
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 53db46485fd49498357d77c4a9742b601175219d1f01c5e403a92a5088f488a9
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773081"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57091400"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取、设置或添加收件人
 

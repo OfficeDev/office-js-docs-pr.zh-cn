@@ -3,12 +3,12 @@ title: 创建将 REST 与本地 Project Server OData 服务结合使用的 Proje
 description: 了解如何为 Project Professional 2013 生成任务窗格外接程序，以将活动项目中的成本和工作数据与当前 Project Web App 实例中所有项目的平均值进行比较。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2ffcd8eacef56f881ae61a5c0f2a656e5b3edfee
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: a9a6d8699720f63107c3f4ad0114fbb75cd7771c1e730dda71ee5c1df1b8730d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773151"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088049"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 

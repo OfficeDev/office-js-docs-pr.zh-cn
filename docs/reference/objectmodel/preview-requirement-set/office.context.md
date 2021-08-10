@@ -3,12 +3,12 @@ title: Office.context - 预览要求集
 description: Office。适用于使用邮箱 API Outlook要求集的外接程序的上下文对象成员。
 ms.date: 12/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 59b1cce579afe69384e41a6f31cc70c8cec25bea
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 90ab8198aaff1c18273eb0721ceac5bdb92d12ac3d3d786aa01e4b2c40169965
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591070"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088523"
 ---
 # <a name="context-mailbox-preview-requirement-set"></a>上下文 (邮箱预览要求集) 
 
@@ -16,7 +16,7 @@ ms.locfileid: "52591070"
 
 Office.context 提供了外接程序在所有应用程序中使用的共享Office接口。 此列表仅记录外接程序Outlook接口。有关 Office.context 命名空间的完整列表，请参阅通用 API 中的[Office.context 引用](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true)。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -28,7 +28,7 @@ Office.context 提供了外接程序在所有应用程序中使用的共享Offic
 | 属性 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
 | [auth](#auth-auth) | 撰写<br>阅读 | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true) | [IdentityAPI 1.3](../../requirement-sets/identity-api-requirement-sets.md) |
-| [contentLanguage](#contentlanguage-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [diagnostics](#diagnostics-contextinformation) | 撰写<br>阅读 | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [host](#host-hosttype) | 撰写<br>阅读 | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
@@ -49,7 +49,7 @@ Office.context 提供了外接程序在所有应用程序中使用的共享Offic
 
 *   [Auth](/javascript/api/office/office.auth)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -125,7 +125,7 @@ function write(message){
 
 *   [ContextInformation](/javascript/api/office/office.contextinformation)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -200,7 +200,7 @@ function write(message){
 
 *   [HostType](/javascript/api/office/office.hosttype)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -233,14 +233,14 @@ console.log(JSON.stringify(Office.context.host));
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
-|`bodyBackgroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文背景色。|
+|`bodyBackgroundColor`| String|获取十六进制三原色形式的 Office 主题正文背景色。|
 |`bodyForegroundColor`| String|获取十六进制三原色形式的 Office 主题正文前景色。|
 |`controlBackgroundColor`| 字符串|获取十六进制三原色形式的 Office 主题控制背景色。|
 |`controlForegroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文控制颜色。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -278,7 +278,7 @@ function applyOfficeTheme(){
 
 *   [PlatformType](/javascript/api/office/office.platformtype)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -304,7 +304,7 @@ console.log(JSON.stringify(Office.context.platform));
 
 *   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -332,7 +332,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 *   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -353,7 +353,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 *   [UI](/javascript/api/office/office.ui)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

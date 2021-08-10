@@ -3,12 +3,12 @@ title: 在 Outlook 加载项的正文中插入数据
 description: 了解如何将数据插入到 Outlook 加载项的邮件或约会的正文中。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 575718baa6a54f4e2e8c6ddd4e582254e1607fa8
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 2cab9d3bd0e3846067029ebc436334d25f6fc03b5aabc0e7c85014a3c8b29ada
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773130"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089883"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时将数据插入到正文中
 

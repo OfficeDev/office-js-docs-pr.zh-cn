@@ -3,12 +3,12 @@ title: 在幻灯片中添加和删除PowerPoint
 description: 了解如何添加和删除幻灯片，并指定新幻灯片的主控母版和版式。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 7fbfd24da7bf552adfe96437187ae0128c513574
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: c49496a6c2cfc2b591fc5ff9e003df455e33f4c9b1f18ee8b7049b16f12fd81d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774047"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090208"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>在幻灯片中添加和删除PowerPoint
 

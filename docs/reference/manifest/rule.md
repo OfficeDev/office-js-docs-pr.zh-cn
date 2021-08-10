@@ -3,12 +3,12 @@ title: 清单文件中的 Rule 元素
 description: Rule 元素指定应为此上下文邮件外接程序评估的激活规则。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 60882a5e36a63832cf81eab9320b113a420b84a3
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: f78dfedf59c6294a477f112512afe21650e9ef5a63331b5ccde673a2c046c2ad
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348669"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093005"
 ---
 # <a name="rule-element"></a>Rule 元素
 

@@ -3,12 +3,12 @@ title: 处理 OneNote 页面内容
 description: 了解如何使用 JavaScript API OneNote页面内容。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 01aa4a65f6f1d7ae8fccf490986c10035d30b0c3
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5f521c11c085f296c8eb0600a3249392224fcfa1ae3bca273a32cb5dda978dcf
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671343"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089950"
 ---
 # <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容
 

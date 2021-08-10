@@ -3,12 +3,12 @@ title: 在加载项中启用共享文件夹Outlook邮箱方案
 description: 讨论如何为共享文件夹配置外接程序支持 (。例如， 委派访问) 和共享邮箱。
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 70578f2c78a9dd88efc9ba70d5599a13e121df53
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 9bcfaf77ecd837a39c9743d9194aa5e4ef30ba69a32c6caed41a38b8ab0ddb03
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290710"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092344"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在加载项中启用共享文件夹Outlook邮箱方案
 
@@ -61,7 +61,7 @@ Exchange管理员可创建和管理共享邮箱，供多组用户访问。 目�
 
 |权限|值|说明|
 |---|---:|---|
-|阅读|1 (0000001) |可读取项目。|
+|阅读|1 (000001) |可读取项目。|
 |写入|2 (000010) |可以创建项目。|
 |DeleteOwn|4 (000100) |只能删除他们创建的项。|
 |DeleteAll|8 (001000) |可以删除任何项目。|

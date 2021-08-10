@@ -4,16 +4,16 @@ description: 通过跨 Office、PowerPoint 和 Word 的外接程序支持图像�
 ms.date: 02/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 35fed16003fe217e6f1f53d8c790cf78547308cf
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: d605a8ac5d36825ffdfa9648578f7d252340325e1021c7663667778f4427ef6a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671616"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090643"
 ---
 # <a name="image-coercion-requirement-sets"></a>图像强制要求集
 
-要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
@@ -51,5 +51,5 @@ ImageCoercion 1.2 支持在使用 () 写入数据时转换为 SVG `Office.Coerci
 ## <a name="see-also"></a>另请参阅
 
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

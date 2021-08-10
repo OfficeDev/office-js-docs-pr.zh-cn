@@ -3,12 +3,12 @@ title: 清单文件中的 AllFormFactors 元素
 description: 指定加载项的所有外观设置。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 9dac322312c1dfd60f6deb4296413e12b55a6a49
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 674fbe9defa961cb0eef1103cf2dedea0983ffabadc665b172d1f3b15292e987
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608794"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088535"
 ---
 # <a name="allformfactors-element"></a>AllFormFactors 元素
 
@@ -16,7 +16,7 @@ ms.locfileid: "44608794"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  Description  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [ExtensionPoint](extensionpoint.md) |  是 |  定义加载项用于公开功能的位置。 |
 

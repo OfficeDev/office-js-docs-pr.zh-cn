@@ -5,12 +5,12 @@ ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: f2f160b01971385abc22f7dce63f807e90fbe7d3
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ede86bb68d3b87ec4a27e1ca2967f76d4f87833d9490d9ccbfe52aa8549287fe
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348375"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093077"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 

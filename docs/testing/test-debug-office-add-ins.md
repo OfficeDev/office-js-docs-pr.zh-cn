@@ -3,12 +3,12 @@ title: 测试和调试 Office 加载项
 description: 了解如何测试和调试 Office 加载项
 ms.date: 05/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 5df42a6c22325528eaaf2dcde28fddbfd3a211fb
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: bf3fb2dc869b382212c607144b5c61728e393c24c0ec5397dd035c6906830ac3
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349355"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094152"
 ---
 # <a name="test-and-debug-office-add-ins"></a>测试和调试 Office 加载项
 

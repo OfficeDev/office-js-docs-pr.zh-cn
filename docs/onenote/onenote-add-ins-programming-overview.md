@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 8c0765fe2c56d23bcf7073f3e72e2138717e9e37
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5890f24fba5828242702c78aec2c361b718db312a0de96e60f82e0047386c761
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671588"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089926"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 

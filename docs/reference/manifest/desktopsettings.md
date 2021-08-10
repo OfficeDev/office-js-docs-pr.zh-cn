@@ -3,19 +3,19 @@ title: 清单文件中的 DesktopSettings 元素
 description: 指定在台式计算机上使用邮件外接程序时应用的源位置和控制设置。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 50201080d8be3c8943d16730c34a4bac236d7b90
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d8f35a29e14337a849f81b0becb60f761116cb48fa420119228255bb1179bb35
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612274"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089847"
 ---
 # <a name="desktopsettings-element"></a>DesktopSettings 元素
 
 指定在台式计算机上使用邮件外接程序时应用的源位置和控制设置。
 
 > [!IMPORTANT]
-> `DesktopSettings`元素仅适用于 web 上的经典 outlook （通常连接到本地 Exchange server 的旧版本）和 Windows 上的 Outlook 2013。
+> 元素仅在经典版本中可用Outlook 网页版 (通常连接到旧版本地 Exchange server) 和 Outlook `DesktopSettings` 2013 Windows。
 
 **外接程序类型：** 邮件
 

@@ -3,12 +3,12 @@ title: Outlook外接程序 API 预览要求集
 description: 当前处于预览阶段的功能和 API Outlook外接程序。
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 79ae0f200743607ee762feebd34dc0e4d192048a
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 58f27010372bef495ece16e3c9fb5cf4a8a7e78b1c3e7880485367ec6f954f63
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671910"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57091388"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook外接程序 API 预览要求集
 

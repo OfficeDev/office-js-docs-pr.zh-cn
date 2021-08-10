@@ -3,12 +3,12 @@ title: 排查Office加载项的开发错误
 description: 了解如何解决加载项中的Office错误。
 ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 8f0ceaf13041fa27c4e9e279646e979f132913b3
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a750f8db6e58406403d8bd0ef89e60128c2e08523375b4b2fbe6a904bfbae2d4
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349273"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093220"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>排查Office加载项的开发错误
 

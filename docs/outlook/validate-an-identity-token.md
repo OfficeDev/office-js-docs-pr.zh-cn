@@ -3,12 +3,12 @@ title: 验证 Outlook 加载项标识令牌
 description: Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你信任此请求之前，必须验证该令牌以确保它来自预期的 Exchange 服务器。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: ba499fa2ece03a326eabb1a48bb19e33c3feea94
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d70b03478cea6eb6f517d44f91d73677ba1ab3f4d702840cb05b5cc628dfa62f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348837"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092332"
 ---
 # <a name="validate-an-exchange-identity-token"></a>验证 Exchange 标识令牌
 

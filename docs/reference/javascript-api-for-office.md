@@ -5,12 +5,12 @@ title: Office JavaScript API 参考文档
 description: 了解 Office JavaScript API。
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 8c467003bfd3481f35864225876e3ee024910eef
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 165786143dac08f7e1ffc9fde81ea8cb8ef6eff067a68dfd9d38eb2dfe99f687
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234154"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088025"
 ---
 # <a name="api-reference-documentation"></a>API 参考文档
 

@@ -3,12 +3,12 @@ title: 管理加载项的状态Outlook设置
 description: 了解如何保留加载项的加载项状态Outlook设置。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 8f43c7f105dc68c879f175beabcabb49715a75aa
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: e045c2410c30ae7142aaf9de06d3d4606dc8a0c8fd2cb776620b4aa69cafac99
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348501"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093528"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>管理加载项的状态Outlook设置
 
@@ -36,7 +36,7 @@ var _settings = Office.context.roamingSettings;
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>创建或分配漫游设置
 
-紧接着前面的示例，下面的  `setAppSetting` 函数演示如何使用 [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings#set-name--value-) 方法通过当天的日期设置或更新名为 `cookie` 的设置。然后使用 [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#saveasync-callback-) 方法将所有漫游设置保存回 Exchange Server。
+紧接着前面的示例，下面的  `setAppSetting` 函数演示如何使用 [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings#set_name__value_) 方法通过当天的日期设置或更新名为 `cookie` 的设置。然后使用 [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#saveAsync_callback_) 方法将所有漫游设置保存回 Exchange Server。
 
 ```js
 // Set an add-in setting.
@@ -57,7 +57,7 @@ function saveMyAppSettingsCallback(asyncResult) {
 
 ### <a name="removing-a-roaming-setting"></a>删除漫游设置
 
-进一步展开前面的示例，以下  `removeAppSetting` 函数演示了如何使用 [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#remove-name-) 方法删除 `cookie` 设置并将所有漫游设置保存回 Exchange Server。
+进一步展开前面的示例，以下  `removeAppSetting` 函数演示了如何使用 [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#remove_name_) 方法删除 `cookie` 设置并将所有漫游设置保存回 Exchange Server。
 
 ```js
 // Remove an application setting.
@@ -72,7 +72,7 @@ function removeAppSetting()
 
 自定义属性允许 Outlook 外接程序存储其使用的有关项目的信息。例如，如果 Outlook 外接程序根据邮件中的会议建议创建约会，则可以使用自定义属性存储创建了会议的事实。这确保了如果再次打开邮件，Outlook 外接程序不再可供创建约会。
 
-在您将自定义属性用于特定邮件、约会或会议请求项目之前，必须通过调用  [Item](/javascript/api/outlook/office.mailbox) 对象的 **loadCustomPropertiesAsync** 方法将属性加载到内存中。如果为当前项目设置了任何自定义属性，此时会从 Exchanger Server 加载这些属性。在您加载了属性以后，可以使用 [CustomProperties](/javascript/api/outlook/office.customproperties#set-name--value-) 对象的 [set](/javascript/api/outlook/office.roamingsettings) 和 **get** 方法添加、更新和检索内存中的属性。要保存对于项目的自定义属性所做的任何更改，必须使用 [saveAsync](/javascript/api/outlook/office.customproperties#saveasync-callback--asynccontext-) 方法在 Exchanger Server上保留对项目所做的更改。
+在您将自定义属性用于特定邮件、约会或会议请求项目之前，必须通过调用  [Item](/javascript/api/outlook/office.mailbox) 对象的 **loadCustomPropertiesAsync** 方法将属性加载到内存中。如果为当前项目设置了任何自定义属性，此时会从 Exchanger Server 加载这些属性。在您加载了属性以后，可以使用 [CustomProperties](/javascript/api/outlook/office.customproperties#set_name__value_) 对象的 [set](/javascript/api/outlook/office.roamingsettings) 和 **get** 方法添加、更新和检索内存中的属性。要保存对于项目的自定义属性所做的任何更改，必须使用 [saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_) 方法在 Exchanger Server上保留对项目所做的更改。
 
 ### <a name="custom-properties-example"></a>自定义属性示例
 

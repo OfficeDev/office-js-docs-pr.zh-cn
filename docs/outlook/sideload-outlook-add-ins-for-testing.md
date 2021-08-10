@@ -3,12 +3,12 @@ title: 旁加载 Outlook 外接程序进行测试
 description: 利用旁加载来安装 Outlook 外接程序以供测试，无需先将其置于外接程序目录中。
 ms.date: 05/13/2021
 localization_priority: Normal
-ms.openlocfilehash: 47eb5da19f858b6e30339acc59da24a818fc0959
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6c50a6966915d0aa87d27b1768b0e67e5e8c6d8867c3e0148166f6abfdcd92e0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077027"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093375"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>旁加载 Outlook 外接程序进行测试
 

@@ -3,12 +3,12 @@ title: 使用 Windows 上的 Microsoft Edge WebView2 （基于 Chromium）调试
 description: 了解如何在 VS 代码中使用适用于 Microsoft Edge 扩展的调试器来调试使用 Microsoft Edge WebView2（基于 Chromium）的 Office 加载项。
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 3a79c9f02aba91d29b3af15a5a3c9113079bc197
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 0fc2cee39553521fef490ab33e08c2b11c8ec9c37d4787e408647f72c30df3b7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773641"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090655"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>使用 Windows 上的 Microsoft Edge Chromium WebView2 调试加载项
 

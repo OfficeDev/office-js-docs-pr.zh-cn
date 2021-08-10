@@ -4,12 +4,12 @@ description: 有关即将推出的 JavaScript Excel的详细信息。
 ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5de8ee52aea357c8dce4d2027556e5e8a5b1a4ac
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: d90c5e8bb2c344cb3bb297a3cd793613f017e910ab99df6dfffc456c3f715d20
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671714"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092640"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 

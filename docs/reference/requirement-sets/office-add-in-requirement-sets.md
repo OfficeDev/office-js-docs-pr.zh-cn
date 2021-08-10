@@ -4,16 +4,16 @@ description: 详细了解通用 API Office集。
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 458369ad693afeedb760eda3238191c44bedc5e9
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: d62f71905f892f6abd700fb78d21eb75c3fb4271f1370eb6b10a60326d52eafb
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536044"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093244"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
-要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 > [!TIP]
 > 正在查找 *特定于应用程序的* API 要求集？ 请参阅以下 API 要求集。
@@ -282,5 +282,5 @@ Office JavaScript API 中的以下方法不是要求集的一部分。 如果加
 ## <a name="see-also"></a>另请参阅
 
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

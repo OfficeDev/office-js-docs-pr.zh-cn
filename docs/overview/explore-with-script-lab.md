@@ -5,16 +5,16 @@ ms.date: 06/18/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 7f4b67dd2369181e5d7b2b92496c8259ffd5c120
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: ba70a95444bcc7a8b5eda8aad0bb2d8e1b0d12affe9ce341e65ba9baa3107c58
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077006"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088867"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用 Script Lab 探索 Office JavaScript API
 
-借助 [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) 和[适用于 Outlook 的 Script Lab](https://appsource.microsoft.com/product/office/wa200001603) 加载项（可从 AppSource 免费获取），你可以在使用 Excel 或 Outlook 等 Office 程序时探索 Office JavaScript API。 Script Lab 是一项方便的工具，可将其作为原型添加到开发工具包，并在你自己的加载项中验证你想使用的功能。
+借助 [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) 和[适用于 Outlook 的 Script Lab](https://appsource.microsoft.com/product/office/WA200001603) 加载项（可从 AppSource 免费获取），你可以在使用 Excel 或 Outlook 等 Office 程序时探索 Office JavaScript API。 Script Lab 是一项方便的工具，可将其作为原型添加到开发工具包，并在你自己的加载项中验证你想使用的功能。
 
 ## <a name="what-is-script-lab"></a>什么是 Script Lab？
 

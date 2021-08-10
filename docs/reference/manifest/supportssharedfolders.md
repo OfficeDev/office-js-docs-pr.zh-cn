@@ -3,12 +3,12 @@ title: 清单文件中的 SupportsSharedFolders 元素
 description: SupportsSharedFolders 元素定义 Outlook外接程序在共享文件夹和共享邮箱方案中是否可用。
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 43f2c60664a6822b714023246cfa044e179e9a55
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: f7620d3b34767e3a54a1283d23f956cab79a447a71f56ba924ac6a70a3ebaa0a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007781"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092688"
 ---
 # <a name="supportssharedfolders-element"></a>SupportsSharedFolders 元素
 

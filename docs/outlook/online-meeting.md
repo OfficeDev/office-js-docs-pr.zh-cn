@@ -4,12 +4,12 @@ description: 讨论如何为联机会议Outlook设置移动外接程序。
 ms.topic: article
 ms.date: 07/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 34574809e2b874217113e42043b3bde7ef0dd8ba
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 8a8546bbbaf051d0f270aaee1a7222e8cc5dd8e7ccce6f21a48c92e79a4359c4
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671315"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57091780"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>为Outlook会议提供商创建一个移动外接程序
 

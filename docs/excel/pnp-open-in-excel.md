@@ -3,12 +3,12 @@ title: 从Excel打开加载项并嵌入Office加载项
 description: 从Excel打开"加载项"，并嵌入Office加载项。
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: a7998d1f15f40a549f8ff9ddd9745d6bf9b8ab6d
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 3d9f9d0ce811fefe31792f2ab924a6d3d0bb684faec01bb03043707c87dc70be
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773137"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089203"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>从Excel打开加载项并嵌入Office加载项
 

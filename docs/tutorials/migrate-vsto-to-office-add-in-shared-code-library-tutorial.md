@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: 有关如何在 VSTO 加载项与 Office 加载项之间共享代码的教程。
 title: 教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 localization_priority: Priority
-ms.openlocfilehash: ed921a114ef204058a8c95e1d26bfb2bdbe51fd5
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d6752d1cff210b526aca78cb5ee2a08fe64b4536e3f2cf4f5bb9e5e5d7c9d75a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350230"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089255"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 

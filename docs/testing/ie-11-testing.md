@@ -3,12 +3,12 @@ title: Internet Explorer 11 测试
 description: 在 Office 11 上测试Internet Explorer加载项。
 ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: fa9550884a24feffdd750171f3a7e08648f9432f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 8579a37f1ea48d511010b8c55cfe9fad5aa6b41acee85b1da426e25083287655
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076404"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090124"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>在 Office 11 上测试Internet Explorer加载项
 

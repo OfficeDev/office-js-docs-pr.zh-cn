@@ -4,12 +4,12 @@ description: 了解如何调试Outlook基于事件的激活的加载项。
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: d96ab13ada1135d17feef7597c6427cf56d75872cefdf43f0e24fb8da2274ce1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077090"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090811"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>调试基于事件Outlook加载项 (预览) 
 
@@ -81,7 +81,7 @@ ms.locfileid: "53077090"
 ### <a name="other"></a>其他
 
 1. 在桌面 **文件夹中创建一** (调试文件夹) 。 
-1. 打开 Visual Studio 代码。
+1. 打开 Visual Studio Code。
 1. 转到"**文件**  >  **""打开** 文件夹"，导航到刚创建的文件夹，然后选择"**选择文件夹"。**
 1. 在活动栏上，选择"调试" (Ctrl+Shift+D) 。
 
@@ -123,7 +123,7 @@ ms.locfileid: "53077090"
 
     ![Screenshot of selecting Direct Debugging from configuration options in the Visual Studio Code Debug dropdown.](../images/outlook-win-autolaunch-debug-vsc.png)
 
-## <a name="debug"></a>Debug
+## <a name="debug"></a>调试
 
 1. 确认已附加调试程序后，返回到Outlook，在"调试基于 **事件的处理程序**"对话框中，选择"确定 **"。**
 

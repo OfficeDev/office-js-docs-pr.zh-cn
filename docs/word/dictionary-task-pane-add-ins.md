@@ -3,12 +3,12 @@ title: 创建字典任务窗格加载项
 description: 了解如何创建字典任务窗格外接程序
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: e8667e77416caeb041af15141cd47b9cf35e2737
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 2473edc8e9de78ffdb03faf472c2c01eafbaa7425a62e505904f51f970893b56
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671658"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094116"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 

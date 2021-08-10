@@ -3,12 +3,12 @@ title: 从 Outlook 项中提取实体字符串
 description: 了解如何从 Outlook 加载项中的某个 Outlook 项中提取实体字符串。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: d266795e3794cfa293d073dafc1ca714644faa5b
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: b206f76ff1b817ff64970f59cfc79752aad943b3b71a40d86a3ee3d6f6493a3f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671110"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092818"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>从 Outlook 项中提取实体字符串
 

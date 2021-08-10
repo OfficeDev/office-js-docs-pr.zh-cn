@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.8 要求集的详细信息。
 ms.date: 03/19/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 87d59bb78a00035d4dc0ff8514d3214bc93397b3
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: b6cc766277d6f6a7c9ecca505e2f527f7654fd6e93fc85a2f2694c2a3df6db05
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671420"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088946"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>JavaScript API 1.8 Excel的新增功能
 
@@ -129,7 +129,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[varyByCategories](/javascript/api/excel/excel.chartseries#varyByCategories)|如此 如果Excel为每个数据标记分配不同的颜色或图案。|
 |[ChartTrendline](/javascript/api/excel/excel.charttrendline)|[backwardPeriod](/javascript/api/excel/excel.charttrendline#backwardPeriod)|表示趋势线向后延伸的周期数。|
 ||[forwardPeriod](/javascript/api/excel/excel.charttrendline#forwardPeriod)|表示趋势线向前延伸的周期数。|
-||[标签](/javascript/api/excel/excel.charttrendline#label)|表示图表趋势线的标签。|
+||[label](/javascript/api/excel/excel.charttrendline#label)|表示图表趋势线的标签。|
 ||[showEquation](/javascript/api/excel/excel.charttrendline#showEquation)|如果图表上显示趋势线公式，则为 True。|
 ||[showRSquared](/javascript/api/excel/excel.charttrendline#showRSquared)|如此 如果趋势线的 r 平方值显示在图表上。|
 |[ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)|[autoText](/javascript/api/excel/excel.charttrendlinelabel#autoText)|指定趋势线标签是否根据上下文自动生成相应的文本。|

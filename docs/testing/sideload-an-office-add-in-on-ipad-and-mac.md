@@ -3,12 +3,12 @@ title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: 通过旁Office在 iPad 和 Mac 上测试加载项。
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: b3d7d7fa3ee69e849c112c888b66fa9deed23d88
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b5de4fcf11fd05f945be99206a43879fa6205bd7b5074f1aa542528adc7a5772
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076201"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089638"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 

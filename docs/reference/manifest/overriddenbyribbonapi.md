@@ -3,12 +3,12 @@ title: 清单文件中 OverriddenByRibbonApi 元素
 description: 了解如何指定自定义选项卡、组、控件或菜单项在也是自定义上下文选项卡的一部分时不应显示。
 ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 06d7ae47c7d9de9d48fe9c59493258efc1fa9cae
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 0f314761f686ca559caea4e04ec5d5a66fab9618ea21a221a6cf2affde897578
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671749"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092206"
 ---
 # <a name="overriddenbyribbonapi-element"></a>OverriddenByRibbonApi 元素
 

@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.6 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9cc7155928fb3f98acf25a38ca5210ca6d57bb19
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 74fd184c4d65f30643266ba4799406cfe6f6e8e1e275af09eb6102e4bda986fa
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671208"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088977"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 的最近更新
 

@@ -3,12 +3,12 @@ title: 清单文件中的 Resources 元素
 description: Resources 元素包含用于 VersionOverrides 节点的图标、字符串和 URL。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 1deacc0b93e19e5f646ca2dd74d6f89de562f21e
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 9fbf28790b717389bf7248babcb69f28d4226b77c3139415fb14bbd712690074
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348291"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094140"
 ---
 # <a name="resources-element"></a>Resources 元素
 

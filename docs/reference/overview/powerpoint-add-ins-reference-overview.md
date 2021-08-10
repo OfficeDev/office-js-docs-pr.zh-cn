@@ -4,12 +4,12 @@ description: PowerPoint JavaScript API 概述
 ms.date: 07/05/2019
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 5951bddc1d5812ba52674c984b0199aeab83949b
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e375c577c4c5ccaa2187e976b6365197b867546e9ff0bb03f2d2c037137e183e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293637"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092170"
 ---
 # <a name="javascript-api-for-powerpoint"></a>适用于 PowerPoint 的 JavaScript API
 

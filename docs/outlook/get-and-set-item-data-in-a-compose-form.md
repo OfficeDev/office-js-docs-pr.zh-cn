@@ -3,12 +3,12 @@ title: 在 Outlook 的撰写窗体中获取和设置项目数据
 description: 在撰写应用场景中获取或设置 Outlook 加载项中项的不同属性，包括收件人、主题、正文和约会地点和时间。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: f888e0f5a9d1d3c3ab64a174064f3b2984111229
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 7d290b698d5fcfc625baa1860fad297fa79b499bb7fcbcae8c7fa646ebd18f12
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53670284"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57091436"
 ---
 # <a name="get-and-set-item-data-in-a-compose-form-in-outlook"></a>在 Outlook 的撰写窗体中获取和设置项目数据
 

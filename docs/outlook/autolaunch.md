@@ -2,14 +2,14 @@
 title: 配置Outlook加载项进行基于事件的激活
 description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
-ms.date: 07/08/2021
+ms.date: 08/05/2021
 localization_priority: Normal
-ms.openlocfilehash: 1856f78b7e6d49952d2eebf521894d6a988402a0
-ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
+ms.openlocfilehash: 904c7ce907b9fc31c898cbeaf89203e369e3155855ff86c7cb8af1cf6d956d64
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2021
-ms.locfileid: "53455528"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090979"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -262,7 +262,7 @@ Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一
     >
     > 1. 重新启动 Outlook。
 
-## <a name="debug"></a>Debug
+## <a name="debug"></a>调试
 
 在外接程序中对启动事件处理进行更改时，应注意：
 
@@ -279,10 +279,10 @@ Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一
 
 ![页面上"集成应用"页面的屏幕截图Microsoft 365 管理中心自定义Upload操作。](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource 和客户端存储：即将推出部署基于事件的加载项或更新现有加载项以包含基于事件的激活功能的功能。
+AppSource 和应用Office应用商店：即将推出部署基于事件的加载项或更新现有加载项以包含基于事件的激活功能的功能。
 
 > [!IMPORTANT]
-> 基于事件的外接程序仅限于管理员托管的部署。 目前，用户无法从 AppSource 或客户端应用商店获取基于事件的加载项。
+> 基于事件的外接程序仅限于管理员托管的部署。 目前，用户无法从 AppSource 或应用内应用商店获取基于Office加载项。
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>基于事件的激活行为和限制
 

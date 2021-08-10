@@ -3,12 +3,12 @@ title: 从 Outlook 加载项使用 Exchange Web 服务 (EWS)
 description: 提供的示例显示 Outlook 加载项如何通过 Exchange Web 服务请求信息。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 63c969355c9bae5dab6ef8603a9f3d61d8e82eec
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 174f2bdfe63fbd4cef7cf2b6129a666ccea0135507d122570431306dae12d651
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348452"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092712"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>从 Outlook 加载项调用 Web 服务
 

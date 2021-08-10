@@ -3,12 +3,12 @@ title: 处理 Outlook 加载项中的日期值
 description: JavaScript API Office JavaScript Date 对象对日期和时间进行大部分存储和检索。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d244c7a4f7009a634fc2354e62cee0ad175cffd
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 46be9e7e3c952d08addcf8ef761a259f8c0d1d84c1bc3b0bb61cbb40c07ce35b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671819"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093316"
 ---
 # <a name="tips-for-handling-date-values-in-outlook-add-ins"></a>处理 Outlook 加载项中的日期值的提示
 

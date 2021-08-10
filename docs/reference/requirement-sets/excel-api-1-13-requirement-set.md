@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.13 要求集的详细信息。
 ms.date: 07/09/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 8238f6c32aad74d59ed1d178b3f7b162a64026f1
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 61ae65fc0692cdf05741e299e95460eb3167dc6ca3b759a49d655c3a8f1bc425
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671539"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092628"
 ---
 # <a name="whats-new-in-excel-javascript-api-113"></a>JavaScript API 1.13 Excel的新增功能
 

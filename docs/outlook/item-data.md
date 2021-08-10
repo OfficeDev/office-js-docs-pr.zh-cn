@@ -3,12 +3,12 @@ title: 获取或设置 Outlook 加载项中的项目数据
 description: 根据加载项是在阅读窗体中激活还是在撰写窗体中激活，项目为加载项提供的属性也有所不同。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 6ef0b868ba83a6003c401e15b7d6dd9ee0f4f94b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: d274d850c06178e1fdb31f95d921c5a8ae4ea0a399a5dbebd61de548c084ce5d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609074"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093913"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>在阅读或撰写窗体中获取和设置 Outlook 项目数据
 
@@ -18,7 +18,7 @@ ms.locfileid: "44609074"
 
 ## <a name="item-properties-available-in-compose-and-read-forms"></a>撰写和阅读窗体中可用的项目属性
 
-表1显示了 Office JavaScript API 中的项目级属性，在邮件加载项的每种模式（阅读和撰写）中都可用。通常，在阅读窗体中可用的那些属性是只读的，而撰写窗体中的可用属性是可读写的，但不包括[itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)、 [conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)和[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)属性（无论是如此）。
+表 1 显示了 Office JavaScript API 中的项目级属性，这些属性在邮件外接程序 (和撰写) 模式下可用。通常，阅读窗体中可用的属性是只读的，撰写窗体中可用的属性是可读/写属性[，itemId、conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)和[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)属性除外，无论如何，这些属性始终为只读。 [](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
 
 对于撰写窗体中的其余项目级属性，由于加载项和用户可以同时读取或写入同一属性，在撰写模式下获取或设置这些属性的方法都是异步的，因此这些属性在撰写窗体中和阅读窗体中返回的对象类型可能也有所不同。 有关在撰写模式下使用异步方法获取或设置项目级属性的详细信息，请参阅[在 Outlook 的撰写窗体中获取和设置项目数据](get-and-set-item-data-in-a-compose-form.md)。
 
@@ -63,7 +63,7 @@ ms.locfileid: "44609074"
 
 另外，还可以使用 [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法直接从加载项访问 Exchange Web 服务 (EWS) 操作 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 和 [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation)。 可以使用这两个操作获取并设置指定项目的多个属性。 无论加载项已在阅读还是撰写窗体中激活，只要在加载项清单中指定了 **ReadWriteMailbox** 权限，Outlook 加载项就可以使用此方法。
 
-有关使用 **makeEwsRequestAsync** 访问 EWS 操作的详细信息，请参阅[从 Outlook 加载项调用 Web 服务](web-services.md)。
+有关使用 **makeEwsRequestAsync** 访问 EWS 操作的详细信息，请参阅 [从 Outlook 加载项调用 Web 服务](web-services.md)。
 
 
 ## <a name="see-also"></a>另请参阅

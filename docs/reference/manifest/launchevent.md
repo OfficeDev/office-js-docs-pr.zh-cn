@@ -3,12 +3,12 @@ title: 清单文件中 LaunchEvent
 description: LaunchEvent 元素将外接程序配置为基于支持的事件激活。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: c866a085ed6b7a33c8d7bf02d25e6ec748629e07
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 763ee6b0776cce0118df35dbbad3488a54fd7599cc774de240d4f1130ed021cb
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591077"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089762"
 ---
 # <a name="launchevent-element"></a>LaunchEvent 元素
 

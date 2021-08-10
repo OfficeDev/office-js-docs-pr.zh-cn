@@ -4,18 +4,18 @@ description: 资深 VSTO 加载项开发人员了解 Office Web 加载项资源�
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6da72dbdc5dc25d222cc7c2a269d905d9271ce15
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 653f90d610dbad7d1b00df777109d3d02bffc0598454c38b5945fa56542beb61
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238013"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089388"
 ---
 # <a name="vsto-add-in-developers-guide"></a>VSTO 加载项开发人员指南
 
 因此，你为在 Windows 上运行的 Office 应用创建了一些 VSTO 加载项，现在正在探索扩展将在 Windows、Mac 上所运行 Office 和 Office 套件联机版的新方式：Office Web 加载项。
 
-对 Excel、Word 和其他 Office 应用程序的对象模型的理解将非常有用，因为 Office Web 加载项中的对象模型遵循类似的模式。 但是将面临一些挑战：
+对 Excel、Word 和其他 Office 应用程序的对象模型的理解将非常有用，因为 Office Web 加载项中的对象模型遵循类似的模式。但是将会有一些挑战：
 
 - 你将使用其他语言（JavaScript 或 TypeScript）而不是 C＃或 Visual Basic .NET。 （还有一种方法，如下所述，可以重复使用 Web 加载项中存在的代码。）
 - Office Web 加载项的部署方式不同于 VSTO 加载项。

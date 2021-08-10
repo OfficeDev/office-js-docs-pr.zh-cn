@@ -4,12 +4,12 @@ description: 通过 Office 加载项的学习资源为初学者提供指导的�
 ms.date: 02/12/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: b71e4dfaf6f80431e114c6a9bd83d47bc06c3128
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: c3242057be7e8306af91268085b6b46078d301fd507013fc1a27b94e7538d26c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51177983"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089412"
 ---
 # <a name="beginners-guide"></a>初学者指南
 

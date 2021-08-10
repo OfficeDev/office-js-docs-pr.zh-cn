@@ -3,12 +3,12 @@ title: 清单文件中的 Icon 元素
 description: 定义“按钮”或“菜单”控件的 Image 元素。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 1adfbcd154091fcae49966f0c1f7d0b9cc968ed3
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: d153ca4ef162b8790b48a37a911ccd6b11c2632160bd02e09a34b2ea4f14daf6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604622"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093017"
 ---
 # <a name="icon-element"></a>Icon 元素
 
@@ -22,7 +22,7 @@ ms.locfileid: "51604622"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  Description  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [Image](#image)        | 是 |   要使用的图像的 resid         |
 
@@ -39,7 +39,7 @@ ms.locfileid: "51604622"
 ```
 
 > [!IMPORTANT]
-> 如果此图像是加载项的代表图标，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和 Office 内创建有效列表，了解大小和其他要求。
+> 如果此图像是加载项的代表图标，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和加载项内创建有效Office大小和其他要求。
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>移动外形规格的其他要求
 

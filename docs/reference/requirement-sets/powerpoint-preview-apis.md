@@ -4,12 +4,12 @@ description: 有关即将推出的 JavaScript PowerPoint的详细信息。
 ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: af947919ad680864bf4a63ab29af33d0560aaaa0
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5569a732dce2db1da5b6fb29169c87e65222afb50b55c7b1930a7c20e138c5c9
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671602"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092616"
 ---
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPointJavaScript 预览 API
 
@@ -33,10 +33,10 @@ JavaScript API PowerPoint先在"预览"中引入，之后在经过充分测试�
 |[AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions)|[layoutId](/javascript/api/powerpoint/powerpoint.addslideoptions#layoutId)|指定要用于新幻灯片的幻灯片版式 ID。|
 ||[slideMasterId](/javascript/api/powerpoint/powerpoint.addslideoptions#slideMasterId)|指定要用于新幻灯片的幻灯片母版的 ID。|
 |[Presentation](/javascript/api/powerpoint/powerpoint.presentation)|[slideMasters](/javascript/api/powerpoint/powerpoint.presentation#slideMasters)|返回演示文稿 `SlideMaster` 中的对象的集合。|
-||[tags](/javascript/api/powerpoint/powerpoint.presentation#tags)|返回附加到演示文稿的标记的集合。|
+||[标记](/javascript/api/powerpoint/powerpoint.presentation#tags)|返回附加到演示文稿的标记的集合。|
 |[Shape](/javascript/api/powerpoint/powerpoint.shape)|[delete()](/javascript/api/powerpoint/powerpoint.shape#delete__)|从形状集合中删除形状。|
 ||[id](/javascript/api/powerpoint/powerpoint.shape#id)|获取形状的唯一 ID。|
-||[tags](/javascript/api/powerpoint/powerpoint.shape#tags)|返回形状中的标记集合。|
+||[标记](/javascript/api/powerpoint/powerpoint.shape#tags)|返回形状中的标记集合。|
 |[ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection)|[getCount()](/javascript/api/powerpoint/powerpoint.shapecollection#getCount__)|获取集合中的形状数。|
 ||[getItem(key: string)](/javascript/api/powerpoint/powerpoint.shapecollection#getItem_key_)|使用形状的唯一 ID 获取形状。|
 ||[getItemAt(index: number)](/javascript/api/powerpoint/powerpoint.shapecollection#getItemAt_index_)|使用形状在集合中从零开始编制的索引获取形状。|
@@ -45,7 +45,7 @@ JavaScript API PowerPoint先在"预览"中引入，之后在经过充分测试�
 |[Slide](/javascript/api/powerpoint/powerpoint.slide)|[layout](/javascript/api/powerpoint/powerpoint.slide#layout)|获取幻灯片的版式。|
 ||[shapes](/javascript/api/powerpoint/powerpoint.slide#shapes)|返回幻灯片中形状的集合。|
 ||[slideMaster](/javascript/api/powerpoint/powerpoint.slide#slideMaster)|获取 `SlideMaster` 表示幻灯片的默认内容的对象。|
-||[tags](/javascript/api/powerpoint/powerpoint.slide#tags)|返回幻灯片中的标记集合。|
+||[标记](/javascript/api/powerpoint/powerpoint.slide#tags)|返回幻灯片中的标记集合。|
 |[SlideCollection](/javascript/api/powerpoint/powerpoint.slidecollection)|[添加 (选项？：PowerPoint。AddSlideOptions) ](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_)|在集合的末尾添加新幻灯片。|
 |[SlideLayout](/javascript/api/powerpoint/powerpoint.slidelayout)|[id](/javascript/api/powerpoint/powerpoint.slidelayout#id)|获取幻灯片版式的唯一 ID。|
 ||[名称](/javascript/api/powerpoint/powerpoint.slidelayout#name)|获取幻灯片版式的名称。|

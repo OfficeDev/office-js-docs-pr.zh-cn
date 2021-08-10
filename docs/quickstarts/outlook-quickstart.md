@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗�
 ms.date: 08/04/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: c435fe78255513fb50001e99cfeb476959aafb28
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 045928e0202857f21825ceeddf0e7489ad6d9d0359b843353fefd532bbd4d48e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774425"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094260"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 

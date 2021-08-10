@@ -1,16 +1,16 @@
 ---
-title: 在 PowerPoint 中对演示文稿、幻灯片和形状使用自定义标记
+title: 对演示文稿、幻灯片和演示文稿中的形状使用自定义PowerPoint
 description: 了解如何将标记用于有关演示文稿、幻灯片和形状的自定义元数据。
 ms.date: 04/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fbb13e67da1f7962fc2c0b8d45689f259b015014
-ms.sourcegitcommit: 58d394fa49308ecf93cd53f7d3fb6e316ff56209
+ms.openlocfilehash: 9ae86906a2ac69cb79adac34fa4e923a9bc218a7dc8a7e5bdefd63300b589da5
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "51876856"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093652"
 ---
-# <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>在 PowerPoint 中对演示文稿、幻灯片和形状使用自定义标记
+# <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>对演示文稿、幻灯片和演示文稿中的形状使用自定义PowerPoint
 
 加载项可以将自定义元数据（称为"标记"键值对）附加到幻灯片上的演示文稿、特定幻灯片和特定形状。
 
@@ -32,7 +32,7 @@ ms.locfileid: "51876856"
 
 - 方法的第一 `add` 个参数是键值对中的键。 
 - 第二个参数是值。
-- 键为大写字母。 此方法并非严格强制要求;但是 `add` ，PowerPoint 始终将键存储为大写，并且某些与标记相关的方法要求键使用大写形式表示，因此建议最佳做法是始终在代码中对标记键使用大写形式。
+- 键为大写字母。 此方法并非严格强制要求;但是，键始终由 PowerPoint 存储为大写，并且某些与标记相关的方法要求键以大写形式表示，因此我们建议始终在代码中对标记键使用大写形式。 `add` 
 
 ```javascript
 async function addMultipleSlideTags() {
@@ -88,7 +88,7 @@ async function updateTag() {
     - 它使用Office.context.docJavaScript API 的 [ ument.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) 方法。
     - 对 的 `getSelectedDataAsync` 调用嵌入承诺返回函数中。 有关这样做的原因和如何操作，请参阅在承诺返回函数中[包装通用 API。](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)
     - `getSelectedDataAsync` 返回一个数组，因为可以选择多个幻灯片。 在此方案中，用户只选择了一个，因此代码获取第一张 (第) 张幻灯片，该幻灯片是唯一一个选定的幻灯片。
-    - 幻灯片的值是用户在 PowerPoint UI 缩略图窗格中的幻灯片旁边看到的从 `index` 1 开始的值。
+    - 幻灯片的值是用户在 UI 缩略图窗格中的幻灯片旁边看到的 `index` PowerPoint 1 的值。
 
     ```javascript
     function getSelectedSlideIndex() {
@@ -138,7 +138,7 @@ async function updateTag() {
 
 ## <a name="set-custom-metadata-on-the-presentation"></a>在演示文稿上设置自定义元数据
 
-加载项还可以将标记作为一个整体应用于演示文稿。 这样，您能够将标记用于文档级元数据，类似于 [CustomProperty](/javascript/api/word/word.customproperty)类在 Word 中的使用方式。 但与 Word `CustomProperty` 类不同，PowerPoint 标记的值只能是类型 `string` 。
+加载项还可以将标记作为一个整体应用于演示文稿。 这样，您能够将标记用于文档级元数据，类似于 [CustomProperty](/javascript/api/word/word.customproperty)类在 Word 中的使用方式。 但与 Word `CustomProperty` 类不同，PowerPoint标记的值只能是 类型 `string` 。
 
 以下代码是向演示文稿添加标记的示例。 
 

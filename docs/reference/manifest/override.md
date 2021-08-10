@@ -3,12 +3,12 @@ title: 清单文件中的 Override 元素
 description: Override 元素使您能够根据指定条件指定设置的值。
 ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: cd270fa19750810238b42c26c2abc35a61c1bac8
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: d6f91d32a604a939118e42de882976239006c5235ea65a55d713712ebca4ee70
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590902"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093640"
 ---
 # <a name="override-element"></a>Override 元素
 

@@ -3,12 +3,12 @@ title: 创建适用于撰写窗体的 Outlook 加载项
 description: 了解有关适用于撰写窗体的 Outlook 加载项的方案和功能。
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 59ccebafbb3991ff3edb241596f44b5939d73693
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ea85194eb74e0eb57addecddab32fe157cf2a88ef05604dfe1b1992678973996
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348529"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090862"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>创建适用于撰写窗体的 Outlook 加载项
 
@@ -19,7 +19,7 @@ ms.locfileid: "53348529"
 - 查看或编辑现有约会或用户是组织者的会议项目。
 
    > [!NOTE]
-   > 如果用户使用的是 Outlook 2013 和 Exchange 2013 的 RTM 版本，在查看由用户组织的会议项目时，用户可以发现读取加载项是可用的。 从 Office 2013 SP1 版本开始进行了更改，在同一方案中，只有撰写外接程序能够激活并可用。
+   > 如果用户在 Outlook 2013 和 Exchange 2013 的 RTM 版本上，并查看由用户组织的会议项目，则用户可以发现读取外接程序是可用的。从 Office 2013 SP1 版本开始进行了更改，在同一场景中，只有撰写外接程序能够激活并可用。
 
 - 在单独的撰写窗体中撰写内嵌响应邮件或答复邮件。
 

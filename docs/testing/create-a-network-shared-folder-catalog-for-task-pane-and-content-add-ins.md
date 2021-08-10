@@ -3,12 +3,12 @@ title: 从Office旁加载外接程序以进行测试
 description: 了解如何旁加载Office外接程序以从网络共享进行测试
 ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 9a44c14669bf0a8fa842e931fc1b12601f73043b
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 93d791b544a1debe62512f12cc3a5e8b3022d89f8003b77dc1e3afc9c73bc627
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348305"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093877"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>从Office旁加载外接程序以进行测试
 

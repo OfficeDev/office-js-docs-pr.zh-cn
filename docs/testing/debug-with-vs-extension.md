@@ -3,12 +3,12 @@ title: 适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩�
 description: 使用Visual Studio Code调试Microsoft Office调试器中的扩展Office调试外接程序。
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 3daedb48bdec5a17dfc220f049a8e2cdc86ac398
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d027e5937fa3a58623ce9e798fc683e5459e73b8b72606c0a006e465c9c1360c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349285"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088463"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展
 

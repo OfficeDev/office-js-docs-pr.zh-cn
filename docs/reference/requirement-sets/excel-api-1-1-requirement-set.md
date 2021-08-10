@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.1 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 7bc378c200d8aa7c200158d7fe50fdbd71b8251a
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: db8754e793d86fbc1c85bae85a1ce1f925504c649b1694659896ba567dc4e478
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671441"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093817"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>ExcelJavaScript API 要求集 1.1
 
@@ -185,7 +185,7 @@ Excel JavaScript API 1.1 是首版 API。 这是唯一Excel支持的特定要求
 ||[getRange()](/javascript/api/excel/excel.table#getRange__)|获取与整个表相关的 range 对象。|
 ||[getTotalRowRange () ](/javascript/api/excel/excel.table#getTotalRowRange__)|获取与表的总计行相关的 range 对象。|
 ||[名称](/javascript/api/excel/excel.table#name)|表的名称。|
-||[columns](/javascript/api/excel/excel.table#columns)|表示表中所有列的集合。|
+||[列](/javascript/api/excel/excel.table#columns)|表示表中所有列的集合。|
 ||[id](/javascript/api/excel/excel.table#id)|返回用于唯一标识指定工作簿中表的值。|
 ||[rows](/javascript/api/excel/excel.table#rows)|表示表中所有行的集合。|
 ||[showHeaders](/javascript/api/excel/excel.table#showHeaders)|指定标题行是否可见。|
