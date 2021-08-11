@@ -3,12 +3,12 @@ title: Outlook 加载项的激活和 API 使用限制
 description: 请注意某些激活和 API 使用指南，并在这些限制范围内实施加载项。
 ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: b1d948add382f19083f099ed7a01b4f954555b6f
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: fcc28a5183195cade1314aaa6ed4d0890a892e8f8a3bf71935bdd8c01b968ab6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671777"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097523"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Outlook 加载项的激活和 JavaScript API 限制
 

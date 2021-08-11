@@ -3,12 +3,12 @@ title: Outlook加载项 API 要求集 1.10
 description: 加载项 API 要求集 1.10 Outlook 1.10。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 9e3e30590279036a08a93d8643cd56c2c73be78c
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: fe870792a730404c4e90bf3eb1c3377b0f40c6f4b01a26a86deca56049868f16
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671259"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095519"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook加载项 API 要求集 1.10
 

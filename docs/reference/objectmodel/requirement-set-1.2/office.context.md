@@ -3,12 +3,12 @@ title: Office.context - 要求集 1.2
 description: Office。适用于使用邮箱 API Outlook集 1.2 的外接程序的上下文对象成员。
 ms.date: 12/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 9036761d0b6dfeb3ffb92613a202db896dccfdc5
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: d90858005a466d0b4ec4fd693eadb999fc14676ece19c9366eeb14ad1f20f463
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590433"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095414"
 ---
 # <a name="context-mailbox-requirement-set-12"></a>context (Mailbox requirement set 1.2) 
 
@@ -16,7 +16,7 @@ ms.locfileid: "52590433"
 
 Office.context 提供了外接程序在所有应用程序中使用的共享Office接口。 此列表仅记录外接程序Outlook接口。有关 Office.context 命名空间的完整列表，请参阅通用 API 中的[Office.context 引用](/javascript/api/office/office.context?view=outlook-js-1.2&preserve-view=true)。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -27,7 +27,7 @@ Office.context 提供了外接程序在所有应用程序中使用的共享Offic
 
 | 属性 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [contentLanguage](#contentlanguage-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [diagnostics](#diagnostics-contextinformation) | 撰写<br>阅读 | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [mailbox](office.context.mailbox.md) | 撰写<br>阅读 | [邮箱](/javascript/api/outlook/office.mailbox?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -88,7 +88,7 @@ function write(message){
 
 *   [ContextInformation](/javascript/api/office/office.contextinformation)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -160,7 +160,7 @@ function write(message){
 
 *   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -188,7 +188,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 *   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -209,7 +209,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 *   [UI](/javascript/api/office/office.ui)
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

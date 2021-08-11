@@ -3,12 +3,12 @@ title: 在演示文稿中PowerPoint幻灯片
 description: 了解如何将幻灯片从一个演示文稿插入另一个演示文稿。
 ms.date: 03/07/2021
 localization_priority: Normal
-ms.openlocfilehash: d9c50b87e7ba702a2cffcef5ca94dfb0d39b1af0
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 73e618696dab66565d4d4da1ccf98689166d81ab613b90b5abafd5093651b4b9
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671763"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094676"
 ---
 # <a name="insert-slides-in-a-powerpoint-presentation"></a>在演示文稿中PowerPoint幻灯片
 

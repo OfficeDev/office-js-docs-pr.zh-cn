@@ -4,16 +4,16 @@ description: 了解有关对话框 API 要求集的详细信息。
 ms.date: 07/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: a5e0855cf6e7b7c9c3157fe24bed3610a26992ed
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 3c5aea3fecc6b48a830e48cf7739e93ef16dab6bacee1338b94774911a06ef5d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536037"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098939"
 ---
 # <a name="dialog-api-requirement-sets"></a>Dialog API 要求集
 
-要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了对话框 API 要求集、Office要求集的客户端应用程序，以及该对话框应用程序Office版本号。
 
@@ -53,5 +53,5 @@ Dialog API 1.1 是首版 API。 要求集 1.2 增加了对使用[Office.dialog.m
 
 - [在 Office 加载项中使用 Office 对话框 API](../../develop/dialog-api-in-office-add-ins.md)
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

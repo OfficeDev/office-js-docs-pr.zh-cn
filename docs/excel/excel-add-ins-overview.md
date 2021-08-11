@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 18484c9f6745399b0fdf50da466004e80beca44e
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: afca81ad2a4ee3ed24221798f19bea2d1df8dc5f2fe6b97b4d0bcc5152df4783
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349502"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085955"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
@@ -113,7 +113,7 @@ Excel 加载项通过使用 [Office JavaScript API](../reference/javascript-api-
 
 - **Excel JavaScript API**：[Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 随 Office 2016 引入，提供强类型的 Excel 对象，可用于访问工作表、区域、表、图表等。
 
-- **通用 API**：通用 API 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。 由于通用 API 确实为 Excel 交互提供了有限的功能，因此，如果加载项需要在 Excel 2013 上运行，则可以使用它。
+- **通用 API**：通用 API 随 Office 2013 引入，使用它可以访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。 由于通用 API 确实为 Excel 交互提供了有限的功能，如果加载项需要在 Excel 2013 上运行，则可以使用它。
 
 ## <a name="next-steps"></a>后续步骤
 

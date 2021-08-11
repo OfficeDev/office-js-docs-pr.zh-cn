@@ -3,12 +3,12 @@ title: 在 Office 网页版中旁加载 Office 加载项进行测试
 description: 通过旁Office在Office web 版外接程序中测试外接程序。
 ms.date: 08/02/2021
 localization_priority: Normal
-ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 3dbb6ade3089fa20dc7f5a13a5a87654cda8cafa4c4391386513b33169aa8a15
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773648"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098252"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 

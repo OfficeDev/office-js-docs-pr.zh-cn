@@ -3,12 +3,12 @@ title: Outlook 上下文加载项激活故障排查
 description: 外接程序未按预期激活的可能原因。
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 7999bac00e2d3b1b7ecb3f58e6d70a247500982e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 08369db7d4f77b9fa23d8df332bd59d7ddbbce959c5630eeb0fb0b6e833d2045
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671679"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094712"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook 加载项激活故障排查
 

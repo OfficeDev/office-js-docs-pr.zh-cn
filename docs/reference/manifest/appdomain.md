@@ -1,21 +1,21 @@
 ---
 title: 清单文件中的 AppDomain 元素
-description: 指定加载项使用的其他域，并且应受 Office 信任。
+description: 指定您的外接程序使用且应受您的外接程序信任的其他Office。
 ms.date: 06/12/2020
 localization_priority: Normal
-ms.openlocfilehash: ae49944afceada559b39353cd119e26a21fd3d15
-ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
+ms.openlocfilehash: be983418a09be8f808e6cde0b84bff7f99c25923e57baced85b915709668564c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "44778646"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098309"
 ---
 # <a name="appdomain-element"></a>AppDomain 元素
 
-指定除了在[SourceLocation 元素](sourcelocation.md)中指定的域之外，Office 应信任的其他域。 指定域具有以下效果：
+指定除[SourceLocation](sourcelocation.md)Office中指定的域之外，还应信任其他域。 指定域具有以下效果：
 
-- 它允许在桌面 Office 平台上的加载项的根任务窗格中直接打开页面、路由或域中的其他资源。 （为 web 上的 Office**指定不需要的域**或在 IFrame 中打开资源，也需要在使用[对话框 API](../../develop/dialog-api-in-office-add-ins.md)打开的对话框中打开资源时。）
-- 它使域中的页面可以从加载项中的 Iframe 进行 Office.js API 调用。
+- 它使页面中、路由或域中的其他资源可以直接在桌面和平台加载项的根任务窗格中Office打开。  (在 **AppDomain** 中指定域对于 Office web 版 或在 IFrame 中打开资源不是必需的，也不需要在对话框 [API](../../develop/dialog-api-in-office-add-ins.md).) 打开的对话框中打开资源。
+- 它使域中的页面Office.js内 IFrame 进行 API 调用。
 
 **加载项类型：** 内容、任务窗格和邮件
 
@@ -27,11 +27,11 @@ ms.locfileid: "44778646"
 
 > [!IMPORTANT]
 > 1. **AppDomain** 元素的值必须包括协议（如 `<AppDomain>https://myappdomain.com</AppDomain>`）。
-> 2. 如果有域的显式端口，请将其包括在内（例如， `<AppDomain>https://myappdomain.com:9999</AppDomain>` ）。
-> 3. 如果需要信任某个子域，请将其包括在内（例如， `<AppDomain>https://mysubdomain.myappdomain.com</AppDomain>` ）。 子域 `mysubdomain.mydomain.com` 和 `mydomain.com` 不同的域。 如果两者都需要信任，则这两个元素都需要位于单独的**AppDomain**元素中。
-> 4. 列出与[SourceLocation 元素](sourcelocation.md)中指定的域相同的域不起作用，并且可能会引起误导。 特别是在上进行开发时 `localhost` ，不需要为创建**AppDomain**元素 `localhost` 。
-> 5. 不要将任何段的 URL 包含在域之后。 例如，不要包含页面的完整 URL。
-> 6. 不要*在值上添加一个*结束斜杠 "/"。
+> 2. 如果存在域的显式端口，请 (例如 `<AppDomain>https://myappdomain.com:9999</AppDomain>` ，) 。
+> 3. 如果需要信任子域，请 (，例如 `<AppDomain>https://mysubdomain.myappdomain.com</AppDomain>`) 。 子域和 `mysubdomain.mydomain.com` `mydomain.com` 是不同的域。 如果两者都需要受信任，则两者都需要位于单独的 **AppDomain** 元素中。
+> 4. 列出与 [SourceLocation](sourcelocation.md) 元素中指定的域相同的域没有任何效果，并且可能会令人误解。 特别是，在 进行开发时， `localhost` 不需要为 **创建 AppDomain** 元素 `localhost` 。
+> 5. 请勿包含通过域的 URL 的任何段。 例如，不包括页面的完整 URL。
+> 6. 不要 *将* 结束斜杠"/"放在值上。
 
 ## <a name="contained-in"></a>包含于
 

@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 OneNote 任务窗�
 ms.date: 08/04/2021
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 5ccd3b3fdb1853b151f0acbcc57dfdf2dd608dea
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: d82ce959b7d9d1494c2f183c4e60ec633064a0dd33bcb40bc1ac5474dca923b0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774432"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097265"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 

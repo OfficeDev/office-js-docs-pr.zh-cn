@@ -1,20 +1,20 @@
 ---
 title: 清单文件中的 WebApplicationInfo 元素
-description: Office 外接程序清单的 WebApplicationInfo 元素参考文档 (XML) 文件。
+description: 有关外接程序清单的 WebApplicationInfo 元素Office XML 文件 (文档) 文档。
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 037de49320a6d1a1ca7dce3446b4f4008a2f1331
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 7b14b62fa8b3dd87c650dbeaaeedb8d29c3995a77e0be8c8582da422cb480e67
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234161"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097879"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
 
 支持 Office 外接程序中的单一登录 (SSO)。此元素包含外接程序中的信息，如下所示：
 
-- Office 客户端应用程序可能需要权限的OAuth 2.0 资源。
+- OAuth 2.0 *资源*，Office应用程序可能需要权限。
 - OAuth 2.0 *客户端*，可能需要访问 Microsoft Graph 的权限。
 
 > [!NOTE]
@@ -27,10 +27,10 @@ ms.locfileid: "50234161"
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  **Id**    |  是   |  在 Azure Active Directory v2.0 终结点中注册的加载项关联服务的 **应用程序 ID**。|
-|  **MsaId**    |  否   |  加载项 Web 应用程序的 MSA 客户端 ID，如msm.live.com。|
+|  **MsaId**    |  否   |  外接程序的 MSA Web 应用程序的客户端 ID，如 msm.live.com 中注册。|
 |  **Resource**  |  是   |  指定在 Azure Active Directory v2.0 终结点中注册的加载项的 **应用程序 ID URI**。|
-|  [Scopes](scopes.md)                |  是  |  指定加载项对资源（如 Microsoft Graph）所需的权限。  |
-|  [授权](authorizations.md)  |  否   | 指定加载项的 Web 应用程序需要授权的外部资源和所需的权限。|
+|  [Scopes](scopes.md)                |  是  |  指定加载项对资源（如 Microsoft 加载项）所需的Graph。  |
+|  [授权](authorizations.md)  |  否   | 指定加载项的 Web 应用程序需要授权的外部资源和所需权限。|
 
 ## <a name="webapplicationinfo-example"></a>WebApplicationInfo 示例
 

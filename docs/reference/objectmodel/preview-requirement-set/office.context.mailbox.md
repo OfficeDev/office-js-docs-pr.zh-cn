@@ -3,12 +3,12 @@ title: Office.context.mailbox - 预览要求集
 description: Outlook邮箱 API 预览要求集版本的邮箱对象模型。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 2765a782b33e6ffd3ef4d99b1ec70195498e6962
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: e99e731c20759a5822ef55cec0dd94d674076259f906d73c485125fd6b155f43
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671574"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096504"
 ---
 # <a name="mailbox-preview-requirement-set"></a>邮箱 (预览要求集) 
 
@@ -32,7 +32,7 @@ ms.locfileid: "53671574"
 | [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#ewsUrl) | ReadItem | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [项](office.context.mailbox.item.md) | 受限 | 撰写<br>阅读 | [项](/javascript/api/outlook/office.item?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [masterCategories](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#masterCategories) | ReadWriteMailbox | 撰写<br>阅读 | [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-preview&preserve-view=true) | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |
-| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#restUrl) | ReadItem | 撰写<br>阅读 | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#restUrl) | ReadItem | 撰写<br>阅读 | 字符串 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#userProfile) | ReadItem | 撰写<br>阅读 | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="methods"></a>方法

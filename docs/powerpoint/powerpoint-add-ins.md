@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 106f11da21d994534219399829dca37e16bd2fe5
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 47bc41f9ffed538440d635a49a83ecd7ab11df6cd12ec5eee04bc7b524ed72cf
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671700"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094736"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
@@ -18,13 +18,13 @@ ms.locfileid: "53671700"
 
 - 使用 **内容外接程序** 向演示文稿添加动态 HTML5 内容。有关示例，请参阅可用于将交互关系图从 LucidChart 插入面板的 [PowerPoint 的 LucidChart 关系图](https://appsource.microsoft.com/product/office/wa104380117)外接程序。
 
-- 使用 **任务窗格加载项** 引入参考信息或通过服务将数据插入演示文稿。 有关示例，请参阅可用于在演示文稿中添加专业照片的 [Pexels - 免费素材图片](https://appsource.microsoft.com/product/office/wa104379997)加载项。
+- 使用 **任务窗格外接程序** 引入参考信息或通过服务将数据插入演示。有关示例，请参阅可用于在演示文稿中添加专业照片的 [Pexels - Free Stock Photos](https://appsource.microsoft.com/product/office/wa104379997) 图像外接程序。
 
 ## <a name="powerpoint-add-in-scenarios"></a>PowerPoint 加载项方案
 
 本文中的代码示例展示了开发 PowerPoint 加载项涉及的一些基本任务。请注意以下几点:
 
-- 这些示例使用 `app.showNotification` 函数来显示信息，该函数包含在 Visual Studio Office 加载项项目模板中。 如果你没打算使用 Visual Studio 开发加载项，则需要将 `showNotification` 函数替换为你自己的代码。
+- 这些示例使用 `app.showNotification` 函数来显示信息，该函数包含在 Visual Studio Office 外接程序项目模板中。如果你没打算使用 Visual Studio 开发外接程序，则需要将 `showNotification` 函数替换为你自己的代码。
 
 - 其中一些示例还使用在这些函数的作用域外声明的 `Globals` 对象：`var Globals = {activeViewHandler:0, firstSlideId:0};`
 
@@ -35,7 +35,7 @@ ms.locfileid: "53671700"
 若要生成内容外接程序，则需要获取演示文稿的活动视图，并在 `ActiveViewChanged` 处理程序期间处理 `Office.Initialize` 事件。
 
 > [!NOTE]
-> 在 PowerPoint 网页版中，[Document.ActiveViewChanged](/javascript/api/office/office.document) 事件永远不会触发，因为幻灯片放映模式被视为新会话。 在这种情况下，加载项必须在加载时提取活动视图，如下面的代码示例所述。
+> 在 PowerPoint Web 版中，[Document.ActiveViewChanged](/javascript/api/office/office.document) 事件永远不会触发，因为幻灯片放映模式被视为新会话。在这种情况下，加载项必须在加载时提取活动视图，如下方代码示例所述。
 
 在以下代码示例中：
 
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>转到演示文稿中的特定幻灯片
 
-在以下代码示例中，`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 方法以获取 `asyncResult.value` 返回的 JSON 对象，其中包括一个名为 `slides` 的数组。 `slides` 数组包含所选范围内的幻灯片（或当前幻灯片，如果未选择多张幻灯片）的 ID、标题和索引。 此外，它会将所选范围内的第一张幻灯片的 ID 保存为全局变量。
+在下方的代码示例中，`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 方法，以获取 `asyncResult.value` 返回的、包含名为 `slides` 的阵列的 JSON 对象。`slides` 阵列中包含所选幻灯片范围（如果没有选中多个幻灯片，则为当前幻灯片）的 ID、标题和索引。它还会将所选范围内第一张幻灯片的 ID 保存到一个全局变量。
 
 ```js
 function getSelectedRange() {

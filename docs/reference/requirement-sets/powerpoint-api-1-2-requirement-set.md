@@ -4,12 +4,12 @@ description: 有关 PowerPointApi 1.2 要求集的详细信息。
 ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: fac472e9b88b78f52fe939f883d88cded8b1702c
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 971617bc2bd70525fc3d5adf34fc0ad092ae66f9892ed52f0d83053b142caa10
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671609"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098684"
 ---
 # <a name="whats-new-in-powerpoint-javascript-api-12"></a>JavaScript API 1.2 PowerPoint新增功能
 

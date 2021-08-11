@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 和 React 生成简单的 Excel �
 ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 74a28f3914ddbc54188d3b8baa33fc1faa7a30fe
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 11f31d4145b83ad1efbef441cd78c4ad62410df3f371a991f9f7d94cd75db899
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773391"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097511"
 ---
 # <a name="use-react-to-build-an-excel-task-pane-add-in"></a>使用 React 生成 Excel 任务窗格加载项
 
@@ -37,7 +37,7 @@ ms.locfileid: "53773391"
 
 ## <a name="explore-the-project"></a>浏览项目
 
-使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。 如果想要浏览加载项项目的主要组件，请在代码编辑器中打开项目并检查下面列出的文件。 准备好试用加载项时，请转至下一部分。
+使用 Yeoman 生成器创建的加载项项目，包含适合于基础任务窗格加载项的示例代码。 如果想要浏览加载项项目的主要组件，请在代码编辑器中打开项目并检查下面列出的文件。 准备好试用加载项时，请转至下一部分。
 
 - 项目根目录中的 **manifest.xml** 文件定义加载项的设置和功能。 有关 **manifest.xml** 文件的详细信息，请参阅 [ Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 - **./src/taskpane/taskpane.html** 文件定义任务窗格的 HTML 框架，而 **./src/taskpane/components** 文件夹内的文件定义任务窗格 UI 的各个部分。

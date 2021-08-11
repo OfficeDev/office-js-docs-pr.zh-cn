@@ -3,12 +3,12 @@ title: 将字符串作为 Outlook 加载项中的已知实体进行匹配
 description: 通过使用 Office JavaScript API，您可以获取与特定已知实体匹配的字符串，以进一步进行处理。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d4b78259b771d29244641d9e3ca867018b763ef
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: bc95b53b0b94574f2db3543d9c8b1b3f6eecae0b87f82922a4ad245b8ad84575
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348494"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097903"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>将 Outlook 项中的字符串作为已知实体进行匹配
 

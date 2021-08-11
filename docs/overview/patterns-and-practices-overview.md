@@ -3,12 +3,12 @@ title: Office 加载项的模式和实践 (PnP) 概述
 description: 面向 Office 加载项开发人员的模式和实践 (PnP) 内容概述。
 ms.date: 01/22/2021
 localization_priority: Priority
-ms.openlocfilehash: 92539c917926658378bdfc074eeaa5bbc3f49213
-ms.sourcegitcommit: adbc9d59ffa5efdff5afa9115e0990544f2246ab
+ms.openlocfilehash: 5dd2d8b60b9a41b29800c7b77f1cb79f3949e6d6763f63079cf94a2ab60849f7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "49990482"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098732"
 ---
 # <a name="overview-of-patterns-and-practices-pnp-for-office-add-ins"></a>Office 加载项的模式和实践 (PnP) 概述
 

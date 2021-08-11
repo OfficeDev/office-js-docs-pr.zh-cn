@@ -4,12 +4,12 @@ description: 针对 Word 内部版本的 Office 加载项要求集信息。
 ms.date: 05/05/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 816bb49c165d41e5a29b71bb8df422c353087bab
-ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
+ms.openlocfilehash: 7edead1b1683eca1fd00e92c12043974933864c0ff0efda202c9fcb78f45f249
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2021
-ms.locfileid: "52266094"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098672"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
@@ -47,5 +47,5 @@ Word 加载项可跨多个版本的 Office 运行，包括 Windows 上的 Office
 
 - [Word JavaScript API 参考文档](/javascript/api/word)
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

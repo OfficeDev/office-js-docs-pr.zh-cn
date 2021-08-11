@@ -1,15 +1,15 @@
 ---
 title: 教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 description: 学习如何在Microsoft Excel中的自定义函数和任务窗格之间共享数据和事件。
-ms.date: 08/13/2020
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 402534b55c1ff186dc5123407fc470c42ee2b253
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: de27ff675e8ef757e0b4b7c95a74a061e9cadee586ae6b7134b68c16184fdf9c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350223"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098540"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
@@ -146,7 +146,7 @@ yo office
 ### <a name="create-task-pane-controls-to-work-with-global-data"></a>创建任务窗格控件以处理全局数据
 
 1. 打开 **src/taskpane/taskpane.html** 文件。
-2. 在 `</head>` 元素前，添加以下脚本元素。
+2. 紧贴在结尾的 `</head>` 元素前，添加以下脚本元素。
 
    ```html
    <script src="functions.js"></script>
@@ -183,18 +183,19 @@ yo office
    </div>
    ```
 
-4. 在 `<body>` 元素前，添加以下脚本。 当用户想存储或获取全局数据时，此代码将处理按钮单击事件。
+4. 在结尾的 `</body>` 元素前，添加以下脚本。 当用户想存储或获取全局数据时，此代码将处理按钮单击事件。
 
    ```js
    <script>
    function storeSharedValue() {
-   let sharedValue = document.getElementById('storeBox').value;
-   window.sharedState = sharedValue;
+     let sharedValue = document.getElementById('storeBox').value;
+     window.sharedState = sharedValue;
    }
 
    function getSharedValue() {
-   document.getElementById('getBox').value = window.sharedState;
-   }</script>
+     document.getElementById('getBox').value = window.sharedState;
+   }
+   </script>
    ```
 
 5. 保存文件。

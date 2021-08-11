@@ -4,12 +4,12 @@ description: 本教程将介绍如何生成 Word 加载项，用于插入（和�
 ms.date: 07/08/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 9ba9c378500ca90288ed5cd88a684e976615e710
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 1400bd4f91522ec50afa90b932cc5aeaedb4342bace4c007d10c8293257f8e11
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774068"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098221"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -173,7 +173,7 @@ ms.locfileid: "53774068"
 
 1. 打开 ./src/taskpane/taskpane.html 文件。
 
-1. 查找 `<button>` 按钮的 `insert-paragraph` 元素，并在行后添加下列标记。
+1. 查找`insert-paragraph`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class=&quot;ms-Button&quot; id=&quot;apply-style&quot;>Apply Style</button><br/><br/>
@@ -217,7 +217,7 @@ ms.locfileid: "53774068"
 
 1. 打开 ./src/taskpane/taskpane.html 文件。
 
-1. 查找 `<button>` 按钮的 `apply-style` 元素，并在行后添加下列标记。
+1. 查找`apply-style`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button><br/><br/>
@@ -263,7 +263,7 @@ ms.locfileid: "53774068"
 
 1. 打开 ./src/taskpane/taskpane.html 文件。
 
-1. 查找 `<button>` 按钮的 `apply-custom-style` 元素，并在行后添加下列标记。
+1. 查找`apply-custom-style`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class="ms-Button" id="change-font">Change Font</button><br/><br/>
@@ -335,7 +335,7 @@ ms.locfileid: "53774068"
 
 1. 打开 ./src/taskpane/taskpane.html 文件。
 
-1. 查找 `<button>` 按钮的 `change-font` 元素，并在行后添加下列标记。
+1. 查找`change-font`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class=&quot;ms-Button&quot; id=&quot;insert-text-into-range&quot;>Insert Abbreviation</button><br/><br/>
@@ -467,7 +467,7 @@ function insertTextIntoRange() {
 
 1. 打开 ./src/taskpane/taskpane.html 文件。
 
-1. 查找 `<button>` 按钮的 `insert-text-into-range` 元素，并在行后添加下列标记。
+1. 查找`insert-text-into-range`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button><br/><br/>
@@ -547,7 +547,7 @@ function insertTextIntoRange() {
 
 1. 打开 ./src/taskpane/taskpane.html 文件。
 
-1. 查找 `<button>` 按钮的 `insert-text-outside-range` 元素，并在行后添加下列标记。
+1. 查找`insert-text-outside-range`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
@@ -633,7 +633,7 @@ function insertTextIntoRange() {
 
 1. 打开 ./src/taskpane/taskpane.html 文件。
 
-1. 查找 `<button>` 按钮的 `replace-text` 元素，并在行后添加下列标记。
+1. 查找`replace-text`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
     <button class=&quot;ms-Button&quot; id=&quot;insert-image&quot;>Insert Image</button><br/><br/>

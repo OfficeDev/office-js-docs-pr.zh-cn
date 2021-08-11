@@ -3,12 +3,12 @@ title: 比较Outlook Mac 上 Outlook 中的外接程序支持
 description: 了解 Mac 上外接程序支持与其他 Outlook 客户端Outlook比较。
 ms.date: 07/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 76ef712b95682538a962b4b8305e6fc0d060a75a
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 23bdd6938cb7c795a2b652f4649714dcbb46d446175d87a889b5c8ecffcf718a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671336"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096995"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>比较Outlook Mac 上的 Outlook 与其他 Outlook 客户端中的外接程序支持
 

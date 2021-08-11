@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 AppDomains 元素
-description: 列出除 Office 外接程序将使用的元素中指定的域之外的所有域 `SourceLocation` ，以及 office 应信任的域。
+description: 列出除外接程序将使用的 元素中指定的域Office且应受用户信任 `SourceLocation` 的域Office。
 ms.date: 06/12/2020
 localization_priority: Normal
-ms.openlocfilehash: 751e4ad2ffa5fd50739a855fad48964473b154f1
-ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
+ms.openlocfilehash: 55401d62e88cc1f2d67d13de0997a40db7a3f6b0c2f8997aa1b976962c8c797f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "44778653"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096528"
 ---
 # <a name="appdomains-element"></a>AppDomains 元素
 
-列出 `SourceLocation` 您的 Office 外接程序将使用且应受 office 信任的任何域（除了元素中指定的域）。 这使域中的页面可以调用来自加载项中的 Iframe 的 Office.js Api，并具有其他效果。 对于每个其他域，指定 **AppDomain** 元素。
+列出除 元素中指定的域外，Office外接程序将使用且应受用户信任的任何 `SourceLocation` 域Office。 这样，域中的页面可以调用Office.js内 IFrame 的 API，并产生其他效果。 对于每个其他域，指定 **AppDomain** 元素。
 
  **外接程序类型：** 内容、任务窗格、邮件
 
@@ -26,7 +26,7 @@ ms.locfileid: "44778653"
 ```
 
 > [!IMPORTANT]
-> 对可以成为**AppDomain**元素的值的值有一些限制。 有关详细信息，请参阅[AppDomain](appdomain.md)。
+> **AppDomain** 元素的值存在一些限制。 有关详细信息，请参阅 [AppDomain](appdomain.md)。
 
 ## <a name="contained-in"></a>包含于
 

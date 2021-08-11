@@ -3,12 +3,12 @@ title: 使用单一登录令牌对用户进行身份验证
 description: 了解如何使用 Outlook 外接程序提供的单一登录令牌为服务实现 SSO。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: cf0deef6cf9ea7d4e29d8ab7c3c5a7e79f70d9ec
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: c35c30339362ddbd6e408499c15d50f0bdc0851c09cda553c92b0ae5cb72c7de
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774404"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098419"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>使用加载项中的单一登录令牌Outlook用户
 

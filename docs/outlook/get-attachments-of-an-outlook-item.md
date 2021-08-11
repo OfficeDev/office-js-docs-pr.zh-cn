@@ -3,12 +3,12 @@ title: 获取 Outlook 加载项中的附件
 description: 加载项可使用附件 API 将与附件相关的信息发送至远程服务。
 ms.date: 01/14/2021
 localization_priority: Normal
-ms.openlocfilehash: db59ce44d2ed6f120503701479b705f13727130b
-ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
+ms.openlocfilehash: b572893e93c747e155f643e99c0a3a67c323e5e6e12be9fa996adefc5de47780
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "52639961"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095172"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>从服务器获取 Outlook 项的附件
 

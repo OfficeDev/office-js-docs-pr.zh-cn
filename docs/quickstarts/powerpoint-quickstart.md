@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务�
 ms.date: 08/04/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: f68dcf96231f18c43d5f1a28fcc536f0f39521a5
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: b64a1f9554513e1b301c7989ee57f89734131433efc1d886265427affd9d8e82
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773704"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095135"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -109,7 +109,7 @@ ms.locfileid: "53773704"
 
 1. 在 Visual Studio 中，选择“**新建项目**”。
 
-2. 使用搜索框，输入“**加载项**”。 选择“**PowerPoint 外接程序**”，然后选择“**下一步**”。
+2. 使用搜索框，输入 **外接程序**。 选择“**PowerPoint 外接程序**”，然后选择“**下一步**”。
 
 3. 对项目命名，然后选择“**创建**”。
 

@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 1cde5e60d2c476078754fae5285101df5995c406
-  ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
+  ms.openlocfilehash: 25e7f92908bb334f390400df5f09ac702e5a39c8cce01d22c82df2da87278edc
+  ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/30/2021
-  ms.locfileid: "53204988"
+  ms.lasthandoff: 08/07/2021
+  ms.locfileid: "57096492"
 landingContent:
 - title: 关于Visio JavaScript API
   linkLists:

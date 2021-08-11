@@ -1,25 +1,25 @@
 ---
 title: Outlook 外接程序 API 要求集 1.1
-description: 作为邮箱 API 1.1 的一部分引入的 Outlook 外接程序和 Office JavaScript Api 的功能和 Api。
+description: 作为邮箱 API 1.1 Outlook外接程序和 Office JavaScript API 引入的功能和 API。
 ms.date: 12/17/2019
 localization_priority: Normal
-ms.openlocfilehash: f93b6d582043641903b362121c6e5eaf89c2ad1c
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 20105efd3d7e7e978f7c184c029d6482c0db8bd947166e91d9e9f5714e775d99
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431372"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098720"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Outlook 外接程序 API 要求集 1.1
 
-Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook 外接程序中使用的对象、方法、属性和事件。 Outlook JavaScript API 1.1 (邮箱 1.1) 是 API 的第一个版本。
+Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。 OutlookJavaScript API 1.1 (Mailbox 1.1) 是首版 API。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
 
 ## <a name="whats-new-in-11"></a>1.1 中的新增功能有哪些？
 
-要求集1.1 包括在 Outlook 中支持的所有 [通用 API 要求集](../../requirement-sets/office-add-in-requirement-sets.md) 。 它添加了外接程序访问邮件和约会的正文以及修改当前项的功能。
+要求集 1.1 包括所有[通用 API](../../requirement-sets/office-add-in-requirement-sets.md)要求集，这些通用 API 要求集Outlook。 它添加了外接程序访问邮件和约会的正文以及修改当前项的功能。
 
 ### <a name="change-log"></a>更改日志
 
@@ -32,7 +32,7 @@ Office JavaScript API 的 Outlook 外接程序 API 子集包括可以在 Outlook
 - 添加了 [Office.context.mailbox.item.addItemAttachmentAsync](office.context.mailbox.item.md#methods)：将 Exchange 项目（如邮件）作为附件添加到邮件或约会。
 - 添加了 [Office.context.mailbox.item.removeAttachmentAsync](office.context.mailbox.item.md#methods)：将附件从邮件或约会中删除。
 - 添加了 [Office.context.mailbox.item.body](office.context.mailbox.item.md#properties)：获取一个提供用于处理项目正文的方法的对象。
-- 添加了邮件的 ["密件抄送"](office.context.mailbox.item.md#properties) 行。
+- 添加了[Office.context.mailbox.item.bcc](office.context.mailbox.item.md#properties)行。
 - 添加了 [Office.MailboxEnums.RecipientType](/javascript/api/outlook/office.mailboxenums.recipienttype?view=outlook-js-1.1&preserve-view=true)：指定约会收件人的类型。
 
 ## <a name="see-also"></a>另请参阅

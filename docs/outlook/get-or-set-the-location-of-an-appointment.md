@@ -3,12 +3,12 @@ title: 在加载项获取或设置约会位置
 description: 了解如何在 Outlook 加载项中获取或设置约会位置。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 5669f656348465baabb3e684b359261024a509ca
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5557820cb1549bf0d24b5ff68d268c4f02d3fd36fa3bab344595adadbb31c3e1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671833"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098340"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置位置
 

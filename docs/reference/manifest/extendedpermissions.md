@@ -1,21 +1,21 @@
 ---
-title: 清单文件中的 ExtendedPermissions 元素
-description: 定义加载项访问关联的 Api 或功能所需的扩展权限的集合。
+title: 清单文件中 ExtendedPermissions 元素
+description: 定义外接程序访问关联 API 或功能所需的扩展权限的集合。
 ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 1e3aa16c160613d34ef2c4f9c25bc2ffe4970816
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: c3f021adfcc2f3a4ba7b7d7aeeb52f3213d92788d401130abbc92618930d09fe
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626440"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097891"
 ---
 # <a name="extendedpermissions-element"></a>ExtendedPermissions 元素
 
-定义加载项访问关联的 Api 或功能所需的扩展权限的集合。 `ExtendedPermissions`元素是[VersionOverrides](versionoverrides.md)的子元素。
+定义外接程序访问关联 API 或功能所需的扩展权限的集合。 元素 `ExtendedPermissions` 是 [VersionOverrides 的子元素](versionoverrides.md)。
 
 > [!IMPORTANT]
-> 对此元素的支持是在要求集1.9 中引入的。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> 要求集 1.9 中引入了对此元素的支持。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="child-elements"></a>子元素
 
@@ -25,7 +25,7 @@ ms.locfileid: "48626440"
 
 ## <a name="extendedpermissions-example"></a>`ExtendedPermissions` 示例
 
-以下是元素的示例 `ExtendedPermissions` 。
+下面是 元素 `ExtendedPermissions` 的一个示例。
 
 ```XML
 ...

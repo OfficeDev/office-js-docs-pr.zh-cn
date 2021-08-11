@@ -4,12 +4,12 @@ description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office �
 ms.date: 11/03/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 2baed2ef4aaca3539d1d41d1fb2ea985337fda25
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c4264c644e064787819705c8cd63bed6243b6eddfde24e21730b8938846a89b7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076558"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097499"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>使用 Yeoman 生成器创建使用单一登录的 Node.js Office 加载项
 
@@ -24,7 +24,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 - [Node.js](https://nodejs.org)（最新[LTS](https://nodejs.org/about/releases) 版本）。
 
-- 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令：
+- 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令。
 
     ```command&nbsp;line
     npm install -g yo generator-office

@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 Sets 元素
-description: Set 元素指定 Office 外接程序在激活时所需的最小 Office JavaScript API 集。
+description: Sets 元素指定外接程序Office激活Office JavaScript API 的最小集合。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: bd8f8311bb06a8e9e98fc408aece6395ab5643b1
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: a0a7edf6543cc74ac69ee6dc430c0a7497b6911ed43d66ea1082c0d477255948
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641422"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095015"
 ---
 # <a name="sets-element"></a>Sets 元素
 
-指定 Office JavaScript API 的最小子集，Office 外接程序需要这些 API 才能激活。
+指定您的外接程序Office激活Office JavaScript API 的最小子集。
 
 **加载项类型：** 内容、任务窗格和邮件
 
@@ -36,11 +36,11 @@ ms.locfileid: "46641422"
 
 |属性|类型|必需|说明|
 |:-----|:-----|:-----|:-----|
-|DefaultMinVersion|字符串|可选|指定所有子[集](set.md)元素的默认**MinVersion**属性值。 默认值为“1.1”。|
+|DefaultMinVersion|字符串|可选|指定所有子 **Set** 元素的默认 MinVersion [属性值。](set.md) 默认值为“1.1”。|
 
 ## <a name="remarks"></a>注释
 
 有关要求集的详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
-有关**Set**元素的**MinVersion**属性和**Sets**元素的**DefaultMinVersion**属性的详细信息，请参阅[在清单中设置需求元素](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)。
+有关 **Set** 元素 **的 MinVersion** 属性和 **Sets** 元素 **的 DefaultMinVersion** 属性详细信息，请参阅在清单中设置 [Requirements 元素](../../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)。
 

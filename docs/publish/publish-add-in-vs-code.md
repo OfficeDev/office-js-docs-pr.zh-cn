@@ -3,12 +3,12 @@ title: 使用 Azure 和 Visual Studio Code加载项
 description: 如何使用加载项和加载项Visual Studio Code Azure Active Directory
 ms.date: 08/12/2020
 localization_priority: Normal
-ms.openlocfilehash: ab8daf3dfb87c809cd812da45246ce2d5ca9e743
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e8c81a57b49254103366c28092f30235cc525e12d9a446897d862af4fc189325
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076936"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097205"
 ---
 # <a name="publish-an-add-in-developed-with-visual-studio-code"></a>发布使用 Visual Studio Code 开发的加载项
 
@@ -19,7 +19,7 @@ ms.locfileid: "53076936"
 
 ## <a name="publishing-an-add-in-for-other-users-to-access"></a>发布加载项供其他人用户访问
 
-Office 加载项由一个 Web 应用程序和一个清单文件构成。 Web 应用程序定义加载项的用户界面和功能，清单指定 Web 应用程序的位置并定义加载项的设置和功能。
+Office 加载项 包含 Web 应用程序和清单文件。Web 应用程序定义加载项的用户界面和功能，清单指定 Web 应用程序的位置并定义加载项的设置和功能。
 
 开发时，可以在本地 Web 服务器上运行加载项 `localhost` ， () 。 准备好发布它供其他用户访问时，需要部署 Web 应用程序并更新清单以指定已部署应用程序的 URL。
 

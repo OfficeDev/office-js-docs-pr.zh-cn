@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ProviderName 元素
-description: ProviderName 元素指定开发此 Office 外接程序的个人或公司的名称。
+description: ProviderName 元素指定开发此加载项的个人或Office的名称。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: f97acfa32b742edf55dd50a2dc00fd113cb02411
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 689ad5bc33370554da543dcb95bc5ad2cdba5cd244236c789fd778d4f161adb2
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611741"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098708"
 ---
 # <a name="providername-element"></a>ProviderName 元素
 

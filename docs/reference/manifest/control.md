@@ -3,12 +3,12 @@ title: 清单文件中的 Control 元素
 description: 定义执行操作或启动任务窗格的 JavaScript 函数。
 ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 737902bef52edeb70e2c5760df5bb589b624271b
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: 3ad26165e77305c69791aac9b128c5dfadf7f9beb97f85ae24a000876146c2cc
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173981"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095950"
 ---
 # <a name="control-element"></a>Control 元素
 
@@ -31,8 +31,8 @@ ms.locfileid: "50173981"
 ### <a name="child-elements"></a>子元素
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Label**     | 是 |  按钮文本。 **resid** 属性的长度不能超过 32 个字符，必须设置为 Resources 元素 **中 ShortStrings** 元素 **中 String** 元素的 **id** [属性值。](resources.md)        |
-|  **ToolTip**    |否|按钮的工具提示。 **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性值。 **String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|        
+|  **Label**     | 是 |  按钮文本。 **resid** 属性的长度不能超过 32 个字符，并且必须设置为 **ShortStrings** 元素（位于 [Resources](resources.md)元素）中 **String** 元素的 **id** 属性的值。        |
+|  **ToolTip**    |否|按钮的工具提示。 **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性的值。 **String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|        
 |  [Supertip](supertip.md)  | 是 |  按钮的 supertip。    |
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
 |  [Action](action.md)    | 是 |  指定要执行的操作。  |
@@ -41,7 +41,7 @@ ms.locfileid: "50173981"
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction 按钮示例
 
-在下面的示例中，当加载项启动时禁用该按钮。 可以编程方式启用它。 有关详细信息，请参阅[启用和禁用加载项命令](../../design/disable-add-in-commands.md)。
+在下面的示例中，按钮在加载项启动时被禁用。 可以编程方式启用它。 有关详细信息，请参阅[启用和禁用加载项命令](../../design/disable-add-in-commands.md)。
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -151,8 +151,8 @@ ms.locfileid: "50173981"
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Label**     | 是 |  按钮文本。 **resid** 属性的长度不能超过 32 个字符，必须设置为 Resources 元素 **中 ShortStrings** 元素 **中 String** 元素的 **id** [属性值。](resources.md)      |
-|  **ToolTip**    |否|按钮的工具提示。 **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性值。 **String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|        
+|  **Label**     | 是 |  按钮文本。 **resid** 属性的长度不能超过 32 个字符，并且必须设置为 **ShortStrings** 元素（位于 [Resources](resources.md)元素）中 **String** 元素的 **id** 属性的值。      |
+|  **ToolTip**    |否|按钮的工具提示。 **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性的值。 **String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 [Resources](resources.md) 元素的子元素。|        
 |  [Supertip](supertip.md)  | 是 |  此按钮的 supertip。    |
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
 |  **Items**     | 是 |  菜单中显示的按钮的集合。 包含每个子菜单项的 **Item** 元素。 每个 **Item** 元素均包含 [按钮控件](#button-control) 的子元素。|
@@ -253,7 +253,7 @@ ms.locfileid: "50173981"
 ### <a name="child-elements"></a>子元素
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **Label**     | 是 |  按钮文本。 **resid** 属性的长度不能超过 32 个字符，必须设置为 Resources 元素 **中 ShortStrings** 元素 **中 String** 元素的 **id** [属性值。](resources.md)        |
+|  **Label**     | 是 |  按钮文本。 **resid** 属性的长度不能超过 32 个字符，并且必须设置为 **ShortStrings** 元素（位于 [Resources](resources.md)元素）中 **String** 元素的 **id** 属性的值。        |
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
 |  [Action](action.md)    | 是 |  指定要执行的操作。  |
 

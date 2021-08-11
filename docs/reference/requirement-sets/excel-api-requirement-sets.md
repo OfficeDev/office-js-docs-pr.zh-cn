@@ -4,12 +4,12 @@ description: 针对 Excel 内部版本的 Office 加载项要求集信息。
 ms.date: 05/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 6fb5587b7eb3120a1e4b7db7dc6327bdcadc6691
-ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
+ms.openlocfilehash: 4ba1970f57bb08210878bc3e363598b37eea2265b773f7e533c48939edb6d9e3
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2021
-ms.locfileid: "52266087"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095890"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
@@ -75,7 +75,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>在清单中定义要求集支持
 
-可以在加载项清单中使用[要求元素](../manifest/requirements.md)指定加载项要求激活的最小要求集和/或 API 方法。 如果 Office 应用程序或平台不支持清单的 `Requirements` 元素中指定的要求集或 API 方法，则加载项将不会在该应用程序或平台中运行，也不会出现在“**我的加载项**”中显示的加载项列表中。如果你的加载项需要特定要求集以实现完整功能，但是即使在不支持该要求集的平台上也可以为用户提供值，则建议在运行时按照上述方式检查要求支持，而不是在清单中定义要求集支持。
+可以使用加载项清单中的“[要求元素](../manifest/requirements.md)”来指定的加载项需要激活的最小需求集和/或 API 方法。如果 Office 应用程序或平台不支持清单的 `Requirements` 元素中指定的要求集或 API 方法，则加载项将不会在该应用程序或平台中运行，也不会出现在“**我的加载项**”中显示的加载项列表中。如果加载项需要特定要求集以实现完整功能，但是即使在不支持该要求集的平台上也可以为用户提供值，则建议在运行时按照上述方式检查要求支持，而不是在清单中定义要求集支持。
 
 以下代码示例显示加载项清单中的 `Requirements` 元素，该元素指定应在支持 ExcelApi 要求集版本 1.3 或更高版本的所有 Office 客户端应用程序中加载该加载项。
 

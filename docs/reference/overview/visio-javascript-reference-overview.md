@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 7f706d8f566a747468c4c8d676bd54882bb2a6bf
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 58eedf260a52fd2ffc321de6d1a389736a93b4e4e65f7dfa824286bcfa156f7b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076439"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098089"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 

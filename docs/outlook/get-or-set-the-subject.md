@@ -3,12 +3,12 @@ title: 在 Outlook 加载项中获取或设置主题
 description: 了解如何在 Outlook 加载项中获取或设置邮件或约会的主题。
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 048aa079adf3fda5d5f4a85bfcadd3b671ce865a
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: cfe2ad8010090e21606d2b9ec95ab2bed79d5ccf956a27e4cee303e09ca68349
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671798"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098321"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取或设置主题
 
