@@ -3,19 +3,19 @@ title: 清单文件中的 Form 元素
 description: 在特定设备（台式机、平板电脑或电话）上运行时邮件外接程序将使用的窗体的 UX 设置。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: c9cd1d9104fc51edc84149ef677c4308dfb1a9f5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f2a7265752cfcdd1030e4bcef36381692aeae1e8e1bb9d20f393c495f6beb48f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611853"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086707"
 ---
 # <a name="form-element"></a>Form 元素
 
 在特定设备（台式机、平板电脑或电话）上运行时邮件外接程序将使用的窗体的 UX 设置。
 
 > [!IMPORTANT]
-> `DesktopSettings`、 `TabletSettings` 和 `PhoneSettings` 元素仅适用于 web 上的经典 Outlook （通常连接到本地 Exchange server 的旧版本）和 Windows 上的 Outlook 2013。
+> 、 和 元素仅在经典 Outlook 网页版 (中可用，通常连接到旧版本地 Exchange 服务器) 和 Outlook `DesktopSettings` `TabletSettings` `PhoneSettings` 2013 Windows。
 
 **外接程序类型：** 邮件
 

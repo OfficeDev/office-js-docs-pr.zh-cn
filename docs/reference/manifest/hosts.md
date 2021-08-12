@@ -3,12 +3,12 @@ title: 清单文件中的 Hosts 元素
 description: 指定将在其中激活 Office 外接程序的 Office 客户端应用程序。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 037ac2b5fedbfb1b59b7523382574942fe59a00a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c89a0154b2dbbc9b07a10493401ff761d48b955d7538eb14a825591d2b12607d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611804"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57083800"
 ---
 # <a name="hosts-element"></a>Hosts 元素
 
@@ -18,6 +18,6 @@ ms.locfileid: "44611804"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  必需  |  Description  |
+|  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [Host](host.md)    |  是   |  说明主机及其设置。 |

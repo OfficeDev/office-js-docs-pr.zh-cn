@@ -4,12 +4,12 @@ description: 了解有关 PowerPoint JavaScript API 要求集的详细信息。
 ms.date: 01/08/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 8ab5ad7067ed29b161935cfd2716a02ca261c55b
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 2d56ce833f62432847b4d6d47d31b11b940d1dfe1af646838a9cd3480fa25a15
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671707"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086179"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>PowerPoint JavaScript API 要求集
 
@@ -77,5 +77,5 @@ if (Office.context.requirements.isSetSupported('PowerPointApi', '1.1')) {
 
 - [PowerPoint JavaScript API 参考文档](/javascript/api/powerpoint)
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

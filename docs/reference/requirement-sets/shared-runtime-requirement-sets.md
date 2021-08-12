@@ -1,25 +1,25 @@
 ---
 title: 共享运行时要求集
-description: 指定支持 SharedRuntime API 的平台和 Office 应用程序。
+description: 指定支持 SharedRuntime Office支持的平台和应用程序。
 ms.date: 04/08/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8d0db6e129aaf7a4aa2967e7a1341d6db1188359
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: d5b931c5bda65f5907684c2f957e15c6fdacd1668d410dc3db96ca614f426892
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652221"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084895"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共享运行时要求集
 
 要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
-运行 JavaScript 代码的 Office 外接程序的某些部分（如任务窗格、从外接程序命令启动的函数文件和 Excel 自定义函数）可以共享单个 JavaScript 运行时。 这允许所有部件共享一组全局变量、共享一组加载的库以及相互通信，而无需通过持久存储传递邮件。 有关详细信息，请参阅将 [Office 加载项配置为使用共享的 JavaScript 运行时](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
+运行 JavaScript 代码的 Office 外接程序的某些部分（如任务窗格、从外接程序命令启动的函数文件和 Excel 自定义函数）可以共享单个 JavaScript 运行时。 这允许所有部件共享一组全局变量、共享一组加载的库以及相互通信，而无需通过持久存储传递邮件。 有关详细信息，请参阅[将Office加载项配置为使用共享的 JavaScript 运行时](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
-下表列出了 SharedRuntime 1.1 要求集、支持该要求集的 Office 客户端应用程序，以及 Office 应用程序内部版本或版本号。
+下表列出了 SharedRuntime 1.1 要求集、支持该要求集的 Office 客户端应用程序，以及 Office 应用程序的版本或版本号。
 
-|  要求集  |  Windows 版 Office 2013 (或) 更高版本<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  | Office Online Server |
+|  要求集  |  Office 2013 (或更高版本) Windows<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | SharedRuntime 1.1  | 不适用 | 版本 2002 (内部版本 12527.20092) 或更高版本 | 不适用 | 16.35 或更高版本 | 2020 年 2 月 | 不适用 |
 
@@ -46,5 +46,5 @@ ms.locfileid: "51652221"
 
 - [将 Office 加载项配置为使用共享 JavaScript 运行时](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
 - [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)
-- [指定 Office 应用程序和 API 要求集](../../develop/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)
 - [Office 加载项 XML 清单](../../develop/add-in-manifests.md)

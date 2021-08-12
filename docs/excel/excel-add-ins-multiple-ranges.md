@@ -3,12 +3,12 @@ title: 同时在 Excel 加载项中处理多个区域
 description: 了解 Excel JavaScript 库如何使外接程序能够同时在多个区域上执行操作和设置属性。
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 4f1661d07432d6072649cb6db7315fd39fee5b4f
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 89c8b8bbc92e656230544caac0d7f584524ca58951d0041d548bebbea0ae4bf4
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671152"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084255"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>同时在 Excel 加载项中处理多个区域
 

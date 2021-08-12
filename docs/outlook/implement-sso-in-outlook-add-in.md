@@ -3,12 +3,12 @@ title: 应用场景 - 为服务实施单一登录
 description: 了解如何使用 Outlook 加载项提供的单一登录令牌和 Exchange 标识令牌为服务实现 SSO。
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 07e3672860a063f8bf14ef9a653f97a8244e2c3e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: b7087efd430e695aeec432ad70a350693d8f11fb5aeb74b5aa3b90d2dc08e75b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671448"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086275"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>应用场景：为 Outlook 加载项中的服务实现单一登录
 

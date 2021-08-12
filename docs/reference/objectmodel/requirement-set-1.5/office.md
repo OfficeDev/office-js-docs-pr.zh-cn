@@ -3,18 +3,18 @@ title: Office命名空间 - 要求集 1.5
 description: Office邮箱 API 要求集 1.5 Outlook外接程序可用的命名空间成员。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 46b70185ce983721c75093351e47a02eb8b9e7cd
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 2600bfe58df9d33f080fff5999cf3285c770fa802c8e83ebc5405cbc0e727d96
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590853"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087234"
 ---
 # <a name="office-mailbox-requirement-set-15"></a>Office (邮箱要求集 1.5) 
 
 该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -32,9 +32,9 @@ ms.locfileid: "52590853"
 | 枚举 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
 | [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [EventType](#eventtype-string) | 撰写<br>阅读 | 字符串 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>命名空间
 
@@ -52,12 +52,12 @@ ms.locfileid: "52590853"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
-|`Succeeded`| 字符串|调用成功。|
+|`Succeeded`| String|调用成功。|
 |`Failed`| 字符串|调用失败。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -79,12 +79,12 @@ ms.locfileid: "52590853"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
-|`Html`| 字符串|请求以 HTML 格式返回的数据。|
+|`Html`| String|请求以 HTML 格式返回的数据。|
 |`Text`| 字符串|请求以文本格式返回的数据。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -106,11 +106,11 @@ ms.locfileid: "52590853"
 
 ##### <a name="properties"></a>属性
 
-| 名称 | 类型 | 描述 | 最低要求集 |
+| 名称 | 类型 | 说明 | 最低要求集 |
 |---|---|---|:---:|
 |`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
@@ -132,12 +132,12 @@ ms.locfileid: "52590853"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
-|`Body`| 字符串|数据源来自邮件的正文。|
+|`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
-##### <a name="requirements"></a>Requirements
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

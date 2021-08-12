@@ -3,12 +3,12 @@ title: Office.context.mailbox - 要求集 1.7
 description: Outlook邮箱 API 要求集 1.7 版本的邮箱对象模型。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: fe8dea1efdeb22f2fa1b14d88d4f33bdc9fdc4de
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 64f6bbb0445a4f9dab6d1df38b7f3f32c51e9a3fa1882c66b6a1b21b5a83ecd0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671287"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57083788"
 ---
 # <a name="mailbox-requirement-set-17"></a>邮箱 (要求集 1.7) 
 

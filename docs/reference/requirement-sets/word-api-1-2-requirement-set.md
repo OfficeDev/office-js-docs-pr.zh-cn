@@ -4,12 +4,12 @@ description: 有关 WordApi 1.2 要求集的详细信息
 ms.date: 11/09/2020
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: fd33b043a9205e793a248c35118ed86efcdf0036
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 9576069fba08948a76d3e83b3b1af588aa436ddd7f81c4c71681dc7b3dd5bb15
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671854"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087881"
 ---
 # <a name="whats-new-in-word-javascript-api-12"></a>Word JavaScript API 1.2 的最近更新
 

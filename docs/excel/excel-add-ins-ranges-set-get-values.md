@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API Excel和获取区域值、文本�
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5d9d1bf3b248585bf27ac591754cfa4eb4dd0fbc
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: fccf4325fb3e2473e10719efb6d5336cb87d8abcedfaa6a4f80f8e07eb2b05b6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075745"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085386"
 ---
 # <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>使用 JavaScript API 设置和获取区域Excel文本或公式
 

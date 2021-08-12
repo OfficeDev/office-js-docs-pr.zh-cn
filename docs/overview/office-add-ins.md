@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 36b14386816e34d474266cad32ea9a0a66d681d7
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 38f48c76482d2f3096aef0145598d510049a27bea6a349864f7c30c500f154b9
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348858"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087516"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 

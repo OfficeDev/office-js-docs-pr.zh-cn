@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: e238371002b8ff92e7d57a06c3a9fd9f6bf19f3a
-  ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+  ms.openlocfilehash: 368f26b4f76cee004f97c74ed53c909dae753bc1400e693b872bef535871641c
+  ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/19/2021
-  ms.locfileid: "52555316"
+  ms.lasthandoff: 08/07/2021
+  ms.locfileid: "57087406"
 landingContent:
 - title: 关于 Word 加载项
   linkLists:
@@ -25,7 +25,7 @@ landingContent:
     links:
     - text: 生成首个 Word 加载项
       url: ../quickstarts/word-quickstart.md
-    - text: 使用应用程序浏览SCRIPT LAB
+    - text: 使用 Script Lab 了解 API
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:

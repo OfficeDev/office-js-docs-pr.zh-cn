@@ -4,22 +4,22 @@ description: 详细了解 Excel Javascript API
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 80340b4990b56b2ba4d51f2a028480af3e267828
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 1177cd4837e5cbebfc6cef533932486612d273c2a489fcd8f26b37b90726ce56
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650807"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085030"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API 概述
 
 Excel 加载项通过使用 Office JavaScript API 与 Excel 中的对象进行交互，JavaScript API 包括两个 JavaScript 对象模型：
 
-* **Excel JavaScript API**：下面是针对 Excel 的 [应用程序特定 API](../../develop/application-specific-api-model.md)。 [Excel JavaScript API](/javascript/api/excel) 随 Office 2016 一起引入，提供了强类型的对象，可用于访问工作表、区域、表格、图表等。
+* **Excel JavaScript API**：下面是针对 Excel 的 [应用程序特定 API](../../develop/application-specific-api-model.md)。[Excel JavaScript API](/javascript/api/excel) 随 Office 2016 引入，提供强类型的 Excel 对象，可用于访问工作表、区域、表、图表等。
 
 * **通用 API**：[通用 API](/javascript/api/office) 随 Office 2013 引入，可用于访问多种类型的 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
 
-文档的本部分着重介绍了 Excel JavaScript API，它可用于开发面向 Excel 网页版或 Excel 2016 或更高版本的加载项中的大部分功能。 有关通用 API 的信息，请参阅[常见 JavaScript API 对象模型](../../develop/office-javascript-api-object-model.md)。
+本文档的此部分重点介绍 Excel JavaScript API，你将使用该 API 开发面向 Excel 网页版或 Excel 2016 或更高版本的加载项中的大部分功能。有关通用 API 的信息，请参阅[常用 JavaScript API 对象模型](../../develop/office-javascript-api-object-model.md)。
 
 ## <a name="learn-object-model-concepts"></a>了解对象模型概念
 

@@ -1,19 +1,19 @@
 ---
-title: 使用 Excel JavaScript API 查找字符串
-description: 了解如何使用 Excel JavaScript API 查找范围内的字符串。
+title: 使用 JavaScript API Excel字符串
+description: 了解如何使用 JavaScript API 查找Excel字符串。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9b649bb249cd24d7578bc4f8285e5d0a23d0e4cd
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: efd2671781a8ce8d3e8aeda88f87abb3ad5058a35878f28f47f50305cff1b038
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652787"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087394"
 ---
-# <a name="find-a-string-within-a-range-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 查找范围内的字符串
+# <a name="find-a-string-within-a-range-using-the-excel-javascript-api"></a>使用 JavaScript API 查找Excel字符串
 
-本文提供了一个代码示例，该示例使用 Excel JavaScript API 查找范围内的字符串。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel.Range 类](/javascript/api/excel/excel.range)。
+本文提供了一个代码示例，该示例使用 JavaScript API 查找Excel字符串。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -47,5 +47,5 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
-- [使用 Excel JavaScript API 处理单元格](excel-add-ins-cells.md)
-- [使用 Excel JavaScript API 查找区域内的特殊单元格](excel-add-ins-ranges-special-cells.md)
+- [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
+- [使用 JavaScript API 查找Excel单元格](excel-add-ins-ranges-special-cells.md)

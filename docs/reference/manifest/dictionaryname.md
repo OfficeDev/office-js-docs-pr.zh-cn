@@ -3,12 +3,12 @@ title: 清单文件中的 DictionaryName 元素
 description: 指定该词典的名称。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: d591c405d016474d2b7ee1f883d38e2051bd6d5b
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 391ae71a86b8c4ea78cc13bef09c2f730459e65139c87303015c1b63df931135
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612253"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086017"
 ---
 # <a name="dictionaryname-element"></a>DictionaryName 元素
 

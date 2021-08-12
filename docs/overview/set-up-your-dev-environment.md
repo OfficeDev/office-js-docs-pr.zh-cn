@@ -3,12 +3,12 @@ title: 设置开发环境
 description: 设置开发人员环境以构建Office加载项。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: efc89b728117e2888cdebd2c5a132047fe662915
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: b396ad9774959e36ef34c8ca158eda26162c3b13794aa65a4eab0859c317c167
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774343"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087430"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 

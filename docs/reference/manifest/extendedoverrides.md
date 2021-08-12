@@ -3,16 +3,16 @@ title: 清单文件中 ExtendedOverrides 元素
 description: 指定清单的 JSON 格式扩展的 URL。
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: f433c9c5604f3fae35580ba20780ea6fe91401c7
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: f2b9ea409763119b5bec5286ecdc5f15c94c49e6312a13209197e6457353f369
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505470"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57083580"
 ---
 # <a name="extendedoverrides-element"></a>ExtendedOverrides 元素
 
-指定扩展清单的 JSON 格式文件的完整 URL。 有关使用此元素及其后代元素的详细信息，请参阅使用清单 [的扩展重写](../../develop/extended-overrides.md)。
+指定用于扩展清单的 JSON 格式文件的完整 URL。 有关使用此元素及其后代元素的详细信息，请参阅使用清单 [的扩展替代](../../develop/extended-overrides.md)。
 
 **外接程序类型：** 任务窗格
 
@@ -36,8 +36,8 @@ ms.locfileid: "50505470"
 
 |属性|说明|
 |:-----|:-----|
-|Url (必需) | 扩展的 URL 将覆盖 JSON 文件。 将来，此值可能是使用 [Tokens](tokens.md) 元素定义的令牌的 URL 模板。 请参阅 [示例](#examples)。|
-|ResourcesUrl (可选)  | 为属性中指定的文件提供补充资源（如本地化字符串）的文件的完整 `Url` URL。 这可能是使用 [Tokens](tokens.md) 元素定义的令牌的 URL 模板。|
+|Url (必需) | 扩展的完整 URL 重写 JSON 文件。 将来，此值可能是使用 [Tokens](tokens.md) 元素定义的令牌的 URL 模板。 请参阅 [示例](#examples)。|
+|ResourcesUrl (可选)  | 为 属性中指定的文件提供补充资源（如本地化字符串）的文件的完整 `Url` URL。 这可能是使用 [Tokens](tokens.md) 元素定义的令牌的 URL 模板。|
 
 ## <a name="examples"></a>示例
 

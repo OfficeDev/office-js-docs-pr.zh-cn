@@ -1,19 +1,19 @@
 ---
-title: 使用 Excel JavaScript API 获取区域
-description: 了解如何使用 Excel JavaScript API 检索区域。
+title: 使用 JavaScript API Excel区域
+description: 了解如何使用 JavaScript API Excel区域。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6aa9bb00bc9d24aeee5f1fef9e8d1531525e9d1f
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: d48d69a45e964db2d5797e2f0927f776795bcca0365f0ccef245fcd3682a3a72
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652800"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084715"
 ---
-# <a name="get-a-range-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 获取区域
+# <a name="get-a-range-using-the-excel-javascript-api"></a>使用 JavaScript API Excel区域
 
-本文提供的示例显示了使用 Excel JavaScript API 获取工作表内区域的不同方法。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel.Range 类](/javascript/api/excel/excel.range)。
+本文提供的示例显示了使用 JavaScript API 在工作表内获取区域Excel方法。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -88,5 +88,5 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
-- [使用 Excel JavaScript API 处理单元格](excel-add-ins-cells.md)
-- [使用 Excel JavaScript API 插入区域](excel-add-ins-ranges-insert.md)
+- [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
+- [使用 JavaScript API Excel区域](excel-add-ins-ranges-insert.md)

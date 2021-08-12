@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理事件
 description: JavaScript 对象Excel列表。 这包括有关使用事件处理程序和相关模式的信息。
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 596d8738b4c4953a937825e6c7294b2478ae59f7
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: e908a9253649a47838e762f03b930838115847c5927333f3af82bd00bdc90829
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671490"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085506"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件
 

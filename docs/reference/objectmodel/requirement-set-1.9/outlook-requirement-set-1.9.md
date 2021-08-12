@@ -3,12 +3,12 @@ title: Outlook外接程序 API 要求集 1.9
 description: 加载项 API 要求集 1.9 Outlook要求集 1.9。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: e73f8805f87950b969be18214a570b747b1e1314
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 6ac4e119fea41a6f4bd1b3ab0bfe79f289278f3badeb5842fd895c8635d7f7b4
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590496"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087659"
 ---
 # <a name="outlook-add-in-api-requirement-set-19"></a>Outlook外接程序 API 要求集 1.9
 
@@ -26,14 +26,14 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了 [CustomProperties.getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-1.9&preserve-view=true#getall--)：向获取所有自定义属性的对象添加了 `CustomProperties` 一个新函数。
+- 添加了 [CustomProperties.getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-1.9&preserve-view=true#getAll__)：向获取所有自定义属性的对象添加了 `CustomProperties` 一个新函数。
 - 添加了 [Dialog.messageChild：](../../../develop/dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)添加了一个新方法，该方法将邮件从主机页（如任务窗格或无 UI 函数文件）发送到从该页面打开的对话框。
 - 添加了 [ExtendedPermissions 清单元素](../../manifest/extendedpermissions.md)：向 [VersionOverrides](../../manifest/versionoverrides.md) 清单元素添加了子元素。 若要使外接程序支持 [附加 Onss 发送](../../../outlook/append-on-send.md)功能，扩展权限必须包含在扩展 `AppendOnSend` 权限集合中。
-- 添加了[Office.context.mailbox.displayAppointmentFormAsync：](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displayappointmentformasync-itemid--options--callback-)向显示现有约会 `Mailbox` 的对象添加新函数。 这是 方法的异步 `displayAppointmentForm` 版本。
-- 添加了[Office.context.mailbox.displayMessageFormAsync：](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displaymessageformasync-itemid--options--callback-)向显示现有邮件 `Mailbox` 的对象添加新函数。 这是 方法的异步 `displayMessageForm` 版本。
-- 添加了[Office.context.mailbox.displayNewAppointmentFormAsync：](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displaynewappointmentformasync-parameters--options--callback-)向显示新约会窗体的对象添加新 `Mailbox` 函数。 这是 方法的异步 `displayNewAppointmentForm` 版本。
-- 添加了[Office.context.mailbox.displayNewMessageFormAsync：](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displaynewmessageformasync-parameters--options--callback-)向显示新邮件表单的对象添加新 `Mailbox` 函数。 这是 方法的异步 `displayNewMessageForm` 版本。
-- 添加了[Office.context.mailbox.item.body.appendOnSendAsync：](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendonsendasync-data--options--callback-)向在撰写模式下将数据追加到项目正文末尾 `Body` 的对象添加新函数。
+- 添加了[Office.context.mailbox.displayAppointmentFormAsync：](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displayAppointmentFormAsync_itemId__options__callback_)向显示现有约会 `Mailbox` 的对象添加新函数。 这是 方法的异步 `displayAppointmentForm` 版本。
+- 添加了[Office.context.mailbox.displayMessageFormAsync：](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displayMessageFormAsync_itemId__options__callback_)向显示现有邮件 `Mailbox` 的对象添加新函数。 这是 方法的异步 `displayMessageForm` 版本。
+- 添加了[Office.context.mailbox.displayNewAppointmentFormAsync：](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displayNewAppointmentFormAsync_parameters__options__callback_)向显示新约会窗体的对象添加新 `Mailbox` 函数。 这是 方法的异步 `displayNewAppointmentForm` 版本。
+- 添加了[Office.context.mailbox.displayNewMessageFormAsync：](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displayNewMessageFormAsync_parameters__options__callback_)向显示新邮件表单的对象添加新 `Mailbox` 函数。 这是 方法的异步 `displayNewMessageForm` 版本。
+- 添加了[Office.context.mailbox.item.body.appendOnSendAsync：](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_)向在撰写模式下将数据追加到项目正文末尾 `Body` 的对象添加新函数。
 - 添加了[Office.context.mailbox.item.displayReplyAllFormAsync：](office.context.mailbox.item.md#methods)向在阅读模式下显示"全部答复"窗体的对象添加新 `Item` 函数。 这是 方法的异步 `displayReplyAllForm` 版本。
 - 添加了[Office.context.mailbox.item.displayReplyFormAsync：](office.context.mailbox.item.md#methods)向在阅读模式下显示"答复"窗体的对象添加新 `Item` 函数。 这是 方法的异步 `displayReplyForm` 版本。
 

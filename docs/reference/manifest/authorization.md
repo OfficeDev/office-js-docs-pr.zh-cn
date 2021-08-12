@@ -1,20 +1,20 @@
 ---
 title: 清单文件中的授权元素
-description: 指定加载项的 web 应用程序需要对其进行授权的外部资源以及所需的权限。
+description: 指定加载项的 Web 应用程序需要授权的外部资源以及所需的权限。
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: b8d3dd31a212a7de00ff4dbf263e8593a8ec2898
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: af40a47c4ae30b6d18d3457704487027ff18ac92da2a3ae23cf1afe5c1e9b46a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294260"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087707"
 ---
 # <a name="authorization-element"></a>Authorization 元素
 
-指定加载项的 web 应用程序需要对其进行授权的外部资源以及所需的权限。
+指定加载项的 Web 应用程序需要授权的外部资源和所需权限。
 
-**授权** 是清单中 [授权](authorizations.md) 元素的子元素。
+**授权** 是清单中 [Authorizations](authorizations.md) 元素的子元素。
 
 ## <a name="child-elements"></a>子元素
 

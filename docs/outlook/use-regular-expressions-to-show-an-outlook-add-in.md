@@ -3,12 +3,12 @@ title: 使用正则表达式激活规则显示加载项
 description: 了解如何为 Outlook 上下文加载项使用正则表达式激活规则。
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: d334ba6b2e0f044fc8d876cd6edd218743ccb390
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 722de040116e967f3baa97858480ad10e787794f766b334c9132cdb64451662b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348851"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085233"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>使用正则表达式激活规则显示 Outlook 外接程序
 

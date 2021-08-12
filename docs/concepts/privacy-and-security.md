@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: 了解加载项平台的隐私Office安全方面。
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 0ff3e77dcbd9f51ee4ac3c1b5d923a2db2bfbc05
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: c3cde56ce1bedc76afb967a449b3d29ce61e1fecd8fe7b2774a7c69278a61688
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773270"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57083235"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 

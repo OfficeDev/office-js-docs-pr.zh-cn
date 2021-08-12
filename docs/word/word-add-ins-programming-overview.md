@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c4abde797ac25b049e3d77acad59f7e2263005aa
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 145ce76f0e50baca7f9538fefc40362084fd1994f6b4cbd6c446a0ef2a4f5bac
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075542"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086551"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 

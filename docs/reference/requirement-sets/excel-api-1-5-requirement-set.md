@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.5 要求集的详细信息。
 ms.date: 03/19/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 01a13a0f531eae9eea2c213ba0da764fbe51ee15
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 1ce97ae8acbcd943027ea799e0c8183790ce3c733c73cc8ed0f39303957e5093
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671805"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084907"
 ---
 # <a name="whats-new-in-excel-javascript-api-15"></a>Excel JavaScript API 1.5 的最近更新
 

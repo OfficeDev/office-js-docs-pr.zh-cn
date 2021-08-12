@@ -1,19 +1,19 @@
 ---
-title: 使用 Excel JavaScript API 读取或写入无限区域
-description: 了解如何使用 Excel JavaScript API 读取或写入无限区域。
+title: 使用 JavaScript API 读取或写入无限Excel区域
+description: 了解如何使用 JavaScript API Excel读取或写入无限区域。
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f7be2efc3e069ea3451088608ca5255a632ef863
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: e9df563c9bac688e0806f5280139da8faa5b94870d4d32a852c919cd7fd03ad0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652786"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087647"
 ---
-# <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 读取或写入无限区域
+# <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>使用 JavaScript API 读取或写入无限Excel区域
 
-本文介绍如何使用 Excel JavaScript API 读取和写入无限区域。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel.Range 类](/javascript/api/excel/excel.range)。
+本文介绍如何使用 JavaScript API 对无限区域进行Excel写入。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
 
 无限区域地址是指定整列或整行的范围地址。 例如：
 
@@ -37,6 +37,6 @@ range.values = 'Due Date';
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
-- [使用 Excel JavaScript API 处理单元格](excel-add-ins-cells.md)
-- [使用 Excel JavaScript API 读取或写入较大区域](excel-add-ins-ranges-large.md)
+- [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
+- [使用 JavaScript API 读取或写入Excel区域](excel-add-ins-ranges-large.md)
 - [ 同时在 Excel 加载项中处理多个区域 ](excel-add-ins-multiple-ranges.md)

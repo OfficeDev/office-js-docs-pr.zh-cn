@@ -4,12 +4,12 @@ description: 了解如何使用 Excel JavaScript API 设置和获取选定区域
 ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 623ba5c1b9e76151d4a2c4b169e655236b37e8c8
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 575436a1d69ec0125dd58e5b8b542405b9b64c9c6493462f3cf7512dcf0f0f02
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290780"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087048"
 ---
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>使用 JavaScript API 设置并Excel区域
 

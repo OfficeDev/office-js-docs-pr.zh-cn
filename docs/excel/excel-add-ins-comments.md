@@ -1,32 +1,32 @@
 ---
-title: 使用 Excel JavaScript API 处理注释
-description: 有关使用 Api 添加、删除和编辑注释和注释线程的信息。
+title: 使用 JavaScript API Excel注释
+description: 有关使用 API 添加、删除和编辑注释和注释线程的信息。
 ms.date: 10/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 00f7dd22fb2148902152197521098482071e5284
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 5e292dab77b080906d77b1517a8de715bc0d2122f29e3de73b04f5b9d9276c85
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626419"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084317"
 ---
-# <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理注释
+# <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 JavaScript API Excel注释
 
-本文介绍如何使用 Excel JavaScript API 在工作簿中添加、读取、修改和删除注释。 您可以从 Excel 文章的 " [插入注释和注释](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) " 中了解有关注释功能的详细信息。
+本文介绍如何使用 JavaScript API 在工作簿中添加、读取、修改Excel注释。 可以从在文档中插入注释和注释一文了解有关[Excel功能。](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
 
-在 Excel JavaScript API 中，注释包括单个初始注释和已连接的线程讨论。 它与单个单元格相关联。 任何人查看具有足够权限的工作簿都可以答复注释。 [Comment](/javascript/api/excel/excel.comment)对象将那些答复存储为[CommentReply](/javascript/api/excel/excel.commentreply)对象。 应将注释视为线程，并且线程必须具有特殊条目作为起始点。
+在 Excel JavaScript API 中，注释包括单个初始注释和已连接的线程讨论。 它绑定到单个单元格。 查看具有足够权限的工作簿的任何人都可以回复注释。 Comment [对象](/javascript/api/excel/excel.comment) 将回复存储为 [CommentReply](/javascript/api/excel/excel.commentreply) 对象。 你应该将注释视为一个线程，并且线程必须具有一个特殊条目作为起点。
 
-![带有两个答复的标签为 "Comment" 的 Excel 注释，标记为 "Comment. 答复 [0]" 和 "Comment. 答复 [1]"。](../images/excel-comments.png)
+![一Excel批注，标记为"Comment"，带有两个回复，标记为"Comment.replies[0]"和"Comment.replies[1]。](../images/excel-comments.png)
 
-工作簿中的注释由属性跟踪 `Workbook.comments` 。 这包括由用户创建的批注以及由加载项创建的批注。 `Workbook.comments` 属性是一个包含一系列 [Comment](/javascript/api/excel/excel.comment) 对象的 [CommentCollection](/javascript/api/excel/excel.commentcollection) 对象。 此外，还可以在 [工作表](/javascript/api/excel/excel.worksheet) 级别访问注释。 本文中的示例处理工作簿级别的注释，但可以轻松地将其修改为使用 `Worksheet.comments` 属性。
+工作簿中的注释由 属性 `Workbook.comments` 进行跟踪。 这包括由用户创建的批注以及由加载项创建的批注。 `Workbook.comments` 属性是一个包含一系列 [Comment](/javascript/api/excel/excel.comment) 对象的 [CommentCollection](/javascript/api/excel/excel.commentcollection) 对象。 注释也可在 [工作表级别访问](/javascript/api/excel/excel.worksheet) 。 本文中的示例处理工作簿级别的注释，但可以轻松地修改它们以使用 `Worksheet.comments` 属性。
 
 ## <a name="add-comments"></a>添加备注
 
-使用 `CommentCollection.add` 方法将注释添加到工作簿中。 此方法最长可使用三个参数：
+使用 `CommentCollection.add` 方法向工作簿添加注释。 此方法最多需要三个参数：
 
-- `cellAddress`：添加了注释的单元格。 它可以是一个字符串或 [Range](/javascript/api/excel/excel.range) 对象。 区域必须是单个单元格。
-- `content`：注释的内容。 将字符串用于纯文本注释。 将 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) 对象用于包含 [提及](#mentions)的注释。
-- `contentType`：用于指定内容类型的 [ContentType](/javascript/api/excel/excel.contenttype) 枚举。 默认值为 `ContentType.plain`。
+- `cellAddress`：添加注释的单元格。 它可以是字符串或 [Range](/javascript/api/excel/excel.range) 对象。 区域必须是单个单元格。
+- `content`：注释的内容。 将字符串用于纯文本注释。 将 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) 对象用于包含提及 [的评论](#mentions)。
+- `contentType`：指定内容类型的 [ContentType](/javascript/api/excel/excel.contenttype) 枚举。 默认值为 `ContentType.plain`。
 
 下面的代码示例将向单元格 **A2** 添加批注。
 
@@ -42,11 +42,11 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> 外接程序添加的注释被应用于该外接程序的当前用户。
+> 由加载项添加的注释将归结到加载项的当前用户。
 
-### <a name="add-comment-replies"></a>添加批注答复
+### <a name="add-comment-replies"></a>添加批注回复
 
-`Comment`对象是包含零个或多个答复的注释线程。 `Comment` 对象具有 `replies` 属性，后者是一个包含 [CommentReply](/javascript/api/excel/excel.commentreply) 对象的 [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) 对象。 若要向批注添加回复，请使用 `CommentReplyCollection.add` 方法，传入回复的文本。 回复将按照添加的顺序显示。 此外接加载项的当前用户也具有这些属性。
+对象 `Comment` 是包含零个或多个回复的注释线程。 `Comment` 对象具有 `replies` 属性，后者是一个包含 [CommentReply](/javascript/api/excel/excel.commentreply) 对象的 [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) 对象。 若要向批注添加回复，请使用 `CommentReplyCollection.add` 方法，传入回复的文本。 回复将按照添加的顺序显示。 它们还会归结到加载项的当前用户。
 
 下面的代码示例向工作簿中的第一个批注添加回复。
 
@@ -59,7 +59,7 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="edit-comments"></a>编辑批注
+## <a name="edit-comments"></a>编辑注释
 
 若要编辑批注或批注回复，请设置其 `Comment.content` 属性或 `CommentReply.content` 属性。
 
@@ -72,9 +72,9 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="edit-comment-replies"></a>编辑批注答复
+### <a name="edit-comment-replies"></a>编辑批注回复
 
-若要编辑批注答复，请设置其 `CommentReply.content` 属性。
+若要编辑批注回复，请设置其 `CommentReply.content` 属性。
 
 ```js
 Excel.run(function (context) {
@@ -88,7 +88,7 @@ Excel.run(function (context) {
 
 ## <a name="delete-comments"></a>删除注释
 
-若要删除注释，请使用 `Comment.delete` 方法。 删除注释的同时也会删除与该注释相关的答复。
+若要删除批注，请使用 `Comment.delete` 方法。 删除注释还会删除与该注释关联的回复。
 
 ```js
 Excel.run(function (context) {
@@ -98,9 +98,9 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="delete-comment-replies"></a>删除批注答复
+### <a name="delete-comment-replies"></a>删除批注回复
 
-若要删除批注答复，请使用 `CommentReply.delete` 方法。
+若要删除批注回复，请使用 `CommentReply.delete` 方法。
 
 ```js
 Excel.run(function (context) {
@@ -113,7 +113,7 @@ Excel.run(function (context) {
 
 ## <a name="resolve-comment-threads"></a>解析注释线程
 
-注释线程具有可配置的布尔值， `resolved` 以指示是否已解决。 值 `true` 表示注释线程已解析。 值 `false` 表示注释线程是新的，也可能是重新打开的。
+注释线程具有可配置的布尔值 `resolved` ，以指示是否解析。 的值 `true` 表示注释线程已解析。 的值 `false` 表示注释线程是新的或重新打开的。
 
 ```js
 Excel.run(function (context) {
@@ -123,7 +123,7 @@ Excel.run(function (context) {
 });
 ```
 
-批注答复有一个 readonly `resolved` 属性。 它的值始终等于线程的其余部分的值。
+批注回复具有 readonly `resolved` 属性。 它的值始终等于线程其余部分的值。
 
 ## <a name="comment-metadata"></a>注释元数据
 
@@ -144,11 +144,11 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="comment-reply-metadata"></a>批注答复元数据
+### <a name="comment-reply-metadata"></a>注释回复元数据
 
-批注答复存储与初始注释相同类型的元数据。
+注释回复存储与初始注释相同的元数据类型。
 
-下面的示例展示了如何在 **A2**中显示作者的电子邮件、作者的姓名以及最新注释答复的创建日期。
+以下示例演示如何在 **A2** 上显示作者的电子邮件、作者姓名和最新批注回复的创建日期。
 
 ```js
 Excel.run(function (context) {
@@ -171,14 +171,14 @@ Excel.run(function (context) {
 
 ## <a name="mentions"></a>提及
 
-[提及](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) 用于在注释中标记同事。 这将向他们发送你的评论内容通知。 你的外接程序可以代表你创建这些提及。
+[提及](https://support.office.com/article/use-mention-in-comments-to-tag-someone-for-feedback-644bf689-31a0-4977-a4fb-afe01820c1fd) 用于在注释中标记同事。 这会向用户发送包含注释内容的通知。 加载项可以代表你创建这些提及内容。
 
-包含提及的注释需要使用 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) 对象创建。 `CommentCollection.add`使用 `CommentRichContent` 包含一个或多个提及的调用，并将其指定 `ContentType.mention` 为 `contentType` 参数。 `content`此外，还需要设置字符串格式，以在文本中插入所提及的内容。 提及的格式为： `<at id="{replyIndex}">{mentionName}</at>` 。
+需要用 [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) 对象创建包含提及内容的评论。 使用 `CommentCollection.add` 包含 `CommentRichContent` 一个或多个提及项的 调用，并 `ContentType.mention` 指定 作为 `contentType` 参数。 `content`还需要设置字符串的格式，以在文本中插入提及内容。 提及的格式为 `<at id="{replyIndex}">{mentionName}</at>` ：。
 
 > [!NOTE]
-> 目前，只有提及的确切名称可用作提及链接的文本。 稍后将添加对名称的缩写版本的支持。
+> 目前，仅提及的确切名称可以用作提及链接的文本。 稍后将添加对名称的缩短版本的支持。
 
-下面的示例展示了一个注释，其中包含一个注明。
+以下示例显示一个提及评论。
 
 ```js
 Excel.run(function (context) {
@@ -204,19 +204,19 @@ Excel.run(function (context) {
 
 ## <a name="comment-events"></a>注释事件
 
-您的外接程序可以侦听注释的添加、更改和删除。 [批注事件](/javascript/api/excel/excel.commentcollection#event-details) 发生在 `CommentCollection` 对象上。 若要侦听注释事件，请注册 `onAdded` 、 `onChanged` 或 `onDeleted` 注释事件处理程序。 当检测到注释事件时，请使用此事件处理程序检索有关添加的、已更改或已删除的注释的数据。 该 `onChanged` 事件还处理注释添加、更改和删除。 
+加载项可以侦听注释添加、更改和删除。 [注释事件](/javascript/api/excel/excel.commentcollection#event-details) 在对象 `CommentCollection` 上发生。 若要侦听注释事件，请注册 `onAdded` 、 `onChanged` 或 `onDeleted` comment 事件处理程序。 检测到注释事件时，使用此事件处理程序检索有关已添加、已更改或删除的注释的数据。 `onChanged`该事件还会处理批注回复的添加、更改和删除。 
 
-每个注释事件仅在同时执行多个添加、更改或删除时触发一次。 所有 [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)、 [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventargs)和 [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) 对象都包含注释 id 的数组，用于将事件操作映射回注释集合。
+当同时执行多个添加、更改或删除操作时，每个注释事件仅触发一次。 所有[CommentAddedEventArgs、CommentChangedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)和[CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs)对象都包含注释 ID 数组，用于将事件操作映射回注释集合。 [](/javascript/api/excel/excel.commentchangedeventargs)
 
-若要详细了解如何注册事件处理程序、处理事件和删除事件处理程序，请参阅使用 [Excel JAVASCRIPT API 文章处理事件](excel-add-ins-events.md) 。 
+有关注册事件处理程序、处理事件和删除事件处理程序的其他信息，请参阅使用[Excel JavaScript API](excel-add-ins-events.md)处理事件一文。 
 
 ### <a name="comment-addition-events"></a>注释添加事件 
-向 `onAdded` 注释集合中添加一个或多个新注释时，将触发该事件。 将答复添加到注释线程中时， *不* 会触发此事件 (请参阅 [注释更改事件](#comment-change-events) 以了解有关注释答复事件) 。
+向 `onAdded` 注释集合中添加一个或多个新批注时，将触发该事件。 将回复 *添加到* 注释线程时，不会触发此事件 (请参阅注释更改事件以了解注释回复事件) 。 [](#comment-change-events)
 
-下面的示例展示了如何注册 `onAdded` 事件处理程序，然后使用该 `CommentAddedEventArgs` 对象来检索 `commentDetails` 添加的注释的数组。
+以下示例演示如何注册事件 `onAdded` 处理程序，然后使用 `CommentAddedEventArgs` 对象检索添加的注释 `commentDetails` 的数组。
 
 > [!NOTE]
-> 此示例仅在添加单个批注时才起作用。 
+> 本示例仅在添加单个批注时有效。 
 
 ```js
 Excel.run(function (context) {
@@ -246,20 +246,20 @@ function commentAdded() {
 }
 ```
 
-### <a name="comment-change-events"></a>批注更改事件 
-`onChanged`在下列情况下，会触发注释事件。
+### <a name="comment-change-events"></a>注释更改事件 
+注释 `onChanged` 事件在下列方案中触发。
 
-- 更新注释的内容。
-- 解析注释线程。
-- 重新打开注释线程。
-- 将答复添加到注释线程中。
-- 在注释线程中更新答复。
-- 在注释线程中删除答复。
+- 注释的内容已更新。
+- 注释线程已解析。
+- 将重新打开注释线程。
+- 回复将添加到注释线程。
+- 回复在注释线程中更新。
+- 在注释线程中删除回复。
 
-下面的示例展示了如何注册 `onChanged` 事件处理程序，然后使用该 `CommentChangedEventArgs` 对象来检索 `commentDetails` 已更改注释的数组。
+以下示例演示如何注册事件 `onChanged` 处理程序，然后使用 `CommentChangedEventArgs` 对象检索已更改注释 `commentDetails` 的数组。
 
 > [!NOTE]
-> 此示例仅在更改单个批注时才起作用。 
+> 本示例仅在更改单个批注时有效。 
 
 ```js
 Excel.run(function (context) {
@@ -290,12 +290,12 @@ function commentChanged() {
 ```
 
 ### <a name="comment-deletion-events"></a>注释删除事件
-`onDeleted`从注释集合中删除注释时将触发该事件。 删除注释后，其元数据将不再可用。 如果外接程序管理各个注释，则 [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) 对象提供注释 id。
+从 `onDeleted` 注释集合中删除批注时，将触发该事件。 删除注释后，其元数据将不再可用。 [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs)对象提供注释 ID，以防加载项管理单个注释。
 
-下面的示例展示了如何注册 `onDeleted` 事件处理程序，然后使用该 `CommentDeletedEventArgs` 对象来检索 `commentDetails` 已删除注释的数组。
+以下示例演示如何注册事件 `onDeleted` 处理程序，然后使用 `CommentDeletedEventArgs` 对象检索已删除 `commentDetails` 注释的数组。
 
 > [!NOTE]
-> 此示例仅在删除单个批注时才起作用。 
+> 本示例仅在删除单个批注时有效。 
 
 ```js
 Excel.run(function (context) {
@@ -318,7 +318,7 @@ function commentDeleted() {
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office 外接程序中的 Excel JavaScript 对象模型](excel-add-ins-core-concepts.md)
+- [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [使用 Excel JavaScript API 处理工作簿](excel-add-ins-workbooks.md)
 - [使用 Excel JavaScript API 处理事件](excel-add-ins-events.md)
-- [在 Excel 中插入批注和备注](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
+- [在文档中插入注释Excel](https://support.office.com/article/insert-comments-and-notes-in-excel-bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

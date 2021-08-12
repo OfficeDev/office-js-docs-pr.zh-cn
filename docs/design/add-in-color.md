@@ -3,12 +3,12 @@ title: Office 外接程序的颜色准则
 description: 了解如何在加载项的 UI Office颜色。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: a472dfd02787d68a5ce11a198d580aefe37ce315
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: fc22a2168a531d0f3fe50358f5d45e6052bfde6c3418f9ee13197bd48ed35101
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773221"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082728"
 ---
 # <a name="color-guidelines-for-office-add-ins"></a>Office 外接程序的颜色准则
 

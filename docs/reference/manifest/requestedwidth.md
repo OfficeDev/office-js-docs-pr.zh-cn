@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 RequestedWidth 元素
-description: RequestedWidth 元素指定内容加载项的初始宽度（以像素为单位）。
+description: RequestedWidth 元素指定内容 (的初始宽度) 以像素为单位）。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 517b09492aede111d6359dc8e127c6029df89341
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 82223b027f9f00fefb5b297624320790762ab3344a831367950fb3b07d152801
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611720"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085998"
 ---
 # <a name="requestedwidth-element"></a>RequestedWidth 元素
 
-指定内容加载项的初始宽度（以像素为单位）。
+指定内容 (的初始宽度) 以像素为单位）。
 
 **外接程序类型：** 内容
 
