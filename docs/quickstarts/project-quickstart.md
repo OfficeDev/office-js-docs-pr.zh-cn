@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Project 任务窗�
 ms.date: 08/04/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 8cada7195d61b26867beeff87fc95ac2b2864c911b07a53540f1934fbaddc420
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e135a4df75d1da02fd542d004b939c750099528cd9f5a32f932f1295958cc8f0
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089424"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845632"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -94,12 +94,6 @@ Office.context.document.getSelectedTaskAsync(
 
     ```command&nbsp;line
     cd "My Office Add-in"
-    ```
-
-1. 安装项目的依赖项。
-
-     ```command&nbsp;line
-    npm install
     ```
 
 1. 启动本地 Web 服务器。

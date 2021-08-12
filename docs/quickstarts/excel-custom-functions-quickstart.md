@@ -4,12 +4,12 @@ description: 在 Excel 中开发自定义函数快速入门指南。
 title: 自定义函数快速入门
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4c185453a644765cd9081f1c7df49afac1657854694764eb1144dd19b8ad7667
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6c463c494bf3175309226d72d0ca95417a3889b392a4f43035cd5d50263d8fbf
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095159"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845604"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -46,20 +46,11 @@ ms.locfileid: "57095159"
     cd starcount
     ```
 
-1. 安装依赖项。
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 1. 生成项目。
 
     ```command&nbsp;line
     npm run build
     ```
-
-    > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run build` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
 1. 启动在 Node.js 中运行的本地 Web 服务器。 你可以在 Excel 网页版或 Windows 版 Excel 中尝试使用自定义函数加载项。 系统可能会提示你打开加载项的任务窗格，不过这是可选的。 你仍可在不打开加载项的任务窗格的情况下运行自定义函数。
 
@@ -71,6 +62,9 @@ ms.locfileid: "57095159"
 npm run start:desktop
 ```
 
+> [!NOTE]
+> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run start` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+    
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
 若要在Excel 网页版中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
@@ -78,6 +72,9 @@ npm run start:desktop
 ```command&nbsp;line
 npm run start:web
 ```
+
+> [!NOTE]
+> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run start` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
 若要使用自定义函数加载项，请在 Excel 网页版中打开一个新工作簿。 在此工作簿中，完成以下步骤以旁加载你的加载项。
 

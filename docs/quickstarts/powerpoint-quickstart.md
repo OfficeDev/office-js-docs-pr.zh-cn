@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务�
 ms.date: 08/04/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: b64a1f9554513e1b301c7989ee57f89734131433efc1d886265427affd9d8e82
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e7d4f77cf8e680d8846f8847c74df85e64f8ac85d1b3c4e92b4888361429f013
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095135"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845668"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -66,12 +66,6 @@ ms.locfileid: "57095135"
     > ```command&nbsp;line
     > npm run dev-server
     > ```
-
-    - 在项目的根目录中安装外接程序的依赖项。
-
-        ```command&nbsp;line
-        npm install
-        ```
 
     - 若要在 PowerPoint 中测试加载项，请在项目的根目录中运行以下命令。 这将启动本地的 Web 服务器（如果尚未运行的话），并使用加载的加载项打开 PowerPoint。
 

@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 07/08/2020
 localization_priority: Priority
-ms.openlocfilehash: aac1133c36eda13f4bf806331d2ebee5114e7ee1
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 2294c68ec246055704df990e50a77094deeb0c8e610dd54f95c767bc7ef918d6
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773515"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845597"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -18,7 +18,7 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 
 * 通过提供 ID、版本、说明、显示名称和默认区域设置进行自我描述。
 
-* 指定用于为加载项塑造品牌的图像，以及用于 Office 应用功能区中[加载项命令][]的图标。
+* 指定用于为加载项塑造品牌的图像，以及用于 Office 应用功能区中[加载项命令](create-addin-commands.md)的图标。
 
 * 指定外接程序如何与 Office 集成，包括任何自定义 UI，如外接程序创建的功能区按钮。
 
@@ -100,7 +100,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="hosting-requirements"></a>托管要求
 
-所有图像 URI，[如用于加载项命令的 URI][]都必须支持缓存。 托管图像的服务器不得在 HTTP 响应中返回指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 标头。
+所有图像 URI（如用于[外接程序命令](create-addin-commands.md)的 URI）都必须支持缓存。 托管图像的服务器不得在 HTTP 响应中返回指定 `no-cache`、`no-store` 或类似选项的 `Cache-Control` 标头。
 
 所有 URL（如 [SourceLocation](../reference/manifest/sourcelocation.md) 元素中指定的源文件位置）都应 **受 SSL 保护 (HTTPS)**。 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
