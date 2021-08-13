@@ -1,20 +1,20 @@
 ---
 title: 使用 Script Lab 探索 Office JavaScript API
 description: 使用 Script Lab 探索 Office JS API 和原型功能。
-ms.date: 06/18/2021
+ms.date: 08/05/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: ba70a95444bcc7a8b5eda8aad0bb2d8e1b0d12affe9ce341e65ba9baa3107c58
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: c475870166415dc6142169dc1029b682477001e7f4bbbe35721ddcd1b82d5f07
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088867"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845618"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用 Script Lab 探索 Office JavaScript API
 
-借助 [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) 和[适用于 Outlook 的 Script Lab](https://appsource.microsoft.com/product/office/WA200001603) 加载项（可从 AppSource 免费获取），你可以在使用 Excel 或 Outlook 等 Office 程序时探索 Office JavaScript API。 Script Lab 是一项方便的工具，可将其作为原型添加到开发工具包，并在你自己的加载项中验证你想使用的功能。
+借助 [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) 和[适用于 Outlook 的 Script Lab](https://appsource.microsoft.com/product/office/wa200001603) 加载项（可从 AppSource 免费获取），你可以在使用 Excel 或 Outlook 等 Office 程序时探索 Office JavaScript API。 Script Lab 是一项方便的工具，可将其作为原型添加到开发工具包，并在你自己的加载项中验证你想使用的功能。
 
 ## <a name="what-is-script-lab"></a>什么是 Script Lab？
 
@@ -70,11 +70,11 @@ Script Lab 提供许多功能，可帮助你探索 Office JavaScript API 和原�
 有关适用于 Outlook 的 Script Lab 的更多详细信息，请参阅相关[博客文章](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/)。
 
 > [!IMPORTANT]
-> 在 2021 年某个时间，Script Lab 将停止处理使用 Internet Explorer 托管加载项的平台和 Office 版本组合。这包括通过 Office 2019 一次性购买的 Office 版本，以及一些旧版本的 Microsoft 365（订阅）Office。 （有关详细信息，请参阅[ Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。）需要其他平台和版本组合来浏览和测试使用 Script Lab 的 Office JavaScript 库 API。 但这些 API 的行为在 Internet Explorer 中并无不同，因此这不是 Script Lab 的一个弱点。 请注意，提交到 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 的 Office 加载项必须支持使用 Internet Explorer 托管加载项的平台和版本组合。
+> 脚本实验室不再适用于平台和使用 Internet Explorer 托管加载项的 Office 版本组合。这包括通过 Office 2019 一次性购买的 Office 版本。 有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 ## <a name="next-steps"></a>后续步骤
 
-若要在 Excel、Word 或 PowerPoint 中使用 Script Lab，请从 AppSource 安装 [Script Lab 加载项](https://appsource.microsoft.com/product/office/WA104380862)。 
+若要在 Excel、Word 或 PowerPoint 中使用 Script Lab，请从 AppSource 安装 [Script Lab 加载项](https://appsource.microsoft.com/product/office/WA104380862)。
 
 若要使用适用于 Outlook 的 Script Lab，请从 AppSource 安装 [适用于 Outlook 的 Script Lab 加载项](https://appsource.microsoft.com/product/office/wa200001603)。
 
