@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Word 任务窗格�
 ms.date: 08/04/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 60a18c8939e07c1de7aa21e1f3f904529a444fa6d00e3a9a626144d0c0242cf8
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: db71a0103f9bcb793d6f3d68f1b2f293c92a0983
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845646"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232408"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 

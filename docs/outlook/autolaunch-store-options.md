@@ -4,12 +4,12 @@ description: 了解可用于实现基于事件的激活Outlook加载项的 AppSo
 ms.topic: article
 ms.date: 08/05/2021
 localization_priority: Normal
-ms.openlocfilehash: cbc4f43340b5dba4c10c5cf9362c3c6104289ea6ba32a46fb7df758494e27b64
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5d48e441d41b9d1fcd5508cb1beb3a90acd1550f
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098359"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232398"
 ---
 # <a name="appsource-listing-options-for-your-event-based-outlook-add-in"></a>基于事件的加载项的 AppSource Outlook选项
 
@@ -32,7 +32,7 @@ ms.locfileid: "57098359"
 > [!NOTE]
 > 虽然最终用户可以使用测试代码安装外接程序，但外接程序不包括基于事件的激活。
 
-## <a name="specify-a-flight-code"></a>指定航班代码
+## <a name="specify-a-flight-code"></a>指定一个测试代码
 
 若要指定外接程序的运行代码，在发布外接程序时，在认证说明中共享该信息。 _**重要提示**：_ 航班代码区分大小写。
 
@@ -50,7 +50,7 @@ ms.locfileid: "57098359"
 
 ## <a name="unrestricted-appsource-listing"></a>无限制 AppSource 一览
 
-如果你的加载项未对关键方案（即 (无需自动调用) 即可正常使用基于事件的激活，请考虑在没有任何特殊外部测试代码的情况下在 AppSource 中列出加载项。 如果最终用户从 AppSource 获取加载项，则用户不会进行自动激活。 但是，他们可以使用外接程序的其他组件，如任务窗格或无 UI 命令。
+如果你的加载项未对关键方案（即 (无需自动调用) 即可正常使用基于事件的激活，请考虑在 AppSource 中列出加载项，而无需任何特殊的外部测试代码。 如果最终用户从 AppSource 获取加载项，则用户不会进行自动激活。 但是，他们可以使用外接程序的其他组件，如任务窗格或无 UI 命令。
 
 > [!IMPORTANT]
 > 这是一个临时限制。 将来，我们计划为直接获取外接程序的最终用户启用基于事件的外接程序激活。
@@ -59,7 +59,7 @@ ms.locfileid: "57098359"
 
 你可以更新现有加载项以包含基于事件的激活，然后重新提交它进行验证，并决定是需要受限还是不受限制的 AppSource 一览。
 
-更新后的加载项获得批准后，之前部署了加载项的组织管理员将在管理中心的"集成应用"部分收到更新消息。  该消息会向管理员建议基于事件的激活更改。 管理员接受更改后，更新将部署到最终用户。
+在更新后的加载项得到批准后，之前已部署加载项的组织管理员将在管理中心的"集成应用"部分收到更新消息。  该消息会向管理员建议基于事件的激活更改。 管理员接受更改后，更新将部署到最终用户。
 
 !["集成应用"屏幕上的应用更新通知屏幕截图。](../images/outlook-deploy-update-notification.png)
 

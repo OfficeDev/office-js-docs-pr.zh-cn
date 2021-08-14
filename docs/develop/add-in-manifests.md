@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 07/08/2020
 localization_priority: Priority
-ms.openlocfilehash: 2294c68ec246055704df990e50a77094deeb0c8e610dd54f95c767bc7ef918d6
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: c5734c38e243520f6c2fa75935fff945350abf44
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845597"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232197"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -49,7 +49,7 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [说明][]                                                                              |    X    |     X     |    X    |
+| [Description][]                                                                              |    X    |     X     |    X    |
 | [IconUrl][]                                                                                  |    X    |     X     |    X    |
 | [SupportUrl][]\*\*                                                                           |    X    |     X     |    X    |
 | [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |

@@ -3,12 +3,12 @@ title: Office 客户端应用程序和平台的 Office 加载项可用性
 description: Excel、OneNote、Outlook、PowerPoint、Project 和 Word 支持的要求集。
 ms.date: 07/13/2021
 localization_priority: Priority
-ms.openlocfilehash: ce23157d622b1b443f4cf3513405af7fcfef47eedec5206275589ca6b5f6657a
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: ed54f6c513da9ada85afcbdbdb30798acb7048f4
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845625"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232239"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Office 客户端应用程序和平台的 Office 加载项可用性
 

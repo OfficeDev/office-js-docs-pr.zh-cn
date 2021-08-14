@@ -1,18 +1,18 @@
 ---
-ms.date: 09/23/2020
-description: '处理和返回自定义函数中类似 #NULL! 来自自定义函数。'
 title: 处理和返回自定义函数中的错误
+description: '处理和返回自定义函数中类似 #NULL! 来自自定义函数。'
+ms.date: 08/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 2822b3e93f7e5f16410e49d4414110e37172f3569b8f3c5d7d4dd98d5c5ecf6a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b72ed2baea49b4b6d5f00e63e323d12a7e57d021
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079669"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232333"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>处理和返回自定义函数中的错误
 
-如果自定义函数运行时出错，则返回错误以通知用户。 如果你有特定的参数要求（例如仅正数），请测试参数，如果它们不正确，则引发错误。 还可以使用 `try`-`catch` 块来捕获自定义函数运行时发生的任何错误。
+如果自定义函数运行时出错，则返回错误以通知用户。 如果你有特定的参数要求（例如仅正数），请测试参数，如果它们不正确，则引发错误。 您还可以使用 块捕获自定义函数运行时出现 [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) 的任何错误。
 
 ## <a name="detect-and-throw-an-error"></a>检测和引发错误
 
@@ -35,15 +35,14 @@ function getCity(zipCode: string): string {
 
 ## <a name="the-customfunctionserror-object"></a>CustomFunctions.Error 对象
 
-[CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error)对象用于将错误返回给单元格。 创建对象时，通过选择下列枚举值之一来指定 `ErrorCode` 要使用哪个错误。
-
+[CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error)对象用于将错误返回给单元格。 创建对象时，通过选择以下枚举值之一来指定 `ErrorCode` 要使用哪个错误。
 
 |ErrorCode 枚举值  |Excel 单元格值  |说明  |
 |---------------|---------|---------|
 |`divisionByZero` | `#DIV/0`  | 函数试图除以零。 |
-|`invalidName`    | `#NAME?`  | 函数名称有一个拼写错误。 请注意，支持将此错误作为自定义函数输入错误，但不作为自定义函数输出错误。 | 
+|`invalidName`    | `#NAME?`  | 函数名称有一个拼写错误。 请注意，此错误作为自定义函数输入错误受到支持，但不作为自定义函数输出错误。 |
 |`invalidNumber`  | `#NUM!`   | 公式中的数字存在问题。 |
-|`invalidReference` | `#REF!` | 函数引用无效的单元格。 请注意，支持将此错误作为自定义函数输入错误，但不作为自定义函数输出错误。|
+|`invalidReference` | `#REF!` | 函数引用无效的单元格。 请注意，此错误作为自定义函数输入错误受到支持，但不作为自定义函数输出错误。|
 |`invalidValue`   | `#VALUE!` | 公式中的值的类型错误。 |
 |`notAvailable`   | `#N/A`    | 函数或服务不可用。 |
 |`nullReference`  | `#NULL!`  | 公式中的区域不相交。 |
@@ -63,12 +62,50 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "T
 throw error;
 ```
 
-## <a name="use-try-catch-blocks"></a>使用 try-catch 块
+### <a name="handle-errors-when-working-with-dynamic-arrays"></a>使用动态数组时处理错误
 
-通常，使用 `try` - `catch` 自定义函数中的块来捕获发生的任何潜在错误。 如果不在代码中处理异常，它们将返回到 Excel。 默认情况下，Excel `#VALUE!` 错误或异常返回。
+除了返回单个错误之外，自定义函数还可以输出包含错误的动态数组。 例如，自定义函数可以输出数组 `[1],[#NUM!],[3]` 。 下面的代码示例演示如何向自定义函数中输入三个参数，将其中一个输入参数替换为错误，然后返回一个二维数组，并返回处理每个输入参数 `#NUM!` 的结果。
+
+```js
+/**
+* Returns the #NUM! error as part of a 2-dimensional array.
+* @customfunction
+* @param {number} first First parameter.
+* @param {number} second Second parameter.
+* @param {number} third Third parameter.
+* @returns {number[][]} Three results, as a 2-dimensional array.
+*/
+function returnInvalidNumberError(first, second, third) {
+  // Use the `CustomFunctions.Error` object to retrieve an invalid number error.
+  var error = new CustomFunctions.Error(
+    CustomFunctions.ErrorCode.invalidNumber, // Corresponds to the #NUM! error in the Excel UI.
+  );
+
+  // Enter logic that processes the first, second, and third input parameters.
+  // Imagine that the second calculation results in an invalid number error. 
+  var firstResult = first;
+  var secondResult =  error;
+  var thirdResult = third;
+
+  // Return the results of the first and third parameter calculations and a #NUM! error in place of the second result. 
+  return [[firstResult], [secondResult], [thirdResult]];
+}
+```
+
+### <a name="errors-as-custom-function-inputs"></a>作为自定义函数输入的错误
+
+即使输入区域包含错误，自定义函数也可以计算。 例如，自定义函数可以将 **区域 A2：A7** 作为输入，即使 **A6：A7** 包含错误。
+
+若要处理包含错误的输入，自定义函数必须将 JSON 元数据属性 `allowErrorForDataTypeAny` 设置为 `true` 。 有关详细信息 [，请参阅手动为自定义函数创建 JSON](custom-functions-json.md#metadata-reference) 元数据。
+
+> [!IMPORTANT]
+> `allowErrorForDataTypeAny`属性只能与手动创建的[JSON 元数据一同使用](custom-functions-json.md)。 此属性不能用于自动生成的 JSON 元数据进程。
+
+## <a name="use-trycatch-blocks"></a>使用 `try...catch` 块
+
+通常，使用 [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) 自定义函数中的块来捕获发生的任何潜在错误。 如果不处理代码中的异常，它们将被返回到Excel。 默认情况下，Excel `#VALUE!` 错误或异常返回。
 
 在下面的代码示例中，自定义函数对 REST 服务执行 fetch 调用。 此调用有可能会失败，例如，如果 REST 服务返回错误或网络中断，就可能会失败。 如果发生这种情况，自定义函数将返回 `#N/A` 以指示 Web 调用失败。
-
 
 ```typescript
 /**

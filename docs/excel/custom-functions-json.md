@@ -1,14 +1,14 @@
 ---
-ms.date: 12/22/2020
-description: 定义自定义函数的 JSON 元数据Excel并关联函数 ID 和名称属性。
 title: 手动为自定义函数创建 JSON Excel
+description: 在函数中定义自定义函数的 JSON Excel并关联函数 ID 和名称属性。
+ms.date: 08/06/2021
 localization_priority: Normal
-ms.openlocfilehash: c03238d46e8d861307ba0db3d03dafea81aeca51
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 78a14d591276ad7fcc2cca47df0f5e540d7bad91
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349628"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232212"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>手动为自定义函数创建 JSON 元数据
 
@@ -33,7 +33,7 @@ ms.locfileid: "53349628"
 
 ## <a name="authoring-metadata-and-connecting-to-the-manifest"></a>创作元数据并连接到清单
 
-在项目中创建 JSON 文件，并提供其中函数的所有详细信息，例如函数的参数。 有关[函数属性](#json-metadata-example)[的完整列表](#metadata-reference)，请参阅以下元数据示例和元数据引用。
+在项目中创建 JSON 文件，并提供函数中函数的所有详细信息，例如函数的参数。 有关[函数属性](#json-metadata-example)[的完整列表](#metadata-reference)，请参阅以下元数据示例和元数据引用。
 
 确保 XML 清单文件引用 部分中的 JSON 文件， `<Resources>` 类似于以下示例。
 
@@ -56,6 +56,7 @@ ms.locfileid: "53349628"
 
 ```json
 {
+  "allowErrorForDataTypeAny": true,
   "functions": [
     {
       "id": "ADD",
@@ -138,6 +139,13 @@ ms.locfileid: "53349628"
 
 ## <a name="metadata-reference"></a>元数据参考
 
+### <a name="allowerrorfordatatypeany"></a>allowErrorForDataTypeAny
+
+属性 `allowErrorForDataTypeAny` 是一个布尔数据类型。 将值设置为 `true` 允许自定义函数将错误作为输入值处理。 类型为 或 的所有参数在设置为 时都可以接受错误 `any` `any[][]` 作为 `allowErrorForDataTypeAny` 输入值 `true` 。 默认值 `allowErrorForDataTypeAny` 为 `false` 。
+
+> [!NOTE]
+> 与其他 JSON 元数据属性不同， `allowErrorForDataTypeAny` 是顶级属性，不包含子属性。 请参阅前面的 [JSON 元数据代码](#json-metadata-example) 示例，了解如何设置此属性的格式。
+
 ### <a name="functions"></a>functions
 
 `functions` 属性是自定义函数对象的一个数组。 下表列出了每个对象的属性。
@@ -161,8 +169,8 @@ ms.locfileid: "53349628"
 | `cancelable`      | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `CancelableInvocation` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 可取消函数通常仅用于返回单个结果并需要处理数据请求取消的异步函数。 函数不能同时使用 和 `stream` `cancelable` 属性。 |
 | `requiresAddress` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true` 为 ，则自定义函数可以访问调用它的单元格的地址。 `address`调用参数的[属性](custom-functions-parameter-options.md#invocation-parameter)包含调用自定义函数的单元格的地址。 函数不能同时使用 和 `stream` `requiresAddress` 属性。 |
 | `requiresParameterAddresses` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true` 为 ，则自定义函数可以访问函数的输入参数的地址。 此属性必须与结果对象的 属性结合使用， `dimensionality` 并且[](#result) `dimensionality` 必须设置为 `matrix` 。 有关详细信息 [，请参阅检测参数](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 的地址。 |
-| `stream`          | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 相反，结果值将作为 `StreamingInvocation.setResult` 回调方法的参数传递。 有关详细信息，请参阅 [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function)。 |
-| `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果为 ，则函数每次Excel重新计算，而不是仅在公式的从属值发生更改 `true` 时重新计算。 函数不能同时使用 和 `stream` `volatile` 属性。 如果 `stream` 和 `volatile` 属性都设置为 `true` ，则可变属性将被忽略。 |
+| `stream`          | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 相反，结果值将作为 `StreamingInvocation.setResult` 回调方法的参数传递。 有关详细信息，请参阅 Make [a streaming function](custom-functions-web-reqs.md#make-a-streaming-function)。 |
+| `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果为 ，函数每次重新计算Excel重新计算，而不是仅在公式的从属值 `true` 发生更改时重新计算。 函数不能同时使用 和 `stream` `volatile` 属性。 如果 `stream` 和 `volatile` 属性都设置为 `true` ，则可变属性将被忽略。 |
 
 ### <a name="parameters"></a>参数
 
@@ -242,7 +250,7 @@ CustomFunctions.associate("ADD", add);
 
 - 在将 JSON 元数据文件中的 `id` 属性的值与相应的 JavaScript 函数名称关联后，请勿再更改该值。 你可以通过更新 JSON 元数据文件中的 `name` 属性来更改最终用户在 Excel 中看到的函数名称，但绝不能更改已确定的 `id` 属性的值。
 
-- 在 JavaScript 文件中，在每个函数后使用 `CustomFunctions.associate` 指定自定义函数关联。
+- 在 JavaScript 文件中，在每个函数后使用 指定 `CustomFunctions.associate` 自定义函数关联。
 
 以下示例显示对应于前面 JavaScript 代码示例中定义的函数的 JSON 元数据。 `id`和 `name` 属性值为大写，这是描述自定义函数时的最佳操作。 只有在手动准备自己的 JSON 文件而不是使用自动生成时，才需要添加此 JSON。 有关自动生成的信息，请参阅自动生成 [自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
 
