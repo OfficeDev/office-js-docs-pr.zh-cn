@@ -1,14 +1,14 @@
 ---
 title: Outlook 外接程序设计
 description: 可帮助你设计和构建引人入胜的外接程序的准则，通过遵循这些准则，你可以将自己的最佳的应用引入到 Windows、Web、iOS、Mac 和 Android 上的 Outlook 中。
-ms.date: 07/05/2021
+ms.date: 08/12/2021
 localization_priority: Priority
-ms.openlocfilehash: 63dbeaee2c5718af656b5865cb016cb0ec72f53b5af2ab9e992c406f8dd84efc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 62a25595d42470094f7f9471fb97f2e133350da4
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090220"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232382"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Outlook 外接程序设计准则
 
@@ -30,7 +30,7 @@ ms.locfileid: "57090220"
 
    应使用正在运行 Outlook 的平台上的本机模式设计外接程序。若要实现这一点，务必尊重并实现各个平台规定的交互和外观准则。Outlook 具有自己的准则，同样也必须考虑这些准则。设计良好的外接程序将恰当地融合体验、平台和 Outlook。
 
-   这就是说，加载项在 iOS 版 Outlook 与在 Android 版 Outlook 上运行时的外观必须不同。我们建议不妨使用 [Fluent UI](https://developer.microsoft.com/fluentui#/) 作为样式设置选项。
+   这意味着，在 iOS 版 Outlook 与 Android 版 Outlook 中运行加载项时，加载项在外观上必须不同。 
 
 3. **确保使用体验令人满意，并正确设置详细信息**
 

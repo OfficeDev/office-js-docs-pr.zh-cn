@@ -1,16 +1,16 @@
 ---
 description: 为 Office 加载项创建 Excel 自定义函数。
 title: 在 Excel 中创建自定义函数
-ms.date: 07/08/2021
+ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 99211ed1debbff5274b257d91bb5a3612609d9d4
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 8ff424df95d92c17004448aca99f8d0001dc3c06
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774201"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232403"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -74,7 +74,7 @@ function add(first, second){
 
 - 定义自定义函数的命名空间。命名空间在自定义函数前加上自己的名字，可帮助客户识别加载项的的函数。
 - 使用自定义函数清单特有的 `<ExtensionPoint>` 和 `<Resources>` 元素。 这些元素包含有关 JavaScript、JSON 和 HTML 文件的位置的信息。
-- 指定要用于自定义函数的运行时。 除非你对另一运行时有特殊需求，否则建议始终使用共享运行时，因为共享运行时允许在函数和任务窗格之间共享数据。 请注意，使用共享运行时意味着加载项将使用 Internet Explorer 11，而不是 Microsoft Edge。
+- 指定用于自定义函数的运行时。除非你对另一运行时有特殊需求，否则建议始终使用共享运行时，因为共享运行时允许在函数和任务窗格之间共享数据。
 
 如果你使用 Yo Office 生成器来创建文件，则建议将你的清单调整为使用共享运行时，因为这不是这些文件的默认设置。 若要更改清单，请按照[将 Excel 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)中的说明进行操作。
 
@@ -84,7 +84,7 @@ function add(first, second){
 
 ## <a name="coauthoring"></a>共同创作
 
-利用连接到 Microsoft 365 订阅的 Excel web 版和 Windows 版 Excel，你可以在 Excel 中共同创作。 如果你的工作簿使用自定义函数，系统会提示你的共同创作同事加载自定义函数的加载项。 当你们均加载此加载项后，自定义函数将通过共同创作共享结果。
+利用连接到 Microsoft 365 订阅的 Excel 网页版和 Windows 版 Excel，最终用户可以在 Excel 中共同创作。 如果最终用户的工作簿使用自定义函数，系统将提示该最终用户的共同创作同事加载相应的自定义函数加载项。 当两个用户均加载此加载项后，自定义函数将通过共同创作共享结果。
 
 若要详细了解共同创作，请参阅[关于 Excel 中的共同创作](/office/vba/excel/concepts/about-coauthoring-in-excel)。
 
