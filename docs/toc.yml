@@ -269,6 +269,9 @@ items:
                 href: testing/attach-debugger-from-task-pane.md
               - name: 使用开发者工具调试
                 href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+              - name: 使用 Edge Chromium WebView2 进行调试
+                href: testing/debug-desktop-using-edge-chromium.md
+                displayName: 'debug, windows'
               - name: 使用 Internet Explorer 11 进行测试
                 href: testing/ie-11-testing.md
           - name: Web 浏览器
