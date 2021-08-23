@@ -2,14 +2,14 @@
 title: 配置Outlook加载项进行基于事件的激活
 description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
-ms.date: 08/05/2021
+ms.date: 08/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 2c914acdc695901a14eefa2d7619bfd3dc919f66
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.openlocfilehash: 587ad9afde7b8f0619c720cdd83e1ec07150ab64
+ms.sourcegitcommit: dd77da9b19e7a2d65174b632556e9e01b7f006e0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232234"
+ms.lasthandoff: 08/19/2021
+ms.locfileid: "58407944"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -22,22 +22,22 @@ ms.locfileid: "58232234"
 
 ## <a name="supported-events"></a>支持的事件
 
-目前，Web 和 Web 上支持以下Windows。
-
-|事件|说明|最小值<br>要求集|
-|---|---|---|
-|`OnNewMessageCompose`|撰写新邮件时 (包括答复、全部答复和转发) 而不是编辑时，例如草稿。|1.10|
-|`OnNewAppointmentOrganizer`|创建新约会但不编辑现有约会时。|1.10|
-|`OnMessageAttachmentsChanged`|在撰写邮件时添加或删除附件。|预览|
-|`OnAppointmentAttachmentsChanged`|在撰写约会时添加或删除附件。|预览|
-|`OnMessageRecipientsChanged`|在撰写邮件时添加或删除收件人。|预览|
-|`OnAppointmentAttendeesChanged`|在撰写约会时添加或删除与会者。|预览|
-|`OnAppointmentTimeChanged`|在撰写约会时更改日期/时间。|预览|
-|`OnAppointmentRecurrenceChanged`|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间发生更改， `OnAppointmentTimeChanged` 也会触发该事件。|预览|
-|`OnInfoBarDismissClicked`|在撰写邮件或约会项目时关闭通知。 仅通知添加了通知的外接程序。|预览|
+目前，Web 和 web 上支持以下Windows。 此外，当引发事件时，处理程序会收到一个对象，该对象可能包含特定于事件 `event` 类型的详细信息。 在下表中，特定于 **事件的 JSON** 列包含指向相关对象的链接（如果适用）。
 
 > [!IMPORTANT]
-> 仍在预览中的事件仅适用于 Microsoft 365 和 Windows 中的 Outlook 网页版 订阅。 有关详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。 预览事件不应在生产外接程序中使用。
+> 仍在预览中的事件仅适用于 Microsoft 365 订阅Outlook 网页版和 Windows。 有关详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。 预览事件不应在生产外接程序中使用。
+
+|事件|说明|特定于事件的 JSON|最低要求集|
+|---|---|---|---|
+|`OnNewMessageCompose`|撰写新邮件时 (包括答复、全部答复和转发) 而不是编辑时，例如草稿。|不适用|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|
+|`OnNewAppointmentOrganizer`|创建新约会但不编辑现有约会时。|不适用|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|
+|`OnMessageAttachmentsChanged`|在撰写邮件时添加或删除附件。|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-preview&preserve-view=true)|[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentAttachmentsChanged`|在撰写约会时添加或删除附件。|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-preview&preserve-view=true)|[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnMessageRecipientsChanged`|在撰写邮件时添加或删除收件人。|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-preview&preserve-view=true)|[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentAttendeesChanged`|在撰写约会时添加或删除与会者。|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-preview&preserve-view=true)|[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentTimeChanged`|在撰写约会时更改日期/时间。|[AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-preview&preserve-view=true)|[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnAppointmentRecurrenceChanged`|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间发生更改， `OnAppointmentTimeChanged` 也会触发该事件。|[RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-preview&preserve-view=true)|[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
+|`OnInfoBarDismissClicked`|在撰写邮件或约会项目时关闭通知。 仅通知添加了通知的外接程序。|[InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-preview&preserve-view=true)|[预览](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)|
 
 ### <a name="how-to-preview"></a>如何预览
 
@@ -47,10 +47,10 @@ ms.locfileid: "58232234"
 
 - 例如Outlook 网页版：
   - [在租户 上配置Microsoft 365版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
-  - 在 上 **引用** beta https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN (。 TypeScript[编译和](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)定义类型定义IntelliSense位于 CDN[和 DefinitelyTyped 中](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 可以使用 安装这些类型 `npm install --save-dev @types/office-js-preview` 。
+  - 在 上 **引用** beta https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN (。 TypeScript[编译和](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)定义的类型定义IntelliSense位于 CDN[和 DefinitelyTyped 中](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 可以使用 安装这些类型 `npm install --save-dev @types/office-js-preview` 。
 - 有关Outlook Windows：
   - 最低要求版本为 16.0.14026.20000。 加入[Office 预览体验计划](https://insider.office.com)，以访问 Office beta 版本。
-  - 配置注册表。 Outlook包括 Office.js 的生产版本和 beta 版本的本地副本，而不是从 CDN。 默认情况下，将引用 API 的本地生产副本。 若要切换到 JavaScript API Outlook测试版，需要添加此注册表项，否则可能找不到 beta API。
+  - 配置注册表。 Outlook包括 Office.js 的生产版本和 beta 版本的本地副本，而不是从 CDN。 默认情况下，将引用 API 的本地生产副本。 若要切换到 JavaScript API 的本地 beta Outlook，需要添加此注册表项，否则可能找不到 beta API。
     1. 创建注册表项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
     1. 添加一个名为 的 `EnableBetaAPIsInJavaScript` 条目，将值设置为 `1` 。 下图显示注册表应该呈现的状态。
 
@@ -58,7 +58,7 @@ ms.locfileid: "58232234"
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)使用适用于加载项的 Yeoman 生成器创建加载项Office快速入门。
+完成[Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)使用 Yeoman 生成器为加载项创建加载项Office快速入门。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -177,7 +177,7 @@ ms.locfileid: "58232234"
 </VersionOverrides>
 ```
 
-Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一 JavaScript 文件的 HTML 文件。 你必须在清单节点中提供对这两个文件的引用，因为 Outlook 平台最终确定是使用 HTML 还是基于 Outlook `Resources` JavaScript。 因此，若要配置事件处理，请提供 HTML 在 元素中的位置，然后在其子元素中提供 JAVAScript 文件内附或 HTML `Runtime` `Override` 引用的位置。
+Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一 JavaScript 文件的 HTML 文件。 你必须在清单的 节点中提供对这两个文件的引用，因为 Outlook 平台最终确定是使用 HTML 还是基于 Outlook `Resources` 客户端的 JavaScript。 因此，若要配置事件处理，请提供 HTML 在 元素中的位置，然后在其子元素中提供 JAVAScript 文件内附或 HTML `Runtime` `Override` 引用的位置。
 
 > [!TIP]
 > 若要了解有关加载项清单Outlook，请参阅Outlook[加载项清单。](manifests.md)
@@ -243,7 +243,7 @@ Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一
 
 1. 在 Outlook 网页版中，创建新邮件。
 
-    ![撰写时主题设置Outlook 网页版窗口中邮件窗口的屏幕截图。](../images/outlook-web-autolaunch-1.png)
+    ![撰写时设置主题Outlook 网页版窗口中邮件窗口的屏幕截图。](../images/outlook-web-autolaunch-1.png)
 
 1. 在Outlook中Windows新建一封邮件。
 
@@ -275,29 +275,29 @@ Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一
 
 ## <a name="deploy-to-users"></a>部署到用户
 
-可以通过在外接程序中上载清单来部署基于事件的Microsoft 365 管理中心。 在管理门户中，展开导航 **设置** 中的"集成应用"部分，然后选择"**集成应用"。** 在"**集成应用"** 页上，选择 **"Upload应用"** 操作。
+可以通过在加载项中上传清单来部署基于事件的Microsoft 365 管理中心。 在管理门户中，展开设置窗格中的"集成应用"部分，然后选择"**集成应用"。** 在"**集成应用"** 页上，选择 **"Upload应用"** 操作。
 
-![页面上集成应用页面的屏幕截图Microsoft 365 管理中心自定义Upload操作。](../images/outlook-deploy-event-based-add-ins.png)
+![屏幕中集成应用页面的屏幕截图Microsoft 365 管理中心自定义Upload操作。](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource 和应用内 Office 应用商店：即将推出部署基于事件的加载项或更新现有加载项以包含基于事件的激活功能的功能。
 
 > [!IMPORTANT]
-> 基于事件的外接程序仅限于管理员托管的部署。 目前，用户无法从 AppSource 或应用内应用商店获取Office加载项。
+> 基于事件的外接程序仅限于管理员托管的部署。 目前，用户无法从 AppSource 或应用内应用商店获取Office加载项。 若要了解详情，请参阅基于事件的加载项Outlook [AppSource 一览选项](autolaunch-store-options.md)。
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>基于事件的激活行为和限制
 
-加载项启动事件处理程序应尽量短运行、轻量且无影响。 激活后，外接程序将在大约 300 秒（运行基于事件的外接程序所允许的最大时间长度）内退出。若要指示加载项已完成对启动事件的处理，我们建议让关联的处理程序调用 `event.completed` 方法。  (请注意，语句之后包含的代码不能保证运行。) 每次触发外接程序处理的事件时，外接程序将重新激活并运行关联的事件处理程序，并重置超时窗口。 `event.completed` 外接程序在时间结束后结束，或者用户关闭撰写窗口或发送项目。
+加载项启动事件处理程序应尽量短运行、轻量且无影响。 激活后，外接程序将在大约 300 秒（运行基于事件的外接程序所允许的最大时间长度）内退出。若要指示加载项已完成对启动事件的处理，我们建议让关联的处理程序调用 `event.completed` 方法。  (请注意，语句后包含的代码不能保证运行。) 每次触发外接程序处理的事件时，外接程序将重新激活并运行关联的事件处理程序，超时窗口将重置。 `event.completed` 外接程序在时间结束后结束，或者用户关闭撰写窗口或发送项目。
 
 如果用户有多个订阅了同一事件的加载项，Outlook平台将按特定顺序启动加载项。 目前，只能主动运行五个基于事件的加载项。
 
 用户可以切换或导航离开外接程序开始运行的当前邮件项目。 启动的加载项将在后台完成其操作。
 
-JavaScript 文件中不支持导入，在 JavaScript 文件中，您可以在客户端中对基于事件的激活Windows处理。
+在 JavaScript 文件中不支持导入，在 JavaScript 文件中对客户端中基于事件的激活Windows处理。
 
 某些Office.js更改或更改 UI 的 API 不允许来自基于事件的外接程序。以下是阻止的 API。
 
 - 在 `OfficeRuntime.auth` 下：
-  - `getAccessToken` (Windows) 
+  - `getAccessToken` (Windows仅) 
 - 在 `Office.context.auth` 下：
   - `getAccessToken`
   - `getAccessTokenAsync`
@@ -318,7 +318,7 @@ JavaScript 文件中不支持导入，在 JavaScript 文件中，您可以在客
 
 请注意，在生成 XmlHttpRequest 时，必须使用其他安全措施，要求使用同源[策略和简单的](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) [CORS。](https://www.w3.org/TR/cors/)
 
-简单的 CORS 实现不能使用 Cookie，并且仅支持 GET、HEAD (POST) 。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 还可以在简单 `Content-Type` CORS 中使用标头，只要内容类型为 、 或 `application/x-www-form-urlencoded` `text/plain` `multipart/form-data` 。
+简单的 CORS 实现无法使用 Cookie，并且仅支持 GET、HEAD、POST (简单) 。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 还可以在简单 `Content-Type` CORS 中使用标头，只要内容类型为 、 或 `application/x-www-form-urlencoded` `text/plain` `multipart/form-data` 。
 
 即将提供完整的 CORS 支持。
 
@@ -329,4 +329,4 @@ JavaScript 文件中不支持导入，在 JavaScript 文件中，您可以在客
 - [基于事件的加载项的 AppSource Outlook选项](autolaunch-store-options.md)
 - PnP 示例：
   - [使用Outlook基于事件的激活设置签名](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
-  - [使用Outlook事件激活来标记外部收件人](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)
+  - [使用Outlook基于事件的激活来标记外部收件人](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)
