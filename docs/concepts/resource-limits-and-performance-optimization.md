@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的资源限制和性能优化
 description: 了解加载项平台的资源Office，包括 CPU 和内存。
-ms.date: 07/08/2021
+ms.date: 08/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 43902dcf3a7703a763e1268d5b5695c48c59e0fcacf3ae7d2740b54e31e3057e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e89aebeb93c5b5b3f3b41cd5c8c72870e0fa2e51
+ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082764"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "58505661"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -26,7 +26,7 @@ ms.locfileid: "57082764"
 
 - **内存使用** - 默认内存使用阈值，根据设备的可用物理内存动态确定。
 
-   默认情况下，当 Office 客户端检测到设备上的物理内存使用率超过可用内存的 80% 时，客户端开始监视外接程序的内存使用率、内容和任务窗格外接程序的文档级别以及 Outlook 外接程序的邮箱级别。在默认间隔 5 秒时，如果文档或邮箱级别的一组外接程序的物理内存使用率超过 50%，客户端将警告用户。 此内存使用率限制使用物理内存而非虚拟内存来确保具有有限 RAM 的设备（如平板电脑）保持良好性能。 管理员可以使用 **MemoryAlertThreshold** Windows 注册表项作为全局设置来覆盖此动态设置，使用 **AlertInterval** 项作为全局设置来调整警报间隔。
+   默认情况下，当 Office 客户端检测到设备上的物理内存使用率超过可用内存的 80% 时，客户端开始监视外接程序的内存使用率、内容和任务窗格外接程序的文档级别以及 Outlook 外接程序的邮箱级别。在默认间隔 5 秒时，如果文档或邮箱级别的一组外接程序的物理内存使用率超过 50%，客户端将警告用户。 此内存使用率限制使用物理内存而非虚拟内存来确保具有有限 RAM 的设备（如平板电脑）保持良好性能。 管理员可以使用 **MemoryAlertThreshold** Windows 注册表项作为全局设置来覆盖此动态设置，将 **AlertInterval** 项用作全局设置来调整警报间隔。
 
 - **故障容忍度** - 外接程序的默认限制为 4 次故障。
 
@@ -49,7 +49,7 @@ ms.locfileid: "57082764"
 
     通过使用组策略或 Windows 注册表中特定于应用程序的设置，管理员可以在 **OutlookActivationAlertThreshold** 设置中调整此 1,000 毫秒的默认阈值。
 
-- **正则表达式重新计算** - Outlook 重新计算清单中的所有正则表达式的默认限制为三次。 如果计算因超过适用的阈值 (（默认值为 1，000 毫秒或 **OutlookActivationAlertThreshold** 指定的值）而全部三次失败，如果该设置存在于 Windows 注册表) 中，Outlook 将禁用 Outlook 外接程序。 管理Exchange显示禁用状态，并且外接程序被禁用，以在 Outlook 富客户端、Outlook 网页版移动设备中使用。
+- **正则表达式重新计算** - Outlook 重新计算清单中的所有正则表达式的默认限制为三次。 如果计算因超过适用的阈值 (（默认值为 1，000 毫秒或 **OutlookActivationAlertThreshold** 指定的值）而全部三次失败，如果该设置存在于 Windows 注册表) 中，Outlook 将禁用 Outlook 外接程序。 Exchange管理中心将显示禁用状态，并且外接程序被禁用，以在 Outlook 富客户端、Outlook 网页版移动设备中使用。
 
     通过使用组策略或 Windows 注册表中特定于应用程序的设置，管理员可以在 **OutlookActivationManagerRetryLimit** 设置中调整此重试计算的次数。
 
@@ -62,7 +62,7 @@ ms.locfileid: "57082764"
 
 如果你希望用户输入超出这些限制，请确保在调用 之前检查数据 `context.sync()` 。 根据需要将操作拆分为多个较小的部分。 请务必调用 `context.sync()` 每个子操作，以避免这些操作再次被批处理在一起。
 
-这些限制通常由较大范围超出。 您的外接程序可能可以使用 [RangeAreas](/javascript/api/excel/excel.rangeareas) 以战略方式更新更大范围内的单元格。 有关详细信息[，请参阅在Excel中同时](../excel/excel-add-ins-multiple-ranges.md)处理多个区域。
+这些限制通常由较大范围超出。 您的外接程序可能可以使用 [RangeAreas](/javascript/api/excel/excel.rangeareas) 以战略方式更新更大范围内的单元格。 有关使用的信息，请参阅在加载项中同时处理Excel `RangeAreas` [区域](../excel/excel-add-ins-multiple-ranges.md)。有关优化负载大小在负载Excel，请参阅有效负载[大小限制最佳实践](../excel/performance.md#payload-size-limit-best-practices)。
 
 ### <a name="task-pane-and-content-add-ins"></a>任务窗格和内容外接程序
 
@@ -88,11 +88,11 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 
 |**事件 ID**|**标题**|**严重性**|**说明**|
 |:-----|:-----|:-----|:-----|
-|7 |外接程序清单已成功下载||应用程序已成功Office和读取加载项Office清单。|
-|8 |外接程序清单未下载|关键|Office应用程序无法从 SharePoint 目录、公司目录或 AppSource Office加载项的清单文件。|
-|9 |无法分析外接程序标记|关键|应用程序Office加载Office清单，但无法读取应用程序的 HTML 标记。|
+|7 |外接程序清单已成功下载||加载项Office加载项的清单已成功加载和读取Office应用程序。|
+|8 |外接程序清单未下载|关键|Office应用程序无法从 Office 目录、公司目录或 AppSource SharePoint加载项的清单文件。|
+|9 |无法分析外接程序标记|关键|应用程序Office加载Office加载项清单，但无法读取应用程序的 HTML 标记。|
 |10 |外接程序占用了太多 CPU|关键|在有限的时间内，Office 外接程序使用了超过 90% 的 CPU 资源。|
-|15|由于字符串搜索超时，外接程序已被禁用||Outlook 外接程序搜索电子邮件的主题行和消息，以确定是否应使用正则表达式来显示它们。“文件”列中列出的 Outlook 外接程序已被 Outlook 禁用，因为它在尝试匹配正则表达式时超时多次。|
+|15 |由于字符串搜索超时，外接程序已被禁用||Outlook 外接程序搜索电子邮件的主题行和消息，以确定是否应使用正则表达式来显示它们。“文件”列中列出的 Outlook 外接程序已被 Outlook 禁用，因为它在尝试匹配正则表达式时超时多次。|
 |18 |外接程序已成功关闭||Office应用程序能够成功关闭Office加载项。|
 |19|外接程序遇到运行时错误|关键|Office 外接程序遇到一个导致它失败的问题。 有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“Microsoft Office 通知”日志。|
 |20|外接程序未能验证许可|关键|无法验证 Office 外接程序的许可信息，且其可能已过期。 有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“Microsoft Office 通知”日志。|
@@ -101,7 +101,7 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 
 ## <a name="design-and-implementation-techniques"></a>设计和实现技术
 
-尽管 CPU 和内存使用率的资源限制、故障容忍度以及 UI 无响应仅适用于在富客户端上运行的 Office 外接程序，但如果您希望外接程序在所有支持性客户端和设备上的性能都令人满意，优化这些资源和电池的使用情况仍然是头等大事。 如果您的外接程序要执行长时间运行的操作或处理大型数据集，则优化尤为重要。 以下列表建议了一些技术，可以将 CPU 密集型或数据密集型操作分解为较小的区块，以便加载项可以避免过多的资源消耗，并且 Office 应用程序可以保持响应状态。
+尽管 CPU 和内存使用率的资源限制、故障容忍度以及 UI 无响应仅适用于在富客户端上运行的 Office 外接程序，但如果您希望外接程序在所有支持性客户端和设备上的性能都令人满意，优化这些资源和电池的使用情况仍然是头等大事。 如果您的外接程序要执行长时间运行的操作或处理大型数据集，则优化尤为重要。 以下列表建议了一些技术，可以将 CPU 密集型或数据密集型操作分解为较小的区块，这样加载项可以避免过多的资源消耗，并且 Office 应用程序可以保持响应状态。
 
 - 在外接程序需要从无限制的数据集中读取大量数据的情况下，您可以在从表格中读取数据时应用分页，或者减小每次短暂读取操作中的数据大小，而不是试图在一次操作中完成全部读取。 可以通过全局对象的 [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) 方法来限制输入和输出的持续时间。 它还会处理定义区块中的数据，来代替随机无限数据。 另一个选项是 [使用异步来处理](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) 你的承诺。
 

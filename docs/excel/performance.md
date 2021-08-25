@@ -1,14 +1,14 @@
 ---
 title: Excel JavaScript API 性能优化
 description: 使用 javaScript API Excel优化加载项性能。
-ms.date: 07/29/2020
+ms.date: 08/24/2021
 localization_priority: Normal
-ms.openlocfilehash: 9061d6f248169bbfb58623f6710fd044cd50350b8f2e37c8417d41e281040237
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f65db836d6e7e640672fa5b9e6642ef8122ed5a5
+ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089273"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "58505654"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -109,8 +109,143 @@ Excel.run(async (ctx) => {
 > [!NOTE]
 > 可以使用 [Table.convertToRange()](/javascript/api/excel/excel.table#convertToRange__) 方法将 Table 对象转换为 Range 对象，此做法非常方便。
 
+## <a name="payload-size-limit-best-practices"></a>有效负载大小限制最佳实践
+
+JavaScript API Excel API 调用的大小限制。 Excel web 版 5MB 的请求和响应的有效负载大小限制，如果超出此限制，API `RichAPI.Error` 将返回错误。 在所有平台上，一个范围限制为五百万个单元格，用于获取操作。 较大区域通常超过这两个限制。
+
+请求的有效负载大小是以下三个组件的组合。
+
+* API 调用数
+* 对象的数量，例如 `Range` 对象
+* 要设置或获取的值的长度
+
+如果 API 返回错误，请使用本文中介绍的最佳实践策略来优化 `RequestPayloadSizeLimitExceeded` 脚本并避免错误。
+
+### <a name="strategy-1-move-unchanged-values-out-of-loops"></a>策略 1：将未更改的值移出循环
+
+限制循环内发生的进程数以提高性能。 在下面的代码示例中 `context.workbook.worksheets.getActiveWorksheet()` ，可以移出 `for` 循环，因为它不会在此循环中更改。
+
+```js
+// DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
+async function run() {
+  await Excel.run(async (context) => {
+    var ranges = [];
+    
+    // This sample retrieves the worksheet every time the loop runs, which is bad for performance.
+    for (let i = 0; i < 7500; i++) {
+      var rangeByIndex = context.workbook.worksheets.getActiveWorksheet().getRangeByIndexes(i, 1, 1, 1);
+    }    
+    await context.sync();
+  });
+}
+```
+
+下面的代码示例演示了与前面的代码示例类似的逻辑，但具有改进的性能策略。 该值在循环之前检索，因为每次循环运行时都不需要检索 `context.workbook.worksheets.getActiveWorksheet()` `for` `for` 此值。 仅应在该循环中检索在循环上下文中更改的值。
+
+```js
+// This code sample shows a good performance strategy.
+async function run() {
+  await Excel.run(async (context) => {
+    var ranges = [];
+    // Retrieve the worksheet outside the loop.
+    var worksheet = context.workbook.worksheets.getActiveWorksheet(); 
+
+    // Only process the necessary values inside the loop.
+    for (let i = 0; i < 7500; i++) {
+      var rangeByIndex = worksheet.getRangeByIndexes(i, 1, 1, 1);
+    }    
+    await context.sync();
+  });
+}
+```
+
+### <a name="strategy-2-create-fewer-range-objects"></a>策略 2：创建更少的 range 对象
+
+创建更少的 range 对象以提高性能并最小化有效负载大小。 以下文章部分和代码示例介绍了两种创建较少的 range 对象的方法。
+
+#### <a name="split-each-range-array-into-multiple-arrays"></a>将每个区域数组拆分为多个数组
+
+创建较少的 range 对象的一种方式是，将每个区域数组拆分为多个数组，然后使用循环和新调用处理每个新 `context.sync()` 数组。
+
+> [!IMPORTANT]
+> 仅在首次确定超出有效负载请求大小限制时使用此策略。 使用多个循环可以减少每个有效负载请求的大小，以避免超出 5MB 的限制，但使用多个循环和多个调用 `context.sync()` 也会对性能产生负面影响。
+
+下面的代码示例尝试在一个循环中处理一个大型区域数组，然后处理一个 `context.sync()` 调用。 在一次调用中处理过多的范围 `context.sync()` 值会导致有效负载请求大小超过 5MB 限制。
+
+```js
+// This code sample does not show a recommended strategy.
+// Calling 10,000 rows would likely exceed the 5MB payload size limit in a real-world situation.
+async function run() {
+  await Excel.run(async (context) => {
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    
+    // This sample attempts to process too many ranges at once. 
+    for (let row = 1; row < 10000; row++) {
+      var range = sheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
+    }
+    await context.sync(); 
+  });
+}
+```
+
+下面的代码示例演示了类似于前面的代码示例的逻辑，但具有避免超过 5 MB 有效负载请求大小限制的策略。 在下面的代码示例中，范围在两个单独的循环中进行处理，每个循环后跟一个 `context.sync()` 调用。
+
+```js
+// This code sample shows a strategy for reducing payload request size.
+// However, using multiple loops and `context.sync()` calls negatively impacts performance.
+// Only use this strategy if you've determined that you're exceeding the payload request limit.
+async function run() {
+  await Excel.run(async (context) => {
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Split the ranges into two loops, rows 1-5000 and then 5001-10000.
+    for (let row = 1; row < 5000; row++) {
+      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
+    }
+    // Sync after each loop. 
+    await context.sync(); 
+    
+    for (let row = 5001; row < 10000; row++) {
+      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
+    }
+    await context.sync(); 
+  });
+}
+```
+
+#### <a name="set-range-values-in-an-array"></a>设置数组中的区域值
+
+创建较少的 range 对象的另一种方式是创建一个数组，使用循环设置该数组中的所有数据，然后将数组值传递到一个范围。 这有利于性能和有效负载大小。 不是在 `range.values` 循环中调用每个区域， `range.values` 而是在循环外调用一次。
+
+下面的代码示例演示如何创建数组、在循环中设置该数组的值，然后将数组值传递到循环 `for` 外部的范围。
+
+```js
+// This code sample shows a good performance strategy.
+async function run() {
+  await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getActiveWorksheet();    
+    // Create an array.
+    const array = new Array(10000);
+
+    // Set the values of the array inside the loop.
+    for (var i = 0; i < 10000; i++) {
+      array[i] = [1];
+    }
+
+    // Pass the array values to a range outside the loop. 
+    var range = worksheet.getRange("A1:A10000");
+    range.values = array;
+    await context.sync();
+  });
+}
+```
+
 ## <a name="see-also"></a>另请参阅
 
 * [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
+* [JavaScript API Excel错误处理](excel-add-ins-error-handling.md)
 * [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md)
 * [工作表函数对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.functions)
