@@ -1,21 +1,21 @@
 ---
 title: JavaScript API Excel错误处理
 description: 了解如何Excel JavaScript API 错误处理逻辑，以考虑运行时错误。
-ms.date: 01/15/2021
+ms.date: 08/26/2021
 localization_priority: Normal
-ms.openlocfilehash: 020828a022605454b2b070bedb560ce7d53ff39f6902b042e5e9ac793f14b277
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8dde0a57ea79e87eed0f506ca7995b3ce1a1f964
+ms.sourcegitcommit: 7245eeedc6246c7aad2fc7df8d47e11971b42ee7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084267"
+ms.lasthandoff: 08/26/2021
+ms.locfileid: "58614613"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API Excel错误处理
 
 使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 鉴于 API 的异步特性，这样做非常关键。
 
 > [!NOTE]
-> 有关 JavaScript API 的方法和异步特性 `sync()` Excel，请参阅 Excel 外接程序中的[Office JavaScript 对象模型](excel-add-ins-core-concepts.md)。
+> 有关 JavaScript API 的方法和异步特性Excel，请参阅 Excel 外接程序中的 `sync()` [Office JavaScript 对象模型](excel-add-ins-core-concepts.md)。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -56,34 +56,41 @@ Excel.run(function (context) {
 |`AccessDenied` |无法执行所请求的操作。|
 |`ActivityLimitReached`|已达到活动限制。|
 |`ApiNotAvailable`|请求的 API 不可用。|
-|`ApiNotFound`|找不到您尝试使用的 API。 它在更高版本的 Excel 中Excel。 有关详细信息[，Excel JavaScript API](../reference/requirement-sets/excel-api-requirement-sets.md)要求集文章。|
+|`ApiNotFound`|找不到您尝试使用的 API。 它可能在更高版本的 Excel 中提供。 有关详细信息[，Excel JavaScript API](../reference/requirement-sets/excel-api-requirement-sets.md)要求集文章。|
 |`BadPassword`|你提供的密码不正确。|
 |`Conflict`|由于冲突，无法处理请求。|
 |`ContentLengthRequired`|`Content-length`HTTP 标头缺失。|
+|`FilteredRangeConflict`|- 不能将表格插入筛选区域。 <br>- 不支持删除筛选区域。|
 |`GeneralException`|处理请求时出现内部错误。|
 |`InactiveWorkbook`|操作失败，因为多个工作簿已打开，并且此 API 调用的工作簿已失去焦点。|
 |`InsertDeleteConflict`|尝试的插入或删除操作导致冲突。|
 |`InvalidArgument` |自变量无效、缺少或格式不正确。|
-|`InvalidBinding`  |由于之前的更新，此对象绑定不再有效。|
+|`InvalidBinding` |由于之前的更新，此对象绑定不再有效。|
 |`InvalidOperation`|尝试的操作对于对象无效。|
+|`InvalidOperationInCellEditMode`|当编辑单元格模式Excel操作不可用。 使用 Enter 或 **Tab** 键或选择另一个单元格退出编辑模式，然后重试。|
 |`InvalidReference`|此引用对于当前操作无效。|
 |`InvalidRequest`  |无法处理此请求。|
 |`InvalidSelection`|当前选定内容对于此操作无效。|
 |`ItemAlreadyExists`|所创建的资源已存在。|
 |`ItemNotFound` |所请求的资源不存在。|
-|`NonBlankCellOffSheet`|Microsoft Excel无法插入新单元格，因为它会将非空单元格推送到工作表末尾。 这些非空单元格可能为空，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。|
+|`MemoryLimitReached`|已达到内存限制。 无法完成操作。|
+|`MergedRangeConflict`|无法完成操作。 表不能与其他表、数据透视表、查询结果、合并单元格或 XML 映射重叠。|
+|`NonBlankCellOffSheet`|Microsoft Excel无法插入新单元格，因为它将非空单元格推送到工作表末尾。 这些非空单元格可能为空，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。|
 |`NotImplemented`|所请求的功能未实现。|
-|`RangeExceedsLimit`|该范围中的单元格计数已超出支持的最大数。 有关详细信息[，请参阅Office加载项](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。|
+|`PivotTableRangeConflict`|- 表不能与数据透视表相邻插入。 <br>- 不能插入或删除数据透视表中的单元格。 <br>- 无法更改数据透视表中的单元格。|
+|`RangeExceedsLimit`|该范围中的单元格计数已超出支持的最大数。 有关详细信息[，请参阅](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)Office 外接程序的资源限制和性能优化一文。|
+|`RefreshWorkbookLinksBlocked`|API 调用不受支持，因为用户尚未授予刷新外部工作簿链接的权限。|
 |`RequestAborted`|请求在运行时已中止。|
-|`RequestPayloadSizeLimitExceeded`|请求有效负载大小已超出限制。 有关详细信息[，请参阅Office加载项](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。 <br><br>此错误仅出现在Excel web 版。|
-|`ResponsePayloadSizeLimitExceeded`|响应有效负载大小已超出限制。 有关详细信息[，请参阅Office加载项](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。  <br><br>此错误仅出现在Excel web 版。|
+|`RequestPayloadSizeLimitExceeded`|请求有效负载大小已超出限制。 有关详细信息[，请参阅](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)Office 外接程序的资源限制和性能优化一文。 <br><br>此错误仅出现在Excel web 版。|
+|`ResponsePayloadSizeLimitExceeded`|响应有效负载大小已超出限制。 有关详细信息[，请参阅](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)Office 外接程序的资源限制和性能优化一文。  <br><br>此错误仅出现在Excel web 版。|
 |`ServiceNotAvailable`|服务不可用。|
 |`Unauthenticated` |所需的身份验证信息缺少或无效。|
+|`UnsupportedFeature`|不允许 API 调用，因为它具有不受支持的功能。|
 |`UnsupportedOperation`|不支持正在尝试的操作。|
 |`UnsupportedSheet`|此工作表类型不支持此操作，因为它是一个宏或图表工作表。|
 
 > [!NOTE]
-> 上表列出了使用 JavaScript API 时Excel错误消息。 如果你使用通用 API 而不是特定于应用程序的 JavaScript API Excel，请参阅Office[通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码以了解相关的错误消息。
+> 上表列出了使用 JavaScript API 时可能遇到的Excel消息。 如果你使用通用 API 而不是特定于应用程序的 Excel JavaScript API，请参阅Office[通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码，以了解相关的错误消息。
 
 ## <a name="see-also"></a>另请参阅
 
