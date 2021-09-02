@@ -1,2 +1,2 @@
 >[!NOTE]
-> 除非你有使用无 UI 函数的特定原因，否则我们建议将自定义函数与共享 [运行时一同使用](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。 另请注意，使用共享运行时意味着你的外接程序将使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
+> 除非你有使用无 UI 函数的特定原因，否则我们建议将自定义函数与共享 [运行时一同使用](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。 请注意，使用共享运行时意味着如果满足条件，外接程序将 Microsoft Edge 与基于 WebView2 (Chromium 的) 一起使用，否则无论 Windows 或 Microsoft 365 版本如何，外接程序都将使用 Internet Explorer 11。 有关 WebView2 条件的说明，请参阅Office[使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。有关运行时的信息，请参阅[运行时](../reference/manifest/runtimes.md)。

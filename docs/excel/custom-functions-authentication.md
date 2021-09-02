@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: 在不使用任务窗格Excel自定义函数对用户进行身份验证。
 title: 无 UI 自定义函数的身份验证
 localization_priority: Normal
-ms.openlocfilehash: 94eadd343f969e6dbd83881764fac936acf0704b
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d39d31d2a54cafc6829482451dcbdb5c5b764b968dc1c0e03be77a72fe1e12f1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349698"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079779"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>无 UI 自定义函数的身份验证
 
@@ -37,7 +37,7 @@ ms.locfileid: "53349698"
 
 1. 从工作簿中的单元格发出无 UI 自定义函数Excel调用。
 2. 无 UI 自定义函数用于 `Dialog` 将用户凭据传递到网站。
-3. 然后，此网站向无 UI 自定义函数返回访问令牌。
+3. 然后，此网站会向无 UI 自定义函数返回访问令牌。
 4. 然后，无 UI 自定义函数将此访问令牌设置到 `storage` 。
 5. 加载项的任务窗格将从 `storage` 访问该令牌。
 
@@ -90,7 +90,7 @@ Office 加载项基于 Web，你可以使用任何 Web 身份验证技术。 没
 
 在开发自定义函数时，请避免使用下列位置来存储数据：。
 
-- `localStorage`：无 UI 的自定义函数无法访问全局对象，因此 `window` 无法访问 中存储的数据 `localStorage` 。
+- `localStorage`：无 UI 的自定义函数无法访问全局对象，因此无法访问 `window` 中存储的数据 `localStorage` 。
 - `Office.context.document.settings`：此位置不安全，使用加载项的任何人员都可以提取相关信息。
 
 ## <a name="dialog-box-api-example"></a>对话框 API 示例

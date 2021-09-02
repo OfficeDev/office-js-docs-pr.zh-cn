@@ -1,18 +1,18 @@
 ---
 title: 从Excel函数调用 JavaScript API
 description: 了解Excel函数调用哪些 JavaScript API。
-ms.date: 03/05/2021
+ms.date: 08/30/2021
 localization_priority: Normal
-ms.openlocfilehash: d44f88dc11136bd0302453054cefe93c82b22136e2084baecac006834100a077
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 93b0c1a792c752102359b31b8baa808182c29c46
+ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079845"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "58863525"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>从Excel函数调用 JavaScript API
 
-从Excel函数调用 JavaScript API 以获取区域数据，并获取用于计算的更多上下文。 在Excel函数调用 JavaScript API 可能会有所帮助：
+从Excel函数调用 JavaScript API 以获取区域数据，并获取适用于计算的更多上下文。 在Excel函数调用 JavaScript API 可能会有所帮助：
 
 - 自定义函数需要在计算之前从Excel信息。 此信息可能包括文档属性、范围格式、自定义 XML 部件、工作簿名称或其他Excel特定的信息。
 - 自定义函数将在计算后设置返回值的单元格编号格式。
@@ -24,7 +24,7 @@ ms.locfileid: "57079845"
 
 若要从Excel调用 JavaScript API，首先需要上下文。 使用[Excel。获取上下文的 RequestContext](/javascript/api/excel/excel.requestcontext)对象。 然后，使用上下文调用工作簿中所需的 API。
 
-下面的代码示例演示如何使用 从工作簿 `Excel.RequestContext` 的单元格获取值。 在此示例中，参数 `address` 将传递到 JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) Excel中，并且必须以字符串形式输入。 例如，在用户界面中输入的Excel函数必须遵循 模式，其中 是单元格的地址，从中检索 `=CONTOSO.GETRANGEVALUE("A1")` `"A1"` 值。
+下面的代码示例演示如何使用 从工作簿 `Excel.RequestContext` 的单元格获取值。 在此示例中，参数 `address` 将传递到 JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) Excel中，并且必须以字符串形式输入。 例如，在用户界面中输入的Excel函数必须遵循 模式，其中 是从中检索值的 `=CONTOSO.GETRANGEVALUE("A1")` `"A1"` 单元格的地址。
 
 ```JavaScript
 /**
@@ -38,7 +38,7 @@ async function getRangeValue(address) {
  
  // Use the context object to access the cell at the input address. 
  var range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
- range.load();
+ range.load("values");
  await context.sync();
  
  // Return the value of the cell at the input address.
