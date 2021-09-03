@@ -3,18 +3,18 @@ title: 在 PowerPoint 加载项中使用文档主题
 description: 了解如何在视觉上协调应用于演示文稿、文档、工作表和电子邮件的主题，如字体和颜色。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 4493517fbaf5307ae0c9e0195944397c2ab766f8154f26095f764e1499d1f218
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b3dfce5e36f1247e84cdd13372fd822a27a59fe0
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096089"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868699"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>在 PowerPoint 加载项中使用文档主题
 
-[Office 主题](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6)在某种程度上包括一组视觉协调的字体和颜色，可应用于演示文稿、文档、工作表和电子邮件。若要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区上“设计”选项卡中的“主题”和“变量”组。虽然 PowerPoint 向新空白演示文稿分配默认的“Office 主题”，但也可以选择“设计”选项卡上的其他主题、从 Office.com 下载其他主题，或创建并自定义自己的主题。
+[Office 主题](https://support.microsoft.com/office/83e68627-2c17-454a-9fd8-62deb81951a6)在某种程度上包括一组视觉协调的字体和颜色，可应用于演示文稿、文档、工作表和电子邮件。若要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区上“设计”选项卡中的“主题”和“变量”组。虽然 PowerPoint 向新空白演示文稿分配默认的“Office 主题”，但也可以选择“设计”选项卡上的其他主题、从 Office.com 下载其他主题，或创建并自定义自己的主题。
 
-通过使用 OfficeThemes.css，设计通过两种方式与 PowerPoint协调的外接程序。
+使用 OfficeThemes.css，设计通过两种方式与 PowerPoint协调的外接程序。
 
 - **在 PowerPoint 内容加载项中**。使用 OfficeThemes.css 的文档主题类指定字体和颜色，与内容加载项要插入到的演示文稿的主题匹配（这些颜色和字体将在用户更改或自定义演示文稿主题时动态更新）。
     
@@ -131,7 +131,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 ## <a name="reference-officethemescss-in-your-add-ins-html-pages"></a>在加载项的 HTML 页面中引用 OfficeThemes.css
 
-若要在外接程序项目中使用 OfficeThemes.css 文件，请添加一个引用 OfficeThemes.css 文件的标记，该标记位于网页 (（如以此格式实现外接程序 UI 的网页 `<link>` .html、.aspx 或 .php 文件) ）的 标记内。 `<head>`
+若要在外接程序项目中使用 OfficeThemes.css 文件，请添加一个引用 OfficeThemes.css 文件的标记，该标记位于网页 (（例如，采用此格式实现外接程序 UI 的网页 `<link>` .html、.aspx 或 .php 文件) ）的 标记内。 `<head>`
 
 ```HTML
 <link href="<local_path_to_OfficeThemes.css>" rel="stylesheet" type="text/css" />

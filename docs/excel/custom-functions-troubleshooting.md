@@ -1,14 +1,14 @@
 ---
 ms.date: 03/30/2021
-description: Excel 自定义函数的常见问题疑难解答。
+description: 排查自定义函数Excel常见问题。
 title: 自定义函数疑难解答
 localization_priority: Normal
-ms.openlocfilehash: e79b2f8ee8abccda2b34821761bab65592a90218
-ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
+ms.openlocfilehash: 5029deea7b02f7564d2149e3aa689408fbb8b479
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "51506138"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868615"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -45,7 +45,7 @@ Excel 有许多内置错误消息，如果存在计算错误，系统会将向�
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 版 Excel 上的运行时日志记录报告“TypeError:网络请求失败”
 
-如果在调用 localhost 服务器时在[运行时日志](custom-functions-troubleshooting.md#enable-runtime-logging)中看到错误“TypeError:网络请求失败”，必须启用本地环回异常。 若要详细了解如何执行此操作，请参阅 [这篇 Microsoft 支持文章](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work)中的 *选项 #2*。
+如果在调用 localhost 服务器时在[运行时日志](custom-functions-troubleshooting.md#enable-runtime-logging)中看到错误“TypeError:网络请求失败”，必须启用本地环回异常。 若要详细了解如何执行此操作，请参阅 [这篇 Microsoft 支持文章](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost)中的 *选项 #2*。
 
 ### <a name="ensure-promises-return"></a>确保返回 promise
 
@@ -80,7 +80,7 @@ CustomFunctions.associate("ADD", add);
 
 ## <a name="known-issues"></a>已知问题
 
-已知问题在 Excel 自定义函数 [GitHub 存储库中进行跟踪并报告](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
+已知问题将跟踪并报告在自定义函数Excel[库中GitHub报告](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
 
 ## <a name="reporting-feedback"></a>报告反馈
 

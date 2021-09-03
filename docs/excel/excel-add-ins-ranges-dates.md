@@ -4,22 +4,22 @@ description: 使用 Moment-MSDate JavaScript API Excel插件处理日期。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: fdfc39f12b3374d9903156b1ba71a9bbd4f296735f0ed41dac56d62243058c1d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 82dd7bb957834efc17c0174e3b89fd526610a08a
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084727"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868664"
 ---
-# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>使用 JavaScript EXCEL和 Moment-MSDate插件处理日期
+# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>使用 Excel JavaScript API 和 Moment-MSDate 插件处理日期
 
-本文提供的代码示例显示了如何使用 javaScript API Excel [Moment-MSDate 插件处理日期](https://www.npmjs.com/package/moment-msdate)。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供的代码示例显示了如何使用 JavaScript API Excel [Moment-MSDate 插件处理日期](https://www.npmjs.com/package/moment-msdate)。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ## <a name="use-the-moment-msdate-plug-in-to-work-with-dates"></a>使用Moment-MSDate插件处理日期
 
-[时刻 JavaScript 库](https://momentjs.com/)提供了使用日期和时间戳的便捷方式。 [Moment-MSDate 插件](https://www.npmjs.com/package/moment-msdate)可将时刻格式转换为 Excel 所需的格式。 这是 [NOW 函数](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46)返回的相同格式。
+[时刻 JavaScript 库](https://momentjs.com/)提供了使用日期和时间戳的便捷方式。 [Moment-MSDate 插件](https://www.npmjs.com/package/moment-msdate)可将时刻格式转换为 Excel 所需的格式。 这是 [NOW 函数](https://support.microsoft.com/office/3337fd29-145a-4347-b2e6-20c904739c46)返回的相同格式。
 
 以下代码演示如何将 **B4** 区域设置为时刻的时间戳。
 

@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: 了解加载项平台的隐私Office安全方面。
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: c3cde56ce1bedc76afb967a449b3d29ce61e1fecd8fe7b2774a7c69278a61688
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1972fa8de2c6a6f42a003efe99be7694290ee06c
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57083235"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868419"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -22,7 +22,7 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 - 不允许模式交互-例如，不允许调用 JavaScript 、 和 函数， `alert` `confirm` `prompt` 因为它们是模式交互。
 
-此外，运行时框架还提供以下好处，以确保Office加载项不会损害用户环境。
+此外，运行时框架还提供以下好处，Office加载项不会损害用户环境。
 
 - 隔离运行加载项的进程。
 
@@ -38,7 +38,7 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 在支持的台式机和平板电脑设备的客户端（如 Windows 版 Excel、Windows 版 Outlook 和 Mac 版 Outlook）中，通过集成进程内组件 Office 加载项运行时来支持 Office 加载项，该组件管理加载项的生命周期，并实现加载项和客户端应用程序之间的互操作性。加载项网页本身托管在进程外。如图 1 中所示，在 Windows 台式机或平板电脑设备上，[加载项网页托管在 Internet Explorer 或 Microsoft Edge 控件内部](browsers-used-by-office-web-add-ins.md)，而 Internet Explorer 控件托管在加载项运行时进程内部，提供安全和性能隔离。
 
-在 Windows 桌面设备上，必须为受限网站区域启用 Internet Explorer 保护模式。通常情况下，此模式默认启用。如果禁用，则会在尝试启动加载项时[看到错误消息](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)。
+在 Windows 桌面设备上，必须为受限网站区域启用 Internet Explorer 保护模式。通常情况下，此模式默认启用。如果禁用，则会在尝试启动加载项时[看到错误消息](/office/troubleshoot/office-suite-issues/apps-for-office-not-start)。
 
 *图 1.基于 Windows 的台式机和平板电脑客户端中的 Office 外接程序运行时环境*
 
@@ -74,7 +74,7 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于Office外接程序，禁用"可选连接体验"设置的影响是用户无法再通过这些客户端访问外接程序或 Office Store。 但是，某些被视为必需或业务关键型的 Microsoft 加载项，以及组织的 IT 管理员通过集中部署部署的 [加载项仍将可用](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) 。 此外，无论设置的状态如何，加载项和应用商店Outlook 网页版都可用。
 
-有关特定Outlook，请参阅隐私、权限和安全性[Outlook外接程序](../outlook/privacy-and-security.md#optional-connected-experiences)。
+有关特定Outlook行为，请参阅隐私、权限和安全性[Outlook外接程序](../outlook/privacy-and-security.md#optional-connected-experiences)。
 
 请注意，如果 IT 管理员禁止在[](/deployoffice/privacy/manage-privacy-controls#policy-setting-for-most-connected-experiences)Office 中使用连接体验，则对外接程序的影响与仅关闭可选连接体验的效果相同。
 
@@ -87,7 +87,7 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术而生成。因此，使用加载项与转到 Internet 或 Intranet 上的网站类似。加载项可以位于组织外部（如果从 AppSource 获取加载项的话），也可以位于组织内部（如果从 Exchange Server 加载项目录、SharePoint 应用目录或组织网络上的文件共享获取加载项的话）。加载项对网络的访问权限受限，大部分加载项都可以对活动文档或邮件项执行读取或写入操作。在用户或管理员安装或启动加载项前，加载项平台就施加了特定约束。不过，与任何扩展性模型一样，用户在启动未知加载项之前应非常谨慎。
 
 > [!NOTE]
-> 用户首次加载外接程序时可能会看到信任域的安全提示。 如果加载项的域主机位于本地或本地 Exchange域之外，Office Online Server。
+> 用户首次加载外接程序时可能会看到信任域的安全提示。 如果加载项的域主机位于本地或本地 Exchange域之外，将会Office Online Server。
 
 外接程序平台通过以下方式解决最终用户的隐私问题。
 
@@ -97,11 +97,11 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
 - 在共享一个文档时，用户也会共享已插入该文档或与该文档关联的加载项。 如果用户打开包含用户以前没有使用过的加载项的文档，Office 客户端应用程序会提示用户授予加载项在文档中运行的权限。 在组织环境中，Office客户端应用程序还会在文档来自外部源时提示用户。
 
-- 用户可启用或禁用对 AppSource 的访问。 对于内容和任务窗格外接程序，用户从从文件选项信任中心信任中心  >    >    >  **设置**  >  受信任外接程序目录) 打开的主机 Office 客户端 (上的信任中心管理对受信任外接程序和目录的访问。 对于Outlook外接程序，使用 可以通过选择"管理外接程序"按钮来管理外接程序：在 Windows上的 Outlook 中，选择"文件""管理  >  **外接程序"。** In Outlook on Mac， choose the **Manage Add-ins** button on the add-in bar. 在 Outlook 网页版中，依次选择“**设置**”菜单（齿轮图标）>“**管理加载项**”。管理员还可以 [通过使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)来管理此访问。
+- 用户可启用或禁用对 AppSource 的访问。 对于内容和任务窗格外接程序，用户从从文件选项信任中心信任中心设置 受信任外接程序目录) 打开的主机 Office 客户端 (上的信任中心管理对受信任外接程序和  >    >    >    >  目录的访问权限。 For Outlook add-ins， uses can manage add-ins by choosing the **Manage Add-ins** button： in Outlook on Windows， choose **File**  >  **Manage Add-ins**.In Outlook on Mac， choose the **Manage Add-ins** button on the add-in bar. 在 Outlook 网页版中，依次选择“**设置**”菜单（齿轮图标）>“**管理加载项**”。管理员还可以 [通过使用组策略](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)来管理此访问。
 
 - 外接程序平台的设计通过以下方式为最终用户提供了安全和性能。
 
-  - 一Office外接程序在 Web 浏览器控件中运行，该控件托管在独立于 Office 客户端应用程序的外接程序运行时环境中。 此设计提供与客户端应用程序的安全和性能隔离。
+  - 外接程序Office在 Web 浏览器控件中运行，该控件托管在独立于 Office 客户端应用程序的外接程序运行时环境中。 此设计提供与客户端应用程序的安全和性能隔离。
 
   - 在 Web 浏览器控件中运行可允许加载项完成在浏览器中运行的常规网页可执行的所有操作，但同时将限制加载项遵守针对域隔离和安全区域的同源策略。
 
@@ -158,7 +158,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 由于Office外接程序是运行在 Web 浏览器控件中的网页，因此它们必须遵循浏览器强制实施的同源策略。 默认情况下，一个域中的网页无法对托管该网页的其他域进行 [XmlHttpRequest](https://www.w3.org/TR/XMLHttpRequest/) Web 服务调用。
 
-克服此限制的一个方法就是使用 JSON/P --通过包含一个脚本标记（其 **src** 属性指向另一个域中承载的一些脚本）为 Web 服务提供代理。 你可以编程方式创建 **script** 标记，动态创建 **src** 属性所指向的 URL，并通过 URI 查询参数将参数传递到 URL。 Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。 这些脚本然后在插入位置执行并按照预期的方式工作。
+克服此限制的一个方法就是使用 JSON/P -- 通过包含一个脚本标记（其 **src** 属性指向另一个域中承载的一些脚本）为 Web 服务提供代理。 你可以编程方式创建 **script** 标记，动态创建 **src** 属性所指向的 URL，并通过 URI 查询参数将参数传递到 URL。 Web 服务提供程序在特定的 URL 位置创建和托管 JavaScript 代码，并根据 URI 查询参数返回不同的脚本。 这些脚本然后在插入位置执行并按照预期的方式工作。
 
 以下是 Outlook 外接程序示例中的 JSON/P 的示例。
 
@@ -202,7 +202,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 ### <a name="tips-to-prevent-clickjacking"></a>防止“点击劫持”的提示
 
-由于Office在包含 Office 客户端应用程序的浏览器中运行时，外接程序呈现在 iframe 中，因此请使用以下提示来最大程度地降低点击劫持（黑客用来欺骗用户泄露机密信息[](https://en.wikipedia.org/wiki/Clickjacking)的技术）的风险。
+由于Office使用 Office 客户端应用程序在浏览器中运行时，外接程序呈现在 iframe 中，因此请使用以下提示来最大程度地降低点击劫持（黑客用来欺骗用户泄露[](https://en.wikipedia.org/wiki/Clickjacking)机密信息的技术）的风险。
 
 首先，确定您的加载项可以执行的敏感操作。其中包括未授权的用户可能恶意使用的任何操作，如启动金融交易或发布敏感数据。例如，您的加载项可能让用户将款项发送到用户定义的接收人。
 
@@ -230,7 +230,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
   若要确保加载项不会使用 HTTP 传送内容，在测试加载项时，开发人员应确保在"控制面板"的 **"Internet** 选项"中选择了以下设置，并且其测试方案中不会出现安全警告。
 
-  - 确保针对“Internet”区域的安全设置“显示混合内容”设置为“提示”。 为此，可以在 **"Internet** 选项"中选择以下选项：在"安全"选项卡上，选择 **"Internet** 区域"，选择"自定义级别"，滚动查找"显示混合内容"，然后选择"提示"（如果尚未选择）。 
+  - 确保针对“Internet”区域的安全设置“显示混合内容”设置为“提示”。 为此，可以在 **"Internet** 选项"中选择以下选项：在"安全"选项卡上，选择 **"Internet** 区域"，选择"自定义级别"，滚动以查找"显示混合内容"，然后选择"提示"（如果尚未选择）。 
 
   - 确保在“Internet 选项”对话框的“高级”选项卡中，选中了“在安全和非安全模式之间转换时发出警告”。
 
@@ -273,5 +273,5 @@ Office 设置的管理和执行由组策略设置完成。 这些操作可通过
 - [同源策略](https://www.w3.org/Security/wiki/Same_Origin_Policy)
 - [同源策略第 1 部分：不准偷看](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [针对 JavaScript 的同源策略](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
-- [IE 保护模式](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
+- [IE 保护模式](/office/troubleshoot/office-suite-issues/apps-for-office-not-start)
 - [Microsoft 365 应用的隐私控制](/deployoffice/privacy/overview-privacy-controls)

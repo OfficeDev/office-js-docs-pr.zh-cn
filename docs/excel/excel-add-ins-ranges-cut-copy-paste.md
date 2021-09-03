@@ -1,19 +1,19 @@
 ---
-title: 使用 JavaScript API Excel、复制和粘贴区域
-description: 了解如何使用 JavaScript API 剪切、复制和粘贴Excel区域。
+title: 使用 JavaScript API 剪切、复制Excel粘贴区域
+description: 了解如何使用 JavaScript API 剪切、复制和Excel区域。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ef13a5d71a427c06db9e57daa265834db4fff850d12a79723a7c891a972ec8fb
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a48d726e517899249652d857d9e79d2201f3bfc3
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084099"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868678"
 ---
-# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API Excel、复制和粘贴区域
+# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API 剪切、复制Excel粘贴区域
 
-本文提供使用 JavaScript API 剪切、复制和粘贴区域Excel示例。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供了使用 JavaScript API 剪切、复制和粘贴Excel示例。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -78,9 +78,9 @@ Excel.run(function (context) {
 
 ![区域Excel复制方法之后的数据。](../images/excel-range-copyfrom-skipblanks-after.png)
 
-## <a name="cut-and-paste-move-cells"></a>剪切并粘贴 (单元格) 移动
+## <a name="cut-and-paste-move-cells"></a>剪切并粘贴 (移动) 单元格
 
-[Range.moveTo](/javascript/api/excel/excel.range#moveTo_destinationRange_)方法将单元格移动到工作簿中的新位置。 此单元格移动行为的工作方式与通过拖动区域边框或执行"[](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e)剪切"和"粘贴"操作移动单元格 **时相同**。 区域的格式和值都移至指定为 参数 `destinationRange` 的位置。
+[Range.moveTo](/javascript/api/excel/excel.range#moveTo_destinationRange_)方法将单元格移动到工作簿中的新位置。 此单元格移动行为的工作方式与通过拖动区域边框或执行"[](https://support.microsoft.com/office/803d65eb-6a3e-4534-8c6f-ff12d1c4139e)剪切"和"粘贴"操作移动单元格 **时相同**。 区域的格式和值都移至指定为 参数 `destinationRange` 的位置。
 
 下面的代码示例使用 方法移动 `Range.moveTo` 区域。 请注意，如果目标区域小于源范围，它将扩展以包含源内容。
 

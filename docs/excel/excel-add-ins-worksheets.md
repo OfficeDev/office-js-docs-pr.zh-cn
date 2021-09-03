@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理工作表
 description: 显示如何使用 JavaScript API 对工作表执行常见Excel示例。
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 27129feb603af52d53aa87e16227a946480c7bdf47954fc9db7398b42a795416
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2c0c046d060e9ed32d872307f27784ff8337b100
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087024"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868748"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -372,13 +372,13 @@ function formulaChangeHandler(event) {
 
 下图显示了排序事件的 `address` 属性返回的范围。 首先是排序前的示例数据：
 
-![排序前Excel表中的数据。](../images/excel-sort-event-before.png)
+![排序之前Excel表中的数据。](../images/excel-sort-event-before.png)
 
 如果对 **"Q1&quot;** 执行从上到下排序 **(&quot;B")** 中的值，则返回以下突出显示的行 `WorksheetRowSortedEventArgs.address` 。
 
 ![从上到下排序后 Excel 中的表格数据。 已移动的行会突出显示。](../images/excel-sort-event-after-row.png)
 
-如果对 **"Quinces&quot;** 执行从左到右排序 (原始数据的 **&quot;4")** 中的值，则返回以下突出显示的列 `WorksheetColumnsSortedEventArgs.address` 。
+如果对原始数据上的"Quinces&quot; (&quot;4") 中的值执行从左到右排序，则返回以下突出显示的列 `WorksheetColumnsSortedEventArgs.address` 。
 
 ![从左到右排序后 Excel 中的表格数据。 已移动的列会突出显示。](../images/excel-sort-event-after-column.png)
 
@@ -498,7 +498,7 @@ Excel.run(function (context) {
 - `options`：定义具体编辑限制的 [WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions) 对象。
 - `password`：表示用户规避保护并编辑工作表所需使用的密码的字符串。
 
-[保护工作表](https://support.office.com/article/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6)一文详细介绍了工作表保护，以及如何通过 Excel UI 更改保护。
+[保护工作表](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6)一文详细介绍了工作表保护，以及如何通过 Excel UI 更改保护。
 
 ## <a name="page-layout-and-print-settings"></a>页面布局和打印设置
 

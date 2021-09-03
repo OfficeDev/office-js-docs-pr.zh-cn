@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API 对工作簿或应用程序级别
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 17802627fd5b9d23f2aa0a128e9ca8bda945c20ba63d2c5c3cc5960d4c8dfc20
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ed63337aad322762019e8a51e3f1cc1c202db210
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086167"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868720"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
@@ -140,11 +140,11 @@ Excel.run(function (context) {
 此外，还可以在工作表级别设置保护，来防止不希望发生的数据编辑。 有关详细信息，请参阅[使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md#data-protection)一文的“数据保护”部分。
 
 > [!NOTE]
-> 有关 Excel 中工作簿保护的详细信息，请参阅[保护工作簿](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517)一文。
+> 有关 Excel 中工作簿保护的详细信息，请参阅[保护工作簿](https://support.microsoft.com/office/7e365a4d-3e89-4616-84ca-1931257c1517)一文。
 
 ## <a name="access-document-properties"></a>访问文档属性
 
-Workbook 对象可以访问 Office 文件元数据，即[文档属性](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75)。 Workbook 对象的 `properties` 属性是一个包含这些元数据值的 [DocumentProperties](/javascript/api/excel/excel.documentproperties) 对象。 以下示例演示如何设置 `author` 属性。
+Workbook 对象可以访问 Office 文件元数据，即[文档属性](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75)。 Workbook 对象的 `properties` 属性是一个包含这些元数据值的 [DocumentProperties](/javascript/api/excel/excel.documentproperties) 对象。 以下示例演示如何设置 `author` 属性。
 
 ```js
 Excel.run(function (context) {
@@ -234,7 +234,7 @@ Excel.run(function (context) {
 
 `Application.cultureInfo` 将系统区域性设置定义为 [CultureInfo](/javascript/api/excel/excel.cultureinfo) 对象。 这包括数字小数分隔符或日期格式等设置。
 
-某些区域性设置可以通过自定义[UI Excel更改](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e)。 系统设置保留在 对象 `CultureInfo` 中。 任何本地更改都保留为 [应用程序](/javascript/api/excel/excel.application)级属性，例如 `Application.decimalSeparator` 。
+某些区域性设置可以通过自定义[UI Excel更改](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e)。 系统设置保留在 对象 `CultureInfo` 中。 任何本地更改都保留为 [应用程序](/javascript/api/excel/excel.application)级属性，例如 `Application.decimalSeparator` 。
 
 以下示例将数字字符串的十进制分隔符字符从""更改为系统设置所使用的字符。
 
@@ -329,7 +329,7 @@ Excel.run(async (context) => {
 - `recalculate`：重新计算所有活动工作簿中自上次计算后发生更改（或已以编程方式将其标记为重新计算目标）的公式，以及从属于它们的公式。
 
 > [!NOTE]
-> 有关重新计算的详细信息，请参阅[更改公式重新计算、迭代或精度](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4)一文。
+> 有关重新计算的详细信息，请参阅[更改公式重新计算、迭代或精度](https://support.microsoft.com/office/73fc7dac-91cf-4d36-86e8-67124f6bcce4)一文。
 
 ### <a name="temporarily-suspend-calculations"></a>暂停计算
 

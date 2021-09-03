@@ -3,21 +3,21 @@ title: 加载项中的Office快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）Office加载项。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 0e622820dbf1c582188d038fc532236154b7ec7389a8e14b0ce0e982a6f67a8a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2ac9a83511fc29eb055ebdc4d2c77f7675c68994
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081747"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868405"
 ---
-# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到Office加载项
+# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式Office加载项
 
 键盘快捷方式（也称为组合键）使加载项的用户能够更高效地工作。 键盘快捷方式通过提供鼠标的替代方法，还可以为残障人士改进加载项的辅助功能。
 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> 若要从已启用键盘快捷方式的加载项的工作版本开始，请克隆并运行键盘快捷方式[Excel示例](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)。 准备好向自己的加载项添加键盘快捷方式后，请继续阅读本文。
+> 若要从已启用键盘快捷方式的加载项的工作版本开始，请克隆并运行示例Excel[键盘快捷方式。](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) 准备好向自己的加载项添加键盘快捷方式后，请继续阅读本文。
 
 向加载项添加键盘快捷方式有三个步骤。
 
@@ -130,7 +130,7 @@ ms.locfileid: "57081747"
     });
     ```
 
-按照前面的步骤，加载项可通过按 **Ctrl+Alt+Up** 和 **Ctrl+Alt+Down 切换任务窗格的可见性**。 相同的行为显示在 Excel 外接程序[](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)PnP Office中的键盘快捷方式示例GitHub。
+按照前面的步骤，加载项可通过按 **Ctrl+Alt+Up** 和 **Ctrl+Alt+Down 切换任务窗格的可见性**。 相同的行为显示在 Excel 外接程序 PnP [Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)中的键盘快捷方式示例GitHub。
 
 ## <a name="details-and-restrictions"></a>详细信息和限制
 
@@ -169,10 +169,10 @@ ms.locfileid: "57081747"
 - 属性名称 `action` 、 `key` 和 `default` 是必需的。
 - 该属性的值 `action` 是一个字符串，并且必须与 action 对象 `id` 中的某个属性匹配。
 - 该属性 `default` 可以是字符 A - Z、-z、0 - 9 和标点符号"-"、"_"和"+"的任意组合。  (根据惯例，这些属性中不使用小写字母。) 
-- 该属性 `default` 必须至少包含 Alt、Ctrl、Shift 和一个 (键的名称) 一个修饰符键。
+- 该属性必须至少包含一个修饰符键的名称，该 (`default` Alt、Ctrl、Shift) 另一个键。
 - Shift 不能用作唯一的修改键。 将 Shift 与 Alt 或 Ctrl 组合使用。
 - 对于 Mac，我们还支持 Command 修饰符键。
-- 对于 Mac，Alt 映射到 Option 键。 例如Windows命令映射到 Ctrl 键。
+- 对于 Mac，Alt 映射到 Option 键。 对于Windows，Command 将映射到 Ctrl 键。
 - 当两个字符链接到标准键盘中的同一个物理键时，它们是 属性中的同义词;例如，Alt+a 和 Alt+A 是同一快捷方式 `default` ，Ctrl+- 和 Ctrl+ 也是，因为 \_ "-"和"_"是同一个物理键。
 - "+"字符指示同时按下其任一侧的键。
 
@@ -204,20 +204,20 @@ ms.locfileid: "57081747"
 
 有许多键盘快捷方式已由 Office。 避免为已在使用的外接程序注册键盘快捷方式，但在某些情况下，可能需要替代现有键盘快捷方式或处理已注册同一键盘快捷方式的多个加载项之间的冲突。
 
-如果发生冲突，用户将在第一次尝试使用冲突的键盘快捷方式时看到一个对话框，请注意，此对话框中显示的动作名称是文件中 action 对象中的 属性。 `name` `shortcuts.json`
+如果发生冲突，用户第一次尝试使用冲突的键盘快捷方式时将看到一个对话框，请注意，此对话框中显示的动作名称是文件中 action 对象中的 属性。 `name` `shortcuts.json`
 
 ![插图显示具有单个快捷方式的两个不同操作的冲突模式。](../images/add-in-shortcut-conflict-modal.png)
 
 用户可以选择键盘快捷方式将执行的操作。 做出选择后，保存首选项，供将来使用同一快捷方式。 快捷方式首选项按用户、平台保存。 如果用户希望更改其首选项，他们可以从"告诉我"搜索框中调用"重置Office外接程序快捷方式首选项"命令。  调用命令可清除用户的所有加载项快捷方式首选项，并且用户下次尝试使用冲突快捷方式时，会再次看到冲突对话框提示。
 
-!["告诉我"搜索框显示在Excel快捷方式首选项Office重置操作。](../images/add-in-reset-shortcuts-action.png)
+![显示外接程序快捷方式首选项Excel重置Office中的"告诉我"搜索框。](../images/add-in-reset-shortcuts-action.png)
 
 为了获得最佳用户体验，我们建议您尽量减少与这些Excel冲突。
 
 - 请仅使用以下模式的键盘快捷方式： **Ctrl+Shift+Alt+* x***，其中 *x* 是一些其他键。
-- 如果您需要更多键盘快捷方式，请检查Excel[键盘](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)快捷方式的列表，并避免在外接程序中使用它们。
+- 如果您需要更多键盘快捷方式，请检查Excel[键盘](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)快捷方式的列表，并避免在外接程序中使用它们。
 - 当键盘焦点位于加载项 UI 内时 **，Ctrl+空格** 键和 **Ctrl+Shift+F10** 将不起作用，因为这些都是基本的辅助功能快捷方式。
-- 在 Windows 或 Mac 计算机上，如果"重置 Office 外接程序快捷方式首选项"命令在搜索菜单上不可用，则用户可以通过通过上下文菜单自定义功能区，将该命令手动添加到功能区。
+- 在 Windows 或 Mac 计算机上，如果"重置 Office 加载项快捷方式首选项"命令在搜索菜单上不可用，则用户可以通过通过上下文菜单自定义功能区，将该命令手动添加到功能区。
 
 ## <a name="customize-the-keyboard-shortcuts-per-platform"></a>自定义每个平台的键盘快捷方式
 

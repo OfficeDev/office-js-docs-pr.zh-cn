@@ -3,12 +3,12 @@ title: 通过 Excel JavaScript API 将条件格式应用于范围
 description: 了解 JavaScript 加载项Excel条件格式。
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: f2470431e54a45b847461179c94a9621387f5a427aaf4fe48e4fe7125074d273
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7c8d40145e7e66407df4f39e8f96be394b24bb2e
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084775"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868468"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>将条件格式应用于特定 Excel 范围
 
@@ -16,8 +16,8 @@ Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定
 
 > [!NOTE]
 > 本文介绍了 Excel JavaScript 外接程序上下文中的条件格式。下面的文章提供了有关在 Excel 中实现完整条件格式功能的详细信息。
-> -  [添加、更改或清除条件格式](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
-> -  [将公式用于条件格式](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+> -  [添加、更改或清除条件格式](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
+> -  [将公式用于条件格式](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
 
 ## <a name="programmatic-control-of-conditional-formatting"></a>条件格式的编程控制
 
@@ -33,7 +33,7 @@ Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定
 -    `topBottom`
 
 > [!NOTE]
-> 每个格式属性都有相应的 `*OrNullObject` 变体。 在[ \* OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)方法部分了解有关该模式的内容。
+> 每个格式属性都有相应的 `*OrNullObject` 变体。 在[ \* OrNullObject 方法部分了解有关该模式](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)的内容。
 
 仅可为 ConditionalFormat 对象设置一种格式类型。 该格式类型由 `type` 属性确定，该属性是 [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) 枚举值。 `type` 是在向某一范围添加条件格式时设置的。
 
@@ -338,5 +338,5 @@ await context.sync();
 
 - [Excel 加载项中的 Word JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
 - [ConditionalFormat 对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.conditionalformat)
-- [添加、更改或清除条件格式](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
-- [将公式用于条件格式](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)
+- [添加、更改或清除条件格式](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
+- [将公式用于条件格式](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)

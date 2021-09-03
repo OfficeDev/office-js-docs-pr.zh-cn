@@ -1,18 +1,18 @@
 ---
 title: Outlook外接程序 API 预览要求集
-description: 当前处于预览阶段的功能和 API Outlook外接程序。
-ms.date: 06/15/2021
+description: 当前处于预览状态的功能和 API Outlook外接程序。
+ms.date: 08/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 58f27010372bef495ece16e3c9fb5cf4a8a7e78b1c3e7880485367ec6f954f63
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ed37bdc872c045a071ee6217efa98eff5b5eea97
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57091388"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868671"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook外接程序 API 预览要求集
 
-Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Outlook JavaScript API 的 Office API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!IMPORTANT]
 > 本文档适用于 **预览**[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。 此要求集尚未完全实现，客户端不会准确报告对它的支持。 不应在外接程序清单中指定此要求集。
@@ -22,7 +22,7 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 > [!TIP]
 > 你或许能够通过在 Outlook 网页版 租户上配置定向发布来预览 Microsoft 365[功能](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。 此页面中会针对适用的功能说明"配置预览访问"。
 >
-> 对于其他功能，您可能能够通过完成和提交此表单Outlook 网页版请求访问 Microsoft 365 预览[位](https://aka.ms/OWAPreview)。 这些功能中会指出"请求预览访问"。
+> 对于其他功能，你可能能够通过完成和提交此表单Outlook 网页版请求访问预览位Microsoft 365[帐户。](https://aka.ms/OWAPreview) 这些功能中会指出"请求预览访问"。
 
 预览要求集包含要求集 [1.10 的所有功能](../requirement-set-1.10/outlook-requirement-set-1.10.md)。
 
@@ -30,11 +30,11 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 
 以下是预览版中的功能。
 
-### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>对受信息权限管理中心 IRM 保护的项目 (加载项) 
+### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>对受信息权限管理 IRM 管理程序保护 (加载项) 
 
 现在可以在受 IRM 保护的项目上激活外接程序。 若要启用此功能，租户管理员需要在租户中设置"允许以编程方式访问"自定义策略选项， `OBJMODEL` 以启用Office。  有关详细信息 [，请参阅使用](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 权限和说明。
 
-**提供位置**：Outlook Windows版本 13229.10000 (连接到 Microsoft 365 订阅) 
+**提供位置**：Outlook Windows版本 13229.10000， (连接到 Microsoft 365 订阅) 
 
 <br>
 
@@ -71,6 +71,26 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 #### <a name="officemailboxenumsappointmentsensitivitytype"></a>[Office。MailboxEnums.AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview&preserve-view=true)
 
 新增了表示约会 `AppointmentSensitivityType` 可用的敏感度选项的枚举。
+
+**在**：Outlook Windows (订阅Microsoft 365上) 
+
+<br>
+
+---
+
+---
+
+### <a name="delay-delivery-time"></a>延迟传递时间
+
+#### <a name="officecontextmailboxitemdelaydeliverytime"></a>[Office.context.mailbox.item.delayDeliveryTime](office.context.mailbox.item.md#properties)
+
+添加了一个新属性，该属性返回一个对象，该对象允许您在撰写模式下管理邮件的传递日期和时间。
+
+**在**：Outlook Windows (订阅Microsoft 365上) 
+
+#### <a name="officedelaydeliverytime"></a>[Office。DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime)
+
+新增了一个对象，允许您在撰写模式下管理邮件的传递日期和时间。
 
 **在**：Outlook Windows (订阅Microsoft 365上) 
 

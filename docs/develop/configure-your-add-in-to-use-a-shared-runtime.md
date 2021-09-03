@@ -4,12 +4,12 @@ title: 将 Office 加载项配置为使用共享 JavaScript 运行时
 ms.prod: non-product-specific
 description: 将 Office 加载项配置为使用共享 JavaScript 运行时，以支持其他功能区、任务窗格和自定义函数功能。
 localization_priority: Priority
-ms.openlocfilehash: 9e24545bac2b2aaad58c2441ed0a5741c78c053d
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: f2c47f7c666c173480851b780311002eb4dbeac0
+ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661138"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "58863539"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>将 Office 加载项配置为使用共享 JavaScript 运行时
 
@@ -54,16 +54,20 @@ ms.locfileid: "53661138"
     <DefaultSettings>
     ```
 
-1. 找到 `<VersionOverrides>` 部分并添加 `<Host ...>` 标记内的以下 `<Runtimes>` 部分。 生存期需要 **较长**，以便在关闭任务窗格时加载项代码仍可运行。 `resid` 值是 **Taskpane.Url**，它引用 **manifest.xml** 文件底部附近的 ` <bt:Urls>` 部分中指定的 **taskpane.html** 文件位置。
+1. 查找 `<VersionOverrides>` 部分并添加以下 `<Runtimes>` 部分。 生存期需要 **较长**，以便在关闭任务窗格时加载项代码仍可运行。 `resid` 值是 **Taskpane.Url**，它引用 **manifest.xml** 文件底部附近的 ` <bt:Urls>` 部分中指定的 **taskpane.html** 文件位置。
+
+    > [!IMPORTANT]
+    > 必须按照以下 XML 中显示的确切顺序在 `<Host>` 元素之后输入 `<Runtimes>` 部分。
 
    ```xml
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-       <Runtimes>
-         <Runtime resid="Taskpane.Url" lifetime="long" />
-       </Runtimes>
+         <Runtimes>
+           <Runtime resid="Taskpane.Url" lifetime="long" />
+         </Runtimes>
        ...
+       </Host>
    ```
 
 1. 如果你生成带自定义函数的 Excel 加载项，请查找 `<Page>` 元素。 然后将源位置从 **Functions.Page.Url** 更改为 **Taskpane.Url**。

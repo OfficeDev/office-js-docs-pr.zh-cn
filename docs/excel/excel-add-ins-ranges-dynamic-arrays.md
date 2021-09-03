@@ -1,23 +1,23 @@
 ---
 title: 使用 JavaScript API 处理动态数组Excel溢出
-description: 了解如何使用 JavaScript API 处理动态数组Excel溢出。
+description: 了解如何使用 JavaScript API 处理动态数组和Excel溢出。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b44f00e58eb9688b8526d56064bb6d6902729635075fe80d64e47ebedb13a8f6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d95546b4cff3f0ba7410d9ceaa73e19b7e684985
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084075"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868685"
 ---
 # <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>使用 JavaScript API 处理动态Excel溢出
 
-本文提供了一个代码示例，该示例使用 JavaScript API 处理动态数组Excel溢出。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供了一个代码示例，该示例使用 JavaScript API 处理动态数组Excel溢出。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 ## <a name="dynamic-arrays"></a>动态数组
 
-某些Excel公式返回[动态数组](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)。 这些填充公式原始单元格之外的多个单元格的值。 此值溢出称为"溢出"。 外接程序可以使用 [Range.getSpillingToRange](/javascript/api/excel/excel.range#getSpillingToRange__) 方法查找用于溢出的范围。 还有 [*OrNullObject 版本](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject` 。
+某些Excel返回[动态数组](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)。 这些填充公式原始单元格之外的多个单元格的值。 此值溢出称为"溢出"。 外接程序可以使用 [Range.getSpillingToRange](/javascript/api/excel/excel.range#getSpillingToRange__) 方法查找用于溢出的范围。 还有 [*OrNullObject 版本](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject` 。
 
 以下示例显示一个基本公式，该公式将区域的内容复制到单元格中，该公式会溢出到相邻的单元格中。 然后，外接程序记录包含溢出的范围。
 
@@ -43,7 +43,7 @@ Excel.run(function (context) {
 
 ## <a name="range-spilling"></a>区域溢出
 
-使用 [Range.getSpillParent](/javascript/api/excel/excel.range#getSpillParent__) 方法查找负责溢出到给定单元格的单元格。 请注意， `getSpillParent` 仅在 range 对象是单个单元格时有效。 对 `getSpillParent` 具有多个单元格的范围调用将导致在返回 (返回空区域时 `Range.getSpillParentOrNullObject` 引发错误) 。
+使用 [Range.getSpillParent](/javascript/api/excel/excel.range#getSpillParent__) 方法查找负责溢出到给定单元格的单元格。 请注意， `getSpillParent` 仅在 range 对象是单个单元格时有效。 对 `getSpillParent` 具有多个单元格的范围调用将导致引发错误 (或返回空区域以用于 `Range.getSpillParentOrNullObject`) 。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -3,19 +3,19 @@ title: Internet Explorer 11 测试
 description: 在 Office 11 上测试Internet Explorer加载项。
 ms.date: 08/13/2021
 localization_priority: Normal
-ms.openlocfilehash: 098479942f2e2b5ed7b7cc219e5bbd591b88112a
-ms.sourcegitcommit: bc6203dd8f21d1c375039c5ee8f1388ede9be93b
+ms.openlocfilehash: 2d33853d37ddcf595583f24f232c36ae68e3a05c
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2021
-ms.locfileid: "58382954"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868622"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>在 Office 11 上测试Internet Explorer加载项
 
 > [!IMPORTANT]
 > **Internet Explorer加载项中Office仍使用**
 >
-> Microsoft 将终止对Internet Explorer的支持，但这不会显著Office外接程序。平台和 Office 版本的一些组合（包括 2019 至 Office 2019 的所有一次购买版本）将继续使用 Internet Explorer 11 随附的 Webview 控件来托管外接程序，如[Office](../concepts/browsers-used-by-office-web-add-ins.md)外接程序使用的浏览器所说明。此外，提交到[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)的加载项仍然需要支持这些Internet Explorer，因此，对于加载项，这些组合也仍是必需的。 有两 *个变化* ：
+> Microsoft 将终止对Internet Explorer的支持，但这不会显著影响Office外接程序。平台和 Office 版本（包括 Office 2019 的所有一次购买版本）的一些组合将继续使用 Internet Explorer 11 随附的 Webview 控件来托管外接程序，如[Office 外接程序](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器所说明。此外，提交到[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)的加载项仍然需要支持这些组合，因此Internet Explorer对应用的支持。 有两 *个变化* ：
 >
 > - AppSource 不再使用作为浏览器Office web 版Internet Explorer加载项。 但 AppSource 仍测试使用 Office *版本的平台* 和桌面Internet Explorer。
 > - Script Lab[工具](../overview/explore-with-script-lab.md)不再支持Internet Explorer。
@@ -33,7 +33,7 @@ ms.locfileid: "58382954"
 > 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
 
 > [!NOTE]
-> 若要在 11 Internet Explorer上测试外接程序，Office web 版中Internet Explorer并[旁加载外接程序](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)。
+> 若要在 Internet Explorer 11 浏览器上测试外接程序，Office web 版中Internet Explorer并[旁加载外接程序](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -55,7 +55,7 @@ ms.locfileid: "58382954"
     ```
 
 > [!TIP]
-> 不需要使用此命令，但它应有助于调试与 Internet Explorer 11 运行时相关的大多数问题。 为提供完整的稳定性，应测试使用具有 Windows 7、8.1 和 10 的各种版本以及 Office 的各种组合的计算机。 有关详细信息，请参阅Office[外接程序](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器和如何还原到早期版本[的 Office](https://support.microsoft.com/topic/how-to-revert-to-an-earlier-version-of-office-2bd5c457-a917-d57e-35a1-f709e3dda841)。
+> 虽然不需要使用此命令，但它应该有助于调试与 Internet Explorer 11 运行时相关的大多数问题。 为提供完整的稳定性，应测试使用具有 Windows 7、8.1 和 10 的各种版本以及 Office 的各种组合的计算机。 有关详细信息，请参阅浏览器[Office外接程序](../concepts/browsers-used-by-office-web-add-ins.md)和[如何还原到早期版本的Office。](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841)
 
 ### <a name="command-options"></a>命令选项
 

@@ -3,12 +3,12 @@ title: 安装最新版本 Office
 description: 与如何选择获取最新版 Office 相关的信息。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6c18e91c93d8125c30bd52ffa7ee602c555e53accea108fb6b0645eb03610caf
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f5e1bf7afe89efd6f523a74b04d7b6a99f0195bf
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080575"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868433"
 ---
 # <a name="install-the-latest-version-of-office"></a>安装最新版本 Office
 
@@ -16,14 +16,14 @@ ms.locfileid: "57080575"
 
 ## <a name="opt-in-to-getting-the-latest-builds-of-office"></a>选择获取最新版Office
 
-- 如果你是预览体验成员Microsoft 365 家庭版个人或大学订阅者，请参阅成为预览体验成员Office[订阅者](https://insider.office.com)。
-- 如果你是客户，请参阅Microsoft 365 商业应用版[客户安装首次发布Microsoft 365 商业应用版版本](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)。
+- 如果你是预览体验成员、Microsoft 365 家庭版或大学订阅者，请参阅成为预览体验Office[会员](https://insider.office.com)。
+- 如果你是客户，请参阅Microsoft 365 商业应用版[客户安装首次发布Microsoft 365 商业应用版版本](https://support.office.com/article/4dd8ba40-73c0-4468-b778-c7b744d03ead)。
 - 如果在 Mac 上运行 Office：
   - 启动 Office 应用程序。
   - 选择“帮助”菜单上的“检查更新”。
   - 选中“Microsoft 自动更新”框，以加入 Office 预览体验成员计划。
 
-## <a name="get-the-latest-build-of-office"></a>获取最新版Office
+## <a name="get-the-latest-build-of-office"></a>获取最新内部Office
 
 1. 下载 [Office 部署工具](https://www.microsoft.com/download/details.aspx?id=49117)。
 2. 运行该工具。这会提取以下两个文件：Setup.exe 和 configuration.xml。

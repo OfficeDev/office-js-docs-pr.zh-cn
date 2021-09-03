@@ -3,20 +3,20 @@ title: 向特定 Excel 范围添加数据验证
 description: 了解 Excel JavaScript API 如何允许外接程序向工作簿中的表、列、行和其他区域添加自动数据验证。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 1d05db463da8586e39e6a8e172529d9da46a8cec11ca36f5231cb9c3f1c49033
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 188abed325a432023ee78c42a04f875f1b7f1ec8
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084291"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868643"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>向特定 Excel 范围添加数据验证
 
-Excel JavaScript 库提供的 API 可支持使用外接程序来向表格、列、行及工作簿中的其他范围添加自动数据验证。 若要了解数据验证的概念和术语，请参阅以下文章，这些文章介绍了用户如何通过 Excel UI 添加数据验证。
+Excel JavaScript 库提供的 API 可支持使用外接程序来向表格、列、行及工作簿中的其他范围添加自动数据验证。 若要了解数据验证的概念和术语，请参阅以下文章，了解用户如何通过 Excel UI 添加数据验证。
 
-- [向单元格应用数据验证](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
-- [有关数据验证的更多信息](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
-- [Excel 中的数据验证的说明和示例](https://support.microsoft.com/help/211485/description-and-examples-of-data-validation-in-excel)
+- [向单元格应用数据验证](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249)
+- [有关数据验证的更多信息](https://support.microsoft.com/office/f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
+- [Excel 中的数据验证的说明和示例](https://support.microsoft.com/help/211485)
 
 ## <a name="programmatic-control-of-data-validation"></a>数据验证的编程控制
 
@@ -163,7 +163,7 @@ Excel.run(function (context) {
 你可以创建一个在用户试图在单元格中输入无效数据时显示的自定义错误警报。 下面展示了一个非常简单的示例。 对于此代码，请注意以下事项。
 
 - `style` 属性决定用户是会收到信息警报、警告还是“停止”警报。 实际上，只有 `Stop` 会阻止用户添加无效数据。 `Warning` 和 `Information` 弹出窗口都具有允许用户输入无效数据的选项。
-- `showAlert` 属性默认为 `true`。 这意味着，Excel将弹出 (类型为) 的常规警报，除非您创建自定义警报来设置或设置自定义消息、标题和 `Stop` `showAlert` `false` 样式。 以下代码设置了自定义消息和标题。
+- `showAlert` 属性默认为 `true`。 这意味着Excel将弹出 (类型为) 的常规警报，除非您创建自定义警报来设置或设置自定义消息、标题和 `Stop` `showAlert` `false` 样式。 以下代码设置了自定义消息和标题。
 
 ```js
 Excel.run(function (context) {

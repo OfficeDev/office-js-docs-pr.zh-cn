@@ -3,12 +3,12 @@ title: Outlook 加载项命令
 description: Outlook 加载项命令提供了通过添加按钮或下拉菜单从功能区启动特定加载项操作的方法。
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: b99f793565163042821cc5c5bf3c7364858cd6fac37637359d90aec28ae3e1fc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8fc8f5c30f5a56ffe9c792f2347b915cf2f04051
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097542"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868741"
 ---
 # <a name="add-in-commands-for-outlook"></a>适用于 Outlook 的外接程序命令
 
@@ -19,10 +19,10 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 >
 > 需要安装以下三个更新，Outlook 2013 才支持加载项命令：
 > - [2016 年 3 月 8 日发布的 Outlook 安全更新程序](https://support.microsoft.com/kb/3114829)
-> - [2016 年 3 月 8 日发布的 Office 安全更新程序 (KB3114816)](https://support.microsoft.com/help/3114816/march-8,-2016,-update-for-office-2013-kb3114816)
-> - [2016 年 3 月 8 日发布的 Office 安全更新程序 (KB3114828)](https://support.microsoft.com/help/3114828/march-8,-2016,-update-for-office-2013-kb3114828)
+> - [2016 年 3 月 8 日发布的 Office 安全更新程序 (KB3114816)](https://support.microsoft.com/topic/3d3eb171-78c2-0e61-62a2-85723bc4bcc0)
+> - [2016 年 3 月 8 日发布的 Office 安全更新程序 (KB3114828)](https://support.microsoft.com/topic/54437016-d1e0-7aac-dbb7-4ecfbd57f5f0)
 >
-> 需要安装[累积更新 5](https://support.microsoft.com/help/4012106/cumulative-update-5-for-exchange-server-2016)，Exchange 2016 才支持加载项命令。
+> 需要安装[累积更新 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd)，Exchange 2016 才支持加载项命令。
 
 加载项命令仅适用于不使用 [ItemHasAttachment、ItemHasKnownEntity 或 ItemHasRegularExpressionMatch 规则](activation-rules.md)限制其激活的项目类型的加载项。不过，[上下文加载项](contextual-outlook-add-ins.md)可以显示不同的命令（具体取决于当前选定的项是邮件还是约会），并且可以选择是在阅读还是在撰写应用场景中显示命令。如可能，使用加载项命令将是[最佳做法](../concepts/add-in-development-best-practices.md)。
 

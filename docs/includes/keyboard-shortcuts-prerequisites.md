@@ -6,6 +6,6 @@
 >- Excel 网页版
 
 > [!NOTE]
-> 键盘快捷方式仅适用于支持以下要求集的平台。 有关要求集以及如何使用它们，请参阅指定Office应用程序和 API[要求](../develop/specify-office-hosts-and-api-requirements.md)。
+> 键盘快捷方式仅适用于支持以下要求集的平台。 有关要求集以及如何使用它们，请参阅指定Office和 API[要求](../develop/specify-office-hosts-and-api-requirements.md)。
 >
 > - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)

@@ -3,12 +3,12 @@ title: 运行 Office 加载项的要求
 description: 了解最终用户在加载项中运行所需的客户端和Office要求。
 ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 1cc591db443c1fb0e2ca934cd05f52ad41ed61cf977ef4053af70d536867a6db
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: eaa5836cc9254314b952fb49d251cc240a1d56e4
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082984"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868398"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -29,7 +29,7 @@ ms.locfileid: "57082984"
 > [!TIP]
 > 在 Visual Studio 中开发和调试加载项时，Visual Studio 使用 IIS Express 在本地部署并运行加载项的网页文件，无需使用其他 Web 服务器。
 
-对于内容和任务窗格外接程序，在受支持的 Office 客户端应用程序（Excel、PowerPoint、Project 或 Word）中，您还需要 SharePoint 上的应用程序目录来上载外接程序的 XML[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)清单文件，或者您需要使用集成应用程序部署外接程序。 [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+对于内容和任务窗格外接程序，在受支持的 Office 客户端应用程序（Excel、PowerPoint、Project 或 Word）中，您还需要 SharePoint 上的应用程序目录来上载外接程序的 XML 清单[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)文件，或者您需要使用集成应用程序部署外接程序。 [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
 
 若要测试和运行 Outlook 外接程序，用户的 Outlook 电子邮件帐户必须驻留在 Exchange 2013 或更高版本上，这可以通过 Microsoft 365、Exchange Online 或本地安装获得。 用户或管理员在该服务器上安装 Outlook 外接程序的清单文件。
 
@@ -44,7 +44,7 @@ ms.locfileid: "57082984"
   - 在 Windows 7 或更高版本上运行的 32 位或 64 位版本 Office 2013。
   - Excel 2013、Outlook 2013、PowerPoint 2013、Project Professional 2013、Project 2013 SP1、Word 2013 或更高版本的 Office 客户端，（如果您正在专门为这些 Office 桌面客户端测试或运行 Office 外接程序）。Office 桌面客户端可以在本地安装或通过即点即用安装在客户端计算机上。
 
-  如果你有有效的 Microsoft 365 订阅，并且你无法访问 Office 客户端，你可以下载并安装最新版本的[Office](https://support.office.com/article/download-and-install-or-reinstall-office-365-or-office-2019-on-a-pc-or-mac-4414eaaf-0478-48be-9c42-23adc4716658)。
+  如果你有有效的 Microsoft 365 订阅，并且你无法访问 Office 客户端，你可以下载并安装最新版本的[Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658)。
 
 - 必须安装 Internet Explorer 11 或 Microsoft Edge（由 Windows 和 Office 版本而定），但它们不能是默认浏览器。 为支持 Office 加载项，充当主机的 Office 客户端使用了 Internet Explorer 11 或 Microsoft Edge 所包含的浏览器组件。 有关更多详细信息，请参阅 [Office加载项使用的浏览器](browsers-used-by-office-web-add-ins.md)。
 
@@ -76,12 +76,12 @@ Outlook作为加载项的一部分分发的 Mac Microsoft 365支持Outlook加载
 
 | Office 应用程序 | 设备 | 操作系统 | Exchange 帐户 | 移动浏览器 |
 |:-----|:-----|:-----|:-----|:-----|
-|Android 版 Outlook|Android 平板电脑和智能手机|Android 4.4 KitKat 及更高版本|有关更新或更新Microsoft 365 商业应用版Exchange Online|Android 版本机应用（不适用于浏览器）|
-|iOS 版 Outlook|iPad 平板电脑，iPhone 智能手机|iOS 11 或更高版本|有关更新或更新Microsoft 365 商业应用版Exchange Online|iOS 版本机应用（不适用于浏览器）|
-|Outlook 网页版|iPhone 4 或更高版本、iPad 2 或更高版本、iPod Touch 4 或更高版本|iOS 5 或更高版本|在 Microsoft 365 2013 Exchange Online或更高版本的 Exchange Server、Exchange Online 或本地|Safari|
+|Android 版 Outlook|Android 平板电脑和智能手机|Android 4.4 KitKat 及更高版本|有关最新更新或Microsoft 365 商业应用版Exchange Online|Android 版本机应用（不适用于浏览器）|
+|iOS 版 Outlook|iPad 平板电脑，iPhone 智能手机|iOS 11 或更高版本|有关最新更新或Microsoft 365 商业应用版Exchange Online|iOS 版本机应用（不适用于浏览器）|
+|Outlook 网页版|iPhone 4 或更高版本、iPad 2 或更高版本、iPod Touch 4 或更高版本|iOS 5 或更高版本|在 Microsoft 365 2013 Exchange Online或更高版本的 Exchange Server、Exchange Server 或本地|Safari|
 
 > [!NOTE]
-> Android 版本机应用 OWA、iPad 版 OWA 和 iPhone 版 OWA 现已[弃用](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b)且之后无需这些软件即可测试 Outlook 加载项。
+> Android 版本机应用 OWA、iPad 版 OWA 和 iPhone 版 OWA 现已[弃用](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b)且之后无需这些软件即可测试 Outlook 加载项。
 
 
 ## <a name="see-also"></a>另请参阅
