@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 8ff424df95d92c17004448aca99f8d0001dc3c06
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.openlocfilehash: 8d702d7820e8a85499c5a64355310844b456abbc
+ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232403"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "58863546"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -18,7 +18,7 @@ ms.locfileid: "58232403"
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-以下动态图像显示调用你使用 JavaScript 或 Typescript 创建的函数的工作簿。 在此示例中，自定义函数 `=MYFUNCTION.SPHEREVOLUME` 计算球的体积。
+以下动态图像显示调用你使用 JavaScript 或 TypeScript 创建的函数的工作簿。 在此示例中，自定义函数 `=MYFUNCTION.SPHEREVOLUME` 计算球的体积。
 
 ![显示最终用户插入 MYFUNCTION 的动画图像。将 SPHEREVOLUME 自定义函数放入 Excel 工作表的单元格中。](../images/SphereVolumeNew.gif)
 
