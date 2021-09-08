@@ -1,18 +1,18 @@
 ---
 title: 手动为自定义函数创建 JSON Excel
-description: 在函数中定义自定义函数的 JSON Excel并关联函数 ID 和名称属性。
+description: 定义自定义函数的 JSON 元数据Excel并关联函数 ID 和名称属性。
 ms.date: 08/06/2021
 localization_priority: Normal
 ms.openlocfilehash: 78a14d591276ad7fcc2cca47df0f5e540d7bad91
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232212"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938721"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>手动为自定义函数创建 JSON 元数据
 
-如自定义函数概述[](custom-functions-overview.md)文章中所述，自定义函数项目必须同时包括 JSON 元数据文件和脚本 (JavaScript 或 TypeScript) 文件以注册函数，使其可供使用。 当用户首次运行外接程序时以及之后，自定义函数将注册到所有工作簿中的同一用户。
+如自定义函数概述[](custom-functions-overview.md)文章中所述，自定义函数项目必须同时包括 JSON 元数据文件和脚本 (JavaScript 或 TypeScript) 文件来注册函数，使其可供使用。 当用户首次运行外接程序时以及之后，自定义函数将注册到所有工作簿中的同一用户。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -26,7 +26,7 @@ ms.locfileid: "58232212"
 
 下图说明了使用基架文件和从头开始编写 `yo office` JSON 的区别。
 
-![使用 Yo 方法与编写Office JSON 之间的差异的图像。](../images/custom-functions-json.png)
+![使用 Yo 方法与Office JSON 之间的差异的图像。](../images/custom-functions-json.png)
 
 > [!NOTE]
 > 请记住，如果不使用生成器，请通过 XML 清单文件的 部分将清单连接到你创建的 JSON `<Resources>` `yo office` 文件。
@@ -170,7 +170,7 @@ ms.locfileid: "58232212"
 | `requiresAddress` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true` 为 ，则自定义函数可以访问调用它的单元格的地址。 `address`调用参数的[属性](custom-functions-parameter-options.md#invocation-parameter)包含调用自定义函数的单元格的地址。 函数不能同时使用 和 `stream` `requiresAddress` 属性。 |
 | `requiresParameterAddresses` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true` 为 ，则自定义函数可以访问函数的输入参数的地址。 此属性必须与结果对象的 属性结合使用， `dimensionality` 并且[](#result) `dimensionality` 必须设置为 `matrix` 。 有关详细信息 [，请参阅检测参数](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 的地址。 |
 | `stream`          | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 相反，结果值将作为 `StreamingInvocation.setResult` 回调方法的参数传递。 有关详细信息，请参阅 Make [a streaming function](custom-functions-web-reqs.md#make-a-streaming-function)。 |
-| `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果为 ，函数每次重新计算Excel重新计算，而不是仅在公式的从属值 `true` 发生更改时重新计算。 函数不能同时使用 和 `stream` `volatile` 属性。 如果 `stream` 和 `volatile` 属性都设置为 `true` ，则可变属性将被忽略。 |
+| `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果为 ，则函数每次重新计算Excel重新计算，而不是仅在公式的从属值发生更改 `true` 时重新计算。 函数不能同时使用 和 `stream` `volatile` 属性。 如果 `stream` 和 `volatile` 属性都设置为 `true` ，则可变属性将被忽略。 |
 
 ### <a name="parameters"></a>参数
 

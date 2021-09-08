@@ -3,12 +3,12 @@ title: Outlook 加载项的隐私、权限和安全性
 description: 了解如何管理 Outlook 加载项中的隐私、权限和安全性。
 ms.date: 07/27/2021
 localization_priority: Priority
-ms.openlocfilehash: e88dc6395eafc665a6e0635823a0419feb8f27de1acc7ec28bb94becc43b5536
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: cd0c793bb8a2cfbc4cef17e0cf717c35cb68794c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093497"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939270"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook 外接程序的隐私、权限和安全性
 

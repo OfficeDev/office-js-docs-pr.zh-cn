@@ -3,12 +3,12 @@ title: 创建字典任务窗格加载项
 description: 了解如何创建字典任务窗格外接程序
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 2473edc8e9de78ffdb03faf472c2c01eafbaa7425a62e505904f51f970893b56
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e8667e77416caeb041af15141cd47b9cf35e2737
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094116"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938658"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -533,7 +533,7 @@ a:hover, a:active
     
 - [对象的 addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_)方法，在 函数中调用，为文档的 SelectionChanged 事件添加事件处理程序以 `Document` `initialize` 侦听用户选择更改。 [](/javascript/api/office/office.documentselectionchangedeventargs)
     
-- 对象的 [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 方法，当引发事件处理程序以获取用户选择的单词或短语时，在 函数中调用该方法，将其强制转换为 `Document` `tryUpdatingSelectedWord()` `SelectionChanged` 纯 `selectedTextCallback` 文本，然后执行异步回调函数。
+- 对象的[getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_)方法，当引发事件处理程序以获取用户选择的单词或短语时，在 函数中调用该方法，将其强制转换为纯文本，然后执行异步回调函数。 `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback`
     
 - 当作为方法的 callback 参数传递的异步回调函数执行时，它将在回调返回时 `selectTextCallback` 获取所选 `getSelectedDataAsync` 文本的值。 它从回调的 _selectedText_ 参数 (，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 返回对象的 [value](/javascript/api/office/office.asyncresult#status) `AsyncResult` 属性。
     

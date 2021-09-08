@@ -1,14 +1,14 @@
 ---
 title: 如何查找清单元素的正确顺序
 description: 了解如何查找在父元素中放置子元素的正确顺序。
-ms.date: 01/29/2021
+ms.date: 09/02/2021
 localization_priority: Normal
-ms.openlocfilehash: e435add4b47984880ba4dc0d17f8a81c04af6ba7e9c2d499296a5679f15ef029
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 39d3e82162b1ed39390cff30b269417ef61d46f2
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080424"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938214"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>如何查找清单元素的正确顺序
 
@@ -67,7 +67,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
     <ExtendedOverrides>
 ```
 
-\*有关 VersionOverrides 的子元素的排序，请参阅[Task pane add-in element ordering within VersionOverrides。](#task-pane-add-in-element-ordering-within-versionoverrides)
+\*有关[VersionOverrides 的子元素排序，请参阅 Task pane add-in element ordering within VersionOverrides。](#task-pane-add-in-element-ordering-within-versionoverrides)
 
 ## <a name="basic-mail-add-in-element-ordering"></a>基本邮件外接程序元素排序
 
@@ -209,7 +209,6 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
-                        <OverriddenByRibbonApi>
                         <Group> (can be below <ControlGroup>)
                             <OverriddenByRibbonApi>
                             <Label>
@@ -512,5 +511,5 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office v1.1 (外接程序清单) ](../develop/add-in-manifests.md)
+- [有关 Office v1.1 (外接程序清单) ](../develop/add-in-manifests.md)
 - [官方架构定义](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

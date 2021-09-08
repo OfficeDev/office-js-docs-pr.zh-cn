@@ -4,16 +4,16 @@ description: 有关即将推出的 JavaScript PowerPoint的详细信息。
 ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 5569a732dce2db1da5b6fb29169c87e65222afb50b55c7b1930a7c20e138c5c9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: af947919ad680864bf4a63ab29af33d0560aaaa0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092616"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938993"
 ---
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPointJavaScript 预览 API
 
-JavaScript API PowerPoint先在"预览"中引入，之后在经过充分测试并获取用户反馈后成为特定编号要求集的一部分。
+JavaScript API PowerPoint在"预览"中首次引入，之后在经过充分测试并获取用户反馈后，它将成为特定编号要求集的一部分。
 
 第一个表提供了 API 的简明摘要，而后续表提供了详细列表。
 
@@ -48,7 +48,7 @@ JavaScript API PowerPoint先在"预览"中引入，之后在经过充分测试�
 ||[标记](/javascript/api/powerpoint/powerpoint.slide#tags)|返回幻灯片中的标记集合。|
 |[SlideCollection](/javascript/api/powerpoint/powerpoint.slidecollection)|[添加 (选项？：PowerPoint。AddSlideOptions) ](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_)|在集合的末尾添加新幻灯片。|
 |[SlideLayout](/javascript/api/powerpoint/powerpoint.slidelayout)|[id](/javascript/api/powerpoint/powerpoint.slidelayout#id)|获取幻灯片版式的唯一 ID。|
-||[名称](/javascript/api/powerpoint/powerpoint.slidelayout#name)|获取幻灯片版式的名称。|
+||[name](/javascript/api/powerpoint/powerpoint.slidelayout#name)|获取幻灯片版式的名称。|
 |[SlideLayoutCollection](/javascript/api/powerpoint/powerpoint.slidelayoutcollection)|[getCount()](/javascript/api/powerpoint/powerpoint.slidelayoutcollection#getCount__)|获取集合中的布局数。|
 ||[getItem(key: string)](/javascript/api/powerpoint/powerpoint.slidelayoutcollection#getItem_key_)|使用唯一 ID 获取布局。|
 ||[getItemAt(index: number)](/javascript/api/powerpoint/powerpoint.slidelayoutcollection#getItemAt_index_)|获取一个布局，该布局使用集合中从零开始编制的索引。|
@@ -56,7 +56,7 @@ JavaScript API PowerPoint先在"预览"中引入，之后在经过充分测试�
 ||[items](/javascript/api/powerpoint/powerpoint.slidelayoutcollection#items)|获取此集合中已加载的子项。|
 |[SlideMaster](/javascript/api/powerpoint/powerpoint.slidemaster)|[id](/javascript/api/powerpoint/powerpoint.slidemaster#id)|获取幻灯片母版的唯一 ID。|
 ||[布局](/javascript/api/powerpoint/powerpoint.slidemaster#layouts)|获取幻灯片母版提供的幻灯片版式的集合。|
-||[名称](/javascript/api/powerpoint/powerpoint.slidemaster#name)|获取幻灯片母版的唯一名称。|
+||[name](/javascript/api/powerpoint/powerpoint.slidemaster#name)|获取幻灯片母版的唯一名称。|
 |[SlideMasterCollection](/javascript/api/powerpoint/powerpoint.slidemastercollection)|[getCount()](/javascript/api/powerpoint/powerpoint.slidemastercollection#getCount__)|获取集合中幻灯片母版的数量。|
 ||[getItem(key: string)](/javascript/api/powerpoint/powerpoint.slidemastercollection#getItem_key_)|使用幻灯片母版的唯一 ID 获取幻灯片母版。|
 ||[getItemAt(index: number)](/javascript/api/powerpoint/powerpoint.slidemastercollection#getItemAt_index_)|使用集合中从零开始编制的索引获取幻灯片母版。|

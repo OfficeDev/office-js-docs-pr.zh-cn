@@ -8,14 +8,14 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 3bfa1642a3ec5bfc79a0670df3399590c9ff3b9bb601883908f1857faeb38b8c
-  ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+  ms.openlocfilehash: 22a4d97562287d7c4ef60208e87cc1c42f7ddf68
+  ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/07/2021
-  ms.locfileid: "57092218"
+  ms.lasthandoff: 09/08/2021
+  ms.locfileid: "58938974"
 landingContent:
-- title: 关于Outlook加载项
+- title: 关于 Outlook 加载项
   linkLists:
   - linkListType: overview
     links:
@@ -33,7 +33,7 @@ landingContent:
       url: apis.md
     - text: 测试和调试Outlook加载项
       url: ../testing/test-debug-office-add-ins.md
-    - text: 部署和发布Outlook加载项
+    - text: 部署和Outlook加载项
       url: ../publish/publish.md
 - title: 关键Office加载项概念
   linkLists:

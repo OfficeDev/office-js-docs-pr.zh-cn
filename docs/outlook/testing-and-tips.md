@@ -3,12 +3,12 @@ title: 部署和安装 Outlook 加载项以进行测试
 description: 创建清单文件，将加载项 UI 文件部署到 Web 服务器，在邮箱中安装加载项，然后测试加载项。
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 7a8c6a22d053f58b38e6dbb432c2ad151c0fee94f3a512eea0611e28ab3595f6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0fe7aa8d24b4da14a14480aaf07ef588cd8a243a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086239"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938268"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>部署和安装 Outlook 加载项以进行测试
 

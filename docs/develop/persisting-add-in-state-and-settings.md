@@ -3,12 +3,12 @@ title: 暂留加载项状态和设置
 description: 了解如何将数据保留Office浏览器控件的无状态环境中运行的外接程序 Web 应用程序中。
 ms.date: 03/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 5b2a7d59340a0126fe270334c560ba5fbf1f1739ef6f119a2cef754a06321699
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a1730826fafb840bc6ae69c5c1e95c54ccc0f2f7
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080277"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938376"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>暂留加载项状态和设置
 
@@ -28,19 +28,19 @@ Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web
 
 ## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>使用 JavaScript API 保留Office状态和设置
 
-JavaScript API Office提供了 设置、RoamingSettings[](/javascript/api/outlook/office.roamingsettings)和[CustomProperties](/javascript/api/outlook/office.customproperties)对象，用于跨会话保存外接程序状态，如下表所述。 [](/javascript/api/office/office.settings) 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
+JavaScript API Office提供了 设置、RoamingSettings 和[CustomProperties](/javascript/api/outlook/office.customproperties)对象，用于跨会话保存外接程序状态，如下表所述。 [](/javascript/api/office/office.settings) [](/javascript/api/outlook/office.roamingsettings) 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
 
 |**对象**|**外接程序类型支持**|**存储位置**|**Office应用程序支持**|
 |:-----|:-----|:-----|:-----|
-|[Settings](/javascript/api/office/office.settings)|内容和任务窗格|加载项使用的文档、电子表格或演示文稿。 内容和任务窗格加载项设置供创建它们的加载项使用，且能从保存它们的文档访问。<br/><br/>**重要说明：** 不要使用 **Settings** 对象保存密码和其他敏感的个人身份信息 (PII)。保存的数据对最终用户不可见，但它作为文档的一部分存储，可通过直接读取文档的文件格式进行访问。您应限制加载项对 PII 的使用，并仅将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。|Word、Excel 或 PowerPoint<br/><br/> **注意：** Project 2013 任务窗格加载项不支持用于存储加载项状态或设置的 **Settings** API。 但是，对于在 Project (和其他 Office 客户端应用程序中运行的) 您可以使用浏览器 Cookie 或 Web 存储等技术。 有关详细信息，请参阅 [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。 |
+|[Settings](/javascript/api/office/office.settings)|内容和任务窗格|加载项使用的文档、电子表格或演示文稿。 内容和任务窗格加载项设置供创建它们的加载项使用，且能从保存它们的文档访问。<br/><br/>**重要说明：** 不要使用 **Settings** 对象保存密码和其他敏感的个人身份信息 (PII)。保存的数据对最终用户不可见，但它作为文档的一部分存储，可通过直接读取文档的文件格式进行访问。您应限制加载项对 PII 的使用，并仅将加载项所需的任何 PII 存储在将加载项作为用户保护的资源托管的服务器上。|Word、Excel 或 PowerPoint<br/><br/> **注意：** Project 2013 任务窗格加载项不支持用于存储加载项状态或设置的 **Settings** API。 但是，对于在 Project (和其他 Office 客户端应用程序中运行的) 可以使用浏览器 Cookie 或 Web 存储等技术。 有关详细信息，请参阅 [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)。 |
 |[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Outlook|安装了加载项的用户 Exchange 服务器邮箱。 由于这些设置存储在用户的服务器邮箱中，因此它们可以随用户"漫游"，并且可在外接程序在任何访问该用户邮箱的受支持 Office 客户端应用程序或浏览器的上下文中运行时使用。<br/><br/> Outlook 加载项漫游设置只可供创建它们的加载项使用，且只能从安装了加载项的邮箱访问。|Outlook|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|Outlook|加载项使用的邮件、约会或会议请求项目。 Outlook 外接程序项目自定义属性仅供创建它们的外接程序使用，并且只能从保存它们的项目使用。|Outlook|
-|[CustomXmlParts](/javascript/api/office/office.customxmlparts)|任务窗格|加载项要使用的文档、电子表格或演示文稿。任务窗格加载项设置可供创建它们的加载项使用，且能从保存它们的文档访问。<br/><br/>**重要说明：** 请勿将密码和其他敏感的个人身份信息 (PII) 存储在自定义 XML 部分中。虽然保存的数据对最终用户不可见，但它存储为文档的一部分，可通过直接读取文档的文件格式进行访问。应限制加载项对 PII 的使用，并仅将加载项所需的任何 PII 存储在服务器上，且服务器将加载项托管为用户保护资源。|Word (JavaScript OFFICE JavaScript API) Excel (JavaScript API Excel JavaScript API|
+|[CustomXmlParts](/javascript/api/office/office.customxmlparts)|任务窗格|加载项要使用的文档、电子表格或演示文稿。任务窗格加载项设置可供创建它们的加载项使用，且能从保存它们的文档访问。<br/><br/>**重要说明：** 请勿将密码和其他敏感的个人身份信息 (PII) 存储在自定义 XML 部分中。虽然保存的数据对最终用户不可见，但它存储为文档的一部分，可通过直接读取文档的文件格式进行访问。应限制加载项对 PII 的使用，并仅将加载项所需的任何 PII 存储在服务器上，且服务器将加载项托管为用户保护资源。|Word (JavaScript OFFICE JavaScript API) Excel (JavaScript API 中Excel JavaScript API|
 
 ## <a name="settings-data-is-managed-in-memory-at-runtime"></a>设置数据在运行时托管在内存中
 
 > [!NOTE]
-> 下面两部分是在 Office 常见 JavaScript API 上下文中介绍的设置。 特定于应用程序的应用程序Excel JavaScript API 还提供对自定义设置的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel SettingCollection](/javascript/api/excel/excel.settingcollection)。
+> 下面两部分是在 Office 常见 JavaScript API 上下文中介绍的设置。 JavaScript API Excel应用程序特定的应用程序还提供对自定义设置的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel SettingCollection](/javascript/api/excel/excel.settingcollection)。
 
 在内部，使用 、 或 对象访问的属性包中数据存储为序列化的 JavaScript 对象表示法 `Settings` `CustomProperties` (JSON) 对象，其中包含名称/值对 `RoamingSettings` 。 每个 (键) 的名称必须为 ，并且存储的值可以是 JavaScript 、、 或 ， `string` `string` `number` `date` `object` 但不能是 **函数**。
 
@@ -79,7 +79,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ### <a name="getting-the-value-of-a-setting"></a>获取设置的值
 
-下面的示例演示如何使用 [Settings.get](/javascript/api/office/office.settings#get_name_) 方法获取名为"themeColor"的设置值。 该方法的唯一 `get` 参数是设置 _的名称（区分_ 大小写）。
+下面的示例演示如何使用 [Settings.get](/javascript/api/office/office.settings#get_name_) 方法获取名为"themeColor"的设置值。 方法的唯一 `get` 参数是设置的名称 _（区分_ 大小写）。
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
@@ -94,7 +94,7 @@ function write(message){
 
 ### <a name="removing-a-setting"></a>删除设置
 
-下面的示例演示如何使用 [Settings.remove](/javascript/api/office/office.settings#remove_name_) 方法删除名为"themeColor"的设置。 该方法的唯一 `remove` 参数是设置 _的名称（区分_ 大小写）。
+下面的示例演示如何使用 [Settings.remove](/javascript/api/office/office.settings#remove_name_) 方法删除名为"themeColor"的设置。 方法的唯一 `remove` 参数是设置的名称 _（区分_ 大小写）。
 
 ```js
 Office.context.document.settings.remove('themeColor');
@@ -120,14 +120,14 @@ function write(message){
 }
 ```
 
-作为 callback 参数传入 `saveAsync` 方法的匿名函数在操作完成时执行。 回调 _的 asyncResult_ 参数提供对包含操作 `AsyncResult` 状态的对象的访问。 在示例中，函数检查 属性以查看保存操作是成功还是失败，然后在加载项页面中 `AsyncResult.status` 显示结果。
+作为 callback 参数传入 `saveAsync` 方法的匿名函数在操作完成时执行。 回调 _的 asyncResult_ 参数提供对包含操作 `AsyncResult` 状态的对象的访问。 在示例中，函数检查 属性以查看保存操作是成功还是失败，然后在加载项页面中显示 `AsyncResult.status` 结果。
 
 ## <a name="how-to-save-custom-xml-to-the-document"></a>如何将自定义 XML 保存到文档
 
 > [!NOTE]
 > 此部分是在 Word 中支持的 Office 常见 JavaScript API 上下文中介绍的自定义 XML 部分。 特定于应用程序的应用程序Excel JavaScript API 还提供对自定义 XML 部件的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel CustomXmlPart](/javascript/api/excel/excel.customxmlpart)。
 
-当需要存储的信息超过文档文档大小限制或具有结构化字符设置存在附加存储选项。 可以在 Word 的任务窗格加载项中暂留自定义 XML 标记（对于 Excel，但请参阅本节顶部的注释）。 在 Word 中，可以使用 [CustomXmlPart](/javascript/api/office/office.customxmlpart) 对象及其方法（同样，请参阅上面的 Excel 注释）。 以下代码将创建自定义 XML 部件，并在页面的 divs 中显示其 ID 及内容。 请注意，XML 字符串中必须有一个 `xmlns` 属性。
+当需要存储的信息超过文档文档大小限制或具有结构化字符时设置另一个存储选项。 可以在 Word 的任务窗格加载项中暂留自定义 XML 标记（对于 Excel，但请参阅本节顶部的注释）。 在 Word 中，可以使用 [CustomXmlPart](/javascript/api/office/office.customxmlpart) 对象及其方法（同样，请参阅上面的 Excel 注释）。 以下代码将创建自定义 XML 部件，并在页面的 divs 中显示其 ID 及内容。 请注意，XML 字符串中必须有一个 `xmlns` 属性。
 
 ```js
 function createCustomXmlPart() {
@@ -145,7 +145,7 @@ function createCustomXmlPart() {
 }
 ```
 
-若要检索自定义 XML 部分，请使用 [getByIdAsync](/javascript/api/office/office.customxmlparts#getByIdAsync_id__options__callback_) 方法，但 ID 是在创建 XML 部分时生成的 GUID，因此编码时无法知道 ID 是什么。 因此，最好是在创建 XML 部分时，立即将 XML 部分的 ID 存储为设置，并为它提供容易记住的密钥。 下面的方法展示了如何执行此操作。  (请参阅本文的前面部分，了解使用自定义设置时的详细信息和) 
+若要检索自定义 XML 部分，请使用 [getByIdAsync](/javascript/api/office/office.customxmlparts#getByIdAsync_id__options__callback_) 方法，但 ID 是在创建 XML 部分时生成的 GUID，因此编码时无法知道 ID 是什么。 因此，最好是在创建 XML 部分时，立即将 XML 部分的 ID 存储为设置，并为它提供容易记住的密钥。 下面的方法展示了如何执行此操作。  (有关使用自定义设置的详细信息和最佳做法，请参阅本文的前面) 
 
  ```js
 function createCustomXmlPartAndStoreId() {

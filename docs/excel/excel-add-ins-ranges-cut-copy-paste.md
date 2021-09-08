@@ -1,17 +1,17 @@
 ---
-title: 使用 JavaScript API 剪切、复制Excel粘贴区域
+title: 使用 JavaScript API Excel、复制和粘贴区域
 description: 了解如何使用 JavaScript API 剪切、复制和Excel区域。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
 ms.openlocfilehash: a48d726e517899249652d857d9e79d2201f3bfc3
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868678"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938525"
 ---
-# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API 剪切、复制Excel粘贴区域
+# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API Excel、复制和粘贴区域
 
 本文提供了使用 JavaScript API 剪切、复制和粘贴Excel示例。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 

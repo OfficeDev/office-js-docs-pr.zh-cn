@@ -4,12 +4,12 @@ description: 有关 WordApi 1.1 要求集的详细信息
 ms.date: 11/09/2020
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: c7b1adfa1af76f9994ced793dfddcf457cf733858fd27ba0ef763a67c35611c2
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 80914cd0804600e7987408ce3a3de8a94e6fec29
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092449"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938919"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Word JavaScript API 1.1 的新增功能
 
@@ -99,7 +99,7 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Wor
 ||[doubleStrikeThrough](/javascript/api/word/word.font#doubleStrikeThrough)|获取或设置一个值，该值指示字体是否具有双删除线。|
 ||[highlightColor](/javascript/api/word/word.font#highlightColor)|获取或设置突出显示颜色。|
 ||[italic](/javascript/api/word/word.font#italic)|获取或设置表示字体是否为斜体的值。|
-||[名称](/javascript/api/word/word.font#name)|获取或设置表示字体名称的值。|
+||[name](/javascript/api/word/word.font#name)|获取或设置表示字体名称的值。|
 ||[size](/javascript/api/word/word.font#size)|获取或设置表示字体大小（以磅值表示）的值。|
 ||[strikeThrough](/javascript/api/word/word.font#strikeThrough)|获取或设置一个值，该值指示字体是否有删除线。|
 ||[subscript](/javascript/api/word/word.font#subscript)|获取或设置表示字体是否为下标的值。|
@@ -141,7 +141,7 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Wor
 ||[matchWholeWord](/javascript/api/word/word.paragraph#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.paragraph#matchWildcards)||
 ||[outlineLevel](/javascript/api/word/word.paragraph#outlineLevel)|获取或设置段落的大纲级别。|
-||[contentControls](/javascript/api/word/word.paragraph#contentControls)|获取段落中内容控件对象的集合。|
+||[contentControls](/javascript/api/word/word.paragraph#contentControls)|获取段落中的内容控件对象的集合。|
 ||[font](/javascript/api/word/word.paragraph#font)|获取段落的文本格式。|
 ||[inlinePictures](/javascript/api/word/word.paragraph#inlinePictures)|获取段落中的 InlinePicture 对象的集合。|
 ||[parentContentControl](/javascript/api/word/word.paragraph#parentContentControl)|获取包含段落的内容控件。|
@@ -153,7 +153,7 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Wor
 ||[spaceBefore](/javascript/api/word/word.paragraph#spaceBefore)|获取或设置段落前面的间距（以磅值表示）。|
 ||[style](/javascript/api/word/word.paragraph#style)|获取或设置段落的样式名称。|
 |[ParagraphCollection](/javascript/api/word/word.paragraphcollection)|[items](/javascript/api/word/word.paragraphcollection#items)|获取此集合中已加载的子项。|
-|[区域](/javascript/api/word/word.range)|[clear()](/javascript/api/word/word.range#clear__)|清除 range 对象的内容。|
+|[Range](/javascript/api/word/word.range)|[clear()](/javascript/api/word/word.range#clear__)|清除 range 对象的内容。|
 ||[delete()](/javascript/api/word/word.range#delete__)|从文档中删除区域及其内容。|
 ||[getHtml()](/javascript/api/word/word.range#getHtml__)|获取 range 对象的 HTML 表示形式。|
 ||[getOoxml()](/javascript/api/word/word.range#getOoxml__)|获取 range 对象的 OOXML 表示形式。|

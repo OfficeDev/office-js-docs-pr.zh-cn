@@ -4,12 +4,12 @@ description: 有关即将推出的 JavaScript Excel的详细信息。
 ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d90c5e8bb2c344cb3bb297a3cd793613f017e910ab99df6dfffc456c3f715d20
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5de8ee52aea357c8dce4d2027556e5e8a5b1a4ac
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092640"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938530"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -17,7 +17,7 @@ ms.locfileid: "57092640"
 
 [!INCLUDE [Information about using preview APIs](../../includes/using-preview-apis-host.md)]
 
-下表提供了 API 的简要摘要，而后续 [API](#api-list) 列表表提供了一个详细列表。
+下表提供了 API 的简要摘要，而后续 [的 API](#api-list) 列表表提供了详细的列表。
 
 | 功能区域 | 说明 | 相关对象 |
 |:--- |:--- |:--- |
@@ -26,7 +26,7 @@ ms.locfileid: "57092640"
 | 身份 | 管理用户标识，包括显示名称和电子邮件地址。 | [](/javascript/api/excel/excel.identity) [Identity、IdentityCollection、IdentityEntity](/javascript/api/excel/excel.identitycollection) [](/javascript/api/excel/excel.identityentity) |
 | 链接的数据类型 | 添加对从外部源连接到Excel类型的支持。 | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
 | 链接的工作簿 | 管理工作簿之间的链接，包括对刷新和断开工作簿链接的支持。 | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook) [、LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
-| 表样式 | 提供对字体、边框、填充颜色以及表格样式的其他方面的控制。 | [表](/javascript/api/excel/excel.table)、[数据透视表](/javascript/api/excel/excel.pivottable)[、切片器](/javascript/api/excel/excel.slicer) |
+| 表样式 | 提供对字体、边框、填充颜色以及表格样式其他方面的控制。 | [表](/javascript/api/excel/excel.table)、[数据透视表](/javascript/api/excel/excel.pivottable)[、切片器](/javascript/api/excel/excel.slicer) |
 | 查询 | 检索查询属性，如名称、刷新日期和查询计数。 | [Query](/javascript/api/excel/excel.query) [、QueryCollection](/javascript/api/excel/excel.querycollection)|
 
 ## <a name="api-list"></a>API 列表
@@ -36,7 +36,7 @@ ms.locfileid: "57092640"
 | 类 | 域 | 说明 |
 |:---|:---|:---|
 |[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteShiftDirection)|代表在 (单元格时剩余单元格) 移动的方向，例如向上或向左移动。|
-||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertShiftDirection)|代表插入 (单元格时现有单元格) 向右或向下移动的方向。|
+||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertShiftDirection)|表示插入 (单元格时现有单元格) 向右或向下移动的方向。|
 |[Chart](/javascript/api/excel/excel.chart)|[getDataTable () ](/javascript/api/excel/excel.chart#getDataTable__)|获取图表上的数据表。|
 ||[getDataTableOrNullObject () ](/javascript/api/excel/excel.chart#getDataTableOrNullObject__)|获取图表上的数据表。|
 |[ChartDataTable](/javascript/api/excel/excel.chartdatatable)|[format](/javascript/api/excel/excel.chartdatatable#format)|表示图表数据表的格式，包括填充、字体和边框格式。|
@@ -62,7 +62,7 @@ ms.locfileid: "57092640"
 ||[assignees](/javascript/api/excel/excel.documenttask#assignees)|返回任务的被分配者的集合。|
 ||[更改](/javascript/api/excel/excel.documenttask#changes)|获取任务的更改记录。|
 ||[comment](/javascript/api/excel/excel.documenttask#comment)|获取与任务关联的注释。|
-||[completedBy](/javascript/api/excel/excel.documenttask#completedBy)|获取已完成该任务的最新用户。|
+||[completedBy](/javascript/api/excel/excel.documenttask#completedBy)|获取完成任务的最新用户。|
 ||[completedDateTime](/javascript/api/excel/excel.documenttask#completedDateTime)|获取任务的完成日期和时间。|
 ||[createdBy](/javascript/api/excel/excel.documenttask#createdBy)|获取创建任务的用户。|
 ||[createdDateTime](/javascript/api/excel/excel.documenttask#createdDateTime)|获取任务的创建日期和时间。|
@@ -93,21 +93,21 @@ ms.locfileid: "57092640"
 |[DocumentTaskSchedule](/javascript/api/excel/excel.documenttaskschedule)|[dueDateTime](/javascript/api/excel/excel.documenttaskschedule#dueDateTime)|获取任务到期的日期和时间。|
 ||[startDateTime](/javascript/api/excel/excel.documenttaskschedule#startDateTime)|获取任务应开始的日期和时间。|
 |[GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.groupshapecollection#getItemOrNullObject_key_)|使用形状的名称或 ID 获取形状。|
-|[身份](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayName)|表示用户的显示名称。|
+|[标识](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayName)|表示用户的显示名称。|
 ||[email](/javascript/api/excel/excel.identity#email)|表示用户的电子邮件地址。|
 ||[id](/javascript/api/excel/excel.identity#id)|表示用户的唯一 ID。|
-|[IdentityCollection](/javascript/api/excel/excel.identitycollection)|[add (assignee： Identity) ](/javascript/api/excel/excel.identitycollection#add_assignee_)|向集合添加用户标识。|
+|[IdentityCollection](/javascript/api/excel/excel.identitycollection)|[添加 (：标识) ](/javascript/api/excel/excel.identitycollection#add_assignee_)|向集合添加用户标识。|
 ||[clear()](/javascript/api/excel/excel.identitycollection#clear__)|从集合中删除所有的用户标识。|
 ||[getCount()](/javascript/api/excel/excel.identitycollection#getCount__)|获取集合中项的数目。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.identitycollection#getItemAt_index_)|使用文档在集合中的索引获取文档用户标识。|
 ||[items](/javascript/api/excel/excel.identitycollection#items)|获取此集合中已加载的子项。|
-||[删除 (：标识) ](/javascript/api/excel/excel.identitycollection#remove_assignee_)|从集合中删除用户标识。|
+||[remove (assignee： Identity) ](/javascript/api/excel/excel.identitycollection#remove_assignee_)|从集合中删除用户标识。|
 |[IdentityEntity](/javascript/api/excel/excel.identityentity)|[displayName](/javascript/api/excel/excel.identityentity#displayName)|表示用户的显示名称。|
 ||[email](/javascript/api/excel/excel.identityentity#email)|表示用户的电子邮件地址。|
 ||[id](/javascript/api/excel/excel.identityentity#id)|表示用户的唯一 ID。|
 |[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[dataProvider](/javascript/api/excel/excel.linkeddatatype#dataProvider)|链接数据提供程序的数据提供程序数据类型。|
 ||[lastRefreshed](/javascript/api/excel/excel.linkeddatatype#lastRefreshed)|自上次刷新链接工作簿时打开工作簿以来的本地数据类型日期和时间。|
-||[名称](/javascript/api/excel/excel.linkeddatatype#name)|链接对象数据类型。|
+||[name](/javascript/api/excel/excel.linkeddatatype#name)|链接对象数据类型。|
 ||[periodicRefreshInterval](/javascript/api/excel/excel.linkeddatatype#periodicRefreshInterval)|链接对象刷新频率（以秒数据类型设置为 `refreshMode` "Periodic"时刷新。|
 ||[refreshMode](/javascript/api/excel/excel.linkeddatatype#refreshMode)|用于检索链接数据数据类型的机制。|
 ||[服务 Id](/javascript/api/excel/excel.linkeddatatype#serviceId)|链接对象的唯一数据类型。|
@@ -119,7 +119,7 @@ ms.locfileid: "57092640"
 ||[type](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#type)|获取事件的类型。|
 |[LinkedDataTypeCollection](/javascript/api/excel/excel.linkeddatatypecollection)|[getCount()](/javascript/api/excel/excel.linkeddatatypecollection#getCount__)|获取集合中链接的数据类型的数量。|
 ||[getItem (键：number) ](/javascript/api/excel/excel.linkeddatatypecollection#getItem_key_)|按服务 ID 数据类型链接的标识符。|
-||[getItemAt(index: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemAt_index_)|按集合数据类型索引获取链接对象。|
+||[getItemAt(index: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemAt_index_)|按集合数据类型索引获取链接的索引。|
 ||[getItemOrNullObject (键：number) ](/javascript/api/excel/excel.linkeddatatypecollection#getItemOrNullObject_key_)|按 ID 数据类型链接的标识符。|
 ||[items](/javascript/api/excel/excel.linkeddatatypecollection#items)|获取此集合中已加载的子项。|
 ||[requestRefreshAll () ](/javascript/api/excel/excel.linkeddatatypecollection#requestRefreshAll__)|请求刷新集合中所有链接的数据类型。|
@@ -140,14 +140,14 @@ ms.locfileid: "57092640"
 |[Query](/javascript/api/excel/excel.query)|[error](/javascript/api/excel/excel.query#error)|从上次刷新查询时获取查询错误消息。|
 ||[loadedTo](/javascript/api/excel/excel.query#loadedTo)|获取查询"加载到"对象类型。|
 ||[loadedToDataModel](/javascript/api/excel/excel.query#loadedToDataModel)|指定是否将查询加载到数据模型。|
-||[名称](/javascript/api/excel/excel.query#name)|获取查询的名称。|
+||[name](/javascript/api/excel/excel.query#name)|获取查询的名称。|
 ||[refreshDate](/javascript/api/excel/excel.query#refreshDate)|获取上次刷新查询的日期和时间。|
 ||[rowsLoadedCount](/javascript/api/excel/excel.query#rowsLoadedCount)|获取上次刷新查询时加载的行数。|
 |[QueryCollection](/javascript/api/excel/excel.querycollection)|[getCount()](/javascript/api/excel/excel.querycollection#getCount__)|获取工作簿中的查询数。|
 ||[getItem(key: string)](/javascript/api/excel/excel.querycollection#getItem_key_)|根据名称从集合获取查询。|
 ||[items](/javascript/api/excel/excel.querycollection#items)|获取此集合中已加载的子项。|
-|[区域](/javascript/api/excel/excel.range)|[getDependents () ](/javascript/api/excel/excel.range#getDependents__)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有 `WorkbookRangeAreas` 从属单元格的范围。|
-||[getPrecedents () ](/javascript/api/excel/excel.range#getPrecedents__)|返回一个对象，该对象代表包含同一工作表或多个工作表中单元格的所有引用 `WorkbookRangeAreas` 单元格的范围。|
+|[Range](/javascript/api/excel/excel.range)|[getDependents () ](/javascript/api/excel/excel.range#getDependents__)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有 `WorkbookRangeAreas` 从属单元格的范围。|
+||[getPrecedents () ](/javascript/api/excel/excel.range#getPrecedents__)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有引用 `WorkbookRangeAreas` 单元格的范围。|
 |[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[refreshMode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshMode)|链接的数据类型刷新模式。|
 ||[服务 Id](/javascript/api/excel/excel.refreshmodechangedeventargs#serviceId)|刷新模式已更改的对象的唯一 ID。|
 ||[source](/javascript/api/excel/excel.refreshmodechangedeventargs#source)|获取事件源。|

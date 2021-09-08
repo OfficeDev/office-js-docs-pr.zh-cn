@@ -3,22 +3,22 @@ title: Office 外接程序的颜色准则
 description: 了解如何在加载项的 UI Office颜色。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fc22a2168a531d0f3fe50358f5d45e6052bfde6c3418f9ee13197bd48ed35101
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a472dfd02787d68a5ce11a198d580aefe37ce315
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082728"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939342"
 ---
 # <a name="color-guidelines-for-office-add-ins"></a>Office 外接程序的颜色准则
 
 颜色通常用于强调品牌和强化可视化层次结构。 它可以帮助标识接口，也可以指导客户完成体验。 在 Office 中，颜色用于相同目标，但应有目的地最小限度地应用它。 它不会过度使用客户内容。 即使每个 Office 应用程序被标上了自己的主色，但还是很少用到。
 
-![显示 Office、Excel、Word 和 PowerPoint 的配色方案。 主要颜色Office为黑白，次要颜色为浅灰色、深灰色和橙色。 文本的基准颜色Excel绿色，Word 为蓝色，PowerPoint橙色。](../images/office-addins-color-schemes.png)
+![此图显示 Office、Excel、Word 和 PowerPoint 的配色方案。 主要颜色Office为黑白，次要颜色为浅灰色、深灰色和橙色。 文本的基准颜色Excel绿色，Word 为蓝色，PowerPoint橙色。](../images/office-addins-color-schemes.png)
 
-[Fabric Core](fabric-core.md) 包括一组默认主题颜色。 在组件或布局中将 Fabric Core Office外接程序时，相同的目标适用。 颜色应传达层次结构，有目的地指导客户操作而不会干扰内容。 Fabric Core 主题颜色可以在整体界面中引入新的主题色。 此新的个性色可能会与 Office 应用程序品牌产生冲突并干扰层次结构。 换句话说，在加载项内使用时，Fabric Core 可以将新的强调文字颜色引入整个界面。 此新的个性色可能会分散用户注意力并干扰整个层次结构。 寻找避免冲突和干扰的方法。 使用中性主题或覆盖 Fabric Core 主题颜色来匹配Office 应用品牌或你自己的品牌颜色。
+[Fabric Core](fabric-core.md) 包括一组默认主题颜色。 在组件或布局中将 Fabric Core Office外接程序时，相同的目标适用。 颜色应传达层次结构，有目的地指导客户操作而不会干扰内容。 Fabric Core 主题颜色可以在整体界面中引入新的主题色。 此新的个性色可能会与 Office 应用程序品牌产生冲突并干扰层次结构。 换句话说，在加载项内使用时，Fabric Core 可以将新的强调文字颜色引入整个界面。 此新的个性色可能会分散用户注意力并干扰整个层次结构。 寻找避免冲突和干扰的方法。 使用中性强调文字或覆盖 Fabric Core 主题颜色，以匹配Office 应用品牌或你自己的品牌颜色。
 
-Office 应用程序使客户能够通过应用 Office UI 主题个性化设置其界面。 客户可以在四个 UI 主题中进行选择来改变背景样式以及 Word、PowerPoint、Excel 和 Office 套件中其他应用程序的按钮。 若要使加载项感觉自己就像是个性化Office，请使用我们"Theming"API。 例如，任务窗格背景颜色在某些主题中切换到深灰色。 我们的主题 API 允许你照做并调整前景文本，以确保[辅助功能](../design/accessibility-guidelines.md)。
+Office 应用程序使客户能够通过应用 Office UI 主题个性化设置其界面。 客户可以在四个 UI 主题中进行选择来改变背景样式以及 Word、PowerPoint、Excel 和 Office 套件中其他应用程序的按钮。 若要使加载项感觉就像应用和Office的一部分，请使用我们"Theming"API。 例如，任务窗格背景颜色在某些主题中切换到深灰色。 我们的主题 API 允许你照做并调整前景文本，以确保[辅助功能](../design/accessibility-guidelines.md)。
 
 > [!NOTE]
 >

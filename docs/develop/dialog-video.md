@@ -3,19 +3,19 @@ title: 使用 Office 对话框播放视频
 description: 了解如何在"开始"对话框中打开Office视频
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 4865b15f21238431f9cf48cebb9a35253cdba0695873b429ab249c33d329d7e4
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4704b31cb698e2986360e5aff692ed6469fd0eb5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080752"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938940"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>使用Office对话框显示视频
 
 本文介绍如何在加载项对话框中Office视频。
 
 > [!NOTE]
-> 本文认为你已熟悉使用 Office 对话框的基础知识，如在 Office 外接程序中使用 Office 对话框[API 中所述](dialog-api-in-office-add-ins.md)。
+> 本文要求你熟悉使用 Office 对话框的基础知识，如在 Office 加载项中使用 Office 对话框[API 中所述](dialog-api-in-office-add-ins.md)。
 
 若要使用对话框 API 在对话框中Office视频，请按照以下步骤操作。
 

@@ -3,12 +3,12 @@ title: 清单文件中的 DictionaryHomePage 元素
 description: 指定该词典的主页的 URL。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: c76c9f0f1a97edd181dc3bef4743dca83ccc51ef0ca6c9e75a3629e002f1ff07
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 115647a726beb3dfc8ac9c9170a9a8a791c2fbe4
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092700"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938649"
 ---
 # <a name="dictionaryhomepage-element"></a>DictionaryHomePage 元素
 

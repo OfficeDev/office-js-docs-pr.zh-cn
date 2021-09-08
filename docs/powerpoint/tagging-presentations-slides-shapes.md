@@ -3,12 +3,12 @@ title: 对演示文稿、幻灯片和演示文稿中的形状使用自定义Powe
 description: 了解如何将标记用于有关演示文稿、幻灯片和形状的自定义元数据。
 ms.date: 04/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 9ae86906a2ac69cb79adac34fa4e923a9bc218a7dc8a7e5bdefd63300b589da5
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: fbb13e67da1f7962fc2c0b8d45689f259b015014
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093652"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939368"
 ---
 # <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>对演示文稿、幻灯片和演示文稿中的形状使用自定义PowerPoint
 
@@ -19,8 +19,8 @@ ms.locfileid: "57093652"
 
 使用标记有两种主要方案：
 
-- 应用于幻灯片或形状时，标记允许对对象进行分类以便进行批处理。 例如，假设演示文稿包含一些幻灯片，这些幻灯片应包含在向东部区域而不是西地区的演示文稿中。 同样，还有一些备用幻灯片应只向西显示。 您的外接程序可以创建一个包含键和值的标记，并应用于只应在东部使用的 `REGION` `East` 幻灯片。 对于应该只向"西"区域显示的幻灯片，该标记 `West` 的值设置为 。 在向"东部"显示演示文稿之前，加载项中的按钮将运行代码，该代码将循环访问检查标记值的所有 `REGION` 幻灯片。 删除区域 `West` 位置的幻灯片。 然后，用户关闭外接程序并启动幻灯片放映。
-- 应用于演示文稿时，标记实际上是演示文稿文档中的自定义 (类似于 Word 文档中的 [CustomProperty](/javascript/api/word/word.customproperty)) 。
+- 应用于幻灯片或形状时，标记允许对对象进行分类以便进行批处理。 例如，假设演示文稿包含一些幻灯片，这些幻灯片应包含在向东部区域（而不是西区域）的演示文稿中。 同样，还有一些备用幻灯片应只向西显示。 您的外接程序可以创建一个包含键和值的标记，并应用于只 `REGION` `East` 应在东部使用的幻灯片。 对于应该只向"西"区域显示的幻灯片，该标记 `West` 的值设置为 。 在向"东部"显示演示文稿之前，加载项中的按钮运行代码，该代码将循环访问检查标记值的所有 `REGION` 幻灯片。 删除区域 `West` 位置的幻灯片。 然后，用户关闭外接程序并启动幻灯片放映。
+- 应用于演示文稿时，标记实际上是演示文稿文档中的自定义属性 (Word 文档中的 [CustomProperty](/javascript/api/word/word.customproperty)) 。
 
 ## <a name="tag-slides-and-shapes"></a>标记幻灯片和形状
 
@@ -32,7 +32,7 @@ ms.locfileid: "57093652"
 
 - 方法的第一 `add` 个参数是键值对中的键。 
 - 第二个参数是值。
-- 键为大写字母。 此方法并非严格强制要求;但是，键始终由 PowerPoint 存储为大写，并且某些与标记相关的方法要求键以大写形式表示，因此我们建议始终在代码中对标记键使用大写形式。 `add` 
+- 键为大写字母。 此方法并非严格强制要求;但是，PowerPoint 始终将键存储为大写，并且某些与标记相关的方法要求键用大写表示，因此我们建议始终在代码中对标记键使用大写形式。 `add` 
 
 ```javascript
 async function addMultipleSlideTags() {
@@ -63,7 +63,7 @@ async function updateTag() {
 
 ### <a name="use-tags-to-selectively-process-slides-and-shapes"></a>使用标记选择性地处理幻灯片和形状
 
-请考虑以下方案：Contoso Consulting 有一个向所有新客户演示的演示文稿。 但某些幻灯片应只向已支付"高级"状态费用的客户显示。 在向非高级客户显示演示文稿之前，他们可以复制演示文稿并删除仅高级客户应该看到的幻灯片。 通过外接程序，Contoso 可以标记适合高级客户的幻灯片并根据需要删除这些幻灯片。 下面的列表概述了创建此功能的主要编码步骤。
+请考虑以下方案：Contoso Consulting 向所有新客户演示了一个演示文稿。 但某些幻灯片应只向已支付"高级"状态费用的客户显示。 在向非高级客户显示演示文稿之前，他们可以复制演示文稿并删除仅高级客户应该看到的幻灯片。 通过加载项，Contoso 可以标记适合高级客户的幻灯片，并根据需要删除这些幻灯片。 下面的列表概述了创建此功能的主要编码步骤。
 
 1. 创建一个方法，将当前选定的幻灯片标记为适合 `Premium` 客户。 关于此代码，请注意以下几点：
 
@@ -88,7 +88,7 @@ async function updateTag() {
     - 它使用Office.context.docJavaScript API 的 [ ument.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) 方法。
     - 对 的 `getSelectedDataAsync` 调用嵌入承诺返回函数中。 有关这样做的原因和如何操作，请参阅在承诺返回函数中[包装通用 API。](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)
     - `getSelectedDataAsync` 返回一个数组，因为可以选择多个幻灯片。 在此方案中，用户只选择了一个，因此代码获取第一张 (第) 张幻灯片，该幻灯片是唯一一个选定的幻灯片。
-    - 幻灯片的值是用户在 UI 缩略图窗格中的幻灯片旁边看到的 `index` PowerPoint 1 的值。
+    - 幻灯片的值是用户在"UI 缩略图"窗格中的幻灯片旁边看到的 `index` PowerPoint 1 的值。
 
     ```javascript
     function getSelectedSlideIndex() {
@@ -138,7 +138,7 @@ async function updateTag() {
 
 ## <a name="set-custom-metadata-on-the-presentation"></a>在演示文稿上设置自定义元数据
 
-加载项还可以将标记作为一个整体应用于演示文稿。 这样，您能够将标记用于文档级元数据，类似于 [CustomProperty](/javascript/api/word/word.customproperty)类在 Word 中的使用方式。 但与 Word `CustomProperty` 类不同，PowerPoint标记的值只能是 类型 `string` 。
+加载项还可以将标记作为一个整体应用于演示文稿。 这样，您能够将标记用于文档级别的元数据，类似于 [CustomProperty](/javascript/api/word/word.customproperty)类在 Word 中的使用方式。 但与 Word `CustomProperty` 类不同，PowerPoint标记的值只能是 类型 `string` 。
 
 以下代码是向演示文稿添加标记的示例。 
 

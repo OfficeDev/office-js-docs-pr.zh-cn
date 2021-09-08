@@ -5,11 +5,11 @@ ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
 ms.openlocfilehash: fe304ff0eef4b707cb0b90a2c38c60aff921279d
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232392"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939102"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 

@@ -5,11 +5,11 @@ ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
 ms.openlocfilehash: d95546b4cff3f0ba7410d9ceaa73e19b7e684985
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868685"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938736"
 ---
 # <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>使用 JavaScript API 处理动态Excel溢出
 
@@ -43,7 +43,7 @@ Excel.run(function (context) {
 
 ## <a name="range-spilling"></a>区域溢出
 
-使用 [Range.getSpillParent](/javascript/api/excel/excel.range#getSpillParent__) 方法查找负责溢出到给定单元格的单元格。 请注意， `getSpillParent` 仅在 range 对象是单个单元格时有效。 对 `getSpillParent` 具有多个单元格的范围调用将导致引发错误 (或返回空区域以用于 `Range.getSpillParentOrNullObject`) 。
+使用 [Range.getSpillParent](/javascript/api/excel/excel.range#getSpillParent__) 方法查找负责溢出到给定单元格的单元格。 请注意， `getSpillParent` 仅在 range 对象是单个单元格时有效。 对 `getSpillParent` 具有多个单元格的范围调用将导致在返回 (或返回空区域时 `Range.getSpillParentOrNullObject`) 。
 
 ## <a name="see-also"></a>另请参阅
 

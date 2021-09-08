@@ -3,12 +3,12 @@ title: Office 加载项的 Office UI 元素
 description: 大致了解加载项中不同类型的 UI Office。
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: b09530aa25e7383e189520e7f1030a5f35b94ab4348fe4bad40773092cd5e08b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5d0a1576d850f2291c28e6bb39554cbb0403f50b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081774"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939133"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Office 加载项的 Office UI 元素
 
@@ -16,11 +16,11 @@ ms.locfileid: "57081774"
 
 下图显示了可以创建的 Office UI 元素的类型。
 
-![显示功能区中的外接程序命令、任务窗格以及文档文档中的对话框/内容外接程序的Office图表。](../images/add-in-ui-elements.png)
+![显示功能区中的外接程序命令、任务窗格以及活动文档中的对话框/内容外接程序的Office图表。](../images/add-in-ui-elements.png)
 
 ## <a name="add-in-commands"></a>加载项命令
 
-[使用外接程序命令](add-in-commands.md)将加载项的入口点添加到加载项Office 应用功能区。 命令通过运行 JavaScript 代码，或启动 HTML 容器开始在外接程序中操作。 可以创建以下两种类型的外接程序命令。
+[使用外接程序命令](add-in-commands.md)将加载项的入口点添加到"Office 应用"功能区。 命令通过运行 JavaScript 代码，或启动 HTML 容器开始在外接程序中操作。 可以创建以下两种类型的外接程序命令。
 
 |命令类型|说明|
 |:---------------|:--------------|

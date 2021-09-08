@@ -4,12 +4,12 @@ description: 了解如何在加载项中实现附加的Outlook功能。
 ms.topic: article
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: c590c26f9c7f092702efe91dd4debea911af38fc165a0806435f10ed1192180f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8b69fbbaef1d0f060f0675fe5c4948a70d935b7a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095567"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939255"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>在加载项中实现Outlook On-send
 
@@ -26,13 +26,13 @@ ms.locfileid: "57095567"
 
 若要在加载项中启用附加 Onss 功能，必须在 `AppendOnSend` [ExtendedPermissions](../reference/manifest/extendedpermissions.md)集合中包括 权限。
 
-对于此方案，你将运行 函数，而不是在选择"执行操作"按钮时运行 `action`  `appendOnSend` 函数。
+对于此方案，你将运行 函数，而不是在选择"操作"按钮时运行 `action`  `appendOnSend` 函数。
 
 1. 在代码编辑器中，打开快速启动项目。
 
 1. 打开 **manifest.xml** 根目录下的文件。
 
-1. 选择整个节点 (包括打开和 `<VersionOverrides>` 关闭标记) 并将其替换为以下 XML。
+1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -120,7 +120,7 @@ ms.locfileid: "57095567"
     ```
 
 > [!TIP]
-> 若要了解有关加载项清单Outlook，请参阅Outlook[加载项清单](manifests.md)。
+> 若要了解有关加载项清单Outlook，请参阅Outlook[加载项清单。](manifests.md)
 
 ## <a name="implement-append-on-send-handling"></a>实现附加 On-send 处理
 
@@ -131,7 +131,7 @@ ms.locfileid: "57095567"
 
 对于此方案，你将在用户发送时实现向项目附加免责声明。
 
-1. 从同一快速启动项目中，在代码编辑器中打开 **commands.js./src/commands/commands.js** 文件。
+1. 从同一快速启动项目中，在代码编辑器中打开文件 **./src/commands/commands.js** 文件。
 
 1. 在 函数 `action` 后插入以下 JavaScript 函数。
 

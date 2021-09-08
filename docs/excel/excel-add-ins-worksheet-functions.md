@@ -4,11 +4,11 @@ description: 了解如何使用 JavaScript API Excel和 JavaScript API 等Excel 
 ms.date: 12/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 5cf1478e7f76c0602b9c8f0d19031abfa8369888
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868727"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938991"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>调用内置 Excel 工作表函数
 
@@ -447,4 +447,4 @@ Excel.run(function (context) {
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [Functions 类 (JavaScript API for Excel) ](/javascript/api/excel/excel.functions)
-- [工作簿函数对象 (JavaScript API for Excel) ](/javascript/api/excel/excel.workbook#functions)
+- [工作簿函数对象 (JavaScript API Excel) ](/javascript/api/excel/excel.workbook#functions)

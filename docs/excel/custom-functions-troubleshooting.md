@@ -4,11 +4,11 @@ description: 排查自定义函数Excel常见问题。
 title: 自定义函数疑难解答
 localization_priority: Normal
 ms.openlocfilehash: 5029deea7b02f7564d2149e3aa689408fbb8b479
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868615"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938718"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 

@@ -1,14 +1,14 @@
 ---
 title: 验证 Office 加载项的清单
-description: 了解如何使用 XML 架构和其他工具Office加载项的清单。
+description: 了解如何使用 XML 架构和其他Office验证加载项清单。
 ms.date: 09/18/2020
 localization_priority: Normal
-ms.openlocfilehash: ae2254bcd14b70b7bbd6c71dbbac2c90f53dd2580115a4a532931cee8d674c32
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 66127652a9abd00a3d1cb2e92a8a780b0c029327
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097807"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938414"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 
@@ -49,7 +49,7 @@ npm run validate
     ```
 
     > [!NOTE]
-    > 如果此命令不可用或无法工作，请改为运行以下命令以强制使用最新版本的 office-addin-manifest 工具 (以清单文件名称替换 `MANIFEST_FILE`) 。
+    > 如果此命令不可用或无法工作，请改为运行以下命令以强制使用最新版本的 office-addin-manifest 工具 (将 替换为清单文件 `MANIFEST_FILE`) 。
     >
     > ```command&nbsp;line
     > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE

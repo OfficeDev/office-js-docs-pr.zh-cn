@@ -3,16 +3,16 @@ title: 清单文件中的 SupportsSharedFolders 元素
 description: SupportsSharedFolders 元素定义 Outlook外接程序在共享文件夹和共享邮箱方案中是否可用。
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: f7620d3b34767e3a54a1283d23f956cab79a447a71f56ba924ac6a70a3ebaa0a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 43f2c60664a6822b714023246cfa044e179e9a55
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092688"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938675"
 ---
 # <a name="supportssharedfolders-element"></a>SupportsSharedFolders 元素
 
-定义 Outlook 外接程序现在在预览版 (中是否可用) 以及共享文件夹 (即委派访问权限) 方案。 **SupportsSharedFolders** 元素是 [DesktopFormFactor](desktopformfactor.md) 的子元素。 默认情况下，此元素设置为 *false*。
+定义 Outlook 外接程序是否可用于共享邮箱 (现在预览) 和共享文件夹 (即委派访问权限) 方案。 **SupportsSharedFolders** 元素是 [DesktopFormFactor](desktopformfactor.md) 的子元素。 默认情况下，此元素设置为 *false*。
 
 > [!IMPORTANT]
 > 要求集 1.8 中引入了对此元素的支持。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。

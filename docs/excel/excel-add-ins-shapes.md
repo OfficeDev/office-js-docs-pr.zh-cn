@@ -3,12 +3,12 @@ title: 使用 JavaScript API Excel形状
 description: 了解如何Excel形状定义为位于绘图层上的任何Excel。
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 01dd8949105be8a511aefc90c69eec13b18e3243e0fb201dc2f2eeb36e62b3bf
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 533a9cf9689bcaa5cd43635da836730a2af6ab61
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087857"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938750"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>使用 JavaScript API Excel形状
 
@@ -54,7 +54,7 @@ Excel.run(function (context) {
 
 ### <a name="images"></a>图像
 
-JPEG、PNG 和 SVG 图像可以作为形状插入到工作表中。 `ShapeCollection.addImage`方法将 base64 编码的字符串作为参数。 这是字符串形式的 JPEG 或 PNG 图像。 `ShapeCollection.addSvg` 即使此参数是定义图形的 XML，也采用字符串。
+JPEG、PNG 和 SVG 图像可以作为形状插入到工作表中。 `ShapeCollection.addImage`方法采用 base64 编码的字符串作为参数。 这是字符串形式的 JPEG 或 PNG 图像。 `ShapeCollection.addSvg` 即使此参数是定义图形的 XML，也采用字符串。
 
 下面的代码示例演示 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 作为字符串加载的图像文件。 该字符串具有元数据"base64"，该元数据在形状创建之前被删除。
 
@@ -109,11 +109,11 @@ Excel.run(function (context) {
 
 ## <a name="move-and-resize-shapes"></a>移动形状并调整形状大小
 
-形状位于工作表的顶部。 它们的位置由 和 `left` `top` 属性定义。 它们充当工作表各自边缘的边距，[0， 0] 为左上角。 可以使用 和 方法直接设置它们，也可以从当前位置 `incrementLeft` `incrementTop` 进行调整。 此外，还通过此方式建立形状相对于默认位置的旋转量，该属性为绝对量，而方法用于调整现有 `rotation` `incrementRotation` 旋转量。
+形状位于工作表的顶部。 它们的位置由 和 `left` `top` 属性定义。 它们充当工作表各自边缘的边距，[0， 0] 为左上角。 可以使用 和 方法直接设置它们，也可以从当前位置 `incrementLeft` `incrementTop` 进行调整。 此外，还通过此方式建立形状相对于默认位置的旋转量，该属性为绝对量，而方法用于调整现有 `rotation` `incrementRotation` 旋转。
 
 形状相对于其他形状的深度由 属性 `zorderPosition` 定义。 这是使用 方法 `setZOrder` 设置的，该方法采用 [ShapeZOrder](/javascript/api/excel/excel.shapezorder)。 `setZOrder` 调整当前形状相对于其他形状的排序。
 
-外接程序具有多个选项，用于更改形状的高度和宽度。 如果设置 `height` 或 `width` 属性，则更改指定维度而不更改其他维度。 和 `scaleHeight` `scaleWidth` 根据所提供的 [ShapeScaleType](/javascript/api/excel/excel.shapescaletype) 属性的值调整形状相对于当前大小或原始 (调整形状) 。 可选的 [ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom) 参数指定形状缩放位置 (左上角、中间或右下角缩放) 。 如果 `lockAspectRatio` 该属性为 **true，** 则缩放方法通过同时调整其他尺寸来保持形状的当前纵横比。
+加载项具有多个选项，用于更改形状的高度和宽度。 如果设置 `height` 或 `width` 属性，则更改指定维度而不更改其他维度。 和 `scaleHeight` `scaleWidth` 根据所提供的 [ShapeScaleType](/javascript/api/excel/excel.shapescaletype) 属性的值调整形状相对于当前大小 (或原始尺寸) 。 可选的 [ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom) 参数指定形状从何处缩放 (左上角、中间或右下角缩放) 。 如果 `lockAspectRatio` 该属性为 **true，** 则缩放方法通过同时调整其他尺寸来保持形状的当前纵横比。
 
 > [!NOTE]
 > 对 和 `height` `width` 属性的直接更改仅影响该属性，而 `lockAspectRatio` 不管属性值如何。
@@ -160,7 +160,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-`addTextBox`方法创建 `ShapeCollection` 具有 `GeometricShape` 白色 `Rectangle` 背景和黑色文本的 类型。 这与"插入"选项卡 **Excel"** 文本框"按钮 **所创建** 的内容相同。 `addTextBox`采用字符串参数来设置 的文本 `TextRange` 。
+`addTextBox`方法创建 `ShapeCollection` 具有 `GeometricShape` 白色 `Rectangle` 背景和黑色文本的 类型。 这与"插入"选项卡 **Excel"文本框**"按钮 **所创建** 的内容相同。 `addTextBox`采用字符串参数来设置 的文本 `TextRange` 。
 
 下面的代码示例演示了如何创建文本为"Hello！"的文本框。
 

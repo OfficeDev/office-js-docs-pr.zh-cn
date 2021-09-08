@@ -4,11 +4,11 @@ description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
 title: 为自定义函数自动生成 JSON 元数据
 localization_priority: Normal
 ms.openlocfilehash: b4ae61ab46de7dadb9280e731d65715adaf64630
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774166"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938714"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
@@ -119,7 +119,7 @@ ms.locfileid: "53774166"
 
 ### <a name="description"></a>说明
 
-在用户输入函数Excel向用户显示说明，并指定函数的功能。 说明不需要任何特定标记。 通过在 JSDoc 注释中添加一个短语来描述函数的功能，为自定义函数添加说明。 默认情况下，JSDoc 注释部分中未标记的任何文本都是该函数的说明。
+在用户输入函数Excel，用户会显示一个说明，并指定函数的功能。 说明不需要任何特定标记。 通过在 JSDoc 注释中添加一个短语来描述函数的功能，为自定义函数添加说明。 默认情况下，JSDoc 注释部分中未标记的任何文本都是该函数的说明。
 
 在以下示例中，短语“对两个数字求和的函数”是 id 属性为 `ADD` 的自定义函数的相关说明。
 
@@ -160,7 +160,7 @@ JavaScript 语法：@param {type} name _description_
 * `name` 指定该标记@param参数。 这是必需的。
 * `description` 为函数参数提供显示在 Excel 中的说明。 可选。
 
-若要将自定义函数参数表示为可选，请用方括号将参数名称括起。 例如，`@param {string} [text] Optional text`。
+若要将自定义函数参数表示为可选参数，请用方括号将参数名称括起。 例如，`@param {string} [text] Optional text`。
 
 > [!NOTE]
 > 可选参数的默认值为 `null`。

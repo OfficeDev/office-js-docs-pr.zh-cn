@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.9 要求集的详细信息。
 ms.date: 04/01/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: eb917ed75049f965178075f57e8d0e9e7630bc9081019763e7812b221a00f67c
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 41f6eb2dd329a2ab82981cb3ee8e11a784e23591
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098285"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938546"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>JavaScript API 1.9 Excel的新增功能
 
@@ -101,7 +101,7 @@ ms.locfileid: "57098285"
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[colorScheme](/javascript/api/excel/excel.chartareaformat#colorScheme)|指定图表的配色方案。|
 ||[roundedCorners](/javascript/api/excel/excel.chartareaformat#roundedCorners)|指定图表的图表区域是否具有圆角。|
 |[ChartAxis](/javascript/api/excel/excel.chartaxis)|[linkNumberFormat](/javascript/api/excel/excel.chartaxis#linkNumberFormat)|指定数字格式是否链接到单元格。|
-|[ChartBinOptions](/javascript/api/excel/excel.chartbinoptions)|[allowOverflow](/javascript/api/excel/excel.chartbinoptions#allowOverflow)|指定在直方图或直方图中是否启用箱溢出。|
+|[ChartBinOptions](/javascript/api/excel/excel.chartbinoptions)|[allowOverflow](/javascript/api/excel/excel.chartbinoptions#allowOverflow)|指定在直方图或流程图中是否启用箱溢出。|
 ||[allowUnderflow](/javascript/api/excel/excel.chartbinoptions#allowUnderflow)|指定在直方图或流程图中是否启用箱下溢。|
 ||[count](/javascript/api/excel/excel.chartbinoptions#count)|指定直方图或流程图的箱计数。|
 ||[overflowValue](/javascript/api/excel/excel.chartbinoptions#overflowValue)|指定直方图或流程图的箱溢出值。|
@@ -127,7 +127,7 @@ ms.locfileid: "57098285"
 |[ChartPivotOptions](/javascript/api/excel/excel.chartpivotoptions)|[showAxisFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showAxisFieldButtons)|指定是否在坐标轴上显示坐标轴字段数据透视图。|
 ||[showLegendFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showLegendFieldButtons)|指定是否在图例上显示图例数据透视图。|
 ||[showReportFilterFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showReportFilterFieldButtons)|指定是否在报表上显示报表筛选字段数据透视图。|
-||[showValueFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showValueFieldButtons)|指定是否在项目上显示"显示值"字段数据透视图。|
+||[showValueFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showValueFieldButtons)|指定是否在项目上显示显示值字段数据透视图。|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[bubbleScale](/javascript/api/excel/excel.chartseries#bubbleScale)|这可以是从 0（零）到 300 的整数值，表示默认大小的百分比。|
 ||[gradientMaximumColor](/javascript/api/excel/excel.chartseries#gradientMaximumColor)|指定区域地图图表系列的最大值的颜色。|
 ||[gradientMaximumType](/javascript/api/excel/excel.chartseries#gradientMaximumType)|指定区域地图图表系列的最大值的类型。|
@@ -140,7 +140,7 @@ ms.locfileid: "57098285"
 ||[gradientMinimumValue](/javascript/api/excel/excel.chartseries#gradientMinimumValue)|指定区域地图图表系列的最小值。|
 ||[gradientStyle](/javascript/api/excel/excel.chartseries#gradientStyle)|指定区域地图图表的系列渐变样式。|
 ||[invertColor](/javascript/api/excel/excel.chartseries#invertColor)|指定系列中负数据点的填充颜色。|
-||[parentLabelStrategy](/javascript/api/excel/excel.chartseries#parentLabelStrategy)|指定树图的系列父标签策略区域。|
+||[parentLabelStrategy](/javascript/api/excel/excel.chartseries#parentLabelStrategy)|指定树状图的系列父标签策略区域。|
 ||[binOptions](/javascript/api/excel/excel.chartseries#binOptions)|封装直方图和排列图的容器选项。|
 ||[boxwhiskerOptions](/javascript/api/excel/excel.chartseries#boxwhiskerOptions)|封装箱形图的选项。|
 ||[mapOptions](/javascript/api/excel/excel.chartseries#mapOptions)|封装区域地图图表的选项。|
@@ -180,8 +180,8 @@ ms.locfileid: "57098285"
 ||[id](/javascript/api/excel/excel.image#id)|指定图像对象的形状标识符。|
 ||[shape](/javascript/api/excel/excel.image#shape)|返回 `Shape` 与图像关联的对象。|
 |[IterativeCalculation](/javascript/api/excel/excel.iterativecalculation)|[enabled](/javascript/api/excel/excel.iterativecalculation#enabled)|如果 Excel 使用迭代来处理循环引用，则为 True。|
-||[maxChange](/javascript/api/excel/excel.iterativecalculation#maxChange)|指定每个迭代之间的最大更改量，因为Excel循环引用。|
-||[maxIteration](/javascript/api/excel/excel.iterativecalculation#maxIteration)|指定可用于解析循环引用Excel迭代的最大次数。|
+||[maxChange](/javascript/api/excel/excel.iterativecalculation#maxChange)|指定每个迭代之间的最大更改量，Excel循环引用。|
+||[maxIteration](/javascript/api/excel/excel.iterativecalculation#maxIteration)|指定可用于解析循环引用Excel的最大迭代次数。|
 |[Line](/javascript/api/excel/excel.line)|[beginArrowheadLength](/javascript/api/excel/excel.line#beginArrowheadLength)|表示指定线条始端的箭头长度。|
 ||[beginArrowheadStyle](/javascript/api/excel/excel.line#beginArrowheadStyle)|表示指定线条始端的箭头样式。|
 ||[beginArrowheadWidth](/javascript/api/excel/excel.line#beginArrowheadWidth)|表示指定线条始端的箭头宽度。|
@@ -233,7 +233,7 @@ ms.locfileid: "57098285"
 ||[printHeadings](/javascript/api/excel/excel.pagelayout#printHeadings)|指定是否打印工作表的标题。|
 ||[printOrder](/javascript/api/excel/excel.pagelayout#printOrder)|工作表的页面打印顺序选项。|
 ||[headersFooters](/javascript/api/excel/excel.pagelayout#headersFooters)|工作表的页眉和页脚配置。|
-||[rightMargin](/javascript/api/excel/excel.pagelayout#rightMargin)|打印时工作表的右边距（以点表示）。|
+||[rightMargin](/javascript/api/excel/excel.pagelayout#rightMargin)|打印时使用的工作表的右边距（以点表示）。|
 ||[setPrintArea(printArea: Range \| RangeAreas \| string)](/javascript/api/excel/excel.pagelayout#setPrintArea_printArea_)|设置工作表的打印区域。|
 ||[setPrintMargins(unit: Excel.PrintMarginUnit, marginOptions: Excel.PageLayoutMarginOptions)](/javascript/api/excel/excel.pagelayout#setPrintMargins_unit__marginOptions_)|设置带单位的工作表的页边距。|
 ||[setPrintTitleColumns(printTitleColumns: Range \| string)](/javascript/api/excel/excel.pagelayout#setPrintTitleColumns_printTitleColumns_)|设置列，这些列包含要在打印的工作表的每页左侧重复的单元格。|
@@ -257,7 +257,7 @@ ms.locfileid: "57098285"
 ||[setAutoSortOnCell(cell: Range \| string, sortBy: Excel.SortBy)](/javascript/api/excel/excel.pivotlayout#setAutoSortOnCell_cell__sortBy_)|将数据透视表设置为使用指定的单元格设置自动排序，以自动选择排序的所有条件和上下文。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[enableDataValueEditing](/javascript/api/excel/excel.pivottable#enableDataValueEditing)|指定数据透视表是否允许用户编辑数据正文中的值。|
 ||[useCustomSortLists](/javascript/api/excel/excel.pivottable#useCustomSortLists)|指定数据透视表在排序时是否使用自定义列表。|
-|[区域](/javascript/api/excel/excel.range)|[autoFill (destinationRange？： Range \| string， autoFillType？： Excel。AutoFillType) ](/javascript/api/excel/excel.range#autoFill_destinationRange__autoFillType_)|使用指定的自动填充逻辑填充从当前区域到目标区域的范围。|
+|[Range](/javascript/api/excel/excel.range)|[autoFill (destinationRange？： Range \| string， autoFillType？： Excel。AutoFillType) ](/javascript/api/excel/excel.range#autoFill_destinationRange__autoFillType_)|使用指定的自动填充逻辑填充从当前区域到目标区域的范围。|
 ||[convertDataTypeToText()](/javascript/api/excel/excel.range#convertDataTypeToText__)|将数据类型为区域单元格转换为文本。|
 ||[convertToLinkedDataType(serviceID: number, languageCulture: string)](/javascript/api/excel/excel.range#convertToLinkedDataType_serviceID__languageCulture_)|将区域单元格转换为工作表中的链接数据类型。|
 ||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.range#copyFrom_sourceRange__copyType__skipBlanks__transpose_)|将单元格数据或格式从源区域或 `RangeAreas` 当前区域复制。|
@@ -301,7 +301,7 @@ ms.locfileid: "57098285"
 ||[dataValidation](/javascript/api/excel/excel.rangeareas#dataValidation)|返回 中所有区域的数据验证对象 `RangeAreas` 。|
 ||[format](/javascript/api/excel/excel.rangeareas#format)|返回一个对象，该对象封装对象中所有范围的字体、填充、边框、 `RangeFormat` 对齐方式和其他 `RangeAreas` 属性。|
 ||[isEntireColumn](/javascript/api/excel/excel.rangeareas#isEntireColumn)|指定此对象上的所有区域是否代表整个列 (例如 `RangeAreas` ，"A：C，Q：Z") 。|
-||[isEntireRow](/javascript/api/excel/excel.rangeareas#isEntireRow)|指定此对象上的所有区域是否代表整个行 (例如 `RangeAreas` ，"1：3， 5：7") 。|
+||[isEntireRow](/javascript/api/excel/excel.rangeareas#isEntireRow)|指定此对象上的所有区域是否代表 (行，例如 `RangeAreas` "1：3， 5：7") 。|
 ||[worksheet](/javascript/api/excel/excel.rangeareas#worksheet)|返回当前 的工作表 `RangeAreas` 。|
 ||[setDirty()](/javascript/api/excel/excel.rangeareas#setDirty__)|设置 `RangeAreas` 在下次重新计算时要重新计算的 。|
 ||[style](/javascript/api/excel/excel.rangeareas#style)|表示此对象中所有范围的 `RangeAreas` 样式。|
@@ -354,7 +354,7 @@ ms.locfileid: "57098285"
 ||[incrementTop(increment: number)](/javascript/api/excel/excel.shape#incrementTop_increment_)|以指定磅数垂直移动形状。|
 ||[left](/javascript/api/excel/excel.shape#left)|从形状左侧到工作表左侧的距离（以磅为单位）。|
 ||[lockAspectRatio](/javascript/api/excel/excel.shape#lockAspectRatio)|指定是否锁定此形状的纵横比。|
-||[名称](/javascript/api/excel/excel.shape#name)|指定形状的名称。|
+||[name](/javascript/api/excel/excel.shape#name)|指定形状的名称。|
 ||[connectionSiteCount](/javascript/api/excel/excel.shape#connectionSiteCount)|返回此形状上的连接站点数。|
 ||[fill](/javascript/api/excel/excel.shape#fill)|返回此形状的填充格式。|
 ||[geometricShape](/javascript/api/excel/excel.shape#geometricShape)|返回与形状关联的几何形状。|
@@ -370,7 +370,7 @@ ms.locfileid: "57098285"
 ||[textFrame](/javascript/api/excel/excel.shape#textFrame)|返回此形状的文本框对象。|
 ||[type](/javascript/api/excel/excel.shape#type)|返回此形状的类型。|
 ||[zOrderPosition](/javascript/api/excel/excel.shape#zOrderPosition)|返回指定形状在 z 顺序中的位置，0 表示顺序堆栈的底部。|
-||[rotation](/javascript/api/excel/excel.shape#rotation)|指定形状的旋转度数。|
+||[rotation](/javascript/api/excel/excel.shape#rotation)|指定形状的旋转角度（以度数表示）。|
 ||[scaleHeight(scaleFactor: number, scaleType: Excel.ShapeScaleType, scaleFrom?: Excel.ShapeScaleFrom)](/javascript/api/excel/excel.shape#scaleHeight_scaleFactor__scaleType__scaleFrom_)|按指定因子缩放形状的高度。|
 ||[scaleWidth(scaleFactor: number, scaleType: Excel.ShapeScaleType, scaleFrom?: Excel.ShapeScaleFrom)](/javascript/api/excel/excel.shape#scaleWidth_scaleFactor__scaleType__scaleFrom_)|按指定因子缩放形状的宽度。|
 ||[setZOrder(position: Excel.ShapeZOrder)](/javascript/api/excel/excel.shape#setZOrder_position_)|将指定形状沿集合的 z 顺序向上或向下移动，将其移动到其他形状的前面或后面。|
@@ -400,7 +400,7 @@ ms.locfileid: "57098285"
 |[ShapeFont](/javascript/api/excel/excel.shapefont)|[bold](/javascript/api/excel/excel.shapefont#bold)|表示字体的加粗状态。|
 ||[color](/javascript/api/excel/excel.shapefont#color)|文本颜色格式的 HTML 颜色代码表示 (例如，"#FF0000"表示红色) 。|
 ||[italic](/javascript/api/excel/excel.shapefont#italic)|表示字体的斜体状态。|
-||[名称](/javascript/api/excel/excel.shapefont#name)|表示字体名称 (例如"Calibri") 。|
+||[name](/javascript/api/excel/excel.shapefont#name)|表示字体名称 (例如"Calibri") 。|
 ||[size](/javascript/api/excel/excel.shapefont#size)|表示字号（以 (，例如 11) ）。|
 ||[underline](/javascript/api/excel/excel.shapefont#underline)|应用于字体的下划线类型。|
 |[ShapeGroup](/javascript/api/excel/excel.shapegroup)|[id](/javascript/api/excel/excel.shapegroup#id)|指定形状标识符。|
@@ -453,7 +453,7 @@ ms.locfileid: "57098285"
 |[Workbook](/javascript/api/excel/excel.workbook)|[chartDataPointTrack](/javascript/api/excel/excel.workbook#chartDataPointTrack)|如果工作簿中的所有图表都跟踪它们所附加的实际数据点，则为 True。|
 ||[getActiveChart()](/javascript/api/excel/excel.workbook#getActiveChart__)|获取工作簿中的当前活动图表。|
 ||[getActiveChartOrNullObject()](/javascript/api/excel/excel.workbook#getActiveChartOrNullObject__)|获取工作簿中的当前活动图表。|
-||[getIsActiveCollabSession()](/javascript/api/excel/excel.workbook#getIsActiveCollabSession__)|返回 `true` 工作簿是否正由多个用户编辑， (共同创作) 。|
+||[getIsActiveCollabSession()](/javascript/api/excel/excel.workbook#getIsActiveCollabSession__)|返回 `true` 工作簿是否正由多个用户通过共同创作 (编辑) 。|
 ||[getSelectedRanges()](/javascript/api/excel/excel.workbook#getSelectedRanges__)|从工作簿中获取当前选定的一个或多个区域。|
 ||[isDirty](/javascript/api/excel/excel.workbook#isDirty)|指定自上次保存工作簿以来是否进行了更改。|
 ||[autoSave](/javascript/api/excel/excel.workbook#autoSave)|指定工作簿是否位于"自动保存"模式。|

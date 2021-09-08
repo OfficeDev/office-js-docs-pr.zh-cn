@@ -3,12 +3,12 @@ title: 清单文件中 EquivalentAddins 元素
 description: 指定与等效 COM 加载项和/或 XLL 的向后兼容性。
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: b1a3eed0003a2798019ea6879a5d5c6b4ed3d6fc49b4efb45eaaf2006e9f7160
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: cce316ceac2b6c79a0f7ea1378411b864923cada
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096516"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938195"
 ---
 # <a name="equivalentaddins-element"></a>EquivalentAddins 元素
 

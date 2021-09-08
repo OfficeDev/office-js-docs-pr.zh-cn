@@ -3,12 +3,12 @@ title: 清单文件中的 DesktopFormFactor 元素
 description: 指定对桌面外形规格的外接程序的设置。
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 1d7a811f54f5fc1eb8f789f889610cc2a53237634731646038ead699f7b8719e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 66673d83fd8608a1ec10492d7a944b0515de61c0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089865"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938466"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor 元素
 
@@ -23,7 +23,7 @@ ms.locfileid: "57089865"
 | [ExtensionPoint](extensionpoint.md)   | 是      | 定义外接程序公开功能的位置。 |
 | [FunctionFile](functionfile.md)       | 是      | 包含 JavaScript 函数的文件的 URL。|
 | [GetStarted](getstarted.md)           | 否       | 定义在 Word、加载项或加载项中安装加载项时Excel标注PowerPoint。 |
-| [SupportsSharedFolders](supportssharedfolders.md) | 否 | 定义 Outlook 外接程序现在在预览版 (中是否可用) 以及共享文件夹 (即委派访问权限) 方案。 默认情况下设置为 *false。* |
+| [SupportsSharedFolders](supportssharedfolders.md) | 否 | 定义Outlook外接程序是否可用于共享邮箱 (预览) 和共享文件夹 (即委派访问权限) 方案。 默认情况下设置为 *false。* |
 
 ## <a name="desktopformfactor-example"></a>DesktopFormFactor 示例
 

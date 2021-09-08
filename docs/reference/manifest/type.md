@@ -3,12 +3,12 @@ title: 清单文件中的类型元素
 description: Type 元素指定等效加载项是 COM 加载项还是 XLL。
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: ca6fa7183727870593dd3e726abc72fdc0d6f0b518fdb8451ec80c6b590f8c83
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5af3359c232e91b097311bfc06fc9b1c932b0703
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092473"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938895"
 ---
 # <a name="type-element"></a>Type 元素
 

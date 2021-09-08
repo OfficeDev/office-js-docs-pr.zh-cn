@@ -3,16 +3,16 @@ title: 清单文件中标记元素
 description: 指定可用于清单中的 URL 模板的令牌或通配符。
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 867bb5bc801b85b63c7815debfaf59c5cee3a8157dc866ba7082803ee1d7fe2a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 48078f8211a8fd3f0e3f9d7c3f3aabd1d31b0a6d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095906"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938233"
 ---
 # <a name="token-element"></a>Token 元素
 
-定义单个 URL 令牌。 有关此元素的使用详细信息，请参阅使用清单 [的扩展替代](../../develop/extended-overrides.md)。
+定义单个 URL 令牌。 有关此元素的使用详细信息，请参阅使用 [清单的扩展替代](../../develop/extended-overrides.md)。
 
 **外接程序类型：** 任务窗格
 

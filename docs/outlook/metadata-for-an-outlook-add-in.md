@@ -3,12 +3,12 @@ title: 获取和设置 Outlook 加载项中的元数据
 description: 可以使用以下漫游设置或自定义属性，管理 Outlook 加载项中的自定义数据。
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 0ed30c48a07f76b6bc3a969ad064f1b66d96b90b569bb62e9a34eb16fc836648
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ceed27cc5c0d479ac67a0497e78e971498365e6f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57091648"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939085"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>获取和设置 Outlook 加载项的元数据
 
@@ -114,7 +114,7 @@ function removeAddInSetting()
 
 与漫游设置类似，对自定义属性的更改将存储在当前 Outlook 会话的属性的内存副本中。为确保这些自定义属性在下次会话中可用，请使用 [CustomProperties.saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_)。
 
-这些特定于加载项、特定于项目的自定义属性只能使用 对象 `CustomProperties` 访问。 这些属性不同于 Outlook 对象模型中基于 MAPI 的自定义[UserProperties，](/office/vba/api/Outlook.UserProperties)以及 Exchange Web 服务 (EWS) 。 不能通过使用对象 `CustomProperties` 模型、EWS 或 REST Outlook直接访问。 若要了解如何使用 EWS 或 REST 访问，请参阅使用 EWS 或 REST 获取自定义 `CustomProperties` [属性一节](#get-custom-properties-using-ews-or-rest)。
+这些特定于加载项、特定于项目的自定义属性只能使用 对象 `CustomProperties` 访问。 这些属性不同于 Outlook 对象模型中基于 MAPI 的自定义[UserProperties，](/office/vba/api/Outlook.UserProperties)以及 Exchange Web 服务 (EWS) 中的扩展) 。 您不能通过使用对象 `CustomProperties` 模型、EWS 或 REST Outlook直接访问。 若要了解如何使用 EWS 或 REST 访问，请参阅使用 EWS 或 REST 获取自定义 `CustomProperties` [属性一节](#get-custom-properties-using-ews-or-rest)。
 
 ### <a name="using-custom-properties"></a>使用自定义属性
 
@@ -197,7 +197,7 @@ function saveCallback() {
 
 #### <a name="how-custom-properties-are-stored-on-an-item"></a>如何存储项的自定义属性
 
-通过加载项设置的自定义属性并不等同于常规的基于 MAPI 的属性。 外接程序 API 将序列化所有外接程序作为 JSON 有效负载，然后将它们保存在一个基于 MAPI 的扩展属性中，其名称为 (是外接程序的 ID) 且属性集 `CustomProperties` `cecp-<app-guid>` `<app-guid>` GUID 为 `{00020329-0000-0000-C000-000000000046}` 。 （有关此对象的详细信息，请参阅 [MS-OXCEXT 2.2.5 邮件应用程序自定义属性](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481)。）随后可使用 EWS 或 REST 获取此基于 MAPI 的属性。
+通过加载项设置的自定义属性并不等同于常规的基于 MAPI 的属性。 外接程序 API 将所有外接程序序列化为 JSON 有效负载，然后将它们保存在一个基于 MAPI 的扩展属性中，其名称为 (是外接程序的 ID) 且属性集 `CustomProperties` `cecp-<app-guid>` `<app-guid>` GUID 为 `{00020329-0000-0000-C000-000000000046}` 。 （有关此对象的详细信息，请参阅 [MS-OXCEXT 2.2.5 邮件应用程序自定义属性](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481)。）随后可使用 EWS 或 REST 获取此基于 MAPI 的属性。
 
 #### <a name="get-custom-properties-using-ews"></a>使用 EWS 获取自定义属性
 

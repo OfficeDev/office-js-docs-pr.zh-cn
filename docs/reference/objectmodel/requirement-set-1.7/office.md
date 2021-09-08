@@ -1,14 +1,14 @@
 ---
 title: Office命名空间 - 要求集 1.7
-description: Office邮箱 API 要求集 1.7 Outlook外接程序可用的命名空间成员。
+description: Office邮箱 API 要求集 1.7 Outlook加载项可用的命名空间成员。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 2e94351b2265aa6cd0e05a3c54c30a3ede0511e8464c659fd53bb9a0b2692122
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 19c80c0c8c4aaf31c42aad16b3f474e92b7cdaec
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092182"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938855"
 ---
 # <a name="office-mailbox-requirement-set-17"></a>Office (邮箱要求集 1.7) 
 
@@ -25,16 +25,16 @@ ms.locfileid: "57092182"
 
 | 属性 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [context](office.context.md) | 撰写<br>阅读 | [Context](/javascript/api/office/office.context?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | 撰写<br>读取 | [Context](/javascript/api/office/office.context?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="enumerations"></a>枚举
 
 | 枚举 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | 撰写<br>阅读 | 字符串 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | 撰写<br>读取 | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>命名空间
 

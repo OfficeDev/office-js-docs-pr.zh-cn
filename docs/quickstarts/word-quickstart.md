@@ -5,11 +5,11 @@ ms.date: 08/04/2021
 ms.prod: word
 localization_priority: Priority
 ms.openlocfilehash: db71a0103f9bcb793d6f3d68f1b2f293c92a0983
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232408"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938810"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 

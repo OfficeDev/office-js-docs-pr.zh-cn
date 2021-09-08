@@ -4,15 +4,15 @@ description: 有关使用 API 添加、删除和编辑注释和注释线程的�
 ms.date: 10/09/2020
 localization_priority: Normal
 ms.openlocfilehash: 16569bc1d72391dff0ac35a48e45470ff90852f8
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868650"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938720"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>使用 JavaScript API Excel注释
 
-本文介绍如何使用 JavaScript API 在工作簿中添加、读取、修改和Excel注释。 可以从在文档中插入注释和注释一文了解有关[Excel功能。](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
+本文介绍如何使用 JavaScript API 在工作簿中添加、读取、修改Excel注释。 可以从在文档中插入注释和注释一文了解有关[Excel功能。](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
 
 在 Excel JavaScript API 中，注释包括单个初始注释和已连接的线程讨论。 它绑定到单个单元格。 查看具有足够权限的工作簿的任何人都可以回复注释。 Comment [对象](/javascript/api/excel/excel.comment) 将回复存储为 [CommentReply](/javascript/api/excel/excel.commentreply) 对象。 你应该将注释视为一个线程，并且线程必须具有一个特殊条目作为起点。
 
@@ -208,10 +208,10 @@ Excel.run(function (context) {
 
 当同时执行多个添加、更改或删除操作时，每个注释事件仅触发一次。 所有[CommentAddedEventArgs、CommentChangedEventArgs](/javascript/api/excel/excel.commentaddedeventargs)和[CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs)对象都包含注释 ID 数组，用于将事件操作映射回注释集合。 [](/javascript/api/excel/excel.commentchangedeventargs)
 
-有关[注册事件处理程序、处理事件和](excel-add-ins-events.md)删除事件处理程序的其他信息，请参阅使用 Excel JavaScript API 处理事件一文。 
+有关注册事件处理程序、处理事件和删除事件处理程序的其他信息，请参阅使用[Excel JavaScript API](excel-add-ins-events.md)处理事件一文。 
 
 ### <a name="comment-addition-events"></a>注释添加事件 
-向 `onAdded` 注释集合中添加一个或多个新批注时，将触发该事件。 将回复 *添加到* 注释线程时，不会触发此事件 (请参阅注释更改事件以了解注释回复事件) 。 [](#comment-change-events)
+向 `onAdded` 注释集合中添加一个或多个新批注时，将触发该事件。 将回复 *添加到* 注释线程时，不会触发此事件 (请参阅注释更改事件，以了解注释回复事件 [](#comment-change-events)) 。
 
 以下示例演示如何注册事件 `onAdded` 处理程序，然后使用 `CommentAddedEventArgs` 对象检索添加的注释 `commentDetails` 的数组。
 

@@ -5,11 +5,11 @@ ms.date: 08/04/2021
 ms.prod: outlook
 localization_priority: Priority
 ms.openlocfilehash: f72e84a71fd853f8a8f0c00d1b226b3b08548e1c
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232345"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938287"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -57,10 +57,10 @@ ms.locfileid: "58232345"
 1. 导航到 Web 应用程序项目的根文件夹。
 
     ```command&nbsp;line
-    cd "My Office Add-in&quot;
+    cd "My Office Add-in"
     ```
 
-### <a name=&quot;explore-the-project&quot;></a>浏览项目
+### <a name="explore-the-project"></a>浏览项目
 
 使用 Yeoman 生成器创建的加载项项目包含适合于基础任务窗格加载项的示例代码。
 
@@ -69,16 +69,16 @@ ms.locfileid: "58232345"
 - **./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。
 - **./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Outlook 之间的交互的 Office JavaScript API 代码。
 
-### <a name=&quot;update-the-code&quot;></a>更新代码
+### <a name="update-the-code"></a>更新代码
 
 1. 在代码编辑器中，打开文件 **./src/taskpane/taskpane.html** 并将整个 `<main>` 元素（位于 `<body>` 元素中）替换为以下标记。 此新标记将添加标签，其中 **./src/taskpane/taskpane.js** 中的脚本将写入数据。
 
     ```html
-    <main id=&quot;app-body&quot; class=&quot;ms-welcome__main&quot; style=&quot;display: none;&quot;>
-        <h2 class=&quot;ms-font-xl&quot;> Discover what Office Add-ins can do for you today! </h2>
-        <p><label id=&quot;item-subject&quot;></label></p>
-        <div role=&quot;button&quot; id=&quot;run&quot; class=&quot;ms-welcome__action ms-Button ms-Button--hero ms-font-xl&quot;>
-            <span class=&quot;ms-Button-label&quot;>Run</span>
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+        <h2 class="ms-font-xl"> Discover what Office Add-ins can do for you today! </h2>
+        <p><label id="item-subject"></label></p>
+        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Run</span>
         </div>
     </main>
     ```
@@ -90,7 +90,7 @@ ms.locfileid: "58232345"
     var item = Office.context.mailbox.item;
 
     // Write message property value to the task pane
-    document.getElementById(&quot;item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
+    document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
     ```
 
 ### <a name="try-it-out"></a>试用

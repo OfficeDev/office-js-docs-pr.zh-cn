@@ -3,12 +3,12 @@ title: Office命名空间 - 要求集 1.2
 description: Office邮箱 API 要求集 1.2 Outlook外接程序可用的命名空间成员。
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 0f27ffda734f6acc817fbf398403693338524cd0225841b4404fb65b97b23935
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4cd15d77d1c5d9b95152f038f3421c5838bfb84f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092664"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939024"
 ---
 # <a name="office-mailbox-requirement-set-12"></a>Office (邮箱要求集 1.2) 
 
@@ -25,15 +25,15 @@ ms.locfileid: "57092664"
 
 | 属性 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [context](office.context.md) | 撰写<br>阅读 | [Context](/javascript/api/office/office.context?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | 撰写<br>读取 | [Context](/javascript/api/office/office.context?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="enumerations"></a>枚举
 
 | 枚举 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 撰写<br>阅读 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [SourceProperty](#sourceproperty-string) | 撰写<br>阅读 | 字符串 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>命名空间
 

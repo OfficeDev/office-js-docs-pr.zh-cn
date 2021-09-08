@@ -4,19 +4,19 @@ description: 了解如何调试Outlook基于事件的激活的加载项。
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: d96ab13ada1135d17feef7597c6427cf56d75872cefdf43f0e24fb8da2274ce1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090811"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938411"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>调试基于事件Outlook加载项 (预览) 
 
 本文提供了在外接程序中实现基于 [事件的](autolaunch.md) 激活时调试指南。 基于事件的激活功能当前处于预览阶段。
 
 > [!IMPORTANT]
-> 此调试功能仅在使用 Outlook 订阅Windows预览Microsoft 365支持。 有关详细信息，请参阅本文中的预览调试基于 [事件的](#preview-debugging-for-the-event-based-activation-feature) 激活功能部分。
+> 此调试功能仅在具有 Outlook 订阅的 Windows 中Microsoft 365预览。 有关详细信息，请参阅本文中的预览调试基于 [事件的](#preview-debugging-for-the-event-based-activation-feature) 激活功能部分。
 
 本文将讨论启用调试的关键阶段。
 
@@ -25,13 +25,13 @@ ms.locfileid: "57090811"
 - [附加Visual Studio Code](#attach-visual-studio-code)
 - [Debug](#debug)
 
-有几种创建加载项项目的选项。 根据你使用的选项，步骤可能会有所不同。 在这种情况下，如果使用 Office 加载项的 Yeoman 生成器创建加载项项目 (，例如，通过执行基于事件的激活演练 [) ，](autolaunch.md)请按照 **yo office** 步骤操作，否则执行其他步骤。  Visual Studio Code版本 1.56.1。
+有几种创建加载项项目的选项。 根据你使用的选项，步骤可能会有所不同。 在这种情况下，如果使用 Office 加载项的 Yeoman 生成器创建加载项项目 (，例如，通过执行基于事件的激活演练 [) ，](autolaunch.md)请执行 **yo office** 步骤，否则执行其他步骤。  Visual Studio Code版本 1.56.1。
 
 ## <a name="preview-debugging-for-the-event-based-activation-feature"></a>预览基于事件的激活功能调试
 
 我们邀请你试用基于事件的激活功能调试功能！ 请告诉我们你的方案，以及我们如何通过反馈提供反馈GitHub (请参阅此页面末尾的反馈部分) 。 
 
-若要预览此功能，Outlook上Windows，最低要求版本为 16.0.13729.20000。 若要访问 Office beta 版本，请加入[Office 预览体验计划](https://insider.office.com)。
+若要在 Outlook 上预览Windows，最低要求版本为 16.0.13729.20000。 若要访问 Office beta 版本，请加入[Office 预览体验计划](https://insider.office.com)。
 
 ## <a name="mark-your-add-in-for-debugging"></a>标记加载项进行调试
 
@@ -49,7 +49,7 @@ ms.locfileid: "57090811"
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-1. 如果Outlook桌面 (桌面Outlook，请启动桌面) 。
+1. 如果Outlook桌面 (桌面Outlook，请重新启动桌面) 。
 1. 撰写新邮件或约会。 应看到以下对话框。 *不要* 与对话框进行交互。
 
     ![调试基于事件的处理程序对话框的屏幕截图。](../images/outlook-win-autolaunch-debug-dialog.png)
@@ -64,7 +64,7 @@ ms.locfileid: "57090811"
     code .
     ```
 
-1. In Visual Studio Code， open the file **./.vscode/launch.json** and add the following excerpt to your list of configurations. 保存所做的更改。
+1. 在Visual Studio Code中，打开 **文件 ./.vscode/launch.json，** 并添加以下摘录到配置列表中。 保存所做的更改。
 
     ```json
     {
@@ -89,7 +89,7 @@ ms.locfileid: "57090811"
 
 1. 选择" **创建launch.js文件"** 链接。
 
-    ![Screenshot of link to create a launch.json file in Visual Studio Code.](../images/vs-code-create-launch.json.png)
+    ![在文件上创建launch.js链接的屏幕截图Visual Studio Code。](../images/vs-code-create-launch.json.png)
 
 1. 在" **选择环境** "下拉列表中，选择" **边缘： 启动** "以创建launch.js文件。
 1. 将以下摘录添加到配置列表中。 保存所做的更改。
@@ -119,7 +119,7 @@ ms.locfileid: "57090811"
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
 1. 将断点bundle.js调试器停止的位置。
-1. 在 **"调试**"下拉列表中，选择名称 **"Direct Debugging"，** 然后选择"运行 **"。**
+1. 在 **"调试**"下拉列表中，选择名称 **"Direct Debugging"，** 然后选择"**运行"。**
 
     ![Screenshot of selecting Direct Debugging from configuration options in the Visual Studio Code Debug dropdown.](../images/outlook-win-autolaunch-debug-vsc.png)
 
@@ -127,7 +127,7 @@ ms.locfileid: "57090811"
 
 1. 确认已附加调试程序后，返回到Outlook，在"调试基于 **事件的处理程序**"对话框中，选择"确定 **"。**
 
-1. 现在，你可以点击 Visual Studio Code 断点，从而可以调试基于事件的激活代码。
+1. 现在，可以在 Visual Studio Code断点，从而调试基于事件的激活代码。
 
 ## <a name="stop-debugging"></a>停止调试
 

@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.7 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1012efa0143710a6646c5288ef8c4adfd49a6006e62eb850f25d6d12e9028c51
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ed18997224f052c2e36943fcdbb93865ec8ac73d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088958"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938543"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 的最近更新
 
@@ -102,7 +102,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[lineStyle](/javascript/api/excel/excel.chartborder#lineStyle)|表示边框的线条样式。|
 ||[weight](/javascript/api/excel/excel.chartborder#weight)|表示边框的粗细，以磅为单位。|
 |[ChartDataLabel](/javascript/api/excel/excel.chartdatalabel)|[position](/javascript/api/excel/excel.chartdatalabel#position)|表示数据标签的位置的值。|
-||[分隔符](/javascript/api/excel/excel.chartdatalabel#separator)|该字符串表示用于图表中数据标签的分隔符。|
+||[separator](/javascript/api/excel/excel.chartdatalabel#separator)|该字符串表示用于图表中数据标签的分隔符。|
 ||[showBubbleSize](/javascript/api/excel/excel.chartdatalabel#showBubbleSize)|指定数据标签气泡大小是否可见。|
 ||[showCategoryName](/javascript/api/excel/excel.chartdatalabel#showCategoryName)|指定数据标签类别名称是否可见。|
 ||[showLegendKey](/javascript/api/excel/excel.chartdatalabel#showLegendKey)|指定数据标签图例项标示是否可见。|
@@ -123,8 +123,8 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 |[ChartLineFormat](/javascript/api/excel/excel.chartlineformat)|[lineStyle](/javascript/api/excel/excel.chartlineformat#lineStyle)|代表线条样式。|
 ||[weight](/javascript/api/excel/excel.chartlineformat#weight)|表示线条的粗细（以磅为单位）。|
 |[ChartPoint](/javascript/api/excel/excel.chartpoint)|[hasDataLabel](/javascript/api/excel/excel.chartpoint#hasDataLabel)|表示一个数据点是否具有数据标签。|
-||[markerBackgroundColor](/javascript/api/excel/excel.chartpoint#markerBackgroundColor)|数据点的数据标记背景色的 HTML 颜色代码表示 (例如，#FF0000红色) 。|
-||[markerForegroundColor](/javascript/api/excel/excel.chartpoint#markerForegroundColor)|数据点标记前景色的 HTML 颜色代码表示 (例如，#FF0000红色) 。|
+||[markerBackgroundColor](/javascript/api/excel/excel.chartpoint#markerBackgroundColor)|表示数据点的数据标记背景色的 HTML 颜色代码 (例如，#FF0000表示红色) 。|
+||[markerForegroundColor](/javascript/api/excel/excel.chartpoint#markerForegroundColor)|数据点标志前景色的 HTML 颜色代码表示 (例如，#FF0000红色) 。|
 ||[markerSize](/javascript/api/excel/excel.chartpoint#markerSize)|表示数据点的标记大小。|
 ||[markerStyle](/javascript/api/excel/excel.chartpoint#markerStyle)|表示图表数据点的标记样式。|
 ||[dataLabel](/javascript/api/excel/excel.chartpoint#dataLabel)|返回图表点的数据标签。|
@@ -162,7 +162,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 |[ChartTrendline](/javascript/api/excel/excel.charttrendline)|[delete()](/javascript/api/excel/excel.charttrendline#delete__)|删除 Trendline 对象。|
 ||[intercept](/javascript/api/excel/excel.charttrendline#intercept)|表示趋势线的截距值。|
 ||[movingAveragePeriod](/javascript/api/excel/excel.charttrendline#movingAveragePeriod)|表示图表趋势线的周期。|
-||[名称](/javascript/api/excel/excel.charttrendline#name)|表示趋势线的名称。|
+||[name](/javascript/api/excel/excel.charttrendline#name)|表示趋势线的名称。|
 ||[polynomialOrder](/javascript/api/excel/excel.charttrendline#polynomialOrder)|表示图表趋势线的顺序。|
 ||[format](/javascript/api/excel/excel.charttrendline#format)|表示图表趋势线的格式。|
 ||[type](/javascript/api/excel/excel.charttrendline#type)|表示图表趋势线的类型。|
@@ -198,8 +198,8 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[arrayValues](/javascript/api/excel/excel.nameditem#arrayValues)|返回包含已命名项目的值和类型的对象。|
 |[NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)|[types](/javascript/api/excel/excel.nameditemarrayvalues#types)|表示已命名项目数组中每个项目的类型|
 ||[values](/javascript/api/excel/excel.nameditemarrayvalues#values)|表示已命名项目数组中每个项目的值。|
-|[区域](/javascript/api/excel/excel.range)|[getAbsoluteResizedRange (numRows： number， numColumns： number) ](/javascript/api/excel/excel.range#getAbsoluteResizedRange_numRows__numColumns_)|获取一个对象，该对象的左上单元格与当前对象相同，但具有 `Range` `Range` 指定的行数和列数。|
-||[getImage () ](/javascript/api/excel/excel.range#getImage__)|将区域呈现为 base64 编码的 png 图像。|
+|[Range](/javascript/api/excel/excel.range)|[getAbsoluteResizedRange (numRows： number， numColumns： number) ](/javascript/api/excel/excel.range#getAbsoluteResizedRange_numRows__numColumns_)|获取一个对象，该对象的左上单元格与当前对象相同，但具有 `Range` `Range` 指定的行数和列数。|
+||[getImage () ](/javascript/api/excel/excel.range#getImage__)|将区域呈现为 base64 编码 png 图像。|
 ||[getSurroundingRegion () ](/javascript/api/excel/excel.range#getSurroundingRegion__)|返回 `Range` 一个对象，该对象代表此区域左上单元格的周围区域。|
 ||[hyperlink](/javascript/api/excel/excel.range#hyperlink)|表示当前范围的超链接。|
 ||[numberFormatLocal](/javascript/api/excel/excel.range#numberFormatLocal)|表示Excel用户的语言设置，指定范围的号码格式代码。|
@@ -232,7 +232,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[builtIn](/javascript/api/excel/excel.style#builtIn)|指定样式是否内置样式。|
 ||[fill](/javascript/api/excel/excel.style#fill)|样式的填充。|
 ||[font](/javascript/api/excel/excel.style#font)|`Font`一个代表样式字体的对象。|
-||[名称](/javascript/api/excel/excel.style#name)|样式的名称。|
+||[name](/javascript/api/excel/excel.style#name)|样式的名称。|
 ||[shrinkToFit](/javascript/api/excel/excel.style#shrinkToFit)|指定文本是否自动缩小以适应可用列宽。|
 ||[verticalAlignment](/javascript/api/excel/excel.style#verticalAlignment)|指定样式的垂直对齐方式。|
 ||[wrapText](/javascript/api/excel/excel.style#wrapText)|指定是否Excel对象中的文本换行。|
@@ -255,11 +255,11 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[worksheetId](/javascript/api/excel/excel.tableselectionchangedeventargs#worksheetId)|获取选定内容发生更改的工作表的 ID。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[getActiveCell () ](/javascript/api/excel/excel.workbook#getActiveCell__)|获取工作簿中当前处于活动状态的单元格。|
 ||[dataConnections](/javascript/api/excel/excel.workbook#dataConnections)|表示工作簿中所有数据连接。|
-||[名称](/javascript/api/excel/excel.workbook#name)|获取工作簿名称。|
+||[name](/javascript/api/excel/excel.workbook#name)|获取工作簿名称。|
 ||[properties](/javascript/api/excel/excel.workbook#properties)|获取工作簿属性。|
 ||[protection](/javascript/api/excel/excel.workbook#protection)|返回工作簿的保护对象。|
 ||[styles](/javascript/api/excel/excel.workbook#styles)|表示与工作簿关联的样式的集合。|
-|[WorkbookProtection](/javascript/api/excel/excel.workbookprotection)|[保护 (密码？：string) ](/javascript/api/excel/excel.workbookprotection#protect_password_)|保护工作簿。|
+|[WorkbookProtection](/javascript/api/excel/excel.workbookprotection)|[protect (password？： string) ](/javascript/api/excel/excel.workbookprotection#protect_password_)|保护工作簿。|
 ||[protected](/javascript/api/excel/excel.workbookprotection#protected)|指定工作簿是否受保护。|
 ||[不 (密码？：string) ](/javascript/api/excel/excel.workbookprotection#unprotect_password_)|解除保护工作簿。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[copy (positionType？： Excel。WorksheetPositionType， relativeTo？： Excel。工作表) ](/javascript/api/excel/excel.worksheet#copy_positionType__relativeTo_)|复制工作表，并放置于指定位置。|
@@ -291,7 +291,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 |[WorksheetDeletedEventArgs](/javascript/api/excel/excel.worksheetdeletedeventargs)|[source](/javascript/api/excel/excel.worksheetdeletedeventargs#source)|获取事件源。|
 ||[type](/javascript/api/excel/excel.worksheetdeletedeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetdeletedeventargs#worksheetId)|获取从工作簿中删除的工作表的 ID。|
-|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange：Range \| string) ](/javascript/api/excel/excel.worksheetfreezepanes#freezeAt_frozenRange_)|设置活动工作表视图中的冻结单元格。|
+|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange： Range \| string) ](/javascript/api/excel/excel.worksheetfreezepanes#freezeAt_frozenRange_)|设置活动工作表视图中的冻结单元格。|
 ||[freezeColumns (count？： number) ](/javascript/api/excel/excel.worksheetfreezepanes#freezeColumns_count_)|就地冻结工作表的第一列。|
 ||[freezeRows (count？： number) ](/javascript/api/excel/excel.worksheetfreezepanes#freezeRows_count_)|就地冻结工作表的首行。|
 ||[getLocation()](/javascript/api/excel/excel.worksheetfreezepanes#getLocation__)|获取用于描述活动工作表视图中的冻结单元格的区域。|

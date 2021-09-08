@@ -3,12 +3,12 @@ title: 获取或设置 Outlook 加载项中的项目数据
 description: 根据加载项是在阅读窗体中激活还是在撰写窗体中激活，项目为加载项提供的属性也有所不同。
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: d274d850c06178e1fdb31f95d921c5a8ae4ea0a399a5dbebd61de548c084ce5d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0f7e2335420ee74765ec28bf7d33b339dc3fb6a5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093913"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938676"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>在阅读或撰写窗体中获取和设置 Outlook 项目数据
 
@@ -18,7 +18,7 @@ ms.locfileid: "57093913"
 
 ## <a name="item-properties-available-in-compose-and-read-forms"></a>撰写和阅读窗体中可用的项目属性
 
-表 1 显示了 Office JavaScript API 中的项目级属性，这些属性在邮件外接程序 (和撰写) 模式下可用。通常，阅读窗体中可用的属性是只读的，撰写窗体中可用的属性是可读/写属性[，itemId、conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)和[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)属性除外，无论如何，这些属性始终为只读。 [](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+表 1 显示了 Office JavaScript API 中的项目级属性，这些属性在邮件外接程序 (阅读和撰写) 模式下可用。通常，阅读窗体中可用的属性是只读的，撰写窗体中可用的属性是可读/写属性[，itemId、conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)和[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)属性除外，无论如何，这些属性始终为只读。 [](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
 
 对于撰写窗体中的其余项目级属性，由于加载项和用户可以同时读取或写入同一属性，在撰写模式下获取或设置这些属性的方法都是异步的，因此这些属性在撰写窗体中和阅读窗体中返回的对象类型可能也有所不同。 有关在撰写模式下使用异步方法获取或设置项目级属性的详细信息，请参阅[在 Outlook 的撰写窗体中获取和设置项目数据](get-and-set-item-data-in-a-compose-form.md)。
 
@@ -33,7 +33,7 @@ ms.locfileid: "57093913"
 |约会和邮件|[dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|JavaScript **Date** 对象|属性不可用|
 |约会和邮件|[itemClass](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|字符串|属性不可用|
 |约会和邮件|[itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|字符串|属性不可用|
-|约会和邮件|[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) 枚举中的字符串|[ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) 枚举中的字符串（只读）|
+|约会和邮件|[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) 枚举中的字符串|[ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)枚举中的字符串 (只读) |
 |约会和邮件|[attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)|属性不可用|
 |约会和邮件|[body](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[Body](/javascript/api/outlook/office.body)|[Body](/javascript/api/outlook/office.body)|
 |约会和邮件|[normalizedSubject](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|字符串|属性不可用|
@@ -46,7 +46,7 @@ ms.locfileid: "57093913"
 |约会|[start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|JavaScript **Date** 对象|[Time](/javascript/api/outlook/office.time)|
 |邮件|[bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|属性不可用|[收件人](/javascript/api/outlook/office.recipients)|
 |邮件|[cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|[收件人](/javascript/api/outlook/office.recipients)|
-|邮件|[conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|字符串|字符串（只读）|
+|邮件|[conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|字符串|字符串 (只读) |
 |邮件|[from](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|[From](/javascript/api/outlook/office.from)|
 |邮件|[internetMessageId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|整数|属性不可用|
 |邮件|[sender](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|属性不可用|

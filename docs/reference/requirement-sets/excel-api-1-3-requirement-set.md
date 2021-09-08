@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.3 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d237455baa73aef8e70a6e4901cba6ee8b2b8f3475f6e915b93c437747478408
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d3606b74e8a1099cd58631cc047a783f27a09a19
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095366"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938535"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 的最近更新
 
@@ -25,13 +25,13 @@ ExcelApi 1.3 增加了对数据绑定和基本数据透视表访问的支持。
 |[BindingCollection](/javascript/api/excel/excel.bindingcollection)|[add (range： Range \| string， bindingType： Excel.BindingType，id：string) ](/javascript/api/excel/excel.bindingcollection#add_range__bindingType__id_)|将新的 binding 对象添加到特定区域。|
 ||[addFromNamedItem (name： string， bindingType： Excel。BindingType，id：string) ](/javascript/api/excel/excel.bindingcollection#addFromNamedItem_name__bindingType__id_)|根据工作簿中的命名项添加新的 binding 对象。|
 ||[addFromSelection (bindingType： Excel。BindingType，id：string) ](/javascript/api/excel/excel.bindingcollection#addFromSelection_bindingType__id_)|根据当前选择的内容添加新的 binding 对象。|
-|[PivotTable](/javascript/api/excel/excel.pivottable)|[名称](/javascript/api/excel/excel.pivottable#name)|PivotTable 对象的名称。|
+|[PivotTable](/javascript/api/excel/excel.pivottable)|[name](/javascript/api/excel/excel.pivottable#name)|PivotTable 对象的名称。|
 ||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|包含当前 PivotTable 对象的工作表。|
 ||[refresh()](/javascript/api/excel/excel.pivottable#refresh__)|刷新 PivotTable 对象。|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getItem(name: string)](/javascript/api/excel/excel.pivottablecollection#getItem_name_)|按名称获取 PivotTable 对象。|
 ||[items](/javascript/api/excel/excel.pivottablecollection#items)|获取此集合中已加载的子项。|
 ||[refreshAll () ](/javascript/api/excel/excel.pivottablecollection#refreshAll__)|刷新集合中的所有数据透视表。|
-|[区域](/javascript/api/excel/excel.range)|[getVisibleView () ](/javascript/api/excel/excel.range#getVisibleView__)|表示当前 range 对象的可见行。|
+|[Range](/javascript/api/excel/excel.range)|[getVisibleView () ](/javascript/api/excel/excel.range#getVisibleView__)|表示当前 range 对象的可见行。|
 |[RangeView](/javascript/api/excel/excel.rangeview)|[formulas](/javascript/api/excel/excel.rangeview#formulas)|表示采用 A1 表示法的公式。|
 ||[formulasLocal](/javascript/api/excel/excel.rangeview#formulasLocal)|表示采用 A1 样式表示法的公式，使用用户的语言和数字格式区域设置。|
 ||[formulasR1C1](/javascript/api/excel/excel.rangeview#formulasR1C1)|表示采用 R1C1 样式表示法的公式。|

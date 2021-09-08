@@ -3,12 +3,12 @@ ms.date: 07/08/2021
 description: 了解Excel窗格及其特定 JavaScript 运行时的自定义函数。
 title: 无 UI 的运行时Excel自定义函数
 localization_priority: Normal
-ms.openlocfilehash: 973bbf8179c6536d5964453ff63b7a04d425dae3c1d17527bf0247ff03eef4a5
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8e08f4accd33e405beb5fab618e92dd28abf2246
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079455"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938303"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>无 UI 的运行时Excel自定义函数
 
@@ -32,7 +32,7 @@ ms.locfileid: "57079455"
 
 在无 UI 自定义函数中，可以使用 对象存储和访问 `OfficeRuntime.storage` 数据。 `Storage` 是一个持续、未加密的键值存储系统，可提供 [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage)的替代项，而无 UI 自定义函数不能使用它。 `Storage` 每个域提供 10 MB 的数据。 域可以由多个加载项共享。
 
-`Storage` 旨在作为共享存储解决方案，这意味着外接程序的多个部分将能访问相同数据。 例如，用户身份验证令牌可能存储在 中，因为它可以通过无 UI 自定义函数和外接程序 UI 元素（如任务窗格） `storage` 访问。 同样，如果两个加载项共享同一个域 (例如 ，、) ，则还允许它们通过 来回 `www.contoso.com/addin1` `www.contoso.com/addin2` 共享信息 `storage` 。 请注意，具有不同子域的外接程序将具有不同的 (`storage` 例如 `subdomain.contoso.com/addin1` ，) 。 `differentsubdomain.contoso.com/addin2`
+`Storage` 旨在作为共享存储解决方案，这意味着外接程序的多个部分将能访问相同数据。 例如，用户身份验证令牌可能存储在 中，因为它可以通过无 UI 自定义函数和外接程序 UI 元素（如任务窗格） `storage` 访问。 同样，如果两个加载项共享同一个域 (例如 ，、) ，则还允许它们通过 来回 `www.contoso.com/addin1` `www.contoso.com/addin2` 共享信息 `storage` 。 请注意，具有不同子域的外接程序将具有不同的 (`storage` 例如 `subdomain.contoso.com/addin1` `differentsubdomain.contoso.com/addin2` ，) 。
 
 由于 `storage` 可能是共享的位置，因此一定要认识到，可能会存在替代键值对的情况。
 

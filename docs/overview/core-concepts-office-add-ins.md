@@ -5,12 +5,12 @@ title: 开发生命周期概述
 description: 了解计划、开发、测试和发布生命周期事件。
 ms.date: 05/25/2021
 localization_priority: Priority
-ms.openlocfilehash: c9b376f40c42dcd90025d37f37f25400df5201b8364ad909fdda6b1f23f16291
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 37a31e57fe15504937e9ece42a4b0dea8328fa24
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086789"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938765"
 ---
 # <a name="development-lifecycle-overview"></a>开发生命周期概述
 

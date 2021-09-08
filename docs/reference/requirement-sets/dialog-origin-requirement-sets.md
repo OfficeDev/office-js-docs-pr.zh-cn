@@ -4,16 +4,16 @@ description: 了解有关 Dialog Origin 要求集的详细信息。
 ms.date: 07/22/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 20cd797cfcc0c8b673f8531fbe71769196d0d274ea58a9b76171c1427c125aba
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 24513823eb60435359d5d7307a11a192fece2015
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086623"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939297"
 ---
 # <a name="dialog-origin-requirement-sets"></a>对话框源要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了 Dialog Origin 要求集、Office要求集的客户端应用程序，以及该对话框应用程序Office版本号。
 

@@ -3,12 +3,12 @@ title: 从 Outlook 加载项使用 Outlook REST API
 description: 了解如何从 Outlook 加载项使用 Outlook REST API 获得访问令牌。
 ms.date: 07/06/2021
 localization_priority: Normal
-ms.openlocfilehash: 60a3dab3794dc3c379ae3e6ddf47324a72726e0388839e884ec272c868bdec35
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e7ed6c1c21d90ac058e2dce1eb0856aad02845aa
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093304"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938494"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>从 Outlook 加载项使用 Outlook REST API
 
@@ -17,7 +17,7 @@ ms.locfileid: "57093304"
 > [!IMPORTANT]
 > **已Outlook REST API**
 >
-> 有关Outlook， (2022 年 11 月将完全停用 REST 终结点，请参阅[2020 年 11](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)月) 。 应迁移现有加载项，以使用 Microsoft [Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph)。 此外，[比较 Microsoft Graph 和 Outlook REST API 终结点](/outlook/rest/compare-graph)。
+> 有关Outlook的详细信息，请参阅[20 (20](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)年 11 月发布的) 。 应迁移现有加载项，以使用 Microsoft [Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph)。 此外，[比较 Microsoft Graph 和 Outlook REST API 终结点](/outlook/rest/compare-graph)。
 
 ## <a name="get-an-access-token"></a>获取访问令牌
 

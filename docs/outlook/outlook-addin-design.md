@@ -4,11 +4,11 @@ description: 可帮助你设计和构建引人入胜的外接程序的准则，�
 ms.date: 08/12/2021
 localization_priority: Priority
 ms.openlocfilehash: 62a25595d42470094f7f9471fb97f2e133350da4
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232382"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938289"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Outlook 外接程序设计准则
 

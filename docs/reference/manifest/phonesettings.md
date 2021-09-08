@@ -3,19 +3,19 @@ title: 清单文件中的 PhoneSettings 元素
 description: PhoneSettings 元素指定在手机上使用邮件外接程序时所应用到的源位置和控制设置。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 883242dc290384f9f0b72736338bdd78a2d23ffeee6cf3aee46d5acd970654ab
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d7957e23a77a0f837366e5cedc0e0f350b5635c8
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085724"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938288"
 ---
 # <a name="phonesettings-element"></a>PhoneSettings 元素
 
 指定在手机上使用邮件外接程序时应用的源位置和控制设置。
 
 > [!IMPORTANT]
-> 元素仅在经典版本中可用Outlook 网页版 (通常连接到旧版本地 Exchange server) 和 Outlook `PhoneSettings` 2013 Windows。 若要支持Outlook Android 和 iOS 上的加载项，请参阅适用于[Outlook Mobile 的外接程序](../../outlook/outlook-mobile-addins.md)。
+> 此元素仅在经典版本中可用Outlook 网页版 (通常连接到旧版本地 `PhoneSettings` Exchange server) ，Outlook 2013 on Windows。 若要支持Outlook Android 和 iOS 上的加载项，请参阅适用于[Outlook Mobile 的外接程序](../../outlook/outlook-mobile-addins.md)。
 
 **外接程序类型：** 邮件
 

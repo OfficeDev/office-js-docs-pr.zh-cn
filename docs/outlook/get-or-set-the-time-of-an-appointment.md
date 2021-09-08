@@ -3,16 +3,16 @@ title: 获取或设置 Outlook 加载项中的约会时间
 description: 了解如何在 Outlook 加载项中获取或设置约会开始和结束时间。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6af5bc6227a8a159946991beeb4bdfda85bf9c52fa880c523224c2ad3c67da3d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: eadce9b540a9b3b8a03186340fff4511d42dd35a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098963"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939296"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置时间
 
-Office JavaScript API 提供了异步方法 ([Time.getAsync](/javascript/api/outlook/office.time#getAsync_options__callback_)和[Time.setAsync](/javascript/api/outlook/office.time#setAsync_dateTime__options__callback_)) 获取和设置用户正在撰写的约会的开始时间或结束时间。 这些异步方法仅适用于撰写加载项。若要使用这些方法，请确保为 Outlook 设置相应的外接程序清单以在撰写窗体中激活外接程序，如为撰写窗体创建[Outlook](compose-scenario.md)外接程序中所述。
+Office JavaScript API 提供了异步方法 ([Time.getAsync](/javascript/api/outlook/office.time#getAsync_options__callback_)和[Time.setAsync](/javascript/api/outlook/office.time#setAsync_dateTime__options__callback_)) ，用于获取和设置用户正在撰写的约会的开始时间或结束时间。 这些异步方法仅适用于撰写加载项。若要使用这些方法，请确保为 Outlook 设置相应的外接程序清单以在撰写窗体中激活外接程序，如为撰写窗体创建[Outlook](compose-scenario.md)外接程序中所述。
 
 [start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和 [end](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性对撰写和阅读窗体中的约会均适用。在阅读窗体中，您可以直接从父对象访问属性，类似于：
 

@@ -3,12 +3,12 @@ title: 将内置控件Office集成到自定义控件组和选项卡中
 description: 了解如何在自定义命令组Office自定义命令组和自定义功能区上的选项卡Office按钮。
 ms.date: 02/25/2021
 localization_priority: Normal
-ms.openlocfilehash: a32b2831bdbd9a260acd7f2c09b6a6c2d8ff5789807ac6e6e1e1073a0953fc18
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8d4e8f39313551d001669b948b146250114f3e06
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082142"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939072"
 ---
 # <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>将内置控件Office集成到自定义控件组和选项卡中
 
@@ -19,7 +19,7 @@ ms.locfileid: "57082142"
 
 > [!IMPORTANT]
 >
-> - 本文中所述的外接程序功能与标记仅在 PowerPoint web 版 *中提供*。
+> - 本文中介绍的加载项功能与标记仅在 PowerPoint web 版 *中提供*。
 > - 本文中介绍的标记仅适用于支持要求集 **AddinCommands 1.3 的平台**。 请参阅后一节 [在不受支持的平台上的行为](#behavior-on-unsupported-platforms)。
 
 ## <a name="insert-a-built-in-control-group-into-a-custom-tab"></a>将内置控件组插入自定义选项卡
@@ -44,7 +44,7 @@ ms.locfileid: "57082142"
 
 若要将内置控件Office自定义组中，请将[OfficeControl](../reference/manifest/group.md#officecontrol)元素添加为父元素中的子 `<Group>` 元素。 `id`元素的 `<OfficeControl>` 属性设置为内置控件的 ID。 请参阅[查找控件和控件组的 ID。](#find-the-ids-of-controls-and-control-groups)
 
-以下标记示例将Office上标控件添加到自定义组，并将它定位到自定义按钮的正之后。
+以下标记示例将上标Office添加到自定义组，并将它定位到自定义按钮的正之后。
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
@@ -76,4 +76,4 @@ ms.locfileid: "57082142"
 
 ## <a name="behavior-on-unsupported-platforms"></a>不受支持的平台上的行为
 
-如果外接程序安装在不支持要求集[AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md)的平台上，则本文中介绍的标记将被忽略，并且内置 Office 控件/组将不会显示在自定义组/选项卡中。 若要防止加载项安装在不支持标记的平台上，请添加对清单部分的要求集 `<Requirements>` 的引用。 有关说明，请参阅 [在清单中设置 Requirements 元素](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)。 或者，您可以将外接程序设计成在 **AddinCommands 1.3** 不受支持时提供备用体验，如在 [JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)代码中使用运行时检查中所述。 例如，如果您的外接程序包含假定内置按钮在自定义组中的说明，则您可能具有一个备用版本，该版本假定内置按钮仅包含在它们的常用位置。
+如果外接程序安装在不支持要求集[AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md)的平台上，则本文中描述的标记将被忽略，并且内置 Office 控件/组将不会显示在自定义组/选项卡中。 若要防止加载项安装在不支持标记的平台上，请添加对清单部分的要求集 `<Requirements>` 的引用。 有关说明，请参阅 [在清单中设置 Requirements 元素](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)。 或者，您可以将外接程序设计成在 **AddinCommands 1.3** 不受支持时提供备用体验，如在 [JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)代码中使用运行时检查中所述。 例如，如果您的外接程序包含假定内置按钮在自定义组中的说明，则您可能具有一个备用版本，该版本假定内置按钮仅包含在它们的常用位置。

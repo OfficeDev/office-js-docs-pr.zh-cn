@@ -4,12 +4,12 @@ description: 构建一个 Excel 外接程序，用于创建、填充、筛选和
 ms.date: 07/08/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 2fd962f3729805805601af4379e83086059314151e880143443d65fbd8e80416
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2441d5fa266ba0e10e64e2af55d6679a6c77af9f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085638"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938782"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -54,7 +54,7 @@ ms.locfileid: "57085638"
 
 1. 在代码编辑器中打开项目。
 
-1. 打开 **./src/taskpane/taskpane.html** 文件。  此文件含有任务窗格的 HTML 标记。
+1. 打开 ./src/taskpane/taskpane.html 文件。  此文件含有任务窗格的 HTML 标记。
 
 1. 找到 `<main>` 元素并删除在开始 `<main>` 标记后和关闭 `</main>` 标记前出现的所有行。
 
@@ -117,7 +117,7 @@ ms.locfileid: "57085638"
     }
     ```
 
-1. 在 `createTable()` 函数中，将 `TODO1` 替换为以下代码。 注意：
+1. 在 `createTable()` 函数中，将 `TODO1` 替换为下列代码。注意：
 
     - 此代码通过使用工作表的表格集合的 `add` 方法来创建表格，即使是空的，也始终存在。 这是创建 Excel.js 对象的标准方式。 没有类构造函数 API，切勿使用 `new` 运算符创建 Excel 对象。 相反，请添加到父集合对象。
 
@@ -131,7 +131,7 @@ ms.locfileid: "57085638"
     expensesTable.name = "ExpensesTable";
     ```
 
-1. 在 `createTable()` 函数中，将 `TODO2` 替换为以下代码。 注意：
+1. 在 `createTable()` 函数中，使用以下代码替换 `TODO2`。注意：
 
     - 范围的单元格值是通过一组数组进行设置。
 
@@ -152,7 +152,7 @@ ms.locfileid: "57085638"
     ]);
     ```
 
-1. 在 `createTable()` 函数中，将 `TODO3` 替换为以下代码。 注意：
+1. 在 `createTable()` 函数中，使用以下代码替换 `TODO3`。注意：
 
     - 此代码将从零开始编制的索引传递给表格的列集合的 `getItemAt` 方法，以获取对“金额”列的引用。
 
@@ -249,7 +249,7 @@ ms.locfileid: "57085638"
     }
     ```
 
-1. 在 `filterTable()` 函数中，将 `TODO1` 替换为以下代码。 注意：
+1. 在 `filterTable()` 函数中，将 `TODO1` 替换为以下代码。注意：
 
    - 代码先将列名称传递给 `getItem` 方法（而不是像 `getItemAt` 方法一样将列索引传递给 `createTable` 方法），获取对需要筛选的列的引用。 由于用户可以移动表格列，因此给定索引处的列可能会在表格创建后更改。 所以，更安全的做法是，使用列名称获取对列的引用。 上一教程安全地使用了 `getItemAt`，因为是在与创建表格完全相同的方法中使用了它，所以用户没有机会移动列。
 
@@ -299,7 +299,7 @@ ms.locfileid: "57085638"
     }
     ```
 
-1. 在 `sortTable()` 函数中，将 `TODO1` 替换为以下代码。 注意：
+1. 在 `sortTable()` 函数中，将 `TODO1` 替换为以下代码。注意：
 
    - 此代码创建一组 `SortField` 对象，其中只有一个成员，因为加载项只对“商家”列进行了排序。
 
@@ -470,7 +470,7 @@ ms.locfileid: "57085638"
     }
     ```
 
-1. 在 `freezeHeader()` 函数中，将 `TODO1` 替换为以下代码。 注意：
+1. 在 `freezeHeader()` 函数中，将 `TODO1` 替换为以下代码。注意：
 
    - `Worksheet.freezePanes` 集合是工作表中的一组窗格，在工作表滚动时就地固定或冻结。
 
@@ -656,7 +656,7 @@ ms.locfileid: "57085638"
 
 只要代码需要从 Office 文档 *读取* 信息，就必须完成这些步骤。
 
-1. 在 `toggleProtection` 函数中，将 `TODO2` 替换为以下代码。 注意：
+1. 在 `toggleProtection` 函数中，使用以下代码替换 `TODO2`。注意：
 
    - 每个 Excel 对象都有 `load` 方法。 对于要在参数中读取的对象属性，将它们指定为逗号分隔名称字符串。 在此示例中，需要读取的属性为 `protection` 属性的子属性。 引用子属性的方法与在代码中的其他任何地方引用属性几乎完全一样，不同之处在于使用的是正斜杠（“/”）字符，而不是“.”字符。
 

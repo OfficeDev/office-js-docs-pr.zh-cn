@@ -3,12 +3,12 @@ title: 清单文件中的 Icon 元素
 description: 定义“按钮”或“菜单”控件的 Image 元素。
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: d153ca4ef162b8790b48a37a911ccd6b11c2632160bd02e09a34b2ea4f14daf6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1adfbcd154091fcae49966f0c1f7d0b9cc968ed3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093017"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938704"
 ---
 # <a name="icon-element"></a>Icon 元素
 
@@ -39,7 +39,7 @@ ms.locfileid: "57093017"
 ```
 
 > [!IMPORTANT]
-> 如果此图像是加载项的代表图标，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和加载项内创建有效Office大小和其他要求。
+> 如果此图像是加载项的代表图标，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和 Office内创建有效列表，了解大小和其他要求。
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>移动外形规格的其他要求
 

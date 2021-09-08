@@ -3,12 +3,12 @@ title: 常见 JavaScript API 对象模型
 description: 了解 JavaScript Office API 对象模型
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e5624c59604ab81e19293b2af023e6519860011f54c41430602a2aa0a227eeb1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: dd30f5e5be70f58fec9eb4c84c0491397792950b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080356"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938227"
 ---
 # <a name="common-javascript-api-object-model"></a>常见 JavaScript API 对象模型
 
@@ -42,7 +42,7 @@ OfficeJavaScript API 提供对Office应用程序的基础功能的访问权限�
 
 - 文档上按加载项保留的设置或加载项状态。
 
-您还可以使用 `Document` 对象与文档中的数据Project交互。 特定于 Project 的 API 功能记录在成员 [ProjectDocument](/javascript/api/office/office.document) 抽象类中。 有关为 Project 创建任务窗格加载项的详细信息，请参阅[适用于 Project 的任务窗格加载项](../project/project-add-ins.md)。
+您还可以使用 `Document` 对象与文档中Project交互。 特定于 Project 的 API 功能记录在成员 [ProjectDocument](/javascript/api/office/office.document) 抽象类中。 有关为 Project 创建任务窗格加载项的详细信息，请参阅[适用于 Project 的任务窗格加载项](../project/project-add-ins.md)。
 
 所有这些形式的数据访问都从抽象对象的实例 `Document` 开始。
 
@@ -64,7 +64,7 @@ OfficeJavaScript API 提供对Office应用程序的基础功能的访问权限�
 
  **适用于：** 内容和任务窗格加载项类型
 
-为了创建跨不同 Office 文档无缝工作的扩展，Office JavaScript API 通过常见数据类型和将不同文档内容强制转换为三种常见数据类型的功能来抽象化每个 Office 应用程序的特殊性。
+为了创建可跨不同 Office 文档无缝工作的扩展，Office JavaScript API 通过常见数据类型和将不同文档内容强制转换为三种常见数据类型的功能来提取每个 Office 应用程序的特殊性。
 
 #### <a name="common-data-types"></a>通用数据类型
 
@@ -78,10 +78,10 @@ OfficeJavaScript API 提供对Office应用程序的基础功能的访问权限�
 
 #### <a name="data-type-coercion"></a>数据类型强制转换
 
-和 Binding 对象上的数据访问方法支持使用这些方法 `Document` 的 _coercionType_ 数据类型和相应的 [CoercionType](/javascript/api/office/office.coerciontype)枚举值指定所需的属性。 [](/javascript/api/office/office.binding) 不管绑定的实际形状如何，不同的 Office 应用程序都通过尝试将数据强制转换为请求的数据类型来支持通用的数据类型。 例如，如果选中了某个 Word 表格或段落，开发人员可以指定以纯文本、HTML、Office Open XML 或表格的形式读取它，而 API 实现则负责处理必要的转换和数据转换。
+和 Binding 对象上的数据访问方法支持使用这些方法 `Document` 的 _coercionType_ 数据类型以及相应的 [CoercionType](/javascript/api/office/office.coerciontype)枚举值指定所需的属性。 [](/javascript/api/office/office.binding) 不管绑定的实际形状如何，不同的 Office 应用程序都通过尝试将数据强制转换为请求的数据类型来支持通用的数据类型。 例如，如果选中了某个 Word 表格或段落，开发人员可以指定以纯文本、HTML、Office Open XML 或表格的形式读取它，而 API 实现则负责处理必要的转换和数据转换。
 
 > [!TIP]
-> **何时应使用矩阵与表格 coercionType 数据访问？** 如果需要在添加行和列时动态增加表格数据，并且必须使用表标题，则应该将 或 对象数据访问方法的 _coercionType_ 参数指定为 或) ，从而使用表 `Document` `Binding` `"table"` `Office.CoercionType.Table` 数据类型 (。 表格数据和矩阵数据中都支持在数据结构内添加行和列，但仅支持对表格数据追加行和列。 如果您不计划添加行和列，并且数据不需要标题功能，则应该通过将数据访问方法的 _coercionType_ 参数指定为 或) 来使用矩阵 `"matrix"` 数据类型 (，这将提供与数据交互的更简单的模型。 `Office.CoercionType.Matrix`
+> **何时应使用矩阵与表格 coercionType 数据访问？** 如果需要在添加行和列时表格数据动态增长，并且必须使用表标题，则应该将 或 对象数据访问方法的 _coercionType_ 参数指定为 或) ，从而使用表 `Document` `Binding` `"table"` `Office.CoercionType.Table` 数据类型 (。 表格数据和矩阵数据中都支持在数据结构内添加行和列，但仅支持对表格数据追加行和列。 如果您不计划添加行和列，并且数据不需要标题功能，则应该通过将数据访问方法的 _coercionType_ 参数指定为 或) 来使用矩阵 `"matrix"` 数据类型 (，它提供了与数据交互的更简单的模型。 `Office.CoercionType.Matrix`
 
 如果无法将数据强制转换为指定的类型，那么回调中的 [AsyncResult.status](/javascript/api/office/office.asyncresult#status) 属性返回 `"failed"`，并且你可以使用 [AsyncResult.error](/javascript/api/office/office.asyncresult#error) 属性访问 [Error](/javascript/api/office/office.error) 对象，其中包括方法调用失败原因的信息。
 
@@ -143,12 +143,12 @@ var item = Office.context.mailbox.item;
 
 ```
 
-此外Outlook加载项可以使用下列对象。
+此外，Outlook加载项可以使用下列对象。
 
 - `Office` 对象：用于初始化。
 
 - `Context` 对象：用于访问内容和显示语言属性。
 
-- `RoamingSettings`object：Outlook加载项特定的自定义设置保存至安装加载项的用户邮箱。
+- `RoamingSettings`对象：Outlook加载项特定的自定义设置保存至安装加载项的用户邮箱。
 
 有关在 Outlook 加载项中使用 JavaScript 的信息，请参阅 [Outlook 加载项](../outlook/outlook-add-ins-overview.md)。

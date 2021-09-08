@@ -3,16 +3,16 @@ title: 清单文件中的 Set 元素
 description: Set 元素指定Office加载项Office所需的 JavaScript API 要求集。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: efffb3681ffb8ff310a6236c6f9aad6f001b0f86e4046df6e867798302d66f5a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 608830e1ebc0d2e2d4c170b48bba00b3a19e87af
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095027"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938456"
 ---
 # <a name="set-element"></a>Set 元素
 
-指定加载项激活Office JavaScript API Office要求集。
+从 JavaScript API Office要求集，Office加载项需要该要求集才能激活。
 
 **加载项类型：** 内容、任务窗格和邮件
 

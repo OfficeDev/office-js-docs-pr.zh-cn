@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 08/17/2021
 localization_priority: Normal
 ms.openlocfilehash: 587ad9afde7b8f0619c720cdd83e1ec07150ab64
-ms.sourcegitcommit: dd77da9b19e7a2d65174b632556e9e01b7f006e0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2021
-ms.locfileid: "58407944"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938218"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -25,7 +25,7 @@ ms.locfileid: "58407944"
 目前，Web 和 web 上支持以下Windows。 此外，当引发事件时，处理程序会收到一个对象，该对象可能包含特定于事件 `event` 类型的详细信息。 在下表中，特定于 **事件的 JSON** 列包含指向相关对象的链接（如果适用）。
 
 > [!IMPORTANT]
-> 仍在预览中的事件仅适用于 Microsoft 365 订阅Outlook 网页版和 Windows。 有关详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。 预览事件不应在生产外接程序中使用。
+> 仍在预览中的事件仅适用于 Microsoft 365 和 Outlook 网页版 中的 Windows。 有关详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。 预览事件不应在生产外接程序中使用。
 
 |事件|说明|特定于事件的 JSON|最低要求集|
 |---|---|---|---|
@@ -46,11 +46,11 @@ ms.locfileid: "58407944"
 预览这些事件：
 
 - 例如Outlook 网页版：
-  - [在租户 上配置Microsoft 365版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
-  - 在 上 **引用** beta https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN (。 TypeScript[编译和](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)定义的类型定义IntelliSense位于 CDN[和 DefinitelyTyped 中](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 可以使用 安装这些类型 `npm install --save-dev @types/office-js-preview` 。
+  - [在租户上配置Microsoft 365版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
+  - 在 上 **引用** beta https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN (。 TypeScript[编译和](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)定义类型定义IntelliSense位于 CDN[和 DefinitelyTyped 中](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 可以使用 安装这些类型 `npm install --save-dev @types/office-js-preview` 。
 - 有关Outlook Windows：
   - 最低要求版本为 16.0.14026.20000。 加入[Office 预览体验计划](https://insider.office.com)，以访问 Office beta 版本。
-  - 配置注册表。 Outlook包括 Office.js 的生产版本和 beta 版本的本地副本，而不是从 CDN。 默认情况下，将引用 API 的本地生产副本。 若要切换到 JavaScript API 的本地 beta Outlook，需要添加此注册表项，否则可能找不到 beta API。
+  - 配置注册表。 Outlook包括 Office.js 的生产和 beta 版本的本地副本，而不是从 CDN。 默认情况下，将引用 API 的本地生产副本。 若要切换到 JavaScript API Outlook beta 副本，需要添加此注册表项，否则可能无法找到 beta API。
     1. 创建注册表项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
     1. 添加一个名为 的 `EnableBetaAPIsInJavaScript` 条目，将值设置为 `1` 。 下图显示注册表应该呈现的状态。
 
@@ -58,7 +58,7 @@ ms.locfileid: "58407944"
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)使用 Yeoman 生成器为加载项创建加载项Office快速入门。
+完成[Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)使用适用于加载项的 Yeoman 生成器创建加载项Office快速入门。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -177,7 +177,7 @@ ms.locfileid: "58407944"
 </VersionOverrides>
 ```
 
-Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一 JavaScript 文件的 HTML 文件。 你必须在清单的 节点中提供对这两个文件的引用，因为 Outlook 平台最终确定是使用 HTML 还是基于 Outlook `Resources` 客户端的 JavaScript。 因此，若要配置事件处理，请提供 HTML 在 元素中的位置，然后在其子元素中提供 JAVAScript 文件内附或 HTML `Runtime` `Override` 引用的位置。
+Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一 JavaScript 文件的 HTML 文件。 你必须在清单的节点中提供对这些文件的引用，因为 Outlook 平台最终确定是使用 HTML 还是基于 Outlook `Resources` 客户端的 JavaScript。 因此，若要配置事件处理，请提供 HTML 在 元素中的位置，然后在其子元素中提供 JAVAScript 文件内附或 HTML `Runtime` `Override` 引用的位置。
 
 > [!TIP]
 > 若要了解有关加载项清单Outlook，请参阅Outlook[加载项清单。](manifests.md)
@@ -188,7 +188,7 @@ Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一
 
 在此方案中，您将添加用于撰写新项的处理。
 
-1. 从同一快速启动项目中，在代码编辑器中打开 **commands.js./src/commands/commands.js** 文件。
+1. 从同一快速启动项目中，在代码编辑器中打开文件 **./src/commands/commands.js** 文件。
 
 1. 在 函数 `action` 之后，插入以下 JavaScript 函数。
 
@@ -243,7 +243,7 @@ Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一
 
 1. 在 Outlook 网页版中，创建新邮件。
 
-    ![撰写时设置主题Outlook 网页版窗口中邮件窗口的屏幕截图。](../images/outlook-web-autolaunch-1.png)
+    ![撰写时主题设置Outlook 网页版窗口中邮件窗口的屏幕截图。](../images/outlook-web-autolaunch-1.png)
 
 1. 在Outlook中Windows新建一封邮件。
 
@@ -254,7 +254,7 @@ Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一
     >
     > 1. 关闭 Outlook。
     > 1. 打开 **任务管理器** ， **并确保msoadfsb.exe进程** 未运行。
-    > 1. 运行以下命令：
+    > 1. 运行以下命令。
     >
     >    ```command&nbsp;line
     >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
@@ -269,13 +269,13 @@ Outlook Windows使用 JavaScript 文件，Outlook 网页版使用可引用同一
 - 如果更新了清单 [，请删除加载项，](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) 然后再次旁加载它。
 - 如果对清单外的文件进行了更改，请关闭并重新打开Outlook或Windows浏览器选项卡以运行Outlook 网页版。
 
-实现自己的功能时，可能需要调试代码。 有关如何调试基于事件的外接程序激活的指南，请参阅调试基于事件Outlook[外接程序](debug-autolaunch.md)。
+实现自己的功能时，可能需要调试代码。 有关如何调试基于事件的外接程序激活的指南，请参阅调试基于事件Outlook[加载项](debug-autolaunch.md)。
 
 运行时日志记录还可用于 Windows。 有关详细信息，请参阅使用运行时 [日志记录调试加载项](../testing/runtime-logging.md#runtime-logging-on-windows)。
 
 ## <a name="deploy-to-users"></a>部署到用户
 
-可以通过在加载项中上传清单来部署基于事件的Microsoft 365 管理中心。 在管理门户中，展开设置窗格中的"集成应用"部分，然后选择"**集成应用"。** 在"**集成应用"** 页上，选择 **"Upload应用"** 操作。
+可以通过在加载项中上传清单来部署基于事件的Microsoft 365 管理中心。 在管理门户中，展开导航设置的"集成应用"部分，然后选择"**集成应用"。** 在"**集成应用"** 页上，选择 **"Upload应用"** 操作。
 
 ![屏幕中集成应用页面的屏幕截图Microsoft 365 管理中心自定义Upload操作。](../images/outlook-deploy-event-based-add-ins.png)
 
@@ -286,13 +286,13 @@ AppSource 和应用内 Office 应用商店：即将推出部署基于事件的�
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>基于事件的激活行为和限制
 
-加载项启动事件处理程序应尽量短运行、轻量且无影响。 激活后，外接程序将在大约 300 秒（运行基于事件的外接程序所允许的最大时间长度）内退出。若要指示加载项已完成对启动事件的处理，我们建议让关联的处理程序调用 `event.completed` 方法。  (请注意，语句后包含的代码不能保证运行。) 每次触发外接程序处理的事件时，外接程序将重新激活并运行关联的事件处理程序，超时窗口将重置。 `event.completed` 外接程序在时间结束后结束，或者用户关闭撰写窗口或发送项目。
+加载项启动事件处理程序应尽量短运行、轻量且无影响。 激活后，外接程序将在大约 300 秒（运行基于事件的外接程序所允许的最大时间长度）内退出。若要指示加载项已完成对启动事件的处理，我们建议让关联的处理程序调用 `event.completed` 方法。  (请注意，语句之后包含的代码不能保证运行。) 每次触发外接程序处理的事件时，外接程序将重新激活并运行关联的事件处理程序，超时窗口将重置。 `event.completed` 外接程序在时间结束后结束，或者用户关闭撰写窗口或发送项目。
 
 如果用户有多个订阅了同一事件的加载项，Outlook平台将按特定顺序启动加载项。 目前，只能主动运行五个基于事件的加载项。
 
 用户可以切换或导航离开外接程序开始运行的当前邮件项目。 启动的加载项将在后台完成其操作。
 
-在 JavaScript 文件中不支持导入，在 JavaScript 文件中对客户端中基于事件的激活Windows处理。
+在 JavaScript 文件中不支持导入，因为 JavaScript 文件在客户端中对基于事件的激活Windows处理。
 
 某些Office.js更改或更改 UI 的 API 不允许来自基于事件的外接程序。以下是阻止的 API。
 
@@ -314,7 +314,7 @@ AppSource 和应用内 Office 应用商店：即将推出部署基于事件的�
 
 ### <a name="requesting-external-data"></a>请求外部数据
 
-可以使用提取等 API 或[XmlHttpRequest (XHR) （](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)一种标准 Web API，用于发送 HTTP 请求以与服务器交互）请求外部数据。 [](https://developer.mozilla.org/docs/Web/API/Fetch_API)
+可以使用 [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) 等 API 或 [XmlHttpRequest (XHR) （ ](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)一种用于发送 HTTP 请求以与服务器交互的标准 Web API）请求外部数据。
 
 请注意，在生成 XmlHttpRequest 时，必须使用其他安全措施，要求使用同源[策略和简单的](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) [CORS。](https://www.w3.org/TR/cors/)
 
@@ -329,4 +329,4 @@ AppSource 和应用内 Office 应用商店：即将推出部署基于事件的�
 - [基于事件的加载项的 AppSource Outlook选项](autolaunch-store-options.md)
 - PnP 示例：
   - [使用Outlook基于事件的激活设置签名](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
-  - [使用Outlook基于事件的激活来标记外部收件人](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)
+  - [使用Outlook事件激活来标记外部收件人](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)

@@ -5,21 +5,21 @@ ms.date: 04/09/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: 8197228f1d428fd48c494825fec0e73cb85609f6
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868755"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939298"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>打开浏览器窗口 API 要求集
 
 要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
-OpenBrowserWindow API 集使加载项能够打开浏览器，以完成无法在加载项本身的沙盒 Webview 控件中始终完成的任务;例如，在 webview 控件由 webview 控件提供时下载 PDF Microsoft Edge。
+OpenBrowserWindow API 集使加载项能够打开浏览器，以完成无法在加载项本身的沙盒 Webview 控件中始终完成的任务;例如，在 webview 控件由 webview 控件提供时下载 pdf Microsoft Edge。
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了 OpenBrowserWindow API 要求集、Office 支持该要求集的主机应用程序，以及 Office 应用程序的版本或版本号。
 
-|  要求集  | Office 2013 Windows或更高版本<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |  Office Online Server  |
+|  要求集  | Office或更高版本的 Windows 2013<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | OpenBrowserWindowApi 1.1  | 不适用 | 版本 1810 (内部版本 16.0.11001.20074) 或更高版本 | 16.0.0.0 或更高版本 | 16.0.0.0 或更高版本 | 不适用 | 不适用|
 

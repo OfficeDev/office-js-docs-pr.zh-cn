@@ -4,12 +4,12 @@ description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office �
 ms.date: 11/03/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: c4264c644e064787819705c8cd63bed6243b6eddfde24e21730b8938846a89b7
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: eb75c0b4f2a27612a2e361caaaefefa047a68a44
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097499"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938570"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>使用 Yeoman 生成器创建使用单一登录的 Node.js Office 加载项
 

@@ -3,12 +3,12 @@ title: 初始化 Office 加载项
 description: 了解如何初始化Office外接程序。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 23005b89e4633a2c88b7d17f76dd3be530246ac31a741935af1e018144abea55
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0cddc4eaa99c9f1536be91d6fe2971c43344a149
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080587"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938626"
 ---
 # <a name="initialize-your-office-add-in"></a>初始化 Office 加载项
 
@@ -18,7 +18,7 @@ Office 加载项通常使用启动逻辑执行以下操作：
 
 - 确保存在某些项目，例如具有特定名称的工作表。
 
-- 提示用户选择文档中的一些Excel，然后插入用这些选定值初始化的图表。
+- 提示用户选择图表中的一些Excel，然后插入用这些选定值初始化的图表。
 
 - 建立绑定。
 
@@ -88,7 +88,7 @@ Office.onReady(function() {
 });
 ```
 
-但是，此做法存在例外情况。 例如，假设你想要在浏览器 (而不是在 Office 应用程序) 中旁加载外接程序，以便使用浏览器工具调试 UI。 由于 Office.js 将不会在浏览器中加载，所以，`onReady` 将不会运行，且如果在 Office `$(document).ready` 内调用它，则 `onReady` 将不会运行。 
+但是，此做法存在例外情况。 例如，假设你想要在浏览器 (中打开外接程序，而不是在 Office 应用程序) 中旁加载它，以便使用浏览器工具调试 UI。 由于 Office.js 将不会在浏览器中加载，所以，`onReady` 将不会运行，且如果在 Office `$(document).ready` 内调用它，则 `onReady` 将不会运行。 
 
 另一个例外情况是，您希望在加载外接程序时在任务窗格中显示进度指示器。 在此方案中，代码应调用 jQuery 并使用 `ready` 其回调来呈现进度指示器。 然后，Office `onReady` 的回调可将进度指示器替换为最终 UI。 
 
@@ -104,7 +104,7 @@ Office.initialize = function () {
 };
 ```
 
-如果你使用的是包含它们自己的初始化处理程序或测试的其他 JavaScript 框架，它们通常应放置在事件 (前面使用 `Office.initialize` **Office.onReady ()** 初始化部分中介绍的异常也适用于) 。 例如，会对 [JQuery 的](https://jquery.com) `$(document).ready()` 函数进行以下引用：
+如果你使用的是包含它们自己的初始化处理程序或测试的其他 JavaScript 框架，它们通常应放置在事件 (前面使用 `Office.initialize` **Office.onReady ()** 初始化部分中所述的异常也适用于) 。 例如，会对 [JQuery 的](https://jquery.com) `$(document).ready()` 函数进行以下引用：
 
 ```js
 Office.initialize = function () {
@@ -137,7 +137,7 @@ Office.initialize = function (reason) {
 - `Office.initialize` 事件将在 Office.js 初始化其本身的内部过程的末尾处触发。 并且它会在内部过程结束后 *立即* 触发。 如果将处理程序分配到事件所使用的代码在事件触发后执行的时间过长，则处理程序将不会运行。 例如，如果使用的是 WebPack 任务管理器，则在加载 Office.js 后但在加载自定义 JavaScript 前，它会配置加载项的主页以加载填充代码文件。 在脚本加载和分配处理程序时，初始化事件已经发生。 但调用 `Office.onReady()` 永远不会“太迟”。 如果初始化事件已经发生，则回调将立即运行。
 
 > [!NOTE]
-> 即使没有启动逻辑，也应在加载项 JavaScript 加载时调用 `Office.onReady()` 或将空函数分配到 `Office.initialize`。 某些Office应用程序组合和平台组合不会加载任务窗格，直到其中一个情况发生。 以下示例显示了这两种方法。
+> 即使没有启动逻辑，也应在加载项 JavaScript 加载时调用 `Office.onReady()` 或将空函数分配到 `Office.initialize`。 某些Office和平台组合将不会加载任务窗格，直到其中一个情况发生。 以下示例显示了这两种方法。
 >
 >```js    
 >Office.onReady();

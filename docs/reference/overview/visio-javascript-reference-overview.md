@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 58eedf260a52fd2ffc321de6d1a389736a93b4e4e65f7dfa824286bcfa156f7b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7f706d8f566a747468c4c8d676bd54882bb2a6bf
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098089"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939089"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 
@@ -30,12 +30,12 @@ ms.locfileid: "57098089"
 
 本文介绍了如何通过结合使用 Visio JavaScript API 和 Visio 网页版来生成 SharePoint Online 解决方案。具体介绍了有关使用 API（如 `EmbeddedSession`、`RequestContext`、JavaScript 代理对象、`sync()`、`Visio.run()` 和 `load()` 方法）的基本概念。下面这些代码示例展示了如何应用这些概念。
 
-## <a name="embeddedsession&quot;></a>EmbeddedSession
+## <a name="embeddedsession"></a>EmbeddedSession
 
 EmbeddedSession 对象在浏览器中初始化开发人员框架和 Visio 框架之间的通信。
 
 ```js
-var session = new OfficeExtension.EmbeddedSession(url, { id: &quot;embed-iframe&quot;,container: document.getElementById(&quot;iframeHost") });
+var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
 session.init().then(function () {
     window.console.log("Session successfully initialized");
 });

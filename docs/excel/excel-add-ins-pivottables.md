@@ -4,11 +4,11 @@ description: 使用 Excel JavaScript API 创建数据透视表并与其组件交
 ms.date: 07/02/2021
 localization_priority: Normal
 ms.openlocfilehash: d9ccaf72be4fa23b73f1f91d38d240ea02569eca
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868636"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938733"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>使用 JavaScript API Excel数据透视表
 
@@ -287,7 +287,7 @@ Excel.run(function (context) {
 
 ### <a name="filter-with-pivotfilters"></a>使用 PivotFilter 进行筛选
 
-[PivotFilters](/javascript/api/excel/excel.pivotfilters)允许您基于四个层次结构类别筛选数据透视表[](#hierarchies)数据 (筛选器、列、行和) 。 在数据透视表对象模型中， `PivotFilters` 应用于 [透视字段](/javascript/api/excel/excel.pivotfield)，并且 `PivotField` 每个都可以分配一个或多个 `PivotFilters` 。 若要将 PivotFilter 应用于透视字段，必须将字段对应的 [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) 分配给层次结构类别。
+[PivotFilters](/javascript/api/excel/excel.pivotfilters)允许您基于四个层次结构类别筛选数据透视表[](#hierarchies)数据 (筛选器、列、行和值) 。 在数据透视表对象模型中， `PivotFilters` 应用于 [数据透视字段](/javascript/api/excel/excel.pivotfield)，并且 `PivotField` 每个字段都可以分配一个或多个 `PivotFilters` 。 若要将 PivotFilter 应用于透视字段，必须将字段对应的 [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) 分配给层次结构类别。
 
 #### <a name="types-of-pivotfilters"></a>PivotFilter 的类型
 
@@ -300,7 +300,7 @@ Excel.run(function (context) {
 
 #### <a name="create-a-pivotfilter"></a>创建 PivotFilter
 
-若要使用数据透视表等 (`Pivot*Filter` 数据透视表 `PivotDateFilter`) ，请对透视 [字段应用筛选器](/javascript/api/excel/excel.pivotfield)。 以下四个代码示例显示了如何使用四种类型的 PivotFilter。
+若要使用数据透视表等 (`Pivot*Filter` 数据透视表 `PivotDateFilter`) ，请对透视字段应用 [筛选器](/javascript/api/excel/excel.pivotfield)。 以下四个代码示例显示了如何使用四种类型的 PivotFilter。
 
 ##### <a name="pivotdatefilter"></a>PivotDateFilter
 
@@ -412,7 +412,7 @@ Excel.run(function (context) {
 
 ### <a name="filter-with-slicers"></a>使用切片器筛选
 
-[切片器](/javascript/api/excel/excel.slicer)允许从数据透视表或Excel筛选数据。 切片器使用指定列或透视字段的值筛选相应的行。 这些值存储为 中的 [SlicerItem](/javascript/api/excel/excel.sliceritem) 对象 `Slicer` 。 加载项可以调整这些筛选器，就像用户 ([UI Excel) 。](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d) 切片器位于绘图层中工作表的顶部，如以下屏幕截图所示。
+[切片器](/javascript/api/excel/excel.slicer)允许从数据透视表或Excel筛选数据。 切片器使用指定列或透视字段的值筛选相应的行。 这些值存储为 中的 [SlicerItem](/javascript/api/excel/excel.sliceritem) 对象 `Slicer` 。 加载项可以调整这些筛选器，就像用户 (UI Excel[一](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d)) 。 切片器位于绘图层中工作表的顶部，如以下屏幕截图所示。
 
 ![筛选数据透视表上的数据的切片器。](../images/excel-slicer.png)
 
@@ -446,7 +446,7 @@ Excel.run(function (context) {
 切片器使用 中的项筛选数据透视表 `sourceField` 。 `Slicer.selectItems`方法设置保留在切片器中的项。 这些项目作为 传递给 方法， `string[]` 表示项的键。 包含这些项目的任何行都保留在数据透视表的聚合中。 后续调用 `selectItems` ，用于将列表设置为这些调用中指定的键。
 
 > [!NOTE]
-> `Slicer.selectItems`如果传递的项不在数据源中，则 `InvalidArgument` 会引发错误。 可通过 属性（即 `Slicer.slicerItems` [SlicerItemCollection ）验证内容](/javascript/api/excel/excel.sliceritemcollection)。
+> `Slicer.selectItems`如果传递的项不在数据源中，则 `InvalidArgument` 会引发错误。 可通过 属性（即 `Slicer.slicerItems` [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection)）验证内容。
 
 下面的代码示例显示了为切片器选择的三个项目：**橙色**、**橙色****和橙色**。
 
@@ -471,7 +471,7 @@ Excel.run(function (context) {
 
 #### <a name="style-and-format-a-slicer"></a>设置切片器样式和格式
 
-加载项可以通过属性调整切片器显示 `Slicer` 设置。 下面的代码示例将样式设置为 **SlicerStyleLight6，** 将切片器顶部的文本设置为 **"木** 马类型"，将切片器放在绘图层上位置 **(395，15) ，** 将切片器的大小设置为 **135x150** 像素。
+加载项可以通过属性调整切片器显示 `Slicer` 设置。 下面的代码示例将样式设置为 **SlicerStyleLight6**，将切片器顶部的文本设置为 **"菜** 类型"，将切片器放在绘图层上位置 **(395，15) ，** 将切片器的大小设置为 **135x150** 像素。
 
 ```js
 Excel.run(function (context) {
@@ -502,7 +502,7 @@ Excel.run(function (context) {
 
 数据层次结构聚合了它们的值。 对于数字数据集，默认情况下这是一个和。 属性 `summarizeBy` 根据 [AggregationFunction](/javascript/api/excel/excel.aggregationfunction) 类型定义此行为。
 
-当前支持的聚合函数类型是 `Sum` 、和 `Count` (`Average` `Max` `Min` `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance` `VarianceP` `Automatic` 默认) 。
+当前支持的聚合函数类型是 、 和 (`Sum` `Count` `Average` `Max` `Min` `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance` `VarianceP` `Automatic` 默认) 。
 
 下面的代码示例将聚合更改为数据的平均值。
 

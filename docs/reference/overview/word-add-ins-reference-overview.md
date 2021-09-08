@@ -4,12 +4,12 @@ description: Word Javascript API 的概述
 ms.date: 09/04/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 22c3c63494fd389dd2cd77501a129b38cc55b2232551b106ca73fe809ca4cfe7
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 432822b72c60b72c283183517696f60833e36e13
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098975"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938597"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API 概述
 

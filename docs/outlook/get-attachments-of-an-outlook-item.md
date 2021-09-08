@@ -1,14 +1,14 @@
 ---
 title: 获取 Outlook 加载项中的附件
 description: 加载项可使用附件 API 将与附件相关的信息发送至远程服务。
-ms.date: 01/14/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: b572893e93c747e155f643e99c0a3a67c323e5e6e12be9fa996adefc5de47780
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d525b6eb0e52c5c292f50e53451e648db1243215
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095172"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939062"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>从服务器获取 Outlook 项的附件
 
@@ -20,7 +20,7 @@ ms.locfileid: "57095172"
 
 1. 使用要求集 1.8 中提供的 [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) API。 支持的格式 [：AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)。
 
-    如果 EWS/REST (例如，由于 Exchange 服务器) 的管理员配置，或者您的外接程序希望直接在 HTML 或 JavaScript 中使用 base64 内容，则此 API 可能很方便。 此外，该 API 在撰写方案中可用，其中附件可能尚未同步到 Exchange;有关详细信息，请参阅在 Outlook 中的撰写窗体中管理 `getAttachmentContentAsync` [项目的](add-and-remove-attachments-to-an-item-in-a-compose-form.md)附件。
+    如果 EWS/REST (例如，由于 Exchange 服务器) 的管理员配置，或者您的外接程序希望直接在 HTML 或 JavaScript 中使用 base64 内容，则此 API 可能很方便。 此外，该 API 在撰写方案中可用，其中附件可能尚未同步到 Exchange;有关详细信息，请参阅在 Outlook 窗体中管理项目的附件 `getAttachmentContentAsync` 。 [](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
 
 本文详细介绍了第一个选项。 若要将附件信息发送到远程服务，请使用以下属性和函数。
 
@@ -420,4 +420,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [创建适用于阅读窗体的 Outlook 加载项](read-scenario.md)
 - [在 Exchange 中浏览 EWS 托管 API、EWS 和 Web 服务](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [EWS 托管 API 客户端应用程序入门](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Outlook外接程序 SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlook外接程序 SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)

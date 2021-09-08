@@ -3,16 +3,16 @@ title: 清单文件中的 OfficeTab 元素
 description: OfficeTab 元素定义显示外接程序命令的功能区选项卡。
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 2a223aaa212eacef07ca2b211bfa7c8168f961c0e41427ae25fc86adb7d36100
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 25e8044d8b3264bf9ee64c54487566bf11f0065e
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087418"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939076"
 ---
 # <a name="officetab-element"></a>OfficeTab 元素
 
-定义在其上显示外接程序命令的功能区选项卡。 这可以是默认选项卡 **(、消息** 或会议) 或外接程序定义的自定义选项卡。  此元素是必需的。
+定义在其上显示外接程序命令的功能区选项卡。 这可以是默认选项卡 **(、邮件** 或会议) 或外接程序定义的自定义选项卡。  此元素是必需的。
 
 ## <a name="child-elements"></a>子元素
 

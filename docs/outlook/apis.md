@@ -3,12 +3,12 @@ title: Outlook 加载项 API
 description: 了解如何引用 Outlook 加载项 API 并声明 Outlook 加载项中的权限。
 ms.date: 02/21/2021
 localization_priority: Normal
-ms.openlocfilehash: d063045acfad3dee16c676733ddb5494761b66270345d701d36e7e8a6db16c6a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0e38747f484eabac26e2e9e846e562ec54510326
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095390"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938267"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook 外接程序 API
 
@@ -26,7 +26,7 @@ ms.locfileid: "57095390"
 添加 API 时，Office.js 的 URL 将保持不变。仅当我们打破现有的 API 行为时，才会更改 URL 中的版本。
 
 > [!IMPORTANT]
-> 为任何客户端应用程序开发外接程序Office，请从页面Office内引用 JavaScript `<head>` API。 这样可确保 API 先于所有正文元素完全初始化。
+> 为任何客户端应用程序开发Office时，请从Office部分引用 JavaScript `<head>` API。 这样可确保 API 先于所有正文元素完全初始化。
 
 ## <a name="requirement-sets"></a>要求集
 

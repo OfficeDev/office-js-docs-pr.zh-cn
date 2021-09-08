@@ -3,19 +3,19 @@ title: 处理 Office 对话框中的错误和事件
 description: 了解如何在打开和使用"设置"对话框时捕获Office错误。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 50b439f9d3d20af97d78ea51db66a96c219b32d64140531ee1d51e1149feaffc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 86b8e6f3ff6dba72245d70551846884901ec597a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080789"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939320"
 ---
 # <a name="handle-errors-and-events-in-the-office-dialog-box"></a>处理"事件"对话框中Office和事件
 
 本文介绍如何捕获和处理打开对话框时发生的错误以及对话框内发生的错误。
 
 > [!NOTE]
-> 本文假定你熟悉使用 Office 对话框 API 的基础知识，如在 Office 加载项中使用 Office 对话框[API 中所述](dialog-api-in-office-add-ins.md)。
+> 本文假定你熟悉使用 Office 对话框 API 的基础知识，如在 Office 外接程序中使用 Office 对话框[API 中所述](dialog-api-in-office-add-ins.md)。
 > 
 > 另请参阅[Best practices and rules for the Office dialog API](dialog-best-practices.md)。
 
@@ -35,7 +35,7 @@ ms.locfileid: "57080789"
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|已从此主机窗口打开了一个对话框。主机窗口（如任务窗格）一次只能打开一个对话框。|
 |12009|用户已选择忽略对话框。 此错误可能发生在Office web 版，用户可能会选择不允许外接程序显示对话框。 有关详细信息，请参阅使用 Office web 版[处理弹出窗口阻止Office web 版。](dialog-best-practices.md#handle-pop-up-blockers-with-office-on-the-web)|
 
-调用 `displayDialogAsync` 时，它会将 [AsyncResult](/javascript/api/office/office.asyncresult) 对象传递给其回调函数。 调用成功后，对话框将打开，并且 `value` `AsyncResult` 对象的 属性是 [Dialog](/javascript/api/office/office.dialog) 对象。 有关此内容的示例，请参阅 [将信息从对话框发送到主机页](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page)。 调用失败时，不会创建对话框，对象的 属性设置为 `displayDialogAsync` `status` `AsyncResult` `Office.AsyncResultStatus.Failed` ， `error` 并且填充对象的属性。 应始终提供回调，以在出现错误 `status` 时测试 并做出响应。 有关报告错误消息（无论其代码编号如何）的示例，请参阅以下代码。  (`showNotification` 本文中未定义的 函数将显示或记录错误。 有关如何在加载项中实现此函数的示例，请参阅Office[加载项对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).) 
+调用 `displayDialogAsync` 时，它会将 [AsyncResult](/javascript/api/office/office.asyncresult) 对象传递给其回调函数。 调用成功后，对话框将打开，并且 `value` `AsyncResult` 对象的 属性是 [Dialog](/javascript/api/office/office.dialog) 对象。 有关此内容的示例，请参阅 [将信息从对话框发送到主机页](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page)。 调用失败时，不会创建对话框，对象的 属性设置为 `displayDialogAsync` `status` ，并 `AsyncResult` `Office.AsyncResultStatus.Failed` `error` 填充对象的 属性。 应始终提供回调，以在出现错误 `status` 时测试 并做出响应。 有关报告错误消息（无论其代码编号如何）的示例，请参阅以下代码。  (本文中未定义的 函数将显示 `showNotification` 或记录错误。 有关如何在外接程序中实现此函数的示例，请参阅 Office[外接程序对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).) 
 
 ```js
 var dialog;

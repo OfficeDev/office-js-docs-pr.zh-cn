@@ -3,12 +3,12 @@ title: 从任务窗格附加调试器
 description: 了解如何从任务窗格附加调试器
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 3efe02f2683990a8f4d802bff5040ba9e007c5c91574bba274f4c26b9a5b8683
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 930c5db7a9e1a0499a759d70e0bc94e64c5b7ae5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086671"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938565"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>从任务窗格附加调试器
 
@@ -17,14 +17,14 @@ ms.locfileid: "57086671"
 若要启动“**附加调试器**”工具，选择任务窗格右上角来激活“**个性**”菜单，如下图红圈所示。
 
 > [!NOTE]
-> - 目前，唯一受支持的调试器工具Visual Studio [2015](https://www.visualstudio.com/downloads/) Update [3](/previous-versions/mt752379(v=vs.140))或更高版本。 如果没有安装任何Visual Studio，选择"附加调试器"选项不会产生任何操作。
+> - 目前，唯一受支持的调试器工具是[Visual Studio 2015](https://www.visualstudio.com/downloads/) Update [3](/previous-versions/mt752379(v=vs.140))或更高版本。 如果没有安装任何Visual Studio，选择"附加调试器"选项不会产生任何操作。
 > - 只能使用“附加调试器”工具调试客户端 JavaScript。 要调试服务器端代码（例如 Node.js 服务器），可选择多种方式。 有关如何使用 Visual Studio Code 进行调试的信息，请参阅 [VS Code 中的 Node.js 调试](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。 如果没有使用 Visual Studio Code，请搜索“debug Node.js”或“debug {name-of-server}”。
 
 !["附加调试器"菜单的屏幕截图。](../images/attach-debugger.png)
 
 选择“**附加调试器**”。此操作将启动“**Visual Studio 实时调试器**”对话框，如下图所示。
 
-!["JIT Visual Studio"对话框的屏幕截图。](../images/visual-studio-debugger.png)
+![JIT Visual Studio对话框的屏幕截图。](../images/visual-studio-debugger.png)
 
 Visual Studio 中的“解决方案资源管理器”**** 会显示代码文件。   可以在要使用 Visual Studio 调试的代码行处设置断点。
 

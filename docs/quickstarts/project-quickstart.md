@@ -5,11 +5,11 @@ ms.date: 08/04/2021
 ms.prod: project
 localization_priority: Priority
 ms.openlocfilehash: 79a5dc33593eebbe8a0276638248bb78b9745524
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232337"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938812"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
