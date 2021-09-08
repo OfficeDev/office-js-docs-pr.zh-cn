@@ -3,14 +3,14 @@ title: 获取和设置 Internet 标头
 description: 如何获取和设置外接程序中邮件Outlook Internet 标头。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 39e328f26ca849a95cf359b31480db5a1ca1830c80f4c414e34bb07657fe9b75
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9e88af7c8fa996fe3b6164ce1fc04b6d77b048f2
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089478"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938095"
 ---
-# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>在加载项中获取和设置Outlook的 Internet 标头
+# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>获取和设置加载项中邮件Outlook Internet 标头
 
 ## <a name="background"></a>背景
 
@@ -19,7 +19,7 @@ ms.locfileid: "57089478"
 - 项目级别 - 对于应用于特定项目的属性，请使用 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象。 例如，存储与发送电子邮件的人相关联的客户代码。
 - 邮箱级别 - 对于适用于用户邮箱中所有邮件项目的属性，请使用 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 对象。 例如，存储用户的首选项以以特定刻度显示温度。
 
-这两种类型的属性在项目从服务器Exchange后不会保留，因此电子邮件收件人无法获取对项目设置的任何属性。 因此，开发人员无法访问这些设置或其他 MIME 属性，从而启用更好的读取方案。
+这两种类型的属性在项目从服务器Exchange后不会保留，因此电子邮件收件人无法获取在项目上设置的任何属性。 因此，开发人员无法访问这些设置或其他 MIME 属性，从而启用更好的读取方案。
 
 虽然可以通过 EWS 请求设置 Internet 标头，但在某些情况下，EWS 请求不起作用。 例如，在桌面Outlook撰写模式下，项目 ID 不会在缓存模式下  `saveAsync`   同步。
 
@@ -31,7 +31,7 @@ ms.locfileid: "57089478"
 要求 [集 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)中引入了 Internet 标头 API，开发人员可以：
 
 - 标记电子邮件在离开所有客户端后Exchange的信息。
-- 在邮件阅读方案中，阅读电子邮件离开Exchange保留的电子邮件的信息。
+- 阅读电子邮件离开后保留的电子邮件信息Exchange邮件阅读方案中的所有客户端。
 - 访问电子邮件的整个 MIME 标头。
 
 ![Internet 标头关系图。 文本：用户 1 发送电子邮件。 在用户撰写电子邮件时，外接程序管理自定义 Internet 标头。 用户 2 接收电子邮件。 外接程序从收到的电子邮件获取 Internet 标头，然后分析和使用自定义标头。](../images/outlook-internet-headers.png)
@@ -107,11 +107,11 @@ Selected headers: {"x-preferred-fruit":"orange","x-preferred-vegetable":"broccol
 
 ## <a name="get-internet-headers-while-reading-a-message"></a>在阅读邮件时获取 Internet 标头
 
-尝试调用 [item.getAllInternetHeadersAsync，](/javascript/api/outlook/office.messageread#getAllInternetHeadersAsync_options__callback_) 以在阅读模式下获取当前邮件的 Internet 标头。
+尝试调用 [item.getAllInternetHeadersAsync，](/javascript/api/outlook/office.messageread#getAllInternetHeadersAsync_options__callback_) 以在阅读模式下获取当前邮件上的 Internet 标头。
 
 ### <a name="get-sender-preferences-from-current-mime-headers-example"></a>从当前 MIME 头获取发件人首选项示例
 
-以下代码基于上一部分的示例，显示如何从当前电子邮件的 MIME 邮件头获取发件人的首选项。
+基于上一部分的示例，以下代码显示如何从当前电子邮件的 MIME 邮件头获取发件人的首选项。
 
 ```js
 Office.context.mailbox.item.getAllInternetHeadersAsync(getCallback);

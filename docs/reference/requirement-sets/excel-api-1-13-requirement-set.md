@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.13 要求集的详细信息。
 ms.date: 07/09/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 61ae65fc0692cdf05741e299e95460eb3167dc6ca3b759a49d655c3a8f1bc425
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8238f6c32aad74d59ed1d178b3f7b162a64026f1
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092628"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937870"
 ---
 # <a name="whats-new-in-excel-javascript-api-113"></a>JavaScript API 1.13 Excel的新增功能
 
@@ -24,7 +24,7 @@ ExcelApi 1.13 添加了一种方法，用于从 Base64 编码的字符串将工�
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求Excel集 1.13 中的 API。 若要查看受 Excel JavaScript API 要求集 1.13 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.13](/javascript/api/excel?view=excel-js-1.13&preserve-view=true)或更早中的 Excel API。
+下表列出了 JavaScript API 要求集 1.13 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.13 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.13](/javascript/api/excel?view=excel-js-1.13&preserve-view=true)或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -41,8 +41,8 @@ ExcelApi 1.13 添加了一种方法，用于从 Base64 编码的字符串将工�
 ||[repeatAllItemLabels (repeatLabels：boolean) ](/javascript/api/excel/excel.pivotlayout#repeatAllItemLabels_repeatLabels_)|设置数据透视表中所有字段的"重复所有项目标签"设置。|
 ||[showFieldHeaders](/javascript/api/excel/excel.pivotlayout#showFieldHeaders)|指定数据透视表是否显示字段标题 (字段标题和筛选器下拉列表) 。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[refreshOnOpen](/javascript/api/excel/excel.pivottable#refreshOnOpen)|指定工作簿打开时数据透视表是否刷新。|
-|[区域](/javascript/api/excel/excel.range)|[getDirectDependents () ](/javascript/api/excel/excel.range#getDirectDependents__)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有直接从属 `WorkbookRangeAreas` 单元格的范围。|
-||[getExtendedRange (方向：Excel。KeyboardDirection， activeCell？： Range \| string) ](/javascript/api/excel/excel.range#getExtendedRange_direction__activeCell_)|返回一个 range 对象，该对象包括当前区域以及区域边缘，根据提供的方向。|
+|[Range](/javascript/api/excel/excel.range)|[getDirectDependents () ](/javascript/api/excel/excel.range#getDirectDependents__)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有直接从属 `WorkbookRangeAreas` 单元格的范围。|
+||[getExtendedRange (方向：Excel。KeyboardDirection， activeCell？： Range \| string) ](/javascript/api/excel/excel.range#getExtendedRange_direction__activeCell_)|返回一个 range 对象，该对象包括当前区域以及范围边缘，根据提供的方向。|
 ||[getMergedAreasOrNullObject () ](/javascript/api/excel/excel.range#getMergedAreasOrNullObject__)|返回一个 RangeAreas 对象，该对象代表此范围中的合并区域。|
 ||[getRangeEdge (方向：Excel。KeyboardDirection， activeCell？： Range \| string) ](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_)|返回一个 range 对象，该对象是数据区域的边缘单元格，对应于提供的方向。|
 |[Table](/javascript/api/excel/excel.table)|[resize (newRange：Range \| string) ](/javascript/api/excel/excel.table#resize_newRange_)|将表格调整到新区域。|

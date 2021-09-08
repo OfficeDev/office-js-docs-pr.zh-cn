@@ -1,14 +1,14 @@
 ---
 title: 指定 Office 主机和 API 要求
-description: 了解如何指定Office的应用程序和 API 要求，使加载项按预期工作。
+description: 了解如何指定Office应用和 API 要求，使加载项按预期运行。
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 8d8d4d8536cd118bd139c19541f9a9808e6eec442b1a828fa241222e282e8b8b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f1382bcdba0c3bb88c1d98075fc4b14eb0ca3b07
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080094"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938127"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>指定 Office 应用程序和 API 要求
 
@@ -32,7 +32,7 @@ ms.locfileid: "57080094"
 |Office应用程序，Office客户端应用程序|用于运行加载项的 Office 应用程序。例如 Word、Excel 等。|
 |平台|应用程序Office，例如浏览器或浏览器iPad。|
 |要求集|命名的一组相关的 API 成员。 外接程序使用要求集来确定Office应用程序是否支持外接程序使用的 API 成员。 测试对要求集的支持比对单个的 API 成员的支持更为容易。 要求集支持因Office应用程序以及应用程序版本Office而异。 <br >要求集在清单文件中指定。 在清单中指定要求集时，应设置应用程序必须提供的最低级别的 API Office应用程序才能运行外接程序。 Office清单中指定的要求集的应用程序无法运行您的外接程序，并且您的外接程序不会显示在"我的外接程序<span class="ui">"中</span>。这将限制外接程序的可用位置。 在使用运行时检查的代码中。 有关要求集的完整列表，请参阅 [Office 加载项要求集](../reference/requirement-sets/office-add-in-requirement-sets.md)。|
-|运行时检查|在运行时执行的一个测试，用于确定Office加载项的加载项应用程序是否支持加载项使用的要求集或方法。 若要执行运行时检查，请使用 **if** 语句和方法、要求集或不是要求集 `isSetSupported` 一部分的方法名称。 使用运行时检查可确保加载项能够覆盖最大数量的客户。 与要求集不同，运行时检查不指定外接程序运行Office应用程序必须提供的最低级别的 API 支持。 相反，使用 **if** 语句来确定 API 成员是否受支持。 如果支持，则可以在外接程序中提供其他功能。 使用运行时检查时，你的外接程序将始终在“**我的外接程序**”中显示。|
+|运行时检查|在运行时执行的一个测试，用于确定Office外接程序的应用程序是否支持外接程序使用的要求集或方法。 若要执行运行时检查，请使用 **if** 语句以及方法、要求集或不是要求集 `isSetSupported` 一部分的方法名称。 使用运行时检查可确保加载项能够覆盖最大数量的客户。 与要求集不同，运行时检查不指定外接程序运行Office应用程序必须提供的最低级别的 API 支持。 相反，使用 **if** 语句来确定 API 成员是否受支持。 如果支持，则可以在外接程序中提供其他功能。 使用运行时检查时，你的外接程序将始终在“**我的外接程序**”中显示。|
 
 ## <a name="before-you-begin"></a>开始之前
 
@@ -46,7 +46,7 @@ ms.locfileid: "57080094"
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
 ```
 
-### <a name="specify-the-latest-office-javascript-api-library"></a>指定最新 Office JavaScript API 库
+### <a name="specify-the-latest-office-javascript-api-library"></a>指定最新的 Office JavaScript API 库
 
 如果使用运行时检查，请从内容交付网络Office JavaScript API 库的最新版本 (CDN) 。 若要执行此操作，请将以下 `script` 标记添加到 HTML 中。 使用 CDN URL 中的 `/1/` 可以确保引用的是最新版本的 Office.js。
 
@@ -56,9 +56,9 @@ ms.locfileid: "57080094"
 
 ## <a name="options-to-specify-office-applications-or-api-requirements"></a>用于指定应用程序Office API 要求的选项
 
-当你指定Office或 API 要求时，有几个因素需要考虑。 下图显示了如何确定要在外接程序中使用的技术。
+当你指定Office API 要求时，有几个因素需要考虑。 下图显示了如何确定要在外接程序中使用的技术。
 
-![指定应用程序或 API 要求时，选择Office最佳选项。](../images/options-for-office-hosts.png)
+![指定外接程序的应用程序或 API 要求时，Office最佳选项。](../images/options-for-office-hosts.png)
 
 - 如果外接程序在一个Office中运行，请设置 `Hosts` 清单中的 元素。 有关详细信息，请参阅 [设置 Hosts 元素](#set-the-hosts-element)。
 
@@ -78,7 +78,7 @@ ms.locfileid: "57080094"
 </Hosts>
 ```
 
-元素 `Hosts` 可以包含一个或多个 `Host` 元素。 `Host`元素指定Office所需的应用程序类型。 `Name`属性是必需的，可以设置为下列值之一。
+元素 `Hosts` 可以包含一个或多个 `Host` 元素。 `Host`元素指定Office应用程序所需的属性。 `Name`属性是必需的，可以设置为下列值之一。
 
 | 名称          | Office客户端应用程序                     | 可用的外接程序类型 |
 |:--------------|:-----------------------------------------------|:-----------------------|
@@ -91,19 +91,19 @@ ms.locfileid: "57080094"
 | 工作簿      | Excel web 版、Windows、Mac、iPad           | 任务窗格、内容     |
 
 > [!NOTE]
-> `Name`属性指定Office加载项的客户端应用程序。 Office应用程序在不同的平台上受支持，并且运行在桌面、Web 浏览器、平板电脑和移动设备上。 不能指定用于运行外接程序的平台。 例如，如果指定 ，Outlook 网页版 和 `Mailbox` Windows 都可用于运行外接程序。
+> `Name`属性指定Office加载项的客户端应用程序。 Office应用程序在不同的平台上受支持，并且运行在桌面、Web 浏览器、平板电脑和移动设备上。 不能指定用于运行外接程序的平台。 例如，如果指定 ，Outlook 网页版 和 Windows `Mailbox` 均可用于运行加载项。
 
 > [!IMPORTANT]
 > 我们不建议在 SharePoint 中创建和使用 Access Web 应用和数据库。 作为一种替代方法，我们建议你使用 [Microsoft PowerApps](https://powerapps.microsoft.com/) 生成适用于 Web 和移动设备的无代码业务解决方案。
 
 ## <a name="set-the-requirements-element-in-the-manifest"></a>在清单中设置 Requirements 元素
 
-元素指定应用程序必须支持的最低要求集或 API Office `Requirements` 应用程序运行外接程序。 `Requirements`元素可以指定要求集和外接程序中使用的单个方法。 在外接程序清单架构的版本 1.1 中，元素对于所有外接程序都是可选的，但Outlook `Requirements` 外接程序除外。
+元素指定应用程序必须支持的最低要求集或 API Office `Requirements` 以运行外接程序。 `Requirements`元素可以指定要求集和外接程序中使用的单个方法。 在外接程序清单架构的版本 1.1 中，元素对于所有外接程序（外接程序除外 `Requirements` ）Outlook可选。
 
 > [!WARNING]
-> 只能使用 `Requirements` 元素指定外接程序必须使用的关键要求集或 API 成员。 如果 Office 应用程序或平台不支持 元素中指定的要求集或 API 成员，外接程序将不会在该应用程序或平台中运行，也不会显示在"我的外接程序 `Requirements` **"中**。相反，我们建议你在 Office 应用程序的所有平台上提供外接程序，如 Excel web 版、Windows 和 iPad。 若要使外接程序在所有 _应用程序Office都_ 可用，请使用运行时检查而不是 `Requirements` 元素。
+> 只能使用 `Requirements` 元素指定外接程序必须使用的关键要求集或 API 成员。 如果 Office 应用程序或平台不支持 元素中指定的要求集或 API 成员，外接程序将不会在应用程序或平台中运行，也不会显示在"我的外接程序 `Requirements` **"中**。相反，我们建议在 Office 应用程序的所有平台上提供外接程序，如 Excel web 版、Windows 和 iPad。 若要使外接程序在所有 _应用程序Office都_ 可用，请使用运行时检查而不是 `Requirements` 元素。
 
-以下代码示例演示在支持以下内容的所有 Office 客户端应用程序中加载的外接程序：
+以下代码示例演示一个外接程序，它在所有支持以下内容Office客户端应用程序中加载：
 
 -  `TableBindings` 要求集，最低版本为"1.1"。
 
@@ -127,7 +127,7 @@ ms.locfileid: "57080094"
 
 - 元素 `Sets` 可以包含一个或多个 `Set` 元素。 `DefaultMinVersion` 指定所有 `MinVersion` 子元素的 `Set` 默认值。
 
-- `Set`元素指定应用程序必须Office运行外接程序的要求集。 `Name`属性指定要求集的名称。 `MinVersion`指定要求集的最低版本。 `MinVersion`替代 的值 有关 API 成员所属的要求集和要求集版本Office外接程序 `DefaultMinVersion` [要求集](../reference/requirement-sets/office-add-in-requirement-sets.md)。
+- `Set`元素指定应用程序必须Office运行外接程序的要求集。 `Name`属性指定要求集的名称。 `MinVersion`指定要求集的最低版本。 `MinVersion`替代 API 成员所属的要求集和要求集版本Office，请参阅外接程序 `DefaultMinVersion` [要求集](../reference/requirement-sets/office-add-in-requirement-sets.md)。
 
 - 元素 `Methods` 可以包含一个或多个 `Method` 元素。 无法将 元素与 `Methods` Outlook一起使用。
 
@@ -149,7 +149,7 @@ if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersio
 - _MinimumVersion_ (可选) 是一个字符串，用于指定 Office 应用程序必须支持的最低要求集版本，以便语句中的代码运行 (例如 `if` **"1.9") 。**
 
 > [!WARNING]
-> 调用 方法 `isSetSupported` 时，如果指定 (`MinimumVersion` 参数) 应为字符串。 这是因为 JavaScript 分析器无法区分数值，例如 1.1 和 1.10，因为它可以用于字符串值，例如“1.1”和“1.10”。
+> 调用方法 `isSetSupported` 时，如果指定参数 (`MinimumVersion` 参数) 应为字符串。 这是因为 JavaScript 分析器无法区分数值，例如 1.1 和 1.10，因为它可以用于字符串值，例如“1.1”和“1.10”。
 > `number` 重载已弃用。
 
 与 `isSetSupported` 与 `RequirementSetName` 应用程序关联的 Office，如下所示。
@@ -161,7 +161,7 @@ if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersio
 |Outlook|Mailbox|
 |Word|WordApi|
 
-这些 `isSetSupported` 应用程序的 方法和要求集可在 Office.js 上的最新 CDN。 如果不从加载项Office.js，CDN可能会生成异常，因为 `isSetSupported` 将是未定义的。 有关详细信息，请参阅指定[JavaScript API Office的最新版本](#specify-the-latest-office-javascript-api-library)。
+`isSetSupported`这些应用程序的 方法和要求集可在 Office.js 上的最新 CDN。 如果不从加载项Office.js，CDN可能会生成异常，因为 `isSetSupported` 将是未定义的。 有关详细信息，请参阅指定[JavaScript API Office的最新版本](#specify-the-latest-office-javascript-api-library)。
 
 以下代码示例演示外接程序如何为可能支持不同要求集或 API 成员的不同Office应用程序提供不同的功能。
 
@@ -188,7 +188,7 @@ else
 > [!NOTE]
 > 建议限制在加载项代码中使用此类型运行时检查。
 
-下面的代码示例检查应用程序Office是否 `document.setSelectedDataAsync` 支持 。
+下面的代码示例检查应用程序Office是否支持 `document.setSelectedDataAsync` 。
 
 ```js
 if (Office.context.document.setSelectedDataAsync)

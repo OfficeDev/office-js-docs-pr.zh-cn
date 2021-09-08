@@ -3,12 +3,12 @@ title: 清单文件中的 FormSettings 元素
 description: 指定邮件外接程序的源位置和控制设置。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 8553ddcfa28f000667e776234f0249d3e29cdda5e884dc46d2a377ab17d6d770
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 64a2caa67ceea02eda60bebaec5a9df450f68dc7
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086683"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936928"
 ---
 # <a name="formsettings-element"></a>FormSettings 元素
 

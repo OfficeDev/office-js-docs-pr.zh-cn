@@ -3,16 +3,16 @@ title: 获取和设置类别
 description: 如何管理邮箱和项目的类别
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: deec0f911f1a9a82c356dc29e2429329806184fbca3a25e6985219a0e87244fa
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f9f46d689166983083b33fb92da78469470e4d7d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086357"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937686"
 ---
 # <a name="get-and-set-categories"></a>获取和设置类别
 
-在Outlook中，用户可以将类别应用于邮件和约会，以用作组织其邮箱数据的方式。 用户定义其邮箱的颜色编码类别主列表，然后可以将这些类别的一个或多个应用于任何邮件或约会项目。 [主](/javascript/api/outlook/office.categorydetails)列表中的每个类别都由用户[指定的](/javascript/api/outlook/office.mailboxenums.categorycolor)名称和颜色表示。 可以使用 JavaScript API Office管理邮箱上的类别主列表以及应用于项目的类别。
+在Outlook中，用户可以将类别应用于邮件和约会，以用作组织其邮箱数据的方式。 用户定义其邮箱的颜色编码类别主列表，然后可以将这些类别的一个或多个应用于任何邮件或约会项目。 [主](/javascript/api/outlook/office.categorydetails)列表中的每个类别都由用户[指定的](/javascript/api/outlook/office.mailboxenums.categorycolor)名称和颜色表示。 可以使用 JavaScript API Office邮箱上的类别主列表以及应用于项目的类别。
 
 > [!NOTE]
 > 要求集 1.8 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
@@ -90,7 +90,7 @@ Office.context.mailbox.masterCategories.removeAsync(masterCategoriesToRemove, fu
 
 ### <a name="add-categories-to-an-item"></a>向项目添加类别
 
-以下示例演示如何应用名为"Urgent！"的类别。 调用 上的 [addAsync，将](/javascript/api/outlook/office.categories#addAsync_categories__options__callback_) 当前项 `item.categories` 添加到 。
+以下示例演示如何应用名为"Urgent！"的类别。 调用 上的 [addAsync，以访问当前](/javascript/api/outlook/office.categories#addAsync_categories__options__callback_) 项 `item.categories` 。
 
 ```js
 var categoriesToAdd = ["Urgent!"];

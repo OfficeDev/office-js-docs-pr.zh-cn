@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用 Office 对话框 API
-description: 了解在加载项中Office对话框的基础知识。
-ms.date: 08/27/2021
+description: 了解在加载项中Office的基础知识。
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 6e87ddfc6c29e74a578d399116df5df9b364028f
-ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
+ms.openlocfilehash: 8b45aa0da3a92dd8387c316213698a5e040f05f5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "58863532"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937056"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -85,8 +85,8 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 > [!NOTE]
 >
-> - 为清楚起见，在此部分中，我们将消息称为面向主机页，但严格来说，消息将进入任务窗格 (中的 *JavaScript* 运行时或托管函数文件) [的运行时。](../reference/manifest/functionfile.md) 这种区别仅在跨域邮件的情况下十分明显。 有关详细信息，请参阅[向主机运行时间跨域消息传递](#cross-domain-messaging-to-the-host-runtime)。
-> - 对话框无法与任务窗格中的主机页通信，除非 Office JavaScript API 库已加载到页面中。  (与使用 JavaScript API Office的任何页面一样，页面的脚本必须初始化外接程序。 有关详细信息，请参阅[Initialize your Office Add-in](initialize-add-in.md).) 
+> - 为清楚起见，在此部分中，我们将消息称为面向主机页，但严格来说，消息将进入任务窗格 (中的 *JavaScript* 运行时或托管函数文件) 的运行时。 [](../reference/manifest/functionfile.md) 这种区别仅在跨域邮件的情况下十分明显。 有关详细信息，请参阅[向主机运行时间跨域消息传递](#cross-domain-messaging-to-the-host-runtime)。
+> - 除非 JavaScript API 库已加载到任务窗格中，否则Office无法与主机页通信。  (与使用 JavaScript API Office的任何页面一样，页面的脚本必须初始化外接程序。 有关详细信息，请参阅[Initialize your Office Add-in](initialize-add-in.md).) 
 
 对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) 函数向主机页发送字符串消息。 该字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何可以序列化为字符串或转换为字符串的字符串。 示例如下。
 
@@ -97,7 +97,7 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
-> - 函数 `messageParent` 是对话框中唯一 *Office* 两个 JS API 之一。
+> - 函数 `messageParent` 是唯一 *可以在Office* 调用的两个 JS API 之一。
 > - 可以在对话框中调用的其他 JS API 是 `Office.context.requirements.isSetSupported` 。 有关它的信息，请参阅指定[Office应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在对话框中，此 API 在一Outlook 2016购买中不受 (，即 MSI 版本) 。
 
 在下一个示例中，`googleProfile` 是用户 Google 配置文件的字符串化版本。
@@ -215,7 +215,7 @@ function processMessage(arg) {
 
 ### <a name="cross-domain-messaging-to-the-host-runtime"></a>到主机运行时的跨域消息传送
 
-对话框或父 JavaScript 运行时 (在任务窗格中或在托管函数文件) 的无 UI 运行时中，在对话框打开后，可能会导航离开外接程序的域。 如果发生以上任一情况，则调用 将失败，除非你的代码指定父运行时 `messageParent` 的域。 为此，将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到 的调用 `messageParent` 中。 此对象 `targetOrigin` 具有一个属性，该属性指定邮件应发送到的域。 如果未使用 参数，则Office假定目标与对话框当前托管的域相同。
+对话框或父 JavaScript 运行时 (在任务窗格中或托管函数文件) 的无 UI 运行时中，在对话框打开后，可能会导航离开外接程序的域。 如果发生以上任一情况，则调用 将失败，除非你的代码指定父运行时 `messageParent` 的域。 为此，将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到 的调用 `messageParent` 中。 此对象 `targetOrigin` 具有一个属性，该属性指定邮件应发送到的域。 如果未使用 参数，则Office假定目标与对话框当前托管的域相同。
 
 > [!NOTE]
 > 使用 `messageParent` 发送跨域邮件需要 Dialog [Origin 1.1 要求集](../reference/requirement-sets/dialog-origin-requirement-sets.md)。 在不支持要求集的早期版本Office参数将被忽略，因此，如果传递方法，此方法 `DialogMessageOptions` 的行为将不受影响。
@@ -227,7 +227,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "https://resourc
 ```
 
 > [!NOTE]
-> 参数 `DialogMessageOptions` 大约在 2021 年 7 月 19 日发布。 在此日期后大约 30 天内，在 Office web 版 中，首次调用不带 参数且父级与对话框不同的域时，将提示用户批准向目标域发送数据。 `messageParent` `DialogMessageOptions` 如果用户批准，用户的答案将缓存 24 小时。 在此期间，如果使用相同的目标域调用用户，则系统不会再次 `messageParent` 提示用户。
+> 参数 `DialogMessageOptions` 大约在 2021 年 7 月 19 日发布。 在此日期后大约 30 天内，在 Office web 版 中，首次调用不带 参数且父级与对话框不同的域时，将提示用户批准向目标域发送数据。 `messageParent` `DialogMessageOptions` 如果用户批准，用户的答案将缓存 24 小时。 在此期间，如果使用相同的目标域调用用户，系统不会再次 `messageParent` 提示用户。
 
 如果邮件不包含敏感数据，可以将 设置为 `targetOrigin` \* ""，以允许将邮件发送到任何域。 示例如下。
 
@@ -236,7 +236,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 ```
 
 > [!TIP]
-> 在 `DialogMessageOptions` 2021 年中，参数已作为必需参数添加到方法 `messageParent` 中。 使用 方法发送跨域邮件的旧版加载项在更新为使用新参数之前不再有效。 在更新加载项之前，仅在 Office for *Windows* 上，用户和系统管理员可以使用注册表设置指定受信任的域 () ，以便这些加载项继续工作 **：HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**。 为此，请创建一个扩展名文件，将其保存到Windows计算机，然后 `.reg` 双击它以运行该文件。 以下是此类文件的内容示例。
+> 在 `DialogMessageOptions` 2021 年中，参数已作为必需参数添加到方法 `messageParent` 中。 使用 方法发送跨域邮件的旧版加载项在更新为使用新参数之前不再有效。 在更新外接程序之前，仅在 Office for *Windows* 上，用户和系统管理员可以使用注册表设置指定受信任的域 () ，使这些外接程序继续工作 **：HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**。 为此，请创建一个扩展名文件，将其保存到Windows计算机，然后 `.reg` 双击它以运行该文件。 以下是此类文件的内容示例。
 >
 > ```
 > Windows Registry Editor Version 5.00
@@ -273,7 +273,7 @@ function processMessage(arg) {
 
 此 `Dialog` 对象具有 [messageChild](/javascript/api/office/office.dialog#messageChild_message__messageOptions_) 方法，该方法将任何字符串（包括字符串化数据）发送到对话框。 这将在 `DialogParentMessageReceived` 对话框中引发事件。 代码应处理此事件，如下一节所示。
 
-请考虑以下方案：对话框的 UI 与当前活动的工作表相关，并且该工作表相对于其他工作表的位置。 在下面的示例中，将 `sheetPropertiesChanged` Excel工作表属性发送到对话框。 在这种情况下，当前工作表名为"My Sheet"，它是工作簿中的第二个工作表。 数据封装在对象中并字符串化，以便可以传递给 `messageChild` 。
+请考虑以下方案：对话框的 UI 与当前活动的工作表相关，并且该工作表相对于其他工作表的位置。 在下面的示例中， `sheetPropertiesChanged` 将Excel工作表属性发送到对话框。 在这种情况下，当前工作表名为"My Sheet"，它是工作簿中的第二个工作表。 数据封装在对象中并字符串化，以便可以传递给 `messageChild` 。
 
 ```javascript
 function sheetPropertiesChanged() {
@@ -338,7 +338,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>到对话框运行时的跨域消息传送
 
-对话框或父 JavaScript 运行时 (在任务窗格中或在托管函数文件) 的无 UI 运行时中，在对话框打开后，可能会导航离开外接程序的域。 如果发生上述任一情况，则调用 将失败，除非你的代码指定对话框 `messageChild` 运行时的域。 为此，将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到 的调用 `messageChild` 中。 此对象 `targetOrigin` 具有一个属性，该属性指定邮件应发送到的域。 如果未使用 参数，则Office假定目标与父运行时当前托管的域相同。 
+对话框或父 JavaScript 运行时 (在任务窗格中或托管函数文件) 的无 UI 运行时中，在对话框打开后，可能会导航离开外接程序的域。 如果发生上述任一情况，则调用 将失败，除非你的代码指定对话框 `messageChild` 运行时的域。 为此，将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到 的调用 `messageChild` 中。 此对象 `targetOrigin` 具有一个属性，该属性指定邮件应发送到的域。 如果未使用 参数，则Office假定目标与父运行时当前托管的域相同。 
 
 > [!NOTE]
 > 使用 `messageChild` 发送跨域邮件需要 Dialog [Origin 1.1 要求集](../reference/requirement-sets/dialog-origin-requirement-sets.md)。 在不支持要求集的早期版本Office参数将被忽略，因此，如果传递方法，此方法 `DialogMessageOptions` 的行为将不受影响。
@@ -371,7 +371,7 @@ function onMessageFromParent(arg) {
 例如，您的代码可以使用[Office.onReady 或 Office.initialize](initialize-add-in.md)方法将受信任域的数组存储在全局变量中。 然后 `arg.origin` ，可以在处理程序中针对该列表检查该属性。
 
 > [!TIP]
-> 在 `DialogMessageOptions` 2021 年中，参数已作为必需参数添加到方法 `messageChild` 中。 使用 方法发送跨域邮件的旧版加载项在更新为使用新参数之前不再有效。 在更新加载项之前，仅在 Office for *Windows* 上，用户和系统管理员可以使用注册表设置指定受信任的域 () ，以便这些加载项继续工作 **：HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**。 为此，请创建一个扩展名文件，将其保存到Windows计算机，然后 `.reg` 双击它以运行该文件。 以下是此类文件的内容示例。
+> 在 `DialogMessageOptions` 2021 年中，参数已作为必需参数添加到方法 `messageChild` 中。 使用 方法发送跨域邮件的旧版加载项在更新为使用新参数之前不再有效。 在更新外接程序之前，仅在 Office for *Windows* 上，用户和系统管理员可以使用注册表设置指定受信任的域 () ，使这些外接程序继续工作 **：HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**。 为此，请创建一个扩展名文件，将其保存到Windows计算机，然后 `.reg` 双击它以运行该文件。 以下是此类文件的内容示例。
 >
 > ```
 > Windows Registry Editor Version 5.00
@@ -441,11 +441,11 @@ function processMessage(arg) {
 
 - [Office外接程序 Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Office 加载项 Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
-- [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
-- [Office外接程序 ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
+- [Office 加载项 NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Office外接程序 ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
 - [Office加载项 SAAS 盈利示例](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
 - [Outlook外接程序 Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
-- [Outlook外接程序 SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlook外接程序 SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Outlook外接程序令牌查看器](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
 - [Outlook加载项可操作邮件](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
 - [Outlook外接程序共享到OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)

@@ -3,12 +3,12 @@ title: 清单文件中的 Control 元素
 description: 定义执行操作或启动任务窗格的 JavaScript 函数。
 ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 3ad26165e77305c69791aac9b128c5dfadf7f9beb97f85ae24a000876146c2cc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 737902bef52edeb70e2c5760df5bb589b624271b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095950"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937093"
 ---
 # <a name="control-element"></a>Control 元素
 
@@ -37,7 +37,7 @@ ms.locfileid: "57095950"
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
 |  [Action](action.md)    | 是 |  指定要执行的操作。  |
 |  [Enabled](enabled.md)    | 否 |  指定加载项启动时是否启用控件。  |
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | 否 |  指定该按钮是否应该显示在支持自定义上下文选项卡的应用程序和平台组合上。 如果使用，则它必须是第 *一个* 子元素。 |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | 否 |  指定该按钮是否应该显示在支持自定义上下文选项卡的应用程序和平台组合上。 如果使用，则它必须是第 *一个子* 元素。 |
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction 按钮示例
 
@@ -156,7 +156,7 @@ ms.locfileid: "57095950"
 |  [Supertip](supertip.md)  | 是 |  此按钮的 supertip。    |
 |  [Icon](icon.md)      | 是 |  按钮的图像。         |
 |  **Items**     | 是 |  菜单中显示的按钮的集合。 包含每个子菜单项的 **Item** 元素。 每个 **Item** 元素均包含 [按钮控件](#button-control) 的子元素。|
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | 否 |  指定菜单是否应该显示在支持自定义上下文选项卡的应用程序和平台组合上。 如果使用，则它必须是第 *一个* 子元素。 |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | 否 |  指定菜单是否应该显示在支持自定义上下文选项卡的应用程序和平台组合上。 如果使用，则它必须是第 *一个子* 元素。 |
 
 ### <a name="menu-control-examples"></a>菜单控件示例
 

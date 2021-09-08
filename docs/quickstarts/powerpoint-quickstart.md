@@ -5,11 +5,11 @@ ms.date: 08/04/2021
 ms.prod: powerpoint
 localization_priority: Priority
 ms.openlocfilehash: 8025e5a36ea13c7b1eca94778ce33608a84ccc7e
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232280"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936275"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 

@@ -4,12 +4,12 @@ description: 有关 WordApi 1.3 要求集的详细信息。
 ms.date: 03/09/2021
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 4943eeb020e99f9a87d77996c59ea838e84ec6eecf705cb483930dc948d4e8c1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b58bb99e664e982d1d9047f4348755d807ad216d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092158"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937585"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 的最近更新
 
@@ -34,7 +34,7 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 ||[type](/javascript/api/word/word.body#type)|获取 body 的类型。|
 ||[styleBuiltIn](/javascript/api/word/word.body#styleBuiltIn)|获取或设置 body 的嵌入样式名称。|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[getRange (rangeLocation？：Word.RangeLocation) ](/javascript/api/word/word.contentcontrol#getRange_rangeLocation_)|获取整个内容控件或内容控件的起点/终点，作为一个范围。|
-||[getTextRanges (结束Marks： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.contentcontrol#getTextRanges_endingMarks__trimSpacing_)|使用标点符号和/或其他结束标记获取内容控件中的文本范围。|
+||[getTextRanges (结束标记： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.contentcontrol#getTextRanges_endingMarks__trimSpacing_)|使用标点符号和/或其他结束标记获取内容控件中的文本范围。|
 ||[insertTable (rowCount： number， columnCount： number， insertLocation： Word.InsertLocation， values？： string[][]) ](/javascript/api/word/word.contentcontrol#insertTable_rowCount__columnCount__insertLocation__values_)|将包含指定行数和列数的 table 插入 contentControl 中或在其旁边插入。|
 ||[lists](/javascript/api/word/word.contentcontrol#lists)|获取 contentControl 中的一组 list 对象。|
 ||[parentBody](/javascript/api/word/word.contentcontrol#parentBody)|获取 contentControl 的父正文。|
@@ -107,7 +107,7 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 ||[setLevelAlignment (level： number， alignment： Word.Alignment) ](/javascript/api/word/word.list#setLevelAlignment_level__alignment_)|设置项目符号、编号或图片在列表中指定级别的对齐方式。|
 ||[setLevelBullet (level： number， listBullet： Word.ListBullet， charCode？： number， fontName？： string) ](/javascript/api/word/word.list#setLevelBullet_level__listBullet__charCode__fontName_)|设置 list 中指定级别的项目符号格式。|
 ||[setLevelIndents (level： number， textIndent： number， bulletNumberPictureIndent： number) ](/javascript/api/word/word.list#setLevelIndents_level__textIndent__bulletNumberPictureIndent_)|设置列表中指定级别的两种缩进方式。|
-||[setLevelNumbering (level： number， listNumbering： Word.ListNumbering， formatString？： Array<string \| number>) ](/javascript/api/word/word.list#setLevelNumbering_level__listNumbering__formatString_)|设置列表中指定级别的编号格式。|
+||[setLevelNumbering (级别： number， listNumbering： Word.ListNumbering， formatString？： Array<string \| number>) ](/javascript/api/word/word.list#setLevelNumbering_level__listNumbering__formatString_)|设置列表中指定级别的编号格式。|
 ||[setLevelStartingNumber (level： number， startingNumber： number) ](/javascript/api/word/word.list#setLevelStartingNumber_level__startingNumber_)|设置 list 中指定级别的起始编号。|
 |[ListCollection](/javascript/api/word/word.listcollection)|[getById(id: number)](/javascript/api/word/word.listcollection#getById_id_)|按标识符获取列表。|
 ||[getByIdOrNullObject (id： number) ](/javascript/api/word/word.listcollection#getByIdOrNullObject_id_)|按标识符获取列表。|
@@ -150,7 +150,7 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 ||[getFirstOrNullObject () ](/javascript/api/word/word.paragraphcollection#getFirstOrNullObject__)|获取此集合中的第一个段落。|
 ||[getLast () ](/javascript/api/word/word.paragraphcollection#getLast__)|获取此集合中的最后一个段落。|
 ||[getLastOrNullObject () ](/javascript/api/word/word.paragraphcollection#getLastOrNullObject__)|获取此集合中的最后一个段落。|
-|[区域](/javascript/api/word/word.range)|[compareLocationWith (range： Word.Range) ](/javascript/api/word/word.range#compareLocationWith_range_)|比较此范围与另一范围的位置。|
+|[Range](/javascript/api/word/word.range)|[compareLocationWith (range： Word.Range) ](/javascript/api/word/word.range#compareLocationWith_range_)|比较此范围与另一范围的位置。|
 ||[expandTo (range： Word.Range) ](/javascript/api/word/word.range#expandTo_range_)|返回从此 range 进行任一方向扩展的新 range，以便覆盖另一 range。|
 ||[expandToOrNullObject (范围：Word.Range) ](/javascript/api/word/word.range#expandToOrNullObject_range_)|返回从此 range 进行任一方向扩展的新 range，以便覆盖另一 range。|
 ||[getHyperlinkRanges () ](/javascript/api/word/word.range#getHyperlinkRanges__)|获取相应范围内的超链接子范围。|

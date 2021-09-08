@@ -3,19 +3,19 @@ title: 使用清单的扩展替代
 description: 了解如何使用清单的扩展替代来配置扩展性功能。
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 09ced571f4b7d72a3479984582a8f58a0cb440bb2a3e62afe3f90329f2cd1be3
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4eb8936e8a01b81a3883f848446d20ebf4ecf863
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080666"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936456"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>使用清单的扩展替代
 
 外接程序的一Office扩展性功能使用托管在服务器上的 JSON 文件（而不是外接程序的 XML 清单）进行配置。
 
 > [!NOTE]
-> 本文假定你熟悉Office清单及其在外接程序中的角色。如果您[Office，](add-in-manifests.md)请阅读外接程序 XML 清单。
+> 本文假定你熟悉Office清单及其在外接程序中的角色。如果[Office，](add-in-manifests.md)请阅读外接程序 XML 清单。
 
 下表指定了需要扩展替代的扩展性功能以及指向功能文档的链接。
 
@@ -39,7 +39,7 @@ ms.locfileid: "57080666"
 </OfficeApp>
 ```
 
-下面是一个非常简单的扩展覆盖 JSON 文件的示例。 它将键盘快捷方式 Ctrl+Shift+A 分配给 (打开加载项任务窗格) 定义的函数。
+下面是一个非常简单的扩展覆盖 JSON 文件的示例。 它将键盘快捷方式 Ctrl+Shift+A 分配给在 (打开外接程序任务窗格) 位置定义的函数。
 
 ```json
 {

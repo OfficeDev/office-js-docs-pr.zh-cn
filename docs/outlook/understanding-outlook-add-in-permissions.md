@@ -3,12 +3,12 @@ title: 了解 Outlook 加载项权限
 description: Outlook 加载项在清单中指定所需的权限级别，其中包括受限、ReadItem、ReadWriteItem 或 ReadWriteMailbox。
 ms.date: 02/19/2020
 localization_priority: Normal
-ms.openlocfilehash: 6330856ed417db669e3077b190485700bad226990e6b13c015ea0f9511e6dd5a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8bb2995896624f4ef9db610d466000b35fa1d29c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092509"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937344"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>了解 Outlook 加载项权限
 
@@ -135,7 +135,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 - [添加或删除该邮件的附件](add-and-remove-attachments-to-an-item-in-a-compose-form.md)。
 
-- 使用适用于邮件外接程序的 Office JavaScript API 的所有其他成员 **，Mailbox.makeEWSRequestAsync 除外**。
+- 使用适用于邮件外接程序Office JavaScript API 的所有其他成员 **，Mailbox.makeEWSRequestAsync 除外**。
 
 ### <a name="cant-do"></a>禁止事项
 

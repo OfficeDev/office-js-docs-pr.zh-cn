@@ -4,24 +4,24 @@ description: 加载项的标识 API 要求Office信息。
 ms.date: 01/26/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: b4ca583126eb70351fd7b9162cc6ee77a686e8b269219ba298a91f498f6a4b0a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 40f9154b06b0e373ac367b0dcc24cbfc05be4856
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079086"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937951"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
-Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity API 要求集、Office要求集的客户端应用程序，以及该标识 API 要求集Office版本号。
+Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity API 要求集、Office要求集的客户端应用程序，以及该要求集Office版本号。
 
 |  要求集  | Windows 上的 Office 2013 或更高版本<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI 1.3  | 不适用 | 2008 (版本 13127.20000) 或更高版本 | 即将推出 | 16.40 或更高版本 | Microsoft Office SharePoint Online 和 OneDrive\* |
 
-\*目前，要求集仅在Office web 版和文档打开的文档Microsoft Office SharePoint Online OneDrive。
+\*目前，只有从 Office web 版 和 Microsoft Office SharePoint Online 打开的文档才支持要求OneDrive。
 
 > [!NOTE]
 > Outlook：若要要求在加载项代码中将 Identity API 设置为 1.3，请通过调用 检查是否受支持 `isSetSupported('IdentityAPI', '1.3')` 。 不支持在Outlook清单中声明它。 还可通过检查其不是 `undefined` 来确定该 API 是否受到支持。 有关详细信息，请参阅 [从后续要求集中使用 API](outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets)。

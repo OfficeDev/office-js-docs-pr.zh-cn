@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.4 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f1201b15c1f4e09e064afa7301d68d1f6ce54e05f2b202e3bec2dbb7179e2db1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: be71d1e0c063bd3902bf57ba8f2024ae5a78ff1d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088996"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937157"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 的最近更新
 
@@ -48,7 +48,7 @@ worksheet.getItemOrNullObject("itemName")
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求集 1.4 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.4 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.4](/javascript/api/excel?view=excel-js-1.4&preserve-view=true)或更早中的 Excel API。
+下表列出了 JavaScript API 要求Excel集 1.4 中的 API。 若要查看受 Excel JavaScript API 要求集 1.4 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.4](/javascript/api/excel?view=excel-js-1.4&preserve-view=true)或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -70,8 +70,8 @@ worksheet.getItemOrNullObject("itemName")
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.nameditemcollection#getItemOrNullObject_name_)|使用 `NamedItem` 对象的名称获取对象。|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getCount()](/javascript/api/excel/excel.pivottablecollection#getCount__)|获取集合中的数据透视表的数量。|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablecollection#getItemOrNullObject_name_)|按名称获取 PivotTable 对象。|
-|[区域](/javascript/api/excel/excel.range)|[getIntersectionOrNullObject (anotherRange： Range \| string) ](/javascript/api/excel/excel.range#getIntersectionOrNullObject_anotherRange_)|获取表示指定区域的矩形交集的 range 对象。|
-||[getUsedRangeOrNullObject (值Only？： boolean) ](/javascript/api/excel/excel.range#getUsedRangeOrNullObject_valuesOnly_)|返回指定 range 对象的所用区域。|
+|[Range](/javascript/api/excel/excel.range)|[getIntersectionOrNullObject (anotherRange： Range \| string) ](/javascript/api/excel/excel.range#getIntersectionOrNullObject_anotherRange_)|获取表示指定区域的矩形交集的 range 对象。|
+||[getUsedRangeOrNullObject (valuesOnly？： boolean) ](/javascript/api/excel/excel.range#getUsedRangeOrNullObject_valuesOnly_)|返回指定 range 对象的所用区域。|
 |[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getCount()](/javascript/api/excel/excel.rangeviewcollection#getCount__)|获取集合 `RangeView` 中对象的数量。|
 |[设置](/javascript/api/excel/excel.setting)|[delete()](/javascript/api/excel/excel.setting#delete__)|删除 Setting 对象。|
 ||[key](/javascript/api/excel/excel.setting#key)|表示设置的 ID 的键。|
@@ -89,7 +89,7 @@ worksheet.getItemOrNullObject("itemName")
 ||[getItemOrNullObject (键：数字 \| 字符串) ](/javascript/api/excel/excel.tablecolumncollection#getItemOrNullObject_key_)|按名称或 ID 获取 column 对象。|
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[getCount()](/javascript/api/excel/excel.tablerowcollection#getCount__)|获取表格中的行数。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[设置](/javascript/api/excel/excel.workbook#settings)|表示与工作簿关联的设置的集合。|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (值Only？： boolean) ](/javascript/api/excel/excel.worksheet#getUsedRangeOrNullObject_valuesOnly_)|使用的区域是包含分配了值或格式化的任何单元格的最小区域。|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject (valuesOnly？： boolean) ](/javascript/api/excel/excel.worksheet#getUsedRangeOrNullObject_valuesOnly_)|使用的区域是包含分配了值或格式化的任何单元格的最小区域。|
 ||[names](/javascript/api/excel/excel.worksheet#names)|一组范围限定到当前工作表的名称。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getCount (visibleOnly？： boolean) ](/javascript/api/excel/excel.worksheetcollection#getCount_visibleOnly_)|获取集合中的工作表数量。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcollection#getItemOrNullObject_key_)|使用其名称或 ID 获取 worksheet 对象。|

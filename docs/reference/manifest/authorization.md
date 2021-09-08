@@ -3,12 +3,12 @@ title: 清单文件中的授权元素
 description: 指定加载项的 Web 应用程序需要授权的外部资源以及所需的权限。
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: af40a47c4ae30b6d18d3457704487027ff18ac92da2a3ae23cf1afe5c1e9b46a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b8d3dd31a212a7de00ff4dbf263e8593a8ec2898
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087707"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937295"
 ---
 # <a name="authorization-element"></a>Authorization 元素
 

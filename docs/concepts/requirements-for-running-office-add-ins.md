@@ -4,11 +4,11 @@ description: 了解最终用户在加载项中运行所需的客户端和Office�
 ms.date: 07/27/2021
 localization_priority: Normal
 ms.openlocfilehash: eaa5836cc9254314b952fb49d251cc240a1d56e4
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868398"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936712"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -16,7 +16,7 @@ ms.locfileid: "58868398"
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-有关当前支持Office外接程序的高级别视图，请参阅 Office 外接程序的 Office 客户端应用程序和[平台可用性](../overview/office-add-in-availability.md)。
+有关当前支持Office外接程序的高级别视图，请参阅 Office Client application and platform [availability for Office Add-ins。](../overview/office-add-in-availability.md)
 
 ## <a name="server-requirements"></a>服务器要求
 
@@ -29,7 +29,7 @@ ms.locfileid: "58868398"
 > [!TIP]
 > 在 Visual Studio 中开发和调试加载项时，Visual Studio 使用 IIS Express 在本地部署并运行加载项的网页文件，无需使用其他 Web 服务器。
 
-对于内容和任务窗格外接程序，在受支持的 Office 客户端应用程序（Excel、PowerPoint、Project 或 Word）中，您还需要 SharePoint 上的应用程序目录来上载外接程序的 XML 清单[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)文件，或者您需要使用集成应用程序部署外接程序。 [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+对于内容和任务窗格外接程序，在受支持的 Office 客户端应用程序（Excel、PowerPoint、Project 或 Word）中，您还需要 SharePoint 上的应用程序目录来上载外接程序的 XML[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)清单文件，或者您需要使用集成应用程序部署外接程序。 [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
 
 若要测试和运行 Outlook 外接程序，用户的 Outlook 电子邮件帐户必须驻留在 Exchange 2013 或更高版本上，这可以通过 Microsoft 365、Exchange Online 或本地安装获得。 用户或管理员在该服务器上安装 Outlook 外接程序的清单文件。
 
@@ -38,7 +38,7 @@ ms.locfileid: "58868398"
 
 ## <a name="client-requirements-windows-desktop-and-tablet"></a>客户端要求：Windows 台式机和平板电脑
 
-为基于 Windows 台式机、笔记本电脑或平板电脑设备上运行的受支持的 Office 桌面客户端或 Web 客户端开发 Office 外接程序需要以下软件。
+为基于 Windows 的台式机、笔记本电脑或平板电脑设备上运行的受支持的 Office 桌面客户端或 Web 客户端开发 Office 外接程序需要以下软件。
 
 - 对于 Windows x86 和 x64 台式机与平板电脑（如 Surface Pro）：
   - 在 Windows 7 或更高版本上运行的 32 位或 64 位版本 Office 2013。
@@ -56,7 +56,7 @@ ms.locfileid: "58868398"
 
 ## <a name="client-requirements-os-x-desktop"></a>客户端要求：OS X 桌面
 
-Outlook作为加载项的一部分分发的 Mac Microsoft 365支持Outlook加载项。在 Mac Outlook Outlook Outlook 中运行加载项的要求与 Mac 上的 Outlook 相同：操作系统必须至少为 OS X v10.10 "Yosemite"。 由于 Mac 版 Outlook 使用 WebKit 作为布局引擎以呈现加载项页，因此没有其他浏览器依赖项。
+Outlook作为加载项的一部分分发的 Mac Microsoft 365支持Outlook加载项。在 Mac Outlook Outlook Outlook 中运行 Outlook 加载项的要求与 Mac 上的 Outlook 相同：操作系统必须至少为 OS X v10.10 "Yosemite"。 由于 Mac 版 Outlook 使用 WebKit 作为布局引擎以呈现加载项页，因此没有其他浏览器依赖项。
 
 以下是支持 Office 加载项的 Mac 版 Office 的最低客户端版本。
 
@@ -76,9 +76,9 @@ Outlook作为加载项的一部分分发的 Mac Microsoft 365支持Outlook加载
 
 | Office 应用程序 | 设备 | 操作系统 | Exchange 帐户 | 移动浏览器 |
 |:-----|:-----|:-----|:-----|:-----|
-|Android 版 Outlook|Android 平板电脑和智能手机|Android 4.4 KitKat 及更高版本|有关最新更新或Microsoft 365 商业应用版Exchange Online|Android 版本机应用（不适用于浏览器）|
-|iOS 版 Outlook|iPad 平板电脑，iPhone 智能手机|iOS 11 或更高版本|有关最新更新或Microsoft 365 商业应用版Exchange Online|iOS 版本机应用（不适用于浏览器）|
-|Outlook 网页版|iPhone 4 或更高版本、iPad 2 或更高版本、iPod Touch 4 或更高版本|iOS 5 或更高版本|在 Microsoft 365 2013 Exchange Online或更高版本的 Exchange Server、Exchange Server 或本地|Safari|
+|Android 版 Outlook|Android 平板电脑和智能手机|Android 4.4 KitKat 及更高版本|更新或更新Microsoft 365 商业应用版Exchange Online|Android 版本机应用（不适用于浏览器）|
+|iOS 版 Outlook|iPad 平板电脑，iPhone 智能手机|iOS 11 或更高版本|更新或更新Microsoft 365 商业应用版Exchange Online|iOS 版本机应用（不适用于浏览器）|
+|Outlook 网页版|iPhone 4 或更高版本、iPad 2 或更高版本、iPod Touch 4 或更高版本|iOS 5 或更高版本|在 Microsoft 365 2013 Exchange Online或更高版本的 Exchange Server、Exchange Online 或本地|Safari|
 
 > [!NOTE]
 > Android 版本机应用 OWA、iPad 版 OWA 和 iPhone 版 OWA 现已[弃用](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b)且之后无需这些软件即可测试 Outlook 加载项。

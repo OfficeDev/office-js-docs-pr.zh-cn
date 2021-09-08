@@ -1,14 +1,14 @@
 ---
 title: 使用 Office Open XML 创建更优质的 Word 加载项
-description: 有关如何使用 Open XML 改进 Word 加载项Office概述。
+description: 如何使用 Open XML 改进 Word Office概述。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: d348f9ce1b435499896d89623fc739897693172e41de5f6ef32e421b2c35445f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: c8fe7c181c8dc05f91b36042bdf2732177638add
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094604"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938097"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>使用 Office Open XML 创建更优质的 Word 加载项
 
@@ -95,7 +95,7 @@ Office提供了各种 SmartArt 图表布局 (并且您可以使用 Office Open X
 你可以在 Word 文档中插入 Excel 图表作为实时图表，这也意味着你可以在 Word 外接程序中使用这些图表。如上述示例中所示，你可以使用 Office Open XML 强制转换，以插入用户可以插入其自己的文档中的几乎任何类型的内容。获取所需的 Office Open XML 标记有两种简单的方法。将多种格式的内容添加到一个原本空白的 Word 文档中，然后将文件保存为 Word XML 文档格式，或通过 [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 方法，使用测试外接程序来捕捉标记。两种方法都可以获得几乎相同的结果。
 
 > [!NOTE]
-> Office Open XML 文档实际上是表示文档内容的文件压缩包。 将文件保存为 Word XML 文档格式可为您提供平展到一个 XML 文件的整个Office Open XML 包，这也是使用 检索 Open XML 标记Office `getSelectedDataAsync` 获取的内容。
+> Office Open XML 文档实际上是表示文档内容的文件压缩包。 以 Word XML 文档格式保存文件可为你提供平展到一个 XML 文件的整个Office Open XML 包，这也是使用 检索 Open XML 标记Office `getSelectedDataAsync` 获取的内容。
 
 如果从 Word 中将文件保存为 XML 格式，请注意“另存为”对话框的“另存为类型”列表下有两个适用于 .xml 格式文件的选项。 请确保选择“Word XML 文档”而非“Word 2003”选项。
 下载名为 [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) 的代码示例，该示例可以用作检索和测试标记的工具。
@@ -127,7 +127,7 @@ Office提供了各种 SmartArt 图表布局 (并且您可以使用 Office Open X
 > [!NOTE]
 > 包标记上方有两行标记（版本 XML 声明和 Office 程序 ID）的前提是，使用 Office Open XML 强制转换类型，因此无需将它们包括在内。若要将编辑过的标记打开为 Word 文档以进行测试，请保留这两行标记。
 
-本主题开始部分中显示的一些其他类型的内容还需要其他部件 (图 13) 之外的其他部分，您将在本主题的稍后部分进行介绍。 同时，您将看到图 13 中所示的任何 Word 文档包标记中的大部分部件，因此此处有一个关于每个部件的作用以及何时需要这些部件的快速摘要。
+本主题开始部分中显示的一些其他类型的内容还需要其他部件 (图 13) 之外的其他部分，您将在本主题的稍后部分介绍这些内容。 同时，您将看到图 13 中所示的任何 Word 文档包标记中的大部分部件，因此此处有一个关于每个部件的作用以及何时需要这些部件的快速摘要。
 
 - 数据包标记内部的第一个部件是 .rels 文件，它定义数据包顶级各部件之间的关系（通常为文档属性、缩略图(如果有)，以及主文档正文）。标记中始终需要部件中的一些内容，因为您需要将（内容所在的）主文档部件的关系定义为文档包。
 
@@ -148,7 +148,7 @@ Office提供了各种 SmartArt 图表布局 (并且您可以使用 Office Open X
 
 ### <a name="simplified-office-open-xml-markup"></a>简化的 Office Open XML 标记
 
-您编辑了此处Office Open XML 示例（如上一节中所述）以保留所需的文档部件，并仅保留每个部件中所需的元素。 您将演练如何自己编辑标记 (我们将在本主题的下一节中进一步解释此处) 部分的内容。
+您编辑了此处Office Open XML 示例（如上一节所述）以保留所需的文档部件，并仅保留每个部件中所需的元素。 您将演练如何自己编辑标记 (我们将在本主题的下一节中进一步解释此处) 部分的内容。
 
 ```XML
 <pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">
@@ -187,7 +187,7 @@ Office提供了各种 SmartArt 图表布局 (并且您可以使用 Office Open X
 ```
 
 > [!NOTE]
-> 如果将此处所示的标记与 version XML 声明标记和 mso-application 一起添加到 XML 文件（如图 13 所示，后两行标记位于文件顶部），可以在 Word 中将它打开为 Word 文档。 或者，如果没有这些标记，你仍可以使用 Word 中的 **文件**  >  **打开打开** 它。 You'll see **Compatibility Mode** on the title bar in Word， because you removed the settings that tell Word this is a Word document. 由于要向现有 Word 文档添加此标记，这完全不会影响内容。
+> 如果将此处所示的标记与 version XML 声明标记和 mso-application 一起添加到 XML 文件（如图 13 所示，后两行标记位于文件顶部），可以在 Word 中将它打开为 Word 文档。 或者，如果没有这些标记，您仍可以使用 Word 中的 **文件**  >  **打开打开** 它。 You'll see **Compatibility Mode** on the title bar in Word， because you removed the settings that tell Word this is a Word document. 由于要向现有 Word 文档添加此标记，这完全不会影响内容。
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>使用 setSelectedDataAsync 所需的 JavaScript
 
@@ -328,7 +328,7 @@ function writeContent() {
 
 在继续之前，请看一下要注意的一些内容类型的差异以及如何置换出所需的片段。
 
-### <a name="understand-drawingml-markup-office-graphics-in-word-what-are-fallbacks"></a>了解 word 中的 drawingML (Office图形) ：什么是回退？
+### <a name="understand-drawingml-markup-office-graphics-in-word-what-are-fallbacks"></a>了解 Word 中的 drawingML (Office图形) ：什么是回退？
 
 如果形状或文本框的标记看起来要比预期的复杂得多，这是有原因的。我们看到在 Office 2007 版本中引入了 Office Open XML 格式，以及 PowerPoint 和 Excel 完全采用的新 Office 图形引擎。在 2007 版本中，Word 仅并入部分图形引擎，即采用更新的 Excel 图表引擎、SmartArt 图形，以及高级图片工具。对于形状和文本框，Word 2007 继续使用旧的绘图对象 (VML)。Word 在 2010 版本中使用图形引擎执行了其他步骤，以合并更新的图形和绘图工具。
 
@@ -363,7 +363,7 @@ Word 中的内容控件类型包括格式文本、纯文本、图片、构建基
 
 - 启用“设计模式”编辑控件中的占位符内容。
 
-If your add-in works with a Word template, you can include controls in that template to enhance the behavior of the content. You can also use XML data binding in a Word document to bind content controls to data, such as document properties, for easy form completion or similar tasks.  (在"插入"选项卡上的"快速部件.文档"下查找已绑定到 Word中内置文档属性) 
+If your add-in works with a Word template, you can include controls in that template to enhance the behavior of the content. You can also use XML data binding in a Word document to bind content controls to data, such as document properties, for easy form completion or similar tasks.  (在"插入"选项卡上的"快速部件 ".) 下查找已绑定到Word 中的内置文档属性的控件
 
 您在通过外接程序使用内容控件时，还可以使用不同类型的绑定大幅扩展外接程序可以进行操作的选项。可以从外接程序中绑定内容控件，然后将内容写入到绑定（而不是活动的选定内容）。
 
@@ -489,7 +489,7 @@ function addAndBindControl() {
 > [!NOTE]
 > 如前所述，以及如前面的代码中所示，内容控件的名称用于确定创建绑定的位置。但是，在 Office Open XML 标记中，代码使用内容控件的名称和 ID 属性添加绑定到文档。
 
-代码执行之后，如果检查外接程序在其中创建了绑定的文档标记，则会看到每个绑定有两个部件。 在内容控件的标记中， (document.xml) ，你将看到 **属性 w15：webExtensionLinked/**。
+代码执行之后，如果检查外接程序在其中创建了绑定的文档标记，则会看到每个绑定有两个部件。 在内容控件的标记中， (绑定document.xml) ，你将看到 **属性 w15：webExtensionLinked/**。
 
 在名为 webExtensions1.xml 的文档部件中，你将看到已创建的绑定列表。 每个控件都使用绑定 ID 和适用控件的 ID 属性进行标识，如下所示，其中 **appref** 属性是内容控件 **ID：we：binding id="myBinding" type="text" appref="1382295294"/**。
 
@@ -518,7 +518,7 @@ function populateBinding(filename) {
 > [!NOTE]
 > 无论是初始填充绑定，还是替换绑定内容，只需运行上述代码即可。如果在绑定位置插入新的内容片断，相应绑定中的现有内容会自动被替换掉。有关示例，请查看前面引用的代码示例 [Word-Add-in-JavaScript-AddPopulateBindings](https://github.com/OfficeDev/Word-Add-in-JavaScript-AddPopulateBindings)，其中提供了两个独立内容示例，可以交替使用它们来填充同一个绑定。
 
-## <a name="add-objects-that-use-additional-office-open-xml-parts"></a>添加使用 Open XML 部件Office对象
+## <a name="add-objects-that-use-additional-office-open-xml-parts"></a>在 Open XML 部件中添加Office对象
 
 很多内容类型都需要 Office Open XML 数据包中的其他文档部件，这意味着它们要么在另一个部件中引用信息，要么将内容本身存储在一个或多个其他部件中，并在 document.xml 中引用。
 
@@ -541,7 +541,7 @@ function populateBinding(filename) {
 
 ### <a name="working-with-styles"></a>使用样式
 
-使用段落样式或表格样式设置内容格式时，使用直接格式化文本编辑前面示例中所查看的标记的方法同样适用。 但是，使用段落样式的标记相当简单，因此在此处作为说明的示例。
+使用段落样式或表格样式设置内容格式时，使用直接格式化文本编辑前面示例中查看的标记的方法同样适用。 但是，使用段落样式的标记相当简单，因此在此处作为说明的示例。
 
 #### <a name="editing-the-markup-for-content-using-paragraph-styles"></a>使用段落样式编辑内容标记
 
@@ -582,7 +582,7 @@ function populateBinding(filename) {
 
     但是，最佳做法是包含一个完整的样式定义（即使它是内置样式的默认值）。如果样式已在目标文档中使用，你的内容将采用该样式的常驻定义，而不考虑 styles.xml 中包含的内容。如果该样式尚未在目标文档中使用，你的内容将使用标记中提供的样式。
 
-例如，对于图 2 中所示的示例文本（使用"标题 1"样式设置格式）的 styles.xml 部件中，您需要保留的唯一内容如下：
+因此，对于图 2 中所示的示例文本（使用标题 1 样式设置格式）的 styles.xml 部件中，您需要保留的唯一内容如下：
 
 > [!NOTE]
 > “Heading 1”样式的完整 Word 定义在本示例中已保留。
@@ -722,7 +722,7 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。�
 
 ## <a name="create-an-add-in-for-both-template-and-stand-alone-use"></a>为模板和独立使用创建外接程序
 
-在本主题中，您了解到外接程序中可以使用 Office Open XML 进行操作的多个示例。 您查看了可以使用 Office Open XML 强制转换类型插入到文档中的多种丰富内容类型示例，以及用于将内容插入到所选内容或指定的 (绑定) 位置的 JavaScript 方法。
+在本主题中，您了解到外接程序中可以使用 Office Open XML 进行操作的多个示例。 您查看了可以使用 Office Open XML 强制转换类型插入到文档中的多种格式内容类型示例，以及用于将内容插入到所选内容或指定的 (绑定) 位置的 JavaScript 方法。
 
 如果您创建的是可独立使用（即从应用商店或专有服务器位置插入的），也可在预先创建的模板（设计为与外接程序一起使用）中使用的外接程序，您还需要了解什么内容？答案应该是，您已经了解了所有所需的内容。
 

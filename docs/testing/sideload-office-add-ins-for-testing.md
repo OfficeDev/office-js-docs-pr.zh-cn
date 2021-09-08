@@ -1,14 +1,14 @@
 ---
 title: 在 Office 网页版中旁加载 Office 加载项进行测试
-description: 通过旁Office在Office web 版外接程序中测试外接程序。
+description: 在Office加载中Office web 版外接程序。
 ms.date: 08/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 3dbb6ade3089fa20dc7f5a13a5a87654cda8cafa4c4391386513b33169aa8a15
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098252"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936600"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
@@ -23,11 +23,11 @@ ms.locfileid: "57098252"
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>在 Office 网页版中旁加载 Office 加载项
 
-此过程仅支持 **Excel、OneNote、PowerPoint** 和 **Word。**  有关其他主机应用程序，请参阅以下部分中的手动旁加载说明。 此示例项目假定你正在使用使用[Yeoman](https://github.com/OfficeDev/generator-office)生成器为加载项创建Office项目。
+此过程仅支持 **Excel、OneNote、PowerPoint****和 Word。**  有关其他主机应用程序，请参阅以下部分中的手动旁加载说明。 此示例项目假定你正在使用使用[Yeoman](https://github.com/OfficeDev/generator-office)生成器为加载项创建Office项目。
 
-1. 打开[Office web 版](https://office.live.com/)。 使用"**创建"** 选项，在"新建"Excel、OneNote、PowerPoint或 Word **中****创建文档**。 在此新文档中，选择功能 **区** 中的"共享"，选择" **复制链接**"，然后复制 URL。
+1. 打开[Office web 版](https://office.live.com/)。 使用"**创建"** 选项，在"新建Excel、OneNote、PowerPoint或 Word **中****创建文档**。  在此新文档中，选择功能 **区** 中的"共享"，选择" **复制链接**"，然后复制 URL。
 
-1. 在 yo office 项目文件的根目录中，打开package.js **on** 文件。 在此 **文件的"配置** "部分，创建 `"document"` 一个属性。 粘贴您复制的 URL 作为属性的值 `"document"` 。 例如，你的将如下所示：
+1. 在 yo office 项目文件的根目录中，打开 **package.json** 文件。 在此 **文件的"配置** "部分，创建 `"document"` 一个属性。 粘贴您复制的 URL 作为属性的值 `"document"` 。 例如，你的将如下所示：
 
     ```json
       "config": {
@@ -54,15 +54,15 @@ ms.locfileid: "57098252"
 
 1. 已安装您的外接程序。 如果是加载项命令，它应显示在功能区或上下文菜单上。 如果是任务窗格加载项，应显示任务窗格。
 
-## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>手动Office加载项旁Office web 版加载项
+## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>在加载项Office旁加载Office web 版加载项
 
 此方法不使用命令行，只能在主机应用程序（如 Excel) ）内使用命令 (实现。
 
-1. 打开[Office web 版](https://office.live.com/)。 在"文档"Excel、Word或 PowerPoint **中打开文档**。  在"**外接程序**"部分的功能区上的"插入"选项卡上，Office **外接程序"。**
+1. 打开[Office web 版](https://office.live.com/)。 在"文档"Excel、Word 或 **PowerPoint****中打开文档**。  在"**外接程序**"部分的功能区上的"插入"选项卡上，Office **外接程序"。**
 
-1. 在 **"Office** 外接程序"对话框中，选择"**我的** 外接程序"选项卡，选择"管理 **我的** 外接程序"，Upload"**我的外接程序"。**
+1. 在 **"Office** 加载项"对话框中，选择"**我的** 加载项"选项卡，选择"管理我的加载项"，Upload"**我的加载项"。**
 
-    ![the Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
+    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
 
 1. **转到** 加载项清单文件，再选择“上传”。
 
@@ -71,19 +71,19 @@ ms.locfileid: "57098252"
 1. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
 
 > [!NOTE]
-> 若要使用Office EdgeHTML Microsoft Edge WebView (测试加载项) ，需要执行其他配置步骤。 在命令Windows中，运行以下行： `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` 。 使用基于 Office 的边缘 WebView2 时Chromium此要求。 有关详细信息，请参阅Office[使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+> 若要使用Office WebView Microsoft Edge EdgeHTML (测试加载项) ，需要执行其他配置步骤。 在命令Windows中，运行以下行： `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` 。 使用基于 Office 的边缘 WebView2 时Chromium此要求。 有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 ## <a name="sideload-an-office-add-in"></a>旁加载Office加载项
 
 1. 登录到你的 Microsoft 365 帐户。
 
-1. 打开工具栏Launcher"应用"菜单，选择"Excel、Word 或 **PowerPoint"，** 然后创建新文档。
+1. 打开工具栏Launcher上的"应用"菜单并选择"Excel、Word 或 **PowerPoint"，** 然后创建新文档。
 
 1. 步骤 3 - 6 与上一部分 **在 Office 网页版中旁加载 Office 加载项** 相同。
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>使用 Visual Studio 时旁加载加载项
 
-如果你使用 Visual Studio 开发外接程序，旁加载的过程类似于手动旁加载到 Web。 唯一的区别是，必须更新清单中 **SourceURL** 元素的值以包含部署加载项位置的完整 URL。
+如果你使用 Visual Studio 开发外接程序，则旁加载的过程类似于手动旁加载到 Web。 唯一的区别是，必须更新清单中 **SourceURL** 元素的值以包含部署加载项位置的完整 URL。
 
 > [!NOTE]
 > 虽然可以将加载项从 Visual Studio 旁加载到 Office 网页版，但无法从 Visual Studio 调试它们。 若要进行调试，需要使用浏览器调试工具。 有关详细信息，请参阅[在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)。
@@ -99,7 +99,7 @@ ms.locfileid: "57098252"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的外接程序
 
-可以通过清除浏览器的缓存来删除以前旁加载的外接程序。 如果您更改外接程序的清单 (例如，更新图标的文件名或外接程序命令文本) ，您可能需要清除浏览器的缓存，然后使用更新后的清单重新旁加载外接程序。 这样，Office web 版清单描述的外接程序呈现。
+可以通过清除浏览器的缓存来删除以前旁加载的外接程序。 如果您更改外接程序的清单 (例如，更新图标的文件名或外接程序命令文本) ，您可能需要清除浏览器的缓存，然后使用更新后的清单重新旁加载外接程序。 这样做将Office web 版更新后的清单中所述呈现外接程序。
 
 ## <a name="see-also"></a>另请参阅
 

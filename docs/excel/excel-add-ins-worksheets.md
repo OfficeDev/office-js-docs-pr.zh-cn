@@ -4,11 +4,11 @@ description: 显示如何使用 JavaScript API 对工作表执行常见Excel示�
 ms.date: 07/02/2021
 localization_priority: Normal
 ms.openlocfilehash: 2c0c046d060e9ed32d872307f27784ff8337b100
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868748"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936766"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -378,7 +378,7 @@ function formulaChangeHandler(event) {
 
 ![从上到下排序后 Excel 中的表格数据。 已移动的行会突出显示。](../images/excel-sort-event-after-row.png)
 
-如果对原始数据上的"Quinces&quot; (&quot;4") 中的值执行从左到右排序，则返回以下突出显示的列 `WorksheetColumnsSortedEventArgs.address` 。
+如果对 **"Quinces&quot;** 执行从左到右排序 (原始数据的 **&quot;4")** 中的值，则返回以下突出显示的列 `WorksheetColumnsSortedEventArgs.address` 。
 
 ![从左到右排序后 Excel 中的表格数据。 已移动的列会突出显示。](../images/excel-sort-event-after-column.png)
 

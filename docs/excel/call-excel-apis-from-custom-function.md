@@ -1,18 +1,18 @@
 ---
-title: 从Excel函数调用 JavaScript API
+title: 从Excel调用 JavaScript API
 description: 了解Excel函数调用哪些 JavaScript API。
 ms.date: 08/30/2021
 localization_priority: Normal
 ms.openlocfilehash: 93b0c1a792c752102359b31b8baa808182c29c46
-ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "58863525"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937651"
 ---
-# <a name="call-excel-javascript-apis-from-a-custom-function"></a>从Excel函数调用 JavaScript API
+# <a name="call-excel-javascript-apis-from-a-custom-function"></a>从Excel调用 JavaScript API
 
-从Excel函数调用 JavaScript API 以获取区域数据，并获取适用于计算的更多上下文。 在Excel函数调用 JavaScript API 可能会有所帮助：
+从Excel函数调用 JavaScript API 以获取区域数据，并获取用于计算的更多上下文。 在Excel函数调用 JavaScript API 可能会有所帮助：
 
 - 自定义函数需要在计算之前从Excel信息。 此信息可能包括文档属性、范围格式、自定义 XML 部件、工作簿名称或其他Excel特定的信息。
 - 自定义函数将在计算后设置返回值的单元格编号格式。

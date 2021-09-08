@@ -3,21 +3,21 @@ title: Office 加载项中的 Fabric Core
 description: 大致了解如何在加载项中Office Fabric Core 和 Fabric UI 组件。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2e7c1fa2bff177deecb113c7d3afc346f277e5480a588152911118d1b36bc05f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e8455cbdf37d80545c9e9fc957a75152db5c7841
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081863"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936311"
 ---
 # <a name="fabric-core-in-office-add-ins"></a>Office 加载项中的 Fabric Core
 
-Fabric Core 是 CSS 类和 SASS mixin 的开源集合，旨在用于非 React *Office* 外接程序。Fabric Core 包含 UI 设计Fluent的基本元素，如图标、颜色、字样和网格。 Fabric Core 与框架无关，因此可用于任何单页应用程序或任何服务器端 Web UI 框架。  (历史原因，它被称为"Fabric Core"，而不是"Fluent Core"。) 
+Fabric Core 是 CSS 类和 SASS mix 的开源集合，旨在用于非 React *Office* 外接程序。Fabric Core 包含 UI 设计Fluent的基本元素，如图标、颜色、字样和网格。 Fabric Core 与框架无关，因此可用于任何单页应用程序或任何服务器端 Web UI 框架。  (历史原因，它称为"Fabric Core"，而不是"Fluent Core"。) 
 
-如果外接程序的 UI 不是基于React的，则您还可以使用一组非React组件。 请参阅[使用Office UI Fabric JS 组件](#use-office-ui-fabric-js-components)。
+如果外接程序的 UI 不是基于React的，则您还可以使用一组非React组件。 请参阅[使用 Office UI Fabric JS 组件](#use-office-ui-fabric-js-components)。
 
 > [!NOTE]
-> 本文介绍了 Fabric Core 在加载项Office的使用。但它还用于各种应用Microsoft 365扩展。 有关详细信息，请参阅[Fabric Core](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core)和开源存储库Office UI Fabric [Core。](https://github.com/OfficeDev/office-ui-fabric-core)
+> 本文介绍 Fabric Core 在加载项Office的使用。但它还用于各种应用Microsoft 365扩展。 有关详细信息，请参阅[Fabric Core](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core)和开源存储库Office UI Fabric [Core。](https://github.com/OfficeDev/office-ui-fabric-core)
 
 ## <a name="use-fabric-core-icons-fonts-colors"></a>使用 Fabric Core：图标、字体、颜色
 
@@ -43,7 +43,7 @@ Fabric Core 是 CSS 类和 SASS mixin 的开源集合，旨在用于非 React *O
 
 ## <a name="use-office-ui-fabric-js-components"></a>使用 Office UI Fabric JS 组件
 
-具有非 REACT API 的外接程序还可使用[Office UI Fabric JS 中的](https://github.com/OfficeDev/office-ui-fabric-js)任意组件，包括按钮、对话框、选取器等。 有关说明，请参阅存储库自述。
+具有非 React API 的外接程序还可使用[Office UI Fabric JS](https://github.com/OfficeDev/office-ui-fabric-js)中的任意组件，包括按钮、对话框、选取器等。 有关说明，请参阅存储库自述。
 
 示例包含在本文稍后 [的示例中](#samples) 。
 

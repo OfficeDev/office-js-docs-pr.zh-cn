@@ -1,18 +1,18 @@
 ---
 title: 清单文件中 LaunchEvents
-description: LaunchEvents 元素将外接程序配置为基于支持的事件进行激活。
+description: LaunchEvents 元素将你的外接程序配置为基于支持的事件进行激活。
 ms.date: 05/11/2021
 localization_priority: Normal
-ms.openlocfilehash: c6714c4f52bdc1ed9d7a75a42100df8d3fe046c504575295880ff614fe4a447f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 16d721ca6d9402d2bd5d19787707e146358044f0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089743"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937805"
 ---
 # <a name="launchevents-element"></a>LaunchEvents 元素
 
-将加载项配置为基于支持的事件进行激活。 元素的 [`<ExtensionPoint>`](extensionpoint.md) 子元素。 有关详细信息，请参阅[Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md)。
+配置加载项以根据支持的事件激活。 元素的 [`<ExtensionPoint>`](extensionpoint.md) 子元素。 有关详细信息，请参阅[Configure your Outlook add-in for event-based activation](../../outlook/autolaunch.md)。
 
 **外接程序类型：** 邮件
 

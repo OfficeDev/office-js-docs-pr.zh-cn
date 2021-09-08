@@ -3,12 +3,12 @@ title: 将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 description: 为使组织内的用户可访问 Office 加载项，管理员可以将 Office 加载项清单文件上传到组织的应用程序目录中。
 ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 3ca28f9c354b1b121eec55ccbec8c0aed4dfc861b38951d2a60bcb0f8dbfd3dd
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7af7b951ebe6b2523ed0b8644cc7f115f0082889
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089072"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936454"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>将任务窗格和内容加载项发布到 SharePoint 应用程序目录
 
@@ -17,12 +17,12 @@ ms.locfileid: "57089072"
 > [!IMPORTANT]
 >
 > - SharePoint 上的应用程序目录不支持在[加载项清单](../develop/add-in-manifests.md)的 `VersionOverrides` 节点中实现的加载项功能（如加载项命令）。
-> - 如果你面向的是云或混合环境，我们建议你通过 Microsoft 365 管理中心集成应用来[](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)发布你的外接程序。
+> - 如果你面向云或混合环境，我们建议你通过 Microsoft 365 管理中心集成应用来发布[](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)你的外接程序。
 > - Mac 版 Office 不支持 SharePoint 上的应用程序目录。 若要向 Mac 客户端部署 Office 加载项，必须将其提交到 [AppSource](/office/dev/store/submit-to-the-office-store)。
 
 ## <a name="create-an-app-catalog"></a>创建应用程序目录
 
-完成以下部分之一中的步骤，以使用本地 SharePoint Server 或 Microsoft 365。
+完成以下部分之一中的步骤，创建具有本地 SharePoint Server 或 Microsoft 365 的应用程序目录。
 
 ### <a name="to-create-an-app-catalog-for-on-premises-sharepoint-server"></a>为本地 SharePoint Server 创建应用程序目录
 
@@ -32,7 +32,7 @@ ms.locfileid: "57089072"
 
 ### <a name="to-create-an-app-catalog-on-microsoft-365"></a>若要在应用程序上创建应用程序Microsoft 365
 
-若要创建SharePoint目录，请按照创建应用程序目录网站[集 中的说明操作](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection)。 创建应用程序目录后，请按照下一节中的步骤发布Office外接程序。
+若要创建SharePoint目录，请按照创建应用程序目录网站[集 中的说明操作](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection)。 创建应用程序目录后，请按照下一部分中的步骤发布Office外接程序。
 
 ## <a name="publish-an-office-add-in"></a>发布 Office 加载项
 

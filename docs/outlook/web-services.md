@@ -3,12 +3,12 @@ title: 从 Outlook 加载项使用 Exchange Web 服务 (EWS)
 description: 提供的示例显示 Outlook 加载项如何通过 Exchange Web 服务请求信息。
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 174f2bdfe63fbd4cef7cf2b6129a666ccea0135507d122570431306dae12d651
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 63c969355c9bae5dab6ef8603a9f3d61d8e82eec
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092712"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936753"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>从 Outlook 加载项调用 Web 服务
 
@@ -49,9 +49,9 @@ EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResul
 分析 EWS 操作中的 SOAP 响应时，请注意以下与浏览器相关的问题。
 
 
-- 使用 DOM 方法时指定标记名称的前缀，以 `getElementsByTagName` 包含对Internet Explorer。
+- 使用 DOM 方法时指定标记名称的前缀 `getElementsByTagName` ，以包含对Internet Explorer。
 
-  `getElementsByTagName` 根据浏览器类型，其行为会有所不同。 例如，EWS 响应可以包含以下 XML (格式和缩写，以便显示) 。
+  `getElementsByTagName` 根据浏览器类型，其行为会有所不同。 例如，EWS 响应可以包含以下 XML (进行格式化和缩写，以便) 。
 
    ```XML
         <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
@@ -88,7 +88,7 @@ EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResul
       content = $.parseJSON(value.textContent);
    ```
 
-   其他属性（如 ）可能Internet Explorer `innerHTML` EWS 响应中某些标记的标记。
+   其他属性 `innerHTML` （如 ）可能Internet Explorer EWS 响应中某些标记的标记。
 
 
 ## <a name="example"></a>示例

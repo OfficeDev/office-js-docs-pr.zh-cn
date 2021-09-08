@@ -3,12 +3,12 @@ title: Office 加载项开发最佳做法
 description: 在开发时应用最佳做法以创建Office外接程序。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 2e9a0c3528f9ea6785dc8c2313aa6f9d12db474f2da21b0c8a7cf10c742c23fa
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2dd8162814115398a89dd75a0542d1d077abf006
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57083350"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937253"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -36,7 +36,7 @@ ms.locfileid: "57083350"
 
 - 提供用以指导用户的教学 UI，并使您的 UI 富有个性化。
 
-  ![显示"执行"与"不"比较的屏幕截图。 "执行"示例显示了一个外接程序，其中包括用户可单击以开始使用的按钮。 "请勿"示例显示没有介绍性步骤或按钮的外接程序。](../images/contoso-part-catalog-do-dont.png)
+  ![显示"执行"与"不"比较的屏幕截图。 "执行"示例显示了一个外接程序，其中包含用户可单击以开始使用的按钮。 "不"示例显示没有介绍性步骤或按钮的外接程序。](../images/contoso-part-catalog-do-dont.png)
 
 - 如果内容外接程序绑定到用户文档中的数据，请将那些用于向用户显示要使用的数据格式的示例数据或模板包含在内。
 
@@ -76,7 +76,7 @@ ms.locfileid: "57083350"
 
 ### <a name="optimize-for-touch"></a>触摸优化
 
-- 使用[Context.touchEnabled](/javascript/api/office/office.context#touchEnabled)属性可检测Office运行加载项的加载项应用程序是否启用了触摸。
+- 使用[Context.touchEnabled](/javascript/api/office/office.context#touchEnabled)属性可检测Office运行加载项的加载项应用程序是否启用了触摸功能。
 
   > [!NOTE]
   > Outlook 不支持此属性。
@@ -90,7 +90,7 @@ ms.locfileid: "57083350"
 - 使用[旁加载](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)在实际设备上测试加载项。
 
 > [!NOTE]
-> 如果你为设计[元素Fluent UI](../design/using-office-ui-fabric-react.md) React，许多这些元素都内置在设计系统中。
+> 如果你为设计[元素Fluent UI](../design/using-office-ui-fabric-react.md) React，则许多这些元素都内置在设计系统中。
 
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>优化和监视加载项性能

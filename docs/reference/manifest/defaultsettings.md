@@ -3,12 +3,12 @@ title: 清单文件中的 DefaultSettings 元素
 description: 指定内容或任务窗格外接程序的默认源位置和其他默认设置。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 11e398d86a702f4e45a5cea7b63e0380ce65d1749d0660789e96477744d73079
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a9711fb44390bcbda8979b8018eed1318c5579bc
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095895"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937482"
 ---
 # <a name="defaultsettings-element"></a>DefaultSettings 元素
 

@@ -3,12 +3,12 @@ title: 清单文件中 Enabled 元素
 description: 了解如何指定外接程序启动时禁用外接程序命令。
 ms.date: 01/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 54d28839a274ff41bab0b1e2cdd2d169e76c5815095950dec67ce2564eade601
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: be18767638af6f2be6352cea46739f6a01b7dd45
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093901"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937089"
 ---
 # <a name="enabled-element"></a>Enabled 元素
 

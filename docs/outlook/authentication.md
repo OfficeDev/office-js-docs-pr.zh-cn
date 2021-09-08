@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项中的身份验证选项
 description: Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
-ms.date: 06/22/2021
+ms.date: 09/03/2021
 localization_priority: Priority
-ms.openlocfilehash: f088c91026aa27117073539e0104378514dd93490effc65fac6ecaf0746b42c9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1f579d5f0a71cf4c078b3db5412adfe39d7e1287
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084469"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937666"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook 加载项中的身份验证选项
 
@@ -40,7 +40,7 @@ SSO 身份验证方法使用 [Azure Active Directory 提供的 OAuth2 代表流]
 
 有关在 Outlook 加载项中使用 SSO 令牌的详细信息，请参阅[在 Outlook 加载项中使用单一登录令牌对用户进行身份验证](authenticate-a-user-with-an-sso-token.md)。
 
-有关使用 SSO 令牌的加载项示例，请参阅 [Outlook 加载项 SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)。
+有关使用 SSO 令牌的加载项示例，请参阅 [Outlook 加载项 SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)。
 
 ## <a name="exchange-user-identity-token"></a>Exchange 用户标识令牌
 

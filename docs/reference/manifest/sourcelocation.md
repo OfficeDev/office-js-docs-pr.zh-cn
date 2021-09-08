@@ -3,12 +3,12 @@ title: 清单文件中的 SourceLocation 元素
 description: SourceLocation 元素指定外接程序的Office位置。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 6830a26cf192802c97c486511695b4ace35ac8263cfcd30ceaf71398f0d83a07
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4dcd093db2f23220eaa34c0c81300c4994c1a697
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095003"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936416"
 ---
 # <a name="sourcelocation-element"></a>SourceLocation 元素
 

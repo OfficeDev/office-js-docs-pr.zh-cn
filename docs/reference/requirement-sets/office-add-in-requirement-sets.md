@@ -4,16 +4,16 @@ description: 详细了解通用 API Office集。
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d62f71905f892f6abd700fb78d21eb75c3fb4271f1370eb6b10a60326d52eafb
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 458369ad693afeedb760eda3238191c44bedc5e9
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093244"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937074"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
-要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 > [!TIP]
 > 正在查找 *特定于应用程序的* API 要求集？ 请参阅以下 API 要求集。
@@ -29,10 +29,10 @@ ms.locfileid: "57093244"
 
 ## <a name="common-api-requirement-sets"></a>通用 API 要求集
 
-以下各节列出了通用 API 要求集、每个集内的方法，以及支持Office集的客户端应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
+以下各节列出了通用 API 要求集、每个集内的方法，Office支持该要求集的客户端应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
 
 > [!TIP]
-> 需要有关外接程序和要求集在应用程序与版本Office的信息？ 请参阅[Office外接程序的客户端应用程序和Office可用性](../../overview/office-add-in-availability.md)。
+> 需要有关外接程序和要求集在应用程序与版本Office的信息？ 请参阅[Office外接程序的客户端](../../overview/office-add-in-availability.md)应用程序和Office可用性。
 
 ### <a name="activeview"></a>ActiveView
 
@@ -258,7 +258,7 @@ ms.locfileid: "57093244"
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>不作为要求集一部分的方法
 
-Office JavaScript API 中的以下方法不是要求集的一部分。 如果加载项需要这些方法的任意一个，请使用加载项清单中的 **Methods** 和 **Method** 元素以声明需要这些方法，或使用 `if` 语句执行运行时检查。 有关详细信息，请参阅指定Office[应用程序和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)。
+Office JavaScript API 中的以下方法不是要求集的一部分。 如果加载项需要这些方法的任意一个，请使用加载项清单中的 **Methods** 和 **Method** 元素以声明需要这些方法，或使用 `if` 语句执行运行时检查。 有关详细信息，请参阅指定Office[和 API 要求](../../develop/specify-office-hosts-and-api-requirements.md)。
 
 |**方法名称**|**Office应用程序支持**|
 |:-----|:-----|

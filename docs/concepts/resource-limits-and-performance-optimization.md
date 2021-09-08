@@ -4,11 +4,11 @@ description: 了解加载项平台的资源Office，包括 CPU 和内存。
 ms.date: 08/17/2021
 localization_priority: Normal
 ms.openlocfilehash: e89aebeb93c5b5b3f3b41cd5c8c72870e0fa2e51
-ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2021
-ms.locfileid: "58505661"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937055"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
@@ -22,11 +22,11 @@ ms.locfileid: "58505661"
 
 - **CPU 内核使用** - 单个 CPU 内核使用阈值为 90%，默认每 5 秒监测三次。
 
-   客户端检查 CPU 内核Office的默认间隔是每 5 秒。 如果Office客户端检测到外接程序的 CPU 内核使用率超过阈值，则会显示一条消息，询问用户是否要继续运行外接程序。 如果用户选择继续，Office客户端不会在编辑会话期间再次询问用户。 如果用户运行占用大量 CPU 的加载项，建议管理员使用“AlertInterval”**** 注册表项增加阈值，以减少此类警告消息的显示。
+   客户端检查 CPU Office的默认间隔是每 5 秒。 如果Office客户端检测到外接程序的 CPU 内核使用率超过阈值，则会显示一条消息，询问用户是否要继续运行外接程序。 如果用户选择继续，Office客户端不会在编辑会话期间再次询问用户。 如果用户运行占用大量 CPU 的加载项，建议管理员使用“AlertInterval”**** 注册表项增加阈值，以减少此类警告消息的显示。
 
 - **内存使用** - 默认内存使用阈值，根据设备的可用物理内存动态确定。
 
-   默认情况下，当 Office 客户端检测到设备上的物理内存使用率超过可用内存的 80% 时，客户端开始监视外接程序的内存使用率、内容和任务窗格外接程序的文档级别以及 Outlook 外接程序的邮箱级别。在默认间隔 5 秒时，如果文档或邮箱级别的一组外接程序的物理内存使用率超过 50%，客户端将警告用户。 此内存使用率限制使用物理内存而非虚拟内存来确保具有有限 RAM 的设备（如平板电脑）保持良好性能。 管理员可以使用 **MemoryAlertThreshold** Windows 注册表项作为全局设置来覆盖此动态设置，将 **AlertInterval** 项用作全局设置来调整警报间隔。
+   默认情况下，当 Office 客户端检测到设备上的物理内存使用率超过可用内存的 80% 时，客户端将开始监视外接程序的内存使用率、内容和任务窗格外接程序的文档级别以及 Outlook 外接程序的邮箱级别。在默认间隔 5 秒时，如果文档或邮箱级别的一组外接程序的物理内存使用率超过 50%，客户端将警告用户。 此内存使用率限制使用物理内存而非虚拟内存来确保具有有限 RAM 的设备（如平板电脑）保持良好性能。 管理员可以使用 **MemoryAlertThreshold** Windows 注册表项作为全局设置来覆盖此动态设置，使用 **AlertInterval** 项作为全局设置来调整警报间隔。
 
 - **故障容忍度** - 外接程序的默认限制为 4 次故障。
 
@@ -43,13 +43,13 @@ ms.locfileid: "58505661"
 > [!NOTE]
 > 尽管只有 Outlook 丰富客户端（而不是 Outlook 网页版或移动设备）监视资源使用，如果丰富客户端禁用 Outlook 加载项，加载项也禁用于Outlook 网页版和移动设备。
 
-除了 CPU 内核、内存和可靠性规则，Outlook加载项还应遵守以下激活规则。
+除了 CPU 内核、内存和可靠性规则之外，Outlook加载项还应遵守以下激活规则。
 
 - **正则表达式响应时间** - Outlook 计算 Outlook 外接程序清单中的所有正则表达式的默认阈值为 1,000 毫秒。超过该阈值会导致 Outlook 稍后重新尝试计算。
 
     通过使用组策略或 Windows 注册表中特定于应用程序的设置，管理员可以在 **OutlookActivationAlertThreshold** 设置中调整此 1,000 毫秒的默认阈值。
 
-- **正则表达式重新计算** - Outlook 重新计算清单中的所有正则表达式的默认限制为三次。 如果计算因超过适用的阈值 (（默认值为 1，000 毫秒或 **OutlookActivationAlertThreshold** 指定的值）而全部三次失败，如果该设置存在于 Windows 注册表) 中，Outlook 将禁用 Outlook 外接程序。 Exchange管理中心将显示禁用状态，并且外接程序被禁用，以在 Outlook 富客户端、Outlook 网页版移动设备中使用。
+- **正则表达式重新计算** - Outlook 重新计算清单中的所有正则表达式的默认限制为三次。 如果计算因超过适用的阈值 (（默认值为 1，000 毫秒或 **OutlookActivationAlertThreshold** 指定的值）而全部三次失败，如果该设置存在于 Windows 注册表) 中，Outlook 将禁用 Outlook 外接程序。 管理Exchange显示禁用状态，并且外接程序被禁用，以在 Outlook 富客户端、Outlook 网页版移动设备中使用。
 
     通过使用组策略或 Windows 注册表中特定于应用程序的设置，管理员可以在 **OutlookActivationManagerRetryLimit** 设置中调整此重试计算的次数。
 
@@ -62,7 +62,7 @@ ms.locfileid: "58505661"
 
 如果你希望用户输入超出这些限制，请确保在调用 之前检查数据 `context.sync()` 。 根据需要将操作拆分为多个较小的部分。 请务必调用 `context.sync()` 每个子操作，以避免这些操作再次被批处理在一起。
 
-这些限制通常由较大范围超出。 您的外接程序可能可以使用 [RangeAreas](/javascript/api/excel/excel.rangeareas) 以战略方式更新更大范围内的单元格。 有关使用的信息，请参阅在加载项中同时处理Excel `RangeAreas` [区域](../excel/excel-add-ins-multiple-ranges.md)。有关优化负载大小在负载Excel，请参阅有效负载[大小限制最佳实践](../excel/performance.md#payload-size-limit-best-practices)。
+这些限制通常由较大范围超出。 您的外接程序可能可以使用 [RangeAreas](/javascript/api/excel/excel.rangeareas) 以战略方式更新更大范围内的单元格。 有关使用的信息，请参阅在加载项中同时Excel `RangeAreas` [多个区域](../excel/excel-add-ins-multiple-ranges.md)。有关优化负载大小在负载Excel，请参阅有效负载[大小限制最佳实践](../excel/performance.md#payload-size-limit-best-practices)。
 
 ### <a name="task-pane-and-content-add-ins"></a>任务窗格和内容外接程序
 
@@ -88,9 +88,9 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 
 |**事件 ID**|**标题**|**严重性**|**说明**|
 |:-----|:-----|:-----|:-----|
-|7 |外接程序清单已成功下载||加载项Office加载项的清单已成功加载和读取Office应用程序。|
+|7 |外接程序清单已成功下载||应用程序已成功Office和读取加载项Office清单。|
 |8 |外接程序清单未下载|关键|Office应用程序无法从 Office 目录、公司目录或 AppSource SharePoint加载项的清单文件。|
-|9 |无法分析外接程序标记|关键|应用程序Office加载Office加载项清单，但无法读取应用程序的 HTML 标记。|
+|9 |无法分析外接程序标记|关键|应用程序Office加载项Office，但无法读取应用程序的 HTML 标记。|
 |10 |外接程序占用了太多 CPU|关键|在有限的时间内，Office 外接程序使用了超过 90% 的 CPU 资源。|
 |15 |由于字符串搜索超时，外接程序已被禁用||Outlook 外接程序搜索电子邮件的主题行和消息，以确定是否应使用正则表达式来显示它们。“文件”列中列出的 Outlook 外接程序已被 Outlook 禁用，因为它在尝试匹配正则表达式时超时多次。|
 |18 |外接程序已成功关闭||Office应用程序能够成功关闭Office加载项。|

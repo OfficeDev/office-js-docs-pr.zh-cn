@@ -3,12 +3,12 @@ title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 5164829d3d66ee05d1fa21bf4a4ccfdc00b719ed0a5b6ce247044f9c2760fb45
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 44a3d56a276d70e24a3b466e16dd24d264f6555d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081000"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936757"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
@@ -27,7 +27,7 @@ ms.locfileid: "57081000"
 
 ## <a name="review-the-build-and-debug-properties"></a>查看生成和调试属性
 
-在开始调试之前，请查看每个项目的属性以确认 Visual Studio将打开所需的 Office 应用程序，并正确设置其他生成和调试属性。
+在开始调试之前，请查看每个项目的属性以确认Visual Studio将打开所需的 Office 应用程序，并正确设置其他生成和调试属性。
 
 ### <a name="add-in-project-properties"></a>外接程序项目属性
 
@@ -96,7 +96,7 @@ ms.locfileid: "57081000"
 从菜单栏中依次选择“**调试**” > “**开始调试**”，可启动项目。 Visual Studio 将自动生成解决方案并启动 Office 以托管外接程序。
 
 > [!NOTE]
-> 启动 Outlook 外接程序项目时，系统会提示你输入登录凭据。 如果系统要求你重复登录或收到未经授权错误，则对于你的租户上的帐户，可能会Microsoft 365基本身份验证。 在这种情况下，请尝试使用 Microsoft 帐户。 可能还需要在“Outlook Web 加载项”项目属性对话框中将属性“使用多重身份验证”设置为 True。
+> 启动 Outlook 外接程序项目时，系统会提示你输入登录凭据。 如果系统要求你重复登录，或者收到未经授权错误，则对于你的 Microsoft 365 租户上的帐户，可能会禁用基本身份验证。 在这种情况下，请尝试使用 Microsoft 帐户。 可能还需要在“Outlook Web 加载项”项目属性对话框中将属性“使用多重身份验证”设置为 True。
 
 生成Visual Studio时，它将执行以下任务。
 
@@ -109,7 +109,7 @@ ms.locfileid: "57081000"
 4. 如果这是你已部署到本地 IIS Web 服务器的第一个加载项项目，系统可能会提示你将自签名证书安装到当前用户的受信任的根证书存储中。 若要使 IIS Express 正确显示加载项内容，这是必需的操作。
 
 > [!NOTE]
-> 在 Windows 10 上运行时，最新版本的 Office 可能会使用较新的 Web 控件来显示加载项内容。 如果是这种情况，Visual Studio 可能会提示你添加本地网络环回豁免。 这是 Web 控件（在 Office 客户端应用程序中）能够访问部署到本地 IIS Web 服务器的网站所必需。 还可以在 Visual Studio 中的“工具” > “选项” > “Office 工具(Web)” > “Web 加载项调试”下随时更改此设置。
+> 在 Windows 10 上运行时，最新版本的 Office 可能会使用较新的 Web 控件来显示加载项内容。 如果是这种情况，Visual Studio 可能会提示你添加本地网络环回豁免。 这是 Web 控件在客户端应用程序中Office访问部署到本地 IIS Web 服务器的网站所必需。 还可以在 Visual Studio 中的“工具” > “选项” > “Office 工具(Web)” > “Web 加载项调试”下随时更改此设置。
 
 接下来，Visual Studio 会执行以下操作：
 
@@ -139,7 +139,7 @@ ms.locfileid: "57081000"
 
 5. 在 Visual Studio 中命中断点时，根据需要逐步执行代码。
 
-您可以更改代码并查看外接程序中这些更改的效果，而无需关闭 Office 应用程序并重新启动项目。 保存对代码所做的更改后，只需在应用程序内重新加载Office。 例如，通过选择任务窗格的右上角来激活 [个性菜单](../design/task-pane-add-ins.md#personality-menu)，然后选择“**重新加载**”，便可重新加载任务窗格外接程序。
+您可以更改代码并查看外接程序中这些更改的效果，而无需关闭 Office 应用程序并重新启动项目。 保存对代码的更改后，只需在应用程序中添加Office。 例如，通过选择任务窗格的右上角来激活 [个性菜单](../design/task-pane-add-ins.md#personality-menu)，然后选择“**重新加载**”，便可重新加载任务窗格外接程序。
 
 ## <a name="debug-the-code-for-an-outlook-add-in"></a>调试 Outlook 外接程序的代码
 

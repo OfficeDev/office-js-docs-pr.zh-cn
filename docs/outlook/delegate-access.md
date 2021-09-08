@@ -4,11 +4,11 @@ description: 讨论如何为共享文件夹配置外接程序支持 (。。 委�
 ms.date: 07/02/2021
 localization_priority: Normal
 ms.openlocfilehash: 55c084ba8b0c2d7d83a4e7df0acb6aa7e7abc7c1
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868692"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936333"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在加载项中启用共享文件夹Outlook邮箱方案
 
@@ -86,7 +86,7 @@ Exchange管理员可创建和管理共享邮箱，供多组用户访问。 目�
 
 若要在加载项中启用共享文件夹和共享邮箱方案，必须在父元素 下的清单中将 [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` 元素设置为 `DesktopFormFactor` 。 目前，不支持其他外形因素。
 
-若要支持从代理进行 REST 调用，将清单中的 ["权限](../reference/manifest/permissions.md) "节点设置为 `ReadWriteMailbox` 。
+若要支持从代理进行 REST 调用，将清单 [中的"权限"](../reference/manifest/permissions.md) 节点设置为 `ReadWriteMailbox` 。
 
 以下示例显示清单 `SupportsSharedFolders` 的一节中设置为 `true` 的 元素。
 
@@ -171,7 +171,7 @@ function performOperation() {
 ```
 
 > [!TIP]
-> 作为代理，您可以使用 REST 获取附加到Outlook或组帖子Outlook[邮件的内容](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
+> 作为代理，您可以使用 REST 获取附加到Outlook项目或组帖子Outlook[邮件的内容](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
 
 ## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>处理对共享项和非共享项的调用 REST
 
@@ -197,7 +197,7 @@ if (item.getSharedPropertiesAsync) {
 
 ### <a name="message-compose-mode"></a>邮件撰写模式
 
-在邮件撰写模式下[，getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_)在 Outlook 网页版 或 Windows都不受支持，除非满足以下条件。
+在邮件撰写模式下[，getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_)在 Outlook 网页版 或 Windows除非满足以下条件。
 
 a. **委派访问权限/共享文件夹**
 
@@ -219,7 +219,7 @@ b. **共享邮箱**
 
 ### <a name="user-or-shared-mailbox-hidden-from-an-address-list"></a>从地址列表中隐藏的用户或共享邮箱
 
-如果管理员从地址列表中隐藏用户或共享邮箱地址，如全局地址列表 (GAL) ，则邮箱报告中打开的受影响的邮件项目为 `Office.context.mailbox.item` null。 例如，如果用户在共享邮箱中打开一个在 GAL 中隐藏的邮件项目，则代表该 `Office.context.mailbox.item` 邮件项目为空。
+如果管理员从地址列表（如全局地址列表 (GAL) ）隐藏用户或共享邮箱地址，则邮箱报告中打开的受影响的邮件项目为 `Office.context.mailbox.item` null。 例如，如果用户在共享邮箱中打开一个在 GAL 中隐藏的邮件项目，则代表该 `Office.context.mailbox.item` 邮件项目为空。
 
 ## <a name="see-also"></a>另请参阅
 
@@ -227,5 +227,5 @@ b. **共享邮箱**
 - [日历中的日历Microsoft 365](https://support.microsoft.com/office/b576ecc3-0945-4d75-85f1-5efafb8a37b4)
 - [将共享邮箱添加到Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
 - [如何对清单元素排序](../develop/manifest-element-ordering.md)
-- [计算 (的) ](https://en.wikipedia.org/wiki/Mask_(computing))
+- [掩盖 (计算) ](https://en.wikipedia.org/wiki/Mask_(computing))
 - [JavaScript 位运算符](https://www.w3schools.com/js/js_bitwise.asp)

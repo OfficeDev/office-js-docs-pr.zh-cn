@@ -4,11 +4,11 @@ description: 了解 JavaScript 加载项Excel条件格式。
 ms.date: 04/01/2021
 localization_priority: Normal
 ms.openlocfilehash: 7c8d40145e7e66407df4f39e8f96be394b24bb2e
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868468"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937979"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>将条件格式应用于特定 Excel 范围
 
@@ -33,7 +33,7 @@ Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定
 -    `topBottom`
 
 > [!NOTE]
-> 每个格式属性都有相应的 `*OrNullObject` 变体。 在[ \* OrNullObject 方法部分了解有关该模式](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)的内容。
+> 每个格式属性都有相应的 `*OrNullObject` 变体。 在[ \* OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)方法部分了解有关该模式的内容。
 
 仅可为 ConditionalFormat 对象设置一种格式类型。 该格式类型由 `type` 属性确定，该属性是 [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) 枚举值。 `type` 是在向某一范围添加条件格式时设置的。
 

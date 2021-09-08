@@ -3,19 +3,19 @@ title: 清单文件中运行时
 description: Runtimes 元素指定外接程序的运行时。
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: e5ec70449d3984671d507131ac8d4fc0f7617cdcda1ad8f99b4f4bf52773aded
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 80336674c6d954bb9e0c6892feb41cb2f03c5859
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57091624"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936463"
 ---
 # <a name="runtimes-element"></a>Runtimes 元素
 
 指定外接程序的运行时。 元素的 [`<Host>`](host.md) 子元素。
 
 > [!NOTE]
-> 当在 Office Windows 中运行时，其清单中具有 元素的加载项不必像否则一样在同一 `<Runtimes>` Webview 控件中运行。 有关 web 视图和 Windows Office版本如何确定通常使用的 Webview 控件Office[请参阅](../../concepts/browsers-used-by-office-web-add-ins.md)浏览器。如果满足将 Microsoft Edge与 WebView2 (Chromium) 的条件，则无论外接程序是否具有 元素，外接程序都使用该 `<Runtimes>` 浏览器。 但是，当不满足这些条件时，具有 元素的外接程序始终使用 Internet Explorer 11，而不考虑 Windows `<Runtimes>` 或 Microsoft 365 版本。
+> 当在 Office Windows 中运行时，其清单中具有元素的外接程序不必像否则一样在同一 `<Runtimes>` Webview 控件中运行。 有关网站和加载项Windows Office哪些 Webview 控件是正常使用的信息，请参阅Office[加载项使用的浏览器](../../concepts/browsers-used-by-office-web-add-ins.md)。如果满足Microsoft Edge WebView2 (Chromium WebView2) 的条件，则无论外接程序是否具有 元素，外接程序都使用该 `<Runtimes>` 浏览器。 但是，当不满足这些条件时，具有 元素的外接程序始终使用 Internet Explorer 11，而不考虑 Windows `<Runtimes>` 或 Microsoft 365 版本。
 
 **外接程序类型：** 任务窗格、邮件
 

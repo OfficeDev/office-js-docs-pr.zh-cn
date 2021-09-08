@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.6 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 74fd184c4d65f30643266ba4799406cfe6f6e8e1e275af09eb6102e4bda986fa
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9cc7155928fb3f98acf25a38ca5210ca6d57bb19
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088977"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936572"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 的最近更新
 
@@ -32,7 +32,7 @@ ms.locfileid: "57088977"
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求集 1.6 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.6 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.6](/javascript/api/excel?view=excel-js-1.6&preserve-view=true)或更早中的 Excel API。
+下表列出了 JavaScript API 要求Excel集 1.6 中的 API。 若要查看受 Excel JavaScript API 要求集 1.6 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.6](/javascript/api/excel?view=excel-js-1.6&preserve-view=true)或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -40,7 +40,7 @@ ms.locfileid: "57088977"
 |[CellValueConditionalFormat](/javascript/api/excel/excel.cellvalueconditionalformat)|[format](/javascript/api/excel/excel.cellvalueconditionalformat#format)|返回一个 format 对象，该对象封装了条件格式的字体、填充、边框和其他属性。|
 ||[rule](/javascript/api/excel/excel.cellvalueconditionalformat#rule)|指定此条件格式的规则对象。|
 |[ColorScaleConditionalFormat](/javascript/api/excel/excel.colorscaleconditionalformat)|[criteria](/javascript/api/excel/excel.colorscaleconditionalformat#criteria)|色标的条件。|
-||[threeColorScale](/javascript/api/excel/excel.colorscaleconditionalformat#threeColorScale)|如果为 ，色标将具有三个点 (最小值、中点、最大) ，否则色标将具有 (最小、 `true` 最大) 。|
+||[threeColorScale](/javascript/api/excel/excel.colorscaleconditionalformat#threeColorScale)|如果为 ，色标将具有三个点 (最小值、中点、最大) ，否则它将具有 (最小、 `true` 最大) 。|
 |[ConditionalCellValueRule](/javascript/api/excel/excel.conditionalcellvaluerule)|[formula1](/javascript/api/excel/excel.conditionalcellvaluerule#formula1)|用于计算条件格式规则的公式（如果需要）。|
 ||[formula2](/javascript/api/excel/excel.conditionalcellvaluerule#formula2)|用于计算条件格式规则的公式（如果需要）。|
 ||[operator](/javascript/api/excel/excel.conditionalcellvaluerule#operator)|单元格值条件格式的运算符。|
@@ -129,17 +129,17 @@ ms.locfileid: "57088977"
 ||[axisFormat](/javascript/api/excel/excel.databarconditionalformat#axisFormat)|如何为数据条确定坐标轴Excel表示。|
 ||[barDirection](/javascript/api/excel/excel.databarconditionalformat#barDirection)|指定数据条图形应基于的方向。|
 ||[lowerBoundRule](/javascript/api/excel/excel.databarconditionalformat#lowerBoundRule)|构成数据栏的下限（以及如何计算，如果适用）的规则。|
-||[negativeFormat](/javascript/api/excel/excel.databarconditionalformat#negativeFormat)|数据条中轴左侧的所有Excel表示。|
+||[negativeFormat](/javascript/api/excel/excel.databarconditionalformat#negativeFormat)|数据条中坐标轴左侧的所有Excel表示。|
 ||[positiveFormat](/javascript/api/excel/excel.databarconditionalformat#positiveFormat)|数据条中轴右侧所有值的Excel表示。|
 ||[showDataBarOnly](/javascript/api/excel/excel.databarconditionalformat#showDataBarOnly)|如果 `true` 为 ，则隐藏应用数据栏的单元格的值。|
 ||[upperBoundRule](/javascript/api/excel/excel.databarconditionalformat#upperBoundRule)|构成数据栏的上限（以及如何计算，如果适用）的规则。|
-|[IconSetConditionalFormat](/javascript/api/excel/excel.iconsetconditionalformat)|[criteria](/javascript/api/excel/excel.iconsetconditionalformat#criteria)|规则和条件图标的规则和图标集数组，以及条件图标的潜在自定义图标。|
+|[IconSetConditionalFormat](/javascript/api/excel/excel.iconsetconditionalformat)|[criteria](/javascript/api/excel/excel.iconsetconditionalformat#criteria)|针对规则的条件和图标集的数组，以及条件图标的潜在自定义图标。|
 ||[reverseIconOrder](/javascript/api/excel/excel.iconsetconditionalformat#reverseIconOrder)|如果 `true` 为 ，则反转图标集的图标顺序。|
 ||[showIconOnly](/javascript/api/excel/excel.iconsetconditionalformat#showIconOnly)|如果 `true` 为 ，则隐藏值，并且只显示图标。|
 ||[style](/javascript/api/excel/excel.iconsetconditionalformat#style)|如果设置，则显示条件格式的图标集选项。|
 |[PresetCriteriaConditionalFormat](/javascript/api/excel/excel.presetcriteriaconditionalformat)|[format](/javascript/api/excel/excel.presetcriteriaconditionalformat#format)|返回一个 format 对象，该对象封装了条件格式的字体、填充、边框和其他属性。|
 ||[rule](/javascript/api/excel/excel.presetcriteriaconditionalformat#rule)|条件格式的规则。|
-|[区域](/javascript/api/excel/excel.range)|[calculate()](/javascript/api/excel/excel.range#calculate__)|计算工作表上的单元格区域。|
+|[Range](/javascript/api/excel/excel.range)|[calculate()](/javascript/api/excel/excel.range#calculate__)|计算工作表上的单元格区域。|
 ||[conditionalFormats](/javascript/api/excel/excel.range#conditionalFormats)|与区域 `ConditionalFormats` 相交的集合。|
 |[TextConditionalFormat](/javascript/api/excel/excel.textconditionalformat)|[format](/javascript/api/excel/excel.textconditionalformat#format)|返回一个 format 对象，该对象封装条件格式的字体、填充、边框和其他属性。|
 ||[rule](/javascript/api/excel/excel.textconditionalformat#rule)|条件格式的规则。|

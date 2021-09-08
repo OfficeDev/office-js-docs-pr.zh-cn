@@ -1,18 +1,18 @@
 ---
 title: Office 加载项的版式准则
-description: 了解在外接程序中Office字样和字号。
+description: 了解在加载项中Office字样和字号。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 8cc17a25ed33fc34dd7a44622baacc620304402931de87eeadee903db5f135b0
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 187267c20d119ca1b3d103f32a5fd665dc903a5a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082305"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937233"
 ---
 # <a name="typography"></a>版式
 
-Segoe 是 Office 的标准字样。 在外接程序中使用 Segoe，以与 Office 任务窗格、对话框和内容对象保持一致。 [Fabric Core](fabric-core.md) 可让你访问 Segoe。 它在方便使用的 CSS 类中为 Segoe 的全型斜坡提供了许多不同的字体粗细和大小。 并非所有 Fabric Core 大小和权重在加载项Office外观都不错。 为了协调适应或避免冲突，请考虑使用 Fabric Core 类型渐变的子集。 下表列出了建议在外接程序中Office Fabric Core 的基类。
+Segoe 是 Office 的标准字样。 在外接程序中使用 Segoe，以与 Office 任务窗格、对话框和内容对象保持一致。 [Fabric Core](fabric-core.md) 可让你访问 Segoe。 它在方便使用的 CSS 类中为 Segoe 的全型斜坡提供了许多不同的字体粗细和大小。 并非所有 Fabric Core 大小和权重在加载项Office外观。 为了协调适应或避免冲突，请考虑使用 Fabric Core 类型渐变的子集。 下表列出了建议在加载项中Office Fabric Core 的基类。
 
 > [!NOTE]
 > 这些基类不包含文本颜色。 对白色背景上的大多数文本使用 Fabric Core 的"中性主要"。

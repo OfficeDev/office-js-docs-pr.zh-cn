@@ -3,12 +3,12 @@ title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 6ae968db2df014fb4bdcb533214e26936a7fa7e5e8a97bafcc19d10c6b220e50
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 958086793e423c8e8d0a12dcf38d5035063115e0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081971"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936247"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
@@ -25,7 +25,7 @@ ms.locfileid: "57081971"
 
 ## <a name="office-application-and-platform-support-only"></a>Office应用程序和平台仅支持
 
-本文中介绍的 API 仅可用于Excel平台和 PowerPoint web 版。
+本文中介绍的 API 仅适用于所有Excel和 PowerPoint web 版。
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>使用要求集测试平台支持
 
@@ -34,7 +34,7 @@ ms.locfileid: "57081971"
 启用/禁用 API 属于 [RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md) 要求集。
 
 > [!NOTE]
-> **RibbonApi 1.1** 要求集在清单中尚不受支持，因此您无法在清单的 部分中指定 `<Requirements>` 它。 若要测试支持，代码应调用 `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` 。 如果 *且仅在 返回* 时 ， `true` 代码可以调用启用/禁用 API。 如果 调用 `isSetSupported` 返回 `false` ，则所有自定义外接程序命令将一向启用。 您必须设计生产外接程序以及任何应用内说明，以考虑当 **RibbonApi 1.1** 要求集不受支持时它如何工作。 有关使用 有关详细信息和示例，请参阅指定 Office 应用程序和 API 要求， `isSetSupported` 尤其是在[JavaScript 代码中使用运行时检查](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)。 [](../develop/specify-office-hosts-and-api-requirements.md)  (本文清单中的设置 [Requirements](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) 元素部分不适用于功能区 1.1.) 
+> **RibbonApi 1.1** 要求集在清单中尚不受支持，因此您无法在清单的 部分中指定 `<Requirements>` 它。 若要测试支持，代码应调用 `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` 。 如果 *且仅在 调用* 返回 时 ， `true` 代码可以调用启用/禁用 API。 如果 调用 `isSetSupported` 返回 `false` ，则所有自定义外接程序命令将一向启用。 您必须设计生产外接程序以及任何应用内说明，以考虑当 **RibbonApi 1.1** 要求集不受支持时它如何工作。 有关使用 有关详细信息和示例，请参阅指定 Office 应用程序和 API 要求， `isSetSupported` 尤其是[使用 JavaScript 代码中的运行时检查](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)。 [](../develop/specify-office-hosts-and-api-requirements.md)  (本文清单中的设置 [Requirements](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) 元素一节不适用于功能区 1.1.) 
 
 ## <a name="shared-runtime-required"></a>需要共享运行时
 
@@ -78,7 +78,7 @@ ms.locfileid: "57081971"
 
 更改加载项命令的启用状态的基本步骤如下：
 
-1. 创建 [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) 对象 (1) 指定命令及其父组和选项卡，按清单中声明的其 ID;和 (2) 指定命令的启用或禁用状态。
+1. 创建 [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) 对象，该对象 (1) 指定命令及其父组和选项卡，按清单中声明的其 ID;和 (2) 指定命令的启用或禁用状态。
 2. 将 **RibbonUpdaterData** 对象传递到 [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestUpdate_input_) 方法。
 
 下面展示了一个非常简单的示例。 请注意，"MyButton"、"OfficeAddinTab1"和"CustomGroup111"从清单中复制。
@@ -118,7 +118,7 @@ const enableButton = async () => {
 }
 ```
 
-如果父函数是异步 () 可以调用 `await` **requestUpdate，** 但请注意，Office应用程序在更新功能区的状态时进行控制。 **requestUpdate()** 方法会将更新请求加入队列中。 一旦将请求排入队列，该方法将解析承诺对象，而不是功能区实际更新时。
+如果父函数是异步 () 可以调用 `await` **requestUpdate** 对象，但请注意，Office 应用程序在更新功能区的状态时进行控制。 **requestUpdate()** 方法会将更新请求加入队列中。 一旦将请求排入队列，该方法将解析承诺对象，而不是功能区实际更新时。
 
 ## <a name="change-the-state-in-response-to-an-event"></a>更改状态以响应事件
 
@@ -166,7 +166,7 @@ function enableChartFormat() {
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>切换选项卡可见性和按钮的启用状态
 
-**requestUpdate** 方法还用于切换自定义上下文选项卡的可见性。有关此代码和示例代码的详细信息，请参阅在加载项Office [上下文选项卡](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
+**requestUpdate** 方法还用于切换自定义上下文选项卡的可见性。有关此代码和示例代码的详细信息，请参阅在加载项中Office [上下文选项卡](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
 
 ## <a name="best-practice-test-for-control-status-errors"></a>最佳做法：测试控件状态错误
 

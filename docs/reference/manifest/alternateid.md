@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 AlternateId 元素
-description: 指定 AppSource Office加载项的备用 ID。
+description: 指定 AppSource 颁发的Office加载项的备用 ID。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 7ebe065658bd30a65c18e7827b85cc562e533d4f30529f93fdbcb850a9a267f0
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 122b18564d0473fee65412563ad48c98ce48544c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085790"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937252"
 ---
 # <a name="alternateid-element"></a>AlternateId 元素
 
-指定 AppSource Office加载项的备用 ID。
+指定 AppSource 颁发的Office加载项的备用 ID。
 
 **加载项类型：** 内容、任务窗格和邮件
 

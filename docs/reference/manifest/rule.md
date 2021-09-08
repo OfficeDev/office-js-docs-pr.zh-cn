@@ -3,12 +3,12 @@ title: 清单文件中的 Rule 元素
 description: Rule 元素指定应为此上下文邮件外接程序评估的激活规则。
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: f78dfedf59c6294a477f112512afe21650e9ef5a63331b5ccde673a2c046c2ad
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 60882a5e36a63832cf81eab9320b113a420b84a3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093005"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937830"
 ---
 # <a name="rule-element"></a>Rule 元素
 
@@ -19,7 +19,7 @@ ms.locfileid: "57093005"
 ## <a name="contained-in"></a>包含于
 
 - [OfficeApp](officeapp.md)
-- [ExtensionPoint](extensionpoint.md) ([ **CustomPane** (已](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/)) [**，DetectedEntity**](extensionpoint.md#detectedentity)) 
+- [ExtensionPoint](extensionpoint.md) ([ **CustomPane**](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/) (已) [**，DetectedEntity**](extensionpoint.md#detectedentity)) 
 
 ## <a name="attributes"></a>属性
 

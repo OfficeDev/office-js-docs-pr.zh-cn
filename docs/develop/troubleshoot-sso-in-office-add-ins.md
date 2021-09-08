@@ -1,14 +1,14 @@
 ---
 title: 排查单一登录 (SSO) 错误消息
 description: 有关如何解决加载项中单一登录 (SSO) 问题Office处理特殊条件或错误的指导。
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 1587f747ab3128904d4b287581f6f909f3fdb216ec03a711b30d994ca696eb03
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f2a4b4b7ae44596bef101aeeba51ee6dffa8ba5e
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079955"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937297"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>排查单一登录 (SSO) 错误消息
 
@@ -28,9 +28,8 @@ ms.locfileid: "57079955"
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>导致 getAccessToken 生成错误的原因和处理方法
 
 有关此部分中介绍的错误处理示例，请参阅：
-
-- [Office-Add-in-ASPNET-SSO 中的 HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
-- [ssoAuthES6.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
+- [Office-Add-in-ASPNET-SSO 中的 HomeES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
+- [ssoAuthES6.js in Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="13000"></a>13000
 
@@ -60,7 +59,7 @@ ms.locfileid: "57079955"
 
 ### <a name="13003"></a>13003
 
-用户类型不受支持。 用户未使用有效的 Microsoft Office或工作帐户Microsoft 365 教育版登录。 例如，当使用本地域帐户运行 Office 时，可能会生成此错误。 代码应回退到用户身份验证备用系统。 在Outlook中，如果为用户租户禁用新式验证，[](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)则也会发生Exchange Online。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
+用户类型不受支持。 用户未使用有效的 Microsoft 帐户Office或工作帐户Microsoft 365 教育版登录。 例如，当使用本地域帐户运行 Office 时，可能会生成此错误。 代码应回退到用户身份验证备用系统。 在Outlook中，如果为用户租户禁用新式验证[](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)，也会发生Exchange Online。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
 
 ### <a name="13004"></a>13004
 
@@ -83,7 +82,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 - 如果在开发过程中发生此错误，请确保加载项注册和加载项清单指定 `profile` 权限（和 `openid` 权限 - 如果你使用的是 MSAL.NET）。 如需了解更多信息，请参阅[向 Azure AD v2.0 终结点注册加载项](register-sso-add-in-aad-v2.md)。
 - 在生产中，有几种情况可能导致此错误。 其中一些是：
   - 用户具有 Microsoft 帐户标识。
-  - 使用 MSA 时，某些会导致其他 13xxx 错误Microsoft 365 教育版或工作帐户导致 13007 错误。
+  - 使用 MSA 时，某些会导致其他 13xxx 错误之一Microsoft 365 教育版或工作帐户将导致 13007 错误。
 
   对于所有这些情况，代码应回退到用户身份验证备用系统。
 
@@ -93,7 +92,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 
 ### <a name="13010"></a>13010
 
-用户正在 Microsoft Edge 或 Internet Explorer 上的 Office 中运行加载项。 用户的域Microsoft 365和 `login.microsoftonline.com` 域在浏览器设置中的不同安全区域。 此错误仅出现在 **Office 网页版** 中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
+用户正在 Microsoft Edge 或 Internet Explorer 上的 Office 中运行加载项。 用户的域Microsoft 365和域，在浏览器设置 `login.microsoftonline.com` 中都在不同的安全区域中。 此错误仅出现在 **Office 网页版** 中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
 
 ### <a name="13012"></a>13012
 
@@ -108,7 +107,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 
 ### <a name="13013"></a>13013
 
-调用时间过短，因此Office最近一次 `getAccessToken` 调用。 这通常是由对 方法的无限循环调用导致的。 建议在一些方案中撤回此方法。 但是，您的代码应该使用计数器或标志变量来确保不会重复调用该方法。 如果同一"重试"代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何在HomeES6.js`retryGetAccessToken` 或ssoAuthES6.js[](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) [中ssoAuthES6.js。 ](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
+调用时间过短，因此Office最近一次 `getAccessToken` 调用。 这通常是由对 方法的无限循环调用导致的。 建议在一些方案中撤回此方法。 但是，您的代码应该使用计数器或标志变量来确保不会重复调用该方法。 如果同一"重试"代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何在HomeES6.js`retryGetAccessToken` 或ssoAuthES6.js[](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) [中ssoAuthES6.js。 ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="50001"></a>50001
 
@@ -119,9 +118,8 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Azure Active Directory 服务器端错误
 
 有关此部分中介绍的错误处理示例，请参阅：
-
-- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
-- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
+- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>条件访问/多重身份验证错误
 

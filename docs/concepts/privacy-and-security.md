@@ -4,11 +4,11 @@ description: 了解加载项平台的隐私Office安全方面。
 ms.date: 03/19/2021
 localization_priority: Normal
 ms.openlocfilehash: 1972fa8de2c6a6f42a003efe99be7694290ee06c
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868419"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936513"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -101,7 +101,7 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
 - 外接程序平台的设计通过以下方式为最终用户提供了安全和性能。
 
-  - 外接程序Office在 Web 浏览器控件中运行，该控件托管在独立于 Office 客户端应用程序的外接程序运行时环境中。 此设计提供与客户端应用程序的安全和性能隔离。
+  - 加载项Office在 Web 浏览器控件中运行，该控件托管在独立于 Office 客户端应用程序的外接程序运行时环境中。 此设计提供与客户端应用程序的安全和性能隔离。
 
   - 在 Web 浏览器控件中运行可允许加载项完成在浏览器中运行的常规网页可执行的所有操作，但同时将限制加载项遵守针对域隔离和安全区域的同源策略。
 
@@ -202,7 +202,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 ### <a name="tips-to-prevent-clickjacking"></a>防止“点击劫持”的提示
 
-由于Office使用 Office 客户端应用程序在浏览器中运行时，外接程序呈现在 iframe 中，因此请使用以下提示来最大程度地降低点击劫持（黑客用来欺骗用户泄露[](https://en.wikipedia.org/wiki/Clickjacking)机密信息的技术）的风险。
+由于Office在包含 Office 客户端应用程序的浏览器中运行时，外接程序呈现在 iframe 中，因此请使用以下提示来最大程度地降低点击劫持（黑客用来欺骗用户[](https://en.wikipedia.org/wiki/Clickjacking)泄露机密信息的技术）的风险。
 
 首先，确定您的加载项可以执行的敏感操作。其中包括未授权的用户可能恶意使用的任何操作，如启动金融交易或发布敏感数据。例如，您的加载项可能让用户将款项发送到用户定义的接收人。
 
@@ -230,7 +230,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
   若要确保加载项不会使用 HTTP 传送内容，在测试加载项时，开发人员应确保在"控制面板"的 **"Internet** 选项"中选择了以下设置，并且其测试方案中不会出现安全警告。
 
-  - 确保针对“Internet”区域的安全设置“显示混合内容”设置为“提示”。 为此，可以在 **"Internet** 选项"中选择以下选项：在"安全"选项卡上，选择 **"Internet** 区域"，选择"自定义级别"，滚动以查找"显示混合内容"，然后选择"提示"（如果尚未选择）。 
+  - 确保针对“Internet”区域的安全设置“显示混合内容”设置为“提示”。 为此，可以在 **"Internet** 选项"中选择以下内容：在"安全"选项卡上，选择 **"Internet"** 区域，选择"自定义级别"，滚动以查找"显示混合内容"，然后选择"提示"（如果尚未选择）。 
 
   - 确保在“Internet 选项”对话框的“高级”选项卡中，选中了“在安全和非安全模式之间转换时发出警告”。
 

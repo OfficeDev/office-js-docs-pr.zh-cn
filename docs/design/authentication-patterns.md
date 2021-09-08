@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的身份验证设计准则
 ms.date: 02/09/2021
-description: 了解如何在加载项中直观地设计登录Office注册页。
+description: 了解如何在加载项中直观地设计登录Office注册页面。
 localization_priority: Normal
-ms.openlocfilehash: 6550628555dcc2c7a11cccc17b00824169137d34df72ec51f8e0962f56c9a54e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: bc047e6b001b7a491aa8117ba1b5901716ca1555
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082286"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938154"
 ---
 # <a name="authentication-patterns"></a>身份验证模式
 
@@ -23,7 +23,7 @@ ms.locfileid: "57082286"
 |使用清晰的按钮标签来描述“登录”或“创建帐户”等特定任务。 |使用模糊的按钮标签，如“提交”或“入门”来指导用户完成身份验证流程。|
 |使用对话框将用户的注意力集中在身份验证表单上。 |使用初次运行体验和身份验证表单塞满任务窗格。|
 |在流程中寻找细处的效率，如自动对焦输入框。 |为交互添加如要求用户单击表单域等不必要的步骤。|
-|为用户提供一种注销和重新进行身份验证的方法。 |强制用户卸载以切换标识。|
+|为用户提供注销和重新进行身份验证的方法。 |强制用户卸载以切换标识。|
 
 ## <a name="authentication-flow"></a>身份验证流
 

@@ -4,29 +4,29 @@ description: 启用与Excel等效功能的 XLL 用户定义函数的兼容性
 ms.date: 08/24/2021
 localization_priority: Normal
 ms.openlocfilehash: 5611a8d7c22867146c0f0904d62bd113fe8d29d2
-ms.sourcegitcommit: 7245eeedc6246c7aad2fc7df8d47e11971b42ee7
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2021
-ms.locfileid: "58614586"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936532"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>使用 XLL 用户定义函数扩展自定义函数
 
 > [!NOTE]
-> XLL 加载项是一个Excel扩展名 **.xll 的加载项文件**。 XLL 文件是动态链接库的一 (DLL) 文件，它只能由 Excel。 XLL 加载项文件必须使用 C 或 C++ 编写。 若要[了解Excel XLL，](/office/client-developer/excel/developing-excel-xlls)请参阅开发 XLL。
+> XLL 加载项是一个Excel扩展名 **.xll 的加载项文件**。 XLL 文件是一种动态链接库 (DLL) 文件，它只能由 Excel。 XLL 加载项文件必须使用 C 或 C++ 编写。 若要[了解Excel XLL，](/office/client-developer/excel/developing-excel-xlls)请参阅开发 XLL。
 
-如果你有现有的 Excel XLL 加载项，可以使用 Excel JavaScript API 生成等效的自定义函数加载项，以将解决方案功能扩展到其他平台，如 Excel web 版 或 Mac。 但是Excel JavaScript API 加载项并不具有 XLL 加载项中提供的所有功能。根据解决方案使用的功能，XLL 加载项可能会提供比 Excel JavaScript API 加载项更好的体验，Excel Windows。
+如果你有现有的 Excel XLL 加载项，可以使用 Excel JavaScript API 生成等效的自定义函数加载项，以将解决方案功能扩展到其他平台，如 Excel web 版 或 Mac。 但是Excel JavaScript API 加载项并不具有 XLL 加载项中提供的所有功能。根据解决方案使用的功能，XLL 加载项可能会提供比 Windows 中 Excel JavaScript API Excel更好的体验。
 
 > [!IMPORTANT]
-> COM 加载项和 XLL 用户定义的函数 (UDF) 兼容性受 Excel 版本 1904 或Windows (版本) 。 COM 加载项和 XLL 用户定义函数 (UDF) 不支持在 mac Excel web 版兼容性。
+> COM 加载项和 XLL 用户定义函数 (UDF) 兼容性受 Excel 版本 1904 或更高版本 Windows (支持) 。 COM 加载项和 XLL 用户定义的函数 (UDF) 或 Mac 不支持Excel web 版兼容性。
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>在清单中指定等效的 XLL
 
-若要实现与现有 XLL 加载项的兼容性，在 JavaScript API 加载项清单中Excel等效的 XLL 加载项。 Excel在 Windows 上运行时，将使用 XLL 加载项函数，而不是 Excel JavaScript API 加载项自定义Windows。
+若要实现与现有 XLL 加载项的兼容性，在 JavaScript API 加载项清单中Excel等效的 XLL 加载项。 Excel在 Windows 上运行时，Excel使用 XLL 加载项函数，而不是 javaScript API Windows。
 
 若要为自定义函数设置等效的 XLL 加载项，请指定 `FileName` XLL 文件的 。 当用户打开包含 XLL 文件中函数的工作簿时，Excel函数转换为兼容函数。 然后，在 Windows 上的 Excel 中打开工作簿时，工作簿将使用 XLL 文件，当在 Web 或 Mac 上打开时，它将使用 Excel JavaScript API 加载项中的自定义函数。
 
-以下示例演示如何将 COM 加载项和 XLL 加载项指定为 Excel JavaScript API 加载项清单文件中等效项。 通常，您将同时指定这两者。 为完整，此示例在上下文中显示这两者。 它们分别由它们 `ProgId` 和 `FileName` 标识。 `EquivalentAddins`元素必须紧接在结束标记 `VersionOverrides` 的之前。 有关 COM 加载项兼容性的详细信息，请参阅使Office[加载项与现有 COM](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)加载项兼容。
+以下示例演示如何在 JavaScript API 加载项清单文件中将 COM 加载项和 XLL Excel指定为等效项。 通常，您将同时指定这两者。 为完整，此示例在上下文中显示这两者。 它们分别由它们 `ProgId` 和 `FileName` 标识。 `EquivalentAddins`元素必须紧接在结束标记 `VersionOverrides` 的之前。 有关 COM 加载项兼容性的详细信息，请参阅使Office[加载项与现有 COM](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)加载项兼容。
 
 ```xml
 <VersionOverrides>
@@ -50,7 +50,7 @@ ms.locfileid: "58614586"
 
 ## <a name="custom-function-behavior-for-xll-compatible-functions"></a>XLL 兼容函数的自定义函数行为
 
-打开电子表格并且有等效的加载项可用时，加载项的 XLL 函数将转换为 XLL 兼容的自定义函数。 下一次保存时，XLL 函数会以兼容模式写入文件，以便它们适用于 XLL 加载项和 Excel JavaScript API 加载项自定义函数 (在其他平台上) 。
+打开电子表格并且有等效的加载项可用时，加载项的 XLL 函数将转换为 XLL 兼容的自定义函数。 下一次保存时，XLL 函数会以兼容模式写入文件，以便它们在其他平台) 中同时使用 XLL 加载项和 Excel JavaScript API 加载项自定义函数 (。
 
 下表比较了 XLL 用户定义函数、XLL 兼容自定义函数Excel JavaScript API 加载项自定义函数之间的功能。
 
@@ -60,7 +60,7 @@ ms.locfileid: "58614586"
 | **支持的文件格式** | XLSX、XLSB、XLSM、XLS | XLSX、XLSB、XLSM | XLSX、XLSB、XLSM |
 | **公式自动完成** | 否 | 是 | 是 |
 | **流式** | 可通过 xlfRTD 和 XLL 回调实现。 | 是 | 是 |
-| **函数本地化** | 否 | 不需要。 Name 和 ID 必须与现有的 XLL 函数匹配。 | 是 |
+| **函数本地化** | 否 | 否。 Name 和 ID 必须与现有的 XLL 函数匹配。 | 是 |
 | **可变函数** | 是 | 是 | 是 |
 | **多线程重新计算支持** | 是 | 是 | 是 |
 | **计算行为** | 无 UI。 Excel计算期间可能无响应。 | 用户将看到#BUSY！ 直到返回结果。 | 用户将看到#BUSY！ 直到返回结果。 |

@@ -1,20 +1,20 @@
 ---
 title: 应用场景 - 为服务实施单一登录
 description: 了解如何使用 Outlook 加载项提供的单一登录令牌和 Exchange 标识令牌为服务实现 SSO。
-ms.date: 02/09/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: b7087efd430e695aeec432ad70a350693d8f11fb5aeb74b5aa3b90d2dc08e75b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ab86e54ef4f71674904811581d1f2f176ce5b16a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086275"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937864"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>应用场景：为 Outlook 加载项中的服务实现单一登录
 
 在本文中，我们将探讨结合使用[单一登录访问令牌](authenticate-a-user-with-an-sso-token.md)和 [Exchange 标识令牌](authenticate-a-user-with-an-identity-token.md)为自己的后端服务提供单一登录实现的建议方法。 通过结合使用这两种令牌，可以在 SSO 访问令牌可用时利用其优势，并在其不可用时确保加载项仍能正常工作（例如，当用户切换到不支持这些令牌的客户端时，或当用户的邮箱位于本地 Exchange 服务器时）。
 
-有关实现本文中的想法的示例外接程序，请参阅Outlook[外接程序 SSO。](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+有关实现本文中的想法的示例外接程序，请参阅Outlook[外接程序 SSO。](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
 
 
 > [!NOTE]
@@ -83,7 +83,7 @@ Exchange 标识令牌适用于加载项 API 的所有要求集，因此，仅依
 1. 加载项通知用户需要授权其使用 API 并让用户单击一个链接或按钮来启动这一过程。
 
     > [!NOTE]
-    > [Outlook 外接程序 SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)的示例外接程序演示如何使用[对话框 API](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_)和[office-js-helpers](https://github.com/OfficeDev/office-js-helpers)库作为选项来启动 API 的[OAuth2 授权](/azure/active-directory/develop/active-directory-protocols-oauth-code)代码流。
+    > [Outlook 外接程序 SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)的示例外接程序演示如何使用[对话框 API](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-)和[office-js-helpers](https://github.com/OfficeDev/office-js-helpers)库作为选项来启动 API 的[OAuth2 授权](/azure/active-directory/develop/active-directory-protocols-oauth-code)代码流。
 
 1. 此流完成后，加载项向后端 Web API 发送刷新令牌并包含 SSO 令牌（如果可用）或 Exchange 标识令牌。
 

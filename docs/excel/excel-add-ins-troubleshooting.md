@@ -3,12 +3,12 @@ title: 加载项Excel疑难解答
 description: 了解如何解决加载项中的Excel错误。
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: da3f22597cace678aeff8a471d478b0b091036301d6ddd1776fae03b97673fda
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b90d8cfdb4696445655122a2fa7eb74d1c87fa2f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088807"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936693"
 ---
 # <a name="troubleshooting-excel-add-ins"></a>加载项Excel疑难解答
 
@@ -16,7 +16,7 @@ ms.locfileid: "57088807"
 
 ## <a name="api-limitations-when-the-active-workbook-switches"></a>活动工作簿切换时的 API 限制
 
-加载项Excel一次对一个工作簿进行操作。 与运行加载项的工作簿分开的工作簿获得焦点时，可能会出现错误。 只有在焦点更改时调用特定方法时，才会发生此情况。
+适用于工作簿的Excel旨在一次对一个工作簿进行操作。 与运行加载项的工作簿分开的工作簿获得焦点时，可能会出现错误。 只有在焦点更改时调用特定方法时，才会发生此情况。
 
 以下 API 受此工作簿开关的影响。
 
@@ -44,7 +44,7 @@ ms.locfileid: "57088807"
 
 ## <a name="coauthoring"></a>共同创作
 
-有关[用于共同Excel](co-authoring-in-excel-add-ins.md)中的事件的模式，请参阅在加载项中共同授权。 本文还讨论了使用某些 API（如 ）时的潜在合并冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 。
+请参阅[共同Excel](co-authoring-in-excel-add-ins.md)外接程序中的共同授权，了解用于共同授权环境中事件的模式。 本文还讨论了使用某些 API（如 ）时的潜在合并冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 。
 
 ## <a name="known-issues"></a>已知问题
 
@@ -98,5 +98,5 @@ Range [getImage](/javascript/api/excel/excel.range#getImage__)方法当前在 Ex
 
 ## <a name="see-also"></a>另请参阅
 
-- [排查Office加载项的开发错误](../testing/troubleshoot-development-errors.md)
+- [解决加载项Office错误](../testing/troubleshoot-development-errors.md)
 - [排查 Office 加载项中的用户错误](../testing/testing-and-troubleshooting.md)

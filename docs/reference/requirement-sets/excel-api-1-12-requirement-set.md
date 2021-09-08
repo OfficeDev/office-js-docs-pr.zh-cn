@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.12 要求集的详细信息。
 ms.date: 04/01/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9daee6dd70263af2654833f582e7ed6560ccbbd3c5e41e2c5e42bf94b568aa5a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 10587b84ba476b91cdd56d8472e551348b3a718b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090136"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936470"
 ---
 # <a name="whats-new-in-excel-javascript-api-112"></a>JavaScript API 1.12 Excel的新增功能
 
@@ -19,14 +19,14 @@ ExcelApi 1.12 通过添加用于跟踪动态数组和查找公式的直接引用
 |:--- |:--- |:--- |
 | [注释事件](../../excel/excel-add-ins-comments.md#comment-events) | 将添加、更改和删除事件添加到注释集合。| [CommentCollection](/javascript/api/excel/excel.commentcollection) |
 | 日期和时间 [区域性设置](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | 提供对日期和时间格式的其他文化设置的访问权限。 | [CultureInfo](/javascript/api/excel/excel.cultureinfo) [、NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [应用程序](/javascript/api/excel/excel.application) |
-| [直接引用单元格](../../excel/excel-add-ins-ranges-precedents.md) | 返回用于计算单元格公式的范围。| [区域](/javascript/api/excel/excel.range#getdirectprecedents--) |
+| [直接引用单元格](../../excel/excel-add-ins-ranges-precedents.md) | 返回用于计算单元格公式的范围。| [Range](/javascript/api/excel/excel.range#getdirectprecedents--) |
 | 透视筛选器 | 将值驱动的筛选器应用于数据透视表的字段。 | [PivotField](/javascript/api/excel/excel.pivotfield#applyfilter-filter-) [、PivotFilters](/javascript/api/excel/excel.pivotFilters) |
-| [区域溢出](../../excel/excel-add-ins-ranges-dynamic-arrays.md) | 允许外接程序查找与动态数组结果 [关联的](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531) 区域。 | [区域](/javascript/api/excel/excel.range) |
+| [区域溢出](../../excel/excel-add-ins-ranges-dynamic-arrays.md) | 允许外接程序查找与动态数组结果 [关联的](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531) 区域。 | [Range](/javascript/api/excel/excel.range) |
 | [工作表级别的自定义属性](../../excel/excel-add-ins-workbooks.md#worksheet-level-custom-properties) | 除了将自定义属性的范围限制到工作簿级别外，还可以将自定义属性的范围缩小到工作表级别。 | [WorksheetCustomProperty](/javascript/api/excel/excel.worksheetcustomproperty) [、WorksheetCustomPropertyCollection](/javascript/api/excel/excel.worksheetcustompropertycollection)|
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求集 1.12 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.12 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.12](/javascript/api/excel?view=excel-js-1.12&preserve-view=true)或更早中的 Excel API。
+下表列出了 JavaScript API 要求Excel集 1.12 中的 API。 若要查看受 Excel JavaScript API 要求集 1.12 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.12](/javascript/api/excel?view=excel-js-1.12&preserve-view=true)或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -66,7 +66,7 @@ ExcelApi 1.12 通过添加用于跟踪动态数组和查找公式的直接引用
 ||[wholeDays](/javascript/api/excel/excel.pivotdatefilter#wholeDays)|对于 、 、 和 筛选条件， `equals` `before` `after` `between` 指示是否按整日进行比较。|
 |[PivotField](/javascript/api/excel/excel.pivotfield)|[applyFilter (筛选器：Excel。PivotFilters) ](/javascript/api/excel/excel.pivotfield#applyFilter_filter_)|设置字段的一个或多个当前 PivotFilter，并应用于该字段。|
 ||[clearAllFilters () ](/javascript/api/excel/excel.pivotfield#clearAllFilters__)|清除字段的所有筛选器的所有条件。|
-||[clearFilter (filterType： Excel。PivotFilterType) ](/javascript/api/excel/excel.pivotfield#clearFilter_filterType_)|从给定类型的字段筛选器中清除所有现有条件 (如果当前应用了一个) 。|
+||[clearFilter (filterType： Excel。PivotFilterType) ](/javascript/api/excel/excel.pivotfield#clearFilter_filterType_)|从给定类型的字段筛选器中清除所有现有条件， (当前应用了一个) 。|
 ||[getFilters () ](/javascript/api/excel/excel.pivotfield#getFilters__)|获取当前应用于字段的所有筛选器。|
 ||[isFiltered (filterType？： Excel。PivotFilterType) ](/javascript/api/excel/excel.pivotfield#isFiltered_filterType_)|检查字段上是否有已应用的筛选器。|
 |[PivotFilters](/javascript/api/excel/excel.pivotfilters)|[dateFilter](/javascript/api/excel/excel.pivotfilters#dateFilter)|透视字段当前应用的日期筛选器。|
@@ -94,7 +94,7 @@ ExcelApi 1.12 通过添加用于跟踪动态数组和查找公式的直接引用
 ||[阈值](/javascript/api/excel/excel.pivotvaluefilter#threshold)|要针对顶部/底部筛选条件进行筛选的项目数、百分比或总和的"N"阈值。|
 ||[upperBound](/javascript/api/excel/excel.pivotvaluefilter#upperBound)|筛选条件的范围 `between` 上限。|
 ||[value](/javascript/api/excel/excel.pivotvaluefilter#value)|要筛选的字段中所选"值"的名称。|
-|[区域](/javascript/api/excel/excel.range)|[getDirectPrecedents () ](/javascript/api/excel/excel.range#getDirectPrecedents__)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有直接引用 `WorkbookRangeAreas` 单元格的范围。|
+|[Range](/javascript/api/excel/excel.range)|[getDirectPrecedents () ](/javascript/api/excel/excel.range#getDirectPrecedents__)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有直接引用 `WorkbookRangeAreas` 单元格的范围。|
 ||[getPivotTables (fullyContained？： boolean) ](/javascript/api/excel/excel.range#getPivotTables_fullyContained_)|获取与区域重叠的数据透视表的范围集合。|
 ||[getSpillParent()](/javascript/api/excel/excel.range#getSpillParent__)|获取 Range 对象，它包含要将某个单元格溢出到的定位单元格。|
 ||[getSpillParentOrNullObject()](/javascript/api/excel/excel.range#getSpillParentOrNullObject__)|获取包含被溢出到的单元格的定位单元格的 range 对象。|
@@ -115,7 +115,7 @@ ExcelApi 1.12 通过添加用于跟踪动态数组和查找公式的直接引用
 |[WorksheetCustomProperty](/javascript/api/excel/excel.worksheetcustomproperty)|[delete()](/javascript/api/excel/excel.worksheetcustomproperty#delete__)|删除 custom property 对象。|
 ||[key](/javascript/api/excel/excel.worksheetcustomproperty#key)|获取 customProperty 的键。|
 ||[value](/javascript/api/excel/excel.worksheetcustomproperty#value)|获取或设置自定义属性的值。|
-|[WorksheetCustomPropertyCollection](/javascript/api/excel/excel.worksheetcustompropertycollection)|[add (key： string， value： string) ](/javascript/api/excel/excel.worksheetcustompropertycollection#add_key__value_)|添加映射到提供的键的新自定义属性。|
+|[WorksheetCustomPropertyCollection](/javascript/api/excel/excel.worksheetcustompropertycollection)|[添加 (键：string，value：string) ](/javascript/api/excel/excel.worksheetcustompropertycollection#add_key__value_)|添加映射到提供的键的新自定义属性。|
 ||[getCount()](/javascript/api/excel/excel.worksheetcustompropertycollection#getCount__)|获取此工作表上的自定义属性数。|
 ||[getItem(key: string)](/javascript/api/excel/excel.worksheetcustompropertycollection#getItem_key_)|按键获取自定义属性对象（不区分大小写）。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcustompropertycollection#getItemOrNullObject_key_)|按键获取自定义属性对象（不区分大小写）。|

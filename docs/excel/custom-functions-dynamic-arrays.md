@@ -4,15 +4,15 @@ description: 在加载项中返回自定义函数Office Excel结果。
 title: 从自定义函数返回多个结果
 localization_priority: Normal
 ms.openlocfilehash: b7df6b2c5ca3dca24615a61e11277ac36b42c0df
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868447"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938087"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>从自定义函数返回多个结果
 
-可以从自定义函数返回多个结果，这些结果将返回到相邻单元格。 此行为称为溢出。 当自定义函数返回结果数组时，它称为动态数组公式。 有关数组中动态数组公式Excel，请参阅动态[数组和溢出的数组行为](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)。
+可以从自定义函数返回多个结果，这些结果将返回到相邻单元格。 此行为称为溢出。 当自定义函数返回结果数组时，它称为动态数组公式。 有关动态数组公式中Excel，请参阅动态[数组和溢出的数组行为](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)。
 
 下图显示了函数如何 `SORT` 溢出到相邻单元格。 自定义函数也可以返回如下所示的多个结果。
 

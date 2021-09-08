@@ -3,16 +3,16 @@ title: 使用 Excel JavaScript API 处理表格
 description: 显示如何使用 JavaScript API 对表执行常见Excel示例。
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 51d91fcbc34f559c02627303aa8ce702de02269fd01658aa974b5d10fa7ff72b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 931a035b5e46a77afe2f56fecb0cd7ef6d134570
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088379"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937779"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
-本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关 和 对象支持的属性和方法的完整列表，请参阅适用于 Excel) 的 Table 对象 (JavaScript API 和适用于 Excel) 的 `Table` `TableCollection` [TableCollection 对象 (JavaScript API。 ](/javascript/api/excel/excel.tablecollection) [](/javascript/api/excel/excel.table)
+本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关 和 对象支持的属性和方法的完整列表，请参阅 Table Object (JavaScript API for Excel) 和 `Table` `TableCollection` [TableCollection Object (JavaScript API for Excel) 。 ](/javascript/api/excel/excel.tablecollection) [](/javascript/api/excel/excel.table)
 
 ## <a name="create-a-table"></a>创建表
 
@@ -62,7 +62,7 @@ Excel.run(function (context) {
 > `index` [TableRow 对象的 属性](/javascript/api/excel/excel.tablerow)指示表的行集合中行的索引号。 `TableRow`对象不包含可用于标识行的唯一 `id` 键的属性。
 
 > [!WARNING]
-> 从内容外接程序向表中添加行将导致内存泄漏。 有关[GitHub和其他#1415，](https://github.com/OfficeDev/office-js/issues/1415)请参阅"问题"报告。 
+> 从内容加载项向表中添加行将导致内存泄漏。 请参阅[GitHub问题#1415](https://github.com/OfficeDev/office-js/issues/1415)当前状态和其他信息。 
 
 ```js
 Excel.run(function (context) {
@@ -344,7 +344,7 @@ Excel.run(function (context) {
 
 **将筛选器应用于类别和金额的表数据**
 
-![在数据表中筛选的Excel。](../images/excel-tables-filters-apply.png)
+![在数据记录中筛选的Excel。](../images/excel-tables-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>清除表筛选器
 
@@ -367,7 +367,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>从筛选表中获取可见区域
 
-下面的代码示例获取一个区域，其中只包含当前在指定表中可见的单元格数据，然后将该区域的值写入控制台。 可以使用如下所示的方法，在应用列筛选器后获取表 `getVisibleView()` 的可见内容。
+下面的代码示例获取一个区域，其中只包含当前在指定表中可见的单元格数据，然后将该区域的值写入控制台。 可以使用如下所示的方法，在应用列筛选器时获取表 `getVisibleView()` 的可见内容。
 
 ```js
 Excel.run(function (context) {
@@ -470,7 +470,7 @@ Excel.run(function (context) {
 
 **内的数据（在区域转换为表之前）**
 
-![Excel 中Excel。](../images/excel-ranges.png)
+![Excel 中的Excel。](../images/excel-ranges.png)
 
 **表中的数据（在区域转换为表之后）**
 
@@ -521,7 +521,7 @@ Excel.run(function (context) {
 
 **新建表**
 
-![导入的 JSON 数据的新表Excel。](../images/excel-tables-create-from-json.png)
+![从导入的 JSON 数据的新表Excel。](../images/excel-tables-create-from-json.png)
 
 ## <a name="see-also"></a>另请参阅
 

@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 08/05/2021
 localization_priority: Normal
 ms.openlocfilehash: 5d48e441d41b9d1fcd5508cb1beb3a90acd1550f
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232398"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936738"
 ---
 # <a name="appsource-listing-options-for-your-event-based-outlook-add-in"></a>基于事件的加载项的 AppSource Outlook选项
 

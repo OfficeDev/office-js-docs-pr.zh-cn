@@ -4,16 +4,16 @@ description: 了解如何使用 JavaScript API Excel和获取区域值、文本�
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: fccf4325fb3e2473e10719efb6d5336cb87d8abcedfaa6a4f80f8e07eb2b05b6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5d9d1bf3b248585bf27ac591754cfa4eb4dd0fbc
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085386"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937962"
 ---
 # <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>使用 JavaScript API 设置和获取区域Excel文本或公式
 
-本文提供使用 JavaScript API 设置和获取区域值、文本或公式Excel示例。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供使用 JavaScript API 设置和获取区域值、文本或公式Excel示例。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -43,7 +43,7 @@ Excel.run(function (context) {
 
 #### <a name="data-after-cell-value-is-updated"></a>更新单元格值之后的数据
 
-![单元格值Excel之后，数据将返回数据。](../images/excel-ranges-set-cell-value.png)
+![单元格值Excel之后，数据将位于单元格中。](../images/excel-ranges-set-cell-value.png)
 
 ### <a name="set-values-for-a-range-of-cells"></a>设置多个单元格的值
 
@@ -67,7 +67,7 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-values-are-updated"></a>更新多个单元格值之前的数据
 
-![更新Excel值之前的数据。](../images/excel-ranges-set-start.png)
+![更新Excel之前的数据。](../images/excel-ranges-set-start.png)
 
 #### <a name="data-after-cell-values-are-updated"></a>更新多个单元格值之后的数据
 

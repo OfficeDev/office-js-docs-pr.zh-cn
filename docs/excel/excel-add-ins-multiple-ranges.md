@@ -1,14 +1,14 @@
 ---
 title: 同时在 Excel 加载项中处理多个区域
-description: 了解 Excel JavaScript 库如何使外接程序能够同时在多个区域上执行操作和设置属性。
+description: 了解 Excel JavaScript 库如何允许外接程序同时在多个区域上执行操作和设置属性。
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 89c8b8bbc92e656230544caac0d7f584524ca58951d0041d548bebbea0ae4bf4
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4f1661d07432d6072649cb6db7315fd39fee5b4f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084255"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937537"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>同时在 Excel 加载项中处理多个区域
 
@@ -16,7 +16,7 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 
 ## <a name="rangeareas"></a>RangeAreas
 
-一组 (区域可能不连续) 范围由 [RangeAreas](/javascript/api/excel/excel.rangeareas) 对象表示。 它具有与 `Range` 类型类似的属性和方法（许多具有相同或相似的名称），但已对以下对象进行了调整：
+一组 (区域可能不) 区域由 [RangeAreas](/javascript/api/excel/excel.rangeareas) 对象表示。 它具有与 `Range` 类型类似的属性和方法（许多具有相同或相似的名称），但已对以下对象进行了调整：
 
 - 属性和 Setter 及 Getter 行为的数据类型。
 - 方法参数和方法行为的数据类型。
@@ -128,7 +128,7 @@ Excel.run(function (context) {
 
 ## <a name="read-properties-of-rangeareas"></a>读取 RangeAreas 的属性
 
-读取 `RangeAreas` 的属性值时须小心操作，因为对于 `RangeAreas` 内的不同区域，给定的属性可能具有不同的值。 一般规则是，如果 *可以* 返回一致的值，则系统会返回该值。 例如，在下面的代码中，用于粉色 () 的 RGB 代码会记录到控制台，因为 对象中的两个范围都有粉色填充，两者都是整列 `#FFC0CB` `true` `RangeAreas` 。
+读取 `RangeAreas` 的属性值时须小心操作，因为对于 `RangeAreas` 内的不同区域，给定的属性可能具有不同的值。 一般规则是，如果 *可以* 返回一致的值，则系统会返回该值。 例如，在下面的代码中，用于粉色 () 的 RGB 代码将记录到控制台，因为 对象中的两个范围都有粉色填充，两者都是整 `#FFC0CB` `true` `RangeAreas` 列。
 
 ```js
 Excel.run(function (context) {

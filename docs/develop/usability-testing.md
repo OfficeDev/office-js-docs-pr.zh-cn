@@ -3,12 +3,12 @@ title: Office 加载项的可用性测试
 description: 了解如何使用真实用户测试外接程序设计。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e054f8402bed25ed27d549f5fb1af73aad3919aa53f88047278d1d94b4d00392
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4f797033343fd20d814cba1fd67ad8eb21b246b3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079871"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936502"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office 加载项的可用性测试
 
@@ -108,7 +108,7 @@ ms.locfileid: "57079871"
 
 通常，逐步指导用户如何安装外接程序需要大约 5 分钟。以下是简洁明了的安装步骤示例。请根据测试的具体情况调整步骤。
 
-**请按照以下 (，在) 外接程序中安装 PowerPoint 外接程序名称。**
+**Please install the (insert your add-in name here) add-in for PowerPoint， using the following instructions.**
 
 1. 打开 Microsoft PowerPoint。
 1. 选择“**空白演示文稿**”。

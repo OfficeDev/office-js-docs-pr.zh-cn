@@ -1,19 +1,19 @@
 ---
 title: 使用 JavaScript API Excel日期
-description: 使用 Moment-MSDate JavaScript API Excel插件处理日期。
+description: 将 Moment-MSDate插件与 Excel JavaScript API 一起用于日期。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
 ms.openlocfilehash: 82dd7bb957834efc17c0174e3b89fd526610a08a
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868664"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937590"
 ---
-# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>使用 Excel JavaScript API 和 Moment-MSDate 插件处理日期
+# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>使用 JavaScript API Excel应用程序插件Moment-MSDate日期
 
-本文提供的代码示例显示了如何使用 JavaScript API Excel [Moment-MSDate 插件处理日期](https://www.npmjs.com/package/moment-msdate)。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供的代码示例介绍了如何使用 JavaScript API Excel [Moment-MSDate 插件处理日期](https://www.npmjs.com/package/moment-msdate)。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 

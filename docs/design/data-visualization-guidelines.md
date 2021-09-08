@@ -1,20 +1,20 @@
 ---
 title: Office 加载项的数据可视化样式指南
-description: 获取有关如何在加载项中可视化数据Office一些好的做法。
+description: 获取有关如何在加载项中可视化数据的一Office做法。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2d4fef7d5bcc6bf4220842d7010b6203d26ebd8e74b971acf5d73381220f2721
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 353406742bf247b7b9d2700f731de8a70f7b4928
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082085"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937885"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
 良好的数据可视化效果可帮助用户找到数据见解。他们可以使用这些见解来讲述具有说服力的故事。本文提供了准则，以帮助你在适用于 Excel 和其他 Office 应用的外接程序中设计有效的数据可视化。
 
-我们建议你使用 Fluent [UI](../design/add-in-design.md)为数据可视化创建部件版式。 FluentUI 包括样式和组件，这些样式和组件与Office体验无缝集成。
+我们建议你使用 Fluent [UI](../design/add-in-design.md)为数据可视化创建部件版式。 FluentUI 包括样式和组件，这些样式和组件与Office外观无缝集成。
 
 ## <a name="data-visualization-elements"></a>数据可视化元素
 
@@ -28,7 +28,7 @@ ms.locfileid: "57082085"
 
 - 使图表标题便于阅读。设定其位置以创建相对于其余图表的清晰视觉对象层次结构。
 - 一般情况下，使用句子大写（大写第一个字词）。若要创建对比度或强化层次结构，可以全部使用大写，但应谨慎使用全部大写。
-- 合并[Fluent UI 类型渐变](https://developer.microsoft.com/fluentui#/styles/web/typography)，使图表与使用 Segoe 的 Office UI 保持一致。 你还可以使用不同的字样来区分图表内容和 UI。
+- 合并[Fluent UI 类型](https://developer.microsoft.com/fluentui#/styles/web/typography)渐变，使图表与使用 Segoe 的 Office UI 保持一致。 你还可以使用不同的字样来区分图表内容和 UI。
 - 使用带有大型计数器的 sans-serif 字样。
 
 ### <a name="axis-labels"></a>轴标签

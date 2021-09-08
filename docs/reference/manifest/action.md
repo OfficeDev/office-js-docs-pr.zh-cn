@@ -3,12 +3,12 @@ title: 清单文件中的 Action 元素
 description: 此元素指定在用户选择按钮或菜单控件时要执行的操作。
 ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fe4b0b0cbc4e9c455225cb4ad3d80e081589eeaedcd5efc18f1df31624515a1a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1ec2623ad5dbb07677735b7bcb1e39612e56984c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089859"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936857"
 ---
 # <a name="action-element"></a>Action 元素
 
@@ -139,7 +139,7 @@ ms.locfileid: "57089859"
 > [!IMPORTANT]
 > 尽管 `SupportsPinning` 元素是在要求集[1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)中引入的，但当前仅支持以下Microsoft 365订阅者：
 >
-> - Outlook 2016版本 7628.1000 或 Windows (更高版本) 
+> - Outlook 2016版本 7628.1000 或Windows (版本 7628.1000 或更高版本) 
 > - Outlook 2016版本 16.13.503 (更高版本的 Mac 版本或更高版本) 
 > - 新式 Outlook 网页版
 

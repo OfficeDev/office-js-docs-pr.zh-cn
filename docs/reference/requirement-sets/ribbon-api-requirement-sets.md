@@ -5,11 +5,11 @@ ms.date: 05/12/2021
 ms.prod: non-product-specific
 localization_priority: Normal
 ms.openlocfilehash: aa198009a3d1d16a1c34966516a4ddeee9f7f940
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868734"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937647"
 ---
 # <a name="ribbon-api-requirement-sets"></a>功能区 API 要求集
 
@@ -19,12 +19,12 @@ ms.locfileid: "58868734"
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 API 要求集、Office要求集的客户端应用程序，以及功能区 API 应用程序Office版本号。
 
-|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Office 2016 或更高版本Windows<br>（一次性购买）   | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br>（关联至 Microsoft 365 订阅）  | Office 网页版\*  |  Office Online Server  |
+|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Office 2016 年 10 月或Windows<br>（一次性购买）   | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br>（关联至 Microsoft 365 订阅）  | Office 网页版\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | RibbonApi 1.1  | 不适用 | 不适用 | 请参阅支持<br>部分如下 | 不适用 | 16.38 | 2020 年 11 月 | 不适用|
 | RibbonApi 1.2  | 不适用 | 不适用 | 2102 (内部版本 13801.20294)  | 不适用 | 即将推出 | 2021 年 5 月 | 不适用|
 
-> **&#42;** 功能区 API 仅在 Excel且需要一个Microsoft 365订阅。
+> **&#42;** 功能区 API 仅在 Excel并且需要一个Microsoft 365订阅。
 
 ## <a name="support-for-version-11-on-office-on-windows-subscription"></a>支持版本 1.1 on Office on Windows (subscription) 
 

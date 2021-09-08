@@ -3,12 +3,12 @@ title: 清单文件中 Event 元素
 description: 定义外接程序中的事件处理程序。
 ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 486236f2c2dc19f835e06bad027b4fca33809fb257ba6f6d455add66ab5b5ce0
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 3d8e94c10bed214dd976b3048e11328f10f99325
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093292"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936407"
 ---
 # <a name="event-element"></a>Event 元素
 

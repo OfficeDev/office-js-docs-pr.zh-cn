@@ -3,29 +3,29 @@ title: 设置开发环境
 description: 设置开发人员环境以构建Office加载项。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: b396ad9774959e36ef34c8ca158eda26162c3b13794aa65a4eab0859c317c167
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: efc89b728117e2888cdebd2c5a132047fe662915
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087430"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936679"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
-本指南可帮助你设置工具，以便你Office快速入门或教程创建加载项。 你需要从以下列表中安装工具。 如果已安装这些组件，则已准备好开始快速入门[，Excel React快速入门](../quickstarts/excel-quickstart-react.md)。
+本指南可帮助你设置工具，以便Office快速入门或教程创建加载项。 你需要从以下列表中安装工具。 如果已安装这些组件，则已准备好开始快速入门[，Excel React快速入门。](../quickstarts/excel-quickstart-react.md)
 
 - Node.js
 - npm
-- 包含 Microsoft 365 订阅版本的 Office
+- 一Microsoft 365订阅版本的用户帐户Office
 - 你选择的代码编辑器
 
 本指南假定你了解如何使用命令行工具。
 
 ## <a name="install-nodejs"></a>安装 Node.js
 
-Node.js JavaScript 运行时，你需要开发新式Office外接程序。
+Node.js是一个 JavaScript 运行时，你需要开发新式Office外接程序。
 
-通过Node.js下载建议[的最新版本来安装客户端。](https://nodejs.org) 按照操作系统的安装说明操作。
+通过Node.js下载[建议的最新版本来安装客户端。](https://nodejs.org) 按照操作系统的安装说明操作。
 
 ## <a name="install-npm"></a>安装 npm
 
@@ -47,7 +47,7 @@ npm -v
 
 ## <a name="get-microsoft-365"></a>获取Microsoft 365
 
-如果你还没有 Microsoft 365 帐户，可以通过加入 Microsoft 365 开发人员计划获取包含所有 Office 应用的免费 90 天可续订[Microsoft 365 订阅](https://developer.microsoft.com/office/dev-program)。
+如果你还没有 Microsoft 365 帐户，可以通过加入 Microsoft 365 开发人员计划获取包含所有 Office 应用的免费、90 天的可续订[Microsoft 365 订阅](https://developer.microsoft.com/office/dev-program)。
 
 ## <a name="install-a-code-editor"></a>安装代码编辑器
 

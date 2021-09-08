@@ -1,15 +1,15 @@
 ---
 title: 自定义函数要求集
-description: 有关 JavaScript API 的自定义函数Excel集的详细信息。
+description: 有关 JavaScript API 的自定义函数Excel的详细信息。
 ms.date: 09/14/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5fbb280176b6c222bedb7cefe14c3caa92148032b59cc1d6c0942dde1f52a3aa
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0860dd2d1b55376a85eadf04898d288d83b0205d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079467"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936939"
 ---
 # <a name="custom-functions-requirement-sets"></a>自定义函数要求集
 
@@ -22,7 +22,7 @@ ms.locfileid: "57079467"
 | CustomFunctionsRuntime 1.1 | 16.0.12527.20092 或更高版本 | 不支持 | 16.34 或更高版本 | 2019 年 5 月 |
 
 > [!NOTE]
-> Excel 2019 Office或更早版本不支持自定义 (一次购买) 。
+> Excel 2019 Office或更早版本上不支持自定义 (一次购买) 。
 
 ## <a name="customfunctionsruntime-11-12-and-13"></a>CustomFunctionsRuntime 1.1、1.2 和 1.3
 

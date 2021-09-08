@@ -4,11 +4,11 @@ description: 了解如何在视觉上协调应用于演示文稿、文档、工�
 ms.date: 07/08/2021
 localization_priority: Normal
 ms.openlocfilehash: b3dfce5e36f1247e84cdd13372fd822a27a59fe0
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868699"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936685"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>在 PowerPoint 加载项中使用文档主题
 
@@ -38,7 +38,7 @@ ms.locfileid: "58868699"
 
 ![字体选取器。](../images/office15-app-font-picker.png)
 
-若要在 PowerPoint 中查看或自定义主题字体，请在"设计"选项卡上的"变量"组中，单击"更多"下拉列表，然后选择"字体自定义字体"以显示"新建  >  **主题** 字体"对话框。
+若要查看或自定义 PowerPoint 中的主题字体，请在"设计"选项卡上的"变量"组中，单击"更多"下拉列表，然后选择"字体自定义字体"以显示"新建  >  **主题** 字体"对话框。
 
 ![新建主题字体对话框。](../images/office15-app-create-new-theme-fonts.png)
 
@@ -131,7 +131,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 ## <a name="reference-officethemescss-in-your-add-ins-html-pages"></a>在加载项的 HTML 页面中引用 OfficeThemes.css
 
-若要在外接程序项目中使用 OfficeThemes.css 文件，请添加一个引用 OfficeThemes.css 文件的标记，该标记位于网页 (（例如，采用此格式实现外接程序 UI 的网页 `<link>` .html、.aspx 或 .php 文件) ）的 标记内。 `<head>`
+若要在外接程序项目中使用 OfficeThemes.css 文件，请添加一个引用 OfficeThemes.css 文件的标记，该标记位于网页 (的 标记内 `<link>` .html、.aspx 或 .php 文件) 以此格式实现外接程序的 `<head>` UI。
 
 ```HTML
 <link href="<local_path_to_OfficeThemes.css>" rel="stylesheet" type="text/css" />
@@ -149,7 +149,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 
 4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。**Home.html** 文件在 Visual Studio 中打开。
 
-5. 在实现外接程序 UI 的 HTML 页（如默认模板中的 Home.html）中，在引用 `<link>` OfficeThemes.css 文件的 标记内添加以下 `<head>` 标记。
+5. 在实现外接程序 UI 的 HTML 页（如默认模板中的 Home.html）中，在引用 `<link>` `<head>` OfficeThemes.css 文件的 标记中添加以下标记。
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />

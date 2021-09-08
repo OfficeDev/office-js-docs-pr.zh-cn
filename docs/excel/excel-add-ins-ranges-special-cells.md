@@ -4,16 +4,16 @@ description: 了解如何使用 JavaScript API Excel查找特殊单元格，例�
 ms.date: 07/08/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 650cfba187771063fe3636fef2ed447d27c11d3e9099ec909bff38921409d8c5
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f1562351b045b5c8df1edb3c22f651883a836ad9
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085209"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938172"
 ---
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>使用 JavaScript API 查找Excel单元格
 
-本文提供的代码示例使用 JavaScript API 查找Excel单元格。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供的代码示例使用 JavaScript API 查找Excel单元格。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 ## <a name="find-ranges-with-special-cells"></a>查找包含特殊单元格的范围
 
@@ -88,7 +88,7 @@ Excel.run(function (context) {
 
 下面的代码示例查找数值常量的特殊单元格，并设置这些单元格的粉色。 关于此代码，请注意以下几点：
 
-- 它只突出显示具有文字数字值的单元格。 它不会突出显示具有公式单元格 (即使结果是数字或布尔) 、文本或错误状态单元格。
+- 它只突出显示具有文字数字值的单元格。 即使结果为数字或布尔 (、文本或错误状态单元格，它也不会突出显示具有公式) 单元格。
 - 要测试代码，请确保工作表中的某些单元格包含文本数值，某些包含其他类型的文本值，而某些则包含公式。
 
 ```js

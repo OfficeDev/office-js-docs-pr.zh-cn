@@ -3,19 +3,19 @@ title: Office 加载项中的 Fluent UI React
 description: 了解如何在Fluent外接程序React UI Office UI。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1137fd2465af6c09a42a14babe8ca2898e864c743cfd73e0263ad39ff085bf3f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8018c27a50aa4aca96aae5fd8fb2b62261a694a0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081562"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937268"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>在Fluent外接程序React UI Office UI
 
 FluentUI React 是官方开源 JavaScript 前端框架，旨在构建无缝适用于各种 Microsoft 产品（包括 Office）的体验。 它提供了可靠、最新、可访问的基于反应的组件，这些组件可以使用 CSS-in-JS 进行高度定制。
 
 > [!NOTE]
-> 本文介绍了在加载项Fluent React UI Office的使用。但它还用于各种应用Microsoft 365扩展。 有关详细信息，请参阅 ui Fluent [ui React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react)和 UI Web Fluent[存储库](https://github.com/microsoft/fluentui)。
+> 本文介绍了在加载项Fluent React UI Office的使用。但它也用于各种应用Microsoft 365扩展。 有关详细信息，请参阅 ui Fluent [ui React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react)和 UI Web Fluent[存储库](https://github.com/microsoft/fluentui)。
 
 本文介绍如何创建使用 React 构建的外接程序，Fluent UI React组件。
 
@@ -76,11 +76,11 @@ FluentUI React 是官方开源 JavaScript 前端框架，旨在构建无缝适�
 
         若要使用加载项，请在 Word 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
 
-3. 若要打开加载项任务窗格，在"开始 **"选项卡上** ，选择" **显示任务窗格"** 按钮。 请注意任务窗格底部的“默认文本”和 "**运行**" 按钮。 在此演练的其余部分中，你将通过创建一个 React 组件来重新定义此文本和按钮，该组件使用来自 UI Fluent UX React。
+3. 若要打开加载项任务窗格，在"开始 **"选项卡上** ，选择" **显示任务窗格"** 按钮。 请注意任务窗格底部的“默认文本”和 "**运行**" 按钮。 在此演练的其余部分中，你将重新定义此文本和按钮，方法为创建一个 React 组件，该组件使用来自 UI Fluent UX React。
 
     ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane.](../images/word-task-pane-yo-default.png)
 
-## <a name="create-a-react-component-that-uses-fluent-ui-react"></a>创建React UI Fluent的React
+## <a name="create-a-react-component-that-uses-fluent-ui-react"></a>创建一React UI Fluent的React
 
 此时, 你已经创建了一个使用 React 构建的非常基本的任务窗格加载项。 接下来，完成以下步骤，在加载项项目中创建新的 React 组件 (`ButtonPrimaryExample`)。 该组件使用 UI Fluent 中的 和 `Label` `PrimaryButton` React。
 
@@ -126,10 +126,10 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 此代码将执行以下操作：
 
 - 引用使用 `import * as React from 'react';` 的 React 库。
-- 引用Fluent UI React、 (、) 创建 `PrimaryButton` `IButtonProps` `Label` 的组件 `ButtonPrimaryExample` 。
+- 引用Fluent UI `PrimaryButton` React、 (、) 创建 `IButtonProps` `Label` 的组件 `ButtonPrimaryExample` 。
 - 声明新的 `ButtonPrimaryExample` 组件使用 `export class ButtonPrimaryExample extends React.Component`。
 - 声明 `insertText` 将处理按钮 `onClick` 事件的函数。
-- 定义 `render` 函数中 React 组件的 UI。 HTML 标记使用 UI 元素中的 和 Fluent 组件React并指定当事件触发时 `Label` `PrimaryButton` `onClick` `insertText` ，函数将运行。
+- 定义 `render` 函数中 React 组件的 UI。 HTML 标记使用 UI 元素中的 和 Fluent组件React并指定当事件触发时 `Label` `PrimaryButton` `onClick` `insertText` ，函数将运行。
 
 ## <a name="add-the-react-component-to-your-add-in"></a>将 React 组件添加到加载项
 
@@ -172,7 +172,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 ![显示具有"插入文本..."的 Word 应用程序的屏幕截图按钮，紧接突出显示的文本前面。](../images/word-task-pane-with-react-component.png)
 
-恭喜！你已成功使用 ui 加载项和 ui React Fluent创建React！
+恭喜！你已成功使用 UI 加载项和 ui React Fluent创建React！
 
 ## <a name="see-also"></a>另请参阅
 

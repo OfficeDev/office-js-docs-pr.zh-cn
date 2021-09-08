@@ -3,12 +3,12 @@ title: 清单文件中 ExtendedPermission 元素
 description: 定义加载项访问关联 API 或功能所需的扩展权限。
 ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 29e4a16c09982a2f7b52fd085960b33dba1efb8781d8a33b63bf138a571ef00e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 37859350cfaffdc14ab91d5026d67aa0a736ac56
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090178"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937822"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission` 元素
 

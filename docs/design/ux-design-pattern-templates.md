@@ -1,14 +1,14 @@
 ---
 title: 适用于 Office 外接程序的 UX 设计模式
-description: 大致了解加载项的 UI 设计Office，包括导航、身份验证、首次运行和品牌打造模式。
+description: 大致了解适用于外接程序的 UI 设计Office包括导航、身份验证、首次运行和品牌打造的模式。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 2c7de48aef161a335fe67dcd4cc87cd32c6be10373f078baac77c9407ae1466b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8544b56b85a25d522c95546b42a78fe01a3c2586
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081469"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936240"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>适用于 Office 外接程序的 UX 设计模式
 
@@ -16,7 +16,7 @@ ms.locfileid: "57081469"
 
 我们的 UX 模式由组件组成。 组件是帮助客户与软件或服务元素进行交互的控件。 按钮、导航、和菜单是常见组件的示例，通常具有一致的样式和行为。
 
-[Fluent UI React组件](using-office-ui-fabric-react.md)的外观和行为与 Office 的一部分类似，Office UI Fabric [JS 的中性框架组件一样](fabric-core.md)。 利用任一组组件与Office。 或者，如果您的外接程序具有自己的预先不存在的组件语言，则无需放弃它。 与 Office 集成的同时寻找保留该语言的机会。 想办法改变风格元素、消除冲突或采用可避免用户混淆的样式和行为。
+[Fluent UI React组件](using-office-ui-fabric-react.md)的外观和行为与 Office 的一部分类似，与[OFFICE UI FABRIC JS 无关。](fabric-core.md) 利用任一组组件与 Office。 或者，如果您的外接程序具有自己的预先不存在的组件语言，则无需放弃它。 与 Office 集成的同时寻找保留该语言的机会。 想办法改变风格元素、消除冲突或采用可避免用户混淆的样式和行为。
 
 提供的模式是基于常见客户方案和用户体验研究的最佳做法解决方案。 它们旨在提供设计和开发外接程序的快速入口点，以及指导在 Microsoft 品牌元素和您自己的元素之间实现平衡。 提供干净、现代用户体验，在 Microsoft Fluent UI 设计语言和合作伙伴的独特品牌标识之间实现设计元素的平衡，可帮助提高外接程序的用户保留率和采用率。
 

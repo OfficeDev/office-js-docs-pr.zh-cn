@@ -3,12 +3,12 @@ title: 绑定到文档或电子表格中的区域
 description: 了解如何使用绑定以确保通过标识符一致地访问文档或电子表格的特定区域或元素。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 611d7c28a75fc13464ae55f14f2784506b04882796ace8e73c831f75f2ef1a60
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9db35168274b599b93a6688d1318103c48edee55
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081195"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936865"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
@@ -30,7 +30,7 @@ ms.locfileid: "57081195"
 
     在 Word 中，大多数连续选区都是有效的，而在 Excel 中，只有单个单元格选区才能作为文本绑定的目标。在 Excel 中，只支持纯文本。在 Word 中，支持以下三种格式：纯文本、HTML 和 Open XML for Office。
 
-2. **[矩阵绑定][MatrixBinding]** - 绑定到包含不带标题的表格数据的文档的固定区域。矩阵绑定中的数据以二维 **Array** 形式写入或读取，在 JavaScript 中作为数组的数组实现。 例如，两行两列 **string** 值可以写入或读取为 `[['a', 'b'], ['c', 'd']]`，而三行单列则可以写入或读取为 `[['a'], ['b'], ['c']]`。
+2. **[矩阵绑定][MatrixBinding]** - 绑定到包含不带标题的表格数据的文档的固定区域。矩阵绑定中的数据作为二维 **Array** 写入或读取，在 JavaScript 中作为数组的数组实现。 例如，两行两列 **string** 值可以写入或读取为 `[['a', 'b'], ['c', 'd']]`，而三行单列则可以写入或读取为 `[['a'], ['b'], ['c']]`。
 
     在 Excel 中，任何连续的单元格选区都可用于建立矩阵绑定。在 Word 中，只有表格支持矩阵绑定。
 
@@ -126,9 +126,9 @@ function write(message){
 **对于 Excel** `itemName` [，addFromNamedItemAsync]方法的参数可以引用现有的命名区域、使用引用样式指定的区域 `A1` `("A1:A3")` 或表。 默认情况下，在 Excel 中添加表会为你添加的第一个表分配名称“Table1”，为你添加的第二个表分配名称“Table2”，以此类推。 若要在用户界面中为表指定有意义的Excel，请使用"表工具"| `Table Name` **功能** 区的"设计"选项卡。
 
 > [!NOTE]
-> 在Excel中，将表指定为已命名项时，必须完全限定名称以将工作表名称包含在此格式的表名称中：`"Sheet1!Table1"`
+> 在Excel中，将表指定为已命名项时，必须完全限定名称以在此格式的表名称中包含工作表名称：`"Sheet1!Table1"`
 
-以下示例在 Excel 中创建一个绑定到 A 列 () 中的前三个单元格，分配 id，然后将三个城市名称写入 `"A1:A3"` `"MyCities"` 该绑定。
+以下示例在 Excel A 列的前三个单元格创建一个 () ，分配 id，然后将三个城市名称写入 `"A1:A3"` `"MyCities"` 该绑定。
 
 ```js
  function bindingFromA1Range() {
@@ -244,7 +244,7 @@ function write(message){
 ```
 
 > [!NOTE]
-> 如果方法承诺成功返回 Binding 对象，则该对象仅公开该对象的以下四个方法 `select` []：getDataAsync、setDataAsync、addHandlerAsync[]和[removeHandlerAsync。] [] [] 如果承诺无法返回 Binding 对象，则回调可用于 `onError` 访问[asyncResult].error 对象获取详细信息。如果你需要调用 Binding 对象的成员，而不是方法返回的[Binding]对象承诺公开的四个方法，请通过使用 `select` [Document.bindings]属性和 Bindings 来使用[getByIdAsync]方法。[用于检索] [Binding]对象的 getByIdAsync 方法。
+> 如果方法承诺成功返回 Binding 对象，则该对象仅公开该对象的以下四个方法 `select` []：getDataAsync、setDataAsync、addHandlerAsync 和[removeHandlerAsync。] [] [] [] 如果承诺无法返回 Binding 对象，则回调可用于 `onError` 访问[asyncResult].error 对象，获取详细信息。如果你需要调用 Binding 对象的成员，而不是方法返回的[Binding]对象承诺公开的四个方法，请通过使用 `select` [Document.bindings]属性和 Bindings 来使用[getByIdAsync]方法。[用于检索] [Binding]对象的 getByIdAsync 方法。
 
 ## <a name="release-a-binding-by-id"></a>按 ID 释放绑定
 

@@ -4,12 +4,12 @@ description: 在本教程中，你将创建一个 Excel 外接程序，其中包
 ms.date: 07/07/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0067d0164c5bb126963f3ec1786f8428d3ea18a6503002af483e5495e916d688
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: fbc03603cd3b3d546fbb83526d4654b35a124393
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087180"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937790"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -164,7 +164,7 @@ npm run start:web
 
 1. 依次选择文件“manifest.xml”，“打开”，然后选择“上载”。
 
-5. 尝试使用新函数。 在单元格 **B1** 中，键入文本 **=CONTOSO.GETSTARCOUNT("OfficeDev&quot;, &quot;Excel-Custom-Functions")**，然后按 Enter。 你会看到，单元格 **B1** 中的结果便是 [Excel-Custom-Functions Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)所获得的星星的当前数目。
+5. 尝试使用新函数。 在单元格 **B1** 中，键入文本 **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")**，然后按 Enter。 你会看到，单元格 **B1** 中的结果便是 [Excel-Custom-Functions Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)所获得的星星的当前数目。
 
 ---
 

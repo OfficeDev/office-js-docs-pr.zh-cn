@@ -4,11 +4,11 @@ description: 指定操作系统和 Office 版本如何确定 Office 加载项使
 ms.date: 08/09/2021
 localization_priority: Normal
 ms.openlocfilehash: bda86e8bb7aacf72fbe26e86b7f062f362adbdd3
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868391"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937706"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -49,10 +49,10 @@ Office外接程序是 Web 应用程序，在 Office web 版 中运行时，使�
 
 <sup>3</sup>如果加载项在清单中包含 元素，则它将不会将 Microsoft Edge与原始 WebView (`<Runtimes>` EdgeHTML) 。 如果满足将 webView2 Microsoft Edge WebView2 (Chromium的条件) ，则外接程序会使用该浏览器。 否则，它将使用 Internet Explorer 11，而不考虑Windows或Microsoft 365版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
 
-<sup>4</sup>必须安装可嵌入的 WebView2 控件Office嵌入它，并且它不会自动随 Edge 一起安装。 它随 Microsoft 365 2101 或更高版本一起安装。 如果你拥有早期版本的 Microsoft 365，请按照在 WebView2/嵌入 Web Microsoft Edge[安装控件的说明...使用 Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)。
+<sup>4</sup>必须安装可嵌入的 WebView2 控件Office嵌入它，并且它不会自动随 Edge 一起安装。 它随 Microsoft 365 2101 或更高版本一起安装。 如果你拥有早期版本的 Microsoft 365，请按照在 WebView2/嵌入 web Microsoft Edge安装[控件的说明...使用 Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)。
 
 > [!IMPORTANT]
-> Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何外接程序的用户具有使用 Internet Explorer 11 的平台，则要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项。
+> Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果任何外接程序用户具有使用 Internet Explorer 11 的平台，则要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项。
 >
 > - 在 ECMAScript 2015 (（也称为 ES6) 或更高版本 JavaScript）中编写代码，或在 TypeScript 中编写代码，然后使用编译器（如 [#A0](https://babeljs.io/) 或 [tsc）](https://www.typescriptlang.org/index.html)将代码编译为 ES5 JavaScript。
 > - 在 ECMAScript 2015 或更高版本的 JavaScript[](https://en.wikipedia.org/wiki/Polyfill_(programming))中编写，但也加载填充库（如[core-js，](https://github.com/zloirock/core-js)它使 IE 能够运行代码）。
@@ -81,7 +81,7 @@ Office使用原始 WebView Microsoft Edge [EdgeHTML](https://en.wikipedia.org/wi
 
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>尝试下载 PDF 文件时出错
 
-当 Edge 为浏览器时，不支持在外接程序中直接将 blob 下载为 PDF 文件。 解决方法是创建一个简单的 Web 应用程序，将 blob 下载为 PDF 文件。 在外接程序中，调用 `Office.context.ui.openBrowserWindow(url)` 方法并传递 Web 应用程序的 URL。 这将在浏览器窗口之外打开 Web Office。
+当 Edge 为浏览器时，不支持在外接程序中直接将 blob 下载为 PDF 文件。 解决方法是创建一个简单的 Web 应用程序，将 blob 下载为 PDF 文件。 在外接程序中，调用 `Office.context.ui.openBrowserWindow(url)` 方法并传递 Web 应用程序的 URL。 这将在 Web 应用程序外部的浏览器窗口中Office。
 
 ## <a name="see-also"></a>另请参阅
 

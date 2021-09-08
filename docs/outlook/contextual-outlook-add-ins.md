@@ -3,12 +3,12 @@ title: 上下文 Outlook 加载项
 description: 无需离开邮件本身即可启用与邮件相关的任务，以此带来更便捷、更丰富的用户体验。
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: aef8991a6b7db8ddb655c27568d32302ea5d47da6e476db71d38c527f91444b6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7898f836e431ad4446952a0f34a24d3771e51d01
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096911"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937010"
 ---
 # <a name="contextual-outlook-add-ins"></a>上下文 Outlook 加载项
 
@@ -84,7 +84,7 @@ ms.locfileid: "57096911"
 
 ## <a name="current-contextual-add-ins"></a>当前上下文外接程序
 
-默认情况下，会为使用加载项的用户安装Outlook加载项。
+默认情况下，会为具有加载项的用户安装Outlook加载项。
 
 - 必应地图
 - 建议的会议

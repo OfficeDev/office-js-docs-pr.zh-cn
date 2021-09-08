@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用动作
 description: 获取有关在加载项中使用切换、运动或动画Office最佳做法。
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: fa89a63681acb8767e755eaaa514e6514e201af3d2b6bfaf23fa1be74a725efc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 94b421a04d4dc91aa7ab97abd8569e0b590786ae
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081581"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938086"
 ---
 # <a name="using-motion-in-office-add-ins"></a>在 Office 加载项中使用动作
 
@@ -29,11 +29,11 @@ Office 的重点是工作效率，因此 Office 动画语言支持帮助客户�
 |确定加载项中应包含动作的关键元素。 加载项中的常见动画元素包括面板、叠加层、模式、工具提示、菜单和教导标注。| 不得为每个元素都添加动画效果，否则用户会感到不知所措。 避免应用多个动作，以试图让用户一次关注多个元素。 |
 |应使用行为符合预期的简单精细动作。请考虑触发元素的起源。使用动作可以在操作和生成的 UI 之间创建关联。 | 不得创建有等待时间的动作。 加载项中的动作不得妨碍任务完成。|
 
-![GIF 显示打开面板时，GIF 旁边移动的元素最少，显示打开时具有许多移动元素的面板。](../images/add-in-motion-purpose.gif)
+![GIF 显示以最少的移动元素打开的面板，并位于 GIF 旁边，显示打开时具有许多移动元素的面板。](../images/add-in-motion-purpose.gif)
 
 ## <a name="use-expected-motions"></a>使用符合预期的动作
 
-我们建议使用[Fluent UI](https://developer.microsoft.com/fluentui#/)创建与 Office 平台的可视连接，我们还鼓励使用[Fluent UI 动画](https://developer.microsoft.com/fluentui#/styles/web/motion)创建与 Fabric 运动语言一致的运动。
+我们建议使用[Fluent UI](https://developer.microsoft.com/fluentui#/)创建与 Office 平台的可视连接，我们还鼓励使用[Fluent UI](https://developer.microsoft.com/fluentui#/styles/web/motion)动画创建与 Fabric 运动语言一致的动作。
 
 它可用于在 Office 中无缝集成。它有助于创建更侧重用户感受（而不是外观）的体验。动画 CSS 类提供方向、进入/退出和持续时间（强化 Office 心理模型），并为客户提供了解如何与加载项交互的机会。
 

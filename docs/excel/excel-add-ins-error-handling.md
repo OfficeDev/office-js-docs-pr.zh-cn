@@ -4,18 +4,18 @@ description: 了解如何Excel JavaScript API 错误处理逻辑，以考虑运�
 ms.date: 08/27/2021
 localization_priority: Normal
 ms.openlocfilehash: 37457e6cd8b35c9e68fa4ce9a1cb9317dcf9b1af
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868629"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937991"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API Excel错误处理
 
 使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 鉴于 API 的异步特性，这样做非常关键。
 
 > [!NOTE]
-> 有关 JavaScript API 的方法和异步特性Excel，请参阅 Excel `sync()` 外接程序中的[Office JavaScript 对象模型](excel-add-ins-core-concepts.md)。
+> 有关 JavaScript API 的方法和异步特性 `sync()` Excel，请参阅 Excel 外接程序中的[Office JavaScript 对象模型](excel-add-ins-core-concepts.md)。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -36,7 +36,7 @@ Excel.run(function (context) {
 
 ## <a name="api-errors"></a>API 错误
 
-当 Excel JavaScript API 请求无法成功运行时，API 将返回包含以下属性的错误对象。
+当 Excel JavaScript API 请求无法成功运行时，API 将返回一个包含以下属性的错误对象。
 
 - **代码**：错误消息的 `code` 属性包含一个字符串，它属于 `OfficeExtension.ErrorCodes` 或 `Excel.ErrorCodes` 列表的一部分。 例如，错误代码“InvalidReference”指示引用对于指定操作无效。 错误代码尚未本地化。
 
@@ -90,7 +90,7 @@ Excel.run(function (context) {
 |`UnsupportedSheet`|此工作表类型不支持此操作，因为它是一个宏或图表工作表。|
 
 > [!NOTE]
-> 上表列出了使用 JavaScript API 时Excel错误消息。 如果你使用通用 API 而不是特定于应用程序的 Excel JavaScript API，请参阅Office[通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码，以了解相关的错误消息。
+> 上表列出了在使用 JavaScript API 时Excel错误消息。 如果你使用通用 API 而不是特定于应用程序的 Excel JavaScript API，请参阅Office[通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码，以了解相关的错误消息。
 
 ## <a name="see-also"></a>另请参阅
 

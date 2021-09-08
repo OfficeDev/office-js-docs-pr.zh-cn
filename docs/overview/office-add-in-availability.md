@@ -4,11 +4,11 @@ description: Excel、OneNote、Outlook、PowerPoint、Project 和 Word 支持的
 ms.date: 07/13/2021
 localization_priority: Priority
 ms.openlocfilehash: ed54f6c513da9ada85afcbdbdb30798acb7048f4
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232239"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936843"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Office 客户端应用程序和平台的 Office 加载项可用性
 

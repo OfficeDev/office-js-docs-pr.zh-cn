@@ -4,16 +4,16 @@ description: 了解如何使用 Excel JavaScript API 设置区域的格式。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 3e9c8dd58216de695fc0bc634a6eaed7dbc724468bd9e02bc23bf34c394b5e16
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a09d3b4d79584e186c0be37d4a30954c4d4d0086
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086491"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937082"
 ---
 # <a name="set-range-format-using-the-excel-javascript-api"></a>使用 JavaScript API Excel区域格式
 
-本文提供的代码示例使用 JavaScript API 为区域单元格设置字体颜色、填充颜色和数字Excel格式。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供的代码示例使用 JavaScript API 为区域单元格设置字体颜色、填充颜色和数字Excel格式。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -39,7 +39,7 @@ Excel.run(function (context) {
 
 ### <a name="data-in-range-after-font-color-and-fill-color-are-set"></a>区域中设置字体颜色和填充颜色之后的数据
 
-![设置Excel格式后的数据。](../images/excel-ranges-format-font-and-fill.png)
+![设置Excel之后的数据。](../images/excel-ranges-format-font-and-fill.png)
 
 ## <a name="set-number-format"></a>设置数字格式
 
@@ -75,4 +75,4 @@ Excel.run(function (context) {
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
 - [使用 JavaScript API Excel和获取范围](excel-add-ins-ranges-set-get.md)
-- [使用 JavaScript API 设置和获取区域Excel文本或公式](excel-add-ins-ranges-set-get-values.md)
+- [使用 JavaScript API 设置和获取Excel值、文本或公式](excel-add-ins-ranges-set-get-values.md)

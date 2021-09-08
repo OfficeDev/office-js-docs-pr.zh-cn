@@ -4,16 +4,16 @@ description: 了解如何使用 Excel JavaScript API 设置和获取选定区域
 ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 575436a1d69ec0125dd58e5b8b542405b9b64c9c6493462f3cf7512dcf0f0f02
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 623ba5c1b9e76151d4a2c4b169e655236b37e8c8
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087048"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937293"
 ---
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>使用 JavaScript API 设置并Excel区域
 
-本文提供了使用 JavaScript API 设置和获取选定区域Excel示例。 有关对象支持的属性和方法的完整列表，请参阅 `Range` [Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供了使用 JavaScript API 设置和获取选定区域Excel示例。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -134,7 +134,7 @@ Excel.run(function (context) {
 
 #### <a name="after-selecting-all-the-cells-from-the-current-range-to-the-edge-of-the-used-range"></a>选择从当前区域到已用区域边缘的所有单元格后
 
-以下屏幕截图显示与上一屏幕截图相同的表，包含 **C5：F12 范围的数据**。 在此表中，选择了区域 **D8：E12。** 在运行 *该方法以* 从当前区域到已用区域的边缘沿向下方向选择所有单元格之后，此选择处于 `Range.getExtendedRange` 之后状态。
+以下屏幕截图显示与上一屏幕截图相同的表，包含 **C5：F12 范围的数据**。 在此表中，选择了区域 **D8：E12。** 此选择位于 *状态* 之后，运行该方法以从当前区域到已用区域的边缘沿向下 `Range.getExtendedRange` 方向选择所有单元格。
 
 ![包含来自 C5：F12 的数据的Excel。 选择区域 D8：E12。](../images/excel-ranges-used-range-d8-e12.png)
 
@@ -142,5 +142,5 @@ Excel.run(function (context) {
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
-- [使用 JavaScript API 设置和获取区域Excel文本或公式](excel-add-ins-ranges-set-get-values.md)
+- [使用 JavaScript API 设置和获取Excel值、文本或公式](excel-add-ins-ranges-set-get-values.md)
 - [使用 JavaScript API Excel区域格式](excel-add-ins-ranges-set-format.md)

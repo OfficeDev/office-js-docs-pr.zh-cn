@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 47bc41f9ffed538440d635a49a83ecd7ab11df6cd12ec5eee04bc7b524ed72cf
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 106f11da21d994534219399829dca37e16bd2fe5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094736"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936980"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 

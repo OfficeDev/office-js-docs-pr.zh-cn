@@ -3,12 +3,12 @@ title: 在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 description: 在清单中，使用 VersionOverrides 定义用于 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: af5a87ed087c3c8df474feb445cd006bdebba493d12d1e90c787dab6437e808a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 461e58e63be73619d46cd0552467187b7eab5071
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081147"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936846"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 
@@ -31,7 +31,7 @@ ms.locfileid: "57081147"
 
 下图是对清单中的加载项命令元素的概述。
 
-![清单中的外接程序命令元素概述。 此处的顶部节点是包含子级 Hosts 和 Resources 的 VersionOverrides。 在"主机为主机"下，"DesktopFormFactor"下。 在 DesktopFormFactor 下是 FunctionFile 和 ExtensionPoint。 在 ExtensionPoint 下是 CustomTab 或 OfficeTab 和 Office 菜单。 在"CustomTab"或"Office"选项卡下，"分组"再"控制"，然后单击"操作"。 在"Office"下是"控件"，然后单击"操作"。 在" (VersionOverrides 的子级下) 图像、Url、ShortStrings 和 LongStrings。](../images/version-overrides.png)
+![清单中的外接程序命令元素概述。 此处的顶部节点是包含子级 Hosts 和 Resources 的 VersionOverrides。 在"主机为主机"下，"DesktopFormFactor"下。 在 DesktopFormFactor 下是 FunctionFile 和 ExtensionPoint。 在 ExtensionPoint 下是 CustomTab 或 OfficeTab 和 Office 菜单。 在"CustomTab"或"Office选项卡"下，"分组"再"控制"，然后单击"操作"。 在Office菜单下是"控件"，然后单击"操作"。 在"resources (VersionOverrides"子) 为 Images、Url、ShortStrings 和 LongStrings。](../images/version-overrides.png)
 
 ## <a name="step-1-start-from-a-sample"></a>第 1 步：从示例入手
 
@@ -86,7 +86,7 @@ ms.locfileid: "57081147"
 |元素|说明|
 |:-----|:-----|
 |**说明** <br/> |可选。描述外接程序。此子级 **Description** 元素替代清单中父级部分中的旧 **Description** 元素。此 **Description** 元素的 **resid** 属性将设置为 **String** 元素的 **id**。**String** 元素包含 **Description** 的文本。 <br/> |
-|**Requirements** <br/> |可选。 指定外接程序要求的最低要求集和 Office.js 的版本。 此子级 **Requirements** 元素替代清单中父级部分中的 **Requirements** 元素。 有关详细信息，请参阅指定Office[应用程序和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
+|**Requirements** <br/> |可选。 指定外接程序要求的最低要求集和 Office.js 的版本。 此子级 **Requirements** 元素替代清单中父级部分中的 **Requirements** 元素。 有关详细信息，请参阅指定Office[和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
 |**Hosts** <br/> |必需。 指定应用程序Office集合。 子级 **Hosts** 元素替代清单中父级部分中的 **Hosts** 元素。 必须包含已设置为“Workbook”或“Document”的 **xsi:type** 属性 <br/> |
 |**Resources** <br/> |定义其他清单元素引用的资源集合（字符串、URL 和图像）。例如，**Description** 元素的值引用了 **Resources** 中的子元素。**Resources** 元素将在本文后续部分中的 [步骤 7：添加 Resources 元素](#step-7-add-the-resources-element)中进行介绍。 <br/> |
 
@@ -249,7 +249,7 @@ ms.locfileid: "57081147"
 |元素|说明|
 |:-----|:-----|
 |**CustomTab** <br/> |如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 <br/> |
-|**OfficeTab** <br/> |如果要使用 **PrimaryCommandSurface** Office 应用扩展默认功能区选项卡 (，) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 有关与 id 属性一同使用的更多 **选项卡** 值，请参阅默认选项卡Office 应用 [选项卡的值](../reference/manifest/officetab.md)。  <br/> |
+|**OfficeTab** <br/> |如果要使用 **PrimaryCommandSurface** Office 应用扩展默认功能 (选项卡，) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 有关与 id 属性一同使用的更多 **选项卡** 值，请参阅默认选项卡Office 应用 [选项卡的值](../reference/manifest/officetab.md)。  <br/> |
 |**OfficeMenu** <br/> | 如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 当用户选定文本，然后右键单击所选文本时，适用于 Excel 或 Word 的 **ContextMenuText** 显示上下文菜单上的项。<br/> 适用于 Excel 的 **ContextMenuCell**。当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。 <br/> |
 |**Group** <br/> |选项卡上的一组用户界面扩展点。一组可以有多达六个控件。**id** 属性是必需的。它是一个最多为 125 个字符的字符串。 <br/> |
 |**Label** <br/> |必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。 <br/> |

@@ -3,12 +3,12 @@ title: 开发 Office 加载项
 description: Office 加载项开发简介。
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 4677f50d718234cb0751b192547fe99ec720d680725aeeed2be9caea904001be
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b2fa3e630fbcfb013f4458f7b8f9f564d0fed3f1
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080825"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936644"
 ---
 # <a name="develop-office-add-ins"></a>开发 Office 加载项
 

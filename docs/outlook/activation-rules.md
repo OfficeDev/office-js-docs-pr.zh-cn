@@ -3,12 +3,12 @@ title: Outlook 加载项的激活规则
 description: 如果用户正在读取或撰写的邮件或约会符合加载项的激活规则，则 Outlook 将激活某些类型的加载项。
 ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 609bb915c98b1213c4d20733a7b00681740bdce1e182e237dbde9253e8b06104
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 24f17b7bb3da4665f3f05b23d34ba15bcc4ae729
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096935"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936517"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>上下文 Outlook 加载项的激活规则
 
@@ -59,7 +59,7 @@ ms.locfileid: "57096935"
 |**Value**|**说明**|
 |:-----|:-----|
 |**约会**|在 Outlook 日历中指定一个项目。 这包括已获取响应并且具有组织者和参与者的会议项目，或者没有组织者或参与者且仅为日历上的一个项目的约会。 这与 Outlook 中的 IPM.Appointment 邮件类别相对应。|
-|**邮件**|指定通常在收件箱中收到的以下项目之一。 <ul><li><p>电子邮件。这与 Outlook 中的 IPM.Note 邮件类别相对应。</p></li><li><p>会议请求、响应或取消。 这对应于 Outlook 中的以下邮件Outlook。</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
+|**消息**|指定通常在收件箱中收到的以下项目之一。 <ul><li><p>电子邮件。这与 Outlook 中的 IPM.Note 邮件类别相对应。</p></li><li><p>会议请求、响应或取消。 这对应于 Outlook 中的以下邮件Outlook。</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
 `FormType`属性用于指定阅读 (撰写) 外接程序应激活的模式。
 
@@ -113,7 +113,7 @@ ms.locfileid: "57096935"
 - TaskSuggestion
 - URL
 
-可以选择在 属性中包括正则表达式，以便仅在存在与正则表达式匹配的实体时 `RegularExpression` 显示外接程序。 若要获取规则中指定的正则表达式的匹配项，可以将 或 方法用于当前选定的 `ItemHasKnownEntity` `getRegExMatches` `getFilteredEntitiesByName` Outlook项。
+可以选择在 属性中包括正则表达式，以便仅在存在与正则表达式匹配的实体 `RegularExpression` 时显示外接程序。 若要获取规则中指定的正则表达式的匹配项，可以将 或 方法用于当前选定的 `ItemHasKnownEntity` `getRegExMatches` `getFilteredEntitiesByName` Outlook项。
 
 以下示例显示一组元素，这些元素在邮件中出现指定的已知实体之一时 `Rule` 显示外接程序。
 
@@ -139,7 +139,7 @@ ms.locfileid: "57096935"
 
 `ItemHasRegularExpressionMatch`复杂类型定义一个规则，该规则使用正则表达式来匹配项目的指定属性的内容。 如果在项的指定属性中发现与正则表达式匹配的文本，则 Outlook 会激活外接程序栏并显示外接程序。 可以使用表示当前选定项的对象的 或 方法 `getRegExMatches` `getRegExMatchesByName` 获取指定正则表达式的匹配项。
 
-以下示例显示 ，当选定项的正文包含 `ItemHasRegularExpressionMatch` "apple"、"apple"或"apple"（不区分大小写）时，将激活加载项。
+以下示例演示一个 ，当选定项的正文包含"apple"、"apple"或"可能忽略大小写"时，将激活 `ItemHasRegularExpressionMatch` 加载项。
 
 ```xml
 <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
@@ -192,7 +192,7 @@ ms.locfileid: "57096935"
 |清单大小|不大于 256 KB。|
 |规则|不超过 15 条规则。|
 |ItemHasKnownEntity|Outlook 富客户端将对正文的前 1 MB 内容应用规则，对正文其余部分则不应用。|
-|正则表达式|对于所有应用程序的所有 ItemHasKnownEntity 或 ItemHasRegularExpressionMatch Outlook规则：<br><ul><li>在 Outlook 加载项的激活规则中指定不超过 5 个正则表达式。如果超过该限制，则无法安装加载项。</li><li>指定由 <b>getRegExMatches</b> 方法调用在前 50 个匹配项内返回其预期结果的正则表达式。 </li><li>在正则表达式中指定向前断言，但不支持向后 `(?<=text)` 和否定向后 `(?<!text)` 断言。</li><li>指定其匹配不超过下表中的限制的正则表达式。<br/><br/><table><tr><th>正则表达式匹配项的长度限制</th><th>Outlook 富客户端</th><th>iOS 版和 Android 版 Outlook</th></tr><tr><td>项目正文采用纯文本</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>项目正文采用 HTML</td><td>3 KB</td><td>3KB</td></tr></table>|
+|正则表达式|对于所有应用程序上的 ItemHasKnownEntity 或 ItemHasRegularExpressionMatch Outlook规则：<br><ul><li>在 Outlook 加载项的激活规则中指定不超过 5 个正则表达式。如果超过该限制，则无法安装加载项。</li><li>指定由 <b>getRegExMatches</b> 方法调用在前 50 个匹配项内返回其预期结果的正则表达式。 </li><li>在正则表达式中指定向前断言，但不支持向后 `(?<=text)` 和否定向后 `(?<!text)` 断言。</li><li>指定其匹配不超过下表中的限制的正则表达式。<br/><br/><table><tr><th>正则表达式匹配项的长度限制</th><th>Outlook 富客户端</th><th>iOS 版和 Android 版 Outlook</th></tr><tr><td>项目正文采用纯文本</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>项目正文采用 HTML</td><td>3 KB</td><td>3KB</td></tr></table>|
 
 ## <a name="see-also"></a>另请参阅
 

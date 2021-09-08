@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Methods 元素
-description: Methods 元素指定外接程序Office激活Office JavaScript API 方法的列表。
+description: Methods 元素指定外接程序Office激活所需的 Office JavaScript API 方法的列表。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 12f562bb3d4ab182226af82a4961ee4cc36f20c1a4381fc12a4bea3028699c79
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b270122240314b792ee492336417a4d133bdcc84
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089712"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936908"
 ---
 # <a name="methods-element"></a>Methods 元素
 

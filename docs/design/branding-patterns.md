@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的品牌模式设计准则
-description: 了解如何打造外接程序Office品牌，同时与外接程序的可视化设计保持Office。
+description: 了解如何打造外接程序Office品牌，同时与加载项的视觉设计保持Office。
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: e02e5139ed6ccc556661a610610d0ce51437a0893fb8df99ec7bfc49e7947ec6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b42d3a722e4f8805e8c03d2e1a5db528a66f1202
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082178"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937224"
 ---
 # <a name="branding-patterns"></a>品牌模式
 
@@ -36,4 +36,4 @@ ms.locfileid: "57082178"
 
 使用此屏幕在外接程序正在加载或转换 UI 状态时显示你的品牌。
 
-![品牌初始屏幕显示在桌面应用程序外接程序任务窗格中Office屏幕。](../images/add-in-splash-screen.png)
+![品牌初始屏幕显示在桌面应用程序外接程序任务Office窗格中。](../images/add-in-splash-screen.png)

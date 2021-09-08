@@ -3,12 +3,12 @@ title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
 ms.date: 05/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 6d76c38521f03adc3c38e6e9a72d1d5b6cda6c6a359b4aa2ba87799f81ae932f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8f84be1f2dcc43d795026fcd28dc3860c5e07a1e
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097427"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937306"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -74,11 +74,11 @@ ms.locfileid: "57097427"
 |元素|说明|
 |:-----|:-----|
 |**CustomTab**|如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 |
-|**OfficeTab**|如果要使用 **PrimaryCommandSurface** Office 应用扩展默认功能区选项卡 (，) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 有关详细信息，请参阅 [OfficeTab](officetab.md)。|
+|**OfficeTab**|如果要使用 **PrimaryCommandSurface** Office 应用扩展默认功能 (选项卡) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 有关详细信息，请参阅 [OfficeTab](officetab.md)。|
 |**OfficeMenu**|如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 适用于 Excel 或 Word 的 - **ContextMenuText** 当用户选定文本，然后右键单击所选定的文本时显示上下文菜单上的项。 <br/> 适用于 Excel 的 - **ContextMenuCell** 当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。|
 |**Group**|选项卡上的一组用户界面扩展点。一组可以有多达六个控件。**id** 属性是必需的。它是一个最多为 125 个字符的字符串。 |
 |**Label**|必需。 组的标签。 **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性的值。 **String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。|
-|**Icon**|必需。 指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。 **resid** 属性不能超过 32 个字符，必须设置为 **Image** 元素 **的 id** 属性的值。 **Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。 **size** 属性给出图像的大小（以像素为单位）。 要求三种图像大小：16、32 和 80。 也同样支持五种可选大小：20、24、40、48 和 64。|
+|**Icon**|必需。 指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。 **resid** 属性不能超过 32 个字符，并且必须设置为 **Image** 元素的 **id** 属性的值。 **Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。 **size** 属性给出图像的大小（以像素为单位）。 要求三种图像大小：16、32 和 80。 也同样支持五种可选大小：20、24、40、48 和 64。|
 |**Tooltip**|Optional. The tooltip of the group. **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性的值。 The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
 |**Control**|每个组需要至少一个控件。 Control 元素可以是 Button **或** **Menu。** 使用 **Menu** 指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 请参阅[按钮控件](control.md#button-control)和[菜单控件](control.md#menu-dropdown-button-controls)各节了解详细信息。<br/>**注意：**  为了简化疑难解答，我们建议一次添加 **一** 个 Control 元素和相关 **Resources** 子元素。|
 |**Script**|使用自定义函数定义和注册代码链接到 JavaScript 文件。 在开发者预览版中不使用此元素。 实际上，HTML 页负责加载所有 JavaScript 文件。|
@@ -309,7 +309,7 @@ ms.locfileid: "57097427"
 
 ### <a name="launchevent"></a>LaunchEvent
 
-通过此扩展点，加载项可以基于桌面设备类型中支持的事件进行激活。 若要了解有关此方案以及受支持事件的完整列表的信息，请参阅 Configure your [Outlook add-in for event-based activation](../../outlook/autolaunch.md)一文。
+通过此扩展点，加载项可以基于桌面设备类型中支持的事件进行激活。 若要了解有关此方案以及受支持事件的完整列表，请参阅 Configure [your Outlook add-in for event-based activation一](../../outlook/autolaunch.md)文。
 
 > [!IMPORTANT]
 > 注册 [邮箱](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) 和 [项目](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 事件不适用于此扩展点。

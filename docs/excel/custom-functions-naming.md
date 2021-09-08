@@ -4,22 +4,22 @@ description: 了解自定义函数Excel的要求，并避免常见的命名错�
 ms.date: 07/08/2021
 localization_priority: Normal
 ms.openlocfilehash: bfc850fb2a40e7736006930c63489ec7e0c9912b
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773347"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936677"
 ---
 # <a name="custom-functions-naming-guidelines"></a>自定义函数命名准则
 
-自定义函数由 `id` JSON 元数据文件的 和 `name` 属性标识。
+自定义函数由 JSON 元数据文件的 和 属性 `id` `name` 标识。
 
 - 函数 `id` 用于唯一标识 JavaScript 代码中的自定义函数。
 - 该 `name` 函数用作显示名称用户显示Excel。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-函数 `name` 可以不同于 函数 `id` ，例如用于本地化目的。 一般情况下，函数的 应保持与 相同 `name` （如果没有 `id` 理由区别的话）。
+函数 `name` 可以不同于 函数 `id` ，例如用于本地化目的。 一般情况下，函数的 应保持与 `name` `id` 相同（如果没有理由区别的话）。
 
 一个函数 `name` ， `id` 并共享一些常见要求。
 
@@ -35,7 +35,7 @@ Excel对内置函数名称使用大写字母 (如 `SUM`) 。 最好将大写字�
 
 - A1 到 XFD1048576 之间的任何单元格，或 R1C1 到 R1048576C16384 之间的任何单元格。
 
-- 任何 Excel 4.0 宏 (，例如 `RUN` `ECHO` ，) 。  有关这些函数的完整列表，请参阅本[Excel宏函数参考文档](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)。
+- 任何 Excel 4.0 宏函数 (，例如 `RUN` `ECHO` ，) 。  有关这些函数的完整列表，请参阅[本Excel宏函数参考文档](https://d13ot9o61jdzpp.cloudfront.net/files/Excel%204.0%20Macro%20Functions%20Reference.pdf)。
 
 ## <a name="naming-conflicts"></a>命名冲突
 
@@ -55,13 +55,13 @@ Excel对内置函数名称使用大写字母 (如 `SUM`) 。 最好将大写字�
 
 ## <a name="localizing-function-names"></a>本地化函数名称
 
-可以使用单独的 JSON 文件本地化不同语言的函数名称，并替代加载项清单文件中的值。 避免将 或 作为内置函数的 或 以另一种语言 `id` `name` Excel，因为这可能与本地化函数冲突。
+可以使用单独的 JSON 文件本地化不同语言的函数名称，并替代加载项清单文件中的值。 避免为函数提供 或 作为另一种语言Excel内置函数，因为这可能与本地化函数 `id` `name` 冲突。
 
 有关本地化的完整信息，请参阅 [本地化自定义函数](custom-functions-localize.md)
 
 ## <a name="next-steps"></a>后续步骤
 
-了解 [错误处理最佳实践](custom-functions-errors.md)。
+了解 [错误处理最佳做法](custom-functions-errors.md)。
 
 ## <a name="see-also"></a>另请参阅
 

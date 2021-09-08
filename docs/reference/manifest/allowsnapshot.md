@@ -3,12 +3,12 @@ title: 清单文件中的 AllowSnapshot 元素
 description: 指定是否将内容外接程序的快照图像与主机文档一起保存。
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 1462b60dffda7e3bb611225f015b5a1c9f0b5e78271580383961cc118af60587
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ea910e1ad747e304dbc6ab4fbdcf44a9610dab19
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095051"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937461"
 ---
 # <a name="allowsnapshot-element"></a>AllowSnapshot 元素
 
@@ -29,4 +29,4 @@ ms.locfileid: "57095051"
 ## <a name="remarks"></a>注释
 
  > [!IMPORTANT]
- > **AllowSnapshot** 在默认情况下为 `true`。 这样，对于在不支持 Office 加载项的 Office 应用程序版本中打开文档的用户提供的加载项图像，或者如果应用程序无法连接到托管加载项的服务器，则提供加载项的静态图像。 但是，这也意味着可以直接从托管该外接程序的文档访问显示在外接程序中的潜在敏感信息。
+ > **AllowSnapshot** 在默认情况下为 `true`。 这样，如果用户在不支持 Office 外接程序的 Office 应用程序版本中打开文档，或者该应用程序无法连接到托管该外接程序的服务器，则提供外接程序的静态图像，则用户可以看到该外接程序的图像。 但是，这也意味着可以直接从托管该外接程序的文档访问显示在外接程序中的潜在敏感信息。

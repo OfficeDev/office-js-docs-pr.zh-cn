@@ -1,20 +1,20 @@
 ---
 title: 清单文件中的 AppDomain 元素
-description: 指定您的外接程序使用且应受您的外接程序信任的其他Office。
+description: 指定您的外接程序使用且应受外接程序信任的其他Office。
 ms.date: 06/12/2020
 localization_priority: Normal
-ms.openlocfilehash: be983418a09be8f808e6cde0b84bff7f99c25923e57baced85b915709668564c
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ae49944afceada559b39353cd119e26a21fd3d15
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098309"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937914"
 ---
 # <a name="appdomain-element"></a>AppDomain 元素
 
 指定除[SourceLocation](sourcelocation.md)Office中指定的域之外，还应信任其他域。 指定域具有以下效果：
 
-- 它使页面中、路由或域中的其他资源可以直接在桌面和平台加载项的根任务窗格中Office打开。  (在 **AppDomain** 中指定域对于 Office web 版 或在 IFrame 中打开资源不是必需的，也不需要在对话框 [API](../../develop/dialog-api-in-office-add-ins.md).) 打开的对话框中打开资源。
+- 它使页面中、路由或域中的其他资源可以直接在桌面和平台加载项的根任务窗格中Office打开。  (在 **AppDomain** 中指定域对于 Office web 版 或在 IFrame 中打开资源不是必需的，也不需要在对话框 [API](../../develop/dialog-api-in-office-add-ins.md).) 打开的对话框中打开资源
 - 它使域中的页面Office.js内 IFrame 进行 API 调用。
 
 **加载项类型：** 内容、任务窗格和邮件

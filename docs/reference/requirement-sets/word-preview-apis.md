@@ -4,12 +4,12 @@ description: 有关即将推出的 Word JavaScript API 的详细信息
 ms.date: 11/09/2020
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 1a3871ca4445e595620112bb5176fe2b7ab39015228a1602c119c06730cc90ab
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 09e8c978160cbe59fea1a80ac7f3dce653115440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097843"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936187"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript 预览 API
 
@@ -69,7 +69,7 @@ ms.locfileid: "57097843"
 ||[getLevelPicture (级别：number) ](/javascript/api/word/word.list#getlevelpicture-level-)|获取列表中指定级别的图片的 base64 编码字符串表示形式。|
 ||[resetLevelFont (level： number， resetFontName？： boolean) ](/javascript/api/word/word.list#resetlevelfont-level--resetfontname-)|重置列表中指定级别的项目符号、编号或图片的字体。|
 ||[setLevelPicture (level： number， base64EncodedImage？： string) ](/javascript/api/word/word.list#setlevelpicture-level--base64encodedimage-)|设置列表中指定级别的图片。|
-|[区域](/javascript/api/word/word.range)|[getBookmarks (includeHidden？： boolean， includeAdjacent？： boolean) ](/javascript/api/word/word.range#getbookmarks-includehidden--includeadjacent-)|获取区域内的所有书签或与区域重叠的名称。|
+|[Range](/javascript/api/word/word.range)|[getBookmarks (includeHidden？： boolean， includeAdjacent？： boolean) ](/javascript/api/word/word.range#getbookmarks-includehidden--includeadjacent-)|获取区域内的所有书签或与区域重叠的名称。|
 ||[insertBookmark (name： string) ](/javascript/api/word/word.range#insertbookmark-name-)|在范围中插入书签。|
 |[设置](/javascript/api/word/word.setting)|[delete()](/javascript/api/word/word.setting#delete--)|删除 Setting 对象。|
 ||[key](/javascript/api/word/word.setting#key)|获取设置的键。|

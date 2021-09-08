@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.10 要求集的详细信息。
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 34c21ad0e90593352ae4042c2be148e607c63164aac1845357e9f96371104f6f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7b620bb76f758bc2574e8bd99d2c45d3d4bfae39
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087206"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937487"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>JavaScript API 1.10 Excel的新增功能
 
@@ -24,7 +24,7 @@ ExcelApi 1.10 引入了关键功能，如注释、大纲和切片器。 它还�
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求集 1.10 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.10 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.10](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)或更早版本中的 Excel API。
+下表列出了 JavaScript API 要求集 1.10 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.10 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.10](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -41,7 +41,7 @@ ExcelApi 1.10 引入了关键功能，如注释、大纲和切片器。 它还�
 ||[getItem(commentId: string)](/javascript/api/excel/excel.commentcollection#getItem_commentId_)|根据其 ID 从集合中获取批注。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.commentcollection#getItemAt_index_)|根据其位置从集合中获取批注。|
 ||[getItemByCell(cellAddress: Range \| string)](/javascript/api/excel/excel.commentcollection#getItemByCell_cellAddress_)|从指定单元格获取的批注。|
-||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getItemByReplyId_replyId_)|获取给定答复所连接到的注释。|
+||[getItemByReplyId(replyId: string)](/javascript/api/excel/excel.commentcollection#getItemByReplyId_replyId_)|获取给定答复所连接到的批注。|
 ||[items](/javascript/api/excel/excel.commentcollection#items)|获取此集合中已加载的子项。|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[content](/javascript/api/excel/excel.commentreply#content)|批注回复的内容。|
 ||[delete()](/javascript/api/excel/excel.commentreply#delete__)|删除批注回复。|
@@ -59,7 +59,7 @@ ExcelApi 1.10 引入了关键功能，如注释、大纲和切片器。 它还�
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[enableFieldList](/javascript/api/excel/excel.pivotlayout#enableFieldList)|指定字段列表是否可在 UI 中显示。|
 |[PivotTableStyle](/javascript/api/excel/excel.pivottablestyle)|[delete()](/javascript/api/excel/excel.pivottablestyle#delete__)|删除数据透视表样式。|
 ||[duplicate()](/javascript/api/excel/excel.pivottablestyle#duplicate__)|使用所有样式元素的副本创建此数据透视表样式的副本。|
-||[名称](/javascript/api/excel/excel.pivottablestyle#name)|获取数据透视表样式的名称。|
+||[name](/javascript/api/excel/excel.pivottablestyle#name)|获取数据透视表样式的名称。|
 ||[readOnly](/javascript/api/excel/excel.pivottablestyle#readOnly)|指定此 `PivotTableStyle` 对象是否只读。|
 |[PivotTableStyleCollection](/javascript/api/excel/excel.pivottablestylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.pivottablestylecollection#add_name__makeUniqueName_)|创建具有 `PivotTableStyle` 指定名称的空白。|
 ||[getCount()](/javascript/api/excel/excel.pivottablestylecollection#getCount__)|获取集合中 PivotTable 的数量。|
@@ -68,14 +68,14 @@ ExcelApi 1.10 引入了关键功能，如注释、大纲和切片器。 它还�
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablestylecollection#getItemOrNullObject_name_)|按 `PivotTableStyle` 名称获取 。|
 ||[items](/javascript/api/excel/excel.pivottablestylecollection#items)|获取此集合中已加载的子项。|
 ||[setDefault(newDefaultStyle: PivotTableStyle \| string)](/javascript/api/excel/excel.pivottablestylecollection#setDefault_newDefaultStyle_)|设置在父对象范围内使用的默认数据透视表样式。|
-|[区域](/javascript/api/excel/excel.range)|[group (groupOption： Excel.GroupOption) ](/javascript/api/excel/excel.range#group_groupOption_)|对大纲的列和行进行分组。|
+|[Range](/javascript/api/excel/excel.range)|[group (groupOption：Excel。GroupOption) ](/javascript/api/excel/excel.range#group_groupOption_)|对大纲的列和行进行分组。|
 ||[hideGroupDetails (groupOption： Excel。GroupOption) ](/javascript/api/excel/excel.range#hideGroupDetails_groupOption_)|隐藏行或列组的详细信息。|
 ||[height](/javascript/api/excel/excel.range#height)|返回从区域上边缘到区域下边缘的距离（100% 缩放）。以点表示。|
 ||[left](/javascript/api/excel/excel.range#left)|返回从工作表左边缘到区域左边缘的距离（100% 缩放）。以点表示。|
 ||[top](/javascript/api/excel/excel.range#top)|返回从工作表的上边缘到区域上边缘的距离（100% 缩放）。以点表示。|
 ||[width](/javascript/api/excel/excel.range#width)|返回从区域左边缘到区域右边缘的距离（以 100% 缩放表示）。|
 ||[showGroupDetails (groupOption： Excel。GroupOption) ](/javascript/api/excel/excel.range#showGroupDetails_groupOption_)|显示行或列组的详细信息。|
-||[取消分组 (组选项：Excel。GroupOption) ](/javascript/api/excel/excel.range#ungroup_groupOption_)|取消大纲的列和行的组合。|
+||[ungroup (groupOption： Excel.GroupOption) ](/javascript/api/excel/excel.range#ungroup_groupOption_)|取消大纲的列和行的组合。|
 |[Shape](/javascript/api/excel/excel.shape)|[copyTo(destinationSheet?: Worksheet \| string)](/javascript/api/excel/excel.shape#copyTo_destinationSheet_)|复制和粘贴 `Shape` 对象。|
 ||[placement](/javascript/api/excel/excel.shape#placement)|表示对象如何附加到其下方的单元格。|
 |[Slicer](/javascript/api/excel/excel.slicer)|[caption](/javascript/api/excel/excel.slicer#caption)|表示切片器的标题。|
@@ -89,7 +89,7 @@ ExcelApi 1.10 引入了关键功能，如注释、大纲和切片器。 它还�
 ||[isFilterCleared](/javascript/api/excel/excel.slicer#isFilterCleared)|如果 `true` 当前在切片器上应用的所有筛选器已清除，则值为 。|
 ||[slicerItems](/javascript/api/excel/excel.slicer#slicerItems)|表示属于切片器一部分的切片器项的集合。|
 ||[worksheet](/javascript/api/excel/excel.slicer#worksheet)|表示包含切片器的工作表。|
-||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectItems_items_)|根据切片器项的键选择切片器项。|
+||[selectItems(items?: string[])](/javascript/api/excel/excel.slicer#selectItems_items_)|基于切片器项的键选择切片器项。|
 ||[sortBy](/javascript/api/excel/excel.slicer#sortBy)|表示切片器中的项目的排序顺序。|
 ||[style](/javascript/api/excel/excel.slicer#style)|代表切片器样式的常量值。|
 ||[top](/javascript/api/excel/excel.slicer#top)|表示从切片器上边缘到工作表顶部的距离（以磅为单位）。|
@@ -111,7 +111,7 @@ ExcelApi 1.10 引入了关键功能，如注释、大纲和切片器。 它还�
 ||[items](/javascript/api/excel/excel.sliceritemcollection#items)|获取此集合中已加载的子项。|
 |[SlicerStyle](/javascript/api/excel/excel.slicerstyle)|[delete()](/javascript/api/excel/excel.slicerstyle#delete__)|删除切片器样式。|
 ||[duplicate()](/javascript/api/excel/excel.slicerstyle#duplicate__)|使用所有样式元素的副本创建此切片器样式的副本。|
-||[名称](/javascript/api/excel/excel.slicerstyle#name)|获取切片器样式的名称。|
+||[name](/javascript/api/excel/excel.slicerstyle#name)|获取切片器样式的名称。|
 ||[readOnly](/javascript/api/excel/excel.slicerstyle#readOnly)|指定此 `SlicerStyle` 对象是否只读。|
 |[SlicerStyleCollection](/javascript/api/excel/excel.slicerstylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.slicerstylecollection#add_name__makeUniqueName_)|创建具有指定名称的空白切片器样式。|
 ||[getCount()](/javascript/api/excel/excel.slicerstylecollection#getCount__)|获取集合中的切片器样式数量。|
@@ -122,7 +122,7 @@ ExcelApi 1.10 引入了关键功能，如注释、大纲和切片器。 它还�
 ||[setDefault(newDefaultStyle: SlicerStyle \| string)](/javascript/api/excel/excel.slicerstylecollection#setDefault_newDefaultStyle_)|设置在父对象范围内使用的默认切片器样式。|
 |[TableStyle](/javascript/api/excel/excel.tablestyle)|[delete()](/javascript/api/excel/excel.tablestyle#delete__)|删除表格样式。|
 ||[duplicate()](/javascript/api/excel/excel.tablestyle#duplicate__)|使用所有样式元素的副本创建此表格样式的副本。|
-||[名称](/javascript/api/excel/excel.tablestyle#name)|获取表格样式的名称。|
+||[name](/javascript/api/excel/excel.tablestyle#name)|获取表格样式的名称。|
 ||[readOnly](/javascript/api/excel/excel.tablestyle#readOnly)|指定此 `TableStyle` 对象是否只读。|
 |[TableStyleCollection](/javascript/api/excel/excel.tablestylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.tablestylecollection#add_name__makeUniqueName_)|创建具有 `TableStyle` 指定名称的空白。|
 ||[getCount()](/javascript/api/excel/excel.tablestylecollection#getCount__)|获取集合中表格样式的数量。|
@@ -133,7 +133,7 @@ ExcelApi 1.10 引入了关键功能，如注释、大纲和切片器。 它还�
 ||[setDefault(newDefaultStyle: TableStyle \| string)](/javascript/api/excel/excel.tablestylecollection#setDefault_newDefaultStyle_)|设置在父对象范围内使用的默认表格样式。|
 |[TimelineStyle](/javascript/api/excel/excel.timelinestyle)|[delete()](/javascript/api/excel/excel.timelinestyle#delete__)|删除表格样式。|
 ||[duplicate()](/javascript/api/excel/excel.timelinestyle#duplicate__)|使用所有样式元素的副本创建此时间线样式的副本。|
-||[名称](/javascript/api/excel/excel.timelinestyle#name)|获取日程表样式的名称。|
+||[name](/javascript/api/excel/excel.timelinestyle#name)|获取日程表样式的名称。|
 ||[readOnly](/javascript/api/excel/excel.timelinestyle#readOnly)|指定此 `TimelineStyle` 对象是否只读。|
 |[TimelineStyleCollection](/javascript/api/excel/excel.timelinestylecollection)|[add(name: string, makeUniqueName?: boolean)](/javascript/api/excel/excel.timelinestylecollection#add_name__makeUniqueName_)|创建具有 `TimelineStyle` 指定名称的空白。|
 ||[getCount()](/javascript/api/excel/excel.timelinestylecollection#getCount__)|获取集合中日程表样式的数量。|
@@ -168,7 +168,7 @@ ExcelApi 1.10 引入了关键功能，如注释、大纲和切片器。 它还�
 ||[type](/javascript/api/excel/excel.worksheetrowsortedeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetrowsortedeventargs#worksheetId)|获取发生排序的工作表的 ID。|
 |[WorksheetSingleClickedEventArgs](/javascript/api/excel/excel.worksheetsingleclickedeventargs)|[address](/javascript/api/excel/excel.worksheetsingleclickedeventargs#address)|获取特定工作表中表示被左键单击/点击的单元格的地址。|
-||[OffsetX](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetX)|对于从右到左的语言，从左键单击/点击点到左 (或右到左) 单击/点击单元格的网格线边缘的距离（以点表示）。|
+||[OffsetX](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetX)|对于从右到左的语言，从左键单击/点击点到左侧 (或右侧的距离（以) 单击/点击的单元格的网格线边缘）。|
 ||[OffsetY](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetY)|从左键单击/点击的点到左键单击/点击的单元格的顶部网格线边缘的距离（以磅为单位）。|
 ||[type](/javascript/api/excel/excel.worksheetsingleclickedeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetsingleclickedeventargs#worksheetId)|获取其中单元格被左键单击/点击的工作表的 ID。|

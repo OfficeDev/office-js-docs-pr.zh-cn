@@ -3,12 +3,12 @@ title: 清单文件中 Group 元素
 description: 在选项卡中定义一组 UI 控件。
 ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 236746d6f6ae5e04612aade7e7d29564b064f384d65b6c0be582117faf6cecf6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 89ed16f7996ab06bd21e1ebaa71c959b11af2029
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098744"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937636"
 ---
 # <a name="group-element"></a>Group 元素
 
@@ -47,7 +47,7 @@ ms.locfileid: "57098744"
 
 ### <a name="control"></a>控件
 
-可选，但如果不存在，则必须至少有一 **个 OfficeControl**。 有关受支持的控件类型的详细信息，请参阅 [Control](control.md) 元素。 清单中的 **Control** 和 **OfficeControl** 顺序是可互换的，如果有多个元素，则它们可以相互组成，但所有元素都必须位于 **Icon** 元素下面。
+可选，但如果不存在，则必须至少有一 **个 OfficeControl**。 有关受支持的控件类型的详细信息，请参阅 [Control](control.md) 元素。 清单中的 **Control** 和 **OfficeControl** 顺序是可互换的，如果有多个元素，则它们可以相互组成，但所有元素都必须位于 **Icon** 元素下方。
 
 ```xml
 <Group id="contosoCustomTab.grp1">
@@ -66,7 +66,7 @@ ms.locfileid: "57098744"
 
 ### <a name="officecontrol"></a>OfficeControl
 
-可选，但如果不存在，则必须至少有一个 **Control**。 在包含元素的组中Office一个或多个内置控件 `<OfficeControl>` 。 `id`属性指定内置控件Office ID。 若要查找控件的 ID，请参阅查找控件[和控件组的 ID。](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) 清单中的 **Control** 和 **OfficeControl** 顺序是可互换的，如果有多个元素，则它们可以相互组成，但所有元素都必须位于 **Icon** 元素下面。
+可选，但如果不存在，则必须至少有一个 **Control**。 在包含元素的组中Office一个或多个内置控件 `<OfficeControl>` 。 `id`属性指定内置控件Office ID。 若要查找控件的 ID，请参阅查找控件[和控件组的 ID。](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) 清单中的 **Control** 和 **OfficeControl** 顺序是可互换的，如果有多个元素，则它们可以相互组成，但所有元素都必须位于 **Icon** 元素下方。
 
 > [!NOTE]
 > 此子元素在加载项中Outlook支持。

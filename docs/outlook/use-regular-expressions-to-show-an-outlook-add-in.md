@@ -3,16 +3,16 @@ title: 使用正则表达式激活规则显示加载项
 description: 了解如何为 Outlook 上下文加载项使用正则表达式激活规则。
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 722de040116e967f3baa97858480ad10e787794f766b334c9132cdb64451662b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d334ba6b2e0f044fc8d876cd6edd218743ccb390
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085233"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937009"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>使用正则表达式激活规则显示 Outlook 外接程序
 
-可以将正则表达式规则指定为在邮件的特定字段中找到匹配项时激活[上下文外接程序](contextual-outlook-add-ins.md)。 上下文外接程序仅在阅读模式下激活，Outlook 不会在用户撰写某个项目时激活上下文外接程序。 还有其他一些情况Outlook激活外接程序，例如，数字签名项目。 有关详细信息，请参阅 [Outlook 外接程序的激活规则](activation-rules.md)。
+可以将正则表达式规则指定为在邮件的特定字段中找到匹配项时激活[上下文外接程序](contextual-outlook-add-ins.md)。 上下文外接程序仅在阅读模式下激活，Outlook 不会在用户撰写某个项目时激活上下文外接程序。 还有其他一些情况，Outlook无法激活外接程序，例如，数字签名项目。 有关详细信息，请参阅 [Outlook 外接程序的激活规则](activation-rules.md)。
 
 你可以将正则表达式指定为外接程序 XML 清单中的 [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) 规则或 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 规则的一部分。 在 [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity) 扩展点中指定了这些规则。
 

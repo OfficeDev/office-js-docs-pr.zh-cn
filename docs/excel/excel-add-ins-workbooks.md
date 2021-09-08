@@ -5,15 +5,15 @@ ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
 ms.openlocfilehash: ed63337aad322762019e8a51e3f1cc1c202db210
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868720"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936469"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
-本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作簿执行常见任务。 有关对象支持的属性和方法的完整列表，请参阅 `Workbook` Workbook Object [ (JavaScript API for Excel) 。 ](/javascript/api/excel/excel.workbook) 此外，本文还介绍了通过 [Application](/javascript/api/excel/excel.application) 对象执行的工作簿级别的操作。
+本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作簿执行常见任务。 有关对象支持的属性和方法的完整列表，请参阅 `Workbook` Workbook Object [ (JavaScript API for Excel) ](/javascript/api/excel/excel.workbook)。 此外，本文还介绍了通过 [Application](/javascript/api/excel/excel.application) 对象执行的工作簿级别的操作。
 
 Workbook 对象是加载项与 Excel 交互的入口点。 它用于维护工作表、表、数据透视表等的集合，通过这些集合可以访问并更改 Excel 数据。 加载项可以通过 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) 对象访问单个工作表内的所有工作簿数据。 具体来说，加载项可以借助它添加工作表、在工作表间导航并向工作表分配处理程序。 [使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md)一文介绍了如何访问并编辑工作表。
 

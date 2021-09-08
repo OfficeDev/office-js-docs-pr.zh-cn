@@ -3,18 +3,18 @@ title: 验证 Outlook 加载项标识令牌
 description: Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你信任此请求之前，必须验证该令牌以确保它来自预期的 Exchange 服务器。
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: d70b03478cea6eb6f517d44f91d73677ba1ab3f4d702840cb05b5cc628dfa62f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ba499fa2ece03a326eabb1a48bb19e33c3feea94
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092332"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936700"
 ---
 # <a name="validate-an-exchange-identity-token"></a>验证 Exchange 标识令牌
 
 Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你信任此请求之前，必须验证该令牌以确保它来自预期的 Exchange 服务器。 Exchange 用户标识令牌均为 JSON Web 令牌 (JWT)。 [RFC 7519 JSON Web 令牌 (JWT)](https://www.rfc-editor.org/rfc/rfc7519.txt) 中介绍了验证 JWT 所需的步骤。
 
-建议使用四个步骤验证标识令牌并获取用户的唯一标识符。 首先，从 base64 URL 编码的字符串中提取 JSON Web 令牌 (JWT)。 然后，确保该令牌格式正确、它是用于 Outlook 外接程序的令牌、它未过期且你可以提取身份验证元数据文档的有效 URL。 接下来，从 Exchange 服务器中检索身份验证元数据文档并验证附加到标识令牌的签名。 最后，通过连接用户的 EXCHANGE ID 和身份验证元数据文档的 URL 来计算用户的唯一标识符。
+建议使用四个步骤验证标识令牌并获取用户的唯一标识符。 首先，从 base64 URL 编码的字符串中提取 JSON Web 令牌 (JWT)。 然后，确保该令牌格式正确、它是用于 Outlook 外接程序的令牌、它未过期且你可以提取身份验证元数据文档的有效 URL。 接下来，从 Exchange 服务器中检索身份验证元数据文档并验证附加到标识令牌的签名。 最后，将用户的 ID 与身份验证元数据文档的 URL Exchange，计算用户的唯一标识符。
 
 ## <a name="extract-the-json-web-token"></a>提取 JSON Web 令牌
 
@@ -102,14 +102,14 @@ Outlook 加载项可以向你发送 Exchange 用户标识令牌，但是在你�
 
 ## <a name="compute-the-unique-id-for-an-exchange-account"></a>计算 Exchange 帐户的唯一 ID
 
-可以通过将身份验证元数据文档 URL 与Exchange标识符相连接，为 Exchange 创建唯一标识符。 如果你拥有此唯一标识符，则可以使用它为 Outlook 加载项 Web 服务创建单一登录 (SSO) 系统。 有关将此唯一标识符用于 SSO 的详细信息，请参阅[对具有 Exchange 标识令牌的用户进行身份验证](authenticate-a-user-with-an-identity-token.md)。
+可以通过将身份验证元数据文档 URL 与帐户的 Exchange 标识符连接，为 Exchange 帐户创建唯一标识符。 如果你拥有此唯一标识符，则可以使用它为 Outlook 加载项 Web 服务创建单一登录 (SSO) 系统。 有关将此唯一标识符用于 SSO 的详细信息，请参阅[对具有 Exchange 标识令牌的用户进行身份验证](authenticate-a-user-with-an-identity-token.md)。
 
 ## <a name="use-a-library-to-validate-the-token"></a>使用库验证令牌
 
-有许多库可以执行常规 JWT 解析和验证。 Microsoft 提供了 `System.IdentityModel.Tokens.Jwt` 可用于验证用户标识Exchange库。
+有许多库可以执行常规 JWT 解析和验证。 Microsoft 提供了 `System.IdentityModel.Tokens.Jwt` 可用于验证用户Exchange令牌的库。
 
 > [!IMPORTANT]
-> 我们不再建议使用 Exchange Web 服务托管 API，因为 Microsoft.Exchange.WebServices.Auth.dll（尽管仍然可用）现已过时，并且依赖于不受支持库（如 Microsoft.IdentityModel.Extensions.dll）。
+> 我们不再建议使用 Exchange Web 服务托管 API，因为 Microsoft.Exchange.WebServices.Auth.dll 虽然仍然可用，但现在已过时，并且依赖于不受支持库（如 Microsoft.IdentityModel.Extensions.dll）。
 
 ### <a name="systemidentitymodeltokensjwt"></a>System.IdentityModel.Tokens.Jwt
 

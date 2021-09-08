@@ -3,12 +3,12 @@ title: 清单文件中的 Dictionary 元素
 description: 定义可实现其他字典支持的任务窗格外接程序的设置。
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: f22c30d7a04e9e51e99d86932b783ad0228ac19ab6bc5d09a0043a5f1046131e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 89f9327fa640c4248e733a602c44be76d87bd841
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089333"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937324"
 ---
 # <a name="dictionary-element"></a>Dictionary 元素
 

@@ -4,11 +4,11 @@ description: 了解 Excel JavaScript API 如何允许外接程序向工作簿中
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 188abed325a432023ee78c42a04f875f1b7f1ec8
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868643"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937162"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>向特定 Excel 范围添加数据验证
 

@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: 在不使用任务窗格Excel自定义函数对用户进行身份验证。
 title: 无 UI 自定义函数的身份验证
 localization_priority: Normal
-ms.openlocfilehash: d39d31d2a54cafc6829482451dcbdb5c5b764b968dc1c0e03be77a72fe1e12f1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 94eadd343f969e6dbd83881764fac936acf0704b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079779"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937142"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>无 UI 自定义函数的身份验证
 
