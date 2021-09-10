@@ -1,33 +1,33 @@
 ---
 title: 适用于 Outlook Mobile 的 Outlook 外接程序
-description: Outlook所有 Microsoft 365商业帐户、Outlook.com 帐户都支持移动外接程序，并且即将推出对 gmail 帐户的支持。
-ms.date: 05/27/2020
+description: Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。
+ms.date: 09/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e4f44d36f6dab5841d249e3754e78c5dd7a3813e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.openlocfilehash: acde42dd9ada88d60a811edf53ca0247f98e5519
+ms.sourcegitcommit: 02ffcff39bf1726893651dcd9ef609b0492851d7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938500"
+ms.lasthandoff: 09/10/2021
+ms.locfileid: "58971015"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>适用于 Outlook Mobile 的外接程序
 
 现在，外接程序在 Outlook Mobile 上可用，它们使用适用于其他 Outlook 终结点的相同 API。如果已经生成适用于 Outlook 的外接程序，那么则可以很轻松地在 Outlook Mobile 上使用该外接程序。
 
-Outlook所有商业帐户、Outlook.com 帐户Microsoft 365移动外接程序，并且即将对 Gmail 帐户提供支持。
+Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但是，当前不支持 Gmail 帐户。
 
 **iOS 版 Outlook 中的任务窗格示例**
 
-![iOS 上任务窗格中Outlook屏幕截图。](../images/outlook-mobile-addin-taskpane.png)
+![iOS 上 Outlook任务窗格的屏幕截图。](../images/outlook-mobile-addin-taskpane.png)
 
 <br/>
 
 **Android 版 Outlook 中的任务窗格示例**
 
-![Android 上 Outlook任务窗格的屏幕截图。](../images/outlook-mobile-addin-taskpane-android.png)
+![Android 版中任务窗格Outlook屏幕截图。](../images/outlook-mobile-addin-taskpane-android.png)
 
 > [!IMPORTANT]
-> 外接程序在移动浏览器中的新式 Outlook中不起作用。 有关详细信息，请参阅Outlook[升级移动浏览器上的浏览器。](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)
+> 外接程序在移动浏览器中的新式 Outlook中不起作用。 有关详细信息，请参阅Outlook[浏览器上的升级。](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)
 
 ## <a name="whats-different-on-mobile"></a>在移动电话上会有什么不同？
 
@@ -69,7 +69,7 @@ Outlook所有商业帐户、Outlook.com 帐户Microsoft 365移动外接程序，
 
 在加载项正常运行后，请务必在不同尺寸的屏幕（包括电话和平板电脑）上测试加载项。应确保加载项符合与对比度、字号和颜色有关的辅助功能准则，并且还适用于屏幕阅读器（如 iOS 上的 VoiceOver 或 Android 上的 TalkBack）。
 
-在移动设备上进行故障排除可能很难，因为您可能没有习惯使用的工具。 但是，在 iOS 上进行疑难解答的一个选项是使用 Fiddler (查看本教程中有关将 Fiddler 与 [iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices) 设备) 。
+在移动设备上进行故障排除可能很难，因为您可能没有习惯使用的工具。 但是，在 iOS 上进行疑难解答的一个选项是使用 Fiddler (查看本教程中有关将 Fiddler 与 [iOS 设备](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)) 。
 
 ## <a name="next-steps"></a>后续步骤
 
