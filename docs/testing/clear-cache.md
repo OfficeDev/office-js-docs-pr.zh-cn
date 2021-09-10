@@ -3,16 +3,16 @@ title: 清除 Office 缓存
 description: 了解如何清除计算机上的 Office 缓存。
 ms.date: 08/02/2021
 localization_priority: Priority
-ms.openlocfilehash: 93f6a851ffc0813cc3a6bc6acedddfb000accc36fc50c9cc11fba37faacc0e58
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2c08cb1c83657c685b069dc13b3bf1a7e6b7de09
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57083628"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936884"
 ---
 # <a name="clear-the-office-cache"></a>清除 Office 缓存
 
-你可以通过清除计算机上的 Office 缓存来删除以前在 Windows、Mac 或 iOS 上旁加载的加载项。
+你需要清除计算机上的 Office 缓存来删除以前在 Windows、Mac 或 iOS 上旁加载的加载项。
 
 此外，如果你对加载项的清单进行了更改（例如，更新图标的文件名或加载项命令的文本），则应清除 Office 缓存，然后使用更新后的清单重新旁加载此加载项。执行此操作后，Office 将按照更新清单中所述的方式呈现该加载项。
 
@@ -21,7 +21,7 @@ ms.locfileid: "57083628"
 
 ## <a name="clear-the-office-cache-on-windows"></a>清除 Windows 上的 Office 缓存
 
-如果要从 Excel、Word 和 PowerPoint 中删除所有旁加载的加载项，请删除以下文件夹的内容：
+如果要从 Excel、Word 和 PowerPoint 中删除所有旁加载的加载项，请删除以下文件夹的内容。
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
@@ -53,11 +53,11 @@ ms.locfileid: "57083628"
 
 5. 选择加载项名称以将调试器连接到加载项。 当调试器连接到加载项时，将打开一个新的“Microsoft Edge 开发工具”窗口。
 
-6. 在新窗口的“**网络**”选项卡上，选择“**清除缓存**”按钮。
+6. 在新窗口的“**网络**”选项卡上，选择“**清除缓存**”。
 
     ![Microsoft Edge 开发工具屏幕截图，其中突出显示了“清除缓存”按钮。](../images/edge-devtools-clear-cache.png)
 
-7. 如果完成这些步骤后未获得想要的结果，还可以选择“**始终从服务器中刷新**”按钮。
+7. 如果完成这些步骤后未获得想要的结果，请尝试选择“**始终从服务器中刷新**”。
 
     ![Microsoft Edge 开发工具屏幕截图，其中突出显示了“始终从服务器中刷新”按钮。](../images/edge-devtools-refresh-from-server.png)
 
@@ -67,10 +67,11 @@ ms.locfileid: "57083628"
 
 ## <a name="clear-the-office-cache-on-ios"></a>清除 iOS 上的 Office 缓存
 
-若要清除 iOS 上的 Office 缓存，请从加载项中的 JavaScript 调用 `window.location.reload(true)` 以强制重新加载。 或者，可以重新安装 Office。
+若要清除 iOS 上的 Office 缓存，请从加载项中的 JavaScript 调用 `window.location.reload(true)` 以强制重新加载。 或者，重新安装 Office。
 
 ## <a name="see-also"></a>另请参阅
 
+- [排查 Office 加载项中的开发错误](troubleshoot-development-errors.md)
 - [调试 Office 加载项](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 - [使用运行时日志记录功能调试加载项](runtime-logging.md)
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
