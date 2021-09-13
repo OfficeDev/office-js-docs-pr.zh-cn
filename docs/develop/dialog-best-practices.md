@@ -1,21 +1,21 @@
 ---
 title: Office 对话框 API 最佳做法和规则
-description: '提供适用于 SPA 应用程序Office API 的规则和最佳做法，例如 SPA (应用程序) '
+description: '提供适用于 SPA 对话框 API 的Office最佳实践，例如 SPA 应用程序中单页应用程序 (最佳实践) '
 ms.date: 07/22/2021
-localization_priority: Normal
-ms.openlocfilehash: eef26157381303c67939f4ad33d2054f482bd07a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 46d990488f635aa0918380833a4221daafcae5ce
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937873"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148860"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
 本文提供 Office 对话框 API 的规则、链和最佳做法，包括在单页应用程序 (SPA 应用程序中设计对话框 UI 和使用 API 的最佳实践) 
 
 > [!NOTE]
-> 本文假定你熟悉使用 Office 对话框 API 的基础知识，如在 Office 加载项中使用 Office 对话框[API 中所述](dialog-api-in-office-add-ins.md)。
+> 本文假定你熟悉使用 Office 对话框 API 的基础知识，如在 Office 外接程序中使用 Office 对话框[API 中所述](dialog-api-in-office-add-ins.md)。
 > 
 > 另请参阅[处理错误和事件与Office对话框](dialog-handle-errors-events.md)。
 
@@ -26,10 +26,10 @@ ms.locfileid: "58937873"
 - 主机窗口（可以是任务窗格或外接程序命令的无 UI 函数[](../reference/manifest/functionfile.md)文件）一次只能打开一个对话框。
 - 对话框中Office两个 API：
   - [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_)函数。
-  - `Office.context.requirements.isSetSupported` (有关详细信息，请参阅指定 Office[应用程序和 API](specify-office-hosts-and-api-requirements.md)要求 。) 
+  - `Office.context.requirements.isSetSupported` (有关详细信息，请参阅指定Office[应用程序和 API](specify-office-hosts-and-api-requirements.md)要求 。) 
 - 通常，应该从与加载项本身完全相同的域中的页面调用 [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) 函数，但这不是强制性的。 有关详细信息，请参阅[向主机运行时间跨域消息传递](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)。
 
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳实践
 
 ### <a name="avoid-overusing-dialog-boxes"></a>避免过度使用对话框
 
@@ -55,7 +55,7 @@ Office 会自动向传递给 `_host_info` 的 URL 添加查询参数 `displayDia
 
 ### <a name="open-another-dialog-immediately-after-closing-one"></a>在关闭另一个对话框后立即打开另一个对话框
 
-不能从给定主机页打开多个对话框，因此代码应在打开的对话框中调用 [Dialog.close，](/javascript/api/office/office.dialog#close__) 然后再调用以打开另一 `displayDialogAsync` 个对话框。 `close`方法是异步的。 因此，如果在调用 后立即调用 ，则当尝试打开第二个对话框Office第一个 `displayDialogAsync` `close` 对话框可能未完全关闭。 如果发生这种情况，Office返回[12007](dialog-handle-errors-events.md#12007)错误："操作失败，因为此外接程序已具有活动对话框。"
+不能从给定主机页打开多个对话框，因此代码应在打开的对话框中调用 [Dialog.close，](/javascript/api/office/office.dialog#close__) 然后再调用以打开另一 `displayDialogAsync` 个对话框。 `close`方法是异步的。 因此，如果在调用 后立即调用 ，则第一个对话框在尝试打开第二个对话框Office `displayDialogAsync` `close` 可能未完全关闭。 如果发生这种情况，Office返回[12007](dialog-handle-errors-events.md#12007)错误："操作失败，因为此外接程序已具有活动对话框。"
 
 方法不接受回调参数，并且不会返回 Promise 对象，因此无法使用关键字或 `close` `await` 方法等待 `then` 该对象。 出于此原因，建议在关闭对话框后立即打开新对话框时采用以下技术：封装代码以在方法中打开新对话框，并设计方法，以在 调用 返回 时以递归方式调用 `displayDialogAsync` 自身 `12007` 。 示例如下。
 
@@ -123,7 +123,7 @@ function openFirstDialog() {
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>有关 SBA 和 Office 对话框 API 的问题
 
-The Office dialog box is in a new window with its own instance of the JavaScript engine， and and hence it's own complete execution context. 如果传递路由，则基本页面及其所有初始化和引导代码将在此新上下文中再次运行，并且任何变量都设置为对话框中的初始值。 因此，此技术在"框"窗口中下载并启动应用程序的第二个实例，这部分抵消了 SPA 的用途。 此外，在对话框窗口中更改变量的代码不会更改相同变量的任务窗格版本。 同样，对话框窗口具有其自己的会话存储 ([Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性) ，这无法从任务窗格中的代码访问。 对话框和被调用的主机页看起来与服务器 `displayDialogAsync` 有两个不同的客户端。  (有关主机页的提醒， [请参阅从主机](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)页 .) 
+the Office dialog box is in a new window with its own instance of the JavaScript engine， and and hence it's own complete execution context. 如果传递路由，则基本页面及其所有初始化和引导代码将在此新上下文中再次运行，并且任何变量都设置为对话框中的初始值。 因此，此技术在"框"窗口中下载并启动应用程序的第二个实例，这部分抵消了 SPA 的用途。 此外，在对话框窗口中更改变量的代码不会更改相同变量的任务窗格版本。 同样，对话框窗口具有其自己的会话存储 ([Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性) ，这无法从任务窗格中的代码访问。 对话框和被调用的主机页看起来与服务器 `displayDialogAsync` 有两个不同的客户端。  (有关主机页的提醒， [请参阅从主机](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)页 .) 
 
 因此，如果将路由传递给方法，则实际上没有 SPA;你将具有同一 SPA 的两 `displayDialogAsync` *个实例*。 此外，任务窗格实例中的大部分代码绝不会用于该实例，并且对话框实例中的大部分代码绝不会用于该实例中。 这相当于相同捆绑包中拥有两个 SPA。
 

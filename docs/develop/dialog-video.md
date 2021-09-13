@@ -2,13 +2,13 @@
 title: 使用 Office 对话框播放视频
 description: 了解如何在"开始"对话框中打开Office视频
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 4704b31cb698e2986360e5aff692ed6469fd0eb5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4765c9d549bfcc52315420342bf99ec88fdebf24
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938940"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149509"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>使用Office对话框显示视频
 

@@ -1,14 +1,14 @@
 ---
 title: 在 Office 网页版中旁加载 Office 加载项进行测试
-description: 在Office加载中Office web 版外接程序。
+description: 在Office旁加载Office web 版外接程序。
 ms.date: 08/02/2021
-localization_priority: Normal
-ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4e0f4b1f9fcdad6b0e4e9d3eb387c9322d240581
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936600"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149429"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
@@ -16,16 +16,16 @@ ms.locfileid: "58936600"
 
 旁加载外接程序时，外接程序的清单存储在浏览器的本地存储中，因此，如果您清除浏览器的缓存或切换到其他浏览器，您必须再次旁加载外接程序。
 
-旁加载因主机应用程序而异 (例如，Excel) 。
+旁加载因主机应用程序 (，例如，Excel) 。
 
 > [!NOTE]
-> 如本文所述，在 Excel、OneNote、PowerPoint 和 Word 上支持旁加载。 若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](../outlook/sideload-outlook-add-ins-for-testing.md)。
+> 如本文中所述，旁加载在 Excel、OneNote、PowerPoint 和 Word 上受支持。 若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](../outlook/sideload-outlook-add-ins-for-testing.md)。
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>在 Office 网页版中旁加载 Office 加载项
 
-此过程仅支持 **Excel、OneNote、PowerPoint****和 Word。**  有关其他主机应用程序，请参阅以下部分中的手动旁加载说明。 此示例项目假定你正在使用使用[Yeoman](https://github.com/OfficeDev/generator-office)生成器为加载项创建Office项目。
+此过程仅支持 **Excel、OneNote、PowerPoint** 和 **Word。**  有关其他主机应用程序，请参阅以下部分中的手动旁加载说明。 此示例项目假定你正在使用使用[Yeoman](https://github.com/OfficeDev/generator-office)生成器为加载项创建Office项目。
 
-1. 打开[Office web 版](https://office.live.com/)。 使用"**创建"** 选项，在"新建Excel、OneNote、PowerPoint或 Word **中****创建文档**。  在此新文档中，选择功能 **区** 中的"共享"，选择" **复制链接**"，然后复制 URL。
+1. 打开[Office web 版](https://office.live.com/)。 使用"**创建"** 选项，在"新建Excel、OneNote、PowerPoint **或 Word****中** 创建文档。  在此新文档中，选择功能 **区** 中的"共享"，选择" **复制链接**"，然后复制 URL。
 
 1. 在 yo office 项目文件的根目录中，打开 **package.json** 文件。 在此 **文件的"配置** "部分，创建 `"document"` 一个属性。 粘贴您复制的 URL 作为属性的值 `"document"` 。 例如，你的将如下所示：
 
@@ -54,15 +54,15 @@ ms.locfileid: "58936600"
 
 1. 已安装您的外接程序。 如果是加载项命令，它应显示在功能区或上下文菜单上。 如果是任务窗格加载项，应显示任务窗格。
 
-## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>在加载项Office旁加载Office web 版加载项
+## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>手动Office加载项旁Office web 版加载项
 
-此方法不使用命令行，只能在主机应用程序（如 Excel) ）内使用命令 (实现。
+此方法不使用命令行，只能在主机应用程序（如 (）内使用命令Excel) 。
 
-1. 打开[Office web 版](https://office.live.com/)。 在"文档"Excel、Word 或 **PowerPoint****中打开文档**。  在"**外接程序**"部分的功能区上的"插入"选项卡上，Office **外接程序"。**
+1. 打开[Office web 版](https://office.live.com/)。 在文档 **、Excel、Word** 或 PowerPoint **中打开** 文档。 在"**外接程序**"部分的功能区上的"插入"选项卡上，Office **外接程序"。**
 
 1. 在 **"Office** 加载项"对话框中，选择"**我的** 加载项"选项卡，选择"管理我的加载项"，Upload"**我的加载项"。**
 
-    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
+    ![the Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
 
 1. **转到** 加载项清单文件，再选择“上传”。
 
@@ -83,7 +83,7 @@ ms.locfileid: "58936600"
 
 ## <a name="sideload-an-add-in-when-using-visual-studio"></a>使用 Visual Studio 时旁加载加载项
 
-如果你使用 Visual Studio 开发外接程序，则旁加载的过程类似于手动旁加载到 Web。 唯一的区别是，必须更新清单中 **SourceURL** 元素的值以包含部署加载项位置的完整 URL。
+如果你使用 Visual Studio 开发外接程序，旁加载的过程类似于手动旁加载到 Web。 唯一的区别是，必须更新清单中 **SourceURL** 元素的值以包含部署加载项位置的完整 URL。
 
 > [!NOTE]
 > 虽然可以将加载项从 Visual Studio 旁加载到 Office 网页版，但无法从 Visual Studio 调试它们。 若要进行调试，需要使用浏览器调试工具。 有关详细信息，请参阅[在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)。
@@ -99,7 +99,7 @@ ms.locfileid: "58936600"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的外接程序
 
-可以通过清除浏览器的缓存来删除以前旁加载的外接程序。 如果您更改外接程序的清单 (例如，更新图标的文件名或外接程序命令文本) ，您可能需要清除浏览器的缓存，然后使用更新后的清单重新旁加载外接程序。 这样做将Office web 版更新后的清单中所述呈现外接程序。
+可以通过清除浏览器的缓存来删除以前旁加载的外接程序。 如果您更改外接程序的清单 (例如，更新图标的文件名或外接程序命令) 的文本，您可能需要清除浏览器的缓存，然后使用更新后的清单重新旁加载外接程序。 这样做将Office web 版更新后的清单中所述呈现外接程序。
 
 ## <a name="see-also"></a>另请参阅
 

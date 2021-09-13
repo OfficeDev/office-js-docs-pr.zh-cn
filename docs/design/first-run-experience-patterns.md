@@ -2,13 +2,13 @@
 title: Office 外接程序的首次运行体验模式
 description: 了解在外接程序中设计首次运行体验Office最佳做法。
 ms.date: 07/08/2018
-localization_priority: Normal
-ms.openlocfilehash: cd268e227f6d4c6cc5aae5c954a39e0c19315330
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: a89fb53a0693c4a7f6da49713413986f10584514
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937226"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149365"
 ---
 # <a name="first-run-experience-patterns"></a>首次运行体验模式
 
@@ -34,15 +34,15 @@ ms.locfileid: "58937226"
 
 *图 1.允许用户前进或跳过木马流的开始页面*
 
-![插图显示桌面应用程序任务窗格首次运行体验中的Office 1。 本示例中，任务窗格的右上方包含"跳过"操作。](../images/add-in-FRE-step-1.png)
+![插图显示桌面应用程序任务窗格首次运行体验中的轮Office的第 1 步。 本示例中，任务窗格的右上方包含"跳过"操作。](../images/add-in-FRE-step-1.png)
 
 *图 2.将可播放的屏幕数最小化为仅有效传达消息所需的内容*
 
-![插图显示桌面应用程序任务窗格首次运行体验中的Office 2。 本示例中，任务窗格中有 3 个可播放的屏幕。](../images/add-in-FRE-step-2.png)
+![插图显示桌面应用程序任务窗格首次运行体验中的轮Office的第 2 步。 本示例中，任务窗格中有 3 个可播放的屏幕。](../images/add-in-FRE-step-2.png)
 
 *图 3.提供明确的行动号召以退出首次运行体验*
 
-![插图显示桌面应用程序任务窗格首次运行体验中的Office 3。 本示例中，任务窗格的第三个（即最后一个）屏幕显示一个开始按钮。](../images/add-in-FRE-step-3.png)
+![插图显示桌面应用程序任务窗格首次运行体验中的Office 3 步。 本示例中，任务窗格的第三个（即最后一个）屏幕显示一个开始按钮。](../images/add-in-FRE-step-3.png)
 
 ## <a name="value-placemat"></a>值占位图片
 

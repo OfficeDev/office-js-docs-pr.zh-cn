@@ -2,13 +2,13 @@
 title: 清单文件中的 CustomTab 元素
 description: 在功能区上，可以为它们的外接程序命令指定使用哪种选项卡和组。
 ms.date: 09/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 642b6eabaa9885041dd122b179ee2baa3e772977
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f8cdcd2c1a1e567f36d9d146ed4806b13d400dfe
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936692"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149581"
 ---
 # <a name="customtab-element"></a>CustomTab 元素
 
@@ -26,10 +26,10 @@ ms.locfileid: "58936692"
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [Group](group.md)      | 否 |  定义一组命令。  |
-|  [OfficeGroup](#officegroup)      | 否 |  表示控件组的Office控件组。 **重要** 提示：在Outlook。 |
+|  [OfficeGroup](#officegroup)      | 否 |  代表内置控件Office组。 **重要** 提示：在Outlook。 |
 |  [Label](#label-tab)      | 是 |  CustomTab 或组的标签。  |
 |  [InsertAfter](#insertafter)      | 否 |  指定自定义选项卡应紧接在指定的内置选项卡之后。Office：仅在 PowerPoint。  |
-|  [InsertBefore](#insertbefore)      | 否 |  指定自定义选项卡应紧接在指定的内置选项卡Office之前。重要说明：仅在 PowerPoint。  |
+|  [InsertBefore](#insertbefore)      | 否 |  指定自定义选项卡应紧接在指定的内置选项卡Office之前。重要 **说明：仅在** PowerPoint。 |
 
 ### <a name="group"></a>组
 
@@ -37,14 +37,14 @@ ms.locfileid: "58936692"
 
 ### <a name="officegroup"></a>OfficeGroup
 
-可选，但如果不存在，则必须至少有一 **个 Group** 元素。 表示控件组的Office控件组。 **id** 属性指定内置组Office ID。 若要查找内置组的 ID，请参阅查找控件和[控件组的 ID。](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) 清单中 **Group** 和 **OfficeGroup** 的顺序应为您希望它们显示在自定义选项卡上的顺序。如果有多个元素，则它们可以同时存在，但所有元素都必须在 **Label 元素** 之上。
+可选，但如果不存在，则必须至少有一 **个 Group** 元素。 代表内置控件Office组。 **id** 属性指定内置组Office ID。 若要查找内置组的 ID，请参阅查找控件和[控件组的 ID。](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) 清单中 **Group** 和 **OfficeGroup** 的顺序应为您希望它们显示在自定义选项卡上的顺序。如果有多个元素，则它们可以同时存在，但所有元素都必须在 **Label 元素** 之上。
 
 > [!IMPORTANT]
 > `OfficeGroup`元素在 Outlook 中不可用。
 
 ### <a name="label-tab"></a>标签（选项卡）
 
-必填。 自定义选项卡的标签。**resid** 属性的长度不能超过 32 个字符，并且必须设置为 **ShortStrings** 元素（位于 [Resources](resources.md)元素）中 **String** 元素的 **id** 属性的值。
+必需。 自定义选项卡的标签。**resid** 属性的长度不能超过 32 个字符，并且必须设置为 **ShortStrings** 元素（位于 [Resources](resources.md)元素）中 **String** 元素的 **id** 属性的值。
 
 ### <a name="insertafter"></a>InsertAfter
 

@@ -2,13 +2,13 @@
 title: 从Excel调用 JavaScript API
 description: 了解Excel函数调用哪些 JavaScript API。
 ms.date: 08/30/2021
-localization_priority: Normal
-ms.openlocfilehash: 93b0c1a792c752102359b31b8baa808182c29c46
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 83d2e488d56fb9ab3e97b87160c71f44da2f8371
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937651"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149287"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>从Excel调用 JavaScript API
 
@@ -24,7 +24,7 @@ ms.locfileid: "58937651"
 
 若要从Excel调用 JavaScript API，首先需要上下文。 使用[Excel。获取上下文的 RequestContext](/javascript/api/excel/excel.requestcontext)对象。 然后，使用上下文调用工作簿中所需的 API。
 
-下面的代码示例演示如何使用 从工作簿 `Excel.RequestContext` 的单元格获取值。 在此示例中，参数 `address` 将传递到 JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) Excel中，并且必须以字符串形式输入。 例如，在用户界面中输入的Excel函数必须遵循 模式，其中 是从中检索值的 `=CONTOSO.GETRANGEVALUE("A1")` `"A1"` 单元格的地址。
+下面的代码示例演示如何使用 从工作簿 `Excel.RequestContext` 的单元格获取值。 在此示例中，参数 `address` 将传递到 JavaScript API [Worksheet.getRange Excel中，](/javascript/api/excel/excel.worksheet#getRange_address_)并且必须以字符串形式输入。 例如，在用户界面中输入的Excel函数必须遵循 模式，其中 是单元格的地址，从中检索 `=CONTOSO.GETRANGEVALUE("A1")` `"A1"` 值。
 
 ```JavaScript
 /**
@@ -48,7 +48,7 @@ async function getRangeValue(address) {
 
 ## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>通过自定义函数Excel JavaScript API 的限制
 
-不要从更改Excel环境自定义函数调用 JavaScript Excel。 这意味着自定义函数不应执行下列任何操作：
+不要从更改Excel环境自定义函数调用 JavaScript EXCEL。 这意味着自定义函数不应执行下列任何操作：
 
 - 在电子表格中插入、删除或设置单元格的格式。
 - 更改另一个单元格的值。

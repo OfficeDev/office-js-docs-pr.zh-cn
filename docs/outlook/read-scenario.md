@@ -2,13 +2,13 @@
 title: 创建适用于阅读窗体的 Outlook 加载项
 description: 阅读加载项是在 Outlook 中的阅读窗格或阅读检查器中激活的 Outlook 加载项。
 ms.date: 03/19/2021
-localization_priority: Priority
-ms.openlocfilehash: f84c0d5252f2cf728397965d9414df2ee5070444
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 1bc65c64d0076a9a3b60aac3a18c950acff048d2
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939060"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149491"
 ---
 # <a name="create-outlook-add-ins-for-read-forms"></a>创建适用于阅读窗体的 Outlook 加载项
 

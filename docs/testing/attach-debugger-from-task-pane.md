@@ -2,13 +2,13 @@
 title: 从任务窗格附加调试器
 description: 了解如何从任务窗格附加调试器
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 930c5db7a9e1a0499a759d70e0bc94e64c5b7ae5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ea4aab7422edac4903da593c414c3086233d14bb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938565"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149222"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>从任务窗格附加调试器
 
@@ -24,7 +24,7 @@ ms.locfileid: "58938565"
 
 选择“**附加调试器**”。此操作将启动“**Visual Studio 实时调试器**”对话框，如下图所示。
 
-![JIT Visual Studio对话框的屏幕截图。](../images/visual-studio-debugger.png)
+!["JIT Visual Studio"对话框的屏幕截图。](../images/visual-studio-debugger.png)
 
 Visual Studio 中的“解决方案资源管理器”**** 会显示代码文件。   可以在要使用 Visual Studio 调试的代码行处设置断点。
 

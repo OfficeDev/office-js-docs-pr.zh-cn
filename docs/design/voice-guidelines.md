@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的语音准则
-description: 了解编写适用于加载项的用户帮助Office字符串的最佳实践。
+description: 了解编写适用于加载项的用户帮助和其他字符串Office最佳做法。
 ms.date: 07/08/2019
-localization_priority: Normal
-ms.openlocfilehash: 5bfc671d2462ef2c0b9eaba967744094b512965a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 2fb96b70c1a5319c4dcefd99bc982c6db50d8812
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939338"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149174"
 ---
 # <a name="voice-guidelines"></a>语音准则
 

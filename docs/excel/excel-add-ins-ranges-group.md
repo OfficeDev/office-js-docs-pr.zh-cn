@@ -3,13 +3,13 @@ title: 使用 JavaScript API Excel组范围
 description: 了解如何将一个范围的行或列组合在一起，以使用 JavaScript API Excel大纲。
 ms.date: 04/05/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 41a5bad5013378257287602d5131f1ac07130cf7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9ec3f9e23f5099c703fbbf53fdc6fbb800acba6d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938320"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149265"
 ---
 # <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>使用 JavaScript API 的大纲Excel区域
 
@@ -21,7 +21,7 @@ ms.locfileid: "58938320"
 
 大纲可以具有层次结构，其中较小的组嵌套在较大的组下。 这允许在不同级别查看大纲。 可以通过 [Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#showOutlineLevels_rowLevels__columnLevels_) 方法以编程方式更改可见大纲级别。 请注意，Excel仅支持八个级别的大纲组。
 
-下面的代码示例为行和列创建包含两个级别的组的大纲。 后续图像显示该轮廓的分组。 在代码示例中，分组的范围不包括大纲控件的行或 (本示例的"总计") 。 组定义要折叠的项，而不是控件的行或列。
+下面的代码示例为行和列创建包含两个级别的组的大纲。 后续图像显示该轮廓的分组。 在代码示例中，分组的范围不包括大纲控件的行或列 (此示例的"总计") 。 组定义要折叠的项，而不是控件的行或列。
 
 ```js
 Excel.run(function (context) {

@@ -2,17 +2,17 @@
 title: 清单文件中的 Method 元素
 description: Method 元素指定外接程序激活Office JavaScript API Office JavaScript API 中的单个方法。
 ms.date: 03/19/2019
-localization_priority: Normal
-ms.openlocfilehash: 0e3e74a73a3422a7789e82d6f0e7a516bd795ca8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 037446f5027a97214d2b1be6ee99c8f6822b33b9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938659"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149443"
 ---
 # <a name="method-element"></a>Method 元素
 
-指定外接程序激活Office JavaScript API Office JavaScript API 中的单个方法。
+指定你的加载项激活Office JavaScript API Office JavaScript API 中的单个方法。
 
 **外接程序类型：** 内容、任务窗格
 

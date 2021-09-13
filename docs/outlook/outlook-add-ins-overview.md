@@ -3,13 +3,13 @@ title: Outlook 加载项概述
 description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。
 ms.date: 07/16/2021
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: b49a3aedc88064ec4eeb7e305192319f933abc1a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 9785effec3ba71128aacdbfc4f521fef9a433dba
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936896"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148839"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 

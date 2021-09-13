@@ -2,13 +2,13 @@
 title: 清单文件中自定义函数的 SourceLocation 元素
 description: 定义 Excel 中自定义函数所使用的 Script 或 Page 元素所需的资源的位置。
 ms.date: 08/07/2020
-localization_priority: Normal
-ms.openlocfilehash: 6001673f1954a4af2de66ff7611069c3fb402a13
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 84d5607fbb02c1925137e1a143b7715c7c87c6fa
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937451"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149583"
 ---
 # <a name="sourcelocation-element-custom-functions"></a>SourceLocation 元素 (自定义函数) 
 

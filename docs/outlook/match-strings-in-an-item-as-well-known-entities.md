@@ -2,13 +2,13 @@
 title: 将字符串作为 Outlook 加载项中的已知实体进行匹配
 description: 通过使用 Office JavaScript API，您可以获取与特定已知实体匹配的字符串，以进一步进行处理。
 ms.date: 04/15/2019
-localization_priority: Normal
-ms.openlocfilehash: 8d4b78259b771d29244641d9e3ca867018b763ef
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 636414f3e90fba9ffa78338b20f23d2bd63e4983
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937204"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148842"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>将 Outlook 项中的字符串作为已知实体进行匹配
 
@@ -151,7 +151,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 
 - 使用规则时，Outlook匹配仅采用英语的实体字符串，而不考虑清单中 `ItemHasKnownEntity` 指定的默认区域设置。
     
-- 当外接程序在富客户端Outlook时，Outlook将规则应用到项目正文的第一个兆字节，而不是超过该限制的正文的其余部分。 `ItemHasKnownEntity`
+- 当外接程序在富客户端Outlook时，Outlook将规则应用到项目正文的第一 MB，而不是超过该限制的正文的其余部分。 `ItemHasKnownEntity`
     
 - 不能使用规则为"已发送项目" `ItemHasKnownEntity` 文件夹中的项目激活外接程序。
     

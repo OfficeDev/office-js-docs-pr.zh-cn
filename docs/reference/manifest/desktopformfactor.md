@@ -2,13 +2,13 @@
 title: 清单文件中的 DesktopFormFactor 元素
 description: 指定对桌面外形规格的外接程序的设置。
 ms.date: 06/15/2021
-localization_priority: Normal
-ms.openlocfilehash: 66673d83fd8608a1ec10492d7a944b0515de61c0
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f89dff5626867258c8df93d5f047e3d08103e71b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938466"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149569"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor 元素
 

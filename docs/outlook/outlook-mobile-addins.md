@@ -1,24 +1,24 @@
 ---
 title: 适用于 Outlook Mobile 的 Outlook 外接程序
-description: Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。
+description: Outlook商业帐户和 Outlook.com 帐户Microsoft 365支持移动外接程序。
 ms.date: 09/08/2021
-localization_priority: Normal
-ms.openlocfilehash: acde42dd9ada88d60a811edf53ca0247f98e5519
-ms.sourcegitcommit: 02ffcff39bf1726893651dcd9ef609b0492851d7
+ms.localizationpriority: medium
+ms.openlocfilehash: 312e333e41dae5fa061540bec5018d4d2034b66b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2021
-ms.locfileid: "58971015"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148827"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>适用于 Outlook Mobile 的外接程序
 
 现在，外接程序在 Outlook Mobile 上可用，它们使用适用于其他 Outlook 终结点的相同 API。如果已经生成适用于 Outlook 的外接程序，那么则可以很轻松地在 Outlook Mobile 上使用该外接程序。
 
-Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但是，当前不支持 Gmail 帐户。
+Outlook商业帐户和 Outlook.com 帐户Microsoft 365支持移动外接程序。 但是，当前不支持 Gmail 帐户。
 
 **iOS 版 Outlook 中的任务窗格示例**
 
-![iOS 上 Outlook任务窗格的屏幕截图。](../images/outlook-mobile-addin-taskpane.png)
+![iOS 上任务窗格中Outlook屏幕截图。](../images/outlook-mobile-addin-taskpane.png)
 
 <br/>
 
@@ -35,7 +35,7 @@ Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但�
   - 外接程序 **必须** 遵循 [UI 准则](outlook-addin-design.md)。
   - 外接程序的方案 **必须**[能够在移动电话上实现](#what-makes-a-good-scenario-for-mobile-add-ins)。
 
-- 一般情况下，目前仅支持邮件阅读模式。 这意味着 `MobileMessageReadCommandSurface` 是唯一应在清单的移动部分中声明的[ExtensionPoint。](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) 但是，联机会议提供商集成外接程序支持约会管理器模式，这些外接程序改为声明 [MobileOnlineMeetingCommandSurface 扩展点](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface)。 有关[此Outlook，](online-meeting.md)请参阅为联机会议提供商创建移动外接程序一文。
+- 一般情况下，目前仅支持邮件阅读模式。 这意味着 `MobileMessageReadCommandSurface` 是唯一应在清单的移动部分中声明的[ExtensionPoint。](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) 但是，联机会议提供商集成外接程序支持约会管理器模式，这些外接程序改为声明 [MobileOnlineMeetingCommandSurface 扩展点](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface)。 有关[此方案Outlook，](online-meeting.md)请参阅为联机会议提供商创建移动外接程序一文。
 
 - [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) API 在移动电话上不受支持，因为移动应用使用 REST API 与服务器进行通信。如果应用后端需要连接到 Exchange 服务器，则可以使用回调令牌进行 REST API 调用。有关详细信息，请参阅[从 Outlook 外接程序使用 Outlook REST API](use-rest-api.md)。
 
@@ -61,7 +61,7 @@ Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但�
 
 **从 Android 上的电子邮件创建 Trello 卡片的用户交互示例**
 
-![动态 GIF，显示用户在 Android Outlook移动外接程序的交互。](../images/outlook-mobile-addin-interaction-android.gif)
+![动态 GIF，显示用户在 android Outlook移动外接程序的交互。](../images/outlook-mobile-addin-interaction-android.gif)
 
 ## <a name="testing-your-add-ins-on-mobile"></a>在移动电话上测试外接程序
 

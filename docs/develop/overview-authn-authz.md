@@ -2,13 +2,13 @@
 title: Office 加载项中的身份验证和授权概述
 description: 要求用户在 Web 应用程序和 Office 加载项中对登录进行身份验证。
 ms.date: 09/03/2021
-localization_priority: Priority
-ms.openlocfilehash: 9802e4cccfcd6121d654dccb8606441c597b76f9
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: fb3d541a2d98c97d925dd870a2f9ff8649e2aec1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936718"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149325"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office 加载项中的身份验证和授权概述
 

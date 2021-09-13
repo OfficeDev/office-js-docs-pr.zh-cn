@@ -1,23 +1,23 @@
 ---
 title: Office 加载项中的 Fabric Core
-description: 大致了解如何在加载项中Office Fabric Core 和 Fabric UI 组件。
+description: 大致了解如何在外接程序中Office Fabric Core 和 Fabric UI 组件。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: e8455cbdf37d80545c9e9fc957a75152db5c7841
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: cd534809bb443134e2df06de478e8283a3452aac
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936311"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149364"
 ---
 # <a name="fabric-core-in-office-add-ins"></a>Office 加载项中的 Fabric Core
 
-Fabric Core 是 CSS 类和 SASS mix 的开源集合，旨在用于非 React *Office* 外接程序。Fabric Core 包含 UI 设计Fluent的基本元素，如图标、颜色、字样和网格。 Fabric Core 与框架无关，因此可用于任何单页应用程序或任何服务器端 Web UI 框架。  (历史原因，它称为"Fabric Core"，而不是"Fluent Core"。) 
+Fabric Core 是 CSS 类和 SASS mixin 的开源集合，旨在用于非 React Office 外接程序。Fabric Core 包含 UI 设计Fluent的基本元素，如图标、颜色、字样和网格。 Fabric Core 与框架无关，因此可用于任何单页应用程序或任何服务器端 Web UI 框架。  (历史原因，它被称为"Fabric Core"，而不是"Fluent Core"。) 
 
 如果外接程序的 UI 不是基于React的，则您还可以使用一组非React组件。 请参阅[使用 Office UI Fabric JS 组件](#use-office-ui-fabric-js-components)。
 
 > [!NOTE]
-> 本文介绍 Fabric Core 在加载项Office的使用。但它还用于各种应用Microsoft 365扩展。 有关详细信息，请参阅[Fabric Core](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core)和开源存储库Office UI Fabric [Core。](https://github.com/OfficeDev/office-ui-fabric-core)
+> 本文介绍了 Fabric Core 在加载项Office的使用。但它还用于各种应用Microsoft 365扩展。 有关详细信息，请参阅[Fabric Core](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core)和开放源代码存储库[Office UI Fabric核心](https://github.com/OfficeDev/office-ui-fabric-core)。
 
 ## <a name="use-fabric-core-icons-fonts-colors"></a>使用 Fabric Core：图标、字体、颜色
 

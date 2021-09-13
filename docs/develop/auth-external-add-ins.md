@@ -2,20 +2,20 @@
 title: 在 Office 加载项中授权外部服务
 description: 获得对非 Microsoft 数据的授权，如 Google、Facebook、LinkedIn、SalesForce 和使用 OAuth 2.0、授权代码和隐式流的 GitHub。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 4927837caf96268421cfbc79ce3859b9dc4043f9
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b633fa5cf41603d77454c23390f40f4a33201b8a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936307"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149413"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>在 Office 加载项中授权外部服务
 
 热门在线服务（包括 Microsoft 365、Google、Facebook、LinkedIn、SalesForce 和 GitHub）允许用户在其他应用程序中访问其帐户。 这样，便可在 Office 加载项中添加这些服务。
 
 > [!NOTE]
-> 本文的其余部分涉及的是访问非 Microsoft 服务。 有关访问 Microsoft Graph (包括 Microsoft 365) 的信息，请参阅 Access [to Microsoft Graph with SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso)和 Access to Microsoft Graph without [SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso)。
+> 本文的其余部分涉及的是访问非 Microsoft 服务。 有关访问 Microsoft Graph (包括 Microsoft 365) 的信息，请参阅使用[SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso)访问 Microsoft Graph 和 Access [to Microsoft Graph不含 SSO。](overview-authn-authz.md#access-to-microsoft-graph-without-sso)
 
 授权 Web 应用访问在线服务的行业标准框架为 **OAuth 2.0**。大多数情况下，无需了解框架的详细工作原理，即可在加载项中使用它。许多库都可用来化繁为简。
 
@@ -33,7 +33,7 @@ OAuth 流旨在保护应用程序的标识和授权。 授权代码流中提供�
 > [!NOTE]
 > 还可以视需要使用中间人服务，从而执行授权操作，并将访问令牌传递给加载项。 有关此方案的详细信息，请参阅本文稍后介绍的 **中间人服务** 部分。
 
-## <a name="use-the-implicit-flow-in-office-add-ins"></a>在加载项中Office流
+## <a name="use-the-implicit-flow-in-office-add-ins"></a>在加载项Office隐式流
 
 若要确定在线服务是否支持隐式流，最好是查阅服务文档。
 

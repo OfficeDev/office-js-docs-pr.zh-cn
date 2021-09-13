@@ -2,13 +2,13 @@
 title: 运行 Office 加载项的要求
 description: 了解最终用户在加载项中运行所需的客户端和Office要求。
 ms.date: 07/27/2021
-localization_priority: Normal
-ms.openlocfilehash: eaa5836cc9254314b952fb49d251cc240a1d56e4
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e846da92ac398fa16ed51764a419e9a05b85293e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936712"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149213"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -29,7 +29,7 @@ ms.locfileid: "58936712"
 > [!TIP]
 > 在 Visual Studio 中开发和调试加载项时，Visual Studio 使用 IIS Express 在本地部署并运行加载项的网页文件，无需使用其他 Web 服务器。
 
-对于内容和任务窗格外接程序，在受支持的 Office 客户端应用程序（Excel、PowerPoint、Project 或 Word）中，您还需要 SharePoint 上的应用程序目录来上载外接程序的 XML[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)清单文件，或者您需要使用集成应用程序部署外接程序。 [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+对于内容和任务窗格外接程序，在受支持的 Office 客户端应用程序（Excel、PowerPoint、Project 或 Word）中，您还需要 SharePoint 上的应用程序目录来上载外接程序的 XML 清单文件[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)，或者您需要使用集成应用程序部署外接程序。 [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
 
 若要测试和运行 Outlook 外接程序，用户的 Outlook 电子邮件帐户必须驻留在 Exchange 2013 或更高版本上，这可以通过 Microsoft 365、Exchange Online 或本地安装获得。 用户或管理员在该服务器上安装 Outlook 外接程序的清单文件。
 
@@ -38,7 +38,7 @@ ms.locfileid: "58936712"
 
 ## <a name="client-requirements-windows-desktop-and-tablet"></a>客户端要求：Windows 台式机和平板电脑
 
-为基于 Windows 的台式机、笔记本电脑或平板电脑设备上运行的受支持的 Office 桌面客户端或 Web 客户端开发 Office 外接程序需要以下软件。
+为基于 Windows 台式机、笔记本电脑或平板电脑设备上运行的受支持的 Office 桌面客户端或 Web 客户端开发 Office 外接程序需要以下软件。
 
 - 对于 Windows x86 和 x64 台式机与平板电脑（如 Surface Pro）：
   - 在 Windows 7 或更高版本上运行的 32 位或 64 位版本 Office 2013。
@@ -56,7 +56,7 @@ ms.locfileid: "58936712"
 
 ## <a name="client-requirements-os-x-desktop"></a>客户端要求：OS X 桌面
 
-Outlook作为加载项的一部分分发的 Mac Microsoft 365支持Outlook加载项。在 Mac Outlook Outlook Outlook 中运行 Outlook 加载项的要求与 Mac 上的 Outlook 相同：操作系统必须至少为 OS X v10.10 "Yosemite"。 由于 Mac 版 Outlook 使用 WebKit 作为布局引擎以呈现加载项页，因此没有其他浏览器依赖项。
+Outlook作为加载项的一部分分发的 Mac Microsoft 365支持Outlook加载项。在 Mac Outlook Outlook Outlook 中运行加载项的要求与 Mac 上的 Outlook 相同：操作系统必须至少为 OS X v10.10 "Yosemite"。 由于 Mac 版 Outlook 使用 WebKit 作为布局引擎以呈现加载项页，因此没有其他浏览器依赖项。
 
 以下是支持 Office 加载项的 Mac 版 Office 的最低客户端版本。
 

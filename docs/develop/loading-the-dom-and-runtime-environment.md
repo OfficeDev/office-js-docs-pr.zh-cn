@@ -2,13 +2,13 @@
 title: 加载 DOM 和运行时环境
 description: 加载 DOM Office加载项运行时环境。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 26ff15eb009fbec2554fa74db3109c4fa4abd712
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: db6b8667678e6a38c0932faf66fc2b0b63cc7a9b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937546"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149333"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
@@ -42,7 +42,7 @@ ms.locfileid: "58937546"
 
 ![Flow加载项时Outlook事件数。](../images/outlook15-loading-dom-agave-runtime.png)
 
-当加载项启动时，Outlook事件发生。
+启动加载项时，Outlook事件发生。
 
 1. 当 Outlook 启动时，Outlook 读取已为用户的电子邮件帐户安装的 Outlook 外接程序的 XML 清单。
 

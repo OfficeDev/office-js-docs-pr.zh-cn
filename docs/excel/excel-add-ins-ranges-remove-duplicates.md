@@ -1,15 +1,15 @@
 ---
 title: 使用 JavaScript API Excel重复项
-description: 了解如何使用 JavaScript API Excel删除重复项。
+description: 了解如何使用 JavaScript EXCEL删除重复项。
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 03ef1c15f214fcbd6a81d0b4f557e9816175d3b7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: abb1a1b819349996d56d5e820b283713fe7f7c33
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937148"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149410"
 ---
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>使用 JavaScript API Excel重复项
 
@@ -55,5 +55,5 @@ Excel.run(function (context) {
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
-- [使用 JavaScript API Excel、复制和粘贴区域](excel-add-ins-ranges-cut-copy-paste.md)
+- [使用 JavaScript API 剪切、复制和Excel区域](excel-add-ins-ranges-cut-copy-paste.md)
 - [ 同时在 Excel 加载项中处理多个区域 ](excel-add-ins-multiple-ranges.md)

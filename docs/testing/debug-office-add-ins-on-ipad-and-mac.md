@@ -2,13 +2,13 @@
 title: 在 Mac 上调试 Office 加载项
 description: 了解如何使用 Mac 调试Office加载项。
 ms.date: 10/16/2020
-localization_priority: Normal
-ms.openlocfilehash: 98473e7c37b9ef5ee34d35f91688ccef65ac7d78
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 46104e5cbd9c81e56c1a83b6f49ae5883097b3e5
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936603"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149511"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>在 Mac 上调试 Office 加载项
 
@@ -18,7 +18,7 @@ ms.locfileid: "58936603"
 
 如果有在任务窗格或内容加载项中显示 UI 的加载项，可以使用 Safari Web 检查器调试 Office 加载项。
 
-若要能够在 Mac Office加载项，你必须拥有 Mac OS High Sierra 和 Mac Office 版本 16.9.1 (版本18012504) 更高版本。 如果你没有 Mac Office，可以通过加入开发人员计划Microsoft 365[一个](https://developer.microsoft.com/office/dev-program)。
+若要能够在 Mac Office加载项，你必须拥有 Mac OS High Sierra 和 Mac Office 版本 16.9.1 (版本18012504) 或更高版本。 如果你没有 Mac Office，可以通过加入开发人员计划获取一Microsoft 365[版本](https://developer.microsoft.com/office/dev-program)。
 
 首先，打开终端，设置相关 Office 应用程序的 `OfficeWebAddinDeveloperExtras` 属性，如下所示：
 

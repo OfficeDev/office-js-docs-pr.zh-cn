@@ -1,14 +1,14 @@
 ---
 title: 使用 Angular 开发 Office 加载项
-description: 使用 Angular 创建一Office外接程序作为单个页面应用程序。
+description: 使用 Angular创建一Office一个页面应用程序。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: e0d30b7cb2f3d5489f5dae9e257c0cfc115a955e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 87d63fb8cc6c78d791ca9f5f9231abf375a7b2a1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938955"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149173"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -29,7 +29,7 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>启动代码必须位于 Office.initialize 内
 
-在调用 JavaScript API Office、Word Excel的任何页面上，代码必须先为 属性分配 `Office.initialize` 方法。  (如果没有初始化代码，则方法正文可以只是空的" " 符号，但不得使属性 `{}` `Office.initialize` 保持未定义状态。 有关详细信息，请参阅[Initialize your Office Add-in](initialize-add-in.md).) Office this method immediately after it has initialized the Office JavaScript libraries.
+在任何调用 JavaScript API Office、Word 或 Excel页面上，代码必须先为 属性分配 `Office.initialize` 方法。  (如果没有初始化代码，则方法正文可以只是空的" " 符号，但不得使属性 `{}` `Office.initialize` 保持未定义状态。 有关详细信息，请参阅[Initialize your Office Add-in](initialize-add-in.md).) Office this method immediately after it has initialized the Office JavaScript libraries.
 
 **Angular bootstrapping 代码必须在你分配到 `Office.initialize` 的方法内调用**，以确保 Office JavaScript 库首先进行了初始化。以下是演示如何执行该操作的简单示例。此代码应在项目的 main.ts 文件中。
 
@@ -76,7 +76,7 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-## <a name="use-the-office-dialog-api-with-angular"></a>将Office对话框 API 与 Angular
+## <a name="use-the-office-dialog-api-with-angular"></a>将Office对话框 API 与Angular
 
 Office 加载项对话框 API 可使加载项打开非模态对话框中的页面，该页面可与主页面交换信息，这在任务窗格中是典型操作。
 
@@ -154,7 +154,7 @@ ng serve --aot
 
 ## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>如果你Internet Explorer加载内容，支持Office.js
 
-根据 Windows 版本Office运行外接程序的桌面客户端，外接程序可能正在使用 Internet Explorer 11。  (有关详细信息，请参阅[Office 外接程序](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器 。) Angular 依赖于一些 API，但这些 API 在 Windows 桌面客户端中嵌入的 IE 运行时中不起作用。 `window.history` 当这些 API 不起作用时，您的外接程序可能无法正常运行，例如，它可能会加载一个空白的任务窗格。 若要缓解这种情况，Office.js这些 API。 但是，如果你要动态加载 Office.js，AngularJS 可能会先加载，然后再Office.js。 在这种情况下，您应通过将以下代码添加到外接程序的"index.htm`window.history` **l"页面来禁用 API。**
+根据 Windows 版本和Office运行外接程序的桌面客户端，外接程序可能使用的是 Internet Explorer 11。  (有关详细信息，请参阅[Office 加载项](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器 。) Angular 依赖于一些 API，但这些 API 在 Windows 桌面客户端中嵌入的 IE 运行时 `window.history` 中不起作用。 当这些 API 不起作用时，您的外接程序可能无法正常运行，例如，它可能会加载一个空白任务窗格。 为了缓解这种情况，Office.js这些 API。 但是，如果你要动态加载 Office.js，AngularJS 可能会先加载，然后再Office.js。 在这种情况下，应该通过将以下代码添加到加载项的加载项页面来禁用 `window.history` **index.html。**
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

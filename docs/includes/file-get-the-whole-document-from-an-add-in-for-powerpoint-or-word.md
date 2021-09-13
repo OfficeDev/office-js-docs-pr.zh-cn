@@ -14,7 +14,7 @@
 
 - 共享网络文件夹或外接程序目录中提供的外接程序的 XML 清单文件 (GetDoc_App.xml)。该清单文件必须指向前面提到的 HTML 文件的位置。
 
-您还可以使用 Visual Studio 或 Office 加载项的 Yeoman[](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)生成器，或者使用 Visual Studio 或适用于 Office 加载项的[](../quickstarts/word-quickstart.md?tabs=visualstudio)[Yeoman](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator)生成器为 Word 创建[PowerPoint](../quickstarts/word-quickstart.md?tabs=yeomangenerator)加载项。
+您还可以通过使用 Visual Studio 或 Office 加载项的 Yeoman 生成器，或者使用 Visual Studio 或适用于 Office 加载项的[](../quickstarts/word-quickstart.md?tabs=visualstudio) [](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio) [Yeoman](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator)生成器为 Word 创建[PowerPoint](../quickstarts/word-quickstart.md?tabs=yeomangenerator)加载项。
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>创建任务窗格加载项需要了解的核心概念
 
@@ -150,7 +150,7 @@ function updateStatus(message) {
 
 When you choose the **Submit** button in the UI， the add-in calls the `sendFile` function， which contains a call to the [Document.getFileAsync](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) method. `getFileAsync`方法使用异步模式，类似于 JavaScript API for Office。 It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_.
 
-_fileType_ 参数需要 [FileType](/javascript/api/office/office.filetype)枚举中的三个常量之一 `Office.FileType.Compressed` ： ("compressed") 、Office.FileType.PDF("pdf") 或 **Office。FileType.Text** ("text") 。 [Document.getFileType](/javascript/api/office/office.document#getFileAsync_fileType__callback_)备注下列出了每个平台的当前文件类型支持。 为 _fileType_ 参数传递 **Compressed** 时，该方法通过在本地计算机上创建文件的临时副本，以 PowerPoint 2013 演示文稿文件 (.pptx) 或 `getFileAsync` Word *2013* 文档文件 (.docx) 形式返回文档。
+_fileType_ 参数需要 [FileType](/javascript/api/office/office.filetype)枚举中的三个常量之一 `Office.FileType.Compressed` ： ("compressed") 、Office.FileType.PDF("pdf") 或 **Office。FileType.Text** ("text") 。 [Document.getFileType](/javascript/api/office/office.document#getFileAsync_fileType__callback_)备注下列出了每个平台的当前文件类型支持。 为 _fileType_ 参数传递 **Compressed** 时，该方法通过在本地计算机上创建文件的临时副本，将文档作为 PowerPoint 2013 演示文稿文件 (.pptx) 或 `getFileAsync` Word *2013* 文档文件 (.docx) 返回。
 
 `getFileAsync`方法以 File 对象返回对[文件](/javascript/api/office/office.file)的引用。 对象 `File` 公开四个成员 [：size](/javascript/api/office/office.file#size) 属性 [、sliceCount](/javascript/api/office/office.file#sliceCount) 属性 [、getSliceAsync](/javascript/api/office/office.file#getSliceAsync_sliceIndex__callback_) 方法和 [closeAsync](/javascript/api/office/office.file#closeAsync_callback_) 方法。 `size`属性返回文件中字节数。 `sliceCount`返回本文稍后将 (的[Slice](/javascript/api/office/office.slice)对象) 文件中。
 
@@ -203,7 +203,7 @@ function getSlice(state) {
 }
 ```
 
-`Slice.data`属性将文件的原始数据作为字节数组返回。 如果数据采用文本格式（即 XML 或纯文本），则切片包含原始文本。 如果为 的 _fileType_ 参数传递 **Office.FileType.Compressed，** 切片将包含文件的二进制数据作为 `Document.getFileAsync` 字节数组。 对于 PowerPoint 或 Word 文件，切片包含字节数组。
+`Slice.data`属性将文件的原始数据作为字节数组返回。 如果数据采用文本格式（即 XML 或纯文本），则切片包含原始文本。 如果为 的 _fileType_ 参数传递 **Office.FileType.Compressed，** 切片将包含文件的二进制数据 `Document.getFileAsync` 作为字节数组。 对于 PowerPoint 或 Word 文件，切片包含字节数组。
 
 您必须实施自己的函数（或使用可用库），将字节数组数据转换为 Base64 编码的字符串。有关使用 JavaScript 进行 Base64 编码的信息，请参阅 [Base64 编码和解码](https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding)。
 
@@ -258,7 +258,7 @@ function sendSlice(slice, state) {
 }
 ```
 
-正如名称所示，该方法将关闭 `File.closeAsync` 与文档的连接并释放资源。 虽然 Office 外接程序沙盒垃圾可回收对文件的范围外引用，但在使用这些文件完成您的代码后，最好显式关闭它们。 `closeAsync`方法具有单个参数 _callback_，用于指定在调用完成时要调用的函数。
+正如该名称所示， `File.closeAsync` 该方法将关闭与文档的连接并释放资源。 虽然 Office 外接程序沙盒垃圾可回收对文件的范围外引用，但在使用这些文件完成您的代码后，最好显式关闭它们。 `closeAsync`方法具有单个参数 _callback_，用于指定在调用完成时要调用的函数。
 
 ```js
 function closeFile(state) {

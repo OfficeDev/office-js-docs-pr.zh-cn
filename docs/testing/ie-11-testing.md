@@ -2,22 +2,22 @@
 title: Internet Explorer 11 测试
 description: 在 Office 11 上测试Internet Explorer加载项。
 ms.date: 08/13/2021
-localization_priority: Normal
-ms.openlocfilehash: 2d33853d37ddcf595583f24f232c36ae68e3a05c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f5add8e61dc686e413cfb83b248185d40b2a624f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937383"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149546"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>在 Office 11 上测试Internet Explorer加载项
 
 > [!IMPORTANT]
 > **Internet Explorer外接程序Office中使用的内容**
 >
-> Microsoft 将终止对Internet Explorer的支持，但这不会显著Office外接程序。平台和 Office 版本的一些组合（包括 2019 至 Office 2019 的所有一次购买版本）将继续使用 Internet Explorer 11 随附的 Webview 控件来托管外接程序，如[Office 外接程序](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器所说明。此外，提交到 AppSource 的加载项仍然需要支持这些Internet Explorer，因此，对于加载项，这些[组合也仍是必需的](/office/dev/store/submit-to-appsource-via-partner-center)。 有两 *个变化* ：
+> Microsoft 将终止对Internet Explorer的支持，但这不会显著Office外接程序。平台和 Office 版本（包括 Office 2019 的所有一次购买版本）的一些组合将继续使用 Internet Explorer 11 随附的 Webview 控件来托管外接程序，如[Office](../concepts/browsers-used-by-office-web-add-ins.md)外接程序使用的浏览器所说明。此外，提交到[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)的Internet Explorer仍然需要支持这些组合，因此也支持这些组合。 有两 *个变化* ：
 >
-> - AppSource 不再使用作为浏览器Office web 版Internet Explorer加载项。 但 AppSource 仍测试使用 Office *版本的平台* 和桌面Internet Explorer。
+> - AppSource 不再使用作为浏览器Office web 版Internet Explorer加载项。 但是，AppSource 仍测试使用 Office *版本的平台* 和桌面Internet Explorer。
 > - Script Lab[工具](../overview/explore-with-script-lab.md)不再支持Internet Explorer。
 
 如果计划通过 AppSource 销售加载项或计划支持较旧版本的 Windows 和 Office，加载项必须在基于 Internet Explorer 11 (IE11) 的可嵌入浏览器控件中运行。 可以使用命令行从外接程序使用的更现代运行时切换到 Internet Explorer 11 运行时进行此测试。 有关哪些版本的 Windows 和 Office使用 Internet Explorer 11 Web 视图控件的信息，请参阅 Office [Add-ins](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器。
@@ -25,7 +25,7 @@ ms.locfileid: "58937383"
 > [!IMPORTANT]
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项：
 >
-> - 在 ECMAScript 2015 (（也称为 ES6) 或更高版本 JavaScript）中编写代码，或在 TypeScript 中编写代码，然后使用编译器（如 [#A0](https://babeljs.io/) 或 [tsc）](https://www.typescriptlang.org/index.html)将代码编译为 ES5 JavaScript。
+> - 在 ECMAScript 2015 (（也称为 ES6) 或更高版本 JavaScript）中编写代码，或在 TypeScript 中编写代码，然后使用编译器（如 [#A0](https://babeljs.io/) 或 [tsc](https://www.typescriptlang.org/index.html)）将代码编译为 ES5 JavaScript。
 > - 在 ECMAScript 2015 或更高版本的 JavaScript[](https://en.wikipedia.org/wiki/Polyfill_(programming))中编写，但也加载填充库（如[core-js，](https://github.com/zloirock/core-js)它使 IE 能够运行代码）。
 >
 > 有关这些选项的详细信息，请参阅 Support [Internet Explorer 11](../develop/support-ie-11.md)。
@@ -33,7 +33,7 @@ ms.locfileid: "58937383"
 > 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
 
 > [!NOTE]
-> 若要在 11 Internet Explorer上测试外接程序，Office web 版中Internet Explorer并[旁加载外接程序](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)。
+> 若要在 Internet Explorer 11 浏览器中测试外接程序，Office web 版中Internet Explorer并[旁加载外接程序](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -55,7 +55,7 @@ ms.locfileid: "58937383"
     ```
 
 > [!TIP]
-> 虽然不需要使用此命令，但它应有助于调试与 11 运行时Internet Explorer大多数问题。 为提供完整的稳定性，应测试使用具有 Windows 7、8.1 和 10 的各种组合以及各种版本的 Office。 有关详细信息，请参阅Office[外接程序](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器和如何还原到早期版本[的 Office。](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841)
+> 虽然不需要使用此命令，但它应该有助于调试与 11 运行时Internet Explorer大多数问题。 为提供完整的稳定性，你应该使用具有 Windows 7、8.1 和 10 的各种版本以及 Office 的各种组合的计算机进行测试。 有关详细信息，请参阅浏览器[Office外接程序使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)和如何还原到早期版本[Office。](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841)
 
 ### <a name="command-options"></a>命令选项
 

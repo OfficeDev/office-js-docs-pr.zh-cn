@@ -2,20 +2,20 @@
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: 了解如何在 Office 中转换加载项Visual Studio TypeScript。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 33378fa1270d4ff43a9c8219f6c68675974834f3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 2771dbde52689200bc861aa208b33280776798b0
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938971"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148879"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
 可以使用 Visual Studio 中的 Office 加载项模板，创建使用 JavaScript 的加载项，再将加载项项目转换为使用 TypeScript。 本文介绍了 Excel 加载项的此转换过程。 可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 外接程序项目从 JavaScript 转换为 TypeScript。
 
 > [!IMPORTANT]
-> 本文介绍了 *确保按* F5 时代码将转换为 JavaScript 所需的最少步骤，JavaScript 随后会自动旁加载至 Office。 但是，代码不是非常"TypeScripty"。 例如，变量是使用关键字声明的，而不是使用指定类型 `var` `let` 声明的。 若要充分利用 TypeScript 的强键入，请考虑对代码进行进一步更改。 
+> 本文介绍确保按F5 时代码将转换为 JavaScript 所需的最少步骤，JavaScript 随后会自动旁加载至Office。 但是，代码不是非常"TypeScripty"。 例如，变量是使用关键字声明的，而不是使用指定类型 `var` `let` 声明的。 若要充分利用 TypeScript 的强键入，请考虑对代码进行进一步更改。 
 
 > [!NOTE]
 > 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.yml)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)显示提示时选择 `TypeScript`。

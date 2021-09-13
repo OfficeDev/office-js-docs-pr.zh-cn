@@ -2,13 +2,13 @@
 title: Office 加载项其他资源
 description: 有关加载项主题Office资源
 ms.date: 04/14/2021
-localization_priority: Normal
-ms.openlocfilehash: de774386acca2825734ac50096b83d562df0263b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 01bf4b89758194a2d9ea5bd1d59f755d47f32bbb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938781"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149229"
 ---
 # <a name="office-add-ins-additional-resources"></a>Office 加载项其他资源
 
@@ -21,7 +21,7 @@ ms.locfileid: "58938781"
 |**Office JavaScript API 功能请求**| 若要提交适用于 Office JavaScript API 的功能请求，请将你的想法Microsoft 365[开发人员平台技术Community。](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform)|
 |**文档问题**| 如果遇到文档 (错误) ，请将问题提交到<a href="https://github.com/officedev/office-js-docs-pr/issues" target="_blank">OfficeDev/office-js-docs-pr</a> GitHub存储库。|
 |**文档更新**| 若要自己更改文档，请选择文章上的"编辑"链接，然后向<a href="https://github.com/officedev/office-js-docs-pr" target="_blank">OfficeDev/office-js-docs-pr</a> GitHub提交拉取请求。|
-|**Script Lab**| 如果你想要浏览 JavaScript OFFICE或试用预览 API，可以在 Script Lab、Excel、Outlook、PowerPoint 和 Word Script Lab。 若要了解详细信息，请参阅[使用 Script Lab 探索 Office JavaScript API](../overview/explore-with-script-lab.md)。 |
+|**Script Lab**| 如果你想要浏览 JavaScript OFFICE或试用预览 API，可以在 Excel、Outlook、PowerPoint 和 Word Script Lab。 若要了解详细信息，请参阅[使用 Script Lab 探索 Office JavaScript API](../overview/explore-with-script-lab.md)。 |
 |**关于 Office 加载项的 Pluralsight 课程**| John Brown 的"使用<a href="https://www.pluralsight.com/courses/build-office-addins-js-api" target="_blank">Office JavaScript</a> API 生成 Office 外接程序的基础"课程指导您如何从头开始开发 PowerPoint 外接程序，包括如何与 Trello 通信以及将外接程序发布到 Office 商店的信息。|
 |**关于 Office 加载项的 LinkedIn 课程**| <a href="https://www.linkedin.com/learning/microsoft-office-add-ins-for-developers/microsoft-office-add-ins?u=3322">Bill Ayer 的课程“面向开发人员的 Microsoft Office 加载项”</a>提供了该平台的概述，并且介绍了 Office 加载项的许多主要概念。|
 |***《使用 Office.js 构建 Office 加载项》* 书籍**| <a href="https://leanpub.com/buildingofficeaddins">Michael Zlatkovsky 的著作 *《使用 Office.js 构建 Office 加载项》*</a>介绍了适用于 Excel、Word 和 OneNote 的 2016 API 共享的原则和设计模式。 Michael 是 Microsoft Office 扩展团队的成员和 Microsoft MVP，但本书是在 Microsoft 未提供任何意见的情况下独立编写的。 Microsoft 或 Michael 均未从本书获得任何利润，因为收益已捐给救灾和人道主义慈善事业。|

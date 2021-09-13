@@ -1,20 +1,20 @@
 ---
 title: Office.context - 要求集 1.8
-description: Office。适用于使用邮箱 API 要求Outlook集 1.8 的外接程序的上下文对象成员。
+description: Office。使用邮箱 API 要求集 1.8 Outlook加载项可用的上下文对象成员。
 ms.date: 12/03/2020
-localization_priority: Normal
-ms.openlocfilehash: 99573d9984c571c99461e90e8bdccdca35fe30b7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 93d2c0ef2380f7744ec37c4b3a09735cda170cea
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938040"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149553"
 ---
 # <a name="context-mailbox-requirement-set-18"></a>context (Mailbox requirement set 1.8) 
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-Office.context 提供了外接程序在所有应用程序中使用的共享Office接口。 此列表仅记录加载项Outlook接口。有关 Office.context 命名空间的完整列表，请参阅通用 API 中的[Office.context 引用](/javascript/api/office/office.context?view=outlook-js-1.8&preserve-view=true)。
+Office.context 提供外接程序在所有应用程序中使用的共享Office接口。 此列表仅记录由加载项Outlook接口。有关 Office.context 命名空间的完整列表，请参阅通用 API 中的[Office.context 引用](/javascript/api/office/office.context?view=outlook-js-1.8&preserve-view=true)。
 
 ##### <a name="requirements"></a>要求
 
@@ -41,9 +41,9 @@ Office.context 提供了外接程序在所有应用程序中使用的共享Offic
 
 #### <a name="contentlanguage-string"></a>contentLanguage： String
 
-获取用户 (编辑) 区域设置语言设置。
+获取用户 () 指定用于编辑项目的语言区域设置。
 
-该值 `contentLanguage` 反映当前在客户端 **应用程序中** 由 File **> Options > Language** 指定的Office语言设置。
+该值 `contentLanguage` 反映当前在客户端 **应用程序中** 由 File **> Options > Language** Office设置。
 
 ##### <a name="type"></a>类型
 
@@ -113,9 +113,9 @@ console.log("Platform: " + contextInfo.platform);
 
 #### <a name="displaylanguage-string"></a>displayLanguage：String
 
-获取区域设置 (语言) RFC 1766 语言标记格式，该标记格式由用户为 Office 客户端应用程序的 UI 指定。
+获取区域设置 (语言) RFC 1766 语言标记格式，该标记格式由用户为 Office 应用程序的 UI 指定。
 
-该值 `displayLanguage` 反映当前 **显示语言** 设置，该设置 **由**> 客户端应用程序中>选项Office语言。
+该值 `displayLanguage` 反映当前显示 **语言** 设置，该设置由 >**客户端** 应用程序中>"选项Office语言"。
 
 ##### <a name="type"></a>类型
 
@@ -214,7 +214,7 @@ console.log(JSON.stringify(Office.context.platform));
 
 #### <a name="requirements-requirementsetsupport"></a>requirements： [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
 
-提供用于确定当前应用程序和平台上支持哪些要求集的方法。
+提供用于确定当前应用程序和平台支持哪些要求集的方法。
 
 ##### <a name="type"></a>类型
 
@@ -242,7 +242,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。
 
-该对象允许您存储和访问存储在用户邮箱中的邮件外接程序的数据，以便该外接程序从用于访问该邮箱的任何 Outlook 客户端运行时可以使用该数据 `RoamingSettings` 。
+该对象允许您存储和访问存储在用户邮箱中的邮件外接程序的数据，以便该外接程序在从用于访问该邮箱的任何 Outlook 客户端运行时可供该外接程序使用 `RoamingSettings` 。
 
 ##### <a name="type"></a>类型
 

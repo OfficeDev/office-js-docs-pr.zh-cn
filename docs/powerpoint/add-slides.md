@@ -2,22 +2,22 @@
 title: 在幻灯片中添加和删除PowerPoint
 description: 了解如何添加和删除幻灯片，并指定新幻灯片的主控母版和版式。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 7fbfd24da7bf552adfe96437187ae0128c513574
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 26999ed770fa8fde8766a2accb7ec9eb791fb3d4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936828"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149483"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>在幻灯片中添加和删除PowerPoint
 
-加载项PowerPoint向演示文稿添加幻灯片，并可以选择指定新幻灯片使用哪个幻灯片母版以及母版的哪个版式。 加载项还可以删除幻灯片。
+加载项PowerPoint向演示文稿添加幻灯片，并可以选择指定新幻灯片使用哪个幻灯片母版和哪个母版版式。 加载项还可以删除幻灯片。
 
 > [!IMPORTANT]
 > 用于添加幻灯片的 API 为预览 [版](../reference/requirement-sets/powerpoint-preview-apis.md) ，不适用于生产加载项。用于删除 *幻灯片的* API 已发布。
 
-添加幻灯片的 API 主要用于以下方案：演示文稿中幻灯片母版和版式的标识在编码时已知，或在运行时可在数据源中找到。 在这种情况下，您或客户必须创建和维护一个数据源，该数据源将选择条件 (例如幻灯片母版和版式的名称或图像) 幻灯片母版和版式的名称或图像与幻灯片母版和版式的 ID 相关联。 这些 API 还可用于以下方案：用户可以插入使用默认幻灯片母版和母版的默认版式的幻灯片，以及用户可以选择现有幻灯片并创建一个包含相同幻灯片母版和版式 (但不是相同内容) 的新幻灯片的方案。 有关详细信息 [，](#select-which-slide-master-and-layout-to-use) 请参阅选择使用哪个幻灯片母版和版式。
+添加幻灯片的 API 主要用于以下方案：演示文稿中幻灯片母版和版式的标识在编码时已知，或在运行时可在数据源中找到。 在这种情况下，您或客户必须创建和维护一个数据源，该数据源将选择条件 (如幻灯片母版和版式的名称或图像与幻灯片母版和版式) 的 ID 相关联。 这些 API 还可用于以下方案：用户可以插入使用默认幻灯片母版和母版的默认版式的幻灯片，以及用户可以选择现有幻灯片并使用同一幻灯片母版和版式创建新幻灯片 (但不使用相同的内容) 的方案。 有关详细信息 [，](#select-which-slide-master-and-layout-to-use) 请参阅选择使用哪个幻灯片母版和版式。
 
 ## <a name="add-a-slide-with-slidecollectionadd-preview"></a>使用 SlideCollection.add 添加幻灯片 (预览) 
 
@@ -44,7 +44,7 @@ async function addSlide() {
 - 如果属性不存在 (或者其值为空字符串) ，则使用默认幻灯片母版，并且 必须是该幻灯片母版 `masterId` `layoutId` 的版式。
 - 默认幻灯片母版是演示文稿中最后一张幻灯片使用的幻灯片母版。  (在演示文稿中当前没有幻灯片的异常情况下，默认幻灯片母版是演示文稿的第一个幻灯片母版。) 
 - 如果属性不存在 (或者其值为空字符串) ，则使用 指定的主控母版的第 `layoutId` `masterId` 一个布局。
-- 这两个属性都是三种可能形式之一的字符串：***nnnnnnnnnn*#**、* *#* mmmmmmmmm***、 或 **_nnnnnnnnnn_ #* mmmmmmmmm***，其中 *nnnnnnnnnnnn* 是主控位置或布局的 ID (通常为 10 个数字) *而 mmmmmmmmm* 是主控或布局的创建 ID (通常为 6 - 10 个数字) 。 一些示例包括 `2147483690#2908289500` 、 `2147483690#` 和 `#2908289500` 。
+- 这两个属性都是三种可能形式之一的字符串：***nnnnnnnnnn*#**、* *#* mmmmmmmmm***、 或 **_nnnnnnnnnn_ #* mmmmmmmmm***，其中 *nnnnnnnnnn* 是主控位置或布局的 ID (通常为 10 个数字) *而 mmmmmmmmm* 是主控或布局的创建 ID (通常为 6 - 10 个数字) 。 一些示例包括 `2147483690#2908289500` 、 `2147483690#` 和 `#2908289500` 。
 
 ```javascript
 async function addSlide() {
@@ -69,9 +69,9 @@ async function addSlide() {
 
 1. 创建一个方法，获取选定幻灯片的索引。 示例如下。 关于此代码，请注意以下几点：
 
-    - 它使用Office.context.docJavaScript API 的 [ ument.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) 方法。
+    - 它使用Office JavaScript API 的[Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_)方法。
     - 对 的 `getSelectedDataAsync` 调用嵌入 Promise 返回函数中。 有关这样做的原因和如何操作，请参阅在承诺返回函数中[包装通用 API。](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)
-    - `getSelectedDataAsync` 返回一个数组，因为可以选择多个幻灯片。 在此方案中，用户只选择了一个，因此代码获取第一张 (第) 张幻灯片，这是唯一选定的幻灯片。
+    - `getSelectedDataAsync` 返回一个数组，因为可以选择多个幻灯片。 在此方案中，用户只选择了一个，因此代码获取第一张 (第) 张幻灯片，该幻灯片是唯一选定的幻灯片。
     - 幻灯片的值是用户在缩略图窗格中的幻灯片旁边看到的从 `index` 1 开始的值。
 
     ```javascript

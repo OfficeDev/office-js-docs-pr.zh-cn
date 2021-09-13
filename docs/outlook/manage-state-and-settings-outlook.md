@@ -2,13 +2,13 @@
 title: 管理加载项的状态Outlook设置
 description: 了解如何保留加载项的加载项状态Outlook设置。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 5893850e100399c742954ed130347ff1944b4f37
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: dee9d49c50df610957cb009c73451c58507adbc5
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938373"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148844"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>管理加载项的状态Outlook设置
 
@@ -148,11 +148,11 @@ function saveCallback(asyncResult) {
 |全部答复或全部答复发送的项目|空|空|空|
 |从转发发送的项目|如果未保存，则删除父级的属性|空|空|
 
-若要在管理上处理Windows：
+若要处理当前Windows：
 
 1. 在初始化外接程序时检查现有属性，并根据需要保留或清除它们。
 1. 设置自定义属性时，请包含一个附加属性，以指示自定义属性是在邮件阅读过程中添加的，还是通过外接程序的读取模式添加的。 这将帮助你区分属性是在撰写期间创建的还是从父级继承的。
-1. 若要检查用户是否正在转发电子邮件或答复，可以使用 [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (要求集 1.10) 。
+1. 若要检查用户是否正在转发电子邮件或回复，可以使用要求集 1.10 (提供的 [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_)) 。
 
 ## <a name="see-also"></a>另请参阅
 

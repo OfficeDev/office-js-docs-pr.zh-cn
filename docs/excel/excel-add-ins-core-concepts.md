@@ -3,13 +3,13 @@ title: Excel 加载项中的 Excel JavaScript 对象模型
 description: 了解 Excel JavaScript API 中的关键对象类型，以及如何使用它们为 Excel 构建加载项。
 ms.date: 04/05/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 6c88dc84796d9fd898bee880035ed964ab6cd7c8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f301c69a60305dd204ff9e2c2d034899704b8a78
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936245"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148845"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Excel 加载项中的 Excel JavaScript 对象模型
 

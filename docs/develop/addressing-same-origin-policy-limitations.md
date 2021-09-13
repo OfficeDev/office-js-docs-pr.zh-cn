@@ -2,13 +2,13 @@
 title: 解决 Office 加载项中的同源策略限制
 description: 了解如何通过 JSONP、CORS、IFRAMEs 和其他技术适应同源策略限制。
 ms.date: 10/17/2019
-localization_priority: Normal
-ms.openlocfilehash: e50292c30d77856c896f892c930038c1e19d7af7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: fc8abc60adfeade3b760ab6d55ee51c2988e9a74
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937715"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149170"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>解决 Office 加载项中的同源策略限制
 

@@ -2,13 +2,13 @@
 title: 使用 Excel JavaScript API 处理工作表
 description: 显示如何使用 JavaScript API 对工作表执行常见Excel示例。
 ms.date: 07/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 2c0c046d060e9ed32d872307f27784ff8337b100
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 56bd443c6ec6921247aa8adb98932599594aa55f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936766"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149447"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -372,13 +372,13 @@ function formulaChangeHandler(event) {
 
 下图显示了排序事件的 `address` 属性返回的范围。 首先是排序前的示例数据：
 
-![排序之前Excel表中的数据。](../images/excel-sort-event-before.png)
+![排序前Excel表中的数据。](../images/excel-sort-event-before.png)
 
-如果对 **"Q1&quot;** 执行从上到下排序 **(&quot;B")** 中的值，则返回以下突出显示的行 `WorksheetRowSortedEventArgs.address` 。
+如果对 **"Q1&quot;** 执行从上到下排序 **(&quot;B**") 中的值，则返回以下突出显示的行 `WorksheetRowSortedEventArgs.address` 。
 
 ![从上到下排序后 Excel 中的表格数据。 已移动的行会突出显示。](../images/excel-sort-event-after-row.png)
 
-如果对 **"Quinces&quot;** 执行从左到右排序 (原始数据的 **&quot;4")** 中的值，则返回以下突出显示的列 `WorksheetColumnsSortedEventArgs.address` 。
+如果对 **"Quinces&quot;** 对象执行从左到右排序 (原始数据的 **&quot;4")** 中的值，则返回以下突出显示的列 `WorksheetColumnsSortedEventArgs.address` 。
 
 ![从左到右排序后 Excel 中的表格数据。 已移动的列会突出显示。](../images/excel-sort-event-after-column.png)
 

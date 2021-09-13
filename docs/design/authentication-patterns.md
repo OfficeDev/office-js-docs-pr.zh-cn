@@ -2,13 +2,13 @@
 title: Office 外接程序的身份验证设计准则
 ms.date: 02/09/2021
 description: 了解如何在加载项中直观地设计登录Office注册页面。
-localization_priority: Normal
-ms.openlocfilehash: bc047e6b001b7a491aa8117ba1b5901716ca1555
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3edfbcf805718444fc58823eb5bd726c033636ed
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938154"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149386"
 ---
 # <a name="authentication-patterns"></a>身份验证模式
 

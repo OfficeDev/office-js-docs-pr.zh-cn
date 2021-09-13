@@ -2,13 +2,13 @@
 title: Office 加载项中的异步编程
 description: 了解 Office JavaScript 库如何在加载项Office异步编程。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 6408d1efc99f38468b371247156d84f1a4ac4b99
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ec5e714a617bdc637c34e5168e65aa11e950700a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938178"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149146"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -18,7 +18,7 @@ ms.locfileid: "58938178"
 
 API 中所有异步方法的名称以"Async"结尾，如 `Document.getSelectedDataAsync` 、 或 `Binding.getDataAsync` `Item.loadCustomPropertiesAsync` 方法。 调用某个“Async”方法时，该方法会立即执行，并且任何后续脚本执行都可以继续。 传递给“Async”方法的可选回调函数在数据或请求操作准备就绪后便会立即执行。 虽然是立即执行，但在它返回之前可能会略有延迟。
 
-下图显示了对"Async"方法的调用的执行流，该方法可读取用户在基于服务器的 Word 或 Excel 中打开的文档中选择的数据。 在执行"Async"调用时，JavaScript 执行线程可以自由地执行任何其他客户端处理 (尽管图中未显示任何) 。 ）当“Async”方法返回时，回调在线程上恢复执行，外接程序可以访问数据、处理数据并显示结果。 在使用富客户端应用程序（如 Word 2013 或 Excel 2013）时，相同的异步执行模式Office保留。
+下图显示了对"Async"方法的调用的执行流程，该方法可读取用户在基于服务器的 Word 或 Excel 中打开的文档中选择的数据。 在执行"Async"调用时，JavaScript 执行线程可以自由地执行任何其他客户端处理 (尽管图中未显示任何) 。 ）当“Async”方法返回时，回调在线程上恢复执行，外接程序可以访问数据、处理数据并显示结果。 在使用富客户端应用程序（如 Word 2013 或 Office 2013）时，相同的异步执行模式Excel保留。
 
 *图 1. 异步编程执行流*
 
@@ -93,7 +93,7 @@ function write(message){
 
 对象的 、 和 属性将相同类型的信息返回到传递给所有 `asyncContext` `status` `error` `AsyncResult` "Async"方法的回调函数。 但是，返回给属性 `AsyncResult.value` 的功能因"Async"方法的功能而异。
 
-例如 `addHandlerAsync` [，Binding](/javascript/api/office/office.binding) (、CustomXmlPart、Document、RoamingSettings[](/javascript/api/office/office.document)和[](/javascript/api/outlook/office.roamingsettings)[设置](/javascript/api/office/office.settings)对象) 的方法用于向这些对象表示的项添加事件处理程序函数。 [](/javascript/api/office/office.customxmlpart) 可以从传递给任何方法的回调函数访问属性，但由于添加事件处理程序时未访问任何数据或对象，因此，如果尝试访问该属性，则该属性始终返回 `AsyncResult.value` `addHandlerAsync` `value` **undefined。**
+例如 `addHandlerAsync` [，Binding](/javascript/api/office/office.binding) (、CustomXmlPart、Document、RoamingSettings[](/javascript/api/office/office.document)和[](/javascript/api/outlook/office.roamingsettings)设置 对象[) ](/javascript/api/office/office.settings)的方法用于向这些对象表示的项中添加事件处理程序函数。 [](/javascript/api/office/office.customxmlpart) 可以从传递给任何方法的回调函数访问属性，但由于添加事件处理程序时未访问任何数据或对象，因此，如果尝试访问该属性，则该属性始终返回 `AsyncResult.value` `addHandlerAsync` `value` **undefined。**
 
 另一方面，如果调用 方法，它会将用户在文档中选择的数据返回到 `Document.getSelectedDataAsync` `AsyncResult.value` 回调中的 属性。 或者，如果调用 [Bindings.getAllAsync](/javascript/api/office/office.bindings#getAllAsync_options__callback_) 方法，它将返回文档中所有 `Binding` 对象的数组。 而且，如果你调用 [Bindings.getByIdAsync](/javascript/api/office/office.bindings#getByIdAsync_id__options__callback_) 方法，它将返回单个 `Binding` 对象。
 
@@ -192,13 +192,13 @@ function write(message){
 
 在继续执行之前，承诺编程模式会立即返回表示其预期结果的承诺对象，而不是传递回调函数并等待函数返回。然而，与真正同步编程不同的是，在 Office 外接程序运行时环境完成请求之前，承诺结果的实现在后台实际上是延迟的。提供 _onError_ 处理程序来覆盖请求无法满足的情况。
 
-JavaScript API Office提供了[Office.select](/javascript/api/office#Office_select_expression__callback_)方法，以支持承诺模式以使用现有绑定对象。 返回到 方法的承诺对象仅支持可以直接从 Binding 对象访问的四种方法 `Office.select` [](/javascript/api/office/office.binding)：getDataAsync、setDataAsync、addHandlerAsync[](/javascript/api/office/office.binding#setDataAsync_data__options__callback_)和[removeHandlerAsync](/javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_)。 [](/javascript/api/office/office.binding#getDataAsync_options__callback_) [](/javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_)
+JavaScript API Office JavaScript API 提供了[Office.select](/javascript/api/office#Office_select_expression__callback_)方法，以支持承诺模式以使用现有绑定对象。 返回到 方法的承诺对象仅支持可以直接从 Binding 对象访问的四种方法 `Office.select` [](/javascript/api/office/office.binding)：getDataAsync、setDataAsync、addHandlerAsync[](/javascript/api/office/office.binding#setDataAsync_data__options__callback_)和[removeHandlerAsync](/javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_)。 [](/javascript/api/office/office.binding#getDataAsync_options__callback_) [](/javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_)
 
 使用绑定的承诺模式采用此形式。
 
 **Office.select (** _selectorExpression_， _onError_ **) .**_BindingObjectAsyncMethod_
 
-_selectorExpression_ 参数采用的格式为 ， `"bindings#bindingId"` 其中 _bindingId_ 是之前使用集合的"addFrom"方法之一在文档或电子表格中创建的绑定的名称 ( () ：、 或 `id` `Bindings` `addFromNamedItemAsync` `addFromPromptAsync` `addFromSelectionAsync`) 。 例如，选择 `bindings#cities` 器表达式指定你要访问 **ID** 为"cities"的绑定。
+_selectorExpression_ 参数采用的形式为 ， `"bindings#bindingId"` 其中 _bindingId_ 是之前使用集合的"addFrom"方法之一在文档或电子表格 (中创建的绑定的名称 () ：、 或 `id` `Bindings` `addFromNamedItemAsync` `addFromPromptAsync` `addFromSelectionAsync`) 。 例如，选择 `bindings#cities` 器表达式指定你要访问 **ID** 为"cities"的绑定。
 
 _onError_ 参数是一个错误处理函数，该函数采用一个可用于访问对象的类型参数（如果该方法无法访问 `AsyncResult` `Error` `select` 指定的绑定）。 以下示例显示了一个可传递给 _onError_ 参数的基本错误处理程序函数。
 
@@ -253,7 +253,7 @@ function addBindingDataChangedEventHandler() {
 
 在此形式的调用语法中，两个可选参数 _coercionType_ 和 _asyncContext_ 定义为括在括号中的 JSON 对象内嵌。
 
-以下示例演示如何通过指定可选参数内嵌 `Document.setSelectedDataAsync` 来调用方法。
+以下示例演示如何通过指定可选参数内嵌 `Document.setSelectedDataAsync` 来调用该方法。
 
 ```js
 Office.context.document.setSelectedDataAsync(
@@ -345,7 +345,7 @@ function write(message){
 
 ## <a name="wrap-common-apis-in-promise-returning-functions"></a>在 Promise 返回函数中包装常见 API
 
-通用 API (和 Outlook API) 不会返回[Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)。 因此，在 [异步操作](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) 完成之前，不能使用 await 暂停执行。 如果需要行为，可以将方法调用包装在显式创建的 `await` Promise 中。 
+通用 API (和 Outlook API) 方法不会返回[Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)。 因此，在 [异步操作](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) 完成之前，不能使用 await 暂停执行。 如果需要行为，可以将方法调用包装在显式创建的 `await` Promise 中。 
 
 基本模式是创建一个异步方法，该方法立即返回 Promise 对象，在内部方法完成时解析 Promise 对象;如果该方法失败，则拒绝该对象。 下面展示了一个非常简单的示例。
 

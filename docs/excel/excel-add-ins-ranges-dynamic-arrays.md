@@ -1,19 +1,19 @@
 ---
 title: 使用 JavaScript API 处理动态数组Excel溢出
-description: 了解如何使用 JavaScript API 处理动态数组和Excel溢出。
+description: 了解如何使用 JavaScript API 处理动态数组Excel溢出。
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: d95546b4cff3f0ba7410d9ceaa73e19b7e684985
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4601cd6a901243cadab0e7c5ead6061e28806377
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938736"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149523"
 ---
 # <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>使用 JavaScript API 处理动态Excel溢出
 
-本文提供了一个代码示例，该示例使用 JavaScript API 处理动态数组Excel溢出。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供了一个代码示例，该示例使用 JavaScript API 处理动态数组Excel溢出。 有关对象支持的属性和方法的完整 `Range` 列表，请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 ## <a name="dynamic-arrays"></a>动态数组
 
@@ -43,7 +43,7 @@ Excel.run(function (context) {
 
 ## <a name="range-spilling"></a>区域溢出
 
-使用 [Range.getSpillParent](/javascript/api/excel/excel.range#getSpillParent__) 方法查找负责溢出到给定单元格的单元格。 请注意， `getSpillParent` 仅在 range 对象是单个单元格时有效。 对 `getSpillParent` 具有多个单元格的范围调用将导致在返回 (或返回空区域时 `Range.getSpillParentOrNullObject`) 。
+使用 [Range.getSpillParent](/javascript/api/excel/excel.range#getSpillParent__) 方法查找负责溢出到给定单元格的单元格。 请注意， `getSpillParent` 仅在 range 对象是单个单元格时有效。 对 `getSpillParent` 具有多个单元格的范围进行调用将导致在返回 (返回空区域时 `Range.getSpillParentOrNullObject` 引发错误) 。
 
 ## <a name="see-also"></a>另请参阅
 

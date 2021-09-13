@@ -2,17 +2,17 @@
 title: Outlook 外接程序 API 要求集 1.6
 description: 作为邮箱 API 1.6 Outlook外接程序和 Office JavaScript API 引入的功能和 API。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: a552c362e247da7b36d14a0c32f557440a324977
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9fd96fbd8f310b4e194fe2601dd1900eae49c713
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939041"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149563"
 ---
 # <a name="outlook-add-in-api-requirement-set-16"></a>Outlook 外接程序 API 要求集 1.6
 
-Outlook JavaScript API 的 Office API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Outlook JavaScript API 的 Office API 子集包括可用于加载项的对象、方法、属性和Outlook事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。

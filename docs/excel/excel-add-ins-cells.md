@@ -1,15 +1,15 @@
 ---
 title: 使用 JavaScript API Excel单元格。
-description: 了解Excel的 JavaScript API 定义，并了解如何使用单元格。
+description: 了解Excel的 JavaScript API 定义，并了解如何处理单元格。
 ms.date: 04/16/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: ad8ca985b6bbdcf19920c36c371e690f61639f16
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 74603727c5944583f55e77c75589f31ffbdffb21
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936210"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149506"
 ---
 # <a name="work-with-cells-using-the-excel-javascript-api"></a>使用 JavaScript API Excel单元格
 
@@ -17,7 +17,7 @@ The Excel JavaScript API 没有“Cell”对象或类。 相反，所有Excel单
 
 对象 `Range` 还可以包含多个连续单元格。 连续单元格形成一个不间断的矩形 (包括单个行或) 。 若要了解如何处理不连续的单元格，请参阅使用 [RangeAreas](#work-with-discontiguous-cells-using-the-rangeareas-object)对象处理不连续的单元格。
 
-有关对象支持的属性和方法的完整列表，请参阅 Range `Range` Object [ (JavaScript API for Excel) 。 ](/javascript/api/excel/excel.range)
+有关对象支持的属性和方法的完整列表，请参阅 `Range` Range Object [ (JavaScript API for Excel) ](/javascript/api/excel/excel.range)。
 
 ## <a name="work-with-discontiguous-cells-using-the-rangeareas-object"></a>使用 RangeAreas 对象处理不连续单元格
 

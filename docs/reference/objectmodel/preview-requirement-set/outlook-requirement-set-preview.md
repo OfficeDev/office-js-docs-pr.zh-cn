@@ -1,18 +1,18 @@
 ---
 title: Outlook外接程序 API 预览要求集
-description: 当前处于预览阶段的功能和 API Outlook外接程序。
+description: 当前处于预览状态的功能和 API Outlook外接程序。
 ms.date: 08/27/2021
-localization_priority: Normal
-ms.openlocfilehash: ed37bdc872c045a071ee6217efa98eff5b5eea97
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3715741981f3d287adc85f3545d81fe9a7565bb2
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936800"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149467"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook外接程序 API 预览要求集
 
-Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Outlook JavaScript API 的 Office 加载项 API 子集包括可在加载项中Outlook的对象、方法、属性和事件。
 
 > [!IMPORTANT]
 > 本文档适用于 **预览**[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。 此要求集尚未完全实现，客户端不会准确报告对它的支持。 不应在外接程序清单中指定此要求集。
@@ -20,9 +20,9 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> 你或许能够通过在 Outlook 网页版 租户上配置目标版本来预览 Microsoft 365[功能](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。 此页面中会针对适用的功能说明"配置预览访问"。
+> 你或许能够通过在 Outlook 网页版 租户上配置定向发布来预览 Microsoft 365[功能](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。 此页面中会针对适用的功能说明"配置预览访问"。
 >
-> 对于其他功能，您可能能够通过完成和提交此表单Outlook 网页版请求访问预览 bits for Microsoft 365[帐户。](https://aka.ms/OWAPreview) 这些功能中会指出"请求预览访问"。
+> 对于其他功能，您可能能够通过完成和提交此表单Outlook 网页版请求访问预览位Microsoft 365[帐户。](https://aka.ms/OWAPreview) 这些功能中会指出"请求预览访问"。
 
 预览要求集包含要求集 [1.10 的所有功能](../requirement-set-1.10/outlook-requirement-set-1.10.md)。
 
@@ -34,7 +34,7 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 
 现在可以在受 IRM 保护的项目上激活外接程序。 若要启用此功能，租户管理员需要在租户中通过设置"允许以编程方式访问"自定义策略选项来 `OBJMODEL` 启用Office。  有关详细信息 [，请参阅使用](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 权限和说明。
 
-**适用于**：Outlook（Windows版本 13229.10000） (连接到 Microsoft 365 订阅) 
+**提供位置**：Outlook Windows版本 13229.10000， (连接到 Microsoft 365 订阅) 
 
 <br>
 

@@ -2,13 +2,13 @@
 ms.date: 07/08/2021
 description: 了解Excel窗格及其特定 JavaScript 运行时的自定义函数。
 title: 无 UI 的运行时Excel自定义函数
-localization_priority: Normal
-ms.openlocfilehash: 8e08f4accd33e405beb5fab618e92dd28abf2246
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 491e47674d87d99d0adeda952ee65ffc24dff2bd
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938303"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148859"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>无 UI 的运行时Excel自定义函数
 
@@ -26,13 +26,13 @@ ms.locfileid: "58938303"
 
 请注意，无 UI 函数在生成 XmlHttpRequest 时必须使用额外的安全措施，这需要[同源策略](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)和简单的[CORS。](https://www.w3.org/TR/cors/)
 
-简单的 CORS 实现无法使用 Cookie，并且仅支持 GET、HEAD、POST (简单) 。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 还可以在简单 `Content-Type` CORS 中使用标头，只要内容类型为 、 或 `application/x-www-form-urlencoded` `text/plain` `multipart/form-data` 。
+简单的 CORS 实现不能使用 Cookie，并且仅支持 GET、HEAD、POST () 的简单方法。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 还可以在简单 `Content-Type` CORS 中使用标头，只要内容类型为 、 或 `application/x-www-form-urlencoded` `text/plain` `multipart/form-data` 。
 
 ## <a name="store-and-access-data"></a>存储和访问数据
 
 在无 UI 自定义函数中，可以使用 对象存储和访问 `OfficeRuntime.storage` 数据。 `Storage` 是一个持续、未加密的键值存储系统，可提供 [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage)的替代项，而无 UI 自定义函数不能使用它。 `Storage` 每个域提供 10 MB 的数据。 域可以由多个加载项共享。
 
-`Storage` 旨在作为共享存储解决方案，这意味着外接程序的多个部分将能访问相同数据。 例如，用户身份验证令牌可能存储在 中，因为它可以通过无 UI 自定义函数和外接程序 UI 元素（如任务窗格） `storage` 访问。 同样，如果两个加载项共享同一个域 (例如 ，、) ，则还允许它们通过 来回 `www.contoso.com/addin1` `www.contoso.com/addin2` 共享信息 `storage` 。 请注意，具有不同子域的外接程序将具有不同的 (`storage` 例如 `subdomain.contoso.com/addin1` `differentsubdomain.contoso.com/addin2` ，) 。
+`Storage` 旨在作为共享存储解决方案，这意味着外接程序的多个部分将能访问相同数据。 例如，用户身份验证令牌可能存储在 中，因为它可以通过无 UI 自定义函数和外接程序 UI 元素（如任务窗格） `storage` 访问。 同样，如果两个加载项共享同一个域 (例如 ，、) ，则还允许它们通过 来回 `www.contoso.com/addin1` `www.contoso.com/addin2` 共享信息 `storage` 。 请注意，具有不同子域的加载项将具有不同的 (`storage` 例如 `subdomain.contoso.com/addin1` `differentsubdomain.contoso.com/addin2` ，) 。
 
 由于 `storage` 可能是共享的位置，因此一定要认识到，可能会存在替代键值对的情况。
 

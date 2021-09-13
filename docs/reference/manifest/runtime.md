@@ -2,13 +2,13 @@
 title: 清单文件中运行时
 description: Runtime 元素将外接程序配置为将共享 JavaScript 运行时用于其各种组件，例如功能区、任务窗格、自定义函数。
 ms.date: 05/19/2021
-localization_priority: Normal
-ms.openlocfilehash: cd09abe31ff57eac629c6c61c873c5c886f73f9c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8d58cdce1520439685d868ae264d3b6fb3fe9e69
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937122"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148825"
 ---
 # <a name="runtime-element"></a>运行时元素
 
@@ -34,7 +34,7 @@ ms.locfileid: "58937122"
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-| [Override](override.md) | 否 | **Outlook**：指定 Desktop 为 [LaunchEvent](../../reference/manifest/extensionpoint.md#launchevent)扩展点处理程序Outlook JavaScript 文件的 URL 位置。 **重要** 提示：目前只能定义一 `<Override>` 个元素，并且必须为 类型 `javascript` 。|
+| [Override](override.md) | 否 | **Outlook：** 指定 Desktop 为 [LaunchEvent](../../reference/manifest/extensionpoint.md#launchevent)扩展点处理程序Outlook JavaScript 文件的 URL 位置。 **重要** 提示：目前只能定义一 `<Override>` 个元素，并且必须为 类型 `javascript` 。|
 
 ## <a name="attributes"></a>属性
 

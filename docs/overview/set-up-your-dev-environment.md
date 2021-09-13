@@ -1,22 +1,22 @@
 ---
 title: 设置开发环境
-description: 设置开发人员环境以构建Office加载项。
+description: 设置开发人员环境以Office加载项。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: efc89b728117e2888cdebd2c5a132047fe662915
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 71982a51e4941cb90a488f317cf6f771ccf5b005
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936679"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149250"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
-本指南可帮助你设置工具，以便Office快速入门或教程创建加载项。 你需要从以下列表中安装工具。 如果已安装这些组件，则已准备好开始快速入门[，Excel React快速入门。](../quickstarts/excel-quickstart-react.md)
+本指南可帮助你设置工具，以便你Office快速入门或教程创建加载项。 你需要从以下列表中安装工具。 如果已安装这些组件，则已准备好开始快速入门[，Excel React快速入门](../quickstarts/excel-quickstart-react.md)。
 
 - Node.js
 - npm
-- 一Microsoft 365订阅版本的用户帐户Office
+- 包含 Microsoft 365 订阅版本的 Office
 - 你选择的代码编辑器
 
 本指南假定你了解如何使用命令行工具。
@@ -25,7 +25,7 @@ ms.locfileid: "58936679"
 
 Node.js是一个 JavaScript 运行时，你需要开发新式Office外接程序。
 
-通过Node.js下载[建议的最新版本来安装客户端。](https://nodejs.org) 按照操作系统的安装说明操作。
+通过Node.js[下载建议的最新版本来安装客户端。](https://nodejs.org) 按照操作系统的安装说明操作。
 
 ## <a name="install-npm"></a>安装 npm
 
@@ -43,11 +43,11 @@ npm 是一个开源软件注册表，可从中下载用于开发加载项Office�
 npm -v
 ```
 
-你可能希望使用节点版本管理器，以允许你在多个版本的 Node.js 和 npm 之间切换，但这不是严格必需的。 有关如何操作的详细信息， [请参阅 npm 的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
+你可能希望使用节点版本管理器来允许你在多个版本的 Node.js 和 npm 之间切换，但这不是严格必需的。 有关如何操作的详细信息， [请参阅 npm 的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
 
 ## <a name="get-microsoft-365"></a>获取Microsoft 365
 
-如果你还没有 Microsoft 365 帐户，可以通过加入 Microsoft 365 开发人员计划获取包含所有 Office 应用的免费、90 天的可续订[Microsoft 365 订阅](https://developer.microsoft.com/office/dev-program)。
+如果你还没有 Microsoft 365 帐户，可以通过加入 Microsoft 365 开发人员计划获取包含所有 Office 应用的 90 天[免费可](https://developer.microsoft.com/office/dev-program)续订 Microsoft 365 订阅。
 
 ## <a name="install-a-code-editor"></a>安装代码编辑器
 
@@ -59,7 +59,7 @@ npm -v
 
 ## <a name="next-steps"></a>后续步骤
 
-请尝试创建自己的外接程序或使用 Script Lab来尝试内置示例。
+尝试创建自己的外接程序或使用 Script Lab来尝试内置示例。
 
 ### <a name="create-an-office-add-in"></a>创建 Office 加载项
 

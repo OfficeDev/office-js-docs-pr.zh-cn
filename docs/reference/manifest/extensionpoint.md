@@ -2,13 +2,13 @@
 title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
 ms.date: 05/11/2021
-localization_priority: Normal
-ms.openlocfilehash: 8f84be1f2dcc43d795026fcd28dc3860c5e07a1e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c68df7bdaf1bf6aa93002e3120321f80d69724ab
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937306"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149405"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -74,7 +74,7 @@ ms.locfileid: "58937306"
 |元素|说明|
 |:-----|:-----|
 |**CustomTab**|如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 |
-|**OfficeTab**|如果要使用 **PrimaryCommandSurface** Office 应用扩展默认功能 (选项卡) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 有关详细信息，请参阅 [OfficeTab](officetab.md)。|
+|**OfficeTab**|如果要使用 **PrimaryCommandSurface** 扩展默认功能Office 应用选项卡 (必需) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 有关详细信息，请参阅 [OfficeTab](officetab.md)。|
 |**OfficeMenu**|如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 适用于 Excel 或 Word 的 - **ContextMenuText** 当用户选定文本，然后右键单击所选定的文本时显示上下文菜单上的项。 <br/> 适用于 Excel 的 - **ContextMenuCell** 当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。|
 |**Group**|选项卡上的一组用户界面扩展点。一组可以有多达六个控件。**id** 属性是必需的。它是一个最多为 125 个字符的字符串。 |
 |**Label**|必需。 组的标签。 **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素的 **id** 属性的值。 **String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。|
@@ -264,7 +264,7 @@ ms.locfileid: "58937306"
 
 ### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
-此扩展点将适合模式的切换置于移动外形外形中约会的命令图面中。 会议组织者可以创建联机会议。 与会者随后可以加入联机会议。 若要了解有关此方案的信息，请参阅为联机[会议Outlook创建移动外接程序一](../../outlook/online-meeting.md)文。
+此扩展点将适合模式的切换置于移动外形外形中约会的命令图面中。 会议组织者可以创建联机会议。 与会者随后可以加入联机会议。 若要了解有关此方案的信息，请参阅为联机[会议Outlook创建移动外接程序一文](../../outlook/online-meeting.md)。
 
 > [!NOTE]
 > 此扩展点仅在 Android 和 iOS 上受支持，Microsoft 365订阅。
@@ -309,7 +309,7 @@ ms.locfileid: "58937306"
 
 ### <a name="launchevent"></a>LaunchEvent
 
-通过此扩展点，加载项可以基于桌面设备类型中支持的事件进行激活。 若要了解有关此方案以及受支持事件的完整列表，请参阅 Configure [your Outlook add-in for event-based activation一](../../outlook/autolaunch.md)文。
+通过此扩展点，加载项可以基于桌面设备类型中支持的事件进行激活。 若要了解有关此方案以及受支持事件的完整列表，请参阅为基于事件的激活配置 Outlook[外接程序一文](../../outlook/autolaunch.md)。
 
 > [!IMPORTANT]
 > 注册 [邮箱](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) 和 [项目](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 事件不适用于此扩展点。
@@ -336,7 +336,7 @@ ms.locfileid: "58937306"
 
 ### <a name="events"></a>事件
 
-此扩展点添加了指定事件的事件处理程序。 有关使用此扩展点的信息，请参阅[On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md)。
+此扩展点添加了指定事件的事件处理程序。 有关使用此扩展点的信息，请参阅[On-send feature for Outlook add-ins。](../../outlook/outlook-on-send-addins.md)
 
 > [!IMPORTANT]
 > 注册 [邮箱](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) 和 [项目](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 事件不适用于此扩展点。

@@ -2,13 +2,13 @@
 ms.date: 05/17/2020
 description: 在不使用任务窗格Excel自定义函数对用户进行身份验证。
 title: 无 UI 自定义函数的身份验证
-localization_priority: Normal
-ms.openlocfilehash: 94eadd343f969e6dbd83881764fac936acf0704b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 415663d4947caa6476fff21359d20a03eb8d67c3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937142"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149286"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>无 UI 自定义函数的身份验证
 
@@ -90,7 +90,7 @@ Office 加载项基于 Web，你可以使用任何 Web 身份验证技术。 没
 
 在开发自定义函数时，请避免使用下列位置来存储数据：。
 
-- `localStorage`：无 UI 的自定义函数无法访问全局对象，因此无法访问 `window` 中存储的数据 `localStorage` 。
+- `localStorage`：无 UI 的自定义函数无法访问全局对象，因此 `window` 无法访问 中存储的数据 `localStorage` 。
 - `Office.context.document.settings`：此位置不安全，使用加载项的任何人员都可以提取相关信息。
 
 ## <a name="dialog-box-api-example"></a>对话框 API 示例

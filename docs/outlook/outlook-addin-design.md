@@ -2,13 +2,13 @@
 title: Outlook 外接程序设计
 description: 可帮助你设计和构建引人入胜的外接程序的准则，通过遵循这些准则，你可以将自己的最佳的应用引入到 Windows、Web、iOS、Mac 和 Android 上的 Outlook 中。
 ms.date: 08/12/2021
-localization_priority: Priority
-ms.openlocfilehash: 62a25595d42470094f7f9471fb97f2e133350da4
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: d18c361f0c33275f588d7fb2157f870c4ed3de57
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938289"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148838"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Outlook 外接程序设计准则
 

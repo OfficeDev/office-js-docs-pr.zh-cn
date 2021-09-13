@@ -1,20 +1,20 @@
 ---
 title: Office 外接程序的布局准则
-description: 获取有关如何在加载项中设置任务窗格或Office的指南。
+description: 获取有关如何在加载项中布局任务窗格或对话框Office指南。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 14c788613fe3ac11436c32c5b7457f379b4a72fe
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e309a274835f429d3c9fd5f71de497161474ad45
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937674"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149460"
 ---
 # <a name="layout"></a>布局
 
 嵌入到 Office 中的每个 HTML 容器都将有一个布局。这些布局是外接程序的主屏幕。你将在其中创建使客户能够启动操作、修改设置、查看、滚动或导航内容的体验。设计在屏幕中具有一致布局的外接程序，以确保体验的连续性。如果你有客户熟悉使用的现有网站，请考虑重新使用现有网页中的布局。对它们进行调整以协调适应 Office HTML 容器。
 
-有关布局指南，请参阅[任务窗格](task-pane-add-ins.md)、[内容](content-add-ins.md)和[对话框](dialog-boxes.md)。 若要详细了解如何将 UI Fluent[](using-office-ui-fabric-react.md)或[React JS Office UI Fabric](fabric-core.md)组件组合到通用布局和用户体验流中，请参阅用户体验设计模式[模板](ux-design-pattern-templates.md)。
+有关布局指南，请参阅[任务窗格](task-pane-add-ins.md)、[内容](content-add-ins.md)和[对话框](dialog-boxes.md)。 若要详细了解如何将 UI Fluent[](using-office-ui-fabric-react.md)或[React JS Office UI Fabric](fabric-core.md)组件组合到常见布局和用户体验流中，请参阅用户体验设计模式[模板](ux-design-pattern-templates.md)。
 
 应用以下布局一般准则。
 

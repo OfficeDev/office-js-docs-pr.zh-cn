@@ -1,14 +1,14 @@
 ---
 ms.date: 03/08/2021
-description: 了解如何在自定义函数内使用不同的参数，如Excel范围、可选参数、调用上下文等。
+description: 了解如何在自定义函数内使用不同的参数，如Excel区域、可选参数、调用上下文等。
 title: 自定义Excel选项
-localization_priority: Normal
-ms.openlocfilehash: a168853eeb6a81cf3d0054cb3628b609ec283af7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 760e680441472d3089e9f6a986af60aac26a02f1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938755"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149533"
 ---
 # <a name="custom-functions-parameter-options"></a>自定义函数参数选项
 
@@ -61,7 +61,7 @@ function add(first: number, second: number, third?: number): number {
 ---
 
 > [!NOTE]
-> 如果没有为可选参数指定值，Excel会为其分配值 `null` 。 这意味着 TypeScript 中的默认初始化参数将不能正常工作。 请勿使用语法 `function add(first:number, second:number, third=0):number` ，因为它不会初始化 `third` 为 0。 请改为使用 TypeScript 语法，如上一示例所示。
+> 当未指定可选参数的值时，Excel为其分配值 `null` 。 这意味着 TypeScript 中的默认初始化参数将不能正常工作。 请勿使用语法 `function add(first:number, second:number, third=0):number` ，因为它不会初始化 `third` 为 0。 请改为使用 TypeScript 语法，如上一示例所示。
 
 定义包含一个或多个可选参数的函数时，请指定可选参数为 null 时会发生什么情况。 在以下示例中，`zipCode` 和 `dayOfWeek` 都是 `getWeatherReport` 函数的可选参数。 如果 `zipCode` 参数为 null，则默认值设置为 `98052` 。 如果 `dayOfWeek` 参数为 null，则设置为星期三。
 
@@ -197,7 +197,7 @@ function addSingleValue(singleValue) {
 
 ### <a name="single-range-parameter"></a>单个区域参数
 
-从技术上说，单个范围参数不是重复参数，但此处包含此参数，因为声明与重复参数非常相似。 对于用户，它显示为 ADD (A2：B3) 其中从单个区域传递Excel。 以下示例演示如何声明单个 range 参数。
+从技术上说，单个范围参数不是重复参数，但此处包含此参数，因为声明与重复参数非常相似。 对于用户，它显示为 ADD (A2：B3) 其中单个区域从 Excel。 以下示例演示如何声明单个 range 参数。
 
 ```JS
 /**

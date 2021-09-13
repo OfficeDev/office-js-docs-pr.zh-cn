@@ -2,13 +2,13 @@
 title: 在 Office 加载项中使用动作
 description: 获取有关在加载项中使用切换、运动或动画Office最佳做法。
 ms.date: 05/12/2021
-localization_priority: Normal
-ms.openlocfilehash: 94b421a04d4dc91aa7ab97abd8569e0b590786ae
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3c0b9af5c11c6b2363b6198fc0ebeaf4cb524820
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938086"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149351"
 ---
 # <a name="using-motion-in-office-add-ins"></a>在 Office 加载项中使用动作
 
@@ -33,7 +33,7 @@ Office 的重点是工作效率，因此 Office 动画语言支持帮助客户�
 
 ## <a name="use-expected-motions"></a>使用符合预期的动作
 
-我们建议使用[Fluent UI](https://developer.microsoft.com/fluentui#/)创建与 Office 平台的可视连接，我们还鼓励使用[Fluent UI](https://developer.microsoft.com/fluentui#/styles/web/motion)动画创建与 Fabric 运动语言一致的动作。
+我们建议使用[Fluent UI](https://developer.microsoft.com/fluentui#/)创建与 Office 平台的可视连接，我们还鼓励使用[Fluent UI](https://developer.microsoft.com/fluentui#/styles/web/motion)动画创建与 Fabric 运动语言一致的运动。
 
 它可用于在 Office 中无缝集成。它有助于创建更侧重用户感受（而不是外观）的体验。动画 CSS 类提供方向、进入/退出和持续时间（强化 Office 心理模型），并为客户提供了解如何与加载项交互的机会。
 

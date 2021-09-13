@@ -2,13 +2,13 @@
 title: 设计 Office 加载项的 UI
 description: 了解 Office 加载项视觉设计的最佳做法。
 ms.date: 07/08/2021
-localization_priority: Priority
-ms.openlocfilehash: 7c43a491de9ae3204ca77db45c64cbdf6404969d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 68b398cb04b59f7ce4506739db1357b7cbc3998e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936650"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149392"
 ---
 # <a name="design-the-ui-of-office-add-ins"></a>设计 Office 加载项的 UI
 

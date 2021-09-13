@@ -3,13 +3,13 @@ title: 自定义函数要求集
 description: 有关 JavaScript API 的自定义函数Excel的详细信息。
 ms.date: 09/14/2020
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 0860dd2d1b55376a85eadf04898d288d83b0205d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 0d29d56bb41d44ed8553e97c583e41510e83c132
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936939"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149411"
 ---
 # <a name="custom-functions-requirement-sets"></a>自定义函数要求集
 
@@ -22,7 +22,7 @@ ms.locfileid: "58936939"
 | CustomFunctionsRuntime 1.1 | 16.0.12527.20092 或更高版本 | 不支持 | 16.34 或更高版本 | 2019 年 5 月 |
 
 > [!NOTE]
-> Excel 2019 Office或更早版本上不支持自定义 (一次购买) 。
+> Excel 2019 Office或更早版本不支持自定义 (一次购买) 。
 
 ## <a name="customfunctionsruntime-11-12-and-13"></a>CustomFunctionsRuntime 1.1、1.2 和 1.3
 

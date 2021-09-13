@@ -2,17 +2,17 @@
 title: 单声道样式图标指南Office加载项
 description: 在加载项中使用单Office图标的指南。
 ms.date: 03/30/2021
-localization_priority: Normal
-ms.openlocfilehash: 0e8bf4f39ddbad457df7d033a08836825d9e1d3f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 43048b2e32810fb1f702e58ffb8eb5d9d85bbd4b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936612"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149390"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>单声道样式图标指南Office加载项
 
-单声道样式图标用于Office应用中。 如果更希望图标与 2013+非订阅 Office样式匹配，请参阅适用于 Office 外接程序的新鲜样式[图标指南](add-in-icons-fresh.md)。
+单声道样式图标用于Office应用中。 如果你希望图标与 2013+非订阅 Office样式匹配，请参阅适用于 Office 外接程序的新鲜样式[图标指南](add-in-icons-fresh.md)。
 
 ## <a name="office-monoline-visual-style"></a>Office单声道视觉样式
 
@@ -30,7 +30,7 @@ Monoline 样式的目标是具有一致、清晰且可访问的图标，以通�
 #### <a name="convey-meaning"></a>传达含义
 
 - 使用描述性元素（如页面）表示文档或信封来表示邮件。
-- 使用相同的元素表示相同的概念，即邮件始终用信封而不是标记表示。
+- 使用相同的元素来表示相同的概念，即邮件始终用信封而不是标记表示。
 - 在概念开发过程中使用核心隐喻。
 
 #### <a name="reduction-of-elements"></a>减少元素
@@ -61,7 +61,7 @@ Monoline 样式的目标是具有一致、清晰且可访问的图标，以通�
 **16 像素、20 像素、24 像素、32 像素、40 像素、48 像素、64 像素、80 像素、96 像素**
 
 > [!IMPORTANT]
-> 有关作为加载项代表性图标的图像，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和 Office内创建有效列表，了解大小和其他要求。
+> 对于作为加载项代表性图标的图像，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和 Office内创建有效列表，了解大小和其他要求。
 
 ### <a name="layout"></a>布局
 
@@ -152,7 +152,7 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 #### <a name="palette"></a>调色板
 
-![单声道的四种灰色底纹：独立或大纲的深灰色、大纲或内容的中灰色、背景填充的浅灰色和浅灰色的填充。](../images/monoline-grayshades.png)
+![单声道的四种灰色底纹：独立或大纲的深灰色、大纲或内容的中灰色、背景填充为浅灰色，浅灰色表示填充。](../images/monoline-grayshades.png)
 
 ![单声道的调色板包括独立、大纲和填充的蓝色、绿色、黄色、红色和紫色的阴影。](../images/monoline-colors.png)
 
@@ -177,7 +177,7 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 #### <a name="when-to-use-color"></a>何时使用颜色
 
-颜色应该用于传达图标的含义，而不是用于修饰。 它 **应突出显示给用户** 的操作。 将修饰符添加到具有颜色的基本元素时，基元素通常转换为深灰色和背景填充，以便修饰符可以是颜色元素，如以下示例，将"X"修饰符添加到以下集最左侧图标的图片基础中。
+颜色应该用于传达图标的含义，而不是用于修饰。 它 **应突出显示给用户** 的操作。 将修饰符添加到具有颜色的基本元素时，基元素通常转换为深灰色和背景填充，以便修饰符可以是颜色元素，如以下示例，将"X"修饰符添加到下一组最左侧图标的图片基础中。
 
 ![使用颜色的五个图标的编译。](../images/monolineicon29.png)
 
@@ -199,7 +199,7 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 ### <a name="text"></a>文本
 
-避免在图标中使用文本字符。 由于Office产品已全球使用，我们希望尽可能使图标保持中性语言。
+避免在图标中使用文本字符。 由于Office产品已全球使用，我们希望将图标尽量保持中性语言。
 
 ## <a name="production"></a>生产
 

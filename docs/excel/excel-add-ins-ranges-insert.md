@@ -1,15 +1,15 @@
 ---
-title: 使用 JavaScript API Excel插入区域
+title: 使用 JavaScript API Excel区域
 description: 了解如何使用 JavaScript API 插入Excel单元格。
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 0571e7d6140f5023008654a1e74d7abf6b3cab0a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e14aeb030e01dbf170d3acc1edd4952b4989a557
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936323"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149261"
 ---
 # <a name="insert-a-range-of-cells-using-the-excel-javascript-api"></a>使用 JavaScript API 插入Excel单元格
 

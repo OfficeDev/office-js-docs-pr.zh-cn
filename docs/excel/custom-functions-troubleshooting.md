@@ -2,13 +2,13 @@
 ms.date: 03/30/2021
 description: 排查自定义函数Excel常见问题。
 title: 自定义函数疑难解答
-localization_priority: Normal
-ms.openlocfilehash: 5029deea7b02f7564d2149e3aa689408fbb8b479
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b95dae1acb60fe21298641076fb63f0655193e11
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938718"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149532"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -80,7 +80,7 @@ CustomFunctions.associate("ADD", add);
 
 ## <a name="known-issues"></a>已知问题
 
-已知问题将跟踪并报告在自定义函数Excel[库中GitHub报告](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
+已知问题在自定义函数Excel[库中GitHub报告](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
 
 ## <a name="reporting-feedback"></a>报告反馈
 

@@ -2,13 +2,13 @@
 title: 绑定到文档或电子表格中的区域
 description: 了解如何使用绑定以确保通过标识符一致地访问文档或电子表格的特定区域或元素。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 9db35168274b599b93a6688d1318103c48edee55
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4da5dabe75f41e0ab7add6ee33aa82144a53b3e7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936865"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148881"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
@@ -126,7 +126,7 @@ function write(message){
 **对于 Excel** `itemName` [，addFromNamedItemAsync]方法的参数可以引用现有的命名区域、使用引用样式指定的区域 `A1` `("A1:A3")` 或表。 默认情况下，在 Excel 中添加表会为你添加的第一个表分配名称“Table1”，为你添加的第二个表分配名称“Table2”，以此类推。 若要在用户界面中为表指定有意义的Excel，请使用"表工具"| `Table Name` **功能** 区的"设计"选项卡。
 
 > [!NOTE]
-> 在Excel中，将表指定为已命名项时，必须完全限定名称以在此格式的表名称中包含工作表名称：`"Sheet1!Table1"`
+> 在Excel中，将表指定为已命名项时，必须完全限定名称以将工作表名称包含在此格式的表名称中：`"Sheet1!Table1"`
 
 以下示例在 Excel A 列的前三个单元格创建一个 () ，分配 id，然后将三个城市名称写入 `"A1:A3"` `"MyCities"` 该绑定。
 

@@ -1,9 +1,9 @@
-可通过 Office JS 内容交付网络 (CDN) 访问 Office JavaScript API 库：`https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` 要在任何加载项的网页中使用 Office JavaScript API，必须在页面的 `<head>` 标记中的 `<script>` 标记内引用 CDN。
+可通过 Office JS 内容交付网络 (CDN) 访问 Office JavaScript API 库：`https://appsforoffice.microsoft.com/lib/1/hosted/office.js` 要在任何加载项的网页中使用 Office JavaScript API，必须在页面的 `<head>` 标记中的 `<script>` 标记内引用 CDN。
 
 ```html
 <head>
     ...
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 </head>
 ```
 

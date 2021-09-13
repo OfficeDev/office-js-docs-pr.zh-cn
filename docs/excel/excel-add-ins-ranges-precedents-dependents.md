@@ -1,15 +1,15 @@
 ---
 title: 使用 JavaScript API 处理公式引用Excel依赖项
-description: 了解如何使用 JavaScript API Excel引用单元格和依赖项。
+description: 了解如何使用 JavaScript API Excel引用单元格和从属单元格。
 ms.date: 07/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: defab38c2096fa00051d5246d734e0bae592f46b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4f7339a2d838e93faf6045651e3cb39a244b4aa7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936815"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149412"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>使用 JavaScript API 获取公式引用Excel依赖项
 
@@ -17,13 +17,13 @@ Excel公式通常引用其他单元格。 这些跨单元格引用称为"引用�
 
 单元格可以有引用单元格，并且该引用单元格可能有自己的引用单元格。 "直接引用单元格"是此序列中前面的第一组单元格，类似于父子关系中父级的概念。 "直接从属"是序列中第一个从属单元格组，类似于父子关系中的子级。 引用工作簿中其他单元格，但其关系不是父子关系的单元格不是直接从属单元格或直接引用单元格。
 
-本文提供的代码示例使用 JavaScript API 检索公式的直接引用Excel从属单元格。 有关对象支持的属性和方法的完整列表，请参阅 `Range` Range Object [ (JavaScript API for Excel) 。 ](/javascript/api/excel/excel.range)
+本文提供的代码示例使用 JavaScript API 检索公式的直接引用Excel从属单元格。 有关对象支持的属性和方法的完整列表，请参阅 `Range` Range Object [ (JavaScript API for Excel) ](/javascript/api/excel/excel.range)。
 
 ## <a name="get-the-direct-precedents-of-a-formula"></a>获取公式的直接引用单元格
 
-使用 [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getDirectPrecedents__)查找公式的直接引用单元格。 `Range.getDirectPrecedents` 返回 `WorkbookRangeAreas` 一个对象。 此对象包含工作簿中所有直接引用单元格的地址。 对于每个包含 `RangeAreas` 至少一个公式引用单元格的工作表，它都有一个单独的对象。 有关使用对象的信息，请参阅在加载项中同时Excel `RangeAreas` [多个区域](excel-add-ins-multiple-ranges.md)。
+使用 [Range.getDirectPrecedents](/javascript/api/excel/excel.range#getDirectPrecedents__)查找公式的直接引用单元格。 `Range.getDirectPrecedents` 返回 `WorkbookRangeAreas` 一个对象。 此对象包含工作簿中所有直接引用单元格的地址。 对于每个包含 `RangeAreas` 至少一个公式引用单元格的工作表，它都有一个单独的对象。 有关使用对象的信息，请参阅在加载项中同时 `RangeAreas` [Excel多个区域](excel-add-ins-multiple-ranges.md)。
 
-以下屏幕截图显示了在用户界面中 **选择"追踪** 引用单元格"Excel的结果。 此按钮绘制从引用单元格到选定单元格的箭头。 选定的单元格 **E3** 包含公式"=C3 * D3"，因此 **C3** 和 **D3 都是** 引用单元格。 与 Excel UI 按钮不同， `getDirectPrecedents` 该方法不会绘制箭头。
+以下屏幕截图显示了在"跟踪引用单元格"UI 中选择"追踪引用Excel的结果。  此按钮绘制从引用单元格到选定单元格的箭头。 选定的单元格 **E3** 包含公式"=C3 * D3"，因此 **C3** 和 **D3 都是** 引用单元格。 与 Excel UI 按钮不同， `getDirectPrecedents` 该方法不绘制箭头。
 
 ![箭头跟踪活动 UI 中的引用单元格Excel单元格。](../images/excel-ranges-trace-precedents.png)
 
@@ -56,9 +56,9 @@ Excel.run(function (context) {
 
 ## <a name="get-the-direct-dependents-of-a-formula"></a>获取公式的直接依赖项
 
-使用 [Range.getDirectDependents 查找公式的直接从属单元格](/javascript/api/excel/excel.range#getDirectDependents__)。 与 `Range.getDirectPrecedents` 类似 `Range.getDirectDependents` ，也返回 `WorkbookRangeAreas` 对象。 此对象包含工作簿中所有直接依赖项的地址。 对于每个包含至少一个依赖公式的工作表，它 `RangeAreas` 都有一个单独的对象。 有关使用对象的信息，请参阅在加载项中同时Excel `RangeAreas` [多个区域](excel-add-ins-multiple-ranges.md)。
+使用 [Range.getDirectDependents 查找公式的直接从属单元格](/javascript/api/excel/excel.range#getDirectDependents__)。 与 `Range.getDirectPrecedents` 类似 `Range.getDirectDependents` ，也返回 `WorkbookRangeAreas` 对象。 此对象包含工作簿中所有直接依赖项的地址。 对于每个包含至少一个依赖公式的工作表，它 `RangeAreas` 都有一个单独的对象。 有关使用对象的信息，请参阅在加载项中同时 `RangeAreas` [Excel多个区域](excel-add-ins-multiple-ranges.md)。
 
-以下屏幕截图显示了在自定义 UI 中选择"**跟踪从属项**"Excel的结果。 此按钮绘制从从属单元格到选定单元格的箭头。 选定的单元格 **D3** 将单元格 **E3** 作为从属单元格。 **E3** 包含公式"=C3 * D3"。 与 Excel UI 按钮不同， `getDirectDependents` 该方法不会绘制箭头。
+以下屏幕截图显示了在自定义 UI 中选择"**跟踪从属项**"Excel的结果。 此按钮绘制从从属单元格到选定单元格的箭头。 选定的单元格 **D3** 将单元格 **E3** 作为从属单元格。 **E3** 包含公式"=C3 * D3"。 与 Excel UI 按钮不同， `getDirectDependents` 该方法不绘制箭头。
 
 ![箭头跟踪 UI 中的Excel单元格。](../images/excel-ranges-trace-dependents.png)
 

@@ -3,17 +3,17 @@ title: 使用 JavaScript API 清除或删除Excel区域
 description: 了解如何使用 JavaScript API 清除或删除Excel区域。
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: a1bd99db3aa9af3903552d9cefc6ec6d21701136
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ced04c207bef26c25818d3f4f6f6ed14452e4da6
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938175"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149282"
 ---
 # <a name="clear-or-delete-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API 清除或删除Excel区域
 
-本文提供的代码示例使用 JavaScript API 清除和Excel区域。 有关对象支持的属性和方法的完整 `Range` 列表，请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供的代码示例使用 JavaScript API 清除和删除Excel区域。 有关对象支持的属性和方法的完整 `Range` 列表，请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -61,7 +61,7 @@ Excel.run(function (context) {
 
 ### <a name="data-after-range-is-deleted"></a>删除区域之后的数据
 
-![删除Excel区域之后的数据。](../images/excel-ranges-after-delete.png)
+![删除Excel之后的数据。](../images/excel-ranges-after-delete.png)
 
 
 ## <a name="see-also"></a>另请参阅

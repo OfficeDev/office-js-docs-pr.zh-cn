@@ -1,14 +1,14 @@
 ---
 title: Office命名空间 - 要求集 1.2
-description: Office邮箱 API 要求集 1.2 Outlook外接程序可用的命名空间成员。
+description: Office邮箱 API 要求集 1.2 Outlook加载项可用的命名空间成员。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 4cd15d77d1c5d9b95152f038f3421c5838bfb84f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e3d5832063808910e6b4f9dfaa9571fc14411a27
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939024"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149249"
 ---
 # <a name="office-mailbox-requirement-set-12"></a>Office (邮箱要求集 1.2) 
 
@@ -51,7 +51,7 @@ ms.locfileid: "58939024"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`Succeeded`| String|调用成功。|
 |`Failed`| 字符串|调用失败。|
@@ -78,7 +78,7 @@ ms.locfileid: "58939024"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`Html`| String|请求以 HTML 格式返回的数据。|
 |`Text`| 字符串|请求以文本格式返回的数据。|
@@ -105,7 +105,7 @@ ms.locfileid: "58939024"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|

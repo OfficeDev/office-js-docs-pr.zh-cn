@@ -2,13 +2,13 @@
 title: Outlook 外接程序清单
 description: 该清单介绍 Outlook 外接程序如何跨 Outlook 客户端进行集成；其中包括一个示例。
 ms.date: 05/27/2020
-localization_priority: Priority
-ms.openlocfilehash: 1d1f5c010586364bbbcc474cd4fcb8efa3efee1d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 1b89a351ad19c6038c4ffe0942e5b7335c4206b6
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938634"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148843"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook 外接程序清单
 

@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 VersionOverrides 元素
-description: 用于外接程序清单的 VersionOverrides 元素Office XML (XML) 文档。
+description: 有关外接程序清单的 VersionOverrides 元素Office XML 文件 (文档) 文档。
 ms.date: 05/12/2021
-localization_priority: Normal
-ms.openlocfilehash: 787ba8e7d90900cc72d6c5e9370d68ced0faee2f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1951ad9a71723d5ca1e3971ef0cbde0704824c20
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936451"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149469"
 ---
 # <a name="versionoverrides-element"></a>VersionOverrides 元素
 

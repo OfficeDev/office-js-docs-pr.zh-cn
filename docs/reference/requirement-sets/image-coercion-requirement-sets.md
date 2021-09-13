@@ -1,15 +1,15 @@
 ---
 title: 图像强制要求集
-description: 支持跨 Office、Excel 和 Word PowerPoint外接程序的图像强制要求集。
+description: 通过跨 Office、Excel 和 Word PowerPoint外接程序支持图像强制要求集。
 ms.date: 02/19/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: 35fed16003fe217e6f1f53d8c790cf78547308cf
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1e55eba4d28b459f4ffe9d402640dd04cff9acb4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939303"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59148826"
 ---
 # <a name="image-coercion-requirement-sets"></a>图像强制要求集
 
@@ -17,13 +17,13 @@ ms.locfileid: "58939303"
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
-ImageCoercion 1.1 允许转换为图像 () `Office.CoercionType.Image` 方法写入数据时创建 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 图像。 支持以下应用程序。
+ImageCoercion 1.1 支持在使用 () `Office.CoercionType.Image` 写入数据时转换到图像 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 图像。 支持以下应用程序。
 
-- Excel 2013 及更高版本Windows
+- Excel 2013 年 10 月及Windows
 - Excel 2016 Mac 及更高版本
 - iPad 版 Excel
 - OneNote 网页版
-- PowerPoint 2013 年 10 月及Windows
+- PowerPoint 2013 及更高版本Windows
 - PowerPoint 2016 Mac 及更高版本
 - PowerPoint 网页版
 - iPad 版 PowerPoint

@@ -2,13 +2,13 @@
 title: 从 Outlook 加载项使用 Exchange Web 服务 (EWS)
 description: 提供的示例显示 Outlook 加载项如何通过 Exchange Web 服务请求信息。
 ms.date: 04/28/2020
-localization_priority: Normal
-ms.openlocfilehash: 63c969355c9bae5dab6ef8603a9f3d61d8e82eec
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 80140ee4280b0e8b6f3dff9057e77e7bd6a1eceb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936753"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149487"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>从 Outlook 加载项调用 Web 服务
 
@@ -51,7 +51,7 @@ EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResul
 
 - 使用 DOM 方法时指定标记名称的前缀 `getElementsByTagName` ，以包含对Internet Explorer。
 
-  `getElementsByTagName` 根据浏览器类型，其行为会有所不同。 例如，EWS 响应可以包含以下 XML (进行格式化和缩写，以便) 。
+  `getElementsByTagName` 根据浏览器类型，其行为会有所不同。 例如，EWS 响应可以包含以下 XML (格式和缩写，以便显示) 。
 
    ```XML
         <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
@@ -72,7 +72,7 @@ EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResul
             });
    ```
 
-   在Internet Explorer，必须包含 `t:` 标记名称的前缀，如下所示。
+   在Internet Explorer，必须 `t:` 包含标记名称的前缀，如下所示。
 
    ```js
         var mailbox = Office.context.mailbox;
@@ -88,7 +88,7 @@ EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResul
       content = $.parseJSON(value.textContent);
    ```
 
-   其他属性 `innerHTML` （如 ）可能Internet Explorer EWS 响应中某些标记的标记。
+   其他属性（如 ）可能Internet Explorer `innerHTML` EWS 响应中某些标记的标记。
 
 
 ## <a name="example"></a>示例

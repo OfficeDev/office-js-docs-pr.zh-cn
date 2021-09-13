@@ -1,19 +1,19 @@
 ---
 title: 使用 Excel JavaScript API 处理图表
-description: 演示使用 JavaScript API 的图表Excel示例。
+description: 演示使用 JavaScript API Excel图表任务的代码示例。
 ms.date: 07/17/2019
-localization_priority: Normal
-ms.openlocfilehash: a7199aae31e917b0609a47cc69b5e52279d43b24
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b3cb04ff3bd8b1b0c050741a7238b1e9d6bd498f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936523"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149508"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
 本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。
-有关 和 对象支持的属性和方法的完整列表，请参阅 `Chart` `ChartCollection` Chart [Object (JavaScript API for Excel) ](/javascript/api/excel/excel.chart)和[Chart Collection Object (JavaScript API for Excel) 。 ](/javascript/api/excel/excel.chartcollection)
+有关 和 对象支持的属性和方法的完整列表，请参阅 Chart Object (JavaScript API for Excel) 和 `Chart` Chart Collection Object (`ChartCollection` [](/javascript/api/excel/excel.chart) [JavaScript API for Excel) 。 ](/javascript/api/excel/excel.chartcollection)
 
 ## <a name="create-a-chart"></a>创建图表
 
@@ -105,7 +105,7 @@ Excel.run(function (context) {
 
 **设置分类轴标题后的图表**
 
-![图表中带坐标轴标题的Excel。](../images/excel-charts-axis-title-set.png)
+![图表，其坐标轴标题Excel。](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>设置轴的显示单位
 
@@ -212,8 +212,8 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 这些参数决定图像的大小。 图像始终按比例缩放。 宽度和高度参数在缩放图像上设置上限或下限。 `ImageFittingMode` 具有以下行为的三个值。
 
 - `Fill`：图像的最小高度或宽度是指定的高度或宽度 (缩放图像时首先到达) 。 这是未指定调整模式时的默认行为。
-- `Fit`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像时首先到达) 。
-- `FitAndCenter`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像时首先到达) 。 生成的图像相对于另一个维度居中。
+- `Fit`：图像的最大高度或宽度是指定的高度或宽度， (缩放图像时首先达到) 。
+- `FitAndCenter`：图像的最大高度或宽度是指定的高度或宽度， (缩放图像时首先达到) 。 生成的图像相对于另一个维度居中。
 
 ## <a name="see-also"></a>另请参阅
 

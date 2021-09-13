@@ -2,13 +2,13 @@
 title: 处理和返回自定义函数中的错误
 description: '处理和返回自定义函数中类似 #NULL! 来自自定义函数。'
 ms.date: 08/12/2021
-localization_priority: Normal
-ms.openlocfilehash: b72ed2baea49b4b6d5f00e63e323d12a7e57d021
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 011868f35c656869ae75c7ffab195db18f690f4f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936938"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149453"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>处理和返回自定义函数中的错误
 
@@ -37,12 +37,12 @@ function getCity(zipCode: string): string {
 
 [CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error)对象用于将错误返回给单元格。 创建对象时，通过选择以下枚举值之一来指定 `ErrorCode` 要使用哪个错误。
 
-|ErrorCode 枚举值  |Excel 单元格值  |说明  |
+|ErrorCode 枚举值  |Excel 单元格值  |描述  |
 |---------------|---------|---------|
 |`divisionByZero` | `#DIV/0`  | 函数试图除以零。 |
-|`invalidName`    | `#NAME?`  | 函数名称有一个拼写错误。 请注意，此错误作为自定义函数输入错误受到支持，但不作为自定义函数输出错误。 |
+|`invalidName`    | `#NAME?`  | 函数名称有一个拼写错误。 请注意，支持将此错误作为自定义函数输入错误，但不作为自定义函数输出错误。 |
 |`invalidNumber`  | `#NUM!`   | 公式中的数字存在问题。 |
-|`invalidReference` | `#REF!` | 函数引用无效的单元格。 请注意，此错误作为自定义函数输入错误受到支持，但不作为自定义函数输出错误。|
+|`invalidReference` | `#REF!` | 函数引用无效的单元格。 请注意，支持将此错误作为自定义函数输入错误，但不作为自定义函数输出错误。|
 |`invalidValue`   | `#VALUE!` | 公式中的值的类型错误。 |
 |`notAvailable`   | `#N/A`    | 函数或服务不可用。 |
 |`nullReference`  | `#NULL!`  | 公式中的区域不相交。 |

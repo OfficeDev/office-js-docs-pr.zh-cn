@@ -2,13 +2,13 @@
 title: 使用 Excel 加载项共同创作
 description: 了解如何共同Excel存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中的工作簿。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: f57fccea8b4f7315661d3b7ba596c74dc7427bf8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: a906a9fa46c99881469dea101ac3cf329d74b113
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937366"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149288"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 
@@ -19,7 +19,7 @@ ms.locfileid: "58937366"
 
 ## <a name="coauthoring-overview"></a>共同创作功能概述
 
-如果工作簿的内容有变化，Excel 会自动跨所有共同创作者同步这些更改。 共同创作者可以更改工作簿的内容，而 Excel 加载项中运行的代码也可以这样做。 例如，当以下 JavaScript 代码在加载项Office时，区域的值将设置为 Contoso。
+如果工作簿的内容有变化，Excel 会自动跨所有共同创作者同步这些更改。 共同创作者可以更改工作簿的内容，而 Excel 加载项中运行的代码也可以这样做。 例如，当以下 JavaScript 代码在 Office 外接程序中运行时，区域的值将设置为 Contoso。
 
 ```js
 range.values = [['Contoso']];

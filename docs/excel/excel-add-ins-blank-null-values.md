@@ -1,14 +1,14 @@
 ---
 title: Excel 加载项中的空白和 null 值
-description: 了解如何使用对象模型方法和属性中的空Excel null 值。
+description: 了解如何在对象模型方法和属性中Excel空值。
 ms.date: 09/03/2020
-localization_priority: Normal
-ms.openlocfilehash: 3f38569f7342bb88c52ce424db426bfa7939be5e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ca231e367219eb381ab33d159f8afc0ed3e1594a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936824"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149507"
 ---
 # <a name="blank-and-null-values-in-excel-add-ins"></a>Excel 加载项中的空白和 null 值
 

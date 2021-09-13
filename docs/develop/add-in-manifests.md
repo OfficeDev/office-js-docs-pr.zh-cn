@@ -2,13 +2,13 @@
 title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 07/08/2020
-localization_priority: Priority
-ms.openlocfilehash: c5734c38e243520f6c2fa75935fff945350abf44
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: e948f3023613780af48bdad655230db03b740821
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937260"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149182"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 

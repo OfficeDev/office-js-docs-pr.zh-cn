@@ -2,13 +2,13 @@
 title: JavaScript API Excel错误处理
 description: 了解如何Excel JavaScript API 错误处理逻辑，以考虑运行时错误。
 ms.date: 08/27/2021
-localization_priority: Normal
-ms.openlocfilehash: 37457e6cd8b35c9e68fa4ce9a1cb9317dcf9b1af
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: bf69831f097f28dcb26c4451582dc805dc81cfd2
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937991"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149529"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API Excel错误处理
 
@@ -78,11 +78,11 @@ Excel.run(function (context) {
 |`NonBlankCellOffSheet`|Microsoft Excel无法插入新单元格，因为它将非空单元格推送到工作表末尾。 这些非空单元格可能为空，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。|
 |`NotImplemented`|所请求的功能未实现。|
 |`PivotTableRangeConflict`|尝试的操作会导致与数据透视表区域冲突。|
-|`RangeExceedsLimit`|该范围中的单元格计数已超出支持的最大数。 有关详细信息[，请参阅](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)Office 外接程序的资源限制和性能优化一文。|
+|`RangeExceedsLimit`|该范围中的单元格计数已超出支持的最大数。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。|
 |`RefreshWorkbookLinksBlocked`|操作失败，因为用户未授予刷新外部工作簿链接的权限。|
 |`RequestAborted`|请求在运行时已中止。|
-|`RequestPayloadSizeLimitExceeded`|请求有效负载大小已超出限制。 有关详细信息[，请参阅](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)Office 外接程序的资源限制和性能优化一文。 <br><br>此错误仅出现在Excel web 版。|
-|`ResponsePayloadSizeLimitExceeded`|响应有效负载大小已超出限制。 有关详细信息[，请参阅](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)Office 外接程序的资源限制和性能优化一文。  <br><br>此错误仅出现在Excel web 版。|
+|`RequestPayloadSizeLimitExceeded`|请求有效负载大小已超出限制。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。 <br><br>此错误仅出现在Excel web 版。|
+|`ResponsePayloadSizeLimitExceeded`|响应有效负载大小已超出限制。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。  <br><br>此错误仅出现在Excel web 版。|
 |`ServiceNotAvailable`|服务不可用。|
 |`Unauthenticated` |所需的身份验证信息缺少或无效。|
 |`UnsupportedFeature`|操作失败，因为源工作表包含一个或多个不受支持的功能。|
@@ -90,7 +90,7 @@ Excel.run(function (context) {
 |`UnsupportedSheet`|此工作表类型不支持此操作，因为它是一个宏或图表工作表。|
 
 > [!NOTE]
-> 上表列出了在使用 JavaScript API 时Excel错误消息。 如果你使用通用 API 而不是特定于应用程序的 Excel JavaScript API，请参阅Office[通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码，以了解相关的错误消息。
+> 上表列出了使用 JavaScript API 时可能遇到的Excel消息。 如果你使用通用 API 而不是特定于应用程序的 Excel JavaScript API，请参阅[Office通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码，以了解相关的错误消息。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -2,15 +2,15 @@
 title: 加载项中的Office快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）Office加载项。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 2ac9a83511fc29eb055ebdc4d2c77f7675c68994
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 0f4ef373ee5352f012561d76fa5bc01cb391af48
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937416"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149362"
 ---
-# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式Office加载项
+# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到Office加载项
 
 键盘快捷方式（也称为组合键）使加载项的用户能够更高效地工作。 键盘快捷方式通过提供鼠标的替代方法，还可以为残障人士改进加载项的辅助功能。
 
@@ -80,7 +80,7 @@ ms.locfileid: "58937416"
     }
     ```
 
-    有关 JSON 对象详细信息，请参阅 [构造操作](#construct-the-action-objects) 对象和 [构造快捷方式对象](#construct-the-shortcut-objects)。 快捷方式 JSON 的完整架构位于 上的[extended-manifest.schema.js。](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)
+    有关 JSON 对象详细信息，请参阅 [构造操作](#construct-the-action-objects) 对象和 [构造快捷方式对象](#construct-the-shortcut-objects)。 快捷方式 JSON 的完整架构位于 [extended-manifest.schema.json 中](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
     > [!NOTE]
     > 可以在整个文章中使用"CONTROL"来表示"Ctrl"。
@@ -90,7 +90,7 @@ ms.locfileid: "58937416"
 ## <a name="create-a-mapping-of-actions-to-their-functions"></a>创建操作到其函数的映射
 
 1. 在项目中，打开 元素中的 HTML 页面加载的 JavaScript `<FunctionFile>` 文件。
-1. 在 JavaScript 文件中，使用[Office.actions.associate](/javascript/api/office/office.actions#associate) API 将 JSON 文件中指定的每个操作映射到 JavaScript 函数。 将以下 JavaScript 添加到文件中。 关于代码，请注意以下几点。
+1. 在 JavaScript 文件中，使用[Office.actions.associate](/javascript/api/office/office.actions#associate) API 将 JSON 文件中指定的每个操作映射到 JavaScript 函数。 将以下 JavaScript 添加到文件。 关于代码，请注意以下几点。
 
     - 第一个参数是 JSON 文件的操作之一。
     - 第二个参数是当用户按下映射到 JSON 文件中操作的组合键时运行的函数。
@@ -130,13 +130,13 @@ ms.locfileid: "58937416"
     });
     ```
 
-按照前面的步骤，加载项可通过按 **Ctrl+Alt+Up** 和 **Ctrl+Alt+Down 切换任务窗格的可见性**。 相同的行为显示在 Excel 外接程序 PnP [Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)中的键盘快捷方式示例GitHub。
+按照前面的步骤，加载项可通过按 **Ctrl+Alt+Up** 和 **Ctrl+Alt+Down 切换任务窗格的可见性**。 相同的行为显示在 Excel 外接程序[](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)PnP Office中的键盘快捷方式示例GitHub。
 
 ## <a name="details-and-restrictions"></a>详细信息和限制
 
 ### <a name="construct-the-action-objects"></a>构造操作对象
 
-在上指定对象数组中的对象时 `actions` ，shortcuts.js准则。
+指定 shortcuts.json 数组中的对象时，请使用以下 `actions` 准则。
 
 - 属性名 `id` 和 `name` 是必需的。
 - `id`属性用于唯一标识使用键盘快捷方式调用的操作。
@@ -160,16 +160,16 @@ ms.locfileid: "58937416"
     ]
 ```
 
-快捷方式 JSON 的完整架构位于 上的[extended-manifest.schema.js。](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)
+快捷方式 JSON 的完整架构位于 [extended-manifest.schema.json 中](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
 ### <a name="construct-the-shortcut-objects"></a>构造快捷方式对象
 
-在上指定对象数组中的对象时 `shortcuts` ，shortcuts.js准则。
+指定 shortcuts.json 数组中的对象时，请使用以下 `shortcuts` 准则。
 
 - 属性名称 `action` 、 `key` 和 `default` 是必需的。
 - 该属性的值 `action` 是一个字符串，并且必须与 action 对象 `id` 中的某个属性匹配。
-- 该属性 `default` 可以是字符 A - Z、-z、0 - 9 和标点符号"-"、"_"和"+"的任意组合。  (根据惯例，这些属性中不会使用小写字母。) 
-- 该属性必须至少包含一个修饰符键的名称，该 (`default` Alt、Ctrl、Shift) 一个其他键。
+- 该属性 `default` 可以是字符 A - Z、-z、0 - 9 和标点符号"-"、"_"和"+"的任意组合。  (根据惯例，这些属性中不使用小写字母。) 
+- 该属性 `default` 必须至少包含 Alt、Ctrl、Shift 和一个 (键的名称) 一个修饰符键。
 - Shift 不能用作唯一的修改键。 将 Shift 与 Alt 或 Ctrl 组合使用。
 - 对于 Mac，我们还支持 Command 修饰符键。
 - 对于 Mac，Alt 映射到 Option 键。 对于Windows，Command 将映射到 Ctrl 键。
@@ -195,20 +195,20 @@ ms.locfileid: "58937416"
     ]
 ```
 
-快捷方式 JSON 的完整架构位于 上的[extended-manifest.schema.js。](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)
+快捷方式 JSON 的完整架构位于 [extended-manifest.schema.json 中](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
 > [!NOTE]
-> 键提示（也称为连续键快捷方式，例如选择填充颜色的 Excel 快捷方式 **Alt+H、H）** 在加载项中不受Office支持。
+> 键提示（也称为连续键快捷方式，例如选择填充颜色的 Excel 快捷方式 **Alt+H、H）** 在 Office 外接程序中不受支持。
 
 ## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>避免其他加载项使用组合键
 
 有许多键盘快捷方式已在由 Office。 避免为已在使用的外接程序注册键盘快捷方式，但在某些情况下，可能需要替代现有键盘快捷方式或处理已注册同一键盘快捷方式的多个加载项之间的冲突。
 
-如果发生冲突，用户第一次尝试使用冲突的键盘快捷方式时将看到一个对话框，请注意，此对话框中显示的动作名称是文件中 action 对象中的 属性。 `name` `shortcuts.json`
+如果发生冲突，用户将在第一次尝试使用冲突的键盘快捷方式时看到一个对话框，请注意，此对话框中显示的动作名称是文件中 action 对象中的 属性。 `name` `shortcuts.json`
 
 ![插图显示具有单个快捷方式的两个不同操作的冲突模式。](../images/add-in-shortcut-conflict-modal.png)
 
-用户可以选择键盘快捷方式将执行的操作。 做出选择后，保存首选项，供将来使用同一快捷方式。 快捷方式首选项按用户、平台保存。 如果用户希望更改其首选项，他们可以从"告诉我"搜索框中调用"重置Office外接程序快捷方式 **首选项"命令**。 调用命令可清除用户的所有加载项快捷方式首选项，并且用户下次尝试使用冲突快捷方式时，会再次看到冲突对话框提示。
+用户可以选择键盘快捷方式将执行的操作。 做出选择后，保存首选项，供将来使用同一快捷方式。 快捷方式首选项按用户、平台保存。 如果用户希望更改其首选项，他们可以从"告诉我"搜索框中调用"重置Office外接程序快捷方式首选项"命令。  调用命令可清除用户的所有加载项快捷方式首选项，并且用户下次尝试使用冲突快捷方式时，会再次看到冲突对话框提示。
 
 !["告诉我"搜索框显示在Excel快捷方式首选项Office重置操作。](../images/add-in-reset-shortcuts-action.png)
 
@@ -217,7 +217,7 @@ ms.locfileid: "58937416"
 - 请仅使用以下模式的键盘快捷方式： **Ctrl+Shift+Alt+* x***，其中 *x* 是一些其他键。
 - 如果您需要更多键盘快捷方式，请检查Excel[键盘](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)快捷方式的列表，并避免在外接程序中使用它们。
 - 当键盘焦点位于加载项 UI 内时 **，Ctrl+空格** 键和 **Ctrl+Shift+F10** 将不起作用，因为这些都是基本的辅助功能快捷方式。
-- 在 Windows 或 Mac 计算机上，如果"重置 Office 外接程序快捷方式首选项"命令在搜索菜单上不可用，则用户可以通过通过上下文菜单自定义功能区，将该命令手动添加到功能区。
+- 在 Windows 或 Mac 计算机上，如果"重置 Office 加载项快捷方式首选项"命令在搜索菜单上不可用，则用户可以通过上下文菜单自定义功能区，将该命令手动添加到功能区。
 
 ## <a name="customize-the-keyboard-shortcuts-per-platform"></a>自定义每个平台的键盘快捷方式
 

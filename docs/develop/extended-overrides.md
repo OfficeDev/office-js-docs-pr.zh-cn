@@ -2,13 +2,13 @@
 title: 使用清单的扩展替代
 description: 了解如何使用清单的扩展替代来配置扩展性功能。
 ms.date: 02/23/2021
-localization_priority: Normal
-ms.openlocfilehash: 4eb8936e8a01b81a3883f848446d20ebf4ecf863
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d9af67a19233979cc46ecccc7030fe5b4a65beb7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936456"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149348"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>使用清单的扩展替代
 
@@ -39,7 +39,7 @@ ms.locfileid: "58936456"
 </OfficeApp>
 ```
 
-下面是一个非常简单的扩展覆盖 JSON 文件的示例。 它将键盘快捷方式 Ctrl+Shift+A 分配给在 (打开外接程序任务窗格) 位置定义的函数。
+下面是一个非常简单的扩展覆盖 JSON 文件的示例。 它将键盘快捷方式 Ctrl+Shift+A 分配给 (打开加载项任务窗格) 定义的函数。
 
 ```json
 {
@@ -63,7 +63,7 @@ ms.locfileid: "58936456"
 
 ## <a name="localize-the-extended-overrides-file"></a>本地化扩展替代文件
 
-如果您的外接程序支持多个区域设置，您可以使用 元素的 属性将 Office `ResourceUrl` `<ExtendedOverrides>` 指向本地化资源的文件。 示例如下。
+如果加载项支持多个区域设置，可以使用 元素 的 属性将 Office指向 `ResourceUrl` `<ExtendedOverrides>` 本地化资源的文件。 示例如下。
 
 ```xml
     ...

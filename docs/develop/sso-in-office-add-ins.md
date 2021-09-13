@@ -2,13 +2,13 @@
 title: 为 Office 加载项启用单一登录
 description: 了解如何使用常用的 Microsoft 个人、工作或教育帐户来为 Office 加载项启用单一登录。
 ms.date: 09/03/2021
-localization_priority: Priority
-ms.openlocfilehash: b424d30148f216c1c9bb4290e5bb9f9b12bb073a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: b871258d2a179f39a53b6f062de73ddd14a70a17
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937061"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149304"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>为 Office 加载项启用单一登录
 

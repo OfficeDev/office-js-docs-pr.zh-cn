@@ -1,7 +1,7 @@
 
 1. 导航到“Azure 门户 - 应用注册”[](https://go.microsoft.com/fwlink/?linkid=2083908)页面以注册你的应用。
 
-1. 使用管理员 ***凭据*** 登录到您的Microsoft 365租户。 例如，MyName@contoso.onmicrosoft.com。
+1. 使用管理员 ***凭据*** 登录您的Microsoft 365租户。 例如，MyName@contoso.onmicrosoft.com。
 
 1. 选择“新注册”。 在“注册应用”页上，按如下方式设置值。
 
@@ -23,17 +23,17 @@
     > 此时可能会收到一个不准确的错误：“应用程序 ID URI 必须是以 HTTPS、API、URN、MS-APPX 开头的有效 URI。 不得以斜杠结尾。” 如果该 ID 符合所述的条件，忽略该错误并保存更改。
 
     > [!NOTE]
-    > 如果收到一条错误，指出域已有所有者，但你拥有该域，请按照[快速入门： 将自定义域名添加到 Azure Active Directory](/azure/active-directory/add-custom-domain) 中的步骤进行操作来注册该域，然后重复此步骤。  (如果未使用租户中管理员的凭据登录，Microsoft 365错误。 请参阅步骤 2 。 注销并使用管理员凭据再次登录，然后重复步骤 3 中的过程。）
+    > 如果收到一条错误，指出域已有所有者，但你拥有该域，请按照[快速入门： 将自定义域名添加到 Azure Active Directory](/azure/active-directory/add-custom-domain) 中的步骤进行操作来注册该域，然后重复此步骤。  (如果未使用租户中管理员的凭据登录，也会Microsoft 365此错误。 请参阅步骤 2 。 注销并使用管理员凭据再次登录，然后重复步骤 3 中的过程。）
 
 1. 选择“添加一个作用域”按钮。 在打开的面板中，输入 `access_as_user` 作为“作用域名称”。
 
 1. 将“谁能同意?”设置为“管理员和用户”。
 
-1. 填写用于配置管理员和用户同意提示的字段，并输入适用于范围的值，使 Office 客户端应用程序能够使用与当前用户相同的权限使用加载项的 Web API。 `access_as_user` 建议：
+1. 使用适用于范围的值填写用于配置管理员和用户同意提示的字段，使 Office 客户端应用程序能够使用与当前用户相同的权限使用外接程序的 Web API。 `access_as_user` 建议：
 
     - **管理员显示名称：Office** 可以充当用户。
     - **管理员同意描述:** 使 Office 能够使用与当前用户相同的权限调用加载项的 web API。
-    - **用户显示名称：Office** 可以充当您。
+    - **用户同意显示名称：Office** 可以充当你。
     - **用户同意描述:** 启用 Office 以使用与你相同的权限调用加载项的 web API。
 
 1. 确保将“状态”设置为“已启用”。

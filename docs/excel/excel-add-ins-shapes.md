@@ -2,13 +2,13 @@
 title: 使用 JavaScript API Excel形状
 description: 了解如何Excel形状定义为位于绘图层上的任何Excel。
 ms.date: 01/14/2020
-localization_priority: Normal
-ms.openlocfilehash: 533a9cf9689bcaa5cd43635da836730a2af6ab61
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ff465f59acb272bae3b0161a96c6fb34c66927ab
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938750"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149406"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>使用 JavaScript API Excel形状
 
@@ -109,11 +109,11 @@ Excel.run(function (context) {
 
 ## <a name="move-and-resize-shapes"></a>移动形状并调整形状大小
 
-形状位于工作表的顶部。 它们的位置由 和 `left` `top` 属性定义。 它们充当工作表各自边缘的边距，[0， 0] 为左上角。 可以使用 和 方法直接设置它们，也可以从当前位置 `incrementLeft` `incrementTop` 进行调整。 此外，还通过此方式建立形状相对于默认位置的旋转量，该属性为绝对量，而方法用于调整现有 `rotation` `incrementRotation` 旋转。
+形状位于工作表的顶部。 它们的位置由 和 `left` `top` 属性定义。 它们充当工作表各自边缘的边距，[0， 0] 为左上角。 可以使用 和 方法直接从当前位置设置或 `incrementLeft` `incrementTop` 调整它们。 此外，还通过此方式建立形状相对于默认位置的旋转量，该属性为绝对量，而方法用于调整现有 `rotation` `incrementRotation` 旋转。
 
 形状相对于其他形状的深度由 属性 `zorderPosition` 定义。 这是使用 方法 `setZOrder` 设置的，该方法采用 [ShapeZOrder](/javascript/api/excel/excel.shapezorder)。 `setZOrder` 调整当前形状相对于其他形状的排序。
 
-加载项具有多个选项，用于更改形状的高度和宽度。 如果设置 `height` 或 `width` 属性，则更改指定维度而不更改其他维度。 和 `scaleHeight` `scaleWidth` 根据所提供的 [ShapeScaleType](/javascript/api/excel/excel.shapescaletype) 属性的值调整形状相对于当前大小 (或原始尺寸) 。 可选的 [ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom) 参数指定形状从何处缩放 (左上角、中间或右下角缩放) 。 如果 `lockAspectRatio` 该属性为 **true，** 则缩放方法通过同时调整其他尺寸来保持形状的当前纵横比。
+加载项具有多个选项，用于更改形状的高度和宽度。 如果设置 `height` 或 `width` 属性，则更改指定维度而不更改其他维度。 和 `scaleHeight` `scaleWidth` 根据所提供的 [ShapeScaleType](/javascript/api/excel/excel.shapescaletype) 属性的值调整形状相对于当前大小 (或原始尺寸) 。 可选的 [ShapeScaleFrom](/javascript/api/excel/excel.shapescalefrom) 参数指定形状缩放位置 (左上角、中间或右下角缩放) 。 如果 `lockAspectRatio` 该属性为 **true，** 则缩放方法通过同时调整其他尺寸来保持形状的当前纵横比。
 
 > [!NOTE]
 > 对 和 `height` `width` 属性的直接更改仅影响该属性，而 `lockAspectRatio` 不管属性值如何。
@@ -160,7 +160,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-`addTextBox`方法创建 `ShapeCollection` 具有 `GeometricShape` 白色 `Rectangle` 背景和黑色文本的 类型。 这与"插入"选项卡 **Excel"文本框**"按钮 **所创建** 的内容相同。 `addTextBox`采用字符串参数来设置 的文本 `TextRange` 。
+`addTextBox`方法创建 `ShapeCollection` 具有 `GeometricShape` 白色 `Rectangle` 背景和黑色文本的 类型。 这与"插入"选项卡 **Excel"** 文本框"按钮 **所创建** 的内容相同。 `addTextBox`采用字符串参数来设置 的文本 `TextRange` 。
 
 下面的代码示例演示了如何创建文本为"Hello！"的文本框。
 

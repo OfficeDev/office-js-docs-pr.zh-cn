@@ -2,13 +2,13 @@
 ms.date: 11/06/2020
 description: 本地化自定义Excel函数。
 title: 本地化自定义函数
-localization_priority: Normal
-ms.openlocfilehash: b393cbb76e4993eb77df8ddbe60247c8af74c580
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 596ab23f578f7bb0d12d009d06871e946302300c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936563"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149450"
 ---
 # <a name="localize-custom-functions"></a>本地化自定义函数
 
@@ -21,7 +21,7 @@ ms.locfileid: "58936563"
 
 ## <a name="localize-function-names"></a>本地化函数名称
 
-若要本地化自定义函数，请为每个语言创建新的 JSON 元数据文件。 在每个语言 JSON 文件中， `name` 使用 `description` 目标语言创建 和 属性。 英语的默认文件在 上 **functions.js文件**。 使用文件名中每个附加 JSON 文件（如functions-de.js **on）** 中的区域设置来帮助识别它们。
+若要本地化自定义函数，请为每个语言创建新的 JSON 元数据文件。 在每个语言 JSON 文件中， `name` 使用 `description` 目标语言创建 和 属性。 英语的默认文件名为 **functions.json**。 使用文件名中每个其他 JSON 文件（如 **functions-de.json）** 中的区域设置来帮助识别它们。
 
 和 `name` `description` 显示在 Excel中，并本地化。 但是 `id` ，不会本地化每个函数的 。 属性是Excel函数的唯一性，且设置 `id` 后不应更改它。
 
@@ -81,7 +81,7 @@ ms.locfileid: "58936563"
 
 ## <a name="localize-your-add-in"></a>本地化外接程序
 
-为每种语言创建 JSON 文件后，使用每个区域设置（用于指定每个 JSON 元数据文件的 URL）的替代值更新 XML 清单文件。 以下清单 XML 显示了一个默认区域设置，其替代了德国 (`en-us` `de-de` JSON) 。 on **functions-de.js** 文件包含本地化的德语函数名称和 id。
+为每种语言创建 JSON 文件后，使用每个区域设置（用于指定每个 JSON 元数据文件的 URL）的替代值更新 XML 清单文件。 以下清单 XML 显示了一个默认区域设置，其替代了德国 (`en-us` `de-de` JSON) 。 **functions-de.json** 文件包含本地化的德语函数名称和 ID。
 
 ```XML
 <DefaultLocale>en-us</DefaultLocale>
@@ -96,7 +96,7 @@ ms.locfileid: "58936563"
 </Resources>
 ```
 
-有关本地化外接程序的过程详细信息，请参阅本地化 Office[外接程序](../develop/localization.md#control-localization-from-the-manifest)。
+有关本地化外接程序的过程详细信息，请参阅本地化Office[外接程序。](../develop/localization.md#control-localization-from-the-manifest)
 
 ## <a name="next-steps"></a>后续步骤
 了解 [自定义函数的命名约定或](custom-functions-naming.md) 发现 [错误处理最佳实践](custom-functions-errors.md)。

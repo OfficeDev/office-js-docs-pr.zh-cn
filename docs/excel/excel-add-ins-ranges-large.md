@@ -3,13 +3,13 @@ title: 使用 JavaScript API 读取或写入Excel区域
 description: 了解如何使用 JavaScript API 读取或写入Excel区域。
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: b7a1e54d6b516889884f777bd256df8fb663c794
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4b0398c043ba7cfc4933efe600f89281c988bbb1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937281"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149258"
 ---
 # <a name="read-or-write-to-a-large-range-using-the-excel-javascript-api"></a>使用 JavaScript API 读取或写入Excel区域
 

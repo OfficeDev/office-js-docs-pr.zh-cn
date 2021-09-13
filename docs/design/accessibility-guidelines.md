@@ -1,14 +1,14 @@
 ---
 title: Office 加载项辅助功能指南
-description: 了解如何使Office加载项可供所有用户访问。
+description: 了解如何使你的Office加载项可供所有用户访问。
 ms.date: 09/24/2018
-localization_priority: Normal
-ms.openlocfilehash: 889563af8ab5f7bbcd4037eedb42933369a92cf2
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 43d95fd8732db816643e9e37848eb894ad6b1a24
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936433"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149209"
 ---
 # <a name="accessibility-guidelines"></a>辅助功能准则
 

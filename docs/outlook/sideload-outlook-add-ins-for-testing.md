@@ -2,13 +2,13 @@
 title: 旁加载 Outlook 外接程序进行测试
 description: 利用旁加载来安装 Outlook 外接程序以供测试，无需先将其置于外接程序目录中。
 ms.date: 05/13/2021
-localization_priority: Normal
-ms.openlocfilehash: 47eb5da19f858b6e30339acc59da24a818fc0959
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: a9ea360d58849afeaceb0258f97c7cbf4458e889
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936723"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149490"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>旁加载 Outlook 外接程序进行测试
 
@@ -16,7 +16,7 @@ ms.locfileid: "58936723"
 
 ## <a name="sideload-automatically"></a>自动旁加载
 
-如果使用适用于Outlook的[Yeoman](https://github.com/OfficeDev/generator-office)生成器创建加载项Office，则最好通过命令行执行旁加载。 这将利用我们的工具和通过一个命令跨所有受支持的设备进行旁加载。
+如果你使用适用于 Outlook 加载项的[Yeoman](https://github.com/OfficeDev/generator-office)生成器Office加载项，则最好通过命令行执行旁加载。 这将利用我们的工具和通过一个命令跨所有受支持的设备进行旁加载。
 
 1. 使用命令行导航到 Yeoman 生成的加载项项目的根目录。 运行命令 `npm start`。
 
@@ -41,12 +41,12 @@ ms.locfileid: "58936723"
 
 - 如果邮箱工具栏类似于下图，请参阅[在经典 Outlook 网页版中旁加载外接程序](#classic-outlook-on-the-web)。
 
-    ![经典工具栏的部分Outlook 网页版屏幕截图。](../images/outlook-on-the-web-classic-toolbar.png)
+    ![经典菜单工具栏的部分Outlook 网页版屏幕截图。](../images/outlook-on-the-web-classic-toolbar.png)
 
 > [!NOTE]
 > 如果你的组织在邮箱工具栏中添加了自己的徽标，则你看到的界面可能会与前面的图像略有不同。
 
-### <a name="new-outlook-on-the-web"></a>新建Outlook 网页版
+### <a name="new-outlook-on-the-web"></a>新增Outlook 网页版
 
 1. 转到 [Outlook 网页版](https://outlook.office.com)。
 
@@ -84,7 +84,7 @@ ms.locfileid: "58936723"
 
 1. 找到您的自定义外接程序清单文件并进行安装。在安装过程中接受所有提示。
 
-### <a name="outlook-on-the-desktop"></a>Outlook桌面
+### <a name="outlook-on-the-desktop"></a>Outlook桌面上
 
 #### <a name="outlook-2016-or-later"></a>Outlook 2016或更高版本
 
@@ -92,20 +92,20 @@ ms.locfileid: "58936723"
 
 1. 选择功能区上的“**获取外接程序**”按钮。
 
-    ![Outlook 2016"获取外接程序"按钮的自定义功能区。](../images/outlook-sideload-desktop-store.png)
+    ![Outlook 2016功能区，指向"获取外接程序"按钮。](../images/outlook-sideload-desktop-store.png)
 
     > [!IMPORTANT]
-    > 如果未在加载项版本中看到"获取加载项"按钮，Outlook：
+    > 如果在加载项版本中看不到"获取加载项"按钮，Outlook：
     >
     > - **功能** 区上的"存储"按钮（如果可用）。
     >
     >   或
     >
-    > - **"** 文件"菜单 **，然后选择"** 信息"选项卡上的"管理外接程序"按钮，以打开"加载项"Outlook 网页版。<br>在上一节中，你可以查看有关 Web 体验的更多内容，请参阅在 Outlook 网页版 中旁[加载外接程序](#outlook-on-the-web)。
+    > - **"** 文件"菜单 **，然后选择"** 信息"选项卡上的"管理外接程序"按钮，以打开"加载项"Outlook 网页版。<br>有关 Web 体验的更多内容，请参阅上一部分在加载项中旁[加载Outlook 网页版。](#outlook-on-the-web)
 
 1. 如果对话框顶部附近有选项卡，请确保已选中" **加载项** "选项卡。 选择 **"我的外接程序"。**
 
-    ![Outlook 2016"我的加载项"的"应用商店"对话框。](../images/outlook-sideload-store-select-add-ins.png)
+    ![Outlook 2016"我的外接程序"的"应用商店"对话框。](../images/outlook-sideload-store-select-add-ins.png)
 
 1. 在对话框底部找到“自定义加载项”部分。 选择“添加自定义加载项”链接，然后选择“从文件添加”。
 
@@ -123,8 +123,8 @@ ms.locfileid: "58936723"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的外接程序
 
-在所有版本的 Outlook，删除旁加载加载项的关键是列出已安装加载项的"我的加载项"对话框。 选择外接程序 () 省略号 `...` ，然后选择"删除 **"。**
+在所有版本的 Outlook 中，删除旁加载加载项的关键是列出已安装加载项的"我的加载项"对话框。 选择外接程序 () 省略 `...` 号，然后选择"删除 **"。**
 
 若要 **导航到** Outlook 客户端的"我的外接程序"对话框，请使用本文前面部分中列出的用于手动旁加载的最后步骤 [](#sideload-manually)。
 
-若要从 Outlook 中删除旁加载的外接程序，请使用本文前面介绍的步骤在列出已安装外接程序的对话框的"自定义外接程序"部分查找外接程序。选择外接程序 () `...` 省略号，然后选择"删除"以删除该特定外接程序。  关闭该对话框。
+若要从 Outlook 中删除旁加载的外接程序，请使用本文前面介绍的步骤在列出已安装外接程序的对话框的"自定义外接程序"部分查找外接程序。 选择外接程序 `...` () 省略号，然后选择"删除"以删除该特定外接程序。  关闭该对话框。

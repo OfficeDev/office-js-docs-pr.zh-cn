@@ -3,13 +3,13 @@ title: ExcelJavaScript API 要求集 1.10
 description: 有关 ExcelApi 1.10 要求集的详细信息。
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 7b620bb76f758bc2574e8bd99d2c45d3d4bfae39
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 768902eaac53c67d3aabc35ddb8d96f297d798de
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937487"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149393"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>JavaScript API 1.10 Excel的新增功能
 
@@ -68,14 +68,14 @@ ExcelApi 1.10 引入了关键功能，如注释、大纲和切片器。 它还�
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablestylecollection#getItemOrNullObject_name_)|按 `PivotTableStyle` 名称获取 。|
 ||[items](/javascript/api/excel/excel.pivottablestylecollection#items)|获取此集合中已加载的子项。|
 ||[setDefault(newDefaultStyle: PivotTableStyle \| string)](/javascript/api/excel/excel.pivottablestylecollection#setDefault_newDefaultStyle_)|设置在父对象范围内使用的默认数据透视表样式。|
-|[Range](/javascript/api/excel/excel.range)|[group (groupOption：Excel。GroupOption) ](/javascript/api/excel/excel.range#group_groupOption_)|对大纲的列和行进行分组。|
+|[Range](/javascript/api/excel/excel.range)|[group (groupOption： Excel.GroupOption) ](/javascript/api/excel/excel.range#group_groupOption_)|对大纲的列和行进行分组。|
 ||[hideGroupDetails (groupOption： Excel。GroupOption) ](/javascript/api/excel/excel.range#hideGroupDetails_groupOption_)|隐藏行或列组的详细信息。|
 ||[height](/javascript/api/excel/excel.range#height)|返回从区域上边缘到区域下边缘的距离（100% 缩放）。以点表示。|
 ||[left](/javascript/api/excel/excel.range#left)|返回从工作表左边缘到区域左边缘的距离（100% 缩放）。以点表示。|
 ||[top](/javascript/api/excel/excel.range#top)|返回从工作表的上边缘到区域上边缘的距离（100% 缩放）。以点表示。|
 ||[width](/javascript/api/excel/excel.range#width)|返回从区域左边缘到区域右边缘的距离（以 100% 缩放表示）。|
 ||[showGroupDetails (groupOption： Excel。GroupOption) ](/javascript/api/excel/excel.range#showGroupDetails_groupOption_)|显示行或列组的详细信息。|
-||[ungroup (groupOption： Excel.GroupOption) ](/javascript/api/excel/excel.range#ungroup_groupOption_)|取消大纲的列和行的组合。|
+||[取消分组 (组选项：Excel。GroupOption) ](/javascript/api/excel/excel.range#ungroup_groupOption_)|取消大纲的列和行的组合。|
 |[Shape](/javascript/api/excel/excel.shape)|[copyTo(destinationSheet?: Worksheet \| string)](/javascript/api/excel/excel.shape#copyTo_destinationSheet_)|复制和粘贴 `Shape` 对象。|
 ||[placement](/javascript/api/excel/excel.shape#placement)|表示对象如何附加到其下方的单元格。|
 |[Slicer](/javascript/api/excel/excel.slicer)|[caption](/javascript/api/excel/excel.slicer#caption)|表示切片器的标题。|
@@ -168,7 +168,7 @@ ExcelApi 1.10 引入了关键功能，如注释、大纲和切片器。 它还�
 ||[type](/javascript/api/excel/excel.worksheetrowsortedeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetrowsortedeventargs#worksheetId)|获取发生排序的工作表的 ID。|
 |[WorksheetSingleClickedEventArgs](/javascript/api/excel/excel.worksheetsingleclickedeventargs)|[address](/javascript/api/excel/excel.worksheetsingleclickedeventargs#address)|获取特定工作表中表示被左键单击/点击的单元格的地址。|
-||[OffsetX](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetX)|对于从右到左的语言，从左键单击/点击点到左侧 (或右侧的距离（以) 单击/点击的单元格的网格线边缘）。|
+||[OffsetX](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetX)|对于从右到左的语言，从左键单击/点击点到左 (或从右到左语言的) 单击/点击单元格的网格线边缘的距离（以点表示）。|
 ||[OffsetY](/javascript/api/excel/excel.worksheetsingleclickedeventargs#offsetY)|从左键单击/点击的点到左键单击/点击的单元格的顶部网格线边缘的距离（以磅为单位）。|
 ||[type](/javascript/api/excel/excel.worksheetsingleclickedeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetsingleclickedeventargs#worksheetId)|获取其中单元格被左键单击/点击的工作表的 ID。|
