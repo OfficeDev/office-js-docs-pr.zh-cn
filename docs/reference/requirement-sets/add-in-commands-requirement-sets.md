@@ -3,13 +3,13 @@ title: 加载项命令要求集
 description: 外接程序Office要求集概述。
 ms.date: 11/01/2020
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: f5f7c07f9bdb6bee923337dcc2ae547ca1f76df3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: cb1a21c4d233a716e383d97585a61f5ab2cd2c1e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937959"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152478"
 ---
 # <a name="add-in-commands-requirement-sets"></a>加载项命令要求集
 
@@ -17,7 +17,7 @@ ms.locfileid: "58937959"
 
 外接程序命令是 UI 元素，可扩展 Office UI，并在外接程序中启动操作。可以使用加载项命令在功能区上添加按钮，也可以向上下文菜单添加项。有关详细信息，请参阅 [Excel、Word 和 PowerPoint 的加载项命令](../../design/add-in-commands.md)和 [Outlook 的加载项命令](../../outlook/add-in-commands-for-outlook.md)。
 
-外接程序命令的初始版本没有相应的要求集 (即没有 AddinCommands 1.0 要求集) 。 下表列出了支持Office版本的客户端应用程序，以及这些应用程序的版本或版本号。  
+外接程序命令的初始版本没有相应的要求集 (即，没有 AddinCommands 1.0 要求集) 。 下表列出了支持Office版本的客户端应用程序，以及这些应用程序的版本或版本号。  
 
 | 发布   |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|

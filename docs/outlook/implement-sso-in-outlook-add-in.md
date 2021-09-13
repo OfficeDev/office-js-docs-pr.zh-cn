@@ -2,19 +2,19 @@
 title: 应用场景 - 为服务实施单一登录
 description: 了解如何使用 Outlook 加载项提供的单一登录令牌和 Exchange 标识令牌为服务实现 SSO。
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: ab86e54ef4f71674904811581d1f2f176ce5b16a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 89b90444fbb467c6be1f713461f6cc66d21a8443
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937864"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152398"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>应用场景：为 Outlook 加载项中的服务实现单一登录
 
 在本文中，我们将探讨结合使用[单一登录访问令牌](authenticate-a-user-with-an-sso-token.md)和 [Exchange 标识令牌](authenticate-a-user-with-an-identity-token.md)为自己的后端服务提供单一登录实现的建议方法。 通过结合使用这两种令牌，可以在 SSO 访问令牌可用时利用其优势，并在其不可用时确保加载项仍能正常工作（例如，当用户切换到不支持这些令牌的客户端时，或当用户的邮箱位于本地 Exchange 服务器时）。
 
-有关实现本文中的想法的示例外接程序，请参阅Outlook[外接程序 SSO。](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
+有关实现本文中的想法的示例外接程序，请参阅 Outlook[外接程序 SSO。](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
 
 
 > [!NOTE]

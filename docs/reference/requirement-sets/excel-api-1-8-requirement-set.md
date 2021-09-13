@@ -3,15 +3,15 @@ title: ExcelJavaScript API 要求集 1.8
 description: 有关 ExcelApi 1.8 要求集的详细信息。
 ms.date: 03/19/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 87d59bb78a00035d4dc0ff8514d3214bc93397b3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e97dd98d024b27aa58ca6f0c76fdee17b657c7c9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936264"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152678"
 ---
-# <a name="whats-new-in-excel-javascript-api-18"></a>JavaScript API 1.8 Excel新增功能
+# <a name="whats-new-in-excel-javascript-api-18"></a>JavaScript API 1.8 Excel的新增功能
 
 Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数据验证、图表、图表事件、性能选项和工作簿创建的 API。
 
@@ -33,11 +33,11 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求Excel集 1.8 中的 API。 若要查看受 Excel JavaScript API 要求集 1.8 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.8](/javascript/api/excel?view=excel-js-1.8&preserve-view=true)或更早中的 Excel API。
+下表列出了 JavaScript API 要求集 1.8 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.8 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.8](/javascript/api/excel?view=excel-js-1.8&preserve-view=true)或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
-|[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|当 operator 属性设置为二进制运算符（如 GreaterThan (）时，指定右侧操作数 (左侧操作数是用户尝试在单元格单元格中输入的值) 。|
+|[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|当运算符属性设置为二进制运算符（如 GreaterThan (）时，指定右侧操作数 (左侧操作数是用户尝试在单元格) 中输入的值。|
 ||[formula2](/javascript/api/excel/excel.basicdatavalidation#formula2)|使用三元运算符 Between 和 NotBetween 指定上限操作数。|
 ||[operator](/javascript/api/excel/excel.basicdatavalidation#operator)|用于验证数据有效性的运算符。|
 |[Chart](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categoryLabelLevel)|指定图表类别标签级别枚举常量，该常量引用源分类标签的级别。|
@@ -120,7 +120,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[fill](/javascript/api/excel/excel.chartplotareaformat#fill)|指定对象的填充格式，其中包括背景格式信息。|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[axisGroup](/javascript/api/excel/excel.chartseries#axisGroup)|指定指定系列的组。|
 ||[explosion](/javascript/api/excel/excel.chartseries#explosion)|指定饼图或圆环图扇区的分解值。|
-||[firstSliceAngle](/javascript/api/excel/excel.chartseries#firstSliceAngle)|指定第一个饼图或圆环图扇区的角度（以度 (从垂直方向顺) 。|
+||[firstSliceAngle](/javascript/api/excel/excel.chartseries#firstSliceAngle)|指定第一个饼图或圆环图扇区的角度，以度 (垂直方向顺时针) 。|
 ||[invertIfNegative](/javascript/api/excel/excel.chartseries#invertIfNegative)|如此 Excel当项对应于一个负数时反转图案。|
 ||[overlap](/javascript/api/excel/excel.chartseries#overlap)|指定条柱的摆放方式。|
 ||[dataLabels](/javascript/api/excel/excel.chartseries#dataLabels)|表示系列中所有数据标签的集合。|
@@ -172,7 +172,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 |[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)|[邮件](/javascript/api/excel/excel.datavalidationerroralert#message)|表示错误警报消息。|
 ||[showAlert](/javascript/api/excel/excel.datavalidationerroralert#showAlert)|指定在用户输入无效数据时是否显示错误警报对话框。|
 ||[style](/javascript/api/excel/excel.datavalidationerroralert#style)|数据有效性警报类型，请参阅 `Excel.DataValidationAlertStyle` 了解详细信息。|
-||[title](/javascript/api/excel/excel.datavalidationerroralert#title)|表示错误警报对话框标题。|
+||[title](/javascript/api/excel/excel.datavalidationerroralert#title)|代表错误警报对话框标题。|
 |[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)|[邮件](/javascript/api/excel/excel.datavalidationprompt#message)|指定提示消息。|
 ||[showPrompt](/javascript/api/excel/excel.datavalidationprompt#showPrompt)|指定当用户选择具有数据有效性的单元格时是否显示提示。|
 ||[title](/javascript/api/excel/excel.datavalidationprompt#title)|指定提示的标题。|
@@ -183,7 +183,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[textLength](/javascript/api/excel/excel.datavalidationrule#textLength)|文本长度数据有效性条件。|
 ||[time](/javascript/api/excel/excel.datavalidationrule#time)|时间数据有效性条件。|
 ||[wholeNumber](/javascript/api/excel/excel.datavalidationrule#wholeNumber)|整个数字数据有效性条件。|
-|[DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|[formula1](/javascript/api/excel/excel.datetimedatavalidation#formula1)|当运算符属性设置为二进制运算符（如 GreaterThan (）时指定右侧操作数 (左侧操作数是用户尝试在单元格单元格中输入的值) 。|
+|[DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|[formula1](/javascript/api/excel/excel.datetimedatavalidation#formula1)|当运算符属性设置为二进制运算符（如 GreaterThan (）时，指定右侧操作数 (左侧操作数是用户尝试在单元格) 中输入的值。|
 ||[formula2](/javascript/api/excel/excel.datetimedatavalidation#formula2)|使用三元运算符 Between 和 NotBetween 指定上限操作数。|
 ||[operator](/javascript/api/excel/excel.datetimedatavalidation#operator)|用于验证数据有效性的运算符。|
 |[FilterPivotHierarchy](/javascript/api/excel/excel.filterpivothierarchy)|[enableMultipleFilterItems](/javascript/api/excel/excel.filterpivothierarchy#enableMultipleFilterItems)|确定是否允许多个筛选项。|
@@ -255,7 +255,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[items](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#items)|获取此集合中已加载的子项。|
 ||[remove (rowColumnPivotHierarchy： Excel。RowColumnPivotHierarchy) ](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#remove_rowColumnPivotHierarchy_)|从当前轴删除 PivotHierarchy。|
 |[运行时](/javascript/api/excel/excel.runtime)|[enableEvents](/javascript/api/excel/excel.runtime#enableEvents)|在当前任务窗格或内容加载项中切换 JavaScript 事件。|
-|[ShowAsRule](/javascript/api/excel/excel.showasrule)|[baseField](/javascript/api/excel/excel.showasrule#baseField)|要基于的透视字段 `ShowAs` （如果适用，则根据类型 `ShowAsCalculation` ）进行计算，否则 `null` 为 。|
+|[ShowAsRule](/javascript/api/excel/excel.showasrule)|[baseField](/javascript/api/excel/excel.showasrule#baseField)|要基于的透视字段（如果适用 `ShowAs` ，则根据类型 `ShowAsCalculation` ）进行计算，否则 `null` 为 。|
 ||[baseItem](/javascript/api/excel/excel.showasrule#baseItem)|要基于计算 `ShowAs` 依据的项（如果适用，则根据 `ShowAsCalculation` 类型，为 else `null` ）。|
 ||[calculation](/javascript/api/excel/excel.showasrule#calculation)|`ShowAs`用于透视字段的计算。|
 |[Style](/javascript/api/excel/excel.style)|[autoIndent](/javascript/api/excel/excel.style#autoIndent)|指定当单元格中的文本对齐方式设置为相等分布时文本是否自动缩进。|

@@ -7,13 +7,13 @@ metadata:
   ms.prod: project
   ms.topic: landing-page
   ms.date: 03/29/2021
-  localization_priority: Priority
-  ms.openlocfilehash: 59c6d64a68960860616ead9ce7aef50cc46a766a
-  ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+  ms.localizationpriority: high
+  ms.openlocfilehash: 8c3b93565d6c986f5eb334364889dbcb12ced6ee
+  ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/08/2021
-  ms.locfileid: "58939375"
+  ms.lasthandoff: 09/12/2021
+  ms.locfileid: "59152558"
 landingContent:
 - title: 关于Project加载项
   linkLists:
@@ -31,7 +31,7 @@ landingContent:
     links:
     - text: 测试和调试Project加载项
       url: ../testing/test-debug-office-add-ins.md
-    - text: 部署和发布Project加载项
+    - text: 部署和Project加载项
       url: ../publish/publish.md
 - title: 关键Office加载项概念
   linkLists:

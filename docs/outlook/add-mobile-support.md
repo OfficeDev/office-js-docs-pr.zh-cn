@@ -2,17 +2,17 @@
 title: 添加对 Outlook 外接程序的移动支持
 description: 添加对 Outlook Mobile 的支持需要更新外接程序清单，并且可能会更改移动方案的代码。
 ms.date: 07/16/2021
-localization_priority: Normal
-ms.openlocfilehash: 270042d61077ae28abee79db024243bfbd5b6dc2
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 0237b880610bffef675e011d7c02f70cef4346d5
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937314"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152440"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>添加对适用于 Outlook Mobile 的外接程序命令的支持
 
-使用 Outlook Mobile 中的外接程序命令，用户可以访问与 (、Windows 和 Mac 中已有的[](#code-considerations)相同) Outlook 网页版功能，但存在一些限制。 添加对 Outlook Mobile 的支持需要更新外接程序清单，并且可能会更改移动方案的代码。
+使用 Outlook Mobile 中的外接程序命令，用户可以访问与 Outlook、Windows 和 Mac 中相同的 (，[](#code-considerations)但) 已在 Outlook 网页版、Windows 和 Mac 中具有某些限制。 添加对 Outlook Mobile 的支持需要更新外接程序清单，并且可能会更改移动方案的代码。
 
 ## <a name="updating-the-manifest"></a>更新清单
 

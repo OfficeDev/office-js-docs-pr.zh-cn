@@ -3,13 +3,13 @@ title: 教程：Microsoft Excel自定义函数和任务窗格之间共享数据�
 description: 学习如何在Microsoft Excel中的自定义函数和任务窗格之间共享数据和事件。
 ms.date: 08/04/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: fe304ff0eef4b707cb0b90a2c38c60aff921279d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 0d42329d08de9db35d15d122321d771f6017b937
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939102"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152534"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 

@@ -7,13 +7,13 @@ metadata:
   ms.prod: onenote
   ms.topic: landing-page
   ms.date: 03/29/2021
-  localization_priority: Priority
-  ms.openlocfilehash: f62e49fd1d6505da757ccc87469a5702863f0f45
-  ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+  ms.localizationpriority: high
+  ms.openlocfilehash: 1add7e855d2b2b3334a7944c78627d2c467b3785
+  ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/08/2021
-  ms.locfileid: "58937395"
+  ms.lasthandoff: 09/12/2021
+  ms.locfileid: "59152457"
 landingContent:
 - title: 关于OneNote加载项
   linkLists:
@@ -31,7 +31,7 @@ landingContent:
       url: ../quickstarts/onenote-quickstart.md
   - linkListType: how-to-guide
     links:
-    - text: 使用 OneNote JavaScript API 与对象和笔记本内容进行交互
+    - text: 使用 OneNote JavaScript API 与对象和笔记本内容交互
       url: ../reference/overview/onenote-add-ins-javascript-reference.md
     - text: 测试和调试OneNote加载项
       url: ../testing/test-debug-office-add-ins.md

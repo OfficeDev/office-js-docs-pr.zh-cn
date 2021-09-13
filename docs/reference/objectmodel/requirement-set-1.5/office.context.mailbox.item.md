@@ -2,13 +2,13 @@
 title: Office.context.mailbox.item - 要求集 1.5
 description: Outlook邮箱 API 要求集 1.5 版本的项目对象模型。
 ms.date: 07/16/2021
-localization_priority: Normal
-ms.openlocfilehash: d72cddff6bfba06568e36fc874ce02ca5e4e5b62
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ccefaaffbdfcbe37cb5abaad6a44eab61ee0dbe8
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937607"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152615"
 ---
 # <a name="item-mailbox-requirement-set-15"></a>item (Mailbox requirement set 1.5) 
 

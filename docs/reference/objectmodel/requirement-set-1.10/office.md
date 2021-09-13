@@ -2,13 +2,13 @@
 title: Office命名空间 - 要求集 1.10
 description: Office邮箱 API 要求集 1.10 Outlook外接程序可用的命名空间成员。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: e7b7ab9127ebf8ce9b7394d348144fe63b47de6c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 725e01633c11e33b766cf3ad76d83d3d838b2182
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939035"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152498"
 ---
 # <a name="office-mailbox-requirement-set-110"></a>Office (邮箱要求集 1.10) 
 
@@ -52,7 +52,7 @@ ms.locfileid: "58939035"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`Succeeded`| String|调用成功。|
 |`Failed`| 字符串|调用失败。|
@@ -79,7 +79,7 @@ ms.locfileid: "58939035"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`Html`| String|请求以 HTML 格式返回的数据。|
 |`Text`| 字符串|请求以文本格式返回的数据。|
@@ -106,7 +106,7 @@ ms.locfileid: "58939035"
 
 ##### <a name="properties"></a>属性
 
-| 名称 | 类型 | 说明 | 最低要求集 |
+| 名称 | 类型 | 描述 | 最低要求集 |
 |---|---|---|:---:|
 |`AppointmentTimeChanged`| 字符串 | 所选的约会或系列的日期或时间已更改。 | 1.7 |
 |`AttachmentsChanged`| 字符串 | 已将附件添加到项目或已从项目删除附件。 | 1.8 |
@@ -138,7 +138,7 @@ ms.locfileid: "58939035"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|

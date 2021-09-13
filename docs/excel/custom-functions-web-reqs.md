@@ -2,13 +2,13 @@
 ms.date: 07/08/2021
 description: 使用 Excel 中的自定义函数请求、流式处理和取消流式处理工作簿的外部数据
 title: 使用自定义函数接收和处理数据
-localization_priority: Normal
-ms.openlocfilehash: aaaee865c95c2edb568f73df91fd1a8f2ff659de
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 5aee26cb3c22d43a11ee2b0f500d04f9c7e596e8
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938551"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151949"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
@@ -145,13 +145,13 @@ Excel在下列情况下取消函数的执行。
 
 ### <a name="use-an-invocation-parameter"></a>使用调用参数
 
-默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 参数提供有关单元格 (，如其地址和内容) 并允许 `invocation` 你使用 `setResult` 和 `onCanceled` 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
+默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 参数 `invocation` 提供有关单元格单元格 (如地址和内容) 并允许你使用 `setResult` `onCanceled` 和 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
 
 如果使用的是 TypeScript，则调用处理程序的类型为 [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) 或 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 。
 
 ## <a name="receiving-data-via-websockets"></a>通过 WebSocket 接收数据
 
-在自定义函数内，可使用 WebSocket 来通过与服务器的持久连接交换数据。 通过使用 WebSockets，自定义函数可以打开与服务器的连接，然后在某些事件发生时自动从服务器接收消息，而无需显式轮询服务器获取数据。
+在自定义函数内，可使用 WebSocket 来通过与服务器的持久连接交换数据。 使用 WebSockets，自定义函数可以打开与服务器的连接，然后在某些事件发生时自动从服务器接收消息，而无需显式轮询服务器获取数据。
 
 ### <a name="websockets-example"></a>WebSocket 示例
 

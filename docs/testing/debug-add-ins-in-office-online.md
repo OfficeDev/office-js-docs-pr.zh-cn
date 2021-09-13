@@ -2,13 +2,13 @@
 title: 在 Office 网页版中调试加载项
 description: 如何使用 Office 网页版来测试和调试加载项。
 ms.date: 07/07/2020
-localization_priority: Normal
-ms.openlocfilehash: 1ec844af555ab55d7592a9d764c6173ea9780016
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 255826f8925ea35d25cf228e80de6774c9917cea
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938422"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152341"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>在 Office 网页版中调试加载项
 
@@ -21,9 +21,9 @@ ms.locfileid: "58938422"
 - 如果Microsoft 365或没有对网站的访问权限，请获取一个SharePoint帐户。
 
   > [!NOTE]
-  > 若要获取为期 90 天的免费可续订开发人员Microsoft 365订阅，请加入我们的Microsoft 365[计划](https://developer.microsoft.com/office/dev-program)。 有关如何[Microsoft 365](/office/developer-program/office-365-developer-program) Microsoft 365开发人员计划并配置订阅的分步说明，请参阅 Microsoft 365 开发人员计划文档。
+  > 若要获取为期 90 天的免费可续订Microsoft 365订阅，请加入我们的 Microsoft 365[开发人员计划](https://developer.microsoft.com/office/dev-program)。 有关如何[Microsoft 365](/office/developer-program/office-365-developer-program)开发人员计划并配置订阅的分步说明，请参阅 Microsoft 365 开发人员计划文档。
 
-- 在 SharePoint Online 上SharePoint目录。 应用程序目录是 SharePoint Online 中的专用网站集，Office外接程序的文档库。如果你有自己的网站SharePoint，可以设置应用程序目录文档库。 有关详细信息，请参阅上的将任务窗格和内容加载项发布到[应用程序SharePoint。](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)
+- 在 SharePoint Online 上设置应用程序目录。 应用程序目录是 SharePoint Online 中的专用网站集，Office外接程序的文档库。如果你有自己的网站SharePoint，可以设置应用程序目录文档库。 有关详细信息，请参阅上的将任务窗格和内容加载项发布到[应用程序SharePoint。](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)
 
 
 ## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>在 Excel 网页版或 Word 网页版中调试加载项
@@ -43,7 +43,7 @@ ms.locfileid: "58938422"
 
 3. 将清单上传到 SharePoint 上应用程序目录中的 Office 加载项文档库。
 
-4. 从Excel启动Word web 版启动器启动Microsoft 365或打开一个新文档。
+4. 从Excel启动Word web 版启动器启动Microsoft 365，然后打开一个新文档。
 
 5. 在“插入”选项卡上选择“我的外接程序”或“Office 外接程序”以插入您的外接程序并在应用程序中进行测试。
 

@@ -3,13 +3,13 @@ title: ExcelJavaScript API 要求集 1.9
 description: 有关 ExcelApi 1.9 要求集的详细信息。
 ms.date: 04/01/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 41f6eb2dd329a2ab82981cb3ee8e11a784e23591
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: dde36db799a7f0612439e934d50af4f3ab04077e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938546"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152242"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>JavaScript API 1.9 Excel的新增功能
 
@@ -103,7 +103,7 @@ ms.locfileid: "58938546"
 |[ChartAxis](/javascript/api/excel/excel.chartaxis)|[linkNumberFormat](/javascript/api/excel/excel.chartaxis#linkNumberFormat)|指定数字格式是否链接到单元格。|
 |[ChartBinOptions](/javascript/api/excel/excel.chartbinoptions)|[allowOverflow](/javascript/api/excel/excel.chartbinoptions#allowOverflow)|指定在直方图或流程图中是否启用箱溢出。|
 ||[allowUnderflow](/javascript/api/excel/excel.chartbinoptions#allowUnderflow)|指定在直方图或流程图中是否启用箱下溢。|
-||[count](/javascript/api/excel/excel.chartbinoptions#count)|指定直方图或流程图的箱计数。|
+||[count](/javascript/api/excel/excel.chartbinoptions#count)|指定直方图或 pareto 图表的箱计数。|
 ||[overflowValue](/javascript/api/excel/excel.chartbinoptions#overflowValue)|指定直方图或流程图的箱溢出值。|
 ||[type](/javascript/api/excel/excel.chartbinoptions#type)|指定直方图或流程图的箱类型。|
 ||[underflowValue](/javascript/api/excel/excel.chartbinoptions#underflowValue)|指定直方图或流程图的箱下溢值。|
@@ -127,7 +127,7 @@ ms.locfileid: "58938546"
 |[ChartPivotOptions](/javascript/api/excel/excel.chartpivotoptions)|[showAxisFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showAxisFieldButtons)|指定是否在坐标轴上显示坐标轴字段数据透视图。|
 ||[showLegendFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showLegendFieldButtons)|指定是否在图例上显示图例数据透视图。|
 ||[showReportFilterFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showReportFilterFieldButtons)|指定是否在报表上显示报表筛选字段数据透视图。|
-||[showValueFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showValueFieldButtons)|指定是否在项目上显示显示值字段数据透视图。|
+||[showValueFieldButtons](/javascript/api/excel/excel.chartpivotoptions#showValueFieldButtons)|指定是否在项目上显示"显示值"字段数据透视图。|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[bubbleScale](/javascript/api/excel/excel.chartseries#bubbleScale)|这可以是从 0（零）到 300 的整数值，表示默认大小的百分比。|
 ||[gradientMaximumColor](/javascript/api/excel/excel.chartseries#gradientMaximumColor)|指定区域地图图表系列的最大值的颜色。|
 ||[gradientMaximumType](/javascript/api/excel/excel.chartseries#gradientMaximumType)|指定区域地图图表系列的最大值的类型。|
@@ -180,8 +180,8 @@ ms.locfileid: "58938546"
 ||[id](/javascript/api/excel/excel.image#id)|指定图像对象的形状标识符。|
 ||[shape](/javascript/api/excel/excel.image#shape)|返回 `Shape` 与图像关联的对象。|
 |[IterativeCalculation](/javascript/api/excel/excel.iterativecalculation)|[enabled](/javascript/api/excel/excel.iterativecalculation#enabled)|如果 Excel 使用迭代来处理循环引用，则为 True。|
-||[maxChange](/javascript/api/excel/excel.iterativecalculation#maxChange)|指定每个迭代之间的最大更改量，Excel循环引用。|
-||[maxIteration](/javascript/api/excel/excel.iterativecalculation#maxIteration)|指定可用于解析循环引用Excel的最大迭代次数。|
+||[maxChange](/javascript/api/excel/excel.iterativecalculation#maxChange)|指定每个迭代之间的最大更改量，因为Excel循环引用。|
+||[maxIteration](/javascript/api/excel/excel.iterativecalculation#maxIteration)|指定可用于解析循环引用Excel迭代的最大次数。|
 |[Line](/javascript/api/excel/excel.line)|[beginArrowheadLength](/javascript/api/excel/excel.line#beginArrowheadLength)|表示指定线条始端的箭头长度。|
 ||[beginArrowheadStyle](/javascript/api/excel/excel.line#beginArrowheadStyle)|表示指定线条始端的箭头样式。|
 ||[beginArrowheadWidth](/javascript/api/excel/excel.line#beginArrowheadWidth)|表示指定线条始端的箭头宽度。|
@@ -283,7 +283,7 @@ ms.locfileid: "58938546"
 ||[convertToLinkedDataType(serviceID: number, languageCulture: string)](/javascript/api/excel/excel.rangeareas#convertToLinkedDataType_serviceID__languageCulture_)|将 中所有单元格 `RangeAreas` 转换为链接数据类型。|
 ||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.rangeareas#copyFrom_sourceRange__copyType__skipBlanks__transpose_)|将单元格数据或格式从源区域或 `RangeAreas` 复制到当前 `RangeAreas` 。|
 ||[getEntireColumn()](/javascript/api/excel/excel.rangeareas#getEntireColumn__)|返回一个对象，该对象代表 (例如，如果当前表示单元格 `RangeAreas` `RangeAreas` `RangeAreas` "B4：E11， H2"，则返回表示列 `RangeAreas` "B：E， H：H") 。|
-||[getEntireRow()](/javascript/api/excel/excel.rangeareas#getEntireRow__)|返回一个对象，该对象代表 (例如，如果当前表示单元格 `RangeAreas` `RangeAreas` `RangeAreas` "B4：E11"，则返回表示行 `RangeAreas` "4：11") 。|
+||[getEntireRow()](/javascript/api/excel/excel.rangeareas#getEntireRow__)|返回一个对象，该对象代表 (例如，如果当前代表单元格 `RangeAreas` `RangeAreas` `RangeAreas` "B4：E11"，则返回表示行 `RangeAreas` "4：11") 。|
 ||[getIntersection(anotherRange: Range \| RangeAreas \| string)](/javascript/api/excel/excel.rangeareas#getIntersection_anotherRange_)|返回 `RangeAreas` 表示给定区域或 的交集的对象 `RangeAreas` 。|
 ||[getIntersectionOrNullObject(anotherRange: Range \| RangeAreas \| string)](/javascript/api/excel/excel.rangeareas#getIntersectionOrNullObject_anotherRange_)|返回 `RangeAreas` 表示给定区域或 的交集的对象 `RangeAreas` 。|
 ||[getOffsetRangeAreas(rowOffset: number, columnOffset: number)](/javascript/api/excel/excel.rangeareas#getOffsetRangeAreas_rowOffset__columnOffset_)|返回 `RangeAreas` 由特定行和列偏移移动的对象。|
@@ -301,17 +301,17 @@ ms.locfileid: "58938546"
 ||[dataValidation](/javascript/api/excel/excel.rangeareas#dataValidation)|返回 中所有区域的数据验证对象 `RangeAreas` 。|
 ||[format](/javascript/api/excel/excel.rangeareas#format)|返回一个对象，该对象封装对象中所有范围的字体、填充、边框、 `RangeFormat` 对齐方式和其他 `RangeAreas` 属性。|
 ||[isEntireColumn](/javascript/api/excel/excel.rangeareas#isEntireColumn)|指定此对象上的所有区域是否代表整个列 (例如 `RangeAreas` ，"A：C，Q：Z") 。|
-||[isEntireRow](/javascript/api/excel/excel.rangeareas#isEntireRow)|指定此对象上的所有区域是否代表 (行，例如 `RangeAreas` "1：3， 5：7") 。|
+||[isEntireRow](/javascript/api/excel/excel.rangeareas#isEntireRow)|指定此对象上的所有区域是否代表整个行 (例如 `RangeAreas` ，"1：3， 5：7") 。|
 ||[worksheet](/javascript/api/excel/excel.rangeareas#worksheet)|返回当前 的工作表 `RangeAreas` 。|
 ||[setDirty()](/javascript/api/excel/excel.rangeareas#setDirty__)|设置 `RangeAreas` 在下次重新计算时要重新计算的 。|
 ||[style](/javascript/api/excel/excel.rangeareas#style)|表示此对象中所有范围的 `RangeAreas` 样式。|
-|[RangeBorder](/javascript/api/excel/excel.rangeborder)|[tintAndShade](/javascript/api/excel/excel.rangeborder#tintAndShade)|指定一个使区域边框的颜色变亮或变暗的双精度值，该值介于 -1 (最暗) 和 1 (最亮) 之间，原始颜色为 0。|
+|[RangeBorder](/javascript/api/excel/excel.rangeborder)|[tintAndShade](/javascript/api/excel/excel.rangeborder#tintAndShade)|指定使区域边框的颜色变亮或变暗的双精度值，该值介于 -1 (最暗) 和 1 (最亮) 之间，原始颜色为 0。|
 |[RangeBorderCollection](/javascript/api/excel/excel.rangebordercollection)|[tintAndShade](/javascript/api/excel/excel.rangebordercollection#tintAndShade)|指定使区域边框的颜色变亮或变暗的双精度型值。|
 |[RangeCollection](/javascript/api/excel/excel.rangecollection)|[getCount()](/javascript/api/excel/excel.rangecollection#getCount__)|返回 中区域的数量 `RangeCollection` 。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangecollection#getItemAt_index_)|基于 range 对象在 中的位置返回该对象 `RangeCollection` 。|
 ||[items](/javascript/api/excel/excel.rangecollection#items)|获取此集合中已加载的子项。|
 |[RangeFill](/javascript/api/excel/excel.rangefill)|[pattern](/javascript/api/excel/excel.rangefill#pattern)|范围的图案。|
-||[patternColor](/javascript/api/excel/excel.rangefill#patternColor)|HTML 颜色代码，表示区域图案的颜色，格式为 #RRGGBB (例如"FFA500") ，或作为已命名的 HTML 颜色 (例如"orange") 。|
+||[patternColor](/javascript/api/excel/excel.rangefill#patternColor)|HTML 颜色代码，表示区域图案的颜色，格式为 #RRGGBB (例如，"FFA500") ，或作为已命名的 HTML 颜色 (例如"orange") 。|
 ||[patternTintAndShade](/javascript/api/excel/excel.rangefill#patternTintAndShade)|指定使区域填充的图案颜色变亮或变暗的双精度型。|
 ||[tintAndShade](/javascript/api/excel/excel.rangefill#tintAndShade)|指定使区域填充的颜色变亮或变暗的双精度值。|
 |[RangeFont](/javascript/api/excel/excel.rangefont)|[strikethrough](/javascript/api/excel/excel.rangefont#strikethrough)|指定字体的删除线状态。|
@@ -453,7 +453,7 @@ ms.locfileid: "58938546"
 |[Workbook](/javascript/api/excel/excel.workbook)|[chartDataPointTrack](/javascript/api/excel/excel.workbook#chartDataPointTrack)|如果工作簿中的所有图表都跟踪它们所附加的实际数据点，则为 True。|
 ||[getActiveChart()](/javascript/api/excel/excel.workbook#getActiveChart__)|获取工作簿中的当前活动图表。|
 ||[getActiveChartOrNullObject()](/javascript/api/excel/excel.workbook#getActiveChartOrNullObject__)|获取工作簿中的当前活动图表。|
-||[getIsActiveCollabSession()](/javascript/api/excel/excel.workbook#getIsActiveCollabSession__)|返回 `true` 工作簿是否正由多个用户通过共同创作 (编辑) 。|
+||[getIsActiveCollabSession()](/javascript/api/excel/excel.workbook#getIsActiveCollabSession__)|如果 `true` 工作簿正由多个用户编辑，则返回 (共同创作) 。|
 ||[getSelectedRanges()](/javascript/api/excel/excel.workbook#getSelectedRanges__)|从工作簿中获取当前选定的一个或多个区域。|
 ||[isDirty](/javascript/api/excel/excel.workbook#isDirty)|指定自上次保存工作簿以来是否进行了更改。|
 ||[autoSave](/javascript/api/excel/excel.workbook#autoSave)|指定工作簿是否位于"自动保存"模式。|

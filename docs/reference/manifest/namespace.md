@@ -2,13 +2,13 @@
 title: 清单文件中的 Namespace 元素
 description: Namespace 元素定义自定义函数在自定义函数中Excel。
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: 342f5ebcafa861838956f1033f8597cf05e60215
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3a5afed3d55bde7e9735df534215f96ae1ba7bd3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937694"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152664"
 ---
 # <a name="namespace-element"></a>Namespace 元素
 

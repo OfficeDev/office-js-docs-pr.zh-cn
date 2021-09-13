@@ -2,13 +2,13 @@
 title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: d191b2d7ac6135600bd6875ef7fbbced55caec8b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ebf76b90405f5a4853f5a53411b28d429b1eb4b6
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937475"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152627"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 

@@ -4,13 +4,13 @@ description: 了解如何使用 PowerPoint 加载项跨平台（包括 Windows�
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: 106f11da21d994534219399829dca37e16bd2fe5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 15f61a573e926a87f8ddd1ecaeb58e426504f403
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936980"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151943"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 

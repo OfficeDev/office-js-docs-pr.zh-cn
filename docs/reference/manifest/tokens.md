@@ -2,13 +2,13 @@
 title: 清单文件的 Tokens 元素
 description: 指定可用于清单中的 URL 模板的标记或通配符。
 ms.date: 11/06/2020
-localization_priority: Normal
-ms.openlocfilehash: 8680b985068c44e93f601a2b24e2f28899eb483d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3e52543bdb53709ea005f63a3a990650905d70cd
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938230"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152589"
 ---
 # <a name="tokens-element"></a>Tokens 元素
 

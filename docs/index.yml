@@ -17,13 +17,13 @@ highlightedContent:
       title: Office 加载项平台概述
       url: overview/office-add-ins.md
     - itemType: quickstart
-      title: 在 5 Excel设置外接程序
+      title: 在 5 Excel设置加载项
       url: quickstarts/excel-quickstart-jquery.md
     - itemType: learn
       title: Microsoft Learn：Office加载项自定义客户端简介
       url: /learn/modules/intro-office-add-ins
     - itemType: learn
-      title: Microsoft Learn： extend Office clients with Office Add-ins
+      title: Microsoft Learn： extend Office clients with Office add-ins
       url: /learn/paths/m365-office-add-in-associate
     - itemType: whats-new
       title: Microsoft 365开发人员博客
@@ -106,7 +106,7 @@ conceptualContent:
           text: 请求功能
         - url: 'https://stackoverflow.com/questions/tagged/office-js'
           itemType: reference
-          text: 在 Stack Overflow 上Office.js有关应用的问题
+          text: 询问有关 Stack Overflow Office.js的相关问题
         - url: 'https://github.com/OfficeDev/office-js/issues'
           itemType: reference
           text: 报告 Bug 或问题

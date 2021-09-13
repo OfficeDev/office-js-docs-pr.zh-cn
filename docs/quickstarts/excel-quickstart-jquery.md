@@ -3,13 +3,13 @@ title: 生成首个 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格加载项。
 ms.date: 08/04/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 6f1ce6d14d1a9840011294028db3c7db5faa2e83
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 041feee3ced0a42e2e6a39eabf9188e57ebcf0fe
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938358"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152525"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 

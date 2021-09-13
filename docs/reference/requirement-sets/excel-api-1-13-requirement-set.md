@@ -3,15 +3,15 @@ title: ExcelJavaScript API 要求集 1.13
 description: 有关 ExcelApi 1.13 要求集的详细信息。
 ms.date: 07/09/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 8238f6c32aad74d59ed1d178b3f7b162a64026f1
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 677cb9eceba3d25a7f2d0f8677ab63942852a784
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937870"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152294"
 ---
-# <a name="whats-new-in-excel-javascript-api-113"></a>JavaScript API 1.13 Excel的新增功能
+# <a name="whats-new-in-excel-javascript-api-113"></a>JavaScript API 1.13 Excel新增功能
 
 ExcelApi 1.13 添加了一种方法，用于从 Base64 编码的字符串将工作表插入工作簿，并添加了一个事件来检测工作簿激活。 它还通过添加 API 跟踪对公式的更改并查找公式的直接从属单元格，增加了对范围中公式的支持。 此外，它还通过添加用于替换文本、样式和空单元格管理的 PivotLayout API 来扩展数据透视表支持。
 
@@ -24,7 +24,7 @@ ExcelApi 1.13 添加了一种方法，用于从 Base64 编码的字符串将工�
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求集 1.13 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.13 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.13](/javascript/api/excel?view=excel-js-1.13&preserve-view=true)或更早中的 Excel API。
+下表列出了 JavaScript API 要求Excel集 1.13 中的 API。 若要查看受 Excel JavaScript API 要求集 1.13 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.13](/javascript/api/excel?view=excel-js-1.13&preserve-view=true)或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -35,7 +35,7 @@ ExcelApi 1.13 添加了一种方法，用于从 Base64 编码的字符串将工�
 ||[sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#sheetNamesToInsert)|要插入的单个工作表的名称。|
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[altTextDescription](/javascript/api/excel/excel.pivotlayout#altTextDescription)|数据透视表的替换文字说明。|
 ||[altTextTitle](/javascript/api/excel/excel.pivotlayout#altTextTitle)|数据透视表的替换文字标题。|
-||[displayBlankLineAfterEachItem (显示：boolean) ](/javascript/api/excel/excel.pivotlayout#displayBlankLineAfterEachItem_display_)|设置是否在每一项后显示一个空行。|
+||[displayBlankLineAfterEachItem (显示：布尔) ](/javascript/api/excel/excel.pivotlayout#displayBlankLineAfterEachItem_display_)|设置是否在每一项后显示一个空行。|
 ||[emptyCellText](/javascript/api/excel/excel.pivotlayout#emptyCellText)|如果 为 ，则自动填充到数据透视表中任何空单元格中的文本 `fillEmptyCells == true` 。|
 ||[fillEmptyCells](/javascript/api/excel/excel.pivotlayout#fillEmptyCells)|指定是否应该使用 填充数据透视表中的空单元格 `emptyCellText` 。|
 ||[repeatAllItemLabels (repeatLabels：boolean) ](/javascript/api/excel/excel.pivotlayout#repeatAllItemLabels_repeatLabels_)|设置数据透视表中所有字段的"重复所有项目标签"设置。|
@@ -45,7 +45,7 @@ ExcelApi 1.13 添加了一种方法，用于从 Base64 编码的字符串将工�
 ||[getExtendedRange (方向：Excel。KeyboardDirection， activeCell？： Range \| string) ](/javascript/api/excel/excel.range#getExtendedRange_direction__activeCell_)|返回一个 range 对象，该对象包括当前区域以及范围边缘，根据提供的方向。|
 ||[getMergedAreasOrNullObject () ](/javascript/api/excel/excel.range#getMergedAreasOrNullObject__)|返回一个 RangeAreas 对象，该对象代表此范围中的合并区域。|
 ||[getRangeEdge (方向：Excel。KeyboardDirection， activeCell？： Range \| string) ](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_)|返回一个 range 对象，该对象是数据区域的边缘单元格，对应于提供的方向。|
-|[Table](/javascript/api/excel/excel.table)|[resize (newRange：Range \| string) ](/javascript/api/excel/excel.table#resize_newRange_)|将表格调整到新区域。|
+|[Table](/javascript/api/excel/excel.table)|[resize (newRange： Range \| string) ](/javascript/api/excel/excel.table#resize_newRange_)|将表格调整到新区域。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[insertWorksheetsFromBase64 (base64File： string， options？： Excel。InsertWorksheetOptions) ](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_)|将源工作簿中的指定工作表插入到当前工作簿中。|
 ||[onActivated](/javascript/api/excel/excel.workbook#onActivated)|在激活工作簿时发生。|
 |[WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs)|[type](/javascript/api/excel/excel.workbookactivatedeventargs#type)|获取事件的类型。|

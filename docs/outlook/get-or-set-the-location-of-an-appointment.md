@@ -2,13 +2,13 @@
 title: 在加载项获取或设置约会位置
 description: 了解如何在 Outlook 加载项中获取或设置约会位置。
 ms.date: 10/31/2019
-localization_priority: Normal
-ms.openlocfilehash: 5669f656348465baabb3e684b359261024a509ca
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 02a6360d43b91cde773d767d9a9838c015d9ecd7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937214"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152401"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置位置
 
@@ -17,7 +17,7 @@ JavaScript API Office JavaScript API 提供用于管理用户正在撰写的约�
 - [item.location：](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)允许你获取和设置位置的基本 API。
 - [item.enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)：可让你获取和设置位置的增强型 API，包括指定 [位置类型](/javascript/api/outlook/office.mailboxenums.locationtype)。 类型是 `LocationType.Custom` ，如果使用 设置位置 `item.location` 。
 
-下表列出了位置 API 和模式 (即撰写或阅读) 提供的位置。
+下表列出了位置 API 和模式 (即撰写或阅读) 它们可用。
 
 | API | 适用的约会模式 |
 |---|---|
@@ -32,7 +32,7 @@ JavaScript API Office JavaScript API 提供用于管理用户正在撰写的约�
 
 ## <a name="use-the-enhancedlocation-api"></a>使用 `enhancedLocation` API
 
-可以使用 API `enhancedLocation` 获取和设置约会的位置。 位置字段支持多个位置，对于每个位置，显示名称、类型和会议室电子邮件地址 (（如果适用) ）。 有关支持的位置类型，请参阅[LocationType。](/javascript/api/outlook/office.mailboxenums.locationtype)
+可以使用 API `enhancedLocation` 获取和设置约会的位置。 位置字段支持多个位置，并且对于每个位置，显示名称设置会议室电子邮件地址、类型和 (电子邮件地址（如果) ）。 有关支持的位置类型，请参阅[LocationType。](/javascript/api/outlook/office.mailboxenums.locationtype)
 
 ### <a name="add-location"></a>添加位置
 

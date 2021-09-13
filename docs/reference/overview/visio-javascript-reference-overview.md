@@ -5,13 +5,13 @@ ms.date: 06/03/2020
 ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: 7f706d8f566a747468c4c8d676bd54882bb2a6bf
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f4167c0506a730818527f923ea187467b95ecec8
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939089"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152681"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 

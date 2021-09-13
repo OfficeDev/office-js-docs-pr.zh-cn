@@ -3,13 +3,13 @@ title: Word JavaScript API 要求集 1.1
 description: 有关 WordApi 1.1 要求集的详细信息
 ms.date: 11/09/2020
 ms.prod: word
-localization_priority: Normal
-ms.openlocfilehash: 80914cd0804600e7987408ce3a3de8a94e6fec29
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 43d2eba2180c66f4037b2f4a1742ceae61d7c353
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938919"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152635"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Word JavaScript API 1.1 的新增功能
 

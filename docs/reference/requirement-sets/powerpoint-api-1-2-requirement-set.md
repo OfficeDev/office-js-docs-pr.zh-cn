@@ -3,15 +3,15 @@ title: PowerPointJavaScript API 要求集 1.2
 description: 有关 PowerPointApi 1.2 要求集的详细信息。
 ms.date: 01/27/2021
 ms.prod: powerpoint
-localization_priority: Normal
-ms.openlocfilehash: fac472e9b88b78f52fe939f883d88cded8b1702c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b62bed8d28eb2bacff0450e749da8cf69c868e38
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938913"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152464"
 ---
-# <a name="whats-new-in-powerpoint-javascript-api-12"></a>JavaScript API 1.2 PowerPoint的新增功能
+# <a name="whats-new-in-powerpoint-javascript-api-12"></a>JavaScript API 1.2 PowerPoint新增功能
 
 PowerPointApi 1.2 增加了对将另一个演示文稿中的幻灯片插入当前演示文稿以及删除幻灯片的支持。
 

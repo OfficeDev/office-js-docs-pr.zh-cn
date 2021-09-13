@@ -2,17 +2,17 @@
 title: 在 Microsoft Azure 上托管 Office 加载项 | Microsoft Docs
 description: 了解如何将加载项 Web 应用部署到 Azure 并旁加载该加载项以便在 Office 客户端应用程序中进行测试。
 ms.date: 07/07/2020
-localization_priority: Normal
-ms.openlocfilehash: abe0012861a4c401f003704644fb9f530220521d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 598cfa2691ef1a532e1f94e0f4566c2b41d1a2d7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936820"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152557"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>在 Microsoft Azure 上托管 Office 加载项
 
-最简单的 Office 外接程序由一个 XML 清单文件和一个 HTML 页组成。 XML 清单文件描述外接程序的特征，例如其名称、Office可以运行的桌面客户端以及外接程序的 HTML 页面的 URL。 HTML 页包含在一个 Web 应用中，用户在 Office 客户端应用程序中安装和运行外接程序时将与此 Web 应用进行交互。 可以将 Office 外接程序的 Web 应用托管在任意 Web 托管平台（包括 Azure）上。
+最简单的 Office 外接程序由一个 XML 清单文件和一个 HTML 页组成。 XML 清单文件描述外接程序的特征，如其名称、Office运行哪些桌面客户端以及外接程序的 HTML 页面的 URL。 HTML 页包含在一个 Web 应用中，用户在 Office 客户端应用程序中安装和运行外接程序时将与此 Web 应用进行交互。 可以将 Office 外接程序的 Web 应用托管在任意 Web 托管平台（包括 Azure）上。
 
 本文介绍了如何将外接程序 Web 应用部署到 Azure 并[旁加载外接程序](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)以在 Office 客户端应用程序中进行测试。
 
@@ -113,7 +113,7 @@ ms.locfileid: "58936820"
 
 4. 选择“**Word Web 外接程序**”作为项目类型，然后选择“**下一步**”以接受默认设置。
 
-Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，无需对其 Web 项目进行任何更改。 若要为不同的应用程序（如 Office）创建外接程序Excel，请重复这些步骤并选择具有所需 Office 应用程序的项目类型。
+Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，无需对其 Web 项目进行任何更改。 若要为不同的应用程序（如 Office 应用程序创建外接程序Excel，请重复这些步骤并选择具有所需应用程序Office项目类型。
 
 ## <a name="step-5-publish-your-office-add-in-web-app-to-azure"></a>第 5 步：将 Office 外接程序 Web 应用发布到 Azure
 

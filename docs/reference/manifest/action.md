@@ -2,13 +2,13 @@
 title: 清单文件中的 Action 元素
 description: 此元素指定在用户选择按钮或菜单控件时要执行的操作。
 ms.date: 06/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 1ec2623ad5dbb07677735b7bcb1e39612e56984c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: fb213d8d2938d2d2c0654c1b3a7bf4f177931321
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936857"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151942"
 ---
 # <a name="action-element"></a>Action 元素
 
@@ -107,9 +107,9 @@ ms.locfileid: "58936857"
 **xsi: type** 是“ShowTaskpane”时的可选元素。 指定此操作任务窗格的自定义标题。
 
 > [!NOTE]
-> 此子元素在加载项中Outlook支持。
+> 此子元素在加载项Outlook支持。
 
-以下示例演示使用 **Title** 元素的操作。 请注意，不要直接将 **Title** 分配给字符串。 相反，你可以为其分配 (resid) ，该 ID 在清单的"资源"部分中定义，且不能超过 32 个字符。
+以下示例演示使用 **Title** 元素的操作。 请注意，不要直接将 **Title** 分配给字符串。 相反，你可以为其分配一 (resid) ，该 ID 在清单的"资源"部分中定义，并且不能超过 32 个字符。
 
 ```xml
 <Action xsi:type="ShowTaskpane">

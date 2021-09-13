@@ -2,13 +2,13 @@
 title: 清单文件中的 Resources 元素
 description: Resources 元素包含用于 VersionOverrides 节点的图标、字符串和 URL。
 ms.date: 03/30/2021
-localization_priority: Normal
-ms.openlocfilehash: 1deacc0b93e19e5f646ca2dd74d6f89de562f21e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 874c89a504fa32d7fc7b21324a08d21681d5a11a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938465"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152380"
 ---
 # <a name="resources-element"></a>Resources 元素
 
@@ -18,7 +18,7 @@ ms.locfileid: "58938465"
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  类型  |  说明  |
+|  元素 |  类型  |  描述  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  提供指向图标图像的 HTTPS URL。 |
 |  **Urls**                |  url     |  提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。 |
@@ -46,7 +46,7 @@ ms.locfileid: "58938465"
 
 > [!IMPORTANT]
 >
-> - 如果此图像是加载项的代表图标，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和 Office内创建有效列表，了解大小和其他要求。
+> - 如果此图像是加载项的代表图标，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和加载项内创建有效Office列表了解大小和其他要求。
 > - Outlook 需要缓存图像资源的能力，以提高性能。 为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。 这将导致 Outlook 自动替代泛型或默认图像。
 
 ## <a name="resources-examples"></a>资源示例

@@ -2,13 +2,13 @@
 title: Outlook 加载项的激活规则
 description: 如果用户正在读取或撰写的邮件或约会符合加载项的激活规则，则 Outlook 将激活某些类型的加载项。
 ms.date: 09/22/2020
-localization_priority: Normal
-ms.openlocfilehash: 24f17b7bb3da4665f3f05b23d34ba15bcc4ae729
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e0cac8a2f0153d85e5b6d2600f1dbc7f4c03c398
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936517"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152448"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>上下文 Outlook 加载项的激活规则
 
@@ -22,7 +22,7 @@ ms.locfileid: "58936517"
 ## <a name="specify-activation-rules-in-a-manifest"></a>在清单中指定激活规则
 
 
-若要Outlook条件激活外接程序，请通过使用下列元素之一在外接程序清单中指定激活 `Rule` 规则。
+若要Outlook条件激活外接程序，请通过使用下列元素之一在外接程序清单中指定 `Rule` 激活规则。
 
 - [Rule 元素 (MailApp complexType)](../reference/manifest/rule.md) - 指定单个规则。
 - [Rule 元素 (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) - 使用逻辑操作组合多个规则。
@@ -59,7 +59,7 @@ ms.locfileid: "58936517"
 |**Value**|**说明**|
 |:-----|:-----|
 |**约会**|在 Outlook 日历中指定一个项目。 这包括已获取响应并且具有组织者和参与者的会议项目，或者没有组织者或参与者且仅为日历上的一个项目的约会。 这与 Outlook 中的 IPM.Appointment 邮件类别相对应。|
-|**消息**|指定通常在收件箱中收到的以下项目之一。 <ul><li><p>电子邮件。这与 Outlook 中的 IPM.Note 邮件类别相对应。</p></li><li><p>会议请求、响应或取消。 这对应于 Outlook 中的以下邮件Outlook。</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
+|**邮件**|指定通常在收件箱中收到的以下项目之一。 <ul><li><p>电子邮件。这与 Outlook 中的 IPM.Note 邮件类别相对应。</p></li><li><p>会议请求、响应或取消。 这对应于 Outlook 中的以下邮件Outlook。</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
 `FormType`属性用于指定阅读 (撰写) 外接程序应激活的模式。
 

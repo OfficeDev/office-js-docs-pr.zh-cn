@@ -7,13 +7,13 @@ metadata:
   ms.prod: powerpoint
   ms.topic: landing-page
   ms.date: 03/29/2021
-  localization_priority: Priority
-  ms.openlocfilehash: 4fdc2e9da42cdaa7aafe954383c1c1c48bb404ce
-  ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+  ms.localizationpriority: high
+  ms.openlocfilehash: f587e42839d7ca9d6c41f8497ba8b3a869d398e0
+  ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/08/2021
-  ms.locfileid: "58939269"
+  ms.lasthandoff: 09/12/2021
+  ms.locfileid: "59152390"
 landingContent:
 - title: 关于PowerPoint加载项
   linkLists:
@@ -33,7 +33,7 @@ landingContent:
     links:
     - text: 测试和调试PowerPoint加载项
       url: ../testing/test-debug-office-add-ins.md
-    - text: 部署和PowerPoint加载项
+    - text: 部署和发布PowerPoint加载项
       url: ../publish/publish.md
 - title: 关键Office加载项概念
   linkLists:

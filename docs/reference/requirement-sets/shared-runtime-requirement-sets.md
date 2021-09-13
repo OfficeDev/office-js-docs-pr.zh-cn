@@ -3,19 +3,19 @@ title: 共享运行时要求集
 description: 指定支持 SharedRuntime Office的平台和应用程序。
 ms.date: 04/08/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: 8d0db6e129aaf7a4aa2967e7a1341d6db1188359
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 25efc55c44242398bce684a9b56795d734d2a158
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939070"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152576"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共享运行时要求集
 
 要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
-运行 JavaScript 代码的 Office 外接程序的部件（如任务窗格、从外接程序命令启动的函数文件和 Excel 自定义函数）可以共享单个 JavaScript 运行时。 这允许所有部件共享一组全局变量、共享一组加载的库以及相互通信，而无需通过持久存储传递邮件。 有关详细信息，请参阅[将Office加载项配置为使用共享的 JavaScript 运行时](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
+运行 JavaScript 代码的 Office 外接程序的某些部分（如任务窗格、从外接程序命令启动的函数文件和 Excel 自定义函数）可以共享单个 JavaScript 运行时。 这允许所有部件共享一组全局变量、共享一组加载的库以及相互通信，而无需通过持久存储传递邮件。 有关详细信息，请参阅[将Office加载项配置为使用共享的 JavaScript 运行时](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 下表列出了 SharedRuntime 1.1 要求集、支持该要求集的 Office 客户端应用程序，以及 Office 应用程序的版本或版本号。
 

@@ -3,13 +3,13 @@ title: 功能区 API 要求集
 description: 指定哪些Office和内部版本支持动态功能区 API。
 ms.date: 05/12/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: aa198009a3d1d16a1c34966516a4ddeee9f7f940
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1d68a7a3cf1c7e4f187250a87babcf5525bb867b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937647"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152577"
 ---
 # <a name="ribbon-api-requirement-sets"></a>功能区 API 要求集
 
@@ -19,14 +19,14 @@ ms.locfileid: "58937647"
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 API 要求集、Office要求集的客户端应用程序，以及功能区 API 应用程序Office版本号。
 
-|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Office 2016 年 10 月或Windows<br>（一次性购买）   | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br>（关联至 Microsoft 365 订阅）  | Office 网页版\*  |  Office Online Server  |
+|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Office 2016 或更高版本Windows<br>（一次性购买）   | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br>（关联至 Microsoft 365 订阅）  | Office 网页版\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | RibbonApi 1.1  | 不适用 | 不适用 | 请参阅支持<br>部分如下 | 不适用 | 16.38 | 2020 年 11 月 | 不适用|
 | RibbonApi 1.2  | 不适用 | 不适用 | 2102 (内部版本 13801.20294)  | 不适用 | 即将推出 | 2021 年 5 月 | 不适用|
 
 > **&#42;** 功能区 API 仅在 Excel并且需要一个Microsoft 365订阅。
 
-## <a name="support-for-version-11-on-office-on-windows-subscription"></a>支持版本 1.1 on Office on Windows (subscription) 
+## <a name="support-for-version-11-on-office-on-windows-subscription"></a>对版本 1.1 的支持Office订阅Windows (版本) 
 
 1.1 版本的 RibbonApi 要求集在消费者频道版本 2006 (版本 13001.20498 或) 。 For Office on Windows the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available july 14， 2020 or later. 每个频道支持的最低版本如下所示：  
 
@@ -37,7 +37,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 
 |每月企业频道 | 2004 | 12730.20602 或更大|
 |半年企业频道 | 2002 或更大 | 12527.20880 或更大|
 
-## <a name="more-information"></a>更多信息
+## <a name="more-information"></a>详细信息
 
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 

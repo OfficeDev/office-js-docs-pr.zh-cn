@@ -1,18 +1,18 @@
 ---
 title: Outlook 加载项 API 要求集 1.5
-description: 作为邮箱 API 1.5 Outlook外接程序和 Office JavaScript API 引入的功能和 API。
+description: 为外接程序和 Outlook JavaScript API Office作为邮箱 API 1.5 的一部分引入的功能和 API。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: fa27cc89cbc5c1059525e862016f6c90adc48928
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 024471d8bf9520b0357c73340f3ede3931c0a19c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938030"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152484"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Outlook 外接程序 API 要求集 1.5
 
-Outlook JavaScript API 的 Office API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Outlook JavaScript API 的 Office API 子集包括可用于加载项的对象、方法、属性和Outlook事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
@@ -29,7 +29,7 @@ Outlook JavaScript API 的 Office API 子集包括可在 Outlook 外接程序中
 ### <a name="change-log"></a>更改日志
 
 - 添加了 [Office.context.mailbox.addHandlerAsync](office.context.mailbox.md#methods)：添加支持事件的事件处理程序。
-- 添加了[Office.context.mailbox.removeHandlerAsync：](office.context.mailbox.md#methods)删除受支持事件类型的事件处理程序。
+- 添加了[Office.context.mailbox.removeHandlerAsync：](office.context.mailbox.md#methods)删除支持的事件类型的事件处理程序。
 - 添加了 [Office.EventType](office.md#eventtype-string)：指定与事件处理程序相关联的事件，并包括对 ItemChanged 事件的支持。
 - 添加了 [Office.context.mailbox.restUrl](office.context.mailbox.md#properties)：获取此电子邮件帐户的 REST 终结点的 URL。
 - 修改了 [Office.context.mailbox.getCallbackTokenAsync](office.context.mailbox.md#methods)：添加了此方法的新版本（具有新签名） (`getCallbackTokenAsync([options], callback)`)。原始版本仍可用且未更改。

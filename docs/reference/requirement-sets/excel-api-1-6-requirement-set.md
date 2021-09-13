@@ -3,13 +3,13 @@ title: ExcelJavaScript API 要求集 1.6
 description: 有关 ExcelApi 1.6 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 9cc7155928fb3f98acf25a38ca5210ca6d57bb19
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e5d8cb39c7b4fc41c12625a70d16f47d01d81a5f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936572"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152374"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 的最近更新
 
@@ -32,7 +32,7 @@ ms.locfileid: "58936572"
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求Excel集 1.6 中的 API。 若要查看受 Excel JavaScript API 要求集 1.6 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.6](/javascript/api/excel?view=excel-js-1.6&preserve-view=true)或更早中的 Excel API。
+下表列出了 JavaScript API 要求集 1.6 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.6 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.6](/javascript/api/excel?view=excel-js-1.6&preserve-view=true)或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -40,7 +40,7 @@ ms.locfileid: "58936572"
 |[CellValueConditionalFormat](/javascript/api/excel/excel.cellvalueconditionalformat)|[format](/javascript/api/excel/excel.cellvalueconditionalformat#format)|返回一个 format 对象，该对象封装了条件格式的字体、填充、边框和其他属性。|
 ||[rule](/javascript/api/excel/excel.cellvalueconditionalformat#rule)|指定此条件格式的规则对象。|
 |[ColorScaleConditionalFormat](/javascript/api/excel/excel.colorscaleconditionalformat)|[criteria](/javascript/api/excel/excel.colorscaleconditionalformat#criteria)|色标的条件。|
-||[threeColorScale](/javascript/api/excel/excel.colorscaleconditionalformat#threeColorScale)|如果为 ，色标将具有三个点 (最小值、中点、最大) ，否则它将具有 (最小、 `true` 最大) 。|
+||[threeColorScale](/javascript/api/excel/excel.colorscaleconditionalformat#threeColorScale)|如果为 ，色标的最小 (中点、最大色) 三个点，否则色标将具有 (最小、最大 `true`) 。|
 |[ConditionalCellValueRule](/javascript/api/excel/excel.conditionalcellvaluerule)|[formula1](/javascript/api/excel/excel.conditionalcellvaluerule#formula1)|用于计算条件格式规则的公式（如果需要）。|
 ||[formula2](/javascript/api/excel/excel.conditionalcellvaluerule#formula2)|用于计算条件格式规则的公式（如果需要）。|
 ||[operator](/javascript/api/excel/excel.conditionalcellvaluerule#operator)|单元格值条件格式的运算符。|
@@ -48,7 +48,7 @@ ms.locfileid: "58936572"
 ||[midpoint](/javascript/api/excel/excel.conditionalcolorscalecriteria#midpoint)|色标的中点（如果色标为 3 色色度）。|
 ||[minimum](/javascript/api/excel/excel.conditionalcolorscalecriteria#minimum)|色标条件的最小点。|
 |[ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion)|[color](/javascript/api/excel/excel.conditionalcolorscalecriterion#color)|色标颜色格式的 HTML 颜色代码表示 (例如，#FF0000红色) 。|
-||[formula](/javascript/api/excel/excel.conditionalcolorscalecriterion#formula)|一个数字、公式或 `null` `type` (（ `lowestValue` 如果) ）。|
+||[formula](/javascript/api/excel/excel.conditionalcolorscalecriterion#formula)|如果为数字，则 `null` (`type` 公式 `lowestValue`) 。|
 ||[type](/javascript/api/excel/excel.conditionalcolorscalecriterion#type)|条件条件公式应基于什么。|
 |[ConditionalDataBarNegativeFormat](/javascript/api/excel/excel.conditionaldatabarnegativeformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#borderColor)|HTML 颜色代码，表示边框线条的颜色，格式为 #RRGGBB (例如"FFA500") 或作为已命名的 HTML 颜色 (例如"orange") 。|
 ||[fillColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#fillColor)|表示填充颜色的 HTML 颜色代码，格式为 #RRGGBB (例如"FFA500") 或作为已命名的 HTML 颜色 (例如"orange") 。|
@@ -62,7 +62,7 @@ ms.locfileid: "58936572"
 |[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[delete()](/javascript/api/excel/excel.conditionalformat#delete__)|删除此条件格式。|
 ||[getRange()](/javascript/api/excel/excel.conditionalformat#getRange__)|返回应用条件格式的范围。|
 ||[getRangeOrNullObject()](/javascript/api/excel/excel.conditionalformat#getRangeOrNullObject__)|返回应用了二元格式的范围。|
-||[priority](/javascript/api/excel/excel.conditionalformat#priority)|优先级 (索引) 当前存在此条件格式的条件格式集合中。|
+||[priority](/javascript/api/excel/excel.conditionalformat#priority)|优先级 (索引) 条件格式当前存在的条件格式集合中。|
 ||[cellValue](/javascript/api/excel/excel.conditionalformat#cellValue)|如果当前条件格式为类型，则返回单元格值条件格式 `CellValue` 属性。|
 ||[cellValueOrNullObject](/javascript/api/excel/excel.conditionalformat#cellValueOrNullObject)|如果当前条件格式为类型，则返回单元格值条件格式 `CellValue` 属性。|
 ||[colorScale](/javascript/api/excel/excel.conditionalformat#colorScale)|如果当前条件格式为类型，则返回色标条件格式 `ColorScale` 属性。|
@@ -111,7 +111,7 @@ ms.locfileid: "58936572"
 ||[color](/javascript/api/excel/excel.conditionalrangefill#color)|HTML 颜色代码，表示填充的颜色，格式为 #RRGGBB (例如"FFA500") 或作为已命名的 HTML 颜色 (例如"orange") 。|
 |[ConditionalRangeFont](/javascript/api/excel/excel.conditionalrangefont)|[bold](/javascript/api/excel/excel.conditionalrangefont#bold)|指定字体是否加粗。|
 ||[clear()](/javascript/api/excel/excel.conditionalrangefont#clear__)|重置字体格式。|
-||[color](/javascript/api/excel/excel.conditionalrangefont#color)|文本颜色格式的 HTML 颜色代码表示 (例如，#FF0000红色) 。|
+||[color](/javascript/api/excel/excel.conditionalrangefont#color)|文本颜色格式的 HTML 颜色代码表示 (，例如，#FF0000红色) 。|
 ||[italic](/javascript/api/excel/excel.conditionalrangefont#italic)|指定字体是否为 italic。|
 ||[strikethrough](/javascript/api/excel/excel.conditionalrangefont#strikethrough)|指定字体的删除线状态。|
 ||[underline](/javascript/api/excel/excel.conditionalrangefont#underline)|应用于字体的下划线类型。|
@@ -129,11 +129,11 @@ ms.locfileid: "58936572"
 ||[axisFormat](/javascript/api/excel/excel.databarconditionalformat#axisFormat)|如何为数据条确定坐标轴Excel表示。|
 ||[barDirection](/javascript/api/excel/excel.databarconditionalformat#barDirection)|指定数据条图形应基于的方向。|
 ||[lowerBoundRule](/javascript/api/excel/excel.databarconditionalformat#lowerBoundRule)|构成数据栏的下限（以及如何计算，如果适用）的规则。|
-||[negativeFormat](/javascript/api/excel/excel.databarconditionalformat#negativeFormat)|数据条中坐标轴左侧的所有Excel表示。|
+||[negativeFormat](/javascript/api/excel/excel.databarconditionalformat#negativeFormat)|数据条中轴左侧的所有值的Excel表示。|
 ||[positiveFormat](/javascript/api/excel/excel.databarconditionalformat#positiveFormat)|数据条中轴右侧所有值的Excel表示。|
 ||[showDataBarOnly](/javascript/api/excel/excel.databarconditionalformat#showDataBarOnly)|如果 `true` 为 ，则隐藏应用数据栏的单元格的值。|
 ||[upperBoundRule](/javascript/api/excel/excel.databarconditionalformat#upperBoundRule)|构成数据栏的上限（以及如何计算，如果适用）的规则。|
-|[IconSetConditionalFormat](/javascript/api/excel/excel.iconsetconditionalformat)|[criteria](/javascript/api/excel/excel.iconsetconditionalformat#criteria)|针对规则的条件和图标集的数组，以及条件图标的潜在自定义图标。|
+|[IconSetConditionalFormat](/javascript/api/excel/excel.iconsetconditionalformat)|[criteria](/javascript/api/excel/excel.iconsetconditionalformat#criteria)|规则和条件图标的规则和图标集数组，以及条件图标的潜在自定义图标。|
 ||[reverseIconOrder](/javascript/api/excel/excel.iconsetconditionalformat#reverseIconOrder)|如果 `true` 为 ，则反转图标集的图标顺序。|
 ||[showIconOnly](/javascript/api/excel/excel.iconsetconditionalformat#showIconOnly)|如果 `true` 为 ，则隐藏值，并且只显示图标。|
 ||[style](/javascript/api/excel/excel.iconsetconditionalformat#style)|如果设置，则显示条件格式的图标集选项。|

@@ -1,2 +1,2 @@
-- [更新频道发布的 Microsoft 365 客户端版本号和内部版本号](/officeupdates/update-history-office365-proplus-by-date)
-- [我使用的是哪一版 Office？](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)
+- [适用于客户端的更新频道版本的版本号Microsoft 365版本号](/officeupdates/update-history-office365-proplus-by-date)
+- [使用的是哪一版 Office？](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)

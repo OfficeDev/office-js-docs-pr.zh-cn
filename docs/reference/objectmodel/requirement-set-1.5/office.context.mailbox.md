@@ -2,13 +2,13 @@
 title: Office.context.mailbox - 要求集 1.5
 description: Outlook邮箱 API 要求集 1.5 版本的邮箱对象模型。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: b46efc568ca1d8ac1b2aebe6f16a10d4005ceeb2
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c7fb4584fb90269af82be0d9ce4f3ce99e3f69b9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938407"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152322"
 ---
 # <a name="mailbox-requirement-set-15"></a>邮箱 (要求集 1.5) 
 
@@ -52,13 +52,13 @@ ms.locfileid: "58938407"
 | [makeEwsRequestAsync(data, callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#makeEwsRequestAsync_data__callback__userContext_) | ReadWriteMailbox | 撰写<br>读取 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [removeHandlerAsync(eventType, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#removeHandlerAsync_eventType__options__callback_) | ReadItem | 撰写<br>读取 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 
-## <a name="events"></a>事件
+## <a name="events"></a>活动
 
 可以分别使用 [addHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#addHandlerAsync_eventType__handler__options__callback_) 和 [removeHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true#removeHandlerAsync_eventType__options__callback_) 订阅和取消订阅以下事件。
 
 > [!IMPORTANT]
 > 事件仅适用于任务窗格实现。
 
-| [Event](/javascript/api/office/office.eventtype) | 说明 | 最小值<br>要求集 |
+| [Event](/javascript/api/office/office.eventtype) | 描述 | 最小值<br>要求集 |
 |---|---|:---:|
 |`ItemChanged`| 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |

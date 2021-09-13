@@ -3,13 +3,13 @@ title: Word JavaScript API 要求集 1.3
 description: 有关 WordApi 1.3 要求集的详细信息。
 ms.date: 03/09/2021
 ms.prod: word
-localization_priority: Normal
-ms.openlocfilehash: b58bb99e664e982d1d9047f4348755d807ad216d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d8b8f494886be015abd2922bea1ec280d7c03b76
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937585"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152614"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 的最近更新
 
@@ -62,7 +62,7 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 ||[getItemOrNullObject(key: string)](/javascript/api/word/word.custompropertycollection#getItemOrNullObject_key_)|按键获取自定义属性对象（不区分大小写）。|
 ||[items](/javascript/api/word/word.custompropertycollection#items)|获取此集合中已加载的子项。|
 |[Document](/javascript/api/word/word.document)|[properties](/javascript/api/word/word.document#properties)|获取文档的属性。|
-|[DocumentCreated](/javascript/api/word/word.documentcreated)|[打开 () ](/javascript/api/word/word.documentcreated#open__)|打开文档。|
+|[DocumentCreated](/javascript/api/word/word.documentcreated)|[open () ](/javascript/api/word/word.documentcreated#open__)|打开文档。|
 ||[body](/javascript/api/word/word.documentcreated#body)|获取文档的 body 对象。|
 ||[contentControls](/javascript/api/word/word.documentcreated#contentControls)|获取文档中的内容控件对象的集合。|
 ||[properties](/javascript/api/word/word.documentcreated#properties)|获取文档的属性。|
@@ -107,7 +107,7 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 ||[setLevelAlignment (level： number， alignment： Word.Alignment) ](/javascript/api/word/word.list#setLevelAlignment_level__alignment_)|设置项目符号、编号或图片在列表中指定级别的对齐方式。|
 ||[setLevelBullet (level： number， listBullet： Word.ListBullet， charCode？： number， fontName？： string) ](/javascript/api/word/word.list#setLevelBullet_level__listBullet__charCode__fontName_)|设置 list 中指定级别的项目符号格式。|
 ||[setLevelIndents (level： number， textIndent： number， bulletNumberPictureIndent： number) ](/javascript/api/word/word.list#setLevelIndents_level__textIndent__bulletNumberPictureIndent_)|设置列表中指定级别的两种缩进方式。|
-||[setLevelNumbering (级别： number， listNumbering： Word.ListNumbering， formatString？： Array<string \| number>) ](/javascript/api/word/word.list#setLevelNumbering_level__listNumbering__formatString_)|设置列表中指定级别的编号格式。|
+||[setLevelNumbering (level： number， listNumbering： Word.ListNumbering， formatString？： Array<string \| number>) ](/javascript/api/word/word.list#setLevelNumbering_level__listNumbering__formatString_)|设置列表中指定级别的编号格式。|
 ||[setLevelStartingNumber (level： number， startingNumber： number) ](/javascript/api/word/word.list#setLevelStartingNumber_level__startingNumber_)|设置 list 中指定级别的起始编号。|
 |[ListCollection](/javascript/api/word/word.listcollection)|[getById(id: number)](/javascript/api/word/word.listcollection#getById_id_)|按标识符获取列表。|
 ||[getByIdOrNullObject (id： number) ](/javascript/api/word/word.listcollection#getByIdOrNullObject_id_)|按标识符获取列表。|
@@ -128,7 +128,7 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 ||[getPrevious () ](/javascript/api/word/word.paragraph#getPrevious__)|获取上一个段落。|
 ||[getPreviousOrNullObject () ](/javascript/api/word/word.paragraph#getPreviousOrNullObject__)|获取上一个段落。|
 ||[getRange (rangeLocation？：Word.RangeLocation) ](/javascript/api/word/word.paragraph#getRange_rangeLocation_)|获取整个段落或段落的起点/终点，作为一个范围。|
-||[getTextRanges (结束Marks： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.paragraph#getTextRanges_endingMarks__trimSpacing_)|使用标点符号和/或其他结束标记获取段落中的文本范围。|
+||[getTextRanges (结束标记： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.paragraph#getTextRanges_endingMarks__trimSpacing_)|使用标点符号和/或其他结束标记获取段落中的文本范围。|
 ||[insertTable (rowCount： number， columnCount： number， insertLocation： Word.InsertLocation， values？： string[][]) ](/javascript/api/word/word.paragraph#insertTable_rowCount__columnCount__insertLocation__values_)|插入包含指定行数和列数的 table。|
 ||[isLastParagraph](/javascript/api/word/word.paragraph#isLastParagraph)|指明 paragraph 是其父正文内的最后一个段落。|
 ||[isListItem](/javascript/api/word/word.paragraph#isListItem)|检查 paragraph 是否为 listItem。|
@@ -154,10 +154,10 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 ||[expandTo (range： Word.Range) ](/javascript/api/word/word.range#expandTo_range_)|返回从此 range 进行任一方向扩展的新 range，以便覆盖另一 range。|
 ||[expandToOrNullObject (范围：Word.Range) ](/javascript/api/word/word.range#expandToOrNullObject_range_)|返回从此 range 进行任一方向扩展的新 range，以便覆盖另一 range。|
 ||[getHyperlinkRanges () ](/javascript/api/word/word.range#getHyperlinkRanges__)|获取相应范围内的超链接子范围。|
-||[getNextTextRange (结束标记： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.range#getNextTextRange_endingMarks__trimSpacing_)|使用标点符号和/或其他结束标记获取下一个文本范围。|
+||[getNextTextRange (结束Marks： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.range#getNextTextRange_endingMarks__trimSpacing_)|使用标点符号和/或其他结束标记获取下一个文本范围。|
 ||[getNextTextRangeOrNullObject (endingMarks： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.range#getNextTextRangeOrNullObject_endingMarks__trimSpacing_)|使用标点符号和/或其他结束标记获取下一个文本范围。|
 ||[getRange (rangeLocation？：Word.RangeLocation) ](/javascript/api/word/word.range#getRange_rangeLocation_)|克隆相应范围，或获取该范围的起点/终点作为一个新范围。|
-||[getTextRanges (结束Marks： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.range#getTextRanges_endingMarks__trimSpacing_)|使用标点符号和/或其他结束标记获取范围中的文本子范围。|
+||[getTextRanges (结束标记： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.range#getTextRanges_endingMarks__trimSpacing_)|使用标点符号和/或其他结束标记获取范围中的文本子范围。|
 ||[hyperlink](/javascript/api/word/word.range#hyperlink)|获取 range 内的第一个超链接，或在 range 内设置超链接。|
 ||[insertTable (rowCount： number， columnCount： number， insertLocation： Word.InsertLocation， values？： string[][]) ](/javascript/api/word/word.range#insertTable_rowCount__columnCount__insertLocation__values_)|插入包含指定行数和列数的 table。|
 ||[intersectWith (range： Word.Range) ](/javascript/api/word/word.range#intersectWith_range_)|返回新 range 作为此 range 与另一 range 的交集。|

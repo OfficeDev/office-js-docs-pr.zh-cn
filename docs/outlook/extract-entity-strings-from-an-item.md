@@ -2,13 +2,13 @@
 title: 从 Outlook 项中提取实体字符串
 description: 了解如何从 Outlook 加载项中的某个 Outlook 项中提取实体字符串。
 ms.date: 10/31/2019
-localization_priority: Normal
-ms.openlocfilehash: d266795e3794cfa293d073dafc1ca714644faa5b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 712246f22a83d5bcef85d89a46a3027b763e1304
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938867"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152410"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>从 Outlook 项中提取实体字符串
 
@@ -258,7 +258,7 @@ function myGetAddresses()
 ## <a name="extracting-contact-information"></a>提取联系人信息
 
 
-当用户单击"**获取** 联系人信息"按钮时，事件处理程序从对象的 contacts 属性获取一组联系人及其信息（ `myGetContacts` 如果已提取任何 [](/javascript/api/outlook/office.entities#contacts) `_MyEntities` 联系人）。 每个提取的联系人在数组中被存储为 [Contact](/javascript/api/outlook/office.contact) 对象。 获取有关每个联系人的更多数据。 请注意，上下文确定 Outlook 是否可以从项目中提取电子邮件末尾的签名的联系人，或者联系人附近至少必须存在以下部分 &mdash; 信息。
+当用户单击"**获取** 联系人信息"按钮时，事件处理程序从对象的 contacts 属性获取一组联系人及其信息（ `myGetContacts` 如果已提取任何 [](/javascript/api/outlook/office.entities#contacts) `_MyEntities` 联系人）。 每个提取的联系人在数组中被存储为 [Contact](/javascript/api/outlook/office.contact) 对象。 获取有关每个联系人的更多数据。 请注意，上下文确定Outlook是否可以从项目中提取电子邮件末尾的签名的联系人，或者联系人附近至少必须存在以下部分 &mdash; 信息。
 
 
 - 表示 [Contact.personName](/javascript/api/outlook/office.contact#personName) 属性中联系人名称的字符串。

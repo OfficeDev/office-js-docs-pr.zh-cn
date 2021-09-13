@@ -2,13 +2,13 @@
 title: 创建字典任务窗格加载项
 description: 了解如何创建字典任务窗格外接程序
 ms.date: 09/26/2019
-localization_priority: Normal
-ms.openlocfilehash: e8667e77416caeb041af15141cd47b9cf35e2737
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f340afbc372d37f3d82c55583906e4212e01da0a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938658"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152364"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -23,7 +23,7 @@ ms.locfileid: "58938658"
 
 ![显示定义的字典应用。](../images/dictionary-agave-01.jpg)
 
-由你来决定是单击字典外接程序的 HTML  UI 中的"查看更多"链接在任务窗格中显示更多信息，还是打开单独的浏览器窗口来显示选定单词或短语的完整网页。
+由你决定是单击字典外接程序的 HTML  UI 中的"查看更多"链接在任务窗格中显示更多信息，还是打开单独的浏览器窗口来显示所选单词或短语的完整网页。
 图 2 显示“定义”上下文菜单命令，允许用户快速启动已安装的字典。 图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
 
 *图 2.定义上下文菜单中的命令*
@@ -535,7 +535,7 @@ a:hover, a:active
     
 - 对象的[getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_)方法，当引发事件处理程序以获取用户选择的单词或短语时，在 函数中调用该方法，将其强制转换为纯文本，然后执行异步回调函数。 `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback`
     
-- 当作为方法的 callback 参数传递的异步回调函数执行时，它将在回调返回时 `selectTextCallback` 获取所选 `getSelectedDataAsync` 文本的值。 它从回调的 _selectedText_ 参数 (，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 返回对象的 [value](/javascript/api/office/office.asyncresult#status) `AsyncResult` 属性。
+- 当作为方法的 callback 参数传递的异步回调函数执行时，它将在回调返回时 `selectTextCallback` 获取所选 `getSelectedDataAsync` 文本的值。 它从回调的 _selectedText_ 参数 (，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 返回的对象的 [value](/javascript/api/office/office.asyncresult#status) `AsyncResult` 属性。
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     

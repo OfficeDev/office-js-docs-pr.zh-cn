@@ -2,15 +2,15 @@
 title: Office.context.mailbox.item - 要求集 1.3
 description: Outlook邮箱 API 要求集 1.3 版本的项目对象模型。
 ms.date: 07/16/2021
-localization_priority: Normal
-ms.openlocfilehash: 3cb8d6d188066482d6b50458a9c44f9f436926bf
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 7fa4f0f70185f159f677d50fdf0989de4c79b310
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939021"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152497"
 ---
-# <a name="item-mailbox-requirement-set-13"></a>项目 (邮箱要求集 1.3) 
+# <a name="item-mailbox-requirement-set-13"></a>item (Mailbox requirement set 1.3) 
 
 ### <a name="officecontextmailboxitem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
 

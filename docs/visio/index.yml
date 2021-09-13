@@ -7,13 +7,13 @@ metadata:
   ms.prod: visio
   ms.topic: landing-page
   ms.date: 03/29/2021
-  localization_priority: Priority
-  ms.openlocfilehash: 1cde5e60d2c476078754fae5285101df5995c406
-  ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+  ms.localizationpriority: high
+  ms.openlocfilehash: a20ca9eefe4616e17ff9305ce68597e948680c87
+  ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/08/2021
-  ms.locfileid: "58937593"
+  ms.lasthandoff: 09/12/2021
+  ms.locfileid: "59152458"
 landingContent:
 - title: 关于Visio JavaScript API
   linkLists:

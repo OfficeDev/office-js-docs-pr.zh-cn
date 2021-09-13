@@ -2,13 +2,13 @@
 title: Office命名空间 - 要求集 1.5
 description: Office邮箱 API 要求集 1.5 Outlook外接程序可用的命名空间成员。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 46b70185ce983721c75093351e47a02eb8b9e7cd
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 54b5e08cceb08a46384cfa2eb130f17c14ec2ede
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938410"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152581"
 ---
 # <a name="office-mailbox-requirement-set-15"></a>Office (邮箱要求集 1.5) 
 
@@ -52,7 +52,7 @@ ms.locfileid: "58938410"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`Succeeded`| String|调用成功。|
 |`Failed`| 字符串|调用失败。|
@@ -79,7 +79,7 @@ ms.locfileid: "58938410"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`Html`| String|请求以 HTML 格式返回的数据。|
 |`Text`| 字符串|请求以文本格式返回的数据。|
@@ -106,7 +106,7 @@ ms.locfileid: "58938410"
 
 ##### <a name="properties"></a>属性
 
-| 名称 | 类型 | 说明 | 最低要求集 |
+| 名称 | 类型 | 描述 | 最低要求集 |
 |---|---|---|:---:|
 |`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
 
@@ -132,7 +132,7 @@ ms.locfileid: "58938410"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 说明|
+|名称| 类型| 描述|
 |---|---|---|
 |`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|

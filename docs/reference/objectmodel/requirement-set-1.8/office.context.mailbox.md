@@ -2,13 +2,13 @@
 title: Office.context.mailbox - 要求集 1.8
 description: Outlook邮箱 API 要求集 1.8 版本的邮箱对象模型。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: dbd3a46ba5435694d80f362ba71b3e2912e41513
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 7f1008bd303333e00ec0933d2e062d42f15918d4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939243"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152479"
 ---
 # <a name="mailbox-requirement-set-18"></a>邮箱 (要求集 1.8) 
 
@@ -40,7 +40,7 @@ ms.locfileid: "58939243"
 | 方法 | 最小值<br>权限级别 | 模式 | 最小值<br>要求集 |
 |---|---|---|:---:|
 | [addHandlerAsync(eventType, handler, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#addHandlerAsync_eventType__handler__options__callback_) | ReadItem | 撰写<br>读取 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [convertToEwsId (itemId， restVersion) ](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#convertToEwsId_itemId__restVersion_) | 受限 | 撰写<br>读取 | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| [convertToEwsId (itemId，restVersion) ](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#convertToEwsId_itemId__restVersion_) | 受限 | 撰写<br>读取 | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | [convertToLocalClientTime (timeValue) ](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#convertToLocalClientTime_timeValue_) | ReadItem | 撰写<br>读取 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [convertToRestId (itemId， restVersion) ](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#convertToRestId_itemId__restVersion_) | 受限 | 撰写<br>读取 | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | [convertToUtcClientTime (输入) ](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#convertToUtcClientTime_input_) | ReadItem | 撰写<br>读取 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -54,13 +54,13 @@ ms.locfileid: "58939243"
 | [makeEwsRequestAsync(data, callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#makeEwsRequestAsync_data__callback__userContext_) | ReadWriteMailbox | 撰写<br>读取 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [removeHandlerAsync(eventType, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#removeHandlerAsync_eventType__options__callback_) | ReadItem | 撰写<br>读取 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 
-## <a name="events"></a>事件
+## <a name="events"></a>活动
 
 可以分别使用 [addHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#addHandlerAsync_eventType__handler__options__callback_) 和 [removeHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true#removeHandlerAsync_eventType__options__callback_) 订阅和取消订阅以下事件。
 
 > [!IMPORTANT]
 > 事件仅适用于任务窗格实现。
 
-| [Event](/javascript/api/office/office.eventtype) | 说明 | 最小值<br>要求集 |
+| [Event](/javascript/api/office/office.eventtype) | 描述 | 最小值<br>要求集 |
 |---|---|:---:|
 |`ItemChanged`| 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |

@@ -4,13 +4,13 @@ description: 了解 Project 任务窗格加载项。
 ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: f2f160b01971385abc22f7dce63f807e90fbe7d3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 44c7704ebbc7e53b0ca713f0834e3c9b75334add
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938391"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152559"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 

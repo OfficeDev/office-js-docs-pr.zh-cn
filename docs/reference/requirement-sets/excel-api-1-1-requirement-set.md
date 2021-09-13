@@ -3,13 +3,13 @@ title: ExcelJavaScript API 要求集 1.1
 description: 有关 ExcelApi 1.1 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 7bc378c200d8aa7c200158d7fe50fdbd71b8251a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ef764de37c8f0fea49755ba69d1beda932e17bd9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936949"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152381"
 ---
 # <a name="excel-javascript-api-requirement-set-11"></a>ExcelJavaScript API 要求集 1.1
 
@@ -21,7 +21,7 @@ Excel JavaScript API 1.1 是首版 API。 这是唯一Excel支持的特定要求
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
-|[Application](/javascript/api/excel/excel.application)|[calculate (calculationType： Excel。CalculationType) ](/javascript/api/excel/excel.application#calculate_calculationType_)|重新计算 Excel 中当前打开的所有工作簿。|
+|[Application](/javascript/api/excel/excel.application)|[calculate (calculationType：Excel。CalculationType) ](/javascript/api/excel/excel.application#calculate_calculationType_)|重新计算 Excel 中当前打开的所有工作簿。|
 ||[calculationMode](/javascript/api/excel/excel.application#calculationMode)|返回工作簿中使用的计算模式，如 中的常量所定义 `Excel.CalculationMode` 。|
 |[Binding](/javascript/api/excel/excel.binding)|[getRange()](/javascript/api/excel/excel.binding#getRange__)|返回绑定表示的区域。|
 ||[getTable()](/javascript/api/excel/excel.binding#getTable__)|返回绑定表示的表。|
@@ -44,7 +44,7 @@ Excel JavaScript API 1.1 是首版 API。 这是唯一Excel支持的特定要求
 ||[title](/javascript/api/excel/excel.chart#title)|表示指定图表的标题，包括标题的文本、可见性、位置和格式。|
 ||[setData (sourceData： Range， seriesBy？： Excel。ChartSeriesBy) ](/javascript/api/excel/excel.chart#setData_sourceData__seriesBy_)|重置图表的源数据。|
 ||[setPosition (startCell： Range \| string， endCell？： Range \| string) ](/javascript/api/excel/excel.chart#setPosition_startCell__endCell_)|相对于工作表上的单元格放置图表。|
-||[top](/javascript/api/excel/excel.chart#top)|指定从对象上边缘到工作表上第 1 (行顶端的距离（以) 或图表 (图表区域的顶部) ）。|
+||[top](/javascript/api/excel/excel.chart#top)|指定从对象上边缘到工作表 (上第 1 行顶端或图表区顶部的) 的距离（以 (点) ）。|
 ||[width](/javascript/api/excel/excel.chart#width)|指定图表对象的宽度（以点表示）。|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[fill](/javascript/api/excel/excel.chartareaformat#fill)|表示对象的填充格式，包括背景格式信息。|
 ||[font](/javascript/api/excel/excel.chartareaformat#font)|表示当前对象的字体属性（字体名称、字体大小、颜色等）。|
@@ -59,7 +59,7 @@ Excel JavaScript API 1.1 是首版 API。 这是唯一Excel支持的特定要求
 ||[majorGridlines](/javascript/api/excel/excel.chartaxis#majorGridlines)|返回一个对象，该对象代表指定坐标轴的主要网格线。|
 ||[minorGridlines](/javascript/api/excel/excel.chartaxis#minorGridlines)|返回一个对象，该对象代表指定坐标轴的次要网格线。|
 ||[title](/javascript/api/excel/excel.chartaxis#title)|表示坐标轴标题。|
-|[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[font](/javascript/api/excel/excel.chartaxisformat#font)|指定图表坐标轴元素 (字体名称、字体大小、颜色等) 字体属性。|
+|[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[font](/javascript/api/excel/excel.chartaxisformat#font)|指定图表坐标轴 (字体名称、字体大小、颜色等) 字体属性。|
 ||[line](/javascript/api/excel/excel.chartaxisformat#line)|指定图表线条格式。|
 |[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[format](/javascript/api/excel/excel.chartaxistitle#format)|指定图表坐标轴标题的格式。|
 ||[text](/javascript/api/excel/excel.chartaxistitle#text)|指定坐标轴标题。|
@@ -74,7 +74,7 @@ Excel JavaScript API 1.1 是首版 API。 这是唯一Excel支持的特定要求
 ||[font](/javascript/api/excel/excel.chartdatalabelformat#font)|表示图表数据 (字体名称、字体大小和颜色) 字体属性。|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[position](/javascript/api/excel/excel.chartdatalabels#position)|表示数据标签的位置的值。|
 ||[format](/javascript/api/excel/excel.chartdatalabels#format)|指定图表数据标签的格式，包括填充和字体格式。|
-||[separator](/javascript/api/excel/excel.chartdatalabels#separator)|表示用于图表中数据标签的分隔符的字符串。|
+||[分隔符](/javascript/api/excel/excel.chartdatalabels#separator)|表示用于图表中数据标签的分隔符的字符串。|
 ||[showBubbleSize](/javascript/api/excel/excel.chartdatalabels#showBubbleSize)|指定数据标签气泡大小是否可见。|
 ||[showCategoryName](/javascript/api/excel/excel.chartdatalabels#showCategoryName)|指定数据标签类别名称是否可见。|
 ||[showLegendKey](/javascript/api/excel/excel.chartdatalabels#showLegendKey)|指定数据标签图例项标示是否可见。|
@@ -119,7 +119,7 @@ Excel JavaScript API 1.1 是首版 API。 这是唯一Excel支持的特定要求
 ||[text](/javascript/api/excel/excel.charttitle#text)|指定图表的标题文本。|
 ||[visible](/javascript/api/excel/excel.charttitle#visible)|指定图表标题是否可见。|
 |[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[fill](/javascript/api/excel/excel.charttitleformat#fill)|表示对象的填充格式，包括背景格式信息。|
-||[font](/javascript/api/excel/excel.charttitleformat#font)|代表对象的字体 (字体名称、字号和颜色) 等。|
+||[font](/javascript/api/excel/excel.charttitleformat#font)|代表对象 (字体名称、字号和颜色) 字体属性。|
 |[NamedItem](/javascript/api/excel/excel.nameditem)|[getRange()](/javascript/api/excel/excel.nameditem#getRange__)|返回与名称相关的 range 对象。|
 ||[name](/javascript/api/excel/excel.nameditem#name)|对象的名称。|
 ||[type](/javascript/api/excel/excel.nameditem#type)|指定名称的公式返回的值的类型。|
@@ -128,15 +128,15 @@ Excel JavaScript API 1.1 是首版 API。 这是唯一Excel支持的特定要求
 |[NamedItemCollection](/javascript/api/excel/excel.nameditemcollection)|[getItem(name: string)](/javascript/api/excel/excel.nameditemcollection#getItem_name_)|使用 `NamedItem` 对象的名称获取对象。|
 ||[items](/javascript/api/excel/excel.nameditemcollection#items)|获取此集合中已加载的子项。|
 |[Range](/javascript/api/excel/excel.range)|[clear(applyTo?: Excel.ClearApplyTo)](/javascript/api/excel/excel.range#clear_applyTo_)|清除区域值、格式、填充、边框等。|
-||[删除 (班次：Excel。DeleteShiftDirection) ](/javascript/api/excel/excel.range#delete_shift_)|删除与区域相关的单元格。|
+||[delete (shift： Excel.DeleteShiftDirection) ](/javascript/api/excel/excel.range#delete_shift_)|删除与区域相关的单元格。|
 ||[formulas](/javascript/api/excel/excel.range#formulas)|表示采用 A1 表示法的公式。|
 ||[formulasLocal](/javascript/api/excel/excel.range#formulasLocal)|表示采用 A1 样式表示法的公式，使用用户的语言和数字格式区域设置。|
-||[getBoundingRect (anotherRange： Range \| string) ](/javascript/api/excel/excel.range#getBoundingRect_anotherRange_)|获取包含指定区域的最小 range 对象。|
+||[getBoundingRect (anotherRange：Range \| string) ](/javascript/api/excel/excel.range#getBoundingRect_anotherRange_)|获取包含指定区域的最小 range 对象。|
 ||[getCell(row: number, column: number)](/javascript/api/excel/excel.range#getCell_row__column_)|根据行和列编号获取包含单个单元格的 range 对象。|
 ||[getColumn(column: number)](/javascript/api/excel/excel.range#getColumn_column_)|获取区域中包含的列。|
-||[getEntireColumn()](/javascript/api/excel/excel.range#getEntireColumn__)|获取一个对象，该对象代表区域区域整列 (例如，如果当前区域代表单元格"B4：E11"，则其为表示列 `getEntireColumn` "B：E") 。|
-||[getEntireRow()](/javascript/api/excel/excel.range#getEntireRow__)|获取一个对象，该对象代表区域 (例如，如果当前区域代表单元格"B4：E11"，则其为表示行 `GetEntireRow` "4：11") 。|
-||[getIntersection (anotherRange：Range \| string) ](/javascript/api/excel/excel.range#getIntersection_anotherRange_)|获取表示指定区域的矩形交集的 range 对象。|
+||[getEntireColumn()](/javascript/api/excel/excel.range#getEntireColumn__)|获取一个对象，该对象代表区域区域整列 (例如，如果当前区域代表单元格"B4：E11"，则它是表示列 `getEntireColumn` "B：E") 。|
+||[getEntireRow()](/javascript/api/excel/excel.range#getEntireRow__)|获取一个对象，该对象代表单元格区域整行 (例如，如果当前区域代表单元格"B4：E11"，则其为代表行 `GetEntireRow` "4：11") 。|
+||[getIntersection (anotherRange： Range \| string) ](/javascript/api/excel/excel.range#getIntersection_anotherRange_)|获取表示指定区域的矩形交集的 range 对象。|
 ||[getLastCell () ](/javascript/api/excel/excel.range#getLastCell__)|获取区域内的最后一个单元格。|
 ||[getLastColumn () ](/javascript/api/excel/excel.range#getLastColumn__)|获取区域内的最后一列。|
 ||[getLastRow () ](/javascript/api/excel/excel.range#getLastRow__)|获取区域内的最后一行。|
@@ -170,7 +170,7 @@ Excel JavaScript API 1.1 是首版 API。 这是唯一Excel支持的特定要求
 |[RangeFont](/javascript/api/excel/excel.rangefont)|[bold](/javascript/api/excel/excel.rangefont#bold)|表示字体的加粗状态。|
 ||[color](/javascript/api/excel/excel.rangefont#color)|文本颜色格式的 HTML 颜色代码表示 (，例如，#FF0000红色) 。|
 ||[italic](/javascript/api/excel/excel.rangefont#italic)|指定字体的 italic 状态。|
-||[name](/javascript/api/excel/excel.rangefont#name)|字体名称 (，例如"Calibri") 。|
+||[name](/javascript/api/excel/excel.rangefont#name)|字体名称 (例如"Calibri") 。|
 ||[size](/javascript/api/excel/excel.rangefont#size)|字号|
 ||[underline](/javascript/api/excel/excel.rangefont#underline)|应用于字体的下划线类型。|
 |[RangeFormat](/javascript/api/excel/excel.rangeformat)|[horizontalAlignment](/javascript/api/excel/excel.rangeformat#horizontalAlignment)|表示指定对象的水平对齐方式。|
@@ -214,14 +214,14 @@ Excel JavaScript API 1.1 是首版 API。 这是唯一Excel支持的特定要求
 ||[getRange()](/javascript/api/excel/excel.tablerow#getRange__)|返回与整个行相关的 range 对象。|
 ||[index](/javascript/api/excel/excel.tablerow#index)|返回表的行集合内行的索引编号。|
 ||[values](/javascript/api/excel/excel.tablerow#values)|表示指定区域的原始值。|
-|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[add (index？： number， values？： Array<Array<boolean \| string number>> \| \| boolean \| string number \|) ](/javascript/api/excel/excel.tablerowcollection#add_index__values_)|向表中添加一行或多行。|
+|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[add (index？： number， values？： Array<Array<boolean string number>> \| \| \| boolean \| string \| number) ](/javascript/api/excel/excel.tablerowcollection#add_index__values_)|向表中添加一行或多行。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.tablerowcollection#getItemAt_index_)|根据其在集合中的位置获取行。|
 ||[count](/javascript/api/excel/excel.tablerowcollection#count)|返回表中的行数。|
 ||[items](/javascript/api/excel/excel.tablerowcollection#items)|获取此集合中已加载的子项。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[getSelectedRange () ](/javascript/api/excel/excel.workbook#getSelectedRange__)|从工作簿获取当前选定的单个区域。|
 ||[application](/javascript/api/excel/excel.workbook#application)|表示Excel工作簿的应用程序实例。|
 ||[bindings](/javascript/api/excel/excel.workbook#bindings)|表示属于工作簿的绑定的集合。|
-||[names](/javascript/api/excel/excel.workbook#names)|代表工作簿范围的命名项集合， (范围和常量) 。|
+||[names](/javascript/api/excel/excel.workbook#names)|表示工作簿范围的命名项目集合， (范围和常量) 。|
 ||[表](/javascript/api/excel/excel.workbook#tables)|表示与工作簿关联的表的集合。|
 ||[worksheets](/javascript/api/excel/excel.workbook#worksheets)|表示与工作簿关联的工作表的集合。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[activate()](/javascript/api/excel/excel.worksheet#activate__)|在 Excel UI 中激活工作表。|
@@ -234,7 +234,7 @@ Excel JavaScript API 1.1 是首版 API。 这是唯一Excel支持的特定要求
 ||[id](/javascript/api/excel/excel.worksheet#id)|返回用于唯一标识指定工作簿中工作表的值。|
 ||[表](/javascript/api/excel/excel.worksheet#tables)|属于工作表的表的集合。|
 ||[visibility](/javascript/api/excel/excel.worksheet#visibility)|工作表的可见性。|
-|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[add (name？： string) ](/javascript/api/excel/excel.worksheetcollection#add_name_)|向工作簿添加新工作表。|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[添加 (名称？：string) ](/javascript/api/excel/excel.worksheetcollection#add_name_)|向工作簿添加新工作表。|
 ||[getActiveWorksheet () ](/javascript/api/excel/excel.worksheetcollection#getActiveWorksheet__)|获取工作簿中当前处于活动状态的工作表。|
 ||[getItem(key: string)](/javascript/api/excel/excel.worksheetcollection#getItem_key_)|使用其名称或 ID 获取 worksheet 对象。|
 ||[items](/javascript/api/excel/excel.worksheetcollection#items)|获取此集合中已加载的子项。|

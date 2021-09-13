@@ -3,13 +3,13 @@ title: Office 通用 API 要求集
 description: 详细了解通用 API Office集。
 ms.date: 04/28/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: 458369ad693afeedb760eda3238191c44bedc5e9
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d31b119db15689a8ba4c5f5cf070f26aa916a6d3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937074"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152469"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -29,7 +29,7 @@ ms.locfileid: "58937074"
 
 ## <a name="common-api-requirement-sets"></a>通用 API 要求集
 
-以下各节列出了通用 API 要求集、每个集内的方法，Office支持该要求集的客户端应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
+以下各节列出了通用 API 要求集、每个要求集内的方法，Office支持该要求集的客户端应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
 
 > [!TIP]
 > 需要有关外接程序和要求集在应用程序与版本Office的信息？ 请参阅[Office外接程序的客户端](../../overview/office-add-in-availability.md)应用程序和Office可用性。

@@ -3,13 +3,13 @@ title: ExcelJavaScript API 要求集 1.12
 description: 有关 ExcelApi 1.12 要求集的详细信息。
 ms.date: 04/01/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 10587b84ba476b91cdd56d8472e551348b3a718b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f2780e188eeebc70d754d7c2ea26cde1b1974702
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936470"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152297"
 ---
 # <a name="whats-new-in-excel-javascript-api-112"></a>JavaScript API 1.12 Excel的新增功能
 
@@ -26,7 +26,7 @@ ExcelApi 1.12 通过添加用于跟踪动态数组和查找公式的直接引用
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求Excel集 1.12 中的 API。 若要查看受 Excel JavaScript API 要求集 1.12 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.12](/javascript/api/excel?view=excel-js-1.12&preserve-view=true)或更早中的 Excel API。
+下表列出了 JavaScript API 要求集 1.12 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.12 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.12](/javascript/api/excel?view=excel-js-1.12&preserve-view=true)或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -66,7 +66,7 @@ ExcelApi 1.12 通过添加用于跟踪动态数组和查找公式的直接引用
 ||[wholeDays](/javascript/api/excel/excel.pivotdatefilter#wholeDays)|对于 、 、 和 筛选条件， `equals` `before` `after` `between` 指示是否按整日进行比较。|
 |[PivotField](/javascript/api/excel/excel.pivotfield)|[applyFilter (筛选器：Excel。PivotFilters) ](/javascript/api/excel/excel.pivotfield#applyFilter_filter_)|设置字段的一个或多个当前 PivotFilter，并应用于该字段。|
 ||[clearAllFilters () ](/javascript/api/excel/excel.pivotfield#clearAllFilters__)|清除字段的所有筛选器的所有条件。|
-||[clearFilter (filterType： Excel。PivotFilterType) ](/javascript/api/excel/excel.pivotfield#clearFilter_filterType_)|从给定类型的字段筛选器中清除所有现有条件， (当前应用了一个) 。|
+||[clearFilter (filterType： Excel。PivotFilterType) ](/javascript/api/excel/excel.pivotfield#clearFilter_filterType_)|从给定类型的字段筛选器中清除所有现有条件 (如果当前已对给定) 。|
 ||[getFilters () ](/javascript/api/excel/excel.pivotfield#getFilters__)|获取当前应用于字段的所有筛选器。|
 ||[isFiltered (filterType？： Excel。PivotFilterType) ](/javascript/api/excel/excel.pivotfield#isFiltered_filterType_)|检查字段上是否有已应用的筛选器。|
 |[PivotFilters](/javascript/api/excel/excel.pivotfilters)|[dateFilter](/javascript/api/excel/excel.pivotfilters#dateFilter)|透视字段当前应用的日期筛选器。|
@@ -115,7 +115,7 @@ ExcelApi 1.12 通过添加用于跟踪动态数组和查找公式的直接引用
 |[WorksheetCustomProperty](/javascript/api/excel/excel.worksheetcustomproperty)|[delete()](/javascript/api/excel/excel.worksheetcustomproperty#delete__)|删除 custom property 对象。|
 ||[key](/javascript/api/excel/excel.worksheetcustomproperty#key)|获取 customProperty 的键。|
 ||[value](/javascript/api/excel/excel.worksheetcustomproperty#value)|获取或设置自定义属性的值。|
-|[WorksheetCustomPropertyCollection](/javascript/api/excel/excel.worksheetcustompropertycollection)|[添加 (键：string，value：string) ](/javascript/api/excel/excel.worksheetcustompropertycollection#add_key__value_)|添加映射到提供的键的新自定义属性。|
+|[WorksheetCustomPropertyCollection](/javascript/api/excel/excel.worksheetcustompropertycollection)|[add (key： string， value： string) ](/javascript/api/excel/excel.worksheetcustompropertycollection#add_key__value_)|添加映射到提供的键的新自定义属性。|
 ||[getCount()](/javascript/api/excel/excel.worksheetcustompropertycollection#getCount__)|获取此工作表上的自定义属性数。|
 ||[getItem(key: string)](/javascript/api/excel/excel.worksheetcustompropertycollection#getItem_key_)|按键获取自定义属性对象（不区分大小写）。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcustompropertycollection#getItemOrNullObject_key_)|按键获取自定义属性对象（不区分大小写）。|

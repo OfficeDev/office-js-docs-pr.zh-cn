@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 WebApplicationInfo 元素
-description: 外接程序清单的 WebApplicationInfo 元素的参考Office XML (XML) 文档。
+description: 有关外接程序清单的 WebApplicationInfo 元素Office XML 文件 (文档) 文档。
 ms.date: 07/30/2020
-localization_priority: Normal
-ms.openlocfilehash: 037de49320a6d1a1ca7dce3446b4f4008a2f1331
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 7de9271fc3e7ed76c0423c8a0b8ab70360b105c3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937087"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152542"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
 
@@ -27,7 +27,7 @@ ms.locfileid: "58937087"
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  **Id**    |  是   |  在 Azure Active Directory v2.0 终结点中注册的加载项关联服务的 **应用程序 ID**。|
-|  **MsaId**    |  否   |  外接程序 Web 应用程序的 MSA 客户端 ID，如 msm.live.com 中注册。|
+|  **MsaId**    |  否   |  MSA 加载项 Web 应用程序的客户端 ID（在 msm.live.com 中注册）。|
 |  **Resource**  |  是   |  指定在 Azure Active Directory v2.0 终结点中注册的加载项的 **应用程序 ID URI**。|
 |  [Scopes](scopes.md)                |  是  |  指定外接程序对资源（如 Microsoft Graph）所需的权限。  |
 |  [授权](authorizations.md)  |  否   | 指定加载项的 Web 应用程序需要授权的外部资源和所需权限。|

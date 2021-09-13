@@ -2,13 +2,13 @@
 title: 清单文件中的 Control 元素
 description: 定义执行操作或启动任务窗格的 JavaScript 函数。
 ms.date: 01/29/2021
-localization_priority: Normal
-ms.openlocfilehash: 737902bef52edeb70e2c5760df5bb589b624271b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: effc47ffe9d145dcc8bf924b243c4a2bc9329f43
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937093"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151926"
 ---
 # <a name="control-element"></a>Control 元素
 

@@ -2,13 +2,13 @@
 title: 排查 Office 加载项中的用户错误
 description: 了解如何解决加载项中的Office错误。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 1593dd5aa5ae690d4a44f1a7527dce2c6dfcbd87
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 58983f9733e5a05c3aae317f9cc707de9aee8430
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937107"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152656"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -89,4 +89,4 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 
 ## <a name="see-also"></a>另请参阅
 
-- [解决加载项Office错误](troubleshoot-development-errors.md)
+- [排查 Office 加载项中的开发错误](troubleshoot-development-errors.md)

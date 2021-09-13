@@ -2,17 +2,17 @@
 title: 获取 Outlook 加载项中的附件
 description: 加载项可使用附件 API 将与附件相关的信息发送至远程服务。
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: d525b6eb0e52c5c292f50e53451e648db1243215
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: de31ff257484379af1904ba530f94cb9ab5c3197
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939062"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152403"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>从服务器获取 Outlook 项的附件
 
-可以通过几种方法获取Outlook项的附件，但具体使用哪个选项取决于你的方案。
+可以通过几种方法获取Outlook项的附件，但具体使用哪个选项取决于您的方案。
 
 1. 将附件信息发送到远程服务。
 
@@ -20,7 +20,7 @@ ms.locfileid: "58939062"
 
 1. 使用要求集 1.8 中提供的 [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) API。 支持的格式 [：AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)。
 
-    如果 EWS/REST (例如，由于 Exchange 服务器) 的管理员配置，或者您的外接程序希望直接在 HTML 或 JavaScript 中使用 base64 内容，则此 API 可能很方便。 此外，该 API 在撰写方案中可用，其中附件可能尚未同步到 Exchange;有关详细信息，请参阅在 Outlook 窗体中管理项目的附件 `getAttachmentContentAsync` 。 [](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
+    如果 EWS/REST 不可用 (例如，由于 Exchange 服务器) 的管理员配置，或者您的外接程序希望直接在 HTML 或 JavaScript 中使用 base64 内容，则此 API 可能很方便。 此外，该 API 在撰写方案中可用，其中附件可能尚未同步到 Exchange;有关详细信息，请参阅在 Outlook 中管理撰写窗体中的项目附件 `getAttachmentContentAsync` 。 [](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
 
 本文详细介绍了第一个选项。 若要将附件信息发送到远程服务，请使用以下属性和函数。
 

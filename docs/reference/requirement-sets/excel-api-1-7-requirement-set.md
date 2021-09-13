@@ -3,13 +3,13 @@ title: ExcelJavaScript API 要求集 1.7
 description: 有关 ExcelApi 1.7 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: ed18997224f052c2e36943fcdbb93865ec8ac73d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 81ae4b7ec9180ebb14bdf3b0e19d6dc2a9e997cf
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938543"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152343"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 的最近更新
 
@@ -123,8 +123,8 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 |[ChartLineFormat](/javascript/api/excel/excel.chartlineformat)|[lineStyle](/javascript/api/excel/excel.chartlineformat#lineStyle)|代表线条样式。|
 ||[weight](/javascript/api/excel/excel.chartlineformat#weight)|表示线条的粗细（以磅为单位）。|
 |[ChartPoint](/javascript/api/excel/excel.chartpoint)|[hasDataLabel](/javascript/api/excel/excel.chartpoint#hasDataLabel)|表示一个数据点是否具有数据标签。|
-||[markerBackgroundColor](/javascript/api/excel/excel.chartpoint#markerBackgroundColor)|表示数据点的数据标记背景色的 HTML 颜色代码 (例如，#FF0000表示红色) 。|
-||[markerForegroundColor](/javascript/api/excel/excel.chartpoint#markerForegroundColor)|数据点标志前景色的 HTML 颜色代码表示 (例如，#FF0000红色) 。|
+||[markerBackgroundColor](/javascript/api/excel/excel.chartpoint#markerBackgroundColor)|数据点标记的背景色的 HTML 颜色代码表示 (例如，#FF0000红色) 。|
+||[markerForegroundColor](/javascript/api/excel/excel.chartpoint#markerForegroundColor)|数据点标记前景色的 HTML 颜色代码表示 (例如，#FF0000红色) 。|
 ||[markerSize](/javascript/api/excel/excel.chartpoint#markerSize)|表示数据点的标记大小。|
 ||[markerStyle](/javascript/api/excel/excel.chartpoint#markerStyle)|表示图表数据点的标记样式。|
 ||[dataLabel](/javascript/api/excel/excel.chartpoint#dataLabel)|返回图表点的数据标签。|
@@ -261,7 +261,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[styles](/javascript/api/excel/excel.workbook#styles)|表示与工作簿关联的样式的集合。|
 |[WorkbookProtection](/javascript/api/excel/excel.workbookprotection)|[protect (password？： string) ](/javascript/api/excel/excel.workbookprotection#protect_password_)|保护工作簿。|
 ||[protected](/javascript/api/excel/excel.workbookprotection#protected)|指定工作簿是否受保护。|
-||[不 (密码？：string) ](/javascript/api/excel/excel.workbookprotection#unprotect_password_)|解除保护工作簿。|
+||[取消 (密码？：string) ](/javascript/api/excel/excel.workbookprotection#unprotect_password_)|解除保护工作簿。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[copy (positionType？： Excel。WorksheetPositionType， relativeTo？： Excel。工作表) ](/javascript/api/excel/excel.worksheet#copy_positionType__relativeTo_)|复制工作表，并放置于指定位置。|
 ||[getRangeByIndexes (startRow： number， startColumn： number， rowCount： number， columnCount： number) ](/javascript/api/excel/excel.worksheet#getRangeByIndexes_startRow__startColumn__rowCount__columnCount_)|获取 `Range` 从特定行索引和列索引开始并跨越一定数量的行和列的对象。|
 ||[freezePanes](/javascript/api/excel/excel.worksheet#freezePanes)|获取一个对象，该对象可用于处理工作表上的冻结窗格。|
@@ -291,13 +291,13 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 |[WorksheetDeletedEventArgs](/javascript/api/excel/excel.worksheetdeletedeventargs)|[source](/javascript/api/excel/excel.worksheetdeletedeventargs#source)|获取事件源。|
 ||[type](/javascript/api/excel/excel.worksheetdeletedeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetdeletedeventargs#worksheetId)|获取从工作簿中删除的工作表的 ID。|
-|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange： Range \| string) ](/javascript/api/excel/excel.worksheetfreezepanes#freezeAt_frozenRange_)|设置活动工作表视图中的冻结单元格。|
+|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange：Range \| string) ](/javascript/api/excel/excel.worksheetfreezepanes#freezeAt_frozenRange_)|设置活动工作表视图中的冻结单元格。|
 ||[freezeColumns (count？： number) ](/javascript/api/excel/excel.worksheetfreezepanes#freezeColumns_count_)|就地冻结工作表的第一列。|
 ||[freezeRows (count？： number) ](/javascript/api/excel/excel.worksheetfreezepanes#freezeRows_count_)|就地冻结工作表的首行。|
 ||[getLocation()](/javascript/api/excel/excel.worksheetfreezepanes#getLocation__)|获取用于描述活动工作表视图中的冻结单元格的区域。|
 ||[getLocationOrNullObject () ](/javascript/api/excel/excel.worksheetfreezepanes#getLocationOrNullObject__)|获取用于描述活动工作表视图中的冻结单元格的区域。|
 ||[unfreeze () ](/javascript/api/excel/excel.worksheetfreezepanes#unfreeze__)|移除工作表中的所有冻结窗格。|
-|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[不 (密码？：string) ](/javascript/api/excel/excel.worksheetprotection#unprotect_password_)|解除对 worksheet 的保护。|
+|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[取消 (密码？：string) ](/javascript/api/excel/excel.worksheetprotection#unprotect_password_)|解除对 worksheet 的保护。|
 |[WorksheetProtectionOptions](/javascript/api/excel/excel.worksheetprotectionoptions)|[allowEditObjects](/javascript/api/excel/excel.worksheetprotectionoptions#allowEditObjects)|表示允许编辑对象的工作表保护选项。|
 ||[allowEditScenarios](/javascript/api/excel/excel.worksheetprotectionoptions#allowEditScenarios)|表示允许编辑方案的工作表保护选项。|
 ||[selectionMode](/javascript/api/excel/excel.worksheetprotectionoptions#selectionMode)|表示选择模式的工作表保护选项。|

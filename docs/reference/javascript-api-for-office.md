@@ -4,13 +4,13 @@ ms.topic: landing-page
 title: Office JavaScript API 参考文档
 description: 了解 Office JavaScript API。
 ms.date: 10/14/2020
-localization_priority: Priority
-ms.openlocfilehash: 8c467003bfd3481f35864225876e3ee024910eef
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 03cb74959a78d1013b327fa8c3e95c074fc7b86e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937922"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152597"
 ---
 # <a name="api-reference-documentation"></a>API 参考文档
 

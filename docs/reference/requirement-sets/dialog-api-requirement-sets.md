@@ -3,13 +3,13 @@ title: Dialog API 要求集
 description: 了解有关对话框 API 要求集的详细信息。
 ms.date: 07/19/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: a5e0855cf6e7b7c9c3157fe24bed3610a26992ed
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 7fdef827cf47903b0b7e2872110a5a6801735bf4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937749"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152477"
 ---
 # <a name="dialog-api-requirement-sets"></a>Dialog API 要求集
 
@@ -22,11 +22,11 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了对话框 
 | DialogApi 1.2  | 不适用 | 不适用 | 请参阅支持<br>部分如下 | 2.37 或更高版本 | 16.37 或更高版本 | 2020 年 6 月 | 不适用 |
 | DialogApi 1.1  | 生成号 15.0.4855.1000 或更高版本 | 生成号 16.0.4390.1000 或更高版本 | 版本 1602（生成号 6741.0000）或更高版本 | 1.22 或更高版本 | 15.20 或更高版本 | 2017 年 1 月 | 版本 1608（内部版本 7601.6800）或更高版本|
 
->\*一次购买的用户可能Office所有修补程序和更新。 如果是这样，Office在 UI 中报告其版本的 DLL 可能大于此处列出的版本，即使用户计算机上未安装支持 DialogApi 所需的更新 DLL。 若要确保已安装所需的修补程序，用户必须转到 Office 更新列表 ([Office 2013](/officeupdates/msp-files-office-2013)列表或 [Office 2016](/officeupdates/msp-files-office-2016)列表) ，搜索 **osfclient-x-none，** 然后安装列出的修补程序。
+>\*一次购买计划的用户Office可能尚未接受所有修补程序和更新。 如果是这样，Office在 UI 中报告其版本的 DLL 可能大于此处列出的版本，即使用户计算机上未安装支持 DialogApi 所需的更新 DLL。 若要确保安装所需的修补程序，用户必须转到 Office 更新列表 ([Office 2013](/officeupdates/msp-files-office-2013)列表或 [Office 2016](/officeupdates/msp-files-office-2016)列表) ，搜索 **osfclient-x-none，** 然后安装列出的修补程序。
 
 ## <a name="office-on-windows-subscription-support"></a>Office订阅Windows (支持) 订阅
 
-DialogApi 1.2 要求集在消费者频道版本 2005 (内部版本 12827.20268 或) 。 For Office on Windows， the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available June 9， 2020 or later. 每个频道支持的最低版本如下所示：  
+DialogApi 1.2 要求集在消费者渠道版本 2005 (版本 12827.20268 或) 。 For Office on Windows， the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available June 9， 2020 or later. 每个频道支持的最低版本如下所示：  
 
 |频道 | 版本 | 内部版本|
 |:-----|:-----|:-----|
@@ -47,7 +47,7 @@ DialogApi 1.2 要求集在消费者频道版本 2005 (内部版本 12827.20268 �
 
 ## <a name="dialog-api-11-and-12"></a>对话框 API 1.1 和 1.2
 
-Dialog API 1.1 是首版 API。 要求集 1.2 增加了对使用[Office.dialog.messageChild](/javascript/api/office/office.dialog#messageChild_message_)方法将数据从父页面发送到对话框的支持。 有关这些 API 的详细信息，请参阅 [对话框 API](/javascript/api/office/office.ui) 参考主题。
+Dialog API 1.1 是首版 API。 要求集 1.2 添加了对使用[Office.dialog.messageChild](/javascript/api/office/office.dialog#messageChild_message_)方法将数据从父页面发送到对话框的支持。 有关这些 API 的详细信息，请参阅 [对话框 API](/javascript/api/office/office.ui) 参考主题。
 
 ## <a name="see-also"></a>另请参阅
 

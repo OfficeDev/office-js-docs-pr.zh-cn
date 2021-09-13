@@ -2,13 +2,13 @@
 title: 清单文件中的 OfficeApp 元素
 description: OfficeApp 元素是加载项清单Office元素。
 ms.date: 11/06/2020
-localization_priority: Normal
-ms.openlocfilehash: c5786343173d0e130df4b786f28a8689d573b6ca
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b2245402df963d20d96c7b2beb2be7097f5a064d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937044"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152663"
 ---
 # <a name="officeapp-element"></a>OfficeApp 元素
 

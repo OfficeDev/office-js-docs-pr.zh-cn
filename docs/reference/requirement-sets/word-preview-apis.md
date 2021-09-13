@@ -3,13 +3,13 @@ title: Word JavaScript 预览 API
 description: 有关即将推出的 Word JavaScript API 的详细信息
 ms.date: 11/09/2020
 ms.prod: word
-localization_priority: Normal
-ms.openlocfilehash: 09e8c978160cbe59fea1a80ac7f3dce653115440
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c6aa7b8107e0443091f876baa8bd66ccb8db7061
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936187"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152370"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript 预览 API
 
@@ -20,7 +20,7 @@ ms.locfileid: "58936187"
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前预览版中的 Word JavaScript API。 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅[所有 Word JavaScript API。](/javascript/api/word?view=word-js-preview&preserve-view=true)
+下表列出了当前预览版中的 Word JavaScript API。 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅所有[Word JavaScript API。](/javascript/api/word?view=word-js-preview&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -54,13 +54,13 @@ ms.locfileid: "58936187"
 ||[getOnlyItemOrNullObject () ](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitemornullobject--)|如果集合仅包含一个项，则此方法返回该项。|
 ||[items](/javascript/api/word/word.customxmlpartscopedcollection#items)|获取此集合中已加载的子项。|
 |[Document](/javascript/api/word/word.document)|[deleteBookmark (name： string) ](/javascript/api/word/word.document#deletebookmark-name-)|从文档中删除书签（如果存在）。|
-||[getBookmarkRange (名称：string) ](/javascript/api/word/word.document#getbookmarkrange-name-)|获取书签的范围。|
+||[getBookmarkRange (name： string) ](/javascript/api/word/word.document#getbookmarkrange-name-)|获取书签的范围。|
 ||[getBookmarkRangeOrNullObject (name： string) ](/javascript/api/word/word.document#getbookmarkrangeornullobject-name-)|获取书签的范围。|
 ||[customXmlParts](/javascript/api/word/word.document#customxmlparts)|获取文档中的自定义 XML 部件。|
 ||[onContentControlAdded](/javascript/api/word/word.document#oncontentcontroladded)|添加内容控件时发生。|
 ||[设置](/javascript/api/word/word.document#settings)|获取文档中加载项的设置。|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[deleteBookmark (name： string) ](/javascript/api/word/word.documentcreated#deletebookmark-name-)|从文档中删除书签（如果存在）。|
-||[getBookmarkRange (名称：string) ](/javascript/api/word/word.documentcreated#getbookmarkrange-name-)|获取书签的范围。|
+||[getBookmarkRange (name： string) ](/javascript/api/word/word.documentcreated#getbookmarkrange-name-)|获取书签的范围。|
 ||[getBookmarkRangeOrNullObject (name： string) ](/javascript/api/word/word.documentcreated#getbookmarkrangeornullobject-name-)|获取书签的范围。|
 ||[customXmlParts](/javascript/api/word/word.documentcreated#customxmlparts)|获取文档中的自定义 XML 部件。|
 ||[设置](/javascript/api/word/word.documentcreated#settings)|获取文档中加载项的设置。|

@@ -2,13 +2,13 @@
 title: 使用 Excel JavaScript API 调用内置 Excel 工作表函数
 description: 了解如何使用 JavaScript API Excel和 JavaScript API 等Excel `VLOOKUP` `SUM` 内置函数。
 ms.date: 12/19/2019
-localization_priority: Normal
-ms.openlocfilehash: 5cf1478e7f76c0602b9c8f0d19031abfa8369888
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 179ede5fe26c0b34e13bcab8b37cae7177d35c22
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938991"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152273"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>调用内置 Excel 工作表函数
 
@@ -37,7 +37,7 @@ return context.sync()
 
 下图展示了 Excel 工作表中的表格，其中包含三个月内各种工具的销售数据。 表格中的每个数字均表示具体工具在特定月份中的销售件数。 接下来的两个示例展示了如何向此类数据应用内置工作表函数。
 
-![在 11 月、12 月和 1 月Excel（一月、六个月）的一系列销售数据的屏幕截图。](../images/worksheet-functions-chaining-results.jpg)
+![在 11 月、12 月和 1 月Excel（一月、六月、六月）的一系列销售数据的屏幕截图。](../images/worksheet-functions-chaining-results.jpg)
 
 ## <a name="example-1-single-function"></a>示例 1：单函数
 
@@ -447,4 +447,4 @@ Excel.run(function (context) {
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [Functions 类 (JavaScript API for Excel) ](/javascript/api/excel/excel.functions)
-- [工作簿函数对象 (JavaScript API Excel) ](/javascript/api/excel/excel.workbook#functions)
+- [工作簿函数对象 (JavaScript API for Excel) ](/javascript/api/excel/excel.workbook#functions)

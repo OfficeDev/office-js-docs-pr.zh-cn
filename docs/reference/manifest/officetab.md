@@ -2,17 +2,17 @@
 title: 清单文件中的 OfficeTab 元素
 description: OfficeTab 元素定义显示外接程序命令的功能区选项卡。
 ms.date: 06/20/2019
-localization_priority: Normal
-ms.openlocfilehash: 25e8044d8b3264bf9ee64c54487566bf11f0065e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 94af0e8744c496538a506fdc4626cd3f515129bb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939076"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152333"
 ---
 # <a name="officetab-element"></a>OfficeTab 元素
 
-定义在其上显示外接程序命令的功能区选项卡。 这可以是默认选项卡 **(、邮件** 或会议) 或外接程序定义的自定义选项卡。  此元素是必需的。
+定义在其上显示外接程序命令的功能区选项卡。 这可以是默认选项卡 **(、消息** 或会议) ，也可以是由外接程序定义的自定义选项卡。 此元素是必需的。
 
 ## <a name="child-elements"></a>子元素
 
@@ -20,7 +20,7 @@ ms.locfileid: "58939076"
 |:-----|:-----|:-----|
 |  组      | 是 |  定义一组命令。对于每个外接程序，只能将一个组添加到默认选项卡。  |
 
-以下是应用程序的有效选项卡 `id` 值。 桌面和 **联机** 设备均支持粗体值 (例如，Word 2016或更高版本Windows和Word web 版) 。
+以下是应用程序的有效选项卡 `id` 值。 粗体值 **在** 桌面和联机设备中均受支持 (例如，Word 2016或更高版本Windows和Word web 版) 。
 
 ### <a name="outlook"></a>Outlook
 

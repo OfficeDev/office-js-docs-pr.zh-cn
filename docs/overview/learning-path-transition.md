@@ -3,13 +3,13 @@ title: VSTO 加载项开发人员指南
 description: 资深 VSTO 加载项开发人员了解 Office Web 加载项资源的建议路径。
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: 6da72dbdc5dc25d222cc7c2a269d905d9271ce15
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 4cafa1221a24c7537d84fb662761e7ec66a0125d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938604"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152313"
 ---
 # <a name="vsto-add-in-developers-guide"></a>VSTO 加载项开发人员指南
 

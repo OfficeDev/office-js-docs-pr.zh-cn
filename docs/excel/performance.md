@@ -2,13 +2,13 @@
 title: Excel JavaScript API 性能优化
 description: 使用 javaScript API Excel优化加载项性能。
 ms.date: 08/24/2021
-localization_priority: Normal
-ms.openlocfilehash: f65db836d6e7e640672fa5b9e6642ef8122ed5a5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 07244b67d6721c74072a95a0f35db45245cb064b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936874"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152339"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 

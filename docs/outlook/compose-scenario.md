@@ -2,13 +2,13 @@
 title: 创建适用于撰写窗体的 Outlook 加载项
 description: 了解有关适用于撰写窗体的 Outlook 加载项的方案和功能。
 ms.date: 02/09/2021
-localization_priority: Priority
-ms.openlocfilehash: 59ccebafbb3991ff3edb241596f44b5939d73693
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: b755c727cde9ab705e129c1159a536d654dfbe0e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937961"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152420"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>创建适用于撰写窗体的 Outlook 加载项
 

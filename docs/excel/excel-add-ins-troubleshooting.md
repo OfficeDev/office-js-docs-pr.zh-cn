@@ -2,13 +2,13 @@
 title: 加载项Excel疑难解答
 description: 了解如何解决加载项中的Excel错误。
 ms.date: 02/12/2021
-localization_priority: Normal
-ms.openlocfilehash: b90d8cfdb4696445655122a2fa7eb74d1c87fa2f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 06ed12eb1daf8876e14806fd88f541b5b58eea16
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936693"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152318"
 ---
 # <a name="troubleshooting-excel-add-ins"></a>加载项Excel疑难解答
 
@@ -44,7 +44,7 @@ ms.locfileid: "58936693"
 
 ## <a name="coauthoring"></a>共同创作
 
-请参阅[共同Excel](co-authoring-in-excel-add-ins.md)外接程序中的共同授权，了解用于共同授权环境中事件的模式。 本文还讨论了使用某些 API（如 ）时的潜在合并冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 。
+有关[用于共同Excel](co-authoring-in-excel-add-ins.md)中的事件的模式，请参阅在加载项中共同授权。 本文还讨论了使用某些 API（如 ）时的潜在合并冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 。
 
 ## <a name="known-issues"></a>已知问题
 
@@ -84,7 +84,7 @@ function getBindingId(eventArgs) {
 
 ### <a name="cell-format-usestandardheight-and-usestandardwidth-issues"></a>单元格格式 `useStandardHeight` 和 `useStandardWidth` 问题
 
-[的 useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight)属性在属性中 `CellPropertiesFormat` Excel web 版。 由于用户界面中Excel web 版问题，因此将 属性设置为不精确地在此平台上 `useStandardHeight` `true` 计算高度。 例如，标准高度 **14** 在 Excel web 版 中修改为 **14.25。**
+[的 useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight)属性在属性中 `CellPropertiesFormat` Excel web 版。 由于用户界面中Excel web 版问题，因此设置 属性不精确地在此平台上 `useStandardHeight` `true` 计算高度。 例如，标准高度 **14** 在 Excel web 版 中修改为 **14.25。**
 
 在所有平台上 [，useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) 和 [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#useStandardWidth) 属性仅旨在 `CellPropertiesFormat` 设置为 `true` 。 将这些属性设置为 `false` 无效。 
 
@@ -98,5 +98,5 @@ Range [getImage](/javascript/api/excel/excel.range#getImage__)方法当前在 Ex
 
 ## <a name="see-also"></a>另请参阅
 
-- [解决加载项Office错误](../testing/troubleshoot-development-errors.md)
+- [排查 Office 加载项中的开发错误](../testing/troubleshoot-development-errors.md)
 - [排查 Office 加载项中的用户错误](../testing/testing-and-troubleshooting.md)

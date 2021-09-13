@@ -6,7 +6,7 @@ var item = Office.context.mailbox.item;
 
 ```
 
-此外Outlook加载项可以使用下列对象。
+此外，Outlook加载项可以使用下列对象。
 
 -  **Office** 对象：用于初始化。
 

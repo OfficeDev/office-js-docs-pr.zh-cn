@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 Requirements 元素
-description: Requirements 元素指定外接程序激活Office所需的最低要求集和方法。
+description: Requirements 元素指定外接程序激活Office要求集和方法。
 ms.date: 03/19/2019
-localization_priority: Normal
-ms.openlocfilehash: 319ddc59901c524ed1cee580a81cff749ad570db
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3a5a393485094b5cc830b5120c3abd8c211eff1e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938451"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152384"
 ---
 # <a name="requirements-element"></a>Requirements 元素
 
-指定 JavaScript API 要求Office要求 (要求集和/或) 加载项[](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets)Office需要的方法。
+指定 JavaScript API 的最低Office要求 (要求集和/或) 加载项[](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets)Office激活的方法。
 
 **加载项类型：** 内容、任务窗格和邮件
 

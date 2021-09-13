@@ -1,16 +1,16 @@
 ---
-title: 解决加载项Office错误
+title: 排查 Office 加载项中的开发错误
 description: 了解如何解决加载项中的Office错误。
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: 83c1c62efecff79baf7bfaf2040e7858d72b9ea4
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9a2b36a0c8a89dd5f4087794e1901e72baca6244
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936539"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152234"
 ---
-# <a name="troubleshoot-development-errors-with-office-add-ins"></a>解决加载项Office错误
+# <a name="troubleshoot-development-errors-with-office-add-ins"></a>排查 Office 加载项中的开发错误
 
 下面列出了在开发加载项时可能会遇到的Office问题。
 
@@ -23,7 +23,7 @@ ms.locfileid: "58936539"
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>对加载项命令（包括功能区按钮和菜单项）的更改未生效
 
-清除缓存有助于确保使用外接程序清单的最新版本。 若要清除Office缓存，请按照清除缓存中的Office[操作](clear-cache.md)。 如果你使用的是 Office web 版，请通过浏览器的 UI 清除浏览器的缓存。
+清除缓存有助于确保使用外接程序清单的最新版本。 若要清除Office缓存，请按照清除缓存Office[中的说明操作](clear-cache.md)。 如果你使用的是 Office web 版，请通过浏览器的 UI 清除浏览器的缓存。
 
 ## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>对静态文件（例如 JavaScript、HTML 和 CSS）的更改未生效
 
@@ -52,7 +52,7 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 ## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>对属性值所做的更改不会发生，并且没有错误消息
 
-检查属性的参考文档，以查看其是否为只读。 此外，OFFICE JS 的[TypeScript](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md)定义指定哪些对象属性是只读的。 如果您尝试设置只读属性，写入操作将失败，无提示，不会引发错误。 以下示例错误地尝试将只读属性设置为 [Chart.id](/javascript/api/excel/excel.chart#id)。另请参阅 [某些属性不能直接设置](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
+检查属性的参考文档，以查看其是否为只读。 此外[，JS 的 TypeScript](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) Office指定哪些对象属性是只读的。 如果您尝试设置只读属性，写入操作将失败，无提示，不会引发错误。 以下示例错误地尝试将只读属性设置为 [Chart.id](/javascript/api/excel/excel.chart#id)。另请参阅 [某些属性不能直接设置](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
 
 ```js
 // This will do nothing, since `id` is a read-only property.
@@ -65,7 +65,7 @@ myChart.id = "5";
 
 - 如果使用 Visual Studio，则旁加载可能有问题。 关闭主机和Office的所有Visual Studio。 重新启动Visual Studio并再次尝试按 F5。
 - 外接程序的清单已从其部署位置（如集中部署、SharePoint目录或网络共享）中删除。
-- 清单 [中 ID](../reference/manifest/id.md) 元素的值已在已部署的副本中直接更改。 如果出于任何原因需要更改此 ID，请首先从 Office 主机中删除外接程序，然后将原始清单替换为已更改的清单。 许多用户需要清除Office缓存以删除原始缓存的所有跟踪。 有关[为操作系统清除Office](clear-cache.md)的说明，请参阅清除缓存缓存一文。
+- 清单 [中 ID](../reference/manifest/id.md) 元素的值已在已部署的副本中直接更改。 如果出于任何原因需要更改此 ID，请首先从 Office 主机中删除外接程序，然后将原始清单替换为已更改的清单。 许多用户需要清除Office缓存来删除原始缓存的所有跟踪。 有关[为操作系统清除Office](clear-cache.md)的说明，请参阅清除缓存缓存文章。
 - 加载项的清单有 一个 未在清单的"资源"部分的任何位置定义的 ，或者其使用位置和在部分中定义位置的拼写不匹配。 `resid` [](../reference/manifest/resources.md) `resid` `<Resources>`
 - 清单 `resid` 中的某位置有一个超过 32 个字符的属性。 属性和节中相应资源的属性不能超过 `resid` `id` `<Resources>` 32 个字符。
 - 加载项具有自定义加载项命令，但尝试在不支持命令的平台上运行。 有关详细信息，请参阅加载项 [命令要求集](../reference/requirement-sets/add-in-commands-requirement-sets.md)。
@@ -76,9 +76,9 @@ myChart.id = "5";
 
 ## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel加载项抛出错误，但不一致
 
-请参阅[Excel加载项疑难](../excel/excel-add-ins-troubleshooting.md)解答了解可能的原因。
+请参阅[Excel加载项疑](../excel/excel-add-ins-troubleshooting.md)难解答了解可能的原因。
 
-## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>项目清单架构Visual Studio错误
+## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>清单架构验证错误Visual Studio项目中
 
 如果你使用的是需要更改清单文件的较新功能，你可能会在清单文件中收到Visual Studio。 例如，添加 元素 `<Runtimes>` 来实现共享的 JavaScript 运行时时，你可能会看到以下验证错误。
 
@@ -91,7 +91,7 @@ myChart.id = "5";
 1. 在 Visual Studio 中打开项目。
 1. 在 **"解决方案资源管理器**"中，打开manifest.xml文件。 清单通常位于解决方案下的第一个项目中。
 1. 选择 **"查看**  >  **属性窗口**" (F4) 。
-1. 在" **属性窗口**"中，选择省略号 (...) 打开 **XML 架构** 编辑器。 你可以在此处找到项目使用的所有架构文件的确切文件夹位置。
+1. 在" **属性窗口**"中， (...) 省略号以打开 **XML 架构** 编辑器。 你可以在此处找到项目使用的所有架构文件的确切文件夹位置。
 
 ### <a name="update-the-xsd-files"></a>更新 XSD 文件
 
@@ -112,4 +112,4 @@ myChart.id = "5";
 - [验证 Office 加载项的清单](troubleshoot-manifest.md)
 - [使用运行时日志记录功能调试加载项](runtime-logging.md)
 - [排查 Office 加载项中的用户错误](testing-and-troubleshooting.md)
-- [Microsoft Q&a (office-js-dev) ](/answers/topics/office-js-dev.html)
+- [Microsoft Q&A (office-js-dev) ](/answers/topics/office-js-dev.html)

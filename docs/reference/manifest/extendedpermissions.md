@@ -2,13 +2,13 @@
 title: 清单文件中 ExtendedPermissions 元素
 description: 定义外接程序访问关联 API 或功能所需的扩展权限的集合。
 ms.date: 10/15/2020
-localization_priority: Normal
-ms.openlocfilehash: 1e3aa16c160613d34ef2c4f9c25bc2ffe4970816
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 633609e43b9de656b5bc483fc59a5b4c24556254
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938848"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152595"
 ---
 # <a name="extendedpermissions-element"></a>ExtendedPermissions 元素
 

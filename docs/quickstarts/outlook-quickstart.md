@@ -3,13 +3,13 @@ title: 生成首个 Outlook 加载项
 description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗格加载项。
 ms.date: 08/04/2021
 ms.prod: outlook
-localization_priority: Priority
-ms.openlocfilehash: f72e84a71fd853f8a8f0c00d1b226b3b08548e1c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 51ec95f49ef89f21aaf6a776115f8754c4a87c78
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938287"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152520"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 

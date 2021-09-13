@@ -2,13 +2,13 @@
 title: 在 Outlook 加载项的正文中插入数据
 description: 了解如何将数据插入到 Outlook 加载项的邮件或约会的正文中。
 ms.date: 04/15/2019
-localization_priority: Normal
-ms.openlocfilehash: 575718baa6a54f4e2e8c6ddd4e582254e1607fa8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 377c278464038a2b04d8b0ca49de92530e3724d9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937020"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152393"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时将数据插入到正文中
 
@@ -27,9 +27,9 @@ ms.locfileid: "58937020"
 
 1.  在平板电脑和智能手机上 **，getTypeAsync** 返回 **Office。MailboxEnums.BodyType.Text（** 如果操作系统或应用程序不支持编辑最初以 HTML 格式创建的 HTML 格式的项目）。
 
-2.  如果你要插入的数据是 HTML 并且 **getTypeAsync** 返回该项目的文本类型，请将你的数据重新组织为文本，并插入包含 **Office。MailboxEnums.BodyType.Text** as _coercionType_. 如果只需插入具有文本强制类型的 HTML 数据，应用程序就会将 HTML 标记显示为文本。 如果您尝试插入 HTML 数据，Office.MailboxEnums.BodyType.Htm **l** 为 _coercionType，_ 将发生错误。
+2.  如果你要插入的数据是 HTML 并且 **getTypeAsync** 返回该项目的文本类型，请将你的数据重新组织为文本，然后使用 **Office。MailboxEnums.BodyType.Text** as _coercionType_. 如果只需插入具有文本强制类型的 HTML 数据，应用程序就会将 HTML 标记显示为文本。 如果您尝试插入 HTML 数据 **，Office.MailboxEnums.BodyType.Html**_为 coercionType，_ 将发生错误。
 
-除了 _coercionType_，与 Office JavaScript API 中的大多数异步方法一样 **，getTypeAsync、prependAsync** 和 **setSelectedDataAsync** 采用其他可选输入参数。  有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
+除了 _coercionType_ 之外，与 Office JavaScript API 中的大多数异步方法一样 **，getTypeAsync、prependAsync** 和 **setSelectedDataAsync** 采用其他可选输入参数。  有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
 
 
 ## <a name="insert-data-at-the-current-cursor-position"></a>在当前光标位置插入数据

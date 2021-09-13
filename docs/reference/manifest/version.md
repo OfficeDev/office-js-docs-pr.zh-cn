@@ -2,13 +2,13 @@
 title: 清单文件中的 Version 元素
 description: Version 元素指定Office外接程序版本。
 ms.date: 02/05/2021
-localization_priority: Normal
-ms.openlocfilehash: 48a2be94d95ece597e47468bb18db2a7962a51e9
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 34cefa22123ed4ee723d51a669e01e042efc2934
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938077"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152587"
 ---
 # <a name="version-element"></a>Version 元素
 

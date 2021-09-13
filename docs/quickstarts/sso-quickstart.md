@@ -3,13 +3,13 @@ title: 使用 Yeoman 生成器创建使用 SSO 的 Office 加载项
 description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office 加载项。
 ms.date: 11/03/2020
 ms.prod: non-product-specific
-localization_priority: Priority
-ms.openlocfilehash: eb75c0b4f2a27612a2e361caaaefefa047a68a44
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 5153c1ed3987f619b180dd22ba90f2eb4c760d09
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938570"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152601"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>使用 Yeoman 生成器创建使用单一登录的 Node.js Office 加载项
 

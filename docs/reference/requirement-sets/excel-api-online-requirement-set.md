@@ -3,17 +3,17 @@ title: ExcelJavaScript API 仅联机要求集
 description: 有关 ExcelApiOnline 要求集的详细信息。
 ms.date: 07/23/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 8e49d2a9d655e7bc1bf21233bdaf23321d1e48d1
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 067bd3f033c415b0a6ac271aa1f132cfeb92730c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937492"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152241"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>ExcelJavaScript API 仅联机要求集
 
-要求 `ExcelApiOnline` 集是一个特殊要求集，其中包含仅适用于Excel web 版。 此要求集的 API 被视为生产 API， (应用程序未记录的行为或) 更改Excel web 版 API。 `ExcelApiOnline`API 被视为适用于其他平台（如 (Windows、Mac、iOS) ）的"预览"API，可能不受这些平台的任何支持。
+要求 `ExcelApiOnline` 集是一个特殊要求集，其中包括仅适用于Excel web 版。 此要求集内 API 被视为生产 API， (应用程序未记录的行为或) 更改Excel web 版 API。 `ExcelApiOnline`API 被视为适用于其他平台（如 (Windows、Mac、iOS) ）的"预览"API，可能不受这些平台的任何支持。
 
 当要求集内 API 在所有平台中均受支持时，它们将被添加到下一个发布的要求 `ExcelApiOnline` `ExcelApi 1.[NEXT]` () 。 一旦该新要求公开，将从 中删除这些 `ExcelApiOnline` API。 将此过程视为与从预览版移动到发布的 API 类似的推广过程。
 
@@ -31,7 +31,7 @@ ms.locfileid: "58937492"
 
 ## <a name="recommended-usage"></a>建议的用法
 
-由于 API 仅受 Excel web 版 支持，因此加载项应在调用这些 API 之前检查 `ExcelApiOnline` 要求集是否受支持。 这可以避免在不同的平台上调用仅联机 API。
+由于 API 仅受 Excel web 版，因此加载项应在调用这些 API 之前检查 `ExcelApiOnline` 要求集是否受支持。 这可以避免在不同的平台上调用仅联机 API。
 
 ```js
 if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
@@ -46,7 +46,7 @@ API 位于跨平台要求集后，应删除或编辑 `isSetSupported` 检查。 
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了要求Excel当前包含的 JavaScript `ExcelApiOnline` API。 有关所有 JavaScript EXCEL的完整列表 (包括 API 和以前发布的 API `ExcelApiOnline`) ，请参阅所有 Excel [JavaScript API。](/javascript/api/excel?view=excel-js-online&preserve-view=true)
+下表列出了要求Excel当前包含的 JavaScript `ExcelApiOnline` API。 有关所有 JavaScript EXCEL的完整列表 (包括 API 和以前发布的 API) ，请参阅所有 Excel `ExcelApiOnline` [JavaScript API。](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|

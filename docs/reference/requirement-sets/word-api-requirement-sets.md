@@ -3,13 +3,13 @@ title: Word JavaScript API 要求集
 description: 针对 Word 内部版本的 Office 加载项要求集信息。
 ms.date: 05/05/2021
 ms.prod: word
-localization_priority: Priority
-ms.openlocfilehash: 816bb49c165d41e5a29b71bb8df422c353087bab
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: dba512af0228b8ee7bb9e7ff54654c779e4b3ca5
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937863"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152657"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 

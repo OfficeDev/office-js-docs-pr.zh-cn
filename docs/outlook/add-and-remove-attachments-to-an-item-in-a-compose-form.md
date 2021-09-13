@@ -2,13 +2,13 @@
 title: 在 Outlook 加载项中添加和删除附件
 description: 可以使用各种附件 API 来管理文件或Outlook附加到用户正在撰写的项目的项目。
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 87076965d600cbbcfe88d6711ea3acfb2b3c1fdd
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1df37568d52ae76caaec3e65286fac5544b577c3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937534"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152443"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>在邮件撰写窗体中管理项目的Outlook
 
@@ -16,7 +16,7 @@ Office JavaScript API 提供了多个 API，可用于在用户撰写时管理项
 
 ## <a name="attach-a-file-or-outlook-item"></a>附加文件或Outlook项
 
-可以使用适用于附件Outlook的方法，将文件或项目附加到撰写窗体。
+您可以使用适用于附件Outlook的方法将文件或项目附加到撰写窗体。
 
 - [addFileAttachmentAsync：](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)附加文件
 - [addFileAttachmentFromBase64Async：](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)使用文件的 base64 字符串附加文件
@@ -26,7 +26,7 @@ Office JavaScript API 提供了多个 API，可用于在用户撰写时管理项
 
 如果有任务依赖于要完成的操作，则应在回调方法中执行这些任务。 此回调方法是可选的，在附件上载完成时调用此方法。 此回调方法使用 [AsyncResult](/javascript/api/office/office.asyncresult) 对象作为输出参数，提供添加附件操作的任何状态、错误和返回值。 如果此回调需要任何额外参数，则可以在可选的 `options.asyncContext` 参数中指定它们。 `options.asyncContext` 可以是回调方法所期望的任何类型。
 
-例如，可以定义为包含一个或多个键值对的 `options.asyncContext` JSON 对象。 有关向异步方法传递可选参数的更多示例，Office外接程序中的异步编程中的 Office[外接程序平台中Office外接程序。](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods)以下示例演示如何使用 参数 `asyncContext` 将 2 个参数传递给回调方法。
+例如，可以定义为包含一个或多个键值对的 `options.asyncContext` JSON 对象。 有关向异步方法传递可选参数的更多示例，Office外接程序平台中的异步Office[外接程序。](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods)以下示例演示如何使用 参数 `asyncContext` 将 2 个参数传递给回调方法。
 
 ```js
 var options = { asyncContext: { var1: 1, var2: 2}};
@@ -81,7 +81,7 @@ function write(message){
 
 ### <a name="attach-an-outlook-item"></a>附加Outlook项
 
-您可以通过指定 Outlook Web 服务 (EWS) Exchange ID 并使用此方法，将 Outlook 项目 (（例如，电子邮件、日历或联系人项目) ）附加到撰写窗体中的邮件或约会。 `addItemAttachmentAsync` 通过使用 [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法并访问 EWS 操作 [FindItem](/exchange/client-developer/web-service-reference/finditem-operation)，您可以获取用户邮箱中电子邮件、日历、联系人或任务项目的 EWS ID。 [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性还提供阅读窗体中某个现有项目的 EWS ID。
+您可以通过指定 Outlook Web 服务 (EWS) ID 并使用此方法，将 Outlook 项目 (（例如，电子邮件、日历或联系人项目) Exchange）附加到撰写窗体中的邮件或约会。 `addItemAttachmentAsync` 通过使用 [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法并访问 EWS 操作 [FindItem](/exchange/client-developer/web-service-reference/finditem-operation)，您可以获取用户邮箱中电子邮件、日历、联系人或任务项目的 EWS ID。 [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性还提供阅读窗体中某个现有项目的 EWS ID。
 
 以下 JavaScript 函数 扩展了上述第一个示例，并将项目作为附件添加到正在撰写的电子邮件或 `addItemAttachment` 约会中。 此函数将要附加的项目的 EWS ID 作为实参。 如果附加成功，它将获取附件 ID 以进一步处理，包括在同一会话中删除该附件。
 
@@ -112,7 +112,7 @@ function addItemAttachment(itemId) {
 ```
 
 > [!NOTE]
-> 可以使用撰写加载项在邮件中或移动设备上Outlook 网页版定期约会的实例。 但是，在Outlook客户端中，尝试附加实例将导致将定期系列 (父约会) 。
+> 可以使用撰写加载项在邮件中或移动设备上Outlook 网页版定期约会的实例。 但是，在Outlook客户端中，尝试附加实例将导致将定期系列附加到父约会 (约会) 。
 
 ## <a name="get-attachments"></a>获取附件
 

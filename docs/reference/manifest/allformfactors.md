@@ -2,13 +2,13 @@
 title: 清单文件中的 AllFormFactors 元素
 description: 指定加载项的所有外观设置。
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: 9dac322312c1dfd60f6deb4296413e12b55a6a49
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b579612d73216fab6141501e1c969fb6be1e8495
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936912"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151933"
 ---
 # <a name="allformfactors-element"></a>AllFormFactors 元素
 

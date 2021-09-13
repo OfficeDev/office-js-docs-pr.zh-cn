@@ -2,17 +2,17 @@
 title: Outlook外接程序 API 要求集 1.10
 description: 加载项 API 要求集 1.10 Outlook 1.10。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 9e3e30590279036a08a93d8643cd56c2c73be78c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b54d327d37acd7b2c7fcff100cc7dbe7a39187c0
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936630"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152618"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook外接程序 API 要求集 1.10
 
-Outlook JavaScript API 的 Office API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Outlook JavaScript API 的 Office 加载项 API 子集包括可在加载项中Outlook的对象、方法、属性和事件。
 
 ## <a name="whats-new-in-110"></a>1.10 中的新增功能是什么？
 
@@ -31,7 +31,7 @@ Outlook JavaScript API 的 Office API 子集包括可在 Outlook 外接程序中
 - 添加了[Office.context.mailbox.item.getComposeTypeAsync：](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getComposeTypeAsync_options__callback_)添加了一个新函数，该函数获取撰写模式下邮件的撰写类型。
 - 添加了[Office.context.mailbox.item.isClientSignatureEnabledAsync：](office.context.mailbox.item.md#methods)添加了一个新函数，该函数检查在撰写模式下是否对项目启用了客户端签名。
 - 添加了[Office。MailboxEnums.ActionType：](/javascript/api/outlook/office.mailboxenums.actiontype)添加新枚举。 它表示通知邮件中的自定义操作的类型。
-- 添加了[Office.MailboxEnums.ComposeType：](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true)添加了在撰写模式下可用的新枚举。
+- 添加了[Office.MailboxEnums.ComposeType：](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true)添加了一个在撰写模式下可用的新枚举。
 - 添加了[Office。MailboxEnums.ItemNotificationMessageType.InsightMessage：](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype)向 `ItemNotificationMessageType` 枚举添加新类型。 它表示具有自定义操作的通知消息。
 - 添加了[Office。NotificationMessageAction：](/javascript/api/outlook/office.notificationmessageaction)添加新对象，以便你可以为通知定义自定义 `InsightMessage` 操作。
 - 添加了[Office。NotificationMessageDetails.actions：](/javascript/api/outlook/office.notificationmessagedetails#actions)添加一个新属性，允许您使用自定义操作 `InsightMessage` 添加通知。

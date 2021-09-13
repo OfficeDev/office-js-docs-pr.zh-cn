@@ -2,13 +2,13 @@
 title: 使用单一登录令牌对用户进行身份验证
 description: 了解如何使用 Outlook 外接程序提供的单一登录令牌为服务实现 SSO。
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: a30d5671286f9a0afcff6fd07d4fcfcb4c830c36
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 41eddbcc1db05ca618506ce4810bf2bb795e59f7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937935"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152434"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>使用加载项中的单一登录令牌Outlook用户
 
@@ -50,6 +50,6 @@ ms.locfileid: "58937935"
 
 ## <a name="see-also"></a>另请参阅
 
-- 有关使用 SSO Outlook访问 Microsoft Graph API 的外接程序的示例，请参阅 Outlook [Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)。
+- 有关使用 SSO Outlook访问 Microsoft Graph API 的加载项示例，请参阅 Outlook [Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)。
 - [SSO API 参考](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)

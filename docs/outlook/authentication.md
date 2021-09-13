@@ -2,13 +2,13 @@
 title: Outlook 加载项中的身份验证选项
 description: Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
 ms.date: 09/03/2021
-localization_priority: Priority
-ms.openlocfilehash: 1f579d5f0a71cf4c078b3db5412adfe39d7e1287
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: c51f40cda48fbb343cfae78b258902e5030f49da
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937666"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152431"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook 加载项中的身份验证选项
 

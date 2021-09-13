@@ -2,15 +2,15 @@
 title: Office.context.mailbox - 要求集 1.10
 description: Outlook邮箱 API 要求集 1.10 版本的邮箱对象模型。
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 190dfcb8494214db9c22f9577fef449064fc7779
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 15abb64fb4a931471842c52d298b14dc919b2be1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937617"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152638"
 ---
-# <a name="mailbox-requirement-set-110"></a>邮箱 (要求集 1.10) 
+# <a name="mailbox-requirement-set-110"></a>mailbox (requirement set 1.10) 
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox
 
@@ -58,13 +58,13 @@ ms.locfileid: "58937617"
 | [makeEwsRequestAsync(data, callback, [userContext])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#makeEwsRequestAsync_data__callback__userContext_) | ReadWriteMailbox | 撰写<br>读取 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [removeHandlerAsync(eventType, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#removeHandlerAsync_eventType__options__callback_) | ReadItem | 撰写<br>读取 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 
-## <a name="events"></a>事件
+## <a name="events"></a>活动
 
 分别使用 [addHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#addHandlerAsync_eventType__handler__options__callback_) 和 [removeHandlerAsync 订阅和取消订阅以下](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true#removeHandlerAsync_eventType__options__callback_) 事件。
 
 > [!IMPORTANT]
 > 事件仅适用于任务窗格实现。
 
-| [Event](/javascript/api/office/office.eventtype) | 说明 | 最小值<br>要求集 |
+| [Event](/javascript/api/office/office.eventtype) | 描述 | 最小值<br>要求集 |
 |---|---|:---:|
 |`ItemChanged`| 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |

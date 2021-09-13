@@ -3,17 +3,17 @@ title: PowerPointJavaScript 预览 API
 description: 有关即将推出的 JavaScript PowerPoint的详细信息。
 ms.date: 01/27/2021
 ms.prod: powerpoint
-localization_priority: Normal
-ms.openlocfilehash: af947919ad680864bf4a63ab29af33d0560aaaa0
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d9cb28c56a84829d87ba30e494aa46b927e0bc64
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938993"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152658"
 ---
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPointJavaScript 预览 API
 
-JavaScript API PowerPoint在"预览"中首次引入，之后在经过充分测试并获取用户反馈后，它将成为特定编号要求集的一部分。
+JavaScript API PowerPoint在"预览"中首次引入，之后在经过充分测试且获得用户反馈后，它将成为特定编号要求集的一部分。
 
 第一个表提供了 API 的简明摘要，而后续表提供了详细列表。
 
@@ -26,7 +26,7 @@ JavaScript API PowerPoint在"预览"中首次引入，之后在经过充分测�
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前预览PowerPoint JavaScript API 的列表。 有关所有 JavaScript API PowerPoint的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 Excel [JavaScript API。](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)
+下表列出了当前预览PowerPoint JavaScript API 的列表。 有关所有 JavaScript POWERPOINT API 的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 Excel [JavaScript API。](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|

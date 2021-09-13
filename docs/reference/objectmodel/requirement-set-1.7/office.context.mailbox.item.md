@@ -2,13 +2,13 @@
 title: Office.context.mailbox.item - 要求集 1.7
 description: Outlook邮箱 API 要求集 1.7 版本的项目对象模型。
 ms.date: 07/16/2021
-localization_priority: Normal
-ms.openlocfilehash: 8ea583a2598e15a92777edf4d5873eef016a5197
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: fa911afdd13c1b1750e14f5199a123f2a58e8c69
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938834"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152483"
 ---
 # <a name="item-mailbox-requirement-set-17"></a>item (Mailbox requirement set 1.7) 
 
@@ -142,14 +142,14 @@ ms.locfileid: "58938834"
 | setSelectedDataAsync(data, [options], callback) | ReadWriteItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-1.7&preserve-view=true#setSelectedDataAsync_data__options__callback_) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
 | | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.7&preserve-view=true#setSelectedDataAsync_data__options__callback_) | [1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md) |
 
-## <a name="events"></a>事件
+## <a name="events"></a>活动
 
 可以使用 和 分别订阅和取消订阅以下 `addHandlerAsync` `removeHandlerAsync` 事件。
 
 > [!IMPORTANT]
 > 事件仅适用于任务窗格实现。
 
-| [Event](/javascript/api/office/office.eventtype) | 说明 | 最小值<br>要求集 |
+| [Event](/javascript/api/office/office.eventtype) | 描述 | 最小值<br>要求集 |
 |---|---|:---:|
 |`AppointmentTimeChanged`| 所选的约会或系列的日期或时间已更改。 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 |`RecipientsChanged`| 选定项目或约会位置的收件人列表已更改。 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |

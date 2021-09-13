@@ -2,24 +2,24 @@
 title: 在加载项中启用共享文件夹Outlook邮箱方案
 description: 讨论如何为共享文件夹配置外接程序支持 (。。 委派访问) 和共享邮箱。
 ms.date: 07/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 55c084ba8b0c2d7d83a4e7df0acb6aa7e7abc7c1
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 65850699612e9dc48dfe7cc1aed5b00ce5b79012
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936333"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152417"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在加载项中启用共享文件夹Outlook邮箱方案
 
-本文介绍如何在 Outlook 外接程序的预览) 方案中启用共享文件夹 (也称为委派访问) 和共享邮箱 (，包括 Office JavaScript API 支持哪些权限。 [](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)
+本文介绍如何在 Outlook 外接程序的预览[) ](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)方案中启用共享文件夹 (也称为委派访问) 和共享邮箱 (，包括 Office JavaScript API 支持哪些权限。
 
 > [!IMPORTANT]
 > 要求集 [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="supported-setups"></a>支持的安装程序
 
-以下各节介绍共享邮箱和共享文件夹 (预览) 的配置。 在其他配置中，功能 API 可能无法如预期工作。 选择要了解如何配置的平台。
+以下各节介绍共享邮箱和共享文件夹 (预览) 支持的配置。 在其他配置中，功能 API 可能无法如预期工作。 选择要了解如何配置的平台。
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
@@ -29,24 +29,24 @@ ms.locfileid: "58936333"
 
 #### <a name="shared-mailboxes-preview"></a>共享邮箱 (预览) 
 
-Exchange管理员可创建和管理共享邮箱，供多组用户访问。 目前[，Exchange Online](/exchange/collaboration-exo/shared-mailboxes)是此功能唯一受支持的服务器版本。
+Exchange管理员可以为要访问的用户集创建和管理共享邮箱。 目前[，Exchange Online](/exchange/collaboration-exo/shared-mailboxes)是此功能唯一受支持的服务器版本。
 
-默认情况下Exchange Server自动映射"功能是启用的，这意味着共享邮箱随后应在关闭并重新打开 Outlook 后[](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)自动显示在用户的 Outlook 应用中。 但是，如果管理员关闭自动映射，用户必须按照在 Outlook 中打开和使用共享邮箱一文的"将共享邮箱添加到 Outlook"部分中概述的手动步骤[操作](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)。
+默认情况下Exchange Server"自动映射"功能打开，这意味着共享邮箱随后应在关闭并重新打开 Outlook 后自动显示在[](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)用户的 Outlook 应用中。 但是，如果管理员关闭自动映射，用户必须按照在 Outlook 中打开和使用共享邮箱一文的"将共享邮箱添加到 Outlook"部分中概述的手动步骤[操作。](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)
 
 > [!WARNING]
-> 请勿 **使用** 密码登录共享邮箱。 在这种情况下，功能 API 将不起作用。
+> 请勿 **使用** 密码登录共享邮箱。 在这种情况下，功能 API 不起作用。
 
 ### <a name="web-browser---modern-outlook"></a>[Web 浏览器 - 新式 Outlook](#tab/modern)
 
 #### <a name="shared-folders"></a>共享文件夹
 
-邮箱所有者必须先 [通过更新邮箱文件夹](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) 权限来向代理提供访问权限。 然后，代理必须遵循文章访问其他人的邮箱 的"将其他人的邮箱添加到 Outlook Web App 中的文件夹列表"部分中概述[的说明](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081)。
+邮箱所有者必须先 [通过更新邮箱文件夹](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) 权限来向代理提供访问权限。 然后，代理必须遵循文章访问其他人的邮箱的"将其他人的邮箱添加到 Outlook Web App 中的文件夹列表"部分中概述[的说明](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081)。
 
 #### <a name="shared-mailboxes-preview"></a>共享邮箱 (预览) 
 
-Exchange管理员可创建和管理共享邮箱，供多组用户访问。 目前[，Exchange Online](/exchange/collaboration-exo/shared-mailboxes)是此功能唯一受支持的服务器版本。
+Exchange管理员可以为要访问的用户集创建和管理共享邮箱。 目前[，Exchange Online](/exchange/collaboration-exo/shared-mailboxes)是此功能唯一受支持的服务器版本。
 
-在获得访问权限后，共享邮箱用户必须遵循文章 Open and use a shared mailbox in Outlook 网页版 一文的"添加共享邮箱，以便它显示在主邮箱[下"一节中概述的步骤](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207)。
+在获得访问权限后，共享邮箱用户必须遵循文章 Open and use a shared mailbox in Outlook 网页版一文的"添加共享邮箱，以便它显示在主邮箱[下"一节中概述的步骤](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207)。
 
 > [!WARNING]
 > 请勿 **使用** "打开另一个邮箱"等其他选项。 然后，功能 API 可能无法正常运行。
@@ -71,13 +71,13 @@ Exchange管理员可创建和管理共享邮箱，供多组用户访问。 目�
 > [!NOTE]
 > 目前，API 支持获取现有权限，但无法设置权限。
 
-使用位掩码来指示权限实现 [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) 对象。 位掩码中的每个位置表示特定权限，如果设置为 `1` ，则用户具有各自的权限。 例如，如果右边的第二位是 ， `1` 则用户具有 **写入** 权限。 您可以在本文稍后的以委派或共享邮箱用户角色执行操作部分查看[](#perform-an-operation-as-delegate-or-shared-mailbox-user)如何检查特定权限的示例。
+使用位掩码来指示权限实现 [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) 对象。 位掩码中的每个位置表示特定权限，如果设置为 ， `1` 则用户具有各自的权限。 例如，如果右边的第二位是 ， `1` 则用户具有 **写入** 权限。 您可以在本文稍后的以委派或共享邮箱用户角色执行操作部分查看[](#perform-an-operation-as-delegate-or-shared-mailbox-user)如何检查特定权限的示例。
 
 ## <a name="sync-across-shared-folder-clients"></a>跨共享文件夹客户端同步
 
 代理对所有者邮箱的更新通常会立即跨邮箱同步。
 
-但是，如果 REST 或 Exchange Web (EWS) 操作用于设置项目的扩展属性，则此类更改可能需要几个小时才能同步。我们建议你改为使用[CustomProperties](/javascript/api/outlook/office.customproperties)对象和相关 API 以避免此类延迟。 若要了解更多信息，请参阅"[](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties)在加载项中获取和设置Outlook元数据"一文的自定义属性部分。
+但是，如果使用 REST 或 Exchange Web (EWS) 操作来设置项目的扩展属性，则此类更改可能需要几个小时才能同步。我们建议你改为使用[CustomProperties](/javascript/api/outlook/office.customproperties)对象和相关 API 以避免此类延迟。 若要了解更多信息，请参阅"[](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties)在加载项中获取和设置Outlook元数据"一文的自定义属性部分。
 
 > [!IMPORTANT]
 > 在委派方案中，不能将 EWS 与当前由 office.js API 提供的令牌一起使用。
@@ -86,7 +86,7 @@ Exchange管理员可创建和管理共享邮箱，供多组用户访问。 目�
 
 若要在加载项中启用共享文件夹和共享邮箱方案，必须在父元素 下的清单中将 [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` 元素设置为 `DesktopFormFactor` 。 目前，不支持其他外形因素。
 
-若要支持从代理进行 REST 调用，将清单 [中的"权限"](../reference/manifest/permissions.md) 节点设置为 `ReadWriteMailbox` 。
+若要支持从代理进行 REST 调用，将清单中的 ["权限](../reference/manifest/permissions.md) "节点设置为 `ReadWriteMailbox` 。
 
 以下示例显示清单 `SupportsSharedFolders` 的一节中设置为 `true` 的 元素。
 
@@ -119,7 +119,7 @@ Exchange管理员可创建和管理共享邮箱，供多组用户访问。 目�
 
 可以通过调用 [item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法在撰写或阅读模式下获取项目的共享属性。 这将返回 [一个 SharedProperties](/javascript/api/outlook/office.sharedproperties) 对象，该对象当前提供用户的权限、所有者的电子邮件地址、REST API 的基本 URL 和目标邮箱。
 
-以下示例显示如何获取邮件或约会的共享属性、检查代理或共享邮箱用户是否具有写入权限以及进行 REST调用。
+以下示例演示如何获取邮件或约会的共享属性、检查代理或共享邮箱用户是否具有写入权限以及进行 REST调用。
 
 ```js
 function performOperation() {
@@ -171,7 +171,7 @@ function performOperation() {
 ```
 
 > [!TIP]
-> 作为代理，您可以使用 REST 获取附加到Outlook项目或组帖子Outlook[邮件的内容](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
+> 作为代理，您可以使用 REST 获取附加到项目或组帖子Outlook邮件Outlook[内容](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
 
 ## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>处理对共享项和非共享项的调用 REST
 
@@ -197,7 +197,7 @@ if (item.getSharedPropertiesAsync) {
 
 ### <a name="message-compose-mode"></a>邮件撰写模式
 
-在邮件撰写模式下[，getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_)在 Outlook 网页版 或 Windows除非满足以下条件。
+在邮件撰写模式下[，getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_)在 Outlook 网页版 或 Windows，除非满足以下条件。
 
 a. **委派访问权限/共享文件夹**
 

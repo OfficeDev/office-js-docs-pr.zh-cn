@@ -2,17 +2,17 @@
 title: 清单文件中的 AppDomains 元素
 description: 列出除外接程序将使用的 元素中指定的域Office且应受用户信任 `SourceLocation` 的域Office。
 ms.date: 06/12/2020
-localization_priority: Normal
-ms.openlocfilehash: 751e4ad2ffa5fd50739a855fad48964473b154f1
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 6bf1785cf11e31648d9bc69e101cd5a5cf3ecb9f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937047"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151928"
 ---
 # <a name="appdomains-element"></a>AppDomains 元素
 
-列出除 元素中指定的域之外，Office外接程序将使用且应受用户信任的任何 `SourceLocation` Office。 这使域中的页面能够调用Office.js内 IFrame 的 API，并产生其他效果。 对于每个其他域，指定 **AppDomain** 元素。
+列出除 元素中指定的域之外，你的外接程序将使用Office且应受用户信任的任何域 `SourceLocation` Office。 这使域中的页面能够调用Office.js内 IFrame 的 API，并产生其他效果。 对于每个其他域，指定 **AppDomain** 元素。
 
  **外接程序类型：** 内容、任务窗格、邮件
 

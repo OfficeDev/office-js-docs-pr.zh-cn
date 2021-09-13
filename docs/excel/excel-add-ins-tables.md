@@ -2,13 +2,13 @@
 title: 使用 Excel JavaScript API 处理表格
 description: 显示如何使用 JavaScript API 对表执行常见Excel示例。
 ms.date: 07/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 931a035b5e46a77afe2f56fecb0cd7ef6d134570
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c0903718eab98866e88c18c715bf121979d87d82
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937779"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59151948"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
@@ -62,7 +62,7 @@ Excel.run(function (context) {
 > `index` [TableRow 对象的 属性](/javascript/api/excel/excel.tablerow)指示表的行集合中行的索引号。 `TableRow`对象不包含可用于标识行的唯一 `id` 键的属性。
 
 > [!WARNING]
-> 从内容加载项向表中添加行将导致内存泄漏。 请参阅[GitHub问题#1415](https://github.com/OfficeDev/office-js/issues/1415)当前状态和其他信息。 
+> 从内容加载项向表中添加行将导致内存泄漏。 有关[GitHub和其他#1415，](https://github.com/OfficeDev/office-js/issues/1415)请参阅"问题"报告。 
 
 ```js
 Excel.run(function (context) {
@@ -90,7 +90,7 @@ Excel.run(function (context) {
 
 **包含新行的表**
 
-![包含新行的Excel。](../images/excel-tables-add-rows.png)
+![包含新行的表Excel。](../images/excel-tables-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>向表添加列
 
@@ -344,7 +344,7 @@ Excel.run(function (context) {
 
 **将筛选器应用于类别和金额的表数据**
 
-![在数据记录中筛选的Excel。](../images/excel-tables-filters-apply.png)
+![在数据表中筛选的Excel。](../images/excel-tables-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>清除表筛选器
 
@@ -474,7 +474,7 @@ Excel.run(function (context) {
 
 **表中的数据（在区域转换为表之后）**
 
-![数据表中的Excel。](../images/excel-tables-from-range.png)
+![Excel 中的表Excel。](../images/excel-tables-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>将 JSON 数据导入表
 
