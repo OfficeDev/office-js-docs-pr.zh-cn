@@ -4,13 +4,13 @@ description: 了解 Word 加载项的基本知识。
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: c4abde797ac25b049e3d77acad59f7e2263005aa
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 1f55977cba42c1c16a8533958f60b6da0e9a3650
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937597"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149422"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -53,7 +53,7 @@ Word.run(function (context) {
 
 ## <a name="javascript-apis-for-word"></a>适用于 Word 的 JavaScript API
 
-有两组 JavaScript API 可用于与 Word 文档中的对象和元数据进行交互。 第一组是在 Office 2013 中引入的[通用 API](/javascript/api/office)。 通用 API 中的许多对象可以在由两个或多个 Office 客户端托管的加载项中使用。 此 API 广泛使用回调。
+可以使用两组 JavaScript Api 与 Word 文档中的对象和元数据进行交互。第一组是在 Office 2013 中引入的 [通用 API](/javascript/api/office)。通用 API 中的许多对象都可以在由两个或多个 Office 客户端托管的加载项中使用。此 API 广泛使用回调。
 
 第二组是 [Word JavaScript API](/javascript/api/word)。这是与 Word 2016 年一起引入的[应用程序特定 API 模型](../develop/application-specific-api-model.md)。它是强类型对象模型，可用于创建面向 Mac 版和 Windows 版 Word 2016 的 Word 加载项。此对象模型使用承诺模式，并提供对特定于 Word 的对象（如[正文](/javascript/api/word/word.body)、[内容控件](/javascript/api/word/word.contentcontrol)、[内联图片](/javascript/api/word/word.inlinepicture)和[段落](/javascript/api/word/word.paragraph)）的访问权限。Word JavaScript API 包括 TypeScript 定义和 vsdoc 文件，这样，你便可以在 IDE 中获得代码提示。
 
