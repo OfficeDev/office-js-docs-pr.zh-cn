@@ -1,20 +1,20 @@
 ---
 title: 随文档自动打开任务窗格
 description: 了解如何配置Office打开文档时自动打开的加载项。
-ms.date: 07/08/2021
+ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4858cc3bee0eb679b4345fe74af39a1db3833ae0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d753e7d661c5134a25f6255a017c5bf1cb9b385d
+ms.sourcegitcommit: 6fa846ecad6ba3fd6e6137b7ffaeadf9efc0c472
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148882"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "59326763"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
 可以通过向"外接程序"功能Office按钮，在 Office UI 中使用外接程序Office 应用 UI。 当用户单击命令按钮时，会执行一个操作，如打开任务窗格。
 
-某些情况下，需要在文档打开时自动打开一个任务窗格，而无需进行显式用户交互。 可以使用 Addincommand 1.1 要求集中引入的 AutoOpen 任务窗格功能，以在情况需要时自动打开一个任务窗格。
+某些情况下，需要在文档打开时自动打开一个任务窗格，而无需进行显式用户交互。 您可以使用 [AddInCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md)要求集引入的 Autoopen 任务窗格功能，以在方案需要时自动打开任务窗格。
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>AutoOpen 功能与插入任务窗格有何不同？
 
@@ -24,9 +24,9 @@ ms.locfileid: "59148882"
 
 ## <a name="support-and-availability"></a>支持和可用性
 
-目前支持在以下产品和平台中 <!-- in **developer preview** and it is only --> 使用 Autoopen 功能。
+以下产品和平台当前支持 Autoopen 功能。
 
-|**产品**|**平台**|
+|产品|平台|
 |:-----------|:------------|
 |<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|所有产品的支持平台：<ul><li>Windows 桌面版 Office（内部版本 16.0.8121.1000+）</li><li>Mac 版 Office（生成号 15.34.17051500 及更高版本）</li><li>Office 网页版</li></ul>|
 
@@ -109,11 +109,12 @@ Office.context.document.settings.saveAsync();
 
 `webextension` 部件还包括对具有 `id`、`storeType`、`store` 和 `version` 的属性的应用商店或目录的引用。 在 `storeType` 值中，只有四个与 AutoOpen 功能相关。 其他三个属性的值取决于 `storeType` 的值，如下表所示。
 
-| **`storeType` 值** | **`id` 值**    |**`store` 值** | **`version` 值**|
+|`storeType` 值|`id` value|`store` value|`version` 值|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (AppSource)|加载项的 AppSource 资产 ID（请参阅“注意”）|AppSource 的区域设置；例如，“en-us”。|AppSource 目录中的版本（请参阅“注意”）|
+|OMEX (AppSource)|加载项应用的 AppSource 资产 ID (注意) 。|AppSource 的区域设置；例如，“en-us”。|AppSource 目录中的版本 (注意) 。|
+|WOPICatalog (第三方 [WOPI](/microsoft-365/cloud-storage-partner-program/online/) 主机) | 加载项应用的 AppSource 资产 ID (注意) 。 | "wopicatalog"。 对在应用程序源中发布并安装在第三方 WOPI 主机中的外接程序使用此值。 有关详细信息，请参阅与 Office [Online 集成](/microsoft-365/cloud-storage-partner-program/online/overview)。 | 加载项清单中的版本。|
 |FileSystem（网络共享）|外接程序清单中外接程序的 GUID。|网络共享路径。例如，“\\\\MyComputer\\MySharedFolder”。|外接程序清单中的版本。|
-|EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”。 EXCatalog 行是一行，用于在加载项集中部署Microsoft 365 管理中心。|外接程序清单中的版本。
+|EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”。 EXCatalog 行是一个行，用于在加载项集中部署Microsoft 365 管理中心。|外接程序清单中的版本。|
 |Registry（系统注册表）|外接程序清单中外接程序的 GUID。|“developer”|加载项清单中的版本。|
 
 > [!NOTE]
@@ -154,9 +155,9 @@ Office.context.document.settings.saveAsync();
 </we:webextension>
 ```
 
-您可以使用您的 Microsoft 365 订阅测试上一个示例，以尝试集中部署并验证您的外接程序是否按预期工作。 如果还没有免费订阅，Microsoft 365开发人员计划获取为期 90 天的免费可续订 Microsoft 365[订阅Microsoft 365订阅](https://developer.microsoft.com/office/dev-program)。
+您可以使用您的 Microsoft 365 订阅测试上一个示例，以尝试集中部署并验证您的外接程序是否按预期工作。 如果你还没有免费订阅，Microsoft 365开发人员计划获取为期 90 天的免费可续订 Microsoft 365[订阅Microsoft 365订阅](https://developer.microsoft.com/office/dev-program)。
 
 ## <a name="see-also"></a>另请参阅
 
-有关演示如何使用 AutoOpen 功能的示例，请参阅 [Office 外接程序命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)。
-[加入Microsoft 365开发人员计划](/office/developer-program/office-365-developer-program)。
+- 有关演示如何使用 AutoOpen 功能的示例，请参阅 [Office 外接程序命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)。
+- [加入Microsoft 365开发人员计划。](/office/developer-program/office-365-developer-program)
