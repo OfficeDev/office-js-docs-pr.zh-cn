@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 619fd59a01d91127c0aa4e10af65edf5cbb400cf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0cf4971d46ee80a64fe5ecd70778a333efef960b
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149448"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443515"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -97,7 +97,7 @@ function add(first, second){
 ## <a name="see-also"></a>另请参阅
 
 * [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
-* [自定义函数要求集](custom-functions-requirement-sets.md)
+* [自定义函数要求集](../reference/requirement-sets/custom-functions-requirement-sets.md)
 * [自定义函数命名准则](custom-functions-naming.md)
 * [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)
 * [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

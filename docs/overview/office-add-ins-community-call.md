@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office外接程序社区通话
 description: 每月Microsoft Office外接程序社区通话日程安排和资源。
-ms.date: 09/08/2021
+ms.date: 09/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a880b100fba25ded26c0e1bc9f3392177c2fbfc
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 056fc0a260ebdd22ea0b53c73ef2c1ef25e16db0
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152608"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443536"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
@@ -35,7 +35,8 @@ ms.locfileid: "59152608"
 ## <a name="see-also"></a>另请参阅
 
 - [定期的每月社区通话日历邀请](https://aka.ms/officeaddinscommunitycall)
-- [开发人员Microsoft 365通话](https://aka.ms/M365DevCalls)
 - [Community呼叫主题请求和问题](https://aka.ms/officeaddinsform)
-- [Microsoft 365开发人员 YouTube 频道](https://aka.ms/OfficeDevYouTube)
-- [Microsoft 365 模式和做法](https://aka.ms/M365PnP)
+- [Microsoft 365开发人员 YouTube 频道](https://aka.ms/m365devyoutube)
+- [Microsoft 365社区 YouTube 频道](https://aka.ms/m365pnp/videos )
+- [Microsoft 365技术中心上的 PnP Community](https://aka.ms/m365pnp/community)
+- [Microsoft 365PnP 技术社区博客](https://aka.ms/m365pnp/community/blog)

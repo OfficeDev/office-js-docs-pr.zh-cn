@@ -1,15 +1,15 @@
 ---
 title: 加载项命令要求集
 description: 外接程序Office要求集概述。
-ms.date: 11/01/2020
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: cb1a21c4d233a716e383d97585a61f5ab2cd2c1e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 73bedf79ff9698ed14ed0e17976a3c9e1602cc7e
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152478"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443529"
 ---
 # <a name="add-in-commands-requirement-sets"></a>加载项命令要求集
 
@@ -31,7 +31,7 @@ ms.locfileid: "59152478"
 
 |  要求集  |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| AddinCommands 1.3  | 不适用 | 不适用  | 不适用 | 即将推出 | 不适用 | 即将推出 | 2020 年 11 月 |
+| AddinCommands 1.3  | 不适用 | 不适用  | 不适用 | 不支持 | 不适用 | 不支持 | 2020 年 11 月 |
 | AddinCommands 1.1  | 不适用 | *仅 Outlook 支持* 16.0.4678.1000  | 版本 1809（内部版本 10827.20150）或更高版本 | 版本 1705（内部版本 8121.1000）或更高版本 | 不适用 | 15.34 或更高版本\*| 2017 年 5 月 |
 
 >\*针对版本 16.9 &ndash; 16.14（含），[Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) 方法将错误地返回 `false`，但这些版本 *支持* 需求集。
