@@ -1,15 +1,15 @@
 ---
 title: 图像强制要求集
-description: 通过跨 Office、Excel 和 Word PowerPoint外接程序支持图像强制要求集。
-ms.date: 02/19/2021
+description: 支持跨 Office、PowerPoint 和 Word 的外接程序Excel强制要求集。
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e55eba4d28b459f4ffe9d402640dd04cff9acb4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0f0b80c0af8213eaa9e3695373ddc037c2e60cc3
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148826"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445800"
 ---
 # <a name="image-coercion-requirement-sets"></a>图像强制要求集
 
@@ -17,9 +17,9 @@ ms.locfileid: "59148826"
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
-ImageCoercion 1.1 支持在使用 () `Office.CoercionType.Image` 写入数据时转换到图像 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 图像。 支持以下应用程序。
+ImageCoercion 1.1 允许转换为 () `Office.CoercionType.Image` 写入数据时显示 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 的图像图像。 支持以下应用程序。
 
-- Excel 2013 年 10 月及Windows
+- Excel 2013 及更高版本Windows
 - Excel 2016 Mac 及更高版本
 - iPad 版 Excel
 - OneNote 网页版
@@ -36,13 +36,13 @@ ImageCoercion 1.1 支持在使用 () `Office.CoercionType.Image` 写入数据时
 
 ImageCoercion 1.2 支持在使用 () 写入数据时转换为 SVG `Office.CoercionType.XmlSvg` [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 格式。 支持以下应用程序。
 
-- Excel连接到Windows (订阅Microsoft 365时) 
-- Excel Mac (连接到 Microsoft 365 订阅) 
-- PowerPoint连接到Windows (订阅Microsoft 365时) 
-- PowerPoint Mac (连接到 Microsoft 365 订阅) 
+- Excel 2021 年 10 月及Windows
+- Excel Mac 上的 2021 年及更高版本
+- PowerPoint 2021 年 10 月及Windows
+- PowerPoint Mac 上的 2021 年及更高版本
 - PowerPoint 网页版
-- Word on Windows (连接到 Microsoft 365 订阅) 
-- Mac 版 Word (连接到 Microsoft 365 订阅) 
+- Word 2021 及更高版本Windows
+- Mac 上的 Word 2021 及更高版本
 
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 

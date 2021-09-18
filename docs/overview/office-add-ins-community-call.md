@@ -8,7 +8,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443536"
+ms.locfileid: "59445724"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
@@ -37,6 +37,6 @@ ms.locfileid: "59443536"
 - [定期的每月社区通话日历邀请](https://aka.ms/officeaddinscommunitycall)
 - [Community呼叫主题请求和问题](https://aka.ms/officeaddinsform)
 - [Microsoft 365开发人员 YouTube 频道](https://aka.ms/m365devyoutube)
-- [Microsoft 365社区 YouTube 频道](https://aka.ms/m365pnp/videos )
-- [Microsoft 365技术中心上的 PnP Community](https://aka.ms/m365pnp/community)
+- [Microsoft 365 YouTube 频道](https://aka.ms/m365pnp/videos )
+- [Microsoft 365Tech Community 上的 PnP](https://aka.ms/m365pnp/community)
 - [Microsoft 365PnP 技术社区博客](https://aka.ms/m365pnp/community/blog)

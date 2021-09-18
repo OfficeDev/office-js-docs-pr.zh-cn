@@ -1,15 +1,15 @@
 ---
 title: 共享运行时要求集
 description: 指定支持 SharedRuntime Office的平台和应用程序。
-ms.date: 04/08/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 25efc55c44242398bce684a9b56795d734d2a158
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b4e7d37e66a562799bc841fd7d7e7ad8cd6d89e7
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152576"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445808"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共享运行时要求集
 
@@ -19,9 +19,9 @@ ms.locfileid: "59152576"
 
 下表列出了 SharedRuntime 1.1 要求集、支持该要求集的 Office 客户端应用程序，以及 Office 应用程序的版本或版本号。
 
-|  要求集  |  Office 2013 (或更高版本) Windows<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  | Office Online Server |
+| 要求集 | Office 2021 年 1 月或Windows<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅） | iPad 版 Office<br>（关联至 Microsoft 365 订阅） | Mac 版 Office<br>（关联至 Microsoft 365 订阅） | Office 网页版 | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | 不适用 | 版本 2002 (内部版本 12527.20092) 或更高版本 | 不适用 | 16.35 或更高版本 | 2020 年 2 月 | 不适用 |
+| SharedRuntime 1.1  | 版本 2002 (内部版本 12527.20092) 或更高版本 | 版本 2002 (内部版本 12527.20092) 或更高版本 | 不适用 | 16.35 或更高版本 | 2020 年 2 月 | 不适用 |
 
 > [!IMPORTANT]
 > 共享的 JavaScript 运行时要求集仅在以下平台上可用。

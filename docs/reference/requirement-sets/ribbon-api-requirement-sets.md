@@ -1,15 +1,15 @@
 ---
 title: 功能区 API 要求集
 description: 指定哪些Office和内部版本支持动态功能区 API。
-ms.date: 05/12/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d68a7a3cf1c7e4f187250a87babcf5525bb867b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f0bc97eb7600c913642471650418e14744536ce3
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152577"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445710"
 ---
 # <a name="ribbon-api-requirement-sets"></a>功能区 API 要求集
 
@@ -17,25 +17,25 @@ ms.locfileid: "59152577"
 
 功能区 API 集支持以编程方式控制自定义外接程序命令 (，即自定义功能区按钮和菜单项) 和禁用。
 
-Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 API 要求集、Office要求集的客户端应用程序，以及功能区 API 应用程序Office版本号。
+Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 API 要求集、Office要求集的客户端应用程序，以及功能区 API 要求集Office版本号。
 
-|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Office 2016 或更高版本Windows<br>（一次性购买）   | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br>（关联至 Microsoft 365 订阅）  | Office 网页版\*  |  Office Online Server  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.1  | 不适用 | 不适用 | 请参阅支持<br>部分如下 | 不适用 | 16.38 | 2020 年 11 月 | 不适用|
-| RibbonApi 1.2  | 不适用 | 不适用 | 2102 (内部版本 13801.20294)  | 不适用 | 即将推出 | 2021 年 5 月 | 不适用|
+|  要求集  | Office 2021 年 1 月或Windows<br>（一次性购买） | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br>（关联至 Microsoft 365 订阅）  | Office 网页版\*  |  Office Online Server  |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| RibbonApi 1.2  | 2102 (内部版本 13801.20294)  | 2102 (内部版本 13801.20294)  | 不适用 | 不支持 | 2021 年 5 月 | 不适用|
+| RibbonApi 1.1  | 2102 (内部版本 13801.20294)  | 请参阅支持<br>部分如下 | 不适用 | 16.38 | 2020 年 11 月 | 不适用|
 
-> **&#42;** 功能区 API 仅在 Excel并且需要一个Microsoft 365订阅。
+> **&#42;** 功能区 API 仅在 Excel。
 
-## <a name="support-for-version-11-on-office-on-windows-subscription"></a>对版本 1.1 的支持Office订阅Windows (版本) 
+## <a name="support-for-version-11-on-office-on-windows-subscription"></a>支持版本 1.1 on Office on Windows (subscription) 
 
 1.1 版本的 RibbonApi 要求集在消费者频道版本 2006 (版本 13001.20498 或) 。 For Office on Windows the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available july 14， 2020 or later. 每个频道支持的最低版本如下所示：  
 
 |频道 | 版本 | 内部版本|
 |:-----|:-----|:-----|
 |当前频道 | 2006 或更大 | 20266.20266 或更大|
-|每月企业频道 | 2005 或更大 | 12827.20538 或更大|
+|月度企业频道 | 2005 或更大 | 12827.20538 或更大|
 |每月企业频道 | 2004 | 12730.20602 或更大|
-|半年企业频道 | 2002 或更大 | 12527.20880 或更大|
+|半年度企业频道 | 2002 或更大 | 12527.20880 或更大|
 
 ## <a name="more-information"></a>详细信息
 
@@ -43,7 +43,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 
 
 - [适用于客户端的更新频道版本的版本号Microsoft 365版本号](/officeupdates/update-history-microsoft365-apps-by-date)
 - [使用的是哪一版 Office？](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [在哪里可以找到客户端应用程序的版本号Microsoft 365版本号](/officeupdates/update-history-microsoft365-apps-by-date)
+- [您可以在其中查找客户端应用程序的版本号Microsoft 365版本号](/officeupdates/update-history-microsoft365-apps-by-date)
 - [Office Online Server 概述](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
