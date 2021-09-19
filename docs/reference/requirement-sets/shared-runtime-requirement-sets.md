@@ -8,8 +8,8 @@ ms.openlocfilehash: b4e7d37e66a562799bc841fd7d7e7ad8cd6d89e7
 ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445808"
+ms.lasthandoff: 09/19/2021
+ms.locfileid: "59448717"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共享运行时要求集
 
