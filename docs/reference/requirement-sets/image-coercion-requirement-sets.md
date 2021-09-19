@@ -9,7 +9,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/19/2021
-ms.locfileid: "59448710"
+ms.locfileid: "59450791"
 ---
 # <a name="image-coercion-requirement-sets"></a>图像强制要求集
 

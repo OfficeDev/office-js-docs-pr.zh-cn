@@ -9,7 +9,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/19/2021
-ms.locfileid: "59448752"
+ms.locfileid: "59450798"
 ---
 # <a name="identity-api-requirement-sets"></a>Identity API 要求集
 
@@ -24,7 +24,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Identity 
 \*目前，要求集仅在Office web 版和文档打开的文档Microsoft Office SharePoint Online OneDrive。
 
 > [!NOTE]
-> Outlook：若要要求在加载项代码中将 Identity API 设置为 1.3，请通过调用 检查是否受支持 `isSetSupported('IdentityAPI', '1.3')` 。 不支持在Outlook清单中声明它。 还可通过检查其不是 `undefined` 来确定该 API 是否受到支持。 有关详细信息，请参阅 [从后续要求集中使用 API](outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets)。
+> Outlook：若要要求在加载项代码中将 Identity API 设置为 1.3，请通过调用 检查是否支持 `isSetSupported('IdentityAPI', '1.3')` 。 不支持在Outlook清单中声明它。 还可通过检查其不是 `undefined` 来确定该 API 是否受到支持。 有关详细信息，请参阅 [从后续要求集中使用 API](outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets)。
 
 ## <a name="office-versions-and-build-numbers"></a>Office 版本和内部版本号
 
