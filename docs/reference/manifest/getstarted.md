@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 GetStarted 元素
 description: 提供在 Word、Excel、PowerPoint 和 OneNote 中安装外接程序时出现的标注OneNote。
-ms.date: 10/09/2018
+ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 355b72d4130f3a220e6a1257af51e371665d3cc3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c311e1bb5fbc2db265f430c8762216ad3a727107
+ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152623"
+ms.lasthandoff: 09/22/2021
+ms.locfileid: "59474341"
 ---
 # <a name="getstarted-element"></a>GetStarted 元素
 
-提供在 Word、Excel、PowerPoint 和 OneNote 中安装外接程序时出现的标注OneNote。 **GetStarted** 元素是 [DesktopFormFactor 的子元素](desktopformfactor.md)。
+提供在 Word、Excel、PowerPoint 和 OneNote 中安装外接程序时出现的标注OneNote。 **GetStarted** 元素是 [DesktopFormFactor 的子元素](desktopformfactor.md)。 如果 **省略 GetStarted** 元素，标注将改为使用 [DisplayName](displayname.md) 和 [Description 元素](description.md) 中的值。
 
 ## <a name="child-elements"></a>子元素
 

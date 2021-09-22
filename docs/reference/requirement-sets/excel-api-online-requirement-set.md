@@ -1,19 +1,19 @@
 ---
 title: ExcelJavaScript API 仅联机要求集
 description: 有关 ExcelApiOnline 要求集的详细信息。
-ms.date: 07/23/2021
+ms.date: 09/16/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 067bd3f033c415b0a6ac271aa1f132cfeb92730c
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9b8d326e1a756a873fc19b3d78f795ebf04e5f4e
+ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152241"
+ms.lasthandoff: 09/22/2021
+ms.locfileid: "59474334"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>ExcelJavaScript API 仅联机要求集
 
-要求 `ExcelApiOnline` 集是一个特殊要求集，其中包括仅适用于Excel web 版。 此要求集内 API 被视为生产 API， (应用程序未记录的行为或) 更改Excel web 版 API。 `ExcelApiOnline`API 被视为适用于其他平台（如 (Windows、Mac、iOS) ）的"预览"API，可能不受这些平台的任何支持。
+要求 `ExcelApiOnline` 集是一个特殊要求集，其中包含仅适用于Excel web 版。 此要求集内 API 被视为生产 API， (应用程序的行为或结构) 未Excel web 版更改。 `ExcelApiOnline`API 被视为适用于其他平台（如 (Windows、Mac、iOS) ）的"预览"API，可能不受这些平台的任何支持。
 
 当要求集内 API 在所有平台中均受支持时，它们将被添加到下一个发布的要求 `ExcelApiOnline` `ExcelApi 1.[NEXT]` () 。 一旦该新要求公开，将从 中删除这些 `ExcelApiOnline` API。 将此过程视为与从预览版移动到发布的 API 类似的推广过程。
 
@@ -27,7 +27,8 @@ ms.locfileid: "59152241"
 
 | 功能区域 | 说明 | 相关对象 |
 |:--- |:--- |:--- |
-| 命名工作表视图 | 以编程方式控制每用户工作表视图。 | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) |
+| 链接的工作簿 | 管理工作簿之间的链接，包括对刷新和断开工作簿链接的支持。 | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook) [、LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
+| 命名工作表视图 | 以编程方式控制每用户工作表视图。 | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) [、NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection) |
 
 ## <a name="recommended-usage"></a>建议的用法
 
@@ -46,11 +47,20 @@ API 位于跨平台要求集后，应删除或编辑 `isSetSupported` 检查。 
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了要求Excel当前包含的 JavaScript `ExcelApiOnline` API。 有关所有 JavaScript EXCEL的完整列表 (包括 API 和以前发布的 API) ，请参阅所有 Excel `ExcelApiOnline` [JavaScript API。](/javascript/api/excel?view=excel-js-online&preserve-view=true)
+下表列出了要求Excel中当前包含的 JavaScript `ExcelApiOnline` API。 有关所有 JavaScript EXCEL的完整列表 (包括 API 和以前发布的 API `ExcelApiOnline`) ，请参阅所有 Excel [JavaScript API。](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
 |[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria (columnIndex： number) ](/javascript/api/excel/excel.autofilter#clearColumnCriteria_columnIndex_)|清除自动筛选的列筛选条件。|
+|[LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook)|[breakLinks () ](/javascript/api/excel/excel.linkedworkbook#breakLinks__)|请求断开指向链接工作簿的链接。|
+||[id](/javascript/api/excel/excel.linkedworkbook#id)|指向链接工作簿的原始 URL。|
+||[refresh()](/javascript/api/excel/excel.linkedworkbook#refresh__)|请求刷新从链接工作簿检索到的数据。|
+|[LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection)|[breakAllLinks () ](/javascript/api/excel/excel.linkedworkbookcollection#breakAllLinks__)|断开指向链接工作簿的所有链接。|
+||[getItem(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getItem_key_)|按 URL 获取链接工作簿的信息。|
+||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.linkedworkbookcollection#getItemOrNullObject_key_)|按 URL 获取链接工作簿的信息。|
+||[items](/javascript/api/excel/excel.linkedworkbookcollection#items)|获取此集合中已加载的子项。|
+||[refreshAll () ](/javascript/api/excel/excel.linkedworkbookcollection#refreshAll__)|请求刷新所有工作簿链接。|
+||[workbookLinksRefreshMode](/javascript/api/excel/excel.linkedworkbookcollection#workbookLinksRefreshMode)|表示工作簿链接的更新模式。|
 |[NamedSheetView](/javascript/api/excel/excel.namedsheetview)|[activate()](/javascript/api/excel/excel.namedsheetview#activate__)|激活此工作表视图。|
 ||[delete()](/javascript/api/excel/excel.namedsheetview#delete__)|从工作表中删除工作表视图。|
 ||[duplicate (name？： string) ](/javascript/api/excel/excel.namedsheetview#duplicate_name_)|创建此工作表视图的副本。|
@@ -63,6 +73,7 @@ API 位于跨平台要求集后，应删除或编辑 `isSetSupported` 检查。 
 ||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItem_key_)|使用工作表视图的名称获取工作表视图。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getItemAt_index_)|按工作表视图在集合中的索引获取工作表视图。|
 ||[items](/javascript/api/excel/excel.namedsheetviewcollection#items)|获取此集合中已加载的子项。|
+|[Workbook](/javascript/api/excel/excel.workbook)|[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedWorkbooks)|返回链接工作簿的集合。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedSheetViews)|返回工作表中呈现的工作表视图的集合。|
 
 ## <a name="see-also"></a>另请参阅
