@@ -535,9 +535,6 @@ items:
             href: reference/javascript-api-for-office-error-codes.md
           - name: 不支持的窗口对象
             href: reference/window-objects-unsupported-in-add-ins.md
-      - name: 资源
-        href: resources/resources-links-help.md
-        displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
   - name: Excel
     items:
       - name: Excel 加载项文档
@@ -1281,14 +1278,19 @@ items:
       - name: 在 Excel 中打开
         href: excel/pnp-open-in-excel.md
         displayName: Excel
+  - name: 资源
+    items:
+      - name: 外部资源
+        href: resources/resources-links-help.md
+        displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
       - name: Office 加载项社区通话
         href: overview/office-add-ins-community-call.md
-  - name: VSTO 和 COM 转换资源
-    items:
-      - name: VSTO 加载项开发人员指南
-        href: overview/learning-path-transition.md
-      - name: 将 VSTO 加载项中的代码共享到 Office 加载项
-        href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-      - name: 确认 Office 加载项与已有的COM 加载项兼容
-        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-        displayName: manifest
+      - name: VSTO 和 COM 转换资源
+        items:
+          - name: VSTO 加载项开发人员指南
+            href: overview/learning-path-transition.md
+          - name: 将 VSTO 加载项中的代码共享到 Office 加载项
+            href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+          - name: 确认 Office 加载项与已有的COM 加载项兼容
+            href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+            displayName: manifest
