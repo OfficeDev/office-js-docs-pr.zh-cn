@@ -1,21 +1,21 @@
 ---
 title: JavaScript API Excel错误处理
 description: 了解如何Excel JavaScript API 错误处理逻辑，以考虑运行时错误。
-ms.date: 08/27/2021
+ms.date: 09/20/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: bf69831f097f28dcb26c4451582dc805dc81cfd2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 24daaa8dcd5256be997c8742016a9ec80b3294df
+ms.sourcegitcommit: 43f20d0933d0159dd390da052187b315222b185f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149529"
+ms.lasthandoff: 09/24/2021
+ms.locfileid: "59502729"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API Excel错误处理
 
 使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 鉴于 API 的异步特性，这样做非常关键。
 
 > [!NOTE]
-> 有关 JavaScript API 的方法和异步特性 `sync()` Excel，请参阅 Excel 外接程序中的[Office JavaScript 对象模型](excel-add-ins-core-concepts.md)。
+> 有关 JavaScript API 的方法和异步特性Excel，请参阅 Excel 外接程序中的 `sync()` [Office JavaScript 对象模型](excel-add-ins-core-concepts.md)。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -51,46 +51,48 @@ Excel.run(function (context) {
 
 下表是 API 可能返回的错误列表。
 
-|错误代码 | 错误消息 |
-|:----------|:--------------|
-|`AccessDenied` |无法执行所请求的操作。|
-|`ActivityLimitReached`|已达到活动限制。|
-|`ApiNotAvailable`|请求的 API 不可用。|
-|`ApiNotFound`|找不到您尝试使用的 API。 它可能在更高版本的 Excel 中提供。 有关详细信息[，Excel JavaScript API](../reference/requirement-sets/excel-api-requirement-sets.md)要求集文章。|
-|`BadPassword`|你提供的密码不正确。|
-|`Conflict`|由于冲突，无法处理请求。|
-|`ContentLengthRequired`|`Content-length`HTTP 标头缺失。|
-|`FilteredRangeConflict`|尝试的操作会导致与筛选出的范围冲突。|
-|`GeneralException`|处理请求时出现内部错误。|
-|`InactiveWorkbook`|操作失败，因为多个工作簿已打开，并且此 API 调用的工作簿已失去焦点。|
-|`InsertDeleteConflict`|尝试的插入或删除操作导致冲突。|
-|`InvalidArgument` |自变量无效、缺少或格式不正确。|
-|`InvalidBinding` |由于之前的更新，此对象绑定不再有效。|
-|`InvalidOperation`|尝试的操作对于对象无效。|
-|`InvalidOperationInCellEditMode`|当编辑单元格模式Excel操作不可用。 使用 Enter 或 **Tab** 键或选择另一个单元格退出编辑模式，然后重试。|
-|`InvalidReference`|此引用对于当前操作无效。|
-|`InvalidRequest`  |无法处理此请求。|
-|`InvalidSelection`|当前选定内容对于此操作无效。|
-|`ItemAlreadyExists`|所创建的资源已存在。|
-|`ItemNotFound` |所请求的资源不存在。|
-|`MemoryLimitReached`|已达到内存限制。 无法完成操作。|
+|错误代码 | 错误消息 | 注意 |
+|:----------|:--------------|:------|
+|`AccessDenied` |无法执行所请求的操作。| |
+|`ActivityLimitReached`|已达到活动限制。| |
+|`ApiNotAvailable`|请求的 API 不可用。| |
+|`ApiNotFound`|找不到您尝试使用的 API。 它可能在更高版本的 Excel 中提供。 有关详细信息[，Excel JavaScript API](../reference/requirement-sets/excel-api-requirement-sets.md)要求集文章。| |
+|`BadPassword`|你提供的密码不正确。| |
+|`Conflict`|由于冲突，无法处理请求。| |
+|`ContentLengthRequired`|`Content-length`HTTP 标头缺失。| |
+|`FilteredRangeConflict`|尝试的操作会导致与筛选出的范围冲突。| |
+|`FormulaLengthExceedsLimit`|所应用的公式的字节码超过最大长度限制。 对于Office 32 位计算机上，字节码长度限制为 16384 个字符。 在 64 位计算机上，字节码长度限制为 32768 个字符。| 此错误在桌面和Excel web 版都发生。|
+|`GeneralException`|处理请求时出现内部错误。| |
+|`InactiveWorkbook`|操作失败，因为多个工作簿已打开，并且此 API 调用的工作簿已失去焦点。| |
+|`InsertDeleteConflict`|尝试的插入或删除操作导致冲突。| |
+|`InvalidArgument` |自变量无效、缺少或格式不正确。| |
+|`InvalidBinding` |由于之前的更新，此对象绑定不再有效。| |
+|`InvalidOperation`|尝试的操作对于对象无效。| |
+|`InvalidOperationInCellEditMode`|当编辑单元格模式Excel操作不可用。 使用 Enter 或 **Tab** 键或选择另一个单元格退出编辑模式，然后重试。| |
+|`InvalidReference`|此引用对于当前操作无效。| |
+|`InvalidRequest`  |无法处理此请求。| |
+|`InvalidSelection`|当前选定内容对于此操作无效。| |
+|`ItemAlreadyExists`|所创建的资源已存在。| |
+|`ItemNotFound` |所请求的资源不存在。| |
+|`MemoryLimitReached`|已达到内存限制。 无法完成操作。| |
 |`MergedRangeConflict`|无法完成操作。 表不能与其他表、数据透视表、查询结果、合并单元格或 XML 映射重叠。|
-|`NonBlankCellOffSheet`|Microsoft Excel无法插入新单元格，因为它将非空单元格推送到工作表末尾。 这些非空单元格可能为空，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。|
-|`NotImplemented`|所请求的功能未实现。|
-|`PivotTableRangeConflict`|尝试的操作会导致与数据透视表区域冲突。|
-|`RangeExceedsLimit`|该范围中的单元格计数已超出支持的最大数。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。|
-|`RefreshWorkbookLinksBlocked`|操作失败，因为用户未授予刷新外部工作簿链接的权限。|
-|`RequestAborted`|请求在运行时已中止。|
-|`RequestPayloadSizeLimitExceeded`|请求有效负载大小已超出限制。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。 <br><br>此错误仅出现在Excel web 版。|
-|`ResponsePayloadSizeLimitExceeded`|响应有效负载大小已超出限制。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。  <br><br>此错误仅出现在Excel web 版。|
-|`ServiceNotAvailable`|服务不可用。|
-|`Unauthenticated` |所需的身份验证信息缺少或无效。|
-|`UnsupportedFeature`|操作失败，因为源工作表包含一个或多个不受支持的功能。|
-|`UnsupportedOperation`|不支持正在尝试的操作。|
-|`UnsupportedSheet`|此工作表类型不支持此操作，因为它是一个宏或图表工作表。|
+|`NonBlankCellOffSheet`|Microsoft Excel无法插入新单元格，因为它会将非空单元格推送到工作表末尾。 这些非空单元格可能为空，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。| |
+|`NotImplemented`|所请求的功能未实现。| |
+|`OperationCellsExceedLimit`|尝试的操作影响超过 33554000 个单元格的限制。| 如果 `TableColumnCollection.add API` 触发此错误，请确认工作表中除表外没有意外数据。 特别是，检查工作表最右侧列中的数据。 删除意外数据以解决此错误。 验证操作进程所经过的单元格数的一种方式是运行以下计算 `(number of table rows) x (16383 - (number of table columns))` ：。 数字 16383 是用户支持的最大Excel数。 <br><br>此错误仅出现在Excel web 版。 |
+|`PivotTableRangeConflict`|尝试的操作会导致与数据透视表区域冲突。| |
+|`RangeExceedsLimit`|该范围中的单元格计数已超出支持的最大数。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。| |
+|`RefreshWorkbookLinksBlocked`|操作失败，因为用户未授予刷新外部工作簿链接的权限。| |
+|`RequestAborted`|请求在运行时已中止。| |
+|`RequestPayloadSizeLimitExceeded`|请求有效负载大小已超出限制。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。| 此错误仅出现在Excel web 版。|
+|`ResponsePayloadSizeLimitExceeded`|响应有效负载大小已超出限制。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。|  此错误仅出现在Excel web 版。|
+|`ServiceNotAvailable`|服务不可用。| |
+|`Unauthenticated` |所需的身份验证信息缺少或无效。| |
+|`UnsupportedFeature`|操作失败，因为源工作表包含一个或多个不受支持的功能。| |
+|`UnsupportedOperation`|不支持正在尝试的操作。| |
+|`UnsupportedSheet`|此工作表类型不支持此操作，因为它是一个宏或图表工作表。| |
 
 > [!NOTE]
-> 上表列出了使用 JavaScript API 时可能遇到的Excel消息。 如果你使用通用 API 而不是特定于应用程序的 Excel JavaScript API，请参阅[Office通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码，以了解相关的错误消息。
+> 上表列出了使用 JavaScript API 时可能遇到的Excel消息。 如果你使用通用 API 而不是特定于应用程序的 JavaScript API Excel，请参阅Office[通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码以了解相关的错误消息。
 
 ## <a name="see-also"></a>另请参阅
 
