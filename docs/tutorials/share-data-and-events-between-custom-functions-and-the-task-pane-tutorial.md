@@ -1,15 +1,15 @@
 ---
 title: 教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 description: 学习如何在Microsoft Excel中的自定义函数和任务窗格之间共享数据和事件。
-ms.date: 08/04/2021
+ms.date: 09/23/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 0d42329d08de9db35d15d122321d771f6017b937
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 714f7dc62c7357a67ac26179dee6abc1d229ea49
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152534"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990528"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
@@ -52,7 +52,7 @@ yo office
    ```
 
 > [!NOTE]
-> 如果加载启动项包括清单中的 `Runtimes` 元素，则无论 Windows 或 Microsoft 365 版本如何，都将使用 Internet Explorer 11。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
+> 如果加载项包含清单中的 `Runtimes` 元素（共享运行时所需），并且满足将 Microsoft Edge 与 WebView2（基于 Chromium）一起使用的条件，则它使用该 WebView2 控件。 如果不满足条件，则它会使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)和 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 4. 在 `<Page>` 元素中，将源位置从 **Functions.Page.Url** 更改为 **ContosoAddin.Url**。
 
