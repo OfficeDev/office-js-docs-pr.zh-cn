@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 07/08/2021
+ms.date: 09/23/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f3ecf502f035783aa99dda959d23a3cb2444ec83
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 49145c2c5e6e48fe4f0256d6dbc661e9a826fee5
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149463"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990822"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -843,7 +843,7 @@ ms.locfileid: "59149463"
     ```
 
 > [!NOTE]
-> **popup.html** 文件及其加载的 **popup.js** 文件在完全独立于加载项任务窗格的 Microsoft Edge 或 Internet Explorer 11 进程中运行。 如果将 **popup.js** 转换为与 **app.js** 文件相同的 **bundle.js** 文件，加载项必须加载 **bundle.js** 文件的两个副本，这就违背了绑定目的。 所以此加载项根本不会转换 **popup.js**。
+> **popup.html** 文件及其加载的 **popup.js** 文件在完全独立于加载项任务窗格的浏览器进程中运行。 如果将 **popup.js** 转换为与 **app.js** 文件相同的 **bundle.js** 文件，加载项必须加载 **bundle.js** 文件的两个副本，这就违背了绑定目的。 所以此加载项根本不会转换 **popup.js**。
 
 ### <a name="update-webpack-config-settings"></a>更新 webpack 配置设置
 

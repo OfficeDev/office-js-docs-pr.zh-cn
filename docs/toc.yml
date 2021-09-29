@@ -384,10 +384,6 @@ items:
                 href: reference/manifest/equivalentaddins.md
               - name: ExtendedOverrides
                 href: reference/manifest/extendedoverrides.md
-              - name: ExtendedPermission
-                href: reference/manifest/extendedpermission.md
-              - name: ExtendedPermissions
-                href: reference/manifest/extendedpermissions.md
               - name: FileName
                 href: reference/manifest/filename.md
               - name: 表单
@@ -472,6 +468,8 @@ items:
                     href: reference/manifest/control.md
                   - name: CustomTab
                     href: reference/manifest/customtab.md
+                  - name: DesktopFormFactor
+                    href: reference/manifest/desktopformfactor.md
                   - name: 已启用
                     href: reference/manifest/enabled.md
                   - name: EquivalentAddin
@@ -480,10 +478,12 @@ items:
                     href: reference/manifest/equivalentaddins.md
                   - name: 事件
                     href: reference/manifest/event.md
+                  - name: ExtendedPermission
+                    href: reference/manifest/extendedpermission.md
+                  - name: ExtendedPermissions
+                    href: reference/manifest/extendedpermissions.md
                   - name: ExtensionPoint
                     href: reference/manifest/extensionpoint.md
-                  - name: DesktopFormFactor
-                    href: reference/manifest/desktopformfactor.md
                   - name: FunctionFile
                     href: reference/manifest/functionfile.md
                   - name: GetStarted
@@ -1002,8 +1002,6 @@ items:
           - name: API 参考 - 最新版本
             href: reference/outlook-api-reference-1-10.md
             displayName: Outlook
-      - name: 概念
-        items:
           - name: Outlook 外接程序设计准则
             href: outlook/outlook-addin-design.md
           - name: 加载项命令
