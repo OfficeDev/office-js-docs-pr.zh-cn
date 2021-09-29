@@ -1,20 +1,22 @@
 ---
 title: 清单文件中 EquivalentAddin 元素
 description: 指定等效 COM 加载项或 XLL 的向后兼容性。
-ms.date: 03/09/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e0842a0a5663d6221e854881aef28004ad2a8705
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f77a70681c8a12674d9e22022276e511552861ad
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152359"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990689"
 ---
 # <a name="equivalentaddin-element"></a>EquivalentAddin 元素
 
 指定等效 COM 加载项或 XLL 的向后兼容性。
 
-**外接程序类型：** 任务窗格、自定义函数
+[!INCLUDE [Support note for equivalent add-ins feature](../../includes/equivalent-add-in-support-note.md)]
+
+**外接程序类型：** 任务窗格、邮件、自定义函数
 
 ## <a name="syntax"></a>语法
 
@@ -30,14 +32,14 @@ ms.locfileid: "59152359"
 
 ## <a name="must-contain"></a>必须包含
 
-[类型](type.md)
+[Type](type.md)
 
 ## <a name="can-contain"></a>可以包含
 
 [ProgId](progid.md) 
 [FileName](filename.md)
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>说明
 
 若要将 COM 加载项指定为等效加载项，请提供 和 `ProgId` `Type` 元素。 若要将 XLL 指定为等效的外接程序，请提供 和 `FileName` `Type` 元素。
 

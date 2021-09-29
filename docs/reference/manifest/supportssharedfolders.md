@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 SupportsSharedFolders 元素
-description: SupportsSharedFolders 元素定义Outlook外接程序在共享文件夹和共享邮箱方案中是否可用。
+description: SupportsSharedFolders 元素定义 Outlook外接程序在共享文件夹和共享邮箱方案中是否可用。
 ms.date: 06/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a7cbe1c6549c8a93a6ecceab9e4bdaba07001f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: fed9d98fb993e8568e9ff27b3a3bd44d64efa279
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152505"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990507"
 ---
 # <a name="supportssharedfolders-element"></a>SupportsSharedFolders 元素
 
@@ -16,6 +16,8 @@ ms.locfileid: "59152505"
 
 > [!IMPORTANT]
 > 要求集 1.8 中引入了对此元素的支持。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+
+**外接程序类型：** 邮件
 
 下面是 **SupportsSharedFolders 元素的一** 个示例。
 

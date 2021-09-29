@@ -1,27 +1,29 @@
 ---
 title: 清单文件中 Event 元素
 description: 定义外接程序中的事件处理程序。
-ms.date: 05/15/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ccddc64ffecd9ebc06b28eb37c0aee46dcc2f4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 095023a8f2d8cd5a01835e09cd50ae7289c98c01
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152357"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990660"
 ---
 # <a name="event-element"></a>Event 元素
 
 定义外接程序中的事件处理程序。
 
 > [!NOTE]
-> 有关支持和使用情况的信息，请参阅[On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md)。
+> 有关支持和使用情况的信息，请参阅加载项的Outlook[功能](../../outlook/outlook-on-send-addins.md)。
+
+**外接程序类型：** 邮件
 
 ## <a name="attributes"></a>属性
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  [类型](#type-attribute)  |  是  | 指定要处理的事件。 |
+|  [Type](#type-attribute)  |  是  | 指定要处理的事件。 |
 |  [FunctionExecution](#functionexecution-attribute)  |  是  | 指定事件处理程序的执行风格、异步或同步。目前仅支持同步事件处理程序。 |
 |  [FunctionName](#functionname-attribute)  |  是  | 指定事件处理程序的函数名称。 |
 

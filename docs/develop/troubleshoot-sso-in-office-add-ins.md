@@ -1,14 +1,14 @@
 ---
 title: 排查单一登录 (SSO) 错误消息
 description: 有关如何解决加载项中单一登录 (SSO) 问题Office处理特殊条件或错误的指导。
-ms.date: 09/03/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9740b62a0587b2453edbef17d0be51114d0c51f0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f7fc09c7a0b5a55712c61e9a27ac69d6f2351178
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149302"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990654"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>排查单一登录 (SSO) 错误消息
 
@@ -35,7 +35,7 @@ ms.locfileid: "59149302"
 
 加载项或 Office 版本不支持 [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) API。
 
-- Office 版本不支持 SSO。 所需版本是Microsoft 365频道订阅的必需版本。
+- Office 版本不支持 SSO。 所需版本为Microsoft 365频道中的订阅。
 - 加载项清单缺少适当的 [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) 部分。
 
 加载项应该通过回退到用户身份验证备用系统来响应此错误。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
@@ -59,11 +59,11 @@ ms.locfileid: "59149302"
 
 ### <a name="13003"></a>13003
 
-用户类型不受支持。 用户未使用有效的 Microsoft Office或工作帐户Microsoft 365 教育版登录。 例如，当使用本地域帐户运行 Office 时，可能会生成此错误。 代码应回退到用户身份验证备用系统。 在Outlook中，如果为用户租户禁用新式验证，[](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)则也会发生Exchange Online。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
+用户类型不受支持。 用户未使用有效的 Microsoft 帐户Office或工作帐户Microsoft 365 教育版登录。 例如，当使用本地域帐户运行 Office 时，可能会生成此错误。 代码应回退到用户身份验证备用系统。 在Outlook中，如果用户的租户在 Exchange Online[](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)中禁用新式验证，则也会发生Exchange Online。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
 
 ### <a name="13004"></a>13004
 
-资源无效。  (此错误应仅在开发中出现。) 未正确配置外接程序清单。 请更新此清单。 有关详细信息，请参阅[验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)。 最常见的问题是 **资源** 元素（在 **WebApplicationInfo** 元素中）具有与加载项的域不匹配的域。 虽然资源值的协议部分应该是“api”而不是“https”；域名的所有其他部分（包括端口，如果有）应与加载项域名的相应部分相同。
+资源无效。  (此错误应仅在 development.) 未正确配置外接程序清单。 请更新此清单。 有关详细信息，请参阅[验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)。 最常见的问题是 **资源** 元素（在 **WebApplicationInfo** 元素中）具有与加载项的域不匹配的域。 虽然资源值的协议部分应该是“api”而不是“https”；域名的所有其他部分（包括端口，如果有）应与加载项域名的相应部分相同。
 
 ### <a name="13005"></a>13005
 
@@ -82,7 +82,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 - 如果在开发过程中发生此错误，请确保加载项注册和加载项清单指定 `profile` 权限（和 `openid` 权限 - 如果你使用的是 MSAL.NET）。 如需了解更多信息，请参阅[向 Azure AD v2.0 终结点注册加载项](register-sso-add-in-aad-v2.md)。
 - 在生产中，有几种情况可能导致此错误。 其中一些是：
   - 用户具有 Microsoft 帐户标识。
-  - 使用 MSA 时，某些会导致其他 13xxx 错误Microsoft 365 教育版或工作帐户导致 13007 错误。
+  - 使用 MSA 时，某些会导致其他 13xxx 错误之一Microsoft 365 教育版或工作帐户将导致 13007 错误。
 
   对于所有这些情况，代码应回退到用户身份验证备用系统。
 
@@ -92,7 +92,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 
 ### <a name="13010"></a>13010
 
-用户正在 Microsoft Edge 或 Internet Explorer 上的 Office 中运行加载项。 用户的域Microsoft 365和域均在浏览器设置 `login.microsoftonline.com` 中的不同安全区域。 此错误仅出现在 **Office 网页版** 中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
+用户正在加载项的 Office 中Microsoft Edge。 用户的域Microsoft 365和域，在浏览器设置 `login.microsoftonline.com` 中都在不同的安全区域中。 此错误仅出现在 **Office 网页版** 中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
 
 ### <a name="13012"></a>13012
 
@@ -107,7 +107,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 
 ### <a name="13013"></a>13013
 
-调用时间过短，因此Office最近一次 `getAccessToken` 调用。 这通常是由对 方法的无限循环调用导致的。 建议在一些方案中撤回此方法。 但是，您的代码应该使用计数器或标志变量来确保不会重复调用该方法。 如果同一"重试"代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何在HomeES6.js`retryGetAccessToken` 或ssoAuthES6.js[](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) [中ssoAuthES6.js。 ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
+调用时间过短，因此Office最近一次 `getAccessToken` 调用。 这通常是由对 方法的无限循环调用导致的。 建议在一些方案中撤回此方法。 但是，您的代码应该使用计数器或标志变量来确保不会重复调用该方法。 如果同一"重试"代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何在HomeES6.js`retryGetAccessToken` 或[ssoAuthES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) [中ssoAuthES6.js。 ](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="50001"></a>50001
 

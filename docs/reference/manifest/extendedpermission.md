@@ -1,14 +1,14 @@
 ---
 title: 清单文件中 ExtendedPermission 元素
 description: 定义加载项访问关联 API 或功能所需的扩展权限。
-ms.date: 10/15/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3655ff43088e4506c8bf4125a4a9fae1ef721b4e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 127ad4ea1df0d069a12f642e8fafdfcad006d715
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152304"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990780"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission` 元素
 
@@ -17,11 +17,13 @@ ms.locfileid: "59152304"
 > [!IMPORTANT]
 > 要求集 1.9 中引入了对此元素的支持。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
+**外接程序类型：** 邮件
+
 ## <a name="available-extended-permissions"></a>可用的扩展权限
 
 以下是可用值。
 
-|可用值|描述|Hosts|
+|可用值|说明|Hosts|
 |---|---|---|
 |`AppendOnSend`|声明外接程序正在使用[Office。Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendOnSendAsync_data__options__callback_) API。|Outlook|
 

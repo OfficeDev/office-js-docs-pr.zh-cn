@@ -1,14 +1,14 @@
 ---
 title: 运行 Office 加载项的要求
 description: 了解最终用户在加载项中运行所需的客户端和Office要求。
-ms.date: 07/27/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e846da92ac398fa16ed51764a419e9a05b85293e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b39af2b381bc6dd29df2f1925ca5cbf67740e4a8
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149213"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990556"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -29,7 +29,7 @@ ms.locfileid: "59149213"
 > [!TIP]
 > 在 Visual Studio 中开发和调试加载项时，Visual Studio 使用 IIS Express 在本地部署并运行加载项的网页文件，无需使用其他 Web 服务器。
 
-对于内容和任务窗格外接程序，在受支持的 Office 客户端应用程序（Excel、PowerPoint、Project 或 Word）中，您还需要 SharePoint 上的应用程序目录来上载外接程序的 XML 清单文件[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)，或者您需要使用集成应用程序部署外接程序。 [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+对于内容和任务窗格外接程序，在受支持的 Office 客户端应用程序（Excel、PowerPoint、Project 或 Word）中，您还需要 SharePoint 上的应用程序目录来上载外接程序的 XML 清单[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)文件，或者您需要使用集成应用程序部署外接程序。 [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
 
 若要测试和运行 Outlook 外接程序，用户的 Outlook 电子邮件帐户必须驻留在 Exchange 2013 或更高版本上，这可以通过 Microsoft 365、Exchange Online 或本地安装获得。 用户或管理员在该服务器上安装 Outlook 外接程序的清单文件。
 
@@ -38,7 +38,7 @@ ms.locfileid: "59149213"
 
 ## <a name="client-requirements-windows-desktop-and-tablet"></a>客户端要求：Windows 台式机和平板电脑
 
-为基于 Windows 台式机、笔记本电脑或平板电脑设备上运行的受支持的 Office 桌面客户端或 Web 客户端开发 Office 外接程序需要以下软件。
+为基于 Windows 的台式机、笔记本电脑或平板电脑设备上运行的受支持的 Office 桌面客户端或 Web 客户端开发 Office 外接程序需要以下软件。
 
 - 对于 Windows x86 和 x64 台式机与平板电脑（如 Surface Pro）：
   - 在 Windows 7 或更高版本上运行的 32 位或 64 位版本 Office 2013。
@@ -66,7 +66,7 @@ Outlook作为加载项的一部分分发的 Mac Microsoft 365支持Outlook加载
 
 ## <a name="client-requirements-browser-support-for-office-web-clients-and-sharepoint"></a>客户端要求：针对 Office Web 客户端和 SharePoint 的浏览器支持
 
-支持 ECMAScript 5.1、HTML5 和 CSS3（例如 Internet Explorer 11，或者 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版）的任意浏览器。
+支持 ECMAScript 5.1、HTML5 和 CSS3 的任何浏览器（Internet Explorer 除外），例如 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 。
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>客户端要求：非 Windows 智能手机和平板电脑

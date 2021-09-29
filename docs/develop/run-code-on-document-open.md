@@ -1,14 +1,14 @@
 ---
 title: 文档打开时在 Office 加载项中运行代码
 description: 了解如何在文档打开时Office外接程序外接程序中运行代码。
-ms.date: 12/28/2020
+ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ce550284a10a9410978402f087c2caf231a5917f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 884409fb161970c57b32921192544592ca39bb2c
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149308"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990549"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>文档打开时在 Office 加载项中运行代码
 
@@ -29,23 +29,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 > [!NOTE]
 > `setStartupBehavior`方法是异步的。
 
-## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>在打开文档时将外接程序配置为无加载行为
-
-以下代码将外接程序配置为在打开文档时不启动。 相反，它将在用户以某种方式参与时启动，例如选择功能区按钮或打开任务窗格。
-
-```JavaScript
-Office.addin.setStartupBehavior(Office.StartupBehavior.none);
-```
-
-## <a name="get-the-current-load-behavior"></a>获取当前加载行为
-
-若要确定当前启动行为是什么，请运行以下函数，该函数返回 `Office.StartupBehavior` 对象。
-
-```JavaScript
-let behavior = await Office.addin.getStartupBehavior();
-```
-
-## <a name="how-to-run-code-when-the-document-opens"></a>如何在文档打开时运行代码
+## <a name="place-startup-code-in-officeinitialize"></a>将启动代码放在 Office.initialize 中
 
 当外接程序配置为在打开文档时加载时，它将立即运行。 `Office.initialize`将调用事件处理程序。 将启动代码放在 `Office.initialize` 或 `Office.onReady` 事件处理程序中。
 
@@ -81,7 +65,7 @@ async function onChange(event) {
 }
 ```
 
-以下PowerPoint代码展示了如何为文档文档中的选择更改事件注册PowerPoint处理程序。 如果您将外接程序配置为在文档打开时加载，则此代码将在文档打开时注册事件处理程序。 您可以在打开任务窗格之前处理更改事件。
+下面的PowerPoint代码展示了如何为文档文档中的选择更改事件注册PowerPoint处理程序。 如果您将外接程序配置为在文档打开时加载，则此代码将在文档打开时注册事件处理程序。 您可以在打开任务窗格之前处理更改事件。
 
 ```JavaScript
 // This is called as soon as the document opens.
@@ -101,6 +85,22 @@ Office.onReady(info => {
 async function onChange(event) {
   console.log("Change type of event: " + event.type);
 }
+```
+
+## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>在打开文档时将外接程序配置为无加载行为
+
+以下代码将外接程序配置为在打开文档时不启动。 相反，它将在用户以某种方式参与时启动，例如选择功能区按钮或打开任务窗格。
+
+```JavaScript
+Office.addin.setStartupBehavior(Office.StartupBehavior.none);
+```
+
+## <a name="get-the-current-load-behavior"></a>获取当前加载行为
+
+若要确定当前启动行为是什么，请运行以下函数，该函数返回 `Office.StartupBehavior` 对象。
+
+```JavaScript
+let behavior = await Office.addin.getStartupBehavior();
 ```
 
 ## <a name="see-also"></a>另请参阅

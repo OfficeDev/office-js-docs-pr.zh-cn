@@ -1,20 +1,20 @@
 ---
 title: 适用于 Outlook Mobile 的 Outlook 外接程序
-description: Outlook商业帐户和 Outlook.com 帐户Microsoft 365支持移动外接程序。
-ms.date: 09/08/2021
+description: Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。
+ms.date: 09/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 312e333e41dae5fa061540bec5018d4d2034b66b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e2b43a555821856256bb3da65ecac912f3e60620
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148827"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990815"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>适用于 Outlook Mobile 的外接程序
 
 现在，外接程序在 Outlook Mobile 上可用，它们使用适用于其他 Outlook 终结点的相同 API。如果已经生成适用于 Outlook 的外接程序，那么则可以很轻松地在 Outlook Mobile 上使用该外接程序。
 
-Outlook商业帐户和 Outlook.com 帐户Microsoft 365支持移动外接程序。 但是，当前不支持 Gmail 帐户。
+Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但是，当前不支持 Gmail 帐户。
 
 **iOS 版 Outlook 中的任务窗格示例**
 
@@ -24,7 +24,7 @@ Outlook商业帐户和 Outlook.com 帐户Microsoft 365支持移动外接程序�
 
 **Android 版 Outlook 中的任务窗格示例**
 
-![Android 版中任务窗格Outlook屏幕截图。](../images/outlook-mobile-addin-taskpane-android.png)
+![Android 上 Outlook任务窗格的屏幕截图。](../images/outlook-mobile-addin-taskpane-android.png)
 
 > [!IMPORTANT]
 > 外接程序在移动浏览器中的新式 Outlook中不起作用。 有关详细信息，请参阅Outlook[浏览器上的升级。](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)
@@ -61,11 +61,11 @@ Outlook商业帐户和 Outlook.com 帐户Microsoft 365支持移动外接程序�
 
 **从 Android 上的电子邮件创建 Trello 卡片的用户交互示例**
 
-![动态 GIF，显示用户在 android Outlook移动外接程序的交互。](../images/outlook-mobile-addin-interaction-android.gif)
+![动态 GIF，显示用户在 Android Outlook移动外接程序的交互。](../images/outlook-mobile-addin-interaction-android.gif)
 
 ## <a name="testing-your-add-ins-on-mobile"></a>在移动电话上测试外接程序
 
-若要在 Outlook Mobile 上测试加载项，可以将加载项旁加载到 O365 或 Outlook.com 帐户。在 Outlook 网页版中，转到设置齿轮，并选择“**管理集成**”或“**管理加载项**”。在靠近顶部的位置，单击显示的“**单击此处添加自定义加载项**”并上传清单。请确保清单格式正确以包含 `MobileFormFactor`，否则将无法上传。
+若要在 Outlook Mobile 上测试外接程序，请首先将[](sideload-outlook-add-ins-for-testing.md)外接程序旁加载至 Web、Windows 或 Mac 上的 O365 或 Outlook.com 帐户。 请确保清单的格式正确，以包含 ，否则它不会在移动设备上的 Outlook `MobileFormFactor` 客户端中加载。
 
 在加载项正常运行后，请务必在不同尺寸的屏幕（包括电话和平板电脑）上测试加载项。应确保加载项符合与对比度、字号和颜色有关的辅助功能准则，并且还适用于屏幕阅读器（如 iOS 上的 VoiceOver 或 Android 上的 TalkBack）。
 

@@ -1,14 +1,14 @@
 ---
 title: 清单文件中 ExtendedPermissions 元素
 description: 定义外接程序访问关联 API 或功能所需的扩展权限的集合。
-ms.date: 10/15/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 633609e43b9de656b5bc483fc59a5b4c24556254
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9c8316e045323b6b8c9c8ef140944b92c08f543c
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152595"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990640"
 ---
 # <a name="extendedpermissions-element"></a>ExtendedPermissions 元素
 
@@ -16,6 +16,8 @@ ms.locfileid: "59152595"
 
 > [!IMPORTANT]
 > 要求集 1.9 中引入了对此元素的支持。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+
+**外接程序类型：** 邮件
 
 ## <a name="child-elements"></a>子元素
 

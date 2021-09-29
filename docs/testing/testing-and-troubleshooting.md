@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
 description: 了解如何解决加载项中的Office错误。
-ms.date: 07/08/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 58983f9733e5a05c3aae317f9cc707de9aee8430
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9d5664ab702b205a0002201a223a72154a3c69be
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152656"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990542"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -40,7 +40,7 @@ ms.locfileid: "59152656"
 
 如果在 Windows 上运行并[使用 Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) 的 Outlook 加载项不能正常工作，请尝试在 Internet Explorer 中启用脚本调试。
 
-- 转到工具> **Internet 选项**  >  **高级**。
+- 转到工具> Internet **选项**  >  **高级**。
 - 在“浏览”下，取消选中“禁用脚本调试 (Internet Explorer)”和“禁用脚本调试 (其他)”。
 
 我们建议您仅在解决问题时取消选中这些设置。如果您将其保持未选中状态，您在浏览时将会收到提示。解决此问题后，再次选中“禁用脚本调试 (Internet Explorer)”和“禁用脚本调试 (其他)”。
@@ -67,9 +67,9 @@ ms.locfileid: "59152656"
 
 |**受影响的浏览器**|**受影响的平台**|
 |:--------------------|:---------------------|
-|Internet Explorer、Microsoft Edge|Office 网页版|
+|Microsoft Edge|Office 网页版|
 
-若要解决此问题，最终用户或管理员可以向 Internet Explorer 中的受信任站点列表添加外接程序的域。无论使用的是 Internet Explorer 还是 Microsoft Edge 浏览器，请使用相同过程。
+若要解决此问题，最终用户或管理员可以将加载项的域添加到加载项浏览器的受信任Microsoft Edge列表中。
 
 > [!IMPORTANT]
 > 请勿将不信任的加载项的 URL 添加到受信任网站列表中。

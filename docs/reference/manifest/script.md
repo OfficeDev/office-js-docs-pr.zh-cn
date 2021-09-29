@@ -1,18 +1,20 @@
 ---
 title: 清单文件中的 Script 元素
 description: Script 元素定义自定义函数在自定义脚本Excel。
-ms.date: 10/09/2018
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e6c3c1946bbb45b2fd41e4f39b46f9429b17343e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 259976f752cf3fca72c5012bedd92b9bf021f6aa
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152517"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990668"
 ---
 # <a name="script-element"></a>Script 元素
 
 定义 Excel 中的自定义函数所使用的脚本设置。
+
+**外接程序类型：** 自定义函数
 
 ## <a name="attributes"></a>属性
 
