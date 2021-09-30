@@ -1,14 +1,14 @@
 ---
 title: 测试和调试 Office 加载项
 description: 了解如何测试和调试 Office 加载项
-ms.date: 05/19/2021
+ms.date: 09/24/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 77e99d47783f7c613ad25f8b557cc81ee12d507a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: fd7bcaf5fdc6ded1a2d6991a4ab5207e515fad16
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152463"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990787"
 ---
 # <a name="test-and-debug-office-add-ins"></a>测试和调试 Office 加载项
 
@@ -24,7 +24,7 @@ Office 加载项跨主要平台运行，因此需要在用户可能运行 Office
 > [!IMPORTANT]
 > 通过 AppSource 营销的加载项通过了包括在所有平台上测试的验证过程。 此外，加载项已通过所有主要新式浏览器（包括 Microsoft Edge（基于 Chromium 的 WebView2）、Chrome 和 Safari）针对 Office 网页版进行了测试。 因此，提交 AppSource 之前，应在这些平台和浏览器上先进行测试。 有关验证详细信息，请参阅 [商业市场证书策略](/legal/marketplace/certification-policies)，尤其是 [第 1120.3 一节](/legal/marketplace/certification-policies#11203-functionality)，以及 [Office 加载项应用程序和可用性页面](../overview/office-add-in-availability.md)。
 >
-> AppSource 不使用 Internet Explorer 或旧版 Microsoft Edge (WebView1) 测试 Office 网页版中的加载项。 但如果有大量用户使用这两种浏览器打开 Office 网页版，则应使用这两种浏览器进行测试。 有关详细信息，请参阅 [支持 Internet Explorer 11](../develop/support-ie-11.md) 和 [Microsoft Edge 问题疑难解答](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。 Office 仍然支持这些浏览器的加载项，因此，如果认为你在加载项在这些浏览器中的运行方式方面遇到 bug，请为 [office-js](https://github.com/OfficeDev/office-js/issues/new/choose) 存储库创建问题。
+> AppSource 不使用 Internet Explorer 或旧版 Microsoft Edge (WebView1) 测试 Office 网页版中的加载项。 但如果有大量用户使用旧版 Edge 在 Web 上打开 Office，则需要进行测试。 (Office 网页版无法在 Internet Explorer 中打开，因此你无法也不需要使用 Internet Explorer 在 Web 上测试 Office。) 有关详细信息，请参阅[支持Internet Explorer 11](../develop/support-ie-11.md)和[Microsoft Edge 疑难解答](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。 Office 仍然支持这些浏览器的加载项，因此，如果您认为加载项在浏览器中运行时遇到 bug，请为[ office-js](https://github.com/OfficeDev/office-js/issues/new/choose) 存储库创建问题。
 
 ## <a name="sideload-an-office-add-in-for-testing"></a>旁加载 Office 加载项以供测试
 
@@ -48,7 +48,7 @@ Office 加载项的调试过程也因平台而异。 下面的文章分别介绍
 
 - [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)
 
-- [在 iPad 和 Mac 上调试 Office 加载项](debug-office-add-ins-on-ipad-and-mac.md)
+- [在 Mac 上调试 Office 加载项](debug-office-add-ins-on-ipad-and-mac.md)
 
 - [适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展](debug-with-vs-extension.md)
 
