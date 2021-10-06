@@ -1,21 +1,22 @@
 ---
 title: Microsoft Office外接程序社区通话
 description: 每月Microsoft Office外接程序社区通话日程安排和资源。
-ms.date: 09/09/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 056fc0a260ebdd22ea0b53c73ef2c1ef25e16db0
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: e22840b4a47354c698a20575a000f370ad8c0518
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2021
-ms.locfileid: "59450805"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138448"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
-外接程序Microsoft Office通话是每月一次通话，你可以在这里了解有关新功能、开发实践以及有关创建外接程序Office其他信息。社区通话在每月的第二个星期三上午 8：00 PDT 进行。 可以从 下载日历邀请 [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) 。
+the Microsoft Office Add-ins community call is a monthly call where you can learn more about new features， development practices， and additional information about creating Office Add-ins.社区通话在每月的第二个星期三上午 8：00 PDT 进行。 可以从 下载日历邀请 [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) 。
 
 错过以前的社区通话？ 查看以下博客资源以跟进讨论！
 
+- [Office外接程序社区通话 – 2021 年 9 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-september-8-2021/ba-p/2747100)
 - [Office外接程序社区通话 – 2021 年 8 月 11 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-august-2021/ba-p/2661372)
 - [Office外接程序社区通话 – 2021 年 7 月 14 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-july-2021/ba-p/2573384)
 - [Office外接程序社区通话 – 2021 年 6 月 9 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-june-2021/ba-p/2446156)
@@ -37,6 +38,6 @@ ms.locfileid: "59450805"
 - [定期的每月社区通话日历邀请](https://aka.ms/officeaddinscommunitycall)
 - [Community呼叫主题请求和问题](https://aka.ms/officeaddinsform)
 - [Microsoft 365开发人员 YouTube 频道](https://aka.ms/m365devyoutube)
-- [Microsoft 365社区 YouTube 频道](https://aka.ms/m365pnp/videos )
+- [Microsoft 365 YouTube 频道](https://aka.ms/m365pnp/videos )
 - [Microsoft 365Tech Community 上的 PnP](https://aka.ms/m365pnp/community)
 - [Microsoft 365PnP 技术社区博客](https://aka.ms/m365pnp/community/blog)

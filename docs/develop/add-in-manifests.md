@@ -1,20 +1,20 @@
 ---
 title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
-ms.date: 07/08/2020
+ms.date: 09/28/2021
 ms.localizationpriority: high
-ms.openlocfilehash: e948f3023613780af48bdad655230db03b740821
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9e0e630d9a64390f1f8d5e4ca78262ec8cc998e4
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149182"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138490"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
 Office 外接程序的 XML 清单文件描述，当最终用户安装外接程序并将其与 Office 文档和应用程序配合使用时，应如何激活外接程序。
 
-基于此架构的 XML 清单文件允许 Office 外接程序执行以下内容：
+XML 清单文件支持 Office 加载项执行以下操作：
 
 * 通过提供 ID、版本、说明、显示名称和默认区域设置进行自我描述。
 
@@ -45,7 +45,7 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
 | [OfficeApp][]                                                                                |    X    |     X     |    X    |
 | [Id][]                                                                                       |    X    |     X     |    X    |
-| [Version][]                                                                                  |    X    |     X     |    X    |
+| [版本][]                                                                                  |    X    |     X     |    X    |
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
 | [DisplayName][]                                                                              |    X    |     X     |    X    |
@@ -146,6 +146,57 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
 ```
+
+## <a name="version-overrides-in-the-manifest"></a>清单中的版本替代
+
+可选的 [VersionOverrides](../reference/manifest/versionoverrides.md) 元素值得特别提及。 它包含支持其他加载项功能的子标记。 其中一些为：
+
+ - 自定义 Office 功能区和菜单。
+ - 自定义 Office 与加载项在其中运行的嵌入式浏览器运行时一起工作的方式。
+ - 配置加载项如何与 Azure Active Directory 和 Microsoft Graph 交互以进行单一登录。
+
+`VersionOverrides` 的一些子代元素具有替代父级 `OfficeApp` 元素值的值。 例如，`VersionOverrides` 中的 `Hosts` 元素替代 `OfficeApp` 中的 `Hosts` 元素。
+
+`VersionOverrides` 元素具有其自己的架构（实际上有四个架构），具体取决于加载项的类型及其使用的功能。 架构包括：
+
+- [任务窗格 1.0](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)
+- [内容 1.0](/openspecs/office_file_formats/ms-owemxml/c9cb8dca-e9e7-45a7-86b7-f1f0833ce2c7)
+- [邮件 1.0](/openspecs/office_file_formats/ms-owemxml/578d8214-2657-4e6a-8485-25899e772fac)
+- [邮件 1.1](/openspecs/office_file_formats/ms-owemxml/8e722c85-eb78-438c-94a4-edac7e9c533a)
+
+在使用 `VersionOverrides` 元素时，`OfficeApp` 元素必须具有标识相应架构的 `xmlns` 属性。 属性的可能值如下：
+
+- `http://schemas.microsoft.com/office/taskpaneappversionoverrides`
+- `http://schemas.microsoft.com/office/contentappversionoverrides`
+- `http://schemas.microsoft.com/office/mailappversionoverrides`
+
+`VersionOverrides` 元素本身还必须具有 `xmlns` 属性来指定架构。 可能的值包括上述三个和以下值：
+
+- `http://schemas.microsoft.com/office/mailappversionoverrides/1.1`
+
+`VersionOverrides`元素还必须具有指定架构版本的 `xsi:type` 属性。 可能的值如下：
+
+- `VersionOverridesV1_0`
+- `VersionOverridesV1_1`
+
+以下是在任务窗格加载项和邮件加载项中分别使用的 `VersionOverrides` 的示例。 请注意，在使用版本 1.1 的邮件 `VersionOverrides` 时，它必须是类型 1.0 的父级 `VersionOverrides` 的最后一个子级。 内部 `VersionOverrides` 中子元素的值替代父级 `VersionOverrides` 和祖父级 `OfficeApp` 元素中同名元素的值。
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <!-- child elements omitted -->
+</VersionOverrides>
+```
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <!-- other child elements omitted -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <!-- child elements omitted -->
+  </VersionOverrides>
+</VersionOverrides>
+```
+
+有关包含 `VersionOverrides` 元素的清单示例，请参阅 [清单 v1.1 XML 文件示例和架构](#manifest-v11-xml-file-examples-and-schemas)。
 
 ## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a>指定从中执行 Office .js API 调用的域
 

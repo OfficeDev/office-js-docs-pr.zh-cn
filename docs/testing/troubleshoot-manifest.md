@@ -1,14 +1,14 @@
 ---
 title: 验证 Office 加载项的清单
-description: 了解如何使用 XML 架构和其他工具Office外接程序的清单。
+description: 了解如何使用 XML 架构和其他Office验证外接程序的清单。
 ms.date: 09/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 60151522906fc45c8d0d501c8263acd818612897
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b84461a8062ac0ca0300f869fcf4dba0019a6a9b
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152233"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138609"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 
@@ -25,7 +25,7 @@ ms.locfileid: "59152233"
 npm run validate
 ```
 
-![动态 GIF，显示 Yo Office在命令行中运行并生成显示"验证通过"的结果的验证程序。](../images/yo-office-validator.gif)
+![动态 GIF，显示 Yo Office验证程序在命令行中运行并生成显示"验证通过"的结果。](../images/yo-office-validator.gif)
 
 > [!NOTE]
 > 若要访问此功能，必须使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)版本 1.1.17 或更高版本创建加载项项目。
@@ -75,4 +75,4 @@ npm run validate
 - [清除 Office 缓存](clear-cache.md)
 - [使用运行时日志记录功能调试加载项](runtime-logging.md)
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
-- [调试 Office 外接程序](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [调试 Office 外接程序](debug-add-ins-using-f12-developer-tools-on-windows.md)

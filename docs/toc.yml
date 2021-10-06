@@ -268,7 +268,7 @@ items:
               - name: 从任务窗格附加调试器
                 href: testing/attach-debugger-from-task-pane.md
               - name: 使用开发者工具调试
-                href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+                href: testing/debug-add-ins-using-f12-developer-tools-on-windows.md
               - name: 使用 Edge Chromium WebView2 进行调试
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'

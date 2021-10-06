@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 FunctionFile 元素
 description: 为外接程序通过外接程序命令公开的操作指定源代码文件，这些外接程序命令执行 JavaScript 函数，而不显示 UI。
-ms.date: 11/06/2020
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 443fde5cc5456508556962254ecceb6bd717e8a8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e8d65e8d8ba94dd63dc82c0519260157b1d22a62
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152625"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138756"
 ---
 # <a name="functionfile-element"></a>FunctionFile 元素
 
@@ -17,7 +17,22 @@ ms.locfileid: "59152625"
 * 执行 JavaScript 函数而不是显示 UI 的外接程序命令。
 * 执行 JavaScript 函数的键盘快捷方式。
 
+**外接程序类型：** 任务窗格、邮件
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 任务窗格 1.0
+- Mail 1.0
+- 邮件 1.1
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
 元素 `FunctionFile` 是 [DesktopFormFactor](desktopformfactor.md) 或 [MobileFormFactor 的子元素](mobileformfactor.md)。 元素的 属性不能超过 32 个字符，并且设置为 元素中元素的 属性值，该元素包含 HTML 文件的 URL，该文件包含或加载无 UI 加载项命令按钮使用的所有 `resid` `FunctionFile` `id` `Url` `Resources` JavaScript[](control.md)函数，如 Control 元素所定义。
+
+> [!NOTE]
+> 当外接程序配置为使用共享运行时时，代码文件中的函数[](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)将在同一 JavaScript 运行时 (中运行，并共享一个通用全局命名空间) 作为外接程序任务窗格 (（如果有) ）中的 JavaScript。
+>
+> 元素 `FunctionFile` 和关联的代码文件还具有使用自定义键盘快捷方式（需要共享运行时）[](../../design/keyboard-shortcuts.md)的特殊角色。
 
 下面是 元素 `FunctionFile` 的一个示例。
 

@@ -1,18 +1,30 @@
 ---
 title: 清单文件中的 GetStarted 元素
 description: 提供在 Word、Excel、PowerPoint 和 OneNote 中安装外接程序时出现的标注OneNote。
-ms.date: 09/17/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c311e1bb5fbc2db265f430c8762216ad3a727107
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: 1630b50824cda18ca92ef6b34b0105acf9a4ca9c
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474341"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138748"
 ---
 # <a name="getstarted-element"></a>GetStarted 元素
 
 提供在 Word、Excel、PowerPoint 和 OneNote 中安装外接程序时出现的标注OneNote。 **GetStarted** 元素是 [DesktopFormFactor 的子元素](desktopformfactor.md)。 如果 **省略 GetStarted** 元素，标注将改为使用 [DisplayName](displayname.md) 和 [Description 元素](description.md) 中的值。
+
+**外接程序类型：** 任务窗格
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 任务窗格 1.0
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**与以下要求集相关联**：
+
+- [AppCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## <a name="child-elements"></a>子元素
 

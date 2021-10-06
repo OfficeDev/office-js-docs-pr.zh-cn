@@ -3,12 +3,12 @@ title: 清除 Office 缓存
 description: 了解如何清除计算机上的 Office 缓存。
 ms.date: 08/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 575ab4006187d6986f6ed79fc20e87e5b22725cb
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: 0e3d03303bea1b26f9cf982b59e58865fb683f5d
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474355"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138511"
 ---
 # <a name="clear-the-office-cache"></a>清除 Office 缓存
 
@@ -33,7 +33,7 @@ ms.locfileid: "59474355"
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-若要从 Outlook 中删除旁加载的加载项，请使用 [旁加载 Outlook 加载项以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的步骤，在列出已安装加载项的对话框中查找“**自定义加载项**”部分中的加载项。选择相应加载项所对应的省略号 (`...`)，然后选择“**删除**”以删除这一特定加载项。 如果此加载项删除不起作用，则像之前针对 Excel、Word 和 PowerPoint 所述的那样，删除 `Wef` 文件夹的内容。
+要从 Outlook 中删除旁加载的加载项，请使用 [旁加载 Outlook 加载项以供测试](../outlook/sideload-outlook-add-ins-for-testing.md) 中概述的步骤，以在列出已安装加载项的对话框的“**自定义加载项**”部分中查找该加载项。选择加载项所对应的省略号（`...`），然后选择“**删除**”以删除该特定加载项。如果加载项删除不起作用，则删除 `Wef` 的内容，如之前 针对 Excel、Word 和 PowerPoint 所述。
 
 另外，若要在 Microsoft Edge 中运行加载项时清除 Windows 10 上的 Office 缓存，可使用 Microsoft Edge 开发工具。
 
@@ -41,7 +41,7 @@ ms.locfileid: "59474355"
 > 如果只希望旁加载的加载项反映对其 HTML 或 JavaScript 源文件的最新更改，则应该不需要清除缓存。 相反，只需将焦点放在加载项的任务窗格中（通过单击任务窗格中的任意位置），然后按 **Ctrl+F5** 重新加载加载项。
 
 > [!NOTE]
-> 若要使用以下步骤清除 Office 缓存，加载项必须具有任务窗格。 如果加载项是无 UI 的加载项（例如，使用 [on-send](../outlook/outlook-on-send-addins.md) 功能的加载项），则需要先为加载项添加一个任务窗格，且该任务窗格使用与 [SourceLocation](../reference/manifest/sourcelocation.md) 相同的域，然后才能使用以下步骤来清除缓存。
+> 要使用以下步骤清除 Office 缓存，加载项必须具有任务窗格。如果加载项是无 UI 的加载项（例如，使用 [on-send](../outlook/outlook-on-send-addins.md) 功能的加载项），将需要先为加载项添加一个任务窗格，且该任务窗格使用与 [SourceLocation](../reference/manifest/sourcelocation.md) 相同的域，然后才能使用以下步骤来清除缓存。
 
 1. 安装 [Microsoft Edge 开发工具](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj)。
 
@@ -67,12 +67,12 @@ ms.locfileid: "59474355"
 
 ## <a name="clear-the-office-cache-on-ios"></a>清除 iOS 上的 Office 缓存
 
-若要清除 iOS 上的 Office 缓存，请从加载项中的 JavaScript 调用 `window.location.reload(true)` 以强制重新加载。 或者，重新安装 Office。
+要清除 iOS 上的 Office 缓存，请从加载项中的 JavaScript 调用 `window.location.reload(true)` 以强制重新加载。或者重新安装 Office。
 
 ## <a name="see-also"></a>另请参阅
 
 - [排查 Office 加载项中的开发错误](troubleshoot-development-errors.md)
-- [调试 Office 加载项](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [调试 Office 加载项](debug-add-ins-using-f12-developer-tools-on-windows.md)
 - [使用运行时日志记录功能调试加载项](runtime-logging.md)
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
 - [Office 加载项 XML 清单](../develop/add-in-manifests.md)

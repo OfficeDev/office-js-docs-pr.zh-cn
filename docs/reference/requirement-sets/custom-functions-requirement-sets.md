@@ -1,15 +1,15 @@
 ---
 title: 自定义函数要求集
 description: 有关 JavaScript API 的自定义函数Excel的详细信息。
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: af35f88041f5c90268782fb4cee44b44b56c4644
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: b9141042173799a96657db1bb7e2c603d6c358cc
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445847"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138456"
 ---
 # <a name="custom-functions-requirement-sets"></a>自定义函数要求集
 
@@ -17,9 +17,9 @@ ms.locfileid: "59445847"
 
 |  要求集  |  Office 2021 年 1 月或Windows<br>（一次性购买）  |  Windows 版 Office<br>（关联至 Microsoft 365 订阅）  |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版 |
 |:-----|:-----|:-----|:-----|:-----|:-----|
-| CustomFunctionsRuntime 1.3 | 16.0.13127.20296 或更高版本 | 16.0.13127.20296 或更高版本 | 不支持 | 16.40.20081000 或更高版本 | 2020 年 7 月 |
-| CustomFunctionsRuntime 1.2 | 16.0.13127.20296 或更高版本 | 16.0.12527.20194 或更高版本 | 不支持 | 16.34.20020900 或更高版本 | 2020 年 1 月 |
-| CustomFunctionsRuntime 1.1 | 16.0.13127.20296 或更高版本 | 16.0.12527.20092 或更高版本 | 不支持 | 16.34 或更高版本 | 2019 年 5 月 |
+| CustomFunctionsRuntime 1.3 | 16.0.14326.20454 或更高版本 | 16.0.13127.20296 或更高版本 | 不支持 | 16.40.20081000 或更高版本 | 2020 年 7 月 |
+| CustomFunctionsRuntime 1.2 | 16.0.14326.20454 或更高版本 | 16.0.12527.20194 或更高版本 | 不支持 | 16.34.20020900 或更高版本 | 2020 年 1 月 |
+| CustomFunctionsRuntime 1.1 | 16.0.14326.20454 或更高版本 | 16.0.12527.20092 或更高版本 | 不支持 | 16.34 或更高版本 | 2019 年 5 月 |
 
 > [!NOTE]
 > Excel 2019 Office或更早版本不支持自定义 (一次购买) 。

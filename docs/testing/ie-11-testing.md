@@ -1,23 +1,23 @@
 ---
 title: Internet Explorer 11 测试
 description: 在 Office 11 上测试Internet Explorer加载项。
-ms.date: 09/23/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 97c60b12fe735f5ff6b1fd7c8171f90f12dced72
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 40a380d902de211f2dfcbe2e474553dfa1b02fcb
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990773"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138623"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>在 Office 11 上测试Internet Explorer加载项
 
 > [!IMPORTANT]
-> **Internet Explorer外接程序Office中使用的内容**
+> **Internet Explorer加载项中Office仍使用**
 >
-> Microsoft 将终止对Internet Explorer的支持，但这不会显著影响Office外接程序。平台和 Office 版本（包括 Office 2019 的所有一次购买版本）的一些组合将继续使用 Internet Explorer 11 随附的 Webview 控件来托管外接程序，如[Office](../concepts/browsers-used-by-office-web-add-ins.md)外接程序使用的浏览器所说明。此外，提交到 AppSource 的加载项仍然需要支持这些组合Internet Explorer因此，这些组合对加载项[的支持也是必需的](/office/dev/store/submit-to-appsource-via-partner-center)。 有两 *个变化* ：
+> Microsoft 将终止对Internet Explorer的支持，但这不会显著影响Office外接程序。平台和 Office 版本（包括 Office 2019 的所有一次购买版本）的一些组合将继续使用 Internet Explorer 11 随附的 Webview 控件来托管外接程序，如[Office](../concepts/browsers-used-by-office-web-add-ins.md)外接程序使用的浏览器所说明。此外，提交到[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)的加载项仍然需要支持这些组合Internet Explorer，因此也支持这些组合。 有两 *个变化* ：
 >
-> - Office web 版中不再打开Internet Explorer。 因此，AppSource 不再使用作为浏览器Office web 版Internet Explorer加载项。 但 AppSource 仍测试使用 Office *版本的平台* 和桌面Internet Explorer。
+> - Office web 版中不再打开Internet Explorer。 因此，AppSource 不再使用 Office web 版 浏览器Internet Explorer测试加载项。 但 AppSource 仍测试使用 Office *版本的平台* 和桌面Internet Explorer。
 > - Script Lab[工具](../overview/explore-with-script-lab.md)不再支持Internet Explorer。
 
 如果计划通过 AppSource 销售加载项或计划支持较旧版本的 Windows 和 Office，加载项必须在基于 Internet Explorer 11 (IE11) 的可嵌入浏览器控件中运行。 可以使用命令行从外接程序使用的更现代运行时切换到 Internet Explorer 11 运行时进行此测试。 有关哪些版本的 Windows 和 Office使用 Internet Explorer 11 Web 视图控件的信息，请参阅 Office [Add-ins](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器。
@@ -25,7 +25,7 @@ ms.locfileid: "59990773"
 > [!IMPORTANT]
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项：
 >
-> - 在 ECMAScript 2015 (（也称为 ES6) 或更高版本 JavaScript）中编写代码，或在 TypeScript 中编写代码，然后使用编译器（如 [#A0](https://babeljs.io/) 或 [tsc](https://www.typescriptlang.org/index.html)）将代码编译为 ES5 JavaScript。
+> - 在 ECMAScript 2015 (（也称为 ES6) 或更高版本 JavaScript）中编写代码，或在 TypeScript 中编写代码，然后使用编译器（如 [#A0](https://babeljs.io/) 或 [tsc）](https://www.typescriptlang.org/index.html)将代码编译为 ES5 JavaScript。
 > - 在 ECMAScript 2015 或更高版本的 JavaScript[](https://en.wikipedia.org/wiki/Polyfill_(programming))中编写，但也加载填充库（如[core-js，](https://github.com/zloirock/core-js)它使 IE 能够运行代码）。
 >
 > 有关这些选项的详细信息，请参阅 Support [Internet Explorer 11](../develop/support-ie-11.md)。
@@ -33,7 +33,7 @@ ms.locfileid: "59990773"
 > 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
 
 > [!NOTE]
-> Office web 版 11 Internet Explorer中打开加载项，因此 (，也无需) 加载项Office web 版测试Internet Explorer。
+> Office web 版无法在 Internet Explorer 11 中打开，因此 (，也无需) 使用 Office web 版 测试Internet Explorer。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -55,7 +55,7 @@ ms.locfileid: "59990773"
     ```
 
 > [!TIP]
-> 不需要使用此命令，但它应有助于调试与 Internet Explorer 11 运行时相关的大多数问题。 为提供完整的稳定性，你应该使用具有 Windows 7、8.1 和 10 的各种版本以及 Office 的各种组合的计算机进行测试。 有关详细信息，请参阅浏览器[Office外接程序使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)和如何还原到早期版本[Office。](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841)
+> 虽然不需要使用此命令，但它应有助于调试与 11 运行时Internet Explorer大多数问题。 为提供完整的稳定性，应测试使用具有 Windows 7、8.1、10 和 11 的各种组合以及各种版本的 Office 的计算机。 有关详细信息，请参阅Office[外接程序](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器和如何还原到早期版本[的 Office。](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841)
 
 ### <a name="command-options"></a>命令选项
 
@@ -69,5 +69,5 @@ ms.locfileid: "59990773"
 
 * [测试和调试 Office 加载项](test-debug-office-add-ins.md)
 * [旁加载 Office 外接程序进行测试](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [使用 Windows 10 上的开发人员工具调试加载项](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+* [在加载项上使用开发人员工具调试Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
 * [从任务窗格附加调试器](attach-debugger-from-task-pane.md)

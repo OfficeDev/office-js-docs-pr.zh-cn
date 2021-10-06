@@ -1,15 +1,15 @@
 ---
 title: 共享运行时要求集
 description: 指定支持 SharedRuntime Office的平台和应用程序。
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e7d37e66a562799bc841fd7d7e7ad8cd6d89e7
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: c202ba3047b8dc3998b3bcfd241274bcedf5a93d
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2021
-ms.locfileid: "59450784"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138497"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共享运行时要求集
 
@@ -21,10 +21,10 @@ ms.locfileid: "59450784"
 
 | 要求集 | Office 2021 年 1 月或Windows<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅） | iPad 版 Office<br>（关联至 Microsoft 365 订阅） | Mac 版 Office<br>（关联至 Microsoft 365 订阅） | Office 网页版 | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | 版本 2002 (内部版本 12527.20092) 或更高版本 | 版本 2002 (内部版本 12527.20092) 或更高版本 | 不适用 | 16.35 或更高版本 | 2020 年 2 月 | 不适用 |
+| SharedRuntime 1.1  | 内部版本 16.0.14326.20454 或更高版本 | 版本 2002 (内部版本 12527.20092) 或更高版本 | 不适用 | 16.35 或更高版本 | 2020 年 2 月 | 不适用 |
 
 > [!IMPORTANT]
-> 共享的 JavaScript 运行时要求集仅在以下平台上可用。
+> 共享的 JavaScript 运行时要求集仅在以下应用程序Office可用。
 >
 > - Excel 网页版、Windows 和 Mac。
 > - Windows 版 PowerPoint（内部版本 13218.10000 或更高版本）。 适用于 PowerPoint 的共享 JavaScript 运行时当前处于预览阶段并可能会发生更改。 不支持在生产环境中使用。 要获取最新版本，你需要[加入 Office 预览体验计划](https://insider.office.com/join)。 试用预览版功能的好方法是使用 Microsoft 365 订阅。 如果还没有 Microsoft 365 订阅，可以通过加入[Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。

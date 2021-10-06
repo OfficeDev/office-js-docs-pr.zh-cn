@@ -1,15 +1,15 @@
 ---
 title: Dialog API 要求集
 description: 了解有关对话框 API 要求集的详细信息。
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7c39c1bbe8d13a003710024a79af4f7699c2c7
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: 4802189b0dbde30d0d9058b542c35cac47074998
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445731"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138553"
 ---
 # <a name="dialog-api-requirement-sets"></a>Dialog API 要求集
 
@@ -17,21 +17,21 @@ ms.locfileid: "59445731"
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了对话框 API 要求集、Office要求集的客户端应用程序，以及该对话框应用程序Office版本号。
 
-| 要求集 | Windows 版 Office 2013\*<br>（一次性购买） | Windows 版 Office 2016\*<br>（一次性购买） | Office 2021 年 1 月或Windows\*<br>（一次性购买） | Windows 版 Office<br> (订阅)  | iPad 版 Office<br> (订阅)  |  Mac 版 Office<br> (订阅)  | Office 网页版 | Office Online Server |
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| DialogApi 1.2  | 不适用 | 不适用 | 不适用 | 请参阅支持<br>部分如下 | 2.37 或更高版本 | 16.37 或更高版本 | 2020 年 6 月 | 不适用 |
-| DialogApi 1.1  | 生成号 15.0.4855.1000 或更高版本 | 生成号 16.0.4390.1000 或更高版本 | 生成号 16.0.4390.1000 或更高版本 | 版本 1602（生成号 6741.0000）或更高版本 | 1.22 或更高版本 | 15.20 或更高版本 | 2017 年 1 月 | 版本 1608（内部版本 7601.6800）或更高版本|
+| 要求集 | Windows 版 Office 2013\*<br>（一次性购买） | Windows 版 Office 2016\*<br>（一次性购买） | Windows 版 Office 2019\*<br>（一次性购买） | Office 2021 年 1 月或Windows\*<br>（一次性购买） | Windows 版 Office<br> (订阅)  | iPad 版 Office<br> (订阅)  |  Mac 版 Office<br> (订阅)  | Office 网页版 | Office Online Server |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| DialogApi 1.2  | 不适用 | 不适用 | 不适用 | 内部版本 16.0.14326.20454 或更高版本 | 请参阅支持<br>部分如下 | 2.37 或更高版本 | 16.37 或更高版本 | 2020 年 6 月 | 不适用 |
+| DialogApi 1.1  | 生成号 15.0.4855.1000 或更高版本 | 生成号 16.0.4390.1000 或更高版本 | 内部版本 16.0.12527.20720 或更高版本 | 内部版本 16.0.14326.20454 或更高版本 | 版本 1602（内部版本 6741.0000）或更高版本 | 1.22 或更高版本 | 15.20 或更高版本 | 2017 年 1 月 | 版本 1608（内部版本 7601.6800）或更高版本|
 
->\*一次购买的用户可能Office所有修补程序和更新。 如果是这样，Office在 UI 中报告其版本的 DLL 可能大于此处列出的版本，即使用户计算机上未安装支持 DialogApi 所需的更新 DLL。 若要确保安装了所需的修补程序，用户必须转到 Office 更新列表 ([Office 2013](/officeupdates/msp-files-office-2013)列表或 [Office 2016](/officeupdates/msp-files-office-2016)列表) ，搜索 **osfclient-x-none，** 然后安装列出的修补程序。
+>\*一次购买的用户可能Office所有修补程序和更新。 如果是这样，Office在 UI 中报告其版本的 DLL 可能大于此处列出的版本，即使用户计算机上未安装支持 DialogApi 所需的更新 DLL。 若要确保安装所需的修补程序，用户必须转到 Office 更新列表 ([Office 2013](/officeupdates/msp-files-office-2013)列表或 [Office 2016](/officeupdates/msp-files-office-2016)列表) ，搜索 **osfclient-x-none，** 然后安装列出的修补程序。
 
 ## <a name="office-on-windows-subscription-support"></a>Office订阅Windows (支持) 订阅
 
-DialogApi 1.2 要求集在消费者渠道版本 2005 (版本 12827.20268 或) 。 For Office on Windows， the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available June 9， 2020 or later. 每个频道支持的最低版本如下所示：  
+消费者渠道版本 2005（内部版本 12827.20268 或 (版本 12827.20268）支持 DialogApi 1.2 要求) 。 For Office on Windows， the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available June 9， 2020 or later. 每个频道支持的最低版本如下所示：  
 
 |频道 | 版本 | 内部版本|
 |:-----|:-----|:-----|
 |当前频道 | 2005 或更大 | 12827.20160 或更大|
-|月度企业频道 | 2004 或更大 | 12730.20430 或更大|
+|每月企业频道 | 2004 或更大 | 12730.20430 或更大|
 |半年度企业频道 | 2002 或更大 | 12527.20720 或更大|
 
 ## <a name="office-versions-and-build-numbers"></a>Office 版本和内部版本号

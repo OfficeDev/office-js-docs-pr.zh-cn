@@ -1,14 +1,14 @@
 ---
 title: 使用 Windows 上的 Microsoft Edge WebView2 （基于 Chromium）调试加载项
 description: 了解如何在 VS 代码中使用适用于 Microsoft Edge 扩展的调试器来调试使用 Microsoft Edge WebView2（基于 Chromium）的 Office 加载项。
-ms.date: 08/18/2021
+ms.date: 10/05/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 90c58352ef49a365cd80dd7699d23f40c800bbd6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8ee266b3197a2b02dd4d072b6666cd68add6fec9
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148818"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138644"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>使用 Windows 上的 Microsoft Edge Chromium WebView2 调试加载项
 
@@ -18,7 +18,7 @@ ms.locfileid: "59148818"
 
 - [Visual Studio Code](https://code.visualstudio.com/) （必须以管理员身份运行）
 - [Node.js （版本 10+）](https://nodejs.org/)
-- Windows 10
+- Windows 10、11
 - 支持包含 WebView2 的 Microsoft Edge（基于 Chromium）的平台和 Office 应用程序的组合，如 [ Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md) 中所述。如果 Microsoft 365 版本早于 2101，则需要安装 WebView2。 使用位于 [Microsoft Edge WebView2/在具有 Microsoft Edge Webview2 的...嵌入 Web 内容](https://developer.microsoft.com/microsoft-edge/webview2/) 的安装说明。
 
 ## <a name="install-and-use-the-debugger"></a>安装和使用调试器

@@ -3,19 +3,19 @@ title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf76b90405f5a4853f5a53411b28d429b1eb4b6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 333096d1ea63696e854b35c103da5d5670a940f3
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152627"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138667"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 
 可以使用运行时日志记录调试加载项的清单以及多个安装错误。 此功能可以帮助你标识并修复清单中未被 XSD 架构验证检测到的问题，例如资源 ID 间的不匹配等。 运行时日志记录对于调试执行加载项命令的加载项和 Excel 自定义功能尤其有用。
 
 > [!NOTE]
-> 运行时日志记录功能当前适用于桌面Office 2016 或更高版本。
+> 运行时日志记录功能当前适用于桌面版 Office 2016 或更高版本。
 
 > [!IMPORTANT]
 > 运行时日志记录功能影响性能。仅在需要调试加载项清单问题时，才启用此功能。
@@ -141,4 +141,4 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 - [验证 Office 加载项的清单](troubleshoot-manifest.md)
 - [清除 Office 缓存](clear-cache.md)
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
-- [调试 Office 外接程序](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [调试 Office 外接程序](debug-add-ins-using-f12-developer-tools-on-windows.md)

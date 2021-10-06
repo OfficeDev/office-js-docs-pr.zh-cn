@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript 预览 API
-description: 有关即将推出的 Word JavaScript API 的详细信息
+description: 有关即将推出的 Word JavaScript API 的详细信息。
 ms.date: 11/09/2020
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: c6aa7b8107e0443091f876baa8bd66ccb8db7061
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0aedc0dac2c4af62bf1e21b1c46690a27cbcfc95
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152370"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138772"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript 预览 API
 
@@ -54,13 +54,13 @@ ms.locfileid: "59152370"
 ||[getOnlyItemOrNullObject () ](/javascript/api/word/word.customxmlpartscopedcollection#getonlyitemornullobject--)|如果集合仅包含一个项，则此方法返回该项。|
 ||[items](/javascript/api/word/word.customxmlpartscopedcollection#items)|获取此集合中已加载的子项。|
 |[Document](/javascript/api/word/word.document)|[deleteBookmark (name： string) ](/javascript/api/word/word.document#deletebookmark-name-)|从文档中删除书签（如果存在）。|
-||[getBookmarkRange (name： string) ](/javascript/api/word/word.document#getbookmarkrange-name-)|获取书签的范围。|
+||[getBookmarkRange (名称：string) ](/javascript/api/word/word.document#getbookmarkrange-name-)|获取书签的范围。|
 ||[getBookmarkRangeOrNullObject (name： string) ](/javascript/api/word/word.document#getbookmarkrangeornullobject-name-)|获取书签的范围。|
 ||[customXmlParts](/javascript/api/word/word.document#customxmlparts)|获取文档中的自定义 XML 部件。|
 ||[onContentControlAdded](/javascript/api/word/word.document#oncontentcontroladded)|添加内容控件时发生。|
 ||[设置](/javascript/api/word/word.document#settings)|获取文档中加载项的设置。|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[deleteBookmark (name： string) ](/javascript/api/word/word.documentcreated#deletebookmark-name-)|从文档中删除书签（如果存在）。|
-||[getBookmarkRange (name： string) ](/javascript/api/word/word.documentcreated#getbookmarkrange-name-)|获取书签的范围。|
+||[getBookmarkRange (名称：string) ](/javascript/api/word/word.documentcreated#getbookmarkrange-name-)|获取书签的范围。|
 ||[getBookmarkRangeOrNullObject (name： string) ](/javascript/api/word/word.documentcreated#getbookmarkrangeornullobject-name-)|获取书签的范围。|
 ||[customXmlParts](/javascript/api/word/word.documentcreated#customxmlparts)|获取文档中的自定义 XML 部件。|
 ||[设置](/javascript/api/word/word.documentcreated#settings)|获取文档中加载项的设置。|
@@ -69,7 +69,7 @@ ms.locfileid: "59152370"
 ||[getLevelPicture (级别：number) ](/javascript/api/word/word.list#getlevelpicture-level-)|获取列表中指定级别的图片的 base64 编码字符串表示形式。|
 ||[resetLevelFont (level： number， resetFontName？： boolean) ](/javascript/api/word/word.list#resetlevelfont-level--resetfontname-)|重置列表中指定级别的项目符号、编号或图片的字体。|
 ||[setLevelPicture (level： number， base64EncodedImage？： string) ](/javascript/api/word/word.list#setlevelpicture-level--base64encodedimage-)|设置列表中指定级别的图片。|
-|[Range](/javascript/api/word/word.range)|[getBookmarks (includeHidden？： boolean， includeAdjacent？： boolean) ](/javascript/api/word/word.range#getbookmarks-includehidden--includeadjacent-)|获取区域内的所有书签或与区域重叠的名称。|
+|[区域](/javascript/api/word/word.range)|[getBookmarks (includeHidden？： boolean， includeAdjacent？： boolean) ](/javascript/api/word/word.range#getbookmarks-includehidden--includeadjacent-)|获取区域内的所有书签或与区域重叠的名称。|
 ||[insertBookmark (name： string) ](/javascript/api/word/word.range#insertbookmark-name-)|在范围中插入书签。|
 |[设置](/javascript/api/word/word.setting)|[delete()](/javascript/api/word/word.setting#delete--)|删除 Setting 对象。|
 ||[key](/javascript/api/word/word.setting#key)|获取设置的键。|

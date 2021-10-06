@@ -1,15 +1,15 @@
 ---
-ms.date: 09/23/2021
+ms.date: 10/05/2021
 title: 将 Office 加载项配置为使用共享 JavaScript 运行时
 ms.prod: non-product-specific
 description: 将 Office 加载项配置为使用共享 JavaScript 运行时，以支持其他功能区、任务窗格和自定义函数功能。
 ms.localizationpriority: high
-ms.openlocfilehash: b72f38fc51925124b62b14a4316f2117edfa9f7c
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 95a4cb410bf92a68c1790e3fba67ea482bdc78b6
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990563"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138470"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>将 Office 加载项配置为使用共享 JavaScript 运行时
 
@@ -40,7 +40,7 @@ ms.locfileid: "59990563"
 
 1. 启动 Visual Studio Code 并打开你生成的 Excel 或 PowerPoint 加载项项目。
 1. 打开 **manifest.xml** 文件。
-1. 如果生成 Excel 加载项，请更新“要求”部分，以使用[共享运行时](../reference/requirement-sets/shared-runtime-requirement-sets.md)，而不是自定义函数运行时。 XML 应该如下所示。
+1. 如果生成 Excel 加载项，请更新要求部分，以使用 [共享运行时](../reference/requirement-sets/shared-runtime-requirement-sets.md)，而不是自定义函数运行时。XML 应为如下所示。
 
     ```xml
     <Hosts>
@@ -188,7 +188,7 @@ ms.locfileid: "59990563"
 
 ## <a name="runtime-lifetime"></a>运行时生存期
 
-添加 `Runtime` 元素时，还需要指定值为 `long` 或 `short` 的生存期。 将此值设置为 `long` 以利用相关功能，例如在文档打开时启动加载项，在关闭任务窗格后继续运行代码，或从自定义函数中使用 CORS 和 DOM。
+在添加 `Runtime` 元素时，还指定了值为 `long` 或 `short` 的生存期。将此值设置为 `long` 以利用相关功能，例如在文档打开时启动加载项、在关闭任务窗格后继续运行代码，或从自定义函数中使用 CORS 和 DOM。
 
 > [!NOTE]
 > 默认生存期值为`short`，但我们建议在 Excel 加载项中使用`long`。如果在此例中将运行时设置为`short`，则当按下某个功能区按钮时，Excel 加载项将启动，但在功能区处理程序运行完毕后，它可能会关闭。 同样，打开任务窗格时，加载项将启动，但关闭任务窗格时，加载项可能会关闭。
@@ -226,7 +226,7 @@ ms.locfileid: "59990563"
 
 ### <a name="debugging"></a>调试
 
-使用共享运行时时，目前不能使用 Visual Studio Code 在 Windows 版 Excel 中调试自定义函数。 你需要改为使用开发人员工具。 有关详细信息，请参阅[使用 Windows 10 上的开发人员工具调试加载项](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)。
+使用共享运行时时，目前不能使用 Visual Studio Code 在 Windows 版 Excel 中调试自定义函数。 你需要改为使用开发人员工具。 有关详细信息，请参阅 [使用 Windows 上的开发人员工具调试加载项](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md)。
 
 ### <a name="multiple-task-panes"></a>多个任务窗格
 
@@ -234,7 +234,7 @@ ms.locfileid: "59990563"
 
 ## <a name="give-us-feedback"></a>向我们提供反馈
 
-我们非常乐意听取有关此功能的反馈。 如果你发现此功能存在任何 bug、问题或具有相关请求，请通过在 [office-js repo](https://github.com/OfficeDev/office-js) 中创建 GitHub 问题来告诉我们。
+我们非常乐于听取你关于此功能的反馈。如果发现此功能存在任何 bug、问题或具有相关请求，请通过在 [office-js repo](https://github.com/OfficeDev/office-js) 中创建 GitHub 问题来告诉我们。
 
 ## <a name="see-also"></a>另请参阅
 

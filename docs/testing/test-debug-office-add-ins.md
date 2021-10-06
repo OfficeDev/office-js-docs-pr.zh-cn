@@ -3,12 +3,12 @@ title: 测试和调试 Office 加载项
 description: 了解如何测试和调试 Office 加载项
 ms.date: 09/24/2021
 ms.localizationpriority: high
-ms.openlocfilehash: fd7bcaf5fdc6ded1a2d6991a4ab5207e515fad16
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 1a47c9e5b4d45dc2a20f7fd5dd04a384eea5cba3
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990787"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138595"
 ---
 # <a name="test-and-debug-office-add-ins"></a>测试和调试 Office 加载项
 
@@ -44,7 +44,7 @@ Office 加载项的调试过程也因平台而异。 下面的文章分别介绍
 
 - [从任务窗格附加调试器（在 Windows 上）](attach-debugger-from-task-pane.md)
 
-- [在 Windows 10 上使用 F12 开发人员工具调试加载项](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [在 Windows 10 上使用 F12 开发人员工具调试加载项](debug-add-ins-using-f12-developer-tools-on-windows.md)
 
 - [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)
 
