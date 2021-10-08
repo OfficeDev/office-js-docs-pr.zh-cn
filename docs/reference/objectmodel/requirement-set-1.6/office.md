@@ -3,16 +3,16 @@ title: Office命名空间 - 要求集 1.6
 description: Office邮箱 API 要求集 1.6 Outlook外接程序可用的命名空间成员。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b3641129159cd56b2589cf141fd5850d39a9b544
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e09539c9baf0e3388430619eefe00ed22bd58550
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149566"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237355"
 ---
 # <a name="office-mailbox-requirement-set-16"></a>Office (邮箱要求集 1.6) 
 
-该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office)。
+该 Office 命名空间提供所有 Office 应用中的加载项所使用的共享接口。此列表仅记录 Outlook 加载项所使用的接口。有关 Office 命名空间的完整列表，请参阅[公用 API](/javascript/api/office?view=outlook-js-1.6&preserve-view=true)。
 
 ##### <a name="requirements"></a>要求
 
@@ -52,7 +52,7 @@ ms.locfileid: "59149566"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
 |`Succeeded`| String|调用成功。|
 |`Failed`| 字符串|调用失败。|
@@ -79,9 +79,9 @@ ms.locfileid: "59149566"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
-|`Html`| String|请求以 HTML 格式返回的数据。|
+|`Html`| 字符串|请求以 HTML 格式返回的数据。|
 |`Text`| 字符串|请求以文本格式返回的数据。|
 
 ##### <a name="requirements"></a>要求
@@ -106,7 +106,7 @@ ms.locfileid: "59149566"
 
 ##### <a name="properties"></a>属性
 
-| 名称 | 类型 | 描述 | 最低要求集 |
+| 名称 | 类型 | Description | 最低要求集 |
 |---|---|---|:---:|
 |`ItemChanged`| 字符串 | 在任务窗格固定时，将选择不同的 Outlook 项进行查看。 | 1.5 |
 
@@ -132,9 +132,9 @@ ms.locfileid: "59149566"
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
-|`Body`| String|数据源来自邮件的正文。|
+|`Body`| 字符串|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
 ##### <a name="requirements"></a>要求

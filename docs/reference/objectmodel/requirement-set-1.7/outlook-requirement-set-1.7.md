@@ -1,18 +1,18 @@
 ---
 title: Outlook 外接程序 API 要求集 1.7
-description: '加载项 API Outlook要求集 1.7 (概述) '
+description: '加载项 API Outlook要求集 1.7 () '
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f9e20391113cddb78750e5933d2dd4ad11ba2a3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 51cd018d5e4438daf76b53e00195671b63afd50f
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152482"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237341"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Outlook 外接程序 API 要求集 1.7
 
-Outlook JavaScript API 的 Office API 子集包括可用于加载项的对象、方法、属性和Outlook事件。
+Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
@@ -43,7 +43,7 @@ Outlook JavaScript API 的 Office API 子集包括可用于加载项的对象、
 - 添加了 [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7&preserve-view=true)：添加了一个新枚举，该枚举指定对重复周期应用的时区。
 - 添加了 [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook/office.mailboxenums.recurrencetype?view=outlook-js-1.7&preserve-view=true)：添加了一个新枚举，该枚举指定重复周期的类型。
 - 添加了 [Office.MailboxEnums.WeekNumber](/javascript/api/outlook/office.mailboxenums.weeknumber?view=outlook-js-1.7&preserve-view=true)：添加了一个新枚举，该枚举指定是当月的第几周。
-- 修改了 [Office.EventType](/javascript/api/office/office.eventtype)：添加对 `RecurrenceChanged`、`RecipientsChanged` 和 `AppointmentTimeChanged` 事件的支持。
+- 修改了 [Office.EventType](/javascript/api/office/office.eventtype?view=outlook-js-1.7&preserve-view=true)：添加对 `RecurrenceChanged`、`RecipientsChanged` 和 `AppointmentTimeChanged` 事件的支持。
 
 ## <a name="see-also"></a>另请参阅
 

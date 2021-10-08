@@ -3,12 +3,12 @@ title: 获取和设置 Outlook 加载项中的元数据
 description: 可以使用以下漫游设置或自定义属性，管理 Outlook 加载项中的自定义数据。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fcff058fe05229d13a378fcba9c1b165e84fdd51
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8ac7915a7e9c0c34806052ff42e12acff60dcf2f
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148840"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237739"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>获取和设置 Outlook 加载项的元数据
 
@@ -21,7 +21,7 @@ ms.locfileid: "59148840"
 
 ## <a name="custom-data-per-mailbox-roaming-settings"></a>每个邮箱的自定义数据：漫游设置
 
-您可以使用 [RoamingSettings](/javascript/api/outlook/office.RoamingSettings) 对象指定特定于用户的 Exchange 邮箱的数据，例如用户的个人数据和首选项。当您的邮件外接程序在设计在其上运行的任何设备（台式机、平板电脑或智能手机）上漫游时，可以访问漫游设置。
+您可以使用 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 对象指定特定于用户的 Exchange 邮箱的数据，例如用户的个人数据和首选项。当您的邮件外接程序在设计在其上运行的任何设备（台式机、平板电脑或智能手机）上漫游时，可以访问漫游设置。
 
 对该数据的更改存储在当前 Outlook 会话的这些设置的内存副本中。您应该在更新后显式保存所有漫游设置，以便用户下次在同一设备或任何其他受支持设备上打开您的外接程序时可以使用这些设置。
 
@@ -114,7 +114,7 @@ function removeAddInSetting()
 
 与漫游设置类似，对自定义属性的更改将存储在当前 Outlook 会话的属性的内存副本中。为确保这些自定义属性在下次会话中可用，请使用 [CustomProperties.saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_)。
 
-这些特定于加载项、特定于项目的自定义属性只能使用 对象 `CustomProperties` 访问。 这些属性不同于 Outlook 对象模型中基于 MAPI 的自定义[UserProperties，](/office/vba/api/Outlook.UserProperties)以及 Exchange Web 服务 (EWS) 。 不能通过使用对象 `CustomProperties` 模型、EWS 或 REST Outlook直接访问。 若要了解如何使用 EWS 或 REST 访问，请参阅使用 EWS 或 REST 获取自定义 `CustomProperties` [属性一节](#get-custom-properties-using-ews-or-rest)。
+这些特定于加载项、特定于项目的自定义属性只能使用 对象 `CustomProperties` 访问。 这些属性不同于 Outlook 对象模型中基于 MAPI 的自定义[UserProperties，](/office/vba/api/Outlook.UserProperties)以及 Exchange Web 服务 (EWS) 。 您不能通过使用对象 `CustomProperties` 模型、EWS 或 REST Outlook直接访问。 若要了解如何使用 EWS 或 REST 访问，请参阅使用 EWS 或 REST 获取自定义 `CustomProperties` [属性一节](#get-custom-properties-using-ews-or-rest)。
 
 ### <a name="using-custom-properties"></a>使用自定义属性
 

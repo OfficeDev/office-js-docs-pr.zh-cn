@@ -3,18 +3,18 @@ title: Office.context - 预览要求集
 description: Office。适用于使用邮箱 API Outlook要求集的外接程序的上下文对象成员。
 ms.date: 12/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f09e84062bc12f3d69adbbbedd6d02679362a728
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c418c3acb4b02c11f56e87d3a27745111c3e968e
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149571"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237754"
 ---
 # <a name="context-mailbox-preview-requirement-set"></a>上下文 (邮箱预览要求集) 
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-Office.context 提供外接程序在所有应用程序中使用的共享Office接口。 此列表仅记录由加载项Outlook接口。有关 Office.context 命名空间的完整列表，请参阅通用 API 中的[Office.context 引用](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true)。
+Office.context 提供了外接程序在所有应用程序中使用的共享Office接口。 此列表仅记录加载项Outlook接口。有关 Office.context 命名空间的完整列表，请参阅通用[API Office.context 引用](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true)。
 
 ##### <a name="requirements"></a>要求
 
@@ -41,13 +41,13 @@ Office.context 提供外接程序在所有应用程序中使用的共享Office�
 
 ## <a name="property-details"></a>属性详细信息
 
-#### <a name="auth-auth"></a>身份验证 [：Auth](/javascript/api/office/office.auth)
+#### <a name="auth-auth"></a>身份验证 [：Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true)
 
-通过提供允许 Office 应用程序获取对外接程序 Web 应用程序的访问令牌的方法 ([SSO](../../../outlook/authenticate-a-user-with-an-sso-token.md)) 支持单一登录。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
+通过提供允许 Office 应用程序获取对外接程序 Web) 的访问令牌的方法，支持[SSO](../../../outlook/authenticate-a-user-with-an-sso-token.md) (单一登录。 这也使加载项能够间接访问已登录用户的 Microsoft Graph 数据，而不需要用户第二次登录。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>类型类型
 
-*   [Auth](/javascript/api/office/office.auth)
+*   [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要求
 
@@ -78,7 +78,7 @@ Office.context.auth.getAccessTokenAsync(function(result) {
 
 获取用户 () 指定用于编辑项目的语言区域设置。
 
-该值 `contentLanguage` 反映当前在客户端 **应用程序中** 由 File **> Options > Language** Office设置。
+该值 `contentLanguage` 反映当前编辑语言设置，该设置由> 客户端应用程序中>选项Office语言。
 
 ##### <a name="type"></a>类型
 
@@ -117,13 +117,13 @@ function write(message){
 ---
 ---
 
-#### <a name="diagnostics-contextinformation"></a>diagnostics： [ContextInformation](/javascript/api/office/office.contextinformation)
+#### <a name="diagnostics-contextinformation"></a>diagnostics： [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview&preserve-view=true)
 
 获取加载项运行环境的信息。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>类型类型
 
-*   [ContextInformation](/javascript/api/office/office.contextinformation)
+*   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要求
 
@@ -148,9 +148,9 @@ console.log("Platform: " + contextInfo.platform);
 
 #### <a name="displaylanguage-string"></a>displayLanguage：String
 
-获取区域设置 (语言) RFC 1766 语言标记格式，该标记格式由用户为 Office 应用程序的 UI 指定。
+获取区域设置 (语言) RFC 1766 语言标记格式，该标记格式由用户为 Office 客户端应用程序的 UI 指定。
 
-该值 `displayLanguage` 反映当前显示 **语言** 设置，该设置由 >**客户端** 应用程序中>"选项Office语言"。
+该值 `displayLanguage` 反映当前显示 **语言** 设置，该设置 **由**> 客户端应用程序中>选项Office语言。
 
 ##### <a name="type"></a>类型
 
@@ -189,16 +189,16 @@ function write(message){
 ---
 ---
 
-#### <a name="host-hosttype"></a>host： [HostType](/javascript/api/office/office.hosttype)
+#### <a name="host-hosttype"></a>host： [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview&preserve-view=true)
 
 获取Office加载项的应用程序。
 
 > [!NOTE]
 > 或者，您可以使用[Office.context.diagnostics](#diagnostics-contextinformation)属性获取主机。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>类型类型
 
-*   [HostType](/javascript/api/office/office.hosttype)
+*   [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要求
 
@@ -218,24 +218,24 @@ console.log(JSON.stringify(Office.context.host));
 ---
 ---
 
-#### <a name="officetheme-officetheme"></a>[officeTheme：OfficeTheme](/javascript/api/office/office.officetheme)
+#### <a name="officetheme-officetheme"></a>[officeTheme：OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview&preserve-view=true)
 
 提供了访问 Office 主题颜色的属性。
 
 > [!NOTE]
 > 此成员仅在 Outlook 支持Windows。
 
-使用 Office 主题颜色，可以将加载项的配色方案与用户通过文件 > Office 帐户 > Office 主题 **UI** 选择的当前 Office 主题协调，这适用于所有 Office 客户端应用程序。 使用 Office 主题颜色适用于邮件和任务窗格外接程序。
+使用 Office 主题颜色，可以将外接程序的配色方案与用户通过文件 > Office **帐户 > Office** 主题 UI 选择的当前 Office 主题协调，这适用于所有 Office 客户端应用程序。 使用 Office 主题颜色适用于邮件和任务窗格外接程序。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>类型类型
 
-*   [OfficeTheme](/javascript/api/office/office.officetheme)
+*   [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="properties"></a>属性
 
-|名称| 类型| 描述|
+|名称| 类型| 说明|
 |---|---|---|
-|`bodyBackgroundColor`| String|获取十六进制三原色形式的 Office 主题正文背景色。|
+|`bodyBackgroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文背景色。|
 |`bodyForegroundColor`| String|获取十六进制三原色形式的 Office 主题正文前景色。|
 |`controlBackgroundColor`| 字符串|获取十六进制三原色形式的 Office 主题控制背景色。|
 |`controlForegroundColor`| 字符串|获取十六进制三原色形式的 Office 主题正文控制颜色。|
@@ -274,9 +274,9 @@ function applyOfficeTheme(){
 > [!NOTE]
 > 或者，您可以使用[Office.context.diagnostics](#diagnostics-contextinformation)属性获取平台。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>类型类型
 
-*   [PlatformType](/javascript/api/office/office.platformtype)
+*   [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要求
 
@@ -296,13 +296,13 @@ console.log(JSON.stringify(Office.context.platform));
 ---
 ---
 
-#### <a name="requirements-requirementsetsupport"></a>requirements： [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+#### <a name="requirements-requirementsetsupport"></a>requirements： [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview&preserve-view=true)
 
-提供用于确定当前应用程序和平台支持哪些要求集的方法。
+提供用于确定当前应用程序和平台上支持哪些要求集的方法。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>类型类型
 
-*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要求
 
@@ -322,15 +322,15 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettings"></a>[roamingSettings：RoamingSettings](/javascript/api/outlook/office.roamingsettings)
+#### <a name="roamingsettings-roamingsettings"></a>[roamingSettings：RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true)
 
 获取一个对象，它表示保存到用户邮箱的邮件外接程序的自定义设置或状态。
 
 该对象允许您存储和访问存储在用户邮箱中的邮件外接程序的数据，以便该外接程序在从用于访问该邮箱的任何 Outlook 客户端运行时可供该外接程序使用 `RoamingSettings` 。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>类型类型
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要求
 
@@ -345,13 +345,13 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="ui-ui"></a>[ui：UI](/javascript/api/office/office.ui)
+#### <a name="ui-ui"></a>[ui：UI](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true)
 
 提供可用于在加载项中创建和操作 UI 组件（如对话框）Office方法。
 
-##### <a name="type"></a>类型
+##### <a name="type"></a>类型类型
 
-*   [UI](/javascript/api/office/office.ui)
+*   [UI](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true)
 
 ##### <a name="requirements"></a>要求
 
