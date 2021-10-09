@@ -1,18 +1,26 @@
 ---
 title: Microsoft Office外接程序社区通话
-description: 每月Microsoft Office外接程序社区通话日程安排和资源。
-ms.date: 09/29/2021
+description: 每月Microsoft Office外接程序社区通话日程、日程安排和资源。
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e22840b4a47354c698a20575a000f370ad8c0518
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 85d0f0d697c5c66145536acb8db88ffe66acf278
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138448"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250397"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
-the Microsoft Office Add-ins community call is a monthly call where you can learn more about new features， development practices， and additional information about creating Office Add-ins.社区通话在每月的第二个星期三上午 8：00 PDT 进行。 可以从 下载日历邀请 [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) 。
+外接程序Microsoft Office通话是每月一次通话，你可以在这里了解有关新功能、开发实践以及有关创建外接程序Office其他信息。社区通话在每月的第二个星期三上午 8：00 PDT 进行。 可以从 下载日历邀请 [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) 。
+
+## <a name="agenda-for-october-13th-call"></a>10 月 13 日议程通话
+
+- Word API 更新
+- 适用于 Mac Outlook API 更新
+- 代码示例演示：Hello world
+
+## <a name="previous-calls"></a>以前的调用
 
 错过以前的社区通话？ 查看以下博客资源以跟进讨论！
 

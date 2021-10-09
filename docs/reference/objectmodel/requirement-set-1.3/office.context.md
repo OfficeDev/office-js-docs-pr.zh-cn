@@ -1,20 +1,20 @@
 ---
 title: Office.context - 要求集 1.3
-description: Office。使用邮箱 API 要求集 1.3 Outlook外接程序可用的上下文对象成员。
-ms.date: 12/02/2020
+description: Office。适用于使用邮箱 API 要求Outlook集 1.3 的外接程序的上下文对象成员。
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2821e0a13b892279ec7e9977ad0e7a32e9e28fc0
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 96473c8406d82757b43965247af4567b05632dd9
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237208"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250390"
 ---
 # <a name="context-mailbox-requirement-set-13"></a>context (Mailbox requirement set 1.3) 
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-Office.context 提供了外接程序在所有应用程序中使用的共享Office接口。 此列表仅记录加载项Outlook接口。有关 Office.context 命名空间的完整列表，请参阅通用[API Office.context 引用](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true)。
+Office.context 提供外接程序在所有应用程序中使用的共享Office接口。 此列表仅记录加载项Outlook接口。有关 Office.context 命名空间的完整列表，请参阅通用 API 中的[Office.context 引用](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true)。
 
 ##### <a name="requirements"></a>要求
 
@@ -39,9 +39,9 @@ Office.context 提供了外接程序在所有应用程序中使用的共享Offic
 
 #### <a name="contentlanguage-string"></a>contentLanguage： String
 
-获取用户 (编辑) 时指定的区域设置语言。
+获取用户 (编辑) 区域设置语言。
 
-该值 `contentLanguage` 反映当前在客户端 **应用程序中** 由 File **> Options > Language** 指定的Office语言设置。
+该值反映当前编辑语言设置，该设置由 > 客户端应用程序中的"> `contentLanguage` 选项Office语言"。  
 
 ##### <a name="type"></a>类型
 
@@ -84,7 +84,7 @@ function write(message){
 
 获取加载项运行环境的信息。
 
-##### <a name="type"></a>类型类型
+##### <a name="type"></a>类型
 
 *   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.3&preserve-view=true)
 
@@ -111,7 +111,7 @@ console.log("Platform: " + contextInfo.platform);
 
 #### <a name="displaylanguage-string"></a>displayLanguage：String
 
-获取区域设置 (语言) RFC 1766 语言标记格式，该标记格式由用户为 Office 客户端应用程序的 UI 指定。
+获取区域设置 (语言) RFC 1766 语言标记格式，该格式由用户为 Office 客户端应用程序的 UI 指定。
 
 该值反映当前显示语言设置，该设置由 > `displayLanguage` **客户端** 应用程序中>选项Office语言。 
 
@@ -156,7 +156,7 @@ function write(message){
 
 提供用于确定当前应用程序和平台上支持哪些要求集的方法。
 
-##### <a name="type"></a>类型类型
+##### <a name="type"></a>类型
 
 *   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.3&preserve-view=true)
 
@@ -173,6 +173,9 @@ function write(message){
 console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
 ```
 
+> [!IMPORTANT]
+> 目前存在一个 bug，即针对 `isSetSupported('mailbox', '1.3')` `true` Outlook 网页版 2013 Exchange错误返回。 若要了解有关支持的要求集、Exchange 服务器和 Outlook 客户端的组合，请参阅 Exchange 服务器和 Outlook 客户端支持[的要求集](../../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+
 <br>
 
 ---
@@ -184,7 +187,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 该对象允许您存储和访问存储在用户邮箱中的邮件外接程序的数据，以便该外接程序在从用于访问该邮箱的任何 Outlook 客户端运行时可供该外接程序使用 `RoamingSettings` 。
 
-##### <a name="type"></a>类型类型
+##### <a name="type"></a>类型
 
 *   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.3&preserve-view=true)
 
@@ -205,7 +208,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 提供可用于在加载项中创建和操作 UI 组件（如对话框）Office方法。
 
-##### <a name="type"></a>类型类型
+##### <a name="type"></a>类型
 
 *   [UI](/javascript/api/office/office.ui?view=outlook-js-1.3&preserve-view=true)
 
