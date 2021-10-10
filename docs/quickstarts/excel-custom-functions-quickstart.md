@@ -1,30 +1,27 @@
 ---
-ms.date: 08/04/2021
+ms.date: 10/08/2021
 description: 在 Excel 中开发自定义函数快速入门指南。
 title: 自定义函数快速入门
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f503948b8f468234221ee8713ea4654a7cc76c07
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1bbd519fa49d4518baacf4f8d0b6d88af38f3c94
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152529"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250495"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
 借助自定义函数，开发人员现在可以在 Excel 中添加新函数，方法是在 JavaScript 或 Typescript 中将这些函数定义为加载项的一部分。 Excel 用户可以访问自定义函数，就像他们访问 Excel 中的任何本机函数一样，比如 `SUM()`。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Windows 版 Excel （版本 1904 或更高版本，关联至 Microsoft 365 订阅）或 Excel 网页版
+- Windows 版 Excel（版本 1904 或更高版本）或 Excel 网页版。
 - Mac 版 Office（关联至 Microsoft 365 订阅）支持 Excel 自定义函数，并且本教程即将推出相关更新。
-
->[!NOTE]
->Office 2019（一次性购买）不支持 Excel 自定义函数。
 
 ## <a name="build-your-first-custom-functions-project"></a>生成首个自定义函数项目
 
@@ -96,7 +93,7 @@ npm run start:web
 
 在 Excel 工作簿中，通过完成以下步骤尝试使用 `ADD` 自定义函数。
 
-1. 选择一个单元格，然后键入 `=CONTOSO`。 请注意，自动完成菜单将显示 `CONTOSO` 命名空间中所有函数的列表。
+1. 选择单元格并键入 `=CONTOSO`。请注意，自动完成菜单将显示 `CONTOSO` 命名空间中所有函数的列表。
 
 1. 通过在单元格中指定值 `=CONTOSO.ADD(10,200)` 并按 Enter 来运行 `CONTOSO.ADD` 函数，并将数字 `10` 和 `200` 作为输入参数。
 

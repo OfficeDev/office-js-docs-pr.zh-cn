@@ -1,103 +1,158 @@
 ---
 title: 教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 description: 学习如何在Microsoft Excel中的自定义函数和任务窗格之间共享数据和事件。
-ms.date: 09/23/2021
+ms.date: 10/07/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 714f7dc62c7357a67ac26179dee6abc1d229ea49
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 9ca494cb458755e2878bbc93a4a4fc36cc69138e
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990528"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250439"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
-你可配置 Excel 加载项以使用共享运行时。 这样就可以共享全局数据，或者发送任务窗格和自定义功能之间的事件。
-
-对于大多数自定义函数方案，建议使用共享运行时，除非有特定的理由使用非任务窗格（UI-less）自定义函数。
-
-本教程假设你已经熟悉使用Yo Office生成器来创建插件项目。 如果尚未完成[Excel 自定义函数教程](excel-tutorial-create-custom-functions.md)，请考虑完成它。
+共享全局数据，并通过共享运行时在 Excel 加载项的任务窗格和自定义函数之间发送事件。 对于大多数自定义函数方案，建议使用共享运行时，除非有特定的理由需要使用非任务窗格 (UI-less) 自定义函数。 本教程假设你已经熟悉使用Yo Office生成器来创建插件项目。 如果尚未完成[Excel 自定义函数教程](excel-tutorial-create-custom-functions.md)，请考虑完成它。
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
-使用 Yeoman 生成器创建 Excel 加载项项目。运行以下命令，然后使用以下答案回答提示。
+使用 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office) 来创建 Excel 加载项项目。
 
-```command line
-yo office
-```
+- 要生成带自定义函数的 Excel 加载项，请运行以下命令。
+    
+    ```command&nbsp;line
+    yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true
+    ```
 
-- 选择项目类型： **Excel 自定义函数加载项项目**
-- 选择脚本类型： **JavaScript**
-- 你想要如何命名加载项？ **我的 Office 加载项**
-
-![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图。](../images/yo-office-excel-project.png)
-
-完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
+生成器创建项目并安装支持节点组件。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-1. 启动 Visual Studio Code 并打开“**我的 Office 加载项**”项目。
-2. 打开 **manifest.xml** 文件。
-3. 找到 `<VersionOverrides>` 部分并添加以下 `<Runtimes>` 部分。 生存期需要 **较长**，以便在关闭任务窗格时自定义函数仍可正常工作。
+请按照以下步骤将加载项项目配置为使用共享运行时。
 
-   ```xml
-   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-     <Hosts>
-       <Host xsi:type="Workbook">
-         <Runtimes>
-           <Runtime resid="ContosoAddin.Url" lifetime="long" />
-         </Runtimes>
-       <AllFormFactors>
-   ```
+1. 启动 Visual Studio Code 并打开生成的加载项项目。
+1. 打开 **manifest.xml** 文件。
+1. 替换（或添加）以下 `<Requirements>` 部分 XML，以要求 [共享运行时要求集](../reference/requirement-sets/shared-runtime-requirement-sets.md)。
 
-> [!NOTE]
-> 如果加载项包含清单中的 `Runtimes` 元素（共享运行时所需），并且满足将 Microsoft Edge 与 WebView2（基于 Chromium）一起使用的条件，则它使用该 WebView2 控件。 如果不满足条件，则它会使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)和 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+    ```xml
+    <Requirements>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
+    </Requirements>
+    ```
 
-4. 在 `<Page>` 元素中，将源位置从 **Functions.Page.Url** 更改为 **ContosoAddin.Url**。
+    更新后，清单 XML 应按以下顺序显示。
+
+    ```xml
+    <Hosts>
+      <Host Name="..."/>
+    </Hosts>
+    <Requirements>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
+    </Requirements>
+    <DefaultSettings>
+    ```
+
+1. 查找 `<VersionOverrides>` 部分并添加以下 `<Runtimes>` 部分。 生存期需要 **较长**，以便在关闭任务窗格时加载项代码仍可运行。 `resid` 值是 **Taskpane.Url**，它引用 **manifest.xml** 文件底部附近的 `<bt:Urls>` 部分中指定的 **taskpane.html** 文件位置。
+    
+    ```xml
+    <Runtimes>
+      <Runtime resid="Taskpane.Url" lifetime="long" />
+    </Runtimes>
+    ```
+    
+    > [!IMPORTANT]
+    > 必须按照以下 XML 中显示的确切顺序在 `<Host xsi:type="...">` 元素之后输入 `<Runtimes>` 部分。
+
+    ```xml
+    <VersionOverrides ...>
+      <Hosts>
+        <Host xsi:type="...">
+          <Runtimes>
+            <Runtime resid="Taskpane.Url" lifetime="long" />
+          </Runtimes>
+        ...
+        </Host>
+    ```
+    
+    > [!NOTE]
+    > 如果加载项包含清单中的 `Runtimes` 元素（共享运行时所需），并且满足将 Microsoft Edge 与 WebView2（基于 Chromium）一起使用的条件，则它使用该 WebView2 控件。 如果不满足条件，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅 [运行时](../reference/manifest/runtimes.md) 和 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+
+1. 查找 `<Page>` 元素。然后将源位置从 **Functions.Page.Url** 更改为 **Taskpane.Url**。
 
    ```xml
    <AllFormFactors>
    ...
    <Page>
-   <SourceLocation resid="ContosoAddin.Url"/>
+     <SourceLocation resid="Taskpane.Url"/>
    </Page>
    ...
    ```
 
-5. 在 `<DesktopFormFactor>` 部分中，将 **FunctionFile** 从 **Commands.Url** 更改为使用 **ContosoAddin.Url**。
+1. 查找 `<FunctionFile ...>` 标记并将 `resid` 从 **Commands.Url** 更改为  **Taskpane.Url**。
 
-   ```xml
-   <DesktopFormFactor>
-   <GetStarted>
-   ...
-   </GetStarted>
-   <FunctionFile resid="ContosoAddin.Url"/>
-   ```
+    ```xml
+    </GetStarted>
+    ...
+    <FunctionFile resid="Taskpane.Url"/>
+    ...
+    ```
 
-6. 在 `<Action>` 部分中，将源位置从 **Taskpane.Url** 更改为 **ContosoAddin.Url**。
+1. 保存 **manifest.xml** 文件。
 
-   ```xml
-   <Action xsi:type="ShowTaskpane">
-   <TaskpaneId>ButtonId1</TaskpaneId>
-   <SourceLocation resid="ContosoAddin.Url"/>
-   </Action>
-   ```
+## <a name="configure-the-webpackconfigjs-file"></a>配置 webpack.config.js 文件
 
-7. 为 **ContosoAddin.Url** 添加新的 **Url id**，它指向 **taskpane.html**。
+**webpack.config.js** 将生成多个运行时加载程序。 你需要对其进行修改，以通过 **taskpane.html** 文件仅加载共享 JavaScript 运行时。 
 
-   ```xml
-   <bt:Urls>
-   <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
-   ...
-   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
-   ...
-   ```
+1. 打开 **webpack.config.js** 文件。
+1. 转到 `plugins:` 部分。
+1. 删除以下 `functions.html` 插件（如果存在）。
+    
+    ```javascript
+    new HtmlWebpackPlugin({
+        filename: "functions.html",
+        template: "./src/functions/functions.html",
+        chunks: ["polyfill", "functions"]
+      })
+    ```
 
-8. 保存更改并重新生成项目。
+1. 删除以下 `commands.html` 插件（如果存在）。
 
-   ```command line
+    ```javascript
+    new HtmlWebpackPlugin({
+        filename: "commands.html",
+        template: "./src/commands/commands.html",
+        chunks: ["polyfill", "commands"]
+      })
+    ```
+
+1. 如果删除了 `functions` 或 `commands` 插件，请将其添加为 `chunks`。 如果同时删除了 `functions` 和 `commands` 插件，则以下 JavaScript 将显示更新的条目。
+    
+    ```javascript
+      new HtmlWebpackPlugin({
+        filename: "taskpane.html",
+        template: "./src/taskpane/taskpane.html",
+        chunks: ["polyfill", "taskpane", "commands", "functions"]
+      })
+    ```
+    
+1. 保存更改并重新生成项目。
+
+   ```command&nbsp;line
    npm run build
+   ```
+    
+    > [!NOTE]
+    > 还可以删除 **functions.html** 和 **commands.html** 文件。 **taskpane.html** 将通过你刚才进行的 webpack 更新将 **functions.js** 和 **commands.js** 代码加载到共享 JavaScript 运行时中。
+    
+1. 保存更改并运行项目。 确保加载和运行时没有错误。
+    
+   ```command&nbsp;line
+   npm run start
    ```
 
 ## <a name="share-state-between-custom-function-and-task-pane-code"></a>共享自定义函数和任务窗格代码之间的状态
@@ -183,7 +238,7 @@ yo office
    </div>
    ```
 
-4. 在结尾的 `</body>` 元素前，添加以下脚本。 当用户想存储或获取全局数据时，此代码将处理按钮单击事件。
+4. 在结束 `</body>` 元素之前，添加以下脚本。当用户要存储或获取全局数据时，此代码将处理按钮单击事件。
 
    ```js
    <script>
@@ -217,3 +272,7 @@ Excel 启动后，可使用“任务窗格”按钮来存储或获取共享数�
 
 > [!NOTE]
 > 如本文所示配置项目，可在自定义函数和任务窗格之间共享上下文。 通过自定义函数可以调用一些Office API。 更多细节请参见[从自定义函数调用Microsoft Excel APIs](../excel/call-excel-apis-from-custom-function.md)。
+
+## <a name="see-also"></a>另请参阅
+
+- [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

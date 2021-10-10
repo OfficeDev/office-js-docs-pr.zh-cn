@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 要求集
 description: 针对 Word 内部版本的 Office 加载项要求集信息。
-ms.date: 05/05/2021
+ms.date: 10/08/2021
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: dba512af0228b8ee7bb9e7ff54654c779e4b3ca5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 88d49b860cb832f59e8e2a631f0c4a3c57698306
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152657"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250530"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
@@ -34,7 +34,7 @@ Word 加载项可跨多个版本的 Office 运行，包括 Windows 上的 Office
 > [!NOTE]
 > 非订阅版本的 Office 支持如下所示的要求集：
 >
-> - Office 2019 支持 ExcelApi 1.3 及更低版本。
+> - Office 2019 和 Office 2021 支持 WordApi 1.3 及更低版本。
 > - Office 2016 仅支持 ExcelApi 1.1 要求集。
 
 ## <a name="office-versions-and-build-numbers"></a>Office 版本和内部版本号

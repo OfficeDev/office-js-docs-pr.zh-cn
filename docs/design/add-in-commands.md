@@ -1,14 +1,14 @@
 ---
 title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
-ms.date: 07/27/2021
+ms.date: 10/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 0ad18ca62014ac8b3f4c3710680cd5d97b476215
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2685a157d6c478afc4343d54f52e4337472d015f
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149189"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250432"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
@@ -17,7 +17,7 @@ ms.locfileid: "59149189"
 有关此功能的概述，请观看视频 [Office 应用功能区中的加载项命令](https://channel9.msdn.com/events/Build/2016/P551)。
 
 > [!NOTE]
-> SharePoint 目录不支持加载项命令。 可以通过[集中部署](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)或 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 部署加载项命令，也可以使用[旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)部署加载项命令以供测试。
+> SharePoint 目录不支持加载项命令。可以通过 [集成的应用](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) 或 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 部署加载项命令，也可以使用 [旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) 部署加载项命令以供测试。
 
 > [!IMPORTANT]
 > Outlook 中也支持加载项命令。 有关详细信息，请参阅[适用于 Outlook 的加载项命令](../outlook/add-in-commands-for-outlook.md)。
@@ -85,9 +85,9 @@ ms.locfileid: "59149189"
 目前，以下平台支持加载项命令，但先前[命令功能](#command-capabilities)的小节中指定的限制除外。
 
 - Windows 版 Office（内部版本 16.0.6769 及更高版本，关联至 Microsoft 365 订阅）
-- Windows 版 Office 2019
+- Windows 上的 Office 2019 或更高版本
 - Mac 版 Office（内部版本 15.33 及更高版本，关联至 Microsoft 365 订阅）
-- Mac 版 Office 2019
+- Mac 上的 Office 2019 或更高版本
 - Office 网页版
 
 > [!NOTE]

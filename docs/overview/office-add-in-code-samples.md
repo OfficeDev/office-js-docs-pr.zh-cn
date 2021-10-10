@@ -1,14 +1,14 @@
 ---
 title: Office 加载项代码示例
 description: Office 加载项代码示例列表，可帮助你学习和生成自己的加载项。
-ms.date: 09/09/2021
+ms.date: 10/07/2021
 localization_priority: high
-ms.openlocfilehash: fb595273fa890c6eb16dbfe03fe102a2a3ee6a9a
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: a7e84fb86fb795afc3f73385e2f577458d85621a
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443798"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250481"
 ---
 # <a name="office-add-in-code-samples"></a>Office 加载项代码示例
 
@@ -26,6 +26,7 @@ ms.locfileid: "59443798"
 | 名称                | 说明         |
 |:--------------------|:--------------------|
 | [在 Teams 中打开](/samples/officedev/pnp-officeaddins/office-excel-add-in-open-in-teams/) | 在 Microsoft Teams 中新建包含你定义的数据的 Excel 电子表格。|
+| [插入外部 Excel 文件并使用 JSON 数据填充](/samples/officedev/pnp-officeaddins/excel-add-in-insert-external-file/)  | 将外部 Excel 文件中的现有模板插入当前打开的 Excel 工作簿。 然后，使用来自 JSON Web 服务的数据填充模板。 |
 | [在功能区上创建自定义上下文选项卡](/samples/officedev/pnp-officeaddins/office-add-in-contextual-tabs/) | 在 Office UI 中的功能区上创建自定义上下文选项卡。 该示例创建一个表，并且当用户将焦点移动到表内时，将显示自定义选项卡。 当用户移出表外时，自定义选项卡将隐藏。 |
 | [使用键盘快捷方式执行 Office 加载项操作](/samples/officedev/pnp-officeaddins/office-add-in-keyboard-shortcuts) | 设置使用键盘快捷方式的基本 Excel 加载项项目。 |
 | [使用 Web 辅助进程的自定义函数示例](/samples/officedev/pnp-officeaddins/excel-custom-function-web-worker-pattern/) | 在自定义函数中使用 Web 辅助进程来防止阻止 Office 加载项的 UI。 |
@@ -47,8 +48,8 @@ ms.locfileid: "59443798"
 | [使用 Microsoft Graph 和 Office 加载项中的 msal.js 获取 OneDrive 数据](/samples/officedev/pnp-officeaddins/office-add-in-auth-graph-react/) | 将 Office 加载项构建为一个没有后端的单页应用程序 (SPA)，该应用程序连接到 Microsoft Graph，并访问存储在 OneDrive for Business 中的工作簿以更新电子表格。  |
 | [Office 加载项对 Microsoft Graph 的身份验证](/samples/officedev/pnp-officeaddins/office-add-in-auth-aspnet-graph/) | 了解如何构建连接到 Microsoft Graph 的 Microsoft Office 加载项，并访问存储在 OneDrive for Business 中工作簿以更新电子表格。。 |
 | [Outlook 加载项对 Microsoft Graph 的身份验证](/samples/officedev/pnp-officeaddins/outlook-add-in-auth-aspnet-graph/)。 | 生成连接到 Microsoft Graph 的 Outlook 加载项，并访问存储在 OneDrive for Busines s中的工作簿以撰写新的电子邮件。 |
-| [带有 ASP.NET 的单一登录 (SSO) Office 加载项](/samples/officedev/pnp-officeaddins/office-add-in-sso-aspnet/) | 在 Office.js 中使用 `getAccessToken` API 为加载项提供对 Microsoft Graph 数据的访问权限。 此示例基于 ASP.NET。 |
-| [带有 Node.js 的单一登录 (SSO) Office 加载项](/samples/officedev/pnp-officeaddins/office-add-in-sso-nodejs/) | 在 Office.js 中使用 `getAccessToken` API 为加载项提供对 Microsoft Graph 数据的访问权限。 此示例基于 Node.js 构建。|
+| [带有 ASP.NET 的单一登录 (SSO) Office 加载项](/samples/officedev/pnp-officeaddins/office-add-in-sso-aspnet/) | 在 Office.js 中使用 `getAccessToken` API 为加载项提供 Microsoft Graph 数据的访问权限。此示例基于 ASP.NET。 |
+| [带有 Node.js 的单一登录 (SSO) Office 加载项](/samples/officedev/pnp-officeaddins/office-add-in-sso-nodejs/) | 在 Office.js 中使用 `getAccessToken` API 为加载项提供 Microsoft Graph 数据的访问权限。此示例基于 Node.js 构建。|
 
 ## <a name="additional-samples"></a>其他示例
 
@@ -60,7 +61,7 @@ ms.locfileid: "59443798"
 
 ## <a name="next-steps"></a>后续步骤
 
-加入 Microsoft 365 开发人员计划。 获取构建 Microsoft 365 平台解决方案所需的免费沙盒、工具和其他资源。
+加入 Microsoft 365 开发人员计划。获取为 Microsoft 365 平台构建解决方案所需的免费沙盒、工具和其他资源。
 
 - [免费开发人员沙盒](https://developer.microsoft.com/microsoft-365/dev-program#Subscription) 获取免费的可续订 90 天 Microsoft 365 E5 开发人员订阅。
 - [示例数据包](https://developer.microsoft.com/microsoft-365/dev-program#Sample) 通过安装用户数据和内容来帮助你构建解决方案，从而自动配置你的沙盒。

@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集
 description: 针对 Excel 内部版本的 Office 加载项要求集信息。
-ms.date: 05/05/2021
+ms.date: 10/08/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: c2082ff33de42e58753231008e46d01afff757dd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d6e8ea8fecf2f5495eb7d0c7ac5c3db6952e8b9a
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152238"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250537"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
@@ -28,6 +28,7 @@ Excel 加载项跨多个版本 Office 运行，包括 Windows 版 Office 2016 �
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [预览](excel-preview-apis.md)  | 请使用最新的 Office 版本来试用预览 API（你可能需要加入 [Office 预览体验成员计划](https://insider.office.com)）。 |
 | [ExcelApiOnline](excel-api-online-requirement-set.md) | 不适用 | 不适用 | 不适用 | 最新（请参阅[要求集页面](excel-api-online-requirement-set.md)） |
+| [ExcelApi 1.13](excel-api-1-13-requirement-set.md) | 版本 2102（内部版本 13801.20738）或更高版本 | 16.50 或更高版本 | 16.50 或更高版本 | 2021 年 6 月 |
 | [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | 版本 2008（内部版本 13127.20408）或更高版本 | 16.40 或更高版本 | 16.40 或更高版本 | 2020 年 9 月 |
 | [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | 版本 2002（内部版本 12527.20470）或更高版本 | 16.35 或更高版本 | 16.33 或更高版本 | 2020 年 5 月 |
 | [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | 版本 1907（内部版本 11929.20306）或更高版本 | 16.0 或更高版本 | 16.30 或更高版本 | 2019 年 10 月 |
@@ -44,6 +45,7 @@ Excel 加载项跨多个版本 Office 运行，包括 Windows 版 Office 2016 �
 > [!NOTE]
 > 非订阅版本的 Office 支持如下所示的要求集：
 >
+> - Office 2021 支持 ExcelApi 1.13 及更低版本。
 > - Office 2019 支持 ExcelApi 1.8 及更低版本。
 > - Office 2016 仅支持 ExcelApi 1.1 要求集。
 
