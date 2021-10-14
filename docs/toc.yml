@@ -1178,6 +1178,9 @@ items:
           - name: 在 PowerPoint 加载项中使用文档主题
             href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
             displayName: PowerPoint
+          - name: 处理形状
+            href: powerpoint/shapes.md
+            displayName: PowerPoint
   - name: Project
     items:
       - name: Project 加载项文档

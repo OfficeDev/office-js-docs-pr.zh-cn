@@ -3,16 +3,16 @@ title: 在 Microsoft Azure 上托管 Office 加载项 | Microsoft Docs
 description: 了解如何将加载项 Web 应用部署到 Azure 并旁加载该加载项以便在 Office 客户端应用程序中进行测试。
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 598cfa2691ef1a532e1f94e0f4566c2b41d1a2d7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: af2079c4e6df38e64347ec0a67d441298758c41e
+ms.sourcegitcommit: fb4a55764fb60e826ad06d15d1539e41df503b65
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152557"
+ms.lasthandoff: 10/14/2021
+ms.locfileid: "60356371"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>在 Microsoft Azure 上托管 Office 加载项
 
-最简单的 Office 外接程序由一个 XML 清单文件和一个 HTML 页组成。 XML 清单文件描述外接程序的特征，如其名称、Office运行哪些桌面客户端以及外接程序的 HTML 页面的 URL。 HTML 页包含在一个 Web 应用中，用户在 Office 客户端应用程序中安装和运行外接程序时将与此 Web 应用进行交互。 可以将 Office 外接程序的 Web 应用托管在任意 Web 托管平台（包括 Azure）上。
+最简单的 Office 外接程序由一个 XML 清单文件和一个 HTML 页组成。 XML 清单文件描述外接程序的特征，例如其名称、Office运行哪些桌面客户端以及外接程序的 HTML 页面的 URL。 HTML 页包含在一个 Web 应用中，用户在 Office 客户端应用程序中安装和运行外接程序时将与此 Web 应用进行交互。 可以将 Office 外接程序的 Web 应用托管在任意 Web 托管平台（包括 Azure）上。
 
 本文介绍了如何将外接程序 Web 应用部署到 Azure 并[旁加载外接程序](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)以在 Office 客户端应用程序中进行测试。
 
@@ -113,7 +113,7 @@ ms.locfileid: "59152557"
 
 4. 选择“**Word Web 外接程序**”作为项目类型，然后选择“**下一步**”以接受默认设置。
 
-Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，无需对其 Web 项目进行任何更改。 若要为不同的应用程序（如 Office 应用程序创建外接程序Excel，请重复这些步骤并选择具有所需应用程序Office项目类型。
+Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，无需对其 Web 项目进行任何更改。 若要为不同的应用程序（如 Office）创建外接程序，请重复Excel，并选择具有所需应用程序Office项目类型。
 
 ## <a name="step-5-publish-your-office-add-in-web-app-to-azure"></a>第 5 步：将 Office 外接程序 Web 应用发布到 Azure
 
@@ -131,7 +131,7 @@ Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，
 
 4. Visual Studio 会将 Office 外接程序的 Web 项目发布到 Azure Web 应用。Visual Studio 完成发布 Web 项目后，浏览器将打开并显示网页，其中显示“应用服务应用已创建”文本。这是 Web 应用当前的默认页。
 
-5. 复制根 URL（例如：https://YourDomain.azurewebsites.net)；本文后续部分中编辑加载项清单文件时将需要此 URL。
+5. 复制根 URL (例如：) ;在本文稍后编辑外接程序清单文件时将需要 `https://YourDomain.azurewebsites.net` 它。
 
 ## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>第 6 步：编辑并部署加载项 XML 清单文件
 
@@ -139,7 +139,7 @@ Visual Studio 将创建基本的 Word 外接程序，你可以按原样发布，
 
 2. 展开 Office 加载项项目（例如 WordWebAddIn），右键单击清单文件夹，然后选择“**打开**”。随即打开加载项 XML 清单文件。
 
-3. 在 XML 清单文件中，找到所有的“~remoteAppUr”实例，并将其全部替换为 Azure 上的外接程序 Web 应用的根 URL。这就是之前在将外接程序 Web 应用发布到 Azure 后复制的 URL（例如：https://YourDomain.azurewebsites.net)）。 
+3. 在 XML 清单文件中，找到所有的“~remoteAppUr”实例，并将其全部替换为 Azure 上的加载项 Web 应用的根 URL。 这是之前在将加载项 Web 应用发布到 Azure 应用后复制的 URL (例如 `https://YourDomain.azurewebsites.net` ：) 。
 
 4. 选择“**文件**”，然后选择“**全部保存**”。 然后复制外接程序 XML 清单文件（例如 WordWebAddIn.xml）。
 
