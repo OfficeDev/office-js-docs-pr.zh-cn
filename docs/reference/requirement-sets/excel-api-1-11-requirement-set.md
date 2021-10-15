@@ -4,14 +4,14 @@ description: 有关 ExcelApi 1.11 要求集的详细信息。
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: e396ed369942c22c6e460f3e27702b35d3ef20b6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3f340a7f69cfbbb0c87e937e7d9d1043929a94c9
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152377"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367444"
 ---
-# <a name="whats-new-in-excel-javascript-api-111"></a>JavaScript API 1.11 Excel新增功能
+# <a name="whats-new-in-excel-javascript-api-111"></a>JavaScript API 1.11 Excel的新增功能
 
 ExcelApi 1.11 改进了对注释和工作簿级控件的支持 (例如保存和关闭工作簿) 。 它还添加了对区域性设置的访问权限，以帮助说明本地化。
 
@@ -20,13 +20,13 @@ ExcelApi 1.11 改进了对注释和工作簿级控件的支持 (例如保存和�
 | 评论 [提及](../../excel/excel-add-ins-comments.md#mentions) |通过注释标记并通知其他工作簿用户。 | [Comment](/javascript/api/excel/excel.comment) [、CommentRichContent](/javascript/api/excel/excel.commentrichcontent) |
 | 注释 [解析](../../excel/excel-add-ins-comments.md#resolve-comment-threads) | 解析注释线程并获取解析状态。 | [Comment](/javascript/api/excel/excel.comment) |
 | [区域性设置](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | 获取工作簿的区域性系统设置，如数字格式。 | [CultureInfo](/javascript/api/excel/excel.cultureinfo) [、NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [应用程序](/javascript/api/excel/excel.application) |
-| [剪切并粘贴 (moveTo) ](../../excel/excel-add-ins-ranges-cut-copy-paste.md) | 复制 Range 的 Excel中的剪切和粘贴功能。 | [Range](/javascript/api/excel/excel.range) |
+| [剪切并粘贴 (moveTo) ](../../excel/excel-add-ins-ranges-cut-copy-paste.md) | 复制 Range 的 Excel 中的剪切和粘贴功能。 | [区域](/javascript/api/excel/excel.range) |
 | 工作簿[保存](../../excel/excel-add-ins-workbooks.md#save-the-workbook)和[关闭](../../excel/excel-add-ins-workbooks.md#close-the-workbook) | 保存和关闭工作簿。 | [Workbook](/javascript/api/excel/excel.workbook) |
 | 工作表事件 | 工作表计算和隐藏行的其他事件和事件信息。 | [WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs) [、WorksheetRowHiddenChangedEventArgs](/javascript/api/excel/excel.worksheetrowhiddenchangedeventargs) |
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求集 1.11 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.11 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.11](/javascript/api/excel?view=excel-js-1.11&preserve-view=true)或更早中的 Excel API。
+下表列出了 JavaScript API 要求Excel集 1.11 中的 API。 若要查看受 Excel JavaScript API 要求集 1.11 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.11](/javascript/api/excel?view=excel-js-1.11&preserve-view=true)或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -35,8 +35,8 @@ ExcelApi 1.11 改进了对注释和工作簿级控件的支持 (例如保存和�
 ||[thousandsSeparator](/javascript/api/excel/excel.application#thousandsSeparator)|获取用于分隔数字值小数左侧的一组数字的字符串。|
 ||[useSystemSeparators](/javascript/api/excel/excel.application#useSystemSeparators)|指定是否启用Excel分隔符。|
 |[Comment](/javascript/api/excel/excel.comment)|[提及](/javascript/api/excel/excel.comment#mentions)|获取 (实体，例如) 中提到的人员。|
-||[richContent](/javascript/api/excel/excel.comment#richContent)|获取丰富的注释内容 (例如，注释和批注中的) 。|
 ||[已解决](/javascript/api/excel/excel.comment#resolved)|注释线程状态。|
+||[richContent](/javascript/api/excel/excel.comment#richContent)|获取丰富的注释内容 (例如，注释和批注中的) 。|
 ||[updateMentions (contentWithMentions： Excel。CommentRichContent) ](/javascript/api/excel/excel.comment#updateMentions_contentWithMentions_)|使用特殊格式的字符串和提及列表更新注释内容。|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add (cellAddress： Range \| string， content： CommentRichContent \| string， contentType？： Excel.ContentType) ](/javascript/api/excel/excel.commentcollection#add_cellAddress__content__contentType_)|使用给定单元格上的给定内容创建新批注。|
 |[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|注释中提到的实体的电子邮件地址。|
@@ -44,17 +44,17 @@ ExcelApi 1.11 改进了对注释和工作簿级控件的支持 (例如保存和�
 ||[name](/javascript/api/excel/excel.commentmention#name)|注释中提到的实体的名称。|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[提及](/javascript/api/excel/excel.commentreply#mentions)|实体 (，例如) 中提到的人员。|
 ||[已解决](/javascript/api/excel/excel.commentreply#resolved)|批注回复状态。|
-||[richContent](/javascript/api/excel/excel.commentreply#richContent)|丰富的评论内容 (例如，注释和批注) 。|
+||[richContent](/javascript/api/excel/excel.commentreply#richContent)|丰富的评论内容 (，例如注释和批注) 。|
 ||[updateMentions (contentWithMentions： Excel。CommentRichContent) ](/javascript/api/excel/excel.commentreply#updateMentions_contentWithMentions_)|使用特殊格式的字符串和提及列表更新注释内容。|
 |[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[add (content： CommentRichContent \| string， contentType？： Excel.ContentType) ](/javascript/api/excel/excel.commentreplycollection#add_content__contentType_)|为批注创建批注回复。|
-|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[提及](/javascript/api/excel/excel.commentrichcontent#mentions)|包含注释中提及 (实体（例如，) 人）的数组。|
-||[richContent](/javascript/api/excel/excel.commentrichcontent#richContent)|指定注释内容的丰富内容 (例如，提及评论内容，第一个提及实体的 ID 属性为 0，第二个提及实体的 ID 属性为 1) 。|
+|[CommentRichContent](/javascript/api/excel/excel.commentrichcontent)|[提及](/javascript/api/excel/excel.commentrichcontent#mentions)|包含注释中提及 (实体的数组，例如) 人。|
+||[richContent](/javascript/api/excel/excel.commentrichcontent#richContent)|指定批注内容的丰富内容 (例如，提及评论内容，第一个提及实体的 ID 属性为 0，第二个提及实体的 ID 属性为 1) 。|
 |[CultureInfo](/javascript/api/excel/excel.cultureinfo)|[name](/javascript/api/excel/excel.cultureinfo#name)|获取语言代码 2-国家/地区代码2 格式的区域性名称 (例如，"zh-cn"或"en-us") 。|
 ||[numberFormat](/javascript/api/excel/excel.cultureinfo#numberFormat)|定义在文化上适合显示数字的格式。|
 |[NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo)|[numberDecimalSeparator](/javascript/api/excel/excel.numberformatinfo#numberDecimalSeparator)|获取用作数值的小数分隔符的字符串。|
 ||[numberGroupSeparator](/javascript/api/excel/excel.numberformatinfo#numberGroupSeparator)|获取用于分隔数字值小数左侧的一组数字的字符串。|
-|[Range](/javascript/api/excel/excel.range)|[moveTo (destinationRange：Range \| string) ](/javascript/api/excel/excel.range#moveTo_destinationRange_)|将单元格值、格式设置和公式从当前区域移动到目标区域，替换这些单元格中的旧信息。|
-|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[adjustIndent (amount： number) ](/javascript/api/excel/excel.rangeformat#adjustIndent_amount_)|调整区域格式的缩进。|
+|[区域](/javascript/api/excel/excel.range)|[moveTo (destinationRange：Range \| string) ](/javascript/api/excel/excel.range#moveTo_destinationRange_)|将单元格值、格式设置和公式从当前区域移动到目标区域，替换这些单元格中的旧信息。|
+|[RangeFormat](/javascript/api/excel/excel.rangeformat)|[adjustIndent (数量：number) ](/javascript/api/excel/excel.rangeformat#adjustIndent_amount_)|调整区域格式的缩进。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[close(closeBehavior?: Excel.CloseBehavior)](/javascript/api/excel/excel.workbook#close_closeBehavior_)|关闭当前工作簿。|
 ||[save(saveBehavior?: Excel.SaveBehavior)](/javascript/api/excel/excel.workbook#save_saveBehavior_)|保存当前工作簿。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[onRowHiddenChanged](/javascript/api/excel/excel.worksheet#onRowHiddenChanged)|当特定工作表上一行或多行的隐藏状态发生更改时发生。|

@@ -1,21 +1,21 @@
 ---
 title: ExcelJavaScript API 仅联机要求集
 description: 有关 ExcelApiOnline 要求集的详细信息。
-ms.date: 09/16/2021
+ms.date: 10/13/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b8d326e1a756a873fc19b3d78f795ebf04e5f4e
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: ae014930d3ec11d52b3904ee1205b670f8d3790f
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474334"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367325"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>ExcelJavaScript API 仅联机要求集
 
-要求 `ExcelApiOnline` 集是一个特殊要求集，其中包含仅适用于Excel web 版。 此要求集内 API 被视为生产 API， (应用程序的行为或结构) 未Excel web 版更改。 `ExcelApiOnline`API 被视为适用于其他平台（如 (Windows、Mac、iOS) ）的"预览"API，可能不受这些平台的任何支持。
+要求 `ExcelApiOnline` 集是一个特殊要求集，其中包含仅适用于Excel web 版。 此要求集内 API 被视为生产 API， (应用程序未记录的行为或) 结构Excel web 版更改。 `ExcelApiOnline`API 被视为适用于其他平台（如 (Windows Mac、iOS) ）的"预览"API，可能不受这些平台的任何支持。
 
-当要求集内 API 在所有平台中均受支持时，它们将被添加到下一个发布的要求 `ExcelApiOnline` `ExcelApi 1.[NEXT]` () 。 一旦该新要求公开，将从 中删除这些 `ExcelApiOnline` API。 将此过程视为与从预览版移动到发布的 API 类似的推广过程。
+当所有平台都支持要求集内 API 时，它们将被添加到下一个发布的要求集 `ExcelApiOnline` `ExcelApi 1.[NEXT]` () 。 一旦该新要求公开，将从 中删除这些 `ExcelApiOnline` API。 将此过程视为与从预览版移动到发布的 API 类似的推广过程。
 
 > [!IMPORTANT]
 > `ExcelApiOnline` 是最新编号要求集的超集。
@@ -47,7 +47,7 @@ API 位于跨平台要求集后，应删除或编辑 `isSetSupported` 检查。 
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了要求Excel中当前包含的 JavaScript `ExcelApiOnline` API。 有关所有 JavaScript EXCEL的完整列表 (包括 API 和以前发布的 API `ExcelApiOnline`) ，请参阅所有 Excel [JavaScript API。](/javascript/api/excel?view=excel-js-online&preserve-view=true)
+下表列出了要求Excel当前包含的 JavaScript `ExcelApiOnline` API。 有关所有 JavaScript EXCEL的完整列表 (包括 API 和以前发布的 API `ExcelApiOnline`) ，请参阅所有 Excel [JavaScript API。](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -73,8 +73,30 @@ API 位于跨平台要求集后，应删除或编辑 `isSetSupported` 检查。 
 ||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItem_key_)|使用工作表视图的名称获取工作表视图。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getItemAt_index_)|按工作表视图在集合中的索引获取工作表视图。|
 ||[items](/javascript/api/excel/excel.namedsheetviewcollection#items)|获取此集合中已加载的子项。|
+|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[deleteRows (行： number[] \| TableRow[]) ](/javascript/api/excel/excel.tablerowcollection#deleteRows_rows_)|从表中删除多行。|
+||[deleteRowsAt (索引： number， count？： number) ](/javascript/api/excel/excel.tablerowcollection#deleteRowsAt_index__count_)|从给定索引开始，从表中删除指定数量的行。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedWorkbooks)|返回链接工作簿的集合。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedSheetViews)|返回工作表中呈现的工作表视图的集合。|
+||[onNameChanged](/javascript/api/excel/excel.worksheet#onNameChanged)|更改工作表名称时发生。|
+||[onVisibilityChanged](/javascript/api/excel/excel.worksheet#onVisibilityChanged)|在工作表可见性更改时发生。|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onMoved](/javascript/api/excel/excel.worksheetcollection#onMoved)|当用户在工作簿中移动工作表时发生。|
+||[onNameChanged](/javascript/api/excel/excel.worksheetcollection#onNameChanged)|在工作表集合中更改工作表名称时发生。|
+||[onVisibilityChanged](/javascript/api/excel/excel.worksheetcollection#onVisibilityChanged)|在工作表集合中更改工作表可见性时发生。|
+|[WorksheetMovedEventArgs](/javascript/api/excel/excel.worksheetmovedeventargs)|[positionAfter](/javascript/api/excel/excel.worksheetmovedeventargs#positionAfter)|在移动后获取工作表的新位置。|
+||[positionBefore](/javascript/api/excel/excel.worksheetmovedeventargs#positionBefore)|在移动之前获取工作表的上一位置。|
+||[源](/javascript/api/excel/excel.worksheetmovedeventargs#source)|事件的源。|
+||[type](/javascript/api/excel/excel.worksheetmovedeventargs#type)|获取事件的类型。|
+||[worksheetId](/javascript/api/excel/excel.worksheetmovedeventargs#worksheetId)|获取已移动工作表的 ID。|
+|[WorksheetNameChangedEventArgs](/javascript/api/excel/excel.worksheetnamechangedeventargs)|[nameAfter](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameAfter)|在名称更改后获取工作表的新名称。|
+||[nameBefore](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameBefore)|获取工作表的先前名称，在名称更改之前。|
+||[源](/javascript/api/excel/excel.worksheetnamechangedeventargs#source)|事件的源。|
+||[type](/javascript/api/excel/excel.worksheetnamechangedeventargs#type)|获取事件的类型。|
+||[worksheetId](/javascript/api/excel/excel.worksheetnamechangedeventargs#worksheetId)|获取具有新名称的工作表的 ID。|
+|[WorksheetVisibilityChangedEventArgs](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs)|[源](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#source)|事件的源。|
+||[type](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#type)|获取事件的类型。|
+||[visibilityAfter](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityAfter)|获取在可见性更改后工作表的新可见性设置。|
+||[visibilityBefore](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityBefore)|获取工作表的上一个可见性设置，在可见性更改之前。|
+||[worksheetId](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#worksheetId)|获取其可见性已更改的工作表的 ID。|
 
 ## <a name="see-also"></a>另请参阅
 

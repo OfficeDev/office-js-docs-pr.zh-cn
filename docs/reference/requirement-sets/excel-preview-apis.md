@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript 预览 API
 description: 有关即将推出的 JavaScript Excel的详细信息。
-ms.date: 09/16/2021
+ms.date: 10/13/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: bd36d9ba1be4e9e0caafdd49e63d8e7cdea01c59
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: 1c60fa7fe41a9606150b5a83c4d611c97427d1ab
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474348"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367472"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -33,14 +33,14 @@ ms.locfileid: "59474348"
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前预览Excel JavaScript API 的列表。 有关所有 JavaScript EXCEL的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 Excel [JavaScript API。](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
+下表列出了当前预览Excel JavaScript API 的列表。 有关所有 JavaScript API Excel的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 Excel [JavaScript API。](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
 |[AllowEditRange](/javascript/api/excel/excel.alloweditrange)|[address](/javascript/api/excel/excel.alloweditrange#address)|指定与对象关联的区域。|
 ||[delete()](/javascript/api/excel/excel.alloweditrange#delete__)|从 中删除此对象 `AllowEditRangeCollection` 。|
-||[pauseProtection (password？： string) ](/javascript/api/excel/excel.alloweditrange#pauseProtection_password_)|暂停给定会话中用户 `AllowEditRange` 给定对象的工作表保护。|
 ||[isPasswordProtected](/javascript/api/excel/excel.alloweditrange#isPasswordProtected)|指定 是否 `AllowEditRange` 受密码保护。|
+||[pauseProtection (password？： string) ](/javascript/api/excel/excel.alloweditrange#pauseProtection_password_)|暂停给定会话中用户 `AllowEditRange` 给定对象的工作表保护。|
 ||[setPassword (password？： string) ](/javascript/api/excel/excel.alloweditrange#setPassword_password_)|更改与 关联的密码 `AllowEditRange` 。|
 ||[title](/javascript/api/excel/excel.alloweditrange#title)|指定对象的标题。|
 |[AllowEditRangeCollection](/javascript/api/excel/excel.alloweditrangecollection)|[add (title： string， rangeAddress： string， options？： Excel.AllowEditRangeOptions) ](/javascript/api/excel/excel.alloweditrangecollection#add_title__rangeAddress__options_)|向 `AllowEditRange` 集合添加对象。|
@@ -48,8 +48,8 @@ ms.locfileid: "59474348"
 ||[getItem(key: string)](/javascript/api/excel/excel.alloweditrangecollection#getItem_key_)|按 `AllowEditRange` 对象的标题获取对象。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.alloweditrangecollection#getItemAt_index_)|按 `AllowEditRange` 对象在集合中的索引返回对象。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.alloweditrangecollection#getItemOrNullObject_key_)|按 `AllowEditRange` 对象的标题获取对象。|
-||[pauseProtection (password： string) ](/javascript/api/excel/excel.alloweditrangecollection#pauseProtection_password_)|暂停对集合中给定会话中用户具有给定密码 `AllowEditRange` 的所有对象的工作表保护。|
 ||[items](/javascript/api/excel/excel.alloweditrangecollection#items)|获取此集合中已加载的子项。|
+||[pauseProtection (password： string) ](/javascript/api/excel/excel.alloweditrangecollection#pauseProtection_password_)|暂停对集合中给定会话中用户具有给定密码 `AllowEditRange` 的所有对象的工作表保护。|
 |[AllowEditRangeOptions](/javascript/api/excel/excel.alloweditrangeoptions)|[password](/javascript/api/excel/excel.alloweditrangeoptions#password)|与 关联的密码 `AllowEditRange` 。|
 |[BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue)|[errorSubType](/javascript/api/excel/excel.blockederrorcellvalue#errorSubType)|表示 的类型 `BlockedErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.blockederrorcellvalue#errorType)|表示 的类型 `ErrorCellValue` 。|
@@ -73,31 +73,15 @@ ms.locfileid: "59474348"
 ||[licenseText](/javascript/api/excel/excel.cellvalueattributionattributes#licenseText)|表示管理此属性的许可证的名称。|
 ||[sourceAddress](/javascript/api/excel/excel.cellvalueattributionattributes#sourceAddress)|表示指向 的源的 `CellValue` URL。|
 ||[sourceText](/javascript/api/excel/excel.cellvalueattributionattributes#sourceText)|表示 的源的名称 `CellValue` 。|
-|[CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes)|[说明](/javascript/api/excel/excel.cellvalueproviderattributes#description)|表示在未指定徽标时在卡片视图中使用的提供程序说明属性。|
+|[CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes)|[description](/javascript/api/excel/excel.cellvalueproviderattributes#description)|表示在未指定徽标时在卡片视图中使用的提供程序说明属性。|
 ||[logoSourceAddress](/javascript/api/excel/excel.cellvalueproviderattributes#logoSourceAddress)|表示用于下载将在卡片视图中用作徽标的图像的 URL。|
 ||[logoTargetAddress](/javascript/api/excel/excel.cellvalueproviderattributes#logoTargetAddress)|表示一个 URL，如果用户单击卡片视图中的徽标元素，该 URL 即为导航目标。|
-|[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteShiftDirection)|代表在 (单元格时剩余单元格) 移动的方向，例如向上或向左移动。|
-||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertShiftDirection)|表示插入 (单元格时现有单元格) 向右或向下移动的方向。|
-|[Chart](/javascript/api/excel/excel.chart)|[getDataTable () ](/javascript/api/excel/excel.chart#getDataTable__)|获取图表上的数据表。|
-||[getDataTableOrNullObject () ](/javascript/api/excel/excel.chart#getDataTableOrNullObject__)|获取图表上的数据表。|
-|[ChartDataTable](/javascript/api/excel/excel.chartdatatable)|[format](/javascript/api/excel/excel.chartdatatable#format)|表示图表数据表的格式，包括填充、字体和边框格式。|
-||[showHorizontalBorder](/javascript/api/excel/excel.chartdatatable#showHorizontalBorder)|指定是否显示数据表的水平边框。|
-||[showLegendKey](/javascript/api/excel/excel.chartdatatable#showLegendKey)|指定是否显示数据表的图例项键。|
-||[showOutlineBorder](/javascript/api/excel/excel.chartdatatable#showOutlineBorder)|指定是否显示数据表的外边框。|
-||[showVerticalBorder](/javascript/api/excel/excel.chartdatatable#showVerticalBorder)|指定是否显示数据表的垂直边框。|
-||[visible](/javascript/api/excel/excel.chartdatatable#visible)|指定是否显示图表的数据表。|
-|[ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat)|[border](/javascript/api/excel/excel.chartdatatableformat#border)|表示图表数据表的边框格式，其中包括颜色、线条样式和粗细。|
-||[fill](/javascript/api/excel/excel.chartdatatableformat#fill)|表示对象的填充格式，包括背景格式信息。|
-||[font](/javascript/api/excel/excel.chartdatatableformat#font)|代表当前 (字体名称、字号和颜色) 字体属性。|
 |[Comment](/javascript/api/excel/excel.comment)|[assignTask (：Identity) ](/javascript/api/excel/excel.comment#assignTask_assignee_)|将附加到注释的任务作为委派者分配给给定用户。|
 ||[getTask () ](/javascript/api/excel/excel.comment#getTask__)|获取与此注释关联的任务。|
 ||[getTaskOrNullObject () ](/javascript/api/excel/excel.comment#getTaskOrNullObject__)|获取与此注释关联的任务。|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[getItemOrNullObject (commentId： string) ](/javascript/api/excel/excel.commentcollection#getItemOrNullObject_commentId_)|根据其 ID 从集合中获取批注。|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask (：Identity) ](/javascript/api/excel/excel.commentreply#assignTask_assignee_)|将附加到注释的任务分配给指定用户作为唯一的代理人。|
 ||[getTask () ](/javascript/api/excel/excel.commentreply#getTask__)|获取与此批注回复线程相关联的任务。|
 ||[getTaskOrNullObject () ](/javascript/api/excel/excel.commentreply#getTaskOrNullObject__)|获取与此批注回复线程相关联的任务。|
-|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[getItemOrNullObject (commentReplyId： string) ](/javascript/api/excel/excel.commentreplycollection#getItemOrNullObject_commentReplyId_)|返回由其 ID 标识的批注回复。|
-|[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[getItemOrNullObject(id: string)](/javascript/api/excel/excel.conditionalformatcollection#getItemOrNullObject_id_)|返回由 ID 标识的条件格式。|
 |[ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue)|[errorSubType](/javascript/api/excel/excel.connecterrorcellvalue#errorSubType)|表示 的类型 `ConnectErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.connecterrorcellvalue#errorType)|表示 的类型 `ErrorCellValue` 。|
 ||[基元](/javascript/api/excel/excel.connecterrorcellvalue#primitive)|表示由具有此值 `Range.values` 的单元格返回的值。|
@@ -107,9 +91,7 @@ ms.locfileid: "59474348"
 ||[基元](/javascript/api/excel/excel.div0errorcellvalue#primitive)|表示由具有此值 `Range.values` 的单元格返回的值。|
 ||[primitiveType](/javascript/api/excel/excel.div0errorcellvalue#primitiveType)|表示由具有此值 `Range.valueTypes` 的单元格返回的值。|
 ||[type](/javascript/api/excel/excel.div0errorcellvalue#type)|表示此单元格值的类型。|
-|[DocumentTask](/javascript/api/excel/excel.documenttask)|[percentComplete](/javascript/api/excel/excel.documenttask#percentComplete)|指定任务的完成百分比。|
-||[priority](/javascript/api/excel/excel.documenttask#priority)|指定任务的优先级。|
-||[assignees](/javascript/api/excel/excel.documenttask#assignees)|返回任务的被分配者的集合。|
+|[DocumentTask](/javascript/api/excel/excel.documenttask)|[assignees](/javascript/api/excel/excel.documenttask#assignees)|返回任务的被分配者的集合。|
 ||[更改](/javascript/api/excel/excel.documenttask#changes)|获取任务的更改记录。|
 ||[comment](/javascript/api/excel/excel.documenttask#comment)|获取与任务关联的注释。|
 ||[completedBy](/javascript/api/excel/excel.documenttask#completedBy)|获取完成任务的最新用户。|
@@ -117,6 +99,8 @@ ms.locfileid: "59474348"
 ||[createdBy](/javascript/api/excel/excel.documenttask#createdBy)|获取创建任务的用户。|
 ||[createdDateTime](/javascript/api/excel/excel.documenttask#createdDateTime)|获取任务的创建日期和时间。|
 ||[id](/javascript/api/excel/excel.documenttask#id)|获取任务的 ID。|
+||[percentComplete](/javascript/api/excel/excel.documenttask#percentComplete)|指定任务的完成百分比。|
+||[priority](/javascript/api/excel/excel.documenttask#priority)|指定任务的优先级。|
 ||[setStartAndDueDateTime (startDateTime： Date， dueDateTime： Date) ](/javascript/api/excel/excel.documenttask#setStartAndDueDateTime_startDateTime__dueDateTime_)|更改任务的开始日期和截止日期。|
 ||[startAndDueDateTime](/javascript/api/excel/excel.documenttask#startAndDueDateTime)|获取或设置任务应开始和到期的日期和时间。|
 ||[title](/javascript/api/excel/excel.documenttask#title)|指定任务的标题。|
@@ -161,7 +145,6 @@ ms.locfileid: "59474348"
 ||[基元](/javascript/api/excel/excel.gettingdataerrorcellvalue#primitive)|表示由具有此值 `Range.values` 的单元格返回的值。|
 ||[primitiveType](/javascript/api/excel/excel.gettingdataerrorcellvalue#primitiveType)|表示由具有此值 `Range.valueTypes` 的单元格返回的值。|
 ||[type](/javascript/api/excel/excel.gettingdataerrorcellvalue#type)|表示此单元格值的类型。|
-|[GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.groupshapecollection#getItemOrNullObject_key_)|使用形状的名称或 ID 获取形状。|
 |[标识](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayName)|表示用户的显示名称。|
 ||[email](/javascript/api/excel/excel.identity#email)|表示用户的电子邮件地址。|
 ||[id](/javascript/api/excel/excel.identity#id)|表示用户的唯一 ID。|
@@ -177,19 +160,19 @@ ms.locfileid: "59474348"
 |[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[dataProvider](/javascript/api/excel/excel.linkeddatatype#dataProvider)|链接数据提供程序的数据提供程序数据类型。|
 ||[lastRefreshed](/javascript/api/excel/excel.linkeddatatype#lastRefreshed)|自上次刷新链接工作簿时打开工作簿以来的本地数据类型日期和时间。|
 ||[name](/javascript/api/excel/excel.linkeddatatype#name)|链接对象数据类型。|
-||[periodicRefreshInterval](/javascript/api/excel/excel.linkeddatatype#periodicRefreshInterval)|链接对象刷新频率（以秒数据类型设置为 `refreshMode` "Periodic"时刷新。|
+||[periodicRefreshInterval](/javascript/api/excel/excel.linkeddatatype#periodicRefreshInterval)|链接对象刷新的频率（以秒数据类型设置为 `refreshMode` "Periodic"时刷新。|
 ||[refreshMode](/javascript/api/excel/excel.linkeddatatype#refreshMode)|用于检索链接数据数据类型的机制。|
-||[服务 Id](/javascript/api/excel/excel.linkeddatatype#serviceId)|链接对象的唯一数据类型。|
-||[supportedRefreshModes](/javascript/api/excel/excel.linkeddatatype#supportedRefreshModes)|返回一个数组，该数组包含链接对象支持的所有数据类型。|
 ||[requestRefresh () ](/javascript/api/excel/excel.linkeddatatype#requestRefresh__)|请求刷新链接数据类型。|
 ||[requestSetRefreshMode (refreshMode： Excel。LinkedDataTypeRefreshMode) ](/javascript/api/excel/excel.linkeddatatype#requestSetRefreshMode_refreshMode_)|请求更改此链接的刷新数据类型。|
-|[LinkedDataTypeAddedEventArgs](/javascript/api/excel/excel.linkeddatatypeaddedeventargs)|[服务 Id](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#serviceId)|新链接对象的唯一数据类型。|
+||[服务 Id](/javascript/api/excel/excel.linkeddatatype#serviceId)|链接对象的唯一数据类型。|
+||[supportedRefreshModes](/javascript/api/excel/excel.linkeddatatype#supportedRefreshModes)|返回一个数组，该数组包含链接对象支持的所有数据类型。|
+|[LinkedDataTypeAddedEventArgs](/javascript/api/excel/excel.linkeddatatypeaddedeventargs)|[服务 Id](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#serviceId)|新链接对象的唯一 ID 数据类型。|
 ||[source](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#source)|获取事件源。|
 ||[type](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#type)|获取事件的类型。|
 |[LinkedDataTypeCollection](/javascript/api/excel/excel.linkeddatatypecollection)|[getCount()](/javascript/api/excel/excel.linkeddatatypecollection#getCount__)|获取集合中链接的数据类型的数量。|
 ||[getItem (键：number) ](/javascript/api/excel/excel.linkeddatatypecollection#getItem_key_)|按服务 ID 数据类型链接的标识。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemAt_index_)|按集合数据类型索引获取链接对象。|
-||[getItemOrNullObject (键：number) ](/javascript/api/excel/excel.linkeddatatypecollection#getItemOrNullObject_key_)|按 ID 数据类型链接的标识符。|
+||[getItemOrNullObject (键：number) ](/javascript/api/excel/excel.linkeddatatypecollection#getItemOrNullObject_key_)|按 ID 获取数据类型链接对象。|
 ||[items](/javascript/api/excel/excel.linkeddatatypecollection#items)|获取此集合中已加载的子项。|
 ||[requestRefreshAll () ](/javascript/api/excel/excel.linkeddatatypecollection#requestRefreshAll__)|请求刷新集合中所有链接的数据类型。|
 |[NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue)|[errorType](/javascript/api/excel/excel.naerrorcellvalue#errorType)|表示 的类型 `ErrorCellValue` 。|
@@ -212,18 +195,10 @@ ms.locfileid: "59474348"
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getCell_dataHierarchy__rowItems__columnItems_)|根据数据层次结构以及各自层次结构的行和列项，获取数据透视表中的唯一单元格。|
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotStyle)|应用于数据透视表的样式。|
 ||[setStyle (样式：string \| PivotTableStyle \| BuiltInPivotTableStyle) ](/javascript/api/excel/excel.pivotlayout#setStyle_style_)|设置应用于数据透视表的样式。|
+|[PivotTable](/javascript/api/excel/excel.pivottable)|[getDataSourceString () ](/javascript/api/excel/excel.pivottable#getDataSourceString__)|返回数据透视表数据源的字符串表示形式。|
+||[getDataSourceType () ](/javascript/api/excel/excel.pivottable#getDataSourceType__)|获取数据透视表的数据源的类型。|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject () ](/javascript/api/excel/excel.pivottablescopedcollection#getFirstOrNullObject__)|获取集合中的第一个数据透视表。|
-|[Query](/javascript/api/excel/excel.query)|[error](/javascript/api/excel/excel.query#error)|从上次刷新查询时获取查询错误消息。|
-||[loadedTo](/javascript/api/excel/excel.query#loadedTo)|获取加载到查询对象类型。|
-||[loadedToDataModel](/javascript/api/excel/excel.query#loadedToDataModel)|指定是否将查询加载到数据模型。|
-||[name](/javascript/api/excel/excel.query#name)|获取查询的名称。|
-||[refreshDate](/javascript/api/excel/excel.query#refreshDate)|获取上次刷新查询的日期和时间。|
-||[rowsLoadedCount](/javascript/api/excel/excel.query#rowsLoadedCount)|获取上次刷新查询时加载的行数。|
-|[QueryCollection](/javascript/api/excel/excel.querycollection)|[getCount()](/javascript/api/excel/excel.querycollection#getCount__)|获取工作簿中的查询数。|
-||[getItem(key: string)](/javascript/api/excel/excel.querycollection#getItem_key_)|根据名称从集合获取查询。|
-||[items](/javascript/api/excel/excel.querycollection#items)|获取此集合中已加载的子项。|
-|[Range](/javascript/api/excel/excel.range)|[getDependents () ](/javascript/api/excel/excel.range#getDependents__)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有从属 `WorkbookRangeAreas` 单元格的范围。|
-||[getPrecedents () ](/javascript/api/excel/excel.range#getPrecedents__)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有引用 `WorkbookRangeAreas` 单元格的范围。|
+|[区域](/javascript/api/excel/excel.range)|[getDependents () ](/javascript/api/excel/excel.range#getDependents__)|返回一个对象，该对象表示包含同一工作表或多个工作表中单元格的所有 `WorkbookRangeAreas` 从属单元格的范围。|
 |[RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue)|[errorSubType](/javascript/api/excel/excel.referrorcellvalue#errorSubType)|表示 的类型 `RefErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.referrorcellvalue#errorType)|表示 的类型 `ErrorCellValue` 。|
 ||[基元](/javascript/api/excel/excel.referrorcellvalue#primitive)|表示由具有此值 `Range.values` 的单元格返回的值。|
@@ -240,30 +215,27 @@ ms.locfileid: "59474348"
 ||[warnings](/javascript/api/excel/excel.refreshrequestcompletedeventargs#warnings)|包含从刷新请求生成的任何警告的数组。|
 |[Shape](/javascript/api/excel/excel.shape)|[displayName](/javascript/api/excel/excel.shape#displayName)|获取显示名称的大小。|
 |[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addSvg_xml_)|从 XML 字符串创建可缩放的矢量图形 (SVG) 并将其添加到工作表。|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.shapecollection#getItemOrNullObject_key_)|使用形状的名称或 ID 获取形状。|
 |[Slicer](/javascript/api/excel/excel.slicer)|[nameInFormula](/javascript/api/excel/excel.slicer#nameInFormula)|表示公式中使用切片器名称。|
-||[slicerStyle](/javascript/api/excel/excel.slicer#slicerStyle)|应用于切片器的样式。|
 ||[setStyle (样式：字符串 \| SlicerStyle \| BuiltInSlicerStyle) ](/javascript/api/excel/excel.slicer#setStyle_style_)|设置应用于切片器的样式。|
+||[slicerStyle](/javascript/api/excel/excel.slicer#slicerStyle)|应用于切片器的样式。|
 |[SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.spillerrorcellvalue#errorSubType)|表示 的类型 `SpillErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.spillerrorcellvalue#errorType)|表示 的类型 `ErrorCellValue` 。|
 ||[基元](/javascript/api/excel/excel.spillerrorcellvalue#primitive)|表示由具有此值 `Range.values` 的单元格返回的值。|
 ||[primitiveType](/javascript/api/excel/excel.spillerrorcellvalue#primitiveType)|表示由具有此值 `Range.valueTypes` 的单元格返回的值。|
+||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#spilledColumns)|表示如果没有项目，将溢出的#SPILL！ error。|
+||[spilledRows](/javascript/api/excel/excel.spillerrorcellvalue#spilledRows)|表示如果没有数据，则溢出的#SPILL！ error。|
 ||[type](/javascript/api/excel/excel.spillerrorcellvalue#type)|表示此单元格值的类型。|
 |[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[基元](/javascript/api/excel/excel.stringcellvalue#primitive)|表示由具有此值 `Range.values` 的单元格返回的值。|
 ||[primitiveType](/javascript/api/excel/excel.stringcellvalue#primitiveType)|表示由具有此值 `Range.valueTypes` 的单元格返回的值。|
 ||[type](/javascript/api/excel/excel.stringcellvalue#type)|表示此单元格值的类型。|
-|[StyleCollection](/javascript/api/excel/excel.stylecollection)|[getItemOrNullObject(name: string)](/javascript/api/excel/excel.stylecollection#getItemOrNullObject_name_)|按名称获取样式。|
 |[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearStyle__)|将表格更改为使用默认表格样式。|
 ||[onFiltered](/javascript/api/excel/excel.table#onFiltered)|在将筛选器应用于特定表时发生。|
-||[tableStyle](/javascript/api/excel/excel.table#tableStyle)|应用于表格的样式。|
 ||[setStyle (样式：string \| TableStyle \| BuiltInTableStyle) ](/javascript/api/excel/excel.table#setStyle_style_)|设置应用于表格的样式。|
+||[tableStyle](/javascript/api/excel/excel.table#tableStyle)|应用于表格的样式。|
 |[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onFiltered)|在工作簿或工作表的任何表上应用筛选器时发生。|
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableId)|获取应用筛选器的表的 ID。|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetId)|获取包含表格的工作表的 ID。|
-|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[deleteRows (行： number[] \| TableRow[]) ](/javascript/api/excel/excel.tablerowcollection#deleteRows_rows_)|从表中删除多行。|
-||[deleteRowsAt (索引： number， count？： number) ](/javascript/api/excel/excel.tablerowcollection#deleteRowsAt_index__count_)|从给定索引开始，从表中删除指定数量的行。|
-|[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#getItemOrNullObject_key_)|按名称或 ID 获取表。|
 |[ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.valueerrorcellvalue#errorSubType)|表示 的类型 `ValueErrorCellValue` 。|
 ||[errorType](/javascript/api/excel/excel.valueerrorcellvalue#errorType)|表示 的类型 `ErrorCellValue` 。|
 ||[基元](/javascript/api/excel/excel.valueerrorcellvalue#primitive)|表示由具有此值 `Range.values` 的单元格返回的值。|
@@ -281,57 +253,27 @@ ms.locfileid: "59474348"
 ||[relatedImagesAddress](/javascript/api/excel/excel.webimagecellvalue#relatedImagesAddress)|表示包含图像被视为与此 相关的网页的 `WebImageCellValue` URL。|
 ||[type](/javascript/api/excel/excel.webimagecellvalue#type)|表示此单元格值的类型。|
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkedDataTypes)|返回属于工作簿的链接数据类型的集合。|
-||[查询](/javascript/api/excel/excel.workbook#queries)|返回属于工作簿的 Power Query 查询的集合。|
-||[任务](/javascript/api/excel/excel.workbook#tasks)|返回工作簿中的任务集合。|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showPivotFieldList)|指定是否在工作簿级别显示数据透视表的字段列表窗格。|
+||[任务](/javascript/api/excel/excel.workbook#tasks)|返回工作簿中的任务集合。|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904DateSystem)|如果工作簿使用 1904 日期系统，则为 True。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onFiltered)|在将筛选器应用于特定工作表时发生。|
-||[onNameChanged](/javascript/api/excel/excel.worksheet#onNameChanged)|更改工作表名称时发生。|
-||[onProtectionChanged](/javascript/api/excel/excel.worksheet#onProtectionChanged)|工作表保护状态更改时发生。|
-||[onVisibilityChanged](/javascript/api/excel/excel.worksheet#onVisibilityChanged)|在工作表可见性更改时发生。|
-||[tabId](/javascript/api/excel/excel.worksheet#tabId)|返回一个值，该值代表此工作表，该工作表可通过 Open Office XML 读取。|
 ||[任务](/javascript/api/excel/excel.worksheet#tasks)|返回工作表中的任务集合。|
-|[WorksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[changeDirectionState](/javascript/api/excel/excel.worksheetchangedeventargs#changeDirectionState)|表示工作表中单元格在删除或插入时移动的方向的变化。|
-||[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggerSource)|表示事件的触发源。|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addFromBase64_base64File__sheetNamesToInsert__positionType__relativeTo_)|将工作簿的指定工作表插入当前工作簿。|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onFiltered)|在工作簿中应用任何工作表的筛选器时发生。|
-||[onMoved](/javascript/api/excel/excel.worksheetcollection#onMoved)|当用户在工作簿中移动工作表时发生。|
-||[onNameChanged](/javascript/api/excel/excel.worksheetcollection#onNameChanged)|在工作表集合中更改工作表名称时发生。|
-||[onProtectionChanged](/javascript/api/excel/excel.worksheetcollection#onProtectionChanged)|工作表保护状态更改时发生。|
-||[onVisibilityChanged](/javascript/api/excel/excel.worksheetcollection#onVisibilityChanged)|在工作表集合中更改工作表可见性时发生。|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetId)|获取应用筛选器的工作表的 ID。|
-|[WorksheetMovedEventArgs](/javascript/api/excel/excel.worksheetmovedeventargs)|[positionAfter](/javascript/api/excel/excel.worksheetmovedeventargs#positionAfter)|在移动后获取工作表的新位置。|
-||[positionBefore](/javascript/api/excel/excel.worksheetmovedeventargs#positionBefore)|在移动之前获取工作表的上一位置。|
-||[source](/javascript/api/excel/excel.worksheetmovedeventargs#source)|事件的源。|
-||[type](/javascript/api/excel/excel.worksheetmovedeventargs#type)|获取事件的类型。|
-||[worksheetId](/javascript/api/excel/excel.worksheetmovedeventargs#worksheetId)|获取已移动工作表的 ID。|
-|[WorksheetNameChangedEventArgs](/javascript/api/excel/excel.worksheetnamechangedeventargs)|[nameAfter](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameAfter)|在名称更改后获取工作表的新名称。|
-||[nameBefore](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameBefore)|获取工作表的先前名称，在名称更改之前。|
-||[source](/javascript/api/excel/excel.worksheetnamechangedeventargs#source)|事件的源。|
-||[type](/javascript/api/excel/excel.worksheetnamechangedeventargs#type)|获取事件的类型。|
-||[worksheetId](/javascript/api/excel/excel.worksheetnamechangedeventargs#worksheetId)|获取具有新名称的工作表的 ID。|
-|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[checkPassword (password？： string) ](/javascript/api/excel/excel.worksheetprotection#checkPassword_password_)|指定密码是否可用于解锁工作表保护。|
-||[pauseProtection (password？： string) ](/javascript/api/excel/excel.worksheetprotection#pauseProtection_password_)|暂停给定会话中用户的给定工作表对象的工作表保护。|
-||[allowEditRanges](/javascript/api/excel/excel.worksheetprotection#allowEditRanges)|指定 `AllowEditRangeCollection` 在此工作表中找到的 。|
+|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[allowEditRanges](/javascript/api/excel/excel.worksheetprotection#allowEditRanges)|指定 `AllowEditRangeCollection` 在此工作表中找到的 。|
 ||[canPauseProtection](/javascript/api/excel/excel.worksheetprotection#canPauseProtection)|指定是否可暂停此工作表的保护。|
+||[checkPassword (password？： string) ](/javascript/api/excel/excel.worksheetprotection#checkPassword_password_)|指定密码是否可用于解锁工作表保护。|
 ||[isPasswordProtected](/javascript/api/excel/excel.worksheetprotection#isPasswordProtected)|指定工作表是否受密码保护。|
 ||[isPaused](/javascript/api/excel/excel.worksheetprotection#isPaused)|指定是否暂停工作表保护。|
+||[pauseProtection (password？： string) ](/javascript/api/excel/excel.worksheetprotection#pauseProtection_password_)|暂停给定会话中用户的给定工作表对象的工作表保护。|
 ||[resumeProtection () ](/javascript/api/excel/excel.worksheetprotection#resumeProtection__)|为给定会话中的用户恢复给定工作表对象的工作表保护。|
 ||[setPassword (password？： string) ](/javascript/api/excel/excel.worksheetprotection#setPassword_password_)|更改与对象关联的 `WorksheetProtection` 密码。|
 ||[updateOptions (选项：Excel。WorksheetProtectionOptions) ](/javascript/api/excel/excel.worksheetprotection#updateOptions_options_)|更改与对象关联的工作表保护 `WorksheetProtection` 选项。|
 |[WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)|[allowEditRangesChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#allowEditRangesChanged)|指定是否更改了 `AllowEditRange` 任何对象。|
-||[isProtected](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#isProtected)|获取工作表的当前保护状态。|
 ||[protectionOptionsChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#protectionOptionsChanged)|指定 是否 `WorksheetProtectionOptions` 已更改。|
 ||[sheetPasswordChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#sheetPasswordChanged)|指定工作表密码是否已更改。|
-||[source](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#source)|事件的源。|
-||[type](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#type)|获取事件的类型。|
-||[worksheetId](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#worksheetId)|获取其中保护状态发生更改的工作表的 ID。|
-|[WorksheetVisibilityChangedEventArgs](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs)|[source](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#source)|事件的源。|
-||[type](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#type)|获取事件的类型。|
-||[visibilityAfter](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityAfter)|获取在可见性更改后工作表的新可见性设置。|
-||[visibilityBefore](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityBefore)|获取工作表的上一个可见性设置，在可见性更改之前。|
-||[worksheetId](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#worksheetId)|获取其可见性已更改的工作表的 ID。|
 
 ## <a name="see-also"></a>另请参阅
 

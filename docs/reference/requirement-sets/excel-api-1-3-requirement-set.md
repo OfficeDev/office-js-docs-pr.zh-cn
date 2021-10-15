@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.3 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 45a0a3551662997984a5c999b62c651d81e243f2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c7c39a341f635e3355014f75e32c1501124f99d9
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149233"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367458"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 的最近更新
 
@@ -26,20 +26,20 @@ ExcelApi 1.3 增加了对数据绑定和基本数据透视表访问的支持。
 ||[addFromNamedItem (name： string， bindingType： Excel。BindingType，id：string) ](/javascript/api/excel/excel.bindingcollection#addFromNamedItem_name__bindingType__id_)|根据工作簿中的命名项添加新的 binding 对象。|
 ||[addFromSelection (bindingType： Excel。BindingType，id：string) ](/javascript/api/excel/excel.bindingcollection#addFromSelection_bindingType__id_)|根据当前选择的内容添加新的 binding 对象。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[name](/javascript/api/excel/excel.pivottable#name)|PivotTable 对象的名称。|
-||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|包含当前 PivotTable 对象的工作表。|
 ||[refresh()](/javascript/api/excel/excel.pivottable#refresh__)|刷新 PivotTable 对象。|
+||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|包含当前 PivotTable 对象的工作表。|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getItem(name: string)](/javascript/api/excel/excel.pivottablecollection#getItem_name_)|按名称获取 PivotTable 对象。|
 ||[items](/javascript/api/excel/excel.pivottablecollection#items)|获取此集合中已加载的子项。|
 ||[refreshAll () ](/javascript/api/excel/excel.pivottablecollection#refreshAll__)|刷新集合中的所有数据透视表。|
-|[Range](/javascript/api/excel/excel.range)|[getVisibleView () ](/javascript/api/excel/excel.range#getVisibleView__)|表示当前 range 对象的可见行。|
-|[RangeView](/javascript/api/excel/excel.rangeview)|[formulas](/javascript/api/excel/excel.rangeview#formulas)|表示采用 A1 表示法的公式。|
+|[区域](/javascript/api/excel/excel.range)|[getVisibleView () ](/javascript/api/excel/excel.range#getVisibleView__)|表示当前 range 对象的可见行。|
+|[RangeView](/javascript/api/excel/excel.rangeview)|[cellAddresses](/javascript/api/excel/excel.rangeview#cellAddresses)|表示 的单元格地址 `RangeView` 。|
+||[columnCount](/javascript/api/excel/excel.rangeview#columnCount)|可见列数。|
+||[formulas](/javascript/api/excel/excel.rangeview#formulas)|表示采用 A1 表示法的公式。|
 ||[formulasLocal](/javascript/api/excel/excel.rangeview#formulasLocal)|表示采用 A1 样式表示法的公式，使用用户的语言和数字格式区域设置。|
 ||[formulasR1C1](/javascript/api/excel/excel.rangeview#formulasR1C1)|表示采用 R1C1 样式表示法的公式。|
 ||[getRange()](/javascript/api/excel/excel.rangeview#getRange__)|获取与当前 关联的父区域 `RangeView` 。|
-||[numberFormat](/javascript/api/excel/excel.rangeview#numberFormat)|表示 Excel 中指定单元格的数字格式代码。|
-||[cellAddresses](/javascript/api/excel/excel.rangeview#cellAddresses)|表示 的单元格地址 `RangeView` 。|
-||[columnCount](/javascript/api/excel/excel.rangeview#columnCount)|可见列数。|
 ||[index](/javascript/api/excel/excel.rangeview#index)|返回一个值，该值代表 的索引 `RangeView` 。|
+||[numberFormat](/javascript/api/excel/excel.rangeview#numberFormat)|表示 Excel 中指定单元格的数字格式代码。|
 ||[rowCount](/javascript/api/excel/excel.rangeview#rowCount)|可见行数。|
 ||[rows](/javascript/api/excel/excel.rangeview#rows)|表示一组与 range 相关联的 RangeView。|
 ||[text](/javascript/api/excel/excel.rangeview#text)|指定区域的文本值。|
