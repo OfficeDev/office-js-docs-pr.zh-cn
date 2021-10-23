@@ -1,14 +1,14 @@
 ---
 title: 验证 Office 加载项的清单
-description: 了解如何使用 XML 架构和其他Office验证外接程序的清单。
+description: 了解如何使用 XML 架构和其他工具Office加载项的清单。
 ms.date: 09/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b84461a8062ac0ca0300f869fcf4dba0019a6a9b
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: e9af96db7fbbeaf21274d4c5980afe0f4e9be3c5
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138609"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537609"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 
@@ -75,4 +75,5 @@ npm run validate
 - [清除 Office 缓存](clear-cache.md)
 - [使用运行时日志记录功能调试加载项](runtime-logging.md)
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
-- [调试 Office 外接程序](debug-add-ins-using-f12-developer-tools-on-windows.md)
+- [使用适用于加载项的开发人员工具调试Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)

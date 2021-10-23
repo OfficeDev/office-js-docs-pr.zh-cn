@@ -4,12 +4,12 @@ description: 有关 ExcelApi 1.4 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 297f0d2a9c892800a5f26ecd29be0c7587bc52fc
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e8a38d45a73560cade580cf5f2f9a0892790b38d
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152344"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537476"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 的最近更新
 
@@ -70,13 +70,13 @@ worksheet.getItemOrNullObject("itemName")
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.nameditemcollection#getItemOrNullObject_name_)|使用 `NamedItem` 对象的名称获取对象。|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getCount()](/javascript/api/excel/excel.pivottablecollection#getCount__)|获取集合中的数据透视表的数量。|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivottablecollection#getItemOrNullObject_name_)|按名称获取 PivotTable 对象。|
-|[Range](/javascript/api/excel/excel.range)|[getIntersectionOrNullObject (anotherRange： Range \| string) ](/javascript/api/excel/excel.range#getIntersectionOrNullObject_anotherRange_)|获取表示指定区域的矩形交集的 range 对象。|
+|[区域](/javascript/api/excel/excel.range)|[getIntersectionOrNullObject (anotherRange： Range \| string) ](/javascript/api/excel/excel.range#getIntersectionOrNullObject_anotherRange_)|获取表示指定区域的矩形交集的 range 对象。|
 ||[getUsedRangeOrNullObject (值Only？： boolean) ](/javascript/api/excel/excel.range#getUsedRangeOrNullObject_valuesOnly_)|返回指定 range 对象的所用区域。|
 |[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getCount()](/javascript/api/excel/excel.rangeviewcollection#getCount__)|获取集合 `RangeView` 中对象的数量。|
 |[设置](/javascript/api/excel/excel.setting)|[delete()](/javascript/api/excel/excel.setting#delete__)|删除 Setting 对象。|
 ||[key](/javascript/api/excel/excel.setting#key)|表示设置的 ID 的键。|
 ||[value](/javascript/api/excel/excel.setting#value)|表示为此设置存储的值。|
-|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add (key： string， value： string \| number \| boolean \| Date Array any \| <any> \|) ](/javascript/api/excel/excel.settingcollection#add_key__value_)|设置指定的 Setting 对象，或将其添加到工作簿中。|
+|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add (key： string， value： string \| number \| boolean \| Date Array any \| \|) ](/javascript/api/excel/excel.settingcollection#add_key__value_)|设置指定的 Setting 对象，或将其添加到工作簿中。|
 ||[getCount()](/javascript/api/excel/excel.settingcollection#getCount__)|获取集合中的设置数。|
 ||[getItem(key: string)](/javascript/api/excel/excel.settingcollection#getItem_key_)|通过 键获取设置条目。|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.settingcollection#getItemOrNullObject_key_)|通过 键获取设置条目。|

@@ -1,27 +1,27 @@
 ---
 title: ExcelJavaScript API 仅联机要求集
 description: 有关 ExcelApiOnline 要求集的详细信息。
-ms.date: 10/13/2021
+ms.date: 10/14/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: ae014930d3ec11d52b3904ee1205b670f8d3790f
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: bd1f62b92b9a08d23daf77f8f4b86c60333faab3
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367325"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537588"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>ExcelJavaScript API 仅联机要求集
 
-要求 `ExcelApiOnline` 集是一个特殊要求集，其中包含仅适用于Excel web 版。 此要求集内 API 被视为生产 API， (应用程序未记录的行为或) 结构Excel web 版更改。 `ExcelApiOnline`API 被视为适用于其他平台（如 (Windows Mac、iOS) ）的"预览"API，可能不受这些平台的任何支持。
+要求 `ExcelApiOnline` 集是一个特殊要求集，其中包括仅适用于Excel web 版。 此要求集内 API 被视为生产 API， (应用程序未记录的行为或) 更改Excel web 版 API。 `ExcelApiOnline`API 被视为适用于其他平台（如 (Windows、Mac、iOS) ）的"预览"API，可能不受这些平台的任何支持。
 
-当所有平台都支持要求集内 API 时，它们将被添加到下一个发布的要求集 `ExcelApiOnline` `ExcelApi 1.[NEXT]` () 。 一旦该新要求公开，将从 中删除这些 `ExcelApiOnline` API。 将此过程视为与从预览版移动到发布的 API 类似的推广过程。
+当所有平台都支持要求集内 API 时，它们将被添加到下一个发布的要求 `ExcelApiOnline` `ExcelApi 1.[NEXT]` () 。 一旦该新要求公开，将从 中删除这些 `ExcelApiOnline` API。 将此过程视为与从预览版移动到发布的 API 类似的推广过程。
 
 > [!IMPORTANT]
 > `ExcelApiOnline` 是最新编号要求集的超集。
 
 > [!IMPORTANT]
-> `ExcelApiOnline 1.1` 是仅联机 API 的唯一版本。 这是因为Excel web 版版本始终为最新版本的用户可用。
+> `ExcelApiOnline 1.1` 是仅联机 API 的唯一版本。 这是因为Excel web 版将始终为最新版本的用户提供单个版本。
 
 下表提供了 API 的简要摘要，而后续 API 列表表提供了当前 [API](#api-list) `ExcelApiOnline` 的详细列表。
 
@@ -29,6 +29,7 @@ ms.locfileid: "60367325"
 |:--- |:--- |:--- |
 | 链接的工作簿 | 管理工作簿之间的链接，包括对刷新和断开工作簿链接的支持。 | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook) [、LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
 | 命名工作表视图 | 以编程方式控制每用户工作表视图。 | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) [、NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection) |
+| 工作表移动事件 | 检测何时在集合中移动工作表、工作表的位置以及更改的来源。 | [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) [、WorksheetMovedEventArgs](/javascript/api/excel/excel.worksheetmovedeventargs) |
 
 ## <a name="recommended-usage"></a>建议的用法
 
@@ -47,7 +48,7 @@ API 位于跨平台要求集后，应删除或编辑 `isSetSupported` 检查。 
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了要求Excel当前包含的 JavaScript `ExcelApiOnline` API。 有关所有 JavaScript EXCEL的完整列表 (包括 API 和以前发布的 API `ExcelApiOnline`) ，请参阅所有 Excel [JavaScript API。](/javascript/api/excel?view=excel-js-online&preserve-view=true)
+下表列出了要求Excel当前包含的 JavaScript `ExcelApiOnline` API。 有关所有 JavaScript EXCEL的完整列表 (包括 API 和以前发布的 API) ，请参阅所有 Excel `ExcelApiOnline` [JavaScript API。](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|

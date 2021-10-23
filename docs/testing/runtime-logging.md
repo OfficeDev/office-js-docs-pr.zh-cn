@@ -3,12 +3,12 @@ title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 333096d1ea63696e854b35c103da5d5670a940f3
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: b5fdd28f95d4513c9364ce0bacbfe6f27cc9779c
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138667"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537616"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 
@@ -141,4 +141,5 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 - [验证 Office 加载项的清单](troubleshoot-manifest.md)
 - [清除 Office 缓存](clear-cache.md)
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
-- [调试 Office 外接程序](debug-add-ins-using-f12-developer-tools-on-windows.md)
+- [使用适用于加载项的开发人员工具调试Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)

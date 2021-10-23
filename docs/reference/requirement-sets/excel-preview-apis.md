@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript 预览 API
 description: 有关即将推出的 JavaScript Excel的详细信息。
-ms.date: 10/13/2021
+ms.date: 10/14/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c60fa7fe41a9606150b5a83c4d611c97427d1ab
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: a7f1c81f75243619f562d901cb78e16bcba676d2
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367472"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537560"
 ---
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
@@ -21,19 +21,17 @@ ms.locfileid: "60367472"
 
 | 功能区域 | 说明 | 相关对象 |
 |:--- |:--- |:--- |
-| 图表数据表 | 控制图表上数据表的外观、格式和可见性。 | [](/javascript/api/excel/excel.chart)Chart、ChartDataTable、ChartDataTableFormat [](/javascript/api/excel/excel.chartdatatable) [](/javascript/api/excel/excel.chartdatatableformat) |
 | 自定义数据类型 | 现有数据数据类型Excel扩展，包括对格式化数字和 Web 图像的支持。 | [](/javascript/api/excel/excel.booleancellvalue)BooleanCellValue、CellValueAttributionAttributes、CellValueProviderAttributes、DoubleCellValue、EmptyCellValue、FormattedNumberCellValue、StringCellValue、ValueTypeNotAvailableCellValue、WebImageCellValue [](/javascript/api/excel/excel.cellvalueattributionattributes) [](/javascript/api/excel/excel.cellvalueproviderattributes) [](/javascript/api/excel/excel.doublecellvalue) [](/javascript/api/excel/excel.emptycellvalue) [](/javascript/api/excel/excel.formattednumbercellvalue) [](/javascript/api/excel/excel.stringcellvalue) [](/javascript/api/excel/excel.valuetypenotavailablecellvalue) [](/javascript/api/excel/excel.webimagecellvalue) |
-| 自定义数据类型错误| 支持自定义数据类型的错误对象。 | [](/javascript/api/excel/excel.blockederrorcellvalue)BlockedErrorCellValue、BusyErrorCellValue、CalcErrorCellValue、ConnectErrorCellValue、Div0ErrorCellValue、FieldErrorCellValue、GettingDataErrorCellValue、NaErrorCellValue、NameErrorCellValue、NullErrorCellValue、NumErrorCellValue、RefErrorCellValue、SpillErrorCellValue、ValueErrorCellValue [](/javascript/api/excel/excel.busyerrorcellvalue) [](/javascript/api/excel/excel.calcerrorcellvalue) [](/javascript/api/excel/excel.connecterrorcellvalue) [](/javascript/api/excel/excel.div0errorcellvalue) [](/javascript/api/excel/excel.fielderrorcellvalue) [](/javascript/api/excel/excel.gettingdataerrorcellvalue) [](/javascript/api/excel/excel.naerrorcellvalue) [](/javascript/api/excel/excel.nameerrorcellvalue) [](/javascript/api/excel/excel.nullerrorcellvalue) [](/javascript/api/excel/excel.numerrorcellvalue) [](/javascript/api/excel/excel.referrorcellvalue) [](/javascript/api/excel/excel.spillerrorcellvalue) [](/javascript/api/excel/excel.valueerrorcellvalue)|
+| 自定义数据类型错误 | 支持自定义数据类型的错误对象。 | [](/javascript/api/excel/excel.blockederrorcellvalue)BlockedErrorCellValue、BusyErrorCellValue、CalcErrorCellValue、ConnectErrorCellValue、Div0ErrorCellValue、FieldErrorCellValue、GettingDataErrorCellValue、NaErrorCellValue、NameErrorCellValue、NullErrorCellValue、NumErrorCellValue、RefErrorCellValue、SpillErrorCellValue、ValueErrorCellValue [](/javascript/api/excel/excel.busyerrorcellvalue) [](/javascript/api/excel/excel.calcerrorcellvalue) [](/javascript/api/excel/excel.connecterrorcellvalue) [](/javascript/api/excel/excel.div0errorcellvalue) [](/javascript/api/excel/excel.fielderrorcellvalue) [](/javascript/api/excel/excel.gettingdataerrorcellvalue) [](/javascript/api/excel/excel.naerrorcellvalue) [](/javascript/api/excel/excel.nameerrorcellvalue) [](/javascript/api/excel/excel.nullerrorcellvalue) [](/javascript/api/excel/excel.numerrorcellvalue) [](/javascript/api/excel/excel.referrorcellvalue) [](/javascript/api/excel/excel.spillerrorcellvalue) [](/javascript/api/excel/excel.valueerrorcellvalue)|
 | 记录任务 | 将注释转换为分配给用户的任务。 | [DocumentTask](/javascript/api/excel/excel.documenttask) |
 | 身份 | 管理用户标识，包括显示名称和电子邮件地址。 | [](/javascript/api/excel/excel.identity) [Identity、IdentityCollection、IdentityEntity](/javascript/api/excel/excel.identitycollection) [](/javascript/api/excel/excel.identityentity) |
-| 链接的数据类型 | 添加对从外部源连接到Excel类型的支持。 | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
+| 链接的数据类型 | 添加对从外部源连接到Excel类型的支持。 | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype) [、LinkedDataTypeAddedEventArgs、LinkedDataTypeCollection](/javascript/api/excel/excel.linkeddatatypeaddedeventargs) [](/javascript/api/excel/excel.linkeddatatypecollection) |
 | 表样式 | 提供对字体、边框、填充颜色以及表格样式其他方面的控制。 | [表](/javascript/api/excel/excel.table)、[数据透视表](/javascript/api/excel/excel.pivottable)[、切片器](/javascript/api/excel/excel.slicer) |
-| 查询 | 检索查询属性，如名称、刷新日期和查询计数。 | [Query](/javascript/api/excel/excel.query) [、QueryCollection](/javascript/api/excel/excel.querycollection)|
-| 工作表保护 | 防止未经授权的用户对工作表中的指定区域进行更改。 | [](/javascript/api/excel/excel.worksheetprotection)WorksheetProtection、WorksheetProtectionChangedEventArgs、AllowEditRange、AllowEditRangeCollection、AllowEditRangeOptions [](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) [](/javascript/api/excel/excel.alloweditrange) [](/javascript/api/excel/excel.alloweditrangecollection) [](/javascript/api/excel/excel.alloweditrangeoptions) |
+| 工作表保护 | 防止未经授权的用户对工作表中的指定区域进行更改。 | [](/javascript/api/excel/excel.worksheetprotection)WorksheetProtection、AllowEditRange、AllowEditRangeCollection、AllowEditRangeOptions [](/javascript/api/excel/excel.alloweditrange) [](/javascript/api/excel/excel.alloweditrangecollection) [](/javascript/api/excel/excel.alloweditrangeoptions) |
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前预览Excel JavaScript API 的列表。 有关所有 JavaScript API Excel的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 Excel [JavaScript API。](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
+下表列出了当前预览Excel JavaScript API 的列表。 有关所有 JavaScript EXCEL的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 Excel [JavaScript API。](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -148,7 +146,7 @@ ms.locfileid: "60367472"
 |[标识](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayName)|表示用户的显示名称。|
 ||[email](/javascript/api/excel/excel.identity#email)|表示用户的电子邮件地址。|
 ||[id](/javascript/api/excel/excel.identity#id)|表示用户的唯一 ID。|
-|[IdentityCollection](/javascript/api/excel/excel.identitycollection)|[添加 (：标识) ](/javascript/api/excel/excel.identitycollection#add_assignee_)|向集合添加用户标识。|
+|[IdentityCollection](/javascript/api/excel/excel.identitycollection)|[add (assignee： Identity) ](/javascript/api/excel/excel.identitycollection#add_assignee_)|向集合添加用户标识。|
 ||[clear()](/javascript/api/excel/excel.identitycollection#clear__)|从集合中删除所有的用户标识。|
 ||[getCount()](/javascript/api/excel/excel.identitycollection#getCount__)|获取集合中项的数目。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.identitycollection#getItemAt_index_)|使用文档在集合中的索引获取文档用户标识。|
@@ -170,9 +168,9 @@ ms.locfileid: "60367472"
 ||[source](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#source)|获取事件源。|
 ||[type](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#type)|获取事件的类型。|
 |[LinkedDataTypeCollection](/javascript/api/excel/excel.linkeddatatypecollection)|[getCount()](/javascript/api/excel/excel.linkeddatatypecollection#getCount__)|获取集合中链接的数据类型的数量。|
-||[getItem (键：number) ](/javascript/api/excel/excel.linkeddatatypecollection#getItem_key_)|按服务 ID 数据类型链接的标识。|
+||[getItem (键：number) ](/javascript/api/excel/excel.linkeddatatypecollection#getItem_key_)|按服务 ID 数据类型链接的标识符。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemAt_index_)|按集合数据类型索引获取链接对象。|
-||[getItemOrNullObject (键：number) ](/javascript/api/excel/excel.linkeddatatypecollection#getItemOrNullObject_key_)|按 ID 获取数据类型链接对象。|
+||[getItemOrNullObject (键：number) ](/javascript/api/excel/excel.linkeddatatypecollection#getItemOrNullObject_key_)|按 ID 数据类型链接的标识符。|
 ||[items](/javascript/api/excel/excel.linkeddatatypecollection#items)|获取此集合中已加载的子项。|
 ||[requestRefreshAll () ](/javascript/api/excel/excel.linkeddatatypecollection#requestRefreshAll__)|请求刷新集合中所有链接的数据类型。|
 |[NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue)|[errorType](/javascript/api/excel/excel.naerrorcellvalue#errorType)|表示 的类型 `ErrorCellValue` 。|
@@ -213,7 +211,7 @@ ms.locfileid: "60367472"
 ||[source](/javascript/api/excel/excel.refreshrequestcompletedeventargs#source)|获取事件源。|
 ||[type](/javascript/api/excel/excel.refreshrequestcompletedeventargs#type)|获取事件的类型。|
 ||[warnings](/javascript/api/excel/excel.refreshrequestcompletedeventargs#warnings)|包含从刷新请求生成的任何警告的数组。|
-|[Shape](/javascript/api/excel/excel.shape)|[displayName](/javascript/api/excel/excel.shape#displayName)|获取显示名称的大小。|
+|[Shape](/javascript/api/excel/excel.shape)|[displayName](/javascript/api/excel/excel.shape#displayName)|获取显示名称的一部分。|
 |[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addSvg_xml_)|从 XML 字符串创建可缩放的矢量图形 (SVG) 并将其添加到工作表。|
 |[Slicer](/javascript/api/excel/excel.slicer)|[nameInFormula](/javascript/api/excel/excel.slicer#nameInFormula)|表示公式中使用切片器名称。|
 ||[setStyle (样式：字符串 \| SlicerStyle \| BuiltInSlicerStyle) ](/javascript/api/excel/excel.slicer#setStyle_style_)|设置应用于切片器的样式。|
@@ -222,7 +220,7 @@ ms.locfileid: "60367472"
 ||[errorType](/javascript/api/excel/excel.spillerrorcellvalue#errorType)|表示 的类型 `ErrorCellValue` 。|
 ||[基元](/javascript/api/excel/excel.spillerrorcellvalue#primitive)|表示由具有此值 `Range.values` 的单元格返回的值。|
 ||[primitiveType](/javascript/api/excel/excel.spillerrorcellvalue#primitiveType)|表示由具有此值 `Range.valueTypes` 的单元格返回的值。|
-||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#spilledColumns)|表示如果没有项目，将溢出的#SPILL！ error。|
+||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#spilledColumns)|表示如果没有数据，将溢出的#SPILL！ error。|
 ||[spilledRows](/javascript/api/excel/excel.spillerrorcellvalue#spilledRows)|表示如果没有数据，则溢出的#SPILL！ error。|
 ||[type](/javascript/api/excel/excel.spillerrorcellvalue#type)|表示此单元格值的类型。|
 |[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[基元](/javascript/api/excel/excel.stringcellvalue#primitive)|表示由具有此值 `Range.values` 的单元格返回的值。|

@@ -1,24 +1,22 @@
 ---
 title: Microsoft Office外接程序社区通话
 description: 每月Microsoft Office外接程序社区通话日程、日程安排和资源。
-ms.date: 10/08/2021
+ms.date: 10/18/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 85d0f0d697c5c66145536acb8db88ffe66acf278
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 3ce768bd6b03f3103efae0e9b679a6221e3e7927
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250397"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537596"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
 外接程序Microsoft Office通话是每月一次通话，你可以在这里了解有关新功能、开发实践以及有关创建外接程序Office其他信息。社区通话在每月的第二个星期三上午 8：00 PDT 进行。 可以从 下载日历邀请 [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) 。
 
-## <a name="agenda-for-october-13th-call"></a>10 月 13 日议程通话
+## <a name="agenda-for-november-10th-call"></a>11 月 10 日通话日程
 
-- Word API 更新
-- 适用于 Mac Outlook API 更新
-- 代码示例演示：Hello world
+- 我们计划于 11 月 5 日（星期五）在此发布议程。
 
 ## <a name="previous-calls"></a>以前的调用
 
@@ -31,15 +29,7 @@ ms.locfileid: "60250397"
 - [Office外接程序社区通话 – 2021 年 5 月 12 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
 - [Office外接程序社区通话 – 2021 年 4 月 14 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
 - [Office外接程序社区通话 – 2021 年 3 月 10 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)
-- [Office外接程序社区通话 – 2021 年 2 月 10 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-february-10-2021/)
-- [Office外接程序社区通话 – 2021 年 1 月 13 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-january-13-2021%e2%80%af/)
-- [Office外接程序社区通话 – 2020 年 12 月 9 日](https://developer.microsoft.com/microsoft-365/blogs/office-add-ins-community-call-december-9-2020/)
-- [Office外接程序社区通话 - 2020 年 11 月 11 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-november-11-2020/)
-- [Office外接程序社区通话 - 2020 年 10 月 14 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-october-14-2020%E2%80%AF/)
-- [Office外接程序社区通话 - 2020 年 9 月 9 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-september-9-2020/)
-- [Office外接程序社区通话 - 2020 年 8 月 12 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%E2%80%AF/)
-- [Office外接程序社区通话 - 2020 年 7 月 8 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-july-8-2020/)
-- [Office外接程序社区通话 - 2020 年 6 月 10 日](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-june-10-2020/)
+- [Archived Office Add-ins community calls - June 10， 2020 - February 10， 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
 
 ## <a name="see-also"></a>另请参阅
 
@@ -47,5 +37,5 @@ ms.locfileid: "60250397"
 - [Community呼叫主题请求和问题](https://aka.ms/officeaddinsform)
 - [Microsoft 365开发人员 YouTube 频道](https://aka.ms/m365devyoutube)
 - [Microsoft 365 YouTube 频道](https://aka.ms/m365pnp/videos )
-- [Microsoft 365Tech Community 上的 PnP](https://aka.ms/m365pnp/community)
+- [Microsoft 365技术中心上的 PnP Community](https://aka.ms/m365pnp/community)
 - [Microsoft 365PnP 技术社区博客](https://aka.ms/m365pnp/community/blog)

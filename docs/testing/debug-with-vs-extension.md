@@ -3,16 +3,16 @@ title: 适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩�
 description: 使用Visual Studio Code调试Microsoft Office调试器中的扩展Office调试外接程序。
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eb71ec1bd52198af32129882cb531451fff422a
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 56dee52f71bfb460abbadafb0cdfd82f8f7cb548
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138637"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537637"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展
 
-Microsoft Office 外接程序调试器扩展 for Visual Studio Code 允许你使用原始 webView (EdgeHTML) 运行时针对 Microsoft Edge 调试 Office 外接程序。 有关针对基于 WebView2 Microsoft Edge (Chromium进行) 的说明，[请参阅本文](./debug-desktop-using-edge-chromium.md)
+Microsoft Office外接程序调试器扩展 for Visual Studio Code 允许你使用原始 webView (EdgeHTML) 运行时针对 Microsoft Edge 调试 Office 外接程序。 有关针对基于 WebView2 Microsoft Edge (Chromium进行) 的说明，[请参阅本文](./debug-desktop-using-edge-chromium.md)
 
 此调试模式是动态的，允许在代码运行时设置断点。 在附加调试程序时，你可以立即在代码中看到更改，所有这些更改不会丢失调试会话。 代码更改也持续存在，因此可以看到对代码进行多次更改的结果。 下图显示了此扩展的操作。
 
@@ -29,7 +29,7 @@ Microsoft Office 外接程序调试器扩展 for Visual Studio Code 允许你使
 
 ## <a name="install-and-use-the-debugger"></a>安装和使用调试器
 
-1. 如果需要创建加载项项目，请使用[Yo Office生成器创建一个](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)。 按照命令行中的提示设置项目。 可以选择任何语言或项目类型以满足你的需求。 本教程使用Excel窗格加载项。
+1. 如果需要创建加载项项目，请使用 Yo Office[生成器创建一个](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)。 按照命令行中的提示设置项目。 可以选择任何语言或项目类型以满足你的需求。 本教程使用Excel窗格加载项。
 
     > [!NOTE]
     > 如果已有项目，请跳过步骤 1 并移至步骤 2。
@@ -48,7 +48,7 @@ Microsoft Office 外接程序调试器扩展 for Visual Studio Code 允许你使
   打开Visual Studio Code，手动导航到项目文件夹。
 
   > [!TIP]
-  > 若要以Visual Studio Code方式打开网站，请选择"以管理员方式运行"选项，Visual Studio Code中搜索后打开Windows。
+  > 若要以Visual Studio Code方式打开文件，请选择"以管理员Visual Studio Code"选项，在"管理员"中搜索 Windows。 
 
 1. 在 VS Code 中，选择 **CTRL+SHIFT+X** 打开扩展栏。 搜索"Microsoft Office加载项调试器"扩展并安装它。
 
@@ -71,20 +71,19 @@ Microsoft Office 外接程序调试器扩展 for Visual Studio Code 允许你使
 
 1. 打开命令提示符，并确保位于项目的根文件夹。 运行命令 `npm start` 以启动开发服务器。 当加载项在加载项应用程序中Office时，打开任务窗格。
 
-1. 返回到"Visual Studio Code并选择"查看 **>调试"** 或输入 **Ctrl+Shift+D** 以切换到调试视图。
+1. 返回到"Visual Studio Code，然后选择"查看 **>调试"** 或输入 **Ctrl+Shift+D** 以切换到调试视图。
 
 1. From the Debug options， choose **Attach to Office Add-ins**.从 **菜单中选择 F5** 或 **>开始调试**"以开始调试。
 
-1. 在项目的任务窗格文件中设置断点。 通过将鼠标悬停在代码行Visual Studio Code并选择出现的红色圆圈，可以在代码行中设置断点。
+1. 在项目的任务窗格文件中设置断点。 可以通过将鼠标悬停在代码行Visual Studio Code并选择出现的红色圆圈，在代码中设置断点。
 
-    ![在代码行上显示红色圆圈Visual Studio Code。](../images/set-breakpoint.jpg)
+    ![在代码行中出现红色圆圈Visual Studio Code。](../images/set-breakpoint.jpg)
 
 1. 运行加载项。 你将看到已命中的断点，并且你可以检查本地变量。
 
 ## <a name="see-also"></a>另请参阅
 
 - [测试和调试 Office 加载项](test-debug-office-add-ins.md)
-
-- [在加载项上使用开发人员工具调试Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
-
+- [使用适用于加载项的开发人员工具调试Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
 - [使用 Windows 上的 Microsoft Edge WebView2 （基于 Chromium）调试加载项](debug-desktop-using-edge-chromium.md)
