@@ -3,12 +3,12 @@ title: 清除 Office 缓存
 description: 了解如何清除计算机上的 Office 缓存。
 ms.date: 08/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 0e3d03303bea1b26f9cf982b59e58865fb683f5d
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 4d5351e9f8758109bfd0ef4a901c5ef916c98fa4
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138511"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537644"
 ---
 # <a name="clear-the-office-cache"></a>清除 Office 缓存
 
@@ -72,7 +72,8 @@ ms.locfileid: "60138511"
 ## <a name="see-also"></a>另请参阅
 
 - [排查 Office 加载项中的开发错误](troubleshoot-development-errors.md)
-- [调试 Office 加载项](debug-add-ins-using-f12-developer-tools-on-windows.md)
+- [使用适用于 Internet Explorer 的开发人员工具调试加载项](debug-add-ins-using-f12-tools-ie.md)
+- [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
 - [使用运行时日志记录功能调试加载项](runtime-logging.md)
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
 - [Office 加载项 XML 清单](../develop/add-in-manifests.md)

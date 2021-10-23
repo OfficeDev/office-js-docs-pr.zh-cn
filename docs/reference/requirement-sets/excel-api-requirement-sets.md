@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集
 description: 针对 Excel 内部版本的 Office 加载项要求集信息。
-ms.date: 10/08/2021
+ms.date: 10/18/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: d6e8ea8fecf2f5495eb7d0c7ac5c3db6952e8b9a
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: b2e09d508b4f937ce18029e55c7754719d85527f
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250537"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537581"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
@@ -45,7 +45,7 @@ Excel 加载项跨多个版本 Office 运行，包括 Windows 版 Office 2016 �
 > [!NOTE]
 > 非订阅版本的 Office 支持如下所示的要求集：
 >
-> - Office 2021 支持 ExcelApi 1.13 及更低版本。
+> - Office 2021 支持 ExcelApi 1.14 及更低版本。
 > - Office 2019 支持 ExcelApi 1.8 及更低版本。
 > - Office 2016 仅支持 ExcelApi 1.1 要求集。
 

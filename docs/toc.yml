@@ -267,8 +267,10 @@ items:
                 href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
               - name: 从任务窗格附加调试器
                 href: testing/attach-debugger-from-task-pane.md
-              - name: 使用开发者工具调试
-                href: testing/debug-add-ins-using-f12-developer-tools-on-windows.md
+              - name: 使用适用于 Internet Explorer 的开发人员工具调试加载项
+                href: testing/debug-add-ins-using-f12-tools-ie.md
+              - name: 使用旧版 Edge 开发人员工具调试加载项
+                href: testing/debug-add-ins-using-devtools-edge-legacy.md
               - name: 使用 Edge Chromium WebView2 进行调试
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
@@ -576,6 +578,8 @@ items:
               - name: ExcelApi 仅联机要求集
                 href: reference/requirement-sets/excel-api-online-requirement-set.md
                 displayName: Excel
+              - name: ExcelApi 1.14 要求集
+                href: reference/requirement-sets/excel-api-1-14-requirement-set.md
               - name: ExcelApi 1.13 要求集
                 href: reference/requirement-sets/excel-api-1-13-requirement-set.md
                 displayName: Excel
