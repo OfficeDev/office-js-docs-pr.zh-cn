@@ -1,2 +1,2 @@
 > [!NOTE]
-> 若要查看 `console.log` 输出，需要一组用于 JavaScript 控制台的单独开发人员工具。 若要详细了解 F12 工具和 Microsoft Edge DevTools，请访问[在 Windows 上使用开发人员工具调试加载项](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md)。
+> 若要查看 `console.log` 输出，需要一组用于 JavaScript 控制台的单独开发人员工具。 若要详细了解 F12 工具和 Microsoft Edge DevTools，请访问[使用开发人员工具为 Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md) 或[使用 Edge 旧版开发人员工具调试外接程序](../testing/debug-add-ins-using-devtools-edge-legacy.md)。

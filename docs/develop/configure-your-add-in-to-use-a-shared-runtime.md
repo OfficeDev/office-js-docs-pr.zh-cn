@@ -4,12 +4,12 @@ title: 将 Office 加载项配置为使用共享 JavaScript 运行时
 ms.prod: non-product-specific
 description: 将 Office 加载项配置为使用共享 JavaScript 运行时，以支持其他功能区、任务窗格和自定义函数功能。
 ms.localizationpriority: high
-ms.openlocfilehash: 95a4cb410bf92a68c1790e3fba67ea482bdc78b6
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 1c80247346c6303c552558894357db71669a9376
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138470"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537462"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>将 Office 加载项配置为使用共享 JavaScript 运行时
 
@@ -224,9 +224,9 @@ ms.locfileid: "60138470"
 
 ![自定义函数、任务窗格和功能区按钮的示意图，这些按钮都在 Excel 的共享浏览器运行时中运行。](../images/custom-functions-in-browser-runtime.png)
 
-### <a name="debugging"></a>调试
+### <a name="debug"></a>调试
 
-使用共享运行时时，目前不能使用 Visual Studio Code 在 Windows 版 Excel 中调试自定义函数。 你需要改为使用开发人员工具。 有关详细信息，请参阅 [使用 Windows 上的开发人员工具调试加载项](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md)。
+使用共享运行时时，目前不能使用 Visual Studio Code 在 Windows 版 Excel 中调试自定义函数。 你需要改为使用开发人员工具。 有关详细信息，请参阅[使用开发人员工具为 Internet Explorer ](../testing/debug-add-ins-using-f12-tools-ie.md)或[使用 Edge 旧版开发人员工具调试外接程序](../testing/debug-add-ins-using-devtools-edge-legacy.md)。
 
 ### <a name="multiple-task-panes"></a>多个任务窗格
 
