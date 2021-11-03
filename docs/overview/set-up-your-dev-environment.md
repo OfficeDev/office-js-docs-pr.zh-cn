@@ -1,23 +1,24 @@
 ---
 title: 设置开发环境
-description: 设置开发人员环境以Office加载项。
-ms.date: 07/08/2021
+description: 设置开发人员环境以构建Office加载项。
+ms.date: 10/26/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 71982a51e4941cb90a488f317cf6f771ccf5b005
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9dbe2a994dd8da028ecd1ae4a31b2c7847a062b1
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149250"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681172"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
-本指南可帮助你设置工具，以便你Office快速入门或教程创建加载项。 你需要从以下列表中安装工具。 如果已安装这些组件，则已准备好开始快速入门[，Excel React快速入门](../quickstarts/excel-quickstart-react.md)。
+本指南可帮助你设置工具，以便你Office快速入门或教程创建加载项。 你需要从以下列表中安装工具。 如果已安装这些组件，则已准备好开始快速入门[，Excel React快速入门。](../quickstarts/excel-quickstart-react.md)
 
 - Node.js
 - npm
-- 包含 Microsoft 365 订阅版本的 Office
+- 包含Microsoft 365订阅版本的用户帐户Office
 - 你选择的代码编辑器
+- JavaScript linter Office
 
 本指南假定你了解如何使用命令行工具。
 
@@ -43,11 +44,11 @@ npm 是一个开源软件注册表，可从中下载用于开发加载项Office�
 npm -v
 ```
 
-你可能希望使用节点版本管理器来允许你在多个版本的 Node.js 和 npm 之间切换，但这不是严格必需的。 有关如何操作的详细信息， [请参阅 npm 的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
+你可能希望使用节点版本管理器，以允许你在多个版本的 Node.js 和 npm 之间切换，但这不是严格必需的。 有关如何操作的详细信息， [请参阅 npm 的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
 
 ## <a name="get-microsoft-365"></a>获取Microsoft 365
 
-如果你还没有 Microsoft 365 帐户，可以通过加入 Microsoft 365 开发人员计划获取包含所有 Office 应用的 90 天[免费可](https://developer.microsoft.com/office/dev-program)续订 Microsoft 365 订阅。
+如果你还没有 Microsoft 365 帐户，可以通过加入 Microsoft 365 开发人员计划获取包含所有 Office 应用的免费、为期 90 天的可续订[Microsoft 365 订阅](https://developer.microsoft.com/office/dev-program)。
 
 ## <a name="install-a-code-editor"></a>安装代码编辑器
 
@@ -57,9 +58,51 @@ npm -v
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
 
+## <a name="install-and-use-the-office-javascript-linter"></a>安装和使用 JavaScript Office JavaScript
+
+Microsoft 提供了 JavaScript linter，可帮助你在使用 JavaScript 库时捕获Office错误。 若要安装 linter，请运行以下两个 (在安装 Node.js和[](#install-nodejs)[npm](#install-npm)) 。
+
+```command&nbsp;line
+npm install office-addin-lint --save-dev
+npm install eslint-plugin-office-addins --save-dev
+```
+
+如果使用 Yo Office 工具创建一个加载项Office，则其余设置操作将完成。 在编辑器的终端（如 Visual Studio Code）或命令提示符中，通过以下命令运行 linter。 linter 发现的问题出现在终端或提示中，并且当您使用支持 linter 消息的编辑器（如 Visual Studio Code）时，也直接显示在代码中。  (有关安装 Yo Office 工具的信息，请浏览我们的 Office 外接程序快速入门之一，例如 Excel[外接程序](../quickstarts/excel-quickstart-jquery.md)的这一个 。) 
+
+```command&nbsp;line
+npm run lint
+```
+
+如果加载项项目以另一种方式创建，请执行以下步骤。
+
+1. 在项目的根目录下，创建一个名为 **.eslintrc.json** 的文本文件（如果还没有）。 请确保其属性名为 和 `plugins` `extends` ，类型为 array。 `plugins`数组应包含 `"office-addins"` ， `extends` 数组应包含 `"plugin:office-addins/recommended"` 。 下面展示了一个非常简单的示例。 您的 **.eslintrc.json** 文件可能具有其他属性和两个数组的其他成员。
+
+   ```json
+   {
+     "plugins": [
+       "office-addins"
+     ],
+     "extends": [
+       "plugin:office-addins/recommended"
+     ]
+   }
+   ```
+
+1. 在项目的根中，打开 **package.json** 文件，并确保 `scripts` 数组具有以下成员。
+
+   ```json
+   "lint": "office-addin-lint check",
+   ```
+
+1. 在编辑器的终端（如 Visual Studio Code）或命令提示符中，通过以下命令运行 linter。 linter 发现的问题出现在终端或提示中，并且当您使用支持 linter 消息的编辑器（如 Visual Studio Code）时，也直接显示在代码中。
+
+   ```command&nbsp;line
+   npm run lint
+   ```
+
 ## <a name="next-steps"></a>后续步骤
 
-尝试创建自己的外接程序或使用 Script Lab来尝试内置示例。
+请尝试创建自己的外接程序或使用 Script Lab来尝试内置示例。
 
 ### <a name="create-an-office-add-in"></a>创建 Office 加载项
 

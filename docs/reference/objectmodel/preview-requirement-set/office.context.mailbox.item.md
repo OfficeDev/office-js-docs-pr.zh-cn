@@ -1,14 +1,14 @@
 ---
 title: Office.context.mailbox.item - 预览要求集
 description: Outlook项目对象模型的邮箱 API 预览要求集版本。
-ms.date: 08/27/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 81e637d7cb61b1033d75b8fbb7c5a14eb9198fd2
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: ca4afe583022761a764783293d5c036a3eda6ce7
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237474"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681512"
 ---
 # <a name="item-mailbox-preview-requirement-set"></a>项目 (邮箱预览要求集) 
 
@@ -95,8 +95,8 @@ ms.locfileid: "60237474"
 | | | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#seriesId) | 字符串 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#seriesId) | 字符串 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#seriesId) | 字符串 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| sessionData | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#sessionData) | [SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true) | [预览](outlook-requirement-set-preview.md) |
-| | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#sessionData) | [SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true) | [预览](outlook-requirement-set-preview.md) |
+| sessionData | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#sessionData) | [SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true) | [1.11](../requirement-set-1.11/outlook-requirement-set-1.11.md) |
+| | | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#sessionData) | [SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true) | [1.11](../requirement-set-1.11/outlook-requirement-set-1.11.md) |
 | start | ReadItem | [约会组织者](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#start) | [Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [约会参与者](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#start) | 日期 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#start)<br> (会议请求)  | 日期 | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -107,7 +107,7 @@ ms.locfileid: "60237474"
 | 更改为 | ReadItem | [邮件撰写](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#to) | [收件人](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [邮件阅读](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#to) | Array.<[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails?view=outlook-js-preview&preserve-view=true)> | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-## <a name="methods"></a>方法
+## <a name="methods"></a>Methods
 
 | 方法 | 最小值<br>权限级别 | 按模式显示的详细信息 | 最小值<br>要求集 |
 |---|---|---|:---:|
@@ -191,7 +191,7 @@ ms.locfileid: "60237474"
 > [!IMPORTANT]
 > 事件仅适用于任务窗格实现。
 
-| [Event](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true) | Description | 最小值<br>要求集 |
+| [Event](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true) | 说明 | 最小值<br>要求集 |
 |---|---|:---:|
 |`AppointmentTimeChanged`| 所选的约会或系列的日期或时间已更改。 | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 |`AttachmentsChanged`| 已将附件添加到项目或已从项目删除附件。 | [1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md) |

@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理表格
 description: 显示如何使用 JavaScript API 对表执行常见Excel示例。
-ms.date: 07/02/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c0903718eab98866e88c18c715bf121979d87d82
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f5ea4e12b4662c890259e29c52b98f1b16b9e5f6
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151948"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681158"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
@@ -61,9 +61,6 @@ Excel.run(function (context) {
 > [!NOTE]
 > `index` [TableRow 对象的 属性](/javascript/api/excel/excel.tablerow)指示表的行集合中行的索引号。 `TableRow`对象不包含可用于标识行的唯一 `id` 键的属性。
 
-> [!WARNING]
-> 从内容加载项向表中添加行将导致内存泄漏。 有关[GitHub和其他#1415，](https://github.com/OfficeDev/office-js/issues/1415)请参阅"问题"报告。 
-
 ```js
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getItem("Sample");
@@ -90,7 +87,7 @@ Excel.run(function (context) {
 
 **包含新行的表**
 
-![包含新行的表Excel。](../images/excel-tables-add-rows.png)
+![包含新行的Excel。](../images/excel-tables-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>向表添加列
 
@@ -130,7 +127,7 @@ Excel.run(function (context) {
 
 **包含新列的表**
 
-![包含新列的表Excel。](../images/excel-tables-add-column.png)
+![包含新列的Excel。](../images/excel-tables-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas"></a>添加包含公式的列
 
@@ -344,7 +341,7 @@ Excel.run(function (context) {
 
 **将筛选器应用于类别和金额的表数据**
 
-![在数据表中筛选的Excel。](../images/excel-tables-filters-apply.png)
+![在数据记录中筛选的Excel。](../images/excel-tables-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>清除表筛选器
 
@@ -430,7 +427,7 @@ Excel.run(function (context) {
 
 **应用格式设置的表**
 
-![表格格式应用于Excel。](../images/excel-tables-formatting-after.png)
+![在应用格式设置后的表Excel。](../images/excel-tables-formatting-after.png)
 
 ## <a name="convert-a-range-to-a-table"></a>将区域转换为表
 
@@ -470,11 +467,11 @@ Excel.run(function (context) {
 
 **内的数据（在区域转换为表之前）**
 
-![Excel 中的Excel。](../images/excel-ranges.png)
+![Excel 中Excel。](../images/excel-ranges.png)
 
 **表中的数据（在区域转换为表之后）**
 
-![Excel 中的表Excel。](../images/excel-tables-from-range.png)
+![数据表中的Excel。](../images/excel-tables-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>将 JSON 数据导入表
 

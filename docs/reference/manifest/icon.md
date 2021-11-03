@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Icon 元素
 description: 定义“按钮”或“菜单”控件的 Image 元素。
-ms.date: 03/30/2021
+ms.date: 10/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f47f35f18995b3d9e0af1115668b43a506e830d8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 54ae88e5dceeffa244780764711b263ceabd828d
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152266"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681724"
 ---
 # <a name="icon-element"></a>Icon 元素
 
@@ -39,11 +39,11 @@ ms.locfileid: "59152266"
 ```
 
 > [!IMPORTANT]
-> 如果此图像是加载项的代表图标，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和加载项内创建有效Office列表了解大小和其他要求。
+> 如果此图像是加载项的代表图标，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和加载项Office创建有效列表，了解大小和其他要求。
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>移动外形规格的其他要求
 
-当父 **Icon** 元素是 [MobileFormFactor](mobileformfactor.md) 元素的后代时，所要求的最小大小会略有不同。清单必须至少提供 25、32 和 48 像素大小。所提供的每个大小必须出现三次，并将 `scale` 属性设置为 `1`、`2` 或 `3`。
+当父 **Icon** 元素是 [MobileFormFactor](mobileformfactor.md) 元素的后代时，所要求的最小大小会略有不同。 清单必须至少提供 25、32 和 48 像素大小。 所提供的每个大小必须出现三次，并将 `scale` 属性设置为 `1`、`2` 或 `3`。 此属性指定 `UIScreen.scale` iOS 设备的属性。 有关详细信息，请参阅 [scale](https://developer.apple.com/documentation/uikit/uiscreen/1617836-scale)。
 
 ```xml
 <Icon xsi:type="bt:MobileIconList">

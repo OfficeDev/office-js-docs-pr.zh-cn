@@ -1,15 +1,15 @@
 ---
 title: ExcelJavaScript API 要求集 1.14
 description: 有关 ExcelApi 1.14 要求集的详细信息。
-ms.date: 10/13/2021
+ms.date: 10/29/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b968cf40fa35921df1be0aca508041e72cddf23
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 9cdf22d35125607237b724c88da2083ae78a9940
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537712"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681505"
 ---
 # <a name="whats-new-in-excel-javascript-api-114"></a>JavaScript API 1.14 Excel的新增功能
 
@@ -28,8 +28,9 @@ ExcelApi 1.14 添加了对象来控制图表的数据表功能、用于查找公
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
+|[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria (columnIndex： number) ](/javascript/api/excel/excel.autofilter#clearColumnCriteria_columnIndex_)|清除自动筛选的列筛选条件。|
 |[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteShiftDirection)|代表在 (单元格时剩余单元格) 移动的方向，例如向上或向左移动。|
-||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertShiftDirection)|代表插入 (单元格时现有单元格) 向右或向下移动的方向。|
+||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertShiftDirection)|表示插入 (单元格时现有单元格) 向右或向下移动的方向。|
 |[Chart](/javascript/api/excel/excel.chart)|[getDataTable () ](/javascript/api/excel/excel.chart#getDataTable__)|获取图表上的数据表。|
 ||[getDataTableOrNullObject () ](/javascript/api/excel/excel.chart#getDataTableOrNullObject__)|获取图表上的数据表。|
 |[ChartDataTable](/javascript/api/excel/excel.chartdatatable)|[format](/javascript/api/excel/excel.chartdatatable#format)|表示图表数据表的格式，包括填充、字体和边框格式。|
@@ -40,7 +41,7 @@ ExcelApi 1.14 添加了对象来控制图表的数据表功能、用于查找公
 ||[visible](/javascript/api/excel/excel.chartdatatable#visible)|指定是否显示图表的数据表。|
 |[ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat)|[border](/javascript/api/excel/excel.chartdatatableformat#border)|表示图表数据表的边框格式，其中包括颜色、线条样式和粗细。|
 ||[fill](/javascript/api/excel/excel.chartdatatableformat#fill)|表示对象的填充格式，包括背景格式信息。|
-||[font](/javascript/api/excel/excel.chartdatatableformat#font)|代表当前 (字体名称、字号和颜色) 字体属性。|
+||[font](/javascript/api/excel/excel.chartdatatableformat#font)|表示当前 (字体名称、字号和颜色) 字体属性。|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[getItemOrNullObject (commentId： string) ](/javascript/api/excel/excel.commentcollection#getItemOrNullObject_commentId_)|根据其 ID 从集合中获取批注。|
 |[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[getItemOrNullObject (commentReplyId： string) ](/javascript/api/excel/excel.commentreplycollection#getItemOrNullObject_commentReplyId_)|返回由其 ID 标识的批注回复。|
 |[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[getItemOrNullObject(id: string)](/javascript/api/excel/excel.conditionalformatcollection#getItemOrNullObject_id_)|返回由 ID 标识的条件格式。|

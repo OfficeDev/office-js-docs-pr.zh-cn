@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 要求集 1.1
 description: 有关 WordApi 1.1 要求集的详细信息
-ms.date: 11/09/2020
+ms.date: 11/01/2021
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: 43d2eba2180c66f4037b2f4a1742ceae61d7c353
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bb2ad35e3dfe690437a6081dc5790dc5c36ec84c
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152635"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681700"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Word JavaScript API 1.1 的新增功能
 
@@ -22,10 +22,13 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Wor
 | 类 | 域 | 说明 |
 |:---|:---|:---|
 |[正文](/javascript/api/word/word.body)|[clear()](/javascript/api/word/word.body#clear__)|清除 body 对象的内容。|
+||[contentControls](/javascript/api/word/word.body#contentControls)|获取正文中的格式文本内容控件对象的集合。|
+||[font](/javascript/api/word/word.body#font)|获取正文的文本格式。|
 ||[getHtml()](/javascript/api/word/word.body#getHtml__)|获取 body 对象的 HTML 表示形式。|
 ||[getOoxml()](/javascript/api/word/word.body#getOoxml__)|获取 body 对象的 OOXML (Office Open XML) 表示形式。|
 ||[ignorePunct](/javascript/api/word/word.body#ignorePunct)||
 ||[ignoreSpace](/javascript/api/word/word.body#ignoreSpace)||
+||[inlinePictures](/javascript/api/word/word.body#inlinePictures)|获取正文中的 InlinePicture 对象的集合。|
 ||[insertBreak (breakType： Word.BreakType， insertLocation： Word.InsertLocation) ](/javascript/api/word/word.body#insertBreak_breakType__insertLocation_)|在主文档的指定位置插入分隔符。|
 ||[insertContentControl()](/javascript/api/word/word.body#insertContentControl__)|使用富文本内容控件封装 body 对象。|
 ||[insertFileFromBase64 (base64File： string， insertLocation： Word.InsertLocation) ](/javascript/api/word/word.body#insertFileFromBase64_base64File__insertLocation_)|将文档插入到正文中的指定位置。|
@@ -38,25 +41,26 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Wor
 ||[matchSuffix](/javascript/api/word/word.body#matchSuffix)||
 ||[matchWholeWord](/javascript/api/word/word.body#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.body#matchWildcards)||
-||[contentControls](/javascript/api/word/word.body#contentControls)|获取正文中的格式文本内容控件对象的集合。|
-||[font](/javascript/api/word/word.body#font)|获取正文的文本格式。|
-||[inlinePictures](/javascript/api/word/word.body#inlinePictures)|获取正文中的 InlinePicture 对象的集合。|
 ||[paragraphs](/javascript/api/word/word.body#paragraphs)|获取 body 中的 paragraph 对象的集合。|
 ||[parentContentControl](/javascript/api/word/word.body#parentContentControl)|获取包含正文的内容控件。|
-||[text](/javascript/api/word/word.body#text)|获取正文的文本。|
 ||[search (searchText： string， searchOptions？： Word.SearchOptions \| { ignorePunct？： boolean ignoreSpace？： boolean matchCase？： boolean matchPrefix？： boolean matchSuffix？： boolean matchWholeWord？： boolean matchWildcards？： boolean }) ](/javascript/api/word/word.body#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|在 body 对象范围内使用指定的 SearchOptions 执行搜索。|
 ||[select (selectionMode？： Word.SelectionMode) ](/javascript/api/word/word.body#select_selectionMode_)|选择正文并在 Word UI 中进行浏览。|
 ||[style](/javascript/api/word/word.body#style)|获取或设置正文的样式名称。|
+||[text](/javascript/api/word/word.body#text)|获取正文的文本。|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[appearance](/javascript/api/word/word.contentcontrol#appearance)|获取或设置内容控件的外观。|
 ||[cannotDelete](/javascript/api/word/word.contentcontrol#cannotDelete)|获取或设置指示用户是否可以删除内容控件的值。|
 ||[cannotEdit](/javascript/api/word/word.contentcontrol#cannotEdit)|获取或设置指示用户是否可以编辑内容控件的内容的值。|
 ||[clear()](/javascript/api/word/word.contentcontrol#clear__)|清除内容控件的内容。|
 ||[color](/javascript/api/word/word.contentcontrol#color)|获取或设置内容控件的颜色。|
+||[contentControls](/javascript/api/word/word.contentcontrol#contentControls)|获取内容控件中的内容控件对象的集合。|
 ||[delete (keepContent： boolean) ](/javascript/api/word/word.contentcontrol#delete_keepContent_)|删除内容控件及其内容。|
+||[font](/javascript/api/word/word.contentcontrol#font)|获取内容控件的文本格式。|
 ||[getHtml()](/javascript/api/word/word.contentcontrol#getHtml__)|获取内容控件对象的 HTML 表示形式。|
 ||[getOoxml()](/javascript/api/word/word.contentcontrol#getOoxml__)|获取内容控件对象的 Office Open XML (OOXML) 表示形式。|
+||[id](/javascript/api/word/word.contentcontrol#id)|获取表示内容控件标识符的整数。|
 ||[ignorePunct](/javascript/api/word/word.contentcontrol#ignorePunct)||
 ||[ignoreSpace](/javascript/api/word/word.contentcontrol#ignoreSpace)||
+||[inlinePictures](/javascript/api/word/word.contentcontrol#inlinePictures)|获取内容控件中的 inlinePicture 对象的集合。|
 ||[insertBreak (breakType： Word.BreakType， insertLocation： Word.InsertLocation) ](/javascript/api/word/word.contentcontrol#insertBreak_breakType__insertLocation_)|在主文档的指定位置插入分隔符。|
 ||[insertFileFromBase64 (base64File： string， insertLocation： Word.InsertLocation) ](/javascript/api/word/word.contentcontrol#insertFileFromBase64_base64File__insertLocation_)|将文档插入到内容控件中的指定位置。|
 ||[insertHtml (html： string， insertLocation： Word.InsertLocation) ](/javascript/api/word/word.contentcontrol#insertHtml_html__insertLocation_)|将 HTML 插入到内容控件中的指定位置。|
@@ -68,32 +72,28 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Wor
 ||[matchSuffix](/javascript/api/word/word.contentcontrol#matchSuffix)||
 ||[matchWholeWord](/javascript/api/word/word.contentcontrol#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.contentcontrol#matchWildcards)||
-||[placeholderText](/javascript/api/word/word.contentcontrol#placeholderText)|获取或设置内容控件的占位符文本。|
-||[contentControls](/javascript/api/word/word.contentcontrol#contentControls)|获取内容控件中的内容控件对象的集合。|
-||[font](/javascript/api/word/word.contentcontrol#font)|获取内容控件的文本格式。|
-||[id](/javascript/api/word/word.contentcontrol#id)|获取表示内容控件标识符的整数。|
-||[inlinePictures](/javascript/api/word/word.contentcontrol#inlinePictures)|获取内容控件中的 inlinePicture 对象的集合。|
 ||[paragraphs](/javascript/api/word/word.contentcontrol#paragraphs)|获取内容控件中的 paragraph 对象的集合。|
 ||[parentContentControl](/javascript/api/word/word.contentcontrol#parentContentControl)|获取包含此内容控件的内容控件。|
-||[text](/javascript/api/word/word.contentcontrol#text)|获取内容控件的文本。|
-||[type](/javascript/api/word/word.contentcontrol#type)|获取内容控件的类型。|
+||[placeholderText](/javascript/api/word/word.contentcontrol#placeholderText)|获取或设置内容控件的占位符文本。|
 ||[removeWhenEdited](/javascript/api/word/word.contentcontrol#removeWhenEdited)|获取或设置指示内容控件在编辑后是否可以删除的值。|
 ||[search (searchText： string， searchOptions？： Word.SearchOptions \| { ignorePunct？： boolean ignoreSpace？： boolean matchCase？： boolean matchPrefix？： boolean matchSuffix？： boolean matchWholeWord？： boolean matchWildcards？： boolean }) ](/javascript/api/word/word.contentcontrol#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|在内容控件对象范围内使用指定的 SearchOptions 执行搜索。|
 ||[select (selectionMode？： Word.SelectionMode) ](/javascript/api/word/word.contentcontrol#select_selectionMode_)|选择内容控件。|
 ||[style](/javascript/api/word/word.contentcontrol#style)|获取或设置内容控件的样式名称。|
 ||[标记](/javascript/api/word/word.contentcontrol#tag)|获取或设置用于标识内容控件的标记。|
+||[text](/javascript/api/word/word.contentcontrol#text)|获取内容控件的文本。|
 ||[title](/javascript/api/word/word.contentcontrol#title)|获取或设置内容控件的标题。|
+||[type](/javascript/api/word/word.contentcontrol#type)|获取内容控件的类型。|
 |[ContentControlCollection](/javascript/api/word/word.contentcontrolcollection)|[getById(id: number)](/javascript/api/word/word.contentcontrolcollection#getById_id_)|按其标识符获取内容控件。|
 ||[getByTag(tag: string)](/javascript/api/word/word.contentcontrolcollection#getByTag_tag_)|获取具有指定标记的内容控件。|
 ||[getByTitle(title: string)](/javascript/api/word/word.contentcontrolcollection#getByTitle_title_)|获取具有指定标题的内容控件。|
 ||[getItem(index: number)](/javascript/api/word/word.contentcontrolcollection#getItem_index_)|按内容控件在集合中的索引获取内容控件。|
 ||[items](/javascript/api/word/word.contentcontrolcollection#items)|获取此集合中已加载的子项。|
-|[Document](/javascript/api/word/word.document)|[getSelection () ](/javascript/api/word/word.document#getSelection__)|获取文档的当前选定内容。|
-||[body](/javascript/api/word/word.document#body)|获取文档的 body 对象。|
+|[Document](/javascript/api/word/word.document)|[body](/javascript/api/word/word.document#body)|获取主文档的 body 对象。|
 ||[contentControls](/javascript/api/word/word.document#contentControls)|获取文档中的内容控件对象的集合。|
+||[getSelection () ](/javascript/api/word/word.document#getSelection__)|获取文档的当前选定内容。|
+||[save()](/javascript/api/word/word.document#save__)|保存文档。|
 ||[saved](/javascript/api/word/word.document#saved)|指示是否已保存在文档中所做的更改。|
 ||[sections](/javascript/api/word/word.document#sections)|获取文档中 section 对象的集合。|
-||[save()](/javascript/api/word/word.document#save__)|保存文档。|
 |[Font](/javascript/api/word/word.font)|[bold](/javascript/api/word/word.font#bold)|获取或设置表示字体是否为粗体的值。|
 ||[color](/javascript/api/word/word.font#color)|获取或设置指定字体的颜色。|
 ||[doubleStrikeThrough](/javascript/api/word/word.font#doubleStrikeThrough)|获取或设置一个值，该值指示字体是否具有双删除线。|
@@ -117,12 +117,15 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Wor
 |[InlinePictureCollection](/javascript/api/word/word.inlinepicturecollection)|[items](/javascript/api/word/word.inlinepicturecollection#items)|获取此集合中已加载的子项。|
 |[Paragraph](/javascript/api/word/word.paragraph)|[alignment](/javascript/api/word/word.paragraph#alignment)|获取或设置段落的对齐方式。|
 ||[clear()](/javascript/api/word/word.paragraph#clear__)|清除 paragraph 对象的内容。|
+||[contentControls](/javascript/api/word/word.paragraph#contentControls)|获取段落中的内容控件对象的集合。|
 ||[delete()](/javascript/api/word/word.paragraph#delete__)|从文档中删除段落及其内容。|
 ||[firstLineIndent](/javascript/api/word/word.paragraph#firstLineIndent)|获取或设置首行缩进或悬挂缩进的大小（以磅值表示）。|
+||[font](/javascript/api/word/word.paragraph#font)|获取段落的文本格式。|
 ||[getHtml()](/javascript/api/word/word.paragraph#getHtml__)|获取 paragraph 对象的 HTML 表示形式。|
 ||[getOoxml()](/javascript/api/word/word.paragraph#getOoxml__)|获取 paragraph 对象的 Office Open XML (OOXML) 表示形式。|
 ||[ignorePunct](/javascript/api/word/word.paragraph#ignorePunct)||
 ||[ignoreSpace](/javascript/api/word/word.paragraph#ignoreSpace)||
+||[inlinePictures](/javascript/api/word/word.paragraph#inlinePictures)|获取段落中的 InlinePicture 对象的集合。|
 ||[insertBreak (breakType： Word.BreakType， insertLocation： Word.InsertLocation) ](/javascript/api/word/word.paragraph#insertBreak_breakType__insertLocation_)|在主文档的指定位置插入分隔符。|
 ||[insertContentControl()](/javascript/api/word/word.paragraph#insertContentControl__)|使用富文本内容控件封装 paragraph 对象。|
 ||[insertFileFromBase64 (base64File： string， insertLocation： Word.InsertLocation) ](/javascript/api/word/word.paragraph#insertFileFromBase64_base64File__insertLocation_)|将文档插入到段落中的指定位置。|
@@ -141,20 +144,19 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Wor
 ||[matchWholeWord](/javascript/api/word/word.paragraph#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.paragraph#matchWildcards)||
 ||[outlineLevel](/javascript/api/word/word.paragraph#outlineLevel)|获取或设置段落的大纲级别。|
-||[contentControls](/javascript/api/word/word.paragraph#contentControls)|获取段落中的内容控件对象的集合。|
-||[font](/javascript/api/word/word.paragraph#font)|获取段落的文本格式。|
-||[inlinePictures](/javascript/api/word/word.paragraph#inlinePictures)|获取段落中的 InlinePicture 对象的集合。|
 ||[parentContentControl](/javascript/api/word/word.paragraph#parentContentControl)|获取包含段落的内容控件。|
-||[text](/javascript/api/word/word.paragraph#text)|获取段落的文本。|
 ||[rightIndent](/javascript/api/word/word.paragraph#rightIndent)|获取或设置段落的向右缩进值（以磅值表示）。|
 ||[search (searchText： string， searchOptions？： Word.SearchOptions \| { ignorePunct？： boolean ignoreSpace？： boolean matchCase？： boolean matchPrefix？： boolean matchSuffix？： boolean matchWholeWord？： boolean matchWildcards？： boolean }) ](/javascript/api/word/word.paragraph#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|使用指定的 SearchOptions 搜索段落对象的范围。|
 ||[select (selectionMode？： Word.SelectionMode) ](/javascript/api/word/word.paragraph#select_selectionMode_)|选择并在 Word UI 中导航到段落。|
 ||[spaceAfter](/javascript/api/word/word.paragraph#spaceAfter)|获取或设置段落后面的间距（以磅值表示）。|
 ||[spaceBefore](/javascript/api/word/word.paragraph#spaceBefore)|获取或设置段落前面的间距（以磅值表示）。|
 ||[style](/javascript/api/word/word.paragraph#style)|获取或设置段落的样式名称。|
+||[text](/javascript/api/word/word.paragraph#text)|获取段落的文本。|
 |[ParagraphCollection](/javascript/api/word/word.paragraphcollection)|[items](/javascript/api/word/word.paragraphcollection#items)|获取此集合中已加载的子项。|
-|[Range](/javascript/api/word/word.range)|[clear()](/javascript/api/word/word.range#clear__)|清除 range 对象的内容。|
+|[区域](/javascript/api/word/word.range)|[clear()](/javascript/api/word/word.range#clear__)|清除 range 对象的内容。|
+||[contentControls](/javascript/api/word/word.range#contentControls)|获取范围中的内容控件对象的集合。|
 ||[delete()](/javascript/api/word/word.range#delete__)|从文档中删除区域及其内容。|
+||[font](/javascript/api/word/word.range#font)|获取区域的文本格式。|
 ||[getHtml()](/javascript/api/word/word.range#getHtml__)|获取 range 对象的 HTML 表示形式。|
 ||[getOoxml()](/javascript/api/word/word.range#getOoxml__)|获取 range 对象的 OOXML 表示形式。|
 ||[ignorePunct](/javascript/api/word/word.range#ignorePunct)||
@@ -171,14 +173,12 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Wor
 ||[matchSuffix](/javascript/api/word/word.range#matchSuffix)||
 ||[matchWholeWord](/javascript/api/word/word.range#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.range#matchWildcards)||
-||[contentControls](/javascript/api/word/word.range#contentControls)|获取范围中的内容控件对象的集合。|
-||[font](/javascript/api/word/word.range#font)|获取区域的文本格式。|
 ||[paragraphs](/javascript/api/word/word.range#paragraphs)|获取 range 中的 paragraph 对象的集合。|
 ||[parentContentControl](/javascript/api/word/word.range#parentContentControl)|获取包含该范围的内容控件。|
-||[text](/javascript/api/word/word.range#text)|获取区域的文本。|
 ||[search (searchText： string， searchOptions？： Word.SearchOptions \| { ignorePunct？： boolean ignoreSpace？： boolean matchCase？： boolean matchPrefix？： boolean matchSuffix？： boolean matchWholeWord？： boolean matchWildcards？： boolean }) ](/javascript/api/word/word.range#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|使用指定的 SearchOptions 搜索 range 对象的范围。|
 ||[select (selectionMode？： Word.SelectionMode) ](/javascript/api/word/word.range#select_selectionMode_)|选择并在 Word UI 中导航到区域。|
 ||[style](/javascript/api/word/word.range#style)|获取或设置范围的样式名称。|
+||[text](/javascript/api/word/word.range#text)|获取区域的文本。|
 |[RangeCollection](/javascript/api/word/word.rangecollection)|[items](/javascript/api/word/word.rangecollection#items)|获取此集合中已加载的子项。|
 |[SearchOptions](/javascript/api/word/word.searchoptions)|[ignorePunct](/javascript/api/word/word.searchoptions#ignorePunct)|获取或设置指示是否忽略单词之间的所有标点符号的值。|
 ||[ignoreSpace](/javascript/api/word/word.searchoptions#ignoreSpace)|获取或设置一个值，该值指示是否忽略单词之间的所有空格。|
@@ -187,9 +187,9 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Wor
 ||[matchSuffix](/javascript/api/word/word.searchoptions#matchSuffix)|获取或设置指示是否匹配以搜索字符串结尾的单词。|
 ||[matchWholeWord](/javascript/api/word/word.searchoptions#matchWholeWord)|获取或设置指示是否只查找整个单词，而不查找长单词的一部分的值。|
 ||[matchWildcards](/javascript/api/word/word.searchoptions#matchWildcards)|获取或设置指示搜索是否使用特殊搜索操作符执行的值。|
-|[Section](/javascript/api/word/word.section)|[getFooter (类型：Word.HeaderFooterType) ](/javascript/api/word/word.section#getFooter_type_)|获取节的页脚之一。|
+|[Section](/javascript/api/word/word.section)|[body](/javascript/api/word/word.section#body)|获取节的 body 对象。|
+||[getFooter (类型：Word.HeaderFooterType) ](/javascript/api/word/word.section#getFooter_type_)|获取节的页脚之一。|
 ||[getHeader (类型：Word.HeaderFooterType) ](/javascript/api/word/word.section#getHeader_type_)|获取节的标头之一。|
-||[body](/javascript/api/word/word.section#body)|获取节的 body 对象。|
 |[SectionCollection](/javascript/api/word/word.sectioncollection)|[items](/javascript/api/word/word.sectioncollection#items)|获取此集合中已加载的子项。|
 
 ## <a name="see-also"></a>另请参阅

@@ -1,14 +1,14 @@
 ---
 title: 使用 Windows 上的 Microsoft Edge WebView2 （基于 Chromium）调试加载项
 description: 了解如何在 VS 代码中使用适用于 Microsoft Edge 扩展的调试器来调试使用 Microsoft Edge WebView2（基于 Chromium）的 Office 加载项。
-ms.date: 10/05/2021
+ms.date: 11/01/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 8ee266b3197a2b02dd4d072b6666cd68add6fec9
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: bc7aea8cd48e74edd554a760b80c065c3d287f11
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138644"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681264"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>使用 Windows 上的 Microsoft Edge Chromium WebView2 调试加载项
 
@@ -25,8 +25,12 @@ ms.locfileid: "60138644"
 
 1. 使用 [ 适用于 Office 加载项的 Yeoman 生成器 ](https://github.com/OfficeDev/generator-office) 创建项目。可以使用我们的任何一个快速入门指南，例如 [Outlook 加载项快速入门 ](../quickstarts/outlook-quickstart.md)，以做到这一点。
 
-    > [!TIP]
-    > 如果没有使用基于 Yeoman 生成器的加载项，则系统可能提示需要调整一个注册表项。 在项目根文件夹下，在命令行中运行以下命令：`office-add-in-debugging start <your manifest path>`
+   > [!TIP]
+   > 如果没有使用基于 Yeoman 生成器的加载项，则系统可能提示需要调整一个注册表项。 项目根文件夹下，在命令行中运行以下命令： 。
+   >
+   > ``` command&nbsp;line
+   > npx office-addin-debugging start <your manifest path>
+   > ```
 
 1. 在 VS Code 中打开项目。 在 VS Code 中，选择 **CTRL+SHIFT+X** 打开扩展栏。 搜索“适用于 Microsoft Edge 的调试器”扩展并安装。
 

@@ -1,14 +1,14 @@
 ---
 title: 如何查找清单元素的正确顺序
 description: 了解如何查找在父元素中放置子元素的正确顺序。
-ms.date: 09/02/2021
+ms.date: 10/25/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e62da1c7236aa21fe2fd4fe451d6eec25118c9b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f3cd43cbdc58a7b43cf4712e198198a808dcf93a
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149328"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681116"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>如何查找清单元素的正确顺序
 
@@ -19,7 +19,7 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
 例如，在 `<OfficeApp>` 元素中，`<Id>`、`<Version>`、`<ProviderName>` 必须按此顺序出现。 如果添加了 `<AlternateId>` 元素，则其必须位于 `<Id>` 和 `<Version>` 元素之间。 如果任何元素的顺序出错，清单将无效并且你的外接程序将无法加载。
 
 > [!NOTE]
-> 当 [元素的顺序错误时，office-addin-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) 中的验证程序会使用相同的错误消息，因为元素位于错误的父元素下。 该错误消息会提示子元素不是父元素的有效子级。 如果出现此类错误，而子元素的参考文档却指示它对父级 *是* 有效的，则问题很可能是子级的放置顺序出现了错误。
+> 如果 [元素的顺序不正确，则 office-addin-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) 中的验证程序会使用同一错误消息，因为元素位于错误的父元素下。 该错误消息会提示子元素不是父元素的有效子级。 如果出现此类错误，而子元素的参考文档却指示它对父级 *是* 有效的，则问题很可能是子级的放置顺序出现了错误。
 
 以下各节按清单元素必须出现的顺序显示这些元素。 根据 元素的 属性是 、还是 ， `type` `<OfficeApp>` `TaskPaneApp` `ContentApp` 存在差异 `MailApp` 。 若要阻止这些部分变得不太简单，将高度复杂的 `<VersionOverrides>` 元素分为单独的部分。
 
@@ -283,15 +283,9 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
                     <Override>
         <WebApplicationInfo>
             <Id>
-            <MsaId>
             <Resource>
             <Scopes>
                 <Scope>
-            <Authorizations>
-                <Authorization>
-                    <Resource>
-                    <Scopes>
-                        <Scope>
         <EquivalentAddins>
             <EquivalentAddin>
                 <ProgId>
@@ -511,5 +505,5 @@ Office 外接程序清单中的 XML 元素必须位于正确父元素下，*且*
 
 ## <a name="see-also"></a>另请参阅
 
-- [Office v1.1 (外接程序清单) ](../develop/add-in-manifests.md)
+- [有关 Office v1.1 (外接程序清单) ](../develop/add-in-manifests.md)
 - [官方架构定义](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

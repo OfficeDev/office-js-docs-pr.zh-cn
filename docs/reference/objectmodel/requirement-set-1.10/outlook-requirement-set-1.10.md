@@ -1,18 +1,21 @@
 ---
 title: Outlook外接程序 API 要求集 1.10
 description: 加载项 API 要求集 1.10 Outlook 1.10。
-ms.date: 05/17/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a94e829b1656d7c3a33ff51918834c7ea6913967
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 57814ab7da8faec3cc60f943ef13db12de01dc17
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237495"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681095"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook外接程序 API 要求集 1.10
 
-Outlook JavaScript API 的 Office 加载项 API 子集包括可用于加载项的对象、方法、属性和Outlook事件。
+Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
+
+> [!NOTE]
+> 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
 
 ## <a name="whats-new-in-110"></a>1.10 中的新增功能是什么？
 

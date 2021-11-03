@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 WebApplicationInfo 元素
-description: 有关外接程序清单的 WebApplicationInfo 元素Office XML 文件 (文档) 文档。
-ms.date: 07/30/2020
+description: 外接程序清单的 WebApplicationInfo 元素的参考Office XML (XML) 文档。
+ms.date: 10/25/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7de9271fc3e7ed76c0423c8a0b8ab70360b105c3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bb21c584f516fc9e50bdd881a383fb03f01c753c
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152542"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681547"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
 
@@ -27,10 +27,8 @@ ms.locfileid: "59152542"
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  **Id**    |  是   |  在 Azure Active Directory v2.0 终结点中注册的加载项关联服务的 **应用程序 ID**。|
-|  **MsaId**    |  否   |  MSA 加载项 Web 应用程序的客户端 ID（在 msm.live.com 中注册）。|
 |  **Resource**  |  是   |  指定在 Azure Active Directory v2.0 终结点中注册的加载项的 **应用程序 ID URI**。|
-|  [Scopes](scopes.md)                |  是  |  指定外接程序对资源（如 Microsoft Graph）所需的权限。  |
-|  [授权](authorizations.md)  |  否   | 指定加载项的 Web 应用程序需要授权的外部资源和所需权限。|
+|  [Scopes](scopes.md)                |  是  |  指定加载项对资源（如 Microsoft 加载项）所需的Graph。  |
 
 ## <a name="webapplicationinfo-example"></a>WebApplicationInfo 示例
 
@@ -41,21 +39,13 @@ ms.locfileid: "59152542"
     ...
     <WebApplicationInfo>
       <Id>12345678-abcd-1234-efab-123456789abc</Id>
-      <Resource>api://myDomain.com/12345678-abcd-1234-efab-123456789abc</Resource>
+      <Resource>api://contoso.com/12345678-abcd-1234-efab-123456789abc</Resource>
       <Scopes>
         <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
         <Scope>openid</Scope>
         <Scope>profile</Scope>
       </Scopes>
-      <Authorizations>
-        <Authorization>
-          <Resource>https://api.contoso.com</Resource>
-            <Scopes>
-              <Scope>profile</Scope>
-          </Scopes>
-        </Authorization>
-      </Authorizations>
     </WebApplicationInfo>
   </VersionOverrides>
 ...

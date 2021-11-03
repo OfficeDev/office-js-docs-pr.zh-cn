@@ -1,15 +1,15 @@
 ---
 title: ExcelJavaScript API 仅联机要求集
 description: 有关 ExcelApiOnline 要求集的详细信息。
-ms.date: 10/14/2021
+ms.date: 10/29/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: bd1f62b92b9a08d23daf77f8f4b86c60333faab3
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: ae338b6bd361113ee04ae3dd9076df6c66125345
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537588"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681491"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>ExcelJavaScript API 仅联机要求集
 
@@ -33,7 +33,7 @@ ms.locfileid: "60537588"
 
 ## <a name="recommended-usage"></a>建议的用法
 
-由于 API 仅受 Excel web 版，因此加载项应在调用这些 API 之前检查 `ExcelApiOnline` 要求集是否受支持。 这可以避免在不同的平台上调用仅联机 API。
+由于 API 仅受 Excel web 版 支持，因此加载项应在调用这些 API 之前检查 `ExcelApiOnline` 要求集是否受支持。 这可以避免在不同的平台上调用仅联机 API。
 
 ```js
 if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
@@ -48,11 +48,10 @@ API 位于跨平台要求集后，应删除或编辑 `isSetSupported` 检查。 
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了要求Excel当前包含的 JavaScript `ExcelApiOnline` API。 有关所有 JavaScript EXCEL的完整列表 (包括 API 和以前发布的 API) ，请参阅所有 Excel `ExcelApiOnline` [JavaScript API。](/javascript/api/excel?view=excel-js-online&preserve-view=true)
+下表列出了要求Excel中当前包含的 JavaScript `ExcelApiOnline` API。 有关所有 JavaScript API Excel的完整列表 (包括 API 和以前发布的 API `ExcelApiOnline`) ，请参阅所有 Excel [JavaScript API。](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
-|[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria (columnIndex： number) ](/javascript/api/excel/excel.autofilter#clearColumnCriteria_columnIndex_)|清除自动筛选的列筛选条件。|
 |[LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook)|[breakLinks () ](/javascript/api/excel/excel.linkedworkbook#breakLinks__)|请求断开指向链接工作簿的链接。|
 ||[id](/javascript/api/excel/excel.linkedworkbook#id)|指向链接工作簿的原始 URL。|
 ||[refresh()](/javascript/api/excel/excel.linkedworkbook#refresh__)|请求刷新从链接工作簿检索到的数据。|
