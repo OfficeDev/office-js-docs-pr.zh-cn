@@ -1,17 +1,17 @@
 ---
 title: Excel 加载项中的数据类型概述
 description: Excel JavaScript API 中的数据类型使 Office 加载项开发人员能够使用带格式数字值、Web 图像、实体值、实体值中的数组以及作为数据类型的增强型错误。
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: f5866b3ec27fc2e5869150feb45564701824afcd
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 5ff0d5a055c74eeff096d45ddb6c417615775431
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681773"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749390"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Excel 加载项中的数据类型概述（预览版）
 
@@ -31,10 +31,10 @@ Excel JavaScript API 中的数据类型使加载项开发人员能够将复杂�
 
 [!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
 
-数据类型增强了自定义函数的功能。 自定义函数接受数据类型作为自定义函数的输入和自定义函数的输出，并且自定义函数对数据类型使用与 Excel JavaScript API 相同的 JSON 架构。 在自定义函数计算和求值时，对此数据类型 JSON 架构进行维护。 如果要详细了解如何将数据类型与自定义函数集成，请参阅 [自定义函数和数据类型核心概念](/custom-functions-data-types-concepts.md)。
+数据类型增强了自定义函数的功能。 自定义函数接受数据类型作为自定义函数的输入和自定义函数的输出，并且自定义函数对数据类型使用与 Excel JavaScript API 相同的 JSON 架构。 在自定义函数计算和求值时，对此数据类型 JSON 架构进行维护。 如果要详细了解如何将数据类型与自定义函数集成，请参阅 [自定义函数和数据类型核心概念](custom-functions-data-types-concepts.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-* [Excel 数据类型核心概念](/excel-data-types-concepts.md)
+* [Excel 数据类型核心概念](excel-data-types-concepts.md)
 * [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
-* [自定义函数和数据类型概述](/custom-functions-data-types-overview.md)
+* [自定义函数和数据类型概述](custom-functions-data-types-overview.md)

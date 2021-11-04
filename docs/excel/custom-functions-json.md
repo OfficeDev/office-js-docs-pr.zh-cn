@@ -1,14 +1,14 @@
 ---
 title: 手动为自定义函数创建 JSON Excel
-description: 定义自定义函数的 JSON 元数据Excel并关联函数 ID 和名称属性。
-ms.date: 11/01/2021
+description: 在函数中定义自定义函数的 JSON Excel并关联函数 ID 和名称属性。
+ms.date: 11/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 517fd8f8eb0338f32b58f0b61f1810b3c7ac26a4
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 28be374a88890d20294311599b06b16942edd9b7
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681229"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749397"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>手动为自定义函数创建 JSON 元数据
 
@@ -33,7 +33,7 @@ ms.locfileid: "60681229"
 
 ## <a name="authoring-metadata-and-connecting-to-the-manifest"></a>创作元数据并连接到清单
 
-在项目中创建 JSON 文件，并提供函数中函数的所有详细信息，例如函数的参数。 有关[函数属性](#json-metadata-example)[的完整列表](#metadata-reference)，请参阅以下元数据示例和元数据引用。
+在项目中创建 JSON 文件，并提供函数中函数的所有详细信息，例如函数的参数。 有关[函数属性的完整](#json-metadata-example)[列表，](#metadata-reference)请参阅以下元数据示例和元数据引用。
 
 确保 XML 清单文件引用 部分中的 JSON 文件， `<Resources>` 类似于以下示例。
 
@@ -136,18 +136,18 @@ ms.locfileid: "60681229"
 ```
 
 > [!NOTE]
-> [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) GitHub提交历史记录中提供了完整的 JSON 文件示例。 由于项目已调整为自动生成 JSON，因此手写 JSON 的完整示例仅在项目的早期版本中可用。
+> [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json)中提供了完整的 JSON GitHub存储库的提交历史记录。 由于项目已调整为自动生成 JSON，因此手写 JSON 的完整示例仅在项目的早期版本中可用。
 
 ## <a name="metadata-reference"></a>元数据参考
 
 ### <a name="allowcustomdatafordatatypeany-preview"></a>allowCustomDataForDataTypeAny (预览) 
 
 > [!NOTE]
-> `allowCustomDataForDataTypeAny`属性当前在公共预览版中可用，并且仅与 Office 上的Windows。 预览功能可能会更改，不能用于生产环境。 我们建议你仅在测试和开发环境中试用它们。 请勿在生产环境或业务关键文档中使用预览功能。
+> `allowCustomDataForDataTypeAny`属性当前在公共预览版中可用，并且仅与 Office 上的Windows。 预览功能可能会发生变更，不适合在生产环境中使用。 我们建议你仅在测试和开发环境中试用它们。 不要在生产环境或业务关键型文档中使用预览功能。
 >
-> 若要在 Windows 上的 Office 中试用此属性，必须拥有一个大于或等于 16.0.14623.20002 的 Excel 内部版本。 若要使用此功能，你需要加入预览体验计划 [Office，](https://insider.office.com/)然后选择 **Beta 渠道预览** 体验成员级别。 若要了解更多信息，请参阅[加入 Office预览体验计划](https://insider.office.com/join/windows)。
+> 若要在 Windows 上的 Office 中试用此属性，必须拥有一个大于或等于 16.0.14623.20002 的 Excel 内部版本。 若要使用此功能，需要加入 [Office 预览体验计划](https://insider.office.com/)，然后选择 **Beta 版频道** 预览体验级别。 若要了解详细信息，请参阅[加入 Office 预览体验计划](https://insider.office.com/join/windows)。
 
-属性 `allowCustomDataForDataTypeAny` 是一个布尔数据类型。 将此值设置为 `true` 允许自定义函数接受数据类型作为参数并返回值。 若要了解更多信息，请参阅自定义 [函数和数据类型核心概念](/custom-functions-data-types-concepts.md)。
+属性 `allowCustomDataForDataTypeAny` 是一个布尔数据类型。 将此值设置为 `true` 允许自定义函数接受数据类型作为参数并返回值。 若要了解更多信息，请参阅自定义 [函数和数据类型核心概念](custom-functions-data-types-concepts.md)。
 
 与其他大多数 JSON 元数据属性不同，它是顶级属性 `allowCustomDataForDataTypeAny` ，不包含子属性。 请参阅前面的 [JSON 元数据代码](#json-metadata-example) 示例，了解如何设置此属性的格式。
 
@@ -182,7 +182,7 @@ ms.locfileid: "60681229"
 | `requiresAddress` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true` 为 ，则自定义函数可以访问调用它的单元格的地址。 `address`调用参数的[属性](custom-functions-parameter-options.md#invocation-parameter)包含调用自定义函数的单元格的地址。 函数不能同时使用 和 `stream` `requiresAddress` 属性。 |
 | `requiresParameterAddresses` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true` 为 ，则自定义函数可以访问函数的输入参数的地址。 此属性必须与结果对象的 属性结合使用， `dimensionality` 并且[](#result) `dimensionality` 必须设置为 `matrix` 。 有关详细信息 [，请参阅检测参数](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 的地址。 |
 | `stream`          | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 相反，结果值将作为 `StreamingInvocation.setResult` 回调方法的参数传递。 有关详细信息，请参阅 Make [a streaming function](custom-functions-web-reqs.md#make-a-streaming-function)。 |
-| `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果为 ，则函数每次Excel重新计算，而不是仅在公式的从属值发生更改 `true` 时重新计算。 函数不能同时使用 和 `stream` `volatile` 属性。 如果 `stream` 和 `volatile` 属性都设置为 `true` ，则可变属性将被忽略。 |
+| `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果为 ，则函数每次重新计算Excel重新计算，而不是仅在公式的从属值 `true` 发生更改时重新计算。 函数不能同时使用 和 `stream` `volatile` 属性。 如果 `stream` 和 `volatile` 属性都设置为 `true` ，则可变属性将被忽略。 |
 
 ### <a name="parameters"></a>参数
 
@@ -191,7 +191,7 @@ ms.locfileid: "60681229"
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  否 |  参数的说明。 这将显示在Excel中IntelliSense。  |
-|  `dimensionality`  |  string  |  否  |  必须是 (`scalar` 一个非数组值) 或 (二维 `matrix` 数组) 。  |
+|  `dimensionality`  |  string  |  否  |  必须是 (`scalar` 一个非数组值) 或 (`matrix` 二维数组) 。  |
 |  `name`  |  string  |  是  |  参数的名称。 此名称显示在Excel中IntelliSense。  |
 |  `type`  |  string  |  否  |  参数的数据类型。 可以是 `boolean` 、 、 或 ，它允许您使用前三种类型 `number` `string` `any` 中的任意一种。 如果未指定此属性，则数据类型默认值 `any` 。 |
 |  `optional`  | boolean | 否 | 如果为 `true`，则参数是可选的。 |
@@ -203,7 +203,7 @@ ms.locfileid: "60681229"
 
 | 属性         | 数据类型 | 必需 | 说明                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
-| `dimensionality` | string    | 否       | 必须是 (`scalar` 一个非数组值) 或 (二维 `matrix` 数组) 。 |
+| `dimensionality` | string    | 否       | 必须是 (`scalar` 一个非数组值) 或 (`matrix` 二维数组) 。 |
 | `type` | string    | 否       | 结果数据类型。 可以是 `boolean` `number` 、、或 (，这允许你使用前 `string` `any` 三种类型中的任意) 。 如果未指定此属性，则数据类型默认值 `any` 。 |
 
 ## <a name="associating-function-names-with-json-metadata"></a>将函数名称与 JSON 元数据相关联

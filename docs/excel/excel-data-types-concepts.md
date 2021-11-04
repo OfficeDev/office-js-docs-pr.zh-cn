@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API 数据类型核心概念
 description: 了解在 Office 加载项中使用 Excel 数据类型的核心概念。
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: cb5a1e13ced03116d10c7d7a09f822485b41ff6a
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: a5d4915638d67c67679095eb03bc04a48e9196dd
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681774"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749383"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel 数据类型核心概念（预览版）
 
@@ -109,6 +109,6 @@ const myImage = {
 
 ## <a name="see-also"></a>另请参阅
 
-- [ Excel 加载项中的数据类型的概述](/excel-data-types-overview.md)
+- [ Excel 加载项中的数据类型的概述](excel-data-types-overview.md)
 - [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
-- [自定义函数和数据类型概述](/custom-functions-data-types-overview.md)
+- [自定义函数和数据类型概述](custom-functions-data-types-overview.md)
