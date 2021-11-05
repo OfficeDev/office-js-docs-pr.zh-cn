@@ -1,15 +1,15 @@
 ---
 title: 共享运行时要求集
 description: 指定支持 SharedRuntime Office的平台和应用程序。
-ms.date: 10/05/2021
+ms.date: 11/03/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: c202ba3047b8dc3998b3bcfd241274bcedf5a93d
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: a5f7d3c9394de047b358d7f190c5adae5b5199b1
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138497"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793601"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共享运行时要求集
 
@@ -24,12 +24,21 @@ ms.locfileid: "60138497"
 | SharedRuntime 1.1  | 内部版本 16.0.14326.20454 或更高版本 | 版本 2002 (内部版本 12527.20092) 或更高版本 | 不适用 | 16.35 或更高版本 | 2020 年 2 月 | 不适用 |
 
 > [!IMPORTANT]
-> 共享的 JavaScript 运行时要求集仅在以下应用程序Office可用。
->
-> - Excel 网页版、Windows 和 Mac。
-> - Windows 版 PowerPoint（内部版本 13218.10000 或更高版本）。 适用于 PowerPoint 的共享 JavaScript 运行时当前处于预览阶段并可能会发生更改。 不支持在生产环境中使用。 要获取最新版本，你需要[加入 Office 预览体验计划](https://insider.office.com/join)。 试用预览版功能的好方法是使用 Microsoft 365 订阅。 如果还没有 Microsoft 365 订阅，可以通过加入[Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。
->
-> 目前，iPad 或一次性购买版本的 Office 2019 或更早版本不支持共享 JavaScript 运行时。
+> 目前，iPad 或一次性购买版本的 Office 2019 或更早版本不支持共享 JavaScript 运行时。 有关其他支持详细信息，请参阅以下部分。
+
+## <a name="support-for-version-11-on-excel"></a>支持版本 1.1 Excel
+
+SharedRuntime 1.1 要求集针对 Excel web 版、Windows 和 Mac 发布。
+
+## <a name="preview-support-for-version-11-on-word-and-powerpoint"></a>预览 Word 和 Word 版本 1.1 PowerPoint
+
+下表列出了支持共享 JavaScript 运行时预览的附加应用程序版本。 共享运行时的预览版本可能会更改。 不支持在生产环境中使用。 要获取最新版本，你需要[加入 Office 预览体验计划](https://insider.office.com/join)。 试用预览版功能的好方法是使用 Microsoft 365 订阅。 如果还没有 Microsoft 365 订阅，可以通过加入[Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。
+
+|Office 应用程序 |内部版本 |
+|-------------------|------|
+|Windows 版 PowerPoint |内部版本 16.0.13218.10000 或更高版本 |
+|Windows 版 Word |内部版本 16.0.13218.10000 或更高版本 |
+|Mac 版 Word |内部版本 16.46.207.0 或更高版本 |
 
 ## <a name="office-versions-and-build-numbers"></a>Office 版本和内部版本号
 

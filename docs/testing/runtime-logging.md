@@ -1,14 +1,14 @@
 ---
 title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
-ms.date: 07/08/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b5fdd28f95d4513c9364ce0bacbfe6f27cc9779c
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: e97c9b8bea3ebd656452f096a33d6b386bb82df7
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537616"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793582"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 
@@ -23,6 +23,8 @@ ms.locfileid: "60537616"
 ## <a name="use-runtime-logging-from-the-command-line"></a>使用命令行中的运行时日志
 
 从命令行启用运行时日志记录是最快的使用此日志记录工具的方式。 这些使用 npx，默认情况下，它作为 npm@5.2.0+ 的一部分提供。 如果使用的是 [npm](https://www.npmjs.com/) 的早期版本，请尝试 [Windows 上的运行时日志记录](#runtime-logging-on-windows)或 [Mac](#runtime-logging-on-mac)说明，或者[安装 npx](https://www.npmjs.com/package/npx)。
+
+[!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
 - 要启用运行时日志记录，请执行以下操作：
 
@@ -141,5 +143,5 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 - [验证 Office 加载项的清单](troubleshoot-manifest.md)
 - [清除 Office 缓存](clear-cache.md)
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
-- [使用适用于加载项的开发人员工具调试Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [使用适用于 Internet Explorer 的开发人员工具调试加载项](debug-add-ins-using-f12-tools-ie.md)
 - [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
