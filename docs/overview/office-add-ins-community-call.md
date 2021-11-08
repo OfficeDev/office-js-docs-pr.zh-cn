@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office外接程序社区通话
 description: 每月Microsoft Office外接程序社区通话日程、日程安排和资源。
-ms.date: 11/04/2021
+ms.date: 11/07/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: eae3c8d78f411af31011d6af7b76a3282b53192b
-ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
+ms.openlocfilehash: b2479c4942ca2b4df6cc39da3ac0a06755e760b1
+ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "60793594"
+ms.lasthandoff: 11/08/2021
+ms.locfileid: "60809068"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
@@ -16,7 +16,7 @@ the Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## <a name="agenda-for-november-10th-call"></a>11 月 10 日通话日程
 
-- Community CodeTwo 演示。 将基于事件的激活与Outlook集成。
+- [CodeTwo：Outlook](https://www.codetwo.com/email-signatures/)电子邮件收件人等自动创建签名。
 - 演示使用 Office JS API 时用于单元测试代码的新 Office-Addin-Mock 库。
 - Microsoft 365即时沙盒。
 

@@ -1,26 +1,26 @@
 ---
 title: Internet Explorer 11 测试
 description: 在 Office 11 上测试Internet Explorer加载项。
-ms.date: 10/08/2021
+ms.date: 11/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e64ce43b4b105b54ed5fcf3fa260ef7f81a04520
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 8932545aa692073babeddb6ab22a213466a7c2ba
+ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537630"
+ms.lasthandoff: 11/03/2021
+ms.locfileid: "60809034"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>在 Office 11 上测试Internet Explorer加载项
 
 > [!IMPORTANT]
 > **Internet Explorer外接程序Office中使用的内容**
 >
-> Microsoft 将终止对Internet Explorer的支持，但这不会显著影响Office外接程序。平台和 Office 版本（包括 Office 2019 之间的一次购买版本）的一些组合将继续使用 Internet Explorer 11 随附的 Webview 控件来托管外接程序，如[Office](../concepts/browsers-used-by-office-web-add-ins.md)外接程序使用的浏览器所说明。此外，提交到 AppSource 的外接程序仍然需要支持这些组合Internet Explorer因此，这些组合对应用[的支持也是必需的](/office/dev/store/submit-to-appsource-via-partner-center)。 有两 *个变化* ：
+> Microsoft 将终止对Internet Explorer的支持，但这不会显著影响Office外接程序。平台和 Office 版本（包括 Office 2019 之间的一次购买版本）的一些组合将继续使用 Internet Explorer 11 随附的 Webview 控件来托管外接程序，如[Office](../concepts/browsers-used-by-office-web-add-ins.md)外接程序使用的浏览器所说明。此外，提交到[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)的加载项仍然需要支持这些组合Internet Explorer，因此也支持这些组合。 有两 *个变化* ：
 >
-> - Office web 版中不再打开Internet Explorer。 因此，AppSource 不再使用作为浏览器Office web 版Internet Explorer加载项。 但是，AppSource 仍测试平台和 *Office使用应用的* 桌面版本Internet Explorer。
+> - Office web 版中不再打开Internet Explorer。 因此，AppSource 不再使用 Office web 版 浏览器Internet Explorer测试加载项。 但是，AppSource 仍测试平台和 *Office的桌面* 版本的组合Internet Explorer。
 > - Script Lab[工具](../overview/explore-with-script-lab.md)不再支持Internet Explorer。
 
-如果计划通过 AppSource 销售加载项或计划支持较旧版本的 Windows 和 Office，加载项必须在基于 Internet Explorer 11 (IE11) 的可嵌入浏览器控件中运行。 可以使用命令行从外接程序使用的更现代运行时切换到 Internet Explorer 11 运行时进行此测试。 有关哪些版本的 Windows 和 Office使用 Internet Explorer 11 Web 视图控件的信息，请参阅 Office [Add-ins](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器。
+如果计划通过 AppSource 销售加载项或计划支持较旧版本的 Windows 和 Office，加载项必须在基于 Internet Explorer 11 (IE11) 的可嵌入浏览器控件中运行。 可以使用命令行从外接程序使用的更现代运行时切换到 Internet Explorer 11 运行时进行此测试。 有关哪些版本的 Windows 和 Office使用 Internet Explorer 11 Web 视图控件，请参阅 Office[外接程序使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 > [!IMPORTANT]
 > Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果要使用 ECMAScript 2015 或更高版本的语法和功能，有两个选项：
@@ -30,44 +30,33 @@ ms.locfileid: "60537630"
 >
 > 有关这些选项的详细信息，请参阅 Support [Internet Explorer 11](../develop/support-ie-11.md)。
 >
-> 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。
+> 此外，Internet Explorer 11 不支持媒体、录制和位置等部分 HTML5 功能。 若要了解更多信息，请参阅 [在运行时](../develop/support-ie-11.md#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer)确定加载项是否正在Internet Explorer。
 
 > [!NOTE]
 > Office web 版无法在 Internet Explorer 11 中打开，因此 (，也无需) 使用 Office web 版 测试Internet Explorer。
 
-## <a name="prerequisites"></a>先决条件
-
-- [Node.js](https://nodejs.org/)（最新的 [LTS](https://nodejs.org/about/releases) 版本）
-
-这些说明假定你之前已经设置了 Yo Office生成器项目。 如果之前尚未这样做，请考虑阅读快速入门，例如适用于Excel[入门](../quickstarts/excel-quickstart-jquery.md)。
-
-## <a name="switching-to-the-internet-explorer-11-webview"></a>切换到 Internet Explorer 11 Webview
-
-1. 创建 Yo Office生成器项目。 选择哪种项目并不重要，此工具将用于所有项目类型。
-
-    > [!NOTE]
-    > 如果您有一个现有项目，并且想要在不创建新项目的情况下添加此工具，请跳过此步骤并移至下一步。 
-
-1. 在项目的根文件夹中，在命令行中运行以下命令。 此示例假定项目的清单文件位于根中。 如果不是，请指定清单文件的相对路径。 您应该在命令行中看到一条消息，指出 Web 视图类型现在设置为 IE。
-
-    ```command&nbsp;line
-    npx office-addin-dev-settings webview manifest.xml ie
-    ```
+## <a name="switch-to-the-internet-explorer-11-webview"></a>切换到 Internet Explorer 11 Webview
 
 > [!TIP]
-> 虽然不需要使用此命令，但它应有助于调试与 11 运行时Internet Explorer大多数问题。 为提供完整的稳定性，应测试使用具有 Windows 7、8.1、10 和 11 的各种组合以及各种版本的 Office 的计算机。 有关详细信息，请参阅Office[外接程序](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器和如何还原到早期版本[Office。](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841)
+> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-### <a name="command-options"></a>命令选项
+有两种方法可以切换 web Internet Explorer视图。 可以在命令提示符中运行一个简单的命令，也可以安装默认Office使用Internet Explorer版本。 我们建议使用第一种方法。 但你应在以下方案中使用第二个。
 
-该命令 `office-addin-dev-settings webview` 还可以将多个运行时用作参数：
+- 您的项目是使用 Visual Studio IIS 开发的。 它不是基于node.js的。
+- 你想要在测试中保持绝对可靠。
+- 如果由于任何原因，命令行工具不起作用。
 
-- ie
-- edge
-- default
+### <a name="switch-via-the-command-line"></a>通过命令行进行切换
+
+[!INCLUDE [Steps to switch browsers with the command line tool](../includes/use-legacy-edge-or-ie.md)]
+
+### <a name="install-a-version-of-office-that-uses-internet-explorer"></a>安装使用Office版本的Internet Explorer
+
+[!INCLUDE [Steps to install Office that uses Edge Legacy or Internet Explorer](../includes/install-office-that-uses-legacy-edge-or-ie.md)]
 
 ## <a name="see-also"></a>另请参阅
 
 * [测试和调试 Office 加载项](test-debug-office-add-ins.md)
 * [旁加载 Office 外接程序进行测试](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [使用适用于加载项的开发人员工具调试Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+* [使用适用于 Internet Explorer 的开发人员工具调试加载项](debug-add-ins-using-f12-tools-ie.md)
 * [从任务窗格附加调试器](attach-debugger-from-task-pane.md)

@@ -3,12 +3,12 @@ title: Excel JavaScript API 性能优化
 description: 使用 javaScript API Excel优化加载项性能。
 ms.date: 08/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 07244b67d6721c74072a95a0f35db45245cb064b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ade2ac02f22c93d920174f54e6fc2efed349e3d5
+ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152339"
+ms.lasthandoff: 11/08/2021
+ms.locfileid: "60809061"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
@@ -111,7 +111,7 @@ Excel.run(async (ctx) => {
 
 ## <a name="payload-size-limit-best-practices"></a>有效负载大小限制最佳实践
 
-JavaScript API Excel API 调用的大小限制。 Excel web 版 5MB 的请求和响应的有效负载大小限制，如果超出此限制，API `RichAPI.Error` 将返回错误。 在所有平台上，一个范围限制为五百万个单元格，用于获取操作。 较大区域通常超过这两个限制。
+JavaScript API Excel API 调用的大小限制。 Excel web 版请求和响应的有效负载大小限制为 5MB，如果超出此限制，API `RichAPI.Error` 将返回错误。 在所有平台上，一个范围限制为五百万个单元格，用于获取操作。 较大区域通常超过这两个限制。
 
 请求的有效负载大小是以下三个组件的组合。
 
@@ -181,7 +181,7 @@ async function run() {
     
     // This sample attempts to process too many ranges at once. 
     for (let row = 1; row < 10000; row++) {
-      var range = sheet.getRangeByIndexes(i, 1, 1, 1);
+      var range = sheet.getRangeByIndexes(row, 1, 1, 1);
       range.values = [["1"]];
     }
     await context.sync(); 
@@ -201,14 +201,14 @@ async function run() {
 
     // Split the ranges into two loops, rows 1-5000 and then 5001-10000.
     for (let row = 1; row < 5000; row++) {
-      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      var range = worksheet.getRangeByIndexes(row, 1, 1, 1);
       range.values = [["1"]];
     }
     // Sync after each loop. 
     await context.sync(); 
     
     for (let row = 5001; row < 10000; row++) {
-      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      var range = worksheet.getRangeByIndexes(row, 1, 1, 1);
       range.values = [["1"]];
     }
     await context.sync(); 
