@@ -1,15 +1,15 @@
 ---
 title: Office 通用 API 要求集
 description: 详细了解通用 API Office集。
-ms.date: 04/28/2021
+ms.date: 11/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: d31b119db15689a8ba4c5f5cf070f26aa916a6d3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c6b2f7f41ff002f3ce66c5dd8afbb36f2e3e6f1e
+ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152469"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "60890005"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -29,10 +29,10 @@ ms.locfileid: "59152469"
 
 ## <a name="common-api-requirement-sets"></a>通用 API 要求集
 
-以下各节列出了通用 API 要求集、每个要求集内的方法，Office支持该要求集的客户端应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
+以下各节列出了通用 API 要求集、每个集内的方法，以及支持Office集的客户端应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
 
 > [!TIP]
-> 需要有关外接程序和要求集在应用程序与版本Office的信息？ 请参阅[Office外接程序的客户端](../../overview/office-add-in-availability.md)应用程序和Office可用性。
+> 需要有关外接程序和要求集在应用程序与版本Office的信息？ 请参阅[Office外接程序的客户端应用程序和Office可用性](../../overview/office-add-in-availability.md)。
 
 ### <a name="activeview"></a>ActiveView
 
@@ -180,7 +180,7 @@ ms.locfileid: "59152469"
 
 |**Office 应用程序**|**要求集内的方法**|
 |:-----|:-----|
-| Windows 版 Excel<br>Excel 网页版<br>Mac 版 Excel<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版|支持使用 Document.getFileAsync 方法时输出 PDF 格式 (Office.FileType.Pdf)<br>。|
+| Windows 版 Excel<br>Excel 网页版<br>Mac 版 Excel<br>Windows 版 PowerPoint<br>PowerPoint 网页版<br>iPad 版 PowerPoint<br>Mac 版 PowerPoint<br>Windows 版 Word 2013 及更高版本<br>Mac 版 Word 2016 及更高版本<br>Word 网页版<br>iPad 版 Word|支持使用 Document.getFileAsync 方法时输出 PDF 格式 (Office.FileType.Pdf)<br>。|
 
 ---
 
@@ -192,7 +192,7 @@ ms.locfileid: "59152469"
 
 ---
 
-### <a name="selection"></a>选择
+### <a name="selection"></a>选择内容
 
 |**Office 应用程序**|**要求集内的方法**|
 |:-----|:-----|
