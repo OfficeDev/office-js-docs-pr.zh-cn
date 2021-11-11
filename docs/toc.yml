@@ -271,7 +271,9 @@ items:
                 href: testing/debug-add-ins-using-f12-tools-ie.md
               - name: 使用旧版 Edge 开发人员工具调试加载项
                 href: testing/debug-add-ins-using-devtools-edge-legacy.md
-              - name: 使用 Edge Chromium WebView2 进行调试
+              - name: 使用 Edge Chromium WebView2 的开发人员工具进行调试
+                href: testing/debug-add-ins-using-devtools-edge-chromium.md
+              - name: 使用 Visual Studio Code 和 Edge Chromium WebView2 进行调试
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
               - name: 使用 Internet Explorer 11 进行测试
