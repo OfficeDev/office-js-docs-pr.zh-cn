@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 09/28/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 9e0e630d9a64390f1f8d5e4ca78262ec8cc998e4
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: f5587fc96789769b17a15e242211a7cbb97e5ea3
+ms.sourcegitcommit: e36c25023b4268e8a50af984d753379082d44295
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138490"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "60923564"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -546,7 +546,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 ## <a name="see-also"></a>另请参阅
 
 * [如何查找清单元素的正确顺序](manifest-element-ordering.md)
-* [在清单中创建外接程序命令][create-addin-commands.md]
+* [在清单中创建外接程序命令](create-addin-commands.md)
 * [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)
 * [Office 外接程序的本地化](localization.md)
 * [Office 外接程序清单的架构参考](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
