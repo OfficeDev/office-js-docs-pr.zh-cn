@@ -1136,6 +1136,8 @@ items:
                 href: outlook/authentication.md
               - name: 使用 SSO 令牌进行身份验证
                 href: outlook/authenticate-a-user-with-an-sso-token.md
+              - name: 基于事件的激活中的 SSO
+                href: outlook/use-sso-in-event-based-activation.md
               - name: 使用标识令牌进行身份验证
                 href: outlook/authenticate-a-user-with-an-identity-token.md
               - name: 验证标识令牌
