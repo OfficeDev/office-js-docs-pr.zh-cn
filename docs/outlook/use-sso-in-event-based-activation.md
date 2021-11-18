@@ -1,5 +1,5 @@
 ---
-title: 使用基于事件的激活 (SSO) Outlook启用单一登录
+title: 在使用基于事件的 () Outlook加载项中启用单一登录或 SSO 登录
 description: 了解如何在基于事件的激活加载项中操作时启用 SSO。
 ms.date: 11/16/2021
 ms.localizationpriority: medium
@@ -7,15 +7,15 @@ ms.openlocfilehash: 66d1edb8b7b0092ee107b73af24d5420caee8677
 ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "61064701"
+ms.lasthandoff: 11/18/2021
+ms.locfileid: "61066651"
 ---
-# <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>使用基于事件的激活 (SSO) Outlook启用单一登录
+# <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>在使用基于事件的 () Outlook加载项中启用单一登录或 SSO 登录
 
 当Outlook加载项使用基于事件的激活时，事件在单独的 JavaScript 运行时中运行。 完成在[Outlook](authenticate-a-user-with-an-sso-token.md)加载项中使用单一登录令牌对用户进行身份验证中的步骤后，请按照本文中所述的其他步骤操作，为事件处理代码启用 SSO。 启用 SSO 后，可以调用 `getAccessToken()` API 获取具有用户标识的访问令牌。
 
 > [!NOTE]
-> 本文中的步骤仅适用于在加载项Outlook加载项Windows。 这是因为Outlook使用Windows JavaScript 文件，而 Outlook 网页版使用可引用同一 JavaScript 文件的 HTML 文件。
+> 本文中的步骤仅适用于在加载项Outlook加载项Windows。 这是因为，Outlook上的Windows使用 JavaScript 文件，而 Outlook 网页版 使用可引用同一 JavaScript 文件的 HTML 文件。
 
 For Outlook on Windows， in the manifest for your Outlook add-in， you identify a single JavaScript file to load for event-based activation. 还需要指定是否Office此文件支持 SSO。 有两种方法可以这样做。 您可以创建所有加载项及其 JavaScript 文件的列表，以Office已知的 URI 访问加载项。 也可以添加自定义响应标头以启用 SSO。
 

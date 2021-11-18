@@ -7,15 +7,15 @@ ms.openlocfilehash: 5dcc6991e762f8d3defca50df406952ee7f1385b
 ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "61064678"
+ms.lasthandoff: 11/18/2021
+ms.locfileid: "61066658"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API Excel错误处理
 
 使用 Excel JavaScript API 生成加载项时，请务必加入错误处理逻辑，以便解决运行时错误。 鉴于 API 的异步特性，这样做非常关键。
 
 > [!NOTE]
-> 有关 JavaScript API 的方法和异步特性Excel，请参阅 Excel 外接程序中的 `sync()` [Office JavaScript 对象模型](excel-add-ins-core-concepts.md)。
+> 有关 JavaScript API 的方法和异步特性Excel，请参阅 Excel `sync()` 外接程序中的[Office JavaScript 对象模型](excel-add-ins-core-concepts.md)。
 
 ## <a name="best-practices"></a>最佳做法
 
@@ -56,7 +56,7 @@ Excel.run(function (context) {
 |`AccessDenied` |无法执行所请求的操作。| |
 |`ActivityLimitReached`|已达到活动限制。| |
 |`ApiNotAvailable`|请求的 API 不可用。| |
-|`ApiNotFound`|找不到您尝试使用的 API。 它可能在更高版本的 Excel 中提供。 有关详细信息[，Excel JavaScript API](../reference/requirement-sets/excel-api-requirement-sets.md)要求集文章。| |
+|`ApiNotFound`|找不到您尝试使用的 API。 它在更高版本的 Excel 中Excel。 有关详细信息[，Excel JavaScript API](../reference/requirement-sets/excel-api-requirement-sets.md)要求集文章。| |
 |`BadPassword`|你提供的密码不正确。| |
 |`Conflict`|由于冲突，无法处理请求。| |
 |`ContentLengthRequired`|`Content-length`HTTP 标头缺失。| |
@@ -77,7 +77,7 @@ Excel.run(function (context) {
 |`ItemNotFound` |所请求的资源不存在。| |
 |`MemoryLimitReached`|已达到内存限制。 无法完成操作。| |
 |`MergedRangeConflict`|无法完成操作。 表不能与其他表、数据透视表、查询结果、合并单元格或 XML 映射重叠。|
-|`NonBlankCellOffSheet`|Microsoft Excel无法插入新单元格，因为它将非空单元格推送到工作表末尾。 这些非空单元格可能为空，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。| |
+|`NonBlankCellOffSheet`|Microsoft Excel无法插入新单元格，因为它会将非空单元格推送到工作表末尾。 这些非空单元格可能为空，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。| |
 |`NotImplemented`|所请求的功能未实现。| |
 |`OperationCellsExceedLimit`|尝试的操作影响超过 33554000 个单元格的限制。| 如果 `TableColumnCollection.add API` 触发此错误，请确认工作表中除表外没有意外数据。 特别是，检查工作表最右侧列中的数据。 删除意外数据以解决此错误。 验证操作进程所经过的单元格数的一种方式是运行以下计算 `(number of table rows) x (16383 - (number of table columns))` ：。 数字 16383 是用户支持的最大Excel数。 <br><br>此错误仅出现在Excel web 版。 |
 |`PivotTableRangeConflict`|尝试的操作会导致与数据透视表区域冲突。| |
@@ -93,7 +93,7 @@ Excel.run(function (context) {
 |`UnsupportedSheet`|此工作表类型不支持此操作，因为它是一个宏或图表工作表。| |
 
 > [!NOTE]
-> 上表列出了在使用 JavaScript API 时Excel错误消息。 如果你使用通用 API 而不是特定于应用程序的 Excel JavaScript API，请参阅Office[通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码以了解相关的错误消息。
+> 上表列出了使用 JavaScript API 时可能遇到的Excel消息。 如果你使用通用 API 而不是特定于应用程序的 Excel JavaScript API，请参阅[Office通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码，以了解相关的错误消息。
 
 ## <a name="see-also"></a>另请参阅
 
