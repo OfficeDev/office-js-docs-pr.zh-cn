@@ -1,14 +1,14 @@
 ---
 title: JavaScript API Excel错误处理
 description: 了解如何Excel JavaScript API 错误处理逻辑，以考虑运行时错误。
-ms.date: 09/20/2021
+ms.date: 11/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 24daaa8dcd5256be997c8742016a9ec80b3294df
-ms.sourcegitcommit: 43f20d0933d0159dd390da052187b315222b185f
+ms.openlocfilehash: 5dcc6991e762f8d3defca50df406952ee7f1385b
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2021
-ms.locfileid: "59502729"
+ms.lasthandoff: 11/17/2021
+ms.locfileid: "61064678"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API Excel错误处理
 
@@ -51,7 +51,7 @@ Excel.run(function (context) {
 
 下表是 API 可能返回的错误列表。
 
-|错误代码 | 错误消息 | 注意 |
+|错误代码 | 错误消息 | Notes |
 |:----------|:--------------|:------|
 |`AccessDenied` |无法执行所请求的操作。| |
 |`ActivityLimitReached`|已达到活动限制。| |
@@ -60,6 +60,7 @@ Excel.run(function (context) {
 |`BadPassword`|你提供的密码不正确。| |
 |`Conflict`|由于冲突，无法处理请求。| |
 |`ContentLengthRequired`|`Content-length`HTTP 标头缺失。| |
+|`EmptyChartSeries`|尝试的操作失败，因为图表系列为空。| |
 |`FilteredRangeConflict`|尝试的操作会导致与筛选出的范围冲突。| |
 |`FormulaLengthExceedsLimit`|所应用的公式的字节码超过最大长度限制。 对于Office 32 位计算机上，字节码长度限制为 16384 个字符。 在 64 位计算机上，字节码长度限制为 32768 个字符。| 此错误在桌面和Excel web 版都发生。|
 |`GeneralException`|处理请求时出现内部错误。| |
@@ -76,15 +77,15 @@ Excel.run(function (context) {
 |`ItemNotFound` |所请求的资源不存在。| |
 |`MemoryLimitReached`|已达到内存限制。 无法完成操作。| |
 |`MergedRangeConflict`|无法完成操作。 表不能与其他表、数据透视表、查询结果、合并单元格或 XML 映射重叠。|
-|`NonBlankCellOffSheet`|Microsoft Excel无法插入新单元格，因为它会将非空单元格推送到工作表末尾。 这些非空单元格可能为空，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。| |
+|`NonBlankCellOffSheet`|Microsoft Excel无法插入新单元格，因为它将非空单元格推送到工作表末尾。 这些非空单元格可能为空，但具有空值、某些格式或公式。 删除足够的行或列，为要插入的行或列提供空间，然后重试。| |
 |`NotImplemented`|所请求的功能未实现。| |
 |`OperationCellsExceedLimit`|尝试的操作影响超过 33554000 个单元格的限制。| 如果 `TableColumnCollection.add API` 触发此错误，请确认工作表中除表外没有意外数据。 特别是，检查工作表最右侧列中的数据。 删除意外数据以解决此错误。 验证操作进程所经过的单元格数的一种方式是运行以下计算 `(number of table rows) x (16383 - (number of table columns))` ：。 数字 16383 是用户支持的最大Excel数。 <br><br>此错误仅出现在Excel web 版。 |
 |`PivotTableRangeConflict`|尝试的操作会导致与数据透视表区域冲突。| |
-|`RangeExceedsLimit`|该范围中的单元格计数已超出支持的最大数。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。| |
+|`RangeExceedsLimit`|该范围中的单元格计数已超出支持的最大数。 有关详细信息[，请参阅](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)Office 外接程序的资源限制和性能优化一文。| |
 |`RefreshWorkbookLinksBlocked`|操作失败，因为用户未授予刷新外部工作簿链接的权限。| |
 |`RequestAborted`|请求在运行时已中止。| |
-|`RequestPayloadSizeLimitExceeded`|请求有效负载大小已超出限制。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。| 此错误仅出现在Excel web 版。|
-|`ResponsePayloadSizeLimitExceeded`|响应有效负载大小已超出限制。 有关详细信息[，请参阅Office外接程序](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)的资源限制和性能优化一文。|  此错误仅出现在Excel web 版。|
+|`RequestPayloadSizeLimitExceeded`|请求有效负载大小已超出限制。 有关详细信息[，请参阅](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)Office 外接程序的资源限制和性能优化一文。| 此错误仅出现在Excel web 版。|
+|`ResponsePayloadSizeLimitExceeded`|响应有效负载大小已超出限制。 有关详细信息[，请参阅](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)Office 外接程序的资源限制和性能优化一文。|  此错误仅出现在Excel web 版。|
 |`ServiceNotAvailable`|服务不可用。| |
 |`Unauthenticated` |所需的身份验证信息缺少或无效。| |
 |`UnsupportedFeature`|操作失败，因为源工作表包含一个或多个不受支持的功能。| |
@@ -92,7 +93,7 @@ Excel.run(function (context) {
 |`UnsupportedSheet`|此工作表类型不支持此操作，因为它是一个宏或图表工作表。| |
 
 > [!NOTE]
-> 上表列出了使用 JavaScript API 时可能遇到的Excel消息。 如果你使用通用 API 而不是特定于应用程序的 JavaScript API Excel，请参阅Office[通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码以了解相关的错误消息。
+> 上表列出了在使用 JavaScript API 时Excel错误消息。 如果你使用通用 API 而不是特定于应用程序的 Excel JavaScript API，请参阅Office[通用 API](../reference/javascript-api-for-office-error-codes.md)错误代码以了解相关的错误消息。
 
 ## <a name="see-also"></a>另请参阅
 
