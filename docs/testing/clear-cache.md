@@ -1,14 +1,14 @@
 ---
 title: 清除 Office 缓存
 description: 了解如何清除计算机上的 Office 缓存。
-ms.date: 08/02/2021
+ms.date: 11/15/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 4d5351e9f8758109bfd0ef4a901c5ef916c98fa4
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 79b5f4e483eadec5d9f3095ab1c37e8eb697658b
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537644"
+ms.lasthandoff: 11/18/2021
+ms.locfileid: "61066665"
 ---
 # <a name="clear-the-office-cache"></a>清除 Office 缓存
 
@@ -21,7 +21,25 @@ ms.locfileid: "60537644"
 
 ## <a name="clear-the-office-cache-on-windows"></a>清除 Windows 上的 Office 缓存
 
-如果要从 Excel、Word 和 PowerPoint 中删除所有旁加载的加载项，请删除以下文件夹的内容。
+在 Windows 计算机上清除 Office 缓存的方法有三种：自动、手动以及使用 Microsoft Edge 开发人员工具。 以下子部分介绍了这些方法。
+
+### <a name="automatically"></a>自动
+
+建议对加载项开发计算机使用此方法。 如果 Windows 版 Office 的版本为 2108 或更高版本，则以下步骤会将 Office 缓存配置为每次重新打开 Office 时自动清除。
+
+> [!NOTE]
+> Outlook 不支持自动方法。
+
+1. 从除 Outlook 以外的任何 Office 主机的功能区中，导航到“**文件**” > “**选项**” > “**信任中心**” > “**信任中心设置**” > “**受信任的加载项目录**”。
+1. 选中“**下次启动 Office 时，清除以前启动的所有 Web 加载项的缓存**”复选框。
+
+### <a name="manually"></a>手动
+
+Excel、Word 和 PowerPoint 的手动方法与 Outlook 不同。
+
+#### <a name="manually-clear-the-cache-in-excel-word-and-powerpoint"></a>手动清除 Excel、Word 和 PowerPoint 中的缓存
+
+若要从 Excel、Word 和 PowerPoint 中删除所有旁加载的加载项，请删除以下文件夹中的内容。
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
@@ -33,9 +51,13 @@ ms.locfileid: "60537644"
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
+#### <a name="manually-clear-the-cache-in-outlook"></a>手动清除 Outlook 中的缓存
+
 要从 Outlook 中删除旁加载的加载项，请使用 [旁加载 Outlook 加载项以供测试](../outlook/sideload-outlook-add-ins-for-testing.md) 中概述的步骤，以在列出已安装加载项的对话框的“**自定义加载项**”部分中查找该加载项。选择加载项所对应的省略号（`...`），然后选择“**删除**”以删除该特定加载项。如果加载项删除不起作用，则删除 `Wef` 的内容，如之前 针对 Excel、Word 和 PowerPoint 所述。
 
-另外，若要在 Microsoft Edge 中运行加载项时清除 Windows 10 上的 Office 缓存，可使用 Microsoft Edge 开发工具。
+### <a name="using-the-microsoft-edge-developer-tools"></a>使用 Microsoft Edge 开发人员工具
+
+若要在加载项在 Microsoft Edge 中运行时清除 Windows 10 上的 Office 缓存，可以使用 Microsoft Edge DevTools。
 
 > [!TIP]
 > 如果只希望旁加载的加载项反映对其 HTML 或 JavaScript 源文件的最新更改，则应该不需要清除缓存。 相反，只需将焦点放在加载项的任务窗格中（通过单击任务窗格中的任意位置），然后按 **Ctrl+F5** 重新加载加载项。
