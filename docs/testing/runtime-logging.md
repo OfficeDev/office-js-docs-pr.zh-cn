@@ -3,19 +3,19 @@ title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e97c9b8bea3ebd656452f096a33d6b386bb82df7
-ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
+ms.openlocfilehash: f3e135ef051b79fcfba7aac1252d10ec1109f25d
+ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "60793582"
+ms.lasthandoff: 11/19/2021
+ms.locfileid: "61081440"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 
 可以使用运行时日志记录调试加载项的清单以及多个安装错误。 此功能可以帮助你标识并修复清单中未被 XSD 架构验证检测到的问题，例如资源 ID 间的不匹配等。 运行时日志记录对于调试执行加载项命令的加载项和 Excel 自定义功能尤其有用。
 
 > [!NOTE]
-> 运行时日志记录功能当前适用于桌面版 Office 2016 或更高版本。
+> 运行时日志记录功能当前适用于桌面Office 2016 或更高版本。
 
 > [!IMPORTANT]
 > 运行时日志记录功能影响性能。仅在需要调试加载项清单问题时，才启用此功能。
@@ -145,3 +145,4 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
 - [使用适用于 Internet Explorer 的开发人员工具调试加载项](debug-add-ins-using-f12-tools-ie.md)
 - [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
+- [在基于 Web 的 Microsoft Edge (Chromium 中，使用开发人员工具) ](debug-add-ins-using-devtools-edge-chromium.md) 

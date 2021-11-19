@@ -1,14 +1,14 @@
 ---
 title: 验证 Office 加载项的清单
-description: 了解如何使用 XML 架构和其他工具Office外接程序的清单。
+description: 了解如何使用 XML 架构和其他工具Office加载项的清单。
 ms.date: 10/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e7b93430b8ddffc5ebc2cc8f2ae2bab5c0850f
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: e9b7e868b55489c70a5abe067a262b0ea73fbae8
+ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681526"
+ms.lasthandoff: 11/19/2021
+ms.locfileid: "61081419"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 
@@ -25,7 +25,7 @@ ms.locfileid: "60681526"
 npm run validate
 ```
 
-![动态 GIF，显示 Yo Office验证程序在命令行中运行并生成显示"验证通过"的结果。](../images/yo-office-validator.gif)
+![动态 GIF，显示 Yo Office验证程序在命令行运行并生成显示"验证通过"的结果。](../images/yo-office-validator.gif)
 
 > [!NOTE]
 > 若要访问此功能，必须使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)版本 1.1.17 或更高版本创建加载项项目。
@@ -77,3 +77,4 @@ npm run validate
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
 - [使用适用于 Internet Explorer 的开发人员工具调试加载项](debug-add-ins-using-f12-tools-ie.md)
 - [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
+- [在基于 Web 的 Microsoft Edge (Chromium 中，使用开发人员工具) ](debug-add-ins-using-devtools-edge-chromium.md)
