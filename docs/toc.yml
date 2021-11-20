@@ -307,6 +307,8 @@ items:
             href: testing/testing-and-troubleshooting.md
           - name: 排查开发错误
             href: testing/troubleshoot-development-errors.md
+          - name: 单元测试
+            href: testing/unit-testing.md
           - name: 可用性测试
             href: develop/usability-testing.md
           - name: 验证 Office 加载项的清单
