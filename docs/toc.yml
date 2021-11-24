@@ -348,6 +348,8 @@ items:
                 href: reference/requirement-sets/identity-api-requirement-sets.md
               - name: 图像强制要求集
                 href: reference/requirement-sets/image-coercion-requirement-sets.md
+              - name: 键盘快捷方式要求集
+                href: reference/requirement-sets/keyboard-shortcuts-requirement-sets.md
               - name: Office 通用 API 要求集
                 href: reference/requirement-sets/office-add-in-requirement-sets.md
               - name: 打开浏览器窗口要求集
