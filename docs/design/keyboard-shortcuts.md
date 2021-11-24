@@ -1,14 +1,14 @@
 ---
 title: 加载项中的Office快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）Office加载项。
-ms.date: 07/08/2021
-ms.localizationpriority: medium
-ms.openlocfilehash: 0f4ef373ee5352f012561d76fa5bc01cb391af48
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.date: 11/22/2021
+localization_priority: Normal
+ms.openlocfilehash: c29f6b09d77ab946c9e97483688cd265e8495aef
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149362"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153491"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到Office加载项
 
@@ -35,7 +35,7 @@ ms.locfileid: "59149362"
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>将映射文件链接到清单
 
-在 *紧* (不在) 元素内，添加 `<VersionOverrides>` [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素。 将 `Url` 属性设置为项目中将在稍后步骤创建的 JSON 文件的完整 URL。
+在 *紧* (不在) 元素的内部，添加 `<VersionOverrides>` [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素。 将 `Url` 属性设置为项目中将在稍后步骤创建的 JSON 文件的完整 URL。
 
 ```xml
     ...
@@ -48,7 +48,7 @@ ms.locfileid: "59149362"
 
 在项目中创建 JSON 文件。 确保文件的路径与为 `Url` [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素的 属性指定的位置相匹配。 此文件将描述键盘快捷方式以及这些快捷方式将调用的操作。
 
-1. 在 JSON 文件中，有两个数组。 actions 数组将包含定义要调用的操作的对象，快捷方式数组将包含将键组合映射到操作的对象。 下面是一个示例。
+1. 在 JSON 文件中，有两个数组。 actions 数组将包含定义要调用的操作的对象，快捷方式数组将包含将键组合映射到操作的对象。 以下是示例。
     ```json
     {
         "actions": [
@@ -90,7 +90,7 @@ ms.locfileid: "59149362"
 ## <a name="create-a-mapping-of-actions-to-their-functions"></a>创建操作到其函数的映射
 
 1. 在项目中，打开 元素中的 HTML 页面加载的 JavaScript `<FunctionFile>` 文件。
-1. 在 JavaScript 文件中，使用[Office.actions.associate](/javascript/api/office/office.actions#associate) API 将 JSON 文件中指定的每个操作映射到 JavaScript 函数。 将以下 JavaScript 添加到文件。 关于代码，请注意以下几点。
+1. 在 JavaScript 文件中，使用[Office.actions.associate](/javascript/api/office/office.actions#associate) API 将 JSON 文件中指定的每个操作映射到 JavaScript 函数。 将以下 JavaScript 添加到文件中。 关于代码，请注意以下几点。
 
     - 第一个参数是 JSON 文件的操作之一。
     - 第二个参数是当用户按下映射到 JSON 文件中操作的组合键时运行的函数。
@@ -102,7 +102,7 @@ ms.locfileid: "59149362"
     ```
 
 1. 若要继续此示例，请使用 `'SHOWTASKPANE'` 作为第一个参数。
-1. 对于函数的正文，使用[Office.addin.showTaskpane](/javascript/api/office/office.addin#showAsTaskpane__)方法打开加载项的任务窗格。 完成后，代码应如下所示：
+1. 对于函数的正文，使用[Office.addin.showAsTaskpane](/javascript/api/office/office.addin#showAsTaskpane__)方法打开加载项的任务窗格。 完成后，代码应如下所示：
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -198,13 +198,13 @@ ms.locfileid: "59149362"
 快捷方式 JSON 的完整架构位于 [extended-manifest.schema.json 中](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
 > [!NOTE]
-> 键提示（也称为连续键快捷方式，例如选择填充颜色的 Excel 快捷方式 **Alt+H、H）** 在 Office 外接程序中不受支持。
+> 键提示（也称为连续键快捷方式，例如用于选择填充颜色的 Excel 快捷方式 **Alt+H、H）** 在 Office 外接程序中不受支持。
 
 ## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>避免其他加载项使用组合键
 
-有许多键盘快捷方式已在由 Office。 避免为已在使用的外接程序注册键盘快捷方式，但在某些情况下，可能需要替代现有键盘快捷方式或处理已注册同一键盘快捷方式的多个加载项之间的冲突。
+有许多键盘快捷方式已由 Office。 避免为已在使用的加载项注册键盘快捷方式，但在某些情况下，可能需要替代现有的键盘快捷方式或处理注册了相同键盘快捷方式的多个加载项之间的冲突。
 
-如果发生冲突，用户将在第一次尝试使用冲突的键盘快捷方式时看到一个对话框，请注意，此对话框中显示的动作名称是文件中 action 对象中的 属性。 `name` `shortcuts.json`
+如果发生冲突，用户将在第一次尝试使用冲突的键盘快捷方式时看到一个对话框。 请注意，此对话框中显示的外接程序选项文本来自 file 中的 `name` action 对象中的 `shortcuts.json` 属性。
 
 ![插图显示具有单个快捷方式的两个不同操作的冲突模式。](../images/add-in-shortcut-conflict-modal.png)
 
@@ -217,7 +217,7 @@ ms.locfileid: "59149362"
 - 请仅使用以下模式的键盘快捷方式： **Ctrl+Shift+Alt+* x***，其中 *x* 是一些其他键。
 - 如果您需要更多键盘快捷方式，请检查Excel[键盘](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)快捷方式的列表，并避免在外接程序中使用它们。
 - 当键盘焦点位于加载项 UI 内时 **，Ctrl+空格** 键和 **Ctrl+Shift+F10** 将不起作用，因为这些都是基本的辅助功能快捷方式。
-- 在 Windows 或 Mac 计算机上，如果"重置 Office 加载项快捷方式首选项"命令在搜索菜单上不可用，则用户可以通过上下文菜单自定义功能区，将该命令手动添加到功能区。
+- 在 Windows 或 Mac 计算机上，如果"重置 Office 外接程序快捷方式首选项"命令在搜索菜单上不可用，则用户可以通过通过上下文菜单自定义功能区，将该命令手动添加到功能区。
 
 ## <a name="customize-the-keyboard-shortcuts-per-platform"></a>自定义每个平台的键盘快捷方式
 
@@ -248,7 +248,7 @@ ms.locfileid: "59149362"
 
 ## <a name="localize-the-keyboard-shortcuts-json"></a>本地化键盘快捷方式 JSON
 
-如果加载项支持多个区域设置，则需要本地化 `name` action 对象的 属性。 此外，如果加载项支持的任何区域设置具有字母或不同的书写系统，因此使用不同的键盘，则你可能还需要本地化快捷方式。 若要了解如何本地化键盘快捷方式 JSON，请参阅 [本地化扩展替代](../develop/localization.md#localize-extended-overrides)。
+如果加载项支持多个区域设置，则需要本地化 `name` action 对象的 属性。 此外，如果加载项支持的任何区域设置具有不同的字母或书写系统，因此使用不同的键盘，则你可能还需要本地化快捷方式。 若要了解如何本地化键盘快捷方式 JSON，请参阅 [本地化扩展替代](../develop/localization.md#localize-extended-overrides)。
 
 ## <a name="browser-shortcuts-that-cannot-be-overridden"></a>无法重写的浏览器快捷方式
 
@@ -260,6 +260,67 @@ ms.locfileid: "59149362"
 - Ctrl+Shift+T
 - Ctrl+W
 - Ctrl+PgUp/PgDn
+
+## <a name="enable-custom-keyboard-shortcuts-for-specific-users-preview"></a>为特定用户启用自定义键盘快捷方式 (预览) 
+
+通过外接程序，用户可以将外接程序的操作重新分配给备用键盘组合。
+
+> [!IMPORTANT]
+> 本节中所述的功能目前处于预览阶段，可能会更改。 暂不支持在生产环境中使用。 若要试用预览功能，你需要加入预览体验Office[计划](https://insider.office.com/join)。
+> 试用预览版功能的好方法是使用 Microsoft 365 订阅。 如果还没有 Microsoft 365 订阅，可以通过加入[Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。
+
+> [!NOTE]
+> 本节中所述的 API 需要 [KeyboardShortcuts 1.1](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) 要求集。
+
+使用[Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts)方法将用户的自定义键盘组合分配给您的外接程序操作。 方法采用类型 参数，其中 是加载项扩展清单 JSON 中定义的操作 `{[actionId:string]: string}` `actionId` ID 的子集。 值是用户的首选组合键。 如果用户登录到 Office，则自定义组合将保存在用户的漫游设置中。 如果用户未登录，则自定义项将仅针对加载项的当前会话进行最后一次。
+
+```javascript
+const userCustomShortcuts = {
+    SHOWTASKPANE:"CTRL+SHIFT+1", 
+    HIDETASKPANE:"CTRL+SHIFT+2"
+};
+Office.actions.replaceShortcuts(userCustomShortcuts)
+    .then(function () {
+        console.log("Successfully registered.");
+    })
+    .catch(function (ex) {
+        if (ex.code == "InvalidOperation") {
+            console.log("ActionId does not exist or shortcut combination is invalid.");
+        }
+    });
+```
+
+若要了解用户已在使用哪些快捷方式，请调用[Office.actions.getShortcuts](/javascript/api/office/office.actions#getShortcuts)方法。 此方法返回一个类型 为 `[actionId:string]:string|null}` 的对象，其中 `actionId` s 为：
+
+- 加载项扩展清单 JSON 中定义的所有操作 ID。
+- 在用户的漫游设置中为用户注册的所有自定义快捷方式。 这些值是当前分配给操作的组合键。 
+
+示例如下。
+
+```javascript
+Office.actions.getShortcuts()
+    .then(function (userShortcuts) {
+       for (const action in userShortcuts) {
+           let shortcut = userShortcuts[action];
+           console.log(action + ": " + shortcut);
+       }
+    });
+
+```
+
+如 [避免其他加载项](#avoid-key-combinations-in-use-by-other-add-ins)使用的键组合中所述，避免在快捷方式中发生冲突是一种好的做法。 若要发现一个或多个组合键是否已被使用，请将它们作为字符串数组[传递到 Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#areShortcutsInUse)方法。 方法返回一个包含键组合的报表，这些组合键以类型 为 的对象数组的形式使用 `{shortcut: string, inUse: boolean}` 。 该属性 `shortcut` 是组合键，例如"Ctrl+Shift+1"。 如果组合已注册到另一个操作， `inUse` 则该属性设置为 `true` 。 例如，`[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`。 以下代码段是一个示例：
+
+```javascript
+const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
+Office.actions.areShortcutsInUse(shortcuts)
+    .then(function (inUseArray) {
+        const availableShortcuts = inUseArray.filter(function (shortcut) { return !shortcut.inUse; });
+        console.log(availableShortcuts);
+        const usedShortcuts = inUseArray.filter(function (shortcut) { return shortcut.inUse; });
+        console.log(usedShortcuts);
+    });
+
+```
 
 ## <a name="next-steps"></a>后续步骤
 

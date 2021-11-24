@@ -1,15 +1,15 @@
 ---
 title: Office 通用 API 要求集
 description: 详细了解通用 API Office集。
-ms.date: 11/08/2021
+ms.date: 11/22/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: c6b2f7f41ff002f3ce66c5dd8afbb36f2e3e6f1e
-ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
+ms.openlocfilehash: 65ab09d62a3ca551cb1295744f88ff2fd095861a
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "60890005"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153468"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -32,7 +32,7 @@ ms.locfileid: "60890005"
 以下各节列出了通用 API 要求集、每个集内的方法，以及支持Office集的客户端应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
 
 > [!TIP]
-> 需要有关外接程序和要求集在应用程序与版本Office的信息？ 请参阅[Office外接程序的客户端应用程序和Office可用性](../../overview/office-add-in-availability.md)。
+> 需要有关外接程序和要求集在应用程序与版本Office的信息？ 请参阅[Office外接程序的客户端](../../overview/office-add-in-availability.md)应用程序和Office可用性。
 
 ### <a name="activeview"></a>ActiveView
 
@@ -128,7 +128,15 @@ ms.locfileid: "60890005"
 
 ---
 
-### <a name="mailbox"></a>Mailbox
+### <a name="keyboardshortcuts"></a>KeyboardShortcuts
+
+|**Office 应用程序**|**要求集内的方法**|
+|:-----|:-----|
+| 请参阅 [键盘快捷方式要求集](keyboard-shortcuts-requirement-sets.md)。 | Office.actions.areShortcutsInUse<br>Office.actions.getShortcuts<br>Office.actions.replaceShortcuts |
+
+---
+
+### <a name="mailbox"></a>邮箱
 
 |**Office 应用程序**|**要求集内的方法**|
 |:-----|:-----|

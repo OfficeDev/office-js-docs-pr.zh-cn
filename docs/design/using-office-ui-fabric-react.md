@@ -1,21 +1,21 @@
 ---
 title: Office 加载项中的 Fluent UI React
 description: 了解如何在Fluent外接程序React UI Office UI。
-ms.date: 07/08/2021
+ms.date: 11/19/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3989430c2c73881c9374c078b39d314d9f9705bb
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bb53dfcfca644159a10d3b3c1d7bb6911561e58e
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149181"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153461"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>在Fluent外接程序React UI Office UI
 
-FluentUI React 是官方开源 JavaScript 前端框架，旨在构建无缝适用于各种 Microsoft 产品（包括 Office）的体验。 它提供了可靠、最新、可访问的基于反应的组件，这些组件可以使用 CSS-in-JS 进行高度定制。
+Fluent UI React是官方开源 JavaScript 前端框架，旨在构建无缝适用于各种 Microsoft 产品（包括 Office）的体验。 它提供了可靠、最新、可访问的基于反应的组件，这些组件可以使用 CSS-in-JS 进行高度定制。
 
 > [!NOTE]
-> 本文介绍了在加载项Fluent React UI Office的使用。但它也用于各种Microsoft 365和扩展。 有关详细信息，请参阅 ui Fluent [ui React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react)和 UI Web 中的Fluent[存储库](https://github.com/microsoft/fluentui)。
+> 本文介绍了在加载项Fluent React UI Office的使用。但它还用于各种Microsoft 365应用和扩展。 有关详细信息，请参阅 ui Fluent [ui React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react)和 UI Web Fluent[存储库](https://github.com/microsoft/fluentui)。
 
 本文介绍如何创建使用 React 构建的外接程序，Fluent UI React组件。
 
@@ -82,7 +82,7 @@ FluentUI React 是官方开源 JavaScript 前端框架，旨在构建无缝适�
 
 ## <a name="create-a-react-component-that-uses-fluent-ui-react"></a>创建React UI Fluent的React
 
-此时, 你已经创建了一个使用 React 构建的非常基本的任务窗格加载项。 接下来，完成以下步骤，在加载项项目中创建新的 React 组件 (`ButtonPrimaryExample`)。 该组件使用 `Label` UI `PrimaryButton` Fluent 中的 和 React。
+此时, 你已经创建了一个使用 React 构建的非常基本的任务窗格加载项。 接下来，完成以下步骤，在加载项项目中创建新的 React 组件 (`ButtonPrimaryExample`)。 该组件使用 UI Fluent 中的 和 `Label` `PrimaryButton` React。
 
 1. 打开 Yeoman 生成器创建的项目文件夹，并转到 **src\taskpane\components**。
 2. 在该文件夹中，创建一个名为“**Button.tsx**”的新文件。
@@ -90,8 +90,8 @@ FluentUI React 是官方开源 JavaScript 前端框架，旨在构建无缝适�
 
 ```typescript
 import * as React from 'react';
-import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
-import { Label } from 'office-ui-fabric-react/lib/Label';
+import { PrimaryButton, IButtonProps } from '@fluentui/react/lib/components/Button';
+import { Label } from '@fluentui/react/lib/components/Label';
 
 export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
   public constructor(props) {
@@ -141,11 +141,9 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
     import {ButtonPrimaryExample} from './Button';
     ```
 
-2. 删除以下两个导入语句。
+2. 删除以下 import 语句。
 
     ```typescript
-    import { Button, ButtonType } from 'office-ui-fabric-react';
-    ...
     import Progress from './Progress';
     ```
 
@@ -172,7 +170,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 
 ![显示具有"插入文本..."的 Word 应用程序的屏幕截图按钮，紧接突出显示的文本前面。](../images/word-task-pane-with-react-component.png)
 
-恭喜！你已成功使用 ui 加载项和 UI React Fluent创建React！
+恭喜！你已成功使用 ui 加载项和 ui React Fluent创建React！
 
 ## <a name="see-also"></a>另请参阅
 
