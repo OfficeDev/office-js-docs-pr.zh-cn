@@ -1,15 +1,15 @@
 ---
 title: 教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 description: 学习如何在Microsoft Excel中的自定义函数和任务窗格之间共享数据和事件。
-ms.date: 10/07/2021
+ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 9ca494cb458755e2878bbc93a4a4fc36cc69138e
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 69dbb7c2b57d09f3d71397db0b1d56babf7c64a6
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250439"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242052"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
@@ -204,7 +204,7 @@ ms.locfileid: "60250439"
 2. 紧贴在结尾的 `</head>` 元素前，添加以下脚本元素。
 
    ```html
-   <script src="functions.js"></script>
+   <script src="../functions/functions.js"></script>
    ```
 
 3. 关闭 `</main>` 元素后，添加以下 HTML。 该 HTML 创建两个用于获取或存储全局数据的文本框和按钮。
@@ -216,8 +216,7 @@ ms.locfileid: "60250439"
        <strong>Store</strong>.
      </li>
      <li>
-       Enter <strong>=CONTOSO.GETVALUE()</strong>strong> into a cell to retrieve
-       it.
+       Enter <strong>=CONTOSO.GETVALUE()</strong> into a cell to retrieve it.
      </li>
      <li>
        To send data to the task pane, in a cell, enter
@@ -225,6 +224,7 @@ ms.locfileid: "60250439"
      </li>
      <li>Select <strong>Get</strong> to display the value in the task pane.</li>
    </ol>
+
    <p>Store new value to shared state</p>
    <div>
      <input type="text" id="storeBox" />

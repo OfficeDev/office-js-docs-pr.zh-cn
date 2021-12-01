@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理图表
 description: 演示使用 JavaScript API Excel图表任务的代码示例。
-ms.date: 07/17/2019
+ms.date: 11/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b3cb04ff3bd8b1b0c050741a7238b1e9d6bd498f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 173e20977270e84c7cef39d9ea0e326cb7b5d298
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149508"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242068"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
@@ -105,7 +105,7 @@ Excel.run(function (context) {
 
 **设置分类轴标题后的图表**
 
-![图表，其坐标轴标题Excel。](../images/excel-charts-axis-title-set.png)
+![图表中带坐标轴标题Excel。](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>设置轴的显示单位
 
@@ -124,7 +124,7 @@ Excel.run(function (context) {
 
 **设置数值轴显示单位后的图表**
 
-![图表，其轴显示单位以Excel。](../images/excel-charts-axis-display-unit-set.png)
+![图表，坐标轴显示单位Excel。](../images/excel-charts-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>在图表中设置网格线的可见性
 
@@ -188,6 +188,46 @@ Excel.run(function (context) {
 
 ![图表中带线性趋势线的Excel。](../images/excel-charts-trendline-linear.png)
 
+## <a name="add-and-format-a-chart-data-table"></a>添加图表数据表并设置其格式
+
+可以使用 方法访问图表的 data table [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#getDataTableOrNullObject__) 元素。 此方法返回 [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) 对象。 对象 `ChartDataTable` 具有布尔格式属性，如 `visible` 、 和 `showLegendKey` `showHorizontalBorder` 。
+
+`ChartDataTable.format`属性返回 [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) 对象，这允许您进一步设置数据表的格式和样式。 对象 `ChartDataTableFormat` 提供 `border` `fill` 、 和 `font` 属性。
+
+下面的代码示例演示如何将一个数据表添加到图表中，然后使用 和 对象设置该 `ChartDataTable` 数据表 `ChartDataTableFormat` 的格式。
+
+```js
+// This code sample adds a data table to a chart that already exists on the worksheet, 
+// and then adjusts the display and format of that data table.
+Excel.run(function (context) {
+    // Retrieve the chart on the "Sample" worksheet.
+    var chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
+
+    // Get the chart data table object and load its properties.
+    var chartDataTable = chart.getDataTableOrNullObject();
+    chartDataTable.load();
+
+    // Set the display properties of the chart data table.
+    chartDataTable.visible = true;
+    chartDataTable.showLegendKey = true;
+    chartDataTable.showHorizontalBorder = false;
+    chartDataTable.showVerticalBorder = true;
+    chartDataTable.showOutlineBorder = true;
+
+    // Retrieve the chart data table format object and set font and border properties. 
+    var chartDataTableFormat = chartDataTable.format;
+    chartDataTableFormat.font.color = "#B76E79";
+    chartDataTableFormat.font.name = "Comic Sans";
+    chartDataTableFormat.border.color = "blue";
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+以下屏幕截图显示了上述代码示例创建的数据表。
+
+![包含数据表的图表，显示数据表的自定义格式。](../images/excel-charts-data-table.png)
+
 ## <a name="export-a-chart-as-an-image"></a>将图表导出为图像
 
 图表可以呈现为 Excel 之外的图像。 `Chart.getImage` 将图表作为 base64 编码的字符串返回，将图表表示为 JPEG 图像。 以下代码显示如何获取图像字符串并将其记录到控制台。
@@ -211,9 +251,9 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 这些参数决定图像的大小。 图像始终按比例缩放。 宽度和高度参数在缩放图像上设置上限或下限。 `ImageFittingMode` 具有以下行为的三个值。
 
-- `Fill`：图像的最小高度或宽度是指定的高度或宽度 (缩放图像时首先到达) 。 这是未指定调整模式时的默认行为。
-- `Fit`：图像的最大高度或宽度是指定的高度或宽度， (缩放图像时首先达到) 。
-- `FitAndCenter`：图像的最大高度或宽度是指定的高度或宽度， (缩放图像时首先达到) 。 生成的图像相对于另一个维度居中。
+- `Fill`：图像的最小高度或宽度是指定的高度或宽度 (缩放图像缩放时首先达到) 。 这是未指定调整模式时的默认行为。
+- `Fit`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像时首先到达) 。
+- `FitAndCenter`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像时首先到达) 。 生成的图像相对于另一个维度居中。
 
 ## <a name="see-also"></a>另请参阅
 

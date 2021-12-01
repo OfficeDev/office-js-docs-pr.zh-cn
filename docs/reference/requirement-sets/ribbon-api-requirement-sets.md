@@ -1,25 +1,28 @@
 ---
 title: 功能区 API 要求集
 description: 指定哪些Office和内部版本支持动态功能区 API。
-ms.date: 10/05/2021
+ms.date: 11/29/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d99f3ce3c1f781ca8ebc20ae1d637018386cd1c
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 1801d95da8dd0b2b707e1237498db71ca81474b5
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138707"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242045"
 ---
 # <a name="ribbon-api-requirement-sets"></a>功能区 API 要求集
 
 要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
-功能区 API 集支持以编程方式控制自定义外接程序命令 (，即自定义功能区按钮和菜单项) 和禁用。
+功能区 API 集支持以编程方式控制自定义外接程序命令 (即自定义功能区按钮和菜单项) 何时启用和禁用，以及上下文选项卡何时显示在功能区上。
+
+> [!NOTE]
+> RibbonApi 要求集仅在任务窗格加载项上受支持。
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 API 要求集、Office要求集的客户端应用程序，以及功能区 API 要求集Office版本号。
 
-|  要求集  | Office 2021 年 1 月或Windows<br>（一次性购买） | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br>（关联至 Microsoft 365 订阅）  | Office 网页版\*  |  Office Online Server  |
+|  要求集  | Office 2021 或更高版本Windows<br>（一次性购买） | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br>（关联至 Microsoft 365 订阅）  | Office 网页版\*  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | RibbonApi 1.2  | 内部版本 16.0.14326.20454 或更高版本 | 2102 (内部版本 13801.20294)  | 不适用 | 不支持 | 2021 年 5 月 | 不适用|
 | RibbonApi 1.1  | 内部版本 16.0.14326.20454 或更高版本 | 请参阅支持<br>部分如下 | 不适用 | 16.38 | 2020 年 11 月 | 不适用|
@@ -28,7 +31,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 
 
 ## <a name="support-for-version-11-on-office-on-windows-subscription"></a>支持版本 1.1 on Office on Windows (subscription) 
 
-1.1 版本的 RibbonApi 要求集在消费者频道版本 2006 (版本 13001.20498 或) 。 For Office on Windows the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available july 14， 2020 or later. 每个频道支持的最低版本如下所示：  
+1.1 版本的 RibbonApi 要求集在消费者频道版本 2006（内部版本 13001.20498 或 (版本）中) 。 For Office on Windows the feature is also supported in the Semi-Annual Channel and Monthly Enterprise Channel builds available july 14， 2020 or later. 每个频道支持的最低版本如下所示：  
 
 |频道 | 版本 | 内部版本|
 |:-----|:-----|:-----|
