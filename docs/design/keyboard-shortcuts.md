@@ -3,12 +3,12 @@ title: 加载项中的Office快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）Office加载项。
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: c29f6b09d77ab946c9e97483688cd265e8495aef
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: b92d703ac4c10ba554a7aed8aabb73b65fdbdca7
+ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153491"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "61285004"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到Office加载项
 
@@ -17,7 +17,7 @@ ms.locfileid: "61153491"
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> 若要从已启用键盘快捷方式的加载项的工作版本开始，请克隆并运行示例Excel[键盘快捷方式。](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) 准备好向自己的加载项添加键盘快捷方式后，请继续阅读本文。
+> 若要从已启用键盘快捷方式的加载项工作版本开始，请克隆并运行键盘快捷方式[Excel示例](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts)。 准备好向自己的加载项添加键盘快捷方式后，请继续阅读本文。
 
 向加载项添加键盘快捷方式有三个步骤。
 
@@ -35,7 +35,7 @@ ms.locfileid: "61153491"
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>将映射文件链接到清单
 
-在 *紧* (不在) 元素的内部，添加 `<VersionOverrides>` [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素。 将 `Url` 属性设置为项目中将在稍后步骤创建的 JSON 文件的完整 URL。
+紧 *接* (清单) 元素的内部，添加 `<VersionOverrides>` [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素。 将 `Url` 属性设置为项目中将在稍后步骤创建的 JSON 文件的完整 URL。
 
 ```xml
     ...
@@ -198,7 +198,7 @@ ms.locfileid: "61153491"
 快捷方式 JSON 的完整架构位于 [extended-manifest.schema.json 中](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)。
 
 > [!NOTE]
-> 键提示（也称为连续键快捷方式，例如用于选择填充颜色的 Excel 快捷方式 **Alt+H、H）** 在 Office 外接程序中不受支持。
+> 键提示（也称为连续键快捷方式，如选择填充颜色的 Excel 快捷方式 **Alt+H、H）** 在加载项中不受Office支持。
 
 ## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>避免其他加载项使用组合键
 
@@ -272,7 +272,9 @@ ms.locfileid: "61153491"
 > [!NOTE]
 > 本节中所述的 API 需要 [KeyboardShortcuts 1.1](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) 要求集。
 
-使用[Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts)方法将用户的自定义键盘组合分配给您的外接程序操作。 方法采用类型 参数，其中 是加载项扩展清单 JSON 中定义的操作 `{[actionId:string]: string}` `actionId` ID 的子集。 值是用户的首选组合键。 如果用户登录到 Office，则自定义组合将保存在用户的漫游设置中。 如果用户未登录，则自定义项将仅针对加载项的当前会话进行最后一次。
+使用[Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts)方法将用户的自定义键盘组合分配给您的外接程序操作。 方法采用类型 参数，其中 是必须在加载项扩展清单 JSON 中定义的操作 `{[actionId:string]: string|null}` `actionId` ID 的子集。 值是用户的首选组合键。 值还可以是 ，这将删除任何自定义项，并恢复为在加载项扩展清单 JSON 中定义的默认键盘 `null` `actionId` 组合。
+
+如果用户登录到 Office，自定义组合将保存在每个平台的用户漫游设置中。 匿名用户当前不支持自定义快捷方式。
 
 ```javascript
 const userCustomShortcuts = {
@@ -290,10 +292,11 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
     });
 ```
 
-若要了解用户已在使用哪些快捷方式，请调用[Office.actions.getShortcuts](/javascript/api/office/office.actions#getShortcuts)方法。 此方法返回一个类型 为 `[actionId:string]:string|null}` 的对象，其中 `actionId` s 为：
+若要了解用户已在使用哪些快捷方式，请调用[Office.actions.getShortcuts](/javascript/api/office/office.actions#getShortcuts)方法。 此方法返回一个类型 为 的对象，其中值表示用户必须用于调用指定 `[actionId:string]:string|null}` 操作的当前键盘组合。 这些值可能来自三个不同的源：
 
-- 加载项扩展清单 JSON 中定义的所有操作 ID。
-- 在用户的漫游设置中为用户注册的所有自定义快捷方式。 这些值是当前分配给操作的组合键。 
+- 如果快捷方式存在冲突，并且用户已选择将其他操作 (本机或其他外接程序) 用于该键盘组合，则返回的值将为 ，因为快捷方式已被覆盖，并且用户当前没有可用于调用该外接程序操作的任何键盘组合。 `null`
+- 如果已使用[Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts)方法自定义快捷方式，则返回的值将是自定义的键盘组合。
+- 如果快捷方式尚未重写或自定义，它将从外接程序的扩展清单 JSON 中返回值。
 
 示例如下。
 
@@ -308,7 +311,7 @@ Office.actions.getShortcuts()
 
 ```
 
-如 [避免其他加载项](#avoid-key-combinations-in-use-by-other-add-ins)使用的键组合中所述，避免在快捷方式中发生冲突是一种好的做法。 若要发现一个或多个组合键是否已被使用，请将它们作为字符串数组[传递到 Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#areShortcutsInUse)方法。 方法返回一个包含键组合的报表，这些组合键以类型 为 的对象数组的形式使用 `{shortcut: string, inUse: boolean}` 。 该属性 `shortcut` 是组合键，例如"Ctrl+Shift+1"。 如果组合已注册到另一个操作， `inUse` 则该属性设置为 `true` 。 例如，`[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`。 以下代码段是一个示例：
+如 [避免其他加载项](#avoid-key-combinations-in-use-by-other-add-ins)使用的键组合中所述，避免在快捷方式中发生冲突是一种好的做法。 若要发现一个或多个组合键是否已被使用，请将它们作为字符串数组[传递给 Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#areShortcutsInUse)方法。 方法返回一个包含键组合的报表，这些组合键以类型 为 的对象数组的形式使用 `{shortcut: string, inUse: boolean}` 。 该属性 `shortcut` 是组合键，例如"Ctrl+Shift+1"。 如果组合已注册到另一个操作， `inUse` 则该属性设置为 `true` 。 例如，`[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`。 以下代码段是一个示例：
 
 ```javascript
 const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
