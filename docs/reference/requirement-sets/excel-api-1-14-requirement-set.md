@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 要求集 1.14
 description: 有关 ExcelApi 1.14 要求集的详细信息。
-ms.date: 12/02/2021
+ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 97c221bb8530d32fbfe42ae82519c942c6499928
-ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
+ms.openlocfilehash: 49e1f820f453304215e5ff5f392aae9f3ff1733d
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "61284997"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406625"
 ---
 # <a name="whats-new-in-excel-javascript-api-114"></a>JavaScript API 1.14 Excel的新增功能
 
@@ -20,11 +20,11 @@ ExcelApi 1.14 添加了对象来控制图表的表功能、用于查找公式的
 | [图表数据表](../../excel/excel-add-ins-charts.md#add-and-format-a-chart-data-table) | 控制图表上数据表的外观、格式和可见性。 | [](/javascript/api/excel/excel.chart)Chart、ChartDataTable、ChartDataTableFormat [](/javascript/api/excel/excel.chartdatatable) [](/javascript/api/excel/excel.chartdatatableformat) |
 | [公式引用单元格](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-precedents-of-a-formula) | 返回公式的所有引用单元格。 | [区域](/javascript/api/excel/excel.range) |
 | 查询 | 检索 Power Query 属性，如名称、刷新日期和查询计数。 | [Query](/javascript/api/excel/excel.query) [、QueryCollection](/javascript/api/excel/excel.querycollection)|
-| 工作表保护事件 | 跟踪工作表的保护状态更改以及这些更改的来源。 | [WorksheetProtectionChangedEventArgs、Worksheet](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) [](/javascript/api/excel/excel.worksheet) [、WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) |
+| [工作表保护事件](../../excel/excel-add-ins-worksheets.md#detect-changes-to-the-worksheet-protection-state) | 跟踪工作表的保护状态更改以及这些更改的来源。 | [WorksheetProtectionChangedEventArgs、Worksheet](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) [](/javascript/api/excel/excel.worksheet) [、WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) |
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求Excel集 1.14 中的 API。 若要查看受 Excel JavaScript API 要求集 1.14 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.14](/javascript/api/excel?view=excel-js-1.14&preserve-view=true)或更早版本中的 Excel API。
+下表列出了 JavaScript API 要求Excel集 1.14 中的 API。 若要查看受 Excel JavaScript API 要求集 1.14 或更早版本支持的所有 API 的 API 参考文档，请参阅要求集[1.14](/javascript/api/excel?view=excel-js-1.14&preserve-view=true)或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
