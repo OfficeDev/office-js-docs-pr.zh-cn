@@ -4,12 +4,12 @@ description: 有关即将推出的 Word JavaScript API 的详细信息。
 ms.date: 10/13/2021
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: ba33c6c53dd62aa0adc37b90963d35988165fa96
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: 84e32a224a3d3a9f72a4f5aade1a8c98bbcab839
+ms.sourcegitcommit: e4d915edde57ad5d4e20f1e2c288d572bd9fe5e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367432"
+ms.lasthandoff: 12/13/2021
+ms.locfileid: "61420241"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript 预览 API
 
@@ -20,7 +20,7 @@ ms.locfileid: "60367432"
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前处于预览中的 Word JavaScript API，但仅在[Word web 版。](#web-only-api-list) 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅所有[Word JavaScript API。](/javascript/api/word?view=word-js-preview&preserve-view=true)
+下表列出了当前处于预览中的 Word JavaScript API，但那些仅在 Word web 版 中[可用的](#web-only-api-list)API 除外。 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅所有[Word JavaScript API。](/javascript/api/word?view=word-js-preview&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -65,7 +65,7 @@ ms.locfileid: "60367432"
 ||[matchWholeWord](/javascript/api/word/word.document#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.document#matchWildcards)||
 ||[onContentControlAdded](/javascript/api/word/word.document#onContentControlAdded)|添加内容控件时发生。|
-||[search (searchText： string， searchOptions？： Word.SearchOptions \| { ignorePunct？： boolean ignoreSpace？： boolean matchCase？： boolean matchPrefix？： boolean matchSuffix？： boolean matchWholeWord？： boolean matchWildcards？： boolean }) ](/javascript/api/word/word.document#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|使用指定的 SearchOptions 搜索整个文档的范围。|
+||[search (searchText： string， searchOptions？： Word.SearchOptions \| { ignorePunct？： boolean ignoreSpace？： boolean matchCase？： boolean matchPrefix？： boolean matchSuffix？： boolean matchWholeWord？： boolean matchWildcards？： boolean }) ](/javascript/api/word/word.document#search_searchText__searchOptions_)|使用指定的 SearchOptions 搜索整个文档的范围。|
 ||[设置](/javascript/api/word/word.document#settings)|获取文档中加载项的设置。|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|获取文档中的自定义 XML 部件。|
 ||[deleteBookmark (name： string) ](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|从文档中删除书签（如果存在）。|
@@ -95,7 +95,7 @@ ms.locfileid: "60367432"
 
 ## <a name="web-only-api-list"></a>仅 Web API 列表
 
-下表列出了 Word JavaScript API 当前仅在 Word web 版 中处于预览阶段。 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅所有[Word JavaScript API。](/javascript/api/word?view=word-js-preview&preserve-view=true)
+下表列出了 Word JavaScript API 当前仅在 Word web 版 中处于预览阶段。 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅[所有 Word JavaScript API。](/javascript/api/word?view=word-js-preview&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -148,7 +148,7 @@ ms.locfileid: "60367432"
 |[区域](/javascript/api/word/word.range)|[endnotes](/javascript/api/word/word.range#endnotes)|获取 Range 中的尾注集合。|
 ||[脚注](/javascript/api/word/word.range#footnotes)|获取 Range 中的脚注集合。|
 ||[getComments () ](/javascript/api/word/word.range#getComments__)|获取与区域关联的注释。|
-||[insertComment (commentText： string) ](/javascript/api/word/word.range#insertComment_commentText_)|在范围中插入注释。|
+||[insertComment (commentText：string) ](/javascript/api/word/word.range#insertComment_commentText_)|在范围中插入注释。|
 ||[insertEndnote (insertText？： string) ](/javascript/api/word/word.range#insertEndnote_insertText_)|插入尾注。|
 ||[insertFootnote (insertText？： string) ](/javascript/api/word/word.range#insertFootnote_insertText_)|插入脚注。|
 |[Table](/javascript/api/word/word.table)|[endnotes](/javascript/api/word/word.table#endnotes)|获取 table 中的尾注集合。|
