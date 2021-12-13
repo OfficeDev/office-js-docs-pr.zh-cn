@@ -1,25 +1,29 @@
 ---
 title: Excel 加载项中的数据类型概述
 description: Excel JavaScript API 中的数据类型使 Office 加载项开发人员能够使用带格式数字值、Web 图像、实体值、实体值中的数组以及作为数据类型的增强型错误。
-ms.date: 11/03/2021
+ms.date: 12/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 5ff0d5a055c74eeff096d45ddb6c417615775431
-ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
+ms.openlocfilehash: f6545eb314ec5aef30a595b755e3f702a3e5df20
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "60749390"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406667"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Excel 加载项中的数据类型概述（预览版）
 
 > [!NOTE]
-> 数据类型 API 目前仅在公共预览版中提供。 预览 API 可能会发生变更，不适合在生产环境中使用。 不要在生产环境或业务关键型文档中使用预览 API。
-
-> [!IMPORTANT]
-> 某些数据类型 API（如 `Range.valuesAsJSON`）处于活动开发阶段，尚未提供公共预览版。 本文旨在作为概念性介绍。 本文中介绍的尚未处于公共预览状态的概念将很快发布进入预览。
+> 数据类型 API 目前仅在公共预览版中提供。 预览 API 可能会发生变更，不适合在生产环境中使用。 我们建议你仅在测试和开发环境中试用它们。 不要在生产环境或业务关键型文档中使用预览 API。
+>
+> 若要使用预览 API：
+>
+> - 必须参考 CDN 上的 **beta** 库 (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)。 用于 TypeScript 编译和 IntelliSense 的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)位于 CDN 和 [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) 中。 可以使用 `npm install --save-dev @types/office-js-preview` 来安装这些类型。 有关其他信息，请参阅 [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM 包自述文件。
+> - 可能需要加入 [Office 预览体验计划](https://insider.office.com)才能访问更新的 Office 版本。
+>
+> 若要在 Windows 版 Office 中试用数据类型，则 Excel 内部版本号必须大于或等于 16.0.14626.10000。 若要在 Mac 上的 Office 中试用数据类型，则 Excel 内部版本号必须大于或等于 16.55.21102600。
 
 Excel JavaScript API 中的数据类型使加载项开发人员能够将复杂的数据结构组织为对象，例如带格式数字值、Web 图像和实体值。
 
@@ -35,6 +39,6 @@ Excel JavaScript API 中的数据类型使加载项开发人员能够将复杂�
 
 ## <a name="see-also"></a>另请参阅
 
-* [Excel 数据类型核心概念](excel-data-types-concepts.md)
-* [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
-* [自定义函数和数据类型概述](custom-functions-data-types-overview.md)
+- [Excel 数据类型核心概念](excel-data-types-concepts.md)
+- [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
+- [自定义函数和数据类型概述](custom-functions-data-types-overview.md)

@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API 要求集
 description: 了解有关 Outlook JavaScript API 要求集的详细信息。
-ms.date: 11/01/2021
+ms.date: 11/18/2021
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 07e3f8da6c9d5af1d06f1bb388588dcd109b137e
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: f94f76edfd7ba9fcb5d45fc426f5d8579aefe863
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681498"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406648"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API 要求集
 
@@ -72,7 +72,7 @@ if (item.somePropertyOrFunction !== undefined) {
 本节将说明 Exchange 服务器和 Outlook 客户端支持的要求集范围。 有关运行 Outlook 加载项的服务器和客户端要求的详细信息，请参阅 [Outlook 加载项要求](../../outlook/add-in-requirements.md)。
 
 > [!IMPORTANT]
-> 如果目标 Exchange 服务器和 Outlook 客户端支持不同的要求集，则将受限于较低的要求集范围。 例如，如果外接程序在 Mac 上的 Outlook 2016（最高要求集：1.6）中针对 Exchange 2013（最高要求集：1.1）运行，则外接程序受限于要求集 1.1。
+> 如果目标 Exchange 服务器和 Outlook 客户端支持不同的要求集，则可能受限于较低的要求集范围。 例如，如果外接程序在 Mac 上的 Outlook 2016（最高要求集：1.6）中针对 Exchange 2013（最高要求集：1.1）运行，则外接程序可能受限于要求集 1.1。
 
 ### <a name="exchange-server-support"></a>Exchange 服务器支持
 
@@ -86,7 +86,7 @@ if (item.somePropertyOrFunction !== undefined) {
 || 2013 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 > [!NOTE]
-> \*若要在加载项代码中要求标识 API 设置为 1.3，请通过呼叫 `isSetSupported('IdentityAPI', '1.3')` 来检查是否其是否受到支持。 声明其在加载项清单中不受支持。 还可通过检查其不是 `undefined` 来确定该 API 是否受到支持。 有关详细信息，请参阅 [使用后续要求集中的 API](#using-apis-from-later-requirement-sets)。
+> \* [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../../includes/outlook-identity-13-note.md)]
 
 ### <a name="outlook-client-support"></a>Outlook 客户端支持
 
@@ -113,7 +113,7 @@ if (item.somePropertyOrFunction !== undefined) {
 > [!NOTE]
 > <sup>1</sup>自版本 1910（内部版本 12130.20272）起，包含 Microsoft 365 订阅或零售一次性购买的 Outlook on Windows 开始支持 **1.8**。 版本 2008（内部版本 13127.20296）在包含 Microsoft 365 订阅的 Windows 版 Outlook 中支持 **1.9** 版本。 自版本 2104（内部版本 13929.20296）起，包含 Microsoft 365 订阅的 Windows 版 Outlook 中开始支持 **1.10**。 自版本 2110（内部版本 14527.20226）起，包含 Microsoft 365 订阅的 Windows 版 Outlook 中开始支持 **1.11**。 如需了解你的版本的更多详情，请参阅 [Office 2019](/officeupdates/update-history-office-2019) 或 [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) 的更新历史记录页，以及如何[查找 Office 客户端版本和更新通道](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)。
 >
-> <sup>2</sup> 需要加载项代码中的 Identity API set 1.3，请通过呼叫 `isSetSupported('IdentityAPI', '1.3')` 检查其是否受到支持。 声明其在加载项清单中不受支持。 还可通过检查其不是 `undefined` 来确定该 API 是否受到支持。 有关详细信息，请参阅 [使用后续要求集中的 API](#using-apis-from-later-requirement-sets)。
+> <sup>2</sup> [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../../includes/outlook-identity-13-note.md)]
 >
 > <sup>3</sup> [2015 年 12 月 8 日 Outlook 2013 更新 (KB3114349)](https://support.microsoft.com/kb/3114349) 开始在 Outlook 2013 中支持 1.3 版本。 对 Outlook 2013 中的 1.4 版本的支持已作为 [2016 年 9 月 13 日 Outlook 2013 更新 (KB3118280)](https://support.microsoft.com/help/3118280) 的一部分添加。 对 Outlook 2016（一次性购买）中的 1.4 版本的支持已作为 [2018 年 7 月 3 日 Office 2016 更新 (KB4022223)](https://support.microsoft.com/help/4022223) 的一部分添加。
 >

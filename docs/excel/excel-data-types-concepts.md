@@ -1,31 +1,35 @@
 ---
 title: Excel JavaScript API 数据类型核心概念
 description: 了解在 Office 加载项中使用 Excel 数据类型的核心概念。
-ms.date: 11/08/2021
+ms.date: 12/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 6155805245b14d3c3365d759bcd647419266f499
-ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
+ms.openlocfilehash: 37fe1b90065dd8a784fc7cfc191ccb9cdc3ce5b9
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "60889977"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406618"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel 数据类型核心概念（预览版）
 
 > [!NOTE]
-> 数据类型 API 目前仅在公共预览版中提供。 预览 API 可能会发生变更，不适合在生产环境中使用。 不要在生产环境或业务关键型文档中使用预览 API。
-
-> [!IMPORTANT]
-> 本文中所述的一些数据类型概念，如 `Range.valuesAsJSON` 处于活动开发阶段，尚未在公共预览版中提供。 本文旨在作为概念性介绍。 本文中介绍的尚未处于公共预览状态的概念将很快发布进入预览。
+> 数据类型 API 目前仅在公共预览版中提供。 预览 API 可能会发生变更，不适合在生产环境中使用。 我们建议你仅在测试和开发环境中试用它们。 不要在生产环境或业务关键型文档中使用预览 API。
+>
+> 要使用预览 API：
+>
+> - 必须参考 CDN 上的 **beta** 库 (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)。 TypeScript 编译和 IntelliSense 的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)位于 CDN 和 [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 可以使用 `npm install --save-dev @types/office-js-preview` 安装这些类型。 有关其他信息，请参阅 [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM 包自述文件。
+> - 可能需要加入 [Office 预览体验计划](https://insider.office.com)才能访问更新的 Office 版本。
+>
+> 若要尝试 Windows 版 Office 中的数据类型集成，Excel 内部版本号必须大于或等于 16.0.14626.10000。 若要尝试 Mac 版 Office 中的数据类型集成，Excel 内部版本号必须大于或等于 16.55.21102600。
 
 本文介绍如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 来处理数据类型。 它引入了对数据类型开发至关重要的核心概念。
 
 ## <a name="core-concepts"></a>核心概念
 
-使用 `Range.valuesAsJSON` 属性处理数据类型值。 此属性类似于 [Range.values](/javascript/api/excel/excel.range#values)，但 `Range.values` 只返回四种基本类型：字符串、数字、布尔或错误值。 `Range.valuesAsJSON` 可以返回有关这四种基本类型的扩展信息，此属性可以返回数据类型，例如带格式数字值、实体和 Web 图像。
+使用 [`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJson) 属性处理数据类型值。 此属性类似于 [Range.values](/javascript/api/excel/excel.range#values)，但 `Range.values` 只返回四种基本类型：字符串、数字、布尔或错误值。 `Range.valuesAsJson` 可以返回有关这四种基本类型的扩展信息，此属性可以返回数据类型，例如带格式数字值、实体和 Web 图像。
 
 ### <a name="json-schema"></a>JSON 架构
 

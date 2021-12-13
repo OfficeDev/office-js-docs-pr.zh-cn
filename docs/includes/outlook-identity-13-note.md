@@ -1,0 +1,1 @@
+若要在 Outlook 加载项代码中要求标识 API 集 1.3，请通过呼叫 `isSetSupported('IdentityAPI', '1.3')` 检查其是否收到支持。 声明其在 Outlook 加载项清单中不受支持。 还可通过检查其不是 `undefined` 来确定该 API 是否受到支持。 有关详细信息，请参阅 [从后续要求集中使用 API](../reference/requirement-sets/outlook-api-requirement-sets.md#using-apis-from-later-requirement-sets)。
