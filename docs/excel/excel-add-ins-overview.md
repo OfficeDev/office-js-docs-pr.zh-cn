@@ -2,15 +2,15 @@
 title: Excel 加载项概述
 description: 使用 Excel 加载项，可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）扩展 Excel 应用程序功能。
 ms.date: 10/14/2020
-ms.topic: conceptual
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 6b5f760f3ad13611dbf4b9960343a1348e45a28d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f4141fb743e61605906d4460025f6570ce243480
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149503"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514087"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 

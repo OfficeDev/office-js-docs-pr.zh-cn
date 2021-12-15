@@ -2,15 +2,15 @@
 title: PowerPoint 加载项
 description: 了解如何使用 PowerPoint 加载项跨平台（包括 Windows、iPad、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示演示文稿。
 ms.date: 10/14/2020
-ms.topic: conceptual
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 15f61a573e926a87f8ddd1ecaeb58e426504f403
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2b44b17b14f49e386c44d1581cf2d638005a9a5c
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59151943"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514214"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 

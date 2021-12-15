@@ -2,15 +2,15 @@
 description: 为 Office 加载项创建 Excel 自定义函数。
 title: 在 Excel 中创建自定义函数
 ms.date: 08/04/2021
-ms.topic: conceptual
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 0cf4971d46ee80a64fe5ecd70778a333efef960b
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: f1a517d113488be7320e0f5c81858fa976672c34
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443515"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514094"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 

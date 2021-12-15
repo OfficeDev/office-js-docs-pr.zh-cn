@@ -2,23 +2,23 @@
 title: '在外接程序预览版中Outlook智能警报 (OnMessageSend) '
 description: 了解如何使用基于事件的激活在 Outlook 外接程序中处理发送邮件事件。
 ms.topic: article
-ms.date: 11/01/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 78e10f8609264d69ba32b78badc14c626c210d76
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 2412e1a713c2f15a6b04c77eaba6f368d3607dfb
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681786"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514073"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>在外接程序预览版中Outlook智能警报 (OnMessageSend) 
 
-`OnMessageSend`该事件利用智能警报，允许用户在用户选择其邮件中的"发送"后运行Outlook逻辑。 事件处理程序允许你为用户提供在发送电子邮件之前改进其电子邮件的机会。 `OnAppointmentSend`事件相似，但适用于约会。
+`OnMessageSend`事件利用智能警报，允许用户在用户选择其邮件中的"发送"后运行Outlook逻辑。 事件处理程序允许你为用户提供在发送电子邮件之前改进其电子邮件的机会。 `OnAppointmentSend`事件相似，但适用于约会。
 
 在此演练结束时，您将拥有一个外接程序，该外接程序在邮件发送时运行，并检查用户是否忘记添加电子邮件中提到的文档或图片。
 
 > [!IMPORTANT]
-> 和 `OnMessageSend` `OnAppointmentSend` 事件仅在预览版中提供，Microsoft 365订阅位于 Outlook Windows。 有关详细信息，请参阅 [如何预览](autolaunch.md#how-to-preview)。 预览事件不应在生产外接程序中使用。
+> 和 `OnMessageSend` `OnAppointmentSend` 事件仅在预览版中提供，Microsoft 365订阅Outlook Windows。 有关详细信息，请参阅 [如何预览](autolaunch.md#how-to-preview)。 预览事件不应在生产外接程序中使用。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -26,7 +26,7 @@ ms.locfileid: "60681786"
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)使用适用于加载项的 Yeoman 生成器创建加载项Office快速入门。
+完成[Outlook使用](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)适用于加载项的 Yeoman 生成器创建加载项Office快速入门。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -34,7 +34,7 @@ ms.locfileid: "60681786"
 
 1. 打开 **manifest.xml** 根目录下的文件。
 
-1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML， then save your changes.
+1. 选择整个节点 (包括打开和关闭) `<VersionOverrides>` 并将其替换为以下 XML，然后保存更改。
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -49,7 +49,7 @@ ms.locfileid: "60681786"
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -138,7 +138,7 @@ ms.locfileid: "60681786"
 > [!TIP]
 >
 > - 有关 **事件提供的 SendMode** `OnMessageSend` 选项，请参阅 [可用 SendMode 选项](../reference/manifest/launchevent.md#available-sendmode-options-preview)。
-> - 若要了解有关加载项清单Outlook，请参阅Outlook[加载项清单](manifests.md)。
+> - 若要了解有关加载项清单Outlook，请参阅Outlook[加载项清单。](manifests.md)
 
 ## <a name="implement-event-handling"></a>实现事件处理
 
@@ -223,7 +223,7 @@ ms.locfileid: "60681786"
     > [!NOTE]
     > 如果加载项未自动旁加载，请按照旁加载[Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually)加载项进行测试中的说明，在加载项中手动旁加载Outlook。
 
-1. 在Outlook中Windows新建一封邮件并设置主题。 在正文中，添加类似"你好，查看我的 dog 的此图片！"这样的文本。
+1. 在Outlook中Windows新建邮件并设置主题。 在正文中，添加类似"你好，查看我的 dog 的此图片！"这样的文本。
 1. 发送邮件。 应弹出一个对话框，建议你添加附件。
 1. 添加附件，然后再次发送邮件。 此时应该没有警报。
 
@@ -232,7 +232,7 @@ ms.locfileid: "60681786"
 >
 > 1. 关闭 Outlook。
 > 1. 打开 **任务管理器** ， **并确保msoadfsb.exe进程** 未运行。
-> 1. 运行以下命令。
+> 1. 运行以下命令：
 >
 >    ```command&nbsp;line
 >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC

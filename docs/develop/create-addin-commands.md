@@ -1,14 +1,14 @@
 ---
 title: 在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 description: 在清单中，使用 VersionOverrides 定义用于 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
-ms.date: 07/08/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e71a73c6f253587968affb5e04d28cc95649b8c5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: fa9c26dffd9584fd83ce42058a4fef71bf1152e9
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148878"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514080"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 
@@ -31,13 +31,13 @@ ms.locfileid: "59148878"
 
 下图是对清单中的加载项命令元素的概述。
 
-![清单中的外接程序命令元素概述。 此处的顶部节点是包含子级 Hosts 和 Resources 的 VersionOverrides。 在"主机为主机"下，"DesktopFormFactor"下。 在 DesktopFormFactor 下是 FunctionFile 和 ExtensionPoint。 在 ExtensionPoint 下是 CustomTab 或 OfficeTab 和 Office 菜单。 在"CustomTab"或"Office"下，"分组""控件"，然后单击"操作"。 在"Office"下是"控件"，然后单击"操作"。 在" (VersionOverrides 的子级下) 图像、Url、ShortStrings 和 LongStrings。](../images/version-overrides.png)
+![清单中的外接程序命令元素概述。 此处的顶部节点是包含子级 Hosts 和 Resources 的 VersionOverrides。 在"主机为主机"下，"DesktopFormFactor"下。 在 DesktopFormFactor 下是 FunctionFile 和 ExtensionPoint。 在 ExtensionPoint 下是 CustomTab 或 OfficeTab 和 Office 菜单。 在"CustomTab"或"Office"下，"分组"，"控件"，再"操作"。 在"Office"下是"控件"，然后单击"操作"。 在"资源 (VersionOverrides 的子级) 图像、Url、ShortStrings 和 LongStrings。](../images/version-overrides.png)
 
-## <a name="step-1-start-from-a-sample"></a>第 1 步：从示例入手
+## <a name="step-1-create-the-project"></a>步骤 1：创建项目
 
-强烈建议从 [Office 加载项命令示例](https://github.com/OfficeDev/Office-Add-in-Command-Sample)中的示例之一入手。也可以按照本指南中的步骤操作，创建自己的清单。可以使用“Office 加载项命令示例”网站中的 XSD 文件来验证清单。使用加载项命令前，请确保已阅读 [Excel、Word 和 PowerPoint 加载项命令](../design/add-in-commands.md)。
+我们建议你通过以下快速入门之一创建项目，例如Excel[任务窗格加载项](../quickstarts/excel-quickstart-jquery.md)。 Excel、Word 和 PowerPoint 的每个快速入门都会生成一个已包含加载项命令的项目 (按钮) 显示任务窗格。 在使用外接程序命令之前，请确保已阅读[Excel、Word](../design/add-in-commands.md)和 PowerPoint 外接程序命令。
 
-## <a name="step-2-create-a-task-pane-add-in"></a>第 2 步：创建任务窗格加载项
+## <a name="step-2-create-a-task-pane-add-in"></a>步骤 2：创建任务窗格外接程序
 
 若要开始使用外接程序命令，必须先创建任务窗格外接程序，然后修改外接程序的清单，如本文所述。 外接程序命令不能与内容外接程序一同使用。如果要更新现有清单，则必须添加相应的 **XML** 命名空间，以及将 **VersionOverrides** 元素添加到清单中，如步骤 [3：添加 VersionOverrides 元素中所述](#step-3-add-versionoverrides-element)。
 
@@ -249,7 +249,7 @@ ms.locfileid: "59148878"
 |元素|说明|
 |:-----|:-----|
 |**CustomTab** <br/> |如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 <br/> |
-|**OfficeTab** <br/> |如果要使用 **PrimaryCommandSurface** Office 应用扩展默认功能 (选项卡) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 有关与 id 属性一同使用的更多 **选项卡** 值，请参阅默认选项卡Office 应用 [选项卡的值](../reference/manifest/officetab.md)。  <br/> |
+|**OfficeTab** <br/> |如果要使用 **PrimaryCommandSurface** Office 应用扩展默认功能 (选项卡，) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 有关与 id 属性一同使用的更多 **选项卡** 值，请参阅默认选项卡Office 应用 [选项卡的值](../reference/manifest/officetab.md)。  <br/> |
 |**OfficeMenu** <br/> | 如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 当用户选定文本，然后右键单击所选文本时，适用于 Excel 或 Word 的 **ContextMenuText** 显示上下文菜单上的项。<br/> 适用于 Excel 的 **ContextMenuCell**。当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。 <br/> |
 |**Group** <br/> |选项卡上的一组用户界面扩展点。一组可以有多达六个控件。**id** 属性是必需的。它是一个最多为 125 个字符的字符串。 <br/> |
 |**Label** <br/> |必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。 <br/> |
@@ -442,3 +442,6 @@ ms.locfileid: "59148878"
 ## <a name="see-also"></a>另请参阅
 
 - [Excel、PowerPoint 和 Word 的加载项命令](../design/add-in-commands.md)
+- [示例：Excel命令按钮创建加载项](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/excel)
+- [示例：使用命令按钮创建 Word 外接程序](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/word)
+- [示例：创建PowerPoint按钮的加载项](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/powerpoint)

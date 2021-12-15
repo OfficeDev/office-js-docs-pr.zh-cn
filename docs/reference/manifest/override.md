@@ -1,20 +1,20 @@
 ---
 title: 清单文件中的 Override 元素
 description: Override 元素使您能够根据指定条件指定设置的值。
-ms.date: 05/19/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: bf0f4d8877ba2228d5bfc2053f53b2a8e1ab7b29
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dda8f6ca5aee1492c51960fc637d96e4d82796cb
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152648"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61513996"
 ---
 # <a name="override-element"></a>Override 元素
 
 提供一种根据指定条件替代清单设置的值的方法。 有三种类型的条件：
 
-- 与Office区域设置不同的区域设置，称为 `LocaleToken` **LocaleTokenOverride**。
+- 一Office与默认区域设置不同的区域设置，称为 `LocaleToken` **LocaleTokenOverride**。
 - 与默认模式不同的要求集支持模式，称为 `RequirementToken` **RequirementTokenOverride**。
 - 源不同于默认的 ，称为 `Runtime` **RuntimeOverride**。
 
@@ -26,7 +26,7 @@ ms.locfileid: "59152648"
 
 ## <a name="override-element-for-localetoken"></a>的 Override 元素 `LocaleToken`
 
-元素 `<Override>` 表示条件，可读为"If ...then ..."语句。 如果 `<Override>` 元素的类型为 **LocaleTokenOverride**，则属性为条件， `Locale` 而 `Value` 属性为结果。 例如，以下为"如果 Office 区域设置是 fr-fr，则显示名称是"Lecteur vidéo"。
+元素 `<Override>` 表示条件，可读为"If ...then ..."语句。 如果 `<Override>` 元素的类型为 **LocaleTokenOverride**，则属性为条件， `Locale` 而 `Value` 属性为结果。 例如，以下为"如果 Office区域设置为 fr-fr，则 显示名称为"Lecteur vidéo"。
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -200,7 +200,7 @@ ms.locfileid: "59152648"
 > [!IMPORTANT]
 > 邮箱要求集 [1.10](../../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md) 中引入了对此元素的支持，该功能具有基于 [事件的激活功能](../../outlook/autolaunch.md)。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
-元素 `<Override>` 表示条件，可读为"If ...then ..."语句。 如果 `<Override>` 元素的类型为 **RuntimeOverride**，则 属性为 `type` 条件， `resid` 属性为结果。 例如，以下为"如果类型为'javascript'，则 `resid` 为'JSRuntime.Url'"。Outlook桌面需要此元素用于[LaunchEvent 扩展点](../../reference/manifest/extensionpoint.md#launchevent)处理程序。
+元素 `<Override>` 表示条件，可读为"If ...then ..."语句。 如果 `<Override>` 元素的类型为 **RuntimeOverride**，则 属性为 `type` 条件， `resid` 属性为结果。 例如，以下为"如果类型为'javascript'，则 `resid` 为'JSRuntime.Url'"。Outlook Desktop 需要[LaunchEvent 扩展点处理程序的此](../../reference/manifest/extensionpoint.md#launchevent)元素。
 
 ```xml
 <Runtime resid="WebViewRuntime.Url">
@@ -233,7 +233,7 @@ ms.locfileid: "59152648"
 <!-- Event-based activation happens in a lightweight runtime.-->
 <Runtimes>
   <!-- HTML file including reference to or inline JavaScript event handlers.
-  This is used by Outlook on the web. -->
+  This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
   <Runtime resid="WebViewRuntime.Url">
     <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
     <Override type="javascript" resid="JSRuntime.Url"/>
