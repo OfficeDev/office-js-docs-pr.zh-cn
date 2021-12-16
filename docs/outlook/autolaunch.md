@@ -2,14 +2,14 @@
 title: 配置Outlook加载项进行基于事件的激活
 description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
-ms.date: 12/14/2021
+ms.date: 12/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dc0d75d9bf0f32d4df2de1a88bc4d175c291c2a
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: b97faa9b294b597aea7085209e9ab2dae7be4d8e
+ms.sourcegitcommit: 9ca8259b17566b8d73169de7f98bd4e16764bcdc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514228"
+ms.lasthandoff: 12/16/2021
+ms.locfileid: "61537881"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -25,7 +25,7 @@ ms.locfileid: "61514228"
 下表列出了当前可用的事件以及每个事件支持的客户端。 引发事件时，处理程序会收到一个对象，该对象可能包含特定于 `event` 事件类型的详细信息。 特定于 **事件的 JSON** 列包含指向相关对象的链接（如果适用）。
 
 > [!IMPORTANT]
-> 仍在预览中的事件可能仅适用于 Microsoft 365 订阅和下表中说明的一组有限的受支持客户端。 有关客户端配置的详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。 预览事件不应在生产外接程序中使用。
+> 仍在预览中的事件可能仅可用于 Microsoft 365 订阅和下表中说明的一组有限的受支持客户端。 有关客户端配置的详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。 预览事件不应在生产外接程序中使用。
 
 |事件|说明|特定于事件的 JSON|最低要求集|支持的客户端|
 |---|---|---|---|---|
@@ -48,10 +48,10 @@ ms.locfileid: "61514228"
 若要预览这些事件（如果可用）：
 
 - For Outlook 网页版 and Outlook on the new Mac UI preview：
-  - [在租户 上配置Microsoft 365版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
+  - [在租户上配置Microsoft 365版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
   - 在 上 **引用** beta https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN (。 用于 TypeScript 编译和 IntelliSense 的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)位于 CDN 和 [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) 中。 可以使用 `npm install --save-dev @types/office-js-preview` 来安装这些类型。
-- 有关Outlook Windows：
-  - 所需的最低内部版本为 16.0.14511.10000。 加入[Office 预览体验计划](https://insider.office.com)，以访问 Office beta 版本。
+- For Outlook on Windows：
+  - 所需的最低内部版本为 16.0.14511.10000。 加入 [预览Office](https://insider.office.com/join/windows)计划并选择 **Beta 渠道** 以访问 Office beta 版本。
   - 配置注册表。 Outlook包括 Office.js 的生产和 beta 版本的本地副本，而不是从 CDN。 默认情况下，将引用 API 的本地生产副本。 若要切换到 JavaScript API 的本地 beta Outlook，需要添加此注册表项，否则可能无法找到 beta API。
     1. 创建注册表项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
     1. 添加一个名为 的 `EnableBetaAPIsInJavaScript` 条目，将值设置为 `1` 。 下图显示注册表应该呈现的状态。
@@ -60,7 +60,7 @@ ms.locfileid: "61514228"
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook使用](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)适用于加载项的 Yeoman 生成器创建加载项Office快速入门。
+完成[Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)使用适用于加载项的 Yeoman 生成器创建加载项Office快速入门。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -281,18 +281,18 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
 
 ## <a name="deploy-to-users"></a>部署到用户
 
-可以通过在加载项中上传清单来部署基于事件的Microsoft 365 管理中心。 在管理门户中，展开导航设置的"集成应用"部分，然后选择"**集成应用"。** 在"**集成应用"** 页上，选择 **"Upload应用"** 操作。
+可以通过在加载项中上传清单来部署基于事件的Microsoft 365 管理中心。 在管理门户中，展开导航 **设置** 中的"集成应用"部分，然后选择"**集成应用"。** 在"**集成应用"** 页上，选择 **"Upload应用"** 操作。
 
 ![页面上"集成应用"页面的Microsoft 365 管理中心，包括Upload自定义应用操作。](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource 和应用内 Office 应用商店：即将推出部署基于事件的加载项或更新现有加载项以包含基于事件的激活功能的功能。
+AppSource 和应用Office应用商店：即将推出部署基于事件的加载项或更新现有加载项以包含基于事件的激活功能的功能。
 
 > [!IMPORTANT]
-> 基于事件的外接程序仅限于管理员托管的部署。 目前，用户无法从 AppSource 或应用内应用商店获取Office加载项。 若要了解详情，请参阅基于事件的加载项的[AppSource Outlook选项](autolaunch-store-options.md)。
+> 基于事件的外接程序仅限于管理员托管的部署。 目前，用户无法从 AppSource 或应用内应用商店获取基于Office加载项。 若要了解详情，请参阅基于事件的加载项Outlook [AppSource 一览选项](autolaunch-store-options.md)。
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>基于事件的激活行为和限制
 
-加载项启动事件处理程序应尽量短运行、轻量且无影响。 激活后，外接程序将在大约 300 秒（运行基于事件的外接程序所允许的最大时间长度）内退出。若要指示加载项已完成对启动事件的处理，我们建议让关联的处理程序调用 `event.completed` 方法。  (请注意，语句后包含的代码不能保证运行。) 每次触发外接程序句柄的事件时，外接程序将重新激活并运行关联的事件处理程序，超时窗口将重置。 `event.completed` 外接程序在时间结束后结束，或者用户关闭撰写窗口或发送项目。
+加载项启动事件处理程序应尽量短运行、轻量且无影响。 激活后，外接程序将在大约 300 秒（运行基于事件的外接程序所允许的最大时间长度）内退出。若要指示加载项已完成对启动事件的处理，我们建议让关联的处理程序调用 `event.completed` 方法。  (请注意，语句后包含的代码不能保证运行。) 每次触发外接程序处理的事件时，外接程序将重新激活并运行关联的事件处理程序，超时窗口将重置。 `event.completed` 外接程序在时间结束后结束，或者用户关闭撰写窗口或发送项目。
 
 如果用户有多个订阅了同一事件的加载项，Outlook平台将按特定顺序启动加载项。 目前，只能主动运行五个基于事件的加载项。
 
@@ -320,11 +320,11 @@ JavaScript 文件中不支持导入，在 JavaScript 文件中，您可以在客
 
 ### <a name="requesting-external-data"></a>请求外部数据
 
-可以使用 [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) 等 API 或 [XmlHttpRequest (XHR) （ ](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)一种用于发送 HTTP 请求以与服务器交互的标准 Web API）请求外部数据。
+可以使用提取等 API 或[XmlHttpRequest (XHR) （](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)一种标准 Web API，用于发送 HTTP 请求以与服务器交互）请求外部数据。 [](https://developer.mozilla.org/docs/Web/API/Fetch_API)
 
 请注意，在生成 XmlHttpRequest 时，必须使用其他安全措施，要求使用同源[策略和简单的](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) [CORS。](https://www.w3.org/TR/cors/)
 
-简单的 CORS 实现无法使用 Cookie，并且仅支持 GET、HEAD、POST (简单) 。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 还可以在简单 `Content-Type` CORS 中使用标头，只要内容类型为 、 或 `application/x-www-form-urlencoded` `text/plain` `multipart/form-data` 。
+简单的 CORS 实现不能使用 Cookie，并且仅支持 GET、HEAD、POST (的简单) 。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 还可以在简单 `Content-Type` CORS 中使用标头，只要内容类型为 、 或 `application/x-www-form-urlencoded` `text/plain` `multipart/form-data` 。
 
 即将提供完整的 CORS 支持。
 

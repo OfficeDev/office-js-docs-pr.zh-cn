@@ -1,18 +1,27 @@
 ---
 title: Office 加载项代码示例
 description: Office 加载项代码示例列表，可帮助你学习和生成自己的加载项。
-ms.date: 10/07/2021
+ms.date: 11/18/2021
 localization_priority: high
-ms.openlocfilehash: a7e84fb86fb795afc3f73385e2f577458d85621a
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 62bce4c5c6a01895db5d183e0526e0af820156ea
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250481"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514011"
 ---
 # <a name="office-add-in-code-samples"></a>Office 加载项代码示例
 
 编写这些代码示例的目的是为了帮助你了解如何在开发 Office 加载项时使用各种功能。
+
+## <a name="getting-started"></a>入门
+
+以下示例演示如何仅使用清单、HTML 网页和徽标生成最简单的 Office 加载项。 这些组件是 Office 加载项的基本部分。 有关其他入门信息，请参阅我们的 [快速入门](../quickstarts/excel-quickstart-jquery.md) 和 [教程](/search/?terms=tutorial&scope=Office%20Add-ins)。
+
+* [Excel "Hello world" 加载项](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/excel-hello-world)
+* [Outlook "Hello world" 加载项](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/outlook-hello-world)
+* [PowerPoint "Hello world" 加载项](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/powerpoint-hello-world)
+* [Word "Hello world" 加载项](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/word-hello-world)
 
 ## <a name="outlook"></a>Outlook
 

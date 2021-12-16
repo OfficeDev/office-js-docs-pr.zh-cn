@@ -1,15 +1,15 @@
 ---
 title: PowerPoint JavaScript API 要求集
 description: 了解有关 PowerPoint JavaScript API 要求集的详细信息。
-ms.date: 01/08/2021
+ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 8cb557ed46490e52da3f372ae48848b7305cdd17
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2381252ef0d0a4e5b757b38534a826c77108a380
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152579"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514003"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>PowerPoint JavaScript API 要求集
 
@@ -19,6 +19,7 @@ ms.locfileid: "59152579"
 
 |  要求集  |  Windows 版 Office<br>（关联至 Microsoft 365 订阅）  |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版 |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| [PowerPointApi 1.3](powerpoint-api-1-3-requirement-set.md)  | 版本 2111 (内部版本 14701.20060) 或更高版本| 尚不可以<br>支持 | 16.55 或更高版本 | 2021 年 12 月 |
 | [PowerPointApi 1.2](powerpoint-api-1-2-requirement-set.md)  | 版本 2011（内部版本 13426.20184）或更高版本| 尚不可以<br>支持 | 16.43 或更高版本 | 2020 年 10 月 |
 | [PowerPointApi 1.1](powerpoint-api-1-1-requirement-set.md) | 版本 1810（内部版本 11001.20074）或更高版本 | 2.17 或更高版本 | 16.19 或更高版本 | 2018 年 10 月 |
 
@@ -35,6 +36,10 @@ PowerPoint JavaScript API 1.1 包含[用于创建新演示文稿的单一 API](/
 ## <a name="powerpoint-javascript-api-12"></a>PowerPoint JavaScript API 1.2
 
 PowerPoint JavaScript API 1.2 增加了对将其他 PowerPoint 演示文稿中的幻灯片插入当前演示文稿以及删除幻灯片的支持. 有关 API 的详细信息，请参阅[在 PowerPoint 演示文稿中插入和删除幻灯片](../../powerpoint/insert-slides-into-presentation.md)。
+
+## <a name="powerpoint-javascript-api-13"></a>PowerPoint JavaScript API 1.3
+
+PowerPoint JavaScript API 1.3 增加了对添加和删除幻灯片的额外支持。 它还允许外接程序应用自定义元数据标记。 有关 API 的详细信息，请参阅[在 PowerPoint 中添加和删除幻灯片](../../powerpoint/add-slides.md)和[在 PowerPoint 中为演示文稿、幻灯片和形状使用自定义标记](../../powerpoint/tagging-presentations-slides-shapes.md)。
 
 ## <a name="how-to-use-powerpoint-requirement-sets-at-runtime-and-in-the-manifest"></a>如何在运行时和清单中使用 PowerPoint 要求集
 
