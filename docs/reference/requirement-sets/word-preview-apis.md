@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript 预览 API
 description: 有关即将推出的 Word JavaScript API 的详细信息。
-ms.date: 10/13/2021
+ms.date: 12/14/2021
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: 84e32a224a3d3a9f72a4f5aade1a8c98bbcab839
-ms.sourcegitcommit: e4d915edde57ad5d4e20f1e2c288d572bd9fe5e9
+ms.openlocfilehash: c68a63dc57fbcaa8282343c3f3271778c43bc28d
+ms.sourcegitcommit: 9b6556563451f9907cb5da50cba757eb9960aa39
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/13/2021
-ms.locfileid: "61420241"
+ms.lasthandoff: 12/17/2021
+ms.locfileid: "61565362"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript 预览 API
 
@@ -20,7 +20,7 @@ ms.locfileid: "61420241"
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前处于预览中的 Word JavaScript API，但那些仅在 Word web 版 中[可用的](#web-only-api-list)API 除外。 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅所有[Word JavaScript API。](/javascript/api/word?view=word-js-preview&preserve-view=true)
+下表列出了当前处于预览中的 Word JavaScript API，但那些仅在 Word web 版 中[可用的](#web-only-api-list)API 除外。 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅[所有 Word JavaScript API。](/javascript/api/word?view=word-js-preview&preserve-view=true)
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -65,7 +65,7 @@ ms.locfileid: "61420241"
 ||[matchWholeWord](/javascript/api/word/word.document#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.document#matchWildcards)||
 ||[onContentControlAdded](/javascript/api/word/word.document#onContentControlAdded)|添加内容控件时发生。|
-||[search (searchText： string， searchOptions？： Word.SearchOptions \| { ignorePunct？： boolean ignoreSpace？： boolean matchCase？： boolean matchPrefix？： boolean matchSuffix？： boolean matchWholeWord？： boolean matchWildcards？： boolean }) ](/javascript/api/word/word.document#search_searchText__searchOptions_)|使用指定的 SearchOptions 搜索整个文档的范围。|
+||[search (searchText： string， searchOptions？： Word.SearchOptions \| { ignorePunct？： boolean ignoreSpace？： boolean matchCase？： boolean matchPrefix？： boolean matchSuffix？： boolean matchWholeWord？： boolean matchWildcards？： boolean }) ](/javascript/api/word/word.document#search_searchText__searchOptions_)|使用指定的搜索选项搜索整个文档的范围。|
 ||[设置](/javascript/api/word/word.document#settings)|获取文档中加载项的设置。|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|获取文档中的自定义 XML 部件。|
 ||[deleteBookmark (name： string) ](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|从文档中删除书签（如果存在）。|
@@ -75,7 +75,7 @@ ms.locfileid: "61420241"
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageFormat)|获取内嵌图像的格式。|
 |[列表](/javascript/api/word/word.list)|[getLevelFont (级别：number) ](/javascript/api/word/word.list#getLevelFont_level_)|获取列表中指定级别的项目符号、编号或图片的字体。|
 ||[getLevelPicture (级别：number) ](/javascript/api/word/word.list#getLevelPicture_level_)|获取列表中指定级别的图片的 base64 编码字符串表示形式。|
-||[resetLevelFont (level： number， resetFontName？： boolean) ](/javascript/api/word/word.list#resetLevelFont_level__resetFontName_)|重置列表中指定级别的项目符号、编号或图片的字体。|
+||[resetLevelFont (级别： number， resetFontName？： boolean) ](/javascript/api/word/word.list#resetLevelFont_level__resetFontName_)|重置列表中指定级别的项目符号、编号或图片的字体。|
 ||[setLevelPicture (level： number， base64EncodedImage？： string) ](/javascript/api/word/word.list#setLevelPicture_level__base64EncodedImage_)|设置列表中指定级别的图片。|
 |[区域](/javascript/api/word/word.range)|[getBookmarks (includeHidden？： boolean， includeAdjacent？： boolean) ](/javascript/api/word/word.range#getBookmarks_includeHidden__includeAdjacent_)|获取区域内的所有书签或与区域重叠的名称。|
 ||[insertBookmark (name： string) ](/javascript/api/word/word.range#insertBookmark_name_)|在范围中插入书签。|
@@ -102,6 +102,7 @@ ms.locfileid: "61420241"
 |[正文](/javascript/api/word/word.body)|[endnotes](/javascript/api/word/word.body#endnotes)|获取正文中的尾注集合。|
 ||[脚注](/javascript/api/word/word.body#footnotes)|获取正文中的脚注集合。|
 ||[getComments () ](/javascript/api/word/word.body#getComments__)|获取与正文关联的注释。|
+||[getReviewedText (changeTrackingVersion？：Word.ChangeTrackingVersion) ](/javascript/api/word/word.body#getReviewedText_changeTrackingVersion_)|根据 ChangeTrackingVersion 选择获取已审阅文本。|
 ||[type](/javascript/api/word/word.body#type)|获取 body 的类型。|
 |[Comment](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|获取批注作者的电子邮件。|
 ||[authorName](/javascript/api/word/word.comment#authorName)|获取批注作者的姓名。|
@@ -131,24 +132,28 @@ ms.locfileid: "61420241"
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[endnotes](/javascript/api/word/word.contentcontrol#endnotes)|获取 contentcontrol 中的尾注集合。|
 ||[脚注](/javascript/api/word/word.contentcontrol#footnotes)|获取 contentcontrol 中的脚注集合。|
 ||[getComments () ](/javascript/api/word/word.contentcontrol#getComments__)|获取与正文关联的注释。|
-|[Document](/javascript/api/word/word.document)|[getEndnoteBody () ](/javascript/api/word/word.document#getEndnoteBody__)|获取文档的尾注的正文。|
-||[getFootnoteBody () ](/javascript/api/word/word.document#getFootnoteBody__)|获取文档的脚注的正文。|
+||[getReviewedText (changeTrackingVersion？：Word.ChangeTrackingVersion) ](/javascript/api/word/word.contentcontrol#getReviewedText_changeTrackingVersion_)|根据 ChangeTrackingVersion 选择获取已审阅文本。|
+|[Document](/javascript/api/word/word.document)|[changeTrackingMode](/javascript/api/word/word.document#changeTrackingMode)|获取或设置 ChangeTracking 模式。|
+||[getEndnoteBody () ](/javascript/api/word/word.document#getEndnoteBody__)|获取单个正文中的文档的尾注。|
+||[getFootnoteBody () ](/javascript/api/word/word.document#getFootnoteBody__)|获取单个正文中的文档脚注。|
 |[NoteItem](/javascript/api/word/word.noteitem)|[body](/javascript/api/word/word.noteitem#body)|表示便笺项目的 body 对象。|
 ||[delete()](/javascript/api/word/word.noteitem#delete__)|删除便笺项目。|
 ||[getNext () ](/javascript/api/word/word.noteitem#getNext__)|获取同一类型的下一个便笺项。|
 ||[getNextOrNullObject () ](/javascript/api/word/word.noteitem#getNextOrNullObject__)|获取同一类型的下一个便笺项。|
-||[reference](/javascript/api/word/word.noteitem#reference)|代表主文档中的脚注/尾注引用。|
+||[reference](/javascript/api/word/word.noteitem#reference)|代表主文档中的脚注或尾注引用。|
 ||[type](/javascript/api/word/word.noteitem#type)|代表便笺项目类型：脚注或尾注。|
 |[NoteItemCollection](/javascript/api/word/word.noteitemcollection)|[getFirst()](/javascript/api/word/word.noteitemcollection#getFirst__)|获取此集合中的第一个便笺项。|
 ||[getFirstOrNullObject () ](/javascript/api/word/word.noteitemcollection#getFirstOrNullObject__)|获取此集合中的第一个便笺项。|
 ||[items](/javascript/api/word/word.noteitemcollection#items)|获取此集合中已加载的子项。|
-|[Paragraph](/javascript/api/word/word.paragraph)|[endnotes](/javascript/api/word/word.paragraph#endnotes)|获取 Paragraph 中的尾注集合。|
-||[脚注](/javascript/api/word/word.paragraph#footnotes)|获取 Paragraph 中的脚注集合。|
+|[Paragraph](/javascript/api/word/word.paragraph)|[endnotes](/javascript/api/word/word.paragraph#endnotes)|获取段落中的尾注集合。|
+||[脚注](/javascript/api/word/word.paragraph#footnotes)|获取段落中的脚注集合。|
 ||[getComments () ](/javascript/api/word/word.paragraph#getComments__)|获取与段落关联的注释。|
-|[区域](/javascript/api/word/word.range)|[endnotes](/javascript/api/word/word.range#endnotes)|获取 Range 中的尾注集合。|
-||[脚注](/javascript/api/word/word.range#footnotes)|获取 Range 中的脚注集合。|
+||[getReviewedText (changeTrackingVersion？：Word.ChangeTrackingVersion) ](/javascript/api/word/word.paragraph#getReviewedText_changeTrackingVersion_)|根据 ChangeTrackingVersion 选择获取已审阅文本。|
+|[区域](/javascript/api/word/word.range)|[endnotes](/javascript/api/word/word.range#endnotes)|获取范围中的尾注集合。|
+||[脚注](/javascript/api/word/word.range#footnotes)|获取范围中的脚注集合。|
 ||[getComments () ](/javascript/api/word/word.range#getComments__)|获取与区域关联的注释。|
-||[insertComment (commentText：string) ](/javascript/api/word/word.range#insertComment_commentText_)|在范围中插入注释。|
+||[getReviewedText (changeTrackingVersion？：Word.ChangeTrackingVersion) ](/javascript/api/word/word.range#getReviewedText_changeTrackingVersion_)|根据 ChangeTrackingVersion 选择获取已审阅文本。|
+||[insertComment (commentText： string) ](/javascript/api/word/word.range#insertComment_commentText_)|在范围中插入注释。|
 ||[insertEndnote (insertText？： string) ](/javascript/api/word/word.range#insertEndnote_insertText_)|插入尾注。|
 ||[insertFootnote (insertText？： string) ](/javascript/api/word/word.range#insertFootnote_insertText_)|插入脚注。|
 |[Table](/javascript/api/word/word.table)|[endnotes](/javascript/api/word/word.table#endnotes)|获取 table 中的尾注集合。|
