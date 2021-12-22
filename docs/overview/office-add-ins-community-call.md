@@ -1,28 +1,28 @@
 ---
 title: Microsoft Office外接程序社区通话
 description: 每月Microsoft Office外接程序社区通话日程、日程安排和资源。
-ms.date: 12/01/2021
+ms.date: 12/21/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: da85ba3cafec7c7eb86a4c6a617273747802b8e8
-ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
+ms.openlocfilehash: c0c3edeb05e327fd676a1d4d94c74bf18e22682d
+ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "61284990"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "61583789"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
 外接程序Microsoft Office通话是每月一次通话，你可以在这里了解有关新功能、开发实践以及有关创建外接程序Office其他信息。社区通话在每月的第二个星期三上午 8：00 PDT 进行。 可以从 下载日历邀请 [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) 。
 
-## <a name="agenda-for-december-8th-call"></a>12 月 8 日通话日程
+## <a name="agenda-for-january-12th-call"></a>1 月 12 日通话日程
 
-- Outlook：Ignite 通知的回顾
-- Outlook示例：使用基于事件的激活来加密附件
+1 月议程将在通话前大约一周发布。
 
 ## <a name="previous-calls"></a>以前的调用
 
 错过以前的社区通话？ 查看以下博客资源以跟进讨论！
 
+- [2021 年 12 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-december-8-2021/ba-p/3032949)
 - [2021 年 11 月 10 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-november-10-2021/ba-p/2983146)
 - [2021 年 10 月 13 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-october-13-2021/ba-p/2867151)
 - [2021 年 9 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-september-8-2021/ba-p/2747100)
@@ -40,5 +40,5 @@ ms.locfileid: "61284990"
 - [Community呼叫主题请求和问题](https://aka.ms/officeaddinsform)
 - [Microsoft 365开发人员 YouTube 频道](https://aka.ms/m365devyoutube)
 - [Microsoft 365 YouTube 频道](https://aka.ms/m365pnp/videos )
-- [Microsoft 365 Tech Community 上的 PnP](https://aka.ms/m365pnp/community)
+- [Microsoft 365技术中心上的 PnP Community](https://aka.ms/m365pnp/community)
 - [Microsoft 365 PnP 技术社区博客](https://aka.ms/m365pnp/community/blog)

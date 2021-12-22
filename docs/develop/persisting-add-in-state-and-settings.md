@@ -1,14 +1,14 @@
 ---
 title: 暂留加载项状态和设置
 description: 了解如何将数据保留Office浏览器控件的无状态环境中运行的外接程序 Web 应用程序中。
-ms.date: 03/23/2021
+ms.date: 12/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ad6240df76c1f314072b381f51fe0bd54889b2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dc99285aaaedfe5aa8385709fc5512f7cedfb2a6
+ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149323"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "61583796"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>暂留加载项状态和设置
 
@@ -16,13 +16,13 @@ ms.locfileid: "59149323"
 
 Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web 应用。因此，加载项可能需要暂留数据，以维护各个使用加载项的会话中某些操作或功能的连续性。例如，加载项可能有需要在下一次初始化时保存和重新加载的自定义设置或其他值（如用户的首选视图或默认位置）。为此，可以执行下列操作：
 
-- 使用存储数据的 Office JavaScript API 的成员：
+- 使用将数据存储为Office的 JavaScript API 的成员：
   - 在依赖加载项类型的位置上存储的属性包中的名称-数值对。
   - 在文档中存储的自定义 XML。
 
 - 使用基础浏览器控件提供的技术：浏览器 Cookie 或 HTML5 Web 存储（[localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) 或 [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)）。
     > [!NOTE]
-    > 用户可以阻止基于浏览器的存储技术，具体取决于他们选择的设置。
+    > 某些浏览器或用户的浏览器设置可能会阻止基于浏览器的存储技术。 应测试可用性，如使用 Web 存储[API 中记录](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)。
 
 本文重点介绍如何使用 Office JavaScript API 将外接程序状态保留到当前文档。 如果需要跨文档保留状态（例如，跨文档打开的任何文档跟踪用户首选项）需要使用不同的方法。 例如，您可以使用 [SSO](sso-in-office-add-ins.md#using-the-sso-token-as-an-identity) 获取用户标识，然后将用户 ID 及其设置保存到联机数据库中。
 
@@ -42,7 +42,7 @@ JavaScript API Office提供了 设置、RoamingSettings[](/javascript/api/outloo
 > [!NOTE]
 > 下面两部分是在 Office 常见 JavaScript API 上下文中介绍的设置。 特定于应用程序的应用程序Excel JavaScript API 还提供对自定义设置的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel SettingCollection](/javascript/api/excel/excel.settingcollection)。
 
-在内部，使用 、 或 对象访问的属性包中数据存储为序列化的 JavaScript 对象表示法 `Settings` `CustomProperties` (JSON) 对象，其中包含名称/值对 `RoamingSettings` 。 每个 (键的名称) 必须为 ，而存储的值可以是 JavaScript 、、 或 ， `string` `string` `number` `date` `object` 但不能是 **函数**。
+在内部，使用 、 或 对象访问的属性包中数据存储为序列化的 JavaScript 对象表示法 `Settings` `CustomProperties` (JSON) 对象，其中包含名称/值对 `RoamingSettings` 。 每个 (键) 的名称必须为 ，而存储的值可以是 JavaScript 、、 或 ， `string` `string` `number` `date` `object` 但不能是 **函数**。
 
 本属性包结构示例包含三个已定义 **string** 值，分别为 `firstName`、 `location` 和 `defaultView`。
 
@@ -54,7 +54,7 @@ JavaScript API Office提供了 设置、RoamingSettings[](/javascript/api/outloo
 }
 ```
 
-在前一个加载项会话中保存设置属性包之后，可以在加载项的当前会话中初始化加载项时或在之后的任何时间加载该设置属性包。 在会话期间，使用 对象的 、 和 方法完全在内存中管理设置，这些对象对应于要创建 `get` `set` (`remove` 设置、CustomProperties 或 **RoamingSettings** ) 的设置类型。
+在前一个加载项会话中保存设置属性包之后，可以在加载项的当前会话中初始化加载项时或在之后的任何时间加载该设置属性包。 在会话期间，使用 与要创建 `get` `set` (`remove` 设置、CustomProperties 或 **RoamingSettings**  ) 的设置类型对应的 对象的 、 和 方法，将设置完全托管在内存中。
 
 > [!IMPORTANT]
 > 若要将加载项当前会话期间执行的任何添加、更新或删除操作保留到存储位置，必须调用用于处理此类设置的相应对象的 `saveAsync` 方法。 `get`、 `set` 和 `remove` 方法仅对设置属性包的内存副本进行操作。 如果加载项在未调用的情况下关闭，则在此会话期间对设置进行 `saveAsync` 的任何更改都将丢失。
@@ -79,7 +79,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ### <a name="getting-the-value-of-a-setting"></a>获取设置的值
 
-下面的示例演示如何使用 [Settings.get](/javascript/api/office/office.settings#get_name_) 方法获取名为"themeColor"的设置值。 方法的唯一 `get` 参数是设置的名称 _（区分_ 大小写）。
+下面的示例演示如何使用 [Settings.get](/javascript/api/office/office.settings#get_name_) 方法获取名为"themeColor"的设置值。 该方法的唯一 `get` 参数是设置 _的名称（区分_ 大小写）。
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
@@ -94,7 +94,7 @@ function write(message){
 
 ### <a name="removing-a-setting"></a>删除设置
 
-下面的示例演示如何使用 [Settings.remove](/javascript/api/office/office.settings#remove_name_) 方法删除名为"themeColor"的设置。 方法的唯一 `remove` 参数是设置的名称 _（区分_ 大小写）。
+下面的示例演示如何使用 [Settings.remove](/javascript/api/office/office.settings#remove_name_) 方法删除名为"themeColor"的设置。 该方法的唯一 `remove` 参数是设置 _的名称（区分_ 大小写）。
 
 ```js
 Office.context.document.settings.remove('themeColor');

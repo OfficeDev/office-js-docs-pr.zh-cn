@@ -23,7 +23,7 @@
     > 此时可能会收到一个不准确的错误：“应用程序 ID URI 必须是以 HTTPS、API、URN、MS-APPX 开头的有效 URI。 不得以斜杠结尾。” 如果该 ID 符合所述的条件，忽略该错误并保存更改。
 
     > [!NOTE]
-    > 如果收到一条错误，指出域已有所有者，但你拥有该域，请按照[快速入门： 将自定义域名添加到 Azure Active Directory](/azure/active-directory/add-custom-domain) 中的步骤进行操作来注册该域，然后重复此步骤。  (如果未使用租户中管理员的凭据登录，也会Microsoft 365此错误。 请参阅步骤 2 。 注销并使用管理员凭据再次登录，然后重复步骤 3 中的过程。）
+    > 如果收到一条错误，指出域已有所有者，但你拥有该域，请按照[快速入门： 将自定义域名添加到 Azure Active Directory](/azure/active-directory/add-custom-domain) 中的步骤进行操作来注册该域，然后重复此步骤。  (如果未使用租户中管理员的凭据登录，Microsoft 365此错误。 请参阅步骤 2 。 注销并使用管理员凭据再次登录，然后重复步骤 3 中的过程。）
 
 1. 选择“添加一个作用域”按钮。 在打开的面板中，输入 `access_as_user` 作为“作用域名称”。
 
@@ -47,9 +47,13 @@
   
     * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
     * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
+    * `93d53678-613d-4013-afc1-62e9e444a0a5`（Office 网页版）
     * `57fb890c-0dab-4253-a5e0-7188c88b2bb4`（Office 网页版）
     * `08e18876-6177-487e-b8b5-cf950c1e598c`（Office 网页版）
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Outlook 网页版）
+
+    > [!NOTE]
+    > ID 包括列出的所有其他 ID，并可以单独用于预授权所有 Office 主机终结点，以用于 Office 外接程序 `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` SSO 流中的服务。 
 
     对于每个 ID，请执行以下步骤。
 
