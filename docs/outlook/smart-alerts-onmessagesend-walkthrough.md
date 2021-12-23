@@ -1,19 +1,19 @@
 ---
 title: '在外接程序预览版中Outlook智能警报 (OnMessageSend) '
-description: 了解如何使用基于事件的激活在 Outlook 外接程序中处理发送邮件事件。
+description: 了解如何使用基于事件的激活在 Outlook外接程序中处理发送邮件事件。
 ms.topic: article
-ms.date: 12/13/2021
+ms.date: 12/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2412e1a713c2f15a6b04c77eaba6f368d3607dfb
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: d0745ac0f91fbda7866f52cba431369e45e2a1fe
+ms.sourcegitcommit: c23aa91492ae2d4d07cda2a3ebba94db78929f62
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514073"
+ms.lasthandoff: 12/23/2021
+ms.locfileid: "61598377"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>在外接程序预览版中Outlook智能警报 (OnMessageSend) 
 
-`OnMessageSend`事件利用智能警报，允许用户在用户选择其邮件中的"发送"后运行Outlook逻辑。 事件处理程序允许你为用户提供在发送电子邮件之前改进其电子邮件的机会。 `OnAppointmentSend`事件相似，但适用于约会。
+`OnMessageSend`事件利用智能警报，允许用户在用户选择其邮件中的"发送"后Outlook逻辑。  事件处理程序允许你为用户提供在发送电子邮件之前改进其电子邮件的机会。 `OnAppointmentSend`事件相似，但适用于约会。
 
 在此演练结束时，您将拥有一个外接程序，该外接程序在邮件发送时运行，并检查用户是否忘记添加电子邮件中提到的文档或图片。
 
@@ -26,7 +26,7 @@ ms.locfileid: "61514073"
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook使用](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)适用于加载项的 Yeoman 生成器创建加载项Office快速入门。
+完成[Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)使用适用于加载项的 Yeoman 生成器创建加载项Office快速入门。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -232,10 +232,16 @@ ms.locfileid: "61514073"
 >
 > 1. 关闭 Outlook。
 > 1. 打开 **任务管理器** ， **并确保msoadfsb.exe进程** 未运行。
-> 1. 运行以下命令：
+> 1. 如果使用默认版本 (清单 `https://localhost`) ，请运行以下命令。
 >
 >    ```command&nbsp;line
->    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+>    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
+>    ```
+>
+> 1. 如果使用的是 ，请 `http://localhost` 运行以下命令。
+>
+>    ```command&nbsp;line
+>    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
 >    ```
 >
 > 1. 重新启动 Outlook。

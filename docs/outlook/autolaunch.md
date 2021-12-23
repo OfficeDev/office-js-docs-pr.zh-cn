@@ -2,14 +2,14 @@
 title: 配置Outlook加载项进行基于事件的激活
 description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
-ms.date: 12/17/2021
+ms.date: 12/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf82aa778cb10db596630e2b6912c3518ee0ef1
-ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
+ms.openlocfilehash: c74969e761494dcc795c1360d08e23d93f09735d
+ms.sourcegitcommit: c23aa91492ae2d4d07cda2a3ebba94db78929f62
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2021
-ms.locfileid: "61583804"
+ms.lasthandoff: 12/23/2021
+ms.locfileid: "61598363"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -25,7 +25,7 @@ ms.locfileid: "61583804"
 下表列出了当前可用的事件以及每个事件支持的客户端。 引发事件时，处理程序会收到一个对象，该对象可能包含特定于 `event` 事件类型的详细信息。 特定于 **事件的 JSON** 列包含指向相关对象的链接（如果适用）。
 
 > [!IMPORTANT]
-> 仍在预览中的事件可能仅适用于 Microsoft 365 订阅和下表中说明的一组有限的受支持客户端。 有关客户端配置的详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。 预览事件不应在生产外接程序中使用。
+> 仍在预览中的事件可能仅可用于 Microsoft 365 订阅和下表中说明的一组有限的受支持客户端。 有关客户端配置的详细信息，请参阅 [本文中的](#how-to-preview) 如何预览。 预览事件不应在生产外接程序中使用。
 
 |事件|说明|特定于事件的 JSON|最低要求集|支持的客户端|
 |---|---|---|---|---|
@@ -47,14 +47,14 @@ ms.locfileid: "61583804"
 
 若要预览这些事件（如果可用）：
 
-- 对于Outlook 网页版：
-  - [在租户 上配置Microsoft 365版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
+- 例如Outlook 网页版：
+  - [在租户上配置Microsoft 365版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
   - 在 上 **引用** beta https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN (。 用于 TypeScript 编译和 IntelliSense 的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)位于 CDN 和 [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) 中。 可以使用 `npm install --save-dev @types/office-js-preview` 来安装这些类型。
-- 有关Outlook Mac UI 预览版的详细信息：
+- For Outlook on the new Mac UI preview：
   - 最低要求版本为 16.54 (21101001) 。 加入 [预览Office计划](https://insider.office.com/join/Mac)并选择 **Beta 渠道** 以访问 Office beta 版本。
-- For Outlook on Windows：
+- 有关Outlook Windows：
   - 所需的最低内部版本为 16.0.14511.10000。 加入 [预览Office计划](https://insider.office.com/join/windows)并选择 **Beta 渠道** 以访问 Office beta 版本。
-  - 配置注册表。 Outlook包括 Office.js 的生产和 beta 版本的本地副本，而不是从 CDN。 默认情况下，将引用 API 的本地生产副本。 若要切换到 JavaScript API Outlook beta 副本，需要添加此注册表项，否则可能无法找到 beta API。
+  - 配置注册表。 Outlook包括 Office.js 的生产版本和 beta 版本的本地副本，而不是从 CDN。 默认情况下，将引用 API 的本地生产副本。 若要切换到 JavaScript API Outlook beta 副本，需要添加此注册表项，否则可能无法找到 beta API。
     1. 创建注册表项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` 。
     1. 添加一个名为 的 `EnableBetaAPIsInJavaScript` 条目，将值设置为 `1` 。 下图显示注册表应该呈现的状态。
 
@@ -249,11 +249,11 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
 
 1. 在 Outlook 网页版中，创建新邮件。
 
-    ![撰写时设置主题Outlook 网页版窗口中邮件窗口的屏幕截图。](../images/outlook-web-autolaunch-1.png)
+    ![撰写时主题设置Outlook 网页版窗口中邮件窗口的屏幕截图。](../images/outlook-web-autolaunch-1.png)
 
 1. In Outlook on the new Mac UI preview， create a new message.
 
-    ![Screenshot of a message window in Outlook on the new Mac UI preview with the subject set on compose.](../images/outlook-mac-autolaunch.png)
+    ![使用撰写时设置的主题Outlook Mac UI 预览上显示的消息窗口屏幕截图。](../images/outlook-mac-autolaunch.png)
 
 1. 在Outlook中Windows新建一封邮件。
 
@@ -264,10 +264,16 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
     >
     > 1. 关闭 Outlook。
     > 1. 打开 **任务管理器** ， **并确保msoadfsb.exe进程** 未运行。
-    > 1. 运行以下命令：
+    > 1. 如果使用默认版本 (清单 `https://localhost`) ，请运行以下命令。
     >
     >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
+    >    ```
+    >
+    > 1. 如果使用的是 ，请 `http://localhost` 运行以下命令。
+    >
+    >    ```command&nbsp;line
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
     >    ```
     >
     > 1. 重新启动 Outlook。
@@ -279,7 +285,7 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
 - 如果更新了清单 [，请删除加载项，](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) 然后再次旁加载它。
 - 如果对清单外的文件进行了更改，请关闭并重新打开Outlook或Windows浏览器选项卡以运行Outlook 网页版。
 
-实现自己的功能时，可能需要调试代码。 有关如何调试基于事件的外接程序激活的指南，请参阅调试基于事件Outlook[加载项](debug-autolaunch.md)。
+实现自己的功能时，可能需要调试代码。 有关如何调试基于事件的外接程序激活的指南，请参阅调试基于事件Outlook[外接程序](debug-autolaunch.md)。
 
 运行时日志记录还可用于 Windows。 有关详细信息，请参阅使用运行时 [日志记录调试加载项](../testing/runtime-logging.md#runtime-logging-on-windows)。
 
