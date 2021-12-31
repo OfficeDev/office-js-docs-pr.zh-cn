@@ -773,10 +773,7 @@ items:
           - name: 自动生成 JSON 元数据
             href: excel/custom-functions-json-autogeneration.md
             displayName: 'Excel, Custom Functions'
-          - name: 数据类型和自定义函数概述（预览版）
-            href: excel/custom-functions-data-types-overview.md
-            displayName: 'Excel, Custom Functions'
-          - name: 数据类型和自定义函数概念（预览版）
+          - name: 数据类型（预览）
             href: excel/custom-functions-data-types-concepts.md
             displayName: 'Excel, Custom Functions'
           - name: 调用 Excel JavaScript API
