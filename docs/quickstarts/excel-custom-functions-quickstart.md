@@ -1,15 +1,15 @@
 ---
-ms.date: 10/08/2021
+ms.date: 12/28/2021
 description: 在 Excel 中开发自定义函数快速入门指南。
 title: 自定义函数快速入门
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 1bbd519fa49d4518baacf4f8d0b6d88af38f3c94
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 2f4a2ed07c23c3ced19632b9dbfee2957f0f5ba0
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250495"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61648000"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -105,6 +105,12 @@ npm run start:web
 
 > [!div class="nextstepaction"]
 > [Excel 自定义函数加载项教程](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
+
+## <a name="troubleshooting"></a>疑难解答
+
+如果多次运行快速入门，可能会遇到问题。 如果 Office 缓存已具有同名函数的实例，则加载项在旁加载时会收到错误。 在运行 `npm run start` 之前，可以通过[清除 Office 缓存](../testing/clear-cache.md)来阻止此操作。
+
+:::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="Excel 中标题为“安装函数时出错”的错误消息。它包含文本“未安装此加载项，因为已存在同名的自定义函数”。":::
 
 ## <a name="see-also"></a>另请参阅
 

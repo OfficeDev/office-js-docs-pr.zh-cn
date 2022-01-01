@@ -1,15 +1,15 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流式传输 Web 数据的自定义函数。
-ms.date: 10/08/2021
+ms.date: 12/28/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 7f8a0cb7fcccce4861d77f23c0f3099fd1af2ec5
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 8239cb52002dcf679df0ebd336c1afa17fdad693
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250453"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61647970"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -17,7 +17,7 @@ ms.locfileid: "60250453"
 
 在本教程中，你将：
 > [!div class="checklist"]
-> - 使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)来创建自定义函数加载项。 
+> - 使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)来创建自定义函数加载项。
 > - 使用预生成的自定义函数来执行简单计算。
 > - 创建从 Web 获取数据的自定义函数。
 > - 创建从 Web 传送实时数据的自定义函数。
@@ -31,6 +31,9 @@ ms.locfileid: "60250453"
 ## <a name="create-a-custom-functions-project"></a>创建自定义函数项目
 
  若要开始，请创建代码项目以生成自定义函数加载项。[Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office) 将使用一些可以试用的预生成自定义函数来设置项目。如果已运行自定义函数快速启动并生成了项目，请继续使用该项目，然后改为跳到 [此步骤](#create-a-custom-function-that-requests-data-from-the-web)。
+
+> [!NOTE]
+> 如果重新创建 yo office 项目，则可能会收到错误，因为 Office 缓存已具有同名函数的实例。 在运行 `npm run start` 之前，可以通过[清除 Office 缓存](../testing/clear-cache.md)来阻止此操作。
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
