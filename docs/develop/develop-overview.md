@@ -3,12 +3,12 @@ title: 开发 Office 加载项
 description: Office 加载项开发简介。
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 03e04fa7b1b5df751c161aec01d2d3f29eed6db9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: da68ea157673a81fba9e04a3c73aacec020c61a4
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148861"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765939"
 ---
 # <a name="develop-office-add-ins"></a>开发 Office 加载项
 
@@ -87,7 +87,7 @@ Script Lab 是一款加载项，在 Excel 或 Word 等 Office 程序中工作时
 
 下面时长一分钟的视频展示了 Script Lab 的实际运行情况。
 
-[![显示 Script Lab 在 Excel、Word 和 PowerPoint 中运行的短视频。](../images/screenshot-wide-youtube.png 'Script Lab 预览视频。')](https://aka.ms/scriptlabvideo)
+[![显示 Script Lab 在 Excel、Word 和 PowerPoint 中运行的短视频。](../images/screenshot-wide-youtube.png 'Script Lab 预览视频')](https://aka.ms/scriptlabvideo)
 
 有关 Script Lab 的详细信息，请参阅[使用 Script Lab 了解 Office JavaScript API](../overview/explore-with-script-lab.md)。
 

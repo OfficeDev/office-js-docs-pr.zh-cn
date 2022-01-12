@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office外接程序社区通话
 description: 每月Microsoft Office外接程序社区通话日程、日程安排和资源。
-ms.date: 12/21/2021
+ms.date: 01/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c3edeb05e327fd676a1d4d94c74bf18e22682d
-ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
+ms.openlocfilehash: be9f637db2161f3c3b2da07503a623c0401c1121
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2021
-ms.locfileid: "61583789"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765918"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
@@ -16,7 +16,8 @@ ms.locfileid: "61583789"
 
 ## <a name="agenda-for-january-12th-call"></a>1 月 12 日通话日程
 
-1 月议程将在通话前大约一周发布。
+- Excel快捷方式自定义 API
+- 更新中 SSO Office
 
 ## <a name="previous-calls"></a>以前的调用
 

@@ -1,29 +1,36 @@
 ---
 title: 清单文件中 Event 元素
 description: 定义外接程序中的事件处理程序。
-ms.date: 09/24/2021
+ms.date: 01/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 095023a8f2d8cd5a01835e09cd50ae7289c98c01
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: fac920fc91abd908d3d159877c0c414bd7fae244
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990660"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765890"
 ---
 # <a name="event-element"></a>Event 元素
 
 定义外接程序中的事件处理程序。
 
 > [!NOTE]
-> 有关支持和使用情况的信息，请参阅加载项的Outlook[功能](../../outlook/outlook-on-send-addins.md)。
+> 有关支持和使用情况的信息，请参阅[On-send feature for Outlook add-ins](../../outlook/outlook-on-send-addins.md)。
 
 **外接程序类型：** 邮件
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 邮件 1.0
+- 邮件 1.1
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 ## <a name="attributes"></a>属性
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  [Type](#type-attribute)  |  是  | 指定要处理的事件。 |
+|  [类型](#type-attribute)  |  是  | 指定要处理的事件。 |
 |  [FunctionExecution](#functionexecution-attribute)  |  是  | 指定事件处理程序的执行风格、异步或同步。目前仅支持同步事件处理程序。 |
 |  [FunctionName](#functionname-attribute)  |  是  | 指定事件处理程序的函数名称。 |
 

@@ -1,14 +1,14 @@
 ---
 title: 在 Office 网页版中调试加载项
 description: 如何使用 Office 网页版来测试和调试加载项。
-ms.date: 07/07/2020
+ms.date: 12/02/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 255826f8925ea35d25cf228e80de6774c9917cea
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8fddafa5b7c2fe7a24ab8befa1ead31a56f9c3ac
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152341"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765904"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>在 Office 网页版中调试加载项
 
@@ -18,12 +18,12 @@ ms.locfileid: "59152341"
 
 首先，请执行以下操作：
 
-- 如果Microsoft 365或没有对网站的访问权限，请获取一个SharePoint帐户。
+- 如果Microsoft 365帐户或没有对网站的访问权限，请获取一个SharePoint帐户。
 
   > [!NOTE]
-  > 若要获取为期 90 天的免费可续订Microsoft 365订阅，请加入我们的 Microsoft 365[开发人员计划](https://developer.microsoft.com/office/dev-program)。 有关如何[Microsoft 365](/office/developer-program/office-365-developer-program)开发人员计划并配置订阅的分步说明，请参阅 Microsoft 365 开发人员计划文档。
+  > 若要获取为期 90 天的免费可续订Microsoft 365开发人员订阅，请加入我们的 Microsoft 365[开发人员计划](https://developer.microsoft.com/office/dev-program)。 有关如何[Microsoft 365](/office/developer-program/office-365-developer-program)开发人员计划并配置订阅的分步说明，请参阅 Microsoft 365 开发人员计划文档。
 
-- 在 SharePoint Online 上设置应用程序目录。 应用程序目录是 SharePoint Online 中的专用网站集，Office外接程序的文档库。如果你有自己的网站SharePoint，可以设置应用程序目录文档库。 有关详细信息，请参阅上的将任务窗格和内容加载项发布到[应用程序SharePoint。](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)
+- 在 SharePoint Online 上设置应用程序目录。 应用程序目录是 SharePoint Online 中的专用网站集，Office外接程序的文档库。如果你有自己的网站SharePoint，可以设置应用程序目录文档库。 有关详细信息，请参阅在应用程序目录中发布任务窗格和内容[SharePoint。](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)
 
 
 ## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>在 Excel 网页版或 Word 网页版中调试加载项
@@ -47,7 +47,7 @@ ms.locfileid: "59152341"
 
 5. 在“插入”选项卡上选择“我的外接程序”或“Office 外接程序”以插入您的外接程序并在应用程序中进行测试。
 
-6. 使用常用浏览器工具调试器调试加载项。
+6. 使用浏览器的调试工具调试加载项。 它通常通过按 F12 打开。
 
 ## <a name="potential-issues"></a>潜在问题
 
