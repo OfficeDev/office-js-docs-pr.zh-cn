@@ -1,18 +1,18 @@
 ---
 title: 使用 Visual Studio Code 和 Microsoft Edge WebView2（基于 Chromium）在 Windows 上调试加载项
 description: 了解如何在 VS 代码中使用适用于 Microsoft Edge 扩展的调试器来调试使用 Microsoft Edge WebView2（基于 Chromium）的 Office 加载项。
-ms.date: 11/09/2021
+ms.date: 01/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2ffc9226cb5e4fb38c88a98a79f3676ca3b6071e
-ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
+ms.openlocfilehash: 370aee798b40631000310f65b7ace931d0c2ae3e
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "60889984"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765897"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>使用 Visual Studio Code 和 Microsoft Edge WebView2（基于 Chromium）在 Windows 上调试加载项
 
-在 Windows 上运行的 Office 加载项可以使用 Visual Studio Code 中 Microsoft Edge 扩展的调试器针对 Edge Chromium WebView2 运行时进行调试。 
+在 Windows 上运行的 Office 加载项可以使用 Visual Studio Code 中 Microsoft Edge 扩展的调试器针对 Edge Chromium WebView2 运行时进行调试。
 
 > [!TIP]
 > 如果不能或不希望使用内置于 Visual Studio Code 中的工具进行调试；或仅当加载项在 Visual Studio Code 外部运行时遇到问题，则可以使用 Edge（基于 Chromium）开发人员工具调试 Edge Chromium WebView2 运行时，如[使用 Microsoft Edge WebView2 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-chromium.md)中所述。
@@ -35,7 +35,7 @@ ms.locfileid: "60889984"
    > npx office-addin-debugging start <your manifest path>
    > ```
 
-1. 在 VS Code 中打开项目。 在 VS Code 中，选择 **CTRL+SHIFT+X** 打开扩展栏。 搜索“适用于 Microsoft Edge 的调试器”扩展并安装。
+1. 在 VS Code 中打开项目。 在 VS Code 中，选择 **CTRL+SHIFT+X** 打开扩展栏。 搜索“[Microsoft Edge DevTools](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)”扩展并安装它。
 
 1. 下一步，选择“**视图”>“调试**”或者输入 **CTRL+SHIFT+D** 以切换到调试视图。
 

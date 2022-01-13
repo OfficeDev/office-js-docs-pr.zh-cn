@@ -258,9 +258,12 @@ items:
             href: develop/develop-office-add-ins-for-the-ipad.md
       - name: 测试和调试
         items:
-          - name: 测试和调试 Office 加载项
+          - name: 测试 Office 加载项
             href: testing/test-debug-office-add-ins.md
             displayName: 'test, debug'
+          - name: 调试 Office 加载项
+            href: testing/debug-add-ins-overview.md
+            displayName: debug
           - name: Windows
             items:
               - name: 通过网络共享在 Windows 上旁加载 Office 加载项

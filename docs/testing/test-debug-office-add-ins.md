@@ -1,16 +1,16 @@
 ---
-title: 测试和调试 Office 加载项
-description: 了解如何测试和调试 Office 加载项
-ms.date: 11/14/2021
+title: 测试 Office 加载项
+description: 了解如何测试 Office 加载项
+ms.date: 12/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 3eaf86d7cc2702e0501522debad2e64ac24c323c
-ms.sourcegitcommit: 67b70f5328e4b9c9e9df098ec98f29a02f363464
+ms.openlocfilehash: 8d57f396c5387faf22ba8b03fd2e5019be4e14d2
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61124392"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765911"
 ---
-# <a name="test-and-debug-office-add-ins"></a>测试和调试 Office 加载项
+# <a name="test-office-add-ins"></a>测试 Office 加载项
 
 本文包含有关测试、调试和排查 Office 加载项问题的指南。
 
@@ -44,15 +44,7 @@ Office 加载项跨主要平台运行，因此需要在用户可能运行 Office
 
 ## <a name="debug-an-office-add-in"></a>调试 Office 加载项
 
-Office 加载项的调试过程也因平台而异。 下面的文章分别介绍了如何在特定平台上调试 Office 加载项。
-
-- [从任务窗格附加调试器（在 Windows 上）](attach-debugger-from-task-pane.md)
-- [使用适用于 Internet Explorer 的开发人员工具调试加载项](debug-add-ins-using-f12-tools-ie.md)
-- [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
-- [使用 Microsoft Edge（基于 Chromium）中的开发人员工具调试加载项](debug-add-ins-using-devtools-edge-chromium.md)
-- [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)
-- [在 Mac 上调试 Office 加载项](debug-office-add-ins-on-ipad-and-mac.md)
-- [适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展](debug-with-vs-extension.md)
+调试 Office 加载项的过程因平台和环境而异。 有关详细信息，请参阅 [调试 Office 加载项](debug-add-ins-overview.md)。
 
 ## <a name="validate-an-office-add-in-manifest"></a>验证 Office 加载项清单
 
