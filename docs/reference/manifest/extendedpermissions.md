@@ -1,14 +1,14 @@
 ---
 title: 清单文件中 ExtendedPermissions 元素
 description: 定义外接程序访问关联 API 或功能所需的扩展权限的集合。
-ms.date: 09/24/2021
+ms.date: 01/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c8316e045323b6b8c9c8ef140944b92c08f543c
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 46ca6e3e2fb992755d9067b4251200073f07ade1
+ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990640"
+ms.lasthandoff: 01/14/2022
+ms.locfileid: "62042124"
 ---
 # <a name="extendedpermissions-element"></a>ExtendedPermissions 元素
 
@@ -18,6 +18,16 @@ ms.locfileid: "59990640"
 > 要求集 1.9 中引入了对此元素的支持。 请查看支持此要求集的[客户端和平台](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 **外接程序类型：** 邮件
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 邮件 1.1
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**与以下要求集相关联**：
+
+- [Mailbox 1.9](../../reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md)
 
 ## <a name="child-elements"></a>子元素
 

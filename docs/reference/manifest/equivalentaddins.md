@@ -1,14 +1,14 @@
 ---
 title: 清单文件中 EquivalentAddins 元素
 description: 指定与等效 COM 加载项和/或 XLL 的向后兼容性。
-ms.date: 09/24/2021
+ms.date: 01/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d32f67f49d334a75433aec2d079b45a44a04121a
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 48f3ef86f71ad3d4f0c759df4583af4cd95e5c5a
+ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990808"
+ms.lasthandoff: 01/14/2022
+ms.locfileid: "62042152"
 ---
 # <a name="equivalentaddins-element"></a>EquivalentAddins 元素
 
@@ -17,6 +17,13 @@ ms.locfileid: "59990808"
 [!INCLUDE [Support note for equivalent add-ins feature](../../includes/equivalent-add-in-support-note.md)]
 
 **外接程序类型：** 任务窗格、邮件、自定义函数
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 任务窗格 1.0
+- 邮件 1.1
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 ## <a name="syntax"></a>语法
 
