@@ -1,14 +1,14 @@
 ---
 title: Office 加载项开发最佳做法
 description: 在开发时应用最佳做法以创建Office外接程序。
-ms.date: 05/12/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e6c0982591fa2f101309520e7a0c999927c3fc2a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bd6a4511f7466ee9aa63aecb496d90f17b21b69a
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149221"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073337"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -36,7 +36,7 @@ ms.locfileid: "59149221"
 
 - 提供用以指导用户的教学 UI，并使您的 UI 富有个性化。
 
-  ![显示"执行"与"不"比较的屏幕截图。 "执行"示例显示了一个外接程序，其中包含用户可单击以开始使用的按钮。 "不"示例显示没有介绍性步骤或按钮的外接程序。](../images/contoso-part-catalog-do-dont.png)
+  ![显示"执行"与"不"比较的屏幕截图。 "执行"示例显示了一个外接程序，其中包含用户可单击以开始使用的按钮。 "请勿"示例显示没有介绍性步骤或按钮的外接程序。](../images/contoso-part-catalog-do-dont.png)
 
 - 如果内容外接程序绑定到用户文档中的数据，请将那些用于向用户显示要使用的数据格式的示例数据或模板包含在内。
 
@@ -92,7 +92,6 @@ ms.locfileid: "59149221"
 > [!NOTE]
 > 如果你为设计[元素Fluent UI](../design/using-office-ui-fabric-react.md) React，许多这些元素都内置在设计系统中。
 
-
 ## <a name="optimize-and-monitor-add-in-performance"></a>优化和监视加载项性能
 
 - 创建快速 UI 响应的感觉。外接程序的加载时间应在 500 毫秒以内。
@@ -101,7 +100,7 @@ ms.locfileid: "59149221"
 
 - 为长时间运行的操作提供加载指示器。
 
-- 将 CDN 用于主机图像、资源和公用库。尽可能地从一个位置进行加载。
+- 使用内容交付网络 (CDN) 托管图像、资源和公用库。 尽可能地从一个位置进行加载。
 
 - 请按照标准 Web 实践来优化您的网页。在生产中，仅使用库的缩小版本。仅加载所需的资源，并优化加载资源的方式。
 
@@ -134,7 +133,7 @@ ms.locfileid: "59149221"
 
 - 创建有助于用户查找和使用加载项的网站。
 
-## <a name="use-javascript-that-supports-internet-explorer"></a>使用支持 javaScript 的 javaScript Internet Explorer
+## <a name="use-javascript-that-supports-internet-explorer"></a>使用支持此平台的 JavaScript Internet Explorer
 
 [!INCLUDE [How to support IE](../includes/es5-support.md)]
 

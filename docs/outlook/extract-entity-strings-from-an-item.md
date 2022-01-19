@@ -3,12 +3,12 @@ title: 从 Outlook 项中提取实体字符串
 description: 了解如何从 Outlook 加载项中的某个 Outlook 项中提取实体字符串。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 712246f22a83d5bcef85d89a46a3027b763e1304
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7234e601f448de850a4ab9358362c69392589391
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152410"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074278"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>从 Outlook 项中提取实体字符串
 
@@ -99,7 +99,7 @@ xsi:type="MailApp">
 
 实体外接程序的 HTML 文件为用户指定按钮以选择每种类型的实体，另外还指定另一个按钮以清除显示的实体实例。它包括 JavaScript 文件 default_entities.js，这在下一节的 [JavaScript 实现](#javascript-implementation)中进行介绍。JavaScript 文件包括其中每个按钮的事件处理程序。
 
-请注意，所有 Outlook 外接程序都必须包含 office.js。下面的 HTML 文件包含 CDN 上 office.js 的版本 1.1。 
+请注意，所有 Outlook 外接程序都必须包含 office.js。 以下 HTML 文件包括内容交付网络传输office.js版本 1.1 (CDN) 。
 
 ```html
 <!DOCTYPE html>

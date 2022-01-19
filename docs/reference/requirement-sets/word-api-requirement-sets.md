@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript API 要求集
 description: 针对 Word 内部版本的 Office 加载项要求集信息。
-ms.date: 10/08/2021
+ms.date: 01/14/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 88d49b860cb832f59e8e2a631f0c4a3c57698306
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 6838ed66b6a91f522e7ae78aeeee3d545b6bbf2c
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250530"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074320"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
@@ -20,7 +20,7 @@ ms.locfileid: "60250530"
 Word 加载项可跨多个版本的 Office 运行，包括 Windows 上的 Office 2016 或更高版本，以及 Office 网页版、iPad 和 Mac 版。下表列出了 Word 要求集、支持该要求集的 Office 客户端应用程序，以及这些应用程序的内部版本或版本号。
 
 > [!NOTE]
-> 要在任何编号的需求集中使用API，您应该引用CDN上的 **生产** 库： https://appsforoffice.microsoft.com/lib/1/hosted/office.js。
+> 若要在任何编号的要求集内使用 API，应引用 [ Office.js 内容分发网络（CDN）](https://appsforoffice.microsoft.com/lib/1/hosted/office.js)上的 **生产** 库。
 >
 > 有关使用预览 API 的信息，请参阅 [Excel JavaScript 预览 API](word-preview-apis.md) 一文。
 

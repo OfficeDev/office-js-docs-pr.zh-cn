@@ -3,12 +3,12 @@ ms.date: 05/17/2020
 description: 在不使用任务窗格Excel自定义函数对用户进行身份验证。
 title: 无 UI 自定义函数的身份验证
 ms.localizationpriority: medium
-ms.openlocfilehash: 415663d4947caa6476fff21359d20a03eb8d67c3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 57a003dbcf3c36842c2b5c98aba7844c9e53e012
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149286"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074236"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>无 UI 自定义函数的身份验证
 
@@ -45,7 +45,7 @@ ms.locfileid: "59149286"
 
 ## <a name="storing-the-token"></a>存储令牌
 
-以下示例来自[在自定义函数中使用 OfficeRuntime.storage](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/AsyncStorage) 代码示例。 有关在无 UI 自定义函数和任务窗格之间共享数据的完整示例，请参阅此代码示例。
+以下示例来自[在自定义函数中使用 OfficeRuntime.storage](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage) 代码示例。 有关在无 UI 自定义函数和任务窗格之间共享数据的完整示例，请参阅此代码示例。
 
 如果无 UI 自定义函数进行身份验证，则它会收到访问令牌，并且将需要将令牌存储在 中 `storage` 。 以下代码示例演示如何调用 `storage.setItem` 方法来存储值。 `storeValue`函数是无 UI 的自定义函数，例如用于存储用户的值。 你可以对其进行修改以存储所需的任何令牌值。
 

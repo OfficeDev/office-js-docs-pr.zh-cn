@@ -3,12 +3,12 @@ title: 使用 Office 对话框 API 进行身份验证和授权
 description: 了解如何使用 Office 对话框 API 使用户能够登录到 Google、Facebook、Microsoft 365 以及受 Microsoft 标识平台保护的其他服务。
 ms.date: 07/22/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 1ce7f4a366fbf2f7831c4944d9c21d7c0b1b3446
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: aa4ce5b74752623e10b61082d6f9becc1a26b713
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149145"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074187"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
@@ -88,15 +88,15 @@ Office 对话框和任务窗格在不同的浏览器、JavaScript 运行时实�
 
 ### <a name="how-you-can-use-libraries-with-the-office-dialog-api"></a>如何将库与 Office 对话框 API 结合使用
 
-大多数库提供了更低抽象级别的 API 作为单一“身份验证相关”对象的补充（或取代这些对象），可让代码创建不太单一的整体帮助程序对象。 例如，[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) v. 3. x.x 有一个用于构造登录 URL 的 API，以及另一个用于构造 AuthResult 对象的 API，该对象在代码可访问的属性中包含访问令牌。 有关 Office 加载项中的 MSAL.NET 的示例，请参阅: [Office 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) 和 [Outlook 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)。 有关在加载项中使用 [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) 的示例，请参阅 [Office 加载项 Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)。
+大多数库提供了更低抽象级别的 API 作为单一“身份验证相关”对象的补充（或取代这些对象），可让代码创建不太单一的整体帮助程序对象。 例如，[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) v. 3. x.x 有一个用于构造登录 URL 的 API，以及另一个用于构造 AuthResult 对象的 API，该对象在代码可访问的属性中包含访问令牌。 有关 Office 加载项中的 MSAL.NET 的示例，请参阅: [Office 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) 和 [Outlook 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)。 有关在加载项中使用 [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) 的示例，请参阅 [Office 加载项 Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)。
 
 有关身份验证和授权库的详细信息，请参阅 [Microsoft Graph：推荐的库](authorize-to-microsoft-graph-without-sso.md#recommended-libraries-and-samples)和[其他外部服务：库](auth-external-add-ins.md#libraries)。
 
 ## <a name="samples"></a>示例
 
-- [Office 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)：一个基于 ASP.NET 的加载项（Excel、Word 或 PowerPoint），它使用 MSAL.NET 库和授权代码流进行登录并获取 Microsoft Graph 数据的访问令牌。
-- [Outlook 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)：与上面的加载项一样，但 Office 应用程序为 Outlook。
-- [Office 加载项 Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)：一个基于 NodeJS 的加载项（Excel、Word 或 PowerPoint），它使用 msal.js 库和隐式流进行登录并获取 Microsoft Graph 数据的访问令牌。
+- [Office 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)：一个基于 ASP.NET 的加载项（Excel、Word 或 PowerPoint），它使用 MSAL.NET 库和授权代码流进行登录并获取 Microsoft Graph 数据的访问令牌。
+- [Outlook 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)：与上面的加载项一样，但 Office 应用程序为 Outlook。
+- [Office 加载项 Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)：一个基于 NodeJS 的加载项（Excel、Word 或 PowerPoint），它使用 msal.js 库和隐式流进行登录并获取 Microsoft Graph 数据的访问令牌。
 
 ## <a name="see-also"></a>另请参阅
 

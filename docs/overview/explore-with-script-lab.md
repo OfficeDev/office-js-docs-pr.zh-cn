@@ -1,16 +1,16 @@
 ---
 title: 使用 Script Lab 探索 Office JavaScript API
 description: 使用 Script Lab 探索 Office JS API 和原型功能。
-ms.date: 08/05/2021
+ms.date: 01/14/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 2a8d7f94eab26bc1cb831f95a30442e8e08afe70
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 75b4b5f1e30549628ba9327957e6d0b39c308da9
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765932"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074271"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用 Script Lab 探索 Office JavaScript API
 
@@ -39,7 +39,7 @@ Script Lab 提供许多功能，可帮助你探索 Office JavaScript API 和原�
 除了用于调用 Office JS API 的 JavaScript 或 TypeScript 代码之外，每个代码段还包含用于定义任务窗格内容的 HTML 标记和用于定义任务窗格外观的 CSS。 在为自己的加载项确定任务窗格设计原型时，可以自定义该 HTML 标记 和 CSS，对元素放置和样式设计进行试验。
 
 > [!TIP]
-> 若要在代码段中调用预览 API，需更新该代码段的库，令其使用 beta CDN (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) 和预览类型定义 `@types/office-js-preview`。 此外，仅当注册 [Office 预览体验计划](https://insider.office.com)后、运行 Office 预览体验计划版本时，才能访问某些预览 API。
+> 若要在代码段内调用预览 API，需要更新代码段的库，以使用 beta 内容交付网络 (CDN)(`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) 和预览类型定义`@types/office-js-preview`。 此外，仅当注册 [Office 预览体验计划](https://insider.office.com)后、运行 Office 预览体验计划版本时，才能访问某些预览 API。
 
 ### <a name="save-and-share-snippets"></a>保存和共享代码段
 

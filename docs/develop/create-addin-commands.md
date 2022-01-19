@@ -3,12 +3,12 @@ title: 在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 description: 在清单中，使用 VersionOverrides 定义用于 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
 ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fa9c26dffd9584fd83ce42058a4fef71bf1152e9
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: f12f95f3d45ee0e5b7bce0f0a3b484adcbdcd999
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514080"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073379"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 
@@ -31,11 +31,11 @@ ms.locfileid: "61514080"
 
 下图是对清单中的加载项命令元素的概述。
 
-![清单中的外接程序命令元素概述。 此处的顶部节点是包含子级 Hosts 和 Resources 的 VersionOverrides。 在"主机为主机"下，"DesktopFormFactor"下。 在 DesktopFormFactor 下是 FunctionFile 和 ExtensionPoint。 在 ExtensionPoint 下是 CustomTab 或 OfficeTab 和 Office 菜单。 在"CustomTab"或"Office"下，"分组"，"控件"，再"操作"。 在"Office"下是"控件"，然后单击"操作"。 在"资源 (VersionOverrides 的子级) 图像、Url、ShortStrings 和 LongStrings。](../images/version-overrides.png)
+![清单中的外接程序命令元素概述。 此处的顶部节点是包含子级 Hosts 和 Resources 的 VersionOverrides。 在"主机为主机"下，"DesktopFormFactor"下。 在 DesktopFormFactor 下是 FunctionFile 和 ExtensionPoint。 在 ExtensionPoint 下是 CustomTab 或 OfficeTab 和 Office 菜单。 在"CustomTab"或"Office Tab"下，"分组"再"控制"，然后单击"操作"。 在"Office"下是"控件"，然后单击"操作"。 在"resources (VersionOverrides"子) 为 Images、Url、ShortStrings 和 LongStrings。](../images/version-overrides.png)
 
 ## <a name="step-1-create-the-project"></a>步骤 1：创建项目
 
-我们建议你通过以下快速入门之一创建项目，例如Excel[任务窗格加载项](../quickstarts/excel-quickstart-jquery.md)。 Excel、Word 和 PowerPoint 的每个快速入门都会生成一个已包含加载项命令的项目 (按钮) 显示任务窗格。 在使用外接程序命令之前，请确保已阅读[Excel、Word](../design/add-in-commands.md)和 PowerPoint 外接程序命令。
+我们建议你通过以下快速入门之一创建项目，例如Excel[任务窗格加载项](../quickstarts/excel-quickstart-jquery.md)。 每个 Excel、Word 和 PowerPoint 快速启动都会生成一个已包含加载项命令的项目 (按钮) 显示任务窗格。 在使用外接程序命令之前，请确保已阅读[Excel、Word](../design/add-in-commands.md)和 PowerPoint 外接程序命令。
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>步骤 2：创建任务窗格外接程序
 
@@ -86,7 +86,7 @@ ms.locfileid: "61514080"
 |元素|说明|
 |:-----|:-----|
 |**说明** <br/> |可选。描述外接程序。此子级 **Description** 元素替代清单中父级部分中的旧 **Description** 元素。此 **Description** 元素的 **resid** 属性将设置为 **String** 元素的 **id**。**String** 元素包含 **Description** 的文本。 <br/> |
-|**Requirements** <br/> |可选。 指定外接程序要求的最低要求集和 Office.js 的版本。 此子级 **Requirements** 元素替代清单中父级部分中的 **Requirements** 元素。 有关详细信息，请参阅指定Office[和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
+|**Requirements** <br/> |可选。 指定外接程序要求的最低要求集和 Office.js 的版本。 此子级 **Requirements** 元素替代清单中父级部分中的 **Requirements** 元素。 有关详细信息，请参阅指定Office[应用程序和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
 |**Hosts** <br/> |必需。 指定应用程序Office集合。 子级 **Hosts** 元素替代清单中父级部分中的 **Hosts** 元素。 必须包含已设置为“Workbook”或“Document”的 **xsi:type** 属性 <br/> |
 |**Resources** <br/> |定义其他清单元素引用的资源集合（字符串、URL 和图像）。例如，**Description** 元素的值引用了 **Resources** 中的子元素。**Resources** 元素将在本文后续部分中的 [步骤 7：添加 Resources 元素](#step-7-add-the-resources-element)中进行介绍。 <br/> |
 
@@ -442,6 +442,6 @@ ms.locfileid: "61514080"
 ## <a name="see-also"></a>另请参阅
 
 - [Excel、PowerPoint 和 Word 的加载项命令](../design/add-in-commands.md)
-- [示例：Excel命令按钮创建加载项](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/excel)
-- [示例：使用命令按钮创建 Word 外接程序](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/word)
-- [示例：创建PowerPoint按钮的加载项](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/powerpoint)
+- [示例：创建Excel按钮的加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/excel)
+- [示例：使用命令按钮创建 Word 外接程序](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word)
+- [示例：创建PowerPoint按钮的加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/powerpoint)

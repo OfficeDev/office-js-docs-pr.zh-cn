@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: 有关如何在 VSTO 加载项与 Office 加载项之间共享代码的教程。
 title: 教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 ms.localizationpriority: high
-ms.openlocfilehash: 087d35a6de6618a238ec7c2a30331abcdfdd44f2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ddf1e22141cee516bcd7808fd37b789f6943e093
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149426"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073137"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 
@@ -55,12 +55,12 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>单元格分析器 VSTO 加载项
 
-本教程使用 [Office 加载项的 VSTO 加载项共享库](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP 解决方案。 **/start** 文件夹包含要迁移的 VSTO 加载项解决方案。 你的目标是在可能情况下，通过共享代码，将 VSTO 加载项迁移到新式 Office 加载项。
+本教程使用 [Office 加载项的 VSTO 加载项共享库](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) PnP 解决方案。 **/start** 文件夹包含要迁移的 VSTO 加载项解决方案。 你的目标是在可能情况下，通过共享代码，将 VSTO 加载项迁移到新式 Office 加载项。
 
 > [!NOTE]
 > 该示例使用 C#，但你可以将本教程中的方法应用于采用任何 .NET 语言编写的 VSTO 加载项。
 
-1. 将 [Office 加载项的 VSTO 加载项共享库](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) PnP 解决方案下载到计算机上的工作文件夹。
+1. 将 [Office 加载项的 VSTO 加载项共享库](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) PnP 解决方案下载到计算机上的工作文件夹。
 1. 启动 Visual Studio 2019 并打开 **/start/Cell-Analyzer.sln** 解决方案。
 1. 在“**调试**”菜单中，选择“**开始调试**”。
 1. 在“**解决方案资源管理器**”中，右键单击“**单元格分析器**”项目，然后选择“**属性**”。

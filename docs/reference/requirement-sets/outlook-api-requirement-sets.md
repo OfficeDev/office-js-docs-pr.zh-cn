@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API 要求集
 description: 了解有关 Outlook JavaScript API 要求集的详细信息。
-ms.date: 12/13/2021
+ms.date: 01/14/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 05f44eb07c9484447e1380a02e7047ab0d410a32
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 111cd8a7153b602e726209bfca84ca5c891f2302
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514129"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074327"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API 要求集
 
@@ -30,7 +30,7 @@ Outlook 外接程序通过在其清单中使用 Requirements 元素来声明所�
 在清单中设置最低要求集版本可控制外接程序会显示在哪个 Outlook 客户端中。如果客户端不支持最低要求集，则不会加载外接程序。例如，如果指定要求集版本 1.3，则意味着外接程序不会显示在任何不支持 1.3 及以上版本的 Outlook 客户端中。
 
 > [!NOTE]
-> 要在任何带编号的要求集中使用 API，应引用 CDN 上的 **生产** 库：https://appsforoffice.microsoft.com/lib/1/hosted/office.js)。
+> 若要在任何编号的要求集内使用 API，应引用 [ Office.js 内容分发网络（CDN）](https://appsforoffice.microsoft.com/lib/1/hosted/office.js)上的 **生产** 库。
 >
 > 要了解如何使用预览 API，请参阅本文稍后的[使用预览 API](#using-preview-apis) 部分。
 

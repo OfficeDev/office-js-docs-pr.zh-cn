@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项 API
 description: 了解如何引用 Outlook 加载项 API 并声明 Outlook 加载项中的权限。
-ms.date: 02/21/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a7346882a11b81321c65730390dc213d76879773
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5a44d389bb480ec17b73fe445c885c45aff768f7
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152439"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074292"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook 外接程序 API
 
@@ -16,13 +16,14 @@ ms.locfileid: "59152439"
 
 ## <a name="officejs-library"></a>Office.js 库
 
-若要与 Outlook 加载项 API 进行交互，需要在 Office.js 中使用 JavaScript API。 库的 CDN 为 `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`。 提交到 AppSource 的加载项必须按此 CDN 引用 Office.js，它们不能使用本地引用。
+若要与 Outlook 加载项 API 进行交互，需要在 Office.js 中使用 JavaScript API。 库的内容交付 (CDN) 为 `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` 。 提交到 AppSource 的加载项必须按此 CDN 引用 Office.js，它们不能使用本地引用。
 
 在实现加载项 UI 的网页（.html、.aspx 或 .php 文件）的 `<head>` 标记的 `<script>` 标记中引用 CDN。
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
+
 添加 API 时，Office.js 的 URL 将保持不变。仅当我们打破现有的 API 行为时，才会更改 URL 中的版本。
 
 > [!IMPORTANT]
