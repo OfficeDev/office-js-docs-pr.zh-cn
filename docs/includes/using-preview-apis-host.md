@@ -3,5 +3,5 @@
 >
 > 若要使用预览 API：
 >
-> - 您必须在上 **引用 beta** https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) CDN (。 TypeScript[编译和](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)定义类型定义IntelliSense位于 CDN[和 DefinitelyTyped 中](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts)。 可以使用 安装这些类型 `npm install --save-dev @types/office-js-preview` 。
-> - 你可能需要加入预览体验[Office](https://insider.office.com)计划，以访问最新的Office版本。
+> - 你必须从内容交付网络 Office 使用Office.js JavaScript API 库[的预览 (CDN) 。 ](https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) 用于 TypeScript 编译和 IntelliSense 的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)位于 CDN 和 [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) 中。 可以使用 `npm install --save-dev @types/office-js-preview` 来安装这些类型。
+> - 可能需要加入 [Office 预览体验计划](https://insider.office.com)才能访问更新的 Office 版本。
