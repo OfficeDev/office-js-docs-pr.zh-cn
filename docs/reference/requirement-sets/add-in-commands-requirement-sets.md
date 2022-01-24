@@ -1,15 +1,15 @@
 ---
 title: 加载项命令要求集
 description: 外接程序Office要求集概述。
-ms.date: 10/05/2021
+ms.date: 01/20/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: c290a739a59cd147d668acce8bea84adb1801104
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: b61c3dc98c4d8df83db543ad64d869a5f0143c64
+ms.sourcegitcommit: 63e9ef5e210e353700a3d27cfbd5ed838ce55d01
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138464"
+ms.lasthandoff: 01/24/2022
+ms.locfileid: "62177720"
 ---
 # <a name="add-in-commands-requirement-sets"></a>加载项命令要求集
 
@@ -17,24 +17,29 @@ ms.locfileid: "60138464"
 
 外接程序命令是 UI 元素，可扩展 Office UI，并在外接程序中启动操作。可以使用加载项命令在功能区上添加按钮，也可以向上下文菜单添加项。有关详细信息，请参阅 [Excel、Word 和 PowerPoint 的加载项命令](../../design/add-in-commands.md)和 [Outlook 的加载项命令](../../outlook/add-in-commands-for-outlook.md)。
 
-外接程序命令的初始版本没有相应的要求集 (即，没有 AddinCommands 1.0 要求集) 。 下表列出了支持Office发行版的客户端应用程序，以及这些应用程序的版本或版本号。  
+> [!NOTE]
+> Outlook外接程序支持外接程序命令，但在 Outlook 中启用外接程序命令的 API 和清单元素在[Mailbox 1.3](../objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md)要求集内。 AddinCommands 要求集不适用于Outlook。
+
+外接程序命令的初始版本没有相应的要求集 (即，没有 AddinCommands 1.0 要求集) 。 下表列出了支持Office版本的客户端应用程序，以及这些应用程序的版本或版本号。  
 
 | 发布   |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office 2021<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| 加载项命令（初始版本，无要求集） | 不适用 | *仅 Outlook 支持* 16.0.4678.1000 | 版本 1809（内部版本 10827.20150）或更高版本| 16.0.14326.20454 或更高版本 |版本 1603（内部版本 6769.0000）或更高版本 | 不适用 | 15.33 或更高版本| 2016 年 1 月 |
+| 加载项命令（初始版本，无要求集） | 不适用 | 不适用 | 版本 1809（内部版本 10827.20150）或更高版本| 16.0.14326.20454 或更高版本 |版本 1603（内部版本 6769.0000）或更高版本 | 不适用 | 15.33 或更高版本| 2016 年 1 月 |
 
 外接程序命令 **1.1** 要求集引入了使用文档自动打开 [任务窗格的功能](../../develop/automatically-open-a-task-pane-with-a-document.md)。
 
-加载项命令 **1.3** 要求集引入了清单标记，使加载项能够自定义自定义选项卡在 Office 功能区上的位置，并将内置 Office 功能区控件插入自定义控件组中。
+外接程序命令 **1.3** 要求集引入了清单标记，该标记使外接程序能够自定义自定义选项卡在 Office 功能区上的位置，并将内置 Office 功能区控件插入自定义控件组中。
 
 下表列出了外接程序命令要求集、Office要求集的客户端应用程序，以及外接程序应用程序Office版本号。
 
 |  要求集  |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） |  Windows 版 Office 2021<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.3  | 不适用 | 不适用 | 不适用 | 不适用 | 不支持 | 不适用 | 不支持 | 2020 年 11 月 |
-| AddinCommands 1.1  | 不适用 | *仅 Outlook 支持* 16.0.4678.1000  | 版本 1809（内部版本 10827.20150）或更高版本 | 16.0.14326.20454 或更高版本 | 版本 1705（内部版本 8121.1000）或更高版本 | 不适用 | 15.34 或更高版本\*| 2017 年 5 月 |
+| AddinCommands 1.1  | 不适用 | 不适用  | 版本 1809（内部版本 10827.20150）或更高版本&dagger; | 16.0.14326.20454 或更高版本&dagger; | 版本 1705（内部版本 8121.1000）或更高版本&dagger; | 不适用 | 15.34 或更高版本&dagger;\*| 2017 年 5 月 |
 
->\*针对版本 16.9 &ndash; 16.14（含），[Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) 方法将错误地返回 `false`，但这些版本 *支持* 需求集。
+\*针对版本 16.9 &ndash; 16.14（含），[Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) 方法将错误地返回 `false`，但这些版本 *支持* 需求集。
+
+&dagger;OneNote仅在 Office web 版 中受支持。
 
 > [!IMPORTANT]
 > AddinCommands 1.3 处于预览状态，仅在 PowerPoint web 版 *中提供*。 建议您仅在测试和开发环境中试用标记。 请勿在生产环境或业务关键文档中使用预览标记。
