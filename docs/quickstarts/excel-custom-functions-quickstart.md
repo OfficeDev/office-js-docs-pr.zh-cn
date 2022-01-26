@@ -1,15 +1,15 @@
 ---
-ms.date: 12/28/2021
+ms.date: 01/13/2022
 description: 在 Excel 中开发自定义函数快速入门指南。
 title: 自定义函数快速入门
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 2f4a2ed07c23c3ced19632b9dbfee2957f0f5ba0
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: 2f15be99499e42c0598d70ae91b937c6637c0149
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61648000"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222302"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -59,19 +59,15 @@ ms.locfileid: "61648000"
 npm run start:desktop
 ```
 
-> [!NOTE]
-> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run start` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
     
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
-若要在Excel 网页版中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
+若要在Excel 网页版中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。 将 "{url}" 替换为你拥有权限的 OneDrive 或 SharePoint 库上 Excel 文档的 URL。
 
-```command&nbsp;line
-npm run start:web
-```
+[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-> [!NOTE]
-> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run start` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 若要使用自定义函数加载项，请在 Excel 网页版中打开一个新工作簿。 在此工作簿中，完成以下步骤以旁加载你的加载项。
 

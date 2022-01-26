@@ -1,21 +1,21 @@
 ---
 title: 在 Office 加载项中使用 Office 对话框 API
-description: 了解在加载项中Office的基础知识。
-ms.date: 09/03/2021
+description: 了解在加载项中Office对话框的基础知识。
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: edf28450ae63a232912ae4344d808a4d0c26ed45
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: a105ff917816d24dd412be200fc84181610a09a6
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073351"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222169"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
 可以在 Office 加载项中使用 [Office 对话框 API](/javascript/api/office/office.ui) 打开对话框。 本文提供了有关如何在 Office 加载项中使用对话框 API 的指南。
 
 > [!NOTE]
-> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)。 对话框 API 当前受 Excel、PowerPoint 和 Word 支持。 Outlook邮箱要求集中包含的支持， &mdash; 请参阅 API 参考了解更多详细信息。
+> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](../reference/requirement-sets/dialog-api-requirement-sets.md)。 对话框 API 当前受 Excel、PowerPoint 和 Word 支持。 Outlook邮箱要求集中包含的支持，请参阅 API &mdash; 参考了解更多详细信息。
 
 对话框 API 的主要应用场景是为 Google、Facebook 或 Microsoft Graph 等资源启用身份验证。 有关详细信息，请在熟悉本文 *之后*，参阅 [使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
@@ -32,7 +32,7 @@ ms.locfileid: "62073351"
 
 ![Screenshot showing dialog with 3 sign-in options displayed in front of Word.](../images/auth-o-dialog-open.png)
 
-请注意，对话框总是在屏幕的中心打开。 用户可以移动并重设对话框的大小。 该窗口 *是非* 模式窗口 --用户可以继续与 Office 应用程序中的文档以及任务窗格中的页面（如果有）进行交互。
+请注意，对话框总是在屏幕的中心打开。 用户可以移动并重设对话框的大小。 该窗口 *是非* 模式窗口 -用户可以继续与 Office 应用程序中的文档以及任务窗格中的页面（如果有）进行交互。
 
 ## <a name="open-a-dialog-box-from-a-host-page"></a>从主机页面打开对话框
 
@@ -85,7 +85,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 > [!NOTE]
 >
-> - 为清楚起见，在此部分中，我们将消息称为以主机页为目标，但严格来说，消息将进入任务窗格 (中的 *JavaScript* 运行时或托管函数文件) [的运行时。](../reference/manifest/functionfile.md) 这种区别仅在跨域邮件的情况下十分明显。 有关详细信息，请参阅[向主机运行时间跨域消息传递](#cross-domain-messaging-to-the-host-runtime)。
+> - 为清楚起见，在此部分中，我们将消息称为面向主机页，但严格来说，消息将进入任务窗格 (中的 *JavaScript* 运行时或托管函数文件) 的运行时。 [](../reference/manifest/functionfile.md) 这种区别仅在跨域邮件的情况下十分明显。 有关详细信息，请参阅[向主机运行时间跨域消息传递](#cross-domain-messaging-to-the-host-runtime)。
 > - 除非 JavaScript API 库已加载到任务窗格中，否则Office无法与主机页通信。  (与使用 JavaScript API Office的任何页面一样，页面的脚本必须初始化外接程序。 有关详细信息，请参阅[Initialize your Office Add-in](initialize-add-in.md).) 
 
 对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) 函数向主机页发送字符串消息。 该字符串可以是单词、句子、XML blob、字符串化 JSON 或其他任何可以序列化为字符串或转换为字符串的字符串。 示例如下。
@@ -98,7 +98,7 @@ if (loginSuccess) {
 
 > [!IMPORTANT]
 > - 函数 `messageParent` 是对话框中 *唯* Office两个 JS API 之一。
-> - 可以在对话框中调用的其他 JS API 是 `Office.context.requirements.isSetSupported` 。 有关它的信息，请参阅指定Office[应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在对话框中，此 API 在一Outlook 2016购买中不受支持 (，即 MSI 版本) 。
+> - 可以在对话框中调用的其他 JS API 是 `Office.context.requirements.isSetSupported` 。 有关它的信息，请参阅指定Office[应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在对话框中，此 API 在一Outlook 2016购买中不受 (，即 MSI 版本) 。
 
 在下一个示例中，`googleProfile` 是用户 Google 配置文件的字符串化版本。
 
@@ -215,7 +215,7 @@ function processMessage(arg) {
 
 ### <a name="cross-domain-messaging-to-the-host-runtime"></a>到主机运行时的跨域消息传送
 
-对话框或父 JavaScript 运行时 (在任务窗格中或在托管函数文件) 的无 UI 运行时中，在对话框打开后，可能会导航离开外接程序的域。 如果发生以上任一情况，则调用 将失败，除非你的代码指定父运行时 `messageParent` 的域。 为此，将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到 的调用 `messageParent` 中。 此对象 `targetOrigin` 具有一个属性，该属性指定邮件应发送到的域。 如果未使用 参数，则Office假定目标与对话框当前托管的域相同。
+对话框或父 JavaScript 运行时 (在任务窗格中或托管函数文件) 的无 UI 运行时中，在对话框打开后，可能会导航离开外接程序的域。 如果发生以上任一情况，则调用 将失败，除非你的代码指定父运行时 `messageParent` 的域。 为此，将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到 的调用 `messageParent` 中。 此对象 `targetOrigin` 具有一个属性，该属性指定邮件应发送到的域。 如果未使用 参数，则Office假定目标与对话框当前托管的域相同。
 
 > [!NOTE]
 > 使用 `messageParent` 发送跨域邮件需要 Dialog [Origin 1.1 要求集](../reference/requirement-sets/dialog-origin-requirement-sets.md)。 在不支持要求集的早期版本Office参数将被忽略，因此，如果传递方法，此方法 `DialogMessageOptions` 的行为将不受影响。
@@ -236,7 +236,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 ```
 
 > [!TIP]
-> 在 `DialogMessageOptions` 2021 年中，参数已作为必需参数添加到方法 `messageParent` 中。 使用 方法发送跨域邮件的旧版加载项在更新为使用新参数之前不再有效。 在更新加载项之前，仅在 Office for *Windows* 上，用户和系统管理员可以使用注册表设置指定受信任的域 () ，使这些加载项继续工作 **：HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**。 为此，请创建一个扩展名文件，将其保存到Windows计算机，然后 `.reg` 双击它以运行该文件。 以下是此类文件的内容示例。
+> 在 `DialogMessageOptions` 2021 年中，参数已作为必需参数添加到方法 `messageParent` 中。 使用 方法发送跨域邮件的旧版加载项在更新为使用新参数之前不再有效。 在更新加载项之前，仅在 Office for *Windows* 上，用户和系统管理员可以使用注册表设置指定受信任的域 () ，以便这些加载项继续工作 **：HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**。 为此，请创建一个扩展名文件，将其保存到Windows计算机，然后 `.reg` 双击它以运行该文件。 以下是此类文件的内容示例。
 >
 > ```
 > Windows Registry Editor Version 5.00
@@ -334,11 +334,11 @@ function onRegisterMessageComplete(asyncResult) {
 > 在某些情况下 `messageChild` ，API（即 [DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md)要求集的一部分）可能不受支持。 有关父级到对话框消息传递的一些替代方法，在将邮件从其主机页传递到对话框 [的替代方法中进行了介绍](parent-to-dialog.md)。
 
 > [!IMPORTANT]
-> 外接程序清单的 部分中不能指定 [DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md) `<Requirements>` 要求集。 你将必须在运行时使用 [isSetSupported](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) 方法检查对 DialogApi 1.2 的支持。 对清单要求的支持正在开发中。
+> [DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md)要求集无法指定在外接程序清单的 **"** 要求"部分。 你将必须在运行时使用 方法检查对 DialogApi 1.2 的支持，如运行时检查方法和要求集支持 `isSetSupported` [中所述](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 对清单要求的支持正在开发中。
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>到对话框运行时的跨域消息传送
 
-对话框或父 JavaScript 运行时 (在任务窗格中或在托管函数文件) 的无 UI 运行时中，在对话框打开后，可能会导航离开外接程序的域。 如果发生上述任一情况，则调用 将失败，除非你的代码指定对话框 `messageChild` 运行时的域。 为此，将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到 的调用 `messageChild` 中。 此对象 `targetOrigin` 具有一个属性，该属性指定邮件应发送到的域。 如果未使用 参数，则Office假定目标与父运行时当前托管的域相同。 
+对话框或父 JavaScript 运行时 (在任务窗格中或托管函数文件) 的无 UI 运行时中，在对话框打开后，可能会导航离开外接程序的域。 如果发生上述任一情况，则调用 将失败，除非你的代码指定对话框 `messageChild` 运行时的域。 为此，将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到 的调用 `messageChild` 中。 此对象 `targetOrigin` 具有一个属性，该属性指定邮件应发送到的域。 如果未使用 参数，则Office假定目标与父运行时当前托管的域相同。 
 
 > [!NOTE]
 > 使用 `messageChild` 发送跨域邮件需要 Dialog [Origin 1.1 要求集](../reference/requirement-sets/dialog-origin-requirement-sets.md)。 在不支持要求集的早期版本Office参数将被忽略，因此，如果传递方法，此方法 `DialogMessageOptions` 的行为将不受影响。
@@ -355,7 +355,7 @@ dialog.messageChild(messageToDialog, { targetOrigin: "https://resource.contoso.c
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-由于托管对话框的 JavaScript 运行时无法访问清单的 部分，因此确定邮件来自的域是否受信任，因此必须使用 处理程序来确定这一 `<AppDomains>`  `DialogParentMessageReceived` 点。 传递给处理程序的对象包含当前作为属性托管在父级中的 `origin` 域。 下面是如何使用 属性的示例。
+由于托管对话框的 JavaScript 运行时无法访问清单的 **AppDomains** 部分，因此确定邮件来自的域是否受信任，因此必须使用处理程序来确定这一点。 `DialogParentMessageReceived` 传递给处理程序的对象包含当前作为属性托管在父级中的 `origin` 域。 下面是如何使用 属性的示例。
 
 ```javascript
 function onMessageFromParent(arg) {
@@ -371,7 +371,7 @@ function onMessageFromParent(arg) {
 例如，您的代码可以使用[Office.onReady 或 Office.initialize](initialize-add-in.md)方法将受信任域的数组存储在全局变量中。 然后 `arg.origin` ，可以在处理程序中针对该列表检查该属性。
 
 > [!TIP]
-> 在 `DialogMessageOptions` 2021 年中，参数已作为必需参数添加到方法 `messageChild` 中。 使用 方法发送跨域邮件的旧版加载项在更新为使用新参数之前不再有效。 在更新加载项之前，仅在 Office for *Windows* 上，用户和系统管理员可以使用注册表设置指定受信任的域 () ，使这些加载项继续工作 **：HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**。 为此，请创建一个扩展名文件，将其保存到Windows计算机，然后 `.reg` 双击它以运行该文件。 以下是此类文件的内容示例。
+> 在 `DialogMessageOptions` 2021 年中，参数已作为必需参数添加到方法 `messageChild` 中。 使用 方法发送跨域邮件的旧版加载项在更新为使用新参数之前不再有效。 在更新加载项之前，仅在 Office for *Windows* 上，用户和系统管理员可以使用注册表设置指定受信任的域 () ，以便这些加载项继续工作 **：HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**。 为此，请创建一个扩展名文件，将其保存到Windows计算机，然后 `.reg` 双击它以运行该文件。 以下是此类文件的内容示例。
 >
 > ```
 > Windows Registry Editor Version 5.00
@@ -430,7 +430,7 @@ function processMessage(arg) {
 
 ## <a name="samples"></a>示例
 
-以下所有示例都使用 `displayDialogAsync` 。 一些具有基于 NodeJS 的服务器，而其他服务器具有基于 ASP.NET/IIS 的服务器，但无论外接程序的服务器端如何实现，使用此方法的逻辑都是相同的。
+以下所有示例都使用 `displayDialogAsync` 。 一些服务器基于 NodeJS，其他服务器具有基于 ASP.NET/IIS 的服务器，但无论外接程序的服务器端如何实现，使用此方法的逻辑都是相同的。
 
 **基础知识：**
 

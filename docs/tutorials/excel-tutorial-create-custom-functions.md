@@ -1,15 +1,15 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流式传输 Web 数据的自定义函数。
-ms.date: 12/28/2021
+ms.date: 01/13/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8239cb52002dcf679df0ebd336c1afa17fdad693
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: b211369735e986ae4cf32d61e2a549e06ab083ed
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61647970"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222253"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -74,23 +74,9 @@ npm run start:desktop
 
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
-若要在浏览器中的 Excel 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。
+若要在浏览器中的 Excel 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。 将 "{url}" 替换为你拥有权限的 OneDrive 或 SharePoint 库上 Excel 文档的 URL。
 
-```command&nbsp;line
-npm run start:web
-```
-
-若要使用自定义函数加载项，请在 Excel 网页版中打开一个新工作簿。 在此工作簿中，完成以下步骤以旁加载你的加载项。
-
-1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。
-
-   ![Excel 网页版中插入功能区的屏幕截图，突出显示“我的加载项”按钮。](../images/excel-cf-online-register-add-in-1.png)
-
-1. 选择“管理我的加载项”，然后选择“上载我的加载项”。
-
-1. 选择“浏览...”，并导航到 Yeoman 生成器创建的项目的根目录。
-
-1. 依次选择文件“manifest.xml”，“打开”，然后选择“上载”。
+[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 ---
 

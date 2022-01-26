@@ -1,14 +1,14 @@
 ---
 title: 将内置控件Office集成到自定义控件组和选项卡中
 description: 了解如何在自定义命令组Office自定义命令组和自定义功能区上的选项卡Office按钮。
-ms.date: 02/25/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 078619a616a06610f12a0bebf36d6159eec1e0e2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 81765f470d95a43e597e06f976ad2bfa2a7b66c8
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149383"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222127"
 ---
 # <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>将内置控件Office集成到自定义控件组和选项卡中
 
@@ -24,14 +24,14 @@ ms.locfileid: "59149383"
 
 ## <a name="insert-a-built-in-control-group-into-a-custom-tab"></a>将内置控件组插入自定义选项卡
 
-若要将内置控件Office插入选项卡，请将[OfficeGroup](../reference/manifest/customtab.md#officegroup)元素添加为父元素中的子 `<CustomTab>` 元素。 `id`元素 的 属性 `<OfficeGroup>` 设置为内置组的 ID。 请参阅[查找控件和控件组的 ID。](#find-the-ids-of-controls-and-control-groups)
+若要将内置控件Office插入选项卡，请将 [OfficeGroup](../reference/manifest/customtab.md#officegroup)元素添加为 **父 CustomTab** 元素中的子元素。 `id` **OfficeGroup** 元素的 属性设置为内置组的 ID。 请参阅[查找控件和控件组的 ID。](#find-the-ids-of-controls-and-control-groups)
 
 以下标记示例将 Office Paragraph 控件组添加到自定义选项卡，并将它定位到自定义组之后。
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
-  <CustomTab id="TabCustom1">
-    <Group id="myCustomTab.group1">
+  <CustomTab id="Contoso.TabCustom1">
+    <Group id="Contoso.myCustomTab.group1">
        <!-- additional markup omitted -->
     </Group>
     <OfficeGroup id="Paragraph" />
@@ -42,21 +42,21 @@ ms.locfileid: "59149383"
 
 ## <a name="insert-a-built-in-control-into-a-custom-group"></a>将内置控件插入自定义组
 
-若要将内置控件Office自定义组中，请将[OfficeControl](../reference/manifest/group.md#officecontrol)元素添加为父元素中的子 `<Group>` 元素。 `id`元素的 `<OfficeControl>` 属性设置为内置控件的 ID。 请参阅[查找控件和控件组的 ID。](#find-the-ids-of-controls-and-control-groups)
+若要将内置控件Office自定义组中，请将 [OfficeControl](../reference/manifest/group.md#officecontrol)元素添加为父 **Group** 元素中的子元素。 `id` **OfficeControl** 元素的 属性设置为内置控件的 ID。 请参阅[查找控件和控件组的 ID。](#find-the-ids-of-controls-and-control-groups)
 
-以下标记示例将上标Office添加到自定义组，并将它定位到自定义按钮的正之后。
+以下标记示例将上标Office添加到自定义组，并将它定位到自定义按钮之后。
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
-  <CustomTab id="TabCustom1">
-    <Group id="myCustomTab.grp1">
+  <CustomTab id="Contoso.TabCustom2">
+    <Group id="Contoso.TabCustom2.group1">
         <Label resid="residCustomTabGroupLabel"/>
         <Icon>
             <bt:Image size="16" resid="blue-icon-16" />
             <bt:Image size="32" resid="blue-icon-32" />
             <bt:Image size="80" resid="blue-icon-80" />
         </Icon>
-        <Control xsi:type="Button" id="Button2">
+        <Control xsi:type="Button" id="Contoso.Button1">
             <!-- information on the control omitted -->
         </Control>
         <OfficeControl id="Superscript" />
@@ -76,4 +76,4 @@ ms.locfileid: "59149383"
 
 ## <a name="behavior-on-unsupported-platforms"></a>不受支持的平台上的行为
 
-如果加载项安装在不支持要求集[AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md)的平台上，则本文中介绍的标记将被忽略，并且内置 Office 控件/组将不会显示在自定义组/选项卡中。 若要防止加载项安装在不支持标记的平台上，请添加对清单部分的要求集 `<Requirements>` 的引用。 有关说明，请参阅 [在清单中设置 Requirements 元素](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest)。 或者，您可以将外接程序设计成在 **AddinCommands 1.3** 不受支持时提供备用体验，如在 [JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)代码中使用运行时检查中所述。 例如，如果您的外接程序包含假定内置按钮在自定义组中的说明，则您可能具有一个备用版本，该版本假定内置按钮仅包含在它们的常用位置。
+如果外接程序安装在不支持要求集[AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md)的平台上，则本文中描述的标记将被忽略，并且内置 Office 控件/组将不会显示在自定义组/选项卡中。 若要防止外接程序安装在不支持标记的平台上，请添加对清单的"要求"部分的要求集的引用。  有关说明，请参阅[指定Office哪些版本和平台可以托管你的外接程序](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 或者，将外接程序设计成在 **AddinCommands 1.3** 不受支持时具有体验，如设计 [备用体验中所述](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 例如，如果您的外接程序包含假定内置按钮在自定义组中的说明，您可以设计一个版本，假定内置按钮仅在其常用位置。

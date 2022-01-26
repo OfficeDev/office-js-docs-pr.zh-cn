@@ -1,21 +1,21 @@
 ---
 title: Office 加载项中的 Fluent UI React
 description: 了解如何在Fluent外接程序React UI Office UI。
-ms.date: 11/19/2021
+ms.date: 01/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bb53dfcfca644159a10d3b3c1d7bb6911561e58e
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 742c6e3816b2ed8e9150ee8d78c4fe065bef8f27
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153461"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222239"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>在Fluent外接程序React UI Office UI
 
-Fluent UI React是官方开源 JavaScript 前端框架，旨在构建无缝适用于各种 Microsoft 产品（包括 Office）的体验。 它提供了可靠、最新、可访问的基于反应的组件，这些组件可以使用 CSS-in-JS 进行高度定制。
+Fluent UI React是官方开放源代码 JavaScript 前端框架，旨在构建无缝融入各种 Microsoft 产品（包括 Office）的体验。 它提供了可靠、最新、可访问的基于反应的组件，这些组件可以使用 CSS-in-JS 进行高度定制。
 
 > [!NOTE]
-> 本文介绍了在加载项Fluent React UI Office的使用。但它还用于各种Microsoft 365应用和扩展。 有关详细信息，请参阅 ui Fluent [ui React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react)和 UI Web Fluent[存储库](https://github.com/microsoft/fluentui)。
+> 本文介绍如何在Fluent React外接程序的上下文中使用 Office UI。但它还用于各种Microsoft 365和扩展。 有关详细信息，请参阅 ui Fluent [ui React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react)和 UI Web Fluent[存储库](https://github.com/microsoft/fluentui)。
 
 本文介绍如何创建使用 React 构建的外接程序，Fluent UI React组件。
 
@@ -52,8 +52,7 @@ Fluent UI React是官方开源 JavaScript 前端框架，旨在构建无缝适�
 
 2. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
 
-    > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 你可能还必须以管理员身份运行命令提示符或终端才能进行更改。
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > 如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
@@ -62,21 +61,17 @@ Fluent UI React是官方开源 JavaScript 前端框架，旨在构建无缝适�
     > npm run dev-server
     > ```
 
-    - 若要在 Word 中测试加载项，请在项目的根目录中运行以下命令。 这将启动本地的 Web 服务器（如果尚未运行的话），并使用加载的加载项打开 Word。
+    - 若要在 Word 中测试加载项，请在项目的根目录中运行以下命令。 这将启动本地 Web 服务器，并打开 Word 并加载加载项。
 
         ```command&nbsp;line
         npm start
         ```
 
-    - 若要在浏览器版 Word 中测试加载项，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
+    - 若要在浏览器版 Word 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动。 将"{url}"替换为您拥有权限的 word 文档OneDrive或SharePoint库的 URL。
 
-        ```command&nbsp;line
-        npm run start:web
-        ```
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-        若要使用加载项，请在 Word 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
-
-3. 若要打开加载项任务窗格，在"开始 **"选项卡上** ，选择" **显示任务窗格"** 按钮。 请注意任务窗格底部的“默认文本”和 "**运行**" 按钮。 在此演练的其余部分中，你将重新定义此文本和按钮，方法为创建一个 React 组件，该组件使用来自 UI Fluent UX React。
+3. 若要打开加载项任务窗格，在"开始 **"选项卡上** ，选择" **显示任务窗格"** 按钮。 请注意任务窗格底部的“默认文本”和 "**运行**" 按钮。 在此演练的其余部分中，你将通过创建使用 UI Fluent 中的 UX 组件的 React 组件来重新定义此文本和React。
 
     ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane.](../images/word-task-pane-yo-default.png)
 
@@ -126,10 +121,10 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 此代码将执行以下操作：
 
 - 引用使用 `import * as React from 'react';` 的 React 库。
-- 引用Fluent UI `PrimaryButton` React、 (、) `IButtonProps` 创建 `Label` 的组件 `ButtonPrimaryExample` 。
+- 引用Fluent UI `PrimaryButton` React、 (、) `IButtonProps` 用于创建 `Label` 的组件 `ButtonPrimaryExample` 。
 - 声明新的 `ButtonPrimaryExample` 组件使用 `export class ButtonPrimaryExample extends React.Component`。
 - 声明 `insertText` 将处理按钮 `onClick` 事件的函数。
-- 定义 `render` 函数中 React 组件的 UI。 HTML 标记使用 UI 元素中的 和 Fluent组件React并指定当事件触发时 `Label` `PrimaryButton` `onClick` `insertText` ，函数将运行。
+- 定义 `render` 函数中 React 组件的 UI。 HTML 标记使用 UI 元素中的 和 Fluent 组件React并指定当事件触发时 `Label` `PrimaryButton` `onClick` `insertText` ，函数将运行。
 
 ## <a name="add-the-react-component-to-your-add-in"></a>将 React 组件添加到加载项
 

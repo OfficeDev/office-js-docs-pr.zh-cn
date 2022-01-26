@@ -4,12 +4,12 @@ description: 针对 Excel 内部版本的 Office 加载项要求集信息。
 ms.date: 01/14/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 6ddab3218b313fff244cdd83d8464e8953921f4b
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 615a615f965fdbcef38d14020e307de26a7e4401
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074334"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222218"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Excel JavaScript API 要求集
 
@@ -20,7 +20,7 @@ ms.locfileid: "62074334"
 Excel 加载项跨多个版本 Office 运行，包括 Windows 版 Office 2016 或更高版本、Office 网页版、Mac 版和 iPad 版。下表列出了 Excel 要求集、支持每个要求集的 Office 客户端应用程序，以及这些应用程序的内部版本或生成号。
 
 > [!NOTE]
-> 若要在任何带编号的要求集或 `ExcelApiOnline` 中使用 API，应引用 [Office.js 内容分发网络（CDN）](https://appsforoffice.microsoft.com/lib/1/hosted/office.js.)上的 **生产** 库。
+> 若要在任何带编号的要求集或 `ExcelApiOnline` 中使用 API，应引用 [Office.js 内容分发网络（CDN）](https://appsforoffice.microsoft.com/lib/1/hosted/office.js)上的 **生产** 库。
 >
 > 有关使用预览 API 的信息，请参阅 [Excel JavaScript 预览 API](excel-preview-apis.md) 一文。
 
