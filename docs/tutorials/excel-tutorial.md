@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 09/23/2021
+ms.date: 01/13/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 49145c2c5e6e48fe4f0256d6dbc661e9a826fee5
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: b4bbc96f03b19b0212f65f9f6688272545b4cab9
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990822"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222178"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -175,8 +175,7 @@ ms.locfileid: "59990822"
 
 1. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
 
-    > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > 如果在 Mac 上测试加载项，请先运行项目根目录中的以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
@@ -191,13 +190,9 @@ ms.locfileid: "59990822"
         npm start
         ```
 
-    - 若要在 Excel 网页版中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动（如果尚未运行）。
+    - 若要在 Excel 网页版中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动。 将 "{url}" 替换为你拥有权限的 OneDrive 或 SharePoint 库上 Excel 文档的 URL。
 
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        若要使用加载项，请在 Excel 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. 在 Excel 中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。
 
@@ -207,18 +202,18 @@ ms.locfileid: "59990822"
 
     ![Excel 的屏幕截图，显示带有“创建表格”按钮的加载项任务窗格，以及工作表中填充了“日期”、“商家”、“类别”和“金额”数据的表格。](../images/excel-tutorial-create-table-2.png)
 
-## <a name="filter-and-sort-a-table&quot;></a>筛选和排序表格
+## <a name="filter-and-sort-a-table"></a>筛选和排序表格
 
 本教程的这一步是，筛选并排序之前创建的表。
 
-### <a name=&quot;filter-the-table&quot;></a>筛选表格
+### <a name="filter-the-table"></a>筛选表格
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
 1. 查找`create-table`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
-    <button class=&quot;ms-Button&quot; id=&quot;filter-table&quot;>Filter Table</button><br/><br/>
+    <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
     ```
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
@@ -226,7 +221,7 @@ ms.locfileid: "59990822"
 1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `create-table` 按钮的行，并在行后添加虾类代码。
 
     ```js
-    document.getElementById(&quot;filter-table").onclick = filterTable;
+    document.getElementById("filter-table").onclick = filterTable;
     ```
 
 1. 将以下函数添加到文件结尾。
@@ -334,18 +329,18 @@ ms.locfileid: "59990822"
 
     ![Excel 的屏幕截图，其中“加载项”任务窗格中显示“筛选表”和“排序表”按钮。](../images/excel-tutorial-filter-and-sort-table-2.png)
 
-## <a name="create-a-chart&quot;></a>创建图表
+## <a name="create-a-chart"></a>创建图表
 
 本教程的这一步是，使用先前创建的表中的数据创建图表，再设置图表格式。
 
-### <a name=&quot;chart-a-chart-using-table-data&quot;></a>使用表格数据绘制图表
+### <a name="chart-a-chart-using-table-data"></a>使用表格数据绘制图表
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
 1. 查找`sort-table`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
-    <button class=&quot;ms-Button&quot; id=&quot;create-chart&quot;>Create Chart</button><br/><br/>
+    <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
     ```
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
@@ -353,7 +348,7 @@ ms.locfileid: "59990822"
 1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `sort-table` 按钮的行，并在行后添加虾类代码。
 
     ```js
-    document.getElementById(&quot;create-chart").onclick = createChart;
+    document.getElementById("create-chart").onclick = createChart;
     ```
 
 1. 将以下函数添加到文件结尾。
@@ -429,18 +424,18 @@ ms.locfileid: "59990822"
 
     ![Excel 的屏幕截图，在“加载项”任务窗格中显示“创建图表”按钮，工作表中显示杂货和教育费用数据的图表。](../images/excel-tutorial-create-chart-2.png)
 
-## <a name="freeze-a-table-header&quot;></a>冻结表格标题
+## <a name="freeze-a-table-header"></a>冻结表格标题
 
 如果表格很长，导致用户必须滚动才能看到一些行，那么标题行可能会在滚动时不可见。 本教程的这一步是，冻结以前创建的表格的标题行，让它在用户向下滚动工作表时依然可见。
 
-### <a name=&quot;freeze-the-tables-header-row&quot;></a>冻结表格的标题行
+### <a name="freeze-the-tables-header-row"></a>冻结表格的标题行
 
 1. 打开 **./src/taskpane/taskpane.html** 文件。
 
 1. 查找`create-chart`按钮的`<button>`元素，并在行后添加下列标记。
 
     ```html
-    <button class=&quot;ms-Button&quot; id=&quot;freeze-header&quot;>Freeze Header</button><br/><br/>
+    <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
     ```
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
@@ -448,7 +443,7 @@ ms.locfileid: "59990822"
 1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `create-chart` 按钮的行，并在行后添加虾类代码。
 
     ```js
-    document.getElementById(&quot;freeze-header").onclick = freezeHeader;
+    document.getElementById("freeze-header").onclick = freezeHeader;
     ```
 
 1. 将以下函数添加到文件结尾。
@@ -754,7 +749,7 @@ ms.locfileid: "59990822"
         npm run start:web
         ```
 
-        若要使用加载项，请在 Excel 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
+        要使用加载项，请在 Excel 网页版中打开文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载加载项。
 
 1. 在 Excel 的 **Home** 选项卡上，选择“**切换工作表保护**”按钮。 请注意，功能区上的大部分控件都处于禁用状态（灰显），如下面的屏幕截图所示。
 

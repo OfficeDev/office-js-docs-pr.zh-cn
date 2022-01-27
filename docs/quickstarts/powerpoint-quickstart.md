@@ -1,15 +1,15 @@
 ---
 title: 生成首个 PowerPoint 任务加载项
 description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务窗格加载项。
-ms.date: 08/04/2021
+ms.date: 01/13/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: b7a662848005ec23594825e465611489d9b15188
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c85205ac6e7adf5a265e6b68a185d1cacf7298a1
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152338"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222204"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -57,8 +57,7 @@ ms.locfileid: "59152338"
 
 2. 完成以下步骤，以启动本地 Web 服务器并旁加载你的加载项。
 
-    > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令之一后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > 如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
@@ -73,13 +72,9 @@ ms.locfileid: "59152338"
         npm start
         ```
 
-    - 若要在浏览器版 PowerPoint 中测试加载项，请在项目的根目录中运行以下命令。 如果你运行此命令，本地 Web 服务器将启动（如果尚未运行的话）。
+    - 若要在浏览器版 PowerPoint 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动。 将“{url}”替换为 OneDrive 或你有权访问的 SharePoint 库上的 PowerPoint 文档的 URL。
 
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        若要使用加载项，请在 PowerPoint 网页版中打开新的文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载你的加载项。
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 3. 在 PowerPoint 中，插入新的空白幻灯片，再依次选择“主页”选项卡和功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。
 
