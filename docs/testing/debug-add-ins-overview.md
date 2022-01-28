@@ -1,14 +1,14 @@
 ---
 title: 调试 Office 加载项
 description: 查找开发环境的 Office 加载项调试指南
-ms.date: 12/02/2021
+ms.date: 01/27/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aa98bda4de1786f58b730b2375e5586d2cb8b0ad
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 490d2d786bbd7e3169e7202dbbd70e81f9525e41
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61766096"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263056"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>调试 Office 加载项概述
 
@@ -78,3 +78,7 @@ ms.locfileid: "61766096"
 
 > [!NOTE]
 > 除可以确保所有加载项用户都将从 Linux 计算机通过 Office 网页版访问加载项的少数情况以外，我们不建议在 Linux 计算机上开发 Office 加载项。
+
+## <a name="debug-add-ins-in-staging-or-production"></a>在暂存或生产中调试加载项
+
+要调试已在暂存或生产中的加载项，请从加载项的 UI 附加调试程序。 要了解说明，请参阅 [从任务窗格中附加调试程序](attach-debugger-from-task-pane.md)。
