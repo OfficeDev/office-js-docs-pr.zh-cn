@@ -1,48 +1,33 @@
 ---
 title: 从任务窗格附加调试器
 description: 了解如何从任务窗格附加调试器
-ms.date: 07/08/2021
+ms.date: 01/27/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ea4aab7422edac4903da593c414c3086233d14bb
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 42f987dc4d19ad17140316d82634acf8695fd88d
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149222"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263070"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>从任务窗格附加调试器
 
-在 Windows 版 Office 2016（内部版本 77xx.xxxx 或更高版本）中，可以从任务窗格附加调试器。使用附加调试器功能，可直接将调试器附加到正确的 Internet Explorer 进程中。无论你使用的是 Yeoman 生成器、Visual Studio Code、Node.js、Angular 还是其他任何工具，都可以附加调试器。
+在某些环境中，调试器可以附加到Office运行的加载项上。 当您要调试已位于暂存或生产中的外接程序时，这非常有用。 如果您仍在开发和测试外接程序，请参阅调试外接程序Office[概述](debug-add-ins-overview.md)。
 
-若要启动“**附加调试器**”工具，选择任务窗格右上角来激活“**个性**”菜单，如下图红圈所示。
+本文中所述的技术只能在满足以下条件时使用。
 
-> [!NOTE]
-> - 目前，唯一受支持的调试器工具是[Visual Studio 2015](https://www.visualstudio.com/downloads/) Update [3](/previous-versions/mt752379(v=vs.140))或更高版本。 如果没有安装任何Visual Studio，选择"附加调试器"选项不会产生任何操作。
-> - 只能使用“附加调试器”工具调试客户端 JavaScript。 要调试服务器端代码（例如 Node.js 服务器），可选择多种方式。 有关如何使用 Visual Studio Code 进行调试的信息，请参阅 [VS Code 中的 Node.js 调试](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)。 如果没有使用 Visual Studio Code，请搜索“debug Node.js”或“debug {name-of-server}”。
+- 加载项在加载项的 Office 中Windows。
+- 计算机使用使用基于边缘Windows Webview Office WebView2 (Chromium的) 和 Office 版本。 若要确定你使用的浏览器，请参阅浏览器[Office外接程序](../concepts/browsers-used-by-office-web-add-ins.md)。
+
+> [!TIP]
+> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
+
+若要启动调试器，请选择任务窗格的右上角以激活"个性"菜单 (如下图所示的红色圆圈) 。
 
 !["附加调试器"菜单的屏幕截图。](../images/attach-debugger.png)
 
-选择“**附加调试器**”。此操作将启动“**Visual Studio 实时调试器**”对话框，如下图所示。
-
-!["JIT Visual Studio"对话框的屏幕截图。](../images/visual-studio-debugger.png)
-
-Visual Studio 中的“解决方案资源管理器”**** 会显示代码文件。   可以在要使用 Visual Studio 调试的代码行处设置断点。
-
-> [!NOTE]
-> 如果你没有看到“个性”菜单，则可以使用 Visual Studio 调试加载项。 确保任务窗格加载项在加载项Office，然后按照以下步骤操作。
->
-> 1. 在 Visual Studio 中，依次选择“**调试**” > “**附加到进程**”。
-> 2. 在“**可用进程**”中，选择“所有可用 `Iexplore.exe` 进程”或“所有可用 `MicrosoftEdge*.exe` 进程”（具体取决于 [加载项是使用 Internet Explorer 还是 Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md)），然后选择“附加”按钮。
-
-若要详细了解如何在 Visual Studio 中进行调试，请参阅以下内容：
-
-- 若要在 Visual Studio 中启动并使用 DOM 资源管理器，请参阅 [Building great-looking apps for Office using the new project templates](/archive/blogs/officeapps/building-great-looking-apps-for-office-using-the-new-project-templates)（使用新项目模板为 Office 生成漂亮应用）博客文章中[提示和技巧](/archive/blogs/officeapps/building-great-looking-apps-for-office-using-the-new-project-templates#tips_tricks)部分的提示 4。
-- 若要设置断点，请参阅[使用断点](/visualstudio/debugger/using-breakpoints?view=vs-2015&preserve-view=true)。
-- 若要使用 F12，请参阅[使用 F12 开发人员工具](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85))。
-- 要使用 Microsoft Edge 开发人员工具，请参阅 [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab)。
+选择“**附加调试器**”。 这将启动基于Microsoft Edge (Chromium的) 开发人员工具。 使用使用基于 web 的应用程序中的开发人员工具调试Microsoft Edge (Chromium[中所述) ](debug-add-ins-using-devtools-edge-chromium.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-- [在 Visual Studio 中调试 Office 加载项](../develop/debug-office-add-ins-in-visual-studio.md)
-- [发布 Office 外接程序](../publish/publish.md)
-- [适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展](debug-with-vs-extension.md)
+- [调试 Office 加载项概述](debug-add-ins-overview.md)

@@ -1,18 +1,18 @@
 ---
 title: Microsoft Office外接程序社区通话
 description: 每月Microsoft Office外接程序社区通话日程、日程安排和资源。
-ms.date: 01/14/2022
+ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b0be6e0fe2196cf0ff80970cd9035ed8e66b5e
-ms.sourcegitcommit: 015e0839c4acca0f4dc5ec5df08489314fb509ca
+ms.openlocfilehash: 94f86ef910d032069fe3e537ae5bf5e63bb4ffb0
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "62055056"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263000"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
-外接程序Microsoft Office通话是每月一次通话，你可以在这里了解有关新功能、开发实践以及有关创建外接程序Office其他信息。社区通话在每月的第二个星期三上午 8：00 PDT 进行。 可以从 下载日历邀请 [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) 。
+外接程序Microsoft Office通话是每月一次通话，您可以在其中了解有关新功能、开发实践以及有关创建外接程序Office其他信息。社区通话在每月的第二个星期三太平洋时间上午 8：00 进行。 可以从 下载日历邀请 https://aka.ms/officeaddinscommunitycall。
 
 ## <a name="agenda-for-february-9th-call"></a>2 月 9 日议程调用
 
@@ -22,6 +22,7 @@ ms.locfileid: "62055056"
 
 错过以前的社区通话？ 查看以下博客资源以跟进讨论！
 
+- [2022 年 1 月 12 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-january-12-2022/ba-p/3061097)
 - [2021 年 12 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-december-8-2021/ba-p/3032949)
 - [2021 年 11 月 10 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-november-10-2021/ba-p/2983146)
 - [2021 年 10 月 13 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-october-13-2021/ba-p/2867151)

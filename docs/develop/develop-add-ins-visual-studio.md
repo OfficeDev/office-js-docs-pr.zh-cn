@@ -1,21 +1,21 @@
 ---
 title: 使用 Visual Studio 开发 Office 加载项
 description: 如何使用 Visual Studio 开发 Office 加载项。
-ms.date: 07/08/2021
+ms.date: 01/26/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 169e0d553ba5fbaee506cd3745b95b4dde5ddbaa
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 26fd9d138dc05f7e0ca2961591b9d45b21a9dbe6
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148864"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263042"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>使用 Visual Studio 开发 Office 加载项
 
 本文介绍如何使用 Visual Studio 开发 Office 加载项。 如果你已创建加载项，则可以跳至[使用 Visual Studio 开发加载项](#develop-the-add-in-using-visual-studio)部分。
 
 > [!NOTE]
-> 作为使用 Visual Studio 的替代方法，你可以选择使用适用于 Office 加载项和 VS Code 的 Yeoman 生成器来创建 Office 加载项。 有关此选项的详细信息，请参阅[创建 Office 加载项](../develop/develop-overview.md)#creating-an-office-add-in）。
+> 作为使用 Visual Studio 的替代方法，你可以选择使用适用于 Office 加载项和 VS Code 的 Yeoman 生成器来创建 Office 加载项。 有关此选项的详细信息，请参阅[创建 Office 加载项](../develop/develop-overview.md#create-an-office-add-in)。
 
 ## <a name="create-the-add-in-project-using-visual-studio"></a>使用 Visual Studio 创建加载项项目
 
