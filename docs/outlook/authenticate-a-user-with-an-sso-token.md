@@ -1,14 +1,14 @@
 ---
 title: 使用单一登录令牌对用户进行身份验证
 description: 了解如何使用 Outlook 外接程序提供的单一登录令牌为服务实现 SSO。
-ms.date: 11/11/2021
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f920ce4465256004ab0a286feca8f889c38a4f3
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 5769c6bbd639fab1ce5399b3d7a414ae54d35269
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074285"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320282"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>使用加载项中的单一登录令牌Outlook用户
 
@@ -31,7 +31,7 @@ ms.locfileid: "62074285"
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>旁加载加载项时授予许可
 
-开发加载项时，必须提前同意。 有关详细信息，请参阅向 [加载项授予管理员同意](../develop/grant-admin-consent-to-an-add-in.md)。
+开发加载项时，必须提前同意。 有关详细信息，请参阅 [向加载项授予管理员同意](../develop/grant-admin-consent-to-an-add-in.md)。
 
 ## <a name="update-the-add-in-manifest"></a>更新加载项清单
 
@@ -43,18 +43,19 @@ ms.locfileid: "62074285"
 
 ## <a name="use-the-sso-token-at-the-back-end"></a>在后端使用 SSO 令牌
 
-大多数情况下，如果加载项没有将访问令牌传递到服务器端并在其中使用它，那么获取访问令牌的意义就不大。 若要详细了解服务器端可以和应该执行的操作，请参阅[添加服务器端代码](../develop/sso-in-office-add-ins.md#add-server-side-code)。
+大多数情况下，如果加载项没有将访问令牌传递到服务器端并在其中使用它，那么获取访问令牌的意义就不大。 若要详细了解服务器端可以和应该执行的操作，请参阅[添加服务器端代码](../develop/sso-in-office-add-ins.md#pass-the-access-token-to-server-side-code)。
 
 > [!IMPORTANT]
 > 若要将 SSO 令牌用作 *Outlook* 加载项中的标识，建议还 [使用 Exchange 标识令牌](authenticate-a-user-with-an-identity-token.md)作为备用标识。 加载项用户可能使用多个客户端，而有些客户端可能不支持提供 SSO 令牌。 通过将 Exchange 标识令牌用作备用令牌，就不用多次提示这些用户输入凭据了。 有关详细信息，请参阅[应用场景：在 Outlook 外接程序中对服务实现单一登录](implement-sso-in-outlook-add-in.md)。
 
 ## <a name="sso-for-event-based-activation"></a>用于基于事件的激活的 SSO
 
-如果外接程序使用基于事件的激活，则还需要执行其他步骤。 有关详细信息，请参阅使用基于事件的激活 (SSO) 启用Outlook加载项中的单一[登录。](use-sso-in-event-based-activation.md)
+如果外接程序使用基于事件的激活，则还需要执行其他步骤。 有关详细信息，请参阅使用基于事件的激活 (SSO) Outlook启用单一[登录。](use-sso-in-event-based-activation.md)
 
 ## <a name="see-also"></a>另请参阅
 
-- 有关使用 SSO Outlook访问 Microsoft Graph API 的加载项示例，请参阅 Outlook [Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
-- [SSO API 参考](../develop/sso-in-office-add-ins.md#sso-api-reference)
+- [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_)
+- 有关使用 SSO Outlook访问 Microsoft Graph API 的加载项示例，请参阅Outlook[加载项 SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
+- [SSO API 参考](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
 - [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)
-- [在使用基于事件的 () Outlook加载项中启用 SSO 单一登录](use-sso-in-event-based-activation.md)
+- [在使用基于事件的 () 加载项Outlook SSO 加载项启用单一登录](use-sso-in-event-based-activation.md)

@@ -1,21 +1,18 @@
 ---
-title: 在 Office 加载项中授权外部服务
-description: 获得对非 Microsoft 数据的授权，如 Google、Facebook、LinkedIn、SalesForce 和使用 OAuth 2.0、授权代码和隐式流的 GitHub。
-ms.date: 07/08/2021
+title: 使用非 Microsoft 标识提供程序授权
+description: 使用 OAuth 2.0、授权代码和隐式流获取对非 Microsoft 数据源的授权。
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b633fa5cf41603d77454c23390f40f4a33201b8a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c79dc84522ddabd69f5a713cde43ec4a195a6fd9
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149413"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320428"
 ---
-# <a name="authorize-external-services-in-your-office-add-in"></a>在 Office 加载项中授权外部服务
+# <a name="authorization-with-non-microsoft-identity-providers"></a>使用非 Microsoft 标识提供程序授权
 
-热门在线服务（包括 Microsoft 365、Google、Facebook、LinkedIn、SalesForce 和 GitHub）允许用户在其他应用程序中访问其帐户。 这样，便可在 Office 加载项中添加这些服务。
-
-> [!NOTE]
-> 本文的其余部分涉及的是访问非 Microsoft 服务。 有关访问 Microsoft Graph (包括 Microsoft 365) 的信息，请参阅使用[SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso)访问 Microsoft Graph 和 Access [to Microsoft Graph不含 SSO。](overview-authn-authz.md#access-to-microsoft-graph-without-sso)
+除了外接程序中可以使用的 Microsoft 标识平台，您还可以提供许多提供服务的常用标识。 它们向用户和应用程序（如Office外接程序）授予对其他应用程序中的用户帐户的访问权限。
 
 授权 Web 应用访问在线服务的行业标准框架为 **OAuth 2.0**。大多数情况下，无需了解框架的详细工作原理，即可在加载项中使用它。许多库都可用来化繁为简。
 
@@ -33,21 +30,19 @@ OAuth 流旨在保护应用程序的标识和授权。 授权代码流中提供�
 > [!NOTE]
 > 还可以视需要使用中间人服务，从而执行授权操作，并将访问令牌传递给加载项。 有关此方案的详细信息，请参阅本文稍后介绍的 **中间人服务** 部分。
 
-## <a name="use-the-implicit-flow-in-office-add-ins"></a>在加载项Office隐式流
+## <a name="use-the-implicit-flow-in-office-add-ins"></a>在加载项中Office流
 
 若要确定在线服务是否支持隐式流，最好是查阅服务文档。
 
 有关支持隐式流的库的信息，请参阅本文后面的 **库** 部分。
 
-## <a name="use-the-authorization-code-flow-in-office-add-ins"></a>使用加载项中的授权Office流
+## <a name="use-the-authorization-code-flow-in-office-add-ins"></a>在加载项中Office代码流
 
 许多库都可用于在各种语言和框架中实现授权代码流。若要详细了解其中某些库，请参阅本文稍后将介绍的 **库** 部分。
 
 ## <a name="libraries"></a>库
 
 库适用于许多语言和平台，既可用于隐式流，也可用于授权代码流。 一些库是通用的，而另一些库则为在线服务专用。
-
-**Google**：在 [GitHub.com/Google](https://github.com/google) 中搜索 "auth" 或你语言的相应名称。大部分的相关存储库被命名为 `google-auth-library-[name of language]`。
 
 **Facebook**：在 [Facebook 开发者](https://developers.facebook.com) 中搜索 "library" 或 "sdk"。
 
@@ -62,3 +57,7 @@ OAuth 流旨在保护应用程序的标识和授权。 授权代码流中提供�
 ## <a name="what-is-cors"></a>什么是 CORS？
 
 CORS 的全称是 [Cross Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS)，即“跨源资源共享”。若要了解如何在加载项内使用 CORS，请参阅[解决 Office 加载项中的同源策略限制](addressing-same-origin-policy-limitations.md)。
+
+## <a name="see-also"></a>另请参阅
+
+- [加载项中的身份验证和Office概述](overview-authn-authz.md)。

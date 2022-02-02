@@ -1,26 +1,29 @@
 ---
-title: 在不使用 SSO 的情况下对 Microsoft Graph 授权
-description: 了解如何在不使用 SSO 的情况下对 Microsoft Graph 授权
-ms.date: 07/08/2021
+title: 向 Microsoft Graph加载项Office授权
+description: 了解如何通过加载项Graph Microsoft Office Microsoft 许可
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f9555067b6fac9c55f07623daf5872cecf3c2ba
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 8b2d800daa9cbdf90303405690470b4c44fc3d5e
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074173"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320135"
 ---
-# <a name="authorize-to-microsoft-graph-without-sso"></a>在不使用 SSO 的情况下对 Microsoft Graph 授权
+# <a name="authorize-to-microsoft-graph-from-an-office-add-in"></a>向 Microsoft Graph加载项Office授权
 
-加载项可以通过从加载项获取 Microsoft Graph访问令牌，获取对 Microsoft Graph数据Azure Active Directory (Azure AD) 。 像在其他 Web 应用程序中一样使用授权代码流或隐式流，但有一个例外：Azure AD 不允许其登录页在 iframe 中打开。 当 Office 加载项在 *Office 网页版* 中运行时，任务窗格是一个 iFrame。 这意味着你需要在通过对话框 API 打开Azure AD对话框中打开登录Office屏幕。 这将影响你使用身份验证和授权帮助程序库的方式。 有关详细信息，请参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
+加载项可以通过从加载项获取 Microsoft Graph访问令牌，获取对 Microsoft Graph访问Microsoft 标识平台。 像在其他 Web 应用程序中一样使用授权代码流或隐式流，但有一个例外：Microsoft 标识平台 不允许其登录页在 iframe 中打开。 当 Office 加载项在 *Office 网页版* 中运行时，任务窗格是一个 iFrame。 这意味着你需要使用登录对话框 API 在对话框中打开Office页面。 这将影响你使用身份验证和授权帮助程序库的方式。 有关详细信息，请参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
-有关使用 Azure AD 编程身份验证的信息，请从[Microsoft 标识平台 (v2.0) overview](/azure/active-directory/develop/v2-overview)开始，其中您将找到该文档集的教程和指南，以及指向相关示例的链接。 另外可能需要调整示例中的代码以在 Office 对话框中运行, 以考虑该 Office 对话框在与任务窗格不同的进程中运行的情况。
+> [!NOTE]
+> 如果要实现 SSO 并计划访问 Microsoft Graph，请参阅使用 [SSO Graph Microsoft 授权](authorize-to-microsoft-graph.md)。
 
-代码获取 Microsoft Graph 的访问令牌后，它会将访问令牌从对话框传递至任务窗格，或者将令牌存储在数据库中并指示任务窗格令牌可用。  (有关详细信息，请参阅使用 Office 对话框[API](auth-with-office-dialog-api.md)进行身份验证。任务窗格中的 ) 代码从 Microsoft Graph 请求数据，并包括这些请求中的令牌。 有关调用 Microsoft Graph和 Microsoft Graph SDK 的信息，请参阅 Microsoft [Graph 文档](/graph/)。
+有关使用身份验证程序编程Microsoft 标识平台，请参阅Microsoft 标识平台[文档](/azure/active-directory/develop)。 你将在该文档集内找到教程和指南，以及指向相关示例的链接。 同样，您可能需要调整示例代码以在 Office 对话框中运行，以考虑在任务窗格的单独进程中运行的 Office 对话框。
+
+代码获取 Microsoft Graph 的访问令牌后，它会将访问令牌从对话框传递至任务窗格，或者将令牌存储在数据库中并指示任务窗格令牌可用。  (请参阅使用 Office 对话框 [API](auth-with-office-dialog-api.md) 进行身份验证了解详细信息。任务窗格中的 ) Code 从 Microsoft Graph 请求数据，并包括这些请求中的令牌。 有关调用 Microsoft Graph和 Microsoft Graph SDK Graph[文档](/graph/)。
 
 ## <a name="recommended-libraries-and-samples"></a>推荐的库和示例
 
-建议您在不使用 SSO 的情况下访问 Microsoft Graph以下库。
+我们建议您在访问 Microsoft Graph。
 
 - 对于使用服务器端并采用基于网络的框架（如 .NET Core 或 ASP.NET）的加载项，请使用 [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation)。
 - 对于使用基于 NodeJS 的服务器端的加载项, 请使用[Passport Azure AD](https://github.com/AzureAD/passport-azure-ad)。
@@ -28,7 +31,7 @@ ms.locfileid: "62074173"
 
 有关使用 Microsoft 标识平台 (以前称为 "AAD v. 2.0") 的推荐库的详细信息，请参阅[Microsoft 标识平台身份验证库](/azure/active-directory/develop/reference-v2-libraries)。
 
-以下示例获取 Microsoft Graph加载项Office数据。
+以下示例从加载项Graph Microsoft Office数据。
 
 - [Office 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Outlook 加载项 Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)

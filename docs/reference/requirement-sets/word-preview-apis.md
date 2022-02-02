@@ -1,15 +1,15 @@
 ---
 title: Word JavaScript 预览 API
 description: 有关即将推出的 Word JavaScript API 的详细信息。
-ms.date: 12/14/2021
+ms.date: 02/01/2022
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: c68a63dc57fbcaa8282343c3f3271778c43bc28d
-ms.sourcegitcommit: 9b6556563451f9907cb5da50cba757eb9960aa39
+ms.openlocfilehash: 4ef8bd9897689b354fa7c19ba0d7be7f8fb92be9
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2021
-ms.locfileid: "61565362"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320156"
 ---
 # <a name="word-javascript-preview-apis"></a>Word JavaScript 预览 API
 
@@ -20,7 +20,7 @@ ms.locfileid: "61565362"
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前处于预览中的 Word JavaScript API，但那些仅在 Word web 版 中[可用的](#web-only-api-list)API 除外。 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅[所有 Word JavaScript API。](/javascript/api/word?view=word-js-preview&preserve-view=true)
+下表列出了当前处于预览中的 Word JavaScript API，但仅在 [Word web 版。](#web-only-api-list) 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅 [所有 Word JavaScript API](/javascript/api/word?view=word-js-preview&preserve-view=true)。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -55,7 +55,7 @@ ms.locfileid: "61565362"
 ||[items](/javascript/api/word/word.customxmlpartscopedcollection#items)|获取此集合中已加载的子项。|
 |[Document](/javascript/api/word/word.document)|[customXmlParts](/javascript/api/word/word.document#customXmlParts)|获取文档中的自定义 XML 部件。|
 ||[deleteBookmark (name： string) ](/javascript/api/word/word.document#deleteBookmark_name_)|从文档中删除书签（如果存在）。|
-||[getBookmarkRange (名称：string) ](/javascript/api/word/word.document#getBookmarkRange_name_)|获取书签的范围。|
+||[getBookmarkRange (name： string) ](/javascript/api/word/word.document#getBookmarkRange_name_)|获取书签的范围。|
 ||[getBookmarkRangeOrNullObject (name： string) ](/javascript/api/word/word.document#getBookmarkRangeOrNullObject_name_)|获取书签的范围。|
 ||[ignorePunct](/javascript/api/word/word.document#ignorePunct)||
 ||[ignoreSpace](/javascript/api/word/word.document#ignoreSpace)||
@@ -69,7 +69,7 @@ ms.locfileid: "61565362"
 ||[设置](/javascript/api/word/word.document#settings)|获取文档中加载项的设置。|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|获取文档中的自定义 XML 部件。|
 ||[deleteBookmark (name： string) ](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|从文档中删除书签（如果存在）。|
-||[getBookmarkRange (名称：string) ](/javascript/api/word/word.documentcreated#getBookmarkRange_name_)|获取书签的范围。|
+||[getBookmarkRange (name： string) ](/javascript/api/word/word.documentcreated#getBookmarkRange_name_)|获取书签的范围。|
 ||[getBookmarkRangeOrNullObject (name： string) ](/javascript/api/word/word.documentcreated#getBookmarkRangeOrNullObject_name_)|获取书签的范围。|
 ||[设置](/javascript/api/word/word.documentcreated#settings)|获取文档中加载项的设置。|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageFormat)|获取内嵌图像的格式。|
@@ -95,7 +95,7 @@ ms.locfileid: "61565362"
 
 ## <a name="web-only-api-list"></a>仅 Web API 列表
 
-下表列出了 Word JavaScript API 当前仅在 Word web 版 中处于预览阶段。 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅[所有 Word JavaScript API。](/javascript/api/word?view=word-js-preview&preserve-view=true)
+下表列出了当前仅在 Word web 版 预览版中的 Word JavaScript API。 若要查看所有 Word JavaScript API 的完整列表， (预览 API 和以前发布的 API) ，请参阅 [所有 Word JavaScript API](/javascript/api/word?view=word-js-preview&preserve-view=true)。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -107,26 +107,36 @@ ms.locfileid: "61565362"
 |[Comment](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|获取批注作者的电子邮件。|
 ||[authorName](/javascript/api/word/word.comment#authorName)|获取批注作者的姓名。|
 ||[content](/javascript/api/word/word.comment#content)|获取或设置批注的内容为纯文本。|
+||[contentRange](/javascript/api/word/word.comment#contentRange)|获取或设置注释线程状态。|
 ||[creationDate](/javascript/api/word/word.comment#creationDate)|获取批注的创建日期。|
 ||[delete()](/javascript/api/word/word.comment#delete__)|删除注释及其回复。|
 ||[getRange()](/javascript/api/word/word.comment#getRange__)|获取批注位于主文档中的范围。|
 ||[id](/javascript/api/word/word.comment#id)|ID|
 ||[replies](/javascript/api/word/word.comment#replies)|获取与注释关联的 reply 对象的集合。|
 ||[reply (replyText： string) ](/javascript/api/word/word.comment#reply_replyText_)|将新回复添加到注释线程的末尾。|
-||[已解决](/javascript/api/word/word.comment#resolved)|获取或设置注释线程状态。|
+||[已解决](/javascript/api/word/word.comment#resolved)|获取或设置注释线程的状态。|
 |[CommentCollection](/javascript/api/word/word.commentcollection)|[getFirst()](/javascript/api/word/word.commentcollection#getFirst__)|获取集合中的第一个注释。|
-||[getFirstOrNullObject () ](/javascript/api/word/word.commentcollection#getFirstOrNullObject__)|获取集合中的第一个 comment 或 null 对象。|
+||[getFirstOrNullObject () ](/javascript/api/word/word.commentcollection#getFirstOrNullObject__)|获取集合中的第一个注释。|
 ||[getItem(index: number)](/javascript/api/word/word.commentcollection#getItem_index_)|按注释对象在集合中的索引获取该对象。|
 ||[items](/javascript/api/word/word.commentcollection#items)|获取此集合中已加载的子项。|
+|[CommentContentRange](/javascript/api/word/word.commentcontentrange)|[bold](/javascript/api/word/word.commentcontentrange#bold)|获取或设置一个值，该值指示批注文本是否加粗。|
+||[hyperlink](/javascript/api/word/word.commentcontentrange#hyperlink)|获取 range 内的第一个超链接，或在 range 内设置超链接。|
+||[insertText (text： string， insertLocation： Word.InsertLocation) ](/javascript/api/word/word.commentcontentrange#insertText_text__insertLocation_)|将文本插入到指定位置。|
+||[isEmpty](/javascript/api/word/word.commentcontentrange#isEmpty)|检查 range 长度是否为零。|
+||[italic](/javascript/api/word/word.commentcontentrange#italic)|获取或设置一个值，该值指示批注文本是否为 italicized。|
+||[strikeThrough](/javascript/api/word/word.commentcontentrange#strikeThrough)|获取或设置一个值，该值指示批注文本是否有删除线。|
+||[text](/javascript/api/word/word.commentcontentrange#text)|获取批注区域的文本。|
+||[underline](/javascript/api/word/word.commentcontentrange#underline)|获取或设置一个值，该值指示批注文本的下划线类型。|
 |[CommentReply](/javascript/api/word/word.commentreply)|[authorEmail](/javascript/api/word/word.commentreply#authorEmail)|获取批注回复作者的电子邮件。|
 ||[authorName](/javascript/api/word/word.commentreply#authorName)|获取批注回复作者的姓名。|
 ||[content](/javascript/api/word/word.commentreply#content)|获取或设置批注回复的内容。|
+||[contentRange](/javascript/api/word/word.commentreply#contentRange)|获取或设置 commentReply 的内容范围。|
 ||[creationDate](/javascript/api/word/word.commentreply#creationDate)|获取批注回复的创建日期。|
 ||[delete()](/javascript/api/word/word.commentreply#delete__)|删除批注回复。|
 ||[id](/javascript/api/word/word.commentreply#id)|ID|
 ||[parentComment](/javascript/api/word/word.commentreply#parentComment)|获取此回复的父批注。|
 |[CommentReplyCollection](/javascript/api/word/word.commentreplycollection)|[getFirst()](/javascript/api/word/word.commentreplycollection#getFirst__)|获取集合中的第一个批注回复。|
-||[getFirstOrNullObject () ](/javascript/api/word/word.commentreplycollection#getFirstOrNullObject__)|获取集合中第一个批注答复或 null 对象。|
+||[getFirstOrNullObject () ](/javascript/api/word/word.commentreplycollection#getFirstOrNullObject__)|获取集合中的第一个批注回复。|
 ||[getItem(index: number)](/javascript/api/word/word.commentreplycollection#getItem_index_)|按注释答复对象在集合中的索引获取该对象。|
 ||[items](/javascript/api/word/word.commentreplycollection#items)|获取此集合中已加载的子项。|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[endnotes](/javascript/api/word/word.contentcontrol#endnotes)|获取 contentcontrol 中的尾注集合。|

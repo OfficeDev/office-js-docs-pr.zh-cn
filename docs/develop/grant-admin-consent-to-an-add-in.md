@@ -1,15 +1,29 @@
 ---
 title: 同意管理员访问加载项
 description: 了解如何向外接程序授予管理员同意
-ms.date: 04/10/2018
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8867cd1f70d8a8bfa67e3274861fdd0e92e5431a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2c3a82db390ed28c1eb8194a78f2c9fa787aeede
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149345"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320128"
 ---
 # <a name="grant-administrator-consent-to-the-add-in"></a>同意管理员访问加载项
 
-[!INCLUDE[](../includes/grant-admin-consent-to-an-add-in-include.md)]
+> [!NOTE]
+> 仅在开发加载项时，才需要执行此过程。 将生产加载项部署到 AppSource 或 Microsoft 365 管理中心 时，用户将单独信任它，或者管理员将在安装时同意组织。
+
+在注册 *加载项* 后 [执行此过程](../develop/register-sso-add-in-aad-v2.md)。
+
+1. 浏览到 [Azure 门户 - 应用注册](https://go.microsoft.com/fwlink/?linkid=2083908) 页面以查看应用注册。
+
+1. 使用管理员 ***凭据*** 登录您的Microsoft 365租户。 例如，MyName@contoso.onmicrosoft.com。
+
+1. Select the app with 显示名称 **$ADD-IN-NAME$**.
+
+1. On the **$ADD-IN-NAME$** page， select **API permissions** then， under the **Configured permissions** section， choose **Grant admin consent for [tenant name]**. 对于 **出现的** 确认，选择"是"。
+
+> [!NOTE]
+> 如果使用的是开发人员帐户，建议采用Microsoft 365[最佳做法](https://developer.microsoft.com/microsoft-365/dev-program)。 但是，如果您愿意，可以旁加载开发中的 SSO 外接程序，并提示用户提供同意表单。 有关详细信息，请参阅旁[加载和Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)[旁加载Office web 版](../testing/sideload-office-add-ins-for-testing.md)。
