@@ -3,13 +3,8 @@ title: 保留加载项状态和设置
 description: 了解如何将数据保留Office浏览器控件的无状态环境中运行的外接程序 Web 应用程序中。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2944eb1f98f1654d1a67be91c532be600f62a0ca
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320226"
 ---
+
 # <a name="persist-add-in-state-and-settings"></a>保留加载项状态和设置
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
@@ -40,7 +35,7 @@ JavaScript API Office提供了 设置、[RoamingSettings](/javascript/api/outloo
 ## <a name="settings-data-is-managed-in-memory-at-runtime"></a>设置数据在运行时托管在内存中
 
 > [!NOTE]
-> 下面两部分是在 Office 常见 JavaScript API 上下文中介绍的设置。 特定于应用程序的应用程序Excel JavaScript API 还提供对自定义设置的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel SettingCollection](/javascript/api/excel/excel.settingcollection)。
+> 下面两部分是在 Office 常见 JavaScript API 上下文中介绍的设置。 JavaScript API Excel应用程序特定的应用程序还提供对自定义设置的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel SettingCollection](/javascript/api/excel/excel.settingcollection)。
 
 `Settings``CustomProperties``RoamingSettings`在内部，使用 、 或 对象访问的属性包中数据存储为序列化的 JavaScript 对象表示法 (JSON) 对象，其中包含名称/值对。 每个 (`string`键) 的名称必须为 ，并且存储的值可以是 JavaScript`string``number`、、 `date``object`或 ，但不能 **是函数**。
 
@@ -63,13 +58,13 @@ JavaScript API Office提供了 设置、[RoamingSettings](/javascript/api/outloo
 
 要保留 Word、Excel 或 PowerPoint 的内容或任务窗格加载项的状态或自定义设置，可使用 [Settings](/javascript/api/office/office.settings) 对象及其方法。 使用 对象的方法 `Settings` 创建的属性包仅可用于创建对象的内容或任务窗格加载项的实例，并且只能从保存它的文档使用。
 
-该对象 `Settings` 将自动作为 [Document](/javascript/api/office/office.document) 对象的一部分加载，并且可在任务窗格或内容外接程序激活时使用。 `Document`实例化对象后，可以使用`Settings`对象的 [settings](/javascript/api/office/office.document#settings) 属性访问`Document`该对象。 在会话的`Settings.get``Settings.set``Settings.remove`生命周期中，只能使用 、 和 方法读取、写入或删除属性包的内存副本中的保留设置和加载项状态。
+该对象 `Settings` 将自动作为 [Document](/javascript/api/office/office.document) 对象的一部分加载，并且可在任务窗格或内容外接程序激活时使用。 `Document`实例化对象后，可以使用`Settings`对象的 [settings](/javascript/api/office/office.document#office-office-document-settings-member) 属性访问`Document`该对象。 在会话的`Settings.get``Settings.set``Settings.remove`生命周期中，只能使用 、 和 方法读取、写入或删除属性包的内存副本中的保留设置和加载项状态。
 
-由于 set 和 remove 方法仅针对设置属性包的内存副本，若要将新的或更改的设置保存回加载项关联的文档，必须调用 [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_) 方法。
+由于 set 和 remove 方法仅针对设置属性包的内存副本，若要将新的或更改的设置保存回加载项关联的文档，必须调用 [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) 方法。
 
 ### <a name="creating-or-updating-a-setting-value"></a>创建或更新设置值
 
-以下代码示例演示如何使用 [Settings.set](/javascript/api/office/office.settings#set_name__value_) 方法创建名为 `'themeColor'` 且值为 `'green'` 的设置。set 方法的第一个参数是要设置或创建的设置的 _name_ (Id)（区分大小写）。第二个参数是设置的 _value_。
+以下代码示例演示如何使用 [Settings.set](/javascript/api/office/office.settings#office-office-settings-set-member(1)) 方法创建名为 `'themeColor'` 且值为 `'green'` 的设置。set 方法的第一个参数是要设置或创建的设置的 _name_ (Id)（区分大小写）。第二个参数是设置的 _value_。
 
 ```js
 Office.context.document.settings.set('themeColor', 'green');
@@ -79,7 +74,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ### <a name="getting-the-value-of-a-setting"></a>获取设置的值
 
-下面的示例演示如何使用 [Settings.get](/javascript/api/office/office.settings#get_name_) 方法获取名为"themeColor"的设置值。 该方法的唯一参数 `get` 是设置 _的名称（区分_ 大小写）。
+下面的示例演示如何使用 [Settings.get](/javascript/api/office/office.settings#office-office-settings-get-member(1)) 方法获取名为"themeColor"的设置值。 该方法的唯一参数 `get` 是设置 _的名称（区分_ 大小写）。
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
@@ -94,7 +89,7 @@ function write(message){
 
 ### <a name="removing-a-setting"></a>删除设置
 
-下面的示例演示如何使用 [Settings.remove](/javascript/api/office/office.settings#remove_name_) 方法删除名为"themeColor"的设置。 该方法的唯一参数 `remove` 是设置 _的名称（区分_ 大小写）。
+下面的示例演示如何使用 [Settings.remove](/javascript/api/office/office.settings#office-office-settings-remove-member(1)) 方法删除名为"themeColor"的设置。 该方法的唯一参数 `remove` 是设置 _的名称（区分_ 大小写）。
 
 ```js
 Office.context.document.settings.remove('themeColor');
@@ -104,7 +99,7 @@ Office.context.document.settings.remove('themeColor');
 
 ### <a name="saving-your-settings"></a>保存设置
 
-若要保存当前会话中加载项对设置属性包内存副本所做的任意添加、更改或删除操作，必须调用 [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_) 方法将它们存储在文档中。 方法的唯一参数 `saveAsync` 是 _callback_，它是具有单个参数的回调函数。
+若要保存当前会话中加载项对设置属性包内存副本所做的任意添加、更改或删除操作，必须调用 [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) 方法将它们存储在文档中。 方法的唯一参数 `saveAsync` 是 _callback_，它是具有单个参数的回调函数。
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -127,7 +122,7 @@ function write(message){
 > [!NOTE]
 > 此部分是在 Word 中支持的 Office 常见 JavaScript API 上下文中介绍的自定义 XML 部分。 特定于应用程序的应用程序Excel JavaScript API 还提供对自定义 XML 部件的访问权限。 Excel API 和编程模式有点不一样。 有关详细信息，请参阅 [Excel CustomXmlPart](/javascript/api/excel/excel.customxmlpart)。
 
-当需要存储的信息超过文档文档大小限制或具有结构化字符时设置附加存储选项。 可以在 Word 的任务窗格加载项中暂留自定义 XML 标记（对于 Excel，但请参阅本节顶部的注释）。 在 Word 中，可以使用 [CustomXmlPart](/javascript/api/office/office.customxmlpart) 对象及其方法（同样，请参阅上面的 Excel 注释）。 以下代码将创建自定义 XML 部件，并在页面的 divs 中显示其 ID 及内容。 请注意，XML 字符串中必须有一个 `xmlns` 属性。
+当需要存储的信息超过文档文档大小限制或具有结构化字符设置存在附加存储选项。 可以在 Word 的任务窗格加载项中暂留自定义 XML 标记（对于 Excel，但请参阅本节顶部的注释）。 在 Word 中，可以使用 [CustomXmlPart](/javascript/api/office/office.customxmlpart) 对象及其方法（同样，请参阅上面的 Excel 注释）。 以下代码将创建自定义 XML 部件，并在页面的 divs 中显示其 ID 及内容。 请注意，XML 字符串中必须有一个 `xmlns` 属性。
 
 ```js
 function createCustomXmlPart() {
@@ -145,7 +140,7 @@ function createCustomXmlPart() {
 }
 ```
 
-若要检索自定义 XML 部分，请使用 [getByIdAsync](/javascript/api/office/office.customxmlparts#getByIdAsync_id__options__callback_) 方法，但 ID 是在创建 XML 部分时生成的 GUID，因此编码时无法知道 ID 是什么。 因此，最好是在创建 XML 部分时，立即将 XML 部分的 ID 存储为设置，并为它提供容易记住的密钥。 下面的方法展示了如何执行此操作。  (有关使用自定义设置的详细信息和最佳做法，请参阅本文的前面) 
+若要检索自定义 XML 部分，请使用 [getByIdAsync](/javascript/api/office/office.customxmlparts#office-office-customxmlparts-getbyidasync-member(1)) 方法，但 ID 是在创建 XML 部分时生成的 GUID，因此编码时无法知道 ID 是什么。 因此，最好是在创建 XML 部分时，立即将 XML 部分的 ID 存储为设置，并为它提供容易记住的密钥。 下面的方法展示了如何执行此操作。  (有关使用自定义设置的详细信息和最佳做法，请参阅本文的前面) 
 
  ```js
 function createCustomXmlPartAndStoreId() {

@@ -1,15 +1,10 @@
 ---
 title: 使用 Excel JavaScript API 调用内置 Excel 工作表函数
-description: 了解如何使用 JavaScript API Excel和 JavaScript API 等Excel `VLOOKUP` `SUM` 内置函数。
+description: 了解如何在 JavaScript API 等Excel`VLOOKUP`调用`SUM`内置函数，Excel JavaScript API。
 ms.date: 12/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 179ede5fe26c0b34e13bcab8b37cae7177d35c22
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152273"
 ---
+
 # <a name="call-built-in-excel-worksheet-functions"></a>调用内置 Excel 工作表函数
 
 本文介绍了如何使用 Excel JavaScript API 调用内置 Excel 工作表函数（如 `VLOOKUP` 和 `SUM`）。 其中还收录了可以使用 Excel JavaScript API 调用的内置 Excel 工作表函数的完整列表。
@@ -19,7 +14,7 @@ ms.locfileid: "59152273"
 
 ## <a name="calling-a-worksheet-function"></a>创建工作表函数
 
-下面的代码片段展示了如何调用工作表函数，其中 `sampleFunction()` 是占位符，应将它替换为要调用的函数名称和函数需要使用的输入参数。 `value`工作表函数返回的对象的属性包含 `FunctionResult` 指定函数的结果。 如以下示例所示，您 `load` `value` 必须先使用 对象的 属性 `FunctionResult` ，然后才能读取该对象。 在此示例中，函数结果被直接写入控制台。
+下面的代码片段展示了如何调用工作表函数，其中 `sampleFunction()` 是占位符，应将它替换为要调用的函数名称和函数需要使用的输入参数。 工作表 `value` 函数 `FunctionResult` 返回的对象的属性包含指定函数的结果。 如以下示例所示，您`load``value`必须先使用 对象的 属性`FunctionResult`，然后才能读取该对象。 在此示例中，函数结果被直接写入控制台。
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();
@@ -37,7 +32,7 @@ return context.sync()
 
 下图展示了 Excel 工作表中的表格，其中包含三个月内各种工具的销售数据。 表格中的每个数字均表示具体工具在特定月份中的销售件数。 接下来的两个示例展示了如何向此类数据应用内置工作表函数。
 
-![在 11 月、12 月和 1 月Excel（一月、六月、六月）的一系列销售数据的屏幕截图。](../images/worksheet-functions-chaining-results.jpg)
+![在 11 月、12 月和 1 月Excel（一月、六月）中销售数据的屏幕截图。](../images/worksheet-functions-chaining-results.jpg)
 
 ## <a name="example-1-single-function"></a>示例 1：单函数
 
@@ -447,4 +442,4 @@ Excel.run(function (context) {
 
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [Functions 类 (JavaScript API for Excel) ](/javascript/api/excel/excel.functions)
-- [工作簿函数对象 (JavaScript API for Excel) ](/javascript/api/excel/excel.workbook#functions)
+- [工作簿函数对象 (JavaScript API for Excel) ](/javascript/api/excel/excel.workbook#excel-excel-workbook-functions-member)

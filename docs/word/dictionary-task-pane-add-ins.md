@@ -3,13 +3,9 @@ title: 创建字典任务窗格加载项
 description: 了解如何创建字典任务窗格外接程序
 ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f340afbc372d37f3d82c55583906e4212e01da0a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152364"
 ---
+
+
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
 
@@ -23,7 +19,7 @@ ms.locfileid: "59152364"
 
 ![显示定义的字典应用。](../images/dictionary-agave-01.jpg)
 
-由你决定是单击字典外接程序的 HTML  UI 中的"查看更多"链接在任务窗格中显示更多信息，还是打开单独的浏览器窗口来显示所选单词或短语的完整网页。
+由你决定是单击字典外接程序的 HTML UI  中的"查看更多"链接在任务窗格中显示更多信息，还是打开单独的浏览器窗口来显示所选单词或短语的完整网页。
 图 2 显示“定义”上下文菜单命令，允许用户快速启动已安装的字典。 图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
 
 *图 2.定义上下文菜单中的命令*
@@ -54,38 +50,38 @@ ms.locfileid: "59152364"
     
 以下各节提供了有关如何创建这些组件的示例。
 
-## <a name="creating-a-dictionary-xml-web-service&quot;></a>创建字典 XML Web 服务
+## <a name="creating-a-dictionary-xml-web-service"></a>创建字典 XML Web 服务
 
 
 XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML 架构的 XML 返回。以下两节介绍了 OfficeDefinitions XML 架构，并提供有关如何对返回该 XML 格式查询的 XML Web 服务编码的示例。
 
 
-### <a name=&quot;officedefinitions-xml-schema&quot;></a>OfficeDefinitions XML 架构
+### <a name="officedefinitions-xml-schema"></a>OfficeDefinitions XML 架构
 
 以下代码显示用于 OfficeDefinitions XML 架构的 XSD。
 
 
 ```XML
-<?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema
-  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-  xmlns:xs=&quot;https://www.w3.org/2001/XMLSchema&quot;
-  targetNamespace=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;
-  xmlns=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;>
-  <xs:element name=&quot;Result&quot;>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xs="https://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions"
+  xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
+  <xs:element name="Result">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name=&quot;SeeMoreURL&quot; type=&quot;xs:anyURI&quot;/>
-        <xs:element name=&quot;Definitions&quot; type=&quot;DefinitionListType&quot;/>
+        <xs:element name="SeeMoreURL" type="xs:anyURI"/>
+        <xs:element name="Definitions" type="DefinitionListType"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:complexType name=&quot;DefinitionListType&quot;>
+  <xs:complexType name="DefinitionListType">
     <xs:sequence>
-      <xs:element name=&quot;Definition&quot; maxOccurs=&quot;3&quot;>
+      <xs:element name="Definition" maxOccurs="3">
         <xs:simpleType>
-          <xs:restriction base=&quot;xs:normalizedString&quot;>
-            <xs:maxLength value=&quot;400&quot;/>
+          <xs:restriction base="xs:normalizedString">
+            <xs:maxLength value="400"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -94,13 +90,13 @@ XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML
 </xs:schema>
 ```
 
-返回的符合 OfficeDefinitions 架构的 XML 包含一个根元素，其中包含一个从零到三个子元素的元素，每个子元素包含长度不超过 `Result` `Definitions` `Definition` 400 个字符的定义。 此外，必须在 元素中提供字典网站上完整页面的 `SeeMoreURL` URL。 以下示例演示返回的符合 OfficeDefinitions 架构的 XML 的结构。
+返回的符合 OfficeDefinitions `Result` `Definitions` `Definition` 架构的 XML 包含一个根元素，其中包含一个从零到三个子元素的元素，每个子元素包含长度不超过 400 个字符的定义。 此外，必须在 元素中提供字典网站上完整 `SeeMoreURL` 页面的 URL。 以下示例演示返回的符合 OfficeDefinitions 架构的 XML 的结构。
 
 ```XML
-<?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?>
-<Result xmlns=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;>
-  <SeeMoreURL xmlns=&quot;&quot;>www.bing.com/dictionary/search?q=example</SeeMoreURL>
-  <Definitions xmlns=&quot;&quot;>
+<?xml version="1.0" encoding="utf-8"?>
+<Result xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
+  <SeeMoreURL xmlns="">www.bing.com/dictionary/search?q=example</SeeMoreURL>
+  <Definitions xmlns="">
     <Definition>Definition1</Definition>
     <Definition>Definition2</Definition>
     <Definition>Definition3</Definition>
@@ -110,7 +106,7 @@ XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML
 ```
 
 
-### <a name=&quot;sample-dictionary-xml-web-service&quot;></a>示例字典 XML Web 服务
+### <a name="sample-dictionary-xml-web-service"></a>示例字典 XML Web 服务
 
 以下 C# 代码提供了一个有关如何为 XML Web 服务编写代码的简单示例，该服务以 OfficeDefinitions XML 格式返回字典查询的结果。
 
@@ -129,7 +125,7 @@ using System.Net;
 /// <summary>
 /// Summary description for _Default
 /// </summary>
-[WebService(Namespace = &quot;http://tempuri.org/")]
+[WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // To allow this web service to be called from script, using ASP.NET AJAX, uncomment the following line. 
 // [System.Web.Script.Services.ScriptService]
@@ -258,7 +254,7 @@ public class WebService : System.Web.Services.WebService {
 </OfficeApp>
 ```
 
-以下各节介绍了特定于创建字典加载项清单文件的 元素 `Dictionary` 及其子元素。 有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
+以下 `Dictionary` 各节介绍了特定于创建字典加载项清单文件的 元素及其子元素。 有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
 
 
 ### <a name="dictionary-element"></a>Dictionary 元素
@@ -276,7 +272,7 @@ public class WebService : System.Web.Services.WebService {
 
  **备注**
 
-当您创建字典外接程序时，元素及其子元素将添加到任务窗格 `Dictionary` 外接程序的清单中。
+当您 `Dictionary` 创建字典外接程序时，元素及其子元素将添加到任务窗格外接程序的清单中。
 
 
 #### <a name="targetdialects-element"></a>TargetDialects 元素
@@ -529,13 +525,13 @@ a:hover, a:active
 从此实现Office JavaScript API (Office.js) 的主要成员如下：
 
 
-- 对象的[initialize](/javascript/api/office)事件，在初始化外接程序上下文时引发，并提供对 Document 对象实例的访问权限，该对象实例表示外接程序与之 `Office` 交互的文档。 [](/javascript/api/office/office.document)
+- 对象的 [initialize](/javascript/api/office) `Office` 事件，在初始化外接程序上下文时引发，并提供对 [Document](/javascript/api/office/office.document) 对象实例的访问权限，该对象实例表示外接程序与之交互的文档。
     
-- [对象的 addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_)方法，在 函数中调用，为文档的 SelectionChanged 事件添加事件处理程序以 `Document` `initialize` 侦听用户选择更改。 [](/javascript/api/office/office.documentselectionchangedeventargs)
+- [对象的 addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) `Document` `initialize` 方法，在 函数中调用，为[文档的 SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) 事件添加事件处理程序以侦听用户选择更改。
     
-- 对象的[getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_)方法，当引发事件处理程序以获取用户选择的单词或短语时，在 函数中调用该方法，将其强制转换为纯文本，然后执行异步回调函数。 `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback`
+- 对象的 [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback` 方法，当引发事件处理程序以获取用户选择的单词或短语时，在 函数中调用该方法，将其强制转换为纯文本，然后执行异步回调函数。
     
-- 当作为方法的 callback 参数传递的异步回调函数执行时，它将在回调返回时 `selectTextCallback` 获取所选 `getSelectedDataAsync` 文本的值。 它从回调的 _selectedText_ 参数 (，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 返回的对象的 [value](/javascript/api/office/office.asyncresult#status) `AsyncResult` 属性。
+- 当作为  `selectTextCallback` 方法的 _callback_ `getSelectedDataAsync` 参数传递的异步回调函数执行时，它将在回调返回时获取所选文本的值。 它从回调的 _selectedText_ 参数 (，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 返回的对象的 `AsyncResult` [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) 属性。
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     

@@ -3,17 +3,12 @@ title: 在 Outlook 加载项中获取或修改收件人
 description: 了解如何在 Outlook 加载项中获取、设置或添加邮件或约会的收件人。
 ms.date: 10/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c85a49ea3c409b64e0bd62f3eae3aa79dd614568
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537455"
 ---
+
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取、设置或添加收件人
 
 
-Office JavaScript API 提供了异步方法 ([Recipients.getAsync、Recipients.setAsync](/javascript/api/outlook/office.recipients#getAsync_options__callback_)或[Recipients.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)) 分别获取、设置或添加约会或邮件撰写窗体中的收件人。 [](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_) 这些异步方法仅适用于撰写加载项。若要使用这些方法，请确保为 Outlook 设置相应的外接程序清单以在撰写窗体中激活外接程序，如为撰写窗体创建[Outlook](compose-scenario.md)外接程序中所述。
+Office JavaScript API 提供了异步方法 ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1))、[Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)) 或 [Recipients.addAsync) 分别](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))获取、设置或添加约会或邮件撰写窗体中的收件人。 这些异步方法仅适用于撰写加载项。若要使用这些方法，请确保为 Outlook 设置相应的外接程序清单以在撰写窗体中激活外接程序，如为撰写窗体创建 [Outlook](compose-scenario.md) 外接程序中所述。
 
 部分表示约会或邮件中的收件人的属性在撰写窗体和阅读窗体中可以进行阅读访问。这些属性包括约会的 [optionalAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和 [requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)，以及邮件的 [cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和 [to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)。
 
@@ -23,7 +18,7 @@ Office JavaScript API 提供了异步方法 ([Recipients.getAsync、Recipients.s
 item.cc
 ```
 
-但在撰写窗体中，由于用户和外接程序可以同时插入或更改收件人，因此您必须使用异步方法获取这些属性， `getAsync` 如以下示例所示。
+但在撰写窗体 `getAsync` 中，由于用户和外接程序可以同时插入或更改收件人，因此您必须使用异步方法获取这些属性，如以下示例所示。
 
 
 ```js
@@ -32,7 +27,7 @@ item.cc.getAsync
 
 这些属性只在撰写窗体（而非阅读窗体）中可进行写入访问。
 
-与 JavaScript API 中的大多数异步方法一样，Office、 、 和 `getAsync` `setAsync` `addAsync` 采用可选输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
+与 JavaScript API 中的大多数异步方法一样，Office、`getAsync``setAsync`、和`addAsync`采用可选输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
 
 
 ## <a name="get-recipients"></a>获取收件人
@@ -48,15 +43,15 @@ item.cc.getAsync
 </Rule>
 ```
 
-在 Office JavaScript API 中，由于表示约会收件人的属性 ( **optionalAttendees** 和 **requiredAttendees**) 与邮件 ([bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)、 **cc** 和 **)** 的属性不同，因此应首先使用 [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)属性确定正在撰写的项目是约会还是邮件。 在撰写模式下，约会和邮件的所有这些属性都是 [Recipients](/javascript/api/outlook/office.Recipients) 对象，因此您可以应用异步方法 ， `Recipients.getAsync` 获取相应的收件人。
+在 Office JavaScript API 中，由于表示约会收件人 ( **optionalAttendees** 和 **requiredAttendees**) 的属性不同于邮件 ([bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)、**cc** **和) 的属性**，因此应首先使用 [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性确定正在撰写的项目是约会还是邮件。 在撰写模式下，约会和邮件的所有这些属性都是 [Recipients](/javascript/api/outlook/office.recipients) 对象，因此您可以应用异步 `Recipients.getAsync`方法 ， 获取相应的收件人。
 
-若要 `getAsync` 使用 提供回调方法，请检查异步调用返回的状态、结果和任何 `getAsync` 错误。 您可以使用可选 _asyncContext_ 形参为回调方法提供任意实参。 回调方法会返回 _asyncResult_ 输出形参。 可以使用 AsyncResult 参数对象的 和 属性检查异步调用的状态和任何错误消息，并使用 属性 `status` `error` [](/javascript/api/office/office.asyncresult) `value` 获取实际收件人。 收件人以 [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) 对象数组的形式表示。
+若要使用 `getAsync` 提供回调方法，请检查异步调用返回的状态、结果和任何 `getAsync` 错误。 您可以使用可选 _asyncContext_ 形参为回调方法提供任意实参。 回调方法会返回 _asyncResult_ 输出形参。 `status` `error`可以使用 [AsyncResult](/javascript/api/office/office.asyncresult) `value` 参数对象的 和 属性检查异步调用的状态和任何错误消息，并使用 属性获取实际收件人。 收件人以 [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) 对象数组的形式表示。
 
-请注意，由于 方法是异步的，因此，如果存在依赖成功获取收件人的后续操作，则应该仅在异步调用成功完成时，组织代码以仅在相应的回调方法中启动 `getAsync` 此类操作。
+`getAsync`请注意，由于 方法是异步的，因此，如果存在依赖成功获取收件人的后续操作，则应该仅在异步调用成功完成时，组织代码以仅在相应的回调方法中启动此类操作。
 
 > [!IMPORTANT]
-> 在 Outlook 网页版 中，如果用户通过从联系人或个人资料卡片激活联系人的电子邮件地址链接创建了一封新邮件，则外接程序的呼叫当前不会在关联对象的 属性中返回值。 `Recipients.getAsync` `displayName` `EmailAddressDetails`
-> 有关更多详细信息，请参阅相关[GitHub问题](https://github.com/OfficeDev/office-js-docs-pr/issues/2962)。
+> 在 Outlook 网页版 `Recipients.getAsync` `displayName` `EmailAddressDetails` 中，如果用户通过从联系人或个人资料卡片激活联系人的电子邮件地址链接创建了一封新邮件，则外接程序的呼叫当前不会在关联对象的 属性中返回值。
+> 有关详细信息，请参阅相关的[GitHub问题](https://github.com/OfficeDev/office-js-docs-pr/issues/2962)。
 
 ```js
 var item;
@@ -151,9 +146,9 @@ function write(message){
 ## <a name="set-recipients"></a>设置收件人
 
 
-此部分显示的代码示例会设置用户正在撰写的约会或邮件的收件人。 设置收件人将覆盖现有的全部收件人。 与之前获取撰写窗体中收件人的示例相似，此示例假设已在撰写窗体中为约会和邮件激活外接程序。 本示例首先验证撰写的项目是约会还是邮件，以便对表示约会或邮件收件人的适当属性应用异步 `Recipients.setAsync` 方法 。
+此部分显示的代码示例会设置用户正在撰写的约会或邮件的收件人。 设置收件人将覆盖现有的全部收件人。 与之前获取撰写窗体中收件人的示例相似，此示例假设已在撰写窗体中为约会和邮件激活外接程序。 本示例首先验证 `Recipients.setAsync`撰写的项目是约会还是邮件，以便对表示约会或邮件收件人的适当属性应用异步方法 。
 
-调用 `setAsync` 时，以下列格式之一提供数组作为  _recipients_ 参数的输入参数。
+`setAsync`调用 时，以下列格式之一提供数组作为 _recipients_ 参数的输入参数。
 
 
 - 为 SMTP 地址的字符串数组。
@@ -162,7 +157,7 @@ function write(message){
     
 - 对象数组 `EmailAddressDetails` ，类似于方法返回 `getAsync` 的对象数组。
     
-您可以选择提供回调方法作为方法的输入参数，以确保依赖于成功设置收件人的任何代码仅在发生这种情况 `setAsync` 时执行。 还可以为使用可选 _asyncContext_ 形参的回调方法提供任意实参。 如果使用回调方法，可以访问 _asyncResult_ 输出参数，并使用参数对象的 **status** 和 **error** 属性检查异步调用的状态和 `AsyncResult` 任何错误消息。
+您可以选择提供回调方法作为方法的输入 `setAsync` 参数，以确保依赖于成功设置收件人的任何代码仅在发生这种情况时执行。 还可以为使用可选 _asyncContext_ 形参的回调方法提供任意实参。 如果使用回调方法，可以访问 _asyncResult_ 输出参数，并使用 **参数对象的 status** 和 **error** `AsyncResult` 属性检查异步调用的状态和任何错误消息。
 
 
 
@@ -277,7 +272,7 @@ function write(message){
 
 ## <a name="add-recipients"></a>添加收件人
 
-如果不希望覆盖约会或邮件中任何现有收件人，而不是使用 ，可以使用异步 `Recipients.setAsync` `Recipients.addAsync` 方法追加收件人。 `addAsync` 其工作方式类似 `setAsync` ，因为它需要 _收件人_ 输入参数。 还可以选择使用 asyncContext 形参为回调提供回调方法和任意实参。 然后，可以使用回调方法的 `addAsync` _asyncResult_ 输出参数检查异步调用的状态、结果和任何错误。 以下示例检查正在撰写的项目是否是约会，并为该约会追加两个必需参与者。
+如果不希望覆盖约会 `Recipients.setAsync`或邮件中任何现有收件人，而不是使用 ， `Recipients.addAsync` 可以使用异步方法追加收件人。 `addAsync` 其工作方式类似 `setAsync` ，因为它需要 _收件人_ 输入参数。 还可以选择使用 asyncContext 形参为回调提供回调方法和任意实参。 然后，可以使用回调 `addAsync` 方法的 _asyncResult_ 输出参数检查异步调用的状态、结果和任何错误。 以下示例检查正在撰写的项目是否是约会，并为该约会追加两个必需参与者。
 
 
 ```js

@@ -3,13 +3,8 @@ title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
 ms.date: 08/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9195128dff2bac178822764eda03588597b50d10
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149500"
 ---
+
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
 Outlook 加载项的 Onsend 功能提供了一种处理邮件或会议项目，或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。例如，可以使用 Onsend 功能执行以下操作：
@@ -25,9 +20,9 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 下表显示了 Onss ons ons 功能支持的客户端-服务器组合，包括所需的最低累积更新（如果适用）。 不支持排除的组合。
 
-| Client | Exchange Online | Exchange 2016 本地部署<br> (累积更新 6 或更高版本)  | Exchange 2019 本地部署<br> (累积更新 1 或更高版本)  |
+| 客户端 | Exchange Online | Exchange 2016 本地部署<br> (累积更新 6 或更高版本)  | Exchange 2019 本地部署<br> (累积更新 1 或更高版本)  |
 |---|:---:|:---:|:---:|
-|Windows：<br>版本 1910 (版本 12130.20272) 或更高版本|是|是|是|
+|Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是|是|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|
 |Web 浏览器：<br>新式 Outlook UI|是|不适用|不适用|
 |Web 浏览器：<br>经典Outlook UI|不适用|是|是|
@@ -63,17 +58,17 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 Onsend 功能目前具有以下限制。
 
-- **附加 Onsend** 功能 如果在 Onsend 处理程序中调用 &ndash; [item.body.AppendOnSendAsync，](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) 将返回错误。
+- **附加 Onsend** 功能 &ndash; 如果在 Onsend 处理程序中调用 [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) ，将返回错误。
 - **AppSource** &ndash; 无法在 [AppSource](https://appsource.microsoft.com) 中发布使用 Onsend 功能的 Outlook 加载项，因为它们将无法通过 AppSource 验证。 使用 Onsend 功能的加载项应由管理员部署。
 - **清单**&ndash; - 每个加载项仅支持一个 `ItemSend` 事件。 如果清单中有两个或多个 `ItemSend` 事件，则该清单将无法通过验证。
 - **性能** &ndash; 多次往返到托管加载项的 Web 服务器可能会影响加载项的性能。创建需要多个基于邮件或会议操作的加载项时，请考虑性能影响。
 - **稍后发送**（仅适用于 Mac）&ndash; 如果有 Onsend 加载项，**稍后发送** 功能将不可用。
 
-此外，不建议在 Onss onss 事件处理程序中调用 ，因为关闭项目应在事件完成后 `item.close()` 自动发生。
+此外，不建议在 `item.close()` Onss onss 事件处理程序中调用 ，因为关闭项目应在事件完成后自动发生。
 
 ### <a name="mailbox-typemode-limitations"></a>邮箱类型/模式限制
 
-只有 Outlook 网页版、Windows 版和 Mac 版中的用户邮箱支持 Onsend 功能。 除了外接程序未按 Outlook 外接程序概述页的"可用于外接程序的邮箱项目[](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)"部分所述激活的情况之外，该功能当前不支持脱机模式（该模式可用）。
+只有 Outlook 网页版、Windows 版和 Mac 版中的用户邮箱支持 Onsend 功能。 除了外接程序未按 Outlook 外接程序概述页的"可用于外接程序的邮箱项目"部分[](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)所述激活的情况之外，该功能当前不支持脱机模式（该模式可用）。
 
 如果Outlook加载项无法激活，则 Ons ons-send 外接程序将不会运行，并且邮件将会发送。
 
@@ -188,7 +183,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="web-browser---modern-outlook"></a>[Web 浏览器 - 新式 Outlook](#tab/modern)
 
-对于安装了使用 Onsend 功能的 Outlook 网页版（新式）加载项的任何用户，系统会为其运行该加载项。 但是，如果用户需要运行 Onsend 外接程序以满足合规性标准，则邮箱策略必须将 *OnSendAddinsEnabled* 标志设置为 ，以便不允许在外接程序在发送时编辑项目。 `true`
+对于安装了使用 Onsend 功能的 Outlook 网页版（新式）加载项的任何用户，系统会为其运行该加载项。 但是，如果用户需要运行 Onsend 外接程序以满足合规性标准，则邮箱策略必须将 *OnSendAddinsEnabled* `true` 标志设置为 ，以便不允许在外接程序在发送时编辑项目。
 
 若要安装新的外接程序，请运行以下 Exchange Online PowerShell cmdlet。
 
@@ -278,12 +273,12 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-对于安装了使用 Onsend 功能的 Windows 版 Outlook 加载项的任何用户，系统会为其运行该加载项。 但是，如果用户需要运行外接程序以满足合规性标准，则必须在每个适用计算机上将组策略"无法加载 **Web** 外接程序时阻止发送"设置为"已启用"。 
+对于安装了使用 Onsend 功能的 Windows 版 Outlook 加载项的任何用户，系统会为其运行该加载项。 但是，如果用户需要运行外接程序以满足合规性标准，则必须在每个适用计算机上将组策略"无法加载 **Web** 外接程序时阻止发送"设置为"已启用"。
 
 若要设置邮箱策略，管理员可以下载管理模板工具 [](https://www.microsoft.com/download/details.aspx?id=49030)，然后通过运行本地组策略编辑器 **gpedit.msc** 来访问最新的管理模板。
 
 > [!NOTE]
-> 在旧版管理模板工具中，策略名称是"无法加载 Web 扩展时 **禁用发送"。** 如果需要，在稍后的步骤中替换此名称。
+> 在旧版管理模板工具中，策略名称是"无法加载 Web 扩展时 **禁用发送"**。 如果需要，在稍后的步骤中替换此名称。
 
 #### <a name="what-the-policy-does"></a>策略的用途
 
@@ -291,17 +286,17 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 |策略状态|结果|
 |---|---|
-|已禁用|当前下载的 Ons ons ons 外接程序清单 (在发送的邮件或会议项目) 运行的最新版本。 这是默认状态/行为。|
-|已启用|从 Exchange 下载 Ons ons ons 外接程序的最新清单后，外接程序将运行在要发送的邮件或会议项目上。 否则，将阻止发送。|
+|已禁用|当前下载的 Ons ons- (清单不一定是对) 或会议项目运行的最新版本。 这是默认状态/行为。|
+|已启用|从 Exchange 下载 Ons ons on-send 外接程序的最新清单后，外接程序将运行在要发送的邮件或会议项目上。 否则，将阻止发送。|
 
 #### <a name="manage-the-on-send-policy"></a>管理 Onsend 策略
 
-默认情况下，Onsend 策略处于禁用状态。 管理员可以通过确保用户的组策略设置"无法加载 **Web** 外接程序时阻止发送"设置为"已启用"来启用 Onss ons **策略**。 若为用户禁用策略，管理员应将其设置为“**已禁用**”。 若要管理此策略设置，可以执行以下操作：
+默认情况下，Onsend 策略处于禁用状态。 管理员可通过确保用户的组策略设置"无法加载 **Web** 外接程序时阻止发送"设置为"已启用"来启用 Onss **ons 策略**。 若为用户禁用策略，管理员应将其设置为“**已禁用**”。 若要管理此策略设置，可以执行以下操作：
 
 1. 下载最新的[管理模板工具](https://www.microsoft.com/download/details.aspx?id=49030)。
 1. 打开 **gpedit.msc (本地组策略**) 。
-1. 导航到 **"用户配置**  >  **""管理模板**   >  **""microsoft Outlook 2016**  >    >  **安全信任中心"。**
-1. 选择"当 Web 加载项无法加载时 **阻止发送"** 设置。
+1. 导航到 **用户配置** > **管理模板**  > **Microsoft Outlook 2016** >  **SecurityTrust** >  **Center**。
+1. 选择 **"当 Web 加载项无法加载时阻止发送"** 设置。
 1. 打开链接以编辑策略设置。
 1. 在"**无法加载 Web** 加载项时阻止发送"对话框窗口中，根据需要选择"启用"或"禁用"，然后选择"**确定**"或"应用"使更新生效。
 
@@ -324,8 +319,8 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 |键的状态|结果|
 |---|---|
-|false|当前下载的 Ons ons ons 外接程序清单 (在发送的邮件或会议项目) 运行的最新版本。 这是默认状态/行为。|
-|true|从 Exchange 下载 Ons ons ons 外接程序的最新清单后，外接程序将运行在要发送的邮件或会议项目上。 否则，将阻止发送并禁用 **"** 发送"按钮。|
+|false|当前下载的 Ons ons- (清单不一定是对) 或会议项目运行的最新版本。 这是默认状态/行为。|
+|true|从 Exchange 下载 Ons ons on-send 外接程序的最新清单后，外接程序将运行在要发送的邮件或会议项目上。 否则，将阻止发送并禁用 **"** 发送"按钮。|
 
 ---
 
@@ -350,7 +345,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |1|已启用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
 |2|已禁用|已启用|新会话|邮箱 1 无法从邮箱 2 发送邮件或会议项目。|目前尚不支持。可以使用方案 3 作为一种解决办法。|
 |3|已启用|已启用|同一个会话|分配给邮箱 1 的 Onsend 加载项运行 Onsend。|支持。|
-|4 |已启用|已禁用|新会话|未运行 Onsend 加载项；邮件或会议项目已发送。|支持。|
+|4|已启用|已禁用|新会话|未运行 Onsend 加载项；邮件或会议项目已发送。|支持。|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Web 浏览器（新式 Outlook）、Windows、Mac
 
@@ -377,17 +372,17 @@ Onsend 加载项将根据用户、加载项后端和 Exchange 的联机状态运
 
 ### <a name="user-can-edit-item-while-on-send-add-ins-are-working-on-it"></a>用户可以在 Onss ons ons add-ins 处理项目时编辑项目
 
-Ons ons ons an add-ins are processing an item， the user can edit the item by adding， for example， inappropriate text or attachments. 如果要阻止用户在加载项在发送时编辑项目，可以使用对话框实现解决方法。 此解决方法可用于经典 Outlook 网页版 (、) Windows 和 Mac。
+Ons ons ons an add-ins are processing an item， the user can edit the item by adding， for example， inappropriate text or attachments. 如果要阻止用户在加载项在发送时编辑项目，可以使用对话框实现解决方法。 此解决方法可用于经典 Outlook 网页版 (、) 、Windows 和 Mac。
 
 > [!IMPORTANT]
-> 新式 Outlook 网页版：若要防止用户在加载项在发送时编辑项目，应设置 *OnSendAddinsEnabled* 标志，如本文前面安装使用 Onsend 的 `true` [Outlook](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)加载项部分所述。
+> 新式 Outlook 网页版：若要防止用户在加载项在发送时编辑项目，应设置 *OnSendAddinsEnabled* `true` 标志，如本文前面安装使用 Onsend 的 [Outlook](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send) 加载项部分所述。
 
 在 On-send 处理程序中：
 
-1. 调用 [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displayDialogAsync_startAddress__options__callback_) 打开对话框，以便禁用鼠标单击和击键。
+1. 调用 [displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#office-office-ui-displaydialogasync-member(1)) 打开对话框，以便禁用鼠标单击和击键。
 
     > [!IMPORTANT]
-    > 若要在经典 Outlook 网页版中获取此行为，应在调用的 参数中将[displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayInIframe) `true` `options` `displayDialogAsync` 属性设置为 。
+    > 若要在经典 Outlook 网页版中获取此行为，应在调用的 参数中将 [displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#office-office-dialogoptions-displayiniframe-member) `true` `options` 属性设置为 `displayDialogAsync` 。
 
 1. 实现对项目的处理。
 1. 关闭该对话框。 此外，请处理用户关闭对话框时发生的情况。
@@ -425,7 +420,7 @@ Ons ons ons an add-ins are processing an item， the user can edit the item by a
 ```
 
 > [!IMPORTANT]
-> 如果使用 Visual Studio 2019 开发 Onss ons-send 外接程序，则可能会收到如下验证警告："这是无效的 xsi：type ' http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events '。"若要处理此问题，你需要更高版本的 MailAppVersionOverridesV1_1.xsd，该版本在有关此警告的GitHub gist 中作为 gist[提供](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)。
+> 如果使用 Visual Studio 2019 开发 Onss ons-send 外接程序，则可能会收到如下验证警告："这是无效的 xsi：type 'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events'。"若要绕开这一问题，你需要更高版本的 MailAppVersionOverridesV1_1.xsd，该版本在有关此警告的博客中GitHub gist [提供。](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)
 
 对于 `Contoso Subject and CC Checker.xml` 清单文件，以下示例中显示了邮件发送事件中要调用的函数文件和函数名称。
 
@@ -483,7 +478,7 @@ function validateBody(event) {
 `validateBody` 函数以指定格式 (HTML) 获取当前正文，并在回调方法中传递代码想要访问的 `ItemSend` 事件对象。 除 `getAsync` 方法之外，`Body` 对象还提供了 `setAsync` 方法，可用于将正文替换为指定的文本。
 
 > [!NOTE]
-> 有关详细信息，请参阅 [Event 对象](/javascript/api/office/office.addincommands.event)和 [Body.getAsync](/javascript/api/outlook/office.body#getAsync_coercionType__options__callback_)。
+> 有关详细信息，请参阅 [Event 对象](/javascript/api/office/office.addincommands.event)和 [Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1))。
   
 
 ### <a name="notificationmessages-object-and-eventcompleted-method"></a>`NotificationMessages` 对象和 `event.completed` 方法
@@ -526,7 +521,7 @@ function checkBodyOnlyOnSendCallBack(asyncResult) {
 
 ### <a name="replaceasync-removeasync-and-getallasync-methods"></a>`replaceAsync`、`removeAsync` 和 `getAllAsync` 方法
 
-除了 `addAsync` 方法之外，`NotificationMessages` 对象还包括 `replaceAsync`、`removeAsync` 和 `getAllAsync` 方法。  此代码示例中不使用这些方法。  有关详细信息，请参阅 [NotificationMessages](/javascript/api/outlook/office.NotificationMessages)。
+除了 `addAsync` 方法之外，`NotificationMessages` 对象还包括 `replaceAsync`、`removeAsync` 和 `getAllAsync` 方法。  此代码示例中不使用这些方法。  有关详细信息，请参阅 [NotificationMessages](/javascript/api/outlook/office.notificationmessages)。
 
 
 ### <a name="subject-and-cc-checker-code"></a>主题和抄送检查器代码

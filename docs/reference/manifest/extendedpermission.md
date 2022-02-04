@@ -3,13 +3,8 @@ title: 清单文件中 ExtendedPermission 元素
 description: 定义加载项访问关联 API 或功能所需的扩展权限。
 ms.date: 01/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ed3745da87c2fa04839a8fbd1c677f62ad771dc
-ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2022
-ms.locfileid: "62042138"
 ---
+
 # <a name="extendedpermission-element"></a>`ExtendedPermission` 元素
 
 定义加载项访问关联 API 或功能所需的扩展权限。 元素 `ExtendedPermission` 是 [ExtendedPermissions 的子元素](extendedpermissions.md)。
@@ -35,11 +30,11 @@ ms.locfileid: "62042138"
 
 |可用值|说明|Hosts|
 |---|---|---|
-|`AppendOnSend`|声明外接程序正在使用[Office。Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendOnSendAsync_data__options__callback_) API。|Outlook|
+|`AppendOnSend`|声明外接程序正在使用 Office[。Body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) API。|Outlook|
 
 ## <a name="extendedpermission-example"></a>`ExtendedPermission` 示例
 
-下面是 元素 `ExtendedPermission` 的一个示例。
+下面是 元素的一 `ExtendedPermission` 个示例。
 
 ```XML
 ...

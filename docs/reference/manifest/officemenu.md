@@ -1,18 +1,25 @@
 ---
 title: 清单文件中的 OfficeMenu 元素
 description: OfficeMenu 元素定义要添加到上下文菜单的控件Office集合。
-ms.date: 10/09/2018
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: eba4431fd31ee7df918014cb30d8085a4040880f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152383"
 ---
+
 # <a name="officemenu-element"></a>OfficeMenu 元素
 
 定义要添加到 Office 上下文菜单的控件集合。适用于 Word、Excel、PowerPoint 和 OneNote 外接程序。
+
+**外接程序类型：** 任务窗格
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 任务窗格 1.0
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**与以下要求集相关联**：
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## <a name="attributes"></a>属性
 
@@ -41,7 +48,7 @@ ms.locfileid: "59152383"
 
 ```xml
 <OfficeMenu id="ContextMenuCell">
-    <Control xsi:type="Menu" id="myMenuID">
+    <Control xsi:type="Menu" id="Contoso.myMenu">
       <Label resid="residLabel3" />
       <Supertip>
           <Title resid="residLabel" />

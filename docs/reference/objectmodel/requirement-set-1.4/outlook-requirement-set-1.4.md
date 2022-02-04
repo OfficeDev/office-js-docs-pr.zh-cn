@@ -3,16 +3,11 @@ title: Outlook 加载项 API 要求集 1.4
 description: 作为邮箱 API 1.4 Outlook外接程序和 Office JavaScript API 引入的功能和 API。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e9e39f3682748498dec38708ee61568d8335b02a
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237614"
 ---
+
 # <a name="outlook-add-in-api-requirement-set-14"></a>Outlook 外接程序 API 要求集 1.4
 
-Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook 外接程序中使用的对象、方法、属性和事件。
+Outlook JavaScript API 的 Office API 子集包括可用于加载项的对象、方法、属性和Outlook事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
@@ -23,9 +18,9 @@ Outlook JavaScript API 的 Office 外接程序 API 子集包括可在 Outlook �
 
 ### <a name="change-log"></a>更改日志
 
-- 添加了[Office.context.ui.displayDialogAsync：](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true#displayDialogAsync_startAddress__options__callback_)在 Office 应用程序中显示对话框。
-- 添加了 [Office.context.ui.messageParent](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true#messageParent_message__messageOptions_)：将对话框中的消息传送到其父页/开始页。
-- 添加了 [Dialog](/javascript/api/office/office.dialog?view=outlook-js-1.4&preserve-view=true) 对象：调用 [`displayDialogAsync`](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true#displayDialogAsync_startAddress__options__callback_) 方法时返回的对象。
+- 添加了 [Office.context.ui.displayDialogAsync](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true#office-office-ui-displaydialogasync-member(1))：在 Office 应用程序中显示对话框。
+- 添加了 [Office.context.ui.messageParent](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true#office-office-ui-messageparent-member(1))：将对话框中的消息传送到其父页/开始页。
+- 添加了 [Dialog](/javascript/api/office/office.dialog?view=outlook-js-1.4&preserve-view=true) 对象：调用 [`displayDialogAsync`](/javascript/api/office/office.ui?view=outlook-js-1.4&preserve-view=true#office-office-ui-displaydialogasync-member(1)) 方法时返回的对象。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -3,15 +3,10 @@ title: PowerPoint 加载项
 description: 了解如何使用 PowerPoint 加载项跨平台（包括 Windows、iPad、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示演示文稿。
 ms.date: 10/14/2020
 ms.topic: overview
-ms.custom: scenarios:getting-started
+ms.custom: 'scenarios:getting-started'
 ms.localizationpriority: high
-ms.openlocfilehash: 2b44b17b14f49e386c44d1581cf2d638005a9a5c
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514214"
 ---
+
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
 可以使用 PowerPoint 外接程序为用户演示文稿构建跨平台 (包括 Windows、iPad, Mac, 以及在浏览器中) 出色解决方案。可以创建两种类型的 PowerPoint 外接程序:
@@ -39,9 +34,9 @@ ms.locfileid: "61514214"
 
 在以下代码示例中：
 
-- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](/javascript/api/office/office.document#getActiveViewAsync_options__callback_) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如 **普通** 或 **大纲视图**）还是“阅读”（**幻灯片放映** 或 **阅读视图**）。
+- `getActiveFileView` 函数将调用 [Document.getActiveViewAsync](/javascript/api/office/office.document#office-office-document-getactiveviewasync-member(1)) 方法，以返回演示文稿的当前视图是“编辑”（你可在其中编辑幻灯片的任何视图，如 **普通** 或 **大纲视图**）还是“阅读”（**幻灯片放映** 或 **阅读视图**）。
 
-- `registerActiveViewChanged` 函数调用 [addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) 方法，以注册 [Document.ActiveViewChanged](/javascript/api/office/office.document) 事件的处理程序。
+- `registerActiveViewChanged` 函数调用 [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) 方法，以注册 [Document.ActiveViewChanged](/javascript/api/office/office.document) 事件的处理程序。
 
 
 ```js
@@ -90,7 +85,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>转到演示文稿中的特定幻灯片
 
-在下方的代码示例中，`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) 方法，以获取 `asyncResult.value` 返回的、包含名为 `slides` 的阵列的 JSON 对象。`slides` 阵列中包含所选幻灯片范围（如果没有选中多个幻灯片，则为当前幻灯片）的 ID、标题和索引。它还会将所选范围内第一张幻灯片的 ID 保存到一个全局变量。
+在下方的代码示例中，`getSelectedRange` 函数将调用 [Document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 方法，以获取 `asyncResult.value` 返回的、包含名为 `slides` 的阵列的 JSON 对象。`slides` 阵列中包含所选幻灯片范围（如果没有选中多个幻灯片，则为当前幻灯片）的 ID、标题和索引。它还会将所选范围内第一张幻灯片的 ID 保存到一个全局变量。
 
 ```js
 function getSelectedRange() {
@@ -109,7 +104,7 @@ function getSelectedRange() {
 }
 ```
 
-在以下代码示例中，`goToFirstSlide` 函数将调用 [Document.goToByIdAsync](/javascript/api/office/office.document#goToByIdAsync_id__goToType__options__callback_) 方法，以导航至由之前显示的 `getSelectedRange` 函数标识的第一张幻灯片。
+在以下代码示例中，`goToFirstSlide` 函数将调用 [Document.goToByIdAsync](/javascript/api/office/office.document#office-office-document-gotobyidasync-member(1)) 方法，以导航至由之前显示的 `getSelectedRange` 函数标识的第一张幻灯片。
 
 ```js
 function goToFirstSlide() {
@@ -148,7 +143,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>获取演示文稿的 URL
 
-在以下代码实例中，`getFileUrl` 函数将调用 [Document.getFileProperties](/javascript/api/office/office.document#getFilePropertiesAsync_options__callback_) 方法，以获取演示文稿文件的URL。
+在以下代码实例中，`getFileUrl` 函数将调用 [Document.getFileProperties](/javascript/api/office/office.document#office-office-document-getfilepropertiesasync-member(1)) 方法，以获取演示文稿文件的URL。
 
 ```js
 function getFileUrl() {

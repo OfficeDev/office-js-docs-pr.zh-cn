@@ -3,20 +3,15 @@ title: 加载项Excel疑难解答
 description: 了解如何解决加载项中的Excel错误。
 ms.date: 02/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ed12eb1daf8876e14806fd88f541b5b58eea16
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152318"
 ---
+
 # <a name="troubleshooting-excel-add-ins"></a>加载项Excel疑难解答
 
 本文讨论对解决方案唯一的Excel。 请使用页面底部的反馈工具，建议可添加到文章中的其他问题。
 
 ## <a name="api-limitations-when-the-active-workbook-switches"></a>活动工作簿切换时的 API 限制
 
-适用于工作簿的Excel旨在一次对一个工作簿进行操作。 与运行加载项的工作簿分开的工作簿获得焦点时，可能会出现错误。 只有在焦点更改时调用特定方法时，才会发生此情况。
+加载项Excel一次对一个工作簿进行操作。 与运行加载项的工作簿分开的工作簿获得焦点时，可能会出现错误。 只有在焦点更改时调用特定方法时，才会发生此情况。
 
 以下 API 受此工作簿开关的影响。
 
@@ -44,15 +39,15 @@ ms.locfileid: "59152318"
 
 ## <a name="coauthoring"></a>共同创作
 
-有关[用于共同Excel](co-authoring-in-excel-add-ins.md)中的事件的模式，请参阅在加载项中共同授权。 本文还讨论了使用某些 API（如 ）时的潜在合并冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) 。
+有关[用于共同Excel](co-authoring-in-excel-add-ins.md)中的事件的模式，请参阅在加载项中共同授权。 本文还讨论了使用某些 API（如 ）时的潜在合并冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1))。
 
 ## <a name="known-issues"></a>已知问题
 
-### <a name="binding-events-return-temporary-binding-obects"></a>绑定事件返回 `Binding` 临时对象
+### <a name="binding-events-return-temporary-binding-obects"></a>绑定事件返回临时 `Binding` 对象
 
-[BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding)和[BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding)都返回一个临时对象，其中包含引发 `Binding` `Binding` 该事件的对象的 ID。 使用此 ID 检索 `BindingCollection.getItem(id)` `Binding` 引发事件的对象。
+[BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#excel-excel-bindingdatachangedeventargs-binding-member) 和 [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#excel-excel-bindingselectionchangedeventargs-binding-member) `Binding` 都返回一个临时对象，其中包含引发该事件的对象的 ID`Binding`。 使用此 ID 检索 `BindingCollection.getItem(id)` 引发 `Binding` 事件的对象。
 
-下面的代码示例演示如何使用此临时绑定 ID 检索相关 `Binding` 对象。 在示例中，将事件侦听器分配给绑定。 侦听器在 `getBindingId` 触发事件 `onDataChanged` 时调用 方法。 `getBindingId`方法使用临时对象的 ID `Binding` 检索 `Binding` 引发事件的对象。
+下面的代码示例演示如何使用此临时绑定 ID 检索相关 `Binding` 对象。 在示例中，将事件侦听器分配给绑定。 侦听器在触发 `getBindingId` 事件 `onDataChanged` 时调用 方法。 方法 `getBindingId` 使用临时对象的 `Binding` ID 检索引发 `Binding` 事件的对象。
 
 ```js
 Excel.run(function (context) {
@@ -84,17 +79,17 @@ function getBindingId(eventArgs) {
 
 ### <a name="cell-format-usestandardheight-and-usestandardwidth-issues"></a>单元格格式 `useStandardHeight` 和 `useStandardWidth` 问题
 
-[的 useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight)属性在属性中 `CellPropertiesFormat` Excel web 版。 由于用户界面中Excel web 版问题，因此设置 属性不精确地在此平台上 `useStandardHeight` `true` 计算高度。 例如，标准高度 **14** 在 Excel web 版 中修改为 **14.25。**
+[的 useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) `CellPropertiesFormat` 属性在属性中Excel web 版。 由于用户界面中的问题Excel web 版，`useStandardHeight`将 属性`true`设置为不精确地在此平台上计算高度。 例如，标准高度 **14** 在 Excel web 版 中修改为 **14.25**。
 
-在所有平台上 [，useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) 和 [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#useStandardWidth) 属性仅旨在 `CellPropertiesFormat` 设置为 `true` 。 将这些属性设置为 `false` 无效。 
+在所有平台上， [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) 和 [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardwidth-member) `CellPropertiesFormat` 属性仅旨在设置为 `true`。 将这些属性设置为 `false` 无效。 
 
-### <a name="range-getimage-method-unsupported-on-excel-for-mac"></a>区域 `getImage` 方法不受支持Excel for Mac
+### <a name="range-getimage-method-unsupported-on-excel-for-mac"></a>区域`getImage`方法不受支持Excel for Mac
 
-Range [getImage](/javascript/api/excel/excel.range#getImage__)方法当前在 Excel for Mac。 请参阅 [OfficeDev/office-js issue #235](https://github.com/OfficeDev/office-js/issues/235) 了解当前状态。
+Range [getImage](/javascript/api/excel/excel.range#excel-excel-range-getimage-member(1)) 方法当前在 Excel for Mac。 有关 [当前状态，请参阅 OfficeDev/office-js Issue #235](https://github.com/OfficeDev/office-js/issues/235) 。
 
 ### <a name="range-return-character-limit"></a>区域返回字符限制
 
-[Worksheet.getRange (address) ](/javascript/api/excel/excel.worksheet#getRange_address_) [和 Worksheet.getRanges](/javascript/api/excel/excel.worksheet#getRanges_address_) (address) 方法的地址字符串限制为 8192 个字符。 超出此限制时，地址字符串将被截断为 8192 个字符。
+[Worksheet.getRange (address) ](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) [和 Worksheet.getRanges (address) ](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getranges-member(1)) 方法的地址字符串限制为 8192 个字符。 超出此限制时，地址字符串将被截断为 8192 个字符。
 
 ## <a name="see-also"></a>另请参阅
 

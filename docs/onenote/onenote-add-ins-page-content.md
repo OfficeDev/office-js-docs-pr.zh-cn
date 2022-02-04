@@ -3,18 +3,13 @@ title: 处理 OneNote 页面内容
 description: 了解如何使用 JavaScript API OneNote页面内容。
 ms.date: 03/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 72a5402d16f8d8a39903b3285c62ade48a409578
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152455"
 ---
+
 # <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容
 
 在 OneNote 外接程序 JavaScript API 中，页面内容由以下对象模型表示。
 
-  ![OneNote页面对象模型图。](../images/one-note-om-page.png)
+  ![OneNote页面对象模型关系图。](../images/one-note-om-page.png)
 
 - Page 对象包含一组 PageContent 对象。
 - PageContent 对象包含类型为 Outline、Image 或 Other 的内容。
@@ -23,8 +18,8 @@ ms.locfileid: "59152455"
 
 若要创建空OneNote页，请使用下列方法之一。
 
-- [Section.addPage](/javascript/api/onenote/onenote.section#addPage_title_)
-- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertSectionAsSibling_location__title_)
+- [Section.addPage](/javascript/api/onenote/onenote.section#onenote-onenote-section-addpage-member(1))
+- [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#onenote-onenote-section-insertsectionassibling-member(1))
 
 然后使用以下对象中的方法处理页面内容，如 `Page.addOutline` 和 `Outline.appendHtml`。
 

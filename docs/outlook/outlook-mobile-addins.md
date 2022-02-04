@@ -1,15 +1,10 @@
 ---
 title: 适用于 Outlook Mobile 的 Outlook 外接程序
 description: Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。
-ms.date: 09/22/2021
+ms.date: 02/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e2b43a555821856256bb3da65ecac912f3e60620
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990815"
 ---
+
 # <a name="add-ins-for-outlook-mobile"></a>适用于 Outlook Mobile 的外接程序
 
 现在，外接程序在 Outlook Mobile 上可用，它们使用适用于其他 Outlook 终结点的相同 API。如果已经生成适用于 Outlook 的外接程序，那么则可以很轻松地在 Outlook Mobile 上使用该外接程序。
@@ -26,16 +21,13 @@ Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但�
 
 ![Android 上 Outlook任务窗格的屏幕截图。](../images/outlook-mobile-addin-taskpane-android.png)
 
-> [!IMPORTANT]
-> 外接程序在移动浏览器中的新式 Outlook中不起作用。 有关详细信息，请参阅Outlook[浏览器上的升级。](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)
-
 ## <a name="whats-different-on-mobile"></a>在移动电话上会有什么不同？
 
 - 移动电话尺寸小，需要进行快速交互，这为设计适用于移动电话的加载项带来了挑战。为了确保客户体验的质量，我们正在设置严格的验证标准，声明提供移动支持的加载项必须符合这一标准，以便在 AppSource 中获得批准。
   - 外接程序 **必须** 遵循 [UI 准则](outlook-addin-design.md)。
   - 外接程序的方案 **必须**[能够在移动电话上实现](#what-makes-a-good-scenario-for-mobile-add-ins)。
 
-- 一般情况下，目前仅支持邮件阅读模式。 这意味着 `MobileMessageReadCommandSurface` 是唯一应在清单的移动部分中声明的[ExtensionPoint。](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) 但是，联机会议提供商集成外接程序支持约会管理器模式，这些外接程序改为声明 [MobileOnlineMeetingCommandSurface 扩展点](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface)。 有关[此方案Outlook，](online-meeting.md)请参阅为联机会议提供商创建移动外接程序一文。
+- 一般情况下，目前仅支持邮件阅读模式。 这意味着 `MobileMessageReadCommandSurface` 是唯一应在清单的移动部分中声明的 [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) 。 但是，联机会议提供商集成外接程序支持约会管理器模式，这些外接程序改为声明 [MobileOnlineMeetingCommandSurface 扩展点](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface)。 有关[此方案Outlook](online-meeting.md)请参阅为联机会议提供商创建移动外接程序一文。
 
 - [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) API 在移动电话上不受支持，因为移动应用使用 REST API 与服务器进行通信。如果应用后端需要连接到 Exchange 服务器，则可以使用回调令牌进行 REST API 调用。有关详细信息，请参阅[从 Outlook 外接程序使用 Outlook REST API](use-rest-api.md)。
 
@@ -55,7 +47,7 @@ Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但�
 
 **从 iOS 上的电子邮件创建 Trello 卡片的用户交互示例**
 
-![显示用户与 iOS Outlook移动外接程序交互的动画 GIF。](../images/outlook-mobile-addin-interaction.gif)
+![动态 GIF，显示用户在 iOS Outlook移动外接程序的交互。](../images/outlook-mobile-addin-interaction.gif)
 
 <br/>
 
@@ -65,11 +57,14 @@ Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但�
 
 ## <a name="testing-your-add-ins-on-mobile"></a>在移动电话上测试外接程序
 
-若要在 Outlook Mobile 上测试外接程序，请首先将[](sideload-outlook-add-ins-for-testing.md)外接程序旁加载至 Web、Windows 或 Mac 上的 O365 或 Outlook.com 帐户。 请确保清单的格式正确，以包含 ，否则它不会在移动设备上的 Outlook `MobileFormFactor` 客户端中加载。
+若要在 Outlook Mobile 上测试外接程序，请首先将外接程序旁[](sideload-outlook-add-ins-for-testing.md)加载到 web、Outlook 或 Mac 上的 Microsoft 365 或 Windows.com 帐户。 请确保清单的格式正确，以包含 ，`MobileFormFactor`否则它不会在移动设备上的 Outlook 客户端中加载。
 
 在加载项正常运行后，请务必在不同尺寸的屏幕（包括电话和平板电脑）上测试加载项。应确保加载项符合与对比度、字号和颜色有关的辅助功能准则，并且还适用于屏幕阅读器（如 iOS 上的 VoiceOver 或 Android 上的 TalkBack）。
 
-在移动设备上进行故障排除可能很难，因为您可能没有习惯使用的工具。 但是，在 iOS 上进行疑难解答的一个选项是使用 Fiddler (查看本教程中有关将 Fiddler 与 [iOS 设备](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)) 。
+在移动设备上进行故障排除可能很难，因为您可能没有习惯使用的工具。 但是，在 iOS 上进行疑难解答的一个选项是使用 Fiddler (查看本教程中有关将 [Fiddler 与 iOS 设备](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)) 。
+
+> [!NOTE]
+> 在 Android 上的 Web 浏览器中，外接程序Outlook新式外接程序。 有关受支持的设备的信息，请参阅运行加载项[Office要求](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)。
 
 ## <a name="next-steps"></a>后续步骤
 

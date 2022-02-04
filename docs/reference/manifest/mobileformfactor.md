@@ -1,24 +1,25 @@
 ---
 title: 清单文件中的 MobileFormFactor 元素
 description: MobileFormFactor 元素指定外接程序的移动外形设置。
-ms.date: 09/24/2021
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c0b701064f3a8c0244dc62226899c4317b9075c4
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990675"
 ---
+
 # <a name="mobileformfactor-element"></a>MobileFormFactor 元素
 
 指定对移动外形规格的外接程序的设置。它包含移动外形规格的所有外接程序信息（**资源** 节点的信息除外）。
 
+**外接程序类型：** 邮件
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 邮件 1.1
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
 每个 **MobileFormFactor** 定义都包含 **FunctionFile** 元素和一个或多个 **ExtensionPoint** 元素。 有关详细信息，请参阅 [FunctionFile 元素](functionfile.md) 和 [ExtensionPoint 元素](extensionpoint.md)。
 
-在 VersionOverrides 架构 1.1 中定义了 **MobileFormFactor** 元素。包含  [VersionOverrides](versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。
-
-**外接程序类型：** 邮件
+在 VersionOverrides 架构 1.1 中定义了 **MobileFormFactor** 元素。包含  [VersionOverrides](versionoverrides.md) 元素的 `VersionOverridesV1_1` 属性值必须为 `xsi:type`。
 
 ## <a name="child-elements"></a>子元素
 

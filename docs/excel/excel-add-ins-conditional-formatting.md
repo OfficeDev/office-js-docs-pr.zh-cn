@@ -3,13 +3,8 @@ title: 通过 Excel JavaScript API 将条件格式应用于范围
 description: 了解 JavaScript 加载项Excel条件格式。
 ms.date: 04/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 90d36989b1161ad6953c21207f9f478a60aceafb
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148847"
 ---
+
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>将条件格式应用于特定 Excel 范围
 
 Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定数据范围的 API。 借助此功能，可以轻松直观地解析大型数据集。 该格式还会基于相应范围内的更改进行动态更新。
@@ -33,7 +28,7 @@ Excel JavaScript 库提供了用于将条件格式应用于工作表中的特定
 -    `topBottom`
 
 > [!NOTE]
-> 每个格式属性都有相应的 `*OrNullObject` 变体。 在[ \* OrNullObject 方法部分了解有关该模式](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)的内容。
+> 每个格式属性都有相应的 `*OrNullObject` 变体。 在 [OrNullObject 方法\*部分了解有关该模式](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)的内容。
 
 仅可为 ConditionalFormat 对象设置一种格式类型。 该格式类型由 `type` 属性确定，该属性是 [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) 枚举值。 `type` 是在向某一范围添加条件格式时设置的。
 
@@ -133,7 +128,7 @@ await context.sync();
 ```
 ### <a name="data-bar"></a>[数据栏](/javascript/api/excel/excel.databarconditionalformat)
 
-数据栏条件格式可将数据栏添加到单元格。 默认情况下，相应范围内的最小和最大值形成数据栏的边界和比例大小。 `DataBarConditionalFormat`对象具有多个属性来控制条形图的外观。 
+数据栏条件格式可将数据栏添加到单元格。 默认情况下，相应范围内的最小和最大值形成数据栏的边界和比例大小。 对象 `DataBarConditionalFormat` 具有多个属性来控制条形图的外观。 
 
 下面的示例对相应范围应用了从左到右填充的数据栏格式。
 
@@ -153,7 +148,7 @@ await context.sync();
 
 ### <a name="icon-set"></a>[图标集](/javascript/api/excel/excel.iconsetconditionalformat)
 
-图标集条件格式使用 Excel [图标](/javascript/api/excel/excel.icon)来突出显示单元格。 `criteria` 属性是一个 [ConditionalIconCriterion](/javascript/api/excel/excel.ConditionalIconCriterion) 数组，它定义要插入的符号以及插入该符号的条件。 此数组将使用具有默认属性的条件元素自动预填充。 个别属性不能被覆盖。 相反，必须替换整个条件对象。 
+图标集条件格式使用 Excel [图标](/javascript/api/excel/excel.icon)来突出显示单元格。 `criteria` 属性是一个 [ConditionalIconCriterion](/javascript/api/excel/excel.conditionaliconcriterion) 数组，它定义要插入的符号以及插入该符号的条件。 此数组将使用具有默认属性的条件元素自动预填充。 个别属性不能被覆盖。 相反，必须替换整个条件对象。 
 
 下面的示例展示了应用于相应范围的三元素图标集。
 
@@ -196,7 +191,7 @@ await context.sync();
 
 ### <a name="preset-criteria"></a>[预设条件](/javascript/api/excel/excel.presetcriteriaconditionalformat)
 
-预设条件格式会基于所选标准规则将用户定义的格式应用于相应范围。 这些规则由 [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule) 中的 [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) 定义。 
+预设条件格式会基于所选标准规则将用户定义的格式应用于相应范围。 这些规则由 [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule) 中的 [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.conditionalformatpresetcriterion) 定义。 
 
 下面的示例将字体颜色为白色，只要单元格的值至少比区域平均值高一个标准偏差。
 
@@ -222,7 +217,7 @@ await context.sync();
 
 文本比较条件格式将字符串比较作为条件。 `rule` 属性是一个 [ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule)，用于定义要与单元格进行比较的字符串，以及用于指定比较类型的运算符。 
 
-当单元格的文本包含"Delayed"时，以下示例将字体颜色格式化为红色。
+下面的示例将单元格的文本包含"Delayed"时字体颜色的格式为红色。
 
 ![一个将包含“Delayed”的单元格设置为红色的范围。](../images/excel-conditional-format-text.png)
 
@@ -243,7 +238,7 @@ conditionalFormat.textComparison.rule = {
 await context.sync();
 ```
 
-### <a name="topbottom"></a>[顶/底](/javascript/api/excel/excel.TopBottomconditionalformat)
+### <a name="topbottom"></a>[顶/底](/javascript/api/excel/excel.topbottomconditionalformat)
 
 顶/底条件格式将格式应用于相应范围中的最高值或最低值。 `rule` 属性的类型为 [ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule)，用于设置条件是基于最高还是最低，以及评估是基于排名还是基于百分比。 
 

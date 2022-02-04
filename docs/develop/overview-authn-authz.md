@@ -3,13 +3,8 @@ title: Office 加载项中的身份验证和授权概述
 description: 了解 Office 加载项中的身份验证和授权工作原理。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 1dab5e7e4cd1d5a32115bdecca3fa742699a53b9
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320121"
 ---
+
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office 加载项中的身份验证和授权概述
 
 默认情况下，Office 加载项允许匿名访问，但你可以要求用户登录以后再使用Microsoft 帐户、Microsoft 365 教育版或工作帐户或其他公共帐户的外接程序。 此任务被称为“用户身份验证”，因为它让加载项能够知道用户的身份。
@@ -32,7 +27,7 @@ ms.locfileid: "62320121"
 
 通常，外接程序仅需要用户的标识。 例如，你可能只想对加载项进行个性化设置，并在任务窗格中显示用户的名称。 或者，你可能希望唯一 ID 将用户与数据库中的数据关联。 只需从 Office 获取用户的访问令牌即可实现此目的。
 
-若要通过 SSO 获取用户标识，请调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) 方法。 此方法返回一个访问令牌，该令牌也是一个标识令牌，其中包含对当前已登录用户唯一的多个声明，包括 `preferred_username`、`name`、`sub`和`oid`。 有关这些属性的详细信息，请参阅 [Microsoft 标识平台 ID 令牌](/azure/active-directory/develop/id-tokens)。 有关 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) 返回的令牌示例，请参阅[示例访问令牌](sso-in-office-add-ins.md#example-access-token)。
+若要通过 SSO 获取用户标识，请调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) 方法。 此方法返回一个访问令牌，该令牌也是一个标识令牌，其中包含对当前已登录用户唯一的多个声明，包括 `preferred_username`、`name`、`sub`和`oid`。 有关这些属性的详细信息，请参阅 [Microsoft 标识平台 ID 令牌](/azure/active-directory/develop/id-tokens)。 有关 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) 返回的令牌示例，请参阅[示例访问令牌](sso-in-office-add-ins.md#example-access-token)。
 
 如果用户未登录，Office 将打开一个对话框，并使用 Microsoft 标识平台请求用户登录。 然后，此方法将返回访问令牌，或在用户无法登录时弹出错误。
 
@@ -42,7 +37,7 @@ ms.locfileid: "62320121"
 
 ### <a name="access-your-web-apis-through-sso"></a>通过 SSO 访问 Web API
 
-如果加载项具有需要授权用户的服务器端 API，请调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) 方法以获取访问令牌。 访问令牌提供对你自己 Web 服务器的访问权限（通过 [Microsoft Azure 应用注册](register-sso-add-in-aad-v2.md)配置）。在 Web 服务器上调用 API 时，还会传递访问令牌来授权用户。
+如果加载项具有需要授权用户的服务器端 API，请调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) 方法以获取访问令牌。 访问令牌提供对你自己 Web 服务器的访问权限（通过 [Microsoft Azure 应用注册](register-sso-add-in-aad-v2.md)配置）。在 Web 服务器上调用 API 时，还会传递访问令牌来授权用户。
 
 以下代码演示如何构造对外接程序 Web 服务器 API 的 HTTPS GET 请求，以获取数据。 代码在客户端运行，例如在任务窗格中运行。 它首先通过调用 `getAccessToken` 获取访问令牌。 然后，它使用服务器 API 的正确授权标头和 URL 构造 AJAX 调用。
 
@@ -77,7 +72,7 @@ function getOneDriveFileNames() {
 
 在某些情况下，不仅需要用户标识，还需要代表用户访问 [Microsoft Graph](/graph)资源。 例如，可能需要发送电子邮件，或代表用户在 Teams 中创建聊天。 这些操作等可通过 Microsoft Graph 来完成。 需要按照以下步骤操作：
 
-1. 通过 SSO 调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) 获取当前用户的访问令牌。 如果用户未登录，Office 将打开一个对话框，并使用 Microsoft 标识平台请求用户登录。 用户登录后或者在用户已登录时，该方法会返回一个访问令牌。
+1. 通过 SSO 调用 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) 获取当前用户的访问令牌。 如果用户未登录，Office 将打开一个对话框，并使用 Microsoft 标识平台请求用户登录。 用户登录后或者在用户已登录时，该方法会返回一个访问令牌。
 1. 将访问令牌传递到服务器端代码。
 1. 在服务器端，使用 [OAuth 2.0 代理流](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow) 来交换访问令牌，以获得包含必要的委托用户标识和调用 Microsoft Graph 权限的新访问令牌。 
 

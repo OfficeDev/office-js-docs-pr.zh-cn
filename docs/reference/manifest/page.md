@@ -1,18 +1,25 @@
 ---
 title: 清单文件中的 Page 元素
 description: Page 元素定义自定义函数在自定义页面中使用的 HTML Excel。
-ms.date: 10/09/2018
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bde3ba86270874b1d9059b2f1c44952241bf00f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152646"
 ---
+
 # <a name="page-element"></a>Page 元素
 
 定义 Excel 中的自定义函数所使用的 HTML 页面设置。
+
+**外接程序类型：** 自定义函数
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 任务窗格 1.0
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**与以下要求集相关联**：
+
+- [CustomFunctionsRuntime 1.1](../requirement-sets/custom-functions-requirement-sets.md) 
 
 ## <a name="attributes"></a>属性
 

@@ -4,15 +4,10 @@ description: 了解在 Office 加载项中使用 Excel 数据类型的核心概�
 ms.date: 01/14/2021
 ms.topic: conceptual
 ms.prod: excel
-ms.custom: scenarios:getting-started
+ms.custom: 'scenarios:getting-started'
 ms.localizationpriority: high
-ms.openlocfilehash: a769010ad46af7bba2210d9a6f9d66082cb3f815
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074306"
 ---
+
 # <a name="excel-data-types-core-concepts-preview"></a>Excel 数据类型核心概念（预览版）
 
 > [!NOTE]
@@ -29,11 +24,11 @@ ms.locfileid: "62074306"
 
 ## <a name="core-concepts"></a>核心概念
 
-使用 [`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJson) 属性处理数据类型值。 此属性类似于 [Range.values](/javascript/api/excel/excel.range#values)，但 `Range.values` 只返回四种基本类型：字符串、数字、布尔或错误值。 `Range.valuesAsJson` 可以返回有关这四种基本类型的扩展信息，此属性可以返回数据类型，例如带格式数字值、实体和 Web 图像。
+使用 [`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) 属性处理数据类型值。 此属性类似于 [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member)，但 `Range.values` 只返回四种基本类型：字符串、数字、布尔或错误值。 `Range.valuesAsJson` 可以返回有关这四种基本类型的扩展信息，此属性可以返回数据类型，例如带格式数字值、实体和 Web 图像。
 
 ### <a name="json-schema"></a>JSON 架构
 
-每个数据类型都使用为该类型设计的 JSON 元数据架构。 这将定义数据的 [CellValueType](/javascript/api/excel/excel.cellvaluetype) 以及有关单元格的其他信息，例如 `basicValue`、`numberFormat` 或 `address`。 每个 `CellValueType` 都具有符合该类型的可用属性。 例如，`webImage` 类型包括 [altText](/javascript/api/excel/excel.webimagecellvalue#altText) 和 [attribution](/javascript/api/excel/excel.webimagecellvalue#attribution) 属性。 以下部分显示带格式数字值、实体值和 Web 图像数据类型的 JSON 代码示例。
+每个数据类型都使用为该类型设计的 JSON 元数据架构。 这将定义数据的 [CellValueType](/javascript/api/excel/excel.cellvaluetype) 以及有关单元格的其他信息，例如 `basicValue`、`numberFormat` 或 `address`。 每个 `CellValueType` 都具有符合该类型的可用属性。 例如，`webImage` 类型包括 [altText](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-alttext-member) 和 [attribution](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-attribution-member) 属性。 以下部分显示带格式数字值、实体值和 Web 图像数据类型的 JSON 代码示例。
 
 每个数据类型的 JSON 元数据架构还包括一个或多个只读属性，这些属性在计算遇到不兼容的方案时使用，例如 Excel 版本不符合数据类型功能的最低内部版本号要求。 属性 `basicType` 是每个数据类型的 JSON 元数据的一部分，它始终是只读属性。 当 `basicType` 数据类型不受支持或格式不正确时，属性用作回退。
 

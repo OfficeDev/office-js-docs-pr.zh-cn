@@ -3,13 +3,8 @@ title: 从 Outlook 加载项使用 Outlook REST API
 description: 了解如何从 Outlook 加载项使用 Outlook REST API 获得访问令牌。
 ms.date: 07/06/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fd34e40a35d7a0cc190265587fec6bf8dd60593c
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148819"
 ---
+
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>从 Outlook 加载项使用 Outlook REST API
 
 [Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 命名空间提供访问许多邮件和约会的公用字段的权限。但是，在某些方案中，外接程序可能需要访问命名空间未公开的数据。例如，外接程序可能依赖于外部应用设置的自定义属性，或需要搜索用户邮箱中来自同一发件人的邮件。在这些方案中，[Outlook REST API](/outlook/rest) 是推荐的检索信息的方法。
@@ -17,7 +12,7 @@ ms.locfileid: "59148819"
 > [!IMPORTANT]
 > **已Outlook REST API**
 >
-> 有关Outlook， (2022 年 11 月将完全停用 REST 终结点，请参阅[2020 年 11](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)月) 。 应迁移现有加载项，以使用 Microsoft [Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph)。 此外，[比较 Microsoft Graph 和 Outlook REST API 终结点](/outlook/rest/compare-graph)。
+> 有关Outlook，REST 终结点将于 2022 年 11 月 (完全停用，请参阅 [2020 年 11](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/) 月发布的) 。 应迁移现有外接程序以使用 [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph)。 此外，[比较 Microsoft Graph 和 Outlook REST API 终结点](/outlook/rest/compare-graph)。
 
 ## <a name="get-an-access-token"></a>获取访问令牌
 
@@ -54,7 +49,7 @@ Office.context.mailbox.getCallbackTokenAsync({isRest: true}, function(result){
 - 在其他 Outlook 客户端中，由 `Office.context.mailbox.item.itemId` 返回的值是适用于 EWS 格式的 ID，且必须使用 [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法进行转换。
 - 请注意，还必须将附件 ID 转换为带 REST 格式的 ID，才能使用它。 必须转换 ID 的原因是，EWS ID 可能包含非 URL 安全值，这会导致 REST 问题出现。
 
-通过检查 [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#hostName) 属性，加载项可以确定它所加载的是哪个 Outlook 客户端。
+通过检查 [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostname-member) 属性，加载项可以确定它所加载的是哪个 Outlook 客户端。
 
 ### <a name="example"></a>示例
 
@@ -89,7 +84,7 @@ var restHost = Office.context.mailbox.restUrl;
 有访问令牌、项 ID 和 REST API URL 后，加载项可以将这些信息传递到调用 REST API 的后端服务，也可以使用 AJAX 直接调用 API。 下面的示例展示了如何调用 Outlook 邮件 REST API 来获取当前消息。
 
 > [!IMPORTANT]
-> 对于内部部署Exchange，使用 AJAX 或类似库的客户端请求会失败，因为该服务器安装程序不支持 CORS。
+> 对于本地Exchange部署，使用 AJAX 或类似库的客户端请求将失败，因为该服务器安装程序不支持 CORS。
 
 ```js
 function getCurrentItem(accessToken) {

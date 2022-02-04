@@ -3,13 +3,8 @@ title: 使用应用程序专用 API 模型
 description: 了解 Excel、OneNote 和 Word 加载项基于承诺的 API 模型。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d7eaa51f6ac9255772e7dcd154e82dc28f39e848
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149169"
 ---
+
 # <a name="application-specific-api-model"></a>特定于应用程序的 API 模型
 
 本文介绍如何使用 API 模型在 Excel、Word 和 OneNote 中构建加载项。 本文介绍核心概念，这些概念是使用基于承诺的 API 的基础。
@@ -234,7 +229,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 在上一示例中，***无法*** 直接分配为值`zoom`：`sheet.pageLayout.zoom.scale = 200;`。 该语句会引发错误， `zoom` 加载错误。 即使 `zoom` ，该比例也会生效。 所有上下文操作 `zoom`、刷新加载项中的代理对象并覆盖本地设置的值。
 
-此行为与 [Range.format](application-specific-api-model.md#scalar-and-navigation-properties) 等 [导航属性](/javascript/api/excel/excel.range#format)。 可以使用 `format` 对象导航设置 的属性，如下所示。
+此行为与 [Range.format](application-specific-api-model.md#scalar-and-navigation-properties) 等 [导航属性](/javascript/api/excel/excel.range#excel-excel-range-format-member)。 `format`可以使用对象导航设置 的属性，如下所示。
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.

@@ -3,16 +3,11 @@ title: 在 Outlook 加载项中获取或设置主题
 description: 了解如何在 Outlook 加载项中获取或设置邮件或约会的主题。
 ms.date: 04/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 534b0cff9d065873ddf566a0d82a3716529414df
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152400"
 ---
+
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取或设置主题
 
-JavaScript API Office提供用于 ([subject.getAsync](/javascript/api/outlook/office.Subject#getAsync_options__callback_)和[subject.setAsync](/javascript/api/outlook/office.subject#setAsync_subject__options__callback_)) 的异步方法，用于获取和设置用户正在撰写的约会或邮件的主题。 这些异步方法仅适用于撰写外接程序。若要使用这些方法，请确保已正确设置外接程序清单，Outlook在撰写窗体中激活外接程序。
+Office JavaScript API 提供了异步方法 ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) 和 [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) 获取和设置用户正在撰写的约会或邮件的主题。 这些异步方法仅适用于撰写外接程序。若要使用这些方法，请确保已设置相应的外接程序清单，Outlook以在撰写窗体中激活外接程序。
 
 **subject** 属性可用于约会和邮件的撰写和阅读窗体中的读取权限。在阅读窗体中，可以从父对象直接访问此属性，如：
 
@@ -28,7 +23,7 @@ item.subject.getAsync
 
 **subject** 属性仅适用于撰写窗体中（而不能用于阅读窗体中）的写入权限。
 
-与 JavaScript API 中的大多数异步Office一样 **，getAsync** 和 **setAsync** 采用可选输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md)中的“向异步方法传递可选参数”。
+与 JavaScript API 中的大多数异步Office一样，**getAsync** 和 **setAsync** 采用可选输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md)中的“向异步方法传递可选参数”。
 
 
 ## <a name="get-the-subject"></a>获取主题
@@ -44,7 +39,7 @@ item.subject.getAsync
 
 ```
 
-若要使用 **item.subject.getAsync**，可提供一个检查异步调用状态和结果的回调方法。可以通过 _asyncContext_ 可选形参向回调方法提供任何必要实参。可以使用回调的输出形参 _asyncResult_ 获取状态、结果和任何错误。如果异步调用成功，则可以使用 [AsyncResult.value](/javascript/api/office/office.asyncresult#value) 属性获取纯文本字符串形式的主题。
+若要使用 **item.subject.getAsync**，可提供一个检查异步调用状态和结果的回调方法。可以通过 _asyncContext_ 可选形参向回调方法提供任何必要实参。可以使用回调的输出形参 _asyncResult_ 获取状态、结果和任何错误。如果异步调用成功，则可以使用 [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) 属性获取纯文本字符串形式的主题。
 
 
 ```js

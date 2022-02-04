@@ -3,16 +3,11 @@ title: 获取或设置 Outlook 加载项中的约会时间
 description: 了解如何在 Outlook 加载项中获取或设置约会开始和结束时间。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ab4016923a883a259a3c9c478639ae288b1ebdf7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152399"
 ---
+
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置时间
 
-Office JavaScript API 提供了异步方法 ([Time.getAsync](/javascript/api/outlook/office.time#getAsync_options__callback_)和[Time.setAsync](/javascript/api/outlook/office.time#setAsync_dateTime__options__callback_)) 获取和设置用户正在撰写的约会的开始时间或结束时间。 这些异步方法仅适用于撰写加载项。若要使用这些方法，请确保为 Outlook 设置相应的外接程序清单以在撰写窗体中激活外接程序，如为撰写窗体创建 Outlook 外接程序[中所述](compose-scenario.md)。
+JavaScript API Office提供了异步方法 ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) 和 [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) ，用于获取和设置用户正在撰写的约会的开始时间或结束时间。 这些异步方法仅适用于撰写加载项。若要使用这些方法，请确保为 Outlook 设置相应的外接程序清单以在撰写窗体中激活外接程序，如为撰写窗体创建 [Outlook](compose-scenario.md) 外接程序中所述。
 
 [start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和 [end](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性对撰写和阅读窗体中的约会均适用。在阅读窗体中，您可以直接从父对象访问属性，类似于：
 
@@ -38,7 +33,7 @@ item.start.getAsync
 item.end.getAsync
 ```
 
-与 JavaScript API 中的大多数异步Office一样 **，getAsync** 和 **setAsync** 采用可选输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
+与 JavaScript API 中的大多数异步Office一样，**getAsync** 和 **setAsync** 采用可选输入参数。 有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline)中的[向异步方法传递可选参数](../develop/asynchronous-programming-in-office-add-ins.md)。
 
 
 ## <a name="get-the-start-or-end-time"></a>获取开始或结束时间
@@ -51,7 +46,7 @@ item.end.getAsync
 
 ```
 
-若要使用 **item.start.getAsync** 或 **item.end.getAsync**，请提供回调方法来检查异步调用的状态和结果。可以通过 _asyncContext_ 可选参数向回调方法提供任何需要的自变量。可以使用回调的输出参数 _asyncResult_ 来获取状态、结果和任何错误。如果异步调用成功，则可以使用 [AsyncResult.value](/javascript/api/office/office.asyncresult#value) 属性获取作为 **Date** 对象的 UTC 格式开始时间。
+若要使用 **item.start.getAsync** 或 **item.end.getAsync**，请提供回调方法来检查异步调用的状态和结果。可以通过 _asyncContext_ 可选参数向回调方法提供任何需要的自变量。可以使用回调的输出参数 _asyncResult_ 来获取状态、结果和任何错误。如果异步调用成功，则可以使用 [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) 属性获取作为 **Date** 对象的 UTC 格式开始时间。
 
 
 ```js

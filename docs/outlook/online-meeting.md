@@ -4,16 +4,11 @@ description: 讨论如何为联机会议Outlook设置移动外接程序。
 ms.topic: article
 ms.date: 07/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 339763294e2e3609a1a503cd59d74eb4af4fefb3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148841"
 ---
+
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>为Outlook创建一个移动外接程序
 
-设置联机会议是 Outlook 的核心体验，使用移动设备轻松创建Teams会议[Outlook](/microsoftteams/teams-add-in-for-outlook)体验。 但是，使用非 Microsoft Outlook联机会议可能会很麻烦。 通过实现此功能，服务提供商可以简化其外接程序用户的联机会议Outlook体验。
+设置联机会议是 Outlook 的核心体验，使用移动版创建 Teams 会议[Outlook非常简单。](/microsoftteams/teams-add-in-for-outlook) 但是，使用非 Microsoft 服务Outlook联机会议可能会很麻烦。 通过实现此功能，服务提供商可以简化其外接程序用户的联机会议Outlook体验。
 
 > [!IMPORTANT]
 > 此功能仅在 Android 和 iOS 上受支持，Microsoft 365订阅。
@@ -26,13 +21,13 @@ ms.locfileid: "59148841"
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要使用户能够使用外接程序创建联机会议，您必须在清单中的父元素 下配置 [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) 扩展点 `MobileFormFactor` 。 不支持其他外形因素。
+若要使用户能够使用外接程序创建联机会议，您必须在清单中的父元素 下配置 [MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) 扩展点 `MobileFormFactor`。 不支持其他外形因素。
 
 1. 在代码编辑器中，打开快速启动项目。
 
 1. 打开 **manifest.xml** 根目录下的文件。
 
-1. 选择整个 `<VersionOverrides>` 节点 (包括 open 和 close 标记) 并将其替换为以下 XML。
+1. 选择整个节点 `<VersionOverrides>` (包括 open 和 close 标记) 并将其替换为以下 XML。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -122,13 +117,13 @@ ms.locfileid: "59148841"
 ```
 
 > [!TIP]
-> 若要了解有关外接程序的Outlook清单，请参阅[Outlook add-in manifests](manifests.md)和[Add support for add-in commands for Outlook Mobile。](add-mobile-support.md)
+> 若要了解有关外接程序Outlook清单，请参阅 Outlook [外接程序](manifests.md)清单和添加对 [Outlook Mobile 外接程序命令的支持](add-mobile-support.md)。
 
 ## <a name="implement-adding-online-meeting-details"></a>实现添加联机会议详细信息
 
 在此部分中，了解外接程序脚本如何更新用户会议以包含联机会议详细信息。
 
-1. 从同一快速启动项目中，在代码编辑器中打开 **commands.js./src/commands/commands.js** 文件。
+1. 从同一快速启动项目中，在代码编辑器中打开 **文件./src/commands/commands.js** 文件。
 
 1. 用以下 JavaScript **commands.js** 文件的全部内容。
 
@@ -207,7 +202,7 @@ ms.locfileid: "59148841"
 
 ## <a name="testing-and-validation"></a>测试和验证
 
-按照常规指南 [测试和验证加载项](testing-and-tips.md)。 在[Outlook 网页版、Windows](sideload-outlook-add-ins-for-testing.md)或 Mac Outlook旁加载后，在 Android 或 iOS 移动设备上重新启动。 然后，在新的会议屏幕上，验证 Microsoft Teams 或 Skype 开关是否替换为你自己的开关。
+按照常规指南 [测试和验证加载项](testing-and-tips.md)。 在 [Outlook 网页版](sideload-outlook-add-ins-for-testing.md)、Windows 或 Mac 中旁加载后，Outlook Android 或 iOS 移动设备上重新启动。 然后，在新的会议屏幕上，验证 Microsoft Teams 或 Skype 开关是否替换为你自己的开关。
 
 ### <a name="create-meeting-ui"></a>创建会议 UI
 
@@ -226,13 +221,13 @@ ms.locfileid: "59148841"
 
 ## <a name="register-your-online-meeting-template"></a>注册联机会议模板
 
-如果要为服务注册联机会议模板，可以创建包含详细信息GitHub问题。 之后，我们将联系你以协调注册时间线。
+如果要为服务注册联机会议模板，可以创建一个GitHub问题。 之后，我们将联系你以协调注册时间线。
 
 1. 转到 **本文** 末尾的"反馈"部分。
 1. 按" **此页面"** 链接。
-1. 将 **新问题** 的标题设置为"为 my-service 注册联机会议模板"，并 `my-service` 替换为你的服务名称。
-1. 在问题正文中，将字符串"[在此处输入反馈]"替换为你在本文前面实现添加联机会议详细信息部分或类似变量中设置的 `newBody` 字符串。 [](#implement-adding-online-meeting-details)
-1. 单击 **"提交新问题"。**
+1. 将 **新问题** 的标题设置为"为 my-service 注册联机会议模板"，并替换为 `my-service` 你的服务名称。
+1. 在问题正文中，将字符串"[在此处输入反馈] `newBody` "替换为你在本文前面实现 [添加](#implement-adding-online-meeting-details) 联机会议详细信息部分或类似变量中设置的字符串。
+1. 单击 **"提交新问题"**。
 
 ![包含 Contoso GitHub新问题屏幕的屏幕截图。](../images/outlook-request-to-register-online-meeting-template.png)
 
@@ -241,14 +236,14 @@ ms.locfileid: "59148841"
 以下 API 可用于此功能。
 
 - 约会管理器 API
-  - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#body) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#getAsync_coercionType__options__callback_) [、Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#setAsync_data__options__callback_)) 
-  - [Office.context.mailbox.item.end (](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#end) [Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true)) 
-  - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#loadCustomPropertiesAsync_callback__userContext_) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true)) 
-  - [Office.context.mailbox.item.location (](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#location) [Location) ](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true)
-  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#optionalAttendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true)) 
-  - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#requiredAttendees) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true)) 
-  - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#start) ([Time) ](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true)
-  - [Office.context.mailbox.item.subject (](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#subject) [Subject) ](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true)
+  - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-body-member) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-getasync-member(1))、[Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-setasync-member(1))) 
+  - [Office.context.mailbox.item.end (](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-end-member) [Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true)) 
+  - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-loadcustompropertiesasync-member(1)) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true)) 
+  - [Office.context.mailbox.item.location (](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-location-member) [Location) ](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true)
+  - [Office.context.mailbox.item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-optionalattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true)) 
+  - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-requiredattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true)) 
+  - [Office.context.mailbox.item.start (](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-start-member) [Time) ](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true)
+  - [Office.context.mailbox.item.subject (](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-subject-member) [Subject) ](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true)
   - [Office.context.roamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([RoamingSettings) ](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true)
 - 处理身份验证流
   - [Dialog API](../develop/dialog-api-in-office-add-ins.md)
@@ -258,9 +253,9 @@ ms.locfileid: "59148841"
 有几个限制适用。
 
 - 仅适用于联机会议服务提供商。
-- 只有管理员安装的外接程序将显示在会议撰写屏幕上，以替换默认的Teams或Skype选项。 用户安装的加载项不会激活。
-- 加载项图标应该使用十六进制代码或其他颜色格式的等效 `#919191` 项以灰 [度显示](https://convertingcolors.com/hex-color-919191.html)。
-- 在以撰写模式撰写的约会管理器中，仅 (UI) 命令。
+- 只有管理员安装的外接程序将显示在会议撰写屏幕上，以替换默认 Teams 或 Skype 选项。 用户安装的加载项不会激活。
+- 加载项图标应该使用十六 `#919191` 进制代码或其他颜色格式的等效项以灰 [度显示](https://convertingcolors.com/hex-color-919191.html)。
+- 在"约会管理器"模式下，只有一个无 UI 命令 (撰写) 模式。
 - 外接程序应在一分钟的超时时间内更新约会窗体中的会议详细信息。 但是，在对话框中为进行身份验证而打开的外接程序等所花的任何时间都从超时期间排除。
 
 ## <a name="see-also"></a>另请参阅

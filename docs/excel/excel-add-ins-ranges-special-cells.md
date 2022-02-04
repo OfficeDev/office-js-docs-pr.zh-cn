@@ -4,20 +4,15 @@ description: 了解如何使用 JavaScript API Excel查找特殊单元格，例�
 ms.date: 07/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ddd60f3cd87f528616fe376003b9eb7d3374f4a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152278"
 ---
+
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>使用 JavaScript API 查找Excel单元格
 
-本文提供的代码示例使用 JavaScript API 查找Excel单元格。 有关对象支持的属性和方法的完整 `Range` 列表，请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供的代码示例使用 JavaScript API 查找Excel单元格。 有关对象支持的属性和方法`Range`的完整列表，请参阅Excel[。Range 类](/javascript/api/excel/excel.range)。
 
 ## <a name="find-ranges-with-special-cells"></a>查找包含特殊单元格的范围
 
-[Range.getSpecialCells](/javascript/api/excel/excel.range#getSpecialCells_cellType__cellValueType_)和[Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getSpecialCellsOrNullObject_cellType__cellValueType_)方法根据单元格的特征及其单元格的值类型查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中方法的签名：
+[Range.getSpecialCells](/javascript/api/excel/excel.range#excel-excel-range-getspecialcells-member(1)) 和 [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#excel-excel-range-getspecialcellsornullobject-member(1)) 方法根据单元格的特征及其单元格的值类型查找区域。 这两种方法都返回 `RangeAreas` 对象。 以下是 TypeScript 数据类型文件中方法的签名：
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -43,12 +38,12 @@ Excel.run(function (context) {
 })
 ```
 
-如果区域中不存在具有目标特征的单元格，`getSpecialCells` 会引发 **ItemNotFound** 错误。 这会将控制流转移到 `catch` 信息块（如果存在）。 如果没有块， `catch` 错误将终止方法。
+如果区域中不存在具有目标特征的单元格，`getSpecialCells` 会引发 **ItemNotFound** 错误。 这会将控制流转移到 `catch` 信息块（如果存在）。 如果没有块，错误 `catch` 将终止方法。
 
 如果你希望具有目标特征的单元格始终存在，则你可能想要代码在没有这些单元格的时候引发错误。 若没有匹配单元格是一个有效应用场景，代码应该会检查这种可能的情况并按正常方式处理它，而不会引发错误。 可以用此 `getSpecialCellsOrNullObject` 方法及其返回的 `isNullObject` 属性实现此行为。 下面的代码示例使用此模式。 关于此代码，请注意以下几点：
 
-- `getSpecialCellsOrNullObject`方法始终返回代理对象，因此在普通 JavaScript 意义上，它 `null` 永远不会返回。 但是，如果没有找到匹配的单元格，则对象的 `isNullObject` 属性将设置为 `true`。
-- 在测试 `isNullObject` 属性 *之前*，它将调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你必须始终加载和同步属性才能读取它。 但是，不需要显式 *加载* `isNullObject` 属性。 即使未在 对象上调用 `context.sync` ，它 `load` 也会自动加载。 有关详细信息，请参阅[ \* OrNullObject 方法和属性](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)。
+- 方法 `getSpecialCellsOrNullObject` 始终返回代理对象，因此在 `null` 普通 JavaScript 意义上，它永远不会返回。 但是，如果没有找到匹配的单元格，则对象的 `isNullObject` 属性将设置为 `true`。
+- 在测试 `isNullObject` 属性 *之前*，它将调用 `context.sync`。 这是所有 `*OrNullObject` 方法和属性的要求，因为你必须始终加载和同步属性才能读取它。 但是，不需要显式 *加载*`isNullObject`属性。 即使未在 对象上调用 `context.sync` ， `load` 它也会自动加载。 有关详细信息，请参阅 [\*OrNullObject 方法和属性](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)。
 - 你可以测试此代码，方法是先选择没有公式单元格的区域并运行它。 然后选择至少包含一个带公式的单元格的区域，并再次运行它。
 
 ```js
@@ -68,7 +63,7 @@ Excel.run(function (context) {
 })
 ```
 
-为简单起见，本文中的所有其他代码示例都 `getSpecialCells` 使用 方法而不是  `getSpecialCellsOrNullObject` 。
+为简单起见，本文中的所有其他代码示例都使用 `getSpecialCells` 方法而不是  `getSpecialCellsOrNullObject`。
 
 ## <a name="narrow-the-target-cells-with-cell-value-types"></a>通过单元格值类型缩小目标单元格的范围
 
@@ -88,7 +83,7 @@ Excel.run(function (context) {
 
 下面的代码示例查找数值常量的特殊单元格，并设置这些单元格的粉色。 关于此代码，请注意以下几点：
 
-- 它只突出显示具有文字数字值的单元格。 它不会突出显示具有公式单元格 (即使结果是数字或布尔) 、文本或错误状态单元格。
+- 它只突出显示具有文字数字值的单元格。 它不会突出显示具有公式单元格的 (，即使结果是数字) 、文本或错误状态单元格。
 - 要测试代码，请确保工作表中的某些单元格包含文本数值，某些包含其他类型的文本值，而某些则包含公式。
 
 ```js

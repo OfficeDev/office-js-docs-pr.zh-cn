@@ -3,13 +3,8 @@ title: Office 加载项开发最佳做法
 description: 在开发时应用最佳做法以创建Office外接程序。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6a4511f7466ee9aa63aecb496d90f17b21b69a
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073337"
 ---
+
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
 有效的外接程序提供独特且极具吸引力的功能，采用具有视觉吸引力的方式扩展 Office 应用程序。若要创建出色的外接程序，需为用户提供极具吸引力的首次使用体验、设计一流的 UI 体验和优化外接程序的性能。将本文中描述的最佳实践应用于创建有助于您的用户快速有效地完成其任务的外接程序。
@@ -56,7 +51,7 @@ ms.locfileid: "62073337"
 
 ## <a name="apply-ux-design-principles"></a>应用用户体验设计原则
 
-- 确保你的外接程序的外观和功能很好地补充了 Office 体验。 请参阅[设计加载项Office UI。](../design/add-in-design.md)
+- 确保你的外接程序的外观和功能很好地补充了 Office 体验。 请参阅[设计加载项Office UI](../design/add-in-design.md)。
 
 - 支持内容胜过支持部件版式。避免使用对用户体验毫无价值的不必要的 UI 元素。
 
@@ -76,7 +71,7 @@ ms.locfileid: "62073337"
 
 ### <a name="optimize-for-touch"></a>触摸优化
 
-- 使用[Context.touchEnabled](/javascript/api/office/office.context#touchEnabled)属性可检测Office运行加载项的加载项应用程序是否启用了触摸功能。
+- 使用 [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) 属性可检测Office运行加载项的加载项应用程序是否启用了触摸功能。
 
   > [!NOTE]
   > Outlook 不支持此属性。
@@ -90,7 +85,7 @@ ms.locfileid: "62073337"
 - 使用[旁加载](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)在实际设备上测试加载项。
 
 > [!NOTE]
-> 如果你为设计[元素Fluent UI](../design/using-office-ui-fabric-react.md) React，许多这些元素都内置在设计系统中。
+> 如果你为设计[元素Fluent UI React](../design/using-office-ui-fabric-react.md)，许多这些元素都内置在设计系统中。
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>优化和监视加载项性能
 
@@ -100,7 +95,7 @@ ms.locfileid: "62073337"
 
 - 为长时间运行的操作提供加载指示器。
 
-- 使用内容交付网络 (CDN) 托管图像、资源和公用库。 尽可能地从一个位置进行加载。
+- 使用内容传送网络 (CDN) 托管图像、资源和公用库。 尽可能地从一个位置进行加载。
 
 - 请按照标准 Web 实践来优化您的网页。在生产中，仅使用库的缩小版本。仅加载所需的资源，并优化加载资源的方式。
 
@@ -133,7 +128,7 @@ ms.locfileid: "62073337"
 
 - 创建有助于用户查找和使用加载项的网站。
 
-## <a name="use-javascript-that-supports-internet-explorer"></a>使用支持此平台的 JavaScript Internet Explorer
+## <a name="use-javascript-that-supports-internet-explorer"></a>使用支持 javaScript 的 javaScript Internet Explorer
 
 [!INCLUDE [How to support IE](../includes/es5-support.md)]
 

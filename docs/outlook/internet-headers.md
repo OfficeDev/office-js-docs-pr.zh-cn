@@ -1,15 +1,10 @@
 ---
 title: 获取和设置 Internet 标头
-description: 如何获取和设置加载项中邮件Outlook Internet 标头。
+description: 如何获取和设置外接程序中邮件Outlook Internet 标头。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9784ef16c70e273e6bd1c242ffe91d97aa5d40ed
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149513"
 ---
+
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>在加载项中获取和设置Outlook的 Internet 标头
 
 ## <a name="background"></a>背景
@@ -21,24 +16,24 @@ ms.locfileid: "59149513"
 
 这两种类型的属性在项目从服务器Exchange后不会保留，因此电子邮件收件人无法获取在项目上设置的任何属性。 因此，开发人员无法访问这些设置或其他 MIME 属性，从而启用更好的读取方案。
 
-虽然可以通过 EWS 请求设置 Internet 标头，但在某些情况下，EWS 请求不起作用。 例如，在桌面Outlook撰写模式下，项目 ID 不会在缓存模式下  `saveAsync`   同步。
+虽然可以通过 EWS 请求设置 Internet 标头，但在某些情况下，EWS 请求不起作用。 例如，在桌面Outlook撰写模式下，项目 ID `saveAsync`  不会在缓存模式下同步。
 
 > [!TIP]
-> 请参阅[Get and set add-in metadata for an Outlook in to](metadata-for-an-outlook-add-in.md) learn more about using these options.
+> 请参阅 [Get and set add-in metadata for an Outlook in to](metadata-for-an-outlook-add-in.md) learn more about using these options.
 
 ## <a name="purpose-of-the-internet-headers-api"></a>Internet 标头 API 的用途
 
-要求 [集 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)中引入了 Internet 标头 API，开发人员可以：
+要求 [集 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) 中引入了 Internet 标头 API，开发人员可以：
 
 - 标记电子邮件在离开所有客户端后Exchange的信息。
-- 阅读电子邮件离开后保留的电子邮件信息Exchange邮件阅读方案中的所有客户端。
+- 在邮件阅读方案中，阅读电子邮件离开Exchange保留的电子邮件的信息。
 - 访问电子邮件的整个 MIME 标头。
 
 ![Internet 标头关系图。 文本：用户 1 发送电子邮件。 在用户撰写电子邮件时，外接程序管理自定义 Internet 标头。 用户 2 接收电子邮件。 外接程序从收到的电子邮件获取 Internet 标头，然后分析和使用自定义标头。](../images/outlook-internet-headers.png)
 
 ## <a name="set-internet-headers-while-composing-a-message"></a>在撰写邮件时设置 Internet 标头
 
-请尝试使用 [item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetHeaders) 属性管理在撰写模式下在当前邮件上放置的自定义 Internet 标头。
+请尝试使用 [item.internetHeaders](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-internetheaders-member) 属性管理在撰写模式下在当前邮件上放置的自定义 Internet 标头。
 
 ### <a name="set-get-and-remove-custom-headers-example"></a>设置、获取和删除自定义标头示例
 
@@ -107,7 +102,7 @@ Selected headers: {"x-preferred-fruit":"orange","x-preferred-vegetable":"broccol
 
 ## <a name="get-internet-headers-while-reading-a-message"></a>在阅读邮件时获取 Internet 标头
 
-尝试调用 [item.getAllInternetHeadersAsync，](/javascript/api/outlook/office.messageread#getAllInternetHeadersAsync_options__callback_) 以在阅读模式下获取当前邮件上的 Internet 标头。
+尝试调用 [item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getallinternetheadersasync-member(1)) ，以在阅读模式下获取当前邮件上的 Internet 标头。
 
 ### <a name="get-sender-preferences-from-current-mime-headers-example"></a>从当前 MIME 头获取发件人首选项示例
 

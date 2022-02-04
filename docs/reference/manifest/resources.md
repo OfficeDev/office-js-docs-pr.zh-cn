@@ -1,24 +1,29 @@
 ---
 title: 清单文件中的 Resources 元素
 description: Resources 元素包含用于 VersionOverrides 节点的图标、字符串和 URL。
-ms.date: 03/30/2021
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 874c89a504fa32d7fc7b21324a08d21681d5a11a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152380"
 ---
+
 # <a name="resources-element"></a>Resources 元素
 
 包含图标、字符串以及 [VersionOverrides](versionoverrides.md) 节点的 URL。清单元素通过使用资源的 **id** 来指定资源。这有助于将清单的大小保持在可管理的范围，尤其是当资源具有不同区域设置的版本时。**id** 在清单内必须是唯一的且最多可包含 32 个字符。
+
+**外接程序类型：** 任务窗格、邮件
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 任务窗格 1.0
+- 邮件 1.0
+- 邮件 1.1
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 每个资源可以具有一个或多个 **Override** 子元素以定义特定区域设置的不同资源。
 
 ## <a name="child-elements"></a>子元素
 
-|  元素 |  类型  |  描述  |
+|  元素 |  类型  |  说明  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  提供指向图标图像的 HTTPS URL。 |
 |  **Urls**                |  url     |  提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。 |
@@ -46,8 +51,8 @@ ms.locfileid: "59152380"
 
 > [!IMPORTANT]
 >
-> - 如果此图像是加载项的代表图标，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和加载项内创建有效Office列表了解大小和其他要求。
-> - Outlook 需要缓存图像资源的能力，以提高性能。 为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。 这将导致 Outlook 自动替代泛型或默认图像。
+> - 如果此图像是加载项的代表图标，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和加载项Office创建有效列表，了解大小和其他要求。
+> - Office加载项需要缓存图像资源的能力，以提高性能。 为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。 这些指令会导致Office图像或默认图像自动进行子搜索。 若要强制在开发计算机上使用新图标，请清除Office[缓存](../../testing/clear-cache.md)。 若要强制在最终用户计算机上使用新图标，必须为新图标提供与旧图标不同的 URL。
 
 ## <a name="resources-examples"></a>资源示例
 

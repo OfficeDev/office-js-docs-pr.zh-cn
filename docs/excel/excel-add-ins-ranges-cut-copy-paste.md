@@ -4,22 +4,17 @@ description: 了解如何使用 JavaScript API 剪切、复制和Excel区域。
 ms.date: 04/02/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8d7842eb9b35b293f1ae56c4d444834d1cf672
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149270"
 ---
+
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API 剪切、复制和Excel区域
 
-本文提供了使用 JavaScript API 剪切、复制和粘贴区域Excel示例。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供了使用 JavaScript API 剪切、复制和粘贴Excel示例。 有关对象支持的属性和方法的完整`Range`列表，请参阅Excel[。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-[Range.copyFrom](/javascript/api/excel/excel.range#copyFrom_sourceRange__copyType__skipBlanks__transpose_)方法复制该 **UI** **的** 复制Excel粘贴操作。 目标为 `Range` 所 `copyFrom` 调用的对象。 将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。
+[Range.copyFrom](/javascript/api/excel/excel.range#excel-excel-range-copyfrom-member(1)) 方法复制该 UI 的 **复制** Excel粘贴操作。 目标为 `Range` 所调用 `copyFrom` 的对象。 将要复制的源作为一个范围或一个表示范围的字符串地址进行传递。
 
 以下代码示例将数据从“A1:E1”复制到“G1”开始的范围（粘贴到“G1:K1”结束）。
 
@@ -80,7 +75,7 @@ Excel.run(function (context) {
 
 ## <a name="cut-and-paste-move-cells"></a>剪切并粘贴 (移动) 单元格
 
-[Range.moveTo](/javascript/api/excel/excel.range#moveTo_destinationRange_)方法将单元格移动到工作簿中的新位置。 此单元格移动行为的工作方式与通过拖动区域边框或执行"[](https://support.microsoft.com/office/803d65eb-6a3e-4534-8c6f-ff12d1c4139e)剪切"和"粘贴"操作移动单元格 **时相同**。 区域的格式和值都移至指定为 参数 `destinationRange` 的位置。
+[Range.moveTo](/javascript/api/excel/excel.range#excel-excel-range-moveto-member(1)) 方法将单元格移动到工作簿中的新位置。 此单元格移动行为的工作方式与通过拖动区域边框或执行"[](https://support.microsoft.com/office/803d65eb-6a3e-4534-8c6f-ff12d1c4139e)剪切"和"粘贴"操作移动单元格 **时相同**。 区域的格式和值都移至指定为 参数 `destinationRange` 的位置。
 
 下面的代码示例使用 方法移动 `Range.moveTo` 区域。 请注意，如果目标区域小于源范围，它将扩展以包含源内容。
 

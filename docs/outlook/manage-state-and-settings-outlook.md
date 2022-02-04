@@ -3,19 +3,14 @@ title: 管理加载项的状态Outlook设置
 description: 了解如何保留加载项的加载项状态Outlook设置。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: dee9d49c50df610957cb009c73451c58507adbc5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148844"
 ---
+
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>管理加载项的状态Outlook设置
 
 > [!NOTE]
 > 阅读[本文之前，请查看](../develop/persisting-add-in-state-and-settings.md)本文档的核心概念部分中的保留加载项状态和设置。
 
-对于Outlook外接程序，Office JavaScript API 提供了[RoamingSettings](/javascript/api/outlook/office.roamingsettings)和[CustomProperties](/javascript/api/outlook/office.customproperties)对象，用于跨会话保存外接程序状态，如下表所述。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
+对于Outlook外接程序，Office JavaScript API 提供了 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 和 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象，用于跨会话保存外接程序状态，如下表所述。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
 
 |**对象**|**存储位置**|
 |:-----|:-----|
@@ -36,7 +31,7 @@ var _settings = Office.context.roamingSettings;
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>创建或分配漫游设置
 
-紧接着前面的示例，下面的  `setAppSetting` 函数演示如何使用 [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings#set_name__value_) 方法通过当天的日期设置或更新名为 `cookie` 的设置。然后使用 [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#saveAsync_callback_) 方法将所有漫游设置保存回 Exchange Server。
+紧接着前面的示例，下面的  `setAppSetting` 函数演示如何使用 [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-set-member(1)) 方法通过当天的日期设置或更新名为 `cookie` 的设置。然后使用 [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)) 方法将所有漫游设置保存回 Exchange Server。
 
 ```js
 // Set an add-in setting.
@@ -57,7 +52,7 @@ function saveMyAppSettingsCallback(asyncResult) {
 
 ### <a name="removing-a-roaming-setting"></a>删除漫游设置
 
-进一步展开前面的示例，以下  `removeAppSetting` 函数演示了如何使用 [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#remove_name_) 方法删除 `cookie` 设置并将所有漫游设置保存回 Exchange Server。
+进一步展开前面的示例，以下  `removeAppSetting` 函数演示了如何使用 [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-remove-member(1)) 方法删除 `cookie` 设置并将所有漫游设置保存回 Exchange Server。
 
 ```js
 // Remove an application setting.
@@ -72,7 +67,7 @@ function removeAppSetting()
 
 自定义属性允许 Outlook 外接程序存储其使用的有关项目的信息。例如，如果 Outlook 外接程序根据邮件中的会议建议创建约会，则可以使用自定义属性存储创建了会议的事实。这确保了如果再次打开邮件，Outlook 外接程序不再可供创建约会。
 
-在您将自定义属性用于特定邮件、约会或会议请求项目之前，必须通过调用  [Item](/javascript/api/outlook/office.mailbox) 对象的 **loadCustomPropertiesAsync** 方法将属性加载到内存中。如果为当前项目设置了任何自定义属性，此时会从 Exchanger Server 加载这些属性。在您加载了属性以后，可以使用 [CustomProperties](/javascript/api/outlook/office.customproperties#set_name__value_) 对象的 [set](/javascript/api/outlook/office.roamingsettings) 和 **get** 方法添加、更新和检索内存中的属性。要保存对于项目的自定义属性所做的任何更改，必须使用 [saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_) 方法在 Exchanger Server上保留对项目所做的更改。
+在您将自定义属性用于特定邮件、约会或会议请求项目之前，必须通过调用  [Item](/javascript/api/outlook/office.mailbox) 对象的 **loadCustomPropertiesAsync** 方法将属性加载到内存中。如果为当前项目设置了任何自定义属性，此时会从 Exchanger Server 加载这些属性。在您加载了属性以后，可以使用 [CustomProperties](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) 对象的 [set](/javascript/api/outlook/office.roamingsettings) 和 **get** 方法添加、更新和检索内存中的属性。要保存对于项目的自定义属性所做的任何更改，必须使用 [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) 方法在 Exchanger Server上保留对项目所做的更改。
 
 ### <a name="custom-properties-example"></a>自定义属性示例
 
@@ -139,7 +134,7 @@ function saveCallback(asyncResult) {
 
 下表汇总了不同客户端的电子邮件中保存的自定义Outlook行为。
 
-|方案|Windows|Web|Mac|
+|应用场景|Windows|Web|Mac|
 |---|---|---|---|
 |新撰写|空|空|空|
 |全部答复、全部答复|空|空|空|
@@ -148,11 +143,11 @@ function saveCallback(asyncResult) {
 |全部答复或全部答复发送的项目|空|空|空|
 |从转发发送的项目|如果未保存，则删除父级的属性|空|空|
 
-若要处理当前Windows：
+若要在管理上处理Windows：
 
 1. 在初始化外接程序时检查现有属性，并根据需要保留或清除它们。
 1. 设置自定义属性时，请包含一个附加属性，以指示自定义属性是在邮件阅读过程中添加的，还是通过外接程序的读取模式添加的。 这将帮助你区分属性是在撰写期间创建的还是从父级继承的。
-1. 若要检查用户是否正在转发电子邮件或回复，可以使用要求集 1.10 (提供的 [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_)) 。
+1. 若要检查用户是否正在转发电子邮件或答复，可以使用 [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-getcomposetypeasync-member(1)) (要求集 1.10) 。
 
 ## <a name="see-also"></a>另请参阅
 

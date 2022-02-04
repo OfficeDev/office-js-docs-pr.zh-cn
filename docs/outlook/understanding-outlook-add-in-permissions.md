@@ -3,13 +3,8 @@ title: 了解 Outlook 加载项权限
 description: Outlook 加载项在清单中指定所需的权限级别，其中包括受限、ReadItem、ReadWriteItem 或 ReadWriteMailbox。
 ms.date: 02/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f0a9df52bc37652ef7d5b1981dabdc0a8aa30e4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148821"
 ---
+
 # <a name="understanding-outlook-add-in-permissions"></a>了解 Outlook 加载项权限
 
 Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **Restricted**、**ReadItem**、**ReadWriteItem** 或 **ReadWriteMailbox**。这些权限级别可累计：“**Restricted**”是最低的级别，并且每个更高级别包括所有较低级别的权限。“**ReadWriteMailbox**”包含所有受支持的权限。
@@ -67,11 +62,11 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 ### <a name="can-do"></a>可以执行的操作
 
-- 在读取或 [撰写窗体](item-data.md)[中读取当前项目的所有属性](get-and-set-item-data-in-a-compose-form.md)，例如阅读窗体中的 [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和撰写窗体中的 [item.to.getAsync](/javascript/api/outlook/office.Recipients#getAsync_options__callback_)。
+- 在读取或 [撰写窗体](item-data.md)[中读取当前项目的所有属性](get-and-set-item-data-in-a-compose-form.md)，例如阅读窗体中的 [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和撰写窗体中的 [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1))。
 
 - [获取回调令牌](get-attachments-of-an-outlook-item.md)，以使用 Exchange Web 服务 (EWS) 或 [Outlook REST API](use-rest-api.md) 获取邮件附件或整个邮件。
 
-- [编写外接程序在相应邮件上设置的自定义属性](/javascript/api/outlook/office.CustomProperties)。
+- [编写外接程序在相应邮件上设置的自定义属性](/javascript/api/outlook/office.customproperties)。
 
 - 从该邮件的主题或正文中[获取所有现有已知实体](match-strings-in-an-item-as-well-known-entities.md)，而不仅仅是一个子集。
 
@@ -106,24 +101,24 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
   - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
   - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
   - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.bcc.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)
-  - [item.bcc.setAsync](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_)
-  - [item.body.prependAsync](/javascript/api/outlook/office.body#prependAsync_data__options__callback_)
-  - [item.body.setAsync](/javascript/api/outlook/office.body#setAsync_data__options__callback_)
-  - [item.body.setSelectedDataAsync](/javascript/api/outlook/office.body#setSelectedDataAsync_data__options__callback_)
-  - [item.cc.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)
-  - [item.cc.setAsync](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_)
-  - [item.end.setAsync](/javascript/api/outlook/office.time#setAsync_dateTime__options__callback_)
-  - [item.location.setAsync](/javascript/api/outlook/office.location#setAsync_location__options__callback_)
-  - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)
-  - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_)
+  - [item.bcc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.bcc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
+  - [item.body.prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependasync-member(1))
+  - [item.body.setAsync](/javascript/api/outlook/office.body#outlook-office-body-setasync-member(1))
+  - [item.body.setSelectedDataAsync](/javascript/api/outlook/office.body#outlook-office-body-setselecteddataasync-member(1))
+  - [item.cc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.cc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
+  - [item.end.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))
+  - [item.location.setAsync](/javascript/api/outlook/office.location#outlook-office-location-setasync-member(1))
+  - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
   - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)
-  - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_)
-  - [item.start.setAsync](/javascript/api/outlook/office.time#setAsync_dateTime__options__callback_)
-  - [item.subject.setAsync](/javascript/api/outlook/office.subject#setAsync_subject__options__callback_)
-  - [item.to.addAsync](/javascript/api/outlook/office.recipients#addAsync_recipients__options__callback_)
-  - [item.to.setAsync](/javascript/api/outlook/office.recipients#setAsync_recipients__options__callback_)
+  - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
+  - [item.start.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))
+  - [item.subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))
+  - [item.to.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
+  - [item.to.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
 
 ## <a name="readwriteitem-permission"></a>ReadWriteItem 权限
 
@@ -135,7 +130,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 - [添加或删除该邮件的附件](add-and-remove-attachments-to-an-item-in-a-compose-form.md)。
 
-- 使用适用于邮件外接程序Office JavaScript API 的所有其他成员 **，Mailbox.makeEWSRequestAsync 除外**。
+- 使用适用于邮件外接程序的 Office JavaScript API 的所有其他成员，**Mailbox.makeEWSRequestAsync** 除外。
 
 ### <a name="cant-do"></a>禁止事项
 

@@ -3,13 +3,8 @@ title: 使用 SSO 对 Microsoft Graph 授权
 description: 了解加载项Office如何使用 SSO (单一登录) Microsoft Graph。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 538648e96233bd0c2b497ef588d10c4f708e8522
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320262"
 ---
+
 # <a name="authorize-to-microsoft-graph-with-sso"></a>使用 SSO 对 Microsoft Graph 授权
 
 用户可以使用自己的个人 Microsoft 帐户或 Microsoft 365 教育或工作帐户，登录 Office（在线、移动和桌面平台）。 在 Office 加载项中获取对 [Microsoft Graph](https://developer.microsoft.com/graph/docs) 的访问权限的最佳方式是使用用户的 Office 登录凭据。 这使用户能够访问其 Microsoft Graph 数据，而无需再次登录。
@@ -26,7 +21,7 @@ ms.locfileid: "62320262"
 
 :::image type="content" source="../images/sso-access-to-microsoft-graph.svg" alt-text="显示 SSO 过程的图表。" border="false":::
 
-1. 外接程序的客户端代码调用 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_)。 这将告知Office主机获取外接程序的访问令牌。
+1. 外接程序的客户端代码调用 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))。 这将告知Office主机获取外接程序的访问令牌。
 
     如果用户未登录，则 Office主机与 Microsoft 标识平台 提供 UI 供用户登录和同意。
 
