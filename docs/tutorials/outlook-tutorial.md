@@ -1,16 +1,11 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 05/12/2021
+ms.date: 01/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: d79089ee8b63883d0fe07a98042c8d683a8bfb43
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152539"
 ---
+
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
 本教程将教你如何生成一个可用于在邮件撰写模式下将内容插入到邮件正文中的 Outlook 外接程序。
@@ -158,10 +153,9 @@ ms.locfileid: "59152539"
 
 在继续之前，让我们测试生成器创建的基本外接程序，以确认项目已正确设置。
 
-> [!NOTE]
-> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 你可能还必须以管理员身份运行命令提示符或终端才能进行更改。
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. 在项目的根目录中运行以下命令。 如果运行此命令，本地 Web 服务器将启动（如果尚未运行），并将旁加载加载项。
+1. 在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动，并且将旁加载加载项。
 
     ```command&nbsp;line
     npm start
@@ -858,7 +852,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### <a name="create-a-file-to-manage-configuration-settings"></a>创建文件以管理配置设置
 
-HTML 函数文件引用一个名为 **addin-config.js** 的文件，该文件尚不存在。 在 **./src/helpers** 文件夹中创建一个名为 **addin-config.js** 的文件，并添加以下代码。 此代码使用 [RoamingSettings 对象](/javascript/api/outlook/office.RoamingSettings)来获取和设置配置值。
+HTML 函数文件引用一个名为 **addin-config.js** 的文件，该文件尚不存在。 在 **./src/helpers** 文件夹中创建一个名为 **addin-config.js** 的文件，并添加以下代码。 此代码使用 [RoamingSettings 对象](/javascript/api/outlook/office.roamingsettings)来获取和设置配置值。
 
 ```js
 function getConfig() {
