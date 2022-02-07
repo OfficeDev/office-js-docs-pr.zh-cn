@@ -107,42 +107,46 @@ items:
               - name: 更新 API 和清单版本
                 href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
                 displayName: manifest
-          - name: 隐私、安全性和身份验证
+          - name: 隐私和安全
             items:
               - name: 加载项隐私和安全性概述
                 href: concepts/privacy-and-security.md
-              - name: 身份验证和授权概述
+              - name: 在加载项中请求获取 API 使用权限
+                href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+              - name: ITP 和第三方 Cookie
+                href: develop/itp-and-third-party-cookies.md
+          - name: 身份验证和授权
+            items:
+              - name: 概述
                 href: develop/overview-authn-authz.md
-              - name: 使用 Office 对话框 API 进行身份验证和授权
-                href: develop/auth-with-office-dialog-api.md
-              - name: 授权外部服务
-                href: develop/auth-external-add-ins.md
-              - name: 在不使用 SSO 的情况下对 Microsoft Graph 授权
-                href: develop/authorize-to-microsoft-graph-without-sso.md
-              - name: 在加载项中启用 SSO
+              - name: 单一登录 (SSO)
                 items:
-                  - name: 启用单一登录
+                  - name: 在 Office 加载项中启用 SSO
                     href: develop/sso-in-office-add-ins.md
-                  - name: SSO 快速入门
+                  - name: 快速启动
                     href: quickstarts/sso-quickstart.md
-                  - name: 自定义启用了 SSO 的加载项
+                  - name: 自定义快速入门
                     href: quickstarts/sso-quickstart-customize.md
-                  - name: 使用 SSO 对 Microsoft Graph 授权
+                  - name: 注册到 Microsoft 标识平台
+                    href: develop/register-sso-add-in-aad-v2.md
+                  - name: 授予管理员同意
+                    href: develop/grant-admin-consent-to-an-add-in.md
+                  - name: 获取标识令牌
+                    href: develop/use-sso-to-get-office-signed-in-user-token.md
+                  - name: 对 Microsoft Graph 授权
                     href: develop/authorize-to-microsoft-graph.md
                   - name: 使用 ASP.NET 创建 SSO 外接程序
                     href: develop/create-sso-office-add-ins-aspnet.md
                   - name: 使用 Node.js 创建 SSO 加载项
                     href: develop/create-sso-office-add-ins-nodejs.md
-                  - name: 向 Azure AD v2.0 注册使用 SSO 的 Office 加载项
-                    href: develop/register-sso-add-in-aad-v2.md
-                  - name: 同意管理员访问加载项
-                    href: develop/grant-admin-consent-to-an-add-in.md
-                  - name: 排查单一登录 (SSO) 错误消息
+                  - name: 错误消息疑难解答
                     href: develop/troubleshoot-sso-in-office-add-ins.md
-              - name: 在加载项中请求获取 API 使用权限
-                href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-              - name: ITP 和第三方 Cookie
-                href: develop/itp-and-third-party-cookies.md
+              - name: Office 对话框 API
+                href: develop/auth-with-office-dialog-api.md
+              - name: 标识提供者
+                href: develop/auth-external-add-ins.md
+              - name: 访问 Microsoft Graph
+                href: develop/authorize-to-microsoft-graph-without-sso.md
           - name: UI 和 UX
             items:
               - name: 概述
