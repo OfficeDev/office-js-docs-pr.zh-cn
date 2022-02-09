@@ -283,6 +283,8 @@ items:
               - name: 使用 Visual Studio Code 和 Edge Chromium WebView2 进行调试
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
+              - name: 使用 Visual Studio Code 和 Edge 旧版 WebView 进行调试
+                href: testing/debug-with-vs-extension.md
               - name: 使用 Internet Explorer 11 进行测试
                 href: testing/ie-11-testing.md
           - name: Web 浏览器
@@ -302,8 +304,6 @@ items:
             displayName: 'uninstall, sideload'
           - name: 使用运行时日志记录功能进行调试
             href: testing/runtime-logging.md
-          - name: 适用于 Visual Studio Code 的调试器扩展
-            href: testing/debug-with-vs-extension.md
           - name: 性能
             items:
               - name: 避免在循环中使用 context.sync
@@ -485,6 +485,12 @@ items:
                     href: reference/manifest/allformfactors.md
                   - name: 控制
                     href: reference/manifest/control.md
+                  - name: 控件（按钮）
+                    href: reference/manifest/control-button.md
+                  - name: 控件（菜单）
+                    href: reference/manifest/control-menu.md
+                  - name: 控件 （MobileButton）
+                    href: reference/manifest/control-mobilebutton.md
                   - name: CustomTab
                     href: reference/manifest/customtab.md
                   - name: DesktopFormFactor
@@ -513,6 +519,10 @@ items:
                     href: reference/manifest/hosts.md
                   - name: Icon
                     href: reference/manifest/icon.md
+                  - name: Item
+                    href: reference/manifest/item.md
+                  - name: 项目
+                    href: reference/manifest/items.md
                   - name: LaunchEvent
                     href: reference/manifest/launchevent.md
                   - name: LaunchEvents

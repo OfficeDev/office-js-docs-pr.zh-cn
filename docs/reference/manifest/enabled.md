@@ -1,18 +1,18 @@
 ---
 title: 清单文件中 Enabled 元素
 description: 了解如何指定外接程序启动时禁用外接程序命令。
-ms.date: 11/16/2021
+ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c0107daaf73aee6ba116553a8d01250e9c7d981
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: a3d83a6d117c498cc4d54dfbe73ae6d800995cb6
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081433"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467848"
 ---
 # <a name="enabled-element"></a>Enabled 元素
 
-指定在外接程序[启动](control.md#button-control)[时是否](control.md#menu-dropdown-button-controls)启用"按钮"或"菜单"控件。 **Enabled** 元素是 Control 的子 [元素](control.md)。 如果省略它，则默认值为 `true` 。
+指定在外接程序 [启动](control-button.md) 时 [是否](control-menu.md) 启用"按钮"控件或"菜单"控件。 **Enabled** 元素是 Control 的子 [元素](control.md)。 如果省略它，则默认值为 `true`。
 
 **外接程序类型：** 任务窗格
 
@@ -26,7 +26,7 @@ ms.locfileid: "61081433"
 
 - [RibbonApi 1.0](../requirement-sets/ribbon-api-requirement-sets.md)
 
-此元素仅在 Excel中有效;即，当 Host 元素的 属性为 `Name` "Workbook"时。 [](host.md)
+此元素仅在 Excel中有效;`Name`即[，当 Host](host.md) 元素的 属性为"Workbook"时。
 
 还可以以编程方式启用和禁用父控件。 有关详细信息，请参阅[启用和禁用加载项命令](../../design/disable-add-in-commands.md)。
 

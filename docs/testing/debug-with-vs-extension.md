@@ -1,18 +1,24 @@
 ---
-title: 适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展
-description: 使用Visual Studio Code调试Microsoft Office调试器中的扩展Office调试外接程序。
-ms.date: 10/05/2021
+title: '使用旧版 WebView Windows和 EdgeHTML Visual Studio Code Microsoft Edge调试 (加载项) '
+description: 了解如何使用 VS Code 中的 Office 加载项调试器扩展Office使用 Microsoft Edge 旧版 WebView (EdgeHTML) 的加载项。
+ms.date: 02/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: edc780108cb304b6bfa15ba3d7850f394b863875
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 11b728f9b3f467017711c9d75cfd07767957deae
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081398"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467692"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展
 
-Microsoft Office外接程序调试器扩展 for Visual Studio Code 允许你使用原始 web (View Microsoft Edge EdgeHTML) 运行时针对 Microsoft Edge 调试 Office 外接程序。 有关针对基于 WebView2 Microsoft Edge (Chromium进行) 的说明，[请参阅本文](./debug-desktop-using-edge-chromium.md)
+Office运行在 Windows 上的外接程序可以使用 Visual Studio Code 中的 Office 外接程序调试器扩展，以针对原始 WebView (EdgeHTML) Microsoft Edge 旧版 进行调试。 
+
+> [!IMPORTANT]
+> 本文仅适用于 Office 在原始 WebView (EdgeHTML) 运行时中运行外接程序的情况，如 Office [外接程序](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器所说明。有关针对基于 Microsoft Edge WebView2 Microsoft Edge (Chromium) 在 Visual Studio 代码中进行调试的说明，请参阅 [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-desktop-using-edge-chromium.md)。
+
+> [!TIP]
+> 如果无法或不想使用 Visual Studio Code 中内置的工具进行调试;或者遇到仅在外接程序在 Visual Studio Code 外部运行时发生的问题，可以使用 Edge 旧版开发人员工具调试 Edge 旧版 (EdgeHTML) 运行时，如 使用开发人员工具调试外接程序中所述[Microsoft Edge 旧版](debug-add-ins-using-devtools-edge-legacy.md)。
 
 此调试模式是动态的，允许在代码运行时设置断点。 在附加调试程序时，你可以立即在代码中看到更改，所有这些更改不会丢失调试会话。 代码更改也持续存在，因此可以看到对代码进行多次更改的结果。 下图显示了此扩展的操作。
 
@@ -20,70 +26,99 @@ Microsoft Office外接程序调试器扩展 for Visual Studio Code 允许你使�
 
 ## <a name="prerequisites"></a>先决条件
 
-- [Visual Studio Code](https://code.visualstudio.com/) （必须以管理员身份运行）
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js （版本 10+）](https://nodejs.org/)
 - Windows 10、11
-- [Microsoft Edge](https://www.microsoft.com/edge)
-
-这些说明假定你拥有使用命令行的经验，了解基本 JavaScript，并且已创建一个 Office 加载项项目，然后才使用 Yo Office 生成器。 如果你之前没有这样做，请考虑访问我们的教程之一，Excel Office[外接程序教程](../tutorials/excel-tutorial.md)。
+- [Microsoft Edge](https://www.microsoft.com/edge)支持 Microsoft Edge 旧版 与原始 Webview (EdgeHTML) 的平台和 Office 应用程序的组合，如 [Office 外接程序](../concepts/browsers-used-by-office-web-add-ins.md)使用的浏览器部分所说明。
 
 ## <a name="install-and-use-the-debugger"></a>安装和使用调试器
 
-1. 如果需要创建加载项项目，请使用 Yo Office[生成器创建一个](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)。 按照命令行中的提示设置项目。 可以选择任何语言或项目类型以满足你的需求。 本教程使用Excel窗格加载项。
+这些说明假定你拥有使用命令行的经验，了解基本 JavaScript，并且已创建一个 Office 加载项项目，然后才使用 Yo Office 生成器。 如果你之前没有这样做，请考虑访问我们的其中一个教程，Excel Office[外接程序教程](../tutorials/excel-tutorial.md)。
 
-    > [!NOTE]
-    > 如果已有项目，请跳过步骤 1 并移至步骤 2。
+1. 第一步取决于项目及其创建方式。
 
-1. 以管理员角色打开命令提示符。
-   ![命令提示符选项，包括 Windows 10 和 11 中的"以管理员Windows 10"。](../images/run-as-administrator-vs-code.jpg)
+   - 如果要创建一个项目来尝试在 Visual Studio Code 中调试，请使用适用于 Office [加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。为此，请使用我们的任一快速入门指南，Outlook[快速](../quickstarts/outlook-quickstart.md)入门。 
+   - 如果要调试使用 Yo Office 创建的现有项目，请跳到下一步。
+   - 如果要调试不是使用 Yo Office 创建的现有项目，请执行附录中的过程，然后返回到此过程的下一步。[](#appendix)
 
-1. 导航到项目目录。
 
-1. 运行以下命令以管理员Visual Studio Code中打开项目。
-
-    ```command&nbsp;line
-    code .
-    ```
-
-  打开Visual Studio Code，手动导航到项目文件夹。
-
-  > [!TIP]
-  > 若要以Visual Studio Code方式打开网站，请选择"以管理员方式运行"选项，Visual Studio Code中搜索后打开Windows。
+1. 打开VS Code，然后打开项目中的项目。 
 
 1. 在 VS Code 中，选择 **CTRL+SHIFT+X** 打开扩展栏。 搜索"Microsoft Office加载项调试器"扩展并安装它。
 
-1. 在你的项目 .vscode 文件夹中打开 **launch.json** 文件。 将以下代码添加到 `configurations` 部分。
+1. Choose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 
-    ```JSON
-    {
-      "type": "office-addin",
-      "request": "attach",
-      "name": "Attach to Office Add-ins",
-      "port": 9222,
-      "trace": "verbose",
-      "url": "https://localhost:3000/taskpane.html?_host_Info=HOST$Win32$16.01$en-US$$$$0",
-      "webRoot": "${workspaceFolder}",
-      "timeout": 45000
-    }
-    ```
+1. 从 **"运行和调试**"选项中，为主机应用程序选择"旧版边缘"选项，Outlook **桌面 (旧版)**。 选择 **F5** 或从菜单中选择“**运行”>“开始调试**”以开始调试。 此操作在节点窗口中自动启动本地服务器以托管加载项，然后自动打开主机应用程序，例如 Excel 或 Word。 这可能需要几秒钟的时间。
 
-1. 在刚刚复制的 JSON 部分中，查找 `"url"` 属性。 在此 URL 中，您需要将大写的 **HOST** 文本替换为托管您的外接程序Office应用程序。 例如，如果你Office外接程序用于Excel，则你的 URL 值是 `"https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$\$\$\$0"` 。
+1. 在主机应用程序中，加载项现已可供使用。 选择 **显示任务窗格** 或运行其他加载项命令。 对话框将显示如下：
 
-1. 打开命令提示符，并确保位于项目的根文件夹。 运行命令 `npm start` 以启动开发服务器。 当加载项在加载项应用程序中Office时，打开任务窗格。
+   > WebView 停止加载。
+   > 若要调试 WebView，请将VS Code Microsoft Debugger for Edge 扩展附加到 WebView 实例，然后单击 **"确定"** 继续。 若要阻止将来显示此对话框，请单击"取消 **"**。
 
-1. 返回到"Visual Studio Code并选择"查看 **>调试"** 或输入 **Ctrl+Shift+D** 以切换到调试视图。
+   选择“**确定**”。
 
-1. From the Debug options， choose **Attach to Office Add-ins**.从 **菜单中选择 F5** 或 **>运行"** 开始调试"开始调试。
+   > [!NOTE]
+   > 如果选择“**取消**”，则当加载项的此实例正在运行时，将不会再次显示该对话框。 但如果重新启动加载项，则会再次看到该对话框。
 
-1. 在项目的任务窗格文件中设置断点。 通过将鼠标悬停在代码Visual Studio Code并选择出现的红色圆圈，可以在代码行中设置断点。
+1. 在项目的任务窗格文件中设置断点。 若要在代码Visual Studio Code断点，请将鼠标悬停在代码行旁边，然后选择出现的红色圆圈。
 
     ![在代码行上显示红色圆圈Visual Studio Code。](../images/set-breakpoint.jpg)
 
-1. 运行加载项。 你将看到已命中的断点，并且你可以检查本地变量。
+1. 在加载项中运行调用断点行的功能。 你将看到已命中断点，并且你可以检查本地变量。
+
+   > [!NOTE]
+   > `Office.initialize` 或 `Office.onReady` 调用中的断点将被忽略。 有关这些方法的详细信息，请参阅 [初始化 Office 加载项](../develop/initialize-add-in.md)。
+
+> [!IMPORTANT]
+> 停止调试会话的最佳方式是选择 **Shift+F5** 或从菜单中选择“**运行”>“停止调试**”。 此操作应关闭节点服务器窗口并尝试关闭主机应用程序，但主机应用程序上会出现提示，询问是否保存文档。 请做出适当选择，让主机应用程序关闭。 避免手动关闭节点窗口或主机应用程序。 这样做可能会导致 bug，尤其是在重复停止和启动调试会话时。
+>
+> 如果调试停止工作；例如，如果忽略断点；停止调试。 然后，如有必要，关闭所有主机应用程序窗口和节点窗口。 最后，关闭 Visual Studio Code 并重新将其打开。
+
+### <a name="appendix"></a>附录
+
+如果项目不是使用 Yo Office创建的，则需要为项目创建调试Visual Studio Code。 
+
+1. 在项目文件夹中 `launch.json` 创建 `\.vscode` 一个名为 的文件（如果还没有）。 
+1. 确保文件具有数组 `configurations` 。 下面是 一个简单示例 `launch.json`。
+
+    ```json
+    {
+      // other properities may be here.
+
+      "configurations": [
+
+        // configuration objects may be here.
+
+      ]
+
+      //other properies may be here.
+    }
+    ```
+
+1. 将以下对象添加到数组 `configurations` 。
+
+    ```json
+    {
+      "name": "$HOST$ Desktop (Edge Legacy)",
+      "type": "office-addin",
+      "request": "attach",
+      "url": "https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$$$$0",
+      "port": 9222,
+      "timeout": 600000,
+      "webRoot": "${workspaceRoot}",
+      "preLaunchTask": "Debug: Excel Desktop",
+      "postDebugTask": "Stop Debug"
+    }
+    ```
+
+1. 将占位符`$HOST$`替换为`Outlook`外接程序Office应用程序的名称;例如 或 `Word`。
+1. 保存并关闭此文件。
 
 ## <a name="see-also"></a>另请参阅
 
 - [测试和调试 Office 加载项](test-debug-office-add-ins.md)
+- [使用基于 WebView2 Windows的 Visual Studio Code Microsoft Edge ](debug-desktop-using-edge-chromium.md)调试 (Chromium加载项) 。
 - [使用适用于 Internet Explorer 的开发人员工具调试加载项](debug-add-ins-using-f12-tools-ie.md)
 - [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
-- [在基于 Web 的 Microsoft Edge (Chromium 中，使用开发人员工具) ](debug-add-ins-using-devtools-edge-chromium.md)
+- [使用 Microsoft Edge（基于 Chromium）中的开发人员工具调试加载项](debug-add-ins-using-devtools-edge-chromium.md)
+- [从任务窗格附加调试器](attach-debugger-from-task-pane.md)

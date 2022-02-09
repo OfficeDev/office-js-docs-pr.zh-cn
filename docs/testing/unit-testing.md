@@ -1,26 +1,31 @@
 ---
-title: 外接程序Office单元测试
+title: 加载项中的Office测试
 description: 了解如何对调用 JavaScript API 的Office代码
-ms.date: 11/30/2021
+ms.date: 02/07/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 39bd49f52087433a7095d0949bf22abd10dd0bb6
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467755"
 ---
+# <a name="unit-testing-in-office-add-ins"></a>加载项中的Office测试
 
-# <a name="unit-testing-in-office-add-ins"></a>外接程序Office单元测试
+单元测试无需网络连接或服务连接（包括与加载项应用程序的连接）即可检查Office功能。 单元测试服务器端代码和不调用 [Office JavaScript](../develop/understanding-the-javascript-api-for-office.md) API 的客户端代码在  Office 外接程序中与在任何 Web 应用程序中相同，因此不需要特殊文档。 但是，调用 JavaScript API Office代码很难测试。 为了解决这些问题，我们创建了一个库来简化单元测试中的 mock Office 对象的创建：[Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock)。 该库通过以下方式使测试变得更简单：
 
-单元测试无需网络连接或服务连接（包括与加载项应用程序的连接）即可检查Office功能。 单元测试服务器端代码和不调用 [Office JavaScript](../develop/understanding-the-javascript-api-for-office.md) API 的客户端代码在  Office 外接程序中与在任何 Web 应用程序中相同，因此不需要特殊文档。 但是调用 JavaScript API Office客户端代码很难测试。 为了解决这些问题，我们创建了一个库来简化单元测试中的 mock Office 对象的创建：[Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock)。 该库通过以下方式使测试变得更简单：
+- Office JavaScript API 必须在 Office 应用程序 (Excel、Word 等 ) 上下文中的 Web 视图控件中初始化，因此无法在开发计算机上运行单元测试的过程中加载它们。 可以将 Office-Addin-Mock 库导入到测试文件中，从而可以在运行测试的 node.js 进程中模拟 Office JavaScript API。
+- 特定于 [应用程序的 API](../develop/understanding-the-javascript-api-for-office.md#api-models) 具有 [加载](../develop/application-specific-api-model.md#load) 和 [同步](../develop/application-specific-api-model.md#sync) 方法，这些方法必须相对于其他函数和彼此以特定顺序调用。 此外，`load`必须使用特定参数调用方法，具体取决于稍后在测试的函数中的代码将读取 Office 对象的属性。 但是单元测试框架`load``sync`本身是无状态的，因此它们无法记录是否已调用或传递了哪些参数`load`。 使用 Addin-Mock Office创建的 mock 对象具有可跟踪这些内容的内部状态。 这允许 mock 对象模拟实际对象Office行为。 例如，`load`如果正在测试的函数尝试读取未首先传递到 的属性，则测试将返回一个类似于Office的错误。
 
-- Office JavaScript API 必须在 Office 应用程序 (Excel、Word 等 ) 上下文中的 Web 视图控件中初始化，因此无法在开发计算机上运行单元测试的过程中加载它们。 可以将 Office-Addin-Mock 库导入测试文件，从而可以在运行测试的 node.js 进程中模拟 Office JavaScript API。
-- 特定于 [应用程序的 API](../develop/understanding-the-javascript-api-for-office.md#api-models) 具有 [加载](../develop/application-specific-api-model.md#load) 和 [同步](../develop/application-specific-api-model.md#sync) 方法，这些方法必须相对于其他函数和彼此以特定顺序调用。 此外，`load`必须使用特定参数调用 方法，具体取决于要测试的函数中稍后的代码将读取 Office 对象的属性。 但是单元测试框架`load``sync`本身是无状态的，因此它们无法记录是否已调用或传递了哪些参数`load`。 使用 Addin-Mock Office创建的 mock 对象具有可跟踪这些内容的内部状态。 这使 mock 对象能够模拟实际对象Office行为。 例如，如果`load`正在测试的函数尝试读取未首先传递到 的属性，则测试将返回一个类似于Office的错误。
-
-库不依赖于 JavaScript OFFICE，并且它可用于任何 JavaScript 单元测试框架，例如：
+库不依赖于 JavaScript OFFICE，并且可用于任何 JavaScript 单元测试框架，例如：
 
 - [Jest](https://jestjs.io)
 - [Mocha](https://mochajs.org/)
 - [Jasmine](https://jasmine.github.io/)
 
-本文中的示例使用 Jest 框架。 示例在 [Office-Addin-Mock 主页上使用 Mocha 框架](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples)。
+本文中的示例使用 Jest 框架。 示例在 [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples) 主页上使用 Mocha 框架。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 本文假定你熟悉单元测试和模拟的基本概念，包括如何创建和运行测试文件，并且你具有单元测试框架的一些经验。
 
@@ -37,7 +42,7 @@ npm install office-addin-mock --save-dev
 
 ## <a name="basic-usage"></a>基本用法
 
-1. 项目将具有一个或多个测试文件。  (请参阅下面的示例 (#examples) 中的测试文件示例的说明。) `require` 将库（带 或 `import` 关键字）导入到具有调用 Office JavaScript API 的函数测试的任何测试文件，如以下示例所示。
+1. 项目将具有一个或多个测试文件。  (请参阅下面的示例 (#examples) 中的测试框架说明和测试文件示例。) `require` 将库（带 或 `import` 关键字）导入到具有调用 Office JavaScript API 的函数测试的任何测试文件，如以下示例所示。
 
    ```javascript
    const OfficeAddinMock = require("office-addin-mock");
@@ -114,7 +119,7 @@ npm install office-addin-mock --save-dev
 
 ### <a name="mocking-the-office-common-apis"></a>模拟Office API
 
-此示例为支持 Office 通用 API (例如，[Excel](../develop/office-javascript-api-object-model.md)、PowerPoint 或 Word) 的任何主机Office加载项。 加载项在名为 的文件中有一项功能 `my-common-api-add-in-feature.js`。 下面显示了文件的内容。 函数 `addHelloWorldText` 设置文本"Hello World！" 为文档中当前选择的任何内容;例如;Word 中的区域，或 Excel 中的单元格，或 PowerPoint。
+此示例假定Office通用 API (（例如，[Office Excel](../develop/office-javascript-api-object-model.md)、PowerPoint 或 Word) ）的任何主机的 Office 加载项。 加载项在名为 的文件中有一项功能 `my-common-api-add-in-feature.js`。 下面显示了文件的内容。 函数 `addHelloWorldText` 设置文本"Hello World！" 为文档中当前选择的任何内容;例如;Word 中的一个范围、Excel单元格或 word 中的PowerPoint。
 
 ```javascript
 const myCommonAPIAddinFeature = {
@@ -128,7 +133,7 @@ const myCommonAPIAddinFeature = {
 module.exports = myCommonAPIAddinFeature;
 ```
 
-名为 的测试文件 `my-common-api-add-in-feature.test.js` 位于子文件夹（相对于加载项代码文件的位置） 中。 下面显示了文件的内容。 请注意，顶级属性是 ，Office`context`[。Context](/javascript/api/office/office.context) 对象，因此要模拟的对象是此属性的父对象：一[Office对象。](/javascript/api/office) 关于此代码，请注意以下几点：
+名为 的测试文件 `my-common-api-add-in-feature.test.js` 位于子文件夹（相对于加载项代码文件的位置） 中。 下面显示了文件的内容。 请注意，顶级属性是 ，`context`Office[。Context](/javascript/api/office/office.context) 对象，因此被模拟的对象是此属性的父对象：一个[Office对象。](/javascript/api/office) 关于此代码，请注意以下几点：
 
 - 构造函数`OfficeMockObject`不会 *将* 所有 Office 枚举类添加到 mock `Office` `CoercionType.Text` 对象，因此外接程序方法中引用的值必须显式添加到 seed 对象中。
 - 由于Office JavaScript `Office` 库未加载到节点进程中，因此加载项代码中引用的对象必须声明和初始化。
@@ -170,7 +175,7 @@ test("Text of selection in document should be set to 'Hello World'", async funct
 
 ### <a name="mocking-the-outlook-apis"></a>模拟Outlook API
 
-尽管严格来说，Outlook API 是通用 API 模型的一部分，但是它们有一个围绕 [Mailbox](/javascript/api/outlook/office.mailbox) 对象构建的特殊体系结构，因此我们为 Outlook 提供了一个明显示例。 此示例假定一Outlook一个在名为 的文件中具有其功能之一的组`my-outlook-add-in-feature.js`。 下面显示了文件的内容。 函数 `addHelloWorldText` 设置文本"Hello World！" 为当前在邮件撰写窗口中选择的任何内容。
+尽管严格来说，Outlook API 是通用 API 模型的一部分，但是它们具有围绕 [Mailbox](/javascript/api/outlook/office.mailbox) 对象构建的特殊体系结构，因此我们为 Outlook 提供了一个明显示例。 此示例假定一Outlook一个在名为 的文件中具有其功能之一的组`my-outlook-add-in-feature.js`。 下面显示了文件的内容。 函数 `addHelloWorldText` 设置文本"Hello World！" 为当前在邮件撰写窗口中选择的任何内容。
 
 ```javascript
 const myOutlookAddinFeature = {
@@ -183,8 +188,9 @@ const myOutlookAddinFeature = {
 module.exports = myOutlookAddinFeature;
 ```
 
-名为 的测试文件 `my-outlook-add-in-feature.test.js` 位于子文件夹（相对于加载项代码文件的位置） 中。 下面显示了文件的内容。 请注意，顶级属性是 ，Office`context`[。Context](/javascript/api/office/office.context) 对象，因此要模拟的对象是此属性的父对象：一[Office对象。](/javascript/api/office) 关于此代码，请注意以下几点：
+名为 的测试文件 `my-outlook-add-in-feature.test.js` 位于子文件夹（相对于加载项代码文件的位置） 中。 下面显示了文件的内容。 请注意，顶级属性是 ，`context`Office[。Context](/javascript/api/office/office.context) 对象，因此被模拟的对象是此属性的父对象：一个[Office对象。](/javascript/api/office) 关于此代码，请注意以下几点：
 
+- mock `host` 对象上的 属性由 mock 库在内部使用，Office应用程序。 这是强制要求Outlook。 它目前对任何其他应用程序Office用途。
 - 由于Office JavaScript `Office` 库未加载到节点进程中，因此加载项代码中引用的对象必须声明和初始化。
 
 ```javascript
@@ -193,6 +199,8 @@ const myOutlookAddinFeature = require("../my-outlook-add-in-feature");
 
 // Create the seed mock object.
 const mockData = {
+  // Identify the host to the mock library (required for Outlook).
+  host: "outlook",
   context: {
     mailbox: {
       item: {
@@ -225,7 +233,7 @@ test("Text of selection in message should be set to 'Hello World'", async functi
 
 - Mock a [OfficeExtension.ClientRequestObject](/javascript/api/office/officeextension.clientrequestcontext). 当要测试的函数满足以下两个条件时，可执行下列操作：
 
-  - 它不会调用 *Host*。`run` 方法，如 [Excel.run](/javascript/api/excel#Excel_run_batch_)。
+  - 它不会调用 *Host*。`run` 方法，例如 [Excel.run](/javascript/api/excel#Excel_run_batch_)。
   - 它不引用 Host 对象的其他任何直接属性 *或* 方法。
 
 - 模拟 *Host* 对象，如 [Excel](/javascript/api/excel) [或 Word](/javascript/api/word)。 如果上述选项不可行，则执行上述步骤。
@@ -234,7 +242,7 @@ test("Text of selection in message should be set to 'Hello World'", async functi
 
 #### <a name="mocking-a-clientrequestcontext-object"></a>模拟 ClientRequestContext 对象
 
-此示例假定Excel一个加载项，该加载项在名为 的文件中具有其功能之一`my-excel-add-in-feature.js`。 下面显示了文件的内容。 请注意， `getSelectedRangeAddress` 是在传递给 的回调内调用的帮助程序方法 `Excel.run`。
+此示例假定一Excel一个加载项，该加载项在名为 的文件中具有其功能之一`my-excel-add-in-feature.js`。 下面显示了文件的内容。 请注意， `getSelectedRangeAddress` 是在传递给 的回调内调用的帮助程序方法 `Excel.run`。
 
 ```javascript
 const myExcelAddinFeature = {

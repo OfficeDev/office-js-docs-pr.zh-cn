@@ -1,18 +1,18 @@
 ---
 title: 清单文件中的 Icon 元素
 description: 定义“按钮”或“菜单”控件的 Image 元素。
-ms.date: 10/30/2021
+ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 54ae88e5dceeffa244780764711b263ceabd828d
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: ddacd3fdb8b9306e9f26b7bf2431f3564b579264
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681724"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467727"
 ---
-# <a name="icon-element"></a>Icon 元素
+# <a name="icon-element"></a>图标元素
 
-定义“[按钮](control.md#button-control)”或“[菜单](control.md#menu-dropdown-button-controls)”控件的 **Image** 元素。
+定义 **"按钮**"控件 [和"菜单"控件](control-button.md)[的 Image 元素](control-menu.md)。
 
 ## <a name="attributes"></a>属性
 
@@ -28,7 +28,7 @@ ms.locfileid: "60681724"
 
 ### <a name="image"></a>图像
 
-按钮的图像。 **resid** 属性不能超过 32 个字符，必须设置为 **Images** 元素（位于 [Resources](resources.md)元素）中 **Image** 元素的 **id** 属性的值。 The **size** attribute indicates the size in pixels of the image. 有三个图像大小为必需（16、32 和 80 像素），另外还支持五个大小（20、24、40、48 和 64 像素）。
+按钮的图像。 **resid** 属性不能超过 32 个字符，必须设置为 **Images** 元素（位于 [Resources](resources.md) 元素）中 **Image** 元素的 **id** 属性的值。 The **size** attribute indicates the size in pixels of the image. 有三个图像大小为必需（16、32 和 80 像素），另外还支持五个大小（20、24、40、48 和 64 像素）。
 
 ```xml
 <Icon>
@@ -39,7 +39,7 @@ ms.locfileid: "60681724"
 ```
 
 > [!IMPORTANT]
-> 如果此图像是加载项的代表图标，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和加载项Office创建有效列表，了解大小和其他要求。
+> 如果此图像是加载项的代表图标，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和加载项Office创建有效列表，了解大小和其他要求。
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>移动外形规格的其他要求
 

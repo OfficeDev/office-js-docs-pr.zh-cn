@@ -1,13 +1,18 @@
 ---
 title: 清单文件中的 Supertip 元素
 description: Supertip 元素定义一个丰富的工具提示 (标题和说明) 。
-ms.date: 02/02/2022
+ms.date: 02/04/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: aab7ab3f17e772940403e75796346020b2b9aebe
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467855"
 ---
-
 # <a name="supertip"></a>Supertip
 
-定义丰富的工具提示（标题和说明）。它由“[按钮](control.md#button-control)”或“[菜单](control.md#menu-dropdown-button-controls)”控件使用。
+定义丰富的工具提示（标题和说明）。 它同时由 [Button 控件和](control-button.md) [Menu 控件使用](control-menu.md)。
 
 **外接程序类型：** 任务窗格、邮件
 

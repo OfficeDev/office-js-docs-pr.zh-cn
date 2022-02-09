@@ -1,17 +1,17 @@
 ---
-title: 使用 Yeoman 生成器创建使用 SSO 的 Office 加载项
+title: 单一登录 (SSO) 快速入门
 description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office 加载项。
-ms.date: 11/03/2020
+ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 5153c1ed3987f619b180dd22ba90f2eb4c760d09
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e6c2c65d21b6fac215c8903a5f3e4fd93331e621
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152601"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320289"
 ---
-# <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>使用 Yeoman 生成器创建使用单一登录的 Node.js Office 加载项
+# <a name="single-sign-on-sso-quick-start"></a>单一登录 (SSO) 快速入门
 
 本文将介绍如何使用 Yeoman 生成器创建适用于 Excel、Outlook、Word 或 PowerPoint，尽可能使用单一登录 (SSO) 的 Office 加载项，并在不支持 SSO 时使用替代的用户身份验证方法。
 
@@ -62,7 +62,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 此时，加载项项目已创建并含有简化 SSO 流程所需的代码。 接下来，完成以下步骤，为你的加载项配置 SSO。
 
-1. 导航到项目的根文件夹。
+1. 转到项目的根文件夹。
 
     ```command&nbsp;line
     cd "My SSO Office Add-in"
@@ -94,8 +94,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 1. SSO 配置流程完成后，运行以下命令生成项目、启动本地 Web 服务器，并旁加载之前在 Office 客户端应用程序中选定的加载项。
 
-    > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
@@ -126,8 +125,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 1. SSO 配置过程完成后，运行以下命令生成项目并启动本地 Web 服务器。
 
-    > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 你可能还必须以管理员身份运行命令提示符或终端才能进行更改。
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start

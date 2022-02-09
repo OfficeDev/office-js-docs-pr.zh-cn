@@ -1,10 +1,15 @@
 ---
 title: 清单文件中的 OfficeMenu 元素
 description: OfficeMenu 元素定义要添加到上下文菜单的控件Office集合。
-ms.date: 02/02/2022
+ms.date: 02/04/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 11b68edaef4044fb7ddde0d413debc0339b15c3a
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467741"
 ---
-
 # <a name="officemenu-element"></a>OfficeMenu 元素
 
 定义要添加到 Office 上下文菜单的控件集合。适用于 Word、Excel、PowerPoint 和 OneNote 外接程序。
@@ -42,7 +47,7 @@ ms.localizationpriority: medium
 
 ## <a name="control"></a>Control
 
-每个 **OfficeMenu** 元素都需要一个或多个 [menu](control.md#menu-dropdown-button-controls) 控件。 
+每个 **OfficeMenu** 元素都需要一个或多个 [Menu 控件](control-menu.md)。 
 
 ## <a name="example"></a>示例
 
