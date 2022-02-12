@@ -1,20 +1,20 @@
 ---
 title: Office 常用 API 错误代码
 description: 本文记录在使用通用 API 时可能遇到的Office消息。
-ms.date: 02/09/2021
+ms.date: 02/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c5e6674614f1bfa8fe4f684c1fa6e1dc3d9cd6d4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 4d14aa998504972f7951e0c785e6fb6ce74a7833
+ms.sourcegitcommit: 600e163114f2e3f0d24d56b553487af5bc13f72c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152598"
+ms.lasthandoff: 02/12/2022
+ms.locfileid: "62790588"
 ---
 # <a name="office-common-api-error-codes"></a>Office 常用 API 错误代码
 
 本文记录在使用通用 API 模型时可能遇到的错误消息。 这些错误代码不适用于特定于应用程序的 API，如 Excel JavaScript API 或 Word JavaScript API。
 
-请参阅 [API 模型](../develop/understanding-the-javascript-api-for-office.md#api-models) ，详细了解通用 API 和应用程序特定的 API 模型之间的差异。 
+请参阅 [API 模型](../develop/understanding-the-javascript-api-for-office.md#api-models) ，详细了解通用 API 和应用程序特定的 API 模型之间的差异。
 
 ## <a name="error-codes"></a>错误代码
 
@@ -22,7 +22,7 @@ ms.locfileid: "59152598"
 
 |**Error.code**|**Error.name**|**Error.message**|**Condition**|
 |:-----|:-----|:-----|:-----|
-|1000|强制类型无效|不支持指定的强制类型|强制类型在应用程序Office支持。  (例如，OOXML 和 HTML 强制转换类型在 Excel.) |
+|1000|强制类型无效|不支持指定的强制类型|强制类型在应用程序Office支持。  (例如，OOXML 和 HTML 强制类型在 Excel.) |
 |1001|数据读取错误|不支持当前所选内容。|不支持用户当前所选内容（即与受支持的强制类型有所不同）。|
 |1002|强制类型无效|指定的强制类型与此绑定类型不兼容。|解决方案开发人员提供了强制类型和绑定类型的不兼容组合。|
 |1003|数据读取错误|指定的 rowCount 或 columnCount 值无效。|用户提供无效的列或行计数。|
@@ -53,15 +53,15 @@ ms.locfileid: "59152598"
 |3007|绑定创建错误|找到具有相同名称的多个对象。|冲突错误：存在具有相同名称的多个内容控件，将冲突导致的失败设置为 **true**。|
 |3008|绑定创建错误|指定的绑定类型与提供的命名项不兼容。|命名项无法绑定到类型。例如，内容控件包含文本，但开发人员尝试使用强制类型  _table_ 绑定。|
 |3009|绑定操作无效|不支持绑定类型。|用于向后兼容性。|
-|3010|不受支持的绑定操作|所选内容需为表格格式。将数据格式化为表格并再次尝试。|开发人员正在尝试对强制类型矩阵的数据使用 对象的 或 `addRowsAsync` `deleteAllDataValuesAsync` `TableBinding` _方法_。|
+|3010|不受支持的绑定操作|所选内容需为表格格式。将数据格式化为表格并再次尝试。|开发人员正在尝试对强制`addRowsAsync``deleteAllDataValuesAsync`类型`TableBinding`矩阵的数据使用 对象的 或 _方法_。|
 |4000|读取设置错误|指定设置名称不存在。|提供了不存在的设置名称。|
 |4001|保存设置错误|无法保存设置。|无法保存设置。|
 |4002|设置过期错误|无法保存设置，因为设置已过期。|设置已过期，开发人员指示不要覆盖设置。|
-|5000|设置过期错误|不支持此操作。|当前应用程序不支持Office操作。 例如， `document.getSelectionAsync` 从 Outlook。|
+|5000|设置过期错误|不支持此操作。|当前应用程序不支持此操作Office。 例如，从 `document.getSelectionAsync` Outlook。|
 |5001|内部错误|发生内部错误。|请参阅内部错误情况，可能有以下几个原因。<br/><table><tr><td>另一个共享工作簿的用户正在使用的加载项几乎在同一时间创建了一个绑定，您的加载项需要重新尝试绑定。</tr></td><tr><td>出现未知错误。</tr></td><tr><td>操作失败。</tr></td><tr><td>访问被拒绝，因为用户不是已授权角色的成员。</tr></td><tr><td>访问被拒绝，因为要求安全、加密的通信。</tr></td><tr><td>数据已过时，用户需要确认启用查询以刷数据。</tr></td><tr><td>已超出网站集 CPU 配额。</tr></td><tr><td>已超出网站集的内存配额。</tr></td><tr><td>已超出会话内存配额。</tr></td><tr><td>工作簿处于无效状态，无法执行该操作。</tr></td><tr><td>会话因不活动而超时，用户需要重新加载工作簿。</tr></td><tr><td>已超出每个用户允许的会话数最大值。</tr></td><tr><td>操作被用户取消。</tr></td><tr><td>因为时间太长，无法完成该操作。</tr></td><tr><td>该请求无法完成，需要重试。</tr></td><tr><td>产品的试用期已过。</tr></td><tr><td>会话因不活动而超时。</tr></td><tr><td>用户不具有在指定范围内执行该操作的权限。</tr></td><tr><td>用户的区域设置与当前协作会话不匹配。</tr></td><tr><td>用户已断开连接，必须刷新或重新打开工作簿。</tr></td><tr><td>工作表中不存在请求的范围。</tr></td><tr><td>用户没有编辑该工作簿的权限。</tr></td><tr><td>工作簿已锁定，无法编辑。</tr></td><tr><td>会话无法自动保存工作簿。</tr></td><tr><td>会话无法刷新其在工作簿文件上的锁定。</tr></td><tr><td>无法处理请求，需要重试。</tr></td><tr><td>无法验证用户的登录信息，必须重新输入。</tr></td><tr><td>用户访问被拒绝。</tr></td><tr><td>需要更新共享工作簿。</tr></td></table>|
 |5002|权限被拒绝|当前文档模式不允许请求的操作。|解决方案开发人员提交一组操作，但文档模式不允许进行修改，如"限制编辑"。|
 |5003|事件注册错误|当前对象不支持指定事件类型。|解决方案开发人员尝试对不存在的事件注册或取消注册处理程序。|
-|5004|无效的 API 调用|当前上下文中无效的 API 调用。|对上下文进行了无效调用，例如，尝试使用 `CustomXMLPart` Excel。|
+|5004|无效的 API 调用|当前上下文中无效的 API 调用。|对上下文进行了无效调用`CustomXMLPart`，例如，尝试使用 Excel。|
 |5005|数据过期|操作失败，因为服务器上的数据已过期。|需要刷新服务器上的数据。|
 |5006|会话超时|文档会话超时。重新加载文档。 |会话已超时。|
 |5007|无效的 API 调用|当前上下文中不支持枚举。|当前上下文中不支持枚举。|
@@ -71,7 +71,7 @@ ms.locfileid: "59152598"
 |6100|自定义 XML 错误|自定义 XML 错误|无效的 API 调用。|
 |7000|ID 无效|指定 ID 不存在。|ID 无效。|
 |7001|导航无效|导航不支持对象位置。|用户可查找对象，但无法导航到对象。（例如，在 Word 中绑定页眉、页脚或注释。）|
-|720p|导航无效|对象已锁定或受保护。|用户尝试导航到被阻止或受保护的范围。|
+|7002|导航无效|对象已锁定或受保护。|用户尝试导航到被阻止或受保护的范围。|
 |7004|导航无效|操作失败，索引已超出范围。|用户尝试导航到索引，但超出范围。|
 |8000|参数缺失|无法格式化表格单元格，因为缺失某些参数值。请仔细检查参数并再次尝试。|cellFormat 方法缺失某些参数。例如，缺失单元格、格式或 tableOptions 参数。|
 |8010|值无效|一个或多个单元格参数包含不允许的值。请仔细检查值并再次尝试。|未定义常见单元格引用枚举。例如，All、Data、Headers。|
@@ -81,10 +81,11 @@ ms.locfileid: "59152598"
 |8021|超出范围|列索引值超出允许的范围。请使用一个小于列数的正值（大于等于 0）。|列索引大于表格最大列索引或小于 0。|
 |8022|超出范围|值超出允许的范围。|格式中的某些值超出支持的范围。|
 |9016|权限被拒绝|权限被拒绝|访问被拒绝。|
+|9020|通用响应错误|发生内部错误。|指内部错误条件，该情况可能由于各种原因出现。|
 |9021|保存错误|尝试在服务器上保存项目时发生连接错误。|无法保存该项目。 这可能是由于服务器连接错误（如果在 Outlook 桌面版中使用联机模式）或由于尝试重新保存从 Exchange 服务器中删除的草稿项。|
 |9022|不同存储中的消息错误|无法检索 EWS ID，因为邮件保存在另一个存储中。|无法检索当前邮件的 EWS ID，因为邮件可能已被移动，或者发送邮箱可能已更改。|
 |9041|网络错误|用户不再连接到网络。 请检查网络连接并重试。|用户不再具有网络或 Internet 访问权限。|
-|9043|不支持附件类型|不支持附件类型。|API 不支持附件类型。 例如，如果附件是格式文本格式的嵌入图像，或者它是电子邮件或日历项目类型外的项目类型（如联系人或任务项目 (，则会引发此错误 `item.getAttachmentContentAsync`) 。|
+|9043|不支持附件类型|不支持附件类型。|API 不支持附件类型。 `item.getAttachmentContentAsync`例如，如果附件是格式文本格式的嵌入图像，或者它是电子邮件或日历项目项目类型外的项目类型（如联系人或任务项目 (，则会引发此错误) 。|
 |12002|||下列一种含义：<br> - 传递给 `displayDialogAsync` 的 URL 没有对应的页面。<br> - 传递给 `displayDialogAsync` 的页面已加载，但对话框定向到找不到或无法加载的页面，或者已定向到使用无效语法的 URL。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12003|||对话框定向到使用 HTTP 协议的 URL。 必须使用 HTTPS。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12004|||传递给 `displayDialogAsync` 的 URL 的域不受信任。 此域必须与主机页的域相同（包括协议和端口号）。 由 `displayDialogAsync` 的调用引发。|
@@ -143,3 +144,4 @@ ms.locfileid: "59152598"
 - [了解 Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
 - [JavaScript API Excel错误处理](../excel/excel-add-ins-error-handling.md)
 - [排查单一登录 (SSO) 错误消息](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [排查 Office 加载项中的开发错误](../testing/troubleshoot-development-errors.md)
