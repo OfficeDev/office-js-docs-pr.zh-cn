@@ -3,12 +3,12 @@ title: 文档打开时在 Office 加载项中运行代码
 description: 了解如何在文档打开时Office外接程序外接程序中运行代码。
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 884409fb161970c57b32921192544592ca39bb2c
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: b14d6e9d03bdb9dcec57f76e4ad6b8dbfbc66fe4
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990549"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855546"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>文档打开时在 Office 加载项中运行代码
 
@@ -27,11 +27,11 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 ```
 
 > [!NOTE]
-> `setStartupBehavior`方法是异步的。
+> 方法是 `setStartupBehavior` 异步的。
 
 ## <a name="place-startup-code-in-officeinitialize"></a>将启动代码放在 Office.initialize 中
 
-当外接程序配置为在打开文档时加载时，它将立即运行。 `Office.initialize`将调用事件处理程序。 将启动代码放在 `Office.initialize` 或 `Office.onReady` 事件处理程序中。
+当外接程序配置为在打开文档时加载时，它将立即运行。 将 `Office.initialize` 调用事件处理程序。 将启动代码放在 `Office.initialize` 或 事件 `Office.onReady` 处理程序中。
 
 以下Excel代码展示了如何为活动工作表中的更改事件注册事件处理程序。 如果您将外接程序配置为在文档打开时加载，则此代码将在文档打开时注册事件处理程序。 您可以在打开任务窗格之前处理更改事件。
 
@@ -55,12 +55,11 @@ Office.initialize = () => {
  * @param event The event information from Excel
  */
 async function onChange(event) {
-  return Excel.run(function(context) {
-    return context.sync().then(function() {
-      console.log("Change type of event: " + event.changeType);
-      console.log("Address of event: " + event.address);
-      console.log("Source of event: " + event.source);
-    });
+    await Excel.run(async (context) => {    
+        await context.sync();
+        console.log("Change type of event: " + event.changeType);
+        console.log("Address of event: " + event.address);
+        console.log("Source of event: " + event.source);
   });
 }
 ```
@@ -97,7 +96,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.none);
 
 ## <a name="get-the-current-load-behavior"></a>获取当前加载行为
 
-若要确定当前启动行为是什么，请运行以下函数，该函数返回 `Office.StartupBehavior` 对象。
+若要确定当前启动行为是什么，请运行以下函数，该函数返回对象 `Office.StartupBehavior` 。
 
 ```JavaScript
 let behavior = await Office.addin.getStartupBehavior();

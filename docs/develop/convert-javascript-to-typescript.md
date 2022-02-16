@@ -1,38 +1,38 @@
 ---
 title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: 了解如何在 Office 中转换加载项Visual Studio TypeScript。
-ms.date: 07/08/2021
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2771dbde52689200bc861aa208b33280776798b0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 78a03c29662a981c51a93fcae0c61050a2007dda
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148879"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855567"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
 可以使用 Visual Studio 中的 Office 加载项模板，创建使用 JavaScript 的加载项，再将加载项项目转换为使用 TypeScript。 本文介绍了 Excel 加载项的此转换过程。 可以按照相同的过程操作，在 Visual Studio 中将其他类型的 Office 外接程序项目从 JavaScript 转换为 TypeScript。
 
 > [!IMPORTANT]
-> 本文介绍确保按F5 时代码将转换为 JavaScript 所需的最少步骤，JavaScript 随后会自动旁加载至Office。 但是，代码不是非常"TypeScripty"。 例如，变量是使用关键字声明的，而不是使用指定类型 `var` `let` 声明的。 若要充分利用 TypeScript 的强键入，请考虑对代码进行进一步更改。 
+> 本文介绍确保按  F5 时代码将转换为 JavaScript 所需的最少步骤，JavaScript 随后会自动旁加载至Office。 但是，代码不是非常"TypeScripty"。 例如，变量是使用 `var` 关键字声明的，而不是 `let` 使用指定类型声明的。 若要充分利用 TypeScript 的强键入，请考虑对代码进行进一步更改。
 
 > [!NOTE]
 > 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.yml)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)显示提示时选择 `TypeScript`。
 
 ## <a name="prerequisites"></a>先决条件
 
-- 安装了 **Office/SharePoint 开发** 工作负载的 [Visual Studio 2019](https://www.visualstudio.com/vs/)
+- [Visual Studio 2019 或更高版本](https://www.visualstudio.com/vs/)，Office **/SharePoint开发** 工作负载
 
     > [!TIP]
-    > 如果之前已安装 Visual Studio 2019，请 [使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发** 工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads)。
+    > 如果之前已安装 [Visual Studio，Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)确保安装了 Office **/SharePoint 开发** 工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio#modify-workloads)。
 
-- TypeScript SDK 版本 2.3 或更高版本（适用于 Visual Studio 2019）
+- TypeScript SDK 版本 2.3 或更高版本。
 
     > [!TIP]
-    > 在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”选项卡，然后向下滚动到“SDK、库和框架”部分。 在该部分中，确保至少选择一个“TypeScript SDK”组件（版本 2.3 或更高版本）。 如果未选择任何 **TypeScript SDK** 组件，请选择 SDK 的最新可用版本，然后选择"修改"[以安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)。
+    > 在 [Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)中，选择“单个组件”选项卡，然后向下滚动到“SDK、库和框架”部分。 在该部分中，确保至少选择一个“TypeScript SDK”组件（版本 2.3 或更高版本）。 如果未选择 **任何 TypeScript SDK** 组件，请选择 SDK 的最新可用版本，然后选择"修改"[以安装该单个组件](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)。
 
-- Excel 2016 或更高版本
+- Excel 2016或更高版本。
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
@@ -56,12 +56,12 @@ ms.locfileid: "59148879"
 
 4. 从“**工具**”选项卡中，选择“**NuGet 程序包管理器**”，然后选择“**管理解决方案的 NuGet 程序包...**”。
 
-5. 选中" **浏览"** 选项卡后，输入 **jquery。TypeScript.DefinitelyTyped**。 安装此程序包，或更新（如果已安装）。 这将确保在项目中包括 jQuery TypeScript 定义。 jQuery 包显示在由 Visual Studio 生成的文件中 **，packages.config。**
+5. 选中" **浏览"** 选项卡后，输入 **jquery。TypeScript.DefinitelyTyped**。 安装此程序包，或更新（如果已安装）。 这将确保在项目中包括 jQuery TypeScript 定义。 jQuery 包显示在由 Visual Studio 生成的文件中，**packages.config。**
 
     > [!NOTE]
     > 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。
 
-6. 在 **Home.ts** 中，找到 行，并紧接着添加一行以 `Office.initialize = function (reason) {` 填充全局 `window.Promise` ，如下所示。
+6. 在 **Home.ts** 中，查找行 `Office.initialize = function (reason) {` ，并紧接着添加一行以填充全局 `window.Promise`，如下所示。
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -70,7 +70,7 @@ ms.locfileid: "59148879"
         ...
     ```
 
-7. 在 **Home.ts** 中，找到 函数，将整个 `displaySelectedCells` 函数替换为以下代码，然后保存文件。
+7. 在 **Home.ts** 中，找到 函数 `displaySelectedCells` ，将整个 函数替换为以下代码，然后保存文件。
 
     ```TypeScript
     function displaySelectedCells() {
@@ -237,4 +237,4 @@ ms.locfileid: "59148879"
 ## <a name="see-also"></a>另请参阅
 
 - [StackOverflow 上有关承诺实现的讨论](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-- [GitHub 上的 Office 外接程序示例](https://github.com/officedev)
+- [GitHub 上的 Office 外接程序示例](https://github.com/OfficeDev/Office-Add-in-samples)

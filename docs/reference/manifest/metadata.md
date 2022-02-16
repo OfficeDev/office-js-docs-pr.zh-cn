@@ -1,18 +1,30 @@
 ---
 title: 清单文件中的 Metadata 元素
 description: Metadata 元素定义自定义函数在元数据Excel。
-ms.date: 10/09/2018
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f58b00bb13bde1e2b1742462716119b8b6d369d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 52938155442bb5424a170634d1324de77de2b788
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152298"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855532"
 ---
 # <a name="metadata-element"></a>Metadata 元素
 
 定义 Excel 中的自定义函数所使用的元数据设置。
+
+**外接程序类型：** 自定义函数
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 任务窗格 1.0
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**与以下要求集相关联**：
+
+- [CustomFunctionsRuntime 1.1](../requirement-sets/custom-functions-requirement-sets.md)
 
 ## <a name="attributes"></a>属性
 

@@ -1,24 +1,22 @@
 ---
 title: Microsoft Office外接程序社区通话
 description: 每月Microsoft Office外接程序社区通话日程、日程安排和资源。
-ms.date: 02/04/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a5ea373a45bd8d8b6ee0a3e3e396db2fb5b7234
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: f694d6e718f1e187a1e7b0314ddfa26a1d750a25
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467713"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855553"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
 外接程序Microsoft Office通话是每月一次通话，你可以在这里了解有关新功能、开发实践以及有关创建外接程序Office其他信息。社区通话在每月的第二个星期三太平洋时间上午 8：00 进行。 可以从 下载日历邀请 https://aka.ms/officeaddinscommunitycall。
 
-## <a name="agenda-for-february-9th-call"></a>2 月 9 日议程调用
+## <a name="agenda-for-march-9th-call"></a>3 月 9 日通话日程
 
-- 使用 [Excel](../excel/excel-data-types-overview.md) API 中的数据类型。
-- 更新 Word API。
-- Outlook外接程序和 Outlook REST V2 停用。
+3 月议程将在通话前大约一周发布。
 
 ## <a name="previous-calls"></a>以前的调用
 

@@ -1,14 +1,14 @@
 ---
 title: 在 Office 网页版中旁加载 Office 加载项进行测试
-description: 在Office加载中Office web 版加载项。
-ms.date: 01/13/2022
+description: 通过Office加载在Office web 版外接程序中测试外接程序。
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f09dad4c959082be985ef2076def3bee4d105402
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 5f8c2a9cc30093f6b307239367b9d81d31b2caf8
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222030"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855616"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>在 Office 网页版中旁加载 Office 加载项进行测试
 
@@ -19,15 +19,15 @@ ms.locfileid: "62222030"
 旁加载因主机应用程序 (，例如，Excel) 。
 
 > [!NOTE]
-> 如本文中所述，旁加载在 Excel、OneNote、PowerPoint 和 Word 上受支持。 若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](../outlook/sideload-outlook-add-ins-for-testing.md)。
+> 如本文所述，在 Excel、OneNote、PowerPoint 和 Word 上支持旁加载。 若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](../outlook/sideload-outlook-add-ins-for-testing.md)。
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>在 Office 网页版中旁加载 Office 加载项
 
-此过程仅支持 **Excel、OneNote、PowerPoint** 和 **Word。**  有关其他主机应用程序，请参阅以下部分中的手动旁加载说明。 此示例项目假定你正在使用使用[Yeoman](https://github.com/OfficeDev/generator-office)生成器为加载项创建Office项目。
+此过程仅 **支持 Excel、****OneNote****、PowerPoint** 和 **Word**。 有关其他主机应用程序，请参阅以下部分中的手动旁加载说明。 此示例项目假定你正在使用使用 [Yeoman](https://github.com/OfficeDev/generator-office) 生成器为加载项Office项目。
 
-1. 打开[Office web 版](https://office.live.com/)。 使用"**创建"** 选项，在 Excel、OneNote、PowerPoint或 Word **中** 创建 **文档**。  在此新文档中，选择功能 **区** 中的"共享"，选择" **复制链接**"，然后复制 URL。
+1. 打开[Office web 版](https://office.live.com/)。 使用 **"创建**"选项，在 Excel、OneNote、PowerPoint **或 Word** **中** 创建文档。  在此新文档中，选择功能 **区** 中的"共享"，选择" **复制链接**"，然后复制 URL。
 
-1. 在 yo office 项目文件的根目录中，打开 **package.json** 文件。 在此 **文件的"配置** "部分，创建 `"document"` 一个属性。 粘贴您复制的 URL 作为属性的值 `"document"` 。 例如，你的将如下所示：
+1. 在 yo office 项目文件的根目录中，打开 **package.json** 文件。 在此 **文件的"配置** "部分，创建一个 `"document"` 属性。 粘贴您复制的 URL 作为属性的值 `"document"` 。 例如，你的将如下所示：
 
     ```json
       "config": {
@@ -39,30 +39,30 @@ ms.locfileid: "62222030"
     > [!TIP]
     > 如果创建的加载项不是使用 Yeoman 生成器，可以通过将以下内容附加到现有 URL，将查询参数添加到文档的 URL。
     >
-    > - 开发服务器端口，例如 `&wdaddindevserverport=3000` 。
-    > - 清单文件名，例如 `&wdaddinmanifestfile=manifest1.xml` 。
-    > - 清单 GUID，例如 `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143` 。
+    > - 开发服务器端口，例如 `&wdaddindevserverport=3000`。
+    > - 清单文件名，例如 `&wdaddinmanifestfile=manifest1.xml`。
+    > - 清单 GUID，例如 `&wdaddinmanifestguid=05c2e1c9-3e1d-406e-9a91-e9ac64854143`。
     >
     > 如果你使用的是 Yeoman 生成器，则不需要添加此信息，因为 Yeoman 工具会自动附加此信息。
     > 请注意，在这两种情况下，只能从 localhost 加载清单。
 
-1. 在从项目的根目录开始的命令行中，运行以下命令。 将"{url}"替换为您的Office文档或您OneDrive的 SharePoint 库的 URL。
+1. 在从项目的根目录开始的命令行中，运行以下命令。 将"{url}"替换为您的 Office 文档或您OneDrive的 SharePoint 库的 URL。
 
     [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. 首次使用此方法在 Web 上旁加载外接程序时，你将看到一个对话框，要求您启用开发人员模式。 选中"现在启用 **开发人员模式"复选框，** 然后选择"确定 **"。**
+1. 首次使用此方法在 Web 上旁加载外接程序时，你将看到一个对话框，要求您启用开发人员模式。 选中"现在启用 **开发人员模式"复选框，** 然后选择"确定 **"**。
 
-1. 你将看到第二个对话框，询问您是否希望从Office注册外接程序清单。 应选择"**是"。**
+1. 你将看到第二个对话框，询问您是否希望从Office注册外接程序清单。 应选择" **是"**。
 
 1. 已安装您的外接程序。 如果是加载项命令，它应显示在功能区或上下文菜单上。 如果是任务窗格加载项，应显示任务窗格。
 
-## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>手动Office加载项旁Office web 版加载项
+## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>在加载项Office旁加载Office web 版加载项
 
-此方法不使用命令行，并且只能在主机应用程序（如 Excel) ）内使用命令 (实现。
+此方法不使用命令行，只能在主机应用程序（如 (）内使用命令Excel) 。
 
-1. 打开[Office web 版](https://office.live.com/)。 在文档 **、Excel、Word** 或 PowerPoint **中打开** 文档。 在"**外接程序**"部分的功能区上的"插入"选项卡上，Office **外接程序"。**
+1. 打开[Office web 版](https://office.com/)。 在 word **、Excel、** OneNote、**PowerPoint****中打开****文档**。 在"**加载项**"部分功能区上的"插入"**选项卡上，** Office **"加载项"**。
 
-1. 在Office **加载项**"对话框中，选择"**我的** 加载项"选项卡，选择"管理我的加载项"，Upload"**我的加载项"。**
+1. 在Office **加载项**"对话框中，选择"**我的** 加载项"选项卡，选择"管理我的加载项"，Upload **"我的加载项"**。
 
     ![the Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
 
@@ -73,7 +73,7 @@ ms.locfileid: "62222030"
 1. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
 
 > [!NOTE]
-> 若要使用Office WebView Microsoft Edge EdgeHTML (测试加载项) ，需要执行其他配置步骤。 在命令Windows中，运行以下行： `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` 。 使用基于 Office 的边缘 WebView2 时Chromium此要求。 有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+> 若要使用Office WebView Microsoft Edge EdgeHTML (测试加载项) ，需要执行其他配置步骤。 在命令Windows中，运行以下行： `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`。 使用基于 Office 的边缘 WebView2 时Chromium此要求。 有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 [!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
@@ -81,7 +81,7 @@ ms.locfileid: "62222030"
 
 1. 登录到你的 Microsoft 365 帐户。
 
-1. 在工具栏Launcher，打开"应用"菜单并选择"Excel、Word 或 **PowerPoint"，** 然后创建新文档。 
+1. 打开工具栏Launcher"应用"菜单，选择"Excel、PowerPoint **或 Word**"，然后创建新文档。 
 
 1. 步骤 3 - 6 与上一部分 **在 Office 网页版中旁加载 Office 加载项** 相同。
 
@@ -103,7 +103,7 @@ ms.locfileid: "62222030"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的外接程序
 
-可以通过清除浏览器的缓存来删除以前旁加载的外接程序。 如果您更改外接程序的清单 (例如，更新图标的文件名或外接程序命令) 的文本，您可能需要清除浏览器的缓存，然后使用更新后的清单重新旁加载外接程序。 这样做将Office web 版更新后的清单中所述呈现外接程序。
+可以通过清除浏览器的缓存来删除以前旁加载的外接程序。 如果您更改外接程序的清单 (例如，更新图标的文件名或外接程序命令文本) ，您可能需要清除浏览器的缓存，然后使用更新后的清单重新旁加载外接程序。 这样，Office web 版清单描述的外接程序呈现。
 
 ## <a name="see-also"></a>另请参阅
 

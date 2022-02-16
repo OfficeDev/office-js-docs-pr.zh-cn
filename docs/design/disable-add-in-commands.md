@@ -1,10 +1,15 @@
 ---
 title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
-ms.date: 01/22/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 61ee45e606b8b8981550cab7439eb526ec641ac9
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855560"
 ---
-
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
 如果加载项中的某些功能应仅适用于某些上下文，则能够以编程方式启用或禁用自定义加载项命令。 例如，仅当光标位于表格中时，才启用用于更改表格标题的函数。
@@ -16,26 +21,24 @@ ms.localizationpriority: medium
 >
 > - [加载项命令的基本概念](add-in-commands.md)
 
-[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
-
 ## <a name="office-application-and-platform-support-only"></a>Office应用程序和平台仅支持
 
 本文中介绍的 API 仅可用于Excel平台和 PowerPoint web 版。
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>使用要求集测试平台支持
 
-要求集是指各组已命名的 API 成员。 Office外接程序使用清单中指定的要求集或使用运行时检查来确定 Office 应用程序和平台组合是否支持外接程序所需的 API。 有关详细信息，请参阅Office[版本和要求集](../develop/office-versions-and-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。 Office外接程序使用清单中指定的要求集或使用运行时检查来确定 Office 应用程序和平台组合是否支持外接程序所需的 API。 有关详细信息，请参阅Office[和要求集](../develop/office-versions-and-requirement-sets.md)。
 
 启用/禁用 API 属于 [RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md) 要求集。
 
 > [!NOTE]
-> **RibbonApi 1.1** 要求集在清单中尚不受支持，因此您无法在清单的"要求"部分 **指定它**。 若要测试支持，代码应调用 `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 如果 *且仅在该* 调用返回 `true`时，你的代码可以调用启用/禁用 API。 如果 调用 返回 `isSetSupported` `false`，则所有自定义外接程序命令将一向启用。 您必须设计生产外接程序以及任何应用内说明，以考虑当 **RibbonApi 1.1** 要求集不受支持时它如何工作。 有关使用 有关详细信息和示例`isSetSupported`，请参阅指定 Office [应用程序和 API](../develop/specify-office-hosts-and-api-requirements.md) 要求，尤其是运行时[检查方法和要求集支持](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。  (指定哪些[Office](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)版本和平台可以托管该文章的外接程序一节不适用于功能区 1.1.) 
+> **RibbonApi 1.1** 要求集在清单中尚不受支持，因此您无法在清单的"要求"部分 **指定它**。 若要测试支持，代码应调用 `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 如果 *且仅在该* 调用返回 `true`时，你的代码可以调用启用/禁用 API。 如果 调用 返回 `isSetSupported` `false`，则所有自定义外接程序命令将一向启用。 您必须设计生产外接程序以及任何应用内说明，以考虑当 **RibbonApi 1.1** 要求集不受支持时它如何工作。 有关使用 有关详细信息和示例`isSetSupported`，请参阅指定Office[和 API](../develop/specify-office-hosts-and-api-requirements.md) 要求，尤其是运行时检查方法和[要求集支持](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。  (该部分[Office](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)哪些版本和平台可以托管该文章的外接程序不适用于功能区 1.1.) 
 
 ## <a name="shared-runtime-required"></a>需要共享运行时
 
 本文介绍的 API 和清单标记，需要加载项清单指定它们应使用共享运行时。 为此，请执行以下步骤。
 
-1. 在清单中的 [Runtimes](../reference/manifest/runtimes.md) 元素中，添加以下子元素：`<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`。  (如果清单中还没有 **Runtimes** 元素，请创建它作为 **VersionOverrides** 部分中 **Host** 元素下的第一个子元素) 
+1. 在清单中的 [Runtimes](../reference/manifest/runtimes.md) 元素中，添加以下子元素：`<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`。  (如果清单中还没有 **Runtimes** 元素，请创建它作为 **VersionOverrides** 部分 **中的 Host** 元素下的第一个子元素) 
 2. 在清单的 [Resources.Urls](../reference/manifest/resources.md) 部分中，添加以下子元素：`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`，其中 `{MyDomain}` 是加载项的域，`{path-to-start-page}` 是加载项的起始页路径；例如，`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`。
 3. 根据加载项是包含任务窗格、函数文件还是自定义Excel，必须执行以下三个步骤中的一个或多个操作。
 

@@ -1,19 +1,24 @@
 ---
 title: 使用应用程序专用 API 模型
 description: 了解 Excel、OneNote 和 Word 加载项基于承诺的 API 模型。
-ms.date: 07/08/2021
+ms.date: 02/11/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 2ffce8433be95de0bf75ec1cfba813f7d6cbf57f
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855581"
 ---
-
 # <a name="application-specific-api-model"></a>特定于应用程序的 API 模型
 
-本文介绍如何使用 API 模型在 Excel、Word 和 OneNote 中构建加载项。 本文介绍核心概念，这些概念是使用基于承诺的 API 的基础。
+本文介绍如何使用 API 模型在 Excel、Word、PowerPoint 和 OneNote 中生成外接程序。 本文介绍核心概念，这些概念是使用基于承诺的 API 的基础。
 
 > [!NOTE]
 > Office 2013 客户端不支持此模型。 使用 [API 模型](office-javascript-api-object-model.md) 这些 Office 版本。 有关完整的平台可用性说明，请参阅 [Office 客户端应用程序和平台可用性的 Office 加载项组](../overview/office-add-in-availability.md)。
 
 > [!TIP]
-> 本页中的示例使用 Excel JavaScript API，但概念也适用于 OneNote、Visio 和 Word JavaScript API。
+> 本页中的示例使用 Excel JavaScript API，但概念也适用于 OneNote、PowerPoint、Visio 和 Word JavaScript API。
 
 ## <a name="asynchronous-nature-of-the-promise-based-apis"></a>基于承诺的 API 的异步性质
 
@@ -90,18 +95,11 @@ worksheet.getRange("A1").set({
 下面的示例显示一个批处理函数，定义本地 JavaScript 代理对象 （`selectedRange`），加载该对象的属性，然后使用 JavaScript 形式调用 `context.sync()` 以在 Excel 文档中的代理对象和对象间同步状态。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     var selectedRange = context.workbook.getSelectedRange();
     selectedRange.load('address');
-    return context.sync()
-      .then(function () {
-        console.log('The selected range is: ' + selectedRange.address);
-    });
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    await context.sync();
+    console.log('The selected range is: ' + selectedRange.address);
 });
 ```
 
@@ -118,25 +116,18 @@ Excel.run(function (context) {
 必须显式加载属性才能读取代理对象的属性，才能使用 Office 文档中的数据填充代理对象，然后调用 `context.sync()`。 例如，如果创建代理对象来引用选定的区域，然后希望读取所选区域的 `address` 属性，需要首先加载 `address` 属性，然后才可以读取它。 若要请求加载代理对象的属性，调用 `load()` 的方法并指定要加载的属性。 以下示例显示了为 `Range.address` 加载的 `myRange`。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     var sheetName = 'Sheet1';
     var rangeAddress = 'A1:B2';
     var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
     myRange.load('address');
+    await context.sync();
+      
+    console.log (myRange.address);   // ok
+    //console.log (myRange.values);  // not ok as it was not loaded
 
-    return context.sync()
-      .then(function () {
-        console.log (myRange.address);   // ok
-        //console.log (myRange.values);  // not ok as it was not loaded
-        });
-    }).then(function () {
-        console.log('done');
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    console.log('done');
 });
 ```
 
@@ -179,11 +170,10 @@ var tableCount = context.workbook.tables.getCount();
 
 // This sync call implicitly loads tableCount.value.
 // Any other ClientResult values are loaded too.
-return context.sync()
-    .then(function () {
-        // Trying to log the value before calling sync would throw an error.
-        console.log (tableCount.value);
-    });
+await context.sync();
+
+// Trying to log the value before calling sync would throw an error.
+console.log (tableCount.value);
 ```
 
 ### <a name="set"></a>set()
@@ -193,8 +183,8 @@ return context.sync()
 下面的代码示例设置区域的多个格式属性，具体方法是调用 `set()` 方法，并传入 JavaScript 对象，其中包含可反映 `Range` 对象中属性结构的属性名称和类型。此示例假定区域 **B2:E2** 中有数据。
 
 ```js
-Excel.run(function (ctx) {
-    var sheet = ctx.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    var sheet = context.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:E2");
     range.set({
         format: {
@@ -209,12 +199,7 @@ Excel.run(function (ctx) {
     });
     range.format.autofitColumns();
 
-    return ctx.sync();
-}).catch(function(error) {
-    console.log("Error: " + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
+    await context.sync();
 });
 ```
 
@@ -250,20 +235,21 @@ range.format.font.size = 10;
 > [!NOTE]
 > 这些 `*OrNullObject` 变体永远不会返回值 JavaScript `null`。 它们返回普通 Office 代理对象。 如果对象表示的实体不存在，则对象的 `isNullObject` 属性设置为 `true`。 不要测试返回的对象为 nullity 或 fality。 它从 `null`、 `false`或 `undefined`。
 
-以下代码示例尝试使用以下方法检索名为"数据"的 Excel `getItemOrNullObject()`。 如果具有该名称的工作表不存在，将创建一个新工作表。 请注意，该代码不会加载 `isNullObject` 属性。 当调用此属性时，Office `context.sync` 加载，因此不需要使用 `datasheet.load('isNullObject')`等内容显式加载。
+以下代码示例尝试使用以下方法检索名为"数据"的 Excel `getItemOrNullObject()`。 如果具有该名称的工作表不存在，将创建一个新工作表。 请注意，该代码不会加载 `isNullObject` 属性。 当调用此属性时，Office `context.sync` 加载，因此不需要使用 `dataSheet.load('isNullObject')`等内容显式加载。
 
 ```js
-var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
-
-return context.sync()
-    .then(function () {
-        if (dataSheet.isNullObject) {
-            dataSheet = context.workbook.worksheets.add("Data");
-        }
-
-        // Set `dataSheet` to be the second worksheet in the workbook.
-        dataSheet.position = 1;
-    });
+await Excel.run(async (context) => {
+    var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
+    
+    await context.sync();
+    
+    if (dataSheet.isNullObject) {
+        dataSheet = context.workbook.worksheets.add("Data");
+    }
+    
+    // Set `dataSheet` to be the second worksheet in the workbook.
+    dataSheet.position = 1;
+});
 ```
 
 ## <a name="see-also"></a>另请参阅

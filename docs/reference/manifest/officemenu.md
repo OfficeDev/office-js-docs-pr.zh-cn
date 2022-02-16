@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 OfficeMenu 元素
 description: OfficeMenu 元素定义要添加到上下文菜单的控件Office集合。
-ms.date: 02/04/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 11b68edaef4044fb7ddde0d413debc0339b15c3a
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: e09f5dfcba131912a1a2842bd88c9760a0992235
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467741"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855504"
 ---
 # <a name="officemenu-element"></a>OfficeMenu 元素
 
@@ -36,7 +36,7 @@ ms.locfileid: "62467741"
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  [Control](#control)    | 是 |  一个或多个 Control 对象的集合。  |
+|  [Menu 类型的控件](control-menu.md)    | 是 |  一个或多个 Control 对象的集合。  |
 
 ## <a name="xsitype"></a>xsi:type
 
@@ -44,10 +44,6 @@ ms.locfileid: "62467741"
 
 - `ContextMenuText` -  当用户选定文本，然后打开（右键单击）选定文本上的上下文菜单时显示上下文菜单上的项。适用于 Word、Excel、PowerPoint 和 OneNote。
 - `ContextMenuCell` -  当用户打开（右键单击）电子表格中的某个单元格上的上下文菜单时显示上下文菜单上的项。适用于 Excel。
-
-## <a name="control"></a>Control
-
-每个 **OfficeMenu** 元素都需要一个或多个 [Menu 控件](control-menu.md)。 
 
 ## <a name="example"></a>示例
 

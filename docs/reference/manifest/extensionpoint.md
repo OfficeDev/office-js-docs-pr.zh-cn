@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 ExtensionPoint 元件
 description: 定义 Office UI 中加载项公开功能的位置。
-ms.date: 02/07/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 279cc1b27f42d55e2ead00ee0c4df64afab16a3d
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 1f8ccc08a9c0d42edf89c904b8809a530239be4c
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467862"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855630"
 ---
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
@@ -28,71 +28,111 @@ ms.locfileid: "62467862"
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  **xsi:type**  |  是  | 定义的扩展点类型。|
+|  **xsi:type**  |  是  | 定义的扩展点类型。 可能的值取决于Office Host 元素值中定义的 **主机应用程序。**|
 
-## <a name="extension-points-for-excel-only"></a>仅适用于 Excel 的扩展点
+## <a name="extension-points-for-excel-onenote-powerpoint-and-word-add-in-commands"></a>Excel、OneNote、PowerPoint 和 Word 外接程序命令的扩展点
 
-- **CustomFunctions** - 针对 Excel 使用 JavaScript 编写的自定义函数。
+在这些主机的一个或多个主机中，有三种类型的扩展点可用。
 
-[此 XML 示例代码](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml)演示如何将 **ExtensionPoint** 元素与 **CustomFunctions** 属性值配合使用，以及如何使用子元素。
+- [PrimaryCommandSurface](#primarycommandsurface) (Word、Excel、PowerPoint 和 OneNote) - Office 中的功能区。
+- [ContextMenu](#contextmenu) (对 Word、Excel、PowerPoint 和 OneNote) 有效 - 选择并按住 (或在 Office UI 中右键单击) 时出现的快捷菜单。
+- [CustomFunctions](#customfunctions) (仅对 Excel) 有效 - 使用 JavaScript 为 Excel 编写的自定义函数。
 
-## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a>适用于 Word、Excel、PowerPoint 和 OneNote 加载项命令的扩展点
+有关子元素和这些扩展点类型的示例，请参阅以下子部分。
 
-- **PrimaryCommandSurface** - Office 中的功能区。
-- **ContextMenu** - Office UI 中右键单击时出现的快捷菜单。
+### <a name="primarycommandsurface"></a>PrimaryCommandSurface
 
-下面的示例演示如何将 **ExtensionPoint** 元素与 **PrimaryCommandSurface** 和 **ContextMenu** 属性值配合使用，以及应彼此配合使用的子元素。
+Word、Excel、PowerPoint 和 OneNote 中的主要命令图面是功能区。
+
+#### <a name="child-elements"></a>子元素
+
+|元素|说明|
+|:-----|:-----|
+|[CustomTab] (customtab.md|如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 |
+|[OfficeTab](officetab.md)|如果要使用 **PrimaryCommandSurface** Office 应用扩展默认功能区选项卡 (，) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。|
+
+#### <a name="example"></a>示例
+
+以下示例演示如何将 **ExtensionPoint** 元素与 **PrimaryCommandSurface 一同使用**。 它将自定义选项卡添加到功能区。
 
 > [!IMPORTANT]
-> 对于包含 ID 属性的元素，请务必提供唯一 ID。建议将公司名称与 ID 结合使用。例如，请使用以下格式：`<CustomTab id="mycompanyname.mygroupname">`。
+> 对于包含 ID 属性的元素，请务必提供唯一的 ID。
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
-          <CustomTab id="Contoso Tab">
-          <!-- If you want to use a default tab that comes with Office, remove the above CustomTab element, and then uncomment the following OfficeTab element -->
-            <!-- <OfficeTab id="TabData"> -->
-            <Label resid="residLabel4" />
-            <Group id="Group1Id12">
-              <Label resid="residLabel4" />
-              <Icon>
-                <bt:Image size="16" resid="icon1_32x32" />
-                <bt:Image size="32" resid="icon1_32x32" />
-                <bt:Image size="80" resid="icon1_32x32" />
-              </Icon>
-              <Tooltip resid="residToolTip" />
-              <Control xsi:type="Button" id="Button1Id1">
-
-                  <!-- information about the control -->
-              </Control>
-              <!-- other controls, as needed -->
-            </Group>
-          </CustomTab>
-        </ExtensionPoint>
-
-      <ExtensionPoint xsi:type="ContextMenu">
-        <OfficeMenu id="ContextMenuCell">
-          <Control xsi:type="Menu" id="ContextMenu2">
-                  <!-- information about the control -->
-          </Control>
-          <!-- other controls, as needed -->
-        </OfficeMenu>
-        </ExtensionPoint>
+  <CustomTab id="Contoso.MyTab1">
+    <Label resid="residLabel4" />
+    <Group id="Contoso.Group1">
+      <Label resid="residLabel4" />
+      <Icon>
+        <bt:Image size="16" resid="icon1_32x32" />
+        <bt:Image size="32" resid="icon1_32x32" />
+        <bt:Image size="80" resid="icon1_32x32" />
+      </Icon>
+      <Tooltip resid="residToolTip" />
+      <Control xsi:type="Button" id="Contoso.Button1">
+          <!-- information about the control -->
+      </Control>
+      <!-- other controls, as needed -->
+    </Group>
+  </CustomTab>
+</ExtensionPoint>
 ```
+
+### <a name="contextmenu"></a>ContextMenu
+
+上下文菜单是当你在用户界面中右键单击时出现的Office菜单。
 
 #### <a name="child-elements"></a>子元素
  
 |元素|说明|
 |:-----|:-----|
-|[CustomTab](customtab.md)|如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 |
-|[OfficeTab](officetab.md)|如果要使用 **PrimaryCommandSurface** 扩展默认功能Office 应用选项卡 (必需) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。|
-|[OfficeMenu](officemenu.md)|如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 适用于 Excel 或 Word 的 - **ContextMenuText** 当用户选定文本，然后右键单击所选定的文本时显示上下文菜单上的项。 <br/> 适用于 Excel 的 - **ContextMenuCell** 当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。|
-|[Group](group.md)|选项卡上的一组用户界面扩展点。一组可以有多达六个控件。**id** 属性是必需的。它是一个最多为 125 个字符的字符串。 |
-|**Label**|必需。 组的标签。 **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素 **的 id** 属性的值。 **String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。|
-|[Icon](icon.md)|必需。 指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。 **resid** 属性不能超过 32 个字符，并且必须设置为 **Image** 元素 **的 id** 属性的值。 **Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。 **size** 属性给出图像的大小（以像素为单位）。 要求三种图像大小：16、32 和 80。 也同样支持五种可选大小：20、24、40、48 和 64。|
-|**Tooltip**|Optional. The tooltip of the group. **resid** 属性的长度不能超过 32 个字符，必须设置为 **String** 元素 **的 id** 属性的值。 The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
-|[Control](control.md)|每个组需要至少一个控件。 **Control** 元素可以是 **Button 或** **Menu**。 使用 **Menu** 指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 有关详细信息 [，请参阅](control-button.md) 按钮 [控件和](control-menu.md) 菜单控件。<br/>**注意：**  为了简化疑难解答，我们建议一次添加 **一个 Control** 元素和相关 **Resources** 子元素。|
-|[Script](script.md)|使用自定义函数定义和注册代码链接到 JavaScript 文件。 在开发者预览版中不使用此元素。 实际上，HTML 页负责加载所有 JavaScript 文件。|
-|[Page](page.md)|链接到自定义函数的 HTML 页。|
+|[OfficeMenu](officemenu.md)|如果要使用 **ContextMenu** 命令将外接程序命令添加到默认上下文菜单 (必需) 。 **id** 属性必须设置为以下字符串之一： <br/> - **ContextMenuText** 当用户右键单击所选文本时，上下文菜单应打开。 <br/> - **ContextMenuCell** 当用户右键单击电子表格中的单元格时，上下文菜单Excel菜单。|
+
+#### <a name="example"></a>示例
+
+下面向电子表格中的单元格添加一个自定义Excel菜单。
+
+```xml
+<ExtensionPoint xsi:type="ContextMenu">
+  <OfficeMenu id="ContextMenuCell">
+    <Control xsi:type="Menu" id="Contoso.ContextMenu2">
+            <!-- information about the control -->
+    </Control>
+    <!-- other controls, as needed -->
+  </OfficeMenu>
+</ExtensionPoint>
+```
+
+### <a name="customfunctions"></a>CustomFunctions
+
+用 JavaScript 或 TypeScript 编写的自定义函数Excel。
+
+#### <a name="child-elements"></a>子元素
+
+|元素|说明|
+|:-----|:-----|
+|[Script](script.md)|必需项。 指向包含自定义函数的定义和注册代码的 JavaScript 文件的链接。|
+|[页面](page.md)|必需项。 链接到自定义函数的 HTML 页。|
+|[MetaData](metadata.md)|必需项。 定义 Excel 中的自定义函数所使用的元数据设置。|
+|[命名空间](namespace.md)|可选。 定义 Excel 中的自定义函数使用的命名空间。|
+
+#### <a name="example"></a>示例
+
+```xml
+<ExtensionPoint xsi:type="CustomFunctions">
+  <Script>
+    <SourceLocation resid="Functions.Script.Url"/>
+  </Script>
+  <Page>
+    <SourceLocation resid="Shared.Url"/>
+  </Page>
+  <Metadata>
+    <SourceLocation resid="Functions.Metadata.Url"/>
+  </Metadata>
+  <Namespace resid="Functions.Namespace"/>
+</ExtensionPoint>
+```
 
 ## <a name="extension-points-for-outlook"></a>仅适用于 Outlook 的扩展点
 
@@ -132,7 +172,7 @@ ms.locfileid: "62467862"
 
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom2">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -163,7 +203,7 @@ ms.locfileid: "62467862"
 
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom3">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -194,7 +234,7 @@ ms.locfileid: "62467862"
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom4">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -225,7 +265,7 @@ ms.locfileid: "62467862"
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom5">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -263,9 +303,9 @@ ms.locfileid: "62467862"
 
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
-  <Group id="mobileGroupID">
+  <Group id="Contoso.mobileGroup1">
     <Label resid="residAppName"/>
-      <Control id="mobileButton1" xsi:type="MobileButton">
+      <Control  xsi:type="MobileButton id="Contoso.mobileButton1"">
         <!-- Control definition -->
       </Control>
   </Group>
@@ -274,7 +314,7 @@ ms.locfileid: "62467862"
 
 ### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
-此扩展点将适合模式的切换置于移动外形外形中约会的命令图面中。 会议组织者可以创建联机会议。 与会者随后可以加入联机会议。 若要了解有关此方案的信息，请参阅为联机[会议Outlook创建移动外接程序一](../../outlook/online-meeting.md)文。
+此扩展点将适合模式的切换置于移动外形外形中约会的命令图面中。 会议组织者可以创建联机会议。 与会者随后可以加入联机会议。 若要了解有关此方案的信息，请参阅为联机[Outlook创建移动](../../outlook/online-meeting.md)外接程序一文。
 
 > [!NOTE]
 > 此扩展点仅在 Android 和 iOS 上受支持，Microsoft 365订阅。
@@ -297,7 +337,7 @@ ms.locfileid: "62467862"
 
 ```xml
 <ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
-  <Control xsi:type="MobileButton" id="onlineMeetingFunctionButton">
+  <Control xsi:type="MobileButton" id="Contoso.onlineMeetingFunctionButton1">
     <Label resid="residUILessButton0Name" />
     <Icon>
       <bt:Image resid="UiLessIcon" size="25" scale="1" />
@@ -319,7 +359,7 @@ ms.locfileid: "62467862"
 
 ### <a name="launchevent"></a>LaunchEvent
 
-通过此扩展点，加载项可以基于桌面设备类型中支持的事件进行激活。 若要了解有关此方案以及受支持事件的完整列表，请参阅为基于事件的激活配置 Outlook [外接程序一文](../../outlook/autolaunch.md)。
+通过此扩展点，加载项可以基于桌面设备类型中支持的事件进行激活。 若要了解有关此方案以及受支持事件的完整列表，请参阅为基于事件的激活配置 Outlook 外接程序[一](../../outlook/autolaunch.md)文。
 
 > [!IMPORTANT]
 > 注册 [邮箱](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) 和 [项目](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) 事件不适用于此扩展点。

@@ -1,13 +1,18 @@
 ---
 title: Excel JavaScript API 数据类型核心概念
 description: 了解在 Office 加载项中使用 Excel 数据类型的核心概念。
-ms.date: 01/14/2021
+ms.date: 02/15/2022
 ms.topic: conceptual
 ms.prod: excel
-ms.custom: 'scenarios:getting-started'
+ms.custom: scenarios:getting-started
 ms.localizationpriority: high
+ms.openlocfilehash: 969712a2ae26e515ab3aa28b7c7a0901f456a61f
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855602"
 ---
-
 # <a name="excel-data-types-core-concepts-preview"></a>Excel 数据类型核心概念（预览版）
 
 > [!NOTE]
@@ -41,10 +46,10 @@ ms.localizationpriority: high
 ```json
 // This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
-const myDate = {
+const myDate: Excel.FormattedNumberCellValue = {
     type: Excel.CellValueType.formattedNumber,
     basicValue: 32889.0,
-    basicType: Excel.CellValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
     numberFormat: "m/d/yyyy"
 };
 ```
@@ -60,7 +65,7 @@ const myDate = {
 ```json
 // This is an example of the complete JSON for an entity value.
 // The entity contains text and properties which contain an image, a date, and another text value.
-const myEntity = {
+const myEntity: Excel.EntityCellValue = {
     type: Excel.CellValueType.entity,
     text: "A llama",
     properties: {
@@ -71,7 +76,7 @@ const myEntity = {
             basicValue: "I love llamas."
         }
     }, 
-    basicType: Excel.CellValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
     basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
 };
 ```
@@ -86,10 +91,10 @@ const myEntity = {
 
 ```json
 // This is an example of the complete JSON for a web image.
-const myImage = {
+const myImage: Excel.WebImageCellValue = {
     type: Excel.CellValueType.webImage,
     address: "https://bit.ly/2YGOwtw", 
-    basicType: Excel.CellValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
     basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
 };
 ```

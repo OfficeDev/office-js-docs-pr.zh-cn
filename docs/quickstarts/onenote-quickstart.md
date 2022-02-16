@@ -1,15 +1,15 @@
 ---
 title: 生成首个 OneNote 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 OneNote 任务窗格加载项。
-ms.date: 01/13/2022
+ms.date: 02/11/2022
 ms.prod: onenote
 ms.localizationpriority: high
-ms.openlocfilehash: e377f3f73f6879b374672157ebc127a0cf412830
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 7d806922785f97430619bd74eb04c7c42595aa4e
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222080"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855574"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 
@@ -50,7 +50,7 @@ ms.locfileid: "62222080"
 
 ```js
 try {
-    await OneNote.run(async context => {
+    await OneNote.run(async (context) => {
 
         // Get the current page.
         var page = context.application.getActivePage();
@@ -62,8 +62,8 @@ try {
         var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
         page.addOutline(40, 90, html);
 
-        // Run the queued commands, and return a promise to indicate task completion.
-        return context.sync();
+        // Run the queued commands.
+        await context.sync();
     });
 } catch (error) {
     console.log("Error: " + error);
@@ -78,20 +78,13 @@ try {
     cd "My Office Add-in"
     ```
 
-1. 启动本地 Web 服务器并旁加载你的加载项。
+1. 启动本地 Web 服务器。 在项目的根目录中运行以下命令。
+
+    ```command&nbsp;line
+    npm run dev-server
+    ```
 
     [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-
-    > [!TIP]
-    > 如果在 Mac 上测试加载项，请先运行以下命令，然后再继续。 运行此命令时，本地 Web 服务器将启动。
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
-
-    在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动。 将“{url}”替换为 OneDrive 或你有权访问的 SharePoint 库上的 OneNote 文档的 URL。
-
-    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]`
 
 1. 在 [OneNote 网页版](https://www.onenote.com/notebooks)中，打开笔记本并新建页面。
 

@@ -3,12 +3,17 @@ title: 使用 Excel JavaScript API 处理图表
 description: 演示使用 JavaScript API Excel图表任务的代码示例。
 ms.date: 11/29/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 31b65a6523753f47304adb4e007bb19e2e644c6d
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855609"
 ---
-
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
 本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。
-有关 和 对象支持的属性和方法的完整列表，请参阅 [Chart Object (JavaScript API for Excel) ](/javascript/api/excel/excel.chart)和 [Chart Collection Object (JavaScript API for Excel) ](/javascript/api/excel/excel.chartcollection)。`Chart` `ChartCollection`
+有关 和 `Chart` `ChartCollection` 对象支持的属性和方法的完整列表，请参阅 [Chart Object (JavaScript API for Excel) ](/javascript/api/excel/excel.chart)和 [Chart Collection Object (JavaScript API for Excel) ](/javascript/api/excel/excel.chartcollection)。
 
 ## <a name="create-a-chart"></a>创建图表
 
@@ -138,7 +143,7 @@ Excel.run(function (context) {
 
 **隐藏了网格线的图表**
 
-![图表，其网格线在Excel。](../images/excel-charts-gridlines-removed.png)
+![图表中隐藏有网格线的Excel。](../images/excel-charts-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>图表趋势线
 
@@ -228,8 +233,8 @@ Excel.run(function (context) {
 图表可以呈现为 Excel 之外的图像。 `Chart.getImage` 将图表作为 base64 编码的字符串返回，将图表表示为 JPEG 图像。 以下代码显示如何获取图像字符串并将其记录到控制台。
 
 ```js
-Excel.run(function (ctx) {
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+Excel.run(function (context) {
+    var chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
     var imageAsString = chart.getImage();
     return context.sync().then(function () {
         console.log(imageAsString.value);
@@ -246,9 +251,9 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 这些参数决定图像的大小。 图像始终按比例缩放。 宽度和高度参数在缩放图像上设置上限或下限。 `ImageFittingMode` 具有以下行为的三个值。
 
-- `Fill`：图像的最小高度或宽度是指定的高度或宽度， (缩放图像时首先达到) 。 这是未指定调整模式时的默认行为。
-- `Fit`：图像的最大高度或宽度是指定的高度或宽度， (缩放图像时先到达) 。
-- `FitAndCenter`：图像的最大高度或宽度是指定的高度或宽度， (缩放图像时先到达) 。 生成的图像相对于另一个维度居中。
+- `Fill`：图像的最小高度或宽度是指定的高度或宽度 (缩放图像时首先到达) 。 这是未指定调整模式时的默认行为。
+- `Fit`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像时首先达到) 。
+- `FitAndCenter`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像时首先达到) 。 生成的图像相对于另一个维度居中。
 
 ## <a name="see-also"></a>另请参阅
 

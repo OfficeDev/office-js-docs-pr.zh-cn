@@ -1,20 +1,23 @@
 ---
 title: 在加载项中Office上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到Office外接程序。
-ms.date: 01/22/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: bf359c29552a7ca64e9d14a6b40aa5dc671bbb6d
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855588"
 ---
-
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>在加载项中Office上下文选项卡
 
-上下文选项卡是 Office 功能区中的隐藏选项卡控件，当文档文档中发生指定事件时，该选项卡Office显示。 例如 **，选择表** 时显示在功能Excel上的"表设计"选项卡。 在加载项中添加自定义Office，并创建更改可见性的事件处理程序，指定它们何时可见或隐藏。  (但是，自定义上下文选项卡不会响应焦点更改。) 
+上下文选项卡是活动区中隐藏的选项卡控件Office，当文档文档中发生指定事件时，该选项卡Office显示。 例如 **，选择表** 时显示在功能Excel上的"表设计"选项卡。 在加载项中添加自定义Office，并创建更改可见性的事件处理程序，指定它们何时可见或隐藏。  (但是，自定义上下文选项卡不会响应焦点更改。) 
 
 > [!NOTE]
 > 本文假定你熟悉以下文档。 如果你最近未使用加载项命令（自定义菜单项和功能区按钮），请查看该文档。
 >
 > - [加载项命令的基本概念](add-in-commands.md)
-
-[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
 > 自定义上下文选项卡当前仅在 Excel且仅在这些平台和内部版本上受支持。
@@ -38,7 +41,7 @@ ms.localizationpriority: medium
 - 如果同时显示外接程序中的一个或多个内置上下文选项卡和一个或多个自定义上下文选项卡，则自定义上下文选项卡始终位于所有内置上下文选项卡的右侧。
 - 如果您的外接程序具有多个上下文选项卡，并且存在多个上下文，并且存在多个上下文可见，则它们按照在外接程序中定义的顺序显示。  (方向与 Office 语言的方向相同;即，在从左到右的语言中为从左到右，而在从右到左的语言中为从右到左。) 请参阅定义选项卡上出现的组和控件，详细了解如何定义它们。[](#define-the-groups-and-controls-that-appear-on-the-tab)
 - 如果多个加载项具有特定上下文中可见的上下文选项卡，则它们按加载项的启动顺序显示。
-- 自定义 *上下文* 选项卡与自定义核心选项卡不同，不会Office应用程序的功能区。 它们仅存在于Office运行加载项的文档中。
+- 与 *自定义* 核心选项卡不同，自定义上下文选项卡不会Office应用程序的功能区。 它们仅存在于Office运行加载项的文档中。
 
 ## <a name="major-steps-for-including-a-contextual-tab-in-an-add-in"></a>在外接程序中添加上下文选项卡的主要步骤
 
@@ -46,7 +49,7 @@ ms.localizationpriority: medium
 
 1. 将外接程序配置为使用共享运行时。
 1. 定义选项卡及其上出现的组和控件。
-1. 使用"上下文"选项卡注册Office。
+1. 将上下文选项卡注册到Office。
 1. 指定选项卡可见时的情况。
 
 ## <a name="configure-the-add-in-to-use-a-shared-runtime"></a>将外接程序配置为使用共享运行时
@@ -55,10 +58,10 @@ ms.localizationpriority: medium
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>定义显示在选项卡上的组和控件
 
-与在清单中用 XML 定义的自定义核心选项卡不同，自定义上下文选项卡是在运行时使用 JSON blob 定义的。 代码将 blob 解析为 JavaScript 对象，然后将该对象传递给 [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) 方法。 自定义上下文选项卡仅存在于当前运行加载项的文档中。 这不同于在安装外接程序时添加到 Office 应用程序功能区中的自定义核心选项卡，当打开另一个文档时，这些选项卡仍保持显示状态。 此外， `requestCreateControls` 方法只能在加载项会话中运行一次。 如果再次调用它，将引发错误。
+与在清单中用 XML 定义的自定义核心选项卡不同，自定义上下文选项卡是在运行时使用 JSON blob 定义的。 代码将 blob 解析为 JavaScript 对象，然后将该对象传递给 [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) 方法。 自定义上下文选项卡仅存在于当前运行加载项的文档中。 这不同于在安装外接程序时添加到 Office 应用程序功能区中的自定义核心选项卡，而当打开另一个文档时，这些选项卡仍然存在。 此外， `requestCreateControls` 方法只能在加载项会话中运行一次。 如果再次调用它，将引发错误。
 
 > [!NOTE]
-> JSON blob 的属性和子属性 (和密钥名称) 的结构大致与清单 XML 中 [CustomTab](../reference/manifest/customtab.md) 元素及其后代元素的结构平行。
+> JSON blob 的属性和子属性 (和键名称) 的结构大致与清单 XML 中 [CustomTab](../reference/manifest/customtab.md) 元素及其后代元素的结构平行。
 
 我们将分步构造上下文选项卡 JSON blob 的示例。 上下文选项卡 JSON 的完整架构位于 [dynamic-ribbon.schema.json。](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json) 如果你使用 Visual Studio Code，可以使用此文件获取IntelliSense并验证 JSON。 有关详细信息，请参阅使用 [JSON 架构Visual Studio Code JSON 编辑 JSON](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)。
 
@@ -97,7 +100,7 @@ ms.localizationpriority: medium
     - `groups` 属性是必需的。 它定义将显示在选项卡上的控件组。它必须至少有一个成员且 *不超过 20 个*。  (自定义上下文选项卡上可以具有的控件数量也有限制，这也会限制你拥有多少个组。 有关详细信息，请参阅下一步。) 
 
     > [!NOTE]
-    > Tab 对象还可以具有一个可选 `visible` 属性，该属性指定在外接程序启动时选项卡是否立即可见。 由于上下文选项卡通常是隐藏的，直到用户事件触发其可见性 (例如用户在文档中选择某种类型的实体) `visible` `false` 因此，当不存在时，该属性默认为 。 在稍后的部分中，我们将展示如何设置 属性 `true` 以响应事件。
+    > Tab 对象还可以具有一个可选 `visible` 属性，该属性指定在外接程序启动时选项卡是否立即可见。 由于上下文选项卡通常是隐藏的，直到用户事件触发其可见性 (如用户在文档中选择某种类型的实体) `visible` `false` 因此，当不存在时，该属性默认为 。 在稍后的部分中，我们将展示如何设置 属性 `true` 以响应事件。
 
     ```json
     {
@@ -114,7 +117,7 @@ ms.localizationpriority: medium
     - 所有属性都是必需的。
     - 属性 `id` 在清单的所有组中必须是唯一的。 使用简短的描述性 ID，最多 125 个字符。
     - `label`是用作组标签的用户友好字符串。
-    - 属性的值`icon`是一组对象，这些对象根据功能区的大小和"应用程序"窗口的大小指定组Office图标。
+    - 属性的值`icon`是一组对象，这些对象根据功能区的大小以及应用程序窗口的功能区Office图标。
     - 属性的值 `controls` 是指定组中按钮和菜单的对象数组。 必须至少有一个。
 
     > [!IMPORTANT]
@@ -133,14 +136,14 @@ ms.localizationpriority: medium
     }
     ```
 
-1. 每个组必须具有至少两个大小的图标：32x32 像素和 80x80 像素。 （可选）还可以具有大小为 16x16 像素、20x20 像素、24x24 像素、40x40 像素、48x48 像素和 64x64 像素的图标。 Office根据功能区的大小和应用程序窗口的大小决定Office图标。 将以下对象添加到图标数组。  (如果窗口和功能区的大小足以使组中至少有一个控件显示，则不显示任何组图标。 例如，在缩小和展开 Word 窗口时，观察 Word 功能区上的 **"** 样式"组) 关于此标记，请注意：
+1. 每个组必须具有至少两个大小的图标：32x32 像素和 80x80 像素。 （可选）还可以具有大小为 16x16 像素、20x20 像素、24x24 像素、40x40 像素、48x48 像素和 64x64 像素的图标。 Office根据功能区大小和应用程序窗口的大小决定Office图标。 将以下对象添加到图标数组。  (如果窗口和功能区的大小足以使组中至少有一个控件显示，则不显示任何组图标。 例如，在缩小和展开 Word 窗口时，观察 Word 功能区上的 **"** 样式"组。) 关于此标记，请注意：
 
     - 这两个属性都是必需的。
     - 属性 `size` 度量单位是像素。 图标始终为正方形，因此数字同时为高度和宽度。
     - 属性 `sourceLocation` 指定图标的完整 URL。
 
     > [!IMPORTANT]
-    > 正如在从开发环境移动到生产 (（如将域从 localhost 更改为 contoso.com) ）时，通常必须更改加载项清单中的 URL 一样，您还必须更改上下文选项卡 JSON 中的 URL。
+    > 与从开发环境移动到生产 (（如将域从 localhost 更改为 contoso.com) ）时，通常必须更改加载项清单中的 URL 一样，您还必须更改上下文选项卡 JSON 中的 URL。
 
     ```json
     {
@@ -249,7 +252,7 @@ ms.localizationpriority: medium
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>使用 requestCreateControls Office上下文选项卡
 
-上下文选项卡通过调用 [Office.ribbon.requestCreateControls 方法Office注册上下文](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))选项卡。 这通常在分配给 方法的函数中 `Office.initialize` 或在 方法中 `Office.onReady` 完成。 有关这些方法和初始化外接程序的更多信息，请参阅初始化Office[外接程序](../develop/initialize-add-in.md)。 但是，您可以在初始化后随时调用 该方法。
+上下文选项卡通过调用 [Office.ribbon.requestCreateControls 方法Office注册上下文](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))选项卡。 这通常在分配给 方法的函数中 `Office.initialize` 或在 方法中 `Office.onReady` 完成。 有关这些方法和初始化外接程序的更多信息，请参阅 [Initialize your Office Add-in](../develop/initialize-add-in.md)。 但是，您可以在初始化后随时调用 该方法。
 
 > [!IMPORTANT]
 > 在 `requestCreateControls` 加载项的给定会话中，只能调用方法一次。 如果再次调用，将引发错误。
@@ -266,9 +269,9 @@ Office.onReady(async () => {
 
 ## <a name="specify-the-contexts-when-the-tab-will-be-visible-with-requestupdate"></a>使用 requestUpdate 指定选项卡可见时上下文
 
-通常，当用户启动的事件更改外接程序上下文时，应显示自定义上下文选项卡。 请考虑一种方案，在激活工作簿的默认工作表上的图表窗口时 (选项卡Excel可见) 显示。
+通常，当用户启动的事件更改外接程序上下文时，应显示自定义上下文选项卡。 请考虑在激活工作簿的默认工作表上的图表时（并且仅在 (激活时，选项卡Excel可见) 显示。
 
-首先分配处理程序。 `Office.onReady`此操作通常在 方法中完成，如以下示例所示，该示例将 (在稍后步骤) `onActivated` `onDeactivated` 中创建的处理程序分配给工作表中所有图表的 和 事件。
+首先分配处理程序。 这通常 `Office.onReady` 在 方法中完成，如以下示例所示，该示例将 (在稍后步骤) `onActivated` `onDeactivated` 中创建的处理程序分配给工作表中所有图表的 和 事件。
 
 ```javascript
 Office.onReady(async () => {
@@ -566,7 +569,7 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 
 #### <a name="use-apis-that-show-or-hide-a-task-pane-in-specified-contexts"></a>使用在指定的上下文中显示或隐藏任务窗格的 API
 
-作为 **OverriddenByRibbonApi** 的替代方法，加载项可以使用与自定义上下文选项卡上控件功能重复的 UI 控件定义任务窗格。然后使用 [Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-showastaskpane-member(1)) 和 [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-hide-member(1)) 方法在上下文选项卡受支持时显示任务窗格。 有关如何使用这些方法的详细信息，请参阅显示或隐藏加载项Office[窗格](../develop/show-hide-add-in.md)。
+作为 **OverriddenByRibbonApi** 的替代方法，加载项可以使用与自定义上下文选项卡上控件功能重复的 UI 控件定义任务窗格。然后，[使用 Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-showastaskpane-member(1)) 和 [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-hide-member(1)) 方法在上下文选项卡受支持时显示任务窗格。 有关如何使用这些方法的详细信息，请参阅显示或隐藏加载项Office[窗格](../develop/show-hide-add-in.md)。
 
 ### <a name="handle-the-hostrestartneeded-error"></a>处理 HostRestartNeeded 错误
 
@@ -594,6 +597,6 @@ function showDataTab() {
 ## <a name="resources"></a>资源
 
 - [代码示例：在功能区上创建自定义上下文选项卡](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs)
-- Community上下文选项卡示例的演示
+- Community选项卡示例的演示
 
 > [!VIDEO https://www.youtube.com/embed/9tLfm4boQIo]
