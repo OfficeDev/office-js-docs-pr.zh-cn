@@ -1,10 +1,15 @@
 ---
 title: 适用于 Outlook Mobile 的 Outlook 外接程序
 description: Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 2894e85acccea9879d2c35b425ed8b3af5dfaf65
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892522"
 ---
-
 # <a name="add-ins-for-outlook-mobile"></a>适用于 Outlook Mobile 的外接程序
 
 现在，外接程序在 Outlook Mobile 上可用，它们使用适用于其他 Outlook 终结点的相同 API。如果已经生成适用于 Outlook 的外接程序，那么则可以很轻松地在 Outlook Mobile 上使用该外接程序。
@@ -47,7 +52,7 @@ Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但�
 
 **从 iOS 上的电子邮件创建 Trello 卡片的用户交互示例**
 
-![动态 GIF，显示用户在 iOS Outlook移动外接程序的交互。](../images/outlook-mobile-addin-interaction.gif)
+![显示用户与 iOS Outlook移动外接程序交互的动画 GIF。](../images/outlook-mobile-addin-interaction.gif)
 
 <br/>
 
@@ -57,14 +62,14 @@ Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但�
 
 ## <a name="testing-your-add-ins-on-mobile"></a>在移动电话上测试外接程序
 
-若要在 Outlook Mobile 上测试外接程序，请首先将外接程序旁[](sideload-outlook-add-ins-for-testing.md)加载到 web、Outlook 或 Mac 上的 Microsoft 365 或 Windows.com 帐户。 请确保清单的格式正确，以包含 ，`MobileFormFactor`否则它不会在移动设备上的 Outlook 客户端中加载。
+若要在 Outlook Mobile 上测试外接程序，请首先将外接程序旁加载[](sideload-outlook-add-ins-for-testing.md)到 web、Windows 或 Mac 上的 Microsoft 365 或 Outlook.com 帐户。 请确保清单的格式正确，以包含 ，`MobileFormFactor`否则它不会在移动设备上的 Outlook客户端中加载。
 
 在加载项正常运行后，请务必在不同尺寸的屏幕（包括电话和平板电脑）上测试加载项。应确保加载项符合与对比度、字号和颜色有关的辅助功能准则，并且还适用于屏幕阅读器（如 iOS 上的 VoiceOver 或 Android 上的 TalkBack）。
 
 在移动设备上进行故障排除可能很难，因为您可能没有习惯使用的工具。 但是，在 iOS 上进行疑难解答的一个选项是使用 Fiddler (查看本教程中有关将 [Fiddler 与 iOS 设备](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)) 。
 
 > [!NOTE]
-> 在 Android 上的 Web 浏览器中，外接程序Outlook新式外接程序。 有关受支持的设备的信息，请参阅运行加载项[Office要求](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)。
+> Outlook 网页版和 Android iPhone上的新式设备不再需要或不再可用于测试Outlook外接程序。有关受支持的设备的信息，请参阅运行加载项[Office要求](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)。
 
 ## <a name="next-steps"></a>后续步骤
 

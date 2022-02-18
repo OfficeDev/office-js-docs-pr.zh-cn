@@ -1,11 +1,16 @@
 ---
 title: 加载项命令要求集
 description: 外接程序Office要求集概述。
-ms.date: 01/20/2022
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: e35a36c10f9ca275d5dd969a3592df42a5e1000a
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892543"
 ---
-
 # <a name="add-in-commands-requirement-sets"></a>加载项命令要求集
 
 要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
@@ -17,17 +22,17 @@ ms.localizationpriority: medium
 
 外接程序命令的初始版本没有相应的要求集 (即，没有 AddinCommands 1.0 要求集) 。 下表列出了支持Office版本的客户端应用程序，以及这些应用程序的版本或版本号。  
 
-| 发布   |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office 2021<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |
+| 发布   |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） | Windows 版 Office 2021<br>（一次性购买） | Windows 版 Office<br> (订阅)    |  iPad 版 Office<br> (订阅)   |  Mac 版 Office<br> (两个订阅<br> 和一次购买 Office Mac 2019 及更高版本)    | Office 网页版  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | 加载项命令（初始版本，无要求集） | 不适用 | 不适用 | 版本 1809（内部版本 10827.20150）或更高版本| 16.0.14326.20454 或更高版本 |版本 1603（内部版本 6769.0000）或更高版本 | 不适用 | 15.33 或更高版本| 2016 年 1 月 |
 
 外接程序命令 **1.1** 要求集引入了使用文档自动打开 [任务窗格的功能](../../develop/automatically-open-a-task-pane-with-a-document.md)。
 
-外接程序命令 **1.3** 要求集引入了清单标记，使外接程序能够自定义自定义选项卡在 Office 功能区上的位置，并将内置 Office 功能区控件插入自定义控件组中。
+外接程序命令 **1.3** 要求集引入了清单标记，该标记使外接程序能够自定义自定义选项卡在 Office 功能区上的位置，并将内置 Office 功能区控件插入自定义控件组中。
 
-下表列出了外接程序命令要求集、支持该要求集的 Office 客户端应用程序，以及 Office 应用程序的版本或版本号。
+下表列出了外接程序命令要求集、Office要求集的客户端应用程序，以及 Office 应用程序的版本或版本号。
 
-|  要求集  |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） |  Windows 版 Office 2021<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅）   |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br>（关联至 Microsoft 365 订阅）  | Office 网页版  |  
+|  要求集  |  Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 版 Office 2019<br>（一次性购买） |  Windows 版 Office 2021<br>（一次性购买） | Windows 版 Office<br> (订阅)    |  iPad 版 Office<br> (订阅)   |  Mac 版 Office<br> (两个订阅<br> 和一次购买 Office Mac 2019 及更高版本)    | Office 网页版  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.3  | 不适用 | 不适用 | 不适用 | 不适用 | 不支持 | 不适用 | 不支持 | 2020 年 11 月 |
 | AddinCommands 1.1  | 不适用 | 不适用  | 版本 1809（内部版本 10827.20150）或更高版本&dagger; | 16.0.14326.20454 或更高版本&dagger; | 版本 1705（内部版本 8121.1000）或更高版本&dagger; | 不适用 | 15.34 或更高版本&dagger;\*| 2017 年 5 月 |
@@ -37,7 +42,7 @@ ms.localizationpriority: medium
 &dagger;OneNote仅在 Office web 版 中受支持。
 
 > [!IMPORTANT]
-> AddinCommands 1.3 处于预览状态，*仅在* PowerPoint web 版。 建议您仅在测试和开发环境中试用标记。 请勿在生产环境或业务关键文档中使用预览标记。
+> AddinCommands 1.3 处于预览阶段，*仅在* PowerPoint web 版。 建议您仅在测试和开发环境中试用标记。 请勿在生产环境或业务关键文档中使用预览标记。
 
 ## <a name="office-versions-and-build-numbers"></a>Office 版本和内部版本号
 
