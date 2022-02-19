@@ -1,15 +1,15 @@
 ---
 title: Outlook JavaScript API 要求集
 description: 了解有关 Outlook JavaScript API 要求集的详细信息。
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 8c95596dffbdf6677e8b0821490cf9ccdb4f0706
-ms.sourcegitcommit: be6ba48ba733acc08d1ac2b4f164246de5864f12
+ms.openlocfilehash: 4398afa60c2a3a15571db2a706cb01811c9f41f7
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2022
-ms.locfileid: "62368484"
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892508"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Outlook JavaScript API 要求集
 
@@ -121,18 +121,9 @@ if (item.somePropertyOrFunction !== undefined) {
 >
 > <sup>5</sup> 目前，设计和实现移动客户端的加载项时有其他注意事项。 例如，只支持“邮件阅读”模式。 有关更多详细信息，请参阅[为 Outlook Mobile 添加加载项命令支持时的代码注意事项](../../outlook/add-mobile-support.md#code-considerations)。
 >
-> <sup>6</sup> 加载项在 Android 上的 Web 浏览器上的新式 Outlook 中不起作用。 有关支持的设备的信息，请参阅[运行 Office 加载项的要求](../../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)。
+> <sup>6</sup> 加载项在 iPhone 和 Android 智能手机上的新式 Outlook 网页版中不起作用。 有关支持的设备的信息，请参阅[运行 Office 加载项的要求](../../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)。
 
-> [!TIP]
-> 可通过查看邮箱工具栏，在 Web 浏览器中区分经典和新式 Outlook。
->
-> **新式**
->
-> ![新式 Outlook 工具栏的部分屏幕截图。](../../images/outlook-on-the-web-new-toolbar.png)
->
-> **经典**
->
-> ![经典 Outlook 工具栏的部分屏幕截图。](../../images/outlook-on-the-web-classic-toolbar.png)
+[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../../includes/classic-versus-modern-Outlook-on-the-web.md)]
 
 ## <a name="using-preview-apis"></a>使用预览 API
 
