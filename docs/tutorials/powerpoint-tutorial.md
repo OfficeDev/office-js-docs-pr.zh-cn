@@ -1,15 +1,15 @@
 ---
 title: PowerPoint 加载项教程
 description: 在本教程中，将生成 PowerPoint 加载项，用于插入图像、插入文本、获取幻灯片元数据，以及在幻灯片之间导航。
-ms.date: 05/12/2021
+ms.date: 02/18/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: efddb10e0d72ad79b5da10c3e9b5e7c8d24ecf54
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 38430240b768709d0c6d1bca12c91ebbf019a662
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152537"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340160"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -41,6 +41,11 @@ ms.locfileid: "59152537"
 5. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。**Home.html** 文件在 Visual Studio 中打开。
 
      ![Visual Studio 解决方案资源管理器窗口的屏幕截图，显示 HelloWorld 解决方案中的 2 个项目：HelloWorld 和 HelloWorldWeb。](../images/powerpoint-tutorial-solution-explorer.png)
+
+6. 必须安装以下 NuGet 包。 使用 Visual Studio 中的 **NuGet 程序包管理器** 进行安装。 有关说明，请参阅Visual Studio帮助。 安装第一个时，可能会自动安装其中的第二个。
+
+   - Microsoft.AspNet.WebApi.WebHost
+   - Microsoft.AspNet.WebApi.Core
 
 ### <a name="explore-the-visual-studio-solution"></a>探索 Visual Studio 解决方案
 
@@ -168,7 +173,7 @@ ms.locfileid: "59152537"
     }
     ```
 
-6. 在 **Home.html** 文件中，将 `TODO1` 替换为以下标记。 此标记定义在加载项任务窗格内显示的“插入图像”按钮。
+6. 在 **Home.html** 文件中，将 `TODO1` 替换为以下标记。此标记定义将在加载项的任务窗格中显示的 **"插入图像** "按钮。
 
     ```html
     <button class="Button Button--primary" id="insert-image">
@@ -243,7 +248,7 @@ ms.locfileid: "59152537"
 
 1. 在 **Home.html** 文件中，将 `TODO2` 替换为以下标记，以将页眉部分和标题添加到任务窗格。 注意：
 
-    - 以 `ms-` 开头的样式由 [Office 加载项中的Fabric Core](../design/fabric-core.md) 定义，它是用于生成 Office 用户体验的 JavaScript 前端框架。 **Home.html** 文件包含对 Fabric 样式表的引用。
+    - 以`ms-`开头的样式由 Office 外接程序中的 [Fabric Core](../design/fabric-core.md)定义，这是一种用于生成 Office 用户体验的 JavaScript 前端框架。**Home.html** 文件包含对 Fabric Core 样式表的引用。
 
     ```html
     <div id="content-header">
@@ -259,7 +264,7 @@ ms.locfileid: "59152537"
 
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 PowerPoint，以测试 PowerPoint 加载项，功能区中显示有“显示任务窗格”加载项按钮。 加载项本地托管在 IIS 上。
+1. 使用 Visual Studio，通过按 **F5** 或选择 **"开始** "按钮来启动 PowerPoint，其中功能区中显示 **"显示任务窗格** 外接程序"按钮。加载项将在 IIS 上本地托管。
 
     ![显示在 Visual Studio 中突出显示的“开始”按钮的屏幕截图。](../images/powerpoint-tutorial-start.png)
 
@@ -279,7 +284,7 @@ ms.locfileid: "59152537"
 
 完成以下步骤以添加用于将文本插入到标题幻灯片的代码，该幻灯片包含一天中的[必应](https://www.bing.com)照片。
 
-1. 在 **Home.html** 文件中，将 `TODO3` 替换为以下标记。 此标记定义在加载项任务窗格内显示的“插入文本”按钮。
+1. 在 **Home.html** 文件中，将 `TODO3` 替换为以下标记。此标记定义将在加载项的任务窗格中显示的 **"插入文本** "按钮。
 
     ```html
         <br /><br />
@@ -311,7 +316,7 @@ ms.locfileid: "59152537"
 
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 PowerPoint，以测试加载项，功能区中显示有“显示任务窗格”加载项按钮。 加载项本地托管在 IIS 上。
+1. 使用Visual Studio，通过按 **F5** 或选择 **"开始** "按钮来启动 PowerPoint，并在功能区中显示 **"显示任务窗格"** 外接程序按钮。加载项将在 IIS 上本地托管。
 
     ![在 Visual Studio 中突出显示的“开始”按钮的屏幕截图。](../images/powerpoint-tutorial-start.png)
 
@@ -335,7 +340,7 @@ ms.locfileid: "59152537"
 
 完成以下步骤以添加用于检索所选幻灯片的元数据的代码。
 
-1. 在 **Home.html** 文件中，将 `TODO4` 替换为以下标记。 此标记定义在加载项任务窗格内显示的“获取幻灯片元数据”按钮。
+1. 在 **Home.html** 文件中，将 `TODO4` 替换为以下标记。此标记定义 **"获取幻灯片元数据** "按钮，该按钮将显示在加载项的任务窗格中。
 
     ```html
     <br /><br />
@@ -370,7 +375,7 @@ ms.locfileid: "59152537"
 
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 PowerPoint，以测试加载项，功能区中显示有“显示任务窗格”加载项按钮。 加载项本地托管在 IIS 上。
+1. 使用Visual Studio，通过按 **F5** 或选择 **"开始** "按钮来启动 PowerPoint，并在功能区中显示 **"显示任务窗格"** 外接程序按钮。加载项将在 IIS 上本地托管。
 
     ![在 Visual Studio 中突出显示“开始”按钮的屏幕截图。](../images/powerpoint-tutorial-start.png)
 
@@ -470,7 +475,7 @@ ms.locfileid: "59152537"
 
 ### <a name="test-the-add-in"></a>测试加载项
 
-1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 PowerPoint，以测试加载项，功能区中显示有“显示任务窗格”加载项按钮。 加载项本地托管在 IIS 上。
+1. 使用Visual Studio，通过按 **F5** 或选择 **"开始** "按钮来启动 PowerPoint，并在功能区中显示 **"显示任务窗格"** 外接程序按钮。加载项将在 IIS 上本地托管。
 
     ![显示 Visual Studio 工具栏上突出显示“开始”按钮的屏幕截图。](../images/powerpoint-tutorial-start.png)
 
