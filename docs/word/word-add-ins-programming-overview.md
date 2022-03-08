@@ -1,16 +1,16 @@
 ---
 title: Word 加载项概述
 description: 了解 Word 加载项的基本知识。
-ms.date: 10/14/2020
+ms.date: 02/24/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 488b009861349940c7ccc69a720139c2c3599ee1
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: d298caa78dab205740723998c1fa7ed42c821c66
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514143"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340643"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 
@@ -26,16 +26,16 @@ Word 外接程序是 [Office 外接程序平台](../overview/office-add-ins.md)�
 
 ![在 Word 的任务窗格中运行的加载项。](../images/word-add-in-show-host-client.png)
 
-Word 外接程序 (1) 可以将请求发送到 Word 文档 (2) 可以使用 JavaScript 来访问段落对象和更新、删除或移动段落。例如，下面的代码演示如何将一个新句子附加到该段落。
+Word 外接程序可以 (1) 将请求发送到 Word 文档 (2) 使用 JavaScript 来访问段落对象和更新、删除或移动段落。例如，下面的代码演示如何将一个新句子附加到该段落。
 
 ```js
-Word.run(function (context) {
-    var paragraphs = context.document.getSelection().paragraphs;
+await Word.run(async (context) => {
+    const paragraphs = context.document.getSelection().paragraphs;
     paragraphs.load();
-    return context.sync().then(function () {
-        paragraphs.items[0].insertText(' New sentence in the paragraph.',
+    await context.sync();
+    paragraphs.items[0].insertText(' New sentence in the paragraph.',
                                        Word.InsertLocation.end);
-    }).then(context.sync);
+    await context.sync();
 });
 
 ```
