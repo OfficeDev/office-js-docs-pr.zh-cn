@@ -252,8 +252,6 @@ items:
                   - name: 概述
                     href: develop/develop-add-ins-visual-studio.md
                     displayName: Visual Studio
-                  - name: 在 Visual Studio 中调试 Office 加载项
-                    href: develop/debug-office-add-ins-in-visual-studio.md
                   - name: 在 Visual Studio 中获取 JavaScript IntelliSense
                     href: develop/get-javascript-intellisense-in-visual-studio.md
                   - name: 将 JavaScript 项目转换成 TypeScript
@@ -282,9 +280,10 @@ items:
                 href: testing/debug-add-ins-using-devtools-edge-chromium.md
               - name: 使用 Visual Studio Code 和 Edge Chromium WebView2 进行调试
                 href: testing/debug-desktop-using-edge-chromium.md
-                displayName: 'debug, windows'
               - name: 使用 Visual Studio Code 和 Edge 旧版 WebView 进行调试
                 href: testing/debug-with-vs-extension.md
+              - name: 在 Visual Studio 中调试 Office 加载项
+                href: develop/debug-office-add-ins-in-visual-studio.md
               - name: 使用 Internet Explorer 11 进行测试
                 href: testing/ie-11-testing.md
           - name: Web 浏览器
