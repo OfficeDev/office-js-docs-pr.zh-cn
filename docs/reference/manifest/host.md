@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 Host 元素
 description: 指定应在其中激活外接程序的单个 Office 应用程序类型。
-ms.date: 11/05/2019
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e262183f11361d02d1a710d1f442539a8e936bcd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ea0f5c8bc07c72c0c888fb56b40d98c6030c2ebc
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152596"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340685"
 ---
 # <a name="host-element"></a>Host 元素
 
@@ -25,7 +25,7 @@ ms.locfileid: "59152596"
 
 | 属性     | 类型   | 必需 | 说明                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Name](#name) | string | 必需 | 客户端应用程序Office的名称。 |
+| [Name](#name) | string | 必需 | Office 客户端应用程序类型的名称。 |
 
 ### <a name="name"></a>名称
 
@@ -53,25 +53,37 @@ ms.locfileid: "59152596"
 
 ## <a name="versionoverrides-node"></a>VersionOverrides 节点
 
-在 [VersionOverrides](versionoverrides.md) 中定义时，主机类型由 `xsi:type` 属性决定。
+在 [VersionOverrides](versionoverrides.md) 中定义时，主机类型由 `xsi:type` 属性决定。 
+
+此元素替代 **基本清单中的 Hosts** 元素。
+
+**外接程序类型：** 任务窗格、邮件
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 任务窗格 1.0
+- 邮件 1.0
+- 邮件 1.1
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
 
 ### <a name="attributes"></a>属性
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  是  | 介绍Office应用这些设置的应用程序。|
+|  [xsi:type](#xsitype)  |  是  | 指定应用这些设置的 Office 应用程序。|
 
 ### <a name="child-elements"></a>子元素
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  是   |  定义桌面外形规格的设置。 |
-|  [MobileFormFactor](mobileformfactor.md)    |  否   |  定义移动外形因素的设置。 **注意：** 此元素仅在 iOS Outlook Android 上的设备上受支持。 |
+|  [MobileFormFactor](mobileformfactor.md)    |  否   |  定义移动外形因素的设置。 **注意：** 此元素仅在 iOS 版和 Android 版 Outlook 中受支持。 |
 |  [AllFormFactors](allformfactors.md)    |  否   |  定义所有外形规格的设置。 仅用于 Excel 中的自定义函数。 |
 
 ### <a name="xsitype"></a>xsi:type
 
-控制应用程序Office Word (、Excel、PowerPoint、Outlook、OneNote) 应用包含的设置。 值必须为以下值之一：
+控制包含的设置 (Word、Excel、PowerPoint、Outlook、OneNote) Office 应用程序。 值必须为以下值之一：
 
 - `Document` (Word)
 - `MailHost` (Outlook)

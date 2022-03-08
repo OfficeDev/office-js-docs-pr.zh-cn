@@ -1,67 +1,69 @@
 ---
 title: 使用 Excel JavaScript API 处理图表
 description: 演示使用 JavaScript API Excel图表任务的代码示例。
-ms.date: 11/29/2021
+ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b65a6523753f47304adb4e007bb19e2e644c6d
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: fa9409370d08329a288ba16d6cbb69bbd6c88f7c
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855609"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340783"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理图表
 
 本文提供了代码示例，介绍如何使用 Excel JavaScript API 对图表执行常见任务。
-有关 和 `Chart` `ChartCollection` 对象支持的属性和方法的完整列表，请参阅 [Chart Object (JavaScript API for Excel) ](/javascript/api/excel/excel.chart)和 [Chart Collection Object (JavaScript API for Excel) ](/javascript/api/excel/excel.chartcollection)。
+有关 和 对象支持的属性和方法的完整列表，请参阅 [Chart Object (JavaScript API for Excel) ](/javascript/api/excel/excel.chart)和 [Chart Collection Object (JavaScript API for Excel) ](/javascript/api/excel/excel.chartcollection)。`Chart` `ChartCollection`
 
 ## <a name="create-a-chart"></a>创建图表
 
 下面的代码示例在名为 **Sample** 的工作表中创建一个图表。 该图表是基于区域 **A1:B13** 的数据的 **折线** 图。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var dataRange = sheet.getRange("A1:B13");
-    var chart = sheet.charts.add("Line", dataRange, "auto");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let dataRange = sheet.getRange("A1:B13");
+    let chart = sheet.charts.add(
+      Excel.ChartType.line, 
+      dataRange, 
+      Excel.ChartSeriesBy.auto);
 
     chart.title.text = "Sales Data";
-    chart.legend.position = "right"
+    chart.legend.position = Excel.ChartLegendPosition.right;
     chart.legend.format.fill.setSolidColor("white");
     chart.dataLabels.format.font.size = 15;
     chart.dataLabels.format.font.color = "black";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**新建折线图**
+### <a name="new-line-chart"></a>新建折线图
 
 ![Excel 中的新Excel。](../images/excel-charts-create-line.png)
-
 
 ## <a name="add-a-data-series-to-a-chart"></a>向图表添加数据系列
 
 下面的代码示例向工作表中的第一个图表添加数据系列。 新的数据系列对应于“2016 年”列，并以区域 **D2:D5** 中的数据为依据。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var chart = sheet.charts.getItemAt(0);
-    var dataRange = sheet.getRange("D2:D5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let chart = sheet.charts.getItemAt(0);
+    let dataRange = sheet.getRange("D2:D5");
 
-    var newSeries = chart.series.add("2016");
+    let newSeries = chart.series.add("2016");
     newSeries.setValues(dataRange);
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**添加 2016 数据系列之前的图表**
+### <a name="chart-before-the-2016-data-series-is-added"></a>添加 2016 数据系列之前的图表
 
 ![添加 2016 Excel系列之前的数据系列中的图表。](../images/excel-charts-data-series-before.png)
 
-**添加 2016 数据系列之后的图表**
+### <a name="chart-after-the-2016-data-series-is-added"></a>添加 2016 数据系列之后的图表
 
 ![添加 2016 Excel系列之后的数据系列中的图表。](../images/excel-charts-data-series-after.png)
 
@@ -70,17 +72,17 @@ Excel.run(function (context) {
 下面的代码示例将工作表中的第一个图表标题设置为 **年度销售数据**。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.title.text = "Sales Data by Year";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**设置标题后的图表**
+### <a name="chart-after-title-is-set"></a>设置标题后的图表
 
 ![包含标题的图表Excel。](../images/excel-charts-title-set.png)
 
@@ -93,55 +95,55 @@ Excel.run(function (context) {
 下面的代码示例将工作表中第一个图表的分类轴标题设置为 **产品**。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.axes.categoryAxis.title.text = "Product";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**设置分类轴标题后的图表**
+### <a name="chart-after-title-of-category-axis-is-set"></a>设置分类轴标题后的图表
 
-![图表，其坐标轴标题Excel。](../images/excel-charts-axis-title-set.png)
+![图表中带坐标轴标题Excel。](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>设置轴的显示单位
 
 下面的代码示例将工作表中首个图表的数值轴显示单位设置为“百”。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.axes.valueAxis.displayUnit = "Hundreds";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**设置数值轴显示单位后的图表**
+### <a name="chart-after-display-unit-of-value-axis-is-set"></a>设置数值轴显示单位后的图表
 
-![图表，坐标轴显示单位Excel。](../images/excel-charts-axis-display-unit-set.png)
+![图表，其轴显示单位以Excel。](../images/excel-charts-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>在图表中设置网格线的可见性
 
 以下代码示例隐藏工作表中第一个图表数值轴的主要网格线。 可以通过将 设置为 来显示图表数值轴的主要网格 `chart.axes.valueAxis.majorGridlines.visible` 线 `true`。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
     chart.axes.valueAxis.majorGridlines.visible = false;
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**隐藏了网格线的图表**
+### <a name="chart-with-gridlines-hidden"></a>隐藏了网格线的图表
 
 ![图表中隐藏有网格线的Excel。](../images/excel-charts-gridlines-removed.png)
 
@@ -152,18 +154,18 @@ Excel.run(function (context) {
 下面的代码示例向 **Sample** 工作表中首个图表的第一个系列添加移动均线。趋势线显示超过 5 个周期的移动平均。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
-    var seriesCollection = chart.series;
+    let chart = sheet.charts.getItemAt(0);
+    let seriesCollection = chart.series;
     seriesCollection.getItemAt(0).trendlines.add("MovingAverage").movingAveragePeriod = 5;
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**带移动均线的图表**
+#### <a name="chart-with-moving-average-trendline"></a>带移动均线的图表
 
 ![图表，其移动平均趋势线以Excel。](../images/excel-charts-create-trendline.png)
 
@@ -172,19 +174,19 @@ Excel.run(function (context) {
 下面的代码示例将 Sample `Linear` 工作表中第一个图表的第一个系列的趋势线设置为 **键入。**
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var chart = sheet.charts.getItemAt(0);
-    var seriesCollection = chart.series;
-    var series = seriesCollection.getItemAt(0);
+    let chart = sheet.charts.getItemAt(0);
+    let seriesCollection = chart.series;
+    let series = seriesCollection.getItemAt(0);
     series.trendlines.getItem(0).type = "Linear";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**带线性趋势线的图表**
+#### <a name="chart-with-linear-trendline"></a>带线性趋势线的图表
 
 ![图表中带线性趋势线的Excel。](../images/excel-charts-trendline-linear.png)
 
@@ -199,12 +201,12 @@ Excel.run(function (context) {
 ```js
 // This code sample adds a data table to a chart that already exists on the worksheet, 
 // and then adjusts the display and format of that data table.
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Retrieve the chart on the "Sample" worksheet.
-    var chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
+    let chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
 
     // Get the chart data table object and load its properties.
-    var chartDataTable = chart.getDataTableOrNullObject();
+    let chartDataTable = chart.getDataTableOrNullObject();
     chartDataTable.load();
 
     // Set the display properties of the chart data table.
@@ -215,13 +217,13 @@ Excel.run(function (context) {
     chartDataTable.showOutlineBorder = true;
 
     // Retrieve the chart data table format object and set font and border properties. 
-    var chartDataTableFormat = chartDataTable.format;
+    let chartDataTableFormat = chartDataTable.format;
     chartDataTableFormat.font.color = "#B76E79";
     chartDataTableFormat.font.name = "Comic Sans";
     chartDataTableFormat.border.color = "blue";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 以下屏幕截图显示了上述代码示例创建的数据表。
@@ -233,14 +235,14 @@ Excel.run(function (context) {
 图表可以呈现为 Excel 之外的图像。 `Chart.getImage` 将图表作为 base64 编码的字符串返回，将图表表示为 JPEG 图像。 以下代码显示如何获取图像字符串并将其记录到控制台。
 
 ```js
-Excel.run(function (context) {
-    var chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
-    var imageAsString = chart.getImage();
-    return context.sync().then(function () {
-        console.log(imageAsString.value);
-        // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
-    });
-}).catch(errorHandlerFunction);
+await Excel.run(async (context) => {
+    let chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+    let imageAsString = chart.getImage();
+    await context.sync();
+    
+    console.log(imageAsString.value);
+    // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+});
 ```
 
 `Chart.getImage` 采用三个可选参数：宽度、高度和调整模式。
@@ -251,9 +253,9 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 这些参数决定图像的大小。 图像始终按比例缩放。 宽度和高度参数在缩放图像上设置上限或下限。 `ImageFittingMode` 具有以下行为的三个值。
 
-- `Fill`：图像的最小高度或宽度是指定的高度或宽度 (缩放图像时首先到达) 。 这是未指定调整模式时的默认行为。
-- `Fit`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像时首先达到) 。
-- `FitAndCenter`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像时首先达到) 。 生成的图像相对于另一个维度居中。
+- `Fill`：图像的最小高度或宽度是指定的高度或宽度， (缩放图像时先到达) 。 这是未指定调整模式时的默认行为。
+- `Fit`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像时首先到达) 。
+- `FitAndCenter`：图像的最大高度或宽度是指定的高度或宽度 (缩放图像时首先到达) 。 生成的图像相对于另一个维度居中。
 
 ## <a name="see-also"></a>另请参阅
 

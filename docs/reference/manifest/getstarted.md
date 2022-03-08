@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 GetStarted 元素
 description: 提供在 Word、Excel、PowerPoint 和 OneNote 中安装外接程序时出现的标注OneNote。
-ms.date: 09/29/2021
+ms.date: 02/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1630b50824cda18ca92ef6b34b0105acf9a4ca9c
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 493526c3ad4a8486b76a18ccf23c64720a359784
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138748"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340993"
 ---
 # <a name="getstarted-element"></a>GetStarted 元素
 
@@ -24,27 +24,27 @@ ms.locfileid: "60138748"
 
 **与以下要求集相关联**：
 
-- [AppCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## <a name="child-elements"></a>子元素
 
 | 元素                       | 必需 | 说明                                        |
 |:------------------------------|:--------:|:---------------------------------------------------|
-| [标题](#title)               | 是      | 定义外接程序公开功能的位置。     |
-| [说明](#description)   | 是      | 包含 JavaScript 函数的文件的 URL。|
+| [标题](#title)               | 是      | 用于标注顶部的标题。     |
+| [说明](#description)   | 是      | 标注的说明/正文内容。|
 | [LearnMoreUrl](#learnmoreurl) | 是       | 指向详细说明外接程序的页面的 URL。   |
 
 ### <a name="title"></a>标题 
 
-必需。 用于标注顶部的标题。 **resid** 属性引用"资源"部分 **ShortStrings** 元素中的 [](resources.md)有效 ID，并且不能超过 32 个字符。
+必需。 用于标注顶部的标题。 **resid** 属性引用"资源"部分 **ShortStrings** 元素中的有效 ID，[](resources.md)并且不能超过 32 个字符。
 
 ### <a name="description"></a>说明
 
-必需。 标注的说明/正文内容。 **resid** 属性引用"资源"部分 **LongStrings** 元素中的 [](resources.md)有效 ID，并且不能超过 32 个字符。
+必需。 标注的说明/正文内容。 **resid** 属性引用"资源"部分 **LongStrings** 元素中的有效 ID，[](resources.md)并且不能超过 32 个字符。
 
 ### <a name="learnmoreurl"></a>LearnMoreUrl
 
-必需。 指向用户可以了解你的外接程序详细信息的页面 URL。 **resid** 属性引用 Resources 节 **的 Urls** 元素 [](resources.md)中的有效 ID，并且不能超过 32 个字符。
+必需。 指向用户可以了解你的外接程序详细信息的页面 URL。 **resid** 属性引用 Resources 节 **的 Urls** 元素中的有效 ID，并且 [](resources.md)不能超过 32 个字符。
 
 > [!NOTE]
 > **LearnMoreUrl** 当前无法在 Word、Excel 或 PowerPoint 客户端中呈现。 我们建议为所有客户端添加此 URL，以便 URL 在可用时呈现。 

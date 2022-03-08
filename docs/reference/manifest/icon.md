@@ -1,18 +1,34 @@
 ---
 title: 清单文件中的 Icon 元素
 description: 定义“按钮”或“菜单”控件的 Image 元素。
-ms.date: 02/04/2022
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ddacd3fdb8b9306e9f26b7bf2431f3564b579264
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 9eb4ccf394bb1c894f2b17f34038ca64fee09dc5
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467727"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63341063"
 ---
 # <a name="icon-element"></a>图标元素
 
-定义 **"按钮**"控件 [和"菜单"控件](control-button.md)[的 Image 元素](control-menu.md)。
+为"按钮"或 **"菜单** " [控件定义一组](control-button.md) [Image](control-menu.md) 元素。
+
+**外接程序类型：** 任务窗格、邮件
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 任务窗格 1.0
+- 邮件 1.0
+- 邮件 1.1
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**与以下要求集相关联**：
+
+- 当父 **VersionOverrides** 的类型为 Taskpane [1.0 时，AddinCommands](../requirement-sets/add-in-commands-requirement-sets.md) 1.1。
+- [当父](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) **VersionOverrides** 类型为 Mail 1.0 时，邮箱 1.3。
+- [当父](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) **VersionOverrides** 类型为 Mail 1.1 时，邮箱 1.5。
 
 ## <a name="attributes"></a>属性
 
@@ -39,7 +55,7 @@ ms.locfileid: "62467727"
 ```
 
 > [!IMPORTANT]
-> 如果此图像是加载项的代表图标，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和加载项Office创建有效列表，了解大小和其他要求。
+> 如果此图像是加载项的代表图标，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和加载项内创建有效Office大小和其他要求。
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>移动外形规格的其他要求
 

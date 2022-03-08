@@ -1,14 +1,19 @@
 ---
-title: 使用 JavaScript API 剪切、复制和Excel区域
+title: 使用 JavaScript API Excel、复制和粘贴区域
 description: 了解如何使用 JavaScript API 剪切、复制和Excel区域。
-ms.date: 04/02/2021
+ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 1933807d90a03c2999eda4fa5cce635ab366c9fa
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340944"
 ---
+# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API Excel、复制和粘贴区域
 
-# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API 剪切、复制和Excel区域
-
-本文提供了使用 JavaScript API 剪切、复制和粘贴Excel示例。 有关对象支持的属性和方法的完整`Range`列表，请参阅Excel[。Range 类](/javascript/api/excel/excel.range)。
+本文提供使用 JavaScript API 剪切、复制和粘贴Excel示例。 有关对象支持的属性和方法`Range`的完整列表，请参阅Excel[。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -19,12 +24,12 @@ ms.localizationpriority: medium
 以下代码示例将数据从“A1:E1”复制到“G1”开始的范围（粘贴到“G1:K1”结束）。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1")
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    // Copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1").
     sheet.getRange("G1").copyFrom("A1:E1");
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 `Range.copyFrom` 具有三个可选参数。
@@ -49,20 +54,20 @@ copyFrom(sourceRange: Range | RangeAreas | string, copyType?: Excel.RangeCopyTyp
 以下代码示例和图像在一个简单的方案中演示此行为。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    // Copy a range, omitting the blank cells so existing data is not overwritten in those cells.
     sheet.getRange("D1").copyFrom("A1:C1",
         Excel.RangeCopyType.all,
         true, // skipBlanks
         false); // transpose
-    // copy a range, including the blank cells which will overwrite existing data in the target cells
+    // Copy a range, including the blank cells which will overwrite existing data in the target cells.
     sheet.getRange("D2").copyFrom("A2:C2",
         Excel.RangeCopyType.all,
         false, // skipBlanks
         false); // transpose
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="data-before-range-is-copied-and-pasted"></a>复制和粘贴区域之前的数据
@@ -80,13 +85,13 @@ Excel.run(function (context) {
 下面的代码示例使用 方法移动 `Range.moveTo` 区域。 请注意，如果目标区域小于源范围，它将扩展以包含源内容。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.getRange("F1").values = [["Moved Range"]];
 
     // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1").
     sheet.getRange("A1:E1").moveTo("G1");
-    return context.sync();
+    await context.sync();
 });
 ```
 

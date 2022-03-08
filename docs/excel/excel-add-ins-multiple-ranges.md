@@ -1,14 +1,14 @@
 ---
 title: 同时在 Excel 加载项中处理多个区域
-description: 了解 Excel JavaScript 库如何允许外接程序同时在多个区域上执行操作和设置属性。
-ms.date: 04/01/2021
+description: 了解 Excel JavaScript 库如何使外接程序能够同时在多个区域上执行操作和设置属性。
+ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 571e19814cb5f1b8d3117cd6cccbe18f584330d8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 75b1248a15c37c548b11fa8ac47a809b045571e4
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149526"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340909"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>同时在 Excel 加载项中处理多个区域
 
@@ -31,9 +31,9 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 - `RangeAreas.getEntireColumn` 和 `RangeAreas.getEntireRow` 将返回另一个 `RangeAreas` 对象，用来表示 `RangeAreas` 中的所有区域的列数（或行数）。 例如，如果 `RangeAreas` 表示“A1:C4”和“F14:L15”，则 `RangeAreas.getEntireColumn` 将返回一个表示“A:C”和“F:L”的 `RangeAreas` 对象。
 - `RangeAreas.copyFrom` 可以采用 `Range` 或 `RangeAreas` 参数，用来表示复制操作的源区域。
 
-#### <a name="complete-list-of-range-members-that-are-also-available-on-rangeareas"></a>RangeAreas 还提供了区域成员的完整列表
+### <a name="complete-list-of-range-members-that-are-also-available-on-rangeareas"></a>RangeAreas 还提供了区域成员的完整列表
 
-##### <a name="properties"></a>属性
+#### <a name="properties"></a>属性
 
 在编写用于读取任何所列属性的代码之前，请先熟悉[读取 RangeAreas 的属性](#read-properties-of-rangeareas)。 返回的内容存在细微差别。
 
@@ -49,7 +49,7 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 - `style`
 - `worksheet`
 
-##### <a name="methods"></a>方法
+#### <a name="methods"></a>方法
 
 - `calculate()`
 - `clear()`
@@ -60,12 +60,12 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 - `getEntireRow()`
 - `getIntersection()`
 - `getIntersectionOrNullObject()`
-- `getOffsetRange()` (`getOffsetRangeAreas` 对象对象 `RangeAreas` 上命名) 
+- `getOffsetRange()` (对象 `getOffsetRangeAreas` 对象上命名 `RangeAreas`) 
 - `getSpecialCells()`
 - `getSpecialCellsOrNullObject()`
 - `getTables()`
-- `getUsedRange()` (`getUsedRangeAreas` 对象对象 `RangeAreas` 上命名) 
-- `getUsedRangeOrNullObject()` (`getUsedRangeAreasOrNullObject` 对象对象 `RangeAreas` 上命名) 
+- `getUsedRange()` (对象 `getUsedRangeAreas` 对象上命名 `RangeAreas`) 
+- `getUsedRangeOrNullObject()` (对象 `getUsedRangeAreasOrNullObject` 对象上命名 `RangeAreas`) 
 - `load()`
 - `set()`
 - `setDirty()`
@@ -79,7 +79,7 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 
 - `areas`：一种 `RangeCollection` 对象，它包含由 `RangeAreas` 对象表示的所有区域。 `RangeCollection` 也是新对象，与其他 Excel 集合对象类似。 它具有 `items` 属性，它是一组表示区域的 `Range` 对象。
 - `areaCount`：`RangeAreas` 中的区域总数。
-- `getOffsetRangeAreas`：与 [Range.getOffsetRange](/javascript/api/excel/excel.range#getOffsetRange_rowOffset__columnOffset_) 的作用类似，不同之处在于，前者将返回 `RangeAreas` 并且包含多个区域，每个区域都是原始 `RangeAreas` 中的区域的偏移。
+- `getOffsetRangeAreas`：与 [Range.getOffsetRange](/javascript/api/excel/excel.range#excel-excel-range-getoffsetrange-member(1)) 的作用类似，不同之处在于，前者将返回 `RangeAreas` 并且包含多个区域，每个区域都是原始 `RangeAreas` 中的区域的偏移。
 
 ## <a name="create-rangeareas"></a>创建 RangeAreas
 
@@ -103,13 +103,13 @@ Excel JavaScript 库允许你使用加载项同时在多个区域上执行操作
 以下是在多个区域上设置属性的示例。 函数将突出显示区域 **F3:F5** 和 **H3:H5**。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var rangeAreas = sheet.getRanges("F3:F5, H3:H5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAreas = sheet.getRanges("F3:F5, H3:H5");
     rangeAreas.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 此示例适用于可以对传递给 `getRanges` 的区域地址进行硬编码或在运行时轻松进行计算的应用场景。 一些适用的应用场景包括：
@@ -128,25 +128,22 @@ Excel.run(function (context) {
 
 ## <a name="read-properties-of-rangeareas"></a>读取 RangeAreas 的属性
 
-读取 `RangeAreas` 的属性值时须小心操作，因为对于 `RangeAreas` 内的不同区域，给定的属性可能具有不同的值。 一般规则是，如果 *可以* 返回一致的值，则系统会返回该值。 例如，在下面的代码中，用于粉色 () 的 RGB 代码将记录到控制台，因为 对象中的两个范围都有粉色填充，两者都是 `#FFC0CB` `true` 整列 `RangeAreas` 。
+读取 `RangeAreas` 的属性值时须小心操作，因为对于 `RangeAreas` 内的不同区域，给定的属性可能具有不同的值。 一般规则是，如果 *可以* 返回一致的值，则系统会返回该值。 例如，在下面的代码中，用于粉色 (`#FFC0CB` `true` `RangeAreas`) 的 RGB 代码将记录到控制台，因为 对象中的两个范围都有粉色填充，两者都是整列。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // The ranges are the F column and the H column.
-    var rangeAreas = sheet.getRanges("F:F, H:H");  
+    let rangeAreas = sheet.getRanges("F:F, H:H");  
     rangeAreas.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            console.log(rangeAreas.format.fill.color); // #FFC0CB
-            console.log(rangeAreas.isEntireColumn); // true
-        })
-        .then(context.sync);
-})
+    console.log(rangeAreas.format.fill.color); // #FFC0CB
+    console.log(rangeAreas.isEntireColumn); // true
+});
 ```
 
 如果无法实现一致性，则情况将变得更加复杂。 `RangeAreas` 属性的行为遵循以下三个原则：
@@ -158,23 +155,20 @@ Excel.run(function (context) {
 例如，以下代码将创建 `RangeAreas`，其中只有一个区域是整列，并且只有一个区域具有粉色填充。 控制台将为填充颜色显示 `null`，为 `isEntireRow` 属性显示 `false`，并为 `address` 属性显示“Sheet1!F3:F5, Sheet1!H:H”（假设工作表名称为“Sheet1”）。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var rangeAreas = sheet.getRanges("F3:F5, H:H");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAreas = sheet.getRanges("F3:F5, H:H");
 
-    var pinkColumnRange = sheet.getRange("H:H");
+    let pinkColumnRange = sheet.getRange("H:H");
     pinkColumnRange.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn, address");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            console.log(rangeAreas.format.fill.color); // null
-            console.log(rangeAreas.isEntireColumn); // false
-            console.log(rangeAreas.address); // "Sheet1!F3:F5, Sheet1!H:H"
-        })
-        .then(context.sync);
-})
+    console.log(rangeAreas.format.fill.color); // null
+    console.log(rangeAreas.isEntireColumn); // false
+    console.log(rangeAreas.address); // "Sheet1!F3:F5, Sheet1!H:H"
+});
 ```
 
 ## <a name="see-also"></a>另请参阅

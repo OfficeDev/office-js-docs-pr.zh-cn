@@ -1,10 +1,15 @@
 ---
 title: 加载项Excel疑难解答
 description: 了解如何解决加载项中的Excel错误。
-ms.date: 02/12/2021
+ms.date: 02/17/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: c6a523354cc938ac9e9ba041ddb09f12142a3a58
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340790"
 ---
-
 # <a name="troubleshooting-excel-add-ins"></a>加载项Excel疑难解答
 
 本文讨论对解决方案唯一的Excel。 请使用页面底部的反馈工具，建议可添加到文章中的其他问题。
@@ -39,7 +44,7 @@ ms.localizationpriority: medium
 
 ## <a name="coauthoring"></a>共同创作
 
-有关[用于共同Excel](co-authoring-in-excel-add-ins.md)中的事件的模式，请参阅在加载项中共同授权。 本文还讨论了使用某些 API（如 ）时的潜在合并冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1))。
+请参阅[共同Excel](co-authoring-in-excel-add-ins.md)外接程序中的共同授权，了解用于共同授权环境中事件的模式。 本文还讨论了使用某些 API（如 ）时的潜在合并冲突 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1))。
 
 ## <a name="known-issues"></a>已知问题
 
@@ -50,27 +55,28 @@ ms.localizationpriority: medium
 下面的代码示例演示如何使用此临时绑定 ID 检索相关 `Binding` 对象。 在示例中，将事件侦听器分配给绑定。 侦听器在触发 `getBindingId` 事件 `onDataChanged` 时调用 方法。 方法 `getBindingId` 使用临时对象的 `Binding` ID 检索引发 `Binding` 事件的对象。
 
 ```js
-Excel.run(function (context) {
-    // Retrieve your binding.
-    var binding = context.workbook.bindings.getItemAt(0);
-
-    return context.sync().then(function () {
+async function run() {
+    await Excel.run(async (context) => {
+        // Retrieve your binding.
+        let binding = context.workbook.bindings.getItemAt(0);
+    
+        await context.sync();
+    
         // Register an event listener to detect changes to your binding
         // and then trigger the `getBindingId` method when the data changes. 
         binding.onDataChanged.add(getBindingId);
-
-        return context.sync();
+        await context.sync();
     });
-});
+}
 
-function getBindingId(eventArgs) {
-    return Excel.run(function (context) {
+async function getBindingId(eventArgs) {
+    await Excel.run(async (context) => {
         // Get the temporary binding object and load its ID. 
-        var tempBindingObject = eventArgs.binding;
+        let tempBindingObject = eventArgs.binding;
         tempBindingObject.load("id");
 
         // Use the temporary binding object's ID to retrieve the original binding object. 
-        var originalBindingObject = context.workbook.bindings.getItem(tempBindingObject.id);
+        let originalBindingObject = context.workbook.bindings.getItem(tempBindingObject.id);
 
         // You now have the binding object that raised the event: `originalBindingObject`. 
     });
@@ -79,9 +85,9 @@ function getBindingId(eventArgs) {
 
 ### <a name="cell-format-usestandardheight-and-usestandardwidth-issues"></a>单元格格式 `useStandardHeight` 和 `useStandardWidth` 问题
 
-[的 useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) `CellPropertiesFormat` 属性在属性中Excel web 版。 由于用户界面中的问题Excel web 版，`useStandardHeight`将 属性`true`设置为不精确地在此平台上计算高度。 例如，标准高度 **14** 在 Excel web 版 中修改为 **14.25**。
+[的 useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) `CellPropertiesFormat` 属性在属性中Excel web 版。 由于用户界面中Excel web 版问题`useStandardHeight``true`，因此将 属性设置为不精确地在此平台上计算高度。 例如，标准高度 **14** 在 Excel web 版 中修改为 **14.25**。
 
-在所有平台上， [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) 和 [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardwidth-member) `CellPropertiesFormat` 属性仅旨在设置为 `true`。 将这些属性设置为 `false` 无效。 
+在所有平台上， [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) 和 [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardwidth-member) `CellPropertiesFormat` 属性仅旨在设置为 `true`。 将这些属性设置为 `false` 无效。
 
 ### <a name="range-getimage-method-unsupported-on-excel-for-mac"></a>区域`getImage`方法不受支持Excel for Mac
 

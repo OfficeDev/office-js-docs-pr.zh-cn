@@ -1,10 +1,15 @@
 ---
 title: 使用 Excel JavaScript API 处理事件
 description: JavaScript 对象Excel列表。 这包括有关使用事件处理程序和相关模式的信息。
-ms.date: 12/06/2021
+ms.date: 02/16/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 8bc1dcad8bccb51dbcedfee741954fabf6967670
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340580"
 ---
-
 # <a name="work-with-events-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理事件
 
 本文介绍了与处理 Excel 中事件相关的重要概念，并提供了代码示例，以展示如何使用 Excel JavaScript API 注册事件处理程序、处理事件和删除事件处理程序。
@@ -69,14 +74,12 @@ Excel 工作簿内的事件可以通过下列方式触发：
 下面的代码示例为 `onChanged` 工作表中的  事件注册事件处理程序。 此代码指定 `handleChange` 函数应在工作表中的数据有变化时运行。
 
 ```js
-Excel.run(function (context) {
-    var worksheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getItem("Sample");
     worksheet.onChanged.add(handleChange);
 
-    return context.sync()
-        .then(function () {
-            console.log("Event handler successfully registered for onChanged event in the worksheet.");
-        });
+    await context.sync();
+    console.log("Event handler successfully registered for onChanged event in the worksheet.");
 }).catch(errorHandlerFunction);
 ```
 
@@ -85,56 +88,48 @@ Excel.run(function (context) {
 如上一示例所示，注册事件处理程序时，指定函数应在指定事件发生时运行。 可以将函数设计为执行方案所需的任何操作。 下面的代码示例展示了事件处理程序函数如何直接将事件信息写入控制台。
 
 ```js
-function handleChange(event)
-{
-    return Excel.run(function(context){
-        return context.sync()
-            .then(function() {
-                console.log("Change type of event: " + event.changeType);
-                console.log("Address of event: " + event.address);
-                console.log("Source of event: " + event.source);
-            });
+async function handleChange(event) {
+    await Excel.run(async (context) => {
+        await context.sync();        
+        console.log("Change type of event: " + event.changeType);
+        console.log("Address of event: " + event.address);
+        console.log("Source of event: " + event.source);       
     }).catch(errorHandlerFunction);
 }
 ```
 
 ## <a name="remove-an-event-handler"></a>删除事件处理程序
 
-下面的代码示例为 **Sample** 工作表中的 `onSelectionChanged` 事件注册事件处理程序，并将 `handleSelectionChange` 函数定义为在事件发生时运行。 它还定义了随后可以调用的 `remove()` 函数，以删除相应事件处理程序。 请注意， `RequestContext` 用于创建事件处理程序的 需要删除它。 
+下面的代码示例为 **Sample** 工作表中的 `onSelectionChanged` 事件注册事件处理程序，并将 `handleSelectionChange` 函数定义为在事件发生时运行。 它还定义了随后可以调用的 `remove()` 函数，以删除相应事件处理程序。 请注意， `RequestContext` 用于创建事件处理程序的 需要删除它。
 
 ```js
-var eventResult;
+let eventResult;
 
-Excel.run(function (context) {
-    var worksheet = context.workbook.worksheets.getItem("Sample");
+async function run() {
+  await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getItem("Sample");
     eventResult = worksheet.onSelectionChanged.add(handleSelectionChange);
 
-    return context.sync()
-        .then(function () {
-            console.log("Event handler successfully registered for onSelectionChanged event in the worksheet.");
-        });
-}).catch(errorHandlerFunction);
-
-function handleSelectionChange(event)
-{
-    return Excel.run(function(context){
-        return context.sync()
-            .then(function() {
-                console.log("Address of current selection: " + event.address);
-            });
-    }).catch(errorHandlerFunction);
+    await context.sync();
+    console.log("Event handler successfully registered for onSelectionChanged event in the worksheet.");
+  });
 }
 
-function remove() {
-    return Excel.run(eventResult.context, function (context) {
-        eventResult.remove();
+async function handleSelectionChange(event) {
+  await Excel.run(async (context) => {
+    await context.sync();
+    console.log("Address of current selection: " + event.address);
+  });
+}
 
-        return context.sync()
-            .then(function() {
-                eventResult = null;
-                console.log("Event handler successfully removed.");
-            });
-    }).catch(errorHandlerFunction);
+async function remove() {
+  await Excel.run(eventResult.context, async (context) => {
+    eventResult.remove();
+    await context.sync();
+    
+    eventResult = null;
+    console.log("Event handler successfully removed.");
+  });
 }
 ```
 
@@ -149,19 +144,20 @@ function remove() {
 以下代码示例展示了如何打开和关闭事件。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     context.runtime.load("enableEvents");
-    return context.sync()
-        .then(function () {
-            var eventBoolean = !context.runtime.enableEvents;
-            context.runtime.enableEvents = eventBoolean;
-            if (eventBoolean) {
-                console.log("Events are currently on.");
-            } else {
-                console.log("Events are currently off.");
-            }
-        }).then(context.sync);
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    let eventBoolean = !context.runtime.enableEvents;
+    context.runtime.enableEvents = eventBoolean;
+    if (eventBoolean) {
+        console.log("Events are currently on.");
+    } else {
+        console.log("Events are currently off.");
+    }
+    
+    await context.sync();
+});
 ```
 
 ## <a name="see-also"></a>另请参阅

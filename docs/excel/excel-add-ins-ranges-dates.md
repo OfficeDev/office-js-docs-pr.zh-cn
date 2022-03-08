@@ -1,19 +1,19 @@
 ---
 title: 使用 JavaScript API Excel日期
 description: 使用 Moment-MSDate JavaScript API Excel插件处理日期。
-ms.date: 04/02/2021
+ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e09badf3bf6f848f96fc9e5864f383f781ef63f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: becbbc9deb6f07e244ed0aac1f04b3dad1a800eb
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149266"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340566"
 ---
-# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>使用 JavaScript API Excel应用程序插件处理Moment-MSDate日期
+# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>使用 JavaScript API 和 Excel 插件Moment-MSDate日期
 
-本文提供的代码示例显示如何使用 javaScript API 和[Excel-MSDate 插件处理日期](https://www.npmjs.com/package/moment-msdate)。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供的代码示例显示了如何使用 JavaScript API Excel [Moment-MSDate 插件处理日期](https://www.npmjs.com/package/moment-msdate)。 有关对象支持的属性和方法`Range`的完整列表，请参阅Excel[。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -24,47 +24,46 @@ ms.locfileid: "59149266"
 以下代码演示如何将 **B4** 区域设置为时刻的时间戳。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var now = Date.now();
-    var nowMoment = moment(now);
-    var nowMS = nowMoment.toOADate();
+    let now = Date.now();
+    let nowMoment = moment(now);
+    let nowMS = nowMoment.toOADate();
 
-    var dateRange = sheet.getRange("B4");
+    let dateRange = sheet.getRange("B4");
     dateRange.values = [[nowMS]];
 
     dateRange.numberFormat = [["[$-409]m/d/yy h:mm AM/PM;@"]];
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 下面的代码示例演示了一种类似的技术，用于从单元格重新获取日期并将其转换为 `Moment` 或其他格式。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var dateRange = sheet.getRange("B4");
+    let dateRange = sheet.getRange("B4");
     dateRange.load("values");
 
-    return context.sync().then(function () {
-        var nowMS = dateRange.values[0][0];
+    await context.sync();
 
-        // log the date as a moment
-        var nowMoment = moment.fromOADate(nowMS);
-        console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
+    let nowMS = dateRange.values[0][0];
 
-        // log the date as a UNIX-style timestamp
-        var now = nowMoment.unix();
-        console.log(`get (timestamp): ${now}`);
-    });
-}).catch(errorHandlerFunction);
+    // Log the date as a moment.
+    let nowMoment = moment.fromOADate(nowMS);
+    console.log(`get (moment): ${JSON.stringify(nowMoment)}`);
+
+    // Log the date as a UNIX-style timestamp.
+    let now = nowMoment.unix();
+    console.log(`get (timestamp): ${now}`);
+});
 ```
 
-外接程序必须设置范围的格式，以更可读的形式显示日期。 例如，显示 `"[$-409]m/d/yy h:mm AM/PM;@"` "12/3/18 3：57 PM"。 有关日期和时间数字格式详细信息，请参阅查看自定义数字格式指南文章中的"日期和时间 [格式指南](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) "。
-
+外接程序必须设置范围的格式，以更可读的形式显示日期。 例如，显示 `"[$-409]m/d/yy h:mm AM/PM;@"` "12/3/18 3：57 PM"。 有关日期和时间数字格式详细信息，请参阅查看自定义数字格式指南文章中的"日期和时间 [格式指南"](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) 。
 
 ## <a name="see-also"></a>另请参阅
 

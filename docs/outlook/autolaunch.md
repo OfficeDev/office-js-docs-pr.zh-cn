@@ -2,10 +2,15 @@
 title: 配置Outlook加载项进行基于事件的激活
 description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
-ms.date: 02/03/2022
+ms.date: 03/03/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 7d63e814875ee36a24bf7a919da0b62562433af0
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340286"
 ---
-
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
 如果没有基于事件的激活功能，用户必须显式启动外接程序才能完成其任务。 此功能使加载项能够运行基于特定事件的任务，尤其是适用于每个项目的操作。 还可以与任务窗格和无 UI 功能集成。
@@ -38,7 +43,7 @@ ms.localizationpriority: medium
 
 ### <a name="how-to-preview"></a>如何预览
 
-我们邀请你立即预览一下事件！ 请告诉我们你的方案，以及我们如何通过反馈提供反馈GitHub (请参阅此页面末尾的反馈部分) 。
+我们邀请你立即预览一下事件！ 请告诉我们你的方案，以及我们如何通过反馈提供反馈GitHub (请参阅此页面结尾的反馈部分) 。
 
 若要预览这些事件（如果可用）：
 
@@ -135,6 +140,9 @@ ms.localizationpriority: medium
             <LaunchEvents>
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+              
+              <!-- Other available events (currently released) -->
+              <!--
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
               <LaunchEvent Type="OnMessageRecipientsChanged" FunctionName="onMessageRecipientsChangedHandler" />
@@ -142,8 +150,13 @@ ms.localizationpriority: medium
               <LaunchEvent Type="OnAppointmentTimeChanged" FunctionName="onAppointmentTimeChangedHandler" />
               <LaunchEvent Type="OnAppointmentRecurrenceChanged" FunctionName="onAppointmentRecurrenceChangedHandler" />
               <LaunchEvent Type="OnInfoBarDismissClicked" FunctionName="onInfobarDismissClickedHandler" />
+              -->
+
+              <!-- Other available events (currently in preview) -->
+              <!--
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
               <LaunchEvent Type="OnAppointmentSend" FunctionName="onAppointmentSendHandler" SendMode="PromptUser" />
+              -->
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
             <SourceLocation resid="WebViewRuntime.Url"/>
@@ -162,7 +175,7 @@ ms.localizationpriority: medium
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
         <!-- Entry needed for Outlook Desktop. -->
-        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/commands.js" />
+        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -178,7 +191,7 @@ ms.localizationpriority: medium
 </VersionOverrides>
 ```
 
-Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI 预览版使用可引用同一 JavaScript 文件的 HTML 文件。 你必须在清单`Resources`的节点中提供对这两个文件的引用，因为 Outlook 平台最终确定是使用 HTML 还是基于 Outlook 客户端的 JavaScript。 因此，若要配置事件处理，请提供 HTML `Runtime` `Override` 在 元素中的位置，然后在其子元素中提供 JAVAScript 文件内附或 HTML 引用的位置。
+Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI 预览版使用可引用同一 JavaScript 文件的 HTML 文件。 你必须在清单`Resources`节点中提供对这两个文件的引用，因为 Outlook 平台最终确定是使用 HTML 还是基于 Outlook 客户端的 JavaScript。 因此，若要配置事件处理，请提供 HTML `Runtime` `Override` 在 元素中的位置，然后在其子元素中提供 JAVAScript 文件内附或 HTML 引用的位置。
 
 > [!TIP]
 > 若要了解有关加载项清单Outlook，请参阅Outlook[加载项清单](manifests.md)。
@@ -189,11 +202,18 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
 
 在此方案中，您将添加用于撰写新项的处理。
 
-1. 从同一快速启动项目中，在代码编辑器中打开 **文件./src/commands/commands.js** 文件。
+1. 从同一快速启动项目中，在 **/src/** 目录下新建一个名为 **launchevent** 的文件夹。
 
-1. 在 函数 `action` 之后，插入以下 JavaScript 函数。
+1. 在 **"./src/launchevent** "文件夹中，新建一个名为"launchevent.js **"**。
+
+1. 在代码编辑器 **中打开文件 ./src/launchevent/launchevent.js** 并添加以下 JavaScript 代码。
 
     ```js
+    /*
+    * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+    * See LICENSE in the project root for license information.
+    */
+
     function onMessageComposeHandler(event) {
       setSubject(event);
     }
@@ -204,23 +224,19 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
       Office.context.mailbox.item.subject.setAsync(
         "Set by an event-based add-in!",
         {
-          "asyncContext" : event
+          "asyncContext": event
         },
         function (asyncResult) {
           // Handle success or error.
           if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
             console.error("Failed to set subject: " + JSON.stringify(asyncResult.error));
           }
-    
+
           // Call event.completed() after all work is done.
           asyncResult.asyncContext.completed();
         });
     }
-    ```
 
-1. 在文件末尾添加以下 JavaScript 代码。
-
-    ```js
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
     Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
@@ -231,10 +247,32 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
 > [!IMPORTANT]
 > Windows：目前，在执行基于事件的激活的处理的 JavaScript 文件中不支持导入。
 
+## <a name="update-webpack-config-settings"></a>更新 webpack 配置设置
+
+打开 **webpack.config.js** 根目录中找到的目录文件，并完成以下步骤。
+
+1. 在 对象 `plugins` 中查找 `config` 数组，在数组的开头添加此新对象。
+
+    ```js
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "./src/launchevent/launchevent.js",
+          to: "launchevent.js",
+        },
+      ],
+    }),
+    ```
+
+1. 保存所做的更改。
+
 ## <a name="try-it-out"></a>试用
 
-1. 在项目的根目录中运行以下命令。 如果运行此命令，本地 Web 服务器将启动（如果尚未运行），并将旁加载加载项。
+1. 在项目的根目录中运行以下命令。 运行 时 `npm start`，如果本地 Web 服务器尚未运行 (将启动) 外接程序将旁加载。
 
+    ```command&nbsp;line
+    npm run build
+    ```
     ```command&nbsp;line
     npm start
     ```
@@ -244,43 +282,26 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
 
 1. 在 Outlook 网页版中，创建新邮件。
 
-    ![撰写时设置主题Outlook 网页版窗口中邮件窗口的屏幕截图。](../images/outlook-web-autolaunch-1.png)
+    ![撰写时主题设置Outlook 网页版窗口中邮件窗口的屏幕截图。](../images/outlook-web-autolaunch-1.png)
 
 1. In Outlook on the new Mac UI preview， create a new message.
 
-    ![使用撰写时设置的主题Outlook Mac UI 预览上显示的消息窗口屏幕截图。](../images/outlook-mac-autolaunch.png)
+    ![Screenshot of a message window in Outlook on the new Mac UI preview with the subject set on compose.](../images/outlook-mac-autolaunch.png)
 
 1. 在Outlook中Windows新建一封邮件。
 
     ![撰写时主题集Outlook Windows中邮件窗口的屏幕截图。](../images/outlook-win-autolaunch.png)
 
-    > [!NOTE]
-    > 如果您从 localhost 运行您的外接程序，并且看到错误"很抱歉，我们无法访问 *{your-add-in-name-here}*。 请确保具有网络连接。 如果问题继续，请稍后重试。"，您可能需要启用环回豁免。
-    >
-    > 1. 关闭 Outlook。
-    > 1. 打开 **任务管理器** ， **并确保msoadfsb.exe进程** 未运行。
-    > 1. 如果使用默认版本 (`https://localhost` 清单) ，请运行以下命令。
-    >
-    >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
-    >    ```
-    >
-    > 1. 如果使用的是 ，请 `http://localhost`运行以下命令。
-    >
-    >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
-    >    ```
-    >
-    > 1. 重新启动 Outlook。
+    [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## <a name="debug"></a>调试
 
 在外接程序中对启动事件处理进行更改时，应注意：
 
-- 如果更新了清单 [，请删除加载项，](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) 然后再次旁加载它。
-- 如果对清单外的文件进行了更改，请关闭并重新打开Outlook或Windows浏览器选项卡以Outlook 网页版。
+- 如果更新了清单 [，请删除加载项](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in)，然后再次旁加载它。 如果要在打开时Outlook，Windows请关闭并重新打开它。
+- 如果对清单外的文件进行了更改，请关闭并重新打开Outlook或Windows浏览器选项卡以运行Outlook 网页版。
 
-实现自己的功能时，可能需要调试代码。 有关如何调试基于事件的外接程序激活的指南，请参阅调试基于事件Outlook[外接程序](debug-autolaunch.md)。
+实现自己的功能时，可能需要调试代码。 有关如何调试基于事件的加载项激活的指南，请参阅调试基于事件Outlook[加载项](debug-autolaunch.md)。
 
 运行时日志记录还可用于 Windows。 有关详细信息，请参阅 [使用运行时日志记录调试外接程序](../testing/runtime-logging.md#runtime-logging-on-windows)。
 
@@ -288,16 +309,16 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
 
 可以通过在加载项中上传清单来部署基于事件的Microsoft 365 管理中心。 在管理门户中，展开设置窗格中的"集成应用"部分，然后选择"**集成应用"**。 在"**集成应用"** 页上，选择"**Upload应用"** 操作。
 
-![屏幕中集成应用页面的屏幕截图Microsoft 365 管理中心自定义Upload操作。](../images/outlook-deploy-event-based-add-ins.png)
+![页面上的集成应用页面的屏幕截图Microsoft 365 管理中心自定义Upload操作。](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource 和应用Office应用商店：即将推出部署基于事件的加载项或更新现有加载项以包含基于事件的激活功能的功能。
 
 > [!IMPORTANT]
-> 基于事件的外接程序仅限于管理员托管的部署。 目前，用户无法从 AppSource 或应用内应用商店获取基于Office加载项。 若要了解详情，请参阅[基于事件的加载项Outlook AppSource 一览选项](autolaunch-store-options.md)。
+> 基于事件的外接程序仅限于管理员托管的部署。 目前，用户无法从 AppSource 或应用内应用商店获取Office加载项。 若要了解详情，请参阅[基于事件和加载项Outlook AppSource 一览选项](autolaunch-store-options.md)。
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>基于事件的激活行为和限制
 
-加载项启动事件处理程序应尽量短运行、轻量且无影响。 激活后，外接程序将在大约 300 秒（运行基于事件的外接程序所允许的最大时间长度）内退出。若要指示加载项已完成对启动事件的处理，我们建议让关联的处理程序调用 `event.completed` 方法。 `event.completed` (请注意，语句后包含的代码不能保证运行。) 每次触发外接程序句柄的事件时，外接程序将重新激活并运行关联的事件处理程序，超时窗口将重置。 外接程序在时间结束后结束，或者用户关闭撰写窗口或发送项目。
+加载项启动事件处理程序应尽量短运行、轻量且无影响。 激活后，外接程序将在大约 300 秒（运行基于事件的外接程序所允许的最大时间长度）内退出。若要指示加载项已完成对启动事件的处理，我们建议让关联的处理程序调用 `event.completed` 方法。 `event.completed` (请注意，语句之后包含的代码不能保证运行。) 每次触发外接程序句柄的事件时，外接程序将重新激活并运行关联的事件处理程序，超时窗口将重置。 外接程序在时间结束后结束，或者用户关闭撰写窗口或发送项目。
 
 如果用户有多个订阅了同一事件的加载项，Outlook平台将按特定顺序启动加载项。 目前，只能主动运行五个基于事件的加载项。
 
@@ -311,7 +332,7 @@ AppSource 和应用Office应用商店：即将推出部署基于事件的加载�
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > `OfficeRuntime.auth` 支持。 有关详细信息，请参阅使用基于事件的激活 (SSO) Outlook启用单一[登录。](use-sso-in-event-based-activation.md)
+    > `OfficeRuntime.auth` 支持。 有关详细信息，请参阅使用基于事件的激活 (SSO) Outlook启用[单一登录。](use-sso-in-event-based-activation.md)
 - 在 `Office.context.mailbox`下：
   - `displayAppointmentForm`
   - `displayMessageForm`
@@ -325,7 +346,7 @@ AppSource 和应用Office应用商店：即将推出部署基于事件的加载�
 
 ### <a name="requesting-external-data"></a>请求外部数据
 
-可以使用 [提取](https://developer.mozilla.org/docs/Web/API/Fetch_API) 等 API，或者使用 [XmlHttpRequest (XHR) ](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)请求外部数据，这是一种可发送 HTTP 请求以与服务器交互的标准 Web API。
+可以使用提取等 API 或 [XHR) XmlHttpRequest (XHR) ](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)（一种用于发送 HTTP 请求以与服务器交互的标准 Web API）请求外部数据。[](https://developer.mozilla.org/docs/Web/API/Fetch_API)
 
 请注意，在生成 XmlHttpRequest 时，必须使用其他安全措施 [，要求使用](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) 同源策略和简单 [CORS](https://www.w3.org/TR/cors/)。
 
@@ -340,5 +361,6 @@ AppSource 和应用Office应用商店：即将推出部署基于事件的加载�
 - [基于事件的加载项的 AppSource Outlook选项](autolaunch-store-options.md)
 - [智能警报和 OnMessageSend 演练](smart-alerts-onmessagesend-walkthrough.md)
 - PnP 示例：
+  - [使用Outlook事件激活加密附件、处理会议请求与会者和响应约会日期/时间更改](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
   - [使用 Outlook 基于事件的激活设置签名](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
-  - [使用Outlook事件激活来标记外部收件人](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
+  - [使用 Outlook 基于事件的激活标记外部收件人](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)

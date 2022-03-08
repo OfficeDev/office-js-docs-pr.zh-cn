@@ -1,19 +1,19 @@
 ---
-title: 使用 JavaScript API Excel区域的格式
+title: 使用 JavaScript API 设置Excel格式
 description: 了解如何使用 Excel JavaScript API 设置区域的格式。
-ms.date: 04/02/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a380a64c76709e423be2d5c529a6e35cd44a5d1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 41727f6fd71636be24bdc1bb8416cb3ba07c06e1
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149407"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340349"
 ---
 # <a name="set-range-format-using-the-excel-javascript-api"></a>使用 JavaScript API Excel区域格式
 
-本文提供的代码示例使用 JavaScript API 为区域单元格设置字体颜色、填充颜色和数字Excel格式。 有关对象支持的属性和方法的完整列表， `Range` 请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
+本文提供的代码示例使用 JavaScript API 为区域单元格设置字体颜色、填充颜色和数字Excel格式。 有关对象支持的属性和方法`Range`的完整列表，请参阅Excel[。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -22,15 +22,15 @@ ms.locfileid: "59149407"
 下面的代码示例为区域 **B2:E2** 中的单元格设置字体颜色和填充颜色。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var range = sheet.getRange("B2:E2");
+    let range = sheet.getRange("B2:E2");
     range.format.fill.color = "#4472C4";
     range.format.font.color = "white";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="data-in-range-before-font-color-and-fill-color-are-set"></a>区域中设置字体颜色和填充颜色之前的数据
@@ -39,27 +39,27 @@ Excel.run(function (context) {
 
 ### <a name="data-in-range-after-font-color-and-fill-color-are-set"></a>区域中设置字体颜色和填充颜色之后的数据
 
-![设置Excel格式后的数据。](../images/excel-ranges-format-font-and-fill.png)
+![设置Excel格式之后的数据。](../images/excel-ranges-format-font-and-fill.png)
 
 ## <a name="set-number-format"></a>设置数字格式
 
 下面的代码示例为区域 **D3:E5** 中的单元格设置数字格式。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var formats = [
+    let formats = [
         ["0.00", "0.00"],
         ["0.00", "0.00"],
         ["0.00", "0.00"]
     ];
 
-    var range = sheet.getRange("D3:E5");
+    let range = sheet.getRange("D3:E5");
     range.numberFormat = formats;
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="data-in-range-before-number-format-is-set"></a>区域中设置数字格式之前的数据
@@ -75,4 +75,4 @@ Excel.run(function (context) {
 - [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
 - [使用 JavaScript API Excel单元格](excel-add-ins-cells.md)
 - [使用 JavaScript API Excel和获取范围](excel-add-ins-ranges-set-get.md)
-- [使用 JavaScript API 设置和获取Excel值、文本或公式](excel-add-ins-ranges-set-get-values.md)
+- [使用 JavaScript API 设置和获取区域Excel文本或公式](excel-add-ins-ranges-set-get-values.md)

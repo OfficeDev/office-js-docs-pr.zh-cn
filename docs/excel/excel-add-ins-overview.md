@@ -1,16 +1,16 @@
 ---
 title: Excel 加载项概述
 description: 使用 Excel 加载项，可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）扩展 Excel 应用程序功能。
-ms.date: 10/14/2020
+ms.date: 02/16/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: f4141fb743e61605906d4460025f6570ce243480
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 84246ce43df4b442e32771ee36afe1309e95b7fb
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514087"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340867"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
@@ -61,8 +61,6 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 加载项命令是能够扩展 Excel UI，并在加载项中启动操作的 UI 元素。加载项命令可用于在功能区中添加按钮，也可用于向 Excel 上下文菜单中添加项。选择加载项命令后，用户便启动操作，如运行 JavaScript 代码，或在任务窗格中显示加载项页面。
 
-**加载项命令**
-
 ![Excel 中的加载项命令。](../images/excel-add-in-commands-script-lab.png)
 
 有关命令功能、受支持的平台和开发加载项命令第最佳做法的详细信息，请参阅[适用于 Excel、Word 和 Powerpoint 的加载项命令](../design/add-in-commands.md)。
@@ -70,8 +68,6 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 ### <a name="task-panes"></a>任务窗格
 
 任务窗格是接口图面，通常出现在 Excel 中窗口的右侧。使用任务窗格，用户可以访问接口控件，以运行代码来修改 Excel 文档，或显示数据源中的数据。
-
-**任务窗格**
 
 ![Excel 中的任务窗格加载项。](../images/excel-add-in-task-pane-insights.png)
 
@@ -81,8 +77,6 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 开发人员可以借助自定义函数向 Excel 添加新函数，方法是在 JavaScript 中将这些函数定义为加载项的一部分。 Excel 中的用户可以访问自定义函数，就像他们访问 Excel 中的任何本机函数一样，比如 `SUM()`。
 
-**自定义函数**
-
 ![显示最终用户插入 MYFUNCTION 的动画图像。将 SPHEREVOLUME 自定义函数放入 Excel 工作表的单元格中。](../images/SphereVolumeNew.gif)
 
 有关自定义函数的详细信息，请参阅[在 Excel 中创建自定义函数](custom-functions-overview.md)。
@@ -91,8 +85,6 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 对话框是浮动在活动的 Excel 应用程序窗口之上的界面。 可以将对话框用于以下任务，如显示无法直接在任务窗格中打开的登录页、请求用户确认操作，或托管如果局限在任务窗格中可能过小的视频。 若要在 Excel 加载项中打开对话框，请使用[对话框 API](/javascript/api/office/office.ui)。
 
-**对话框**
-
 ![Excel 中的加载项对话框。](../images/excel-add-in-dialog-choose-number.png)
 
 有关对话框和对话框 API 的详细信息，请参阅 [Office 加载项中的对话框](../design/dialog-boxes.md)和[在 Office 加载项中使用对话框 API](../develop/dialog-api-in-office-add-ins.md)。
@@ -100,8 +92,6 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 ### <a name="content-add-ins"></a>内容加载项
 
 内容加载项是可以直接嵌入到 Excel 文档中的图面。 可以使用内容加载项在工作表中嵌入基于 Web 的丰富对象，如图表、数据可视化效果或媒体，或为用户提供对界面控件的访问权限，这些控件运行代码以修改 Excel 文档，或显示来自数据源的数据。 在你要将功能直接嵌入文档时，请使用内容加载项。
-
-**内容加载项**
 
 ![Excel 中的内容加载项。](../images/excel-add-in-content-map.png)
 

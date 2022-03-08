@@ -1,14 +1,14 @@
 ---
 title: 清单文件中的 WebApplicationInfo 元素
-description: 外接程序清单的 WebApplicationInfo 元素的参考Office XML (XML) 文档。
-ms.date: 10/25/2021
+description: WebApplicationInfo 元素的参考文档Office外接程序清单 (XML) 文件。
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bb21c584f516fc9e50bdd881a383fb03f01c753c
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: aa74c4fc19d060f92c8c0ac2fe723c42f6ad9cdd
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681547"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340657"
 ---
 # <a name="webapplicationinfo-element"></a>WebApplicationInfo 元素
 
@@ -16,6 +16,21 @@ ms.locfileid: "60681547"
 
 - OAuth 2.0 *资源*，Office应用程序可能需要权限。
 - OAuth 2.0 *客户端*，可能需要访问 Microsoft Graph 的权限。
+
+**外接程序类型：** 任务窗格、邮件、内容
+
+**仅在以下 VersionOverrides 架构中有效**：
+
+- 任务窗格 1.0
+- 内容 1.0
+- 邮件 1.0
+- 邮件 1.1
+
+有关详细信息，请参阅清单 [中的版本替代](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)。
+
+**与以下要求集相关联**：
+
+- [IdentityAPI 1.3](../requirement-sets/identity-api-requirement-sets.md)
 
 > [!NOTE]
 > Word、Excel、Outlook 和 PowerPoint 目前支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../requirement-sets/identity-api-requirement-sets.md)。 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 要了解如何执行此操作，请参阅 [Exchange Online：如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。

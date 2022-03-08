@@ -1,11 +1,16 @@
 ---
 title: 使用 JavaScript API 查找Excel单元格
 description: 了解如何使用 JavaScript API Excel查找特殊单元格，例如包含公式、错误或数字的单元格。
-ms.date: 07/08/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 1252fe599f93a3408fb161e2b8204600fa483339
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340517"
 ---
-
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>使用 JavaScript API 查找Excel单元格
 
 本文提供的代码示例使用 JavaScript API 查找Excel单元格。 有关对象支持的属性和方法`Range`的完整列表，请参阅Excel[。Range 类](/javascript/api/excel/excel.range)。
@@ -28,14 +33,14 @@ getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Exc
 - `getSpecialCells` 方法将返回 `RangeAreas` 对象，因此包含公式的单元格都会变成粉色，即使它们并非都是连续的单元格。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var formulaRanges = usedRange.getSpecialCells(Excel.SpecialCellType.formulas);
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let usedRange = sheet.getUsedRange();
+    let formulaRanges = usedRange.getSpecialCells(Excel.SpecialCellType.formulas);
     formulaRanges.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 如果区域中不存在具有目标特征的单元格，`getSpecialCells` 会引发 **ItemNotFound** 错误。 这会将控制流转移到 `catch` 信息块（如果存在）。 如果没有块，错误 `catch` 将终止方法。
@@ -47,20 +52,20 @@ Excel.run(function (context) {
 - 你可以测试此代码，方法是先选择没有公式单元格的区域并运行它。 然后选择至少包含一个带公式的单元格的区域，并再次运行它。
 
 ```js
-Excel.run(function (context) {
-    var range = context.workbook.getSelectedRange();
-    var formulaRanges = range.getSpecialCellsOrNullObject(Excel.SpecialCellType.formulas);
-    return context.sync()
-        .then(function() {
-            if (formulaRanges.isNullObject) {
-                console.log("No cells have formulas");
-            }
-            else {
-                formulaRanges.format.fill.color = "pink";
-            }
-        })
-        .then(context.sync);
-})
+await Excel.run(async (context) => {
+    let range = context.workbook.getSelectedRange();
+    let formulaRanges = range.getSpecialCellsOrNullObject(Excel.SpecialCellType.formulas);
+    await context.sync();
+        
+    if (formulaRanges.isNullObject) {
+        console.log("No cells have formulas");
+    }
+    else {
+        formulaRanges.format.fill.color = "pink";
+    }
+    
+    await context.sync();
+});
 ```
 
 为简单起见，本文中的所有其他代码示例都使用 `getSpecialCells` 方法而不是  `getSpecialCellsOrNullObject`。
@@ -83,20 +88,20 @@ Excel.run(function (context) {
 
 下面的代码示例查找数值常量的特殊单元格，并设置这些单元格的粉色。 关于此代码，请注意以下几点：
 
-- 它只突出显示具有文字数字值的单元格。 它不会突出显示具有公式单元格的 (，即使结果是数字) 、文本或错误状态单元格。
+- 它只突出显示具有文字数字值的单元格。 它不会突出显示具有公式单元格 (即使结果是数字或布尔) 、文本或错误状态单元格。
 - 要测试代码，请确保工作表中的某些单元格包含文本数值，某些包含其他类型的文本值，而某些则包含公式。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var constantNumberRanges = usedRange.getSpecialCells(
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let usedRange = sheet.getUsedRange();
+    let constantNumberRanges = usedRange.getSpecialCells(
         Excel.SpecialCellType.constants,
         Excel.SpecialCellValueType.numbers);
     constantNumberRanges.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 ### <a name="test-for-multiple-cell-value-types"></a>测试多个单元格值类型
@@ -104,16 +109,16 @@ Excel.run(function (context) {
 有时，你需要对多种单元格值类型执行操作，例如所有文本值和所有布尔值（`Excel.SpecialCellValueType.logical`）单元格。 `Excel.SpecialCellValueType` 枚举具有组合类型的值。 例如，`Excel.SpecialCellValueType.logicalText` 将定向所有布尔值和所有文本值单元格。 `Excel.SpecialCellValueType.all` 是默认值，并不限制返回的单元格值类型。 下面的代码示例使用产生数字或布尔值的公式来设置所有单元格的颜色。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var usedRange = sheet.getUsedRange();
-    var formulaLogicalNumberRanges = usedRange.getSpecialCells(
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let usedRange = sheet.getUsedRange();
+    let formulaLogicalNumberRanges = usedRange.getSpecialCells(
         Excel.SpecialCellType.formulas,
         Excel.SpecialCellValueType.logicalNumbers);
     formulaLogicalNumberRanges.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 ## <a name="see-also"></a>另请参阅

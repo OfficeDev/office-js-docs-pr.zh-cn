@@ -3,10 +3,15 @@ title: OneNote JavaScript API 编程概述
 description: 了解有关适用于 OneNote 网页版加载项的 OneNote JavaScript API。
 ms.date: 10/14/2020
 ms.topic: overview
-ms.custom: 'scenarios:getting-started'
+ms.custom: scenarios:getting-started
 ms.localizationpriority: high
+ms.openlocfilehash: 1aa50bf12bb7e2777e31a3dc7875208d8b2966a4
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340972"
 ---
-
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
 OneNote 介绍了适用于 OneNote 加载项网页版的 JavaScript API。你可以创建任务窗格加载项、内容加载项、与 OneNote 对象交互并连接至 Web 服务或其他基于 Web 资源的加载项命令。
@@ -50,33 +55,24 @@ OneNote 介绍了适用于 OneNote 加载项网页版的 JavaScript API。你可
 例如：
 
 ```js
-function getPagesInSection() {
-    OneNote.run(function (context) {
+async function getPagesInSection() {
+    await OneNote.run(async (context) => {
 
         // Get the pages in the current section.
-        var pages = context.application.getActiveSection().pages;
+        const pages = context.application.getActiveSection().pages;
 
         // Queue a command to load the id and title for each page.
         pages.load('id,title');
 
         // Run the queued commands, and return a promise to indicate task completion.
-        return context.sync()
-            .then(function () {
-
-                // Read the id and title of each page.
-                $.each(pages.items, function(index, page) {
-                    var pageId = page.id;
-                    var pageTitle = page.title;
-                    console.log(pageTitle + ': ' + pageId);
-                });
-            })
-            .catch(function (error) {
-                app.showNotification("Error: " + error);
-                console.log("Error: " + error);
-                if (error instanceof OfficeExtension.Error) {
-                    console.log("Debug info: " + JSON.stringify(error.debugInfo));
-                }
-            });
+        await context.sync();
+            
+        // Read the id and title of each page.
+        $.each(pages.items, function(index, page) {
+            let pageId = page.id;
+            let pageTitle = page.title;
+            console.log(pageTitle + ': ' + pageId);
+        });
     });
 }
 ```

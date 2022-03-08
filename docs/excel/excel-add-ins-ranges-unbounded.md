@@ -1,24 +1,28 @@
 ---
 title: 使用 JavaScript API 读取或写入无限Excel区域
 description: 了解如何使用 Excel JavaScript API 读取或写入无限区域。
-ms.date: 04/05/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: a7b2a564377d0dab73d4f3ad6d3aacf2219ddeae
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 6e9b0c56dfd04cd53e01c41fea23fbf826a6fa14
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152274"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340951"
 ---
 # <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>使用 JavaScript API 读取或写入无限Excel区域
 
-本文介绍如何使用 JavaScript API 读取和写入无限Excel范围。 有关对象支持的属性和方法的完整 `Range` 列表，请参阅[Excel。Range 类](/javascript/api/excel/excel.range)。
+本文介绍如何使用 JavaScript API 对无限区域进行Excel写入。 有关对象支持的属性和方法`Range`的完整列表，请参阅Excel[。Range 类](/javascript/api/excel/excel.range)。
 
 无限区域地址是指定整列或整行的范围地址。 例如：
 
-- 由整列组成的区域地址：<ul><li>`C:C`</li><li>`A:F`</li></ul>
-- 由整行组成的区域地址：<ul><li>`2:2`</li><li>`1:4`</li></ul>
+- 由整列组成的区域地址。
+  - `C:C`
+  - `A:F`
+- 由整行组成的区域地址。
+  - `2:2`
+  - `1:4`
 
 ## <a name="read-an-unbounded-range"></a>读取无限区域
 
@@ -26,11 +30,11 @@ API 发出请求以检索无限区域时（例如，`getRange('C:C')`），该�
 
 ## <a name="write-to-an-unbounded-range"></a>写入一个无限区域
 
-由于输入请求过大，无法在无限区域上设置单元格级属性（如 、 和 `values` `numberFormat` `formula` ）。 例如，下面的代码示例无效，因为它尝试指定 `values` 无限区域。 如果您尝试为无限区域设置单元格级属性，API 将返回错误。
+由于输入请求过大`values``numberFormat``formula`，无法在无限区域上设置单元格级属性（如 、 和 ）。 例如，下面的代码示例无效，因为它 `values` 尝试指定无限区域。 如果您尝试为无限区域设置单元格级属性，API 将返回错误。
 
 ```js
 // Note: This code sample attempts to specify `values` for an unbounded range, which is not a valid request. The sample will return an error. 
-var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+let range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
 range.values = 'Due Date';
 ```
 

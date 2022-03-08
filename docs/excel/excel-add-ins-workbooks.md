@@ -1,11 +1,16 @@
 ---
 title: 使用 Excel JavaScript API 处理工作簿
 description: 了解如何使用 JavaScript API 对工作簿或应用程序级别功能执行Excel任务。
-ms.date: 06/07/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 4e07ac7ba679a7016ce19bfbce1b7570ddf29ee5
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340552"
 ---
-
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作簿
 
 本文提供了代码示例，介绍如何使用 Excel JavaScript API 对工作簿执行常见任务。 有关对象支持的属性`Workbook`和方法的完整列表，请参阅 [Workbook Object (JavaScript API for Excel) ](/javascript/api/excel/excel.workbook)。 此外，本文还介绍了通过 [Application](/javascript/api/excel/excel.application) 对象执行的工作簿级别的操作。
@@ -17,24 +22,23 @@ Workbook 对象是加载项与 Excel 交互的入口点。 它用于维护工作
 Workbook 对象包含两种获取用户或加载项所选定单元格范围的方法：`getActiveCell()` 和 `getSelectedRange()`。 `getActiveCell()` 将活动单元格作为 [Range 对象](/javascript/api/excel/excel.range)来从工作簿中获取它。 下列示例演示对 `getActiveCell()` 的调用，紧随其后的是打印到控制台的单元格地址。
 
 ```js
-Excel.run(function (context) {
-    var activeCell = context.workbook.getActiveCell();
+await Excel.run(async (context) => {
+    let activeCell = context.workbook.getActiveCell();
     activeCell.load("address");
+    await context.sync();
 
-    return context.sync().then(function () {
-        console.log("The active cell is " + activeCell.address);
-    });
-}).catch(errorHandlerFunction);
+    console.log("The active cell is " + activeCell.address);
+});
 ```
 
 `getSelectedRange()` 方法返回当前选定的单个范围。 若选定多个范围，将引发 InvalidSelection 错误。 下列示例演示对 `getSelectedRange()` 的调用，并且此方法随后会将相应范围的填充颜色设置为黄色。
 
 ```js
-Excel.run(function(context) {
-    var range = context.workbook.getSelectedRange();
+await Excel.run(async (context) => {
+    let range = context.workbook.getSelectedRange();
     range.format.fill.color = "yellow";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## <a name="create-a-workbook"></a>创建工作簿
@@ -51,18 +55,18 @@ Excel.createWorkbook();
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+let myFile = document.getElementById("file");
+let reader = new FileReader();
 
 reader.onload = (function (event) {
     Excel.run(function (context) {
         // Remove the metadata before the base64-encoded string.
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
+        let startIndex = reader.result.toString().indexOf("base64,");
+        let externalWorkbook = reader.result.toString().substr(startIndex + 7);
 
         Excel.createWorkbook(externalWorkbook);
         return context.sync();
-    }).catch(errorHandlerFunction);
+    });
 });
 
 // Read the file as a data URL so we can parse the base64-encoded string.
@@ -71,33 +75,33 @@ reader.readAsDataURL(myFile.files[0]);
 
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>将现有工作簿副本插入到当前工作簿中
 
-上一示例显示从现有工作簿创建的新工作簿。 此外，还可以将所有或部分现有工作簿复制到当前与加载项关联的工作簿中。 [Workbook](/javascript/api/excel/excel.workbook) 具有将`insertWorksheetsFromBase64`目标工作簿的工作表副本插入自身的方法。 另一个工作簿的文件作为 base64 编码的字符串传递，就像调用 `Excel.createWorkbook` 一样。 
+上一示例显示从现有工作簿创建的新工作簿。 此外，还可以将所有或部分现有工作簿复制到当前与加载项关联的工作簿中。 [Workbook](/javascript/api/excel/excel.workbook) 具有将`insertWorksheetsFromBase64`目标工作簿的工作表副本插入自身的方法。 另一个工作簿的文件作为 base64 编码的字符串传递，就像调用 `Excel.createWorkbook` 一样。
 
 ```TypeScript
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
 > [!IMPORTANT]
-> 此方法`insertWorksheetsFromBase64`在 Excel、Windows 和 Web 上受支持。 iOS 不支持它。 此外，Excel web 版此方法不支持包含数据透视表、图表、注释或 Slicer 元素的源工作表。 如果存在这些对象，该方法`insertWorksheetsFromBase64`将返回 `UnsupportedFeature` Excel web 版。 
+> 此方法`insertWorksheetsFromBase64`在 Excel、Windows 和 Web 上受支持。 iOS 不支持它。 此外，Excel web 版此方法不支持包含数据透视表、图表、注释或 Slicer 元素的源工作表。 如果存在这些对象，该方法`insertWorksheetsFromBase64`将返回 `UnsupportedFeature` Excel web 版。
 
 下面的代码示例演示如何将另一个工作簿中的工作表插入当前工作簿。 此代码示例首先 [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) 处理包含对象的工作簿文件并提取 base64 编码的字符串，然后将此 base64 编码的字符串插入当前工作簿中。 新工作表插入到名为 **Sheet1** 的工作表之后。 请注意， `[]` 作为 [InsertWorksheetOptions.sheetNamesToInsert 属性的参数](/javascript/api/excel/excel.insertworksheetoptions#excel-excel-insertworksheetoptions-sheetnamestoinsert-member) 传递。 这意味着目标工作簿的所有工作表都插入到当前工作簿中。
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+let myFile = document.getElementById("file");
+let reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
         // Remove the metadata before the base64-encoded string.
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var externalWorkbook = reader.result.toString().substr(startIndex + 7);
+        let startIndex = reader.result.toString().indexOf("base64,");
+        let externalWorkbook = reader.result.toString().substr(startIndex + 7);
             
         // Retrieve the current workbook.
-        var workbook = context.workbook;
+        let workbook = context.workbook;
             
         // Set up the insert options. 
-        var options = { 
+        let options = { 
             sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
             positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
             relativeTo: "Sheet1" // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
@@ -118,16 +122,15 @@ reader.readAsDataURL(myFile.files[0]);
 加载项可以控制用户编辑工作簿结构的能力。 Workbook 对象的 `protection` 属性是一个包含 `protect()` 方法的 [WorkbookProtection](/javascript/api/excel/excel.workbookprotection) 对象。 下列示例演示切换对工作簿结构的保护的基本方案。
 
 ```js
-Excel.run(function (context) {
-    var workbook = context.workbook;
+await Excel.run(async (context) => {
+    let workbook = context.workbook;
     workbook.load("protection/protected");
+    await context.sync();
 
-    return context.sync().then(function() {
-        if (!workbook.protection.protected) {
-            workbook.protection.protect();
-        }
-    });
-}).catch(errorHandlerFunction);
+    if (!workbook.protection.protected) {
+        workbook.protection.protect();
+    }
+});
 ```
 
 `protect` 方法接受一个可选字符串参数。 此字符串表示用户要绕过保护并更改工作簿结构所需的密码。
@@ -142,11 +145,11 @@ Excel.run(function (context) {
 Workbook 对象可以访问 Office 文件元数据，即[文档属性](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75)。 Workbook 对象的 `properties` 属性是一个包含这些元数据值的 [DocumentProperties](/javascript/api/excel/excel.documentproperties) 对象。 以下示例演示如何设置 `author` 属性。
 
 ```js
-Excel.run(function (context) {
-    var docProperties = context.workbook.properties;
+await Excel.run(async (context) => {
+    let docProperties = context.workbook.properties;
     docProperties.author = "Alex";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="custom-properties"></a>自定义属性
@@ -154,24 +157,23 @@ Excel.run(function (context) {
 此外，还可以定义自定义属性。 DocumentProperties 对象保护 `custom` 属性，它表示用户定义的属性的键值对集合。 下列示例演示如何创建名称为“Introduction”且值为“Hello”的自定义属性，以及如何检索它。
 
 ```js
-Excel.run(function (context) {
-    var customDocProperties = context.workbook.properties.custom;
+await Excel.run(async (context) => {
+    let customDocProperties = context.workbook.properties.custom;
     customDocProperties.add("Introduction", "Hello");
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 
 [...]
 
-Excel.run(function (context) {
-    var customDocProperties = context.workbook.properties.custom;
-    var customProperty = customDocProperties.getItem("Introduction");
+await Excel.run(async (context) => {
+    let customDocProperties = context.workbook.properties.custom;
+    let customProperty = customDocProperties.getItem("Introduction");
     customProperty.load(["key, value"]);
+    await context.sync();
 
-    return context.sync().then(function() {
-        console.log("Custom key  : " + customProperty.key); // "Introduction"
-        console.log("Custom value : " + customProperty.value); // "Hello"
-    });
-}).catch(errorHandlerFunction);
+    console.log("Custom key  : " + customProperty.key); // "Introduction"
+    console.log("Custom value : " + customProperty.value); // "Hello"
+});
 ```
 
 #### <a name="worksheet-level-custom-properties"></a>工作表级别的自定义属性
@@ -179,31 +181,31 @@ Excel.run(function (context) {
 还可以在工作表级别设置自定义属性。 这些属性类似于文档级别的自定义属性，不同工作表之间可以重复相同的键。 以下示例演示如何在当前工作表上创建名为 **WorksheetGroup** 的自定义属性，其值为"Alpha"，然后进行检索。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Add the custom property.
-    var customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
+    let customWorksheetProperties = context.workbook.worksheets.getActiveWorksheet().customProperties;
     customWorksheetProperties.add("WorksheetGroup", "Alpha");
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 
 [...]
 
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Load the keys and values of all custom properties in the current worksheet.
-    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    let worksheet = context.workbook.worksheets.getActiveWorksheet();
     worksheet.load("name");
 
-    var customWorksheetProperties = worksheet.customProperties;
-    var customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
+    let customWorksheetProperties = worksheet.customProperties;
+    let customWorksheetProperty = customWorksheetProperties.getItem("WorksheetGroup");
     customWorksheetProperty.load(["key", "value"]);
 
-    return context.sync().then(function() {
-        // Log the WorksheetGroup custom property to the console.
-        console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
-        console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    // Log the WorksheetGroup custom property to the console.
+    console.log(worksheet.name + ": " + customWorksheetProperty.key); // "WorksheetGroup"
+    console.log("  Custom value : " + customWorksheetProperty.value); // "Alpha"
+});
 ```
 
 ## <a name="access-document-settings"></a>访问文档设置
@@ -211,16 +213,15 @@ Excel.run(function (context) {
 工作簿的设置类似于自定义属性集合。 区别在于：设置对于单个 Excel 文件和加载项配对而言是唯一的，而属性只是连接到文件。 下列示例演示如何创建并访问设置。
 
 ```js
-Excel.run(function (context) {
-    var settings = context.workbook.settings;
+await Excel.run(async (context) => {
+    let settings = context.workbook.settings;
     settings.add("NeedsReview", true);
-    var needsReview = settings.getItem("NeedsReview");
+    let needsReview = settings.getItem("NeedsReview");
     needsReview.load("value");
 
-    return context.sync().then(function() {
-        console.log("Workbook needs review : " + needsReview.value);
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log("Workbook needs review : " + needsReview.value);
+});
 ```
 
 ## <a name="access-application-culture-settings"></a>访问应用程序区域性设置
@@ -236,25 +237,25 @@ Excel.run(function (context) {
 ```js
 // This will convert a number like "14,37" to "14.37"
 // (assuming the system decimal separator is ".").
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var decimalSource = sheet.getRange("B2");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let decimalSource = sheet.getRange("B2");
+
     decimalSource.load("values");
     context.application.cultureInfo.numberFormat.load("numberDecimalSeparator");
+    await context.sync();
 
-    return context.sync().then(function() {
-        var systemDecimalSeparator =
-            context.application.cultureInfo.numberFormat.numberDecimalSeparator;
-        var oldDecimalString = decimalSource.values[0][0];
+    let systemDecimalSeparator =
+        context.application.cultureInfo.numberFormat.numberDecimalSeparator;
+    let oldDecimalString = decimalSource.values[0][0];
 
-        // This assumes the input column is standardized to use "," as the decimal separator.
-        var newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
+    // This assumes the input column is standardized to use "," as the decimal separator.
+    let newDecimalString = oldDecimalString.replace(",", systemDecimalSeparator);
 
-        var resultRange = sheet.getRange("C2");
-        resultRange.values = [[newDecimalString]];
-        resultRange.format.autofitColumns();
-        return context.sync();
-    });
+    let resultRange = sheet.getRange("C2");
+    resultRange.values = [[newDecimalString]];
+    resultRange.format.autofitColumns();
+    await context.sync();
 });
 ```
 
@@ -267,39 +268,38 @@ Excel.run(function (context) {
 以下示例展示了如何使用自定义 XML 部件。 第一个代码块演示了如何将 XML 数据嵌入到文档中。 它将会存储一个审阅者列表，然后使用工作簿的设置保存 XML 的 `id`，以供后续检索。 第二个代码块演示后续如何访问该 XML。 “ContosoReviewXmlPartId”设置将被加载和传递到工作簿的 `customXmlParts`。 XML 数据随后将打印至控制台。
 
 ```js
-Excel.run(async (context) => {
+await Excel.run(async (context) => {
     // Add reviewer data to the document as XML
-    var originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
-    var customXmlPart = context.workbook.customXmlParts.add(originalXml);
+    let originalXml = "<Reviewers xmlns='http://schemas.contoso.com/review/1.0'><Reviewer>Juan</Reviewer><Reviewer>Hong</Reviewer><Reviewer>Sally</Reviewer></Reviewers>";
+    let customXmlPart = context.workbook.customXmlParts.add(originalXml);
     customXmlPart.load("id");
+    await context.sync();
 
-    return context.sync().then(function() {
-        // Store the XML part's ID in a setting
-        var settings = context.workbook.settings;
-        settings.add("ContosoReviewXmlPartId", customXmlPart.id);
-    });
-}).catch(errorHandlerFunction);
+    // Store the XML part's ID in a setting
+    let settings = context.workbook.settings;
+    settings.add("ContosoReviewXmlPartId", customXmlPart.id);
+});
 ```
 
 ```js
-Excel.run(async (context) => {
+await Excel.run(async (context) => {
     // Retrieve the XML part's id from the setting
-    var settings = context.workbook.settings;
-    var xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
+    let settings = context.workbook.settings;
+    let xmlPartIDSetting = settings.getItemOrNullObject("ContosoReviewXmlPartId").load("value");
 
-    return context.sync().then(function () {
-        if (xmlPartIDSetting.value) {
-            var customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
-            var xmlBlob = customXmlPart.getXml();
+    await context.sync();
 
-            return context.sync().then(function () {
-                // Add spaces to make more human readable in the console
-                var readableXML = xmlBlob.value.replace(/></g, "> <");
-                console.log(readableXML);
-            });
-        }
-    });
-}).catch(errorHandlerFunction);
+    if (xmlPartIDSetting.value) {
+        let customXmlPart = context.workbook.customXmlParts.getItem(xmlPartIDSetting.value);
+        let xmlBlob = customXmlPart.getXml();
+
+        await context.sync();
+
+        // Add spaces to make it more human-readable in the console.
+        let readableXML = xmlBlob.value.replace(/></g, "> <");
+        console.log(readableXML);
+    }
+});
 ```
 
 > [!NOTE]
@@ -346,26 +346,26 @@ context.application.suspendApiCalculationUntilNextSync();
 下面的代码示例演示如何注册事件 `onActivated` 处理程序和设置回调函数。
 
 ```js
-Excel.run(function (context) {
-    // Retrieve the workbook.
-    var workbook = context.workbook;
+async function run() {
+    await Excel.run(async (context) => {
+        // Retrieve the workbook.
+        let workbook = context.workbook;
+    
+        // Register the workbook activated event handler.
+        workbook.onActivated.add(workbookActivated);
+        await context.sync();
+    });
+}
 
-    // Register the workbook activated event handler.
-    workbook.onActivated.add(workbookActivated);
-
-    return context.sync();
-});
-
-function workbookActivated(event) {
-    Excel.run(function (context) {
+async function workbookActivated(event) {
+    await Excel.run(async (context) => {
         // Retrieve the workbook and load the name.
-        var workbook = context.workbook;
-        workbook.load("name");
-        
-        return context.sync().then(function () {
-            // Callback function for when the workbook is activated.
-            console.log(`The workbook ${workbook.name} was activated.`);
-        });
+        let workbook = context.workbook;
+        workbook.load("name");        
+        await context.sync();
+
+        // Callback function for when the workbook is activated.
+        console.log(`The workbook ${workbook.name} was activated.`);
     });
 }
 ```

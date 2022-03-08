@@ -1,33 +1,25 @@
 ---
 title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
-ms.date: 07/08/2021
+ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bceb5faadde48cb98e6eaa9ac96cff7bbfbeb4a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 08f8b48666955db413e3bdaa6c329326f80bdb07
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148865"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340258"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
-本文介绍如何使用 Visual Studio 2019 在 Windows 上的 Office 桌面客户端中调试 Office 加载项。 如果使用的是 Visual Studio 的其他版本，操作步骤可能略有不同。
+本文介绍如何调试使用 Office 2022 中的 Office 外接程序项目模板之一创建的 Visual Studio 外接程序中的客户端代码。  有关在外接程序中调试Office代码的信息，请参阅调试 [Office 外接程序 - 服务器端还是客户端？](../testing/debug-add-ins-overview.md#server-side-or-client-side)。
 
 > [!NOTE]
-> 无法使用 Visual Studio 在 Office 网页版或 Mac 版 Office 中调试加载项。 若要了解如何在这些平台上进行调试，请参阅[在 Office 网页版中调试 Office 加载项](../testing/debug-add-ins-in-office-online.md)或[在 Mac 上调试 Office 加载项](../testing/debug-office-add-ins-on-ipad-and-mac.md)。
-
-## <a name="enable-debugging-for-add-in-commands-and-ui-less-code"></a>对加载项命令和无 UI 的代码启用调试
-
-当 Visual Studio 调试 Windows 上的 Office 时，加载项托管在 Microsoft Internet Explorer 或 Microsoft Edge 浏览器实例中。 若要确定开发计算机上使用的浏览器，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
-> [!NOTE]
-> 以下过程不再需要 JS_Debug 环境变量。 有关详细信息，请参阅 Microsoft 开发人员社区支持论坛中的 [Office Web 加载项中的调试行为](https://developercommunity.visualstudio.com/content/problem/740413/office-development-inconsistent-script-debugging-b.html)。
-
-[!include[Enable debugging on Microsoft Edge DevTools](../includes/enable-debugging-on-edge-devtools.md)]
+> 你无法通过 Visual Studio 在 Mac 上的 Office 中调试外接程序。 有关在 Mac 上调试的信息，请参阅Office [Mac 上的调试加载项](../testing/debug-office-add-ins-on-ipad-and-mac.md)。
 
 ## <a name="review-the-build-and-debug-properties"></a>查看生成和调试属性
 
-在开始调试之前，请查看每个项目的属性以确认Visual Studio将打开所需的 Office 应用程序，并正确设置其他生成和调试属性。
+在开始调试之前，请查看每个项目的属性以确认 Visual Studio将打开所需的 Office 应用程序，并正确设置其他生成和调试属性。
 
 ### <a name="add-in-project-properties"></a>外接程序项目属性
 
@@ -39,39 +31,149 @@ ms.locfileid: "59148865"
 
 下表介绍了外接程序项目的属性。
 
-|属性|描述|
+|属性|说明|
 |:-----|:-----|
-|**启动操作**|指定外接程序的调试模式。 目前，Office 外接程序项目仅支持 **Office 桌面客户端** 模式。|
-|**启动文档**<br/>（仅限 Excel、PowerPoint 和 Word 外接程序）|指定要在启动项目时打开的文档。|
+|**启动操作**|指定外接程序的调试模式。 这应设置为 **Microsoft Edge** 加载项Outlook的加载项。 对于所有其他Office应用程序，应设置为Office **客户端**。|
+|**启动文档**<br/>（仅限 Excel、PowerPoint 和 Word 外接程序）|指定要在启动项目时打开的文档。 在新项目中，此名称设置为 **[New Excel Workbook]**、**[New Word Document]** 或 **[New PowerPoint Presentation]**。 若要指定特定文档，请按照使用现有文档调试 [外接程序中的步骤操作](#use-an-existing-document-to-debug-the-add-in)。|
 |**Web 项目**|指定与外接程序关联的 Web 项目的名称。|
-|**电子邮件地址**<br/>（仅限 Outlook 外接程序）|指定你想在 Exchange Server 或 Exchange Online 中用来测试 Outlook 外接程序的用户帐户的电子邮件地址。|
-|**EWS Url**<br/>（仅限 Outlook 外接程序）|Exchange Web 服务 URL（例如：`https://www.contoso.com/ews/exchange.aspx`）。 |
-|**OWA Url**<br/>（仅限 Outlook 外接程序）|Outlook 网页版 URL（例如：`https://www.contoso.com/owa`）。|
-|**使用多重身份验证**<br/>（仅限 Outlook 加载项）|布尔值，指示是否应使用多重身份验证。|
-|**用户名**<br/>（仅限 Outlook 外接程序）|指定你想在 Exchange Server 或 Exchange Online 中用来测试 Outlook 外接程序的用户帐户的名称。|
+|**电子邮件地址**<br/>（仅限 Outlook 外接程序）|指定你想在 Exchange Server 或 Exchange Online 中用来测试 Outlook 外接程序的用户帐户的电子邮件地址。 如果留空，则开始调试时将提示你输入电子邮件地址。|
+|**EWS Url**<br/>（仅限 Outlook 外接程序）|指定 web Exchange URL (例如： `https://www.contoso.com/ews/exchange.aspx`) 。 此属性可留空。|
+|**OWA Url**<br/>（仅限 Outlook 外接程序）|指定Outlook 网页版 URL (例如： `https://www.contoso.com/owa`) 。 此属性可留空。|
+|**使用多重身份验证**<br/>（仅限 Outlook 加载项）|指定指示是否应该使用多重身份验证的布尔值。 默认值为 **false**，但该属性没有实际效果。 如果您通常必须提供第二个因素才能登录到电子邮件帐户，则当您开始调试时，系统会提示您。 |
+|**用户名**<br/>（仅限 Outlook 外接程序）|指定你想在 Exchange Server 或 Exchange Online 中用来测试 Outlook 外接程序的用户帐户的名称。 此属性可留空。|
 |**项目文件**|指定包含生成、配置和有关项目的其他信息的文件名称。|
-|**项目文件夹**|项目文件的位置。|
+|**项目文件夹**|指定项目文件的位置。|
 
 > [!NOTE]
 > 对于 Outlook 外接程序，你可以选择在“**属性**”窗口中为一个或多个 *Outlook 外接程序* 属性指定值，但这样做并不是必须的。
 
 ### <a name="web-application-project-properties"></a>Web 应用程序项目属性
 
-打开 **Web** 应用程序项目的"属性"窗口，查看项目属性。
+打开 **Web 应用程序** 项目的"属性"窗口，查看项目属性。
 
-1. 在 **"解决方案资源管理器"** 中，选择 Web 应用程序项目。
+1. 在 **"解决方案资源管理器**"中，选择 Web 应用程序项目。
 
 2. 在菜单栏中，依次选择“**视图**” > “**属性窗口**”。
 
 下表介绍了与 Office 外接程序项目最相关的 Web 应用程序项目的属性。
 
-|属性|描述|
+|属性|说明|
 |:-----|:-----|
 |**SSL 已启用**|指定是否在站点上启用 SSL。 对于 Office 外接程序项目，此属性应设置为 **True**。|
 |**SSL URL**|指定站点的安全 HTTPS URL。 只读。|
 |**URL**|指定站点的 HTTP URL。 只读。|
 |**项目文件**|指定包含生成、配置和有关项目的其他信息的文件名称。|
 |**项目文件夹**|指定项目文件的位置。 只读。 Visual Studio 在运行时生成的清单文件将写入到此位置的 `bin\Debug\OfficeAppManifests` 文件夹中。|
+
+## <a name="debug-an-excel-powerpoint-or-word-add-in-project"></a>调试Excel、PowerPoint或 Word 加载项项目
+
+本节介绍如何启动和调试 Excel、PowerPoint 或 Word 外接程序。
+
+### <a name="start-the-excel-powerpoint-or-word-add-in-project"></a>启动 Excel、PowerPoint 或 Word 加载项项目
+
+通过从菜单栏中选择 **"调试** > **""** 开始调试"或按 F5 按钮启动项目。 Visual Studio将自动生成解决方案，并启动Office应用程序。
+
+在Visual Studio项目时，它将执行以下任务：
+
+1. 创建 XML 清单文件的副本并添加到  `_ProjectName_\bin\Debug\OfficeAppManifests` 目录中。 托管Office的应用程序在启动加载项并调试加载项Visual Studio会使用该副本。
+
+2. 在 Windows 计算机上创建一组注册表项，这些注册表项使加载项能够显示在Office应用程序中。
+
+3. 生成 Web 应用程序项目，然后将它部署到本地 IIS Web 服务器 `https://localhost` () 。
+
+4. 如果这是已部署到本地 IIS Web 服务器的第一个加载项项目，系统可能会提示你向当前用户的受信任根证书存储安装 Self-Signed 证书。 若要使 IIS Express 正确显示加载项内容，这是必需的操作。
+
+> [!NOTE]
+> Office使用 Edge 旧版 Webview 控件 (EdgeHTML) 在 Windows 计算机上运行外接程序，Visual Studio 可能会提示你添加本地网络环回豁免。 Webview 控件需要此权限才能访问部署到本地 IIS Web 服务器的网站。 还可以在 Visual Studio 中的“工具” > “选项” > “Office 工具(Web)” > “Web 加载项调试”下随时更改此设置。 若要了解在 Windows 计算机上使用哪些浏览器控件，请参阅 Office [外接程序使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+
+接下来，Visual Studio 会执行以下操作：
+
+1. 将令牌替换为起始页的完全限定地址 ( (`https://localhost:44302/Home.html` 例如，) ，修改 XML 清单文件)  (`_ProjectName_\bin\Debug\OfficeAppManifests` `~remoteAppUrl` 的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素。
+
+2. 在 IIS Express 中启动 Web 应用程序项目。
+
+3. 验证清单。 要查看项目中 XML 清单文件的验证规则，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。 
+
+   > [!IMPORTANT]
+   > Office安装Visual Studio清单 XSD 文件已过期。 如果收到清单的验证错误，则第一个疑难解答步骤应为将其中一个或多个文件替换为最新版本。 有关详细说明，请参阅[清单架构验证错误Visual Studio项目中](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects)。
+
+4. 打开Office应用程序并旁加载外接程序。
+
+### <a name="debug-the-excel-powerpoint-or-word-add-in"></a>调试Excel、PowerPoint或 Word 加载项
+
+1. 在加载项应用程序中启动Office加载项。 例如，如果是任务窗格加载项，它将向"主页"功能区添加一个按钮 (例如，"显示 **任务** 窗格"按钮) 。 选择功能区中的按钮。 
+
+   > [!NOTE]
+   > 如果加载项不是由加载项旁加载Visual Studio，可以手动旁加载。 在Excel、PowerPoint或 Word 中，选择"插入"选项卡，然后选择"我的外接程序"右边 **的向下箭头**。
+   >
+   > ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted.](../images/excel-cf-register-add-in-1b.png)
+   >
+   > 在可用外接程序列表中，找到“**开发人员外接程序**”部分并选择你的外接程序进行注册。
+
+   > [!TIP]
+   > 首次打开任务窗格时，它可能显示为空白。 如果是这样，它应在你稍后步骤中启动调试工具时正确呈现。
+
+3. 打开 ["个性"菜单](../design/task-pane-add-ins.md#personality-menu) ，然后选择" **附加调试器"**。 这将打开 Webview 控件的调试工具，Office在加载项计算机上运行Windows工具。 您可以设置断点并逐步执行代码，如以下文章之一所述：
+
+    - [使用适用于 Internet Explorer 的开发人员工具调试加载项](../testing/debug-add-ins-using-f12-tools-ie.md)
+    - [使用旧版 Edge 开发人员工具调试加载项](../testing/debug-add-ins-using-devtools-edge-legacy.md)
+    - [使用 Microsoft Edge（基于 Chromium）中的开发人员工具调试加载项](../testing/debug-add-ins-using-devtools-edge-chromium.md)
+
+4. 若要更改代码，请首先停止调试Visual Studio并关闭Office应用程序。 进行更改，并开始新的调试会话。
+
+## <a name="debug-an-outlook-add-in-project"></a>调试Outlook加载项项目
+
+本节介绍如何启动和调试Outlook加载项。
+
+### <a name="start-the-outlook-add-in-project"></a>启动Outlook加载项项目
+
+通过从菜单栏中选择 **"调试** > **""** 开始调试"或按 F5 按钮启动项目。 Visual Studio将自动生成解决方案，并启动Outlook租户的 Microsoft 365 页面。
+
+当Visual Studio项目时，它将执行以下任务。
+
+1. 提示您输入登录凭据。 如果系统要求你重复登录，或者收到未经授权错误，则对于你的租户上的帐户，可能会Microsoft 365基本身份验证。 在这种情况下，请尝试使用 Microsoft 帐户。 您还可以尝试在"Web 外接程序项目属性"窗格中Outlook"使用多重身份验证"属性设置为 **True**。 请参阅 [加载项项目属性](#add-in-project-properties)。
+
+1. 创建 XML 清单文件的副本并添加到 `_ProjectName_\bin\Debug\OfficeAppManifests` 目录中。 Outlook开始运行并调试外接程序Visual Studio此副本。
+
+2. 生成 Web 应用程序项目，然后将它部署到本地 IIS Web 服务器 `https://localhost` () 。
+
+3. 如果这是已部署到本地 IIS Web 服务器的第一个加载项项目，系统可能会提示你向当前用户的受信任根证书存储安装 Self-Signed 证书。 若要使 IIS Express 正确显示加载项内容，这是必需的操作。
+
+> [!NOTE]
+> Office使用 Edge 旧版 Webview 控件 (EdgeHTML) 在 Windows 计算机上运行外接程序，Visual Studio 可能会提示你添加本地网络环回豁免。 Webview 控件需要此权限才能访问部署到本地 IIS Web 服务器的网站。 还可以在 Visual Studio 中的“工具” > “选项” > “Office 工具(Web)” > “Web 加载项调试”下随时更改此设置。 若要了解在 Windows 计算机上使用哪些浏览器控件，请参阅 Office [外接程序使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+
+接下来，Visual Studio 会执行以下操作：
+
+1. 将令牌替换为起始页的完全限定地址 ( (`https://localhost:44302/Home.html` 例如，) ，修改 XML 清单文件)  (`_ProjectName_\bin\Debug\OfficeAppManifests` `~remoteAppUrl` 的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素。
+
+2. 在 IIS Express 中启动 Web 应用程序项目。
+
+3. 验证清单。 要查看项目中 XML 清单文件的验证规则，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。 
+
+   > [!IMPORTANT]
+   > Office安装Visual Studio清单 XSD 文件已过期。 如果收到清单的验证错误，则第一个疑难解答步骤应为将其中一个或多个文件替换为最新版本。 有关详细说明，请参阅[清单架构验证错误Visual Studio项目中](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects)。
+
+4. 在 Outlook 中打开Microsoft 365租户的 Microsoft Edge。
+
+### <a name="debug-the-outlook-add-in"></a>调试Outlook加载项
+
+1. 在"Outlook"页中，选择电子邮件或约会项目以在其自己的窗口中打开它。 
+
+2. 按 F12 打开 Edge 调试工具。
+
+3. 工具打开后，启动加载项。 例如，在消息顶部的工具栏中，选择"更多应用"按钮，然后从打开的标注中选择加载项。
+
+   ![Screenshot showing the More apps button and the callout that it opens with the add-in's name and icon visible with other app icons.](../images/outlook-more-apps-button.png)
+
+4. 使用以下文章之一中的说明设置断点并逐步执行代码。 它们各自都有一个指向更详细指南的链接。
+
+   - [使用旧版 Edge 开发人员工具调试加载项](../testing/debug-add-ins-using-devtools-edge-legacy.md)
+   - [使用 Microsoft Edge（基于 Chromium）中的开发人员工具调试加载项](../testing/debug-add-ins-using-devtools-edge-chromium.md)
+
+   > [!TIP]
+   > 若要调试在方法`Office.initialize``Office.onReady`或外接程序打开时运行的方法中运行的代码，请设置断点，然后关闭并重新打开外接程序。 有关这些方法详细信息，请参阅初始化Office[加载项](../develop/initialize-add-in.md)。
+
+5. 若要更改代码，请首先停止调试会话，Visual Studio并关闭Outlook页面。 进行更改，并开始新的调试会话。
 
 ## <a name="use-an-existing-document-to-debug-the-add-in"></a>使用现有文档调试外接程序
 
@@ -90,72 +192,6 @@ ms.locfileid: "59148865"
 6. 在菜单栏中，依次选择“**视图**” > “**属性窗口**”。
 
 7. 在“**属性**”窗口中，选择“**启动文档**”列表，然后选择添加到项目中的文档。 该项目现在配置为在该文档中启动外接程序。
-
-## <a name="start-the-project"></a>启动项目
-
-从菜单栏中依次选择“**调试**” > “**开始调试**”，可启动项目。 Visual Studio 将自动生成解决方案并启动 Office 以托管外接程序。
-
-> [!NOTE]
-> 启动 Outlook 外接程序项目时，系统会提示你输入登录凭据。 如果系统要求你重复登录，或者收到未经授权错误，则对于你的租户上的帐户，可能会Microsoft 365基本身份验证。 在这种情况下，请尝试使用 Microsoft 帐户。 可能还需要在“Outlook Web 加载项”项目属性对话框中将属性“使用多重身份验证”设置为 True。
-
-生成Visual Studio时，它将执行以下任务。
-
-1. 创建 XML 清单文件的副本并将其添加到 `_ProjectName_\bin\Debug\OfficeAppManifests` 目录。 托管Office的应用程序在您启动外接程序并调试外接程序Visual Studio会使用该副本。
-
-2. 在计算机上创建一组注册表项，以便加载项能够显示在Office应用程序中。
-
-3. 生成 Web 应用程序项目，然后将其部署到本地 IIS Web 服务器 (https://localhost))。
-
-4. 如果这是你已部署到本地 IIS Web 服务器的第一个加载项项目，系统可能会提示你将自签名证书安装到当前用户的受信任的根证书存储中。 若要使 IIS Express 正确显示加载项内容，这是必需的操作。
-
-> [!NOTE]
-> 在 Windows 10 上运行时，最新版本的 Office 可能会使用较新的 Web 控件来显示加载项内容。 如果是这种情况，Visual Studio 可能会提示你添加本地网络环回豁免。 这是 Web 控件（在 Office 客户端应用程序中）能够访问部署到本地 IIS Web 服务器的网站所必需。 还可以在 Visual Studio 中的“工具” > “选项” > “Office 工具(Web)” > “Web 加载项调试”下随时更改此设置。
-
-接下来，Visual Studio 会执行以下操作：
-
-1. 通过将 `~remoteAppUrl` 标记替换为起始页的完全限定地址（例如，`https://localhost:44302/Home.html`）来修改 XML 清单文件的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素。
-
-2. 在 IIS Express 中启动 Web 应用程序项目。
-
-3. 打开Office应用程序。
-
-当您构建项目时，Visual Studio 不会在“输出”窗口中显示验证错误。 Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。 通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。 通过这些标志，你可以得知 Visual Studio 在你的代码中检测到的问题。 有关如何启用或禁用验证的详细信息，请参阅[选项、文本编辑器、JavaScript、IntelliSense](/visualstudio/ide/reference/options-text-editor-javascript-intellisense?view=vs-2019&preserve-view=true)。
-
-要查看项目中 XML 清单文件的验证规则，请参阅 [Office 外接程序 XML 清单](../develop/add-in-manifests.md)。
-
-## <a name="debug-the-code-for-an-excel-powerpoint-or-word-add-in"></a>调试 Excel、PowerPoint 或 Word 外接程序的代码
-
-如果加载项在启动项目后显示在 Office 应用程序 (Excel、PowerPoint 或 Word) 中的文档中不可见，请手动启动 Office 应用程序中的加载项。 [](#start-the-project) 例如，通过选择“**主页**”选项卡功能区中的“**显示任务窗格**”按钮来启动任务窗格外接程序。在 Excel、PowerPoint 或 Word 中显示外接程序后，你可以通过执行以下操作来调试代码：
-
-1. 在 Excel、PowerPoint 或 Word 中，选择“**插入**”选项卡，然后选择“**我的外接程序**”右侧的向下箭头。
-
-    ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted.](../images/excel-cf-register-add-in-1b.png)
-
-2. 在可用外接程序列表中，找到“**开发人员外接程序**”部分并选择你的外接程序进行注册。
-
-3. 在 Visual Studio 中，在代码中设置断点。
-
-4. 在 Excel、PowerPoint 或 Word 中，与外接程序进行交互。
-
-5. 在 Visual Studio 中命中断点时，根据需要逐步执行代码。
-
-您可以更改代码并查看外接程序中这些更改的效果，而无需关闭 Office 应用程序并重新启动项目。 保存对代码所做的更改后，只需在应用程序内重新加载Office。 例如，通过选择任务窗格的右上角来激活 [个性菜单](../design/task-pane-add-ins.md#personality-menu)，然后选择“**重新加载**”，便可重新加载任务窗格外接程序。
-
-## <a name="debug-the-code-for-an-outlook-add-in"></a>调试 Outlook 外接程序的代码
-
-在你已[启动项目](#start-the-project)，且 Visual Studio 启动 Outlook 来托管外接程序后，打开电子邮件或约会项目。
-
-只要满足激活条件，Outlook 便会为项目激活外接程序。外接程序栏显示在"检查器"窗口或阅读窗格的顶部，Outlook 外接程序显示为外接程序栏中的一个按钮。如果您的外接程序有外接程序命令，那么在默认选项卡或指定的自定义选项卡中将有一个按钮显示在功能区中，而该外接程序将不会显示在外接程序栏中。
-
-若要查看 Outlook 外接程序，请选择对应 Outlook 外接程序的按钮。 在 Outlook 中显示外接程序后，你可以通过执行以下操作来调试代码：
-
-1. 在 Visual Studio 中，在代码中设置断点。
-
-2. 在 Outlook 中，与外接程序进行交互。
-
-3. 在 Visual Studio 中命中断点时，根据需要逐步执行代码。
-
-你可以更改代码并在外接程序中查看这些更改的效果，而无需关闭 Outlook 并重新启动该项目。 保存对代码的更改后，只需打开外接程序的快捷菜单（在 Outlook 中），然后选择“**重新加载**”。
 
 ## <a name="next-steps"></a>后续步骤
 

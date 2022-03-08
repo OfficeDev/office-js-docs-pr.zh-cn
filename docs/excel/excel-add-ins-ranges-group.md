@@ -1,11 +1,16 @@
 ---
 title: 使用 JavaScript API Excel组范围
-description: 了解如何将区域行或列组合在一起，以使用 JavaScript API Excel大纲。
-ms.date: 04/05/2021
+description: 了解如何将一个范围的行或列组合在一起，以使用 JavaScript API Excel大纲。
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 7a982fc9965772cfeb27934cf60cc4c83967ce51
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340797"
 ---
-
 # <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>使用 JavaScript API 的大纲Excel区域
 
 本文提供了一个代码示例，演示如何使用 JavaScript API 对大纲Excel分组。 有关对象支持的属性和方法`Range`的完整列表，请参阅Excel[。Range 类](/javascript/api/excel/excel.range)。
@@ -19,8 +24,8 @@ ms.localizationpriority: medium
 下面的代码示例为行和列创建包含两个级别的组的大纲。 后续图像显示该轮廓的分组。 在代码示例中，分组的范围不包括大纲控件的行或列 (此示例的"总计") 。 组定义要折叠的项，而不是控件的行或列。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
     // Group the larger, main level. Note that the outline controls
     // will be on row 10, meaning 4-9 will collapse and expand.
@@ -40,8 +45,8 @@ Excel.run(function (context) {
     sheet.getRange("C:F").group(Excel.GroupOption.byColumns);
     sheet.getRange("H:K").group(Excel.GroupOption.byColumns);
     sheet.getRange("M:P").group(Excel.GroupOption.byColumns);
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ![具有两级、二维轮廓的范围。](../images/excel-outline.png)

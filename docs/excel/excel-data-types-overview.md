@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: b498d445f53441cd5db97aa71f4dee36cac45a06
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: ec1e2d761f6c2e489122cfdaa86e1a492e729774
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074299"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340958"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Excel 加载项中的数据类型概述（预览版）
 
@@ -20,7 +20,7 @@ ms.locfileid: "62074299"
 >
 > 若要使用预览 API：
 >
-> - 必须在内容分发网络（CDN）（https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)上引用 **beta** 库。 用于 TypeScript 编译和 IntelliSense 的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)位于 CDN 和 [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) 中。 可以使用 `npm install --save-dev @types/office-js-preview` 来安装这些类型。 有关其他信息，请参阅 [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM 包自述文件。
+> - 必须在内容分发网络 （CDN） （https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)） 上引用 **beta** 库。 用于 TypeScript 编译和 IntelliSense 的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)位于 CDN 和 [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) 中。 可以使用 `npm install --save-dev @types/office-js-preview` 来安装这些类型。 有关其他信息，请参阅 [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) NPM 包自述文件。
 > - 可能需要加入 [Office 预览体验计划](https://insider.office.com)才能访问更新的 Office 版本。
 >
 > 若要在 Windows 版 Office 中试用数据类型，则 Excel 内部版本号必须大于或等于 16.0.14626.10000。 若要在 Mac 上的 Office 中试用数据类型，则 Excel 内部版本号必须大于或等于 16.55.21102600。

@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格加载项。
-ms.date: 08/04/2021
+ms.date: 02/25/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 041feee3ced0a42e2e6a39eabf9188e57ebcf0fe
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1a4639aaa49ed06acb3f24bbd8cb132577670bae
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152525"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63341021"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
@@ -18,6 +18,7 @@ ms.locfileid: "59152525"
 ## <a name="create-the-add-in"></a>创建加载项
 
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
+
 # <a name="yeoman-generator"></a>[Yeoman 生成器](#tab/yeomangenerator)
 
 [!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
@@ -129,12 +130,12 @@ ms.locfileid: "59152525"
             });
         });
 
-        function setColor() {
-            Excel.run(function (context) {
+        async function setColor() {
+            await Excel.run(async (context) => {
                 var range = context.workbook.getSelectedRange();
                 range.format.fill.color = 'green';
 
-                return context.sync();
+                await context.sync();
             }).catch(function (error) {
                 console.log("Error: " + error);
                 if (error instanceof OfficeExtension.Error) {

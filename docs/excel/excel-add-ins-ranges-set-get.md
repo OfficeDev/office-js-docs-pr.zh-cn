@@ -1,14 +1,19 @@
 ---
 title: 使用 JavaScript API 设置并Excel区域
-description: 了解如何使用 Excel JavaScript API 设置和获取所选区域Excel JavaScript API。
-ms.date: 07/02/2021
+description: 了解如何使用 Excel JavaScript API 设置和获取选定区域Excel JavaScript API。
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: ff8690d1d79063114441320232bdef2000af71d5
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340727"
 ---
-
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>使用 JavaScript API 设置并Excel区域
 
-本文提供了使用 JavaScript API 设置和获取选定区域Excel示例。 有关对象支持的属性和方法的完整`Range`列表，请参阅Excel[。Range 类](/javascript/api/excel/excel.range)。
+本文提供了使用 JavaScript API 设置和获取选定区域Excel示例。 有关对象支持的属性和方法`Range`的完整列表，请参阅Excel[。Range 类](/javascript/api/excel/excel.range)。
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -17,14 +22,14 @@ ms.localizationpriority: medium
 下面的代码示例选择活动工作表中的区域 **B2:E6**。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:E6");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let range = sheet.getRange("B2:E6");
 
     range.select();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="selected-range-b2e6"></a>选定的区域 B2:E6
@@ -36,15 +41,14 @@ Excel.run(function (context) {
 下面的代码示例获取所选区域、加载其属性 `address` ，然后向控制台写入一条消息。
 
 ```js
-Excel.run(function (context) {
-    var range = context.workbook.getSelectedRange();
+await Excel.run(async (context) => {
+    let range = context.workbook.getSelectedRange();
     range.load("address");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The address of the selected range is "${range.address}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    
+    console.log(`The address of the selected range is "${range.address}"`);
+});
 ```
 
 ## <a name="select-the-edge-of-a-used-range"></a>选择已用区域的边缘
@@ -60,26 +64,26 @@ Excel.run(function (context) {
 下面的代码示例演示如何 `Range.getRangeEdge` 使用 方法按向上方向选择当前使用区域最远边缘的单元格。 此操作与选择范围时使用 Ctrl+向上箭头键键盘快捷方式的结果匹配。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Get the selected range.
-    var range = context.workbook.getSelectedRange();
+    let range = context.workbook.getSelectedRange();
 
     // Specify the direction with the `KeyboardDirection` enum.
-    var direction = Excel.KeyboardDirection.up;
+    let direction = Excel.KeyboardDirection.up;
 
     // Get the active cell in the workbook.
-    var activeCell = context.workbook.getActiveCell();
+    let activeCell = context.workbook.getActiveCell();
 
     // Get the top-most cell of the current used range.
     // This method acts like the Ctrl+Up arrow key keyboard shortcut while a range is selected.
-    var rangeEdge = range.getRangeEdge(
+    let rangeEdge = range.getRangeEdge(
       direction,
       activeCell
     );
     rangeEdge.select();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 #### <a name="before-selecting-the-cell-at-the-edge-of-the-used-range"></a>选择已用区域边缘的单元格之前
@@ -99,26 +103,26 @@ Excel.run(function (context) {
 下面的代码示例 `Range.getExtendedRange` 演示如何使用 方法按向下方向选择从当前所选区域到已用区域最远边缘的所有单元格。 此操作与选中区域时使用 Ctrl+Shift+向下箭头键键盘快捷方式的结果匹配。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Get the selected range.
-    var range = context.workbook.getSelectedRange();
+    let range = context.workbook.getSelectedRange();
 
     // Specify the direction with the `KeyboardDirection` enum.
-    var direction = Excel.KeyboardDirection.down;
+    let direction = Excel.KeyboardDirection.down;
 
     // Get the active cell in the workbook.
-    var activeCell = context.workbook.getActiveCell();
+    let activeCell = context.workbook.getActiveCell();
 
     // Get all the cells from the currently selected range to the bottom-most edge of the used range.
     // This method acts like the Ctrl+Shift+Down arrow key keyboard shortcut while a range is selected.
-    var extendedRange = range.getExtendedRange(
+    let extendedRange = range.getExtendedRange(
       direction,
       activeCell
     );
     extendedRange.select();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 #### <a name="before-selecting-all-the-cells-from-the-current-range-to-the-edge-of-the-used-range"></a>选择当前区域到已用区域边缘的所有单元格之前

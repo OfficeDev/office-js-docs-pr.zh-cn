@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 概述
 description: 详细了解 Excel Javascript API
-ms.date: 04/05/2021
+ms.date: 02/23/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 4b512db9028d56e9de6dcb31d03ffb0cd0d83ea6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2e2f26033d59def17ac19144da5434c622b9f7d2
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152617"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340825"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API 概述
 
@@ -36,6 +36,7 @@ Excel 加载项通过使用 Office JavaScript API 与 Excel 中的对象进行�
 * [条件格式](../../excel/excel-add-ins-conditional-formatting.md)
 * [自定义函数](../../excel/custom-functions-overview.md)
 * [数据验证](../../excel/excel-add-ins-data-validation.md)
+* [Data types](../../excel/excel-data-types-overview.md)
 * [事件](../../excel/excel-add-ins-events.md)
 * [数据透视表](../../excel/excel-add-ins-pivottables.md)
 * [区域](../../excel/excel-add-ins-ranges-get.md)与[单元格](../../excel/excel-add-ins-cells.md)

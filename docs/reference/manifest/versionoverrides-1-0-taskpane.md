@@ -1,21 +1,21 @@
 ---
 title: 任务窗格外接程序的清单文件中 VersionOverrides 1.0 元素
-description: " (XML 加载项清单) 的 VersionOverrides 元素Office文档 (XML) 文档。"
-ms.date: 01/04/2022
+description: " (XML) 清单Office的 VersionOverrides 元素 (文档) 文档。"
+ms.date: 02/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 266a20ea2b2d980007bd05411150f2f152b6c7c1
-ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
+ms.openlocfilehash: f2d6867db8a8b35d4296b9907e4dbbb440ea28db
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2022
-ms.locfileid: "62042166"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340244"
 ---
 # <a name="versionoverrides-10-element-in-the-manifest-file-for-a-task-pane-add-in"></a>任务窗格外接程序的清单文件中 VersionOverrides 1.0 元素
 
 此元素包含基本清单中不支持的功能的信息。
 
 > [!NOTE]
-> 本文假定你熟悉 [VersionOverrides](versionoverrides.md)元素的概述，该元素包含有关元素的属性和变体的重要信息。
+> 本文假定你熟悉 [VersionOverrides](versionoverrides.md) 元素的概述，该元素包含有关该元素的属性和变体的重要信息。
 
 **外接程序类型：** 任务窗格
 
@@ -35,21 +35,21 @@ ms.locfileid: "62042166"
 下表仅适用于 **VersionOverrides** 元素的版本 1.0，仅适用于任务窗格外接程序。
 
 > [!NOTE]
-> 在 iOS 中， `<WebApplicationInfo>` 仅受支持。 **VersionOverrides 的所有其他子元素** 将被忽略。
+> 在 iOS 中，仅 **支持 WebApplicationInfo** 。 **VersionOverrides 的所有其他子元素** 将被忽略。
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [说明](#description)    |  否   |  描述外接程序。 |
-|  [Requirements](requirements.md)  |  否   |  指定为了使父项中的标记生效而必须支持的最低 `VersionOverrides` 要求集。 这应 *始终比* 清单的基本 `Requirements` 部分中的 元素更加严格。|
+|  [Requirements](requirements.md)  |  否   |  指定为使父 **VersionOverrides** 中的标记生效而必须支持的最低要求集。 这应始终 *比* 清单的基 **部分中的 Requirements** 元素更加严格。|
 |  [Hosts](hosts.md)                |  是  |  指定应用程序Office集合。 子 Hosts 元素替代清单的父部分中的 Hosts 元素。  |
 |  [Resources](resources.md)    |  是  | 定义其他清单元素引用的资源集合（字符串、URL 和图像）。|
-|  [EquivalentAddins](equivalentaddins.md)    |  否  | 指定与 (等效) COM/XLL 加载项的本机属性。 如果安装了等效的本机外接程序，则不激活 Web 外接程序。|
+|  [EquivalentAddins](equivalentaddins.md)    |  否  | 指定与 web (等效) COM/XLL 加载项的本机属性。 如果安装了等效的本机外接程序，则不激活 Web 外接程序。|
 |  **VersionOverrides**    |  否  | 当前在任务窗格加载项的 VersionOverrides 1.0 中不可用。 |
 |  [WebApplicationInfo](webapplicationinfo.md)    |  否  | 指定有关外接程序注册到安全令牌颁发者（如 Azure Active Directory V2.0）的详细信息。 |
 
 ### <a name="description"></a>Description
 
-描述外接程序。 这会替代清单中任何父级部分中的 `Description` 元素。 说明文本包含在 **Rescources** 元素中的 [LongString](resources.md) 元素的子元素中。 Description 元素的 属性不能超过 32 个字符，并设置为包含文本的元素 `resid`  `id` 的 `String` 属性的值。
+描述外接程序。 这将覆盖清单任何父部分的 **Description** 元素。 说明文本包含在 **Rescources** 元素中的 [LongString](resources.md) 元素的子元素中。 `resid` Description 元素的 **属性** 不能超过 32 `id` 个字符，并且必须匹配包含在 Resources 元素中的 **ShortString** 元素的子元素的 [属性的值](resources.md)。
 
 **外接程序类型：** 任务窗格、邮件
 
@@ -63,13 +63,13 @@ ms.locfileid: "62042166"
 
 **与以下要求集相关联**：
 
-- 当父级为 Taskpane [1.0 类型时，AddinCommands](../requirement-sets/add-in-commands-requirement-sets.md) `<VersionOverrides>` 1.1。
-- [当父级为 Mail 1.0](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) `<VersionOverrides>` 类型时，邮箱 1.3。
-- [当父级为](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) Mail `<VersionOverrides>` 1.1 类型时，邮箱 1.5。
+- 当父 **VersionOverrides** 的类型为 Taskpane [1.0 时，AddinCommands](../requirement-sets/add-in-commands-requirement-sets.md) 1.1。
+- [当父](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) **VersionOverrides** 类型为 Mail 1.0 时，邮箱 1.3。
+- [当父](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) **VersionOverrides** 类型为 Mail 1.1 时，邮箱 1.5。
 
 ## <a name="example"></a>示例
 
-下面展示了一个非常简单的示例。 有关完整示例，请参阅外接程序代码示例中的示例Office[清单](https://github.com/OfficeDev/PnP-OfficeAddins)。
+下面展示了一个非常简单的示例。 有关更复杂的示例，请参阅外接程序代码示例中的示例Office[清单](https://github.com/OfficeDev/PnP-OfficeAddins)。
 
 ```xml
 <OfficeApp ... xsi:type="Taskpane">

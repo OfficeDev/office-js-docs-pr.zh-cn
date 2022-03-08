@@ -1,10 +1,15 @@
 ---
 title: 使用 Excel JavaScript API 处理表格
 description: 显示如何使用 JavaScript API 对表执行常见Excel示例。
-ms.date: 10/22/2021
+ms.date: 02/17/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: a2f383209d8c267757fa39b8a4da539adb24e78e
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340265"
 ---
-
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
 本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关 和 对象支持的属性和方法的完整列表，请参阅 [Table Object (JavaScript API for Excel) ](/javascript/api/excel/excel.table) 和 [TableCollection Object (JavaScript API for Excel) ](/javascript/api/excel/excel.tablecollection)。`Table` `TableCollection`
@@ -17,9 +22,9 @@ ms.localizationpriority: medium
 > 若要指定表的名称 `name` ，必须先创建表，然后设置其属性，如以下示例所示。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
 
     expensesTable.getHeaderRowRange().values = [["Date", "Merchant", "Category", "Amount"]];
@@ -41,11 +46,11 @@ Excel.run(function (context) {
 
     sheet.activate();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**新建表**
+### <a name="new-table"></a>新表
 
 ![Excel 中的新表。](../images/excel-tables-create.png)
 
@@ -57,9 +62,9 @@ Excel.run(function (context) {
 > `index` [TableRow 对象的 属性](/javascript/api/excel/excel.tablerow)指示表的行集合中行的索引号。 对象 `TableRow` 不包含可用于标识 `id` 行的唯一键的属性。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.rows.add(null /*add rows to the end of the table*/, [
         ["1/16/2017", "THE PHONE COMPANY", "Communications", "$120"],
@@ -76,13 +81,13 @@ Excel.run(function (context) {
         sheet.getUsedRange().format.autofitRows();
     }
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**包含新行的表**
+### <a name="table-with-new-rows"></a>包含新行的表
 
-![包含新行的Excel。](../images/excel-tables-add-rows.png)
+![包含新行的表Excel。](../images/excel-tables-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>向表添加列
 
@@ -96,9 +101,9 @@ Excel.run(function (context) {
 下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表中所有现有列后面，并且包含一个标题（“星期几”），以及用于填充列中单元格的数据。 如果运行Excel的应用程序支持要求集 [](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.columns.add(null /*add columns to the end of the table*/, [
         ["Day of the Week"],
@@ -116,22 +121,22 @@ Excel.run(function (context) {
         sheet.getUsedRange().format.autofitRows();
     }
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**包含新列的表**
+#### <a name="table-with-new-column"></a>包含新列的表
 
-![包含新列的表Excel。](../images/excel-tables-add-column.png)
+![包含新列的Excel。](../images/excel-tables-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas"></a>添加包含公式的列
 
 下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表的末尾，包含标题（“日期类型”），并使用一个公式来填充列中的每个数据单元格。 如果运行Excel的应用程序支持要求集 [](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.columns.add(null /*add columns to the end of the table*/, [
         ["Type of the Day"],
@@ -149,11 +154,11 @@ Excel.run(function (context) {
         sheet.getUsedRange().format.autofitRows();
     }
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**包含新的计算列的表**
+#### <a name="table-with-new-calculated-column"></a>包含新的计算列的表
 
 ![包含新计算列的表Excel。](../images/excel-tables-add-calculated-column.png)
 
@@ -162,22 +167,22 @@ Excel.run(function (context) {
 加载项可以调整表格大小，而无需向表格添加数据或更改单元格值。 若要调整表格的大小，请使用 [Table.resize](/javascript/api/excel/excel.table#excel-excel-table-resize-member(1)) 方法。 下面的代码示例演示如何调整表的大小。 此代码示例使用本文前面"创建表 [](#create-a-table)"部分中的 **ExpensesTable**，将表的新范围设置 **为 A1：D20**。
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Retrieve the worksheet and a table on that worksheet.
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     // Resize the table.
     expensesTable.resize("A1:D20");
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 > [!IMPORTANT]
 > 表格的新区域必须与原始区域重叠，并且表格标题 (或表格顶部) 必须在同一行中。
 
-**调整大小后的表格** 
+### <a name="table-after-resize"></a>调整大小后的表格
 
 ![表中有多个空行的Excel。](../images/excel-tables-resize.png)
 
@@ -186,27 +191,26 @@ Excel.run(function (context) {
 下面的代码示例将表中第一列的名称更新为 **购买日期**。 如果运行Excel的应用程序支持要求集 [](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
     expensesTable.columns.load("items");
 
-    return context.sync()
-        .then(function () {
-            expensesTable.columns.items[0].name = "Purchase date";
+    await context.sync();
+        
+    expensesTable.columns.items[0].name = "Purchase date";
 
-            if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-                sheet.getUsedRange().format.autofitColumns();
-                sheet.getUsedRange().format.autofitRows();
-            }
+    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
+        sheet.getUsedRange().format.autofitColumns();
+        sheet.getUsedRange().format.autofitRows();
+    }
 
-            return context.sync();
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**包含新列名称的表格**
+### <a name="table-with-new-column-name"></a>包含新列名称的表
 
 ![包含新列名称的表Excel。](../images/excel-tables-update-column-name.png)
 
@@ -215,44 +219,43 @@ Excel.run(function (context) {
 下面的代码示例从名为 **Sample** 的工作表内的 **ExpensesTable** 表中读取数据，然后在同一工作表中的表下输出该数据。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    // Get data from the header row
-    var headerRange = expensesTable.getHeaderRowRange().load("values");
+    // Get data from the header row.
+    let headerRange = expensesTable.getHeaderRowRange().load("values");
 
-    // Get data from the table
-    var bodyRange = expensesTable.getDataBodyRange().load("values");
+    // Get data from the table.
+    let bodyRange = expensesTable.getDataBodyRange().load("values");
 
-    // Get data from a single column
-    var columnRange = expensesTable.columns.getItem("Merchant").getDataBodyRange().load("values");
+    // Get data from a single column.
+    let columnRange = expensesTable.columns.getItem("Merchant").getDataBodyRange().load("values");
 
-    // Get data from a single row
-    var rowRange = expensesTable.rows.getItemAt(1).load("values");
+    // Get data from a single row.
+    let rowRange = expensesTable.rows.getItemAt(1).load("values");
 
-    // Sync to populate proxy objects with data from Excel
-    return context.sync()
-        .then(function () {
-            var headerValues = headerRange.values;
-            var bodyValues = bodyRange.values;
-            var merchantColumnValues = columnRange.values;
-            var secondRowValues = rowRange.values;
+    // Sync to populate proxy objects with data from Excel.
+    await context.sync();
 
-            // Write data from table back to the sheet
-            sheet.getRange("A11:A11").values = [["Results"]];
-            sheet.getRange("A13:D13").values = headerValues;
-            sheet.getRange("A14:D20").values = bodyValues;
-            sheet.getRange("B23:B29").values = merchantColumnValues;
-            sheet.getRange("A32:D32").values = secondRowValues;
+    let headerValues = headerRange.values;
+    let bodyValues = bodyRange.values;
+    let merchantColumnValues = columnRange.values;
+    let secondRowValues = rowRange.values;
 
-            // Sync to update the sheet in Excel
-            return context.sync();
-        });
-}).catch(errorHandlerFunction);
+    // Write data from table back to the sheet
+    sheet.getRange("A11:A11").values = [["Results"]];
+    sheet.getRange("A13:D13").values = headerValues;
+    sheet.getRange("A14:D20").values = bodyValues;
+    sheet.getRange("B23:B29").values = merchantColumnValues;
+    sheet.getRange("A32:D32").values = secondRowValues;
+
+    // Sync to update the sheet in Excel.
+    await context.sync();
+});
 ```
 
-**表和数据输出**
+### <a name="table-and-data-output"></a>表和数据输出
 
 ![数据表中的Excel。](../images/excel-tables-get-data.png)
 
@@ -264,15 +267,15 @@ Excel.run(function (context) {
 
 ```js
 // This function would be used as an event handler for the Table.onChanged event.
-function onTableChanged(eventArgs) {
-    Excel.run(function (context) {
-        var details = eventArgs.details;
-        var address = eventArgs.address;
+async function onTableChanged(eventArgs) {
+    await Excel.run(async (context) => {
+        let details = eventArgs.details;
+        let address = eventArgs.address;
 
         // Print the before and after types and values to the console.
         console.log(`Change at ${address}: was ${details.valueBefore}(${details.valueTypeBefore}),`
             + ` now is ${details.valueAfter}(${details.valueTypeAfter})`);
-        return context.sync();
+        await context.sync();
     });
 }
 ```
@@ -282,12 +285,12 @@ function onTableChanged(eventArgs) {
 下面的代码示例根据表中第四列的值，对表数据按降序进行排序。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    // Queue a command to sort data by the fourth column of the table (descending)
-    var sortRange = expensesTable.getDataBodyRange();
+    // Queue a command to sort data by the fourth column of the table (descending).
+    let sortRange = expensesTable.getDataBodyRange();
     sortRange.sort.apply([
         {
             key: 3,
@@ -295,12 +298,12 @@ Excel.run(function (context) {
         },
     ]);
 
-    // Sync to run the queued command in Excel
-    return context.sync();
-}).catch(errorHandlerFunction);
+    // Sync to run the queued command in Excel.
+    await context.sync();
+});
 ```
 
-**按金额排序的表数据（降序）**
+### <a name="table-data-sorted-by-amount-descending"></a>按金额排序的表数据（降序）
 
 ![排序表中的Excel。](../images/excel-tables-sort.png)
 
@@ -311,49 +314,49 @@ Excel.run(function (context) {
 下面的代码示例将筛选器应用到表中的 **金额** 列和 **类别** 列。 筛选器筛选的结果是，仅显示符合以下条件的行：**类别** 为其中一个指定值且 **金额** 低于所有行的平均值。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    // Queue a command to apply a filter on the Category column
-    filter = expensesTable.columns.getItem("Category").filter;
-    filter.apply({
-        filterOn: Excel.FilterOn.values,
-        values: ["Restaurant", "Groceries"]
+    // Queue a command to apply a filter on the Category column.
+    let categoryFilter = expensesTable.columns.getItem("Category").filter;
+    categoryFilter.apply({
+      filterOn: Excel.FilterOn.values,
+      values: ["Restaurant", "Groceries"]
     });
 
-    // Queue a command to apply a filter on the Amount column
-    var filter = expensesTable.columns.getItem("Amount").filter;
-    filter.apply({
-        filterOn: Excel.FilterOn.dynamic,
-        dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
+    // Queue a command to apply a filter on the Amount column.
+    let amountFilter = expensesTable.columns.getItem("Amount").filter;
+    amountFilter.apply({
+      filterOn: Excel.FilterOn.dynamic,
+      dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
     });
 
-    // Sync to run the queued commands in Excel
-    return context.sync();
-}).catch(errorHandlerFunction);
+    // Sync to run the queued commands in Excel.
+    await context.sync();
+});
 ```
 
-**将筛选器应用于类别和金额的表数据**
+### <a name="table-data-with-filters-applied-for-category-and-amount"></a>将筛选器应用于类别和金额的表数据
 
-![在数据表中筛选的Excel。](../images/excel-tables-filters-apply.png)
+![在数据记录中筛选的Excel。](../images/excel-tables-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>清除表筛选器
 
 下面的代码示例清除当前应用于表的所有筛选器。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.clearFilters();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**没有应用任何筛选器的表数据**
+### <a name="table-data-with-no-filters-applied"></a>没有应用任何筛选器的表数据
 
 ![表中未筛选的表Excel。](../images/excel-tables-filters-clear.png)
 
@@ -362,18 +365,16 @@ Excel.run(function (context) {
 下面的代码示例获取一个区域，其中只包含当前在指定表中可见的单元格数据，然后将该区域的值写入控制台。 可以使用如下所示的方法 `getVisibleView()` ，在应用列筛选器时获取表的可见内容。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    var visibleRange = expensesTable.getDataBodyRange().getVisibleView();
+    let visibleRange = expensesTable.getDataBodyRange().getVisibleView();
     visibleRange.load("values");
 
-    return context.sync()
-        .then(function() {
-            console.log(visibleRange.values);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    console.log(visibleRange.values);
+});
 ```
 
 ## <a name="autofilter"></a>AutoFilter
@@ -383,9 +384,9 @@ Excel.run(function (context) {
 以下代码示例显示与[之前的代码示例相同的数据筛选](#apply-filters-to-a-table)，但完全通过 auto-filter 完成。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.autoFilter.apply(expensesTable.getRange(), 2, {
         filterOn: Excel.FilterOn.values,
@@ -396,8 +397,8 @@ Excel.run(function (context) {
         dynamicCriteria: Excel.DynamicFilterCriteria.belowAverage
     });
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 `AutoFilter` 也可应用于工作表级别的范围。 有关详细信息，请参阅[使用 Excel JavaScript API 处理工作表](excel-add-ins-worksheets.md#filter-data)。
@@ -407,20 +408,20 @@ Excel.run(function (context) {
 下面的代码示例将格式应用于表。 它为表的标题行、正文、第二行以及第一列指定不同的填充颜色。 有关可以用来指定格式的属性的信息，请参阅 [RangeFormat 对象 (Excel JavaScript API)](/javascript/api/excel/excel.rangeformat)。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var expensesTable = sheet.tables.getItem("ExpensesTable");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let expensesTable = sheet.tables.getItem("ExpensesTable");
 
     expensesTable.getHeaderRowRange().format.fill.color = "#C70039";
     expensesTable.getDataBodyRange().format.fill.color = "#DAF7A6";
     expensesTable.rows.getItemAt(1).getRange().format.fill.color = "#FFC300";
     expensesTable.columns.getItemAt(0).getDataBodyRange().format.fill.color = "#FFA07A";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**应用格式设置的表**
+### <a name="table-after-formatting-is-applied"></a>应用了格式设置的表
 
 ![表格格式应用于Excel。](../images/excel-tables-formatting-after.png)
 
@@ -429,11 +430,11 @@ Excel.run(function (context) {
 下面的代码示例创建一个数据区域，然后将该区域转换为表。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    // Define values for the range
-    var values = [["Product", "Qtr1", "Qtr2", "Qtr3", "Qtr4"],
+    // Define values for the range.
+    let values = [["Product", "Qtr1", "Qtr2", "Qtr3", "Qtr4"],
     ["Frames", 5000, 7000, 6544, 4377],
     ["Saddles", 400, 323, 276, 651],
     ["Brake levers", 12000, 8766, 8456, 9812],
@@ -441,8 +442,8 @@ Excel.run(function (context) {
     ["Mirrors", 225, 600, 923, 544],
     ["Spokes", 6005, 7634, 4589, 8765]];
 
-    // Create the range
-    var range = sheet.getRange("A1:E7");
+    // Create the range.
+    let range = sheet.getRange("A1:E7");
     range.values = values;
 
     if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
@@ -452,19 +453,19 @@ Excel.run(function (context) {
 
     sheet.activate();
 
-    // Convert the range to a table
-    var expensesTable = sheet.tables.add('A1:E7', true);
+    // Convert the range to a table.
+    let expensesTable = sheet.tables.add('A1:E7', true);
     expensesTable.name = "ExpensesTable";
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**内的数据（在区域转换为表之前）**
+### <a name="data-in-the-range-before-the-range-is-converted-to-a-table"></a>区域内的数据（在区域转换为表之前）
 
 ![Excel 中的Excel。](../images/excel-ranges.png)
 
-**表中的数据（在区域转换为表之后）**
+### <a name="data-in-the-table-after-the-range-is-converted-to-a-table"></a>表中的数据（在区域转换为表之后）
 
 ![数据表中的Excel。](../images/excel-tables-from-range.png)
 
@@ -473,14 +474,14 @@ Excel.run(function (context) {
 下面的代码示例在名为 **Sample** 的工作表中创建一个表，然后使用定义了两行数据的 JSON 对象来填充表。 如果运行Excel的应用程序支持要求集 [](../reference/requirement-sets/excel-api-requirement-sets.md) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
+    let expensesTable = sheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
     expensesTable.getHeaderRowRange().values = [["Date", "Merchant", "Category", "Amount"]];
 
-    var transactions = [
+    let transactions = [
       {
         "DATE": "1/1/2017",
         "MERCHANT": "The Phone Company",
@@ -495,7 +496,7 @@ Excel.run(function (context) {
       }
     ];
 
-    var newData = transactions.map(item =>
+    let newData = transactions.map(item =>
         [item.DATE, item.MERCHANT, item.CATEGORY, item.AMOUNT]);
 
     expensesTable.rows.add(null, newData);
@@ -507,11 +508,11 @@ Excel.run(function (context) {
 
     sheet.activate();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
-**新建表**
+### <a name="new-table"></a>新表
 
 ![从导入的 JSON 数据的新表Excel。](../images/excel-tables-create-from-json.png)
 
