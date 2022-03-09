@@ -2,14 +2,14 @@
 title: '在外接程序预览版中Outlook智能警报 (OnMessageSend) '
 description: 了解如何使用基于事件的激活在 Outlook外接程序中处理发送邮件事件。
 ms.topic: article
-ms.date: 03/03/2022
+ms.date: 03/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dba12ba6ae667f3f5db740495a58ffc425d3aef3
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: b57cd683dd344d61ebcf7cf957a60522ed9c69da
+ms.sourcegitcommit: 7f4794f73ca3b6090619f790adb4a97c80b9c056
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340846"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "63400005"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>在外接程序预览版中Outlook智能警报 (OnMessageSend) 
 
@@ -146,7 +146,7 @@ ms.locfileid: "63340846"
 
 在此方案中，您将添加用于发送邮件的处理。 外接程序将检查邮件中的某些关键字。 如果找到其中任何关键字，它将检查是否有附件。 如果没有附件，外接程序将建议用户添加可能缺少的附件。
 
-1. 从同一快速启动项目中，在 **/src/** 目录下新建一个名为 **launchevent** 的文件夹。
+1. 从同一快速启动项目中，在 **./src** 目录下新建一个名为 **launchevent** 的文件夹。
 
 1. 在 **"./src/launchevent** "文件夹中，新建一个名为"launchevent.js **"**。
 
@@ -161,50 +161,64 @@ ms.locfileid: "63340846"
     function onMessageSendHandler(event) {
       Office.context.mailbox.item.body.getAsync(
         "text",
-        { "asyncContext": event },
-        function (asyncResult) {
-          let event = asyncResult.asyncContext;
-          let body = "";
-          let matches;
-          if (asyncResult.status !== Office.AsyncResultStatus.Failed && asyncResult.value !== undefined) {
-            body = asyncResult.value;
-          }
+        { asyncContext: event },
+        getBodyCallback
+      );
+    }
 
-          const arrayOfTerms = ["send", "picture", "document", "attachment"];
-          for (let index = 0; index < arrayOfTerms.length; index++) {
-            let term = arrayOfTerms[index].trim();
-            const regex = RegExp(term, 'i');
-            if (regex.test(body)) {
-              matches.push(term);
-            }
-          }
+    function getBodyCallback(asyncResult){
+      let event = asyncResult.asyncContext;
+      let body = "";
+      if (asyncResult.status !== Office.AsyncResultStatus.Failed && asyncResult.value !== undefined) {
+        body = asyncResult.value;
+      } else {
+        let message = "Failed to get body text";
+        console.error(message);
+        event.completed({ allowEvent: false, errorMessage: message });
+        return;
+      }
 
-          if (matches.length > 0) {
-            // Let's verify if there's an attachment!
-            Office.context.mailbox.item.getAttachmentsAsync(
-              { "asyncContext": event },
-              function(result) {
-                let event = result.asyncContext;
-                if (result.value.length <= 0) {
-                  const message = "Looks like you're forgetting to include an attachment?";
-                  event.completed({ allowEvent: false, errorMessage: message });
-                } else {
-                  for (let i = 0; i < result.value.length; i++) {
-                    if (result.value[i].isInline == false) {
-                      event.completed({ allowEvent: true });
-                      return;
-                    }
-                  }
-      
-                  const message = "Looks like you forgot to include an attachment?";
-                  event.completed({ allowEvent: false, errorMessage: message });
-                }
-              });
-            } else {
-              event.completed({ allowEvent: true });
-            }
+      let matches = hasMatches(body);
+      if (matches) {
+        Office.context.mailbox.item.getAttachmentsAsync(
+          { asyncContext: event },
+          getAttachmentsCallback);
+      } else {
+        event.completed({ allowEvent: true });
+      }
+    }
+
+    function hasMatches(body) {
+      if (body == null || body == "") {
+        return false;
+      }
+
+      const arrayOfTerms = ["send", "picture", "document", "attachment"];
+      for (let index = 0; index < arrayOfTerms.length; index++) {
+        const term = arrayOfTerms[index].trim();
+        const regex = RegExp(term, 'i');
+        if (regex.test(body)) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    function getAttachmentsCallback(asyncResult) {
+      let event = asyncResult.asyncContext;
+      if (asyncResult.value.length > 0) {
+        for (let i = 0; i < asyncResult.value.length; i++) {
+          if (asyncResult.value[i].isInline == false) {
+            event.completed({ allowEvent: true });
+            return;
           }
-        );
+        }
+
+        event.completed({ allowEvent: false, errorMessage: "Looks like you forgot to include an attachment?" });
+      } else {
+        event.completed({ allowEvent: false, errorMessage: "Looks like you're forgetting to include an attachment?" });
+      }
     }
 
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
@@ -213,14 +227,11 @@ ms.locfileid: "63340846"
 
 1. 保存所做的更改。
 
-> [!IMPORTANT]
-> Windows：目前，在执行基于事件的激活的处理的 JavaScript 文件中不支持导入。
-
 ## <a name="update-webpack-config-settings"></a>更新 webpack 配置设置
 
-打开 **webpack.config.js** 根目录中找到的目录文件，并完成以下步骤。
+1. 打开 **webpack.config.js** 根目录中找到的目录文件，并完成以下步骤。
 
-1. 在 对象 `plugins` 中查找 `config` 数组，在数组的开头添加此新对象。
+1. 在 对象 `plugins` 内找到 数组 `config` ，将此新对象添加到数组的开头。
 
     ```js
     new CopyWebpackPlugin({
@@ -250,10 +261,11 @@ ms.locfileid: "63340846"
     > 如果加载项未自动旁加载，请按照旁加载 [Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) 加载项进行测试中的说明，在加载项中手动旁加载Outlook。
 
 1. 在Outlook中Windows新建邮件并设置主题。 在正文中，添加类似"你好，查看我的 dog 的此图片！"这样的文本。
-1. 发送消息. 应弹出一个对话框，建议你添加附件。
-1. 添加附件，然后再次发送邮件。 此时应该没有警报。
+1. 发送邮件。 应弹出一个对话框，建议你添加附件。
 
-[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
+    !["使用对话框打开Outlook Windows窗口的屏幕截图。](../images/outlook-win-smart-alert.png)
+
+1. 添加附件，然后再次发送邮件。 此时应该没有警报。
 
 ## <a name="see-also"></a>另请参阅
 

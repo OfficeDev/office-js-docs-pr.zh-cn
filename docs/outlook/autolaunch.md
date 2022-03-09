@@ -2,14 +2,14 @@
 title: 配置Outlook加载项进行基于事件的激活
 description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
-ms.date: 03/03/2022
+ms.date: 03/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d63e814875ee36a24bf7a919da0b62562433af0
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 7c3445199098efc95ed54b20105418502368bc16
+ms.sourcegitcommit: 7f4794f73ca3b6090619f790adb4a97c80b9c056
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340286"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "63399997"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -48,17 +48,12 @@ ms.locfileid: "63340286"
 若要预览这些事件（如果可用）：
 
 - 例如Outlook 网页版：
-  - [在租户上配置Microsoft 365版本](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。
+  - [在租户上配置Microsoft 365版本。](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - 在 上 **引用** beta CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)。 用于 TypeScript 编译和 IntelliSense 的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)位于 CDN 和 [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) 中。 可以使用 `npm install --save-dev @types/office-js-preview` 来安装这些类型。
 - 有关Outlook Mac UI 预览版的详细信息：
   - 最低要求版本为 16.54 (21101001) 。 加入 [预览Office](https://insider.office.com/join/Mac)计划并选择 **Beta 渠道** 以访问 Office beta 版本。
 - 有关Outlook Windows：
   - 所需的最低内部版本为 16.0.14511.10000。 加入 [预览Office](https://insider.office.com/join/windows)计划并选择 **Beta 渠道** 以访问 Office beta 版本。
-  - 配置注册表。 Outlook包括 Office.js 的生产和 beta 版本的本地副本，而不是从内容交付网络 (CDN) 。 默认情况下，将引用 API 的本地生产副本。 若要切换到 JavaScript API Outlook beta 副本，需要添加此注册表项，否则可能找不到 beta API。
-    1. 创建注册表项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`。
-    1. 添加一个名为 的条目 `EnableBetaAPIsInJavaScript` ，将值设置为 `1`。 下图显示注册表应该呈现的状态。
-
-        ![具有 EnableBetaAPIsInJavaScript 注册表项值的注册表编辑器的屏幕截图。](../images/outlook-beta-registry-key.png)
 
 ## <a name="set-up-your-environment"></a>设置环境
 
@@ -202,7 +197,7 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
 
 在此方案中，您将添加用于撰写新项的处理。
 
-1. 从同一快速启动项目中，在 **/src/** 目录下新建一个名为 **launchevent** 的文件夹。
+1. 从同一快速启动项目中，在 **./src** 目录下新建一个名为 **launchevent** 的文件夹。
 
 1. 在 **"./src/launchevent** "文件夹中，新建一个名为"launchevent.js **"**。
 
@@ -247,9 +242,21 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
 > [!IMPORTANT]
 > Windows：目前，在执行基于事件的激活的处理的 JavaScript 文件中不支持导入。
 
+## <a name="update-the-commands-html-file"></a>更新命令 HTML 文件
+
+1. 在 **"./src/commands** "文件夹中，打开"commands.html **"**。
+
+1. 紧接在结束 **head** 标记 (`<\head>`) ，添加一个脚本条目以包含事件处理 JavaScript 代码。
+
+    ```html
+    <script type="text/javascript" src="../launchevent/launchevent.js"></script>
+    ```
+
+1. 保存所做的更改。
+
 ## <a name="update-webpack-config-settings"></a>更新 webpack 配置设置
 
-打开 **webpack.config.js** 根目录中找到的目录文件，并完成以下步骤。
+1. 打开 **webpack.config.js** 根目录中找到的目录文件，并完成以下步骤。
 
 1. 在 对象 `plugins` 中查找 `config` 数组，在数组的开头添加此新对象。
 
@@ -292,8 +299,6 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
 
     ![撰写时主题集Outlook Windows中邮件窗口的屏幕截图。](../images/outlook-win-autolaunch.png)
 
-    [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
-
 ## <a name="debug"></a>调试
 
 在外接程序中对启动事件处理进行更改时，应注意：
@@ -304,6 +309,8 @@ Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 和新的 Mac UI
 实现自己的功能时，可能需要调试代码。 有关如何调试基于事件的加载项激活的指南，请参阅调试基于事件Outlook[加载项](debug-autolaunch.md)。
 
 运行时日志记录还可用于 Windows。 有关详细信息，请参阅 [使用运行时日志记录调试外接程序](../testing/runtime-logging.md#runtime-logging-on-windows)。
+
+[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## <a name="deploy-to-users"></a>部署到用户
 
