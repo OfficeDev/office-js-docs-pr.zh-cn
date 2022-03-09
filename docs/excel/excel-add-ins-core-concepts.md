@@ -1,19 +1,19 @@
 ---
 title: Excel 加载项中的 Excel JavaScript 对象模型
 description: 了解 Excel JavaScript API 中的关键对象类型，以及如何使用它们为 Excel 构建加载项。
-ms.date: 04/05/2021
+ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f301c69a60305dd204ff9e2c2d034899704b8a78
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d2972a3cc30b899340cc47c24c6792eb3e5d202c
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148845"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340818"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Excel 加载项中的 Excel JavaScript 对象模型
 
-本文介绍了如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 生成 Excel 2016 或更高版本的加载项。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
+本文介绍如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 生成适用于 Excel 2016 或更高版本的加载项。 它引入了一些核心概念，这些概念是使用 API 的基础，并为执行特定任务提供指导，如读取或写入较大区域、更新区域内的所有单元格等等。
 
 > [!IMPORTANT]
 > 请参阅[使用特定于应用程序的 API 模型](../develop/application-specific-api-model.md)，以了解 Excel API 的异步性质以及它们如何与工作簿协同工作。  
@@ -49,51 +49,51 @@ Excel 加载项通过使用适 Office JavaScript API 与 Excel 中的对象进�
 
 ### <a name="ranges"></a>Range
 
-Range 是工作簿中的一组连续单元格。 加载项通常使用 A1 样式表示法（例如，对于 **B** 列和第 **3** 行中单个单元格，即 **B3** 或从 **C** 列至 **F** 列和第 **2** 行至第 **4** 行的单元格，即 **C2:F4**）来定义范围。
+范围是工作簿中的一组连续单元格。外接程序通常使用 A1 样式表示法 (例如，对于列 **B** 和行 **3** 中的单个单元格 **B3**，或者从列 **C** 到 **F** 和行 **2** 到 **4** 的单元格 **C2:F4**) 定义范围。
 
-Range 具有三个核心属性：`values`、`formulas` 和 `format`。 这些属性获取或设置单元格值、要计算的公式以及单元格的视觉对象格式设置。
+区间有三个核心属性: `values`、`formulas` 和 `format`。这些属性获取或设置单元格值、要计算的公式以及单元格的视觉对象格式设置。
 
 #### <a name="range-sample"></a>Range 示例
 
 以下示例显示了如何创建销售记录。 此函数使用 `Range` 对象来设置值、公式和格式。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // Create the headers and format them to stand out.
-    var headers = [
+    let headers = [
       ["Product", "Quantity", "Unit Price", "Totals"]
     ];
-    var headerRange = sheet.getRange("B2:E2");
+    let headerRange = sheet.getRange("B2:E2");
     headerRange.values = headers;
     headerRange.format.fill.color = "#4472C4";
     headerRange.format.font.color = "white";
 
     // Create the product data rows.
-    var productData = [
+    let productData = [
       ["Almonds", 6, 7.5],
       ["Coffee", 20, 34.5],
       ["Chocolate", 10, 9.56],
     ];
-    var dataRange = sheet.getRange("B3:D5");
+    let dataRange = sheet.getRange("B3:D5");
     dataRange.values = productData;
 
     // Create the formulas to total the amounts sold.
-    var totalFormulas = [
+    let totalFormulas = [
       ["=C3 * D3"],
       ["=C4 * D4"],
       ["=C5 * D5"],
       ["=SUM(E3:E5)"]
     ];
-    var totalRange = sheet.getRange("E3:E6");
+    let totalRange = sheet.getRange("E3:E6");
     totalRange.formulas = totalFormulas;
     totalRange.format.font.bold = true;
 
     // Display the totals as US dollar amounts.
     totalRange.numberFormat = [["$0.00"]];
 
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -114,10 +114,10 @@ Excel JavaScript API 可以在 Excel 中创建和设置数据结构和可视化�
 以下示例使用上一个示例中的范围创建了一个表。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.tables.add("B2:E5", true);
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -134,11 +134,11 @@ Excel.run(function (context) {
 下面的示例为三个项目创建一个简单的柱形图，并将其置于工作表顶部下方 100 像素处。
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
     chart.top = 100;
-    return context.sync();
+    await context.sync();
 });
 ```
 
