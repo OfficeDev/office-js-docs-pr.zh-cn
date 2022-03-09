@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 01/13/2022
+ms.date: 02/26/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b4bbc96f03b19b0212f65f9f6688272545b4cab9
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: ad7a0332d303b7f774c394340fba303fcb3e782e
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222178"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340874"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -54,7 +54,7 @@ ms.locfileid: "62222178"
 
 1. 在代码编辑器中打开项目。
 
-1. 打开 ./src/taskpane/taskpane.html 文件。  此文件含有任务窗格的 HTML 标记。
+1. 打开文件 **./src/taskpane/taskpane.html**。该文件包含任务窗格的 HTML 标记。
 
 1. 找到 `<main>` 元素并删除在开始 `<main>` 标记后和关闭 `</main>` 标记前出现的所有行。
 
@@ -64,7 +64,7 @@ ms.locfileid: "62222178"
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-1. 打开 **./src/taskpane/taskpane.js** 文件。 此文件包含用于加快任务窗格与 Office 客户端应用程序之间的交互的 Office JavaScript API 代码。
+1. 打开文件 **./src/taskpane/taskpane.js**。此文件包含可促进任务窗格和 Office 客户端应用程序之间交互的 Office JavaScript API 代码。
 
 1. 执行以下操作，删除对 `run` 按钮和 `run()` 函数的所有引用：
 
@@ -72,7 +72,7 @@ ms.locfileid: "62222178"
 
     - 查找并删除整个 `run()` 函数。
 
-1. 在 `Office.onReady` 方法调用中，找到行 `if (info.host === Office.HostType.Excel) {` 并紧接着行添加下列代码。 注意：
+1. 在 `Office.onReady` 方法调用中，找到 `if (info.host === Office.HostType.Excel) {` 一行，并紧贴该行后添加以下代码：
 
     - 此代码的第一部分确定用户的 Excel 版本是否支持某一版本的 Excel.js，其中包含此系列教程所使用全部 API。在生产性加载项中，使用条件块的文本块隐藏或启用调用不受支持的 API 的UI。这将使用户仍然能够使用其版本 Excel 所支持加载项的某些部分。
 
@@ -88,17 +88,17 @@ ms.locfileid: "62222178"
     document.getElementById("create-table").onclick = createTable;
     ```
 
-1. 将以下函数添加到文件结尾。 注意：
+1. 将以下函数添加到文件结尾。注意：
 
     - Excel.js 业务逻辑将添加到传递给 `Excel.run` 的函数。 此逻辑不立即执行。 相反，它会被添加到挂起的命令队列中。
 
     - `context.sync` 方法将所有已排入队列的命令发送到 Excel 以供执行。
 
-    - `Excel.run` 后跟 `catch` 块。 这是应始终遵循的最佳做法。 
+    - `Excel.run` 后跟 `catch` 块。 这是应始终遵循的最佳做法。
 
     ```js
-    function createTable() {
-        Excel.run(function (context) {
+    async function createTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue table creation logic here.
 
@@ -106,7 +106,7 @@ ms.locfileid: "62222178"
 
             // TODO3: Queue commands to format the table.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -126,8 +126,8 @@ ms.locfileid: "62222178"
     - 表名称必须在整个工作簿中都是唯一的，而不仅仅是在工作表一级。
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
     ```
 
@@ -227,13 +227,13 @@ ms.locfileid: "62222178"
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function filterTable() {
-        Excel.run(function (context) {
+    async function filterTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to filter out all expense categories except
             //        Groceries and Education.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -251,9 +251,9 @@ ms.locfileid: "62222178"
    - `applyValuesFilter` 方法是对 `Filter` 对象执行的多种筛选方法之一。
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var categoryFilter = expensesTable.columns.getItem('Category').filter;
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const categoryFilter = expensesTable.columns.getItem('Category').filter;
     categoryFilter.applyValuesFilter(['Education', 'Groceries']);
     ```
 
@@ -278,12 +278,12 @@ ms.locfileid: "62222178"
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function sortTable() {
-        Excel.run(function (context) {
+    async function sortTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to sort the table by Merchant name.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -300,12 +300,12 @@ ms.locfileid: "62222178"
 
    - `SortField` 对象的 `key` 属性是用于排序的列的从零开始编制索引。 表中的行按照所引用列中的值进行排序。
 
-   - `Table` 的 `sort` 成员是 `TableSort` 对象，并不是方法。 `SortField` 传递到 `TableSort` 对象的 `apply` 方法。
+   - `Table` 的 `sort` 成员为 `TableSort` 对象，而非方法。`SortField` 被传递到`TableSort` 对象的 `apply` 方法。
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var sortFields = [
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const sortFields = [
         {
             key: 1,            // Merchant column
             ascending: false,
@@ -354,8 +354,8 @@ ms.locfileid: "62222178"
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function createChart() {
-        Excel.run(function (context) {
+    async function createChart() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to get the range of data to be charted.
 
@@ -363,7 +363,7 @@ ms.locfileid: "62222178"
 
             // TODO3: Queue commands to position and format the chart.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -374,15 +374,15 @@ ms.locfileid: "62222178"
     }
     ```
 
-1. 在 `createChart()` 函数中，将 `TODO1` 替换为以下代码。 请注意，为了排除标题行，此代码使用 `Table.getDataBodyRange` 方法（而不是 `getRange` 方法），获取要绘制成图表的数据的范围。
+1. 在 `createChart()` 函数中，将 `TODO1` 替换为以下代码。请注意，为了排除标题行，代码使用 `Table.getDataBodyRange` 方法(而非 `getRange` 方法)获取要绘制成图表的数据范围。
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var dataRange = expensesTable.getDataBodyRange();
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const dataRange = expensesTable.getDataBodyRange();
     ```
 
-1. 在 `createChart()` 函数中，将 `TODO2` 替换为以下代码。 请注意以下参数。
+1. 在 `createChart()` 函数中，将 `TODO2` 替换为以下代码。请注意以下代码。
 
    - `add` 方法的第一个参数指定图表类型。有几十种类型。
 
@@ -391,10 +391,10 @@ ms.locfileid: "62222178"
    - 第三个参数确定按行方向还是按列方向绘制表格中的一系列数据点。选项 `auto` 指示 Excel 确定最佳方法。
 
     ```js
-    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
+    const chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
-1. 在 `createChart()` 函数中，将 `TODO3` 替换为以下代码。 此代码的大部分内容非常直观明了。 注意：
+1. 在 `createChart()` 函数中，使用以下代码替换 `TODO3`。此代码大多无需解释。请注意：
 
    - `setPosition` 方法的参数指定应包含图表的工作表区域的左上角和右下角单元格。 Excel 可以调整行宽等设置，以便图表能够适应所提供的空间。
 
@@ -449,12 +449,12 @@ ms.locfileid: "62222178"
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function freezeHeader() {
-        Excel.run(function (context) {
+    async function freezeHeader() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to keep the header visible when the user scrolls.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -472,7 +472,7 @@ ms.locfileid: "62222178"
    - `freezeRows` 方法需要使用要就地固定的行数（自顶部算起）作为参数。传递 `1` 可以就地固定第一行。
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
     ```
 
@@ -528,13 +528,13 @@ ms.locfileid: "62222178"
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-1. 接下来的三个 `TODO` 设置资源 ID，或 `resid`。 资源是字符串（最大长度为 32 个字符），这三个字符串将在后续步骤中创建。 现在，需要向资源提供 ID。 虽然按钮标签应名为“切换保护”，但此字符串的 *ID* 应为“ProtectionButtonLabel”。因此 `Label` 元素的样式如下：
+1. 以下三个 `TODO` 会设置资源 ID，或 `resid`。资源为字符串(最大长度为 32 个字符)，你将在后续步骤中创建这三个字符串。目前，需要为资源提供 ID。按钮标签应显示为“切换保护”，但此字符串的 *ID* 应为 "ProtectionButtonLabel"，因此 `Label` 元素应如下所示:
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
     ```
 
-1. `SuperTip` 元素定义了按钮的工具提示。 由于工具提示标题应与按钮标签相同，因此使用完全相同的资源 ID，即“ProtectionButtonLabel”。 工具提示说明为“单击即可启用和禁用工作表保护”。 不过，`resid` 应为“ProtectionButtonToolTip”。 完成后，`SuperTip` 元素如下所示：
+1. `SuperTip` 元素定义按钮的工具提示。工具提示标题应与按钮标签相同，因此我们使用完全相同的资源 ID: "ProtectionButtonLabel"。工具提示说明将为“点击以启用或禁用工作表保护”。但 `resid` 应为 "ProtectionButtonToolTip"。因此，完成操作后，`SuperTip` 元素应如下所示:
 
     ```xml
     <Supertip>
@@ -546,7 +546,7 @@ ms.locfileid: "62222178"
    > [!NOTE]
    > 在生产加载项中，不建议对两个不同的按钮使用相同的图标；但为了简单起见，本教程将采用这样的做法。 因此，新 `Icon` 中的 `Control` 标记直接就是现有 `Icon` 中 `Control` 元素的副本。
 
-1. 虽然原始 `Control` 元素内的 `Action` 元素的类型设置为 `ShowTaskpane`，但新按钮不会要打开任务窗格，而是要运行在后续步骤中创建的自定义函数。 因此，将 `TODO5` 替换为 `ExecuteFunction`，即触发自定义函数的按钮的操作类型。 `Action` 元素的开始标记如下所示：
+1. 原始 `Control` 元素中的 `Action` 元素的类型设置为 `ShowTaskpane`，但我们的新按钮不会打开任务窗格；而是会运行在后续步骤中创建的自定义函数。因此，请将 `TODO5` 替换为 `ExecuteFunction` (触发自定义函数的按钮的操作类型)。`Action` 元素的开始标记应如下所示:
 
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -601,12 +601,12 @@ ms.locfileid: "62222178"
 1. 紧接着 `action` 函数添加下列函数。 注意，我们向函数和函数调用 `args.completed` 的最后一行指定了 `args` 参数。 **ExecuteFunction** 类型的所有加载项命令都必须满足这项要求。 它会指示 Office 客户端应用程序，函数已完成，且 UI 可以再次变得可响应。
 
     ```js
-    function toggleProtection(args) {
-        Excel.run(function (context) {
+    async function toggleProtection(args) {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to reverse the protection status of the current worksheet.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -624,10 +624,10 @@ ms.locfileid: "62222178"
     g.toggleProtection = toggleProtection;
     ```
 
-1. 在 `toggleProtection` 函数中，将 `TODO1` 替换为以下代码。 此代码使用处于标准切换模式的工作表对象 protection 属性。 `TODO2` 将在下一部分中进行介绍。
+1. 在 `toggleProtection` 函数中，使用以下代码替换 `TODO1`。此代码使用处于标准切换模式的工作表对象的保护属性。有关`TODO2` 的说明，请参阅下一节。
 
     ```js
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // TODO2: Queue command to load the sheet's "protection.protected" property from
     //        the document and re-synchronize the document and task pane.
@@ -641,7 +641,7 @@ ms.locfileid: "62222178"
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>添加代码以将文档属性提取到任务窗格的脚本对象
 
-在此教程中创建的各函数内，通过对命令进行排队来 *写入* Office 文档。 每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。 但是在上一步中添加的代码调用的是 `sheet.protection.protected property` ， 这与之前编写的函数明显不同，因为 `sheet` 对象只是任务窗格脚本中的代理对象。 代理对象并不了解文档的实际保护状态，因此它的 `protection.protected` 属性无法有实值。 为避免出现异常错误，必须首先从文档中获取保护状态并使用它来设置值 `sheet.protection.protected`。 此获取过程分为三步。
+到目前为止，在本教程中创建的每个函数中，你都已排列命令以 *写入* Office 文档。每个函数都以对 `context.sync()` 方法的调用结束，该方法会将已排列的命令发送到要执行的文档。但是，在上一步中添加的代码会调用 `sheet.protection.protected property`。这与早前编写的函数有很大区别，因为 `sheet` 对象只是任务窗格脚本中存在的代理对象。代理对象不了解文档的实际保护状态，因此其 `protection.protected` 属性不能有实际值。要避免异常错误，必须先从文档提取保护状态，并将其用于设置 `sheet.protection.protected` 的值。此提取流程包含三个步骤。
 
    1. 将命令排入队列，以加载（即提取）代码需要读取的属性。
 
@@ -655,53 +655,30 @@ ms.locfileid: "62222178"
 
    - 每个 Excel 对象都有 `load` 方法。 对于要在参数中读取的对象属性，将它们指定为逗号分隔名称字符串。 在此示例中，需要读取的属性为 `protection` 属性的子属性。 引用子属性的方法与在代码中的其他任何地方引用属性几乎完全一样，不同之处在于使用的是正斜杠（“/”）字符，而不是“.”字符。
 
-   - 为了确保切换逻辑 `sheet.protection.protected` 只在 `sync` 完成后且 `sheet.protection.protected` 分配有从文档提取的正确值后才运行，（在下一步中）它会被移到 `then` 函数中，此函数在 `sync` 完成前不会运行。
+   - 要确保切换逻辑(显示为 `sheet.protection.protected`)在 `sync` 完成且已为 `sheet.protection.protected` 分配从文档中提取的正确值之后才会运行，它必须在 `await` 运算符确保 `sync` 完成后运行。
 
     ```js
     sheet.load('protection/protected');
-    return context.sync()
-        .then(
-            function() {
-                // TODO3: Move the queued toggle logic here.
-            }
-        )
-        // TODO4: Move the final call of `context.sync` here and ensure that it
-        //        does not run until the toggle logic has been queued.
-    ```
-
-1. 由于不能在同一取消分支代码路径中有两个 `return` 语句，因此请删除 `return context.sync();` 末尾的最后一行代码 `Excel.run`。 新的最后一行代码 `context.sync`将在后续步骤中添加。
-
-1. 剪切并粘贴 `toggleProtection` 函数中的 `if ... else` 结构，以替换 `TODO3`。
-
-1. 将 `TODO4` 替换为以下代码。注意：
-
-   - 将 `sync` 方法传递到 `then` 函数可确保它不会在 `sheet.protection.unprotect()` 或 `sheet.protection.protect()` 已排入队列前运行。
-
-   - 由于 `then` 方法调用传递给它的任何函数，并且也不想调用 `sync` 两次，因此请从 `context.sync` 末尾省略掉“()”。
-
-    ```js
-    .then(context.sync);
+    await context.sync();
     ```
 
    完成后，整个函数应如下所示：
 
     ```js
-    function toggleProtection(args) {
-        Excel.run(function (context) {
-          var sheet = context.workbook.worksheets.getActiveWorksheet();
-          sheet.load('protection/protected');
+    async function toggleProtection(args) {
+        await Excel.run(async (context) => {
+            const sheet = context.workbook.worksheets.getActiveWorksheet();
+            sheet.load('protection/protected');
 
-          return context.sync()
-              .then(
-                  function() {
-                    if (sheet.protection.protected) {
-                        sheet.protection.unprotect();
-                    } else {
-                        sheet.protection.protect();
-                    }
-                  }
-              )
-              .then(context.sync);
+            await context.sync();
+
+            if (sheet.protection.protected) {
+                sheet.protection.unprotect();
+            } else {
+                sheet.protection.protect();
+            }
+            
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -751,7 +728,7 @@ ms.locfileid: "62222178"
 
         要使用加载项，请在 Excel 网页版中打开文档，并按照[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)中的说明操作，以旁加载加载项。
 
-1. 在 Excel 的 **Home** 选项卡上，选择“**切换工作表保护**”按钮。 请注意，功能区上的大部分控件都处于禁用状态（灰显），如下面的屏幕截图所示。
+1. 在 Excel 的“**主页**”选项卡上，选择“**切换工作表保护**”按钮。请注意，功能区上的大多数控件都已禁用(且视觉上已灰显)，如以下屏幕截图所示。
 
     ![突出显示并启用“切换工作表保护”按钮的 Excel 功能区屏幕截图。 大多数其他按钮显示为灰色并已禁用。](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
@@ -828,17 +805,17 @@ ms.locfileid: "62222178"
     document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
-1. 将 `TODO2` 替换为以下代码。 `messageParent` 方法将它的参数传递到父页面（在此示例中，为任务窗格中的页面）。 参数必须是字符串，其中包括任何可以序列化为字符串的内容（例如 XML 或 JSON），或者任何可以转换为字符串的类型。
+1. 将 `TODO2` 替换为以下代码。`messageParent` 方法会将其参数传递到父页(本例中为任务窗格中的页面)。参数必须为字符串，其中包含任何可序列化为字符串的内容，例如 XML 或 JSON，或任何可强制转换为字符串的类型。
 
     ```js
     function sendStringToParentPage() {
-        var userName = document.getElementById("name-box").value;
+        const userName = document.getElementById("name-box").value;
         Office.context.ui.messageParent(userName);
     }
     ```
 
 > [!NOTE]
-> **popup.html** 文件及其加载的 **popup.js** 文件在完全独立于加载项任务窗格的浏览器进程中运行。 如果将 **popup.js** 转换为与 **app.js** 文件相同的 **bundle.js** 文件，加载项必须加载 **bundle.js** 文件的两个副本，这就违背了绑定目的。 所以此加载项根本不会转换 **popup.js**。
+> **popup.html** 文件及其加载的 **popup.js** 文件从加载项的任务窗格在完全独立的浏览器运行时流程中运行。如果 **popup.js** 转译为与 **app.js** 文件相同的 **bundle.js** 文件，则该加载项必须加载 **bundle.js** 文件的两个副本，而这会阻碍实现捆绑目的。因此，此加载项根本不会转译 **popup.js** 文件。
 
 ### <a name="update-webpack-config-settings"></a>更新 webpack 配置设置
 
@@ -918,7 +895,7 @@ ms.locfileid: "62222178"
     <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>
     ```
 
-1. 对话框会提示用户输入用户名，并将用户名传递到任务窗格。 任务窗格将在标签中显示用户名。 紧接着刚添加的 `button`，添加下列标记。
+1. 对话框将提示用户输入用户名，并将用户名传递到任务窗格。任务窗格将在标签中显示用户名。在刚刚添加的 `button` 之后，立即添加以下标记。
 
     ```html
     <label id="user-name"></label><br/><br/>
@@ -926,7 +903,7 @@ ms.locfileid: "62222178"
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `freeze-header` 按钮的行，并在行后添加虾类代码。 将在后续步骤中创建 `openDialog` 方法。
+1. 在 `Office.onReady` 方法调用中，定位分配单机处理程序至 `freeze-header` 按钮的行，并在行后添加以下代码。将在后续步骤中创建 `openDialog` 方法。
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;
@@ -935,10 +912,10 @@ ms.locfileid: "62222178"
 1. 添加下列声明至文件结尾。此变量用于保留父页面执行文本中的对象，以用作对话框页面执行文本的中间对象。
 
     ```js
-    var dialog = null;
+    let dialog = null;
     ```
 
-1. 添加下列函数至文件结尾（`dialog` 声明后）。 关于此代码，请务必注意它 *不* 包含的内容，即不含 `Excel.run` 调用。 这是因为用于打开对话框的 API 跨所有 Office 应用程序共享，所以它属于 Office JavaScript 通用 API，而非 Excel 专用 API。
+1. 在文件结尾（在 `dialog` 的声明之后）添加以下函数。关于这一代码的重要之处在于是 *不是*：没有 `Excel.run`的调用。这是因为打开对话框的 API 在全部 Office 应用程序间共享，所以它属于 Office JavaScript 通用 API，而不是 Excel 专用 API。
 
     ```js
     function openDialog() {
@@ -965,7 +942,7 @@ ms.locfileid: "62222178"
 
 ### <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>处理对话框发送的消息并关闭对话框
 
-1. 在 **./src/taskpane/taskpane.js** 文件的 `openDialog` 函数内，将 `TODO2` 替换为下列代码。 注意：
+1. 在 **./src/taskpane/taskpane.js** 文件的 `openDialog` 函数内，将 `TODO2` 替换为下列代码。注意：
 
    - 回调在对话框成功打开后和用户在对话框中执行任何操作前立即执行。
 
@@ -1001,7 +978,7 @@ ms.locfileid: "62222178"
 
 1. 对话框打开时，拖动它并调整其大小。请注意，可与工作表进行交互，然后按任务窗格中的其他按钮，但无法从同一任务窗格页面中启动第二个对话框。
 
-1. 在对话框中，输入名称并选择“**确定**”。 此时，用户名显示在任务窗格上，且对话框关闭。
+1. 在对话框中，输入名称并选择“**确定**”按钮。该名称会显示在任务窗格中，且对话框会关闭。
 
 1. （可选）注释掉 `processMessage` 函数中的代码行 `dialog.close();`。 然后，重复执行此部分的步骤。 这样一来，对话框便会继续处于打开状态，可供用户更改用户名。 按右上角的“X”按钮，可手动关闭对话框。
 

@@ -1,14 +1,14 @@
 ---
 title: 调试 Office 加载项
 description: 查找开发环境的 Office 加载项调试指南
-ms.date: 01/27/2022
+ms.date: 02/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 490d2d786bbd7e3169e7202dbbd70e81f9525e41
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 67afa308625c4f18775c3470c2bc2410af37905c
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263056"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340377"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>调试 Office 加载项概述
 
@@ -42,9 +42,9 @@ ms.locfileid: "62263056"
 
 下面提供了有关在 Windows 上进行调试的常规指南。 有关在 Excel 中调试无 UI 的自定义函数和 Outlook 中基于事件的加载项，有一些特殊说明。 请参阅本部分后面 [Windows 中的特殊事例](#special-cases-in-windows)。 在 Windows 上调试取决于 IDE：
 
-- **Visual Studio**：使用内部调试器进行调试。 请参阅 [在 Visual Studio 中调试 Office 加载项](../develop/debug-office-add-ins-in-visual-studio.md)。
+- **Visual Studio**：使用浏览器的 F12 工具进行调试。 请参阅 [在 Visual Studio 中调试 Office 加载项](../develop/debug-office-add-ins-in-visual-studio.md)。
 - **Visual Studio Code**：使用 [适用于 Visual Studio Code 的加载项调试器扩展](debug-with-vs-extension.md) 进行调试。
-- **任何其他 IDE**（或者你不想在 IDE 内部进行调试）：使用与加载项在开发计算机上使用的浏览器运行时关联的开发人员工具。 请查看下列内容之一：
+- **任何其他 IDE**（或者你不想在 IDE 内部进行调试）：使用与加载项在开发计算机上使用的浏览器运行时关联的开发人员工具。请参阅下列文档之一：
 
     - [使用适用于 Internet Explorer 的开发人员工具调试加载项](debug-add-ins-using-f12-tools-ie.md)
     - [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
@@ -74,7 +74,7 @@ ms.locfileid: "62263056"
 
 ## <a name="debug-on-linux"></a>在 Linux 上调试
 
-没有适用于 Linux 的 Office 桌面版本，因此需要 [将加载项旁加载到 Office 网页版](sideload-office-add-ins-for-testing.md) 才能对其进行测试和调试。 调试指南位于 [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md) 中。
+没有适用于 Linux 的 Office 桌面版本，因此需要 [将加载项旁加载到 Office 网页版](sideload-office-add-ins-for-testing.md)才能对其进行测试和调试。调试指南位于[在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)中。
 
 > [!NOTE]
 > 除可以确保所有加载项用户都将从 Linux 计算机通过 Office 网页版访问加载项的少数情况以外，我们不建议在 Linux 计算机上开发 Office 加载项。

@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Word 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Word 任务窗格加载项。
-ms.date: 01/13/2022
+ms.date: 02/23/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 55a54dd08d18204bfe4d821ba9403e3a3d9c09a1
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: b79ace7495d782cd245c26a5167add46eb668ab9
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222211"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340447"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>生成首个 Word 任务窗格加载项
 
@@ -88,7 +88,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 ### <a name="next-steps"></a>后续步骤
 
-恭喜！已成功创建 Word 任务窗格加载项！ 接下来，请详细了解 Word 加载项功能，并跟着 [Word 加载项教程](../tutorials/word-tutorial.md)一起操作，生成更复杂的加载项。
+恭喜！已成功创建 Word 任务窗格加载项！接下来，请详细了解 Word 加载项功能，并跟着 [Word 加载项教程](../tutorials/word-tutorial.md)一起操作，以生成更复杂的加载项。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -164,24 +164,23 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
             });
         });
 
-        function insertEmersonQuoteAtSelection() {
-            Word.run(function (context) {
+        async function insertEmersonQuoteAtSelection() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document.
-                var thisDocument = context.document;
+                const thisDocument = context.document;
 
                 // Queue a command to get the current selection.
                 // Create a proxy range object for the selection.
-                var range = thisDocument.getSelection();
+                const range = thisDocument.getSelection();
 
                 // Queue a command to replace the selected text.
                 range.insertText('"Hitch your wagon to a star."\n', Word.InsertLocation.replace);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Ralph Waldo Emerson.');
-                });
+                await context.sync();
+                console.log('Added a quote from Ralph Waldo Emerson.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -191,20 +190,19 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
             });
         }
 
-        function insertChekhovQuoteAtTheBeginning() {
-            Word.run(function (context) {
+        async function insertChekhovQuoteAtTheBeginning() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                var body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the start of the document body.
                 body.insertText('"Knowledge is of no value unless you put it into practice."\n', Word.InsertLocation.start);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Anton Chekhov.');
-                });
+                await context.sync();
+                console.log('Added a quote from Anton Chekhov.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -214,20 +212,19 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
             });
         }
 
-        function insertChineseProverbAtTheEnd() {
-            Word.run(function (context) {
+        async function insertChineseProverbAtTheEnd() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                var body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the end of the document body.
                 body.insertText('"To know the road ahead, ask those coming back."\n', Word.InsertLocation.end);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from a Chinese proverb.');
-                });
+                await context.sync();
+                console.log('Added a quote from a Chinese proverb.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -292,7 +289,7 @@ _适用于：Windows 版 Word 2016 或更高版本、iPad 版 Word 和 Mac 版 W
 
 ### <a name="try-it-out"></a>试用
 
-1. 使用 Visual Studio 的同时，按 **F5** 或选择“开始”按钮启动 Word，以测试新建的 Word 加载项，功能区中显示有“显示任务窗格”加载项按钮。加载项本地托管在 IIS 上。
+1. 使用 Visual Studio 的同时，按 **F5** 或选择“**调试**” > “**开始调试**”启动 Word，以测试新建的 Word 加载项，功能区中显示有“**显示任务窗格**”加载项按钮。加载项本地托管在 IIS 上。
 
 2. 在 Word 中，依次选择“开始”选项卡和功能区中的“显示任务窗格”按钮，以打开加载项任务窗格。 （如果使用的是 Office 的一次性购买版本，而不是 Microsoft 365 版本，那么自定义按钮不受支持。 相反，任务窗格将立即打开。）
 
