@@ -1,14 +1,14 @@
 ---
 title: 使用 Visual Studio Code 和 Microsoft Edge WebView2（基于 Chromium）在 Windows 上调试加载项
 description: 了解如何在 VS Code 中调试使用 Microsoft Edge WebView2（基于 Chromium）的 Office 加载项。
-ms.date: 02/01/2022
+ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 90e7bef4d3902f0282a739569a87b8ca57095f50
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 5e2a3622537702be48ac1653a336f6cf0f0d2485
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467700"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340153"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>使用 Visual Studio Code 和 Microsoft Edge WebView2（基于 Chromium）在 Windows 上调试加载项
 
@@ -68,8 +68,7 @@ ms.locfileid: "62467700"
 
    选择“**确定**”。
 
-   > [!NOTE]
-   > 如果选择“**取消**”，则当加载项的此实例正在运行时，将不会再次显示该对话框。 但如果重新启动加载项，则会再次看到该对话框。
+   [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
 
 1. 现在可以在你的项目代码中设置断点并进行调试。 若要在 Visual Studio Code 中设置断点，请将鼠标悬停在代码行旁边，然后选择显示的红色圆圈。
 
@@ -132,7 +131,7 @@ ms.locfileid: "62467700"
 1. 如果本地服务器未自动关闭，请关闭运行本地服务器的节点窗口。
 1. 如果 Office 关闭应用程序，请关闭该应用程序。
 1. 打开项目中的 `\.vscode\launch.json` 文件。 
-1. 在数组 `configurations` 中，有几个配置对象。 找到其名称具有模式 `$HOST$ Desktop (Edge Chromium)`，其中 $HOST$ 是加载项运行的 Office 应用程序，例如 `Outlook Desktop (Edge Chromium)` 或 `Word Desktop (Edge Chromium)`。 
+1. 在 `configurations` 数组中，有多个配置对象。找到其名称具有模式 `$HOST$ Desktop (Edge Chromium)` 的对象，其中 $HOST$ 是加载项运行的 Office 应用程序；例如，`Outlook Desktop (Edge Chromium)` 或 `Word Desktop (Edge Chromium)`。 
 1. 将 `"type"` 属性的值从 `"edge"` 更改为 `"pwa-msedge"`。
 1. 将 `"useWebView"` 属性的值从字符串 `"advanced"` 更改为布尔值 `true` （请注意， `true` 周围没有引号）。
 1. 保存文件。

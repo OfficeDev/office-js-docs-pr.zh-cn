@@ -4,12 +4,12 @@ description: 本教程将介绍如何生成 Word 加载项，用于插入（和�
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 7a83eb3d8ca35c8d29cf795db1906a7f9594e2e8
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 13378646671698dadc74cc2e1c4aada5bc2b0e6a
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222290"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340167"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -53,7 +53,7 @@ ms.locfileid: "62222290"
 
 1. 在代码编辑器中打开项目。
 
-1. 打开 ./src/taskpane/taskpane.html 文件。 此文件含有任务窗格的 HTML 标记。
+1. 打开文件 **./src/taskpane/taskpane.html**。此文件包含任务窗格的 HTML 标记。
 
 1. 找到 `<main>` 元素并删除在开始 `<main>` 标记后和关闭 `</main>` 标记前出现的所有行。
 
@@ -63,7 +63,7 @@ ms.locfileid: "62222290"
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
-1. 打开 **./src/taskpane/taskpane.js** 文件。 此文件包含用于加快任务窗格与 Office 客户端应用程序之间的交互的 Office JavaScript API 代码。
+1. 打开文件 **./src/taskpane/taskpane.js**。此文件包含可促进任务窗格和 Office 客户端应用程序之间交互的 Office JavaScript API 代码。
 
 1. 执行以下操作，删除对 `run` 按钮和 `run()` 函数的所有引用：
 
@@ -71,7 +71,7 @@ ms.locfileid: "62222290"
 
     - 查找并删除整个 `run()` 函数。
 
-1. 在 `Office.onReady` 方法调用中，找到行 `if (info.host === Office.HostType.Word) {` 并紧接着行添加下列代码。 注意：
+1. 在 `Office.onReady` 方法调用中，找到 `if (info.host === Office.HostType.Word) {` 一行，并紧贴该行后添加以下代码：
 
     - 此代码的第一部分用于确定用户的 Word 版本是否支持包含本教程所有阶段使用的全部 API 的 Word.js 版本。在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。这样一来，用户仍可以使用 Word 版本支持的加载项部分。
     - 此代码的第二部分为 `insert-paragraph` 按钮添加了事件处理程序。
@@ -86,7 +86,7 @@ ms.locfileid: "62222290"
     document.getElementById("insert-paragraph").onclick = insertParagraph;
     ```
 
-1. 将以下函数添加到文件结尾。 注意：
+1. 将以下函数添加到文件结尾。注意：
 
    - Word.js 业务逻辑会添加到传递给 `Word.run` 的函数中。 此逻辑不会立即执行， 而是添加到挂起命令队列中。
 
@@ -95,12 +95,12 @@ ms.locfileid: "62222290"
    - `Word.run` 后跟 `catch` 块。 这是应始终遵循的最佳做法。
 
     ```js
-    function insertParagraph() {
-        Word.run(function (context) {
+    async function insertParagraph() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a paragraph into the document.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -118,7 +118,7 @@ ms.locfileid: "62222290"
    - 第二个参数是应在正文中的什么位置插入段落。 如果父对象为正文，其他段落插入选项包括“End”和“Replace”。
 
     ```js
-    var docBody = context.document.body;
+    const docBody = context.document.body;
     docBody.insertParagraph("Office has several versions, including Office 2016, Microsoft 365 subscription, and Office on the web.",
                             "Start");
     ```
@@ -156,7 +156,7 @@ ms.locfileid: "62222290"
 
 1. 在段落中进行一些更改。
 
-1. 再次选择“插入段落”按钮。 观察新段落是否位于上一段落之上，因为 `insertParagraph` 方法要在文档正文的“开头”插入内容。
+1. 再次选择“**插入段落**”按钮。请注意，新段落出现在上一个段落的上方，因为 `insertParagraph` 方法将在文档正文的开头插入。
 
     ![显示加载项中“插入段落”按钮的屏幕截图。](../images/word-tutorial-insert-paragraph-2.png)
 
@@ -185,12 +185,12 @@ ms.locfileid: "62222290"
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function applyStyle() {
-        Word.run(function (context) {
+    async function applyStyle() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to style text.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -204,7 +204,7 @@ ms.locfileid: "62222290"
 1. 在 `applyStyle()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此代码向段落应用样式，但也可以向文本区域应用样式。
 
     ```js
-    var firstParagraph = context.document.body.paragraphs.getFirst();
+    const firstParagraph = context.document.body.paragraphs.getFirst();
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
     ```
 
@@ -229,12 +229,12 @@ ms.locfileid: "62222290"
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function applyCustomStyle() {
-        Word.run(function (context) {
+    async function applyCustomStyle() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to apply the custom style.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -248,7 +248,7 @@ ms.locfileid: "62222290"
 1. 在 `applyCustomStyle()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此代码应用的自定义样式尚不存在。 将在 [测试加载项](#test-the-add-in-1)步骤中创建 **MyCustomStyle** 样式。
 
     ```js
-    var lastParagraph = context.document.body.paragraphs.getLast();
+    const lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
     ```
 
@@ -275,12 +275,12 @@ ms.locfileid: "62222290"
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function changeFont() {
-        Word.run(function (context) {
+    async function changeFont() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to apply a different font.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -291,10 +291,10 @@ ms.locfileid: "62222290"
     }
     ```
 
-1. 在 `changeFont()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此代码使用链接到 `Paragraph.getNext` 方法的 `ParagraphCollection.getFirst` 方法，获取对第二个段落的引用。
+1. 在`changeFont()`函数中，将`TODO1`替换为以下代码。请注意，代码通过使用链接到`Paragraph.getNext`方法的`ParagraphCollection.getFirst`方法获取对第二个段落的引用。
 
     ```js
-    var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
+    const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     secondParagraph.font.set({
             name: "Courier New",
             bold: true,
@@ -347,8 +347,8 @@ ms.locfileid: "62222290"
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function insertTextIntoRange() {
-        Word.run(function (context) {
+    async function insertTextIntoRange() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert text into a selected range.
 
@@ -358,7 +358,7 @@ ms.locfileid: "62222290"
             // TODO3: Queue commands to repeat the text of the original
             //        range at the end of the document.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -382,8 +382,8 @@ ms.locfileid: "62222290"
    - 在本教程之前阶段步骤中，正文对象的 insert* 方法没有“Before”和“After”选项。 这是因为不能将内容置于文档正文外。
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText(" (C2R)", "End");
     ```
 
@@ -409,45 +409,33 @@ ms.locfileid: "62222290"
   
     ```js
     originalRange.load("text");
-    return context.sync()
-        .then(function() {
-            // TODO4: Move the doc.body.insertParagraph line here.
-        })
-        // TODO5: Move the final call of context.sync here and ensure
-        //        that it does not run until the insertParagraph has
-        //        been queued.
-    ```
+    await context.sync();
 
-1. 由于不能在同一取消分支代码路径中有两个 `return` 语句，因此请删除 `Word.run` 末尾的最后一行代码 `return context.sync();`。本教程稍后将添加最后一个新 `context.sync` 语句。
+    // TODO4: Move the doc.body.insertParagraph line here.
+
+    // TODO5: Move the final call of context.sync here and ensure
+    //        that it does not run until the insertParagraph has
+    //        been queued.
+    ```
 
 1. 剪切并粘贴 `doc.body.insertParagraph` 代码行，以替代 `TODO4`。
-
-1. 将 `TODO5` 替换为下面的代码。请注意以下几点：
-
-   - 将 `sync` 方法传递到 `then` 函数可确保它不会在 `insertParagraph` 逻辑已排入队列前运行。
-
-   - 由于 `then` 方法会调用传递给它的任何函数，而你不想调用 `sync` 两次，因此请从 context.sync 末尾省略掉“()”。
-
-    ```js
-    .then(context.sync);
-    ```
 
 完成后，整个函数应如下所示：
 
 ```js
-function insertTextIntoRange() {
-    Word.run(function (context) {
+async function insertTextIntoRange() {
+    await Word.run(async (context) => {
 
-        var doc = context.document;
-        var originalRange = doc.getSelection();
+        const doc = context.document;
+        const originalRange = doc.getSelection();
         originalRange.insertText(" (C2R)", "End");
 
         originalRange.load("text");
-        return context.sync()
-            .then(function() {
-                doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
-            })
-            .then(context.sync);
+        await context.sync();
+
+        doc.body.insertParagraph("Original range: " + originalRange.text, "End");
+
+        await context.sync();
     })
     .catch(function (error) {
         console.log("Error: " + error);
@@ -479,8 +467,8 @@ function insertTextIntoRange() {
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function insertTextBeforeRange() {
-        Word.run(function (context) {
+    async function insertTextBeforeRange() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a new range before the
             //        selected range.
@@ -507,8 +495,8 @@ function insertTextIntoRange() {
    - 第二个参数指定了应在区域中的什么位置插入其他文本。 若要详细了解位置选项，请参阅前面介绍的 `insertTextIntoRange` 函数。
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText("Office 2019, ", "Before");
     ```
 
@@ -516,14 +504,13 @@ function insertTextIntoRange() {
 
      ```js
     originalRange.load("text");
-    return context.sync()
-        .then(function() {
-            // TODO3: Queue commands to insert the original range as a
-            //        paragraph at the end of the document.
-        })
-        // TODO4: Make a final call of context.sync here and ensure
-        //        that it does not run until the insertParagraph has
-        //        been queued.
+    await context.sync();
+
+    // TODO3: Queue commands to insert the original range as a
+    //        paragraph at the end of the document.
+
+    // TODO4: Make a final call of context.sync here and ensure
+    //        that it runs after the insertParagraph has been queued.
     ```
 
 1. 将 `TODO3` 替换为下面的代码。 这一新段落将说明，新文本 ***不*** 属于原始选定区域。 原始区域中的文本仍与用户选择它时一样。
@@ -535,7 +522,7 @@ function insertTextIntoRange() {
 1. 将 `TODO4` 替换为下面的代码。
 
     ```js
-    .then(context.sync);
+    await context.sync();
     ```
 
 ### <a name="replace-the-text-of-a-range"></a>替换区域文本
@@ -559,12 +546,12 @@ function insertTextIntoRange() {
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function replaceText() {
-        Word.run(function (context) {
+    async function replaceText() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to replace the text.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -578,8 +565,8 @@ function insertTextIntoRange() {
 1. 在 `replaceText()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此方法用于将字符串“几个”替换为字符串“许多”。 它做了一个简化假设，即存在字符串，且用户已选择它。
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText("many", "Replace");
     ```
 
@@ -651,12 +638,12 @@ function insertTextIntoRange() {
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function insertImage() {
-        Word.run(function (context) {
+    async function insertImage() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert an image.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -694,12 +681,12 @@ function insertTextIntoRange() {
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function insertHTML() {
-        Word.run(function (context) {
+    async function insertHTML() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a string of HTML.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -717,7 +704,7 @@ function insertTextIntoRange() {
    - 第二行代码在段落末尾插入 HTML 字符串；具体而言是两个段落，一个设置使用 Verdana 字体格式，另一个采用 Word 文档的默认样式。 （如前面的 `insertImage` 方法一样，`context.document.body` 对象还包含 `insert*` 方法。）
 
     ```js
-    var blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
+    const blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
     blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</p><p>Another paragraph</p>', "End");
     ```
 
@@ -742,15 +729,15 @@ function insertTextIntoRange() {
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function insertTable() {
-        Word.run(function (context) {
+    async function insertTable() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to get a reference to the paragraph
             //        that will proceed the table.
 
             // TODO2: Queue commands to create a table and populate it with data.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -761,10 +748,10 @@ function insertTextIntoRange() {
     }
     ```
 
-1. 在 `insertTable()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此代码行先使用 `ParagraphCollection.getFirst` 方法获取对第一个段落的引用，再使用 `Paragraph.getNext` 方法获取对第二个段落的引用。
+1. 在 `insertTable()` 函数中，将 `TODO1` 替换为以下代码。请注意，此行使用 `ParagraphCollection.getFirst` 方法获取对第一个段落的引用，然后使用 `Paragraph.getNext` 方法获取对第二个段落的引用。
 
     ```js
-    var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
+    const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     ```
 
 1. 在 `insertTable()` 函数中，将 `TODO2` 替换为以下代码。注意：
@@ -778,7 +765,7 @@ function insertTextIntoRange() {
    - 虽然表格采用普通的默认样式，但 `insertTable` 方法返回的 `Table` 对象包含多个成员，其中部分成员用于设置表格样式。
 
     ```js
-    var tableData = [
+    const tableData = [
             ["Name", "ID", "Birth City"],
             ["Bob", "434", "Chicago"],
             ["Sue", "719", "Havana"],
@@ -834,12 +821,12 @@ function insertTextIntoRange() {
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function createContentControl() {
-        Word.run(function (context) {
+    async function createContentControl() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to create a content control.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -863,8 +850,8 @@ function insertTextIntoRange() {
    - `ContentControl.color` 属性指定标记颜色或边界框的边框。
 
     ```js
-    var serviceNameRange = context.document.getSelection();
-    var serviceNameContentControl = serviceNameRange.insertContentControl();
+    const serviceNameRange = context.document.getSelection();
+    const serviceNameContentControl = serviceNameRange.insertContentControl();
     serviceNameContentControl.title = "Service Name";
     serviceNameContentControl.tag = "serviceName";
     serviceNameContentControl.appearance = "Tags";
@@ -892,13 +879,13 @@ function insertTextIntoRange() {
 1. 将以下函数添加到文件结尾。
 
     ```js
-    function replaceContentInControl() {
-        Word.run(function (context) {
+    async function replaceContentInControl() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to replace the text in the Service Name
             //        content control.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -914,7 +901,7 @@ function insertTextIntoRange() {
     - `ContentControlCollection.getByTag` 方法将返回指定标记的所有内容控件的 `ContentControlCollection`。 我们使用 `getFirst` 来获取对所需控件的引用。
 
     ```js
-    var serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
+    const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
     ```
 
