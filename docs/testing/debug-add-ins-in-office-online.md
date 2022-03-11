@@ -1,53 +1,39 @@
 ---
 title: 在 Office 网页版中调试加载项
 description: 如何使用 Office 网页版来测试和调试加载项。
-ms.date: 12/02/2021
+ms.date: 03/06/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fddafa5b7c2fe7a24ab8befa1ead31a56f9c3ac
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 5a07185c064d65432c7a3afce1e9f32e99034c3e
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765904"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63435688"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>在 Office 网页版中调试加载项
 
-您可以在并非运行 Windows 或 Office 2013 或 Office 2016 桌面客户端的计算机上构建和调试外接程序，例如，如果您正在使用 Mac 进行开发。本文介绍如何使用 Office Online 测试和调试您的外接程序。 本文介绍了如何使用 Office 网页版来测试和调试加载项。 
+本文介绍如何使用Office web 版调试外接程序。使用此技术：
 
-## <a name="prerequisites"></a>先决条件
+- 在未运行 Windows 或 Office&mdash; 桌面客户端的计算机上调试外接程序，例如，如果你正在 Mac 或 Linux 上开发。
+- 如果无法或不希望在 IDE 中调试（如在 IDE 中调试，Visual Studio调试Visual Studio Code。
 
-首先，请执行以下操作：
+本文假定您具有需要调试的外接程序项目。 如果只想在 Web 上练习调试，请为特定 Office 应用程序使用快速入门之一创建一个新项目，例如 [Word 的](../quickstarts/word-quickstart.md)此快速入门。
 
-- 如果Microsoft 365帐户或没有对网站的访问权限，请获取一个SharePoint帐户。
-
-  > [!NOTE]
-  > 若要获取为期 90 天的免费可续订Microsoft 365开发人员订阅，请加入我们的 Microsoft 365[开发人员计划](https://developer.microsoft.com/office/dev-program)。 有关如何[Microsoft 365](/office/developer-program/office-365-developer-program)开发人员计划并配置订阅的分步说明，请参阅 Microsoft 365 开发人员计划文档。
-
-- 在 SharePoint Online 上设置应用程序目录。 应用程序目录是 SharePoint Online 中的专用网站集，Office外接程序的文档库。如果你有自己的网站SharePoint，可以设置应用程序目录文档库。 有关详细信息，请参阅在应用程序目录中发布任务窗格和内容[SharePoint。](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)
-
-
-## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>在 Excel 网页版或 Word 网页版中调试加载项
+## <a name="debug-your-add-in"></a>调试加载项
 
 若要使用 Office 网页版调试加载项，请执行以下操作：
 
-1. 将加载项部署到支持 SSL 的服务器上。
+1. 在 localhost 上运行项目，并旁加载它到Office web 版。 有关详细的旁加载说明，请参阅旁[加载Office Web 上的外接程序](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually)。
 
-    > [!NOTE]
-    > 建议使用 [Yeoman 生成器](https://github.com/OfficeDev/generator-office)创建和托管加载项。
+2. 打开浏览器的开发人员工具。 这通常通过按 F12 完成。 打开调试器工具并使用它来设置断点并监视变量。 有关使用浏览器工具的详细帮助，请参阅以下选项之一。  
 
-2. 在 [加载项清单文件](../develop/add-in-manifests.md)中，将 **SourceLocation** 元素值更新为包括绝对 URI，而不是相对 URI。例如：
+   - [Firefox](https://developer.mozilla.org/en-US/docs/Tools)
+   - [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)
+   - [使用 Microsoft Edge（基于 Chromium）中的开发人员工具调试加载项](debug-add-ins-using-devtools-edge-chromium.md)
+   - [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
 
-    ```xml
-    <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
-    ```
-
-3. 将清单上传到 SharePoint 上应用程序目录中的 Office 加载项文档库。
-
-4. 从Excel启动Word web 版启动器启动Microsoft 365，然后打开一个新文档。
-
-5. 在“插入”选项卡上选择“我的外接程序”或“Office 外接程序”以插入您的外接程序并在应用程序中进行测试。
-
-6. 使用浏览器的调试工具调试加载项。 它通常通过按 F12 打开。
+   > [!NOTE]
+   > Office web 版中打开Internet Explorer。
 
 ## <a name="potential-issues"></a>潜在问题
 
@@ -57,11 +43,9 @@ ms.locfileid: "61765904"
 
 - 浏览器可能会显示无效证书错误，你需要忽略此错误。 执行此操作的过程因浏览器而异，而且用于执行此操作的各种浏览器的 UI 会定期进行更改。 有关说明，可搜索浏览器的“帮助”或“联机搜索”。 （例如，搜索“Microsoft Edge 无效证书警告”。）大多数浏览器在“警告”页面上都有一个链接，可以通过此链接单击进入“加载项”页。 例如，Microsoft Edge 有一个链接“转到网页（不推荐）”。 但是每次加载项重新加载时，通常都必须通过此链接来完成。 如需更长久地忽略，请参阅建议的帮助。
 
-- 如果你在代码中设置了断点，Office 网页版可能会抛出错误，指明它无法保存。
+- 如果在代码中设置断点，Office web 版可能会抛出错误，指示无法保存。
 
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项开发最佳做法](../concepts/add-in-development-best-practices.md)
-- [AppSource 验证策略](/legal/marketplace/certification-policies)  
-- [创建有效的 AppSource 应用和加载项](/office/dev/store/create-effective-office-store-listings)  
 - [排查 Office 加载项中的用户错误](testing-and-troubleshooting.md)
