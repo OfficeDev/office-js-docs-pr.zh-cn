@@ -1,14 +1,14 @@
 ---
 title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
-ms.date: 02/11/2022
+ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 61ee45e606b8b8981550cab7439eb526ec641ac9
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 2a2f2521b47a304fb358a33068bcccb425fd1a64
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855560"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511347"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
@@ -23,7 +23,7 @@ ms.locfileid: "62855560"
 
 ## <a name="office-application-and-platform-support-only"></a>Office应用程序和平台仅支持
 
-本文中介绍的 API 仅可用于Excel平台和 PowerPoint web 版。
+本文中介绍的 API 仅在 Excel、PowerPoint 和 Word 中可用。
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>使用要求集测试平台支持
 
@@ -32,7 +32,7 @@ ms.locfileid: "62855560"
 启用/禁用 API 属于 [RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md) 要求集。
 
 > [!NOTE]
-> **RibbonApi 1.1** 要求集在清单中尚不受支持，因此您无法在清单的"要求"部分 **指定它**。 若要测试支持，代码应调用 `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 如果 *且仅在该* 调用返回 `true`时，你的代码可以调用启用/禁用 API。 如果 调用 返回 `isSetSupported` `false`，则所有自定义外接程序命令将一向启用。 您必须设计生产外接程序以及任何应用内说明，以考虑当 **RibbonApi 1.1** 要求集不受支持时它如何工作。 有关使用 有关详细信息和示例`isSetSupported`，请参阅指定Office[和 API](../develop/specify-office-hosts-and-api-requirements.md) 要求，尤其是运行时检查方法和[要求集支持](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。  (该部分[Office](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)哪些版本和平台可以托管该文章的外接程序不适用于功能区 1.1.) 
+> **RibbonApi 1.1** 要求集在清单中尚不受支持，因此您无法在清单的"要求"部分 **指定它**。 若要测试支持，代码应调用 `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 如果 *且仅在该* 调用返回 `true`时，你的代码可以调用启用/禁用 API。 如果 调用 返回 `isSetSupported` `false`，则所有自定义外接程序命令将一向启用。 您必须设计生产外接程序以及任何应用内说明，以考虑当 **RibbonApi 1.1** 要求集不受支持时它如何工作。 有关使用 有关详细信息和示例`isSetSupported`，请参阅指定 Office [应用程序和 API](../develop/specify-office-hosts-and-api-requirements.md) 要求，尤其是运行时[检查方法和要求集支持](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。  (指定哪些[Office](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)版本和平台可以托管该文章的外接程序一节不适用于功能区 1.1.) 
 
 ## <a name="shared-runtime-required"></a>需要共享运行时
 
@@ -116,7 +116,7 @@ const enableButton = async () => {
 }
 ```
 
-如果父`await`函数是异步的，可以调用 **requestUpdate ()**，但请注意，Office 应用程序控制更新功能区状态时。 **requestUpdate()** 方法会将更新请求加入队列中。 一旦将请求排入队列，方法将解析承诺对象，而不是功能区实际更新时。
+如果父`await`函数是异步的，您可以调用 **requestUpdate ()**，但请注意，Office 应用程序控制它更新功能区的状态。 **requestUpdate()** 方法会将更新请求加入队列中。 一旦将请求排入队列，方法将解析承诺对象，而不是功能区实际更新时。
 
 ## <a name="change-the-state-in-response-to-an-event"></a>更改状态以响应事件
 

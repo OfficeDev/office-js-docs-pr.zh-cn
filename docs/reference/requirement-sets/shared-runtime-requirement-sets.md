@@ -1,15 +1,15 @@
 ---
 title: 共享运行时要求集
-description: 指定支持 SharedRuntime Office的平台和应用程序。
-ms.date: 02/05/2022
+description: 指定支持 SharedRuntime Office应用程序的平台和对象。
+ms.date: 03/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f55f3e95ace9101f8545863cae0a05953522edb
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 462a1248acadb35d4a4040fe9b997ede46844e4e
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892529"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511282"
 ---
 # <a name="shared-runtime-requirement-sets"></a>共享运行时要求集
 
@@ -19,7 +19,7 @@ ms.locfileid: "62892529"
 
 下表列出了 SharedRuntime 1.1 要求集、支持该要求集的 Office 客户端应用程序，以及 Office 应用程序的版本或版本号。
 
-| 要求集 | Office 2021 或更高版本Windows<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅） | iPad 版 Office<br>（关联至 Microsoft 365 订阅） | Mac 版 Office<br> (两个订阅<br> 和一次购买 Office Mac 2019 及更高版本)   | Office 网页版 | Office Online Server |
+| 要求集 | Office 2021 年 1 月或Windows<br>（一次性购买） | Windows 版 Office<br>（关联至 Microsoft 365 订阅） | iPad 版 Office<br>（关联至 Microsoft 365 订阅） | Mac 版 Office<br> (两个订阅<br> 和一次购买 Office Mac 2019 及更高版本)   | Office 网页版 | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | SharedRuntime 1.1  | 内部版本 16.0.14326.20454 或更高版本 | 版本 2002 (内部版本 12527.20092) 或更高版本 | 不适用 | 16.35 或更高版本 | 2020 年 2 月 | 不适用 |
 
@@ -37,6 +37,8 @@ SharedRuntime 1.1 要求集针对 Excel web 版、Windows 和 Mac 发布。
 |Office 应用程序 |内部版本 |
 |-------------------|------|
 |Windows 版 PowerPoint |内部版本 16.0.13218.10000 或更高版本 |
+|Mac 版 PowerPoint |内部版本 16.46.207.0 或更高版本 |
+|PowerPoint 网页版 | 2022 年 2 月 |
 |Windows 版 Word |内部版本 16.0.13218.10000 或更高版本 |
 |Mac 版 Word |内部版本 16.46.207.0 或更高版本 |
 

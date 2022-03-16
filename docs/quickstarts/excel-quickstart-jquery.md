@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Excel 任务窗格
 ms.date: 02/25/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 1a4639aaa49ed06acb3f24bbd8cb132577670bae
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: bd503b9f51bb4c97bc8d0cfa144d448bb4ea649d
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63341021"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511392"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>生成 Excel 任务窗格加载项
 
@@ -116,6 +116,8 @@ ms.locfileid: "63341021"
     ```
 
 2. 打开 Web 应用项目根目录中的文件“Home.js”****。 此文件指定加载项脚本。 将整个内容替换为以下代码，并保存文件。
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     'use strict';

@@ -1,14 +1,14 @@
 ---
 title: 使用 Visual Studio Code 开发 Office 加载项
 description: 如何使用 Visual Studio Code 开发 Office 加载项。
-ms.date: 10/14/2020
+ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: cca8ad4e07e08553841f4cef5699ee0312d7ccde
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 6710884a9bc751e6a94607581223dabaea0bce3b
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148862"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63511292"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>使用 Visual Studio Code 开发 Office 加载项
 
@@ -25,16 +25,15 @@ ms.locfileid: "59148862"
 
 ## <a name="create-the-add-in-project-using-the-yeoman-generator"></a>使用 Yeoman 生成器创建加载项项目
 
-如果你正在将 VS Code 用作集成开发环境 (IDE)，则应使用[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)来创建 Office 加载项项目。Yeoman 生成器会创建一个 Node.js 项目，它可通过 VS Code 或任何其他编辑器进行管理。 
+如果你正在将 VS Code 用作集成开发环境 (IDE)，则应使用[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)来创建 Office 加载项项目。Yeoman 生成器会创建一个 Node.js 项目，它可通过 VS Code 或任何其他编辑器进行管理。
 
 要使用 Yeoman 生成器创建 Office 加载项，请按照 [5 分钟快速入门](../index.yml)中与你要创建的加载项类型相对应的说明进行操作。
 
 ## <a name="develop-the-add-in-using-vs-code"></a>使用 VS Code 开发加载项
 
-在 Yeoman 生成器完成加载项项目的创建后，请使用 VS Code 打开项目的根文件夹。 
+在 Yeoman 生成器完成加载项项目的创建后，请使用 VS Code 打开项目的根文件夹。
 
-> [!TIP]
-> 在 Windows 上，可通过命令行导航到项目的根目录，然后输入 `code .`在 VS Code 中打开该文件夹。 在 Mac 上，需要先[将 `code` 命令添加到路径中](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)，然后才可使用该命令在 VS Code 中打开项目文件夹。
+[!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
 
 Yeoman 生成器会创建一个功能受限的基本加载项。 你可通过在 VS Code 中编辑[清单](add-in-manifests.md)HTML、JavaScript/TypeScript 和 CSS 文件，自定义该加载项。 要简要了解 Yeoman 生成器创建的加载项项目中的项目结构和文件，请查看 [5 分钟快速入门](../index.yml)中与你创建的加载项类型相对应的 Yeoman 生成器指南。
 

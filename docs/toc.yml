@@ -115,6 +115,8 @@ items:
                 href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
               - name: ITP 和第三方 Cookie
                 href: develop/itp-and-third-party-cookies.md
+              - name: 解决同一来源策略限制
+                href: develop/addressing-same-origin-policy-limitations.md
           - name: 身份验证和授权
             items:
               - name: 概述
@@ -554,8 +556,6 @@ items:
                     href: reference/manifest/supportssharedfolders.md
                   - name: WebApplicationInfo
                     href: reference/manifest/webapplicationinfo.md
-          - name: 解决同一来源策略限制
-            href: develop/addressing-same-origin-policy-limitations.md
           - name: Office 加载项使用的浏览器
             href: concepts/browsers-used-by-office-web-add-ins.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'

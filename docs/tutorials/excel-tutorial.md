@@ -4,12 +4,12 @@ description: 构建一个 Excel 外接程序，用于创建、填充、筛选和
 ms.date: 02/26/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: ad7a0332d303b7f774c394340fba303fcb3e782e
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: f8d21b0003f24b1b216e0e6823d1962778e18223
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340874"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511303"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -30,6 +30,11 @@ ms.locfileid: "63340874"
 ## <a name="prerequisites"></a>先决条件
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+- 已连接到 Microsoft 365 订阅的 Office (包括 Office 网页版)。
+
+    > [!NOTE]
+    > 如果你还没有 Office，可以[加入 Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)以免费获得为期 90 天的可续订 Microsoft 365 订阅，以便在开发期间使用。
 
 ## <a name="create-your-add-in-project"></a>创建加载项项目
 
@@ -95,6 +100,8 @@ ms.locfileid: "63340874"
     - `context.sync` 方法将所有已排入队列的命令发送到 Excel 以供执行。
 
     - `Excel.run` 后跟 `catch` 块。 这是应始终遵循的最佳做法。
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     async function createTable() {

@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Project 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Project 任务窗格加载项。
-ms.date: 08/04/2021
+ms.date: 01/06/2022
 ms.prod: project
 ms.localizationpriority: high
-ms.openlocfilehash: cb291a76a97c6cf3c7d816c7c2019337132aecc8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9c80769d0116186c574b6e4fa86e89eadfadc410
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152334"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "63511371"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -98,8 +98,7 @@ Office.context.document.getSelectedTaskAsync(
 
 1. 启动本地 Web 服务器。
 
-    > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动。
 

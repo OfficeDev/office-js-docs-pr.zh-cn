@@ -1,13 +1,18 @@
 ---
 title: Outlook外接程序 API 预览要求集
 description: 当前处于预览阶段的功能和 API Outlook外接程序。
-ms.date: 11/01/2021
+ms.date: 03/15/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 714be93351ff67ad49cd07154f145f19949efa68
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511279"
 ---
-
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook外接程序 API 预览要求集
 
-Outlook JavaScript API 的 Office API 子集包括可用于加载项的对象、方法、属性和Outlook事件。
+Outlook JavaScript API 的 Office 加载项 API 子集包括可在加载项中Outlook的对象、方法、属性和事件。
 
 > [!IMPORTANT]
 > 本文档适用于 **预览**[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。 此要求集尚未完全实现，客户端不会准确报告对它的支持。 不应在外接程序清单中指定此要求集。
@@ -15,9 +20,9 @@ Outlook JavaScript API 的 Office API 子集包括可用于加载项的对象、
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> 通过在你的租户上配置Outlook 网页版版本，你可以预览 Microsoft 365[功能](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。 此页面中会针对适用的功能说明"配置预览访问"。
+> 你可能能够通过在 Outlook 网页版 租户上配置目标版本来预览 Microsoft 365 [功能](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)。 此页面中会针对适用的功能说明"配置预览访问"。
 >
-> 对于其他功能，您可能能够通过完成和提交此表单Outlook 网页版请求访问 Microsoft 365 预览[位](https://aka.ms/OWAPreview)。 这些功能中会指出"请求预览访问"。
+> 对于其他功能，您可能能够通过完成和提交此表单Outlook 网页版请求Microsoft 365预览 bits for [Microsoft 365。](https://aka.ms/OWAPreview) 这些功能中会指出"请求预览访问"。
 
 预览要求集包含要求集 [1.11 的所有功能](../requirement-set-1.11/outlook-requirement-set-1.11.md)。
 
@@ -27,7 +32,7 @@ Outlook JavaScript API 的 Office API 子集包括可用于加载项的对象、
 
 ### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>对受信息权限管理中心 IRM 保护的项目 (加载项) 
 
-现在可以在受 IRM 保护的项目上激活外接程序。 若要启用此功能，租户`OBJMODEL`管理员需要在租户中设置"允许以编程方式访问"自定义策略选项，以Office。 有关详细信息 [，请参阅使用](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 权限和说明。
+现在可以在受 IRM 保护的项目上激活外接程序。 若要启用此功能，`OBJMODEL`租户管理员需要在租户中设置"允许以编程方式访问"自定义策略选项，以启用Office。 有关详细信息 [，请参阅使用](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) 权限和说明。
 
 **适用于：** Outlook Windows版本 13229.10000 (连接到 Microsoft 365 订阅) 
 
@@ -101,6 +106,12 @@ Outlook JavaScript API 的 Office API 子集包括可用于加载项的对象、
 
 **适用于**：Outlook订阅Windows (订阅Microsoft 365上) 
 
+#### <a name="officeaddincommandseventcompletedoptionserrormessage"></a>[Office。AddinCommands.EventCompletedOptions.errorMessage](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-errormessage-member)
+
+添加了一个新属性，以在 handled 事件无法继续执行时向用户显示错误消息。 有关示例，请参阅 [智能警报演练](../../../outlook/smart-alerts-onmessagesend-walkthrough.md)。
+
+**适用于**：Outlook订阅Windows (订阅Microsoft 365上) 
+
 <br>
 
 ---
@@ -113,7 +124,7 @@ Outlook JavaScript API 的 Office API 子集包括可用于加载项的对象、
 
 新增了一个函数，当外接程序[由可操作邮件激活时](/outlook/actionable-messages/invoke-add-in-from-actionable-message)，返回传递的初始化数据。
 
-**适用于**：Outlook Windows (订阅Microsoft 365，) 新式Outlook 网页版 () 
+**适用于**：Outlook Windows (连接到 Microsoft 365 订阅) ，Outlook 网页版 (新式) 
 
 <br>
 

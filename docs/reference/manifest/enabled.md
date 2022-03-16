@@ -1,14 +1,14 @@
 ---
 title: 清单文件中 Enabled 元素
 description: 了解如何指定外接程序启动时禁用外接程序命令。
-ms.date: 02/04/2022
+ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a3d83a6d117c498cc4d54dfbe73ae6d800995cb6
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: fc635e91b005eb51c70e8517058fc03fa4f26c6c
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467848"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511261"
 ---
 # <a name="enabled-element"></a>Enabled 元素
 
@@ -26,7 +26,7 @@ ms.locfileid: "62467848"
 
 - [RibbonApi 1.0](../requirement-sets/ribbon-api-requirement-sets.md)
 
-此元素仅在 Excel中有效;`Name`即[，当 Host](host.md) 元素的 属性为"Workbook"时。
+此元素仅在 Excel、PowerPoint 和 Word `Name` 中有效;即，[当 Host](host.md) 元素的属性为"Workbook"、"Presentation"或"Document"时。
 
 还可以以编程方式启用和禁用父控件。 有关详细信息，请参阅[启用和禁用加载项命令](../../design/disable-add-in-commands.md)。
 
