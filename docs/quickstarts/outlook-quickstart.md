@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Outlook 加载项
 description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗格加载项。
-ms.date: 08/04/2021
+ms.date: 02/28/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 51ec95f49ef89f21aaf6a776115f8754c4a87c78
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 356373320919507b81c69cca323965c4d087c7d4
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152520"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63511393"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -25,16 +25,11 @@ ms.locfileid: "59152520"
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
-- [Node.js](https://nodejs.org/)（最新的 [LTS](https://nodejs.org/about/releases) 版本）
+[!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令。
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) 或首选代码编辑器
 
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > 即便先前已安装了 Yeoman 生成器，我们还是建议你通过 npm 将包更新为最新版本。
+- Windows 版 Outlook 2016 或更高版本（关联至 Microsoft 365 帐户）或 Outlook 网页版
 
 ### <a name="create-the-add-in-project"></a>创建加载项项目
 
@@ -71,7 +66,10 @@ ms.locfileid: "59152520"
 
 ### <a name="update-the-code"></a>更新代码
 
-1. 在代码编辑器中，打开文件 **./src/taskpane/taskpane.html** 并将整个 `<main>` 元素（位于 `<body>` 元素中）替换为以下标记。 此新标记将添加标签，其中 **./src/taskpane/taskpane.js** 中的脚本将写入数据。
+1. 在 VS Code 或首选代码编辑器中打开项目。
+   [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
+1. 打开文件 **./src/taskpane/taskpane.html** 并将整个 **\<main\>** 元素（在 **\<body\>** 元素中）替换为以下标记。 此新标记将添加标签，其中 **./src/taskpane/taskpane.js** 中的脚本将写入数据。
 
     ```html
     <main id="app-body" class="ms-welcome__main" style="display: none;">
@@ -83,7 +81,7 @@ ms.locfileid: "59152520"
     </main>
     ```
 
-1. 在代码编辑器中，打开文件 **./src/taskpane/taskpane.js** 并在 `run` 函数中添加以下代码。 此代码使用 Office JavaScript API 获取当前邮件的引用并将其 `subject` 属性值写入任务窗格。
+1. 在代码编辑器中，打开文件 **./src/taskpane/taskpane.js** 并在 **run** 函数中添加以下代码。 此代码使用 Office JavaScript API 获取当前邮件的引用并将其 **subject** 属性值写入任务窗格。
 
     ```js
     // Get a reference to the current message
@@ -95,16 +93,13 @@ ms.locfileid: "59152520"
 
 ### <a name="try-it-out"></a>试用
 
-> [!NOTE]
-> Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 你可能还必须以管理员身份运行命令提示符或终端才能进行更改。
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. 在项目的根目录中运行以下命令。 如果运行此命令，本地 Web 服务器将启动（如果尚未运行），并将旁加载加载项。
+1. 在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动，并且将[旁加载](../outlook/sideload-outlook-add-ins-for-testing.md)加载项。
 
     ```command&nbsp;line
     npm start
     ```
-
-1. 按照[旁加载 Outlook 加载项以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明操作，旁加载加载项。
 
 1. 在 Outlook 中，在[阅读窗格](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0)中查看邮件，或在其自己的窗口中打开邮件。
 
@@ -115,6 +110,10 @@ ms.locfileid: "59152520"
     > [!NOTE]
     > 如果在任务窗格中收到错误“我们无法从本地主机打开此加载项”，请按照[疑难解答文章中](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost)中所述步骤进行操作。
 
+1. 当系统提示“**Web 视图在加载时停止**”对话框时，请选择“**确定**”。
+
+    [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
+
 1. 滚动至任务窗格的底部并选择“**运行**”链接，将邮件主题写入任务窗格。
 
     ![显示突出显示“运行”链接的加载项任务窗格屏幕截图。](../images/quick-start-task-pane-2.png)
@@ -123,7 +122,7 @@ ms.locfileid: "59152520"
 
 ### <a name="next-steps"></a>后续步骤
 
-祝贺！已成功创建首个 Outlook 任务窗格加载项！ 接下来，将继续学习 [Outlook 加载项教程](../tutorials/outlook-tutorial.md)，详细了解 Outlook 加载项的功能，以及如何生成更复杂的加载项。
+祝贺！已成功创建首个 Outlook 任务窗格加载项！接下来，将继续学习 [Outlook 加载项教程](../tutorials/outlook-tutorial.md)，详细了解 Outlook 加载项的功能以及如何生成更复杂的加载项。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -147,7 +146,7 @@ ms.locfileid: "59152520"
 
 1. 命名此项目，再选择“确定”。
 
-1. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。 **MessageRead.html** 文件在 Visual Studio 中打开。
+1. Visual Studio 将创建一个解决方案，且它的两个项目显示在“**解决方案资源管理器**”中。**MessageRead.html** 文件将在 Visual Studio 中打开。
 
 ### <a name="explore-the-visual-studio-solution"></a>浏览 Visual Studio 解决方案
 
@@ -160,7 +159,7 @@ ms.locfileid: "59152520"
 
 ### <a name="update-the-code"></a>更新代码
 
-1. **MessageRead.html** 指定将在加载项的任务窗格中呈现的 HTML。 在 **MessageRead.html** 中，将 `<body>` 元素替换为以下标记，并保存文件。
+1. **MessageRead.html** 指定将在加载项的任务窗格中呈现的 HTML。 在 **MessageRead.html** 中，将 **\<body\>** 元素替换为以下标记，并保存文件。
  
     ```HTML
     <body class="ms-font-m ms-welcome">
@@ -196,7 +195,7 @@ ms.locfileid: "59152520"
     </body>
     ```
 
-1. 打开 Web 应用项目的根文件夹中的文件“MessageRead.js”。 此文件指定的是加载项脚本。 将整个内容替换为以下代码，并保存文件。
+1. 打开 Web 应用程序项目根目录中的文件 **MessageRead.js**。此文件指定加载项脚本。请将整个内容替换为以下代码，并保存文件。
 
     ```js
     'use strict';
@@ -221,7 +220,7 @@ ms.locfileid: "59152520"
     })();
     ```
 
-1. 打开 Web 应用项目的根文件夹中的文件“MessageRead.css”。 此文件指定的是加载项自定义样式。 将整个内容替换为以下代码，并保存文件。
+1. 打开 Web 应用程序项目根目录中的文件 **MessageRead.css**。此文件指定加载项自定义样式。请将整个内容替换为以下代码，并保存文件。
 
     ```CSS
     html,
@@ -245,11 +244,11 @@ ms.locfileid: "59152520"
 
 1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
 
-1. `ProviderName` 元素具有占位符值。 将其替换为你的姓名。
+1. **ProviderName** 元素具有占位符值。请将其替换为你的姓名。
 
-1. `DisplayName` 元素的 `DefaultValue` 属性具有占位符。 将其替换为 `My Office Add-in`。
+1. **DisplayName** 元素的 **DefaultValue** 属性具有占位符。 将其替换为 `My Office Add-in`。
 
-1. `Description` 元素的 `DefaultValue` 属性具有占位符。 将其替换为 `My First Outlook add-in`。
+1. **Description** 元素的 **DefaultValue** 属性具有占位符。 将其替换为 `My First Outlook add-in`。
 
 1. 保存文件。
 

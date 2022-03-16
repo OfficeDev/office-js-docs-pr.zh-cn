@@ -1,11 +1,16 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 01/06/2022
+ms.date: 02/23/2022
 ms.prod: outlook
 ms.localizationpriority: high
+ms.openlocfilehash: 987084c16f3e8f1af1809866ac248b4f1a4995b0
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63511380"
 ---
-
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
 本教程将教你如何生成一个可用于在邮件撰写模式下将内容插入到邮件正文中的 Outlook 外接程序。
@@ -22,16 +27,9 @@ ms.localizationpriority: high
 
 ## <a name="prerequisites"></a>先决条件
 
-- [Node.js](https://nodejs.org/)（最新的 [LTS](https://nodejs.org/about/releases) 版本）
+[!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令。
-
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > 即便先前已安装了 Yeoman 生成器，我们还是建议你通过 npm 将包更新为最新版本。
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) 或首选代码编辑器
 
 - Windows 版 Outlook 2016 或更高版本（关联至 Microsoft 365 帐户）或 Outlook 网页版
 
@@ -119,7 +117,7 @@ ms.localizationpriority: high
 
 1. 此加载项将使用以下库。
 
-    - 用于将 Markdown 转换成 HTML 的 [Showdown](https://github.com/showdownjs/showdown) 库
+    - 用于将 Markdown 转换成 HTML 的 [Showdown](https://github.com/showdownjs/showdown) 库。
     - 用于生成相关 URL 的 [URI.js](https://github.com/medialize/URI.js) 库。
     - 用于简化 DOM 交互的 [jquery](https://jquery.com/) 库。
 
@@ -129,6 +127,10 @@ ms.localizationpriority: high
     npm install showdown urijs jquery --save
     ```
 
+1. 在 VS Code 或首选代码编辑器中打开项目。
+
+    [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
 ### <a name="update-the-manifest"></a>更新清单
 
 加载项的清单控制其在 Outlook 中的显示方式。它定义加载项在加载项列表中的显示方式和功能区上显示的按钮，并设置加载项使用的 HTML 和 JavaScript 文件的 URL。
@@ -137,13 +139,13 @@ ms.localizationpriority: high
 
 请在 **manifest.xml** 文件中进行以下更新，以指定有关该加载项的一些基本信息。
 
-1. 找到 `ProviderName` 元素并将默认值替换为你的公司名称。
+1. 找到 **ProviderName** 元素并将默认值替换为公司名称。
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. 找到 `Description` 元素，将默认值替换为外接程序程序的说明，然后保存文件。
+1. 找到 **Description** 元素，将默认值替换为外接程序的说明，然后保存文件。
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -161,7 +163,13 @@ ms.localizationpriority: high
     npm start
     ```
 
-1. 在 Outlook 中，打开现有邮件，然后选择“**显示任务窗格**”按钮。 如果所有内容都已正确设置，则任务窗格将打开并呈现外接程序的欢迎页。
+1. 在 Outlook 中，打开现有邮件，然后选择“**显示任务窗格**”按钮。
+
+1. 当系统提示“**Web 视图在加载时停止**”对话框时，请选择“**确定**”。
+
+    [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
+
+    如果所有内容都已正确设置，则任务窗格将打开并呈现外接程序的欢迎页。
 
     ![“显示任务窗格”按钮和示例添加的对 Gist 执行 Git 处理任务窗格的屏幕截图。](../images/button-and-pane.png)
 
@@ -175,21 +183,21 @@ ms.localizationpriority: high
 
 ### <a name="remove-the-messagereadcommandsurface-extension-point"></a>删除 MessageReadCommandSurface 扩展点
 
-打开 **manifest.xml** 文件，并找到具有类型 `MessageReadCommandSurface` 的 `ExtensionPoint` 元素。 删除此 `ExtensionPoint` 元素（包括其结束标记）以从“读取邮件”窗口删除按钮。
+打开 **manifest.xml** 文件并找到类型为 **MessageReadCommandSurface** 的 **ExtensionPoint** 元素。 删除此 **ExtensionPoint** 元素（包括其结束标记）以从“读取邮件”窗口删除按钮。
 
 ### <a name="add-the-messagecomposecommandsurface-extension-point"></a>添加 MessageReadCommandSurface 扩展点
 
 在清单中查找显示为 `</DesktopFormFactor>` 的行。 紧靠此行前面，插入以下 XML 标记。 关于此标记，请注意以下几点。
 
-- 类型为 `xsi:type="MessageComposeCommandSurface"` 的 `ExtensionPoint` 指示你已将按钮定义为添加到“邮件撰写”窗口。
+- 类型为 `xsi:type="MessageComposeCommandSurface"` 的 **ExtensionPoint** 指示你已将按钮定义为添加到“撰写邮件”窗口。
 
-- 通过使用类型为 `id="TabDefault"` 的 `OfficeTab` 元素，表明想要将按钮添加到功能区上的默认选项卡。
+- 通过使用类型为 `id="TabDefault"` 的 **OfficeTab** 元素，表明想要将按钮添加到功能区上的默认选项卡。
 
-- `Group` 元素使用 `groupLabel` 资源设置的标签定义新按钮的分组。
+- **Group** 元素使用 **groupLabel** 资源设置的标签定义新按钮的分组。
 
-- 第一个 `Control` 元素包含类型为 `xsi:type="ShowTaskPane"` 的 `Action` 元素，因此此按钮将打开任务窗格。
+- 第一个 **Control** 元素包含类型为 `xsi:type="ShowTaskPane"` 的 **Action** 元素，因此此按钮将打开任务窗格。
 
-- 第二个 `Control` 元素包含类型为 `xsi:type="ExecuteFunction"` 的 `Action` 元素，因此此按钮将调用函数文件中包含的 JavaScript 函数。
+- 第二个 **Control** 元素包含类型为 `xsi:type="ExecuteFunction"` 的 **Action** 元素，因此此按钮将调用函数文件中包含的 JavaScript 函数。
 
 ```xml
 <!-- Message Compose -->
@@ -234,11 +242,11 @@ ms.localizationpriority: high
 
 ### <a name="update-resources-in-the-manifest"></a>更新清单中的资源
 
-前面的代码引用了需要在清单生效前定义的标签、工具提示和 URL。 你将在清单的 `Resources` 部分指定此信息。
+前面的代码引用了需要在清单生效前定义的标签、工具提示和 URL。 你将在清单的“**资源**”部分中指定此信息。
 
-1. 在清单文件中找到 `Resources` 元素并删除整个元素（包括其结束标记）。
+1. 在清单文件中找到 **Resources** 元素，并删除整个元素（包括其结束标记）。
 
-1. 在相同的位置，添加以下标记以替换你刚刚删除的 `Resources` 元素。
+1. 在相同的位置，添加以下标记以替换你刚刚删除的 **Resources** 元素。
 
     ```xml
     <Resources>
@@ -269,15 +277,15 @@ ms.localizationpriority: high
 
 ### <a name="reinstall-the-add-in"></a>重新安装外接程序
 
-由于你之前已通过文件安装了此外接程序，因此必需重新安装它才能使清单更改生效。
+必须重新安装外接程序，清单更改才能生效。
 
-1. 按照说明从 [侧面加载的外接程序](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in)中删除 **对 Gist 执行 Git 处理**。
+1. 如果 Web 服务器正在运行，请关闭节点命令窗口。
 
-1. 关闭“**我的外接程序**”窗口。
+1. 运行以下命令以启动本地 Web 服务器并自动旁加载外接程序。
 
-1. 自定义按钮应从功能区中立即消失。
-
-1. 按照 [旁加载 Outlook 外接程序以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)中的说明，使用更新的 **manifest.xml** 文件重新安装外接程序。
+    ```command&nbsp;line
+    npm start
+    ```
 
 重新安装外接程序后，可以通过在“邮件撰写”窗口中检查“**插入 gist**”和“**插入默认 gist**”命令来验证是否已成功安装。 请注意，即使你选择了其中任何一项，系统也不会执行任何操作，因为你尚未完成生成此外接程序的操作。
 
@@ -295,7 +303,7 @@ ms.localizationpriority: high
 
 ### <a name="collect-data-from-the-user"></a>从用户处收集数据
 
-我们先来为对话框本身创建 UI。 在 **./src** 文件夹中，创建名为 **settings** 的新子文件夹。 在 **./src/settings** 文件夹中，创建一个名为 **dialog.html** 的文件，并添加以下标记来定义一个非常基本的表单，其中包含 GitHub 用户名的文本输入和将通过 JavaScript 填充的 gist 的空列表。
+我们先来为对话框本身创建 UI。 在 **./src** 文件夹中，创建名为 **settings** 的新子文件夹。 在 **./src/settings** 文件夹中，创建名为 **dialog.html** 的文件，并添加以下标记以定义基本窗体，其中包含 GitHub 用户名的文本输入和通过 JavaScript 填充的 gist 的空列表。
 
 ```html
 <!DOCTYPE html>
@@ -360,7 +368,6 @@ ms.localizationpriority: high
       </div>
     </section>
   </main>
-  <script type="text/javascript" src="../../node_modules/core-js/client/core.js"></script>
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="../helpers/gist-api.js"></script>
   <script type="text/javascript" src="dialog.js"></script>
@@ -368,6 +375,8 @@ ms.localizationpriority: high
 
 </html>
 ```
+
+你可能已经注意到，HTML 文件引用了一个尚不存在的 JavaScript 文件 **gist-api.js**。 将在下面的“[从 GitHub 提取数据](#fetch-data-from-github)”部分中创建此文件。
 
 接下来，在 **./src/settings** 文件夹中创建一个名为 **dialog.css** 的文件，并添加以下代码以指定 **dialog.html** 使用的样式。
 
@@ -404,7 +413,7 @@ ul {
 }
 ```
 
-现在你已经定义了对话框 UI，可以编写使其实际执行某些操作的代码。 在 **./src/settings** 文件夹中创建一个名为 **dialog.js** 的文件，并添加以下代码。 请注意，此代码将使用 jQuery 注册事件，并使用 `messageParent` 函数将用户的选择发送回调用方。
+现在你已经定义了对话框 UI，可以编写使其实际执行某些操作的代码。 在 **./src/settings** 文件夹中创建一个名为 **dialog.js** 的文件，并添加以下代码。 请注意，此代码将使用 jQuery 注册事件，并使用 **messageParent** 函数将用户的选择发送回调用方。
 
 ```js
 (function(){
@@ -510,62 +519,70 @@ ul {
 
 #### <a name="update-webpack-config-settings"></a>更新 webpack 配置设置
 
-最后，打开项目根目录中的 **webpack.config.js** 文件，并完成以下步骤。
+最后，打开在项目的根目录中找到的 **webpack.config.js** 文件，并完成以下步骤。
 
 1. 在 `config` 对象内找到 `entry` 对象并为 `dialog` 添加新条目。
 
     ```js
-    dialog: "./src/settings/dialog.js"
+    dialog: "./src/settings/dialog.js",
     ```
 
     完成此操作之后，新的 `entry` 对象将与此类似：
 
     ```js
     entry: {
-      polyfill: "@babel/polyfill",
+      polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
       taskpane: "./src/taskpane/taskpane.js",
       commands: "./src/commands/commands.js",
-      dialog: "./src/settings/dialog.js"
+      dialog: "./src/settings/dialog.js",
     },
     ```
 
-1. 在 `config` 对象中找到 `plugins` 数组。 在 `new CopyWebpackPlugin` 对象的 `patterns` 数组中，添加一个新条目在`taskpane.css`条目后。
+1. 在 `config` 对象中找到 `plugins` 数组。 在 `new CopyWebpackPlugin` 对象的 `patterns` 数组中，为 **taskpane.css** 和 **dialog.css** 添加新条目。
 
     ```js
     {
+      from: "./src/taskpane/taskpane.css",
+      to: "taskpane.css",
+    },
+    {
+      from: "./src/settings/dialog.css",
       to: "dialog.css",
-      from: "./src/settings/dialog.css"
     },
     ```
 
     完成此操作之后，`new CopyWebpackPlugin` 对象将与此类似：
 
     ```js
-      new CopyWebpackPlugin({
-        patterns: [
-        {
-          to: "taskpane.css",
-          from: "./src/taskpane/taskpane.css"
-        },
-        {
-          to: "dialog.css",
-          from: "./src/settings/dialog.css"
-        },
-        {
-          to: "[name]." + buildType + ".[ext]",
-          from: "manifest*.xml",
-          transform(content) {
-            if (dev) {
-              return content;
-            } else {
-              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-            }
+    new CopyWebpackPlugin({
+      patterns: [
+      {
+        from: "./src/taskpane/taskpane.css",
+        to: "taskpane.css",
+      },
+      {
+        from: "./src/settings/dialog.css",
+        to: "dialog.css",
+      },
+      {
+        from: "assets/*",
+        to: "assets/[name][ext][query]",
+      },
+      {
+        from: "manifest*.xml",
+        to: "[name]." + buildType + "[ext]",
+        transform(content) {
+          if (dev) {
+            return content;
+          } else {
+            return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
           }
-        }
-      ]}),
+        },
+      },
+    ]}),
     ```
 
-1. 在 `config` 对象中找到 `plugins` 数组，并将这个新对象添加到该数组的末尾。
+1. 在 `config` 对象内的同一 `plugins` 数组中，将此新对象添加到数组的末尾。
 
     ```js
     new HtmlWebpackPlugin({
@@ -579,38 +596,42 @@ ul {
 
     ```js
     plugins: [
-      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
-        chunks: ["polyfill", "taskpane"]
+        chunks: ["polyfill", "taskpane"],
       }),
       new CopyWebpackPlugin({
         patterns: [
-        {
-          to: "taskpane.css",
-          from: "./src/taskpane/taskpane.css"
-        },
-        {
-          to: "dialog.css",
-          from: "./src/settings/dialog.css"
-        },
-        {
-          to: "[name]." + buildType + ".[ext]",
-          from: "manifest*.xml",
-          transform(content) {
-            if (dev) {
-              return content;
-            } else {
-              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-            }
-          }
-        }
-      ]}),
+          {
+            from: "./src/taskpane/taskpane.css",
+            to: "taskpane.css",
+          },
+          {
+            from: "./src/settings/dialog.css",
+            to: "dialog.css",
+          },
+          {
+            from: "assets/*",
+            to: "assets/[name][ext][query]",
+          },
+          {
+            from: "manifest*.xml",
+            to: "[name]." + buildType + "[ext]",
+            transform(content) {
+              if (dev) {
+                return content;
+              } else {
+                return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+              }
+            },
+          },
+        ],
+      }),
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
-        chunks: ["polyfill", "commands"]
+        chunks: ["polyfill", "commands"],
       }),
       new HtmlWebpackPlugin({
         filename: "dialog.html",
@@ -620,25 +641,11 @@ ul {
     ],
     ```
 
-1. 如果 Web 服务器正在运行，请关闭节点命令窗口。
-
-1. 运行以下命令以重建项目。
-
-    ```command&nbsp;line
-    npm run build
-    ```
-
-1. 运行以下命令以启动 Web 服务器并旁加载你的加载项。
-
-    ```command&nbsp;line
-    npm start
-    ```
-
 ### <a name="fetch-data-from-github"></a>从 GitHub 提取数据
 
-你刚刚创建的 **dialog.js** 文件指定外接程序应在 `change` 事件触发时为 GitHub 用户名字段加载 gist。 若要从 GitHub 检索用户的 gist，需使用 [GitHub Gists API](https://developer.github.com/v3/gists/)。
+你刚刚创建的 **dialog.js** 文件指定外接程序应在 **change** 事件触发时为 GitHub 用户名字段加载 gist。 若要从 GitHub 检索用户的 gist，需使用 [GitHub Gists API](https://developer.github.com/v3/gists/)。
 
-在 **./src** 文件夹中，创建名为 **helpers** 的新子文件夹。 在 **./src/helpers** 文件夹中，创建一个名为 **gist-api.js** 的文件，并添加以下代码以从 GitHub 检索用户的 gist，并生成 gist 列表。
+在 **./src** 文件夹中，创建一个名为 **helpers** 的新子文件夹。在 **./src/helpers** 文件夹中，创建一个名为 **gist-api.js** 的文件，并添加以下代码以从 Github 检索用户的 gist，并生成 gist 列表。
 
 ```js
 function getUserGists(user, callback) {
@@ -708,8 +715,11 @@ function buildFileList(files) {
 }
 ```
 
-> [!NOTE]
-> 你可能已经注意到，没有按钮可以调用设置对话框。 相反，当用户选择“**插入默认 gist**”按钮或“**插入 gist**”按钮时，外接程序将检查自身是否已完成配置。 如果尚未配置外接程序，则设置对话框将提示用户先进行配置，然后再继续。
+运行以下命令以重建项目。
+
+```command&nbsp;line
+npm run build
+```
 
 ## <a name="implement-a-ui-less-button"></a>实现无 UI 按钮
 
@@ -721,7 +731,7 @@ function buildFileList(files) {
 
 ### <a name="update-the-function-file-html"></a>更新函数文件 (HTML)
 
-无 UI 按钮调用的函数必须都在对应的外形规格清单的 `FunctionFile` 元素指定的文件中进行定义。 此外接程序的清单指定 `https://localhost:3000/commands.html` 作为函数文件。
+无 UI 按钮调用的函数必须都在对应的外形规格清单的 **FunctionFile** 元素指定的文件中进行定义。此外接程序的清单将 `https://localhost:3000/commands.html` 指定为函数文件。
 
 打开文件 **./src/commands/commands.html** 并使用以下标记替换全部内容。
 
@@ -736,11 +746,11 @@ function buildFileList(files) {
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../node_modules/showdown/dist/showdown.min.js"></script>
-    <script type="text/javascript" src="../node_modules/urijs/src/URI.min.js"></script>
-    <script type="text/javascript" src="../src/helpers/addin-config.js"></script>
-    <script type="text/javascript" src="../src/helpers/gist-api.js"></script>
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
+    <script type="text/javascript" src="../helpers/addin-config.js"></script>
+    <script type="text/javascript" src="../helpers/gist-api.js"></script>
 </head>
 
 <body>
@@ -751,9 +761,11 @@ function buildFileList(files) {
 </html>
 ```
 
+你可能已注意到，HTML 文件引用了尚不存在的 JavaScript 文件 **addin-config.js**。 将在本教程稍后的“[创建文件以管理配置设置](#create-a-file-to-manage-configuration-settings)”部分中创建此文件。
+
 ### <a name="update-the-function-file-javascript"></a>更新函数文件 (JavaScript)
 
-打开文件 **./src/commands/commands.js** 并使用以下代码替换全部内容。 请注意，如果 `insertDefaultGist` 函数确定外接程序尚未完成配置，则该函数会将 `?warn=1` 参数添加到对话框 URL。 执行此操作可使设置对话框呈现在.**./settings/dialog.html** 中定义的消息栏，告诉用户他们看到此对话框的原因。
+打开文件 **./src/commands/commands.js** 并使用以下代码替换全部内容。 请注意，如果 **insertDefaultGist** 函数确定外接程序尚未完成配置，则该函数会将 `?warn=1` 参数添加到对话框 URL。 执行此操作可使“设置”对话框呈现在 **./src/settings/dialog.html** 中定义的消息栏，告诉用户他们看到此对话框的原因。
 
 ```js
 var config;
@@ -810,7 +822,7 @@ function insertDefaultGist(event) {
     btnEvent = event;
     // Not configured yet, display settings dialog with
     // warn=1 to display warning.
-    var url = new URI('../src/settings/dialog.html?warn=1').absoluteTo(window.location).toString();
+    var url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
     var dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
@@ -852,7 +864,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### <a name="create-a-file-to-manage-configuration-settings"></a>创建文件以管理配置设置
 
-HTML 函数文件引用一个名为 **addin-config.js** 的文件，该文件尚不存在。 在 **./src/helpers** 文件夹中创建一个名为 **addin-config.js** 的文件，并添加以下代码。 此代码使用 [RoamingSettings 对象](/javascript/api/outlook/office.roamingsettings)来获取和设置配置值。
+HTML 函数文件引用一个名为 **addin-config.js** 的文件，该文件尚不存在。 在 **./src/helpers** 文件夹中，创建名为 **addin-config.js** 的文件，并添加以下代码。 此代码使用 [RoamingSettings 对象](/javascript/api/outlook/office.roamingsettings)来获取和设置配置值。
 
 ```js
 function getConfig() {
@@ -874,7 +886,7 @@ function setConfig(config, callback) {
 
 ### <a name="create-new-functions-to-process-gists"></a>创建新函数来处理 gist
 
-接下来，打开 **./src/helpers/gist-api.js** 文件并添加以下函数。 请注意以下事项：
+接下来，打开 **./src/helpers/gist-api.js** 文件并添加以下函数。请注意以下几点：
 
 - 如果 gist 包含 HTML，则外接程序将按原样将 HTML 插入到邮件正文中。
 
@@ -906,7 +918,7 @@ function buildBodyContent(gist, callback) {
         // We have a winner.
         switch (file.language) {
           case 'HTML':
-            // Insert as-is.
+            // Insert as is.
             callback(file.content);
             break;
           case 'Markdown':
@@ -930,7 +942,7 @@ function buildBodyContent(gist, callback) {
 }
 ```
 
-### <a name="test-the-button"></a>测试按钮
+### <a name="test-the-insert-default-gist-button"></a>测试“插入默认 gist”按钮
 
 请保存所有更改并从命令提示符运行 `npm start`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入默认 gist**”按钮。
 
@@ -940,11 +952,11 @@ function buildBodyContent(gist, callback) {
 
     ![配置外接程序的对话框提示屏幕截图。](../images/addin-prompt-configure.png)
 
-1. 在设置对话框中，输入你的 GitHub 用户名，然后选择“**选项卡**”或单击对话框中的其他位置以调用 `change` 事件，该事件应加载公用 gist 列表。 选择一个 gist 作为默认设置，然后选择“**完成**”。
+1. 在“设置”对话框中，输入你的 GitHub 用户名，然后按 **Tab** 或单击对话框中的其他位置以调用 **change** 事件，该事件应加载你的公用 gist 列表。请选择要作为默认值的 gist，然后选择“**完成**”。
 
     ![外接程序设置对话框的屏幕截图。](../images/addin-settings.png)
 
-1. 重新选择“**插入默认 gist**”按钮。 此时应看到插入到电子邮件正文中的 gist 的内容。
+1. 再次选择“**插入默认 gist**”按钮。此时应看到插入到电子邮件正文的 gist 内容。
 
    > [!NOTE]
    > Windows 版 Outlook：若要获取最新设置，可能需要关闭并重新打开“撰写邮件”窗口。
@@ -1006,11 +1018,11 @@ function buildBodyContent(gist, callback) {
       <i class="ms-Icon enlarge ms-Icon--Settings ms-fontColor-white"></i>
     </div>
   </footer>
-  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="../node_modules/showdown/dist/showdown.min.js"></script>
-  <script type="text/javascript" src="../node_modules/urijs/src/URI.min.js"></script>
-  <script type="text/javascript" src="../src/helpers/addin-config.js"></script>
-  <script type="text/javascript" src="../src/helpers/gist-api.js"></script>
+  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
+  <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
+  <script type="text/javascript" src="../helpers/addin-config.js"></script>
+  <script type="text/javascript" src="../helpers/gist-api.js"></script>
   <script type="text/javascript" src="taskpane.js"></script>
 </body>
 
@@ -1137,11 +1149,8 @@ ul {
       -webkit-flex: 1 0 0px;
               flex: 1 0 0px;
       padding: 20px; }
-      .ms-landing-page__footer--left:active, .ms-landing-page__footer--left:hover {
-        background: #005ca4;
-        cursor: pointer; }
       .ms-landing-page__footer--left:active {
-        background: #005ca4; }
+        cursor: default; }
       .ms-landing-page__footer--left--disabled {
         opacity: 0.6;
         pointer-events: none;
@@ -1230,7 +1239,7 @@ ul {
       // When the settings icon is selected, open the settings dialog.
       $('#settings-icon').on('click', function(){
         // Display settings dialog.
-        var url = new URI('../src/settings/dialog.html').absoluteTo(window.location).toString();
+        var url = new URI('dialog.html').absoluteTo(window.location).toString();
         if (config) {
           // If the add-in has already been configured, pass the existing values
           // to the dialog.
@@ -1291,7 +1300,7 @@ ul {
 })();
 ```
 
-### <a name="test-the-button"></a>测试按钮
+### <a name="test-the-insert-gist-button"></a>测试“插入 gist”按钮
 
 请保存所有更改并从命令提示符运行 `npm start`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入 gist**”按钮。
 

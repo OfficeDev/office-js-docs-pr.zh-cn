@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> 以下代码使用 ES6 JavaScript，它与[使用 Internet Explorer 11 浏览器引擎的旧版 Office](/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins) 不兼容。 有关如何在生产中支持这些平台的信息，请参阅[支持 Internet Explorer 11](/office/dev/add-ins/develop/support-ie-11)。 [加入 Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)，以免费获得为期 90 天的可续订 Microsoft 365 订阅以及最新的 Office 应用程序，以便在开发期间使用。
