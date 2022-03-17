@@ -4,12 +4,12 @@ description: 本教程将介绍如何生成 Word 加载项，用于插入（和�
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 13378646671698dadc74cc2e1c4aada5bc2b0e6a
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: ccea2575e62a433ae2d6d2fe541a33e90d53f031
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340167"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511254"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -29,6 +29,11 @@ ms.locfileid: "63340167"
 ## <a name="prerequisites"></a>先决条件
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+- 已连接到 Microsoft 365 订阅的 Office (包括 Office 网页版)。
+
+    > [!NOTE]
+    > 如果你还没有 Office，可以[加入 Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)以免费获得为期 90 天的可续订 Microsoft 365 订阅，以便在开发期间使用。
 
 ## <a name="create-your-add-in-project"></a>创建加载项项目
 
@@ -93,6 +98,8 @@ ms.locfileid: "63340167"
    - `context.sync` 方法将所有已排入队列的命令都发送到 Word 以供执行。
 
    - `Word.run` 后跟 `catch` 块。 这是应始终遵循的最佳做法。
+
+   [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     async function insertParagraph() {
@@ -201,7 +208,7 @@ ms.locfileid: "63340167"
     }
     ```
 
-1. 在 `applyStyle()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此代码向段落应用样式，但也可以向文本区域应用样式。
+1. 在 `applyStyle()` 函数中，将 `TODO1` 替换为以下代码。请注意，代码将样式应用于段落，但样式也可以应用于文本范围。
 
     ```js
     const firstParagraph = context.document.body.paragraphs.getFirst();
@@ -245,7 +252,7 @@ ms.locfileid: "63340167"
     }
     ```
 
-1. 在 `applyCustomStyle()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此代码应用的自定义样式尚不存在。 将在 [测试加载项](#test-the-add-in-1)步骤中创建 **MyCustomStyle** 样式。
+1. 在`applyCustomStyle()`函数中，用`TODO1`替换代码代码。请注意，代码应用了一个尚不存在的自定义样式。你将在 [测试外接程序](#test-the-add-in-1)步骤中创建名称为 **MyCustomStyle** 的样式。
 
     ```js
     const lastParagraph = context.document.body.paragraphs.getLast();
@@ -387,7 +394,7 @@ ms.locfileid: "63340167"
     originalRange.insertText(" (C2R)", "End");
     ```
 
-1. 在下一部分前，将跳过 `TODO2`。 在 `insertTextIntoRange()` 函数中，将 `TODO3` 替换为以下代码。 此代码类似于在本教程第一阶段中创建的代码，区别在于现在是要在文档末尾（而不是开头）插入新段落。 这一新段落将说明，新文本现属于原始区域。
+1. 我们将跳过 `TODO2`，直接到下一部分。在 `insertTextIntoRange()` 函数中，将 `TODO3` 替换为以下代码。此代码类似于在本教程的第一阶段中创建的代码，只是现在在文档末尾（而不是在开头）插入新段落。此新段落将演示新文本现在是原始范围的一部分。
 
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text, "End");
@@ -395,7 +402,7 @@ ms.locfileid: "63340167"
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>添加代码以将文档属性提取到任务窗格的脚本对象
 
-在本系列教程前面的所有函数中，都是将命令排入队列，以对 Office 文档执行写入操作。 每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。 不过，在上一步中添加的代码调用的是 `originalRange.text` 属性，这与之前编写的函数明显不同，因为 `originalRange` 对象只是任务窗格脚本中的代理对象。 由于它并不了解文档中区域的实际文本，因此它的 `text` 属性无法有实值。 有必要先从文档中提取区域的文本值，再用它设置 `originalRange.text` 的值。 只有这样才能调用 `originalRange.text`，而又不会导致异常抛出。 此获取过程分为三步：
+在本系列教程前面的所有函数中，都是将命令排入队列，以 *将* 写入 Office 文档。每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。不过，在上一步中添加的代码调用的是 `originalRange.text` 属性，这与之前编写的函数明显不同，因为 `originalRange` 对象只是任务窗格脚本中的代理对象。由于它并不了解文档中区域的实际文本，因此它的 `text` 属性无法有实际值。有必要先从文档中提取区域的文本值，再用它设置  `originalRange.text` 的值。 只有这样才能调用 `originalRange.text`，而又不会引发异常。 此提取过程分为三步：
 
    1. 将命令排入队列，以加载（即提取）代码需要读取的属性。
 
@@ -562,7 +569,7 @@ async function insertTextIntoRange() {
     }
     ```
 
-1. 在 `replaceText()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此方法用于将字符串“几个”替换为字符串“许多”。 它做了一个简化假设，即存在字符串，且用户已选择它。
+1. 在 `replaceText()` 函数中，将 `TODO1` 替换为以下代码。请注意，该方法旨在将字符串“several”替换为字符串“many”。它做了一个简化的假设，假设字符串存在并且用户已经选择了它。
 
     ```js
     const doc = context.document;
@@ -588,7 +595,7 @@ async function insertTextIntoRange() {
 
 1. 选择“**添加版本信息**” 按钮。观察是否已在“Office 2016”和“Microsoft 365”之间插入“Office 2019”。此外，还请观察，文档底部是否添加了仅包含最初选定文本的新段落，因为新字符串已变成新区域，而不是添加到原始区域中。
 
-1. 在文档中，选择“几个”一词。 *请注意，不要在选定区域的前后添加空格。*
+1. 在文档中，选择单词“several”。 *请注意不要在所选内容中包含前面或以下空格。*
 
 1. 选择 **“更改数量术语”** 按钮。观察选定文本是否替换为“多个”。
 
@@ -654,7 +661,7 @@ async function insertTextIntoRange() {
     }
     ```
 
-1. 在 `insertImage()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此代码行在文档末尾插入 Base64 编码图像。 （`Paragraph` 对象还包含 `insertInlinePictureFromBase64` 方法和其他 `insert*` 方法。 有关示例，请参阅下面的 insertHTML 部分。）
+1. 在 `insertImage()` 函数中，将 `TODO1` 替换为以下代码。请注意，此代码行在文档末尾插入 Base64 编码图像。（`Paragraph` 对象还包含 `insertInlinePictureFromBase64` 方法和其他 `insert*` 方法。有关示例，请参阅以下 insertHTML 部分。）
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, "End");
@@ -915,7 +922,7 @@ async function insertTextIntoRange() {
 
 1. 在任务窗格中，选择“**插入段落**”按钮，以确保文档顶部有包含“Microsoft 365”的段落。
 
-1. 在文档中，选择文本“Microsoft 365”，然后选择“**创建内容控件**”按钮。 观察此短语是否包装在标签为“服务名称”的标记中。
+1. 在文档中，选择文本“Microsoft 365”，然后选择 **创建内容控件** 按钮。观察此短语是否包装在标签为“服务名称”的标记中。
 
 1. 选择“重命名服务”按钮，并观察内容控件的文本是否变成“Fabrikam Online Productivity Suite”。
 
