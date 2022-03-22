@@ -3,12 +3,12 @@ title: 在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 description: 了解如何在 Office 中转换加载项Visual Studio TypeScript。
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 78a03c29662a981c51a93fcae0c61050a2007dda
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 02ff765533edbd8e3cdd4dba246afed78948c0d2
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855567"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711166"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>在 Visual Studio 中将 Office 加载项项目转换为使用 TypeScript
 
@@ -18,14 +18,14 @@ ms.locfileid: "62855567"
 > 本文介绍确保按  F5 时代码将转换为 JavaScript 所需的最少步骤，JavaScript 随后会自动旁加载至Office。 但是，代码不是非常"TypeScripty"。 例如，变量是使用 `var` 关键字声明的，而不是 `let` 使用指定类型声明的。 若要充分利用 TypeScript 的强键入，请考虑对代码进行进一步更改。
 
 > [!NOTE]
-> 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.yml)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)显示提示时选择 `TypeScript`。
+> 若不想使用 Visual Studio 创建 Office 加载项 TypeScript 项目，请按照任何 [5 分钟快速入门](../index.yml)的“Yeoman 生成器”部分中的说明操作，并在[适用于 Office 外接程序的 Yeoman 生成器](yeoman-generator-overview.md)显示提示时选择 `TypeScript`。
 
 ## <a name="prerequisites"></a>先决条件
 
 - [Visual Studio 2019 或更高版本](https://www.visualstudio.com/vs/)，Office **/SharePoint开发** 工作负载
 
     > [!TIP]
-    > 如果之前已安装 [Visual Studio，Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)确保安装了 Office **/SharePoint 开发** 工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio#modify-workloads)。
+    > 如果之前已安装 Visual Studio，请 [使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发** 工作负载。 如果尚未安装此工作负载，请使用 Visual Studio 安装程序进行[安装](/visualstudio/install/modify-visual-studio#modify-workloads)。
 
 - TypeScript SDK 版本 2.3 或更高版本。
 
@@ -56,7 +56,7 @@ ms.locfileid: "62855567"
 
 4. 从“**工具**”选项卡中，选择“**NuGet 程序包管理器**”，然后选择“**管理解决方案的 NuGet 程序包...**”。
 
-5. 选中" **浏览"** 选项卡后，输入 **jquery。TypeScript.DefinitelyTyped**。 安装此程序包，或更新（如果已安装）。 这将确保在项目中包括 jQuery TypeScript 定义。 jQuery 包显示在由 Visual Studio 生成的文件中，**packages.config。**
+5. 选中" **浏览"** 选项卡后，输入 **jquery。TypeScript.DefinitelyTyped**。 安装此程序包，或更新（如果已安装）。 这将确保在项目中包括 jQuery TypeScript 定义。 jQuery 包显示在由 Visual Studio 生成的文件中，称为 **packages.config**。
 
     > [!NOTE]
     > 在 TypeScript 项目中，可以混合使用 TypeScript 和 JavaScript 文件，项目都可以进行编译。这是因为 TypeScript 是键入的 JavaScript 超集，可以编译 JavaScript。

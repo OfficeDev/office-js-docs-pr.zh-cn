@@ -3,12 +3,12 @@ title: 验证 Office 加载项的清单
 description: 了解如何使用 XML 架构和其他工具Office加载项的清单。
 ms.date: 10/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9b7e868b55489c70a5abe067a262b0ea73fbae8
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 89335ffb670f6bb9a41f2d29f300123e1ea78397
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081419"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711257"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 
@@ -19,20 +19,20 @@ ms.locfileid: "61081419"
 
 ## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>使用适用于 Office 加载项的 Yeoman 生成器来验证清单
 
-如果你使用了[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)来创建加载项，则也可以使用它来验证项目的清单文件。 在项目的根目录中运行以下命令。
+如果你使用了[适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)来创建加载项，则也可以使用它来验证项目的清单文件。 在项目的根目录中运行以下命令。
 
 ```command&nbsp;line
 npm run validate
 ```
 
-![动态 GIF，显示 Yo Office验证程序在命令行运行并生成显示"验证通过"的结果。](../images/yo-office-validator.gif)
+![动态 GIF，显示 yo Office验证程序在命令行中运行并生成显示"验证通过"的结果。](../images/yo-office-validator.gif)
 
 > [!NOTE]
-> 若要访问此功能，必须使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)版本 1.1.17 或更高版本创建加载项项目。
+> 若要访问此功能，必须使用 Office 加载项版本 1.1.17 或更高版本的 [Yeoman](../develop/yeoman-generator-overview.md) 生成器创建加载项项目。
 
 ## <a name="validate-your-manifest-with-office-addin-manifest"></a>使用 office-addin-manifest 验证清单
 
-如果你未使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)来创建加载项，则可以使用 [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest)。
+如果你未使用[适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)来创建加载项，则可以使用 [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest)。
 
 1. 安装 [Node.js](https://nodejs.org/download/)。
 
@@ -49,7 +49,7 @@ npm run validate
     ```
 
     > [!NOTE]
-    > 如果此命令不可用或无法工作，请改为运行以下命令以强制使用最新版本的 office-addin-manifest 工具 (以清单文件名称替换 `MANIFEST_FILE`) 。
+    > 如果此命令不可用或无法工作，请改为运行以下命令以强制使用最新版本的 office-addin-manifest 工具 (`MANIFEST_FILE` 将 替换为清单文件) 。
     >
     > ```command&nbsp;line
     > npx office-addin-manifest validate MANIFEST_FILE
@@ -77,4 +77,4 @@ npm run validate
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
 - [使用适用于 Internet Explorer 的开发人员工具调试加载项](debug-add-ins-using-f12-tools-ie.md)
 - [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
-- [在基于 Web 的 Microsoft Edge (Chromium 中，使用开发人员工具) ](debug-add-ins-using-devtools-edge-chromium.md)
+- [使用 Microsoft Edge（基于 Chromium）中的开发人员工具调试加载项](debug-add-ins-using-devtools-edge-chromium.md)

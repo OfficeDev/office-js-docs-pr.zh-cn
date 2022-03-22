@@ -3,30 +3,30 @@ title: 设置开发环境
 description: 设置开发人员环境以构建Office加载项。
 ms.date: 10/26/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dbe2a994dd8da028ecd1ae4a31b2c7847a062b1
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: ad1fc265640b6fb5931ba2086cc61784e94365c1
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681172"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63710921"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
-本指南可帮助你设置工具，以便你Office快速入门或教程创建加载项。 你需要从以下列表中安装工具。 如果已安装这些组件，则已准备好开始快速入门[，Excel React快速入门。](../quickstarts/excel-quickstart-react.md)
+本指南可帮助你设置工具，以便你Office快速入门或教程创建加载项。 你需要从以下列表中安装工具。 如果已安装这些组件，则已准备好开始快速入门，[Excel React快速入门](../quickstarts/excel-quickstart-react.md)。
 
 - Node.js
 - npm
-- 包含Microsoft 365订阅版本的用户帐户Office
+- 包含 Microsoft 365 订阅版本的 Office
 - 你选择的代码编辑器
-- JavaScript linter Office
+- Office JavaScript linter
 
 本指南假定你了解如何使用命令行工具。
 
 ## <a name="install-nodejs"></a>安装 Node.js
 
-Node.js是一个 JavaScript 运行时，你需要开发新式Office外接程序。
+Node.js JavaScript 运行时，你需要开发新式Office外接程序。
 
-通过Node.js[下载建议的最新版本来安装客户端。](https://nodejs.org) 按照操作系统的安装说明操作。
+通过Node.js[下载建议的最新版本来安装新版。](https://nodejs.org) 按照操作系统的安装说明操作。
 
 ## <a name="install-npm"></a>安装 npm
 
@@ -48,7 +48,7 @@ npm -v
 
 ## <a name="get-microsoft-365"></a>获取Microsoft 365
 
-如果你还没有 Microsoft 365 帐户，可以通过加入 Microsoft 365 开发人员计划获取包含所有 Office 应用的免费、为期 90 天的可续订[Microsoft 365 订阅](https://developer.microsoft.com/office/dev-program)。
+如果你还没有 Microsoft 365 帐户，可以通过加入 Microsoft 365 开发人员计划获取包含所有 Office 应用的免费、90 [天的可续订 Microsoft 365](https://developer.microsoft.com/office/dev-program) 订阅。
 
 ## <a name="install-a-code-editor"></a>安装代码编辑器
 
@@ -58,24 +58,24 @@ npm -v
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
 
-## <a name="install-and-use-the-office-javascript-linter"></a>安装和使用 JavaScript Office JavaScript
+## <a name="install-and-use-the-office-javascript-linter"></a>安装和使用 Office JavaScript linter
 
-Microsoft 提供了 JavaScript linter，可帮助你在使用 JavaScript 库时捕获Office错误。 若要安装 linter，请运行以下两个 (在安装 Node.js和[](#install-nodejs)[npm](#install-npm)) 。
+Microsoft 提供了 JavaScript linter，可帮助你在使用 JavaScript 库时捕获Office错误。 若要安装 linter，请运行以下两个 (安装 Node.js[和 npm](#install-npm)) 。[ ](#install-nodejs)
 
 ```command&nbsp;line
 npm install office-addin-lint --save-dev
 npm install eslint-plugin-office-addins --save-dev
 ```
 
-如果使用 Yo Office 工具创建一个加载项Office，则其余设置操作将完成。 在编辑器的终端（如 Visual Studio Code）或命令提示符中，通过以下命令运行 linter。 linter 发现的问题出现在终端或提示中，并且当您使用支持 linter 消息的编辑器（如 Visual Studio Code）时，也直接显示在代码中。  (有关安装 Yo Office 工具的信息，请浏览我们的 Office 外接程序快速入门之一，例如 Excel[外接程序](../quickstarts/excel-quickstart-jquery.md)的这一个 。) 
+如果使用适用于 Office 工具的 [Yeoman](../develop/yeoman-generator-overview.md) 生成器创建一个 Office 加载项项目，则其余设置将完成。 在编辑器的终端（如 Visual Studio Code）或命令提示符中，通过以下命令运行 linter。 linter 发现的问题出现在终端或提示中，并且当您使用支持 linter 消息的编辑器（如 Visual Studio Code）时，也直接显示在代码中。  (有关安装 Yeoman 生成器的信息，请参阅适用于 [Office 加载项的 Yeoman](../develop/yeoman-generator-overview.md) ) 
 
 ```command&nbsp;line
 npm run lint
 ```
 
-如果加载项项目以另一种方式创建，请执行以下步骤。
+如果加载项项目以其他方式创建，请执行以下步骤。
 
-1. 在项目的根目录下，创建一个名为 **.eslintrc.json** 的文本文件（如果还没有）。 请确保其属性名为 和 `plugins` `extends` ，类型为 array。 `plugins`数组应包含 `"office-addins"` ， `extends` 数组应包含 `"plugin:office-addins/recommended"` 。 下面展示了一个非常简单的示例。 您的 **.eslintrc.json** 文件可能具有其他属性和两个数组的其他成员。
+1. 在项目的根目录下，创建一个名为 **.eslintrc.json** 的文本文件（如果还没有文本文件）。 请确保其属性名为 和 `plugins` `extends`，类型为 array。 数组 `plugins` 应包含 `"office-addins"` ，数组 `extends` 应包含 `"plugin:office-addins/recommended"`。 下面展示了一个非常简单的示例。 您的 **.eslintrc.json** 文件可能具有其他属性和两个数组的其他成员。
 
    ```json
    {
@@ -88,7 +88,7 @@ npm run lint
    }
    ```
 
-1. 在项目的根中，打开 **package.json** 文件，并确保 `scripts` 数组具有以下成员。
+1. 在项目的根中，打开 **package.json** 文件 `scripts` ，并确保数组具有以下成员。
 
    ```json
    "lint": "office-addin-lint check",
@@ -102,7 +102,7 @@ npm run lint
 
 ## <a name="next-steps"></a>后续步骤
 
-请尝试创建自己的外接程序或使用 Script Lab来尝试内置示例。
+尝试创建自己的外接程序或使用 Script Lab来尝试内置示例。
 
 ### <a name="create-an-office-add-in"></a>创建 Office 加载项
 

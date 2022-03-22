@@ -3,16 +3,16 @@ title: 从Office旁加载外接程序以进行测试
 description: 了解如何旁加载Office外接程序以从网络共享进行测试
 ms.date: 06/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c1034bbd7df011501338209e7b5a83ce976dd9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0427e279b1c969227b43a1983701e685782e5922
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152676"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711180"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>从Office旁加载外接程序以进行测试
 
-可以通过将Office发布到网络文件共享Windows在 Office 客户端中测试 (加载项，具体) 。 此部署选项用于完成对 localhost 的开发和测试，并且希望从非本地服务器或云帐户测试外接程序。
+可以在 Windows 上的 Office 客户端中测试 Office 外接程序，具体方法为将清单发布到网络文件共享 (以下) 。 此部署选项用于完成对 localhost 的开发和测试，并且希望从非本地服务器或云帐户测试外接程序。
 
 > [!IMPORTANT]
 > 生产加载项不支持通过网络共享进行部署。此方法具有以下限制。
@@ -21,9 +21,9 @@ ms.locfileid: "59152676"
 > - 如果加载项的新版本更改功能区，每个用户必须重新安装加载项。
 
 > [!NOTE]
-> 如果你的外接程序项目是使用[外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)的足够使用的版本，运行 `npm start` 时将自动在 Office 桌面客户端中旁加载外接程序。
+> 如果你的外接程序项目是使用[外接程序的 Yeoman 生成器](../develop/yeoman-generator-overview.md)的足够使用的版本，运行 `npm start` 时将自动在 Office 桌面客户端中旁加载外接程序。
 
-本文仅适用于测试 Word、Excel、PowerPoint 和 Project 加载项，仅适用于 Windows。 如果要在另一个平台上进行测试或想要测试Outlook加载项，请参阅以下主题之一以旁加载外接程序。
+本文仅适用于测试 Word、Excel、PowerPoint 和 Project 加载项，仅适用于 Windows。 如果你想要在另一个平台上进行测试，或者想要测试Outlook外接程序，请参阅以下主题之一以旁加载你的外接程序。
 
 - [在 Office 网页版中旁加载 Office 加载项进行测试](sideload-office-add-ins-for-testing.md)
 - [在 iPad 和 Mac 上旁加载 Office 外接程序进行测试](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -121,7 +121,7 @@ ms.locfileid: "59152676"
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
     > [!NOTE]
-    > 对于Visual Studio，请使用 文件夹中的项目所构建的 `{projectfolder}\bin\Debug\OfficeAppManifests` 清单。
+    > 对于Visual Studio，请使用 文件夹中的项目所构建的`{projectfolder}\bin\Debug\OfficeAppManifests`清单。
 
 1. 在 Excel、Word 或 PowerPoint 中，选择功能区上“**插入**”选项卡中的“**我的加载项**”。 在 Project 中，选择功能区“**Project**”选项卡上的“**我的加载项**”。
 
@@ -131,7 +131,7 @@ ms.locfileid: "59152676"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的外接程序
 
-可以通过清除计算机上以前旁加载的Office加载的外接程序。 有关在缓存上清除Windows的详细信息，请参阅清除缓存Office[中](clear-cache.md#clear-the-office-cache-on-windows)。
+可以通过清除您计算机上以前旁加载的Office加载的外接程序。 有关在缓存上清除Windows的详细信息，请参阅清除缓存Office[文章](clear-cache.md#clear-the-office-cache-on-windows)。
 
 ## <a name="see-also"></a>另请参阅
 

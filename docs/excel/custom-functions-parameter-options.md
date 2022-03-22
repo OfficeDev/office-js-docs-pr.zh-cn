@@ -3,8 +3,13 @@ ms.date: 03/08/2021
 description: 了解如何在自定义函数内使用不同的参数，如Excel范围、可选参数、调用上下文等。
 title: 自定义Excel选项
 ms.localizationpriority: medium
+ms.openlocfilehash: 2cc0c825932afe3a70d0f9ab6483327051c199fd
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711019"
 ---
-
 # <a name="custom-functions-parameter-options"></a>自定义函数参数选项
 
 自定义函数可配置许多不同的参数选项。
@@ -56,7 +61,7 @@ function add(first: number, second: number, third?: number): number {
 ---
 
 > [!NOTE]
-> 当未指定可选参数的值时，Excel为其分配值 `null`。 这意味着 TypeScript 中的默认初始化参数将不能正常工作。 请勿使用语法， `function add(first:number, second:number, third=0):number` 因为它不会初始化 `third` 为 0。 请改为使用 TypeScript 语法，如上一示例所示。
+> 如果未指定可选参数的值，Excel为它分配值 `null`。 这意味着 TypeScript 中的默认初始化参数将不能正常工作。 请勿使用语法， `function add(first:number, second:number, third=0):number` 因为它不会初始化 `third` 为 0。 请改为使用 TypeScript 语法，如上一示例所示。
 
 定义包含一个或多个可选参数的函数时，请指定可选参数为 null 时会发生什么情况。 在以下示例中，`zipCode` 和 `dayOfWeek` 都是 `getWeatherReport` 函数的可选参数。 如果参数 `zipCode` 为 null，则默认值设置为 `98052`。 如果参数 `dayOfWeek` 为 null，则设置为星期三。
 
@@ -192,7 +197,7 @@ function addSingleValue(singleValue) {
 
 ### <a name="single-range-parameter"></a>单个区域参数
 
-从技术上说，单个范围参数不是重复参数，但此处包含此参数，因为声明与重复参数非常相似。 对于用户，它显示为 ADD (A2：B3) 其中单个区域从 Excel。 以下示例演示如何声明单个 range 参数。
+从技术上说，单个范围参数不是重复参数，但此处包含此参数，因为声明与重复参数非常相似。 对于用户，它显示为 ADD (A2：B3) 其中从单个区域传递Excel。 以下示例演示如何声明单个 range 参数。
 
 ```JS
 /**
@@ -257,7 +262,7 @@ function getAddress(first, second, invocation) {
 在输入数据类型可能不同的情况下，这非常有用。 输入参数的地址可用于检查输入值的数量格式。 然后，如有必要，可以在输入之前调整数字格式。 输入参数的地址还可用于检测输入值是否具有与后续计算相关的任何相关属性。 
 
 >[!NOTE]
-> 如果你使用手动创建的 [JSON](custom-functions-json.md) 元数据来返回参数地址，而不是 Yo Office `options` `requiresParameterAddresses` `true`生成器，则对象必须将 属性设置为 ，`result` `dimensionality` `matrix`并且对象必须将 属性设置为 。
+> 如果你使用手动创建的 [JSON](custom-functions-json.md) 元数据来返回参数地址，而不是 Office `dimensionality` `options` `matrix``requiresParameterAddresses` `result` `true`加载项的 [Yeoman](../develop/yeoman-generator-overview.md) 生成器，则对象必须将 属性设置为 ，并且对象必须将 属性设置为 。
 
 以下自定义函数采用三个输入`parameterAddresses``Invocation`参数，检索每个参数的对象属性，然后返回地址。 
 

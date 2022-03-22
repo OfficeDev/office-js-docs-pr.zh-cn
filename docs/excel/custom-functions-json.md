@@ -3,12 +3,12 @@ title: 手动为自定义函数创建 JSON Excel
 description: 在函数中定义自定义函数的 JSON Excel并关联函数 ID 和名称属性。
 ms.date: 12/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cf87ef5ae2a41748cd256c73b1a971e7689bf2bf
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: dd0fec92ad286ea1ef0855c6a4a4f6cdd433c23f
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61647963"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711026"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>手动为自定义函数创建 JSON 元数据
 
@@ -16,7 +16,7 @@ ms.locfileid: "61647963"
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-我们建议尽可能使用 JSON 自动生成，而不是创建自己的 JSON 文件。 自动生成不易出现用户错误，并且基架文件 `yo office` 已包含此错误。 有关 JSDoc 标记和 JSON 自动生成过程的信息，请参阅自动生成 [自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
+我们建议尽可能使用 JSON 自动生成，而不是创建自己的 JSON 文件。 自动生成不易出现用户错误 `yo office` ，并且基架文件已包含此错误。 有关 JSDoc 标记和 JSON 自动生成过程的信息，请参阅自动生成 [自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
 
 但是，你可以从头开始创建自定义函数项目。 此过程需要您：
 
@@ -24,18 +24,18 @@ ms.locfileid: "61647963"
 - 检查清单文件是否连接到 JSON 文件。
 - 在脚本文件中 `id` 关联 `name` 函数和属性，以便注册函数。
 
-下图说明了使用基架文件和从头开始编写 `yo office` JSON 的区别。
+下图说明了使用基架文件和 `yo office` 从头开始编写 JSON 的区别。
 
-![使用 Yo Office编写自己的 JSON 的区别的图像。](../images/custom-functions-json.png)
+![使用适用于加载项的 Yeoman Office和编写自己的 JSON 之间的差异的图像。](../images/custom-functions-json.png)
 
 > [!NOTE]
-> 请记住，如果不使用生成器，请通过 XML 清单文件的 部分将清单连接到你创建的 JSON `<Resources>` `yo office` 文件。
+> 请记住，如果不将 [Yeoman](../develop/yeoman-generator-overview.md) 生成器用于加载项，请通过 XML 清单文件中的 部分将清单连接到Office JSON `<Resources>` 文件。
 
 ## <a name="authoring-metadata-and-connecting-to-the-manifest"></a>创作元数据并连接到清单
 
 在项目中创建 JSON 文件，并提供函数中函数的所有详细信息，例如函数的参数。 有关[函数属性的完整](#json-metadata-example)[列表，](#metadata-reference)请参阅以下元数据示例和元数据引用。
 
-确保 XML 清单文件引用 部分中的 JSON 文件， `<Resources>` 类似于以下示例。
+确保 XML 清单文件引用 部分中的 `<Resources>` JSON 文件，类似于以下示例。
 
 ```json
 <Resources>
@@ -136,27 +136,27 @@ ms.locfileid: "61647963"
 ```
 
 > [!NOTE]
-> [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json)中提供了完整的 JSON GitHub存储库的提交历史记录。 由于项目已调整为自动生成 JSON，因此手写 JSON 的完整示例仅在项目的早期版本中可用。
+> [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) 中提供了完整的 JSON GitHub存储库的提交历史记录。 由于项目已调整为自动生成 JSON，因此手写 JSON 的完整示例仅在项目的早期版本中可用。
 
 ## <a name="metadata-reference"></a>元数据参考
 
 ### <a name="allowcustomdatafordatatypeany-preview"></a>allowCustomDataForDataTypeAny (预览) 
 
 > [!NOTE]
-> `allowCustomDataForDataTypeAny`属性当前在公共预览版中可用，并且仅与 Office 上的Windows。 预览功能可能会发生变更，不适合在生产环境中使用。 我们建议你仅在测试和开发环境中试用它们。 不要在生产环境或业务关键型文档中使用预览功能。
+> 属性`allowCustomDataForDataTypeAny`当前在公共预览版中可用，并且仅与 Office 上的Windows。 预览功能可能会发生变更，不适合在生产环境中使用。 我们建议你仅在测试和开发环境中试用它们。 不要在生产环境或业务关键型文档中使用预览功能。
 >
 > 若要在 Windows 上的 Office 中试用此属性，必须拥有一个大于或等于 16.0.14623.20002 的 Excel 内部版本。 若要使用此功能，需要加入 [Office 预览体验计划](https://insider.office.com/)，然后选择 **Beta 版频道** 预览体验级别。 若要了解详细信息，请参阅[加入 Office 预览体验计划](https://insider.office.com/join/windows)。
 
-属性 `allowCustomDataForDataTypeAny` 是一个布尔数据类型。 将此值设置为 `true` 允许自定义函数接受数据类型作为参数并返回值。 若要了解更多信息，请参阅自定义 [函数和数据类型](custom-functions-data-types-concepts.md)。
+属性 `allowCustomDataForDataTypeAny` 是一个布尔数据类型。 将此值设置为 `true` 允许自定义函数接受数据类型作为参数并返回值。 若要了解更多信息，请参阅 [自定义函数和数据类型](custom-functions-data-types-concepts.md)。
 
-与其他大多数 JSON 元数据属性不同，它是顶级属性 `allowCustomDataForDataTypeAny` ，不包含子属性。 请参阅前面的 [JSON 元数据代码](#json-metadata-example) 示例，了解如何设置此属性的格式。
+与其他大多数 JSON 元数据属性不同 `allowCustomDataForDataTypeAny` ，它是顶级属性，不包含子属性。 请参阅前面的 [JSON 元数据代码](#json-metadata-example) 示例，了解如何设置此属性的格式。
 
 ### <a name="allowerrorfordatatypeany"></a>allowErrorForDataTypeAny
 
-属性 `allowErrorForDataTypeAny` 是一个布尔数据类型。 将值设置为 `true` 允许自定义函数将错误作为输入值处理。 类型为 或 的所有参数在设置为 时都可以接受错误 `any` `any[][]` 作为 `allowErrorForDataTypeAny` 输入值 `true` 。 默认值 `allowErrorForDataTypeAny` 为 `false` 。
+属性 `allowErrorForDataTypeAny` 是一个布尔数据类型。 将值设置为 `true` 允许自定义函数将错误作为输入值处理。 类型为 或 的所有参数在`any``any[][]`设置为 时都可以接受错误作为`allowErrorForDataTypeAny`输入值`true`。 `allowErrorForDataTypeAny`默认值为 `false`。
 
 > [!NOTE]
-> 与其他 JSON 元数据属性不同， `allowErrorForDataTypeAny` 是顶级属性，不包含子属性。 请参阅前面的 [JSON 元数据代码](#json-metadata-example) 示例，了解如何设置此属性的格式。
+> 与其他 JSON 元数据属性不同 `allowErrorForDataTypeAny` ，是顶级属性，不包含子属性。 请参阅前面的 [JSON 元数据代码](#json-metadata-example) 示例，了解如何设置此属性的格式。
 
 ### <a name="functions"></a>functions
 
@@ -179,10 +179,10 @@ ms.locfileid: "61647963"
 | 属性          | 数据类型 | 必需                               | 说明 |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
 | `cancelable`      | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `CancelableInvocation` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 可取消函数通常仅用于返回单个结果并需要处理数据请求取消的异步函数。 函数不能同时使用 和 `stream` `cancelable` 属性。 |
-| `requiresAddress` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true` 为 ，则自定义函数可以访问调用它的单元格的地址。 `address`调用参数的[属性](custom-functions-parameter-options.md#invocation-parameter)包含调用自定义函数的单元格的地址。 函数不能同时使用 和 `stream` `requiresAddress` 属性。 |
-| `requiresParameterAddresses` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true` 为 ，则自定义函数可以访问函数的输入参数的地址。 此属性必须与结果对象的 属性结合使用， `dimensionality` 并且[](#result) `dimensionality` 必须设置为 `matrix` 。 有关详细信息 [，请参阅检测参数](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 的地址。 |
-| `stream`          | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 相反，结果值将作为 `StreamingInvocation.setResult` 回调方法的参数传递。 有关详细信息，请参阅 Make [a streaming function](custom-functions-web-reqs.md#make-a-streaming-function)。 |
-| `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果为 ，则函数每次重新计算Excel重新计算，而不是仅在公式的从属值发生更改 `true` 时重新计算。 函数不能同时使用 和 `stream` `volatile` 属性。 如果 `stream` 和 `volatile` 属性都设置为 `true` ，则可变属性将被忽略。 |
+| `requiresAddress` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true`为 ，则自定义函数可以访问调用它的单元格的地址。 调用 `address` 参数 [的 属性](custom-functions-parameter-options.md#invocation-parameter) 包含调用自定义函数的单元格的地址。 函数不能同时使用 和 `stream` `requiresAddress` 属性。 |
+| `requiresParameterAddresses` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true`为 ，则自定义函数可以访问函数的输入参数的地址。 此属性必须与结果`dimensionality`对象的 属性结合使用，并且[](#result)`dimensionality`必须设置为 。`matrix` 有关详细信息 [，请参阅检测参数](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 的地址。 |
+| `stream`          | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 相反，结果值将作为 `StreamingInvocation.setResult` 回调方法的参数传递。 有关详细信息，请参阅 [创建流式处理函数](custom-functions-web-reqs.md#make-a-streaming-function)。 |
+| `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果`true`为 ，则函数每次Excel重新计算，而不是仅在公式的从属值发生更改时重新计算。 函数不能同时使用 和 `stream` `volatile` 属性。 如果 和 `stream` `volatile` 属性都设置为 `true`，则可变属性将被忽略。 |
 
 ### <a name="parameters"></a>参数
 
@@ -191,11 +191,11 @@ ms.locfileid: "61647963"
 |  属性  |  数据类型  |  必需  |  说明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  否 |  参数的说明。 这将显示在Excel中IntelliSense。  |
-|  `dimensionality`  |  string  |  否  |  必须是 (`scalar` 一个非数组值) 或 (`matrix` 二维数组) 。  |
+|  `dimensionality`  |  string  |  否  |  必须是 (`scalar` 一个非数组 `matrix` 值) 或 (二维数组) 。  |
 |  `name`  |  string  |  是  |  参数的名称。 此名称显示在Excel中IntelliSense。  |
-|  `type`  |  string  |  否  |  参数的数据类型。 可以是 `boolean` 、 、 或 ，它允许您使用前三种类型 `number` `string` `any` 中的任意一种。 如果未指定此属性，则数据类型默认值 `any` 。 |
+|  `type`  |  string  |  否  |  参数的数据类型。 可以是 、 `boolean``number`、 `string`或 `any`，它允许您使用前三种类型中的任意一种。 如果未指定此属性，则数据类型默认值为 `any`。 |
 |  `optional`  | boolean | 否 | 如果为 `true`，则参数是可选的。 |
-|`repeating`| boolean | 否 | 如果 `true` 为 ，参数从指定数组填充。 请注意，根据定义，函数的所有重复参数都被视为可选参数。  |
+|`repeating`| boolean | 否 | 如果 `true`为 ，参数从指定数组填充。 请注意，根据定义，函数的所有重复参数都被视为可选参数。  |
 
 ### <a name="result"></a>结果
 
@@ -203,12 +203,12 @@ ms.locfileid: "61647963"
 
 | 属性         | 数据类型 | 必需 | 说明                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
-| `dimensionality` | string    | 否       | 必须是 (`scalar` 一个非数组值) 或 (`matrix` 二维数组) 。 |
-| `type` | string    | 否       | 结果数据类型。 可以是 `boolean` `number` 、、或 (，这允许你使用前 `string` `any` 三种类型中的任意) 。 如果未指定此属性，则数据类型默认值 `any` 。 |
+| `dimensionality` | string    | 否       | 必须是 (`scalar` 一个非数组 `matrix` 值) 或 (二维数组) 。 |
+| `type` | string    | 否       | 结果数据类型。 可以是 、`boolean``number`、`string`或 (`any` ，这允许你使用前三种类型中的任意) 。 如果未指定此属性，则数据类型默认值为 `any`。 |
 
 ## <a name="associating-function-names-with-json-metadata"></a>将函数名称与 JSON 元数据相关联
 
-若要使函数正常工作，需要将函数的 属性 `id` 与 JavaScript 实现关联。 请确保存在关联，否则函数将不会注册，并且不可在 Excel。 下面的代码示例演示如何使用 方法进行 `CustomFunctions.associate()` 关联。 该示例定义了自定义函数 `add`，并将其与 JSON 元数据文件中的对象关联，其中 `id` 属性的值为 **ADD**。
+若要使函数正常工作，需要 `id` 将函数的 属性与 JavaScript 实现关联。 请确保存在关联，否则函数将不会注册，并且不能用于Excel。 下面的代码示例演示如何使用 方法进行 `CustomFunctions.associate()` 关联。 该示例定义了自定义函数 `add`，并将其与 JSON 元数据文件中的对象关联，其中 `id` 属性的值为 **ADD**。
 
 ```js
 /**
@@ -264,7 +264,7 @@ CustomFunctions.associate("ADD", add);
 
 - 在 JavaScript 文件中，在每个函数后使用 指定 `CustomFunctions.associate` 自定义函数关联。
 
-以下示例显示对应于前面 JavaScript 代码示例中定义的函数的 JSON 元数据。 `id`和 `name` 属性值为大写，这是描述自定义函数时的最佳操作。 只有在手动准备自己的 JSON 文件而不是使用自动生成时，才需要添加此 JSON。 有关自动生成的信息，请参阅自动生成 [自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
+以下示例显示对应于前面 JavaScript 代码示例中定义的函数的 JSON 元数据。 和 `id` `name` 属性值为大写，这是描述自定义函数时的最佳操作。 只有在手动准备自己的 JSON 文件而不是使用自动生成时，才需要添加此 JSON。 有关自动生成的信息，请参阅自动生成 [自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
 
 ```json
 {
@@ -286,7 +286,7 @@ CustomFunctions.associate("ADD", add);
 
 ## <a name="next-steps"></a>后续步骤
 
-了解[命名函数的](custom-functions-naming.md)最佳实践，或了解如何使用前面描述的手写[](custom-functions-localize.md)JSON 方法本地化函数。
+了解[命名函数的](custom-functions-naming.md)最佳实践，或了解如何使用前面描述的手写 JSON 方法本地化函数。[](custom-functions-localize.md)
 
 ## <a name="see-also"></a>另请参阅
 

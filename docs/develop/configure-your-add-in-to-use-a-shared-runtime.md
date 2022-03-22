@@ -4,12 +4,12 @@ title: 将 Office 加载项配置为使用共享 JavaScript 运行时
 ms.prod: non-product-specific
 description: 将 Office 加载项配置为使用共享 JavaScript 运行时，以支持其他功能区、任务窗格和自定义函数功能。
 ms.localizationpriority: high
-ms.openlocfilehash: f11c2060d48dc30f2403fd16f1d7d10481107f75
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 6d3eeef198ca7b5b99a9a459a3094e5c6a3d6707
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081426"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711173"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>将 Office 加载项配置为使用共享 JavaScript 运行时
 
@@ -19,7 +19,7 @@ ms.locfileid: "61081426"
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
-如果要启动新项目，请按照以下步骤使用[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)创建 Excel 或 PowerPoint 加载项项目。
+如果要启动新项目，请按照以下步骤使用[适用于 Office 加载项的 Yeoman 生成器](yeoman-generator-overview.md)创建 Excel 或 PowerPoint 加载项项目。
 
 执行下列操作之一：
 
@@ -36,7 +36,7 @@ ms.locfileid: "61081426"
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-对于新项目或现有项目，请按照以下步骤将其配置为使用共享运行时。 以下步骤能确保你使用[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)生成你的项目。
+对于新项目或现有项目，请按照以下步骤将其配置为使用共享运行时。 以下步骤能确保你使用[适用于 Office 加载项的 Yeoman 生成器](yeoman-generator-overview.md)生成你的项目。
 
 1. 启动 Visual Studio Code 并打开你生成的 Excel 或 PowerPoint 加载项项目。
 1. 打开 **manifest.xml** 文件。

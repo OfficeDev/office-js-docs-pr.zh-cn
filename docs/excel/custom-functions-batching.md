@@ -3,12 +3,12 @@ ms.date: 07/08/2021
 description: 将自定义函数集体进行批处理，以减少对远程服务的网络调用。
 title: 对远程服务的自定义函数调用进行批处理
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf1a1df922a08f63af80498da2e357d285775e9
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: df076c1b148ce604c0b52fe5fbb76fe5f8e3deb5
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074229"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711145"
 ---
 # <a name="batch-custom-function-calls-for-a-remote-service"></a>批处理远程服务的自定义函数调用
 
@@ -20,9 +20,9 @@ ms.locfileid: "62074229"
 
 ## <a name="view-the-completed-sample"></a>查看已完成的示例
 
-你可以按照本文操作，将代码示例粘贴到自己的项目中。 例如，可以使用 [Yo Office 生成器](https://github.com/OfficeDev/generator-office)为 TypeScript 创建一个新的自定义函数项目，然后将本文中的所有代码添加到该项目中。 然后，可以运行代码并尝试执行。
+若要查看已完成的示例，请遵循本文，然后将代码示例粘贴到您自己的项目中。 例如，若要为 TypeScript 创建新的自定义函数项目，请使用 [Office 加载项的 Yeoman](../develop/yeoman-generator-overview.md) 生成器，然后将本文的所有代码添加到该项目中。 运行代码并试用。
 
-此外，还可以在[自定义函数批处理模式](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching)处下载或查看完整的示例项目。 如果要在进一步阅读之前查看完整代码，请查看[脚本文件](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)。
+或者，在自定义函数批处理模式中下载或查看 [完整的示例项目](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching)。 如果要在进一步阅读之前查看完整代码，请查看[脚本文件](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)。
 
 ## <a name="create-the-batching-pattern-in-this-article"></a>创建本文中所述的批处理模式
 
@@ -32,7 +32,7 @@ ms.locfileid: "62074229"
 2. 用以在批处理就绪时发出远程请求的函数。
 3. 用以响应批处理请求、计算所有运算结果并返回值的服务器代码。
 
-以下部分将为你展示如何构造代码（每次一个示例）。 你将把各个代码示例添加到 **functions.ts** 文件中。 建议使用 yo office 生成器创建全新的自定义函数项目。 若要创建新项目，请参阅[开始开发 Excel 自定义函数](../quickstarts/excel-custom-functions-quickstart.md)并使用 TypeScript，而不是 JavaScript。
+以下各节将了解如何一次构建一个示例代码。 你将把各个代码示例添加到 **functions.ts** 文件中。 建议使用适用于加载项生成器的 [Yeoman](../develop/yeoman-generator-overview.md) 生成器创建全新的自定义函数Office项目。 若要创建新项目，请参阅开始[开发自定义Excel并使用](../quickstarts/excel-custom-functions-quickstart.md) TypeScript 而不是 JavaScript。
 
 ## <a name="batch-each-call-to-your-custom-function"></a>批处理对自定义函数的每次调用
 
