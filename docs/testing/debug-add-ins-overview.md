@@ -1,14 +1,14 @@
 ---
 title: 调试 Office 加载项
-description: 查找开发环境的 Office 加载项调试指南
+description: 查找开发环境的 Office 加载项调试指南。
 ms.date: 02/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 67afa308625c4f18775c3470c2bc2410af37905c
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 87265e8aeb760aa9449c86a7991b3ad6ed8943ee
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340377"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744703"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>调试 Office 加载项概述
 

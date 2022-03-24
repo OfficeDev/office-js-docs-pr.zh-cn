@@ -4,12 +4,12 @@ description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office �
 ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: fba13fbef0c9e40b913c97885a67fef5adc11223
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 86094d4aea8addc4dee670845f33b24a6f31d84a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711236"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747195"
 ---
 # <a name="single-sign-on-sso-quick-start"></a>单一登录 (SSO) 快速入门
 
@@ -102,7 +102,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 2. 在运行上一个命令 (即 Excel、Word 或 PowerPoint) 时打开的 Office 客户端应用程序中，请确保使用与在 [上一部分](#configure-sso) 的步骤 3 中配置 SSO 时连接到 Azure 的 Microsoft 365 管理员帐户相同的 Microsoft 365 组织成员的用户登录。这样做可为 SSO 的成功建立适当的条件。
 
-3. 在 Office 客户端应用程序中，选择 **主页** 选项卡，然后选择功能区中的 **显示任务窗格** 按钮以打开外接程序任务窗格。下图显示了 Excel 中的此按钮。
+3. 在 Office 客户端应用程序中，选择“**主页**”选项卡，然后选择功能区中的“**显示任务窗格**”按钮以打开加载项任务窗格。下图显示了 Excel 中的此按钮。
 
     ![Excel 加载项按钮。](../images/excel-quickstart-addin-3b.png)
 

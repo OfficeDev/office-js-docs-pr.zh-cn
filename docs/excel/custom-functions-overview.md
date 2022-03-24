@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 0d3e478e6deaf630f6665b3bba2796c26826fcde
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: d3866c5091c586c039029cab205a5ae0519e992b
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744491"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711033"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -40,7 +40,7 @@ function sphereVolume(radius) {
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>如何在代码中定义自定义函数
 
-如果使用 [适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 创建 Excel 自定义函数加载项项目，则它可创建控制函数和任务窗格的文件。 我们将专注于对自定义函数至关重要的文件。
+如果使用 [适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)创建 Excel 自定义函数加载项项目，则它可创建控制你的函数和任务窗格的文件。 我们将专注于对自定义函数至关重要的文件。
 
 | 文件 | 文件格式 | 说明 |
 |------|-------------|-------------|
@@ -70,15 +70,15 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>清单文件
 
-用于定义自定义函数的加载项的 XML 清单文件（[适用于 Office 的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 创建的项目中的 **./manifest.xml**）会执行以下操作。
+用于定义自定义函数的加载项的 XML 清单文件（[适用于 Office 的 Yeoman 生成器](../develop/yeoman-generator-overview.md)创建的项目中的 **./manifest.xml**）会执行以下操作。
 
 - 定义自定义函数的命名空间。命名空间在自定义函数前加上自己的名字，可帮助客户识别加载项的的函数。
 - 使用自定义函数清单特有的 `<ExtensionPoint>` 和 `<Resources>` 元素。 这些元素包含有关 JavaScript、JSON 和 HTML 文件的位置的信息。
 - 指定用于自定义函数的运行时。除非你对另一运行时有特殊需求，否则建议始终使用共享运行时，因为共享运行时允许在函数和任务窗格之间共享数据。
 
-如果使用 [适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 创建文件，则建议将清单调整为使用共享运行时，因为这不是这些文件的默认设置。 若要更改清单，请按照[将 Excel 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)中的说明进行操作。
+如果你使用[适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)来创建文件，则建议将你的清单调整为使用共享运行时，因为这不是这些文件的默认设置。 若要更改清单，请按照[将 Excel 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)中的说明进行操作。
 
-要从示例加载项中查看完整的工作清单，请参阅 [我们的 Office 加载项示例 Github 存储库之一](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml) 中的清单。
+若要从示例加载项中查看完整的工作清单，请参阅[我们的 Office 加载项示例 Github 存储库之一](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml)中的清单。
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
@@ -90,7 +90,7 @@ function add(first, second){
 
 ## <a name="next-steps"></a>后续步骤
 
-想要试用自定义函数？请查看简单的 [自定义函数快速入门](../quickstarts/excel-custom-functions-quickstart.md) 或更深入的 [自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)（如果尚未这样做）。
+想要试用自定义函数？请查看简单的[自定义函数入门](../quickstarts/excel-custom-functions-quickstart.md)或更深入的[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)（如果尚未这样做）。
 
 另一个尝试自定义函数的简单方法就是使用[脚本实验室](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab)，这是一个允许您在 Excel 中试验自定义函数的加载项。 可以尝试创建自己的自定义函数或使用提供的示例。
 

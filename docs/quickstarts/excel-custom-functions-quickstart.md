@@ -1,27 +1,29 @@
 ---
-ms.date: 01/13/2022
+ms.date: 03/18/2022
 description: 在 Excel 中开发自定义函数快速入门指南。
 title: 自定义函数快速入门
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 2f15be99499e42c0598d70ae91b937c6637c0149
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 920575a1976248be2cbc0ad945654cec63f542ab
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222302"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746401"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
-借助自定义函数，开发人员现在可以在 Excel 中添加新函数，方法是在 JavaScript 或 Typescript 中将这些函数定义为加载项的一部分。 Excel 用户可以访问自定义函数，就像他们访问 Excel 中的任何本机函数一样，比如 `SUM()`。
+借助自定义函数，开发人员现在可以在 Excel 中添加新函数，方法是在 JavaScript 或 TypeScript 中将这些函数定义为加载项的一部分。 Excel 用户可以访问自定义函数，就像他们访问 Excel 中的任何本机函数一样，比如 `SUM()`。
 
 ## <a name="prerequisites"></a>先决条件
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Windows 版 Excel（版本 1904 或更高版本）或 Excel 网页版。
-- Mac 版 Office（关联至 Microsoft 365 订阅）支持 Excel 自定义函数，并且本教程即将推出相关更新。
+- 已连接到 Microsoft 365 订阅的 Office (包括 Office 网页版)。
+
+  > [!NOTE]
+  > 如果你还没有 Office，可以[加入 Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)以免费获得为期 90 天的可续订 Microsoft 365 订阅，以便在开发期间使用。
 
 ## <a name="build-your-first-custom-functions-project"></a>生成首个自定义函数项目
 
@@ -49,11 +51,11 @@ ms.locfileid: "62222302"
     npm run build
     ```
 
-1. 启动在 Node.js 中运行的本地 Web 服务器。 你可以在 Excel 网页版或 Windows 版 Excel 中尝试使用自定义函数加载项。 系统可能会提示你打开加载项的任务窗格，不过这是可选的。 你仍可在不打开加载项的任务窗格的情况下运行自定义函数。
+1. 启动在 Node.js 中运行的本地 Web 服务器。 你可以在 Excel 中尝试使用自定义函数加载项。 系统可能会提示你打开加载项的任务窗格，不过这是可选的。 你仍可在不打开加载项的任务窗格的情况下运行自定义函数。
 
-# <a name="excel-on-windows"></a>[Windows 版 Excel](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Windows 版或 Mac 版 Excel](#tab/excel-windows)
 
-若要在 Windows 版 Excel 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动，Excel 将打开并载入加载项。
+若要在 Windows 版或 Mac 版 Excel 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动，Excel 将打开并载入加载项。
 
 ```command&nbsp;line
 npm run start:desktop
@@ -68,18 +70,6 @@ npm run start:desktop
 [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-
-若要使用自定义函数加载项，请在 Excel 网页版中打开一个新工作簿。 在此工作簿中，完成以下步骤以旁加载你的加载项。
-
-1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。
-
-   ![Excel 网页版中插入功能区的屏幕截图，突出显示“我的加载项”按钮。](../images/excel-cf-online-register-add-in-1.png)
-
-1. 选择“管理我的加载项”，然后选择“上载我的加载项”。
-
-1. 选择“浏览...”，并导航到 Yeoman 生成器创建的项目的根目录。
-
-1. 依次选择文件“manifest.xml”，“打开”，然后选择“上载”。
 
 ---
 

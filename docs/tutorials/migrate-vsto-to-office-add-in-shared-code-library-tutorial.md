@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: 有关如何在 VSTO 加载项与 Office 加载项之间共享代码的教程。
 title: 教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 ms.localizationpriority: high
-ms.openlocfilehash: 76b9e49adcf5954f50794aaae2fdf740c436c480
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 58400dfd1772ff5c3adbd846dd44c9cb0d57fff2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711250"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746091"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 
@@ -50,8 +50,8 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
 
 还需要：
 
-- Microsoft 365帐户。你可以加入 [Microsoft 365开发人员计划](https://aka.ms/devprogramsignup)，该计划提供包含 Office 应用的可续订的 90 天 Microsoft 365 订阅。
-- Microsoft Azure租户。可在此处获取试用订阅: [Microsoft Azure](https://account.windowsazure.com/SignUp)。
+- Microsoft 365帐户。你可以加入 [Microsoft 365 开发人员计划](https://aka.ms/devprogramsignup)，该计划提供包含 Office 应用的可续订的 90 天 Microsoft 365 订阅。
+- Microsoft Azure 租户。可在此处获取试用订阅: [Microsoft Azure](https://account.windowsazure.com/SignUp)。
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>单元格分析器 VSTO 加载项
 
@@ -66,7 +66,7 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
 1. 在“**解决方案资源管理器**”中，右键单击“**单元格分析器**”项目，然后选择“**属性**”。
 1. 在属性中选择“**签名**”类别。
 1. 选择“**为 ClickOnce 清单签名**”，然后选择“**创建测试证书**”。
-1. 在 **创建测试证书** 对话框中，输入并确认密码。然后选择 **确定**。
+1. 在“**创建测试证书**”对话框中，输入并确认密码。然后选择“**确定**”。
 
 该加载项是 Excel 的自定义任务窗格。 你可以选择包含文本的任何单元格，然后选择“**显示 unicode**”按钮。 在“**结果**”部分中，该加载项将列出文本中的每个字符及其相应 Unicode 编号。
 

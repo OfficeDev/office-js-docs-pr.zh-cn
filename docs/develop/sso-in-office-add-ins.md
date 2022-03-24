@@ -3,16 +3,16 @@ title: 在 Office 加载项中启用单一登录 (SSO)
 description: 了解使用常用的 Microsoft 个人、工作或教育帐户为 Office 加载项启用单一登录 (SSO) 的关键步骤。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 3c35ff7c2fac2c6a160fb9e5a5590ee1a56acd14
-ms.sourcegitcommit: be6ba48ba733acc08d1ac2b4f164246de5864f12
+ms.openlocfilehash: aec2e9affa1037638fad07192e9d6b69e3f158d9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2022
-ms.locfileid: "62368864"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744257"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>在 Office 加载项中启用单一登录 (SSO)
 
-用户可以使用自己的个人 Microsoft 帐户或 Microsoft 365 教育或工作帐户，登录 Office（在线、移动和桌面平台）。 利用此功能并使用单一登录 (SSO) 验证用户并授权用户访问加载项，而无需用户重新登录。
+用户可以使用自己的个人 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office（在线、移动和桌面平台）。可以利用这一点，使用单点登录 (SSO) 进行身份验证并将用户授权给加载项，让用户无需登录第二次。
 
 ![显示加载项登录过程的图像。](../images/sso-for-office-addins.png)
 
@@ -28,7 +28,7 @@ ms.locfileid: "62368864"
 4. Office 主机应用程序从当前用户的 Microsoft 标识平台请求 **访问令牌**。
 5. Microsoft 标识平台将访问令牌返回到 Office。 Office 将代表你缓存令牌，以便将来对 **getAccessToken** 的调用仅返回缓存的令牌。
 6. Office 主机应用程序将 **访问令牌** 作为 `getAccessToken` 调用返回的结果对象的一部分返回到加载项。
-7. 该令牌既是 **访问令牌**，也是 **身份令牌**。 可以将其用作身份令牌来分析和检查有关用户的声明，例如用户姓名和电子邮件地址。
+7. 令牌既是 **访问令牌** ，也是 **标识令牌**。可以将其用作标识令牌来分析和检查有关用户的声明，例如用户的姓名和电子邮件地址。
 8. 或者，加载项可以使用令牌作为 **访问令牌**，以向服务器端上的 API 发出经过身份验证的 HTTPS 请求。 由于访问令牌包含身份声明，因此服务器可以存储与用户身份相关的信息；例如用户的首选项。
 
 ## <a name="requirements-and-best-practices"></a>要求和最佳做法
@@ -107,7 +107,7 @@ ms.locfileid: "62368864"
 
 ### <a name="include-the-identity-api-requirement-set"></a>包括标识 API 要求集
 
-若要使用 SSO，加载项需要标识 API 1.3 要求集。 有关详细信息，请参阅 [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)。
+若要使用 SSO，加载项需要标识 API 1.3 要求集。有关详细信息，请参阅 [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)。
 
 ### <a name="add-client-side-code"></a>添加客户端代码
 
@@ -205,7 +205,7 @@ $.ajax({
 
 #### <a name="use-the-access-token-as-an-identity-token"></a>使用访问令牌作为身份令牌
 
-如果加载项需要验证用户身份，则从 `getAccessToken()` 返回的访问令牌包含可用于创建该身份的信息。 令牌中的以下声明与标识相关。
+如果加载项需要验证用户标识，则 `getAccessToken()` 返回的 SSO 令牌包含的信息可用于创建此标识。令牌中的以下声明与标识相关。
 
 - `name` - 用户的显示名称。
 - `preferred_username` - 用户的电子邮件地址。

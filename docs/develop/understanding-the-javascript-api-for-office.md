@@ -1,14 +1,14 @@
 ---
 title: 了解 Office JavaScript API
-description: Office JavaScript API 简介
+description: Office JavaScript API 简介。
 ms.date: 03/18/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 7f9b36e2db9164a03a03f08b862b0a8938753855
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dd7eb6cac4f76307d6ec9ecbb30da15057903687
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149293"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744199"
 ---
 # <a name="understanding-the-office-javascript-api"></a>了解 Office JavaScript API
 
