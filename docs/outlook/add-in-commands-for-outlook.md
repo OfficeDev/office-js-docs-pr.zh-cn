@@ -3,12 +3,12 @@ title: Outlook 加载项命令
 description: Outlook 加载项命令提供了通过添加按钮或下拉菜单从功能区启动特定加载项操作的方法。
 ms.date: 07/07/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 6676dd624163b8ce409a5049e5249cb9299bf9cb
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 52c1bda4a21fba869d67cb3a15d9573d660b8471
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152444"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745768"
 ---
 # <a name="add-in-commands-for-outlook"></a>适用于 Outlook 的外接程序命令
 

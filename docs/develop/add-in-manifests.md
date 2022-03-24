@@ -3,8 +3,13 @@ title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 09/28/2021
 ms.localizationpriority: high
+ms.openlocfilehash: d1e644b73b11f32edebcb74d85e8cf52e66ce479
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743693"
 ---
-
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
 Office 外接程序的 XML 清单文件描述，当最终用户安装外接程序并将其与 Office 文档和应用程序配合使用时，应如何激活外接程序。
@@ -152,7 +157,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 `VersionOverrides` 的一些子代元素具有替代父级 `OfficeApp` 元素值的值。 例如，`VersionOverrides` 中的 `Hosts` 元素替代 `OfficeApp` 中的 `Hosts` 元素。
 
-`VersionOverrides` 元素具有其自己的架构（实际上有四个架构），具体取决于加载项的类型及其使用的功能。 架构包括：
+`VersionOverrides` 元素具有其自己的架构（实际上有四个架构），具体取决于加载项的类型及其使用的功能。这些架构是：
 
 - [任务窗格 1.0](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)
 - [内容 1.0](/openspecs/office_file_formats/ms-owemxml/c9cb8dca-e9e7-45a7-86b7-f1f0833ce2c7)

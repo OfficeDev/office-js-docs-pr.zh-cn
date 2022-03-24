@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API Excel查找特殊单元格，例�
 ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 1252fe599f93a3408fb161e2b8204600fa483339
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 2705f71b5b253801493b07143b8320a1f69062e9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340517"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744796"
 ---
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>使用 JavaScript API 查找Excel单元格
 

@@ -3,18 +3,18 @@ title: Office 外接程序的颜色准则
 description: 了解如何在加载项的 UI Office颜色。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fa24acc442a959e449357f436d3a0ed685b3d808
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b43d3144f24f7b90878bcabe12db492f8dbe4f6f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149193"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742805"
 ---
 # <a name="color-guidelines-for-office-add-ins"></a>Office 外接程序的颜色准则
 
 颜色通常用于强调品牌和强化可视化层次结构。 它可以帮助标识接口，也可以指导客户完成体验。 在 Office 中，颜色用于相同目标，但应有目的地最小限度地应用它。 它不会过度使用客户内容。 即使每个 Office 应用程序被标上了自己的主色，但还是很少用到。
 
-![显示 Office、Excel、Word 和 PowerPoint 的配色方案。 主要颜色Office为黑白，次要颜色为浅灰色、深灰色和橙色。 文本的基准颜色Excel绿色，Word 为蓝色，PowerPoint橙色。](../images/office-addins-color-schemes.png)
+![此图显示 Office、Excel、Word 和 PowerPoint 的配色方案。 主要颜色Office为黑白，次要颜色为浅灰色、深灰色和橙色。 文本的基准颜色Excel绿色，Word 为蓝色，PowerPoint橙色。](../images/office-addins-color-schemes.png)
 
 [Fabric Core](fabric-core.md) 包括一组默认主题颜色。 在组件或布局中将 Fabric Core Office外接程序时，相同的目标适用。 颜色应传达层次结构，有目的地指导客户操作而不会干扰内容。 Fabric Core 主题颜色可以在整体界面中引入新的主题色。 此新的个性色可能会与 Office 应用程序品牌产生冲突并干扰层次结构。 换句话说，在加载项内使用时，Fabric Core 可以将新的强调文字颜色引入整个界面。 此新的个性色可能会分散用户注意力并干扰整个层次结构。 寻找避免冲突和干扰的方法。 使用中性主题或覆盖 Fabric Core 主题颜色来匹配Office 应用品牌或你自己的品牌颜色。
 

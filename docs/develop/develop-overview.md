@@ -1,14 +1,14 @@
 ---
 title: 开发 Office 加载项
 description: Office 加载项开发简介。
-ms.date: 07/08/2021
+ms.date: 03/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: da68ea157673a81fba9e04a3c73aacec020c61a4
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: aa56af832d1be3d868700ec4fae731ec55507579
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765939"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711159"
 ---
 # <a name="develop-office-add-ins"></a>开发 Office 加载项
 
@@ -19,11 +19,11 @@ ms.locfileid: "61765939"
 
 ## <a name="create-an-office-add-in"></a>创建 Office 加载项
 
-你可通过适用于 Office 加载项的 Yeoman 生成器或 Visual Studio 来创建 Office 加载项。
+可以使用[适用于 Office 加载项的 Yeoman 生成器](yeoman-generator-overview.md)或 Visual Studio 创建 Office 加载项。
 
-### <a name="yeoman-generator-for-office-add-ins"></a>适用于 Office 加载项的 Yeoman 生成器
+### <a name="yeoman-generator"></a>Yeoman 生成器
 
-[](https://github.com/officedev/generator-office)可用来创建 Node.js Office 加载项项目，而后者可通过 Visual Studio Code 或任何其他编辑器进行管理。 该生成器可创建适合下述任一应用的 Office 加载项：
+适用于 Office 加载项的 Yeoman 生成器可用于创建一个 Node.js Office 加载项项目，可通过 Visual Studio Code 或任何其他编辑器进行管理。生成器可以创建用于以下任一应用的 Office 加载项:
 
 - Excel
 - OneNote
@@ -33,7 +33,7 @@ ms.locfileid: "61765939"
 - Word
 - Excel 自定义函数
 
-你可选择使用 HTML、CSS 和 JavaScript 创建该项目，也可使用 Angular 或 React 进行创建。 此外，无论选择哪种框架，都可在 JavaScript 和 Typescript 之间进行选择。 有关使用 Yeoman 生成器创建加载项的详细信息，请参阅[使用 Visual Studio Code 开发 Office 加载项](../develop/develop-add-ins-vscode.md)。
+使用 HTML、CSS 和 JavaScript (或 TypeScript) 或 Angular 或 React 创建项目。 此外，无论选择哪种框架，都可在 JavaScript 和 Typescript 之间进行选择。 有关使用生成器创建加载项的详细信息，请参阅[适用于 Office 加载项的 Yeoman 生成器](yeoman-generator-overview.md)。
 
 ### <a name="visual-studio"></a>Visual Studio
 

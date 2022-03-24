@@ -1,13 +1,18 @@
 ---
-title: 在演示文稿中插入PowerPoint幻灯片
+title: 在演示文稿中PowerPoint幻灯片
 description: 了解如何将幻灯片从一个演示文稿插入另一个演示文稿。
 ms.date: 03/07/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: b08dd8bd82e5d4f4f86114630e9238b6c43b6ae7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747024"
 ---
+# <a name="insert-slides-in-a-powerpoint-presentation"></a>在演示文稿中PowerPoint幻灯片
 
-# <a name="insert-slides-in-a-powerpoint-presentation"></a>在演示文稿中插入PowerPoint幻灯片
-
-外接程序PowerPoint应用程序特定的 JavaScript 库将一个演示文稿中的幻灯片PowerPoint当前演示文稿中。 您可以控制插入的幻灯片是否保留源演示文稿的格式或目标演示文稿的格式。
+加载项PowerPoint应用程序特定的 JavaScript 库，将一个演示文稿中的幻灯片PowerPoint当前演示文稿中。 您可以控制插入的幻灯片是否保留源演示文稿的格式或目标演示文稿的格式。
 
 幻灯片插入 API 主要用于演示文稿模板方案：少数已知演示文稿充当加载项可以插入的幻灯片池。 在这种情况下，您或客户必须创建和维护一个将选择条件关联在一起 (如幻灯片标题或图像) 幻灯片的数据源。 这些 API 还可用于以下方案：用户可以插入任意演示文稿中的幻灯片，但在这种情况下，用户实际上只能插入源演示文稿的所有幻灯片。 有关详细信息 [，请参阅](#selecting-which-slides-to-insert) 选择要插入的幻灯片。
 
@@ -36,7 +41,7 @@ ms.localizationpriority: medium
     ![Screenshot showing an HTML file type input control preceded by an instructional sentence reading "Select a PowerPoint presentation from which to insert slides". 该控件包含一个标记为"选择文件"的按钮，后跟"未选择文件"一句。](../images/powerpoint-html-file-input-control.png)
 
     > [!NOTE]
-    > 有许多其他方法可以获取PowerPoint文件。 例如，如果该文件存储在 OneDrive 或 SharePoint，可以使用 Microsoft Graph下载它。 有关详细信息，请参阅在 [Microsoft](/graph/api/resources/onedrive) Graph 和 [Access Files with Microsoft Graph](/learn/modules/msgraph-access-file-data/)。
+    > 有许多其他方法可以获取PowerPoint文件。 例如，如果该文件存储在OneDrive或SharePoint，可以使用 Microsoft Graph下载它。 有关详细信息，请参阅使用 [Microsoft](/graph/api/resources/onedrive) Graph 中的文件和[使用 Microsoft](/learn/modules/msgraph-access-file-data/) Graph。
 
 2. 将以下代码添加到外接程序的 JavaScript，以将函数分配给输入控件的事件 `change` 。  (您将在下 `storeFileAsBase64` 一步创建 函数。) 
 
@@ -70,7 +75,7 @@ ms.localizationpriority: medium
 
 ## <a name="insert-slides-with-insertslidesfrombase64"></a>使用 insertSlidesFromBase64 插入幻灯片
 
-加载项使用 [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)) 方法PowerPoint演示文稿中的幻灯片插入当前演示文稿。 下面是一个简单示例，其中源演示文稿的所有幻灯片都插入到当前演示文稿的开头，并且插入的幻灯片保留源文件的格式。 请注意，`chosenFileBase64`这是一个全局变量，包含 base64 编码版本的演示文稿PowerPoint文件。
+加载项使用 [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)) 方法将另一个演示文稿PowerPoint演示文稿中的幻灯片插入到当前演示文稿中。 下面是一个简单示例，其中源演示文稿的所有幻灯片都插入到当前演示文稿的开头，并且插入的幻灯片保留源文件的格式。 请注意，`chosenFileBase64`该变量是一个全局变量，它保留一个 base64 编码版本的PowerPoint演示文稿文件。
 
 ```javascript
 async function insertAllSlides() {
@@ -103,7 +108,7 @@ async function insertSlidesDestinationFormatting() {
 
 当然，在编码时，你通常不知道目标幻灯片的 ID 或创建 ID。 通常，加载项会要求用户选择目标幻灯片。 以下步骤演示了如何获取当前 **选定幻灯片的 *nnn*#** ID，并使用它作为目标幻灯片。
 
-1. 使用通用 JavaScript API 的 [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 方法创建一个获取当前选定幻灯片 ID 的函数。 示例如下。 请注意，对 的调用 `getSelectedDataAsync` 嵌入 Promise 返回函数中。 有关这样做的原因和如何操作，请参阅在承诺Common-APIs [中包装对象](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)。
+1. 使用通用 JavaScript API 的 [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 方法创建一个函数，以获取当前选定幻灯片的 ID。 示例如下。 请注意，对 的调用 `getSelectedDataAsync` 嵌入 Promise 返回函数中。 有关这样做的原因和如何操作，请参阅在承诺Common-APIs [中的 Wrap 对象](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)。
 
  
     ```javascript
@@ -125,7 +130,7 @@ async function insertSlidesDestinationFormatting() {
     }
     ```
 
-1. 在主函数[的 PowerPoint.run () ](/javascript/api/powerpoint#PowerPoint_run_batch_) 内调用新函数，并传递它返回的 ID (连接了"#"`targetSlideId``InsertSlideOptions`符号) 作为参数的 属性值。 示例如下。
+1. 在主函数的 [PowerPoint.run () ](/javascript/api/powerpoint#PowerPoint_run_batch_) 内调用新函数，并传递它返回的 ID (连接了"#"符号) `targetSlideId` `InsertSlideOptions` 作为参数的 属性值。 示例如下。
 
     ```javascript
     async function insertAfterSelectedSlide() {

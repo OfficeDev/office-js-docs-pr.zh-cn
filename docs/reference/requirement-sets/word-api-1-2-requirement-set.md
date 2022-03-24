@@ -1,11 +1,16 @@
 ---
 title: Word JavaScript API 要求集 1.2
-description: 有关 WordApi 1.2 要求集的详细信息
+description: 有关 WordApi 1.2 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: word
 ms.localizationpriority: medium
+ms.openlocfilehash: 1a5af83615786b241c43ecb07ee0d23b3758cfc8
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744217"
 ---
-
 # <a name="whats-new-in-word-javascript-api-12"></a>Word JavaScript API 1.2 的最近更新
 
 WordApi 1.2 增加了对内联图片的支持。
@@ -28,7 +33,7 @@ WordApi 1.2 增加了对内联图片的支持。
 ||[insertText (text： string， insertLocation： Word.InsertLocation) ](/javascript/api/word/word.inlinepicture#word-word-inlinepicture-inserttext-member(1))|在指定位置插入文本。|
 ||[paragraph](/javascript/api/word/word.inlinepicture#word-word-inlinepicture-paragraph-member)|获取包含嵌入式图像的父段落。|
 ||[select (selectionMode？： Word.SelectionMode) ](/javascript/api/word/word.inlinepicture#word-word-inlinepicture-select-member(1))|选择 inlinePicture。|
-|[区域](/javascript/api/word/word.range)|[inlinePictures](/javascript/api/word/word.range#word-word-range-inlinepictures-member)|获取 range 中的一组 inlinePicture 对象。|
+|[范围](/javascript/api/word/word.range)|[inlinePictures](/javascript/api/word/word.range#word-word-range-inlinepictures-member)|获取 range 中的一组 inlinePicture 对象。|
 ||[insertInlinePictureFromBase64 (base64EncodedImage： string， insertLocation： Word.InsertLocation) ](/javascript/api/word/word.range#word-word-range-insertinlinepicturefrombase64-member(1))|在指定位置插入图片。|
 
 ## <a name="see-also"></a>另请参阅

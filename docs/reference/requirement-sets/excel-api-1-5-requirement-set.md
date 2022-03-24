@@ -4,8 +4,13 @@ description: 有关 ExcelApi 1.5 要求集的详细信息。
 ms.date: 03/19/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 60da29607a8c8a22b38c9e19345a574e4f923922
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745207"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-15"></a>Excel JavaScript API 1.5 的最近更新
 
 ExcelApi 1.5 添加自定义 XML 部件。 可通过 workbook 对象中的 [自定义 XML 部件](/javascript/api/excel/excel.workbook#excel-excel-workbook-customxmlparts-member) 集合访问这些部件。

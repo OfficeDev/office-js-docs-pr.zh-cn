@@ -3,12 +3,12 @@ title: Office 外接程序的身份验证设计准则
 ms.date: 02/09/2021
 description: 了解如何在加载项中直观地设计登录Office注册页面。
 ms.localizationpriority: medium
-ms.openlocfilehash: 3edfbcf805718444fc58823eb5bd726c033636ed
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9df30377c9f10b424c02fe39fbfeeda0980d4ab4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149386"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742967"
 ---
 # <a name="authentication-patterns"></a>身份验证模式
 
@@ -35,7 +35,7 @@ ms.locfileid: "59149386"
 
     ![Screenshot showing the Identity Provider Choices dialog in an Office application.](../images/add-in-auth-choices-dialog.png)
 
-1. 身份提供程序登录 - 身份提供程序将拥有其自己的 UI。 Microsoft Azure Active Directory允许自定义登录和访问面板页面，以与服务保持一致的外观。 [了解更多信息](/azure/active-directory/fundamentals/customize-branding)。
+1. 身份提供程序登录 - 身份提供程序将拥有其自己的 UI。 Microsoft Azure Active Directory允许自定义登录和访问面板页面，以与服务保持一致的外观。 [了解有关详细信息](/azure/active-directory/fundamentals/customize-branding)。
 
     ![Screenshot showing the Identity Provider Sign-in dialog in an Office application.](../images/add-in-auth-identity-sign-in.png)
 

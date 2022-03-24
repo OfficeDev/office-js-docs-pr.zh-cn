@@ -1,10 +1,15 @@
 ---
 title: 在加载项中启用共享文件夹Outlook邮箱方案
-description: 讨论如何为共享文件夹配置外接程序支持 (。 委派访问) 和共享邮箱。
+description: 讨论如何为共享文件夹配置外接程序支持 (。。。 委派访问) 和共享邮箱。
 ms.date: 10/05/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: e949f4f3c1800a2c1fa83ba8bdf6df17e1ed5498
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745851"
 ---
-
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在加载项中启用共享文件夹Outlook邮箱方案
 
 本文介绍如何在 Outlook 外接程序的[预览) 方案中](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)启用共享文件夹 (也称为委派访问) 和共享邮箱 (，包括 Office JavaScript API 支持哪些权限。
@@ -15,13 +20,13 @@ ms.localizationpriority: medium
 
 | 客户端 | Exchange Online | Exchange 2019 本地部署<br> (累积更新 1 或更高版本)  | Exchange 2016 本地部署<br> (累积更新 6 或更高版本)  | Exchange 2013 本地部署 |
 |---|:---:|:---:|:---:|:---:|
-|Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|否|否|否|
+|Windows：<br>版本 1910 (版本 12130.20272) 或更高版本|是|否|否|否|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|是|
 |Web 浏览器：<br>新式 Outlook UI|是|不适用|不适用|不适用|
 |Web 浏览器：<br>经典Outlook UI|不适用|否|否|否|
 
 > [!IMPORTANT]
-> 要求集 [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) 中引入了此功能 (有关详细信息，请参阅客户端和 [平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)) 。 但是，请注意，功能的支持矩阵是要求集的超集。
+> 要求集 [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) 中引入了对此功能 (有关详细信息，请参阅客户端和 [平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)) 。 但是，请注意，功能的支持矩阵是要求集的超集。
 
 ## <a name="supported-setups"></a>支持的安装程序
 
@@ -37,7 +42,7 @@ ms.localizationpriority: medium
 
 Exchange管理员可以为要访问的用户集创建和管理共享邮箱。 目前，[Exchange Online](/exchange/collaboration-exo/shared-mailboxes)是此功能唯一受支持的服务器版本。
 
-默认情况下Exchange Server自动映射"功能是启用的，这意味着共享邮箱随后应在关闭并重新打开共享邮箱后自动[](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)显示在用户的 Outlook 应用中Outlook。 但是，如果管理员关闭自动映射，用户必须遵循在 Outlook 中打开和使用共享邮箱一文的"将共享邮箱添加到 Outlook"一节中[概述的手动步骤](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)。
+默认情况下Exchange Server自动映射"功能是启用的，这意味着共享邮箱随后应在关闭并重新打开共享邮箱后自动显示在[](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)用户的 Outlook Outlook 应用中。 但是，如果管理员关闭自动映射，用户必须遵循在 Outlook 中打开和使用共享邮箱一文的"将共享邮箱添加到 Outlook"一节中概述[的手动步骤](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)。
 
 > [!WARNING]
 > **请勿使用** 密码登录共享邮箱。 在这种情况下，功能 API 将不起作用。
@@ -46,7 +51,7 @@ Exchange管理员可以为要访问的用户集创建和管理共享邮箱。 �
 
 #### <a name="shared-folders"></a>共享文件夹
 
-邮箱所有者必须先 [通过更新邮箱文件夹](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) 权限来向代理提供访问权限。 然后，代理必须遵循文章访问其他人的邮箱"将其他人的邮箱添加到 Outlook Web App 中的文件夹列表"部分中概述[的说明](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081)。
+邮箱所有者必须先 [通过更新邮箱文件夹](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) 权限来向代理提供访问权限。 然后，代理人必须遵循文章访问其他人的邮箱"将其他人的邮箱添加到 Outlook Web App 中的文件夹列表"部分中概述[的说明](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081)。
 
 #### <a name="shared-mailboxes-preview"></a>共享邮箱 (预览) 
 
@@ -75,7 +80,7 @@ Exchange管理员可以为要访问的用户集创建和管理共享邮箱。 �
 
 #### <a name="remote-shared-calendar-previous-model"></a>远程共享日历 (模型) 
 
-例如，如果日历所有者授予了对日历 (的广泛访问权限，使日历所有者能够编辑特定的 DL 或整个组织) ，则用户随后可能拥有间接或隐式权限，并且外接程序在约会阅读和撰写模式下可供这些用户使用。
+例如，如果日历所有者授予了对日历 (的广泛访问权限，使日历所有者能够编辑特定的 DL 或整个组织) ，则用户随后可能拥有间接或隐式权限，并且这些用户在约会阅读和撰写模式下可以使用外接程序。
 
 ---
 
@@ -106,7 +111,7 @@ Exchange管理员可以为要访问的用户集创建和管理共享邮箱。 �
 但是，如果使用 REST 或 Exchange Web (EWS) 操作来设置项目的扩展属性，则此类更改可能需要几个小时才能同步。我们建议你改为使用 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象和相关 API 以避免此类延迟。 若要了解更多信息，请参阅"[](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties)在加载项中获取和设置Outlook元数据"一文的自定义属性部分。
 
 > [!IMPORTANT]
-> 在委派方案中，不能将 EWS 与当前由 office.js API 提供的令牌一起使用。
+> 在委派方案中，不能将 EWS 与当前由 office.js API 提供的令牌一同使用。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -197,7 +202,7 @@ function performOperation() {
 ```
 
 > [!TIP]
-> 作为代理，您可以使用 REST 获取附加到Outlook或组帖子Outlook[邮件的内容](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
+> 作为代理，您可以使用 REST 获取附加到项目或组帖子Outlook邮件Outlook[内容](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
 
 ## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>处理对共享项和非共享项的调用 REST
 
@@ -245,7 +250,7 @@ b. **共享邮箱**
 
 ### <a name="user-or-shared-mailbox-hidden-from-an-address-list"></a>从地址列表中隐藏的用户或共享邮箱
 
-如果管理员从地址列表（如全局地址列表）中隐藏用户或共享邮箱地址 (GAL) `Office.context.mailbox.item` ，则邮箱报告中打开的受影响的邮件项目为 null。 例如，如果用户在共享邮箱中打开一个在 GAL `Office.context.mailbox.item` 中隐藏的邮件项目，则代表该邮件项目为空。
+如果管理员从地址列表中隐藏用户或共享邮箱地址，如全局地址列表 (GAL) `Office.context.mailbox.item` ，则邮箱报告中打开的受影响的邮件项目为 null。 例如，如果用户在共享邮箱中打开一个在 GAL `Office.context.mailbox.item` 中隐藏的邮件项目，则代表该邮件项目为空。
 
 ## <a name="see-also"></a>另请参阅
 
@@ -253,5 +258,5 @@ b. **共享邮箱**
 - [日历中的日历Microsoft 365](https://support.microsoft.com/office/b576ecc3-0945-4d75-85f1-5efafb8a37b4)
 - [将共享邮箱添加到Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
 - [如何对清单元素排序](../develop/manifest-element-ordering.md)
-- [掩盖 (计算) ](https://en.wikipedia.org/wiki/Mask_(computing))
+- [计算 (的) ](https://en.wikipedia.org/wiki/Mask_(computing))
 - [JavaScript 位运算符](https://www.w3schools.com/js/js_bitwise.asp)

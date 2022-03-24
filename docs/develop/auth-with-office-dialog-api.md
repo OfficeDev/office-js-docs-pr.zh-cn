@@ -3,8 +3,13 @@ title: 使用 Office 对话框 API 进行身份验证和授权
 description: 了解如何使用 Office 对话框 API 使用户能够登录到 Google、Facebook、Microsoft 365 以及受 Microsoft 标识平台保护的其他服务。
 ms.date: 01/25/2022
 ms.localizationpriority: high
+ms.openlocfilehash: 4788fbf42870c6b23faa4cd89c74a8547cb1a7bc
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743629"
 ---
-
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
 始终使用 Office 对话框 API 通过 Office 加载项对用户进行身份验证和授权。 如果在无法使用单一登录 (SSO) 时实现回退身份验证，则还应使用 Office 对话框 API。
@@ -37,7 +42,7 @@ ms.localizationpriority: high
 
 1. 对话框中打开的第一个页面托管在加载项域（即与任务窗格相同的域）中的一个页面（或其他资源）。 此页面可以显示 UI，提示用户“请稍候，正在重定向到可以登录 *NAME-OF-PROVIDER* 的页面。” 此页面中的代码使用传递给对话框的信息（如[向对话框传递信息](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)中所述）构造身份提供程序的登录页 URL，或者硬编码到加载项的配置文件中，例如 web.config 文件。
 2. 然后，对话框窗口重定向到登录页。 URL 包含一个查询参数，用于告知身份提供程序在用户登录后将对话框窗口重定向到特定页面。 在本文中，我们将此页面称为 **redirectPage.html**。 在此页上，登录尝试的结果可以通过调用 `messageParent` 传递到任务窗格。 *建议此页与主机窗口位于同一域中*。
-3. 身份提供程序的服务处理来自对话框窗口的传入 GET 请求。 如果用户已经登录，它会立即将窗口重定向到 **redirectPage.html**，并包括用户数据作为查询参数。 如果用户尚未登录，提供程序的登录页会显示在窗口中，以便用户登录。 对于大多数提供程序，如果用户无法成功登录，提供程序会在对话框窗口中显示错误页面，而不会重定向到 **redirectPage.html**。 用户必须通过选择右上角的 **X** 来关闭窗口。 如果用户成功登录，则对话框窗口会重定向到 **redirectPage.html**，并包括用户数据会作为查询参数。
+3. 标识提供程序的服务处理来自对话框窗口的传入 GET 请求。如果用户已经登录，它会立即将窗口重定向到 **redirectPage.html**，并将用户数据作为查询参数包括在内。如果用户尚未登录，提供程序的登录页会显示在窗口中，以便用户登录。对于大多数提供程序，如果用户无法成功登录，提供程序会在对话框窗口中显示错误页面，而不会重定向到 **redirectPage.html**。用户必须通过选择右上角的“**X**”来关闭窗口。如果用户成功登录，则对话框窗口会重定向到 **redirectPage.html**，并将用户数据作为查询参数包括在内。
 4. 当 **redirectPage.html** 页面打开时，它会调用 `messageParent` 向任务窗格页报告登录是否成功，而且还会视情况报告用户数据或错误数据。 其他可能的消息包括传递访问令牌或告知任务窗格信息位于存储中。
 5. `DialogMessageReceived` 事件在任务窗格页中触发，其处理程序关闭对话框窗口，并可能对消息进行进一步处理。
 
@@ -57,7 +62,7 @@ ms.localizationpriority: high
 可以使用 Office 对话框 API 来管理此过程，具体方法是使用与用户登录流程类似的流程。唯一的区别是：
 
 - 如果用户先前未向应用程序授予所需的权限，则登录后会在对话框中看到这样做的提示。
-- 对话框窗口中的代码使用 `messageParent` 发送字符串化访问令牌，或将访问令牌存储在主机窗口可以检索到的位置（并使用 `messageParent` 告知主机窗口令牌可用），从而将访问令牌发送到主机窗口。 令牌具有时间限制，但在持续期间，主机窗口可以使用它直接访问用户资源，而无需进一步提示。
+- 对话框窗口中的代码通过使用 `messageParent` 发送字符串化访问令牌，或通过将访问令牌存储在主机窗口可以检索到的位置（并使用 `messageParent` 告知主机窗口令牌可用），从而将访问令牌发送给主机窗口。令牌具有时间限制，但在持续期间，主机窗口可以使用它直接访问用户资源，而无需进一步提示。
 
 [示例](#samples)中列出了使用 Office 对话框 API 来实现此目的的一些身份验证示例加载项。
 
@@ -74,7 +79,7 @@ Office 对话框和任务窗格在不同的浏览器、JavaScript 运行时实�
 或者，加载项的对话框浏览器实例可以直接调用库的交互式方法。 该方法返回令牌时，代码必须将令牌显式存储在任务窗格的浏览器可检索到的位置，例如本地存储\*或服务器端数据库。 另一种选择是使用 `messageParent` 方法将令牌传递到任务窗格。 仅当交互式方法将访问令牌存储在代码可以读取的位置时，才可以使用此替代选项。 有时，库的交互式方法设计为将令牌存储到代码无法访问的对象的私有属性中。
 
 > [!NOTE]
-> \*有一个 bug 将影响你的令牌处理策略。 如果加载项正使用 Safari 或 Edge 浏览器在 **Office 网页版** 上运行，则对话框和任务窗格不共享同一本地存储，因此该存储无法在它们之间通信。
+> \* 存在影响令牌处理策略的 bug。如果加载项正在 Safari 或 Edge 浏览器中在 **Office 网页版** 上运行，则对话框和任务窗格不共享同一本地存储，因此无法将其用于在二者间进行通信。
 
 ### <a name="you-usually-cannot-use-the-librarys-auth-context-object"></a>通常无法使用库的“身份验证上下文”对象
 

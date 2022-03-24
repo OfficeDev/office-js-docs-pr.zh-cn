@@ -1,15 +1,15 @@
 ---
-title: PowerPointJavaScript API 要求集 1.1
+title: PowerPoint JavaScript API 要求集 1.1
 description: 有关 PowerPointApi 1.1 要求集的详细信息。
 ms.date: 01/08/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ad178a4b989412ec98c7ad3d75e2baa1faa91f0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3a9e82721945751169ef573965890b71e20bd930
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152465"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745803"
 ---
 # <a name="whats-new-in-powerpoint-javascript-api-11"></a>JavaScript API 1.1 PowerPoint的新增功能
 

@@ -3,12 +3,12 @@ title: Office 外接程序的语音准则
 description: 了解编写适用于加载项的用户帮助和其他字符串Office最佳做法。
 ms.date: 07/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fb96b70c1a5319c4dcefd99bc982c6db50d8812
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 4cf7d6a58c33df116e7776589f581fdd191abd56
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149174"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743091"
 ---
 # <a name="voice-guidelines"></a>语音准则
 

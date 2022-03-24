@@ -3,12 +3,12 @@ title: 内容 Office 加载项
 description: 内容加载项是指可以直接嵌入 Excel 或 PowerPoint 文档的图面，用户可以通过它访问界面控件，运行代码以修改文档或显示数据源中的数据。
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d158a4067a4492901128438392cd1607ad851bcf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b7d4cc9605d330bade217f43958b0c2fcb37c724
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149382"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742951"
 ---
 # <a name="content-office-add-ins"></a>内容 Office 加载项
 
@@ -25,7 +25,7 @@ ms.locfileid: "59149382"
 
 ## <a name="variants"></a>变量
 
-用户指定Excel桌面PowerPoint Office外接程序Microsoft 365外接程序大小。
+用户指定桌面Excel PowerPoint Office外接程序Microsoft 365外接程序大小。
 
 ## <a name="personality-menu"></a>“个性”菜单
 

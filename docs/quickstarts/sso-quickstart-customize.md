@@ -1,26 +1,26 @@
 ---
-title: 自定义启用了 Node.js SSO 的加载项
-description: 了解如何自定义使用 Yeoman 生成器创建的启用 SSO 的外接程序。
-ms.date: 08/04/2021
+title: 将 Microsoft Graph功能添加到 SSO 快速启动项目
+description: 了解如何将新的 Microsoft Graph功能添加到您创建的启用 SSO 的外接程序。
+ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b66da764902fba1a0296c349f898a94ef9f9b33
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d536976460ff1db411776055eb0d28b794eb217b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152544"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745452"
 ---
-# <a name="customize-your-nodejs-sso-enabled-add-in"></a>自定义启用了 Node.js SSO 的加载项
+# <a name="add-microsoft-graph-functionality-to-your-sso-quick-start-project"></a>将 Microsoft Graph功能添加到 SSO 快速启动项目
 
 > [!IMPORTANT]
-> 本文基于启用 SSO 的加载项，该加载项是在 [SSO](sso-quickstart.md)加载项中完成单一登录 (快速) 创建的。 请在阅读本文之前完成快速入门。
+> 本文基于启用 SSO 的外接程序，该外接程序通过完成 [SSO (快速入门) 创建](sso-quickstart.md)。 请在阅读本文之前完成快速入门。
 
 [SSO 快速入门](sso-quickstart.md)将创建一个启用 SSO 的外接程序，该外接程序获取已登录用户的配置文件信息，并写入文档或邮件。 本文将介绍使用 SSO 快速入门中的 Yeoman 生成器创建的加载项更新过程，以添加需要不同权限的新功能。
 
 ## <a name="prerequisites"></a>先决条件
 
-- 一Office [SSO](sso-quickstart.md)快速入门中的说明创建一个外接程序。
+- 一Office [SSO](sso-quickstart.md) 快速入门中的说明创建的加载项。
 
 - 至少存储在你的 OneDrive for Business 订阅中的Microsoft 365文件夹。
 
@@ -33,45 +33,41 @@ ms.locfileid: "59152544"
 让我们首先快速回顾一下之前使用 [Yeoman 生成器创建的加载项项目](sso-quickstart.md)。
 
 > [!NOTE]
-> 在本文引用使用扩展名的脚本文件.js，请改为假定 **.ts** 文件扩展名（如果你的项目是使用 TypeScript 创建的）。
+> 在本文引用使用扩展名的脚本文件.js，如果项目是使用 TypeScript 创建的，请改为假定 **.ts** 文件扩展名。
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
 ## <a name="add-new-functionality"></a>添加新功能
 
-使用 SSO 快速入门创建的加载项使用 Microsoft Graph 获取登录用户的配置文件信息，将该信息写入文档或邮件。 让我们更改外接程序的功能，这样它就会从登录用户的 OneDrive for Business 获取前 10 个文件和文件夹的名称，将该信息写入文档或邮件。 若要启用此新功能，需要在 Azure 中更新应用权限，并更新加载项项目中的代码。
+使用 SSO 快速入门创建的外接程序使用 Microsoft Graph 获取已登录用户的配置文件信息，将该信息写入文档或邮件。 让我们更改外接程序的功能，这样它就会从登录用户的 OneDrive for Business 获取前 10 个文件和文件夹的名称，将该信息写入文档或邮件。 若要启用此新功能，需要在 Azure 中更新应用权限，并更新加载项项目中的代码。
 
 ### <a name="update-app-permissions-in-azure"></a>在 Azure 中更新应用权限
 
-加载项必须先使用适当的权限更新其 Azure OneDrive for Business，然后加载项才能成功读取用户加载项的应用注册信息。 完成以下步骤以向应用授予 **Files.Read.All** 权限，并撤销不再需要的 **User.Read** 权限。
+在加载项成功读取用户加载项加载项OneDrive for Business，必须使用相应的权限更新 Azure 中的应用注册信息。 完成以下步骤以向应用授予 **Files.Read.All** 权限，并撤销 **不再需要的 User.Read** 权限。
 
-1. 导航到 [Azure](https://ms.portal.azure.com/#home)门户 **，然后使用管理员Microsoft 365登录**。
+1. 使用你的管理员 [凭据](https://portal.azure.com)Microsoft 365 **Azure 门户**。
 
-2. 导航到 **"应用注册"** 页。
+3. 转到应用 **注册** 页面，然后选择在快速启动期间创建的应用注册。
     > [!TIP]
-    > 为此，可以在 Azure 主页上选择应用注册磁贴，或者使用主页上的搜索框查找并选择应用 **注册**。
+    > **应用的显示** 名称与使用 Yeoman 生成器创建项目时指定的外接程序名称匹配。
 
-3. 在 **"应用注册"** 页上，选择在快速启动期间创建的应用。
-    > [!TIP]
-    > **应用的显示** 名称将匹配使用 Yeoman 生成器创建项目时指定的外接程序名称。
-
-4. 在应用概述页面中，在页面左侧的"管理"标题下选择 **"API** 权限"。
+4. 在 **"管理**"下， **选择"API 权限"**。
 
 5. 在权限 **表的 User.Read** 行中，选择省略号，然后从出现的菜单中选择撤销管理员同意。
 
 6. 选择 **"是，删除** "按钮以响应显示的提示。
 
-7. 在 **"权限"表的"User.Read"** 行中，选择省略号，然后选择"从 **出现的菜单中删除** 权限"。
+7. 在 **"权限"表的"User.Read** "行中，选择省略号，然后选择"从 **出现的菜单中删除** 权限"。
 
 8. 选择 **"是，删除** "按钮以响应显示的提示。
 
 9. 选择“**添加权限**”按钮。
 
-10. 在打开的面板上，选择 **"Microsoft Graph"，** 然后选择"**委派权限"。**
+10. 在打开的面板上，选择 **"Microsoft Graph**"，然后选择"**委派权限"**。
 
 11. 在" **请求 API 权限"** 面板上：
 
-    a. 在 **"文件"** 下，**选择"Files.Read.All"。**
+    a. 在 **"文件"** 下， **选择"Files.Read.All"**。
 
     b. 选择 **面板底部的** "添加权限"按钮以保存这些权限更改。
 
@@ -81,7 +77,7 @@ ms.locfileid: "59152544"
 
 ### <a name="update-code-in-the-add-in-project"></a>更新加载项项目中的代码
 
-若要使加载项能够读取已登录用户加载项OneDrive for Business，需要：
+若要使加载项能够读取已登录用户OneDrive for Business的内容，你需要：
 
 - 更新引用 Microsoft Graph URL、参数和所需访问范围的代码。
 
@@ -103,9 +99,9 @@ ms.locfileid: "59152544"
 
     c. 将 `SCOPE=User.Read` 替换为以下内容： `SCOPE=Files.Read.All`
 
-2. 在 **./manifest.xml** 中，查找文件末尾附近的行， `<Scope>User.Read</Scope>` 并将其替换为 行 `<Scope>Files.Read.All</Scope>` 。
+2. 在 **./manifest.xml**`<Scope>User.Read</Scope>` 中，查找文件末尾附近的行，并将其替换为 行 `<Scope>Files.Read.All</Scope>`。
 
-3. 在 TypeScript 项目) 的 **./src/helpers/fallbackauthdialog.js** (或 **./src/helpers/fallbackauthdialog.ts** 中，查找字符串并将其替换为字符串 ，如下所示 `https://graph.microsoft.com/User.Read` `https://graph.microsoft.com/Files.Read.All` `requestObj` ：
+3. 在 TypeScript 项目) `requestObj` `https://graph.microsoft.com/User.Read` `https://graph.microsoft.com/Files.Read.All`的 **./src/helpers/fallbackauthdialog.js** (或 **./src/helpers/fallbackauthdialog.ts** 中，查找字符串并将其替换为字符串 ，如下所示：
 
     ```javascript
     var requestObj = {
@@ -119,7 +115,7 @@ ms.locfileid: "59152544"
     };
     ```
 
-4. 在 **./src/taskpane/taskpane.html** 中，查找 元素并更新该元素中的文本，以描述外接程序的 `<section class="ms-firstrun-instructionstep__header">` 新功能。
+4. 在 **./src/taskpane/taskpane.html**`<section class="ms-firstrun-instructionstep__header">` 中，查找 元素并更新该元素中的文本以描述外接程序的新功能。
 
     ```html
     <section class="ms-firstrun-instructionstep__header">
@@ -129,7 +125,7 @@ ms.locfileid: "59152544"
     </section>
     ```
 
-5. 在 **./src/taskpane/taskpane.html** 中，查找字符串 的两个匹配项，并将其 `Get My User Profile Information` 替换为字符串 `Read my OneDrive for Business` 。
+5. 在 **./src/taskpane/taskpane.html** 中 `Get My User Profile Information` ，查找字符串 的两个匹配项，并将其替换为字符串 `Read my OneDrive for Business`。
 
     ```html
     <li class="ms-ListItem">
@@ -146,7 +142,7 @@ ms.locfileid: "59152544"
     </p>
     ```
 
-6. 在 **./src/taskpane/taskpane.html** 中，查找字符串 并将其 `Your user profile information will be displayed in the document.` 替换为字符串 `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.` 。
+6. 在 **./src/taskpane/taskpane.html** 中，查找 `Your user profile information will be displayed in the document.` 字符串 并将其替换为字符串 `The names of the top 10 files and folders in your OneDrive for Business will be displayed in the document or message.`。
 
     ```html
     <li class="ms-ListItem">
@@ -157,20 +153,20 @@ ms.locfileid: "59152544"
 
 7. 更新分析 Microsoft Graph 响应的代码，然后按照与加载项类型对应的部分中的指导操作，将响应写入文档或邮件：
 
-    - [JavaScript Excel加载项 (所需的) ](#changes-required-for-an-excel-add-in-javascript)
+    - [JavaScript Excel加载项所需的 (更改) ](#changes-required-for-an-excel-add-in-javascript)
     - [使用 TypeScript Excel加载项 (更改) ](#changes-required-for-an-excel-add-in-typescript)
     - [JavaScript Outlook加载项所需的 (更改) ](#changes-required-for-an-outlook-add-in-javascript)
-    - [使用 TypeScript Outlook加载项 (更改) ](#changes-required-for-an-outlook-add-in-typescript)
-    - [使用 JavaScript PowerPoint加载项 (更改) ](#changes-required-for-a-powerpoint-add-in-javascript)
+    - [使用 TypeScript Outlook加载项 (所需的) ](#changes-required-for-an-outlook-add-in-typescript)
+    - [JavaScript PowerPoint加载项 (所需的) ](#changes-required-for-a-powerpoint-add-in-javascript)
     - [使用 TypeScript PowerPoint加载项 (更改) ](#changes-required-for-a-powerpoint-add-in-typescript)
     - [JavaScript 加载项所需的 Word (更改) ](#changes-required-for-a-word-add-in-javascript)
     - [使用 TypeScript (Word 外接程序) ](#changes-required-for-a-word-add-in-typescript)
 
-### <a name="changes-required-for-an-excel-add-in-javascript"></a>JavaScript Excel加载项所需的 (更改) 
+### <a name="changes-required-for-an-excel-add-in-javascript"></a>使用 JavaScript Excel加载项 (更改) 
 
 如果加载项是使用 JavaScript Excel加载项，请对 **./src/helpers/documentHelper.js进行以下更改**。
 
-1. 找到 `writeDataToOfficeDocument` 函数并将其替换为以下函数。
+1. 找到 函数 `writeDataToOfficeDocument` 并将其替换为以下函数。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -185,7 +181,7 @@ ms.locfileid: "59152544"
     }
     ```
 
-2. 找到 `filterUserProfileInfo` 函数并将其替换为以下函数。
+2. 找到 函数 `filterUserProfileInfo` 并将其替换为以下函数。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -198,7 +194,7 @@ ms.locfileid: "59152544"
     }
     ```
 
-3. 找到 `writeDataToExcel` 函数并将其替换为以下函数。
+3. 找到 函数 `writeDataToExcel` 并将其替换为以下函数。
 
     ```javascript
     function writeDataToExcel(result) {
@@ -225,17 +221,17 @@ ms.locfileid: "59152544"
     }
     ```
 
-4. 删除 `writeDataToOutlook` 函数。
+4. `writeDataToOutlook`删除 函数。
 
-5. 删除 `writeDataToPowerPoint` 函数。
+5. `writeDataToPowerPoint`删除 函数。
 
-6. 删除 `writeDataToWord` 函数。
+6. `writeDataToWord`删除 函数。
 
 进行这些更改后，跳到本文的"试用"部分[](#try-it-out)以试用更新的外接程序。
 
 ### <a name="changes-required-for-an-excel-add-in-typescript"></a>使用 TypeScript Excel加载项 (所需的) 
 
-如果您的外接程序是使用 TypeScript 创建的 Excel 外接程序，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为以下 `writeDataToOfficeDocument` 函数。
+如果加载项是使用 TypeScript 创建的 Excel 加载项，请打开 **./src/taskpane/taskpane.ts**`writeDataToOfficeDocument`，查找 函数，并将其替换为以下函数。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -273,7 +269,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 如果加载项是使用 JavaScript Outlook加载项，请对 **./src/helpers/documentHelper.js进行以下更改**。
 
-1. 找到 `writeDataToOfficeDocument` 函数并将其替换为以下函数。
+1. 找到 函数 `writeDataToOfficeDocument` 并将其替换为以下函数。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -288,7 +284,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-2. 找到 `filterUserProfileInfo` 函数并将其替换为以下函数。
+2. 找到 函数 `filterUserProfileInfo` 并将其替换为以下函数。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -301,7 +297,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-3. 找到 `writeDataToOutlook` 函数并将其替换为以下函数。
+3. 找到 函数 `writeDataToOutlook` 并将其替换为以下函数。
 
     ```javascript
     function writeDataToOutlook(result) {
@@ -323,17 +319,17 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     }
     ```
 
-4. 删除 `writeDataToExcel` 函数。
+4. `writeDataToExcel`删除 函数。
 
-5. 删除 `writeDataToPowerPoint` 函数。
+5. `writeDataToPowerPoint`删除 函数。
 
-6. 删除 `writeDataToWord` 函数。
+6. `writeDataToWord`删除 函数。
 
 进行这些更改后，跳到本文的"试用"部分[](#try-it-out)以试用更新的外接程序。
 
-### <a name="changes-required-for-an-outlook-add-in-typescript"></a>使用 TypeScript Outlook加载项 (更改) 
+### <a name="changes-required-for-an-outlook-add-in-typescript"></a>使用 TypeScript Outlook加载项 (所需的) 
 
-如果您的外接程序是使用 TypeScript 创建的 Outlook 外接程序，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为以下 `writeDataToOfficeDocument` 函数。
+如果加载项是使用 TypeScript 创建的 Outlook 加载项，请打开 **./src/taskpane/taskpane.ts**`writeDataToOfficeDocument`，查找 函数，并将其替换为以下函数。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -366,7 +362,7 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 如果加载项是使用 JavaScript PowerPoint加载项，请对 **./src/helpers/documentHelper.js进行以下更改**。
 
-1. 找到 `writeDataToOfficeDocument` 函数并将其替换为以下函数。
+1. 找到 函数 `writeDataToOfficeDocument` 并将其替换为以下函数。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -381,7 +377,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-2. 找到 `filterUserProfileInfo` 函数并将其替换为以下函数。
+2. 找到 函数 `filterUserProfileInfo` 并将其替换为以下函数。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -394,7 +390,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-3. 找到 `writeDataToPowerPoint` 函数并将其替换为以下函数。
+3. 找到 函数 `writeDataToPowerPoint` 并将其替换为以下函数。
 
     ```javascript
     function writeDataToPowerPoint(result) {
@@ -422,17 +418,17 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-4. 删除 `writeDataToExcel` 函数。
+4. `writeDataToExcel`删除 函数。
 
-5. 删除 `writeDataToOutlook` 函数。
+5. `writeDataToOutlook`删除 函数。
 
-6. 删除 `writeDataToWord` 函数。
+6. `writeDataToWord`删除 函数。
 
 进行这些更改后，跳到本文的"试用"部分[](#try-it-out)以试用更新的外接程序。
 
 ### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>使用 TypeScript PowerPoint加载项 (更改) 
 
-如果加载项是使用 TypeScript 创建的 PowerPoint 加载项，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为以下 `writeDataToOfficeDocument` 函数。
+如果加载项是使用 TypeScript 创建的 PowerPoint 加载项，请打开 **./src/taskpane/taskpane.ts**`writeDataToOfficeDocument`，查找 函数，并将其替换为以下函数。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -465,11 +461,11 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 进行这些更改后，跳到本文的"试用"部分[](#try-it-out)以试用更新的外接程序。
 
-### <a name="changes-required-for-a-word-add-in-javascript"></a>使用 JavaScript (Word 外接程序) 
+### <a name="changes-required-for-a-word-add-in-javascript"></a>JavaScript 应用程序 Word 外接程序 (所需的) 
 
-如果您的外接程序是使用 JavaScript 创建的 Word 外接程序，请对 **./src/helpers/documentHelper.js。**
+如果加载项是使用 JavaScript 创建的 Word 加载项，请对 **./src/helpers/documentHelper.js进行以下更改**。
 
-1. 找到 `writeDataToOfficeDocument` 函数并将其替换为以下函数。
+1. 找到 函数 `writeDataToOfficeDocument` 并将其替换为以下函数。
 
     ```javascript
     export function writeDataToOfficeDocument(result) {
@@ -484,7 +480,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-2. 找到 `filterUserProfileInfo` 函数并将其替换为以下函数。
+2. 找到 函数 `filterUserProfileInfo` 并将其替换为以下函数。
 
     ```javascript
     function filterOneDriveInfo(result) {
@@ -497,7 +493,7 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-3. 找到 `writeDataToWord` 函数并将其替换为以下函数。
+3. 找到 函数 `writeDataToWord` 并将其替换为以下函数。
 
     ```javascript
     function writeDataToWord(result) {
@@ -523,17 +519,17 @@ export function writeDataToOfficeDocument(result: Object): void {
     }
     ```
 
-4. 删除 `writeDataToExcel` 函数。
+4. `writeDataToExcel`删除 函数。
 
-5. 删除 `writeDataToOutlook` 函数。
+5. `writeDataToOutlook`删除 函数。
 
-6. 删除 `writeDataToPowerPoint` 函数。
+6. `writeDataToPowerPoint`删除 函数。
 
 进行这些更改后，跳到本文的"试用"部分[](#try-it-out)以试用更新的外接程序。
 
 ### <a name="changes-required-for-a-word-add-in-typescript"></a>使用 TypeScript (Word 外接程序) 
 
-如果您的外接程序是使用 TypeScript 创建的 Word 外接程序，请打开 **./src/taskpane/taskpane.ts，** 查找 函数，并将其替换为以下 `writeDataToOfficeDocument` 函数。
+如果加载项是使用 TypeScript 创建的 Word 加载项，请打开 **./src/taskpane/taskpane.ts**`writeDataToOfficeDocument`，查找 函数，并将其替换为以下函数。
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -567,7 +563,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 ## <a name="try-it-out"></a>试用
 
-如果加载项是加载项Excel Word 或 PowerPoint，请完成下一节中的步骤进行试用。如果加载项是加载项Outlook，请改为完成[Outlook部分中的步骤](#outlook)。
+如果您的外接程序是 Excel、Word 或 PowerPoint，请完成以下部分中的步骤以试用。如果加载项是加载项Outlook，请改为完成[Outlook部分中的步骤](#outlook)。
 
 ### <a name="excel-word-and-powerpoint"></a>Excel、Word 和 PowerPoint
 
@@ -575,14 +571,13 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 1. 在项目的根文件夹中，运行以下命令以生成项目、启动本地 Web 服务器，以及将加载项旁加载在之前选定的 Office 客户端应用程序中。
 
-    > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
     ```
 
-2. 在运行上一个命令 (即 Excel、Word 或 PowerPoint) 时打开的 Office 客户端应用程序中，确保使用与为应用配置[SSO](sso-quickstart.md#configure-sso)时用于连接到 Azure 的 Microsoft 365 管理员帐户相同的 Microsoft 365 组织成员的用户登录。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
+2. 在运行上一个命令 (（例如 Excel、Word 或 PowerPoint) ）时打开的 Office 客户端应用程序中，确保使用与配置 SSO 时用于连接到 Azure 的 Microsoft 365 管理员帐户相同的 Microsoft 365 组织成员的用户[登录](sso-quickstart.md#configure-sso)。 执行此操作，将为成功进行 SSO 建立了相应的条件。 
 
 3. 在 Office 客户端应用程序中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。 下图显示 Excel 中的该按钮。
 
@@ -607,14 +602,13 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 1. 在项目的根文件夹中，运行以下命令以生成项目、启动本地 Web 服务器并旁加载您的外接程序。 
 
-    > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行以下命令后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。 你可能还必须以管理员身份运行命令提示符或终端才能进行更改。
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
     ```
 
-2. 确保你已使用与为应用配置[SSO](sso-quickstart.md#configure-sso)时用于连接到 Azure 的 Microsoft 365 管理员帐户相同的 Microsoft 365 组织成员的用户登录 Outlook。 执行此操作，将为成功进行 SSO 建立了相应的条件。
+2. 确保你已使用与为应用配置 [SSO](sso-quickstart.md#configure-sso) 时用于连接到 Azure 的 Microsoft 365 管理员帐户相同的 Microsoft 365 组织成员的用户登录 Outlook。 执行此操作，将为成功进行 SSO 建立了相应的条件。
 
 3. 在 Outlook 中，撰写一封新邮件。
 
@@ -631,7 +625,7 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
     > [!NOTE]
     > 用户接受此权限请求后，以后将不会再收到提示。
 
-7. 加载项从登录用户的邮箱中读取数据OneDrive for Business将前 10 个文件和文件夹的名称写入电子邮件正文。
+7. 外接程序从登录用户的 OneDrive for Business 读取数据，将前 10 个文件和文件夹的名称写入电子邮件正文。
 
     ![Screenshot showing OneDrive for Business information in Outlook compose message window.](../images/sso-onedrive-info-outlook.png)
 

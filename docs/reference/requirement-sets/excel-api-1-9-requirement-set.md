@@ -4,8 +4,13 @@ description: 有关 ExcelApi 1.9 要求集的详细信息。
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: f34b109f95f013cf27f0abfca9c2a8c6b1e4e7c9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746698"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-19"></a>JavaScript API 1.9 Excel的新增功能
 
 超过 500 个新  Excel API 随 1.9 要求集一起推出。 第一个表提供了 API 的简明摘要，而后续表提供了详细列表。
@@ -24,7 +29,7 @@ ms.localizationpriority: medium
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求集 1.9 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.9 或更早版本支持的所有 API 的 API 参考文档，请参阅[要求集 1.9](/javascript/api/excel?view=excel-js-1.9&preserve-view=true) 或更早中的 Excel API。
+下表列出了 JavaScript API 要求Excel集 1.9 中的 API。 若要查看受 Excel JavaScript API 要求集 1.9 或更早版本支持的所有 API 的 API 参考文档，请参阅[要求集 1.9](/javascript/api/excel?view=excel-js-1.9&preserve-view=true) 或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -108,7 +113,7 @@ ms.localizationpriority: medium
 ||[showMeanLine](/javascript/api/excel/excel.chartboxwhiskeroptions#excel-excel-chartboxwhiskeroptions-showmeanline-member)|指定在箱形图中是否显示平均值。|
 ||[showMeanMarker](/javascript/api/excel/excel.chartboxwhiskeroptions#excel-excel-chartboxwhiskeroptions-showmeanmarker-member)|指定是否将平均值标记显示在箱形图中。|
 ||[showOutlierPoints](/javascript/api/excel/excel.chartboxwhiskeroptions#excel-excel-chartboxwhiskeroptions-showoutlierpoints-member)|指定在箱形图中是否显示离群值点。|
-|[ChartDataLabel](/javascript/api/excel/excel.chartdatalabel)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabel#excel-excel-chartdatalabel-linknumberformat-member)|指定数字格式是否链接到单元格 (以便当数字格式在单元格区域更改时标签) 。|
+|[ChartDataLabel](/javascript/api/excel/excel.chartdatalabel)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabel#excel-excel-chartdatalabel-linknumberformat-member)|指定数字格式是否链接到单元格 (以便当数字格式在单元格区域更改时，标签中的数字) 。|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabels#excel-excel-chartdatalabels-linknumberformat-member)|指定数字格式是否链接到单元格。|
 |[ChartErrorBars](/javascript/api/excel/excel.charterrorbars)|[endStyleCap](/javascript/api/excel/excel.charterrorbars#excel-excel-charterrorbars-endstylecap-member)|指定误差线是否具有结束样式上限。|
 ||[format](/javascript/api/excel/excel.charterrorbars#excel-excel-charterrorbars-format-member)|指定误差线的格式类型。|
@@ -144,7 +149,7 @@ ms.localizationpriority: medium
 ||[splitValue](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-splitvalue-member)|指定分隔复合饼图或复合条饼图的两个部分的阈值。|
 ||[xErrorBars](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-xerrorbars-member)|表示图表系列的误差线对象。|
 ||[yErrorBars](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-yerrorbars-member)|表示图表系列的误差线对象。|
-|[ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)|[linkNumberFormat](/javascript/api/excel/excel.charttrendlinelabel#excel-excel-charttrendlinelabel-linknumberformat-member)|指定数字格式是否链接到单元格 (以便当数字格式在单元格区域更改时标签) 。|
+|[ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)|[linkNumberFormat](/javascript/api/excel/excel.charttrendlinelabel#excel-excel-charttrendlinelabel-linknumberformat-member)|指定数字格式是否链接到单元格 (以便当数字格式在单元格区域更改时，标签中的数字) 。|
 |[ColumnProperties](/javascript/api/excel/excel.columnproperties)|[address](/javascript/api/excel/excel.columnproperties#excel-excel-columnproperties-address-member)|表示`address`属性。|
 ||[addressLocal](/javascript/api/excel/excel.columnproperties#excel-excel-columnproperties-addresslocal-member)|表示`addressLocal`属性。|
 ||[columnIndex](/javascript/api/excel/excel.columnproperties#excel-excel-columnproperties-columnindex-member)|表示`columnIndex`属性。|
@@ -252,7 +257,7 @@ ms.localizationpriority: medium
 ||[setAutoSortOnCell(cell: Range \| string, sortBy: Excel.SortBy)](/javascript/api/excel/excel.pivotlayout#excel-excel-pivotlayout-setautosortoncell-member(1))|将数据透视表设置为使用指定的单元格设置自动排序，以自动选择排序的所有条件和上下文。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[enableDataValueEditing](/javascript/api/excel/excel.pivottable#excel-excel-pivottable-enabledatavalueediting-member)|指定数据透视表是否允许用户编辑数据正文中的值。|
 ||[useCustomSortLists](/javascript/api/excel/excel.pivottable#excel-excel-pivottable-usecustomsortlists-member)|指定数据透视表在排序时是否使用自定义列表。|
-|[区域](/javascript/api/excel/excel.range)|[autoFill (destinationRange？： Range \| string， autoFillType？： Excel。AutoFillType) ](/javascript/api/excel/excel.range#excel-excel-range-autofill-member(1))|使用指定的自动填充逻辑填充从当前区域到目标区域的范围。|
+|[范围](/javascript/api/excel/excel.range)|[autoFill (destinationRange？： Range \| string， autoFillType？： Excel。AutoFillType) ](/javascript/api/excel/excel.range#excel-excel-range-autofill-member(1))|使用指定的自动填充逻辑填充从当前区域到目标区域的范围。|
 ||[convertDataTypeToText()](/javascript/api/excel/excel.range#excel-excel-range-convertdatatypetotext-member(1))|将数据类型为区域单元格转换为文本。|
 ||[convertToLinkedDataType(serviceID: number, languageCulture: string)](/javascript/api/excel/excel.range#excel-excel-range-converttolinkeddatatype-member(1))|将区域单元格转换为工作表中的链接数据类型。|
 ||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.range#excel-excel-range-copyfrom-member(1))|将单元格数据或格式从源区域或当前 `RangeAreas` 区域复制。|
@@ -285,7 +290,7 @@ ms.localizationpriority: medium
 ||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.rangeareas#excel-excel-rangeareas-copyfrom-member(1))|将单元格数据或格式从源区域或复制到 `RangeAreas` 当前 `RangeAreas`。|
 ||[dataValidation](/javascript/api/excel/excel.rangeareas#excel-excel-rangeareas-datavalidation-member)|返回 中所有区域的数据验证对象 `RangeAreas`。|
 ||[format](/javascript/api/excel/excel.rangeareas#excel-excel-rangeareas-format-member)|返回一 `RangeFormat` 个对象，该对象封装对象中所有范围的字体、填充、边框、对齐方式和其他 `RangeAreas` 属性。|
-||[getEntireColumn()](/javascript/api/excel/excel.rangeareas#excel-excel-rangeareas-getentirecolumn-member(1))|返回一 `RangeAreas` `RangeAreas` `RangeAreas` 个对象，该对象代表 (例如，如果当前表示单元格"B4：E11， H2" `RangeAreas` ，则返回表示列"B：E， H：H") 。|
+||[getEntireColumn()](/javascript/api/excel/excel.rangeareas#excel-excel-rangeareas-getentirecolumn-member(1))|`RangeAreas` `RangeAreas` `RangeAreas` 返回一个对象，该对象代表 (例如，如果当前表示单元格"B4：E11， H2"`RangeAreas`，则返回表示列"B：E， H：H") 。|
 ||[getEntireRow()](/javascript/api/excel/excel.rangeareas#excel-excel-rangeareas-getentirerow-member(1))|`RangeAreas`返回一个对象`RangeAreas``RangeAreas`，该对象代表 (例如，如果当前表示单元格"B4：E11"`RangeAreas`，则返回表示行"4：11") 。|
 ||[getIntersection(anotherRange: Range \| RangeAreas \| string)](/javascript/api/excel/excel.rangeareas#excel-excel-rangeareas-getintersection-member(1))|`RangeAreas`返回表示给定区域或 的交集的对象`RangeAreas`。|
 ||[getIntersectionOrNullObject(anotherRange: Range \| RangeAreas \| string)](/javascript/api/excel/excel.rangeareas#excel-excel-rangeareas-getintersectionornullobject-member(1))|`RangeAreas`返回表示给定区域或 的交集的对象`RangeAreas`。|
@@ -300,7 +305,7 @@ ms.localizationpriority: medium
 ||[setDirty()](/javascript/api/excel/excel.rangeareas#excel-excel-rangeareas-setdirty-member(1))|`RangeAreas`设置在下次重新计算时要重新计算的 。|
 ||[style](/javascript/api/excel/excel.rangeareas#excel-excel-rangeareas-style-member)|表示此对象中所有范围的 `RangeAreas` 样式。|
 ||[worksheet](/javascript/api/excel/excel.rangeareas#excel-excel-rangeareas-worksheet-member)|返回当前 的工作表 `RangeAreas`。|
-|[RangeBorder](/javascript/api/excel/excel.rangeborder)|[tintAndShade](/javascript/api/excel/excel.rangeborder#excel-excel-rangeborder-tintandshade-member)|指定一个使区域边框的颜色变亮或变暗的双精度值，该值介于 -1 (最暗) 和 1 (最亮) 之间，原始颜色为 0。|
+|[RangeBorder](/javascript/api/excel/excel.rangeborder)|[tintAndShade](/javascript/api/excel/excel.rangeborder#excel-excel-rangeborder-tintandshade-member)|指定使区域边框的颜色变亮或变暗的双精度值，该值介于 -1 (最暗) 和 1 (最亮) 之间，原始颜色为 0。|
 |[RangeBorderCollection](/javascript/api/excel/excel.rangebordercollection)|[tintAndShade](/javascript/api/excel/excel.rangebordercollection#excel-excel-rangebordercollection-tintandshade-member)|指定使区域边框的颜色变亮或变暗的双精度型值。|
 |[RangeCollection](/javascript/api/excel/excel.rangecollection)|[getCount()](/javascript/api/excel/excel.rangecollection#excel-excel-rangecollection-getcount-member(1))|返回 中区域的数量 `RangeCollection`。|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangecollection#excel-excel-rangecollection-getitemat-member(1))|基于 range 对象在 中的位置返回该对象 `RangeCollection`。|
@@ -456,7 +461,7 @@ ms.localizationpriority: medium
 ||[usePrecisionAsDisplayed](/javascript/api/excel/excel.workbook#excel-excel-workbook-useprecisionasdisplayed-member)|如果此工作簿中的计算仅使用显示的数字精度来完成，则为 True。|
 |[WorkbookAutoSaveSettingChangedEventArgs](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs)|[type](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs#excel-excel-workbookautosavesettingchangedeventargs-type-member)|获取事件的类型。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[autoFilter](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-autofilter-member)|`AutoFilter`表示工作表的对象。|
-||[enableCalculation](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-enablecalculation-member)|确定是否Excel重新计算工作表（ 如有必要）。|
+||[enableCalculation](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-enablecalculation-member)|确定是否Excel应重新计算工作表（ 如有必要）。|
 ||[findAll(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-findall-member(1))|根据指定的条件查找给定字符串 `RangeAreas` 的所有匹配项，并作为包含一个或多个矩形区域的对象返回。|
 ||[findAllOrNullObject(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-findallornullobject-member(1))|根据指定的条件查找给定字符串 `RangeAreas` 的所有匹配项，并作为包含一个或多个矩形区域的对象返回。|
 ||[getRanges(address?: string)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getranges-member(1))|`RangeAreas`获取表示由地址或名称指定的一个或多个矩形区域块的对象。|

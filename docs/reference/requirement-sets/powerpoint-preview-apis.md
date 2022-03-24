@@ -4,11 +4,16 @@ description: 有关即将推出的 JavaScript PowerPoint的详细信息。
 ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium
+ms.openlocfilehash: 2d43ca19d36b9f30e8699370bc97ecf194395d06
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742944"
 ---
-
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPoint JavaScript 预览 API
 
-JavaScript API PowerPoint先在"预览"中引入，之后在经过充分测试并获取用户反馈后，它将成为特定编号要求集的一部分。
+JavaScript API PowerPoint在"预览"中首次引入，之后在经过充分测试并获取用户反馈后，它将成为特定编号要求集的一部分。
 
 第一个表提供了 API 的简明摘要，而后续表提供了详细列表。
 
@@ -21,7 +26,7 @@ JavaScript API PowerPoint先在"预览"中引入，之后在经过充分测试�
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前预览PowerPoint JavaScript API 的列表。 有关所有 JavaScript POWERPOINT API 的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 Excel [JavaScript API](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)。
+下表列出了当前预览PowerPoint JavaScript API 的列表。 有关所有 JavaScript POWERPOINT的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 Excel [JavaScript API](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -42,8 +47,8 @@ JavaScript API PowerPoint先在"预览"中引入，之后在经过充分测试�
 ||[top](/javascript/api/powerpoint/powerpoint.shapeaddoptions#powerpoint-powerpoint-shapeaddoptions-top-member)|指定从形状的上边缘到幻灯片上边缘的距离（以点表示）。|
 ||[width](/javascript/api/powerpoint/powerpoint.shapeaddoptions#powerpoint-powerpoint-shapeaddoptions-width-member)|指定形状的宽度（以点表示）。|
 |[ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection)|[addGeometricShape (geometricShapeType：PowerPoint。GeometricShapeType， options？： PowerPoint.ShapeAddOptions) ](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addgeometricshape-member(1))|向幻灯片添加几何形状。|
-||[addLine (connectorType？： PowerPoint。ConnectorType，选项？：PowerPoint。ShapeAddOptions) ](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addline-member(1))|向幻灯片添加一行。|
-||[addTextBox (text： string， options？： PowerPoint.ShapeAddOptions) ](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1))|向幻灯片添加一个文本框，并将提供的文本作为内容。|
+||[addLine (connectorType？：PowerPoint。ConnectorType，options？：PowerPoint。ShapeAddOptions) ](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addline-member(1))|向幻灯片添加一行。|
+||[addTextBox (text： string， options？： PowerPoint。ShapeAddOptions) ](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1))|向幻灯片添加一个文本框，并将提供的文本作为内容。|
 |[ShapeFill](/javascript/api/powerpoint/powerpoint.shapefill)|[clear()](/javascript/api/powerpoint/powerpoint.shapefill#powerpoint-powerpoint-shapefill-clear-member(1))|清除此形状的填充格式。|
 ||[foregroundColor](/javascript/api/powerpoint/powerpoint.shapefill#powerpoint-powerpoint-shapefill-foregroundcolor-member)|以 HTML 颜色格式表示形状填充前景色，格式为 #RRGGBB (例如"FFA500") 或作为已命名的 HTML 颜色 (例如"orange") 。|
 ||[setSolidColor(color: string)](/javascript/api/powerpoint/powerpoint.shapefill#powerpoint-powerpoint-shapefill-setsolidcolor-member(1))|将形状的填充格式设置为统一颜色。|

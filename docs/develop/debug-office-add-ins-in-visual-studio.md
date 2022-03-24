@@ -1,18 +1,18 @@
 ---
 title: 在 Visual Studio 中调试 Office 加载项
-description: 使用 Visual Studio 在 Windows 上的 Office 桌面客户端中调试 Office 加载项
+description: 使用 Visual Studio 调试Office桌面客户端中的Office加载项Windows。
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f8b48666955db413e3bdaa6c329326f80bdb07
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 49d52bd9b34b6f03dcf8b333cff816632c47c1c9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340258"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743528"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
-本文介绍如何调试使用 Office 2022 中的 Office 外接程序项目模板之一创建的 Visual Studio 外接程序中的客户端代码。  有关在外接程序中调试Office代码的信息，请参阅调试 [Office 外接程序 - 服务器端还是客户端？](../testing/debug-add-ins-overview.md#server-side-or-client-side)。
+本文介绍如何调试使用 Office 2022 中的 Office 外接程序项目模板之一创建的 Visual Studio 外接程序中的客户端代码。  有关在外接程序中调试服务器端代码Office，请参阅调试 [Office 外接程序 - 服务器端还是客户端？](../testing/debug-add-ins-overview.md#server-side-or-client-side)。
 
 > [!NOTE]
 > 你无法通过 Visual Studio 在 Mac 上的 Office 中调试外接程序。 有关在 Mac 上调试的信息，请参阅Office [Mac 上的调试加载项](../testing/debug-office-add-ins-on-ipad-and-mac.md)。

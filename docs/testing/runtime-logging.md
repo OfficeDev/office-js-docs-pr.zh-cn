@@ -3,12 +3,12 @@ title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e135ef051b79fcfba7aac1252d10ec1109f25d
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: f6fd5e2c184f9daceab999e371e0abab9146d5fb
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081440"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745864"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 
@@ -145,4 +145,4 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 - [旁加载 Office 外接程序进行测试](sideload-office-add-ins-for-testing.md)
 - [使用适用于 Internet Explorer 的开发人员工具调试加载项](debug-add-ins-using-f12-tools-ie.md)
 - [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
-- [在基于 Web 的 Microsoft Edge (Chromium 中，使用开发人员工具) ](debug-add-ins-using-devtools-edge-chromium.md) 
+- [使用 Microsoft Edge（基于 Chromium）中的开发人员工具调试加载项](debug-add-ins-using-devtools-edge-chromium.md) 

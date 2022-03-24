@@ -1,14 +1,14 @@
 ---
 title: 文档打开时在 Office 加载项中运行代码
-description: 了解如何在文档打开时Office外接程序外接程序中运行代码。
+description: 了解如何在打开文档时Office外接程序外接程序中运行代码。
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b14d6e9d03bdb9dcec57f76e4ad6b8dbfbc66fe4
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 20cd7a90f34c0141ca166119ceae92960a904595
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855546"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744081"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>文档打开时在 Office 加载项中运行代码
 
@@ -64,7 +64,7 @@ async function onChange(event) {
 }
 ```
 
-下面的PowerPoint代码展示了如何为文档文档中的选择更改事件注册PowerPoint处理程序。 如果您将外接程序配置为在文档打开时加载，则此代码将在文档打开时注册事件处理程序。 您可以在打开任务窗格之前处理更改事件。
+以下PowerPoint代码展示了如何为文档文档中的选择更改事件注册PowerPoint处理程序。 如果您将外接程序配置为在文档打开时加载，则此代码将在文档打开时注册事件处理程序。 您可以在打开任务窗格之前处理更改事件。
 
 ```JavaScript
 // This is called as soon as the document opens.

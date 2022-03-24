@@ -3,8 +3,13 @@ title: 对演示文稿、幻灯片和演示文稿中的形状使用自定义Powe
 description: 了解如何将标记用于有关演示文稿、幻灯片和形状的自定义元数据。
 ms.date: 12/14/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 01c8ce5c5e3689ef6bd2131334363b3a77710cac
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746967"
 ---
-
 # <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>对演示文稿、幻灯片和演示文稿中的形状使用自定义PowerPoint
 
 加载项可以将自定义元数据（称为"标记"键值对）附加到幻灯片上的演示文稿、特定幻灯片和特定形状。
@@ -12,7 +17,7 @@ ms.localizationpriority: medium
 使用标记有两种主要方案：
 
 - 应用于幻灯片或形状时，标记允许对对象进行分类以便进行批处理。 例如，假设演示文稿包含一些幻灯片，这些幻灯片应包含在向东部区域而不是西地区的演示文稿中。 同样，还有一些备用幻灯片应只向西显示。 您的外接程序可以创建一`REGION``East`个包含键和值的标记，并应用于只应在东部使用的幻灯片。 对于应该只向 `West` "西"区域显示的幻灯片，该标记的值设置为 。 在向"东部 `REGION` "显示演示文稿之前，加载项中的按钮将运行代码，该代码将循环访问检查标记值的所有幻灯片。 删除区域位置的 `West` 幻灯片。 然后，用户关闭外接程序并启动幻灯片放映。
-- 应用于演示文稿时，标记实际上是演示文稿文档中的自定义 (类似于 Word 文档中的 [CustomProperty](/javascript/api/word/word.customproperty)) 。
+- 应用于演示文稿时，标记实际上是演示文稿文档中的自定义属性 (Word [文档中的 CustomProperty](/javascript/api/word/word.customproperty)) 。
 
 ## <a name="tag-slides-and-shapes"></a>标记幻灯片和形状
 
@@ -77,7 +82,7 @@ async function updateTag() {
 
 2. 下面的代码创建一个方法，用于获取选定幻灯片的索引。 关于此代码，请注意以下几点：
 
-    - 它使用通用 JavaScript API [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 方法。
+    - 它使用Office JavaScript API 的 [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 方法。
     - 对 的 `getSelectedDataAsync` 调用嵌入承诺返回函数中。 有关这样做的原因和操作说明，请参阅在承诺返回函数中包装 [通用 API](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)。
     - `getSelectedDataAsync` 返回一个数组，因为可以选择多个幻灯片。 在此方案中，用户只选择了一个，因此代码获取第一张 (第) 张幻灯片，这是唯一选定的幻灯片。
     - 幻灯片`index`的值是用户在 UI 缩略图窗格中的幻灯片旁边看到的PowerPoint 1 的值。

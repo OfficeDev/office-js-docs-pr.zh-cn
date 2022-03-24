@@ -4,18 +4,18 @@ description: 有关 JavaScript API 的自定义函数Excel集的详细信息。
 ms.date: 02/15/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 7558035b6b151977e985ec04ed1fa84c116f0886
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 3f8e66932d6f960898dc2185299fcbe58324f281
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892515"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746218"
 ---
 # <a name="custom-functions-requirement-sets"></a>自定义函数要求集
 
 [自定义函数](../../excel/custom-functions-overview.md)使用独立于核心 Excel JavaScript API 的要求集。 下表列出了自定义函数要求集、受支持的 Office 客户端应用程序，以及这些应用程序的版本或版本号。
 
-|  要求集  |  Office 2021 或更高版本Windows<br>（一次性购买）  |  Windows 版 Office<br>（关联至 Microsoft 365 订阅）  |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br> (两个订阅<br> 和一次购买 Office Mac 2021 及更高版本)   | Office 网页版 |
+|  要求集  |  Office 2021 年 1 月或Windows<br>（一次性购买）  |  Windows 版 Office<br>（关联至 Microsoft 365 订阅）  |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office<br> (两个订阅<br> 和一次购买 Office Mac 2021 及更高版本)   | Office 网页版 |
 |:-----|:-----|:-----|:-----|:-----|:-----|
 | CustomFunctionsRuntime 1.3 | 16.0.14326.20454 或更高版本 | 16.0.13127.20296 或更高版本 | 不支持 | 16.40.20081000 或更高版本 | 2020 年 7 月 |
 | CustomFunctionsRuntime 1.2 | 16.0.14326.20454 或更高版本 | 16.0.12527.20194 或更高版本 | 不支持 | 16.34.20020900 或更高版本 | 2020 年 1 月 |

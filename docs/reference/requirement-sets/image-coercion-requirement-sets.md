@@ -1,24 +1,29 @@
 ---
 title: 图像强制要求集
-description: 支持跨 Office、PowerPoint 和 Word 的外接程序Excel图像强制要求集。
+description: 支持跨 Office、PowerPoint 和 Word 的外接程序Excel强制要求集。
 ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: 50533d179180eeef81825a97c9c39fda95af554f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746920"
 ---
-
 # <a name="image-coercion-requirement-sets"></a>图像强制要求集
 
 要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
-ImageCoercion 1.1 `Office.CoercionType.Image` 允许转换为图像 () 方法写入数据时创建 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 图像。 支持以下应用程序。
+ImageCoercion 1.1 `Office.CoercionType.Image` 支持在使用 () 写入数据时转换到图像 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 图像。 支持以下应用程序。
 
 - Excel 2013 年 10 月及Windows
 - Excel 2016 Mac 及更高版本
 - iPad 版 Excel
 - OneNote 网页版
-- PowerPoint 2013 年 10 月及Windows
+- PowerPoint 2013 及更高版本Windows
 - PowerPoint 2016 Mac 及更高版本
 - PowerPoint 网页版
 - iPad 版 PowerPoint
@@ -31,10 +36,10 @@ ImageCoercion 1.1 `Office.CoercionType.Image` 允许转换为图像 () 方法写
 
 ImageCoercion 1.2 支持在使用 () 写入数据时转换为 [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) SVG `Office.CoercionType.XmlSvg` 格式。 支持以下应用程序。
 
-- Excel 2021 及更高版本Windows
+- Excel 2021 年 10 月及Windows
 - Excel Mac 上的 2021 年及更高版本
 - PowerPoint 2021 年 10 月及Windows
-- PowerPoint Mac 上的 2021 及更高版本
+- PowerPoint Mac 上的 2021 年及更高版本
 - PowerPoint 网页版
 - Word 2021 及更高版本Windows
 - Mac 上的 Word 2021 及更高版本

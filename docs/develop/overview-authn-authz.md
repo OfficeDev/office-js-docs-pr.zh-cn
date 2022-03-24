@@ -3,8 +3,13 @@ title: Office 加载项中的身份验证和授权概述
 description: 了解 Office 加载项中的身份验证和授权工作原理。
 ms.date: 01/25/2022
 ms.localizationpriority: high
+ms.openlocfilehash: b0bd85ae144f45554a48e05d7fad866c3f67fe6b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743699"
 ---
-
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office 加载项中的身份验证和授权概述
 
 默认情况下，Office 加载项允许匿名访问，但你可以要求用户登录以后再使用Microsoft 帐户、Microsoft 365 教育版或工作帐户或其他公共帐户的外接程序。 此任务被称为“用户身份验证”，因为它让加载项能够知道用户的身份。

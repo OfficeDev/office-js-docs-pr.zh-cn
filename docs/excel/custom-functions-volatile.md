@@ -3,12 +3,12 @@ ms.date: 01/14/2020
 description: 了解如何实现可变和脱机流式处理自定义函数。
 title: 函数中的可变值
 ms.localizationpriority: medium
-ms.openlocfilehash: 90f0ecea718282ce85e7e6f2b604239c18533a9a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 401be3e04a7b36a226547175df4311fc653c027a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149531"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744473"
 ---
 # <a name="volatile-values-in-functions"></a>函数中的可变值
 
@@ -20,7 +20,7 @@ Excel 包含多个内置可变函数，例如 `RAND` 和 `TODAY`。 有关 Excel
 
 自定义函数允许您创建自己的可变函数，在处理日期、时间、随机数字和建模时，这些函数可能很有用。 例如， [为确定最佳解决方案，将要求](https://en.wikipedia.org/wiki/Monte_Carlo_method) 生成随机输入。
 
-如果选择自动生成 JSON 文件，请声明具有 JSDoc 注释标记 的可变函数 `@volatile` 。 有关自动生成的信息，请参阅自动生成 [自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
+如果选择自动生成 JSON 文件，请声明具有 JSDoc 注释标记的可变函数 `@volatile`。 有关自动生成详细信息，请参阅 [自动生成自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)。
 
 以下是一个可变自定义函数的示例，该函数模拟滚动六面切纸。
 

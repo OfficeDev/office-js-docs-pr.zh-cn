@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API Excel引用单元格和依赖项�
 ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e401ea6dfe285a56fe0da3d250222a6e016b24c
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 9d686b416b271dce81ee072a98f8cb9e1dac65b2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340699"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744086"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>使用 JavaScript API 获取公式引用Excel依赖项
 

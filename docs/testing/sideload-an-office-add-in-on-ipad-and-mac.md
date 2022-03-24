@@ -3,12 +3,12 @@ title: 在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 description: 通过旁Office在 iPad 和 Mac 上测试加载项。
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 38c2d39cf5dc997492899a41e430413e2ae388b4
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: b57b072df1fa7c55e709f4ed4045cece8b95aa7e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990717"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746614"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>在 iPad 和 Mac 上旁加载 Office 加载项以供测试
 
@@ -21,9 +21,9 @@ ms.locfileid: "59990717"
 
 - 安装了 [iTunes](https://www.apple.com/itunes/download/) 的 Windows 或 Mac 计算机。
   > [!IMPORTANT]
-  > 如果您运行的是 macOS Catalina，[则 iTunes](https://support.apple.com/HT210200)不再可用，因此您应该按照本文稍后使用[macOS Catalina](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina)在 Excel 或 iPad 上的 Word 旁加载外接程序部分中的说明进行操作。
+  > 如果您运行的是 macOS Catalina，[则 iTunes](https://support.apple.com/HT210200) 不再可用，因此您应该按照本文稍后使用 [macOS Catalina 在 Excel 或 iPad 上的 Word](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina) 旁加载外接程序部分中的说明进行操作。
 
-- 运行iPad iOS 8.2 或更高版本，Excel [](https://apps.apple.com/app/microsoft-excel/id586683407) [Word](https://apps.apple.com/app/microsoft-word/id586447913)和同步电缆。
+- 运行iPad iOS 8.2 或[更高版本，Excel](https://apps.apple.com/app/microsoft-excel/id586683407) [Word](https://apps.apple.com/app/microsoft-word/id586447913) 和同步电缆。
 
 - 你想要测试的外接程序的清单 .xml 文件。
 
@@ -41,7 +41,7 @@ ms.locfileid: "59990717"
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-itunes"></a>使用 iTunes 在 Excel 或 Word iPad旁加载外接程序
 
-1. 使用同步电缆将 iPad 连接到你的计算机。 如果是首次将 iPad连接到计算机，系统将提示"信任此计算机 **？"。** 选择“**信任**”继续执行操作。
+1. 使用同步电缆将 iPad 连接到你的计算机。 如果是首次将 iPad连接到计算机，系统将提示"信任 **此计算机？"**。 选择“**信任**”继续执行操作。
 
 2. 在 iTunes 中，选择菜单栏下的“iPad”图标。
 
@@ -49,34 +49,34 @@ ms.locfileid: "59990717"
 
 4. 在 iTunes 右侧，向下滚动到“文件共享”，然后在“外接程序”列下选择“Excel”或“Word”。
 
-5. 在"Excel"或 **"Word** 文档"列的底部，选择"添加文件"，然后选择要旁加载的外接程序的清单 .xml 文件。
+5. 在"Excel"或"**Word** 文档"列的底部，选择"添加文件"，然后选择要旁加载的外接程序的清单 .xml 文件。
 
 6. 在你的 iPad 上打开 Excel 或 Word 应用。 如果Excel Word 应用已在运行，请选择"开始"按钮，然后关闭并重新启动应用。
 
 7. 打开一个文档。
 
-8. 在"插入"选项卡上选择"外接程序"。 (在"插入"选项卡上，您可能需要水平滚动，直到您看到"外接程序"按钮。) 您的旁加载的外接程序可在外接程序 **UI** 中的"开发人员"标题下插入。  
+8. 选择"插入"选项卡上的"外接程序"。 (在"插入"选项卡上，您可能需要水平滚动，直到您看到"外接程序"按钮。) 您的旁加载的外接程序可在 **外接程序 UI 中的**"开发人员"标题下插入。 
 
     ![在加载项应用中插入Excel加载项。](../images/excel-insert-add-in.png)
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina"></a>使用 macOS Catalina 在 Excel 或 Word iPad旁加载外接程序
 
 > [!IMPORTANT]
-> 随着 macOS Catalina 的引入，Apple 不再使用 Mac 上的 [iTunes，](https://support.apple.com/HT210200) 以及将应用旁加载到 **Finder 所需的集成功能**。
+> 随着 macOS Catalina 的引入，Apple 不再使用 [Mac 上的 iTunes](https://support.apple.com/HT210200) ，以及将应用旁加载到 **Finder 所需的集成功能**。
 
-1. 使用同步电缆将 iPad 连接到你的计算机。 如果是首次将 iPad连接到计算机，系统将提示"信任此计算机 **？"。** 选择“**信任**”继续执行操作。 还可能会询问您是否是新的iPad或是否正在还原一个。
+1. 使用同步电缆将 iPad 连接到你的计算机。 如果是首次将 iPad连接到计算机，系统将提示"信任 **此计算机？"**。 选择“**信任**”继续执行操作。 还可能会询问您是否是新的iPad或是否正在还原一个。
 
 2. 在"查找工具"中的"位置 **"** 下 **，选择iPad** 栏下方的"搜索"图标。
 
-3. 在"查找器"窗口顶部，单击"文件"，然后找到 **"Excel** **Word"。**
+3. 在"查找器"窗口顶部，单击"文件"，**然后找到"** Excel **Word"**。
 
-4. 从不同的"查找器"窗口中，拖放要旁加载到第一个"查找器"窗口中的 Excel 或 Word文件的外接程序的 **manifest.xml** 文件。
+4. 从不同的"查找器"窗口中，拖放manifest.xml第一个"查找器"窗口中要旁加载到 Excel 或 Word 文件的外接程序的 **manifest.xml** 文件。
 
 5. 在你的 iPad 上打开 Excel 或 Word 应用。 如果Excel Word 应用已在运行，请选择"开始"按钮，然后关闭并重新启动应用。
 
 6. 打开一个文档。
 
-7. 在"插入"选项卡上选择"外接程序"。 (在"插入"选项卡上，您可能需要水平滚动，直到您看到"外接程序"按钮。) 您的旁加载的外接程序可在外接程序 **UI** 中的"开发人员"标题下插入。  
+7. 选择"插入"选项卡上的"外接程序"。 (在"插入"选项卡上，您可能需要水平滚动，直到您看到"外接程序"按钮。) 您的旁加载的外接程序可在 **外接程序 UI 中的**"开发人员"标题下插入。 
 
     ![在加载项应用中插入Excel加载项。](../images/excel-insert-add-in.png)
 
@@ -94,20 +94,20 @@ ms.locfileid: "59990717"
 
 3. 打开 Word，然后打开一个文档。如果 Word 已运行，则重新启动它。
 
-4. 在 Word中，选择"插入加载项""我的  >    >   ("下拉菜单) ，然后选择加载项。
+4. 在 Word 中，**选择"** > 插入 **外接程序** > ""我的 (外接程序") "菜单，然后选择您的外接程序。
 
-    ![Mac 上的 Office 中的"我的外接程序"。](../images/my-add-ins-wikipedia.png)
+    ![在 Mac 上Office我的外接程序。](../images/my-add-ins-wikipedia.png)
 
     > [!IMPORTANT]
     > 旁加载的加载项不会显示在“我的加载项”对话框中。它们仅显示在下拉菜单中（单击“插入”选项卡上“我的加载项”右侧的向下小箭头）。旁加载的加载项在此菜单中的“开发人员加载项”标题下列出。
 
 5. 验证加载项是否在 Word 中显示。
 
-    ![Office在 Mac 上的 Office 中显示的外接程序。](../images/lorem-ipsum-wikipedia.png)
+    ![Office Mac 上的 Office 中显示的外接程序。](../images/lorem-ipsum-wikipedia.png)
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的外接程序
 
-可以通过清除计算机上以前旁加载的Office加载的外接程序。 有关如何清除每个平台和应用程序缓存的详细信息，请参阅清除每个Office[缓存。](clear-cache.md)
+可以通过清除您计算机上以前旁加载的Office加载的外接程序。 有关如何清除每个平台和应用程序缓存的详细信息，请参阅清除每个Office[缓存。](clear-cache.md)
 
 ## <a name="see-also"></a>另请参阅
 

@@ -3,12 +3,12 @@ title: 在 Mac 上调试 Office 加载项
 description: 了解如何使用 Mac 调试Office加载项。
 ms.date: 03/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dc9017eb7bd27ee0bc22d3ad448e5996895c5eee
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: b0925e53c4e50a5cddc52173b66d5ad9fbfeaef9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711203"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746928"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>在 Mac 上调试 Office 加载项
 

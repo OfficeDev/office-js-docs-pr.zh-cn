@@ -4,8 +4,13 @@ description: 有关 ExcelApi 1.8 要求集的详细信息。
 ms.date: 03/19/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 39f3a5daf89849d3f8517794ab8cd4214309a667
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746859"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-18"></a>JavaScript API 1.8 Excel的新增功能
 
 Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数据验证、图表、图表事件、性能选项和工作簿创建的 API。
@@ -32,7 +37,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
-|[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#excel-excel-basicdatavalidation-formula1-member)|当运算符属性设置为二进制运算符（如 GreaterThan (）时，指定右侧操作数 (左侧操作数是用户尝试在单元格单元格中输入的值) 。|
+|[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#excel-excel-basicdatavalidation-formula1-member)|当 operator 属性设置为二进制运算符（如 GreaterThan (）时，指定右侧操作数 (左侧操作数是用户尝试在单元格单元格中输入的值) 。|
 ||[formula2](/javascript/api/excel/excel.basicdatavalidation#excel-excel-basicdatavalidation-formula2-member)|使用三元运算符 Between 和 NotBetween 指定上限操作数。|
 ||[operator](/javascript/api/excel/excel.basicdatavalidation#excel-excel-basicdatavalidation-operator-member)|用于验证数据有效性的运算符。|
 |[Chart](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#excel-excel-chart-categorylabellevel-member)|指定图表类别标签级别枚举常量，该常量引用源分类标签的级别。|
@@ -116,7 +121,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[axisGroup](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-axisgroup-member)|指定指定系列的组。|
 ||[dataLabels](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-datalabels-member)|表示系列中所有数据标签的集合。|
 ||[explosion](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-explosion-member)|指定饼图或圆环图扇区的分解值。|
-||[firstSliceAngle](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-firstsliceangle-member)|指定第一个饼图或圆环图扇区的角度，以度 (垂直方向顺) 。|
+||[firstSliceAngle](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-firstsliceangle-member)|指定第一个饼图或圆环图扇区的角度，以度 (垂直方向顺时针) 。|
 ||[invertIfNegative](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-invertifnegative-member)|如此 Excel当项对应于一个负数时反转图案。|
 ||[overlap](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-overlap-member)|指定条柱的摆放方式。|
 ||[secondPlotSize](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-secondplotsize-member)|指定复合饼图或复合条饼图的第二部分的大小，以主饼图大小的百分比表示。|
@@ -141,7 +146,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[width](/javascript/api/excel/excel.charttrendlinelabel#excel-excel-charttrendlinelabel-width-member)|返回图表趋势线标签的宽度，以磅为单位。|
 |[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[border](/javascript/api/excel/excel.charttrendlinelabelformat#excel-excel-charttrendlinelabelformat-border-member)|指定边框格式，包括颜色、线条和粗细。|
 ||[fill](/javascript/api/excel/excel.charttrendlinelabelformat#excel-excel-charttrendlinelabelformat-fill-member)|指定当前图表趋势线标签的填充格式。|
-||[font](/javascript/api/excel/excel.charttrendlinelabelformat#excel-excel-charttrendlinelabelformat-font-member)|指定图表趋势 (字体名称、字体大小和颜色) 字体属性。|
+||[font](/javascript/api/excel/excel.charttrendlinelabelformat#excel-excel-charttrendlinelabelformat-font-member)|指定图表趋势 (的字体属性，如字体名称) 字体大小和颜色类型。|
 |[CustomDataValidation](/javascript/api/excel/excel.customdatavalidation)|[formula](/javascript/api/excel/excel.customdatavalidation#excel-excel-customdatavalidation-formula-member)|自定义数据验证公式。|
 |[DataPivotHierarchy](/javascript/api/excel/excel.datapivothierarchy)|[field](/javascript/api/excel/excel.datapivothierarchy#excel-excel-datapivothierarchy-field-member)|返回与 DataPivotHierarchy 相关联的 PivotFields。|
 ||[id](/javascript/api/excel/excel.datapivothierarchy#excel-excel-datapivothierarchy-id-member)|DataPivotHierarchy 的 ID。|
@@ -178,7 +183,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[textLength](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-textlength-member)|文本长度数据有效性条件。|
 ||[time](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-time-member)|时间数据有效性条件。|
 ||[wholeNumber](/javascript/api/excel/excel.datavalidationrule#excel-excel-datavalidationrule-wholenumber-member)|整个数字数据有效性条件。|
-|[DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|[formula1](/javascript/api/excel/excel.datetimedatavalidation#excel-excel-datetimedatavalidation-formula1-member)|当 operator 属性设置为二进制运算符（如 GreaterThan）时，指定右侧操作数 (左侧操作数是用户尝试在单元格单元格中输入的值) 。|
+|[DateTimeDataValidation](/javascript/api/excel/excel.datetimedatavalidation)|[formula1](/javascript/api/excel/excel.datetimedatavalidation#excel-excel-datetimedatavalidation-formula1-member)|当 operator 属性设置为二进制运算符（如 GreaterThan (）时，指定右侧操作数 (左侧操作数是用户尝试在单元格单元格中输入的值) 。|
 ||[formula2](/javascript/api/excel/excel.datetimedatavalidation#excel-excel-datetimedatavalidation-formula2-member)|使用三元运算符 Between 和 NotBetween 指定上限操作数。|
 ||[operator](/javascript/api/excel/excel.datetimedatavalidation#excel-excel-datetimedatavalidation-operator-member)|用于验证数据有效性的运算符。|
 |[FilterPivotHierarchy](/javascript/api/excel/excel.filterpivothierarchy)|[enableMultipleFilterItems](/javascript/api/excel/excel.filterpivothierarchy#excel-excel-filterpivothierarchy-enablemultiplefilteritems-member)|确定是否允许多个筛选项。|
@@ -237,7 +242,7 @@ Excel JavaScript API 要求集 1.8 的功能包括适用于数据透视表、数
 ||[layout](/javascript/api/excel/excel.pivottable#excel-excel-pivottable-layout-member)|PivotLayout，用于说明数据透视表的布局和可视化结构。|
 ||[rowHierarchies](/javascript/api/excel/excel.pivottable#excel-excel-pivottable-rowhierarchies-member)|数据透视表的行透视层级结构。|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[add (name： string， source： Range \| string \| Table， destination： Range \| string) ](/javascript/api/excel/excel.pivottablecollection#excel-excel-pivottablecollection-add-member(1))|添加基于指定源数据的数据透视表，并将其插入到目标区域左上方的单元格中。|
-|[区域](/javascript/api/excel/excel.range)|[dataValidation](/javascript/api/excel/excel.range#excel-excel-range-datavalidation-member)|返回数据有效性对象。|
+|[范围](/javascript/api/excel/excel.range)|[dataValidation](/javascript/api/excel/excel.range#excel-excel-range-datavalidation-member)|返回数据有效性对象。|
 |[RowColumnPivotHierarchy](/javascript/api/excel/excel.rowcolumnpivothierarchy)|[fields](/javascript/api/excel/excel.rowcolumnpivothierarchy#excel-excel-rowcolumnpivothierarchy-fields-member)|返回与 RowColumnPivotHierarchy 相关联的 PivotFields。|
 ||[id](/javascript/api/excel/excel.rowcolumnpivothierarchy#excel-excel-rowcolumnpivothierarchy-id-member)|RowColumnPivotHierarchy 的 ID。|
 ||[name](/javascript/api/excel/excel.rowcolumnpivothierarchy#excel-excel-rowcolumnpivothierarchy-name-member)|RowColumnPivotHierarchy 的名称。|

@@ -1,20 +1,20 @@
 ---
 title: Office 加载项的数据可视化样式指南
-description: 获取有关如何在加载项中可视化数据Office一些好的做法。
+description: 获取有关如何在加载项中可视化数据的一Office做法。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3c743e3a793c4d4fdc2639313eb40a01923ada
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 173416be6ac3346ede19737939b00c7a437f6588
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149371"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743265"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Office 加载项的数据可视化样式指南
 
 良好的数据可视化效果可帮助用户找到数据见解。他们可以使用这些见解来讲述具有说服力的故事。本文提供了准则，以帮助你在适用于 Excel 和其他 Office 应用的外接程序中设计有效的数据可视化。
 
-我们建议你使用 Fluent [UI](../design/add-in-design.md)为数据可视化创建部件版式。 FluentUI 包括样式和组件，这些样式和组件与Office外观无缝集成。
+我们建议你使用 Fluent [UI](../design/add-in-design.md) 为数据可视化创建部件版式。 Fluent UI 包括样式和组件，这些样式和组件与Office外观无缝集成。
 
 ## <a name="data-visualization-elements"></a>数据可视化元素
 
@@ -35,7 +35,7 @@ ms.locfileid: "59149371"
 
 请确保轴标签颜色足够深，以便可以清楚地阅读，并且具有足够的文本和背景色对比度。请确保颜色不要过深，避免比数据墨迹更加突出。
 
-浅灰色轴标签效果最佳。 如果你使用的是中性Fluent UI，请参阅中性[颜色调色板](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)。
+浅灰色轴标签效果最佳。 如果你使用的是非特定Fluent，请参阅中性[色调色板](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)。
 
 ### <a name="data-ink"></a>数据墨迹
 
@@ -55,7 +55,7 @@ ms.locfileid: "59149371"
 
 要准确读取图表，通常网格线是必不可少的，但应显示为辅助可视元素，用于增强数据墨迹效果，但不会影响数据显示。确保静态网格线较细且颜色较淡，除非专门将其设计用于高对比度的情况。还可以使用交互作用创建在用户与图表交互时上下文中显示的动态、实时网格线。
 
-浅灰色网格线效果最佳。 如果你使用的是中性Fluent UI，请参阅中性[颜色调色板](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)。
+浅灰色网格线效果最佳。 如果你使用的是非特定Fluent，请参阅中性[色调色板](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)。
 
 下图显示了带有网格线的数据可视化。
 

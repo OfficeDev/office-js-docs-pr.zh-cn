@@ -3,20 +3,20 @@ title: Outlook 加载项 API
 description: 了解如何引用 Outlook 加载项 API 并声明 Outlook 加载项中的权限。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a44d389bb480ec17b73fe445c885c45aff768f7
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 44b5b770d36177307989500db89f1f4f8ca859ec
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074292"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745687"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook 外接程序 API
 
-要将 API 用于您的 Outlook 外接程序，您必须指定 Office.js 库的位置、要求集、架构和权限。 主要使用通过 Mailbox Office公开的 JavaScript [API。](#mailbox-object)
+要将 API 用于您的 Outlook 外接程序，您必须指定 Office.js 库的位置、要求集、架构和权限。 主要使用通过 Mailbox Office公开的 JavaScript [API](#mailbox-object)。
 
 ## <a name="officejs-library"></a>Office.js 库
 
-若要与 Outlook 加载项 API 进行交互，需要在 Office.js 中使用 JavaScript API。 库的内容交付 (CDN) 为 `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` 。 提交到 AppSource 的加载项必须按此 CDN 引用 Office.js，它们不能使用本地引用。
+若要与 Outlook 加载项 API 进行交互，需要在 Office.js 中使用 JavaScript API。 库的内容 (CDN) 网络是 `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`。 提交到 AppSource 的加载项必须按此 CDN 引用 Office.js，它们不能使用本地引用。
 
 在实现加载项 UI 的网页（.html、.aspx 或 .php 文件）的 `<head>` 标记的 `<script>` 标记中引用 CDN。
 
@@ -27,7 +27,7 @@ ms.locfileid: "62074292"
 添加 API 时，Office.js 的 URL 将保持不变。仅当我们打破现有的 API 行为时，才会更改 URL 中的版本。
 
 > [!IMPORTANT]
-> 为任何客户端应用程序开发Office时，请从页面Office引用 JavaScript `<head>` API。 这样可确保 API 先于所有正文元素完全初始化。
+> 为任意客户端应用程序开发Office时，请从页面Office引用 JavaScript API`<head>`。 这样可确保 API 先于所有正文元素完全初始化。
 
 ## <a name="requirement-sets"></a>要求集
 
@@ -65,7 +65,7 @@ if (item.somePropertyOrFunction) {
 | **读/写** | 除了 **读取项** 所允许的权限，它还允许：<ul><li>Outlook 加载项 API 的完全访问权限，但不包括 `makeEwsRequestAsync`</li><li>设置项属性</li></ul> |
 | **读/写邮箱** | 除了 **读/写** 所允许的权限，它还允许：<ul><li>创建、读取、写入项和文件夹</li><li>发送项目</li><li>调用 [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)</li></ul> |
 
-一般情况下，应该指定加载项所需的最小权限。 权限在清单的 `<Permissions>` 元素中声明。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)。 有关安全问题的信息，请参阅[Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)。
+一般情况下，应该指定加载项所需的最小权限。 权限在清单的 `<Permissions>` 元素中声明。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)。 有关安全问题的信息，请参阅 [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)。
 
 ## <a name="mailbox-object"></a>Mailbox 对象
 

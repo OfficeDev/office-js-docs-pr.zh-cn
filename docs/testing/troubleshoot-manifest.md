@@ -3,12 +3,12 @@ title: 验证 Office 加载项的清单
 description: 了解如何使用 XML 架构和其他工具Office加载项的清单。
 ms.date: 10/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 89335ffb670f6bb9a41f2d29f300123e1ea78397
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 15d885fbfca96d759c10c556bea3533bc54433db
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711257"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745667"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 

@@ -4,12 +4,12 @@ description: 构建一个 Excel 外接程序，用于创建、填充、筛选和
 ms.date: 02/26/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f8d21b0003f24b1b216e0e6823d1962778e18223
-ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
+ms.openlocfilehash: 5ca9ea0fdc600d6044cf3a5ef405dd0f3a98e2b3
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2022
-ms.locfileid: "63511303"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746416"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 

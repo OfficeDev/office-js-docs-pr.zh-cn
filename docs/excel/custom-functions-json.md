@@ -3,12 +3,12 @@ title: 手动为自定义函数创建 JSON Excel
 description: 在函数中定义自定义函数的 JSON Excel并关联函数 ID 和名称属性。
 ms.date: 12/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: dd0fec92ad286ea1ef0855c6a4a4f6cdd433c23f
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 0ef786be050f081c7186f157b6add7a4aca5b04a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711026"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744553"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>手动为自定义函数创建 JSON 元数据
 

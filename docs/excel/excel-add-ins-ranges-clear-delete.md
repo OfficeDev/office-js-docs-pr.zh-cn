@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript API 清除或删除Excel区域。
 ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 7336a0e6485ce502216818b4a8cd077fed0069c3
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 940d91cc144fed14ad36c862c92e593fb0dce939
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340706"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745106"
 ---
 # <a name="clear-or-delete-ranges-using-the-excel-javascript-api"></a>使用 JavaScript API 清除或删除Excel区域
 

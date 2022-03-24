@@ -3,8 +3,13 @@ title: Office 加载项开发最佳做法
 description: 在开发时应用最佳做法以创建Office外接程序。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 32aaedea3ec4d8b0f1a68efdc5cbc4adf0429551
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742846"
 ---
-
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
 有效的外接程序提供独特且极具吸引力的功能，采用具有视觉吸引力的方式扩展 Office 应用程序。若要创建出色的外接程序，需为用户提供极具吸引力的首次使用体验、设计一流的 UI 体验和优化外接程序的性能。将本文中描述的最佳实践应用于创建有助于您的用户快速有效地完成其任务的外接程序。
@@ -85,7 +90,7 @@ ms.localizationpriority: medium
 - 使用[旁加载](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)在实际设备上测试加载项。
 
 > [!NOTE]
-> 如果你为设计[元素Fluent UI React](../design/using-office-ui-fabric-react.md)，许多这些元素都内置在设计系统中。
+> 如果你为设计[元素Fluent UI](../design/using-office-ui-fabric-react.md) React，许多这些元素都内置在设计系统中。
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>优化和监视加载项性能
 
@@ -128,7 +133,7 @@ ms.localizationpriority: medium
 
 - 创建有助于用户查找和使用加载项的网站。
 
-## <a name="use-javascript-that-supports-internet-explorer"></a>使用支持 javaScript 的 javaScript Internet Explorer
+## <a name="use-javascript-that-supports-internet-explorer"></a>使用支持此平台的 JavaScript Internet Explorer
 
 [!INCLUDE [How to support IE](../includes/es5-support.md)]
 

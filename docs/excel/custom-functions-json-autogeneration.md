@@ -1,18 +1,18 @@
 ---
 ms.date: 07/08/2021
-description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。
+description: 使用 JSDoc 标记动态创建自定义函数 JSON 元数据。'
 title: 为自定义函数自动生成 JSON 元数据
 ms.localizationpriority: medium
-ms.openlocfilehash: c5047fb48fe30ba5fdeb69cef46b3a2178ca2343
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c14196da1d686beb32b31589187e57b2b6f2616d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149452"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744551"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>为自定义函数自动生成 JSON 元数据
 
-在使用 JavaScript 或 TypeScript 编写 Excel 自定义函数时，使用 [JSDoc 标记](https://jsdoc.app/)提供有关自定义函数的额外信息。 然后在生成时使用 JSDoc 标记创建 JSON 元数据文件。 使用 JSDoc 标记，你无需手动编辑 [JSON 元数据文件](custom-functions-json.md)。
+在使用 JavaScript 或 TypeScript 编写 Excel 自定义函数时，使用 [JSDoc 标记](https://jsdoc.app/)提供有关自定义函数的额外信息。 然后在生成时使用 JSDoc 标记创建 JSON 元数据文件。 使用 JSDoc 标记可让你无需手动编辑 [JSON 元数据文件](custom-functions-json.md)。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -82,7 +82,7 @@ ms.locfileid: "59149452"
 
 #### <a name="id"></a>id
 
-`id`标识自定义函数。
+标识 `id` 自定义函数。
 
 * 如果未提供 `id`，请将 JavaScript/TypeScript 函数名称转换为大写并删除禁用字符。
 * `id` 对于所有自定义函数必须是唯一的。
@@ -138,7 +138,7 @@ ms.locfileid: "59149452"
 
 提供的 _url_ 显示在 Excel 中。
 
-在下面的示例中，为 `helpurl` `www.contoso.com/weatherhelp` 。
+在下面的示例中，为 `helpurl` `www.contoso.com/weatherhelp`。
 
 ```js
 /**
@@ -156,8 +156,8 @@ ms.locfileid: "59149452"
 
 JavaScript 语法：@param {type} name _description_
 
-* `{type}` 指定大括号中的类型信息。 有关可能使用的类型的详细信息，请参阅[类型](#types)部分。 如果未指定类型，则使用 `any` 默认类型。
-* `name` 指定该标记@param参数。 这是必需的。
+* `{type}` 指定大括号中的类型信息。 有关可能使用的类型的详细信息，请参阅[类型](#types)部分。 如果未指定类型，则使用默认 `any` 类型。
+* `name` 指定该标记@param的参数。 这是必需的。
 * `description` 为函数参数提供显示在 Excel 中的说明。 可选。
 
 若要将自定义函数参数表示为可选参数，请用方括号将参数名称括起。 例如，`@param {string} [text] Optional text`。
@@ -182,7 +182,7 @@ JavaScript 语法：@param {type} name _description_
 
 TypeScript 语法：@param name _description_
 
-* `name` 指定该标记@param参数。 这是必需的。
+* `name` 指定该标记@param的参数。 这是必需的。
 * `description` 为函数参数提供显示在 Excel 中的说明。 可选。
 
 有关可能使用的函数参数类型的详细信息，请参阅[类型](#types)部分。
@@ -218,9 +218,9 @@ function add(first: number, second: number): number {
 
 表示应提供计算函数所在的单元格的地址。
 
-最后一个函数参数必须为 类型 `CustomFunctions.Invocation` 或派生类型，以使用 `@requiresAddress` 。 调用函数时，`address` 属性将包含地址。
+最后一个函数参数必须为 类型 `CustomFunctions.Invocation` 或派生类型，以使用 `@requiresAddress`。 调用函数时，`address` 属性将包含地址。
 
-以下示例演示如何将 参数与 结合使用以返回调用自定义函数 `invocation` `@requiresAddress` 的单元格的地址。 有关详细信息 [，请参阅调用](custom-functions-parameter-options.md#invocation-parameter) 参数。
+以下示例演示如何将 参数`invocation``@requiresAddress`与 结合使用以返回调用自定义函数的单元格的地址。 有关详细信息 [，请参阅调用](custom-functions-parameter-options.md#invocation-parameter) 参数。
 
 ```js
 /**
@@ -242,11 +242,11 @@ function getAddress(first, second, invocation) {
 
 指示函数应返回输入参数的地址。 
 
-最后一个函数参数必须为 类型 `CustomFunctions.Invocation` 或派生类型，以使用  `@requiresParameterAddresses` 。 JSDoc 注释还必须包含一个标记，该标记指定返回 `@returns` 值是矩阵，如 `@returns {string[][]}` 或 `@returns {number[][]}` 。 有关 [其他信息，](#matrix-type) 请参阅矩阵类型。 
+最后一个函数参数必须为 类型 `CustomFunctions.Invocation` 或派生类型，以使用  `@requiresParameterAddresses`。 JSDoc 注释还必须包含一 `@returns` 个标记，该标记指定返回值是矩阵，如 `@returns {string[][]}` 或 `@returns {number[][]}`。 有关 [其他信息，](#matrix-type) 请参阅矩阵类型。 
 
 调用 函数时， `parameterAddresses` 属性将包含输入参数的地址。
 
-以下示例演示如何将 参数与 结合使用以返回三个 `invocation` `@requiresParameterAddresses` 输入参数的地址。 有关详细信息 [，请参阅检测参数](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 的地址。 
+以下示例演示如何将 参数 `invocation` 与 结合使用 `@requiresParameterAddresses` 以返回三个输入参数的地址。 有关详细信息 [，请参阅检测参数](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) 的地址。 
 
 ```js
 /**
@@ -298,10 +298,10 @@ function add(first: number, second: number): number {
 
 用于表示自定义函数是一个流式处理函数。 
 
-最后一个参数的类型为 `CustomFunctions.StreamingInvocation<ResultType>` 。
-函数返回 `void` 。
+最后一个参数的类型为 `CustomFunctions.StreamingInvocation<ResultType>`。
+函数返回 `void`。
 
-流式处理函数不会直接返回值，而是使用 `setResult(result: ResultType)` 最后一个参数调用。
+流式处理函数不会直接返回值，而是使用最后一 `setResult(result: ResultType)` 个参数调用。
 
 由流式处理函数引发的异常将被忽略。 `setResult()` 可能称为“错误”，以指示错误结果。 有关流式处理函数的示例和更多信息，请参阅[生成流式处理函数](custom-functions-web-reqs.md#make-a-streaming-function)。
 
@@ -339,7 +339,7 @@ function roll6sided(): number {
 
 ### <a name="matrix-type"></a>矩阵类型
 
-使用二维数组类型将参数或返回值变为值的矩阵。 例如，类型 `number[][]` 指示数字矩阵， `string[][]` 并指示字符串矩阵。
+使用二维数组类型将参数或返回值变为值的矩阵。 例如，类型指示 `number[][]` 数字矩阵， `string[][]` 并指示字符串矩阵。
 
 ### <a name="error-type"></a>错误类型
 

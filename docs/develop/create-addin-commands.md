@@ -3,12 +3,12 @@ title: 在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 description: 在清单中，使用 VersionOverrides 定义用于 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
 ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a239d6b5b33d2244c6a172c2c61baa894535ab7
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 7fde330cb33018f33e5de156e5b15dd1f1819efa
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467748"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743921"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 
@@ -31,11 +31,11 @@ ms.locfileid: "62467748"
 
 下图是对清单中的加载项命令元素的概述。
 
-![清单中的外接程序命令元素概述。 此处的顶部节点是包含子级 Hosts 和 Resources 的 VersionOverrides。 在"主机为主机"下，"DesktopFormFactor"下。 在 DesktopFormFactor 下是 FunctionFile 和 ExtensionPoint。 在 ExtensionPoint 下是 CustomTab 或 OfficeTab 和 Office 菜单。 在"CustomTab"或"Office Tab"下，"分组"再"控制"，然后单击"操作"。 在"Office"下是"控件"，然后单击"操作"。 在"资源 (VersionOverrides 的子级) 图像、Url、ShortStrings 和 LongStrings。](../images/version-overrides.png)
+![清单中的外接程序命令元素概述。 此处的顶部节点是包含子级 Hosts 和 Resources 的 VersionOverrides。 在"主机为主机"下，"DesktopFormFactor"下。 在 DesktopFormFactor 下是 FunctionFile 和 ExtensionPoint。 在 ExtensionPoint 下是 CustomTab 或 OfficeTab 和 Office 菜单。 在"CustomTab"或"Office选项卡"下，"分组"，"控件"，然后单击"操作"。 在"Office"下是"控件"，然后单击"操作"。 在" (VersionOverrides 的子级下) 图像、Url、ShortStrings 和 LongStrings。](../images/version-overrides.png)
 
 ## <a name="step-1-create-the-project"></a>步骤 1：创建项目
 
-我们建议你通过以下快速入门之一创建项目，例如Excel[任务窗格加载项](../quickstarts/excel-quickstart-jquery.md)。 每个 Excel、Word 和 PowerPoint 快速启动都会生成一个已包含加载项命令的项目 (按钮) 显示任务窗格。 在使用外接程序命令之前，请确保已阅读 Excel[、Word 和 PowerPoint](../design/add-in-commands.md) 外接程序命令。
+我们建议你通过以下快速入门之一创建项目，例如Excel[任务窗格加载项](../quickstarts/excel-quickstart-jquery.md)。 每个 Excel、Word 和 PowerPoint 快速启动都会生成一个已包含加载项命令 (按钮) 显示任务窗格的项目。 在使用外接程序命令之前，确保您已阅读 Excel[、Word 和 PowerPoint](../design/add-in-commands.md) 外接程序命令。
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>步骤 2：创建任务窗格外接程序
 
@@ -118,7 +118,7 @@ ms.locfileid: "62467748"
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>步骤 4：添加 Hosts、Host 和 DesktopFormFactor 元素
 
-“Hosts”元素包含一个或多个“Host”元素。 **Host 元素** 指定特定的Office应用程序。 **Host 元素** 包含子元素，这些子元素指定在外接程序安装到该外接程序应用程序后要显示的Office命令。 若要在两个或多个不同的应用程序中显示相同的外接程序Office，您必须复制每个 Host 中的子 **元素**。
+“Hosts”元素包含一个或多个“Host”元素。 **Host 元素** 指定特定的Office应用程序。 **Host** 元素包含子元素，这些子元素指定在外接程序安装到该外接程序应用程序后要显示的Office命令。 若要在两个或多个不同的应用程序中显示相同的外接程序Office，您必须复制每个 Host 中的子 **元素**。
 
 **DesktopFormFactor** 元素指定在 Office 网页版（浏览器版）和 Windows 版 Office 中运行的加载项的设置。
 
@@ -249,7 +249,7 @@ ms.locfileid: "62467748"
 |元素|说明|
 |:-----|:-----|
 |**CustomTab** <br/> |如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 <br/> |
-|**OfficeTab** <br/> |如果要使用 **PrimaryCommandSurface** 扩展默认功能Office 应用选项卡 (必需) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 有关与 id 属性一同使用的更多 **选项卡** 值，请参阅默认选项卡Office 应用 [选项卡值](../reference/manifest/officetab.md)。  <br/> |
+|**OfficeTab** <br/> |如果要使用 **PrimaryCommandSurface** Office 应用扩展默认功能 (选项卡，) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 有关与 id 属性一同使用的更多 **选项卡** 值，请参阅默认选项卡Office 应用 [选项卡的值](../reference/manifest/officetab.md)。  <br/> |
 |**OfficeMenu** <br/> | 如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 当用户选定文本，然后右键单击所选文本时，适用于 Excel 或 Word 的 **ContextMenuText** 显示上下文菜单上的项。<br/> 适用于 Excel 的 **ContextMenuCell**。当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。 <br/> |
 |**Group** <br/> |选项卡上的一组用户界面扩展点。一组可以有多达六个控件。**id** 属性是必需的。它是一个最多为 125 个字符的字符串。 <br/> |
 |**Label** <br/> |必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。 <br/> |

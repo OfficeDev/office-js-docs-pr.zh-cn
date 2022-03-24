@@ -1,11 +1,16 @@
 ---
 title: Word JavaScript API 要求集 1.1
-description: 有关 WordApi 1.1 要求集的详细信息
+description: 有关 WordApi 1.1 要求集的详细信息。
 ms.date: 11/01/2021
 ms.prod: word
 ms.localizationpriority: medium
+ms.openlocfilehash: dfcb1954cd9522de6165130cc115fddbb5f3ec45
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744216"
 ---
-
 # <a name="whats-new-in-word-javascript-api-11"></a>Word JavaScript API 1.1 的新增功能
 
 WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Word API 要求集支持Word 2016。
@@ -148,7 +153,7 @@ WordApi 1.1 是 Word JavaScript API 的第一个要求集。 这是唯一受 Wor
 ||[style](/javascript/api/word/word.paragraph#word-word-paragraph-style-member)|获取或设置段落的样式名称。|
 ||[text](/javascript/api/word/word.paragraph#word-word-paragraph-text-member)|获取段落的文本。|
 |[ParagraphCollection](/javascript/api/word/word.paragraphcollection)|[items](/javascript/api/word/word.paragraphcollection#word-word-paragraphcollection-items-member)|获取此集合中已加载的子项。|
-|[区域](/javascript/api/word/word.range)|[clear()](/javascript/api/word/word.range#word-word-range-clear-member(1))|清除 range 对象的内容。|
+|[范围](/javascript/api/word/word.range)|[clear()](/javascript/api/word/word.range#word-word-range-clear-member(1))|清除 range 对象的内容。|
 ||[contentControls](/javascript/api/word/word.range#word-word-range-contentcontrols-member)|获取范围中的内容控件对象的集合。|
 ||[delete()](/javascript/api/word/word.range#word-word-range-delete-member(1))|从文档中删除区域及其内容。|
 ||[font](/javascript/api/word/word.range#word-word-range-font-member)|获取区域的文本格式。|

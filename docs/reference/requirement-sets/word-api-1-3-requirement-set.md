@@ -4,8 +4,13 @@ description: 有关 WordApi 1.3 要求集的详细信息。
 ms.date: 03/09/2021
 ms.prod: word
 ms.localizationpriority: medium
+ms.openlocfilehash: d9e0d450b601845d4e11e0fd74652c4e167f802c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746031"
 ---
-
 # <a name="whats-new-in-word-javascript-api-13"></a>Word JavaScript API 1.3 的最近更新
 
 WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
@@ -16,7 +21,7 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
-|[Application](/javascript/api/word/word.application)|[createDocument (base64File？： string) ](/javascript/api/word/word.application#word-word-application-createdocument-member(1))|使用可选的 base64 编码文档文件创建新.docx文件。|
+|[Application](/javascript/api/word/word.application)|[createDocument (base64File？： string) ](/javascript/api/word/word.application#word-word-application-createdocument-member(1))|通过使用可选的 base64 编码文档文件创建新.docx文档。|
 |[正文](/javascript/api/word/word.body)|[getRange (rangeLocation？：Word.RangeLocation) ](/javascript/api/word/word.body#word-word-body-getrange-member(1))|获取整个正文或正文的起点/终点，作为一个范围。|
 ||[insertTable (rowCount： number， columnCount： number， insertLocation： Word.InsertLocation， values？： string[][]) ](/javascript/api/word/word.body#word-word-body-inserttable-member(1))|插入包含指定行数和列数的 table。|
 ||[lists](/javascript/api/word/word.body#word-word-body-lists-member)|获取 body 中的一组 list 对象。|
@@ -29,7 +34,7 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 ||[表](/javascript/api/word/word.body#word-word-body-tables-member)|获取 body 中的一组 table 对象。|
 ||[type](/javascript/api/word/word.body#word-word-body-type-member)|获取 body 的类型。|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[getRange (rangeLocation？：Word.RangeLocation) ](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-getrange-member(1))|获取整个内容控件或内容控件的起点/终点，作为一个范围。|
-||[getTextRanges (结束Marks： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-gettextranges-member(1))|使用标点符号和/或其他结束标记获取内容控件中的文本范围。|
+||[getTextRanges (结束标记： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-gettextranges-member(1))|使用标点符号和/或其他结束标记获取内容控件中的文本范围。|
 ||[insertTable (rowCount： number， columnCount： number， insertLocation： Word.InsertLocation， values？： string[][]) ](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-inserttable-member(1))|将包含指定行数和列数的 table 插入 contentControl 中或在其旁边插入。|
 ||[lists](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-lists-member)|获取 contentControl 中的一组 list 对象。|
 ||[parentBody](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-parentbody-member)|获取 contentControl 的父正文。|
@@ -101,7 +106,7 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 ||[paragraphs](/javascript/api/word/word.list#word-word-list-paragraphs-member)|获取 list 中的段落。|
 ||[setLevelAlignment (level： number， alignment： Word.Alignment) ](/javascript/api/word/word.list#word-word-list-setlevelalignment-member(1))|设置项目符号、编号或图片在列表中指定级别的对齐方式。|
 ||[setLevelBullet (level： number， listBullet： Word.ListBullet， charCode？： number， fontName？： string) ](/javascript/api/word/word.list#word-word-list-setlevelbullet-member(1))|设置 list 中指定级别的项目符号格式。|
-||[setLevelIndents (级别： number， textIndent： number， bulletNumberPictureIndent： number) ](/javascript/api/word/word.list#word-word-list-setlevelindents-member(1))|设置列表中指定级别的两种缩进方式。|
+||[setLevelIndents (level： number， textIndent： number， bulletNumberPictureIndent： number) ](/javascript/api/word/word.list#word-word-list-setlevelindents-member(1))|设置列表中指定级别的两种缩进方式。|
 ||[setLevelNumbering (level： number， listNumbering： Word.ListNumbering， formatString？： Array<string \| number>) ](/javascript/api/word/word.list#word-word-list-setlevelnumbering-member(1))|设置列表中指定级别的编号格式。|
 ||[setLevelStartingNumber (level： number， startingNumber： number) ](/javascript/api/word/word.list#word-word-list-setlevelstartingnumber-member(1))|设置 list 中指定级别的起始编号。|
 |[ListCollection](/javascript/api/word/word.listcollection)|[getById(id: number)](/javascript/api/word/word.listcollection#word-word-listcollection-getbyid-member(1))|按标识符获取列表。|
@@ -123,7 +128,7 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 ||[getPrevious () ](/javascript/api/word/word.paragraph#word-word-paragraph-getprevious-member(1))|获取上一个段落。|
 ||[getPreviousOrNullObject () ](/javascript/api/word/word.paragraph#word-word-paragraph-getpreviousornullobject-member(1))|获取上一个段落。|
 ||[getRange (rangeLocation？：Word.RangeLocation) ](/javascript/api/word/word.paragraph#word-word-paragraph-getrange-member(1))|获取整个段落或段落的起点/终点，作为一个范围。|
-||[getTextRanges (结束Marks： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.paragraph#word-word-paragraph-gettextranges-member(1))|使用标点符号和/或其他结束标记获取段落中的文本范围。|
+||[getTextRanges (结束标记： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.paragraph#word-word-paragraph-gettextranges-member(1))|使用标点符号和/或其他结束标记获取段落中的文本范围。|
 ||[insertTable (rowCount： number， columnCount： number， insertLocation： Word.InsertLocation， values？： string[][]) ](/javascript/api/word/word.paragraph#word-word-paragraph-inserttable-member(1))|插入包含指定行数和列数的 table。|
 ||[isLastParagraph](/javascript/api/word/word.paragraph#word-word-paragraph-islastparagraph-member)|指明 paragraph 是其父正文内的最后一个段落。|
 ||[isListItem](/javascript/api/word/word.paragraph#word-word-paragraph-islistitem-member)|检查 paragraph 是否为 listItem。|
@@ -145,18 +150,18 @@ WordApi 1.3 增加了对内容控件和文档级别设置的更多支持。
 ||[getFirstOrNullObject () ](/javascript/api/word/word.paragraphcollection#word-word-paragraphcollection-getfirstornullobject-member(1))|获取此集合中的第一个段落。|
 ||[getLast () ](/javascript/api/word/word.paragraphcollection#word-word-paragraphcollection-getlast-member(1))|获取此集合中的最后一个段落。|
 ||[getLastOrNullObject () ](/javascript/api/word/word.paragraphcollection#word-word-paragraphcollection-getlastornullobject-member(1))|获取此集合中的最后一个段落。|
-|[区域](/javascript/api/word/word.range)|[compareLocationWith (range： Word.Range) ](/javascript/api/word/word.range#word-word-range-comparelocationwith-member(1))|比较此范围与另一范围的位置。|
+|[范围](/javascript/api/word/word.range)|[compareLocationWith (range： Word.Range) ](/javascript/api/word/word.range#word-word-range-comparelocationwith-member(1))|比较此范围与另一范围的位置。|
 ||[expandTo (range： Word.Range) ](/javascript/api/word/word.range#word-word-range-expandto-member(1))|返回从此 range 进行任一方向扩展的新 range，以便覆盖另一 range。|
 ||[expandToOrNullObject (范围：Word.Range) ](/javascript/api/word/word.range#word-word-range-expandtoornullobject-member(1))|返回从此 range 进行任一方向扩展的新 range，以便覆盖另一 range。|
 ||[getHyperlinkRanges () ](/javascript/api/word/word.range#word-word-range-gethyperlinkranges-member(1))|获取相应范围内的超链接子范围。|
-||[getNextTextRange (结束标记： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.range#word-word-range-getnexttextrange-member(1))|使用标点符号和/或其他结束标记获取下一个文本范围。|
+||[getNextTextRange (endingMarks： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.range#word-word-range-getnexttextrange-member(1))|使用标点符号和/或其他结束标记获取下一个文本范围。|
 ||[getNextTextRangeOrNullObject (endingMarks： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.range#word-word-range-getnexttextrangeornullobject-member(1))|使用标点符号和/或其他结束标记获取下一个文本范围。|
 ||[getRange (rangeLocation？：Word.RangeLocation) ](/javascript/api/word/word.range#word-word-range-getrange-member(1))|克隆相应范围，或获取该范围的起点/终点作为一个新范围。|
-||[getTextRanges (结束Marks： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.range#word-word-range-gettextranges-member(1))|使用标点符号和/或其他结束标记获取范围中的文本子范围。|
+||[getTextRanges (结束标记： string[]， trimSpacing？： boolean) ](/javascript/api/word/word.range#word-word-range-gettextranges-member(1))|使用标点符号和/或其他结束标记获取范围中的文本子范围。|
 ||[hyperlink](/javascript/api/word/word.range#word-word-range-hyperlink-member)|获取 range 内的第一个超链接，或在 range 内设置超链接。|
 ||[insertTable (rowCount： number， columnCount： number， insertLocation： Word.InsertLocation， values？： string[][]) ](/javascript/api/word/word.range#word-word-range-inserttable-member(1))|插入包含指定行数和列数的 table。|
 ||[intersectWith (range： Word.Range) ](/javascript/api/word/word.range#word-word-range-intersectwith-member(1))|返回新 range 作为此 range 与另一 range 的交集。|
-||[intersectWithOrNullObject (范围：Word.Range) ](/javascript/api/word/word.range#word-word-range-intersectwithornullobject-member(1))|返回新 range 作为此 range 与另一 range 的交集。|
+||[intersectWithOrNullObject (range：Word.Range) ](/javascript/api/word/word.range#word-word-range-intersectwithornullobject-member(1))|返回新 range 作为此 range 与另一 range 的交集。|
 ||[isEmpty](/javascript/api/word/word.range#word-word-range-isempty-member)|检查 range 长度是否为零。|
 ||[lists](/javascript/api/word/word.range#word-word-range-lists-member)|获取 range 中的一组 list 对象。|
 ||[parentBody](/javascript/api/word/word.range#word-word-range-parentbody-member)|获取 range 的父正文。|

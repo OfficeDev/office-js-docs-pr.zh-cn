@@ -23,7 +23,7 @@ highlightedContent:
       title: Microsoft Learn：Office加载项自定义客户端简介
       url: /learn/modules/intro-office-add-ins
     - itemType: learn
-      title: Microsoft Learn： Extend Office clients with Office Add-ins
+      title: Microsoft Learn： extend Office clients with Office Add-ins
       url: /learn/paths/m365-office-add-in-associate
     - itemType: sample
       title: 加载项Office示例
@@ -87,7 +87,7 @@ conceptualContent:
           text: 探索部署选项
         - url: /microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps
           itemType: deploy
-          text: 在集成Microsoft 365 应用版门户中测试并部署合作伙伴部署的应用
+          text: 在集成Microsoft 365 应用版中测试并部署合作伙伴的部署
     - title: 发布
       links:
         - url: /office/dev/store
@@ -106,7 +106,7 @@ conceptualContent:
           text: 请求功能
         - url: /answers/products/m365
           itemType: reference
-          text: 在 Microsoft 问答Office.js问题&问题
+          text: 向 Microsoft 问答Office.js问题&问题
         - url: 'https://stackoverflow.com/questions/tagged/office-js'
           itemType: reference
           text: 在 Stack Overflow 上Office.js有关应用的问题

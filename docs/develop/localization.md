@@ -3,22 +3,22 @@ title: Office 加载项的本地化
 description: 使用 Office JavaScript API 确定区域设置，并基于 Office 应用程序区域设置显示字符串，或者根据数据区域设置解释或显示数据。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 74d2338293a392fd0397b65008daf12159ef61ca
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 049cf3c8e6f0d498e6d4a0f9ca223499635cd5ab
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149332"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743408"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
-您可以实现适合 Office 外接程序的任何本地化方案。 Office 外接程序平台的 JavaScript API 和清单架构提供了一些选择。 可以使用 Office JavaScript API 确定区域设置，并基于 Office 应用程序区域设置显示字符串，或者根据数据区域设置解释或显示数据。 可以使用清单指定区域设置特定的加载项文件位置和描述性信息。 也可以使用 Microsoft Ajax 脚本支持全球化和本地化。
+您可以实现适合 Office 外接程序的任何本地化方案。 Office 外接程序平台的 JavaScript API 和清单架构提供了一些选择。 您可以使用 Office JavaScript API 确定区域设置，并基于 Office 应用程序区域设置显示字符串，或者根据数据区域设置解释或显示数据。 可以使用清单指定区域设置特定的加载项文件位置和描述性信息。 也可以使用 Microsoft Ajax 脚本支持全球化和本地化。
 
 ## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>使用 JavaScript API 确定区域设置特定的字符串
 
-JavaScript API Office JavaScript API 提供了两个属性，这些属性支持显示或解释与应用程序Office设置一致的值。
+JavaScript API Office提供了两个属性，支持显示或解释与应用程序和数据区域设置一Office的值。
 
-- [Context.displayLanguage][displayLanguage] (应用程序用户界面) 区域设置或Office语言。 以下示例验证应用程序是否Office en-US 或 fr-FR 区域设置，并显示区域设置特定的问候语。
+- [Context.displayLanguagedisplayLanguage][] 指定应用程序 (用户界面) 区域设置或Office语言。 以下示例验证应用程序是否Office en-US 或 fr-FR 区域设置，并显示区域设置特定的问候语。
 
     ```js
     function sayHelloWithDisplayLanguage() {
@@ -39,7 +39,7 @@ JavaScript API Office JavaScript API 提供了两个属性，这些属性支持�
     }
     ```
 
-- [Context.contentLanguage][contentLanguage] 指定数据的区域设置（或语言）。 扩展最后一个代码示例，而不是检查 [displayLanguage] 属性，分配 `myLanguage` [contentLanguage] 属性的值，并使用相同代码的其余部分基于数据区域设置显示问候语。
+- [Context.contentLanguage][contentLanguage] 指定数据的区域设置（或语言）。 扩展最后一个代码示例，而不是检查 [displayLanguage] 属性，分配 [contentLanguage] `myLanguage` 属性的值，并使用相同代码的其余部分基于数据区域设置显示问候语。
 
     ```js
     var myLanguage = Office.context.contentLanguage;
@@ -47,7 +47,7 @@ JavaScript API Office JavaScript API 提供了两个属性，这些属性支持�
 
 ## <a name="control-localization-from-the-manifest"></a>通过清单控制本地化
 
-每个 Office 外接程序在其清单中指定一个 [DefaultLocale] 元素和区域设置。 默认情况下，Office 外接程序平台和 Office 客户端应用程序将[]Description、DisplayName、IconUrl、HighResolutionIconUrl 和[] [SourceLocation]元素的值应用于所有区域设置。 [] [] 可以通过为每个其他区域设置的上述五个元素中的任意一个指定 [Override] 子元素来选择支持将特定值用于特定的区域设置。 [DefaultLocale] 元素和 `Locale` 元素的 [] 属性的值根据 [RFC 3066]（“用于语言标识的标记”）指定。 表 1 描述了这些元素的本地化支持。
+每个 Office 外接程序在其清单中指定一个 [DefaultLocale] 元素和区域设置。 默认情况下，Office外接程序平台和 Office 客户端应用程序将 [Description]、[DisplayName]、[IconUrl]、[HighResolutionIconUrl] 和 [SourceLocation] 元素的值应用于所有区域设置。 可以通过为每个其他区域设置的上述五个元素中的任意一个指定 [Override] 子元素来选择支持将特定值用于特定的区域设置。 [DefaultLocale] 元素和 `Locale` 元素的 [] 属性的值根据 [RFC 3066]（“用于语言标识的标记”）指定。 表 1 描述了这些元素的本地化支持。
 
 *表 1.本地化支持*
 
@@ -76,14 +76,14 @@ JavaScript API Office JavaScript API 提供了两个属性，这些属性支持�
 ```
 
 > [!NOTE]
-> 如需针对一个语系内的多个区域进行本地化，例如 `de-de` 和 `de-at`，则建议对各个区域使用独立的 `Override` 元素。 在客户端应用程序和平台的所有组合中，不支持仅单独使用语言Office，在这种情况下 `de` ， 。
+> 如需针对一个语系内的多个区域进行本地化，例如 `de-de` 和 `de-at`，则建议对各个区域使用独立的 `Override` 元素。 在客户端应用程序和平台`de`的所有组合中，不支持仅单独使用语言Office，在这种情况下， 。
 
 这意味着，加载项默认情况下采用 `en-us` 区域设置。除非客户端计算机的区域设置为 `fr-fr`（此时用户将看到法语的显示名称“Lecteur vidéo”），否则对于所有区域设置，用户都将看到英文显示名称“Video player”。
 
 > [!NOTE]
 > 每种语言只可指定单一的覆盖，包括对于默认区域设置的覆盖。 例如，如果默认区域设置为 `en-us`，则无法也指定 `en-us` 的覆盖。
 
-以下示例对 Description 元素应用区域 [设置] 替代。 它首先指定 默认区域设置和英语说明，然后指定 Override 语句，该语句具有区域 `en-us` 设置法语[] `fr-fr` 说明。
+以下示例对 Description 元素应用区域 [设置] 替代。 它首先指定 默认区域设置 `en-us` 和英语说明，然后指定 [Override] 语句，该语句具有区域设置法语 `fr-fr` 说明。
 
 ```xml
 <DefaultLocale>en-us</DefaultLocale>
@@ -146,7 +146,7 @@ JavaScript API Office JavaScript API 提供了两个属性，这些属性支持�
 
 Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托管在服务器上的 JSON 文件进行配置，而不是使用外接程序的 XML 清单进行配置。 本部分假定你熟悉扩展替代。 请参阅 [使用清单和](extended-overrides.md) [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素的扩展替代。
 
-使用 `ResourceUrl` [ExtendedOverrides](../reference/manifest/extendedoverrides.md)元素的 属性Office本地化资源的文件。 示例如下。
+`ResourceUrl`使用 [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素的 属性Office本地化资源的文件。 示例如下。
 
 ```xml
     ...
@@ -159,8 +159,8 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 
 然后，扩展替代文件使用令牌而不是字符串。 令牌命名资源文件中字符串。 下面是一个示例，该示例将键盘快捷方式分配给 (加载项任务窗格) 定义的函数。 关于此标记，请注意：
 
-- 该示例并不十分有效。  (我们在下面向它添加一个必需的附加属性) 
-- 令牌的格式必须为 **${resource。*name-of-resource*}**.
+- 该示例并不十分有效。  (我们在下面向它添加一个必需的附加属性。) 
+- 令牌的格式必须为 **${resource。*name-of-resource*}**。
 
 ```json
 {
@@ -182,7 +182,7 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 }
 ```
 
-资源文件也是 JSON 格式的文件，其顶级属性按区域设置划分为子 `resources` 属性。 对于每个区域设置，为扩展替代文件中使用的每个令牌分配一个字符串。 下面是一个包含 和 的字符串 `en-us` 的示例 `fr-fr` 。 本示例中，键盘快捷方式在两个区域设置中均相同，但并非总是如此，尤其是在本地化具有不同字母或书写系统（因而为不同的键盘）区域设置时。
+资源文件也是 JSON `resources` 格式的文件，其顶级属性按区域设置划分为子属性。 对于每个区域设置，为扩展替代文件中使用的每个令牌分配一个字符串。 下面是一个包含 和 的字符串 `en-us` 的示例 `fr-fr`。 本示例中，键盘快捷方式在两个区域设置中均相同，但并非总是如此，尤其是在本地化具有不同字母或书写系统（因而为不同的键盘）区域设置时。
 
 ```json
 {
@@ -207,7 +207,7 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 }
 ```
 
-文件中没有与 和 节 `default` 对等 `en-us` `fr-fr` 的属性。 这是因为，当 Office 主机应用程序区域设置与资源文件中任何 *ll-cc* 属性不匹配时，必须使用扩展替代文件本身定义默认 *字符串*。 直接在扩展替代文件中定义默认字符串可确保当 Office 应用程序区域设置与清单) 中指定的外接程序 (的默认区域设置相匹配时，Office 不会下载资源文件。 下面是前面使用资源令牌的扩展替代文件的更正版本。
+文件中没有`default`与 和 节对等`en-us``fr-fr`的属性。 这是因为，当 Office 主机应用程序区域设置与资源文件中任何 *ll-cc* 属性不匹配时，必须使用扩展替代文件本身定义默认 *字符串*。 直接在扩展替代文件中定义默认字符串可确保当 Office 应用程序区域设置与清单) 中指定的外接程序 (的默认区域设置相匹配时，Office 不会下载资源文件。 下面是前面使用资源令牌的扩展替代文件的更正版本。
 
 ```json
 {
@@ -243,7 +243,7 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 
 可以使用 **[displayLanguage]** 属性获取 Office 应用程序用户界面区域设置。 然后，您可以按照与应用程序当前区域设置一致的格式显示日期和时间Office值。 执行上述操作的一种方法是准备一个指定日期/时间显示格式的资源文件以用于 Office 外界程序支持的各个区域设置。 运行时，加载项可以使用资源文件，将相应的日期/时间格式与从 **[displayLanguage]** 属性获取区域设置相匹配。
 
-可以使用[contentLanguage]属性获取 Office 应用程序的数据区域设置。 基于此值，可以正确地解读或显示日期/时间字符串。 例如，`jp-JP` 区域设置将数据/时间值表示为 `yyyy/MM/dd`，而 `fr-FR` 区域设置则表示为 `dd/MM/yyyy`。
+可以使用 [contentLanguage] 属性获取 Office 应用程序的数据区域设置。 基于此值，可以正确地解读或显示日期/时间字符串。 例如，`jp-JP` 区域设置将数据/时间值表示为 `yyyy/MM/dd`，而 `fr-FR` 区域设置则表示为 `dd/MM/yyyy`。
 
 ## <a name="use-ajax-for-globalization-and-localization"></a>将 Ajax 用于全球化和本地化
 
@@ -262,7 +262,7 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>配置 Office 以使用其他语言进行显示或编辑
 
-若要运行提供的示例代码，请在计算机上将 Office 配置为使用其他语言，以便可以通过切换用于菜单和命令显示的语言、或切换用于编辑和校对的语言（或同时切换两者）来测试外接程序。
+若要运行提供的示例代码，请在计算机上将 Office 配置为使用其他语言，以便可以通过切换用于菜单和命令显示的语言、或切换用于编辑和校对的语言或同时切换两者来测试外接程序。
 
 可以使用 Office 语言包安装其他语言。 有关语言包以及如何获取语言包的详细信息，请参阅[适用于 Office 的 Language Accessory Pack](https://support.microsoft.com/office/82ee1236-0f9a-45ee-9c72-05b026ee809f)。
 
@@ -273,13 +273,13 @@ Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托�
 您需要创建一个 2019 Visual Studio 2019 Office外接程序项目。
 
 > [!NOTE]
-> 如果您尚未安装 2019 Visual Studio 2019，请参阅[Visual Studio IDE 页面，](https://visualstudio.microsoft.com/vs/)了解下载说明。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。 如果之前已安装 Visual Studio 2019，Visual Studio 安装程序确保安装了[](/visualstudio/install/modify-visual-studio/)Office/SharePoint 开发工作负载。
+> 如果您尚未在 2019 Visual Studio IDE，请参阅 Visual Studio [IDE 页面，](https://visualstudio.microsoft.com/vs/)了解下载说明。 在安装过程中，你需要选择 Office/SharePoint 开发工作负载。 如果之前已安装 Visual Studio 2019，Visual Studio 安装程序确保安装了 Office/SharePoint [](/visualstudio/install/modify-visual-studio/) 开发工作负载。
 
 1. 选择“**创建新项目**”。
 
 2. 使用搜索框，输入 **外接程序**。 选择“**Word Web 外接程序**”，然后选择“**下一步**”。
 
-3. 将项目命名 **为 WorldReadyAddIn，** 然后选择"**创建"。**
+3. 将项目命名 **为 WorldReadyAddIn** ，然后选择" **创建"**。
 
 4. 此时，Visual Studio 创建解决方案，且它的两个项目显示在“解决方案资源管理器”中。**Home.html** 文件在 Visual Studio 中打开。
 
@@ -418,9 +418,9 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 
 现在，可以使用 **UIStrings** 对象，为加载项 UI 设置字符串了。
 
-如果要根据在 Office 客户端应用程序中的菜单和命令中显示所使用的语言来更改外接程序的本地化，请使用 **Office.context.displayLanguage** 属性获取该语言区域设置。 例如，如果应用程序语言使用西班牙语在菜单和命令中显示 **，Office.context.displayLanguage** 属性将返回语言代码 es-ES。
+如果要根据在 Office 客户端应用程序中的菜单和命令中显示所使用的语言来更改外接程序的本地化，可以使用 **Office.context.displayLanguage** 属性获取该语言区域设置。 例如，如果应用程序语言使用西班牙语在菜单和命令中显示，**Office.context.displayLanguage** 属性将返回语言代码 es-ES。
 
-如果要根据编辑文档内容所使用的语言更改外接程序的本地化，请使用 **Office.context.contentLanguage** 属性获取该语言区域设置。 例如，如果应用程序语言使用西班牙语编辑文档内容 **，Office.context.contentLanguage** 属性将返回语言代码 es-ES。
+如果要根据编辑文档内容所使用的语言更改加载项的本地化，请使用 **Office.context.contentLanguage** 属性获取该语言区域设置。 例如，如果应用程序语言使用西班牙语编辑文档内容，**Office.context.contentLanguage** 属性将返回语言代码 es-ES。
 
 了解应用程序使用的语言后，可以使用 **UIStrings** 获取与应用程序语言匹配的一组本地化字符串。
 
@@ -466,7 +466,7 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 
 ### <a name="test-your-localized-add-in"></a>测试本地化的加载项
 
-若要测试本地化的外接程序，请更改用于显示或编辑 Office应用程序的语言，然后运行您的外接程序。
+若要测试本地化的外接程序，请更改用于在应用程序Office或编辑的语言，然后运行您的外接程序。
 
 1. 在 Word 中，选择“文件” > “选项” > “语言”。 下图显示打开了“语言”选项卡的“Word 选项”对话框。
 
@@ -474,7 +474,7 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 
     !["Word 选项"对话框。](../images/office15-app-how-to-localize-fig04.png)
 
-2. 在“**选择显示语言**”下，选择想要显示的语言，例如西班牙语，然后选择向上箭头键将西班牙语移至列表中的第一个位置。 或者，若要更改用于编辑的语言，在"选择编辑语言"下，选择要用于编辑的语言，例如西班牙语，然后选择"设置为 **默认值"。**
+2. 在“**选择显示语言**”下，选择想要显示的语言，例如西班牙语，然后选择向上箭头键将西班牙语移至列表中的第一个位置。 或者，若要更改用于编辑的语言，在"选择编辑语言"下，选择要用于编辑的语言（例如西班牙语）然后选择"**设置为默认值"**。
 
 3. 选择“确定”确认选择，然后关闭 Word。
 

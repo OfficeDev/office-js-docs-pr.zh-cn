@@ -3,8 +3,13 @@ title: 加载项中的Office快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）Office加载项。
 ms.date: 11/22/2021
 localization_priority: Normal
+ms.openlocfilehash: 5282d803900e3f18ecbf8799520eae71779f8f73
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743231"
 ---
-
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到Office加载项
 
 键盘快捷方式（也称为组合键）使加载项的用户能够更高效地工作。 键盘快捷方式通过提供鼠标的替代方法，还可以为残障人士改进加载项的辅助功能。
@@ -12,7 +17,7 @@ localization_priority: Normal
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> 若要从已启用键盘快捷方式的加载项工作版本开始，请克隆并运行示例Excel[键盘快捷方式](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)。 准备好向自己的加载项添加键盘快捷方式后，请继续阅读本文。
+> 若要从已启用键盘快捷方式的加载项的工作版本开始，请克隆并运行示例Excel[键盘快捷方式](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)。 准备好向自己的加载项添加键盘快捷方式后，请继续阅读本文。
 
 向加载项添加键盘快捷方式有三个步骤。
 
@@ -30,7 +35,7 @@ localization_priority: Normal
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>将映射文件链接到清单
 
-在 *紧* (不在) `<VersionOverrides>` 元素内，添加 [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素。 将 属性 `Url` 设置为项目中将在稍后步骤创建的 JSON 文件的完整 URL。
+在 *紧* (不在 `<VersionOverrides>`) 元素内，添加 [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素。 将 属性 `Url` 设置为项目中将在稍后步骤创建的 JSON 文件的完整 URL。
 
 ```xml
     ...
@@ -125,7 +130,7 @@ localization_priority: Normal
     });
     ```
 
-按照前面的步骤，加载项可通过按 **Ctrl+Alt+Up** 和 **Ctrl+Alt+Down 切换任务窗格的可见性**。 同一行为显示在 Excel 外接程序 PnP Office中的键盘快捷方式示例GitHub。[](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)
+按照前面的步骤，加载项可通过按 **Ctrl+Alt+Up** 和 **Ctrl+Alt+Down 切换任务窗格的可见性**。 相同的行为显示在 Excel 外接程序 PnP [](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) Office中的键盘快捷方式示例GitHub。
 
 ## <a name="details-and-restrictions"></a>详细信息和限制
 
@@ -163,8 +168,8 @@ localization_priority: Normal
 
 - 属性名称 、 `action``key`和 `default` 是必需的。
 - 该属性的值 `action` 是一个字符串，并且必须与 action 对象 `id` 中的某个属性匹配。
-- 该属性 `default` 可以是字符 A - Z、-z、0 - 9 和标点符号"-"、"_"和"+"的任意组合。  (根据惯例，这些属性中不使用小写字母。) 
-- 该属性 `default` 必须至少包含 Alt、Ctrl、Shift 和另一 (键的名称) 一个修饰符键。
+- 该属性 `default` 可以是字符 A - Z、-z、0 - 9 和标点符号"-"、"_"和"+"的任意组合。  (根据惯例，这些属性中不会使用小写字母。) 
+- 该属性 `default` 必须至少包含 Alt、Ctrl、Shift (一个修饰符) 一个其他键的名称。
 - Shift 不能用作唯一的修改键。 将 Shift 与 Alt 或 Ctrl 组合使用。
 - 对于 Mac，我们还支持 Command 修饰符键。
 - 对于 Mac，Alt 映射到 Option 键。 对于Windows，Command 将映射到 Ctrl 键。
@@ -193,11 +198,11 @@ localization_priority: Normal
 快捷方式 JSON 的完整架构位于 [extended-manifest.schema.json。](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)
 
 > [!NOTE]
-> 键提示（也称为连续键快捷方式，例如用于选择填充颜色的 Excel 快捷方式 **Alt+H、H**）在 Office 外接程序中不受支持。
+> 键提示（也称为连续键快捷方式，例如选择填充颜色的 Excel 快捷方式 **Alt+H、H**）在 Office 外接程序中不受支持。
 
 ## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>避免其他加载项使用组合键
 
-有许多键盘快捷方式已由 Office。 避免为已在使用的加载项注册键盘快捷方式，但在某些情况下，可能需要替代现有的键盘快捷方式或处理注册了相同键盘快捷方式的多个加载项之间的冲突。
+有许多键盘快捷方式已被应用Office。 避免为已在使用的加载项注册键盘快捷方式，但在某些情况下，可能需要替代现有的键盘快捷方式或处理注册了相同键盘快捷方式的多个加载项之间的冲突。
 
 如果发生冲突，用户将在第一次尝试使用冲突的键盘快捷方式时看到一个对话框。 请注意，此 `name` 对话框中显示的外接程序选项文本来自 file 中的 action 对象中的 `shortcuts.json` 属性。
 
@@ -207,12 +212,12 @@ localization_priority: Normal
 
 !["告诉我"搜索框显示在Excel快捷方式首选项Office重置操作。](../images/add-in-reset-shortcuts-action.png)
 
-为了获得最佳用户体验，我们建议您尽量减少与这些Excel冲突。
+为了获得最佳用户体验，我们建议您最大程度地减少与这些Excel冲突。
 
 - 请仅使用以下模式的键盘快捷方式：**Ctrl+Shift+Alt+* x***，其中 *x* 是其他键。
 - 如果您需要更多键盘快捷方式，请检查Excel[键盘](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)快捷方式的列表，并避免在外接程序中使用它们。
 - 当键盘焦点位于加载项 UI 内时， **Ctrl+空格** 键和 **Ctrl+Shift+F10** 将不起作用，因为这些都是基本的辅助功能快捷方式。
-- 在 Windows 或 Mac 计算机上，如果"重置 Office 外接程序快捷方式首选项"命令在搜索菜单上不可用，则用户可以通过通过上下文菜单自定义功能区，将该命令手动添加到功能区。
+- 在 Windows 或 Mac 计算机上，如果"重置 Office 加载项快捷方式首选项"命令在搜索菜单上不可用，则用户可以通过通过上下文菜单自定义功能区，将该命令手动添加到功能区。
 
 ## <a name="customize-the-keyboard-shortcuts-per-platform"></a>自定义每个平台的键盘快捷方式
 
@@ -289,7 +294,7 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
 
 若要了解用户已在使用哪些快捷方式，请调用 [Office.actions.getShortcuts](/javascript/api/office/office.actions#office-office-actions-getshortcuts-member) 方法。 此方法返回一个类型 为 `[actionId:string]:string|null}`的对象，其中值表示用户必须用于调用指定操作的当前键盘组合。 这些值可能来自三个不同的源：
 
-- 如果快捷方式存在冲突，并且用户已选择将其他操作 (本机或其他外接程序) `null` 用于该键盘组合，则返回的值将为 ，因为快捷方式已被覆盖，并且用户当前没有可用于调用该外接程序操作的任何键盘组合。
+- 如果快捷方式存在冲突，并且用户已选择将其他操作 (本机或其他外接程序) `null` 用于该键盘组合，则返回的值将为 ，因为快捷方式已被替代，并且用户当前没有可用于调用该外接程序操作的任何键盘组合。
 - 如果已使用 [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) 方法自定义快捷方式，则返回的值将是自定义的键盘组合。
 - 如果快捷方式尚未重写或自定义，它将从外接程序的扩展清单 JSON 中返回值。
 

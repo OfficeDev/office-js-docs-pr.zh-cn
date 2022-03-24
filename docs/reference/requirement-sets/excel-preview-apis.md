@@ -4,8 +4,13 @@ description: 有关即将推出的 JavaScript Excel的详细信息。
 ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: f15a72631f83a5102fb4e042cc1357d179d1fa3d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747180"
 ---
-
 # <a name="excel-javascript-preview-apis"></a>Excel JavaScript 预览 API
 
 新的 Excel JavaScript API 首先在“预览版”中引入，在进行充分测试并获得用户反馈后，它将成为编号的特定要求集的一部分。
@@ -16,7 +21,7 @@ ms.localizationpriority: medium
 
 | 功能区域 | 说明 | 相关对象 |
 |:--- |:--- |:--- |
-| [Data types](../../excel/excel-data-types-overview.md) | 现有数据数据类型Excel扩展，包括对格式化数字和 Web 图像的支持。 | [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)、 [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)、 [CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes)、 [CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes)、 [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)、 [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)、 [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)、 [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)、 [StringCellValue](/javascript/api/excel/excel.stringcellvalue)、 [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)、 [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) |
+| [Data types](../../excel/excel-data-types-overview.md) | 现有数字数据类型Excel扩展，包括对格式化数字和 Web 图像的支持。 | [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)、 [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)、 [CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes)、 [CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes)、 [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)、 [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)、 [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)、 [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)、 [StringCellValue](/javascript/api/excel/excel.stringcellvalue)、 [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)、 [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) |
 | [数据类型错误](../../excel/excel-data-types-concepts.md#improved-error-support) | 支持扩展数据类型的错误对象。 | [BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue)、 [BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue)、 [CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue)、 [ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue)、 [Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue)、 [FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue)、 [GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue)、 [NotAvailableErrorCellValue](/javascript/api/excel/excel.notavailableerrorcellvalue)、 [NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue)、 [NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue)、 [NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue)、 [RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue)、 [SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue)、 [ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|
 | 记录任务 | 将注释转换为分配给用户的任务。 | [DocumentTask](/javascript/api/excel/excel.documenttask) |
 | 身份 | 管理用户标识，包括显示名称电子邮件地址。 | [Identity](/javascript/api/excel/excel.identity)、 [IdentityCollection](/javascript/api/excel/excel.identitycollection)、 [IdentityEntity](/javascript/api/excel/excel.identityentity) |
@@ -26,7 +31,7 @@ ms.localizationpriority: medium
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了当前预览Excel JavaScript API 的列表。 有关所有 JavaScript EXCEL API 的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 Excel [JavaScript API](/javascript/api/excel?view=excel-js-preview&preserve-view=true)。
+下表列出了当前预览Excel JavaScript API 的列表。 有关所有 JavaScript API Excel列表 (包括预览 API 和以前发布的 API) ，请参阅所有 Excel [JavaScript API](/javascript/api/excel?view=excel-js-preview&preserve-view=true)。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -179,15 +184,15 @@ ms.localizationpriority: medium
 |[IdentityEntity](/javascript/api/excel/excel.identityentity)|[displayName](/javascript/api/excel/excel.identityentity#excel-excel-identityentity-displayname-member)|表示用户的显示名称。|
 ||[email](/javascript/api/excel/excel.identityentity#excel-excel-identityentity-email-member)|表示用户的电子邮件地址。|
 ||[id](/javascript/api/excel/excel.identityentity#excel-excel-identityentity-id-member)|表示用户的唯一 ID。|
-|[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[dataProvider](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-dataprovider-member)|链接数据的数据提供程序的名称数据类型。|
+|[LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|[dataProvider](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-dataprovider-member)|链接数据提供程序的数据提供程序数据类型。|
 ||[lastRefreshed](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-lastrefreshed-member)|自上次刷新链接工作簿时打开工作簿以来的本地数据类型日期和时间。|
 ||[name](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-name-member)|链接对象数据类型。|
-||[periodicRefreshInterval](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-periodicrefreshinterval-member)|链接对象刷新的频率（以 `refreshMode` 秒数据类型设置为"Periodic"时刷新。|
+||[periodicRefreshInterval](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-periodicrefreshinterval-member)|链接对象刷新的频率（以秒 `refreshMode` 数据类型设置为"Periodic"时刷新。|
 ||[refreshMode](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-refreshmode-member)|用于检索链接数据数据类型的机制。|
 ||[requestRefresh () ](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-requestrefresh-member(1))|请求刷新链接数据类型。|
 ||[requestSetRefreshMode (refreshMode： Excel。LinkedDataTypeRefreshMode) ](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-requestsetrefreshmode-member(1))|请求更改此链接的刷新数据类型。|
 ||[服务 Id](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-serviceid-member)|链接对象的唯一数据类型。|
-||[supportedRefreshModes](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-supportedrefreshmodes-member)|返回一个数组，该数组包含链接对象支持的所有数据类型。|
+||[supportedRefreshModes](/javascript/api/excel/excel.linkeddatatype#excel-excel-linkeddatatype-supportedrefreshmodes-member)|返回一个数组，该数组包含链接对象支持的所有刷新数据类型。|
 |[LinkedDataTypeAddedEventArgs](/javascript/api/excel/excel.linkeddatatypeaddedeventargs)|[服务 Id](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#excel-excel-linkeddatatypeaddedeventargs-serviceid-member)|新链接对象的唯一 ID 数据类型。|
 ||[source](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#excel-excel-linkeddatatypeaddedeventargs-source-member)|获取事件源。|
 ||[type](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#excel-excel-linkeddatatypeaddedeventargs-type-member)|获取事件的类型。|
@@ -239,7 +244,7 @@ ms.localizationpriority: medium
 ||[errorType](/javascript/api/excel/excel.placeholdererrorcellvalue#excel-excel-placeholdererrorcellvalue-errortype-member)|表示 的类型 `ErrorCellValue`。|
 ||[target](/javascript/api/excel/excel.placeholdererrorcellvalue#excel-excel-placeholdererrorcellvalue-target-member)|`PlaceholderErrorCellValue` 在处理期间，在下载数据期间使用。|
 ||[type](/javascript/api/excel/excel.placeholdererrorcellvalue#excel-excel-placeholdererrorcellvalue-type-member)|表示此单元格值的类型。|
-|[区域](/javascript/api/excel/excel.range)|[getDependents () ](/javascript/api/excel/excel.range#excel-excel-range-getdependents-member(1))|返回一 `WorkbookRangeAreas` 个对象，该对象表示包含同一工作表或多个工作表中单元格的所有从属单元格的范围。|
+|[范围](/javascript/api/excel/excel.range)|[getDependents () ](/javascript/api/excel/excel.range#excel-excel-range-getdependents-member(1))|返回一 `WorkbookRangeAreas` 个对象，该对象表示包含同一工作表或多个工作表中单元格的所有从属单元格的范围。|
 ||[valuesAsJson](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member)|此区域单元格中的值的 JSON 表示形式。|
 |[RangeView](/javascript/api/excel/excel.rangeview)|[valuesAsJson](/javascript/api/excel/excel.rangeview#excel-excel-rangeview-valuesasjson-member)|此区域单元格中的值的 JSON 表示形式。|
 |[RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue)|[basicType](/javascript/api/excel/excel.referrorcellvalue#excel-excel-referrorcellvalue-basictype-member)|表示由具有此值的 `Range.valueTypes` 单元格返回的值。|
@@ -266,7 +271,7 @@ ms.localizationpriority: medium
 ||[errorSubType](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-errorsubtype-member)|表示 的类型 `SpillErrorCellValue`。|
 ||[errorType](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-errortype-member)|表示 的类型 `ErrorCellValue`。|
 ||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-spilledcolumns-member)|表示如果没有数据，将溢出的#SPILL！ error。|
-||[spilledRows](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-spilledrows-member)|表示如果没有数据，将溢出的#SPILL！ error。|
+||[spilledRows](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-spilledrows-member)|表示如果没有溢出的行数#SPILL！ error。|
 ||[type](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-type-member)|表示此单元格值的类型。|
 |[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[basicType](/javascript/api/excel/excel.stringcellvalue#excel-excel-stringcellvalue-basictype-member)|表示由具有此值的 `Range.valueTypes` 单元格返回的值。|
 ||[basicValue](/javascript/api/excel/excel.stringcellvalue#excel-excel-stringcellvalue-basicvalue-member)|表示由具有此值的 `Range.values` 单元格返回的值。|

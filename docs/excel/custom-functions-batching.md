@@ -3,12 +3,12 @@ ms.date: 07/08/2021
 description: 将自定义函数集体进行批处理，以减少对远程服务的网络调用。
 title: 对远程服务的自定义函数调用进行批处理
 ms.localizationpriority: medium
-ms.openlocfilehash: df076c1b148ce604c0b52fe5fbb76fe5f8e3deb5
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: c22a2d52ca0b144eb8ccb8acf88225cca75f0980
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711145"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744386"
 ---
 # <a name="batch-custom-function-calls-for-a-remote-service"></a>批处理远程服务的自定义函数调用
 

@@ -3,8 +3,13 @@ title: Office.context.mailbox - 要求集 1.9
 description: Outlook邮箱 API 要求集 1.9 版本的邮箱对象模型。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 9451fb23540f91d11c9f0631b77a7a789372cf9a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746231"
 ---
-
 # <a name="mailbox-requirement-set-19"></a>邮箱 (要求集 1.9) 
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox
@@ -35,7 +40,7 @@ ms.localizationpriority: medium
 | 方法 | 最小值<br>权限级别 | 模式 | 最小值<br>要求集 |
 |---|---|---|:---:|
 | [addHandlerAsync(eventType, handler, [options], [callback])](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#outlook-office-mailbox-addhandlerasync-member(1)) | ReadItem | 撰写<br>Read | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [convertToEwsId (itemId、 restVersion) ](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#outlook-office-mailbox-converttoewsid-member(1)) | 受限 | 撰写<br>Read | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
+| [convertToEwsId (itemId，restVersion) ](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#outlook-office-mailbox-converttoewsid-member(1)) | 受限 | 撰写<br>Read | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | [convertToLocalClientTime (timeValue) ](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#outlook-office-mailbox-converttolocalclienttime-member(1)) | ReadItem | 撰写<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [convertToRestId (itemId， restVersion) ](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#outlook-office-mailbox-converttorestid-member(1)) | 受限 | 撰写<br>Read | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | [convertToUtcClientTime (输入) ](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#outlook-office-mailbox-converttoutcclienttime-member(1)) | ReadItem | 撰写<br>Read | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |

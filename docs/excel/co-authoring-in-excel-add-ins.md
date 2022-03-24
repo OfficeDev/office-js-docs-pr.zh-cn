@@ -1,11 +1,15 @@
 ---
 title: 使用 Excel 加载项共同创作
-description: 了解如何共同Excel存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中的工作簿。
+description: 了解如何共同共同Excel存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中的工作簿。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 7fd2e2846c4256e7aac1ffa7263b4aa57b744d21
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744382"
 ---
-
-
 # <a name="coauthoring-in-excel-add-ins"></a>使用 Excel 加载项共同创作  
 
 借助[共同创作功能](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3024e46fb104)，多个人可以共同协作，同时编辑同一个 Excel 工作簿。 在另一个共同创作者更改并保存工作簿后，此工作簿的所有共同创作者都可以立即看这些更改。 若要共同创作 Excel 工作簿，必须将工作簿存储在 OneDrive、OneDrive for Business 或 SharePoint Online 中。
@@ -15,7 +19,7 @@ ms.localizationpriority: medium
 
 ## <a name="coauthoring-overview"></a>共同创作功能概述
 
-如果工作簿的内容有变化，Excel 会自动跨所有共同创作者同步这些更改。 共同创作者可以更改工作簿的内容，而 Excel 加载项中运行的代码也可以这样做。 例如，当以下 JavaScript 代码在 Office 外接程序中运行时，区域的值将设置为 Contoso。
+如果工作簿的内容有变化，Excel 会自动跨所有共同创作者同步这些更改。 共同创作者可以更改工作簿的内容，而 Excel 加载项中运行的代码也可以这样做。 例如，当以下 JavaScript 代码在加载项Office时，区域的值将设置为 Contoso。
 
 ```js
 range.values = [['Contoso']];
@@ -46,7 +50,7 @@ Excel 外接程序可以读取工作簿内容（通过隐藏工作表和设置�
 
 ## <a name="avoid-table-row-coauthoring-conflicts"></a>避免表行共同授权冲突
 
-对 API 的调用可能导致 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) 共同授权冲突是一个已知问题。 如果您预计外接程序将在其他用户编辑外接程序的工作簿时运行，我们不建议使用该 API (特别是，如果他们正在编辑表) 下的表或任何区域。 以下指南应该有助于`TableRowCollection.add`避免方法问题 (并避免触发要求用户刷新Excel的黄色) 。
+对 API 的调用可能导致 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) 共同授权冲突是一个已知问题。 如果您预计外接程序将在其他用户编辑外接程序的工作簿时运行，我们不建议使用该 API (特别是，如果他们正在编辑表) 下的任何区域。 以下指南应该有助于避免方法问题 (`TableRowCollection.add`并避免触发要求用户刷新Excel的黄色) 。
 
 1. 使用 [`Range.values`](/javascript/api/excel/excel.range#excel-excel-range-values-member) ，而不是 [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1))。 `Range`直接在表下方设置值会自动扩展表。 否则，通过 API 添加 `Table` 表行会导致共同作者用户的合并冲突。
 1. 除非 [数据验证应用于](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) 整个列，否则不应对表下面的单元格应用任何数据有效性规则。

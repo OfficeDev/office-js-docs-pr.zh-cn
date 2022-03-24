@@ -1,18 +1,18 @@
 ---
 title: 单声道样式图标指南Office加载项
-description: 在加载项中使用单Office图标的指南。
+description: 在加载项中使用单Office图标指南。
 ms.date: 03/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 43048b2e32810fb1f702e58ffb8eb5d9d85bbd4b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 10c6f2d11384a900e994a574f7a567684c5f4054
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149390"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743042"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>单声道样式图标指南Office加载项
 
-单声道样式图标用于Office应用中。 如果你希望图标与 2013+非订阅 Office样式匹配，请参阅适用于 Office 外接程序的新鲜样式[图标指南](add-in-icons-fresh.md)。
+单声道样式图标用于Office应用中。 如果您希望您的图标与 2013+非订阅 Office样式匹配，请参阅适用于 Office 外接程序的新鲜样式[图标指南](add-in-icons-fresh.md)。
 
 ## <a name="office-monoline-visual-style"></a>Office单声道视觉样式
 
@@ -61,7 +61,7 @@ Monoline 样式的目标是具有一致、清晰且可访问的图标，以通�
 **16 像素、20 像素、24 像素、32 像素、40 像素、48 像素、64 像素、80 像素、96 像素**
 
 > [!IMPORTANT]
-> 对于作为加载项代表性图标的图像，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和 Office内创建有效列表，了解大小和其他要求。
+> 对于作为加载项代表性图标的图像，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和 Office内创建有效列表，了解大小和其他要求。
 
 ### <a name="layout"></a>布局
 
@@ -136,7 +136,7 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 - 填充具有已定义边界的任何元素，并且自然具有填充。
 - 使用单独的形状创建背景填充。
-- 使用 **调色板 中的** 背景 [填充](#color)。
+- 使用 **调色板中的** 背景 [填充](#color)。
 - 保持重叠元素之间的像素分隔。
 - 在多个对象之间填充。
 
@@ -197,9 +197,9 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 当文本行位于"容器"中时 (例如，文档中的文本使用) 中灰色。 不在容器中的文本行应为 **深灰色**。
 
-### <a name="text"></a>文本
+### <a name="text"></a>Text
 
-避免在图标中使用文本字符。 由于Office产品已全球使用，我们希望将图标尽量保持中性语言。
+避免在图标中使用文本字符。 由于Office产品已全球使用，我们希望尽可能使图标保持中性语言。
 
 ## <a name="production"></a>生产
 

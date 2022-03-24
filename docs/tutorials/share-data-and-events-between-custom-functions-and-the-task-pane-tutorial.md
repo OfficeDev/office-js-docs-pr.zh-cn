@@ -4,20 +4,20 @@ description: 学习如何在Microsoft Excel中的自定义函数和任务窗格�
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 69dbb7c2b57d09f3d71397db0b1d56babf7c64a6
-ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
+ms.openlocfilehash: 6942e20495f8d4743df2fa3db1e0c729c1c1d608
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2021
-ms.locfileid: "61242052"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63710914"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
-共享全局数据，并通过共享运行时在 Excel 加载项的任务窗格和自定义函数之间发送事件。 对于大多数自定义函数方案，建议使用共享运行时，除非有特定的理由需要使用非任务窗格 (UI-less) 自定义函数。 本教程假设你已经熟悉使用Yo Office生成器来创建插件项目。 如果尚未完成[Excel 自定义函数教程](excel-tutorial-create-custom-functions.md)，请考虑完成它。
+共享全局数据，并通过共享运行时在 Excel 加载项的任务窗格和自定义函数之间发送事件。 对于大多数自定义函数方案，建议使用共享运行时，除非有特定的理由需要使用非任务窗格 (UI-less) 自定义函数。 本教程假定你已经熟悉使用[适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)来创建加载项项目。 如果尚未完成[Excel 自定义函数教程](excel-tutorial-create-custom-functions.md)，请考虑完成它。
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
-使用 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office) 来创建 Excel 加载项项目。
+使用 [Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 来创建 Excel 加载项项目。
 
 - 要生成带自定义函数的 Excel 加载项，请运行以下命令。
     

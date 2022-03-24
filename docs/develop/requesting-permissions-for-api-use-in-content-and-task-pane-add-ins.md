@@ -3,9 +3,13 @@ title: 在加载项中请求获取 API 使用权限
 description: 了解在内容或任务窗格外接程序的清单中声明的不同权限级别，以指定 JavaScript API 访问级别。
 ms.date: 03/19/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: 7b9fa0276c7ec130621affdcd6070e034cd30b79
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743980"
 ---
-
-
 # <a name="requesting-permissions-for-api-use-in-add-ins"></a>在加载项中请求获取 API 使用权限
 
 本文说明您可以在内容或任务窗格加载项清单中声明的不同权限级别，以指定加载项功能所需的 JavaScript API 访问的级别。 

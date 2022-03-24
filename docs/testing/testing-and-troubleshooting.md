@@ -3,12 +3,12 @@ title: 排查 Office 加载项中的用户错误
 description: 了解如何解决加载项中的Office错误。
 ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d5664ab702b205a0002201a223a72154a3c69be
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 0afef158938818a85ac0ac7ac79596f5911c0c45
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990542"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746392"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -40,7 +40,7 @@ ms.locfileid: "59990542"
 
 如果在 Windows 上运行并[使用 Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) 的 Outlook 加载项不能正常工作，请尝试在 Internet Explorer 中启用脚本调试。
 
-- 转到工具> Internet **选项**  >  **高级**。
+- 转到"工具> **Internet 选项** > **""继续"**。
 - 在“浏览”下，取消选中“禁用脚本调试 (Internet Explorer)”和“禁用脚本调试 (其他)”。
 
 我们建议您仅在解决问题时取消选中这些设置。如果您将其保持未选中状态，您在浏览时将会收到提示。解决此问题后，再次选中“禁用脚本调试 (Internet Explorer)”和“禁用脚本调试 (其他)”。
@@ -59,7 +59,7 @@ ms.locfileid: "59990542"
 
 ## <a name="add-in-dialog-box-cannot-be-displayed"></a>无法显示外接程序对话框
 
-使用 Office 外接程序时，将要求用户允许显示对话框。 用户选择" **允许"，** 会出现以下错误消息。
+使用 Office 外接程序时，将要求用户允许显示对话框。 用户选择" **允许"**，会出现以下错误消息。
 
 “浏览器中的安全设置阻止创建对话框。请尝试使用其他浏览器，或者配置浏览器，使地址栏中显示的 [URL] 和域处于同一安全区域。”
 

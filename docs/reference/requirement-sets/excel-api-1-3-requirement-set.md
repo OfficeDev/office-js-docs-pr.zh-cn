@@ -4,15 +4,20 @@ description: 有关 ExcelApi 1.3 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 1bf8bc604c2c770f517878193994c1ed32640da1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745337"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 的最近更新
 
 ExcelApi 1.3 增加了对数据绑定和基本数据透视表访问的支持。
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求集 1.3 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.3 或更早版本支持的所有 API 的 API 参考文档，请参阅[要求集 1.3](/javascript/api/excel?view=excel-js-1.3&preserve-view=true) 或更早中的 Excel API。
+下表列出了 JavaScript API 要求Excel集 1.3 中的 API。 若要查看受 Excel JavaScript API 要求集 1.3 或更早版本支持的所有 API 的 API 参考文档，请参阅[要求集 1.3](/javascript/api/excel?view=excel-js-1.3&preserve-view=true) 或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -26,7 +31,7 @@ ExcelApi 1.3 增加了对数据绑定和基本数据透视表访问的支持。
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getItem(name: string)](/javascript/api/excel/excel.pivottablecollection#excel-excel-pivottablecollection-getitem-member(1))|按名称获取 PivotTable 对象。|
 ||[items](/javascript/api/excel/excel.pivottablecollection#excel-excel-pivottablecollection-items-member)|获取此集合中已加载的子项。|
 ||[refreshAll () ](/javascript/api/excel/excel.pivottablecollection#excel-excel-pivottablecollection-refreshall-member(1))|刷新集合中的所有数据透视表。|
-|[区域](/javascript/api/excel/excel.range)|[getVisibleView () ](/javascript/api/excel/excel.range#excel-excel-range-getvisibleview-member(1))|表示当前 range 对象的可见行。|
+|[范围](/javascript/api/excel/excel.range)|[getVisibleView () ](/javascript/api/excel/excel.range#excel-excel-range-getvisibleview-member(1))|表示当前 range 对象的可见行。|
 |[RangeView](/javascript/api/excel/excel.rangeview)|[cellAddresses](/javascript/api/excel/excel.rangeview#excel-excel-rangeview-celladdresses-member)|表示 的单元格地址 `RangeView`。|
 ||[columnCount](/javascript/api/excel/excel.rangeview#excel-excel-rangeview-columncount-member)|可见列数。|
 ||[formulas](/javascript/api/excel/excel.rangeview#excel-excel-rangeview-formulas-member)|表示采用 A1 表示法的公式。|

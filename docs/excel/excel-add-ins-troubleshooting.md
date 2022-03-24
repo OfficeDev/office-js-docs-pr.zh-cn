@@ -3,12 +3,12 @@ title: 加载项Excel疑难解答
 description: 了解如何解决加载项中的Excel错误。
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c6a523354cc938ac9e9ba041ddb09f12142a3a58
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: aabbb3d8b62101eacb2ac51684a3d1f6c16e84a4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340790"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745506"
 ---
 # <a name="troubleshooting-excel-add-ins"></a>加载项Excel疑难解答
 

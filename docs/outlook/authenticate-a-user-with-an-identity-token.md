@@ -1,14 +1,14 @@
 ---
 title: 使用加载项中的标识令牌对用户进行身份验证
 description: 了解如何使用 Outlook 加载项提供的标识令牌对服务实施 SSO。
-ms.date: 10/31/2019
+ms.date: 10/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ff51cd4759d4b6e59fd18d6a613a4e6a85f2e152
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5f4dd8345de0edaaef333ee2b01890e876e049a6
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152437"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744622"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>使用 Exchange 的标识令牌对用户进行身份验证
 
@@ -49,7 +49,7 @@ Exchange 用户标识令牌为加载项提供了一种以唯一的方式标识�
 
 ### <a name="generate-a-unique-id"></a>生成唯一 ID
 
-建议结合使用 `msexchuid` 和 `amurl` 属性。 例如，可以将两个值连接在一起，生成 Base 64 编码的字符串。 每次均可通过令牌生成此值，因此你可以将 Exchange 用户标识令牌映射回系统中的用户。
+结合使用 和 `msexchuid` `amurl` 属性。 例如，可以将两个值连接在一起，生成 Base 64 编码的字符串。 每次均可通过令牌生成此值，因此你可以将 Exchange 用户标识令牌映射回系统中的用户。
 
 ### <a name="check-the-user"></a>检查用户
 

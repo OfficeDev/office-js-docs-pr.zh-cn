@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: 有关如何在 VSTO 加载项与 Office 加载项之间共享代码的教程。
 title: 教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 ms.localizationpriority: high
-ms.openlocfilehash: 91ecee722bf18c5a88758ce24bc8861b6c772805
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 76b9e49adcf5954f50794aaae2fdf740c436c480
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855462"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711250"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 
@@ -50,8 +50,8 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
 
 还需要：
 
-- Microsoft 365 帐户。 你可以加入 [Microsoft 365 开发人员计划](https://aka.ms/devprogramsignup)，获取可续订 90 天的 Microsoft 365 订阅，其中包括 Office 应用。
-- Microsoft Azure 租户。 可以从 [Microsoft Azure](https://account.windowsazure.com/SignUp) 获得试用订阅。
+- Microsoft 365帐户。你可以加入 [Microsoft 365开发人员计划](https://aka.ms/devprogramsignup)，该计划提供包含 Office 应用的可续订的 90 天 Microsoft 365 订阅。
+- Microsoft Azure租户。可在此处获取试用订阅: [Microsoft Azure](https://account.windowsazure.com/SignUp)。
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>单元格分析器 VSTO 加载项
 
@@ -66,7 +66,7 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
 1. 在“**解决方案资源管理器**”中，右键单击“**单元格分析器**”项目，然后选择“**属性**”。
 1. 在属性中选择“**签名**”类别。
 1. 选择“**为 ClickOnce 清单签名**”，然后选择“**创建测试证书**”。
-1. 在“**创建测试证书**”对话框中，输入并确认密码。 然后选择“**确定**”。
+1. 在 **创建测试证书** 对话框中，输入并确认密码。然后选择 **确定**。
 
 该加载项是 Excel 的自定义任务窗格。 你可以选择包含文本的任何单元格，然后选择“**显示 unicode**”按钮。 在“**结果**”部分中，该加载项将列出文本中的每个字符及其相应 Unicode 编号。
 
@@ -245,7 +245,7 @@ VSTO 加载项可以直接使用共享类库，因为它们都是 .NET 项目。
 
 ### <a name="add-the-office-add-in-project"></a>添加 Office 加载项项目
 
-为简单起见，请将所有代码保存在一个解决方案中。 将 Office 加载项项目添加到现有 Visual Studio 解决方案。 但是，如果你熟悉 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)和 Visual Studio 代码，也可以运行 `yo office` 来生成项目。 操作步骤非常相似。
+为简单起见，请将所有代码保存在一个解决方案中。 将 Office 加载项项目添加到现有 Visual Studio 解决方案。 但是，如果你熟悉 [Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)和 Visual Studio 代码，也可以运行 `yo office` 来生成项目。 操作步骤非常相似。
 
 1. 在“**解决方案资源管理器**”中，右键单击“**单元格分析器**”解决方案，然后选择 **“添加”>“新建项目”**。
 1. 在“**添加新项目**”对话框中，选择“**Excel Web 加载项**”，然后选择“**下一步**”。

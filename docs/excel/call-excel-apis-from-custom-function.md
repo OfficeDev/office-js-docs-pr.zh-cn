@@ -3,23 +3,28 @@ title: 从Excel调用 JavaScript API
 description: 了解Excel函数调用哪些 JavaScript API。
 ms.date: 08/30/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 7b60f3fbdeb317169800c688b77982580dfbf8c4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744396"
 ---
-
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>从Excel调用 JavaScript API
 
-从Excel调用 JavaScript API 以获取区域数据，并获取更多计算上下文。 在Excel函数调用 JavaScript API 可能会有所帮助：
+从Excel函数调用 JavaScript API 以获取区域数据，并获取用于计算的更多上下文。 在Excel函数调用 JavaScript API 可能会有所帮助：
 
 - 自定义函数需要在计算之前从Excel信息。 此信息可能包括文档属性、范围格式、自定义 XML 部件、工作簿名称或其他Excel特定的信息。
 - 自定义函数将在计算后设置返回值的单元格编号格式。
 
 > [!IMPORTANT]
-> 若要Excel函数调用 JavaScript API，你需要使用共享的 JavaScript 运行时。 查看 [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md) 以了解更多信息。
+> 若要从Excel调用 JavaScript API，你需要使用共享的 JavaScript 运行时。 查看 [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md) 以了解更多信息。
 
 ## <a name="code-sample"></a>代码示例
 
-若要从Excel调用 JavaScript API，首先需要上下文。 使用 [Excel。获取上下文的 RequestContext](/javascript/api/excel/excel.requestcontext) 对象。 然后，使用上下文调用工作簿中所需的 API。
+若要从Excel调用 JavaScript API，首先需要上下文。 使用[Excel。获取上下文的 RequestContext](/javascript/api/excel/excel.requestcontext) 对象。 然后，使用上下文调用工作簿中所需的 API。
 
-下面的代码示例演示如何使用 从 `Excel.RequestContext` 工作簿的单元格获取值。 在此示例中，参数`address`将传递到 JavaScript API [Worksheet.getRange Excel中，](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1))并且必须以字符串形式输入。 例如，在用户界面中输入的Excel函数`=CONTOSO.GETRANGEVALUE("A1")``"A1"`必须遵循模式 ，其中 是单元格的地址，从中检索值。
+下面的代码示例演示如何使用 从 `Excel.RequestContext` 工作簿的单元格获取值。 在此示例中，参数`address`将传递到 JavaScript API [Worksheet.getRange Excel中](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1))，并且必须以字符串形式输入。 例如，在用户界面中输入的Excel函数`=CONTOSO.GETRANGEVALUE("A1")``"A1"`必须遵循 模式，其中 是从中检索值的单元格的地址。
 
 ```JavaScript
 /**

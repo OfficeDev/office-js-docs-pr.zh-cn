@@ -3,12 +3,12 @@ title: 指定 Office 主机和 API 要求
 description: 了解如何指定Office应用和 API 要求，使加载项按预期运行。
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 785ef21a44844eed51ef6815d50ac2542d00de26
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 1df753dfe3e5c517f49d597f9298744cf0c79f52
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711152"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744057"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>指定 Office 应用程序和 API 要求
 

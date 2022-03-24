@@ -4,9 +4,14 @@ description: 有关 PowerPointApi 1.3 要求集的详细信息。
 ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium
+ms.openlocfilehash: 185ece64559d124d8af7c4051d54267da7b11542
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746486"
 ---
-
-# <a name="whats-new-in-powerpoint-javascript-api-13"></a>JavaScript API 1.3 PowerPoint新增功能
+# <a name="whats-new-in-powerpoint-javascript-api-13"></a>JavaScript API 1.3 PowerPoint的新增功能
 
 PowerPointApi 1.3 增加了对幻灯片管理和自定义标记的额外支持。
 
@@ -19,7 +24,7 @@ PowerPointApi 1.3 增加了对幻灯片管理和自定义标记的额外支持�
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API PowerPoint集 1.3。 有关所有 JavaScript POWERPOINT的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 PowerPoint [JavaScript API](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)。
+下表列出了 JavaScript API 要求PowerPoint集 1.3。 有关所有 JavaScript POWERPOINT的完整列表 (包括预览 API 和以前发布的 API) ，请参阅所有 PowerPoint [JavaScript API](/javascript/api/powerpoint?view=powerpoint-js-preview&preserve-view=true)。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|

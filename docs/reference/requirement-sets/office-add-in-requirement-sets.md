@@ -4,12 +4,12 @@ description: 详细了解通用 API Office集。
 ms.date: 11/22/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 65ab09d62a3ca551cb1295744f88ff2fd095861a
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 743473566e632022946bdc2b7e372b5bb6fede49
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153468"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744116"
 ---
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
@@ -29,10 +29,10 @@ ms.locfileid: "61153468"
 
 ## <a name="common-api-requirement-sets"></a>通用 API 要求集
 
-以下各节列出了通用 API 要求集、每个集内的方法，以及支持Office集的客户端应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
+以下各节列出了通用 API 要求集、每个集内的方法，Office支持该要求集的客户端应用程序。 除非另行指定，否则这些 API 要求集都是第 1.1 版。
 
 > [!TIP]
-> 需要有关外接程序和要求集在应用程序与版本Office的信息？ 请参阅[Office外接程序的客户端](../../overview/office-add-in-availability.md)应用程序和Office可用性。
+> 需要有关外接程序和要求集在应用程序与版本Office的信息？ 请参阅[Office外接程序的客户端应用程序和Office可用性](../../overview/office-add-in-availability.md)。
 
 ### <a name="activeview"></a>ActiveView
 

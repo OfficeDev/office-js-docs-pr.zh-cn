@@ -1,34 +1,34 @@
 ---
 title: Office 加载项中的 Word JavaScript 对象模型
 description: 了解特定于 Word 的 JavaScript 对象模型中最重要的类。
-ms.date: 10/14/2020
+ms.date: 3/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 5ecd2a02dc81f4a329d625e05b777b9eaaa2688a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c0e601c75bdf4f163118de93d0c06d4668594c4b
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149423"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63710935"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Office 加载项中的 Word JavaScript 对象模型
 
-本文介绍使用 [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) 生成加载项的基本概念。它介绍了使用 API 的基本核心概念。
+本文介绍了使用 [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) 生成加载项的基础概念。
 
 > [!IMPORTANT]
 > 请参阅[使用特定于应用程序的 API 模型](../develop/application-specific-api-model.md)，以了解 Word API 的异步性质以及它们如何与文档协同工作。
 
 ## <a name="officejs-apis-for-word"></a>适用于 Word 的 Office.js API
 
-Word 加载项通过使用 Office JavaScript API 与 Excel 中的对象进行交互，JavaScript API包括两个 JavaScript 对象模型：
+Word 加载项使用 Office JavaScript API 与 Word 中的对象进行交互。这包括两个 JavaScript 对象模型:
 
-* **Word JavaScript API**：[Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) 提供了强类型的对象，可用于访问文档、范围、表格、列表、格式等。
+* **Word JavaScript API**: [Word JavaScript API](/javascript/api/word) 提供适用于文档、范围、表、列表、格式等的强类型对象。
 
-* **通用 API**：[通用 API](/javascript/api/office) 可用于访问在多种类型的 Office 应用程序中都很常见的 UI、对话框和客户端设置等功能。
+* **通用 API**: [通用 API](/javascript/api/office) 允许访问多个 Office 应用程序中常见的 UI、对话框和客户端设置等功能。
 
 你可能会使用 Word JavaScript API 开发面向 Word 的加载项中的大部分功能，同时还可以使用通用 API 中的对象。例如：
 
-* [Context](/javascript/api/office/office.context)：`Context` 对象表示加载项的运行时环境，并提供对 API 关键对象的访问权限。 它由文档配置详细信息（如 `contentLanguage` 和 `officeTheme`）组成，并提供有关加载项的运行时环境（如 `host` 和 `platform`）的信息。 此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Excel 应用程序是否支持指定的要求集。
-* [Document](/javascript/api/office/office.document)：`Document` 对象提供 `getFileAsync()` 方法，用于下载运行加载项的 Word 文件。
+* [Office.Context](/javascript/api/office/office.context): `Context` 对象表示加载项的运行时环境，并提供对 API 关键对象的访问权限。它包含文档配置详细信息，如 `contentLanguage` 和 `officeTheme`，还提供有关加载项运行时环境的信息，例如 `host` 和 `platform`。此外，它还提供了 `requirements.isSetSupported()` 方法，可用于检查运行加载项的 Word 应用程序是否支持指定的要求集。
+* [Office.Document](/javascript/api/office/office.document): `Office.Document` 对象提供 `getFileAsync()` 方法，可用于下载运行加载项的 Word 文件。这独立于 [Word.Document](/javascript/api/word/word.document) 对象。
 
 ![Word JS API 和通用 API 之间的差异。](../images/word-js-api-common-api.png)
 

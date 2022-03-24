@@ -3,22 +3,22 @@ title: 适用于外接程序的Office样式图标指南
 description: 有关在外接程序中Office样式图标的指南。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e7281304ca448ed498b0ab20422af3688a24336
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f3d2a78a72ea2540b297821323e0337d3a1ddcd4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149391"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743097"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>适用于外接程序的Office样式图标指南
 
 2013 Office 2013 (非订阅) 版本Office Microsoft 的"全新"样式图标。 如果你希望图标与单声道样式匹配Microsoft 365，请参阅适用于加载项的单Office[图标指南](add-in-icons-monoline.md)。
 
-## <a name="office-fresh-visual-style"></a>Office全新的视觉样式
+## <a name="office-fresh-visual-style"></a>Office全新视觉样式
 
 "新鲜度"图标仅包含基本的通信元素。 包括透视、渐变和光源的非必需元素均被删除。 简化后的图标可支持对命令和控件的快速解析。 请遵循此样式，以最适合Office订阅客户端。
 
-## <a name="best-practices"></a>最佳实践
+## <a name="best-practices"></a>最佳做法
 
 创建图标时，请遵循以下指南。
 
@@ -28,7 +28,7 @@ ms.locfileid: "59149391"
 |使用 Office 图标语言来表示行为或概念。|请勿对功能区或上下文菜单中的外接程序命令重新Office 应用 Fabric Core 字形。 Fabric Core 图标在风格上有所不同，不会匹配。|
 |将画笔等公用 Office 视觉隐喻重用于格式或用于查找的放大镜。|不要对不同的命令重复使用视觉隐喻。 对不同的行为和概念使用同一图标可能会引起混淆。 |
 |重绘图标，使其更大或更小。 请花时间重绘切割区、角和圆边，以最大化线条的清晰度。 |切勿通过缩小或扩大尺寸来调整图标大小。 这可能会导致视觉对象质量不佳和操作不清晰。 对于较大尺寸的复杂图标，如果不是通过重绘来使其变小，则可能会降低清晰度。 |
-|为辅助功能使用白色填充。图标中的大部分对象都需使用白色背景，以使其在 Office UI 主题中以及高对比度模式下清晰可辨。  |避免依赖徽标或品牌传达外接程序命令应起到的作用。 品牌标志在较小的图标尺寸上和应用很多修饰符后并非总具有识别性。 品牌标记通常与Office 应用图标样式冲突，并且可能会在饱和的环境中吸引用户的注意力。 |
+|为辅助功能使用白色填充。图标中的大部分对象都需使用白色背景，以使其在 Office UI 主题中以及高对比度模式下清晰可辨。  |避免依赖徽标或品牌传达外接程序命令应起到的作用。 品牌标志在较小的图标尺寸上和应用很多修饰符后并非总具有识别性。 品牌标记通常与Office 应用图标样式冲突，并且可能会吸引用户关注在饱和的环境中。 |
 |使用具有透明背景的 PNG 格式。 ||
 |避免在图标中使用可本地化的内容，包括印刷字符、段落标记指示和问号。 ||
 
@@ -46,7 +46,7 @@ Office 桌面图标是位图图像。 根据用户的 DPI 设置和触摸模式�
 - 80 像素（必需）
 
 > [!IMPORTANT]
-> 有关作为加载项代表性图标的图像，请参阅在[AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)和 Office内创建有效列表，了解大小和其他要求。
+> 对于作为加载项代表性图标的图像，请参阅在 [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) 和 Office内创建有效列表，了解大小和其他要求。
 
 确保根据每个尺寸重新绘制你的图标，而非将其缩小。
 
@@ -89,7 +89,7 @@ Office图标通常由具有操作和概念修饰符的基元素组成。 操�
 ## <a name="icon-colors"></a>图标颜色
 
 > [!NOTE]
-> 这些颜色指南适用于[外接程序命令](add-in-commands.md)中使用的功能区图标。 这些图标不会通过Fluent UI 呈现，并且调色板不同于 Microsoft UI Fabric | [颜色|共享](https://fluentfabric.azurewebsites.net/#/color/shared)。
+> 这些颜色指南适用于[外接程序命令](add-in-commands.md)中使用的功能区图标。 这些图标不会通过 Fluent UI 呈现，并且调色板不同于 [Microsoft UI Fabric |颜色|共享](https://fluentfabric.azurewebsites.net/#/color/shared)。
 
 Office 图标具有一个有限的调色板。 使用下表中列出的颜色确保与 Office UI 无缝集成。 将以下指南应用于颜色使用。
 

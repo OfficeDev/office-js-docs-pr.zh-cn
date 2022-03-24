@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: ec1e2d761f6c2e489122cfdaa86e1a492e729774
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: b42717b58afe75ce2f1e2097b861e51e9224a47d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340958"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745625"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Excel 加载项中的数据类型概述（预览版）
 

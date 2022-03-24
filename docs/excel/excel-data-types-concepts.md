@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 969712a2ae26e515ab3aa28b7c7a0901f456a61f
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: b0827509c4592958a9529af20e3a76da4a4008be
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855602"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743354"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel 数据类型核心概念（预览版）
 
@@ -83,7 +83,7 @@ const myEntity: Excel.EntityCellValue = {
 
 ## <a name="web-image-values"></a>Web 图像值
 
-[WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) 对象创建将图像存储为 [实体](#entity-values) 或作为区域中独立值的一部分的功能。 此对象提供许多属性，包括 `address`、`altText` 和 `relatedImagesAddress`。
+[WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) 对象创建将图像存储为 [实体](#entity-values) 的一部分或作为区域中独立值的功能。此对象提供许多属性，包括 `address`、`altText` 和 `relatedImagesAddress`。
 
 `basicType` 和 `basicValue`属性定义了如果未满足使用数据类型功能的最低兼容性要求，计算将如何读取 Web 图像数据类型。 在该方案中，此 Web 图像数据类型显示为 **#VALUE!** Excel UI 中的错误。
 

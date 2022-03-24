@@ -4,12 +4,12 @@ description: 了解如何使用 Excel JavaScript API 读取或写入无限区域
 ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e9b0c56dfd04cd53e01c41fea23fbf826a6fa14
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 5ef9b6a385db5b1de90e1bd61802d20ef7864533
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340951"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745501"
 ---
 # <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>使用 JavaScript API 读取或写入无限Excel区域
 

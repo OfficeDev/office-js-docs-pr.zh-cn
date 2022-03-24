@@ -3,19 +3,19 @@ title: 使用 Visual Studio 开发 Office 加载项
 description: 如何使用 Visual Studio 开发 Office 加载项。
 ms.date: 01/26/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 26fd9d138dc05f7e0ca2961591b9d45b21a9dbe6
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 52740e16363e3e038269e08a9e50e0f08877db66
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263042"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743840"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>使用 Visual Studio 开发 Office 加载项
 
 本文介绍如何使用 Visual Studio 开发 Office 加载项。 如果你已创建加载项，则可以跳至[使用 Visual Studio 开发加载项](#develop-the-add-in-using-visual-studio)部分。
 
 > [!NOTE]
-> 作为使用 Visual Studio 的替代方法，你可以选择使用适用于 Office 加载项和 VS Code 的 Yeoman 生成器来创建 Office 加载项。 有关此选项的详细信息，请参阅[创建 Office 加载项](../develop/develop-overview.md#create-an-office-add-in)。
+> 作为使用 Visual Studio 的替代方法，可以选择使用 Office 加载项的 Yeoman 生成器和 VS Code 创建 Office 加载项。要了解关于此选项的详细信息，请参阅 [创建 Office 加载项](../develop/develop-overview.md#create-an-office-add-in)。
 
 ## <a name="create-the-add-in-project-using-visual-studio"></a>使用 Visual Studio 创建加载项项目
 
@@ -26,7 +26,7 @@ Visual Studio 可用于创建适用于 Excel、Outlook、Word 和 PowerPoint 的
 - [Word 快速入门](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [PowerPoint 快速入门](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 
-Visual Studio 不支持创建适用于 OneNote 或 Project 的 Office 加载项。 要为其中任何应用程序创建 Office 加载项，你需要使用适用于 Office 加载项的 Yeoman 生成器，如 [OneNote 快速入门](../quickstarts/onenote-quickstart.md)或 [Project 快速入门](../quickstarts/project-quickstart.md)中所述。
+Visual Studio 不支持为 OneNote 或 Project 创建 Office 加载项。如果要为其中任一应用程序创建 Office 加载项，需要使用 Office 加载项的 Yeoman 生成器，如 [OneNote 快速入门](../quickstarts/onenote-quickstart.md) 或 [Project 快速入门](../quickstarts/project-quickstart.md) 中所述。
 
 ## <a name="develop-the-add-in-using-visual-studio"></a>使用 Visual Studio 开发加载项
 

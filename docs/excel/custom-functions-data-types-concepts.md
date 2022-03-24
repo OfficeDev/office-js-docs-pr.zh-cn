@@ -5,12 +5,12 @@ ms.date: 12/27/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: dfce989064ac21a09e07805b408ef744f9dcd3bf
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: 393777730a6f4889d7d053382fd885de3714a4d9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61647956"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744359"
 ---
 # <a name="use-data-types-with-custom-functions-in-excel-preview"></a>在 Excel 中将数据类型与自定义函数配合使用（预览版）
 
@@ -37,7 +37,7 @@ ms.locfileid: "61647956"
 
 自定义函数项目包括 JSON 元数据文件。 此 JSON 元数据文件不同于数据类型 API 使用的 JSON 架构。 若要将数据类型与自定义函数集成，必须手动更新自定义函数 JSON 元数据文件，以包括属性 `allowCustomDataForDataTypeAny`。 将此属性设置为 `true`。
 
-有关手动 JSON 创建过程的完整说明，请参阅[为自定义函数手动创建 JSON 元数据](custom-functions-json.md)。 有关此属性的其他详细信息，请参阅 [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview)。
+有关手动 JSON 创建过程的完整说明，请参阅 [为自定义函数手动创建 JSON 元数据](custom-functions-json.md)。有关此属性的其他详细信息，请参阅 [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview)。
 
 ### <a name="script-lab-option"></a>脚本实验室选项
 

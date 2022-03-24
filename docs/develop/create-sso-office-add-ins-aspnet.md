@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 ASP.NET Office 加载项
-description: 如何创建 (或将 Office 后端的 ASP.NET Office) 外接程序转换为使用单一登录 (SSO) 的分步指南。
+description: 如何创建 (或将) 后端的 ASP.NET Office 外接程序转换为使用单一登录 (SSO) 的分步指南。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a8d2cd20e9ad47e18ff6ee84cbd45c27f89d537c
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: e6d758ad52a4342db40b52162b454e2f112f9ec2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320254"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743533"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
@@ -25,7 +25,7 @@ ms.locfileid: "62320254"
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
-* 至少存储在你的 OneDrive for Business 订阅Microsoft 365文件和文件夹。
+* 至少存储在你的 OneDrive for Business 订阅中的Microsoft 365文件夹。
 
 * 具有活动订阅的 Azure 帐户 - [免费创建帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
 
@@ -53,7 +53,7 @@ ms.locfileid: "62320254"
 
 * 平台： **Web**
 * 重定向 URI： **https://localhost:44355/AzureADAuth/Authorize**
-* 客户端密码： `*********` (创建后记录此值 - 仅显示一次) 
+* 客户端密码： `*********` (创建后记录此值 - 仅显示一) 
 
 ### <a name="expose-a-web-api"></a>公开 Web API
 
@@ -67,11 +67,11 @@ ms.locfileid: "62320254"
     |字段          |值  |
     |---------------|---------|
     |**范围名称** | `access_as_user`|
-    |**Who同意** | **管理员和用户**|
+    |**谁可以同意** | **管理员和用户**|
     |**管理员同意显示名称** | Office可以充当用户。|
-    |**管理员同意说明** | 允许Office以与当前用户相同的权限调用外接程序的 Web API。|
-    |**用户同意显示名称** | Office可以充当你。|
-    |**用户同意说明** | 启用Office，以使用您拥有的相同权限调用外接程序的 Web API。|
+    |**管理员同意说明** | 启用Office以与当前用户相同的权限调用外接程序的 Web API。|
+    |**用户同意显示名称** | Office可以充当您。|
+    |**用户同意说明** | 启用Office以您拥有的相同权限调用外接程序的 Web API。|
 
 1. 将"**状态"****设置为"已启用**"，然后选择"**添加范围"**。
 
@@ -129,7 +129,7 @@ ms.locfileid: "62320254"
 
 1. 在“**通用属性**”下，选择“**启动项目**”，然后选择“**多个启动项目**”。 确保两个项目的“**操作**”均设置为“**启动**”，并且以“...WebAPI”结尾的项目排在前面。 关闭该对话框。
 
-1. 返回到"**解决方案** 资源管理器"， (不要右键) "**Office-Add-in-ASPNET-SSO-WebAPI**"项目。 随后将打开“**属性**”窗格。 确保“**已启用 SSL**”为“**True**”。 验证“**SSL URL**”是否为 `http://localhost:44355/`。
+1. 返回到解决方案 **资源管理器**， (不要右键单击 **) -Office-ASPNET-SSO-WebAPI** 项目。 随后将打开“**属性**”窗格。 确保“**已启用 SSL**”为“**True**”。 验证“**SSL URL**”是否为 `http://localhost:44355/`。
 
 1. 在“Web.config”中，使用先前复制的值。 将“**ida:ClientID**”和“**ida:Audience**”均设置为“**应用程序(客户端) ID**”，并将“**ida:Password**”设置为客户端密码。 此外，将 **ida：Domain** 设置为 (`http://localhost:44355` 末尾没有正斜杠"/") 。
 
@@ -138,7 +138,7 @@ ms.locfileid: "62320254"
 
 1. 如果在注册该加载项时，“**受支持的帐户类型**”未选择“仅限此组织目录中的帐户”，请保存并关闭 web.config。否则，请保存，但将其保持打开状态。
 
-1. 仍在"解决方案资源管理器"中，选择 **Office-Add-in-ASPNET-SSO** 项目，打开外接程序清单文件"Office-Add-in-ASPNET-SSO.xml"，然后滚动到文件底部。 在结束标记 `</VersionOverrides>` 的正上方，你将找到以下标记。
+1. 仍在"解决方案资源管理器"中，**选择 Office-Add-in-ASPNET-SSO** 项目，打开外接程序清单文件"Office-Add-in-ASPNET-SSO.xml"，然后滚动到文件底部。 在结束标记 `</VersionOverrides>` 的正上方，你将找到以下标记。
 
     ```xml
     <WebApplicationInfo>
@@ -195,7 +195,7 @@ ms.locfileid: "62320254"
 1. 在 `getGraphData` 函数下方，添加下列函数。 请注意，你将在稍后的步骤中创建 `handleClientSideErrors` 函数。
 
     > [!NOTE]
-    > 为了区分本文中你使用两个访问令牌，从 getAccessToken () 返回的令牌称为启动令牌。 稍后通过代表流交换该令牌，以使用 Microsoft Graph。
+    > 为了区分本文中你使用两个访问令牌，从 getAccessToken () 返回的令牌称为启动令牌。 它稍后通过代表流进行交换，以使用访问 Microsoft Graph。
 
     ```javascript
     async function getDataWithToken(options) {
@@ -222,7 +222,7 @@ ms.locfileid: "62320254"
 
     * `allowSignInPrompt` 设置为 true。 这将Office用户尚未登录，提示用户登录Office。
     * `allowConsentPrompt` 设置为 true。 这将Office如果尚未授予同意，则提示用户同意允许外接程序访问Microsoft Azure Active Directory配置文件。  (生成的提示 *不允许* 用户同意任何 Microsoft Graph作用域。) 
-    * `forMSGraphAccess` 设置为 true。 这将Office用户或管理员 (外接程序的 Graph 范围时，返回错误代码 13012) 。 若要访问 Microsoft Graph外接程序必须通过代表流将访问令牌交换为新的访问令牌。 设置为 `forMSGraphAccess` true 有助于避免 **getAccessToken ()** 成功，但代表流稍后对 Microsoft Graph。 加载项的客户端代码可以通过分支到回退授权系统来响应 13012。
+    * `forMSGraphAccess` 设置为 true。 这将Office用户 (管理员未同意外接程序的 Graph 范围时，返回错误代码 13012) 。 若要访问 Microsoft Graph加载项必须通过代表流将访问令牌交换为新的访问令牌。 设置为 `forMSGraphAccess` true 有助于避免 **getAccessToken ()** 成功，但代表流稍后对 Microsoft Graph。 加载项的客户端代码可以通过分支到回退授权系统来响应 13012。
 
     另请注意以下代码：
 
@@ -456,7 +456,7 @@ ms.locfileid: "62320254"
 1. 将 `TODO 2` 替换为以下代码。 关于此代码，请注意以下几点：
 
     * 调用的是方法 `UseOAuthBearerAuthentication`，而不是更常见的 `UseWindowsAzureActiveDirectoryBearerAuthentication`，因为后者与 Azure AD V2 终结点不兼容。
-    * 传递到方法的 URL 是 OWIN 中间件获取获取密钥的说明，以验证从 Office 应用程序收到的启动令牌上的签名。 此 URL 的 Authority 区段来自 web.config。它可能是“common”字符串，而对于单租户加载项，则是一个 GUID。
+    * 传递到 方法的 URL 是 OWIN 中间件获取获取密钥的说明，以验证从 Office 应用程序收到的启动令牌上的签名。 此 URL 的 Authority 区段来自 web.config。它可能是“common”字符串，而对于单租户加载项，则是一个 GUID。
 
     ```csharp
     string[] endAuthoritySegments = { "oauth2/v2.0" };
@@ -522,10 +522,10 @@ ms.locfileid: "62320254"
 
 1. 将 `TODO 2` 替换为以下代码，以便整合在使用代理流来获取 Microsoft Graph 的令牌时所需的所有信息。 关于此代码，请注意以下几点：
 
-    * 外接程序不再扮演资源用户或 (访问群体) 用户Office访问群体的角色。 现在它本身就是一个需要访问 Microsoft Graph 的客户端。 是 MSAL“客户端上下文”对象。
+    * 外接程序不再扮演资源用户或 (用户需要) 的资源Office或访问群体的角色。 现在它本身就是一个需要访问 Microsoft Graph 的客户端。 是 MSAL“客户端上下文”对象。
     * 从 MSAL.NET 3.x.x 开始，`bootstrapContext` 仅仅是启动令牌本身。
     * Authority 来自 web.config。它可能是“common”字符串，而对于单租户加载项，则是一个 GUID。
-    * 如果代码请求 `profile`，MSAL 将引发错误，这仅在 Office 客户端应用程序获取到外接程序的 Web 应用程序的令牌时真正使用。 因此，只会显式请求获取 `Files.Read.All`。
+    * 如果代码请求 `profile`，MSAL 将引发错误，这仅在 Office 客户端应用程序获取外接程序的 Web 应用程序的令牌时真正使用。 因此，只会显式请求获取 `Files.Read.All`。
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -566,7 +566,7 @@ ms.locfileid: "62320254"
 1. 将 `TODO 3a` 替换为以下代码。关于此代码，请注意以下几点：
 
     * 如果 Microsoft Graph 资源要求进行多重身份验证，但用户尚未提供，则 Azure AD 会返回“400 错误请求”以及错误 `AADSTS50076` 和 **Claims** 属性。 MSAL 抛出包含此信息的 **MsalUiRequiredException**（继承自 **MsalServiceException**）。
-    * **必须将 Claims** 属性值传递到客户端，客户端应该将它传递到 Office 应用程序，然后客户端应用程序会向请求新的启动令牌中包含它。 Azure AD 会提示用户进行所有必需形式的身份验证。
+    * **必须将 Claims** 属性值传递到客户端，客户端应该会Office应用程序，然后客户端应用程序会向请求新的启动令牌中包含它。 Azure AD 会提示用户进行所有必需形式的身份验证。
     * 由于创建异常 HTTP Response 的 API 并不知道 **Claims** 属性，因此它们不会在 Response 对象中添加这个属性。 必须手动创建消息来添加它。 不过，自定义 **Message** 属性会阻止创建 **ExceptionMessage** 属性，因此向客户端发送错误 ID `AADSTS50076` 的唯一方法是，将它添加到自定义 **Message** 中。 客户端中的 JavaScript 需要发现响应是否包含 **Message** 或 **ExceptionMessage**，这样才能了解要读取的内容。
     * 自定义消息被格式化为 JSON，以便客户端 JavaScript 能够使用已知的 JavaScript `JSON` 对象方法分析它。
 
@@ -620,13 +620,13 @@ ms.locfileid: "62320254"
 
 1. 按 F5。
 1. 在 Office 应用程序的“**主页**”功能区上，选择“**SSO ASP.NET**”组中的“**显示加载项**”以打开任务窗格加载项。
-1. 单击“**获取 OneDrive 文件名**”按钮。 如果使用 Microsoft 365 教育版 或工作帐户或 Microsoft 帐户登录到 Office，并且 SSO 按预期工作，OneDrive for Business 中的前 10 个文件和文件夹名称将显示在任务窗格中。 如果您未登录，或者您位于不支持 SSO 的方案中，或者 SSO 因任何原因无法工作，系统将提示您登录。 登录后，将显示文件和文件夹名称。
+1. 单击“**获取 OneDrive 文件名**”按钮。 如果使用 Microsoft 365 教育版 Office 或工作帐户或 Microsoft 帐户登录 Office 并且 SSO 按预期工作，OneDrive for Business 中的前 10 个文件和文件夹名称将显示在任务窗格中。 如果您未登录，或者您位于不支持 SSO 的方案中，或者 SSO 因任何原因无法工作，系统将提示您登录。 登录后，将显示文件和文件夹名称。
 
 ### <a name="testing-the-fallback-path"></a>测试回退路径
 
 若要测试回退授权路径，请通过以下步骤强制 SSO 路径失败。
 
-1. 将以下代码添加到文件方法 `getDataWithToken` 最上面HomeES6.js文件。
+1. 将以下代码添加到 `getDataWithToken` HomeES6.js 文件的方法顶部。
 
     ```javascript
     function MockSSOError(code) {
@@ -644,4 +644,4 @@ ms.locfileid: "62320254"
 
 与Office Web `localhost:44355` 外接程序一样，当您准备好移动到暂存服务器或生产服务器时，必须使用新域更新清单中的域。 同样，您必须更新 web.config 中的域。
 
-由于域显示在AAD`localhost:44355`中，因此你需要更新该注册，以使用新域来表示它的位置。
+由于域显示在AAD`localhost:44355`中，因此您需要更新该注册以使用新域，以在它出现的位置进行更改。

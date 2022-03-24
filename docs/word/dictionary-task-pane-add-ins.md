@@ -1,11 +1,15 @@
 ---
 title: 创建字典任务窗格加载项
-description: 了解如何创建字典任务窗格外接程序
+description: 了解如何创建字典任务窗格外接程序。
 ms.date: 09/26/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: 2f8eebf7f42073bd144ab3b3010c67c9ece1e8bd
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746715"
 ---
-
-
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
 
@@ -522,7 +526,7 @@ a:hover, a:active
 
 以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。 该脚本重新使用以前介绍的 XML Web 服务。 脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。 它可以通过修改文件顶部的 `xmlServiceURL` 变量来使用符合 XML Web 服务的公用 OfficeDefinitions，然后将拼音的 Bing API 键替换为正确注册的键。
 
-从此实现Office JavaScript API (Office.js) 的主要成员如下：
+从此实现Office JavaScript API (Office.js) 的主要成员如下所示：
 
 
 - 对象的 [initialize](/javascript/api/office) `Office` 事件，在初始化外接程序上下文时引发，并提供对 [Document](/javascript/api/office/office.document) 对象实例的访问权限，该对象实例表示外接程序与之交互的文档。
@@ -531,7 +535,7 @@ a:hover, a:active
     
 - 对象的 [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback` 方法，当引发事件处理程序以获取用户选择的单词或短语时，在 函数中调用该方法，将其强制转换为纯文本，然后执行异步回调函数。
     
-- 当作为  `selectTextCallback` 方法的 _callback_ `getSelectedDataAsync` 参数传递的异步回调函数执行时，它将在回调返回时获取所选文本的值。 它从回调的 _selectedText_ 参数 (，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 返回的对象的 `AsyncResult` [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) 属性。
+- 当作为  `selectTextCallback` 方法的 _callback_ `getSelectedDataAsync` 参数传递的异步回调函数执行时，它将在回调返回时获取所选文本的值。 它从回调的 _selectedText_ 参数 (，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 返回对象的 [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) 属性 `AsyncResult` 。
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     

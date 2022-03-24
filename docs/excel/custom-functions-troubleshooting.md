@@ -3,12 +3,12 @@ ms.date: 03/30/2021
 description: 排查自定义函数Excel常见问题。
 title: 自定义函数疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: b95dae1acb60fe21298641076fb63f0655193e11
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e2332d6e7696ba630953f4fd69154a9bb736c229
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149532"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744479"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -76,11 +76,11 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-有关此过程详细信息，请参阅将函数名称与 [JSON 元数据相关联](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
+有关此过程详细信息，请参阅 [将函数名称与 JSON 元数据相关联](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
 
 ## <a name="known-issues"></a>已知问题
 
-已知问题在自定义函数Excel[库中GitHub报告](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
+已知问题在自定义函数Excel库中进行GitHub[报告](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
 
 ## <a name="reporting-feedback"></a>报告反馈
 

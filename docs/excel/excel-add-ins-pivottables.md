@@ -1,14 +1,14 @@
 ---
 title: 使用 JavaScript API Excel数据透视表
 description: 使用 Excel JavaScript API 创建数据透视表并与其组件交互。
-ms.date: 02/16/2022
+ms.date: 03/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a47baf51a371a388959acbc56778e04f72bcd57
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 5e05e4feaa5cbc9e21279332c07ffa7e22420d9e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340370"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745170"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>使用 JavaScript API Excel数据透视表
 
@@ -21,6 +21,8 @@ ms.locfileid: "63340370"
 > 当前不支持使用 OLAP 创建的数据透视表。 也不支持 Power Pivot。
 
 ## <a name="object-model"></a>对象模型
+
+:::image type="content" source="../images/pivottable-object-model.png" alt-text="显示数据透视表的对象类型之间的关系的图表，如后续列表和相关参考文档中所述。":::
 
 数据[透视表](/javascript/api/excel/excel.pivottable)是 JavaScript API 中数据透视表Office对象。
 

@@ -1,14 +1,14 @@
 ---
 title: 从任务窗格附加调试器
-description: 了解如何从任务窗格附加调试器
+description: 了解如何从任务窗格附加调试器。
 ms.date: 01/27/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f987dc4d19ad17140316d82634acf8695fd88d
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 0363b7966ab3da11167cb4b0cd324df28fd9efb3
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263070"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744750"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>从任务窗格附加调试器
 
@@ -17,7 +17,7 @@ ms.locfileid: "62263070"
 本文中所述的技术只能在满足以下条件时使用。
 
 - 加载项在加载项的 Office 中Windows。
-- 计算机使用使用基于边缘Windows Webview Office WebView2 (Chromium的) 和 Office 版本。 若要确定你使用的浏览器，请参阅浏览器[Office外接程序](../concepts/browsers-used-by-office-web-add-ins.md)。
+- 计算机使用使用基于 Edge Windows Office Webview 控件 (Chromium 的) 版本和) 版本。 若要确定你使用的浏览器，请参阅浏览器[Office外接程序](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]

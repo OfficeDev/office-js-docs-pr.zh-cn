@@ -3,12 +3,12 @@ title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a2f2521b47a304fb358a33068bcccb425fd1a64
-ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.openlocfilehash: b50311b814f91d44792325fce408d58e80e68a1f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "63511347"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743215"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 

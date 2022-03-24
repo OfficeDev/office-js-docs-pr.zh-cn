@@ -1,14 +1,14 @@
 ---
 title: 清除 Office 缓存
 description: 了解如何清除计算机上的 Office 缓存。
-ms.date: 01/27/2022
+ms.date: 03/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2c2b22ececbf293578c9467269c4ad6779eb9aea
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 04a329e9e7289f90b02b9307c67eef2818191221
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263091"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711229"
 ---
 # <a name="clear-the-office-cache"></a>清除 Office 缓存
 
@@ -21,11 +21,11 @@ ms.locfileid: "62263091"
 
 ## <a name="clear-the-office-cache-on-windows"></a>清除 Windows 上的 Office 缓存
 
-在 Windows 计算机上清除 Office 缓存的方法有三种：自动、手动以及使用 Microsoft Edge 开发人员工具。 以下子部分介绍了这些方法。
+在 Windows 计算机上清除 Office 缓存的方法有三种：自动、手动以及使用 Microsoft Edge 开发人员工具。以下子节中介绍了这些方法。
 
 ### <a name="automatically"></a>自动
 
-建议对加载项开发计算机使用此方法。 如果 Windows 上 Office 的版本为 2108 或更高版本，则以下步骤会将 Office 缓存配置为下次重新打开 Office 时清除。
+建议对加载项开发计算机使用此方法。如果 Windows 上 Office 的版本为 2108 或更高版本，则以下步骤会将 Office 缓存配置为下次重新打开 Office 时清除。
 
 > [!NOTE]
 > Outlook 不支持自动方法。

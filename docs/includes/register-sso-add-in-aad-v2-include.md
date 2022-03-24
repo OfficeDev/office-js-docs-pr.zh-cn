@@ -1,26 +1,26 @@
 ## <a name="create-an-app-registration"></a>创建应用注册
 
-在加载项 (注册) 加载项和加载项之间建立信任Microsoft 标识平台。 信任是单向的：加载项信任Microsoft 标识平台信任，而不是信任其他方式。
+在加载项 (注册) 在加载项和加载项之间建立信任Microsoft 标识平台。 信任是单向的：加载项信任Microsoft 标识平台信任，而不是信任其他方式。
 
 1. 使用 ***admin** _ 凭据登录到 [Azure](https://portal.azure.com/) 门户，Microsoft 365租户。 例如，_*MyName@contoso.onmicrosoft.com**。
 1. 在 **"管理**"下， **选择"应用注册""** > **新注册"**。 在“注册应用”页上，按如下方式设置值。
 
     * 将“名称”设置为“`<add-in-name>`”。
-    * 将 **"** 支持的帐户类型"设置为任何 (目录中Azure AD帐户 - 多租户) 和个人 Microsoft 帐户 (例如 **Skype、Xbox)**。
+    * 将 **支持的帐户** 类型设置为任何 (目录中Azure AD **帐户 - 多租户) 和个人 Microsoft 帐户 (例如 Skype、Xbox)**。
     * 保留“重定向 URI”为空。
     * 选择“注册”。
 
-1. 复制并保存 Application **(客户端) ID 和** **Directory 租户 (ID) 值**。 你将在后面的过程中使用它们。
+1. 复制并保存 **Application (客户端** id) **Directory (id) 值**。 你将在后面的过程中使用它们。
 
     > [!NOTE]
-    > 当其他应用程序（如 Office 客户端应用程序 (例如 PowerPoint、Word、Excel) ）寻求应用程序的授权访问权限时，此 ID 是"受众"值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
+    > 当其他应用程序（如 Office 客户端应用程序 (例如 PowerPoint、Word、Excel) ）寻求对该应用程序的授权访问权限时，此 ID 是"受众"值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
 
 ## <a name="add-a-client-secret"></a>添加客户端密码
 
 有时称为 _应用程序密码_，客户端密码是一个字符串值，你的应用可以使用它来表示身份的证书。
 
 1. 在 Azure 门户的应用 **注册中，** 选择应用程序。
-1. 选择 **证书&密码** > **客户端密码** > **新客户端密码**。
+1. Select **Certificates & secretsClient** >  **secretsNew** >  **client secret**.
 1. 添加客户端密码的说明。
 1. 选择密码的过期时间或指定自定义生存期。
     * 客户端密码生存期限制为 2 年 (24 个月) 或更少。 不能指定超过 24 个月的自定义生命周期。
@@ -34,7 +34,7 @@
 1. 在 **"管理**"下 **，选择"公开 API**"，然后选择" **设置"** 链接。 这将打开一 **个设置应用程序 ID URI** 框，其生成的应用程序 ID 为 URI，格式为 `api://<application-id>`。 在 之前插入完全限定的域名 `<application-id>`。 整个 ID 应格式为 `api://<fully-qualified-domain-name>/<application-id>`;例如， `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7`。
 
     > [!NOTE]
-    > 如果收到一条错误，指出域已有所有者，但你拥有该域，请按照[快速入门： 将自定义域名添加到 Azure Active Directory](/azure/active-directory/add-custom-domain) 中的步骤进行操作来注册该域，然后重复此步骤。  (如果未使用租户中管理员的凭据登录，也会Microsoft 365此错误。 请参阅步骤 2 。 注销并使用管理员凭据再次登录，然后重复步骤 3 中的过程。）
+    > 如果收到一条错误，指出域已有所有者，但你拥有该域，请按照[快速入门： 将自定义域名添加到 Azure Active Directory](/azure/active-directory/add-custom-domain) 中的步骤进行操作来注册该域，然后重复此步骤。  (如果未使用租户中管理员的凭据登录，Microsoft 365此错误。 请参阅步骤 2 。 注销并使用管理员凭据再次登录，然后重复步骤 3 中的过程。）
 
 ## <a name="add-a-scope"></a>添加范围
 
@@ -46,7 +46,7 @@
 
     * **管理员显示名称：** Office可以充当用户。
     * **管理员同意描述:** 使 Office 能够使用与当前用户相同的权限调用加载项的 web API。
-    * **用户显示名称：** Office你的行为。
+    * **用户同意显示名称：** Office可以充当你。
     * **用户同意描述:** 启用 Office 以使用与你相同的权限调用加载项的 web API。
 
 1. 确保将“状态”设置为“已启用”。
@@ -66,7 +66,7 @@
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Outlook 网页版）
 
     > [!NOTE]
-    > ID `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` 包括列出的所有其他 ID，并可以单独用于预授权所有 Office 主机终结点，以用于 Office 外接程序 SSO 流中的服务。
+    > ID `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` 包括列出的所有其他 ID，可用于预授权所有 Office 主机终结点，以用于 Office 外接程序 SSO 流中的服务。
 
     对于每个 ID，请执行以下步骤。
 

@@ -4,12 +4,12 @@ description: 了解如何使用 JavaScript EXCEL删除重复项。
 ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 80e1227e06f177d0e37cc2750a7830c727a59436
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 5bd6ff6a6c0889f447e362d200e73bba499f572c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340573"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745345"
 ---
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>使用 JavaScript API Excel重复项
 

@@ -4,13 +4,18 @@ description: 有关 ExcelApiOnline 要求集的详细信息。
 ms.date: 10/29/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: f3ec510e889ecfe565767352c59cd349e0701830
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746603"
 ---
-
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel JavaScript API 仅联机要求集
 
-要求`ExcelApiOnline`集是一个特殊要求集，其中包含仅适用于Excel web 版。 此要求集内 API 被视为生产 API， (应用程序未记录的行为或) 更改Excel web 版更改。 `ExcelApiOnline`API 被视为适用于其他平台（如 (Windows、Mac、iOS) ）的"预览"API，可能不受这些平台的任何支持。
+要求`ExcelApiOnline`集是一个特殊要求集，其中包括仅适用于Excel web 版。 此要求集内 API 被视为生产 API， (应用程序未记录的行为或) 更改Excel web 版 API。 `ExcelApiOnline`API 被视为其他平台（如 (Windows、Mac、iOS) ）的"预览"API，可能不受这些平台的任何支持。
 
-当所有平台 `ExcelApiOnline` 都支持 `ExcelApi 1.[NEXT]` 要求集内 API 时，它们将被添加到下一个发布的要求 () 。 一旦该新要求公开，将从 中删除这些 API `ExcelApiOnline`。 将此过程视为与从预览版移动到发布的 API 类似的推广过程。
+当要求集内 `ExcelApiOnline` `ExcelApi 1.[NEXT]` API 在所有平台中均受支持时，它们将被添加到下一个发布的要求 () 。 一旦该新要求公开，将从 中删除这些 API `ExcelApiOnline`。 将此过程视为与从预览版移动到发布的 API 类似的推广过程。
 
 > [!IMPORTANT]
 > `ExcelApiOnline` 是最新编号要求集的超集。
@@ -28,7 +33,7 @@ ms.localizationpriority: medium
 
 ## <a name="recommended-usage"></a>建议的用法
 
-由于 `ExcelApiOnline` API 仅受 Excel web 版支持，因此加载项应在调用这些 API 之前检查要求集是否受支持。 这可以避免在不同的平台上调用仅联机 API。
+由于 `ExcelApiOnline` API 仅受 Excel web 版 支持，因此加载项应在调用这些 API 之前检查要求集是否受支持。 这可以避免在不同的平台上调用仅联机 API。
 
 ```js
 if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {

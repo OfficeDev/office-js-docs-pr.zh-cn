@@ -3,12 +3,12 @@ title: Office 加载项中的对话框
 description: 了解在加载项中可视化设计对话框Office最佳实践。
 ms.date: 03/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e3dff8249e7d198712c0058f9876aa4806c7e08
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 623a94b5cd0fdd398de2e61cb779f5d256c46d76
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149368"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743256"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Office 加载项中的对话框
 

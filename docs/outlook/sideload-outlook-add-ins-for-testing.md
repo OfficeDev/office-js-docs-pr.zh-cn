@@ -1,14 +1,14 @@
 ---
 title: 旁加载 Outlook 外接程序进行测试
 description: 利用旁加载来安装 Outlook 外接程序以供测试，无需先将其置于外接程序目录中。
-ms.date: 10/22/2021
+ms.date: 03/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 971df0f2e151181f1d595cb0fcd0c0f82b26d759
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 5f9a76aec20574b5397df9fcfd18e4714e5c8dd4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711243"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745726"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>旁加载 Outlook 外接程序进行测试
 
@@ -49,7 +49,7 @@ ms.locfileid: "63711243"
 > [!NOTE]
 > 如果你的组织在邮箱工具栏中添加了自己的徽标，则你看到的界面可能会与前面的图像略有不同。
 
-### <a name="new-outlook-on-the-web"></a>新Outlook 网页版
+#### <a name="new-outlook-on-the-web"></a>新Outlook 网页版
 
 1. 转到 [Outlook 网页版](https://outlook.office.com)。
 
@@ -69,7 +69,7 @@ ms.locfileid: "63711243"
 
 1. 找到您的自定义外接程序清单文件并进行安装。在安装过程中接受所有提示。
 
-### <a name="classic-outlook-on-the-web"></a>经典Outlook 网页版
+#### <a name="classic-outlook-on-the-web"></a>经典Outlook 网页版
 
 1. 转到 [Outlook 网页版](https://outlook.office.com)。
 
@@ -89,22 +89,44 @@ ms.locfileid: "63711243"
 
 ### <a name="outlook-on-the-desktop"></a>Outlook桌面
 
-### <a name="outlook-2016-or-later"></a>Outlook 2016或更高版本
+#### <a name="outlook-2016-or-later-on-windows-or-mac"></a>Outlook 2016或 Mac 上的 Windows 或更高版本
 
 1. 在 Outlook 2016 或 Mac 上打开 Windows 或更高版本。
 
 1. 选择功能区上的“**获取外接程序**”按钮。
 
-    ![Outlook 2016"获取外接程序"按钮的"设置"功能区。](../images/outlook-sideload-desktop-store.png)
+    # <a name="windows"></a>[Windows](#tab/windows)
+
+    ![Outlook"Windows"按钮的"加载项"功能区上显示。](../images/outlook-sideload-desktop-windows.png)
+
+    # <a name="mac"></a>[Mac](#tab/mac)
+
+    ![Outlook Mac 功能区上指向"获取外接程序"按钮。](../images/outlook-sideload-mac-classic.png)
+
+    ---
 
     > [!IMPORTANT]
-    > 如果在加载项版本中看不到"获取加载项"按钮，Outlook：
+    > 如果在加载项版本中看不到"获取加载项"Outlook，请执行下列操作之一：
     >
-    > - **功能** 区上的"存储"按钮（如果可用）。
+    > # <a name="windows"></a>[Windows](#tab/windows)
     >
-    >   或
+    > - 如果将功能区布局 `...` 配置为"简化功能区"，请从功能区 () 省略号按钮，然后选择"获取 **外接程序"**。
     >
-    > - **"** 文件"菜单 **，然后选择"** 信息"选项卡上的"管理外接程序"按钮，以打开"加载项"Outlook 网页版。<br>有关 Web 体验的更多内容，请参阅上一部分在加载项中[旁加载Outlook 网页版](#outlook-on-the-web)。
+    >   ![Outlook指向Windows省略号按钮的"获取外接程序"按钮。](../images/outlook-sideload-simplified-ribbon.png)
+    >
+    > - 选择 **功能区** 上的"应用商店"按钮（如果可用）。
+    >
+    > - 选择 **"文件**"菜单，然后选择"信息"选项卡上的"管理外接程序"按钮，以打开"加载项"Outlook 网页版。 有关 Web 体验的更多内容，请参阅上一部分在加载项中[旁加载Outlook 网页版](#outlook-on-the-web)。
+    >
+    > # <a name="mac"></a>[Mac](#tab/mac)
+    >
+    > - Select the ellipsis button (`...`) from the ribbon， then select **Get Add-ins**.
+    >
+    >   ![Outlook Mac 上的一个按钮，它指向省略号按钮中的"获取外接程序"按钮。](../images/outlook-sideload-deskop-mac.png)
+    >
+    > - 选择 **功能区** 上的"应用商店"按钮（如果可用）。
+    >
+    > ---
 
 1. 如果对话框顶部附近有选项卡，请确保已选中" **加载项** "选项卡。 选择 **"我的外接程序"**。
 
@@ -116,7 +138,7 @@ ms.locfileid: "63711243"
 
 1. 找到您的自定义外接程序清单文件并进行安装。在安装过程中接受所有提示。
 
-### <a name="outlook-2013"></a>Outlook 2013
+#### <a name="outlook-2013-on-windows"></a>Windows 上的 Outlook 2013
 
 1. 在 Outlook 2013 上Windows。
 

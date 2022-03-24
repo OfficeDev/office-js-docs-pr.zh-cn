@@ -4,9 +4,14 @@ description: 有关 ExcelApi 1.13 要求集的详细信息。
 ms.date: 07/09/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 5d7358c35dc4560bf5478bb9ad9970fc364a1b6a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747042"
 ---
-
-# <a name="whats-new-in-excel-javascript-api-113"></a>JavaScript API 1.13 Excel新增功能
+# <a name="whats-new-in-excel-javascript-api-113"></a>JavaScript API 1.13 Excel的新增功能
 
 ExcelApi 1.13 添加了一种方法，用于从 Base64 编码的字符串将工作表插入工作簿，并添加了一个事件来检测工作簿激活。 它还通过添加 API 跟踪对公式的更改并查找公式的直接从属单元格，增加了对范围中公式的支持。 此外，它还通过添加用于替换文本、样式和空单元格管理的 PivotLayout API 来扩展数据透视表支持。
 
@@ -33,10 +38,10 @@ ExcelApi 1.13 添加了一种方法，用于从 Base64 编码的字符串将工�
 ||[displayBlankLineAfterEachItem (显示：boolean) ](/javascript/api/excel/excel.pivotlayout#excel-excel-pivotlayout-displayblanklineaftereachitem-member(1))|设置是否在每一项后显示一个空行。|
 ||[emptyCellText](/javascript/api/excel/excel.pivotlayout#excel-excel-pivotlayout-emptycelltext-member)|如果 为 ，则自动填充到数据透视表中任何空单元格中的文本 `fillEmptyCells == true`。|
 ||[fillEmptyCells](/javascript/api/excel/excel.pivotlayout#excel-excel-pivotlayout-fillemptycells-member)|指定是否应该使用 填充数据透视表中的空单元格 `emptyCellText`。|
-||[repeatAllItemLabels (repeatLabels：布尔) ](/javascript/api/excel/excel.pivotlayout#excel-excel-pivotlayout-repeatallitemlabels-member(1))|设置数据透视表中所有字段的"重复所有项目标签"设置。|
+||[repeatAllItemLabels (repeatLabels：boolean) ](/javascript/api/excel/excel.pivotlayout#excel-excel-pivotlayout-repeatallitemlabels-member(1))|设置数据透视表中所有字段的"重复所有项目标签"设置。|
 ||[showFieldHeaders](/javascript/api/excel/excel.pivotlayout#excel-excel-pivotlayout-showfieldheaders-member)|指定数据透视表是否显示字段标题 (字段标题和筛选器下拉列表) 。|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[refreshOnOpen](/javascript/api/excel/excel.pivottable#excel-excel-pivottable-refreshonopen-member)|指定工作簿打开时数据透视表是否刷新。|
-|[区域](/javascript/api/excel/excel.range)|[getDirectDependents () ](/javascript/api/excel/excel.range#excel-excel-range-getdirectdependents-member(1))|返回一 `WorkbookRangeAreas` 个对象，该对象表示包含同一工作表或多个工作表中单元格的所有直接从属单元格的范围。|
+|[范围](/javascript/api/excel/excel.range)|[getDirectDependents () ](/javascript/api/excel/excel.range#excel-excel-range-getdirectdependents-member(1))|返回一 `WorkbookRangeAreas` 个对象，该对象表示包含同一工作表或多个工作表中单元格的所有直接从属单元格的范围。|
 ||[getExtendedRange (方向：Excel。KeyboardDirection， activeCell？： Range \| string) ](/javascript/api/excel/excel.range#excel-excel-range-getextendedrange-member(1))|返回一个 range 对象，该对象包括当前区域以及范围边缘，根据提供的方向。|
 ||[getMergedAreasOrNullObject () ](/javascript/api/excel/excel.range#excel-excel-range-getmergedareasornullobject-member(1))|返回一个 RangeAreas 对象，该对象代表此范围中的合并区域。|
 ||[getRangeEdge (方向：Excel。KeyboardDirection， activeCell？： Range \| string) ](/javascript/api/excel/excel.range#excel-excel-range-getrangeedge-member(1))|返回一个 range 对象，该对象是数据区域的边缘单元格，对应于提供的方向。|

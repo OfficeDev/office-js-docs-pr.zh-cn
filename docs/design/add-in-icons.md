@@ -3,12 +3,12 @@ title: Office 外接程序的图标准则
 description: 大致了解如何设计图标以及外接程序命令的 Fresh 和 Monoline 设计样式。
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eeed616651535dfd20b6ac443a76fb1138ff51d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 930035dffcbb9c1815c042518a76cace25251710
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149387"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742979"
 ---
 # <a name="icons"></a>图标
 
@@ -16,17 +16,17 @@ ms.locfileid: "59149387"
 
 Office 应用功能区界面具有标准视觉样式。 这可以确保一致性并熟悉各个 Office 应用程序。 这些准则将有助于你为解决方案设计一组适合作为 Office 固有部分的 PNG 资产。
 
-许多 HTML 容器包含带有插图的控件。 使用 Fabric Core 的自定义字体Office外接程序中的样式图标。 Fabric [Core](fabric-core.md)提供的图标字体包含许多通用标志Office，你可以缩放、颜色和样式以满足你的需求。 如果你有带自己图标集的现有视觉语言，则可在 HTML 画布中随意使用。 构建自己带标准图标集的品牌的连续性是任何设计语言的重要组成部分。 请注意避免与 Office 隐喻产生冲突导致客户混淆。
+许多 HTML 容器包含带有插图的控件。 使用 Fabric Core 的自定义字体Office外接程序中的样式图标。 Fabric [Core](fabric-core.md) 提供的图标字体包含许多通用标志Office，你可以缩放、颜色和样式以满足你的需求。 如果你有带自己图标集的现有视觉语言，则可在 HTML 画布中随意使用。 构建自己带标准图标集的品牌的连续性是任何设计语言的重要组成部分。 请注意避免与 Office 隐喻产生冲突导致客户混淆。
 
 ## <a name="design-icons-for-add-in-commands"></a>加载项命令的设计图标
 
 [外接程序命令](add-in-commands.md)添加按钮、文本和 Office UI 图标。 外接程序命令按钮应提供有意义的图标和标签，以便清楚地标识用户在使用命令时执行的操作。 以下文章提供了样式和生产指南，可帮助你设计与应用无缝集成Office。
 
-- 有关单声道样式Microsoft 365，请参阅单声道[样式图标指南Office外接程序。](add-in-icons-monoline.md)
-- 有关 2013+非订阅Office样式，请参阅全新样式[图标指南Office外接程序。](add-in-icons-fresh.md)
+- 有关单声道样式Microsoft 365，请参阅适用于加载项的单Office[图标指南](add-in-icons-monoline.md)。
+- 有关 2013+非订阅Office样式，请参阅全新样式图标指南Office[外接程序](add-in-icons-fresh.md)。
 
 > [!NOTE]
-> 您必须选择一种样式或另一种样式，无论外接程序是在非订阅模式Microsoft 365运行，外接程序都将使用相同的Office。
+> 必须选择一种样式或另一种样式，无论外接程序是在非订阅模式Microsoft 365，外接程序都将使用相同的Office。
 
 ## <a name="see-also"></a>另请参阅
 

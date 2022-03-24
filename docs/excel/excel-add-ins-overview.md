@@ -5,12 +5,12 @@ ms.date: 02/16/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 84246ce43df4b442e32771ee36afe1309e95b7fb
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: db4b26ed605a50c1d127c6b37f9022294e49d420
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340867"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745083"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 

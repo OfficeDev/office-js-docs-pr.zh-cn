@@ -4,12 +4,12 @@ description: 指定哪些Office和内部版本支持动态功能区 API。
 ms.date: 03/12/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dfce106eeb563fce59ccb998878f47f874b0ff9
-ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.openlocfilehash: e399fe14626da2abd688b0e486454908ce1e9f91
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "63511352"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746691"
 ---
 # <a name="ribbon-api-requirement-sets"></a>功能区 API 要求集
 
@@ -22,7 +22,7 @@ ms.locfileid: "63511352"
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 API 要求集、Office要求集的客户端应用程序，以及功能区 API 要求集Office版本号。
 
-|  要求集  | Office 2021 年 1 月或Windows\*<br>（一次性购买） | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br> (两个订阅<br> 和一次购买 Office Mac 2019 及更高版本)    | Office 网页版\*  |  Office Online Server  |
+|  要求集  | Office 2021 年 1 月或Windows\*<br>（一次性购买） | Windows 版 Office\*<br>（关联至 Microsoft 365 订阅） |  iPad 版 Office<br>（关联至 Microsoft 365 订阅）  |  Mac 版 Office\*<br> (两个订阅<br> 和一次购买 Office Mac 2019 及更高版本)    | Office web 版\*  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | RibbonApi 1.2  | 内部版本 16.0.14326.20454 或更高版本 | 2102 (内部版本 13801.20294)  | 不适用 | 16.53.806.0 | 2021 年 5 月 | 不适用|
 | RibbonApi 1.1  | 内部版本 16.0.14326.20454 或更高版本 | 请参阅支持<br>部分如下 | 不适用 | 16.38 | 2020 年 11 月 | 不适用|

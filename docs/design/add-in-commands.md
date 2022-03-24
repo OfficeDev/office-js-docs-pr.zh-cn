@@ -3,12 +3,12 @@ title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
 ms.date: 12/13/2021
 ms.localizationpriority: high
-ms.openlocfilehash: ac79355e916e27ce945d773a580f7ac5d101c67d
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: f5acefe4023a37e04b56cc6e27346965a6e39774
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514115"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742812"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
@@ -107,7 +107,7 @@ ms.locfileid: "61514115"
   - 如果你拥有 6 个以上的顶级命令命令，将命令放置在自定义选项卡上。
   - 对组进行命名以与外接程序的名称相匹配。如果你拥有多个组，则基于对应组中的命令提供的功能为每个组命名。
   - 请勿添加不必要的按钮，这样会增加加载项占用的空间。
-  - 请勿要将“自定义”选项卡置于“主页”选项卡左侧，也不要在打开文档时默认将其放在焦点上，除非加载项是用户与文档进行交互的主要方式。 过分强调加载项的不便，并惹恼用户和管理员。
+  - 请勿要将“自定义”选项卡置于“主页”选项卡左侧，也不要在打开文档时默认将其放在焦点上，除非加载项是用户与文档进行交互的主要方式。过分强调加载项的不便，并惹恼用户和管理员。
   - 如果加载项是用户与文档进行交互的主要方式，而且你具有自定义的功能区选项卡，请考虑将用户经常需要的 Office 功能按钮集成到该选项卡中。
   - 如果用自定义标签提供的功能只能在特定的上下文中使用，请使用[自定义下文选项卡](contextual-tabs.md)。 如果使用自定义上下文选项卡，请确保[在插件运行在不支持自定义上下文标签的平台上时，实行后退体验](contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)。
 

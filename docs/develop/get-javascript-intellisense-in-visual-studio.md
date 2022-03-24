@@ -3,12 +3,12 @@ title: 在 Visual Studio 2019 中获取 JavaScript IntelliSense
 description: 了解如何使用 JSDoc 为 JavaScript IntelliSense、对象、参数和返回值创建属性。
 ms.date: 10/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fedf9e637ffaa32318e6eeca5f0f724abf62ba1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 142f4cf81f83cdc518fb94f65a8e6f67f41a4783
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149346"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743490"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>在 Visual Studio 2019 中获取 JavaScript IntelliSense
 
@@ -60,7 +60,7 @@ function myFunc(paragraphs){
 }
 ```
 
-![屏幕截图显示 JavaScript IntelliSense中"paras"参数 ("paragraphs"参数的) 。](../images/intellisense-vs17-param.png)
+![显示 JavaScript 示例 IntelliSense"paragraphs"参数中"paras"参数 (摘录的屏幕截图) 。](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>返回值
 
@@ -71,7 +71,7 @@ function myFunc() {
 }
 ```
 
-![Screenshot showing excerpt of IntelliSense for 'myFunc () ' return value.](../images/intellisense-vs17-return.png)
+![屏幕截图显示"myFunc #IntelliSense () "返回值的值的摘录。](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>复杂类型
 

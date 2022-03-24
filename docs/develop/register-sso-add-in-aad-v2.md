@@ -1,14 +1,14 @@
 ---
 title: 注册Office SSO 的加载项Microsoft 标识平台
-description: 了解如何使用 Office 注册外接程序Microsoft 标识平台将 SSO 与 Word、Excel、PowerPoint 和 Outlook 一Outlook。
+description: 了解如何使用 Office 注册 Microsoft 标识平台 以将 SSO 与 Word、Excel、PowerPoint 和 Outlook 一Outlook。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b11ce5130e020b049038631b9ae1c0e62fdadeab
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: e408a57534437f0d0fe0c5fb3b4ab844f7dde9ac
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320242"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743381"
 ---
 # <a name="register-an-office-add-in-that-uses-single-sign-on-sso-with-the-microsoft-identity-platform"></a>在Office SSO 加载项中注册使用单一 (登录) 加载项Microsoft 标识平台
 

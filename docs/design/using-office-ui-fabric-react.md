@@ -1,21 +1,21 @@
 ---
 title: Office 加载项中的 Fluent UI React
-description: 了解如何在Fluent外接程序React UI Office UI。
+description: 了解如何在 Fluent 外接程序React UI Office UI。
 ms.date: 01/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 742c6e3816b2ed8e9150ee8d78c4fe065bef8f27
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 453befe44dbcec6527930fcd73c5cb2cb243d965
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222239"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743128"
 ---
-# <a name="use-fluent-ui-react-in-office-add-ins"></a>在Fluent外接程序React UI Office UI
+# <a name="use-fluent-ui-react-in-office-add-ins"></a>在Fluent加载项React UI Office UI
 
-Fluent UI React是官方开放源代码 JavaScript 前端框架，旨在构建无缝融入各种 Microsoft 产品（包括 Office）的体验。 它提供了可靠、最新、可访问的基于反应的组件，这些组件可以使用 CSS-in-JS 进行高度定制。
+Fluent UI React 是官方开源 JavaScript 前端框架，旨在构建无缝适用于各种 Microsoft 产品（包括 Office）的体验。 它提供了可靠、最新、可访问的基于反应的组件，这些组件可以使用 CSS-in-JS 进行高度定制。
 
 > [!NOTE]
-> 本文介绍如何在Fluent React外接程序的上下文中使用 Office UI。但它还用于各种Microsoft 365和扩展。 有关详细信息，请参阅 ui Fluent [ui React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react)和 UI Web Fluent[存储库](https://github.com/microsoft/fluentui)。
+> 本文介绍了在加载项Fluent React UI Office的使用。但它还用于各种Microsoft 365和扩展。 有关详细信息，请参阅 ui Fluent [ui React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react)和 UI Web 中的Fluent[存储库](https://github.com/microsoft/fluentui)。
 
 本文介绍如何创建使用 React 构建的外接程序，Fluent UI React组件。
 
@@ -67,17 +67,17 @@ Fluent UI React是官方开放源代码 JavaScript 前端框架，旨在构建�
         npm start
         ```
 
-    - 若要在浏览器版 Word 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动。 将"{url}"替换为您拥有权限的 word 文档OneDrive或SharePoint库的 URL。
+    - 若要在浏览器版 Word 中测试加载项，请在项目的根目录中运行以下命令。 运行此命令时，本地 Web 服务器将启动。 将“{url}”替换为你有权访问的 OneDrive 或 SharePoint 库中 Word 文档的 URL。
 
         [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-3. 若要打开加载项任务窗格，在"开始 **"选项卡上** ，选择" **显示任务窗格"** 按钮。 请注意任务窗格底部的“默认文本”和 "**运行**" 按钮。 在此演练的其余部分中，你将通过创建使用 UI Fluent 中的 UX 组件的 React 组件来重新定义此文本和React。
+3. 若要打开加载项任务窗格，在"开始 **"选项卡上** ，选择" **显示任务窗格"** 按钮。 请注意任务窗格底部的“默认文本”和 "**运行**" 按钮。 在此演练的其余部分中，你将通过创建一个 React 组件来重新定义此文本和按钮，该组件使用来自 UI Fluent UX React。
 
     ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane.](../images/word-task-pane-yo-default.png)
 
-## <a name="create-a-react-component-that-uses-fluent-ui-react"></a>创建React UI Fluent的React
+## <a name="create-a-react-component-that-uses-fluent-ui-react"></a>创建一个React UI Fluent的React
 
-此时, 你已经创建了一个使用 React 构建的非常基本的任务窗格加载项。 接下来，完成以下步骤，在加载项项目中创建新的 React 组件 (`ButtonPrimaryExample`)。 该组件使用 UI Fluent 中的 和 `Label` `PrimaryButton` React。
+此时, 你已经创建了一个使用 React 构建的非常基本的任务窗格加载项。 接下来，完成以下步骤，在加载项项目中创建新的 React 组件 (`ButtonPrimaryExample`)。 该组件使用 UI `Label` `PrimaryButton` Fluent 中的 和 React。
 
 1. 打开 Yeoman 生成器创建的项目文件夹，并转到 **src\taskpane\components**。
 2. 在该文件夹中，创建一个名为“**Button.tsx**”的新文件。
@@ -121,14 +121,14 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 此代码将执行以下操作：
 
 - 引用使用 `import * as React from 'react';` 的 React 库。
-- 引用Fluent UI `PrimaryButton` React、 (、) `IButtonProps` 用于创建 `Label` 的组件 `ButtonPrimaryExample` 。
+- 引用Fluent UI React、`PrimaryButton` (、 `IButtonProps``Label`) 创建的组件`ButtonPrimaryExample`。
 - 声明新的 `ButtonPrimaryExample` 组件使用 `export class ButtonPrimaryExample extends React.Component`。
 - 声明 `insertText` 将处理按钮 `onClick` 事件的函数。
-- 定义 `render` 函数中 React 组件的 UI。 HTML 标记使用 UI 元素中的 和 Fluent 组件React并指定当事件触发时 `Label` `PrimaryButton` `onClick` `insertText` ，函数将运行。
+- 定义 `render` 函数中 React 组件的 UI。 HTML 标记使用 `Label` `PrimaryButton` `onClick` `insertText` UI Fluent 和 组件React并指定当事件触发时，函数将运行。
 
 ## <a name="add-the-react-component-to-your-add-in"></a>将 React 组件添加到加载项
 
-通过 `ButtonPrimaryExample` 打开 **src\components\App.tsx** 并完成以下步骤将组件添加到外接程序。
+`ButtonPrimaryExample`通过打开 **src\components\App.tsx** 并完成以下步骤将组件添加到外接程序。
 
 1. 添加下面导入语句，以`ButtonPrimaryExample`从 **Button.tsx** 中引用。
 

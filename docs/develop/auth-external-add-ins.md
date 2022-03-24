@@ -1,14 +1,14 @@
 ---
 title: 使用非 Microsoft 标识提供程序授权
-description: 使用 OAuth 2.0、授权代码和隐式流获取对非 Microsoft 数据源的授权。
+description: 使用 OAuth 2.0 以及授权代码和隐式流获取对非 Microsoft 数据源的授权。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c79dc84522ddabd69f5a713cde43ec4a195a6fd9
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: 873bf0ad86490670db7a4733db971e377748babf
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320428"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743640"
 ---
 # <a name="authorization-with-non-microsoft-identity-providers"></a>使用非 Microsoft 标识提供程序授权
 
@@ -30,13 +30,13 @@ OAuth 流旨在保护应用程序的标识和授权。 授权代码流中提供�
 > [!NOTE]
 > 还可以视需要使用中间人服务，从而执行授权操作，并将访问令牌传递给加载项。 有关此方案的详细信息，请参阅本文稍后介绍的 **中间人服务** 部分。
 
-## <a name="use-the-implicit-flow-in-office-add-ins"></a>在加载项中Office流
+## <a name="use-the-implicit-flow-in-office-add-ins"></a>在加载项Office隐式流
 
 若要确定在线服务是否支持隐式流，最好是查阅服务文档。
 
 有关支持隐式流的库的信息，请参阅本文后面的 **库** 部分。
 
-## <a name="use-the-authorization-code-flow-in-office-add-ins"></a>在加载项中Office代码流
+## <a name="use-the-authorization-code-flow-in-office-add-ins"></a>使用加载项中的授权Office流
 
 许多库都可用于在各种语言和框架中实现授权代码流。若要详细了解其中某些库，请参阅本文稍后将介绍的 **库** 部分。
 

@@ -1,15 +1,15 @@
 ---
 title: 对话框源要求集
 description: 了解有关 Dialog Origin 要求集的详细信息。
-ms.date: 07/22/2021
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: db97b19c0a23fa7dbd1b93e03ccd7a7b76317d7a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 47713f2c7c6a9516d04eed608c69b55899c859c8
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152474"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746077"
 ---
 # <a name="dialog-origin-requirement-sets"></a>对话框源要求集
 
@@ -17,7 +17,7 @@ ms.locfileid: "59152474"
 
 Office 外接程序在多个 Office 版本中运行。 下表列出了 Dialog Origin 要求集、Office要求集的客户端应用程序，以及该对话框应用程序Office版本号。
 
-|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Office 2019 年 10 月或Windows<br>（一次性购买） | Windows 版 Office<br> (订阅)  |  iPad 版 Office<br> (订阅)   |  Mac 版 Office<br> (订阅)   | Office 网页版  |  Office Online Server  |
+|  要求集  | Windows 版 Office 2013<br>（一次性购买） | Windows 版 Office 2016<br>（一次性购买） | Windows 上的 Office 2019 或更高版本<br>（一次性购买） | Windows 版 Office<br> (订阅)  |  iPad 版 Office<br> (订阅)   |  Mac 版 Office<br> (两个订阅<br> 和一次购买 Office Mac 2019 及更高版本)   | Office 网页版  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | DialogOrigin 1.1  | 内部版本<br>15.0.5371.1000<br>或更高版本 | 内部版本<br>16.0.5200.1000<br>或更高版本 | 内部版本<br>待定<br>或更高版本 | 待定 | 2.52 或更高版本 | 16.52 或更高版本 | 2021 年 7 月 | 版本 2108<br> (内部版本 10377.1000) <br>或更高版本 |
 
@@ -34,7 +34,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了 Dialog Or
 
 ## <a name="dialog-origin-11"></a>Dialog Origin 1.1
 
-Dialog Origin 1.1 是 API 的第一个版本。 它为对话框及其父页面之间的跨域消息提供支持。 有关这些 API 的详细信息，请参阅[Office.ui](/javascript/api/office/office.ui)参考主题。
+Dialog Origin 1.1 是 API 的第一个版本。 它为对话框及其父页面之间的跨域消息提供支持。 有关这些 API 的详细信息，请参阅 [Office.ui](/javascript/api/office/office.ui) 参考主题。
 
 ## <a name="see-also"></a>另请参阅
 

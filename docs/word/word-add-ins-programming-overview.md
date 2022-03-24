@@ -1,16 +1,16 @@
 ---
 title: Word 加载项概述
-description: 了解 Word 加载项的基本知识。
+description: 了解 Word 加载项的基本信息。
 ms.date: 02/24/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: d298caa78dab205740723998c1fa7ed42c821c66
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 4d8714086c0dc80edfe2a59f37dc8e94cdd96639
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340643"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745370"
 ---
 # <a name="word-add-ins-overview"></a>Word 加载项概述
 

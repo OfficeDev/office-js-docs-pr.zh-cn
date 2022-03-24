@@ -3,8 +3,13 @@ title: Office.context.mailbox - 要求集 1.3
 description: Outlook邮箱 API 要求集 1.3 版本的邮箱对象模型。
 ms.date: 03/18/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: ebeba75e43cb48c435e16c7d53b706ff0b77af55
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746273"
 ---
-
 # <a name="mailbox-requirement-set-13"></a>邮箱 (要求集 1.3) 
 
 ### <a name="officecontextmailbox"></a>[Office](office.md)[.context](office.context.md).mailbox

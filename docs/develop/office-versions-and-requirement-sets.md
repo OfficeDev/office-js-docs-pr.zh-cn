@@ -3,12 +3,12 @@ title: Office 版本和要求集
 description: 使用 JavaScript API 支持的 Office.js 平台。
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 38c1bec5acc116fb05cee14a83db83d3ecc16254
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b212da4528cf2583c6665cac9f65f5afcf19cbac
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149327"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743374"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 

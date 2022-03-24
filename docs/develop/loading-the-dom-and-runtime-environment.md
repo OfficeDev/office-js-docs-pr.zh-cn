@@ -3,12 +3,12 @@ title: 加载 DOM 和运行时环境
 description: 加载 DOM Office加载项运行时环境。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: db6b8667678e6a38c0932faf66fc2b0b63cc7a9b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1dac1980c5f5068451893d24e24d0e0c3da3a6f5
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149333"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743786"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
@@ -32,7 +32,7 @@ ms.locfileid: "59149333"
 
 4. 浏览器控件加载 DOM 和 HTML 正文，并调用事件的事件 `window.onload` 处理程序。
 
-5. Office 客户端应用程序加载运行时环境，该环境从内容分发网络 (CDN) 服务器下载并缓存 Office JavaScript API 库文件，然后为[Office](/javascript/api/office)对象的[initialize](/javascript/api/office#Office_initialize_reason_)事件调用外接程序的事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 和 之间的区别详细信息， `Office.initialize` `Office.onReady` 请参阅 [初始化加载项](initialize-add-in.md)。
+5. Office 客户端应用程序加载运行时环境，该环境从内容分发网络 (CDN) 服务器下载并缓存 Office JavaScript API 库文件，然后为 [Office](/javascript/api/office) 对象的 [initialize](/javascript/api/office#Office_initialize_reason_) 事件调用外接程序的事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 和 之间的区别详细信息`Office.initialize``Office.onReady`，请参阅[初始化加载项](initialize-add-in.md)。
 
 6. 当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。
 
@@ -42,7 +42,7 @@ ms.locfileid: "59149333"
 
 ![Flow加载项时Outlook事件数。](../images/outlook15-loading-dom-agave-runtime.png)
 
-启动加载项时，Outlook事件发生。
+当加载项启动时，Outlook事件发生。
 
 1. 当 Outlook 启动时，Outlook 读取已为用户的电子邮件帐户安装的 Outlook 外接程序的 XML 清单。
 
@@ -54,7 +54,7 @@ ms.locfileid: "59149333"
 
 5. 浏览器控件加载 DOM 和 HTML 正文，并调用事件的事件 `onload` 处理程序。
 
-6. Outlook 加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 加载项对象的 [initialize](/javascript/api/office#Office_initialize_reason_) 事件调用事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 和 之间的区别详细信息， `Office.initialize` `Office.onReady` 请参阅 [初始化加载项](initialize-add-in.md)。
+6. Outlook 加载运行时环境，这将从内容分发网络 (CDN) 服务器中为 JavaScript 库文件下载并缓存 JavaScript API，然后为 [Office](/javascript/api/office) 加载项对象的 [initialize](/javascript/api/office#Office_initialize_reason_) 事件调用事件处理程序（如果已为其分配处理程序）。 此时它还会检查是否有任何回调（或链接 `then()` 函数）已传递（或链接）到 `Office.onReady` 处理程序。 有关 和 之间的区别详细信息`Office.initialize``Office.onReady`，请参阅[初始化加载项](initialize-add-in.md)。
 
 7. 当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。
 

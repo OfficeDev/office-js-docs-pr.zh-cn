@@ -3,12 +3,12 @@ title: 使用 Visual Studio Code 和 Microsoft Edge 旧版 WebView （EdgeHTML�
 description: 了解如何使用 VS Code 中的 Office 加载项调试器扩展Office使用 Microsoft Edge 旧版 WebView (EdgeHTML) 的加载项。
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 98ac2fc4eab8ef20ddc416b299fde88095ef4fb4
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: e43afbe2ae600a7013a8d4872d4148c571c0861d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63710942"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744095"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展
 

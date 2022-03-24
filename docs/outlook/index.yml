@@ -8,14 +8,14 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   ms.localizationpriority: high
-  ms.openlocfilehash: 00b0db41c60a8eaf23d9cee39126df2413ee9c68
-  ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+  ms.openlocfilehash: ac60bd35b7140dbdd2d2ca46196e5fd90318efa8
+  ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/12/2021
-  ms.locfileid: "59152395"
+  ms.lasthandoff: 03/23/2022
+  ms.locfileid: "63745059"
 landingContent:
-- title: 关于 Outlook 加载项
+- title: 关于Outlook加载项
   linkLists:
   - linkListType: overview
     links:

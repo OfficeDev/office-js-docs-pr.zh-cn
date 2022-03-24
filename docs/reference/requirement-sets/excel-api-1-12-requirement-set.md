@@ -4,9 +4,14 @@ description: 有关 ExcelApi 1.12 要求集的详细信息。
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 3c88f8c472ba2ac08ad8c96128616b290dcbb1f1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747069"
 ---
-
-# <a name="whats-new-in-excel-javascript-api-112"></a>JavaScript API 1.12 Excel新增功能
+# <a name="whats-new-in-excel-javascript-api-112"></a>JavaScript API 1.12 Excel的新增功能
 
 ExcelApi 1.12 通过添加用于跟踪动态数组和查找公式的直接引用单元格的 API 来增加对范围中公式的支持。 它还添加了数据透视表筛选器的 API 控件。 注释、区域性设置和自定义属性功能区域也进行了改进。
 
@@ -14,14 +19,14 @@ ExcelApi 1.12 通过添加用于跟踪动态数组和查找公式的直接引用
 |:--- |:--- |:--- |
 | [注释事件](../../excel/excel-add-ins-comments.md#comment-events) | 将添加、更改和删除事件添加到注释集合。| [CommentCollection](/javascript/api/excel/excel.commentcollection) |
 | 日期和时间 [区域性设置](../../excel/excel-add-ins-workbooks.md#access-application-culture-settings) | 提供对日期和时间格式的其他文化设置的访问权限。 | [CultureInfo](/javascript/api/excel/excel.cultureinfo)、 [NumberFormatInfo](/javascript/api/excel/excel.numberformatinfo) [应用程序](/javascript/api/excel/excel.application) |
-| [直接引用单元格](../../excel/excel-add-ins-ranges-precedents.md) | 返回用于计算单元格公式的范围。| [区域](/javascript/api/excel/excel.range#getdirectprecedents--) |
+| [直接引用单元格](../../excel/excel-add-ins-ranges-precedents.md) | 返回用于计算单元格公式的范围。| [范围](/javascript/api/excel/excel.range#getdirectprecedents--) |
 | 透视筛选器 | 将值驱动的筛选器应用于数据透视表的字段。 | [PivotField](/javascript/api/excel/excel.pivotfield#applyfilter-filter-)、 [PivotFilters](/javascript/api/excel/excel.pivotfilters) |
-| [区域溢出](../../excel/excel-add-ins-ranges-dynamic-arrays.md) | 允许外接程序查找与动态数组结果 [关联的](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531) 区域。 | [区域](/javascript/api/excel/excel.range) |
+| [区域溢出](../../excel/excel-add-ins-ranges-dynamic-arrays.md) | 允许外接程序查找与动态数组结果 [关联的](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531) 区域。 | [范围](/javascript/api/excel/excel.range) |
 | [工作表级别的自定义属性](../../excel/excel-add-ins-workbooks.md#worksheet-level-custom-properties) | 除了将自定义属性的范围限制到工作簿级别外，还可以将自定义属性的范围缩小到工作表级别。 | [WorksheetCustomProperty](/javascript/api/excel/excel.worksheetcustomproperty)、 [WorksheetCustomPropertyCollection](/javascript/api/excel/excel.worksheetcustompropertycollection)|
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求Excel集 1.12 中的 API。 若要查看受 Excel JavaScript API 要求集 1.12 或更早版本支持的所有 API 的 API 参考文档，请参阅[要求集 1.12](/javascript/api/excel?view=excel-js-1.12&preserve-view=true) 或更早中的 Excel API。
+下表列出了 JavaScript API 要求集 1.12 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.12 或更早版本支持的所有 API 的 API 参考文档，请参阅[要求集 1.12](/javascript/api/excel?view=excel-js-1.12&preserve-view=true) 或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -61,7 +66,7 @@ ExcelApi 1.12 通过添加用于跟踪动态数组和查找公式的直接引用
 ||[wholeDays](/javascript/api/excel/excel.pivotdatefilter#excel-excel-pivotdatefilter-wholedays-member)|对于 `equals`、 `before``after`、 和 `between` 筛选条件，指示是否按整日进行比较。|
 |[PivotField](/javascript/api/excel/excel.pivotfield)|[applyFilter (筛选器：Excel。PivotFilters) ](/javascript/api/excel/excel.pivotfield#excel-excel-pivotfield-applyfilter-member(1))|设置字段的一个或多个当前 PivotFilter，并应用于该字段。|
 ||[clearAllFilters () ](/javascript/api/excel/excel.pivotfield#excel-excel-pivotfield-clearallfilters-member(1))|清除字段的所有筛选器的所有条件。|
-||[clearFilter (filterType： Excel。PivotFilterType) ](/javascript/api/excel/excel.pivotfield#excel-excel-pivotfield-clearfilter-member(1))|从给定类型的字段筛选器中清除所有现有条件 (如果当前已对给定类型应用) 。|
+||[clearFilter (filterType： Excel。PivotFilterType) ](/javascript/api/excel/excel.pivotfield#excel-excel-pivotfield-clearfilter-member(1))|从字段的给定类型筛选器中清除所有现有条件， (如果当前应用了一个) 。|
 ||[getFilters () ](/javascript/api/excel/excel.pivotfield#excel-excel-pivotfield-getfilters-member(1))|获取当前应用于字段的所有筛选器。|
 ||[isFiltered (filterType？： Excel。PivotFilterType) ](/javascript/api/excel/excel.pivotfield#excel-excel-pivotfield-isfiltered-member(1))|检查字段上是否有已应用的筛选器。|
 |[PivotFilters](/javascript/api/excel/excel.pivotfilters)|[dateFilter](/javascript/api/excel/excel.pivotfilters#excel-excel-pivotfilters-datefilter-member)|透视字段当前应用的日期筛选器。|
@@ -89,7 +94,7 @@ ExcelApi 1.12 通过添加用于跟踪动态数组和查找公式的直接引用
 ||[阈值](/javascript/api/excel/excel.pivotvaluefilter#excel-excel-pivotvaluefilter-threshold-member)|要针对顶部/底部筛选条件进行筛选的项目数、百分比或总和的"N"阈值。|
 ||[upperBound](/javascript/api/excel/excel.pivotvaluefilter#excel-excel-pivotvaluefilter-upperbound-member)|筛选条件的范围上限 `between` 。|
 ||[value](/javascript/api/excel/excel.pivotvaluefilter#excel-excel-pivotvaluefilter-value-member)|要筛选的字段中所选"值"的名称。|
-|[区域](/javascript/api/excel/excel.range)|[getDirectPrecedents () ](/javascript/api/excel/excel.range#excel-excel-range-getdirectprecedents-member(1))|返回一 `WorkbookRangeAreas` 个对象，该对象表示包含同一工作表或多个工作表中单元格的所有直接引用单元格的范围。|
+|[范围](/javascript/api/excel/excel.range)|[getDirectPrecedents () ](/javascript/api/excel/excel.range#excel-excel-range-getdirectprecedents-member(1))|返回一 `WorkbookRangeAreas` 个对象，该对象表示包含同一工作表或多个工作表中单元格的所有直接引用单元格的范围。|
 ||[getPivotTables (fullyContained？： boolean) ](/javascript/api/excel/excel.range#excel-excel-range-getpivottables-member(1))|获取与区域重叠的数据透视表的范围集合。|
 ||[getSpillParent()](/javascript/api/excel/excel.range#excel-excel-range-getspillparent-member(1))|获取 Range 对象，它包含要将某个单元格溢出到的定位单元格。|
 ||[getSpillParentOrNullObject()](/javascript/api/excel/excel.range#excel-excel-range-getspillparentornullobject-member(1))|获取包含被溢出到的单元格的定位单元格的 range 对象。|

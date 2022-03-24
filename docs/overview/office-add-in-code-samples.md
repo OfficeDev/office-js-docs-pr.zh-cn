@@ -3,12 +3,12 @@ title: Office 加载项代码示例
 description: Office 加载项代码示例列表，可帮助你学习和生成自己的加载项。
 ms.date: 02/17/2022
 localization_priority: high
-ms.openlocfilehash: 81d82b2ff2624836d6f298e55618a0c5b0d172bb
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: e727e1df0bfb02eade1133e575234554f7c2b144
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892550"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745962"
 ---
 # <a name="office-add-in-code-samples"></a>Office 加载项代码示例
 
@@ -45,7 +45,7 @@ ms.locfileid: "62892550"
 
 | 名称                | 说明         |
 |:--------------------|:--------------------|
-| [加密附件、处理会议请求与会者以及对约会日期/时间更改做出回应](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-encrypt-attachments) | 当由用户添加时，使用基于事件的激活来加密附件。 此外，对会议请求中更改的收件人，以及会议请求中开始或结束日期或时间的更改使用事件处理。 |
+| [加密附件、处理会议请求与会者以及对约会日期/时间更改做出回应](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-encrypt-attachments) | 当用户添加时，使用基于事件的激活来加密附件。还可以对会议请求中更改的收件人以及会议请求中开始或结束日期或时间的更改使用事件处理。 |
 | [使用 Outlook 基于事件的激活标记外部收件人](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external) | 当用户在撰写邮件时更改收件人时，使用基于事件的激活运行 Outlook 加载项。 加载项还使用 `appendOnSendAsync` API 添加免责声明。 |
 | [使用 Outlook 基于事件的激活设置签名](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature) | 用户创建新邮件或约会时，基于事件的激活将运行 Outlook 加载项。 即使没有打开任务窗格，加载项也可以响应事件。 它还使用 `setSignatureAsync` API。 |
 

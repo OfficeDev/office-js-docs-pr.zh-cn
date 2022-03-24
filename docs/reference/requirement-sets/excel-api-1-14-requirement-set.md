@@ -4,8 +4,13 @@ description: 有关 ExcelApi 1.14 要求集的详细信息。
 ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 93b1690a3c03e51dadb2110ec6382ca6ee86cfe1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747020"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-114"></a>JavaScript API 1.14 Excel的新增功能
 
 ExcelApi 1.14 添加了对象来控制图表的表功能、用于查找公式的所有引用单元格的方法以及用于跟踪工作表保护状态更改的工作表保护事件。 它还为 对象添加了多种 [`getItemOrNullObject`](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties) 方法，如 `CommentCollection`、 `ShapeCollection`和 `StyleCollection` ，以改进错误处理。
@@ -13,7 +18,7 @@ ExcelApi 1.14 添加了对象来控制图表的表功能、用于查找公式的
 | 功能区域 | 说明 | 相关对象 |
 |:--- |:--- |:--- |
 | [图表数据表](../../excel/excel-add-ins-charts.md#add-and-format-a-chart-data-table) | 控制图表上数据表的外观、格式和可见性。 | [Chart](/javascript/api/excel/excel.chart)、 [ChartDataTable](/javascript/api/excel/excel.chartdatatable)、 [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
-| [公式引用单元格](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-precedents-of-a-formula) | 返回公式的所有引用单元格。 | [区域](/javascript/api/excel/excel.range) |
+| [公式引用单元格](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-precedents-of-a-formula) | 返回公式的所有引用单元格。 | [范围](/javascript/api/excel/excel.range) |
 | 查询 | 检索 Power Query 属性，如名称、刷新日期和查询计数。 | [Query](/javascript/api/excel/excel.query)、 [QueryCollection](/javascript/api/excel/excel.querycollection)|
 | [工作表保护事件](../../excel/excel-add-ins-worksheets.md#detect-changes-to-the-worksheet-protection-state) | 跟踪工作表的保护状态更改以及这些更改的来源。 | [WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)、 [Worksheet](/javascript/api/excel/excel.worksheet)、 [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) |
 
@@ -50,7 +55,7 @@ ExcelApi 1.14 添加了对象来控制图表的表功能、用于查找公式的
 |[QueryCollection](/javascript/api/excel/excel.querycollection)|[getCount()](/javascript/api/excel/excel.querycollection#excel-excel-querycollection-getcount-member(1))|获取工作簿中的查询数。|
 ||[getItem(key: string)](/javascript/api/excel/excel.querycollection#excel-excel-querycollection-getitem-member(1))|根据名称从集合获取查询。|
 ||[items](/javascript/api/excel/excel.querycollection#excel-excel-querycollection-items-member)|获取此集合中已加载的子项。|
-|[区域](/javascript/api/excel/excel.range)|[getPrecedents () ](/javascript/api/excel/excel.range#excel-excel-range-getprecedents-member(1))|返回一 `WorkbookRangeAreas` 个对象，该对象表示包含同一工作表或多个工作表中单元格的所有引用单元格的范围。|
+|[范围](/javascript/api/excel/excel.range)|[getPrecedents () ](/javascript/api/excel/excel.range#excel-excel-range-getprecedents-member(1))|返回一 `WorkbookRangeAreas` 个对象，该对象表示包含同一工作表或多个工作表中单元格的所有引用单元格的范围。|
 |[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.shapecollection#excel-excel-shapecollection-getitemornullobject-member(1))|使用形状的名称或 ID 获取形状。|
 |[StyleCollection](/javascript/api/excel/excel.stylecollection)|[getItemOrNullObject(name: string)](/javascript/api/excel/excel.stylecollection#excel-excel-stylecollection-getitemornullobject-member(1))|按名称获取样式。|
 |[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#excel-excel-tablescopedcollection-getitemornullobject-member(1))|按名称或 ID 获取表。|

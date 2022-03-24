@@ -1,15 +1,15 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流式传输 Web 数据的自定义函数。
-ms.date: 01/13/2022
+ms.date: 03/18/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b211369735e986ae4cf32d61e2a549e06ab083ed
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: c6121b4d2041e04cdd5c978b1d8d2a1ba6f5cf5a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222253"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745575"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -17,7 +17,7 @@ ms.locfileid: "62222253"
 
 在本教程中，你将：
 > [!div class="checklist"]
-> - 使用[适用于 Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office)来创建自定义函数加载项。
+> - 使用[适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)来创建自定义函数加载项。
 > - 使用预生成的自定义函数来执行简单计算。
 > - 创建从 Web 获取数据的自定义函数。
 > - 创建从 Web 传送实时数据的自定义函数。
@@ -26,14 +26,17 @@ ms.locfileid: "62222253"
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Windows 版 Excel（版本 1904 或更高版本）或 Excel 网页版。
+- 已连接到 Microsoft 365 订阅的 Office (包括 Office 网页版)。
+
+  > [!NOTE]
+  > 如果你还没有 Office，可以[加入 Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)以免费获得为期 90 天的可续订 Microsoft 365 订阅，以便在开发期间使用。
 
 ## <a name="create-a-custom-functions-project"></a>创建自定义函数项目
 
- 若要开始，请创建代码项目以生成自定义函数加载项。[Office 加载项的 Yeoman 生成器](https://www.npmjs.com/package/generator-office) 将使用一些可以试用的预生成自定义函数来设置项目。如果已运行自定义函数快速启动并生成了项目，请继续使用该项目，然后改为跳到 [此步骤](#create-a-custom-function-that-requests-data-from-the-web)。
+ 若要开始，请创建代码项目以生成自定义函数加载项。[Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 将使用一些可以试用的预生成自定义函数来设置项目。如果已运行自定义函数快速启动并生成了项目，请继续使用该项目，然后改为跳到 [此步骤](#create-a-custom-function-that-requests-data-from-the-web)。
 
 > [!NOTE]
-> 如果重新创建 yo office 项目，则可能会收到错误，因为 Office 缓存已具有同名函数的实例。 在运行 `npm run start` 之前，可以通过[清除 Office 缓存](../testing/clear-cache.md)来阻止此操作。
+> 如果重新创建 yo office 项目，则可能遇到错误，因为 Office 缓存已具有同名函数的实例。在运行 `npm run start` 之前，可以通过 [清除 Office 缓存](../testing/clear-cache.md) 来防止这种情况。
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
@@ -62,7 +65,7 @@ ms.locfileid: "62222253"
     > [!NOTE]
     > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run build` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
-1. 启动在 Node.js 中运行的本地 Web 服务器。 你可以在 Excel 网页版或 Windows 版 Excel 中尝试使用自定义函数加载项。
+1. 启动在 Node.js 中运行的本地 Web 服务器。 可以在 Excel 中试用自定义函数加载项。
 
 # <a name="excel-on-windows-or-mac"></a>[Windows 版或 Mac 版 Excel](#tab/excel-windows)
 
@@ -72,11 +75,15 @@ ms.locfileid: "62222253"
 npm run start:desktop
 ```
 
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
+
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
-若要在浏览器中的 Excel 中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。 将 "{url}" 替换为你拥有权限的 OneDrive 或 SharePoint 库上 Excel 文档的 URL。
+若要在Excel 网页版中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。 将 "{url}" 替换为你拥有权限的 OneDrive 或 SharePoint 库上 Excel 文档的 URL。
 
 [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 ---
 

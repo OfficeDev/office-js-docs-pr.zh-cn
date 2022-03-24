@@ -4,12 +4,12 @@ description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office �
 ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: e6c2c65d21b6fac215c8903a5f3e4fd93331e621
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: fba13fbef0c9e40b913c97885a67fef5adc11223
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320289"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711236"
 ---
 # <a name="single-sign-on-sso-quick-start"></a>单一登录 (SSO) 快速入门
 
@@ -24,7 +24,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 
 - [Node.js](https://nodejs.org)（最新[LTS](https://nodejs.org/about/releases) 版本）。
 
-- 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。若要全局安装这些工具，请从命令提示符处运行以下命令。
+- 最新版本的 [Yeoman](https://github.com/yeoman/yo) 和[适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)。若要全局安装这些工具，请从命令提示符处运行以下命令。
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -75,7 +75,7 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
     ```
 
     > [!WARNING]
-    > 如果租户已配置为需要双因素验证，则此命令将失败。 在此情况中，需要按照“[创建使用单一登录的 Node.js Office 加载项](../develop/create-sso-office-add-ins-nodejs.md)”教程所述，手动完成 Azure 应用程序注册和 SSO 配置步骤。
+    > 如果租户配置为需要双重身份验证，则此命令将失败。在这种情况下，需要手动完成 Azure 应用注册和 SSO 配置步骤，如 [创建使用单一登录的 Node.js Office 外接程序](../develop/create-sso-office-add-ins-nodejs.md) 教程中所述。
 
 3. Web 浏览器窗口将打开，并提示登录 Azure。 使用现有的 Microsoft 365 管理员凭据登录到 Azure。 这些凭据将用于在 Azure 中注册新的应用程序并配置 SSO 所需的设置。
 
@@ -100,9 +100,9 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
     npm start
     ```
 
-2. 在运行上一个命令时打开的 Office 客户端应用程序（如 Excel、Word 或 PowerPoint）中，确保登录的用户与在[上一节](#configure-sso)第 3 步中配置 SSO 时用于连接至 Azure 的 Microsoft 365 管理员帐户是同一 Microsoft 365 组织的成员。 执行此操作，将为成功进行 SSO 建立了相应的条件。
+2. 在运行上一个命令 (即 Excel、Word 或 PowerPoint) 时打开的 Office 客户端应用程序中，请确保使用与在 [上一部分](#configure-sso) 的步骤 3 中配置 SSO 时连接到 Azure 的 Microsoft 365 管理员帐户相同的 Microsoft 365 组织成员的用户登录。这样做可为 SSO 的成功建立适当的条件。
 
-3. 在 Office 客户端应用程序中，依次选择的“**开始**”选项卡和功能区中的“**显示任务窗格**”按钮，以打开加载项任务窗格。 下图显示 Excel 中的该按钮。
+3. 在 Office 客户端应用程序中，选择 **主页** 选项卡，然后选择功能区中的 **显示任务窗格** 按钮以打开外接程序任务窗格。下图显示了 Excel 中的此按钮。
 
     ![Excel 加载项按钮。](../images/excel-quickstart-addin-3b.png)
 

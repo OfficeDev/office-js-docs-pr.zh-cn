@@ -3,12 +3,12 @@ title: Office命名空间 - 要求集 1.4
 description: Office邮箱 API 要求集 1.4 Outlook外接程序可用的命名空间成员。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d4f351dc22dd22ac92dc7cc6bec53369471ed634
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: cc177e1c003ecd50a1151a0466240b37d040da5b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237593"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746751"
 ---
 # <a name="office-mailbox-requirement-set-14"></a>Office (邮箱要求集 1.4) 
 
@@ -25,19 +25,19 @@ ms.locfileid: "60237593"
 
 | 属性 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [context](office.context.md) | 撰写<br>读取 | [Context](/javascript/api/office/office.context?view=outlook-js-1.4&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | 撰写<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-1.4&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="enumerations"></a>枚举
 
 | 枚举 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [SourceProperty](#sourceproperty-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 撰写<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | 撰写<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>命名空间
 
-[MailboxEnums：](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.4&preserve-view=true)包括许多Outlook枚举，例如、 `ItemType` `EntityType` 和 `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` 。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.4&preserve-view=true)：包括许多Outlook`ItemType``EntityType``RecipientType``AttachmentType``ResponseType`枚举，例如、和 。`ItemNotificationMessageType`
 
 ## <a name="enumeration-details"></a>枚举详细信息
 
@@ -53,7 +53,7 @@ ms.locfileid: "60237593"
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Succeeded`| 字符串|调用成功。|
+|`Succeeded`| String|调用成功。|
 |`Failed`| 字符串|调用失败。|
 
 ##### <a name="requirements"></a>要求
@@ -80,7 +80,7 @@ ms.locfileid: "60237593"
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Html`| 字符串|请求以 HTML 格式返回的数据。|
+|`Html`| String|请求以 HTML 格式返回的数据。|
 |`Text`| 字符串|请求以文本格式返回的数据。|
 
 ##### <a name="requirements"></a>要求
@@ -107,7 +107,7 @@ ms.locfileid: "60237593"
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Body`| 字符串|数据源来自邮件的正文。|
+|`Body`| String|数据源来自邮件的正文。|
 |`Subject`| String|数据源来自邮件的主题。|
 
 ##### <a name="requirements"></a>要求

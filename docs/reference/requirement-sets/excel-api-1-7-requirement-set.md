@@ -4,8 +4,13 @@ description: 有关 ExcelApi 1.7 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: cd8f0f333b76306a6feecff95b9ba8831428606a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744531"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-17"></a>Excel JavaScript API 1.7 的最近更新
 
 Excel JavaScript API 要求集 1.7 的功能包括用于图表、事件、工作表、区域、文档属性、已命名项目、保护选项和样式的 API。
@@ -60,7 +65,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 
 ## <a name="api-list"></a>API 列表
 
-下表列出了 JavaScript API 要求Excel集 1.7 中的 API。 若要查看受 Excel JavaScript API 要求集 1.7 或更早版本支持的所有 API 的 API 参考文档，请参阅[要求集 1.7](/javascript/api/excel?view=excel-js-1.7&preserve-view=true) 或更早中的 Excel API。
+下表列出了 JavaScript API 要求集 1.7 Excel中的 API。 若要查看受 Excel JavaScript API 要求集 1.7 或更早版本支持的所有 API 的 API 参考文档，请参阅[要求集 1.7](/javascript/api/excel?view=excel-js-1.7&preserve-view=true) 或更早中的 Excel API。
 
 | 类 | 域 | 说明 |
 |:---|:---|:---|
@@ -137,7 +142,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[plotOrder](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-plotorder-member)|指定图表组中图表系列的绘制顺序。|
 ||[setBubbleSizes (sourceData：Range) ](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-setbubblesizes-member(1))|设置图表系列的气泡大小。|
 ||[setValues (sourceData：Range) ](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-setvalues-member(1))|设置图表系列的值。|
-||[setXAxisValues (sourceData：range) ](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-setxaxisvalues-member(1))|设置图表系列的 x 轴的值。|
+||[setXAxisValues (sourceData：Range) ](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-setxaxisvalues-member(1))|设置图表系列的 x 轴的值。|
 ||[showShadow](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-showshadow-member)|指定系列是否具有阴影。|
 ||[平滑](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-smooth-member)|指定系列是否平滑。|
 ||[trendlines](/javascript/api/excel/excel.chartseries#excel-excel-chartseries-trendlines-member)|系列中趋势线的集合。|
@@ -193,7 +198,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[formula](/javascript/api/excel/excel.nameditem#excel-excel-nameditem-formula-member)|已命名项目的公式。|
 |[NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)|[types](/javascript/api/excel/excel.nameditemarrayvalues#excel-excel-nameditemarrayvalues-types-member)|表示已命名项目数组中每个项目的类型|
 ||[values](/javascript/api/excel/excel.nameditemarrayvalues#excel-excel-nameditemarrayvalues-values-member)|表示已命名项目数组中每个项目的值。|
-|[区域](/javascript/api/excel/excel.range)|[getAbsoluteResizedRange (numRows： number， numColumns： number) ](/javascript/api/excel/excel.range#excel-excel-range-getabsoluteresizedrange-member(1))|获取一 `Range` 个对象，该对象的左上 `Range` 单元格与当前对象相同，但具有指定的行数和列数。|
+|[范围](/javascript/api/excel/excel.range)|[getAbsoluteResizedRange (numRows： number， numColumns： number) ](/javascript/api/excel/excel.range#excel-excel-range-getabsoluteresizedrange-member(1))|获取一 `Range` 个对象，该对象的左上 `Range` 单元格与当前对象相同，但具有指定的行数和列数。|
 ||[getImage () ](/javascript/api/excel/excel.range#excel-excel-range-getimage-member(1))|将区域呈现为 base64 编码 png 图像。|
 ||[getSurroundingRegion () ](/javascript/api/excel/excel.range#excel-excel-range-getsurroundingregion-member(1))|返回一 `Range` 个对象，该对象代表此区域左上单元格的周围区域。|
 ||[hyperlink](/javascript/api/excel/excel.range#excel-excel-range-hyperlink-member)|表示当前范围的超链接。|
@@ -254,7 +259,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[properties](/javascript/api/excel/excel.workbook#excel-excel-workbook-properties-member)|获取工作簿属性。|
 ||[protection](/javascript/api/excel/excel.workbook#excel-excel-workbook-protection-member)|返回工作簿的保护对象。|
 ||[styles](/javascript/api/excel/excel.workbook#excel-excel-workbook-styles-member)|表示与工作簿关联的样式的集合。|
-|[WorkbookProtection](/javascript/api/excel/excel.workbookprotection)|[保护 (密码？：string) ](/javascript/api/excel/excel.workbookprotection#excel-excel-workbookprotection-protect-member(1))|保护工作簿。|
+|[WorkbookProtection](/javascript/api/excel/excel.workbookprotection)|[保护 (密码？：字符串) ](/javascript/api/excel/excel.workbookprotection#excel-excel-workbookprotection-protect-member(1))|保护工作簿。|
 ||[protected](/javascript/api/excel/excel.workbookprotection#excel-excel-workbookprotection-protected-member)|指定工作簿是否受保护。|
 ||[不 (密码？：string) ](/javascript/api/excel/excel.workbookprotection#excel-excel-workbookprotection-unprotect-member(1))|解除保护工作簿。|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[copy (positionType？： Excel。WorksheetPositionType， relativeTo？： Excel。工作表) ](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-copy-member(1))|复制工作表，并放置于指定位置。|
@@ -265,7 +270,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 ||[onDeactivated](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-ondeactivated-member)|在工作表被停用时发生。|
 ||[onSelectionChanged](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onselectionchanged-member)|当特定工作表上的选择更改时发生。|
 ||[standardHeight](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-standardheight-member)|返回工作表中所有行的标准（默认）行高，以磅为单位。|
-||[standardWidth](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-standardwidth-member)|指定工作表中 (列) 的默认列宽。|
+||[standardWidth](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-standardwidth-member)|指定工作表中 (列) 列的默认列宽。|
 ||[tabColor](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-tabcolor-member)|工作表的选项卡颜色。|
 |[WorksheetActivatedEventArgs](/javascript/api/excel/excel.worksheetactivatedeventargs)|[type](/javascript/api/excel/excel.worksheetactivatedeventargs#excel-excel-worksheetactivatedeventargs-type-member)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetactivatedeventargs#excel-excel-worksheetactivatedeventargs-worksheetid-member)|获取已激活工作表的 ID。|
@@ -286,7 +291,7 @@ Excel 事件 API 提供了多个事件处理程序，以便加载项能够在发
 |[WorksheetDeletedEventArgs](/javascript/api/excel/excel.worksheetdeletedeventargs)|[source](/javascript/api/excel/excel.worksheetdeletedeventargs#excel-excel-worksheetdeletedeventargs-source-member)|获取事件源。|
 ||[type](/javascript/api/excel/excel.worksheetdeletedeventargs#excel-excel-worksheetdeletedeventargs-type-member)|获取事件的类型。|
 ||[worksheetId](/javascript/api/excel/excel.worksheetdeletedeventargs#excel-excel-worksheetdeletedeventargs-worksheetid-member)|获取从工作簿中删除的工作表的 ID。|
-|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange： Range \| string) ](/javascript/api/excel/excel.worksheetfreezepanes#excel-excel-worksheetfreezepanes-freezeat-member(1))|设置活动工作表视图中的冻结单元格。|
+|[WorksheetFreezePanes](/javascript/api/excel/excel.worksheetfreezepanes)|[freezeAt (frozenRange：Range \| string) ](/javascript/api/excel/excel.worksheetfreezepanes#excel-excel-worksheetfreezepanes-freezeat-member(1))|设置活动工作表视图中的冻结单元格。|
 ||[freezeColumns (count？： number) ](/javascript/api/excel/excel.worksheetfreezepanes#excel-excel-worksheetfreezepanes-freezecolumns-member(1))|就地冻结工作表的第一列。|
 ||[freezeRows (count？： number) ](/javascript/api/excel/excel.worksheetfreezepanes#excel-excel-worksheetfreezepanes-freezerows-member(1))|就地冻结工作表的首行。|
 ||[getLocation()](/javascript/api/excel/excel.worksheetfreezepanes#excel-excel-worksheetfreezepanes-getlocation-member(1))|获取用于描述活动工作表视图中的冻结单元格的区域。|

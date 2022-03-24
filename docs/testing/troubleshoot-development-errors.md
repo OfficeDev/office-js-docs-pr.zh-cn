@@ -3,8 +3,13 @@ title: 排查 Office 加载项中的开发错误
 description: 了解如何解决加载项中的Office错误。
 ms.date: 09/24/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: c804f4e73dc28e6f401aca01cea68e6d2ce30917
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747101"
 ---
-
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>排查 Office 加载项中的开发错误
 
 下面列出了在开发加载项时可能会遇到的Office问题。
@@ -47,7 +52,7 @@ del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC
 
 ## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>对属性值所做的更改不会发生，并且没有错误消息
 
-检查属性的参考文档，以查看其是否为只读。 此外，[JS 的 TypeScript](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) Office指定哪些对象属性是只读的。 如果您尝试设置只读属性，写入操作将失败，无提示，不会引发错误。 以下示例错误地尝试将只读属性设置为 [Chart.id。](/javascript/api/excel/excel.chart#excel-excel-chart-id-member)另请参阅 [无法直接设置某些属性](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
+检查属性的参考文档，以查看其是否为只读。 此外，OFFICE JS 的 [TypeScript](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) 定义指定哪些对象属性是只读的。 如果您尝试设置只读属性，写入操作将失败，无提示，不会引发错误。 以下示例错误地尝试将只读属性设置为 [Chart.id。](/javascript/api/excel/excel.chart#excel-excel-chart-id-member)另请参阅 [无法直接设置某些属性](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)。
 
 ```js
 // This will do nothing, since `id` is a read-only property.
@@ -60,18 +65,18 @@ myChart.id = "5";
 
 - 如果使用 Visual Studio，则旁加载可能有问题。 关闭主机和Office的所有Visual Studio。 重新启动Visual Studio并再次尝试按 F5。
 - 外接程序的清单已从其部署位置（如集中部署、SharePoint目录或网络共享）中删除。
-- 清单 [中 ID](../reference/manifest/id.md) 元素的值已在已部署的副本中直接更改。 如果出于任何原因需要更改此 ID，请首先从 Office 主机中删除外接程序，然后将原始清单替换为已更改的清单。 许多用户需要清除Office缓存来删除原始缓存的所有跟踪。 有关[为操作系统清除Office](clear-cache.md)的说明，请参阅清除缓存缓存文章。
+- 清单 [中 ID](../reference/manifest/id.md) 元素的值已在已部署的副本中直接更改。 如果出于任何原因需要更改此 ID，请首先从主机中删除Office，然后将原始清单替换为已更改的清单。 许多用户需要清除Office缓存以删除原始缓存的所有跟踪。 有关[为操作系统清除Office](clear-cache.md)的说明，请参阅清除缓存缓存文章。
 - 加载项的`resid` [](../reference/manifest/resources.md) `resid` `<Resources>`清单有 一个 未在清单的"资源"部分的任何位置定义的 ，或者其使用位置和在部分中定义位置的拼写不匹配。
 - 清单中的 `resid` 某位置有一个超过 32 个字符的属性。 属性`resid`和节中`id``<Resources>`相应资源的属性不能超过 32 个字符。
 - 加载项具有自定义加载项命令，但尝试在不支持命令的平台上运行。 有关详细信息，请参阅 [外接程序命令要求集](../reference/requirement-sets/add-in-commands-requirement-sets.md)。
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>外接程序在 Edge 上不起作用，但它适用于其他浏览器
 
-请参阅[疑难Microsoft Edge疑难解答](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。
+请参阅[疑难解答Microsoft Edge问题](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。
 
 ## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel加载项抛出错误，但不一致
 
-请参阅[Excel加载项疑难](../excel/excel-add-ins-troubleshooting.md)解答了解可能的原因。
+请参阅[Excel加载项疑](../excel/excel-add-ins-troubleshooting.md)难解答了解可能的原因。
 
 ## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>清单架构验证错误Visual Studio项目中
 

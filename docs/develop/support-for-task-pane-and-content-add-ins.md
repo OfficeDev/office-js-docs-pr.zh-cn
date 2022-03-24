@@ -3,19 +3,24 @@ title: 对 Office 2013 内容和任务窗格加载项的 Office JavaScript API �
 description: 使用 Office JavaScript API 在 Office 2013 中创建任务窗格。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 4f0edaa6c58399542a87721f4429a72b90cf1667
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744243"
 ---
-
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>对 Office 2013 内容和任务窗格加载项的 Office JavaScript API 支持
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-您可以使用 [JavaScript API Office](../reference/javascript-api-for-office.md) 2013 客户端应用程序的任务窗格或内容Office外接程序。 已对内容和任务窗格外接程序支持的对象和方法进行如下分类：
+您可以使用 [JavaScript API Office](../reference/javascript-api-for-office.md) 2013 客户端应用程序创建任务窗格或Office外接程序。 已对内容和任务窗格外接程序支持的对象和方法进行如下分类：
 
-1. **与其他加载项共享Office对象。** 这些对象包括 [Office](/javascript/api/office)[、Context](/javascript/api/office/office.context) 和 [AsyncResult](/javascript/api/office/office.asyncresult)。 对象`Office`是 JavaScript API Office对象。 对象 `Context` 表示加载项的运行时环境。 `Context`和 `Office` 都是任何加载项Office对象。 对象 `AsyncResult` 表示异步操作 `getSelectedDataAsync` 的结果，如返回到 方法的数据，可读取用户在文档中选择的内容。
+1. **与其他加载项Office对象。** 这些对象包括 [Office](/javascript/api/office)[、Context](/javascript/api/office/office.context) 和 [AsyncResult](/javascript/api/office/office.asyncresult)。 对象`Office`是 JavaScript API Office对象。 对象 `Context` 表示加载项的运行时环境。 `Context`和 `Office` 都是任何加载项Office对象。 对象 `AsyncResult` 表示异步操作 `getSelectedDataAsync` 的结果，如返回到 方法的数据，可读取用户在文档中选择的内容。
 
-2. **Document 对象。** 可通过 [Document](/javascript/api/office/office.document) 对象的方法、属性和事件公开大多数可用于内容和任务窗格加载项的 API。 内容或任务窗格外接程序可以使用 [Office.context.document](/javascript/api/office/office.context#office-office-context-document-member) 属性访问 **Document** 对象，并且通过它可以访问 API 的关键成员以使用文档中的数据，例如 [Bindings](/javascript/api/office/office.bindings) 和 [CustomXmlParts](/javascript/api/office/office.customxmlparts) 对象，[以及 getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1))、[setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) 和 [getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) 方法。 该对象`Document`还提供了 [mode](/javascript/api/office/office.document#office-office-document-mode-member) 属性，用于确定文档是只读还是编辑模式，[url](/javascript/api/office/office.document#office-office-document-url-member) 属性用于获取当前文档的 URL，以及访问 [设置 对象。](/javascript/api/office/office.settings) 该对象 `Document` 还支持为 [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) 事件添加事件处理程序，以便您可以检测用户何时在文档中更改其选择。
+2. **Document 对象。** 可通过 [Document](/javascript/api/office/office.document) 对象的方法、属性和事件公开大多数可用于内容和任务窗格加载项的 API。 内容或任务窗格外接程序可以使用 [Office.context.document](/javascript/api/office/office.context#office-office-context-document-member) 属性访问 **Document** 对象，通过它可以访问 API 的关键成员，以便处理文档中的数据，如 [Bindings](/javascript/api/office/office.bindings) 和 [CustomXmlParts](/javascript/api/office/office.customxmlparts) 对象，[以及 getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1))、[setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) 和 [getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) 方法。 该对象`Document`还提供了 [mode](/javascript/api/office/office.document#office-office-document-mode-member) 属性，用于确定文档是只读还是编辑模式，[url](/javascript/api/office/office.document#office-office-document-url-member) 属性用于获取当前文档的 URL，以及访问 [设置 对象。](/javascript/api/office/office.settings) 该对象 `Document` 还支持为 [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) 事件添加事件处理程序，以便您可以检测用户何时在文档中更改其选择。
 
-   内容或任务窗格外接程序`Document`只能在加载 DOM 和运行时环境后（通常使用 [Office.initialize 事件的事件处理程序）访问](/javascript/api/office)对象。 有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](loading-the-dom-and-runtime-environment.md)。
+   内容或任务窗格外接程序`Document`只能在加载 DOM 和运行时环境后（通常在 [Office.initialize](/javascript/api/office) 事件的事件处理程序中）访问对象。 有关应用程序初始化时的事件流以及如何检查 DOM 和运行时是否成功加载的信息，请参阅[加载 DOM 和运行时环境](loading-the-dom-and-runtime-environment.md)。
 
 3. **使用特定的功能的对象。** 若要使用 API 的特定功能，请使用以下对象和方法。
 
@@ -30,11 +35,11 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > 并不是所有能够承载内容和任务窗格加载项的 Office 应用程序都支持一些 API 成员。要确定支持哪些成员，请参阅以下任一资源：
 
-有关跨 Office 客户端应用程序支持 JavaScript API Office的摘要，请参阅[了解 javaScript API Office。](understanding-the-javascript-api-for-office.md)
+有关跨 Office 客户端应用程序支持 JavaScript API Office的摘要，请参阅[了解 Office JavaScript API](understanding-the-javascript-api-for-office.md)。
 
 ## <a name="read-and-write-to-an-active-selection-in-a-document-spreadsheet-or-presentation"></a>对文档、电子表格或演示文稿中的活动选定内容进行读写操作
 
-您可以在文档、电子表格或演示文稿的用户当前选定内容中读取和写入。 根据加载项的 Office 应用程序，可以指定在 [Document](/javascript/api/office/office.document) 对象的 [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 和 [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) 方法中作为参数读取或写入的数据结构的类型。 例如，您可以指定任何用于 Word 的数据类型（文本、HTML、表格数据或 Office Open XML）、用于 Excel 的文本和表格数据，以及用于 PowerPoint 和 Project 的文本。 您还可以创建事件处理程序来检测对用户选择内容的更改。 以下示例使用 方法从选定内容中作为文本获取 `getSelectedDataAsync` 数据。
+您可以在文档、电子表格或演示文稿的用户当前选定内容中读取和写入。 根据加载项的 Office 应用程序，可以指定要读取或写入的数据结构类型，作为 [Document](/javascript/api/office/office.document) 对象的 [getSelectedDataAsync 和 setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 方法中的参数进行读取或写入[](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1))。 例如，您可以指定任何用于 Word 的数据类型（文本、HTML、表格数据或 Office Open XML）、用于 Excel 的文本和表格数据，以及用于 PowerPoint 和 Project 的文本。 您还可以创建事件处理程序来检测对用户选择内容的更改。 以下示例使用 方法从选定内容中作为文本获取 `getSelectedDataAsync` 数据。
 
 
 ```js
@@ -126,7 +131,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ## <a name="permissions-model-and-governance"></a>权限模型和管治
 
-加载项使用清单`Permissions`中的 元素请求权限，以从 JavaScript API 请求访问Office级别。 例如，如果您的外接程序需要对文档的读/ `ReadWriteDocument` 写访问权限，其清单必须指定为其元素中的文本 `Permissions` 值。 因为权限的存在是为了保护用户的隐私和安全，因此最佳做法应当是，请求功能所需的最低级别的权限。 以下示例显示如何在任务窗格清单中请求 **ReadDocument** 权限。
+加载项使用清单`Permissions`中的 元素请求访问 JavaScript API 中所需的功能Office级别。 例如，如果您的外接程序需要对文档的读/ `ReadWriteDocument` 写访问权限，其清单必须指定为其元素中的文本 `Permissions` 值。 因为权限的存在是为了保护用户的隐私和安全，因此最佳做法应当是，请求功能所需的最低级别的权限。 以下示例显示如何在任务窗格清单中请求 **ReadDocument** 权限。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>

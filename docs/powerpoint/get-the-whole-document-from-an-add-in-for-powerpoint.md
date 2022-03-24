@@ -4,12 +4,12 @@ description: 了解如何从加载项获取整个文档PowerPoint。
 ms.date: 12/04/2017
 ROBOTS: NOINDEX
 ms.localizationpriority: medium
-ms.openlocfilehash: c777e5d8c7e572486985686b4b15498fc8315552
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 07ac69be819c953bdee6e7336aa7729269f5e8e9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149481"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742787"
 ---
 # <a name="get-the-whole-document-from-an-add-in-for-powerpoint-or-word"></a>从 PowerPoint 或 Word 相关外接程序获取整个文档
 

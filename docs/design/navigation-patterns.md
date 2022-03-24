@@ -3,12 +3,12 @@ title: Office 外接程序的导航模式
 description: 了解使用命令栏、选项卡栏和后退按钮的最佳实践，以设计加载项Office导航。
 ms.date: 06/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d6e725ac482245f18d65a5eda3bb8573a1a4f926
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dc7d75c9e914cf6294409590783e5ef73670dcc5
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149353"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743224"
 ---
 # <a name="navigation-patterns"></a>导航模式
 
@@ -31,10 +31,10 @@ CommandBar 是任务窗格中的一个图面，其中包含对它所在的窗口
 
 选项卡栏显示使用具有垂直堆叠文本和图标的按钮的导航。 使用选项卡栏提供导航（使用简短的描述性标题的选项卡）。
 
-![插图显示桌面应用程序任务窗格中Office选项卡栏。 此示例显示紧接在外接程序名称下方的选项卡栏，其选项卡具有"Home"、"设置"、"Favorites"和"Account"选项卡。](../images/add-in-tab-bar.png)
+![插图显示桌面应用程序任务Office内的选项卡栏。 本示例显示紧接在加载项名称下方的选项卡栏，其选项卡具有"Home"、"设置"、"Favorites"和"Account"选项卡。](../images/add-in-tab-bar.png)
 
 ## <a name="back-button"></a>“返回”按钮
 
 "后退"按钮允许用户从向下钻取导航操作中恢复。 此模式有助于确保用户遵循一系列有序的步骤。
 
-![插图显示桌面应用程序任务窗格中Office后退按钮。 本示例在加载项名称的下方左上方显示一个后退按钮。](../images/add-in-back-button.png)
+![插图显示桌面应用程序任务Office内的后退按钮。 本示例在加载项名称的下方左上方显示一个后退按钮。](../images/add-in-back-button.png)

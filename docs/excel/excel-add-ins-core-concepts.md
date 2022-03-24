@@ -4,12 +4,12 @@ description: 了解 Excel JavaScript API 中的关键对象类型，以及如何
 ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: d2972a3cc30b899340cc47c24c6792eb3e5d202c
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 080fe2d3544bc48a95b7ba7286638c35025f609c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340818"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744887"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Excel 加载项中的 Excel JavaScript 对象模型
 

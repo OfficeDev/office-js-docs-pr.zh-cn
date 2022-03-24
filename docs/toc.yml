@@ -243,13 +243,15 @@ items:
                 href: develop/show-hide-add-in.md
               - name: 本地化
                 href: develop/localization.md
-          - name: 框架和 IDE
+          - name: 框架、IDE 和其他工具
             items:
               - name: 使用 Angular 开发加载项
                 href: develop/add-ins-with-angular2.md
+              - name: 使用 Yeoman 生成器创建加载项
+                href: develop/yeoman-generator-overview.md
               - name: 使用 Visual Studio Code 开发加载项
                 href: develop/develop-add-ins-vscode.md
-              - name: 使用 Visual Studio 开发加载项
+              - name: 使用 Visual Studio 创建和开发加载项
                 items:
                   - name: 概述
                     href: develop/develop-add-ins-visual-studio.md

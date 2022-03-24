@@ -3,8 +3,13 @@ title: 排查单一登录 (SSO) 错误消息
 description: 有关如何解决加载项中单一登录 (SSO) 问题Office处理特殊条件或错误的指导。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 181eeb5f45884c2f54b90a07578a5c2844cc17dd
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744185"
 ---
-
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>排查单一登录 (SSO) 错误消息
 
 本文提供了一些指南，介绍了如何排查 Office 加载项中出现的单一登录 (SSO) 问题，以及如何让已启用 SSO 的加载项可靠地处理特殊条件或错误。
@@ -30,7 +35,7 @@ ms.localizationpriority: medium
 
 加载项或 Office 版本不支持 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) API。
 
-- Office 版本不支持 SSO。 所需版本为Microsoft 365频道中的订阅。
+- Office 版本不支持 SSO。 所需版本是Microsoft 365频道订阅的必需版本。
 - 加载项清单缺少适当的 [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) 部分。
 
 加载项应该通过回退到用户身份验证备用系统来响应此错误。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
@@ -54,7 +59,7 @@ ms.localizationpriority: medium
 
 ### <a name="13003"></a>13003
 
-用户类型不受支持。 用户未使用有效的 Microsoft Office或工作帐户Microsoft 365 教育版登录。 例如，当使用本地域帐户运行 Office 时，可能会生成此错误。 代码应回退到用户身份验证备用系统。 在Outlook中，如果为用户租户禁用新式验证，[](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)则也会Exchange Online。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
+用户类型不受支持。 用户未使用有效的 Microsoft Office或工作帐户Microsoft 365 教育版登录。 例如，当使用本地域帐户运行 Office 时，可能会生成此错误。 代码应回退到用户身份验证备用系统。 在Outlook中，如果为用户租户禁用新式验证[](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online)，则也会Exchange Online。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
 
 ### <a name="13004"></a>13004
 
@@ -77,7 +82,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 - 如果在开发过程中发生此错误，请确保加载项注册和加载项清单指定 `profile` 权限（和 `openid` 权限 - 如果你使用的是 MSAL.NET）。 如需了解更多信息，请参阅[向 Azure AD v2.0 终结点注册加载项](register-sso-add-in-aad-v2.md)。
 - 在生产中，有几种情况可能导致此错误。 其中一些是：
   - 用户具有 Microsoft 帐户标识。
-  - 使用 MSA 时，某些会导致其他 13xxx 错误Microsoft 365 教育版或工作帐户导致 13007 错误。
+  - 使用 MSA 时，某些会导致其他 13xxx 错误之一Microsoft 365 教育版或工作帐户将导致 13007 错误。
 
   对于所有这些情况，代码应回退到用户身份验证备用系统。
 
@@ -87,7 +92,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 
 ### <a name="13010"></a>13010
 
-用户正在加载项的 Office 中Microsoft Edge。 用户的域Microsoft 365`login.microsoftonline.com`和域，在浏览器设置中都在不同的安全区域中。 此错误仅出现在 **Office 网页版** 中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
+用户正在加载项加载项Office加载项Microsoft Edge。 用户的域Microsoft 365`login.microsoftonline.com`和域均在浏览器设置中的不同安全区域。 此错误仅出现在 **Office 网页版** 中。 如果此错误返回，用户将已看到对此进行解释的错误，并链接到关于如何更改区域配置的页面。 如果加载项提供的功能无需用户登录，代码应捕获此错误，并让加载项继续正常运行。
 
 ### <a name="13012"></a>13012
 
@@ -102,7 +107,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 
 ### <a name="13013"></a>13013
 
-调用`getAccessToken`时间过短，因此Office最近的调用。 这通常是由对 方法的无限循环调用导致的。 建议在一些方案中撤回此方法。 但是，您的代码应该使用计数器或标志变量以确保不会重复调用该方法。 如果同一"重试"代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何在 `retryGetAccessToken` [HomeES6.js或ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) [ 中ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)。
+调用`getAccessToken`时间过短，因此Office最近一次调用。 这通常是由对 方法的无限循环调用导致的。 建议在一些方案中撤回此方法。 但是，您的代码应该使用计数器或标志变量以确保不会重复调用该方法。 如果同一"重试"代码路径再次运行，则代码应回退到用户身份验证的备用系统。 有关代码示例，请参阅如何在 `retryGetAccessToken` [HomeES6.js或ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) [ 中ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)。
 
 ### <a name="50001"></a>50001
 
@@ -137,6 +142,6 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 - 服务器端代码应向客户端发送 `403 Forbidden` 响应，它应该会在控制台或日志中记录此错误。
 - 请确保加载项清单 [Scopes](../reference/manifest/scopes.md) 部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 如需了解更多信息，请参阅[向 Azure AD v2.0 终结点注册加载项](register-sso-add-in-aad-v2.md)。
 
-### <a name="invalid-audience-error-in-the-access-token-for-microsoft-graph"></a>Microsoft 网站访问令牌中的访问群体错误Graph
+### <a name="invalid-audience-error-in-the-access-token-for-microsoft-graph"></a>Microsoft 应用程序访问令牌中的访问群体错误Graph
 
 服务器端代码应向客户端发送 `403 Forbidden` 响应，向用户显示易记消息，并尽可能在控制台或日志中记录此错误。

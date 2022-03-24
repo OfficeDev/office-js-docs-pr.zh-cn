@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的首次运行体验模式
-description: 了解在外接程序中设计首次运行体验Office最佳做法。
+description: 了解在外接程序中设计首次Office体验的最佳实践。
 ms.date: 07/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a89fb53a0693c4a7f6da49713413986f10584514
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 43127e2a83c07ae659c6672a57486e5488ad268e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149365"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743247"
 ---
 # <a name="first-run-experience-patterns"></a>首次运行体验模式
 
@@ -34,7 +34,7 @@ ms.locfileid: "59149365"
 
 *图 1.允许用户前进或跳过木马流的开始页面*
 
-![插图显示桌面应用程序任务窗格首次运行体验中的轮Office的第 1 步。 本示例中，任务窗格的右上方包含"跳过"操作。](../images/add-in-FRE-step-1.png)
+![插图显示桌面应用程序任务窗格首次运行体验中轮Office的第 1 步。 本示例中，任务窗格的右上方包含"跳过"操作。](../images/add-in-FRE-step-1.png)
 
 *图 2.将可播放的屏幕数最小化为仅有效传达消息所需的内容*
 
@@ -50,7 +50,7 @@ ms.locfileid: "59149365"
 
 *图 4.具有徽标、清晰价值主张、功能摘要和行动号召的值位置图片*
 
-![插图显示桌面应用程序任务窗格首次运行体验Office位置图。 本示例中，任务窗格显示加载项徽标、加载项说明和开始按钮。](../images/add-in-FRE-value.png)
+![插图显示桌面应用程序任务窗格首次运行体验中的Office图片。 本示例中，任务窗格显示加载项徽标、加载项说明和开始按钮。](../images/add-in-FRE-value.png)
 
 ### <a name="video-placemat"></a>视频占位图片
 

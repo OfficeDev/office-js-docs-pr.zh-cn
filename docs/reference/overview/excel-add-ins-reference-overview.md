@@ -1,15 +1,15 @@
 ---
 title: Excel JavaScript API 概述
-description: 详细了解 Excel Javascript API
+description: 详细了解 Excel Javascript API。
 ms.date: 02/23/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 2e2f26033d59def17ac19144da5434c622b9f7d2
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 8c4ac87a9498832854aad65f00fb9cd255e7c0c6
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340825"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746293"
 ---
 # <a name="excel-javascript-api-overview"></a>Excel JavaScript API 概述
 

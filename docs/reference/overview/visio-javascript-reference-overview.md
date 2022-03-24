@@ -1,17 +1,17 @@
 ---
 title: Visio JavaScript API 概述
-description: Visio JavaScript API 概述
+description: Visio JavaScript API 概述。
 ms.date: 06/03/2020
 ms.prod: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 61a835ac425d862ed417b3b47a892e963b6a1b27
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: ccd09288d3f6e7fff4b102743391efc8f6e75e4b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514122"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743362"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 
@@ -68,7 +68,7 @@ function hideToolbars() {
 
 ## <a name="proxy-objects"></a>代理对象
 
-在嵌入会话中声明和使用的 Visio JavaScript 对象是 Visio 文档中真实对象的代理对象。 对代理对象执行的所有操作都不会在 Visio 中实现；在同步文档状态前，Visio 文档的状态不会在代理对象中实现。 运行 `context.sync()` 时将同步文档状态。
+在嵌入式会话中声明和使用的 Visio JavaScript 对象是 Visio 文档中真实对象的代理对象。对代理对象执行的所有操作都不会在 Visio 中实现，并且在同步文档状态前，Visio 文档的状态不会在代理对象中实现。运行 `context.sync()` 时将同步文档状态。
 
 例如，本地 JavaScript 对象 getActivePage 声明为引用选定页面。 这可用于将属性和调用方法的设置操作排入队列。 对此类对象执行的操作不会实现，除非运行 `sync()` 方法。
 
@@ -78,11 +78,11 @@ var activePage = context.document.getActivePage();
 
 ## <a name="sync"></a>sync()
 
-`sync()` 方法通过执行在上下文中排队的指令以及检索用于你代码中的已加载 Office 对象的属性，在 JavaScript 代理对象和 Visio 中的真实对象之间同步状态。 此方法返回一个将在同步完成时实现的承诺。
+`sync()` 方法通过执行在上下文中排队的指令以及检索用于你代码中的已加载 Office 对象的属性，在 JavaScript 代理对象和 Visio 中的真实对象之间同步状态。此方法返回一个将在同步完成时实现的承诺。
 
 ## <a name="load"></a>load()
 
-`load()` 方法用于填充在 JavaScript 层中创建的代理对象。 尝试检索对象（如文档）时，将首先在 JavaScript 层中创建一个本地代理对象。 此类对象可用于将属性和调用方法的设置操作排入队列。 但是，要读取对象属性或关系，则需首先调用 `load()` 和 `sync()` 方法。 load() 方法包括在调用 `sync()` 方法时需加载的属性和关系。
+`load()` 方法用于填充在 JavaScript 层中创建的代理对象。当尝试检索一个对象（如文档）时，将首先在 JavaScript 层创建一个本地代理对象。此类对象可用于对其属性和调用方法的设置进行排队。但为了读取对象属性或关系，需要首先调用 `load()` 和 `sync()` 方法。当调用 `sync()` 方法时，load() 方法将接受需要加载的属性和关系。
 
 下面的示例展示了 `load()` 方法的语法。
 

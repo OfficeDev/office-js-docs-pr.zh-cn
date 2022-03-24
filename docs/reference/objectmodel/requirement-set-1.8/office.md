@@ -3,12 +3,12 @@ title: Office命名空间 - 要求集 1.8
 description: Office邮箱 API 要求集 1.8 Outlook外接程序可用的命名空间成员。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9275d4552de9b057f0b45c89abca9ff4225941
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 0866439c6dedc8672b0ac058e8d1ef8654215f26
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237719"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745225"
 ---
 # <a name="office-mailbox-requirement-set-18"></a>Office (邮箱要求集 1.8) 
 
@@ -25,20 +25,20 @@ ms.locfileid: "60237719"
 
 | 属性 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [context](office.context.md) | 撰写<br>读取 | [Context](/javascript/api/office/office.context?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | 撰写<br>Read | [Context](/javascript/api/office/office.context?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="enumerations"></a>枚举
 
 | 枚举 | 模式 | 返回类型 | 最小值<br>要求集 |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | 撰写<br>读取 | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | 撰写<br>读取 | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | 撰写<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | 撰写<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | 撰写<br>Read | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | 撰写<br>Read | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>命名空间
 
-[MailboxEnums：](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8&preserve-view=true)包括许多Outlook枚举，例如、 `ItemType` `EntityType` 和 `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` 。
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8&preserve-view=true)：包括许多Outlook`ItemType``EntityType``RecipientType``AttachmentType``ResponseType`枚举，例如、和 。`ItemNotificationMessageType`
 
 ## <a name="enumeration-details"></a>枚举详细信息
 
@@ -81,7 +81,7 @@ ms.locfileid: "60237719"
 
 |名称| 类型| 说明|
 |---|---|---|
-|`Html`| 字符串|请求以 HTML 格式返回的数据。|
+|`Html`| String|请求以 HTML 格式返回的数据。|
 |`Text`| 字符串|请求以文本格式返回的数据。|
 
 ##### <a name="requirements"></a>要求
@@ -106,7 +106,7 @@ ms.locfileid: "60237719"
 
 ##### <a name="properties"></a>属性
 
-| 名称 | 类型 | Description | 最低要求集 |
+| 名称 | 类型 | 说明 | 最低要求集 |
 |---|---|---|:---:|
 |`AppointmentTimeChanged`| 字符串 | 所选的约会或系列的日期或时间已更改。 | 1.7 |
 |`AttachmentsChanged`| 字符串 | 已将附件添加到项目或已从项目删除附件。 | 1.8 |

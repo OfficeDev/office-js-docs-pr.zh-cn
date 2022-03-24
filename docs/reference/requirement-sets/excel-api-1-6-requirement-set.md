@@ -4,8 +4,13 @@ description: 有关 ExcelApi 1.6 要求集的详细信息。
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: d68bfae3494ec21df1eee5909ac2df532a0537b9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745833"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-16"></a>Excel JavaScript API 1.6 的最近更新
 
 ## <a name="conditional-formatting"></a>条件格式
@@ -35,7 +40,7 @@ ms.localizationpriority: medium
 |[CellValueConditionalFormat](/javascript/api/excel/excel.cellvalueconditionalformat)|[format](/javascript/api/excel/excel.cellvalueconditionalformat#excel-excel-cellvalueconditionalformat-format-member)|返回一个 format 对象，该对象封装了条件格式的字体、填充、边框和其他属性。|
 ||[rule](/javascript/api/excel/excel.cellvalueconditionalformat#excel-excel-cellvalueconditionalformat-rule-member)|指定此条件格式的规则对象。|
 |[ColorScaleConditionalFormat](/javascript/api/excel/excel.colorscaleconditionalformat)|[criteria](/javascript/api/excel/excel.colorscaleconditionalformat#excel-excel-colorscaleconditionalformat-criteria-member)|色标的条件。|
-||[threeColorScale](/javascript/api/excel/excel.colorscaleconditionalformat#excel-excel-colorscaleconditionalformat-threecolorscale-member)|如果 `true`为 ，色标的最小 (中点、最大色) 三个点，否则色标将具有 (最小、最大) 。|
+||[threeColorScale](/javascript/api/excel/excel.colorscaleconditionalformat#excel-excel-colorscaleconditionalformat-threecolorscale-member)|如果 `true`为 ，色标的最小 (中点、最大色) ，否则色标将具有 (和最大) 。|
 |[ConditionalCellValueRule](/javascript/api/excel/excel.conditionalcellvaluerule)|[formula1](/javascript/api/excel/excel.conditionalcellvaluerule#excel-excel-conditionalcellvaluerule-formula1-member)|用于计算条件格式规则的公式（如果需要）。|
 ||[formula2](/javascript/api/excel/excel.conditionalcellvaluerule#excel-excel-conditionalcellvaluerule-formula2-member)|用于计算条件格式规则的公式（如果需要）。|
 ||[operator](/javascript/api/excel/excel.conditionalcellvaluerule#excel-excel-conditionalcellvaluerule-operator-member)|单元格值条件格式的运算符。|
@@ -43,13 +48,13 @@ ms.localizationpriority: medium
 ||[midpoint](/javascript/api/excel/excel.conditionalcolorscalecriteria#excel-excel-conditionalcolorscalecriteria-midpoint-member)|色标的中点（如果色标为 3 色色度）。|
 ||[minimum](/javascript/api/excel/excel.conditionalcolorscalecriteria#excel-excel-conditionalcolorscalecriteria-minimum-member)|色标条件的最小点。|
 |[ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion)|[color](/javascript/api/excel/excel.conditionalcolorscalecriterion#excel-excel-conditionalcolorscalecriterion-color-member)|色标颜色格式的 HTML 颜色代码表示 (例如，#FF0000红色) 。|
-||[formula](/javascript/api/excel/excel.conditionalcolorscalecriterion#excel-excel-conditionalcolorscalecriterion-formula-member)|一个数字、公式或 (`null` （ `type` 如果) `lowestValue` ）。|
+||[formula](/javascript/api/excel/excel.conditionalcolorscalecriterion#excel-excel-conditionalcolorscalecriterion-formula-member)|如果为数字，则 (`null` 公式 `type`) `lowestValue` 。|
 ||[type](/javascript/api/excel/excel.conditionalcolorscalecriterion#excel-excel-conditionalcolorscalecriterion-type-member)|条件条件公式应基于什么。|
-|[ConditionalDataBarNegativeFormat](/javascript/api/excel/excel.conditionaldatabarnegativeformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#excel-excel-conditionaldatabarnegativeformat-bordercolor-member)|HTML 颜色代码，表示边框线条的颜色，格式为 #RRGGBB (例如，"FFA500") 或作为已命名的 HTML 颜色 (例如"orange") 。|
+|[ConditionalDataBarNegativeFormat](/javascript/api/excel/excel.conditionaldatabarnegativeformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#excel-excel-conditionaldatabarnegativeformat-bordercolor-member)|HTML 颜色代码，表示边框线条的颜色，格式为 #RRGGBB (例如"FFA500") 或作为已命名的 HTML 颜色 (例如"orange") 。|
 ||[fillColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#excel-excel-conditionaldatabarnegativeformat-fillcolor-member)|表示填充颜色的 HTML 颜色代码，格式为 #RRGGBB (例如"FFA500") 或作为已命名的 HTML 颜色 (例如"orange") 。|
 ||[matchPositiveBorderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#excel-excel-conditionaldatabarnegativeformat-matchpositivebordercolor-member)|指定负数据条是否与正数据条具有相同的边框颜色。|
 ||[matchPositiveFillColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#excel-excel-conditionaldatabarnegativeformat-matchpositivefillcolor-member)|指定负数据条是否与正数据条具有相同的填充颜色。|
-|[ConditionalDataBarPositiveFormat](/javascript/api/excel/excel.conditionaldatabarpositiveformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#excel-excel-conditionaldatabarpositiveformat-bordercolor-member)|HTML 颜色代码，表示边框线条的颜色，格式为 #RRGGBB (例如，"FFA500") 或作为已命名的 HTML 颜色 (例如"orange") 。|
+|[ConditionalDataBarPositiveFormat](/javascript/api/excel/excel.conditionaldatabarpositiveformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#excel-excel-conditionaldatabarpositiveformat-bordercolor-member)|HTML 颜色代码，表示边框线条的颜色，格式为 #RRGGBB (例如"FFA500") 或作为已命名的 HTML 颜色 (例如"orange") 。|
 ||[fillColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#excel-excel-conditionaldatabarpositiveformat-fillcolor-member)|表示填充颜色的 HTML 颜色代码，格式为 #RRGGBB (例如"FFA500") 或作为已命名的 HTML 颜色 (例如"orange") 。|
 ||[gradientFill](/javascript/api/excel/excel.conditionaldatabarpositiveformat#excel-excel-conditionaldatabarpositiveformat-gradientfill-member)|指定数据条是否具有渐变。|
 |[ConditionalDataBarRule](/javascript/api/excel/excel.conditionaldatabarrule)|[formula](/javascript/api/excel/excel.conditionaldatabarrule#excel-excel-conditionaldatabarrule-formula-member)|用于计算数据栏规则（如果需要）的公式。|
@@ -124,7 +129,7 @@ ms.localizationpriority: medium
 ||[axisFormat](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-axisformat-member)|如何为数据条确定坐标轴Excel表示。|
 ||[barDirection](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-bardirection-member)|指定数据条图形应基于的方向。|
 ||[lowerBoundRule](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-lowerboundrule-member)|构成数据栏的下限（以及如何计算，如果适用）的规则。|
-||[negativeFormat](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-negativeformat-member)|数据条中轴左侧的所有值的Excel表示。|
+||[negativeFormat](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-negativeformat-member)|数据条中坐标轴左侧的所有Excel表示。|
 ||[positiveFormat](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-positiveformat-member)|数据条中轴右侧所有值的Excel表示。|
 ||[showDataBarOnly](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-showdatabaronly-member)|如果 `true`为 ，则隐藏应用数据栏的单元格的值。|
 ||[upperBoundRule](/javascript/api/excel/excel.databarconditionalformat#excel-excel-databarconditionalformat-upperboundrule-member)|构成数据栏的上限（以及如何计算，如果适用）的规则。|
@@ -134,7 +139,7 @@ ms.localizationpriority: medium
 ||[style](/javascript/api/excel/excel.iconsetconditionalformat#excel-excel-iconsetconditionalformat-style-member)|如果设置，则显示条件格式的图标集选项。|
 |[PresetCriteriaConditionalFormat](/javascript/api/excel/excel.presetcriteriaconditionalformat)|[format](/javascript/api/excel/excel.presetcriteriaconditionalformat#excel-excel-presetcriteriaconditionalformat-format-member)|返回一个 format 对象，该对象封装了条件格式的字体、填充、边框和其他属性。|
 ||[rule](/javascript/api/excel/excel.presetcriteriaconditionalformat#excel-excel-presetcriteriaconditionalformat-rule-member)|条件格式的规则。|
-|[区域](/javascript/api/excel/excel.range)|[calculate()](/javascript/api/excel/excel.range#excel-excel-range-calculate-member(1))|计算工作表上的单元格区域。|
+|[范围](/javascript/api/excel/excel.range)|[calculate()](/javascript/api/excel/excel.range#excel-excel-range-calculate-member(1))|计算工作表上的单元格区域。|
 ||[conditionalFormats](/javascript/api/excel/excel.range#excel-excel-range-conditionalformats-member)|与区域 `ConditionalFormats` 相交的集合。|
 |[TextConditionalFormat](/javascript/api/excel/excel.textconditionalformat)|[format](/javascript/api/excel/excel.textconditionalformat#excel-excel-textconditionalformat-format-member)|返回一个 format 对象，该对象封装条件格式的字体、填充、边框和其他属性。|
 ||[rule](/javascript/api/excel/excel.textconditionalformat#excel-excel-textconditionalformat-rule-member)|条件格式的规则。|

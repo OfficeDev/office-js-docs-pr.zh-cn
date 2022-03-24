@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理表格
 description: 显示如何使用 JavaScript API 对表执行常见Excel示例。
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a2f383209d8c267757fa39b8a4da539adb24e78e
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: b4ea42468c9cc64682ab02423f7df4813333edc7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340265"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745232"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 

@@ -3,13 +3,18 @@ title: 处理 OneNote 页面内容
 description: 了解如何使用 JavaScript API OneNote页面内容。
 ms.date: 03/19/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: 780e7a23f30482f3f8b52524b7a21339c6e19110
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746013"
 ---
-
 # <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容
 
 在 OneNote 外接程序 JavaScript API 中，页面内容由以下对象模型表示。
 
-  ![OneNote页面对象模型关系图。](../images/one-note-om-page.png)
+  ![OneNote页面对象模型图。](../images/one-note-om-page.png)
 
 - Page 对象包含一组 PageContent 对象。
 - PageContent 对象包含类型为 Outline、Image 或 Other 的内容。
@@ -31,7 +36,7 @@ OneNote 页面的内容和结构由 HTML 进行表示。只有一部分 HTML 可
 
 ## <a name="supported-html"></a>受支持的 HTML
 
-外接程序 OneNote JavaScript API 支持以下 HTML 来创建和更新页面内容。
+加载项OneNote JavaScript API 支持以下 HTML 来创建和更新页面内容。
 
 - `<html>`, `<body>`, `<div>`, `<span>`, `<br/>`
 - `<p>`

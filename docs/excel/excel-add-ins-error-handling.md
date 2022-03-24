@@ -3,12 +3,12 @@ title: JavaScript API Excel错误处理
 description: 了解如何Excel JavaScript API 错误处理逻辑，以考虑运行时错误。
 ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fa03cd9a3ccee9fce1cbb7025baf6c2463ff938d
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 829e8ccc947ffd7997146de1aafaf517fd7ebf06
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340538"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744974"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API Excel错误处理
 

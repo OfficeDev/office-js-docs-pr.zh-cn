@@ -1,13 +1,18 @@
 ---
-title: Outlook加载项 API 要求集 1.9
+title: Outlook外接程序 API 要求集 1.9
 description: 加载项 API 要求集 1.9 Outlook 1.9。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: c98db3909400a01ffa12d75acf4ee3c4a7752bf1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745334"
 ---
+# <a name="outlook-add-in-api-requirement-set-19"></a>Outlook外接程序 API 要求集 1.9
 
-# <a name="outlook-add-in-api-requirement-set-19"></a>Outlook加载项 API 要求集 1.9
-
-Outlook JavaScript API 的 Office API 子集包括可用于加载项的对象、方法、属性和Outlook事件。
+Outlook JavaScript API 的 Office 加载项 API 子集包括可在加载项中Outlook的对象、方法、属性和事件。
 
 > [!NOTE]
 > 本文档适用于最新要求集之外的[要求集](../../requirement-sets/outlook-api-requirement-sets.md)。
