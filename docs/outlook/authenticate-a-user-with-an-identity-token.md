@@ -3,12 +3,12 @@ title: 使用加载项中的标识令牌对用户进行身份验证
 description: 了解如何使用 Outlook 加载项提供的标识令牌对服务实施 SSO。
 ms.date: 10/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f4dd8345de0edaaef333ee2b01890e876e049a6
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 4f2a24bb918cc55527adfb7b789004d3dd15d839
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744622"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484380"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>使用 Exchange 的标识令牌对用户进行身份验证
 
@@ -19,7 +19,7 @@ Exchange 用户标识令牌为加载项提供了一种以唯一的方式标识�
 
 ## <a name="send-the-id-token-with-each-request"></a>通过每个请求发送 ID 令牌
 
-第一步是通过调用 [getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 使加载项获取服务器中的 Exchange 用户标识令牌。 然后加载项通过向后端发出的每个请求发送该令牌。 它可能是在标头中，或在请求正文中。
+第一步是通过调用 [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 使加载项获取服务器中的 Exchange 用户标识令牌。 然后加载项通过向后端发出的每个请求发送该令牌。 它可能是在标头中，或在请求正文中。
 
 ## <a name="validate-the-token"></a>验证令牌
 

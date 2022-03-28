@@ -3,12 +3,12 @@ title: Office 加载项的本地化
 description: 使用 Office JavaScript API 确定区域设置，并基于 Office 应用程序区域设置显示字符串，或者根据数据区域设置解释或显示数据。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 049cf3c8e6f0d498e6d4a0f9ca223499635cd5ab
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: d82b4408f55ee94fe1fe27bfb00b335cb08b85bd
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743408"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483677"
 ---
 # <a name="localization-for-office-add-ins"></a>Office 加载项的本地化
 
@@ -144,9 +144,9 @@ JavaScript API Office提供了两个属性，支持显示或解释与应用程�
 
 ## <a name="localize-extended-overrides"></a>本地化扩展替代
 
-Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托管在服务器上的 JSON 文件进行配置，而不是使用外接程序的 XML 清单进行配置。 本部分假定你熟悉扩展替代。 请参阅 [使用清单和](extended-overrides.md) [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素的扩展替代。
+Office 外接程序的一些扩展性功能（如键盘快捷方式）使用托管在服务器上的 JSON 文件进行配置，而不是使用外接程序的 XML 清单进行配置。 本部分假定你熟悉扩展替代。 请参阅 [使用清单和](extended-overrides.md) [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) 元素的扩展替代。
 
-`ResourceUrl`使用 [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素的 属性Office本地化资源的文件。 示例如下。
+`ResourceUrl`使用 [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) 元素的 属性Office本地化资源的文件。 示例如下。
 
 ```xml
     ...
@@ -493,17 +493,17 @@ UIStrings.js 资源文件创建对象 **UIStrings**，其中包含加载项 UI �
 - [Office 加载项的设计准则](../design/add-in-design.md)
 - [Office 2013 中的语言标识符和 OptionState Id 值](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:         ../reference/manifest/defaultlocale.md
-[说明]:           ../reference/manifest/description.md
-[DisplayName]:           ../reference/manifest/displayname.md
-[IconUrl]:               ../reference/manifest/iconurl.md
-[HighResolutionIconUrl]: ../reference/manifest/highresolutioniconurl.md
-[Resources]:             ../reference/manifest/resources.md
-[SourceLocation]:        ../reference/manifest/sourcelocation.md
-[Override]:              ../reference/manifest/override.md
-[DesktopSettings]:       ../reference/manifest/desktopsettings.md
-[TabletSettings]:        ../reference/manifest/tabletsettings.md
-[PhoneSettings]:         ../reference/manifest/phonesettings.md
+[DefaultLocale]:         /javascript/api/manifest/defaultlocale
+[说明]:           /javascript/api/manifest/description
+[DisplayName]:           /javascript/api/manifest/displayname
+[IconUrl]:               /javascript/api/manifest/iconurl
+[HighResolutionIconUrl]: /javascript/api/manifest/highresolutioniconurl
+[Resources]:             /javascript/api/manifest/resources
+[SourceLocation]:        /javascript/api/manifest/sourcelocation
+[Override]:              /javascript/api/manifest/override
+[DesktopSettings]:       /javascript/api/manifest/desktopsettings
+[TabletSettings]:        /javascript/api/manifest/tabletsettings
+[PhoneSettings]:         /javascript/api/manifest/phonesettings
 [displayLanguage]:       /javascript/api/office/office.context#displayLanguage
 [contentLanguage]:       /javascript/api/office/office.context#contentLanguage
 [RFC 3066]:              https://www.rfc-editor.org/info/rfc3066

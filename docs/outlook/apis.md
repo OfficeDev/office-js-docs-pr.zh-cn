@@ -3,12 +3,12 @@ title: Outlook 加载项 API
 description: 了解如何引用 Outlook 加载项 API 并声明 Outlook 加载项中的权限。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b5b770d36177307989500db89f1f4f8ca859ec
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: dffc494778d02feaedb302a4c42ca843637caa71
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745687"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484294"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook 外接程序 API
 
@@ -48,7 +48,7 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > 对于清单中所指定的要求集版本中的任何 API，无需执行此类检查。
 
-指定支持你的方案的关键 API 集的最低要求集，如果缺少该要求集，加载项的功能将无法工作。 指定 `<Requirements>` 元素的清单中的要求集。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)和[了解 Outlook API 要求集](../reference/requirement-sets/outlook-api-requirement-sets.md)。
+指定支持你的方案的关键 API 集的最低要求集，如果缺少该要求集，加载项的功能将无法工作。 指定 `<Requirements>` 元素的清单中的要求集。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)和[了解 Outlook API 要求集](/javascript/api/requirement-sets/outlook-api-requirement-sets)。
 
 `<Methods>` 元素不适用于 Outlook 加载项，因此，无法声明对特定方法的支持。
 
@@ -63,7 +63,7 @@ if (item.somePropertyOrFunction) {
 | **受限** | 允许使用实体，但不允许使用正则表达式。 |
 | **读取项** | 除了 **受限** 所允许的权限，它还允许：<ul><li>正则表达式</li><li>Outlook 外接程序 API 读取访问</li><li>获取项属性和回调令牌</li></ul> |
 | **读/写** | 除了 **读取项** 所允许的权限，它还允许：<ul><li>Outlook 加载项 API 的完全访问权限，但不包括 `makeEwsRequestAsync`</li><li>设置项属性</li></ul> |
-| **读/写邮箱** | 除了 **读/写** 所允许的权限，它还允许：<ul><li>创建、读取、写入项和文件夹</li><li>发送项目</li><li>调用 [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)</li></ul> |
+| **读/写邮箱** | 除了 **读/写** 所允许的权限，它还允许：<ul><li>创建、读取、写入项和文件夹</li><li>发送项目</li><li>调用 [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
 
 一般情况下，应该指定加载项所需的最小权限。 权限在清单的 `<Permissions>` 元素中声明。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)。 有关安全问题的信息，请参阅 [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)。
 
@@ -74,5 +74,5 @@ if (item.somePropertyOrFunction) {
 ## <a name="see-also"></a>另请参阅
 
 - [Outlook 加载项清单](manifests.md)
-- [了解 Outlook API 要求集](../reference/requirement-sets/outlook-api-requirement-sets.md)
+- [了解 Outlook API 要求集](/javascript/api/requirement-sets/outlook-api-requirement-sets)
 - [Office 加载项的隐私和安全](../concepts/privacy-and-security.md)

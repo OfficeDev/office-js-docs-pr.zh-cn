@@ -3,12 +3,12 @@ title: 单声道样式图标指南Office加载项
 description: 在加载项中使用单Office图标指南。
 ms.date: 03/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 10c6f2d11384a900e994a574f7a567684c5f4054
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8c076bae2efd15cdc927f65804f33096fd6ecacb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743042"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483969"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>单声道样式图标指南Office加载项
 
@@ -197,7 +197,7 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 当文本行位于"容器"中时 (例如，文档中的文本使用) 中灰色。 不在容器中的文本行应为 **深灰色**。
 
-### <a name="text"></a>Text
+### <a name="text"></a>文本
 
 避免在图标中使用文本字符。 由于Office产品已全球使用，我们希望尽可能使图标保持中性语言。
 
@@ -209,7 +209,7 @@ Monoline 图标集内大多数图标都需要背景填充。 但是，在某些�
 
 ## <a name="see-also"></a>另请参阅
 
-- [图标清单元素](../reference/manifest/icon.md)
-- [IconUrl 清单元素](../reference/manifest/iconurl.md)
-- [HighResolutionIconUrl 清单元素](../reference/manifest/highresolutioniconurl.md)
+- [图标清单元素](/javascript/api/manifest/icon)
+- [IconUrl 清单元素](/javascript/api/manifest/iconurl)
+- [HighResolutionIconUrl 清单元素](/javascript/api/manifest/highresolutioniconurl)
 - [创建加载项图标](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

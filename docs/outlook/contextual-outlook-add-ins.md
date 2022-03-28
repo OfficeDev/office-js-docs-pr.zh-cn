@@ -3,12 +3,12 @@ title: 上下文 Outlook 加载项
 description: 无需离开邮件本身即可启用与邮件相关的任务，以此带来更便捷、更丰富的用户体验。
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f343f48f0c49de2b322cb737c5896df2f130ec9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 0f85716feb31284492ae2faba1981d1b1ba12f1c
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747201"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484687"
 ---
 # <a name="contextual-outlook-add-ins"></a>上下文 Outlook 加载项
 
@@ -24,11 +24,11 @@ ms.locfileid: "63747201"
 > [!NOTE]
 > 上下文加载项暂不适用于 Android 版和 iOS 版 Outlook。 今后将推出此功能。
 >
-> 要求集1.6 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> 要求集1.6 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="how-to-make-a-contextual-add-in"></a>如何生成上下文加载项
 
-上下文外接程序的清单必须包含将 `xsi:type` 属性设置为 `DetectedEntity` 的 [ExtensionPoint](../reference/manifest/extensionpoint.md#detectedentity) 元素。 在 **ExtensionPoint** 元素中，该外接程序指定可以激活它的实体或正则表达式。 如果指定实体，则该实体可以是 [Entities](/javascript/api/outlook/office.entities) 对象中的任何属性。
+上下文外接程序的清单必须包含将 `xsi:type` 属性设置为 `DetectedEntity` 的 [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) 元素。 在 **ExtensionPoint** 元素中，该外接程序指定可以激活它的实体或正则表达式。 如果指定实体，则该实体可以是 [Entities](/javascript/api/outlook/office.entities) 对象中的任何属性。
 
 因此，外接程序清单必须包含类型为 **ItemHasKnownEntity** 或 **ItemHasRegularExpressionMatch** 的规则。 以下示例演示如何指定外接程序应在检测到的实体为电话号码的邮件上激活。
 

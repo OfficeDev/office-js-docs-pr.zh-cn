@@ -3,12 +3,12 @@ title: 在 Outlook 外接程序中实现可固定的任务窗格
 description: 用于加载项命令的任务窗格用户体验形状会在打开的邮件或会议请求的右侧打开一个垂直任务窗格，以便用户可以在加载项 UI 中进行更详细的交互。
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e418ba10fa5c0b35406b5b105fd1e97599323bc1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ab14f121c9f4e9ae32fc5b26740da80a0df72ce3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149493"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484154"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>在 Outlook 中实现可固定的任务窗格
 
@@ -17,10 +17,10 @@ ms.locfileid: "59149493"
 不过，默认情况下，如果用户在阅读窗格中为某封邮件打开了外接程序任务窗格，然后选择新邮件，此任务窗格会自动关闭。如果频繁使用外接程序，用户可能更倾向于让此任务窗格一直处于打开状态，这样就无需在每封邮件中都重新激活外接程序了。使用可固定的任务窗格，外接程序就可以让用户如愿以偿。
 
 > [!NOTE]
-> 尽管可固定的任务窗格功能是在要求集[1.5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)中引入的，但它当前仅适用于以下Microsoft 365订阅者：
+> 尽管可固定的任务窗格功能是在要求集 [1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5) 中引入的，但它当前仅适用于以下Microsoft 365订阅者：
 >
 > - Outlook 2016当前或 Office 预览体验成员频道中用户的 Windows (内部版本 7668.2000 或更高版本，延期频道中用户的内部版本 7900.xxxx 或) 
-> - Outlook 2016 16.13.503 (或更高版本的 Mac 版本或更高版本) 
+> - Outlook 2016版本 16.13.503 或更高版本 (Mac 版本或更高版本) 
 > - 新式 Outlook 网页版
 
 > [!IMPORTANT]
@@ -31,9 +31,9 @@ ms.locfileid: "59149493"
 
 ## <a name="support-task-pane-pinning"></a>支持固定任务窗格
 
-第一步是添加固定支持，此步操作是在外接程序[清单](manifests.md)中完成。为此，请向描述任务窗格按钮的 `Action` 元素添加 [ SupportsPinning](../reference/manifest/action.md#supportspinning) 元素。
+第一步是添加固定支持，此步操作是在外接程序[清单](manifests.md)中完成。为此，请向描述任务窗格按钮的 `Action` 元素添加 [ SupportsPinning](/javascript/api/manifest/action#supportspinning) 元素。
 
-由于 `SupportsPinning` 元素是在 VersionOverrides v1.1 架构中进行定义，因此需为 v1.0 和 v1.1 架构包含 [VersionOverrides](../reference/manifest/versionoverrides.md) 元素。
+由于 `SupportsPinning` 元素是在 VersionOverrides v1.1 架构中进行定义，因此需为 v1.0 和 v1.1 架构包含 [VersionOverrides](/javascript/api/manifest/versionoverrides) 元素。
 
 > [!NOTE]
 > 如果计划将 Outlook 加载项 [发布](../publish/publish.md)到 [AppSource](https://appsource.microsoft.com)，那么在使用 **SupportsPinning** 元素时，加载项内容不得为静态，且必须清晰显示与邮箱中打开或选择的邮件相关的数据，才能通过 [AppSource 验证](/legal/marketplace/certification-policies)。
@@ -89,7 +89,7 @@ function itemChanged(eventArgs) {
 
 ### <a name="register-the-event-handler"></a>注册事件处理程序
 
-使用 [Office.context.mailbox.addHandlerAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法注册 `Office.EventType.ItemChanged` 事件的事件处理程序。这步操作应在任务窗格的 `Office.initialize` 函数内完成。
+使用 [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法注册 `Office.EventType.ItemChanged` 事件的事件处理程序。这步操作应在任务窗格的 `Office.initialize` 函数内完成。
 
 ```js
 Office.initialize = function (reason) {

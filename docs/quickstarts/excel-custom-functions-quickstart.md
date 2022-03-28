@@ -1,15 +1,15 @@
 ---
-ms.date: 03/18/2022
+ms.date: 03/23/2022
 description: 在 Excel 中开发自定义函数快速入门指南。
 title: 自定义函数快速入门
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 920575a1976248be2cbc0ad945654cec63f542ab
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: cac81cb25b9880a3057e2246d39ac226666a4cb4
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746401"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404702"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -35,7 +35,7 @@ ms.locfileid: "63746401"
     - **选择脚本类型:** `JavaScript`
     - **要如何命名加载项?** `starcount`
 
-    ![Yeoman Office 加载项生成器命令行界面提示自定义函数项目的屏幕截图。](../images/starcountPrompt.png)
+    :::image type="content" source="../images/starcountPrompt.png" alt-text="Yeoman Office 加载项生成器命令行界面提示自定义函数项目的屏幕截图。":::
 
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
@@ -62,7 +62,7 @@ npm run start:desktop
 ```
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-    
+
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
 若要在Excel 网页版中测试加载项，请运行以下命令。 运行此命令时，本地 Web 服务器将启动。 将 "{url}" 替换为你拥有权限的 OneDrive 或 SharePoint 库上 Excel 文档的 URL。
@@ -84,6 +84,8 @@ npm run start:desktop
 1. 通过在单元格中指定值 `=CONTOSO.ADD(10,200)` 并按 Enter 来运行 `CONTOSO.ADD` 函数，并将数字 `10` 和 `200` 作为输入参数。
 
 `ADD` 自定义函数计算指定为输入参数的两个数字的总和。 键入 `=CONTOSO.ADD(10,200)` 应在按下 Enter 后在单元格中生成结果 **210**。
+
+[!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
 ## <a name="next-steps"></a>后续步骤
 

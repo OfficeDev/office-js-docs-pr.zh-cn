@@ -3,22 +3,22 @@ title: 应用场景 - 为服务实施单一登录
 description: 了解如何使用 Outlook 加载项提供的单一登录令牌和 Exchange 标识令牌为服务实现 SSO。
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a2d73439e7db8cdaf8274bd6b9ad54366c24770
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: cc13b13b0ba3469fe1bfd1a02689f39a28c4b0a6
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073302"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484590"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>应用场景：为 Outlook 加载项中的服务实现单一登录
 
 在本文中，我们将探讨结合使用[单一登录访问令牌](authenticate-a-user-with-an-sso-token.md)和 [Exchange 标识令牌](authenticate-a-user-with-an-identity-token.md)为自己的后端服务提供单一登录实现的建议方法。 通过结合使用这两种令牌，可以在 SSO 访问令牌可用时利用其优势，并在其不可用时确保加载项仍能正常工作（例如，当用户切换到不支持这些令牌的客户端时，或当用户的邮箱位于本地 Exchange 服务器时）。
 
-有关实现本文中的想法的示例外接程序，请参阅Outlook[外接程序 SSO。](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
+有关实现本文中的想法的示例外接程序，请参阅Outlook[外接程序 SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
 
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
+> 目前，Word、Excel、Outlook 和 PowerPoint 支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](/javascript/api/requirement-sets/identity-api-requirement-sets)。
 > 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
 
@@ -83,7 +83,7 @@ Exchange 标识令牌适用于加载项 API 的所有要求集，因此，仅依
 1. 加载项通知用户需要授权其使用 API 并让用户单击一个链接或按钮来启动这一过程。
 
     > [!NOTE]
-    > [Outlook 外接程序 SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)的示例外接程序演示如何使用[对话框 API](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-)和[office-js-helpers](https://github.com/OfficeDev/office-js-helpers)库作为选项来启动 API 的[OAuth2 授权](/azure/active-directory/develop/active-directory-protocols-oauth-code)代码流。
+    > [Outlook 外接程序 SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO) 的示例外接程序演示如何使用[对话框 API](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) 和 [office-js-helpers](https://github.com/OfficeDev/office-js-helpers) 库作为选项来启动 [API 的 OAuth2 授权](/azure/active-directory/develop/active-directory-protocols-oauth-code)代码流。
 
 1. 此流完成后，加载项向后端 Web API 发送刷新令牌并包含 SSO 令牌（如果可用）或 Exchange 标识令牌。
 

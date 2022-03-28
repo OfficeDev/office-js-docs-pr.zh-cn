@@ -3,12 +3,12 @@ title: Outlook 加载项要求
 description: 必须满足服务器和客户端的多个要求，才能正常加载和运行 Outlook 加载项。
 ms.date: 02/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 0946cf6841fd46957b21b0d24698042e8d3fcb8c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 0b163c7c90cd430a4502800e7e39fe474b188a44
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746197"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483458"
 ---
 # <a name="outlook-add-in-requirements"></a>Outlook 加载项要求
 
@@ -44,5 +44,5 @@ ms.locfileid: "63746197"
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项的运行要求](../concepts/requirements-for-running-office-add-ins.md)
-- [Office 客户端应用程序和 Office 加载项的平台可用性（Outlook 部分）](../overview/office-add-in-availability.md#outlook)
-- [Outlook JavaScript API 要求集支持](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+- [Office 客户端应用程序和 Office 加载项的平台可用性（Outlook 部分）](/javascript/api/requirement-sets#outlook)
+- [Outlook JavaScript API 要求集支持](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

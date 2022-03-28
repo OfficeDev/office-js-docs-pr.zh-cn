@@ -1,14 +1,14 @@
 ---
 title: 验证 Office 加载项的清单
 description: 了解如何使用 XML 架构和其他工具Office加载项的清单。
-ms.date: 10/29/2020
+ms.date: 03/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 15d885fbfca96d759c10c556bea3533bc54433db
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 02273647a2e1f639aec7adb260453a811035d7e4
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745667"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404716"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>验证 Office 加载项的清单
 
@@ -29,6 +29,8 @@ npm run validate
 
 > [!NOTE]
 > 若要访问此功能，必须使用 Office 加载项版本 1.1.17 或更高版本的 [Yeoman](../develop/yeoman-generator-overview.md) 生成器创建加载项项目。
+
+[!INCLUDE [validate also runs Office Store validation](../includes/office-store-validate.md)]
 
 ## <a name="validate-your-manifest-with-office-addin-manifest"></a>使用 office-addin-manifest 验证清单
 
@@ -54,6 +56,14 @@ npm run validate
     > ```command&nbsp;line
     > npx office-addin-manifest validate MANIFEST_FILE
     > ```
+
+[!INCLUDE [validate also runs Office Store validation](../includes/office-store-validate.md)]
+
+如果你在使用该命令时遇到问题，请尝试 (清单 `MANIFEST_FILE` 文件的名称替换) 。
+
+```command&nbsp;line
+npx office-addin-manifest validate -p MANIFEST_FILE
+```
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>根据 XML 架构验证清单
 

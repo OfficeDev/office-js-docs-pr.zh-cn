@@ -4,16 +4,16 @@ description: 指定哪些Office和内部版本支持动态功能区 API。
 ms.date: 03/12/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: e399fe14626da2abd688b0e486454908ce1e9f91
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8dc590471433f1a98e6a653cb167bac70e1cbf1a
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746691"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404659"
 ---
 # <a name="ribbon-api-requirement-sets"></a>功能区 API 要求集
 
-要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关详细信息，请参阅 [Office 版本和要求集](../../develop/office-versions-and-requirement-sets.md)。
 
 功能区 API 集支持以编程方式控制自定义外接程序命令 (即自定义功能区按钮和菜单项) 启用和禁用，以及上下文选项卡何时显示在功能区上。
 
@@ -27,7 +27,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 
 | RibbonApi 1.2  | 内部版本 16.0.14326.20454 或更高版本 | 2102 (内部版本 13801.20294)  | 不适用 | 16.53.806.0 | 2021 年 5 月 | 不适用|
 | RibbonApi 1.1  | 内部版本 16.0.14326.20454 或更高版本 | 请参阅支持<br>部分如下 | 不适用 | 16.38 | 2020 年 11 月 | 不适用|
 
-> **&#42;** 功能区 API 仅在 Excel。
+> **&#42;** 功能区 API 仅在应用程序环境中支持生产Excel。 它在 PowerPoint 和 Word 中作为预览提供，但仅在 Office 和 Mac Windows () 中提供。 
 
 ## <a name="support-for-version-11-on-office-on-windows-subscription"></a>支持版本 1.1 on Office on Windows (subscription) 
 
@@ -40,7 +40,7 @@ Office 外接程序在多个 Office 版本中运行。 下表列出了功能区 
 |每月企业频道 | 2004 | 12730.20602 或更大|
 |半年企业频道 | 2002 或更大 | 12527.20880 或更大|
 
-## <a name="more-information"></a>更多信息
+## <a name="more-information"></a>详细信息
 
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 

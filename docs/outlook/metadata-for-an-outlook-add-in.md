@@ -3,8 +3,13 @@ title: 获取和设置 Outlook 加载项中的元数据
 description: 可以使用以下漫游设置或自定义属性，管理 Outlook 加载项中的自定义数据。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: b07322733f741747568fd57a99f03dc2d3e4d3bb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484146"
 ---
-
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>获取和设置 Outlook 加载项的元数据
 
 您可以通过使用以下任一项管理 Outlook 外接程序中的自定义数据：
@@ -109,11 +114,11 @@ function removeAddInSetting()
 
 与漫游设置类似，对自定义属性的更改将存储在当前 Outlook 会话的属性的内存副本中。为确保这些自定义属性在下次会话中可用，请使用 [CustomProperties.saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1))。
 
-这些特定于加载项、特定于项目的自定义属性只能使用 对象 `CustomProperties` 访问。 这些属性不同于 Outlook 对象模型中基于 MAPI 的自定义 [UserProperties](/office/vba/api/Outlook.UserProperties)，以及 Exchange Web 服务 (EWS) 。 不能通过使用对象`CustomProperties`模型、EWS 或 REST Outlook直接访问。 若要了解如何使用 `CustomProperties` EWS 或 REST 访问，请参阅使用 [EWS 或 REST 获取自定义属性一节](#get-custom-properties-using-ews-or-rest)。
+这些特定于加载项、特定于项目的自定义属性只能使用 对象 `CustomProperties` 访问。 这些属性不同于 Outlook 对象模型中基于 MAPI 的自定义 [UserProperties](/office/vba/api/Outlook.UserProperties)，以及 Exchange Web 服务 (EWS) 。 您不能通过使用对象`CustomProperties`模型、EWS 或 REST Outlook直接访问。 若要了解如何使用 `CustomProperties` EWS 或 REST 访问，请参阅使用 [EWS 或 REST 获取自定义属性一节](#get-custom-properties-using-ews-or-rest)。
 
 ### <a name="using-custom-properties"></a>使用自定义属性
 
-使用自定义属性之前，必须通过调用 [loadCustomPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法加载这些自定义属性。 创建属性包后，可以使用 [set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) 和 [get](/javascript/api/outlook/office.customproperties) 方法添加和检索自定义属性。 必须使用 [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) 方法才能保存对属性包所做的任何更改。
+使用自定义属性之前，必须通过调用 [loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 方法加载这些自定义属性。 创建属性包后，可以使用 [set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) 和 [get](/javascript/api/outlook/office.customproperties) 方法添加和检索自定义属性。 必须使用 [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) 方法才能保存对属性包所做的任何更改。
 
 
  > [!NOTE]
@@ -192,11 +197,11 @@ function saveCallback() {
 
 #### <a name="how-custom-properties-are-stored-on-an-item"></a>如何存储项的自定义属性
 
-通过加载项设置的自定义属性并不等同于常规的基于 MAPI 的属性。 外接程序 API `CustomProperties` 将所有外接程序序列化为 JSON 有效负载，然后将它们保存在一个基于 MAPI `cecp-<app-guid>` 的扩展属性中，其名称为 (`<app-guid>` 是外接程序的 ID) 且属性集 GUID 为 `{00020329-0000-0000-C000-000000000046}`。 （有关此对象的详细信息，请参阅 [MS-OXCEXT 2.2.5 邮件应用程序自定义属性](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481)。）随后可使用 EWS 或 REST 获取此基于 MAPI 的属性。
+通过加载项设置的自定义属性并不等同于常规的基于 MAPI 的属性。 外接程序 API `CustomProperties` 将序列化所有外接程序作为 JSON 有效负载，然后将它们保存在一个基于 MAPI `cecp-<app-guid>` 的扩展属性中，其名称为 (`<app-guid>` 是外接程序的 ID) 且属性集 GUID 为 `{00020329-0000-0000-C000-000000000046}`。 （有关此对象的详细信息，请参阅 [MS-OXCEXT 2.2.5 邮件应用程序自定义属性](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481)。）随后可使用 EWS 或 REST 获取此基于 MAPI 的属性。
 
 #### <a name="get-custom-properties-using-ews"></a>使用 EWS 获取自定义属性
 
-您的邮件外接程序可以使用 `CustomProperties` EWS [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作获取基于 MAPI 的扩展属性。 使用 `GetItem` 回调令牌访问服务器端，或在客户端使用 [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法访问。 在请求 `GetItem` 中，使用 `CustomProperties` 上一节如何存储项目的自定义属性中提供的详细信息，在其属性集内指定基于 MAPI [的属性](#how-custom-properties-are-stored-on-an-item)。
+您的邮件外接程序可以使用 `CustomProperties` EWS [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作获取基于 MAPI 的扩展属性。 使用 `GetItem` 回调令牌访问服务器端，或在客户端使用 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法访问。 在请求 `GetItem` 中，使用 `CustomProperties` 上一节如何存储项目的自定义属性中提供的详细信息，在其属性集内指定基于 MAPI [的属性](#how-custom-properties-are-stored-on-an-item)。
 
 以下示例显示如何获取某个项目及其自定义属性。
 

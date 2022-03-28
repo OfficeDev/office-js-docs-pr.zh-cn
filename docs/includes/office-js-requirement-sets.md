@@ -2,4 +2,4 @@
 
 加载项可使用要求集来确定 Office 应用程序是否支持需要使用的 API 成员。 有关详细信息，请参阅[指定 Office 应用程序和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。
 
-要求集支持因 Office 应用程序、版本和平台而异。有关每个 Office 应用程序支持的平台、要求集和通用 API 的详细信息，请参阅 [适用于 Office 加载项的 Office 客户端应用程序和平台可用性](../overview/office-add-in-availability.md)。
+要求集支持因 Office 应用程序、版本和平台而异。有关每个 Office 应用程序支持的平台、要求集和通用 API 的详细信息，请参阅 [适用于 Office 加载项的 Office 客户端应用程序和平台可用性](/javascript/api/requirement-sets)。

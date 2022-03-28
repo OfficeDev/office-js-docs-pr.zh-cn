@@ -3,8 +3,13 @@ title: 从 Outlook 项中提取实体字符串
 description: 了解如何从 Outlook 加载项中的某个 Outlook 项中提取实体字符串。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: 3270409dcd24cb0cde4f0e7693400e49efb5c868
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484479"
 ---
-
 # <a name="extract-entity-strings-from-an-outlook-item"></a>从 Outlook 项中提取实体字符串
 
 本文介绍了如何创建“**显示实体**”Outlook 加载项，以从选定 Outlook 项的主题和正文中提取受支持的已知实体的字符串实例。此项可以是约会、电子邮件、会议请求、会议响应或会议取消。
@@ -94,7 +99,7 @@ xsi:type="MailApp">
 
 实体外接程序的 HTML 文件为用户指定按钮以选择每种类型的实体，另外还指定另一个按钮以清除显示的实体实例。它包括 JavaScript 文件 default_entities.js，这在下一节的 [JavaScript 实现](#javascript-implementation)中进行介绍。JavaScript 文件包括其中每个按钮的事件处理程序。
 
-请注意，所有 Outlook 外接程序都必须包含 office.js。 以下 HTML 文件包括内容传送网络传输office.js版本 1.1 (CDN) 。
+请注意，所有 Outlook 外接程序都必须包含 office.js。 以下 HTML 文件包括内容交付网络传输office.js版本 1.1 (CDN) 。
 
 ```html
 <!DOCTYPE html>
@@ -200,7 +205,7 @@ div#meeting_suggestions
 
 ## <a name="extracting-entities-upon-initialization"></a>初始化时提取实体
 
-[Office.initialize](/javascript/api/office#Office_initialize_reason_) 事件发生时，实体外接程序调用当前项目的 [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法。 方法 `getEntities` 返回全局变量 `_MyEntities` 受支持实体的实例数组。 以下为相关的 JavaScript 代码。
+[Office.initialize](/javascript/api/office#Office_initialize_reason_) 事件发生时，实体外接程序调用当前项目的 [getEntities](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 方法。 方法 `getEntities` 返回全局变量 `_MyEntities` 受支持实体的实例数组。 以下为相关的 JavaScript 代码。
 
 
 ```js
@@ -253,7 +258,7 @@ function myGetAddresses()
 ## <a name="extracting-contact-information"></a>提取联系人信息
 
 
-当用户单击"**获取**`myGetContacts`联系人信息"按钮时，事件处理程序从对象的 [contacts](/javascript/api/outlook/office.entities#outlook-office-entities-contacts-member) `_MyEntities` 属性获取一组联系人及其信息（如果已提取任何联系人）。 每个提取的联系人在数组中被存储为 [Contact](/javascript/api/outlook/office.contact) 对象。 获取有关每个联系人的更多数据。 &mdash;请注意，上下文确定Outlook是否可以从电子邮件末尾的项签名中提取联系人，或者联系人附近至少必须存在以下部分信息。
+当用户单击"**获取**`myGetContacts`联系人信息"按钮时，事件处理程序从对象的 [contacts](/javascript/api/outlook/office.entities#outlook-office-entities-contacts-member) `_MyEntities` 属性获取一组联系人及其信息（如果已提取任何联系人）。 每个提取的联系人在数组中被存储为 [Contact](/javascript/api/outlook/office.contact) 对象。 获取有关每个联系人的更多数据。 请注意，上下文确定 Outlook是否可以从电子邮件末尾的 itema&mdash; 签名中提取联系人，或者联系人附近至少必须存在以下部分信息。
 
 
 - 表示 [Contact.personName](/javascript/api/outlook/office.contact#outlook-office-contact-personname-member) 属性中联系人名称的字符串。
@@ -825,4 +830,4 @@ function myGetUrls()
 
 - [创建适用于阅读窗体的 Outlook 加载项](read-scenario.md)
 - [将 Outlook 项目中的字符串作为已知实体进行匹配](match-strings-in-an-item-as-well-known-entities.md)
-- [item.getEntities 方法](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [item.getEntities 方法](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)

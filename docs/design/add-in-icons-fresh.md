@@ -3,12 +3,12 @@ title: 适用于外接程序的Office样式图标指南
 description: 有关在外接程序中Office样式图标的指南。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d2a78a72ea2540b297821323e0337d3a1ddcd4
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: aa5e93eeced9a2accb6ad9f1f6dc32a72f9386e7
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743097"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483545"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>适用于外接程序的Office样式图标指南
 
@@ -132,7 +132,7 @@ Office 图标设计为在高对比度模式中完美呈现。 前景元素与最
 
 ## <a name="see-also"></a>另请参阅
 
-- [图标清单元素](../reference/manifest/icon.md)
-- [IconUrl 清单元素](../reference/manifest/iconurl.md)
-- [HighResolutionIconUrl 清单元素](../reference/manifest/highresolutioniconurl.md)
+- [图标清单元素](/javascript/api/manifest/icon)
+- [IconUrl 清单元素](/javascript/api/manifest/iconurl)
+- [HighResolutionIconUrl 清单元素](/javascript/api/manifest/highresolutioniconurl)
 - [创建加载项图标](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

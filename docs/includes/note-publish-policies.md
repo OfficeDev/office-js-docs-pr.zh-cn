@@ -1,2 +1,2 @@
 > [!NOTE]
-> 如果计划将加载项 [发布](../publish/publish.md) 到 AppSource 并使其在 Office 体验中可用，请务必确保遵循 [商业市场认证策略](/legal/marketplace/certification-policies)。例如，要通过验证，加载项必须适用于支持已定义方法的所有平台（有关详细信息，请参阅 [第 1120.3 部分](/legal/marketplace/certification-policies#11203-functionality) 以及 [Office 加载项应用程序和可用性页面](../overview/office-add-in-availability.md)）。
+> 如果计划将加载项 [发布](../publish/publish.md) 到 AppSource 并使其在 Office 体验中可用，请务必确保遵循 [商业市场认证策略](/legal/marketplace/certification-policies)。例如，要通过验证，加载项必须适用于支持已定义方法的所有平台（有关详细信息，请参阅 [第 1120.3 部分](/legal/marketplace/certification-policies#11203-functionality) 以及 [Office 加载项应用程序和可用性页面](/javascript/api/requirement-sets)）。

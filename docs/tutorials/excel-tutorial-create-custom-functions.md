@@ -1,15 +1,15 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流式传输 Web 数据的自定义函数。
-ms.date: 03/18/2022
+ms.date: 03/23/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: c6121b4d2041e04cdd5c978b1d8d2a1ba6f5cf5a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 984a2090a70360af4f361bb531190a7ee2a05c4c
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745575"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404728"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -44,7 +44,7 @@ ms.locfileid: "63745575"
     - **选择脚本类型:** `JavaScript`
     - **要如何命名加载项?** `starcount`
 
-    ![Yeoman Office 加载项生成器命令行界面提示自定义函数项目的屏幕截图。](../images/starcountPrompt.png)
+    :::image type="content" source="../images/starcountPrompt.png" alt-text="Yeoman Office 加载项生成器命令行界面提示自定义函数项目的屏幕截图。":::
 
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
@@ -63,7 +63,7 @@ ms.locfileid: "63745575"
     ```
 
     > [!NOTE]
-    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。 如果系统在运行 `npm run build` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
+    > Office 加载项应使用 HTTPS，而不是 HTTP（即便是在开发时也是如此）。如果系统在运行 `npm run build` 后提示你安装证书，请接受提示以安装 Yeoman 生成器提供的证书。
 
 1. 启动在 Node.js 中运行的本地 Web 服务器。 可以在 Excel 中试用自定义函数加载项。
 
@@ -98,6 +98,8 @@ npm run start:desktop
 1. 通过在单元格中指定值 `=CONTOSO.ADD(10,200)` 并按 Enter 来运行 `CONTOSO.ADD` 函数，并将数字 `10` 和 `200` 作为输入参数。
 
 `ADD` 自定义函数将计算你提供的两个数字的总和，并返回结果 **210**。
+
+[!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>创建从 Web 请求数据的自定义函数
 
@@ -145,14 +147,19 @@ npm run start:desktop
 
 1. 关闭 Excel，然后重新打开 Excel。
 
-1. 在 Excel 中，选择“**插入**”选项卡，然后选择位于“**我的加载项**”右侧的向下箭头。![ Windows 版 Excel 中“插入”功能区的屏幕截图，突出显示“我的加载项”下箭头。](../images/select-insert.png)
+1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**我的外接程序**”右侧的向下箭头。
+
+    :::image type="content" source="../images/select-insert.png" alt-text="Windows 上 Excel 中插入功能区的屏幕截图，其中突出显示了“我的外接程序”向下箭头。":::
 
 1. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择“**starcount**”加载项进行注册。
-    ![ Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项。](../images/list-starcount.png)
+
+    :::image type="content" source="../images/list-starcount.png" alt-text=" Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项。":::
 
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
-1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。![ Excel 网页版中“插入”功能区的屏幕截图，突出显示“我的加载项”按钮。](../images/excel-cf-online-register-add-in-1.png)
+1. 在 Excel 中，选择“**插入**”选项卡，然后选择“**加载项**”。
+
+    :::image type="content" source="../images/excel-cf-online-register-add-in-1.png" alt-text="Excel 网页版中插入功能区的屏幕截图，突出显示“我的加载项”按钮。":::
 
 1. 选择“管理我的加载项”，然后选择“上载我的加载项”。
 
@@ -160,7 +167,7 @@ npm run start:desktop
 
 1. 依次选择文件“manifest.xml”，“打开”，然后选择“上载”。
 
-5. 尝试使用新函数。 在单元格 **B1** 中，键入文本 **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")**，然后按 Enter。 你会看到，单元格 **B1** 中的结果便是 [Excel-Custom-Functions Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)所获得的星星的当前数目。
+1. 尝试使用新函数。 在单元格 **B1** 中，键入文本 **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")**，然后按 Enter。 你会看到，单元格 **B1** 中的结果便是 [Excel-Custom-Functions Github 存储库](https://github.com/OfficeDev/Excel-Custom-Functions)所获得的星星的当前数目。
 
 ---
 

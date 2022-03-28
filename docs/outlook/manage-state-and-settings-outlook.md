@@ -3,14 +3,19 @@ title: 管理加载项的状态Outlook设置
 description: 了解如何保留加载项的加载项状态Outlook设置。
 ms.date: 05/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 896c473baad95515b199d8934c81745c619374a0
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484675"
 ---
-
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>管理加载项的状态Outlook设置
 
 > [!NOTE]
 > 阅读[本文之前，请查看](../develop/persisting-add-in-state-and-settings.md)本文档的核心概念部分中的保留加载项状态和设置。
 
-对于Outlook外接程序，Office JavaScript API 提供了 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 和 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象，用于跨会话保存外接程序状态，如下表所述。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
+对于Outlook，Office JavaScript API 提供了 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 和 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象，用于跨会话保存外接程序状态，如下表所述。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](/javascript/api/manifest/id) 相关联。
 
 |**对象**|**存储位置**|
 |:-----|:-----|

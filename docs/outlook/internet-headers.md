@@ -1,15 +1,20 @@
 ---
 title: 获取和设置 Internet 标头
-description: 如何获取和设置外接程序中邮件Outlook Internet 标头。
+description: 如何获取和设置加载项中邮件的Outlook标头。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: ddbb555f8901e1b244fb3e30682d73c21928963e
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483998"
 ---
-
-# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>在加载项中获取和设置Outlook的 Internet 标头
+# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>在加载项中获取和设置Outlook邮件头
 
 ## <a name="background"></a>背景
 
-加载项开发Outlook一个常见要求是，在不同级别存储与加载项关联的自定义属性。 目前，自定义属性存储在项目或邮箱级别。
+在外接程序Outlook中的一个常见要求是，在不同级别存储与外接程序关联的自定义属性。 目前，自定义属性存储在项目或邮箱级别。
 
 - 项目级别 - 对于应用于特定项目的属性，请使用 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象。 例如，存储与发送电子邮件的人相关联的客户代码。
 - 邮箱级别 - 对于适用于用户邮箱中所有邮件项目的属性，请使用 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 对象。 例如，存储用户的首选项以以特定刻度显示温度。
@@ -23,7 +28,7 @@ ms.localizationpriority: medium
 
 ## <a name="purpose-of-the-internet-headers-api"></a>Internet 标头 API 的用途
 
-要求 [集 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) 中引入了 Internet 标头 API，开发人员可以：
+要求 [集 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) 中引入了 Internet 标头 API，开发人员可以：
 
 - 标记电子邮件在离开所有客户端后Exchange的信息。
 - 在邮件阅读方案中，阅读电子邮件离开Exchange保留的电子邮件的信息。
@@ -136,7 +141,7 @@ Sender's preferred vegetable: broccoli
 在外接程序中创建 Internet 标头时，请应用以下准则。
 
 - 创建所需的最小标头数。
-- 命名标头，以便以后可以重复使用和更新其值。 因此，避免以可变方式命名标头 (，例如，根据用户输入、时间戳等) 。
+- 命名标头，以便以后可以重复使用和更新其值。 因此，避免以可变 (命名标头，例如，根据用户输入、时间戳等) 。
 
 ## <a name="see-also"></a>另请参阅
 

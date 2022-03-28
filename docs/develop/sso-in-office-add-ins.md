@@ -3,12 +3,12 @@ title: 在 Office 加载项中启用单一登录 (SSO)
 description: 了解使用常用的 Microsoft 个人、工作或教育帐户为 Office 加载项启用单一登录 (SSO) 的关键步骤。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aec2e9affa1037638fad07192e9d6b69e3f158d9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 50adb80137cc01db2ee0f36587e1b7a4cc359237
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744257"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483603"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>在 Office 加载项中启用单一登录 (SSO)
 
@@ -107,7 +107,7 @@ ms.locfileid: "63744257"
 
 ### <a name="include-the-identity-api-requirement-set"></a>包括标识 API 要求集
 
-若要使用 SSO，加载项需要标识 API 1.3 要求集。有关详细信息，请参阅 [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)。
+若要使用 SSO，加载项需要标识 API 1.3 要求集。有关详细信息，请参阅 [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)。
 
 ### <a name="add-client-side-code"></a>添加客户端代码
 
@@ -248,4 +248,4 @@ $.ajax({
 
 - [Microsoft 标识平台文档](/azure/active-directory/develop/)
 - [要求集](specify-office-hosts-and-api-requirements.md)
-- [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)
+- [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)

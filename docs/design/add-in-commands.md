@@ -3,12 +3,12 @@ title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
 ms.date: 12/13/2021
 ms.localizationpriority: high
-ms.openlocfilehash: f5acefe4023a37e04b56cc6e27346965a6e39774
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 620452cee57532eee02c72d32dcbd4854b3ae909
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742812"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483403"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
@@ -125,4 +125,4 @@ ms.locfileid: "63742812"
 
 加载项命令的最佳入门方式是参照 GitHub 上的 [Office 加载项命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/)。
 
-若要详细了解如何在清单中指定加载项命令，请参阅[在清单中创建加载项命令](../develop/create-addin-commands.md)和 [VersionOverrides](../reference/manifest/versionoverrides.md) 参考内容。
+若要详细了解如何在清单中指定加载项命令，请参阅[在清单中创建加载项命令](../develop/create-addin-commands.md)和 [VersionOverrides](/javascript/api/manifest/versionoverrides) 参考内容。

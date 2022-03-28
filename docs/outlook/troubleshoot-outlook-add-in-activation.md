@@ -3,8 +3,13 @@ title: Outlook 上下文加载项激活故障排查
 description: 外接程序未按预期激活的可能原因。
 ms.date: 09/02/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: d5f52f9697b33711a69a9d07b831229a26c7d450
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484557"
 ---
-
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook 加载项激活故障排查
 
 Outlook上下文外接程序激活基于外接程序清单中的激活规则。 当当前所选项目的条件满足外接程序的激活规则时，应用程序将在适用于撰写外接程序的 Outlook UI (外接程序选择窗格中激活并显示外接程序按钮，阅读外接程序的外接程序栏) 。 但是，如果你的外接程序未按预期激活，则应调查以下方面，确定可能的原因。
@@ -65,18 +70,18 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 如果你的 Outlook 加载项为阅读加载项，并且应该在用户查看消息（包括电子邮件、会议请求、响应和取消）或约会时激活，尽管这些项目通常支持加载项，但还是存在例外情况。 检查所选的项目是否是 [Outlook 加载项未激活列表](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)中的一项。
 
-此外，由于约会始终以 RTF 格式保存，因此指定 [BodyAsHTML](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) 的 **PropertyName** 值的 **ItemHasRegularExpressionMatch** 规则不会对以纯文本或 RTF 格式保存的约会或邮件激活加载项。
+此外，由于约会始终以 RTF 格式保存，因此指定 [BodyAsHTML](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) 的 **PropertyName** 值的 **ItemHasRegularExpressionMatch** 规则不会对以纯文本或 RTF 格式保存的约会或邮件激活加载项。
 
 即使某邮件项不是以上类型之一，如果该项不是使用至少为 Exchange 2013 的某个版本的 Exchange Server 传递，则不会在该项上确定已知实体和属性（如发件人的 SMTP 地址）。依赖这些实体或属性的任何激活规则将不会得到满足，并且加载项将不会激活。
 
 如果您的加载项为撰写加载项并且应该在用户撰写邮件或会议请求时激活，请确保该项目未受 IRM 保护。 但是，有一些例外情况。
 
 1. 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
-1. 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。  有关预览版中此支持的详细信息，请参阅外接程序激活受信息权限管理 ([IRM ](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)) 。
+1. 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。  有关预览版中的此支持的详细信息，请参阅受信息权限管理中心 [IRM (保护 ](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm)) 。
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>加载项清单是否安装正确，Outlook 是否有已缓存副本？
 
-此方案仅适用于Outlook Windows。 正常情况下，为邮箱安装 Outlook 外接程序时，Exchange Server 会将外接程序清单从你指示的位置复制到该 Exchange Server 上的邮箱。 每次启动Outlook，它会将为此邮箱安装的所有清单读取到以下位置的临时缓存中。
+此方案仅适用于Outlook Windows。 正常情况下，为邮箱安装 Outlook 外接程序时，Exchange Server 会将外接程序清单从你指示的位置复制到该 Exchange Server 上的邮箱。 每次Outlook时，它会将为此邮箱安装的所有清单读取到以下位置的临时缓存中。
 
 ```text
 %LocalAppData%\Microsoft\Office\16.0\WEF
@@ -142,7 +147,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
         然后，跳过本节的其余部分，并考虑本节后面的其他可能原因。
 
-1. 如果未看到成功事件，请关闭Outlook，并删除以下路径的所有清单。
+1. 如果未看到成功事件，请关闭Outlook并删除以下路径中的所有清单。
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
@@ -158,7 +163,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 ## <a name="are-you-using-the-appropriate-activation-rules"></a>使用的激活规则是否合适？
 
-自 Office 加载项清单架构的版本 1.1 起，你可以创建当用户位于撰写窗体（撰写加载项）或阅读窗体（阅读加载项）中时激活的加载项。确保为加载项将在其中激活的每种窗体类型指定相应的激活规则。例如，你可以仅使用 [ItemIs](../reference/manifest/rule.md#itemis-rule) 规则（**FormType** 属性设置为 **Edit** 或 **ReadOrEdit**）激活撰写加载项，你无法使用任何其他类型的规则，例如用于撰写加载项的 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 和 [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) 规则。有关详细信息，请参阅 [Outlook 加载项的激活规则](activation-rules.md)。
+自 Office 加载项清单架构的版本 1.1 起，你可以创建当用户位于撰写窗体（撰写加载项）或阅读窗体（阅读加载项）中时激活的加载项。确保为加载项将在其中激活的每种窗体类型指定相应的激活规则。例如，你可以仅使用 [ItemIs](/javascript/api/manifest/rule#itemis-rule) 规则（**FormType** 属性设置为 **Edit** 或 **ReadOrEdit**）激活撰写加载项，你无法使用任何其他类型的规则，例如用于撰写加载项的 [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) 和 [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) 规则。有关详细信息，请参阅 [Outlook 加载项的激活规则](activation-rules.md)。
 
 ## <a name="if-you-use-a-regular-expression-is-it-properly-specified"></a>如果使用正则表达式，该表达式的指定是否正确？
 
@@ -230,9 +235,9 @@ Outlook 富客户端使用的正则表达式引擎与 Outlook 网页版和移动
 
 验证属性值后，即可使用正则表达式评估工具来测试正则表达式是否在该值中找到匹配项。
 
-## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>是否Outlook所有正则表达式都应用到项目正文部分？。
+## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>是否Outlook如你预期一样将所有正则表达式应用到项目正文部分？
 
-本节适用于使用正则表达式的所有激活规则，尤其是应用于项目正文的那些规则，这些规则可能较大，需要较长时间才能对匹配项进行评估。 您应该知道，即使激活规则所依赖的项目属性具有您期望的值，Outlook也可能无法计算项目属性的整个值上的所有正则表达式。 为了提供合理的性能并控制阅读外接程序的过多资源使用率，Outlook遵循以下有关运行时处理激活规则中的正则表达式的限制。
+本节适用于使用正则表达式的所有激活规则，尤其是应用于项目正文的那些规则，这些规则可能较大，需要较长时间才能对匹配项进行评估。 您应该知道，即使激活规则所依赖的项目属性具有您期望的值，Outlook也可能无法计算项目属性的整个值上的所有正则表达式。 为了提供合理的性能并控制读取外接程序的过多资源使用率，Outlook遵循以下有关运行时处理激活规则中的正则表达式的限制。
 
 - 评估的项目正文的大小 -- 项目正文中用于计算正则表达式Outlook部分存在限制。 这些限制取决于Outlook正文的客户端、外形和格式。 请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 中表 2 中的详细信息。
 

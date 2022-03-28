@@ -4,12 +4,12 @@ description: 学习如何在Microsoft Excel中的自定义函数和任务窗格�
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8bc2ea45588c7e10cd4fbd2fc32ff88a6c3233a2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 7ff1c7cf217e855eb8c9d208ae7d3ca4deca0659
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746476"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484135"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
@@ -33,7 +33,7 @@ ms.locfileid: "63746476"
 
 1. 启动 Visual Studio Code 并打开生成的加载项项目。
 1. 打开 **manifest.xml** 文件。
-1. 替换（或添加）以下 `<Requirements>` 部分 XML，以要求 [共享运行时要求集](../reference/requirement-sets/shared-runtime-requirement-sets.md)。
+1. 替换（或添加）以下 `<Requirements>` 部分 XML，以要求 [共享运行时要求集](/javascript/api/requirement-sets/shared-runtime-requirement-sets)。
 
     ```xml
     <Requirements>
@@ -80,7 +80,7 @@ ms.locfileid: "63746476"
     ```
     
     > [!NOTE]
-    > 如果加载项包含清单中的 `Runtimes` 元素（共享运行时所需），并且满足将 Microsoft Edge 与 WebView2（基于 Chromium）一起使用的条件，则它使用该 WebView2 控件。 如果不满足条件，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅 [运行时](../reference/manifest/runtimes.md) 和 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+    > 如果加载项包含清单中的 `Runtimes` 元素（共享运行时所需），并且满足将 Microsoft Edge 与 WebView2（基于 Chromium）一起使用的条件，则它使用该 WebView2 控件。 如果不满足条件，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅 [运行时](/javascript/api/manifest/runtimes) 和 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 1. 查找 `<Page>` 元素。然后将源位置从 **Functions.Page.Url** 更改为 **Taskpane.Url**。
 

@@ -3,20 +3,25 @@ title: 从 Outlook 加载项使用 Outlook REST API
 description: 了解如何从 Outlook 加载项使用 Outlook REST API 获得访问令牌。
 ms.date: 07/06/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 063a819ccb7f71351e0eec8cef1702d98c8466b0
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483380"
 ---
-
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>从 Outlook 加载项使用 Outlook REST API
 
-[Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 命名空间提供访问许多邮件和约会的公用字段的权限。但是，在某些方案中，外接程序可能需要访问命名空间未公开的数据。例如，外接程序可能依赖于外部应用设置的自定义属性，或需要搜索用户邮箱中来自同一发件人的邮件。在这些方案中，[Outlook REST API](/outlook/rest) 是推荐的检索信息的方法。
+[Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) 命名空间提供访问许多邮件和约会的公用字段的权限。但是，在某些方案中，外接程序可能需要访问命名空间未公开的数据。例如，外接程序可能依赖于外部应用设置的自定义属性，或需要搜索用户邮箱中来自同一发件人的邮件。在这些方案中，[Outlook REST API](/outlook/rest) 是推荐的检索信息的方法。
 
 > [!IMPORTANT]
 > **已Outlook REST API**
 >
-> 有关Outlook，REST 终结点将于 2022 年 11 月 (完全停用，请参阅 [2020 年 11](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/) 月发布的) 。 应迁移现有外接程序以使用 [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph)。 此外，[比较 Microsoft Graph 和 Outlook REST API 终结点](/outlook/rest/compare-graph)。
+> 有关Outlook的详细信息，请参阅 2020 年 11 月发布的 ([2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/) 年 11 月发布的) 。 应迁移现有外接程序以使用 [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph)。 此外，[比较 Microsoft Graph 和 Outlook REST API 终结点](/outlook/rest/compare-graph)。
 
 ## <a name="get-an-access-token"></a>获取访问令牌
 
-Outlook REST API 需要 `Authorization` 标头中的持有者令牌。应用通常使用 OAuth2 流检索令牌。不过，加载项也可以使用邮箱要求集 1.5 中引入的新 [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法检索令牌，而无需实现 OAuth2。
+Outlook REST API 需要 `Authorization` 标头中的持有者令牌。应用通常使用 OAuth2 流检索令牌。不过，加载项也可以使用邮箱要求集 1.5 中引入的新 [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法检索令牌，而无需实现 OAuth2。
 
 通过将 `isRest` 选项设置为 `true`，可以请求获取与 REST API 兼容的令牌。
 
@@ -43,10 +48,10 @@ Office.context.mailbox.getCallbackTokenAsync({isRest: true}, function(result){
 
 ## <a name="get-the-item-id"></a>获取项 ID
 
-加载项需要针对 REST 正确设置格式的项 ID，才能通过 REST 检索当前项。 这可从 [Office.context.mailbox.item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性获取，但应进行一些检查，以确保它是针对 REST 正确设置格式的 ID。
+加载项需要针对 REST 正确设置格式的项 ID，才能通过 REST 检索当前项。 这可从 [Office.context.mailbox.item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 属性获取，但应进行一些检查，以确保它是针对 REST 正确设置格式的 ID。
 
 - 在 Outlook Mobile 中，由 `Office.context.mailbox.item.itemId` 返回的值是适用于 REST 格式的 ID 并可按原样使用。
-- 在其他 Outlook 客户端中，由 `Office.context.mailbox.item.itemId` 返回的值是适用于 EWS 格式的 ID，且必须使用 [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法进行转换。
+- 在其他 Outlook 客户端中，由 `Office.context.mailbox.item.itemId` 返回的值是适用于 EWS 格式的 ID，且必须使用 [Office.context.mailbox.convertToRestId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法进行转换。
 - 请注意，还必须将附件 ID 转换为带 REST 格式的 ID，才能使用它。 必须转换 ID 的原因是，EWS ID 可能包含非 URL 安全值，这会导致 REST 问题出现。
 
 通过检查 [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostname-member) 属性，加载项可以确定它所加载的是哪个 Outlook 客户端。
@@ -70,7 +75,7 @@ function getItemRestId() {
 
 ## <a name="get-the-rest-api-url"></a>获取 REST API URL
 
-外接程序调用 REST API 所需的最后一部分信息是其发送 API 请求应使用的主机名。此信息在 [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) 属性中。
+外接程序调用 REST API 所需的最后一部分信息是其发送 API 请求应使用的主机名。此信息在 [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) 属性中。
 
 ### <a name="example"></a>示例
 
@@ -84,7 +89,7 @@ var restHost = Office.context.mailbox.restUrl;
 有访问令牌、项 ID 和 REST API URL 后，加载项可以将这些信息传递到调用 REST API 的后端服务，也可以使用 AJAX 直接调用 API。 下面的示例展示了如何调用 Outlook 邮件 REST API 来获取当前消息。
 
 > [!IMPORTANT]
-> 对于本地Exchange部署，使用 AJAX 或类似库的客户端请求将失败，因为该服务器安装程序不支持 CORS。
+> 对于内部部署Exchange，使用 AJAX 或类似库的客户端请求将失败，因为该服务器安装程序不支持 CORS。
 
 ```js
 function getCurrentItem(accessToken) {

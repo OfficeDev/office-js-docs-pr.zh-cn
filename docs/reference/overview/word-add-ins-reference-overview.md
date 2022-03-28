@@ -4,12 +4,12 @@ description: Word Javascript API 概述。
 ms.date: 09/04/2020
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: c442e654ee939b945ab0cdf1838a84fd6eee69e5
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: df250b282c01501155b7e9bd67822dbefb4da84e
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747128"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484631"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API 概述
 
@@ -42,4 +42,4 @@ Word 加载项通过使用 Office JavaScript API 与 Word 中的对象进行交�
 * [Word 加载项文档](../../word/index.yml)
 * [Word 加载项概述](../../word/word-add-ins-programming-overview.md)
 * [Word JavaScript API 参考](/javascript/api/word)
-* [Office 客户端应用程序和平台的 Office 加载项可用性](../../overview/office-add-in-availability.md)
+* [Office 客户端应用程序和平台的 Office 加载项可用性](/javascript/api/requirement-sets)

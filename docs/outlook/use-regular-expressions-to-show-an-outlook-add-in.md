@@ -3,18 +3,18 @@ title: 使用正则表达式激活规则显示加载项
 description: 了解如何为 Outlook 上下文加载项使用正则表达式激活规则。
 ms.date: 07/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f56d973ed3470b70bdfe834f9adc8a15a7623f0b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: cdf15fd2ab46fbad679ea6214cde9b9da50a0cfc
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148820"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484421"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>使用正则表达式激活规则显示 Outlook 外接程序
 
-可以将正则表达式规则指定为在邮件的特定字段中找到匹配项时激活[上下文外接程序](contextual-outlook-add-ins.md)。 上下文外接程序仅在阅读模式下激活，Outlook 不会在用户撰写某个项目时激活上下文外接程序。 还有其他一些情况，Outlook无法激活外接程序，例如，数字签名项目。 有关详细信息，请参阅 [Outlook 外接程序的激活规则](activation-rules.md)。
+可以将正则表达式规则指定为在邮件的特定字段中找到匹配项时激活[上下文外接程序](contextual-outlook-add-ins.md)。 上下文外接程序仅在阅读模式下激活，Outlook 不会在用户撰写某个项目时激活上下文外接程序。 还有其他一些情况，Outlook激活加载项，例如，数字签名项目。 有关详细信息，请参阅 [Outlook 外接程序的激活规则](activation-rules.md)。
 
-你可以将正则表达式指定为外接程序 XML 清单中的 [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) 规则或 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 规则的一部分。 在 [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity) 扩展点中指定了这些规则。
+你可以将正则表达式指定为外接程序 XML 清单中的 [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) 规则或 [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) 规则的一部分。 在 [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity) 扩展点中指定了这些规则。
 
 Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的规则计算正则表达式。 Outlook 支持所有 XML 处理器也支持的相同特殊字符列表。 下表列出了这些特殊字符。 你可以通过为相应字符指定转义序列以在正则表达式中使用这些字符，如下表中所述。
 
@@ -126,11 +126,11 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 
 可以通过对当前项使用下列方法获取正则表达式的匹配项。
 
-- [getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 为在外接程序的 `ItemHasRegularExpressionMatch` 和 `ItemHasKnownEntity` 规则中指定的所有正则表达式返回当前项目中的匹配项。
+- [getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 为在外接程序的 `ItemHasRegularExpressionMatch` 和 `ItemHasKnownEntity` 规则中指定的所有正则表达式返回当前项目中的匹配项。
 
-- [getRegExMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 为外接程序的 `ItemHasRegularExpressionMatch` 规则中指定的已标识正则表达式返回当前项目中的匹配项。
+- [getRegExMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 为外接程序的 `ItemHasRegularExpressionMatch` 规则中指定的已标识正则表达式返回当前项目中的匹配项。
 
-- [getFilteredEntitiesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 对于包含在外接程序的 `ItemHasKnownEntity` 规则中指定的已标识正则表达式匹配项的实体，将返回完整实例。
+- [getFilteredEntitiesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 对于包含在外接程序的 `ItemHasKnownEntity` 规则中指定的已标识正则表达式匹配项的实体，将返回完整实例。
 
 计算正则表达式时，匹配项将以数组对象的形式返回到你的外接程序。 对于 `getRegExMatches`，该对象具有正则表达式名称的标识符。
 

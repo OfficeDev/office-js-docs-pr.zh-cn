@@ -3,13 +3,18 @@ title: 获取或设置 Outlook 加载项中的约会时间
 description: 了解如何在 Outlook 加载项中获取或设置约会开始和结束时间。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: f2f7a0956d7e355389c4cbe08a866686288ced66
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484336"
 ---
-
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置时间
 
-JavaScript API Office提供了异步方法 ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) 和 [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) ，用于获取和设置用户正在撰写的约会的开始时间或结束时间。 这些异步方法仅适用于撰写加载项。若要使用这些方法，请确保为 Outlook 设置相应的外接程序清单以在撰写窗体中激活外接程序，如为撰写窗体创建 [Outlook](compose-scenario.md) 外接程序中所述。
+Office JavaScript API 提供了异步方法 ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) 和 [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) 获取和设置用户正在撰写的约会的开始时间或结束时间。 这些异步方法仅适用于撰写加载项。若要使用这些方法，请确保为 Outlook 设置相应的外接程序清单，以在撰写窗体中激活外接程序，如为撰写窗体创建 [Outlook](compose-scenario.md) 外接程序中所述。
 
-[start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和 [end](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性对撰写和阅读窗体中的约会均适用。在阅读窗体中，您可以直接从父对象访问属性，类似于：
+[start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 和 [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 属性对撰写和阅读窗体中的约会均适用。在阅读窗体中，您可以直接从父对象访问属性，类似于：
 
 ```js
 item.start
@@ -91,7 +96,7 @@ function write(message){
 
 与上一示例类似，此代码示例假定外接程序清单中的某个规则将在撰写窗体中为约会激活外接程序。
 
-若要使用 **item.start.setAsync** 或 **item.end.setAsync**，则在 _dateTime_ 参数中指定一个 UTC 格式的 **Date** 值。如果你根据用户在客户端的输入获取日期，则可以使用 [mailbox.convertToUtcClientTime](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 将值转换为 UTC 格式的 **Date** 对象。你可以提供在 _asyncContext_ 参数中向回调方法提供可选回调方法和任何自变量。应在回调的 _asyncResult_ 输出参数中查看状态、结果和任何错误消息。如果异步调用成功，**setAsync** 会将指定的开始或结束时间字符串作为纯文本插入，覆盖该项的任何现有开始或结束时间。
+若要使用 **item.start.setAsync** 或 **item.end.setAsync**，则在 _dateTime_ 参数中指定一个 UTC 格式的 **Date** 值。如果你根据用户在客户端的输入获取日期，则可以使用 [mailbox.convertToUtcClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 将值转换为 UTC 格式的 **Date** 对象。你可以提供在 _asyncContext_ 参数中向回调方法提供可选回调方法和任何自变量。应在回调的 _asyncResult_ 输出参数中查看状态、结果和任何错误消息。如果异步调用成功，**setAsync** 会将指定的开始或结束时间字符串作为纯文本插入，覆盖该项的任何现有开始或结束时间。
 
 
 

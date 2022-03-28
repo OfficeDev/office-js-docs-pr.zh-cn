@@ -3,12 +3,12 @@ title: Outlook 加载项的激活规则
 description: 如果用户正在读取或撰写的邮件或约会符合加载项的激活规则，则 Outlook 将激活某些类型的加载项。
 ms.date: 12/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d59b6afa9140ad0aa4d362cf8dc82a8d2144f5e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 6af5003108efede78fa06b220abe3c89d472c6e5
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746904"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484115"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>上下文 Outlook 加载项的激活规则
 
@@ -24,17 +24,17 @@ ms.locfileid: "63746904"
 
 若要Outlook条件激活外接程序，请通过使用下列元素之一在外接程序清单中指定激活`Rule`规则。
 
-- [Rule 元素 (MailApp complexType)](../reference/manifest/rule.md) - 指定单个规则。
-- [Rule 元素 (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) - 使用逻辑操作组合多个规则。
+- [Rule 元素 (MailApp complexType)](/javascript/api/manifest/rule) - 指定单个规则。
+- [Rule 元素 (RuleCollection complexType)](/javascript/api/manifest/rule#rulecollection) - 使用逻辑操作组合多个规则。
 
 
  > [!NOTE]
- > 用于 `Rule` 指定单个规则的元素是抽象 [Rule](../reference/manifest/rule.md) 复杂类型。 以下每种类型的规则扩展了此抽象 `Rule` 复杂类型。 因此当你在清单中指定单个规则时，你必须使用 [xsi:type](https://www.w3.org/TR/xmlschema-1/) 属性来进一步定义某个以下类型的规则。
+ > 用于 `Rule` 指定单个规则的元素是抽象 [Rule](/javascript/api/manifest/rule) 复杂类型。 以下每种类型的规则扩展了此抽象 `Rule` 复杂类型。 因此当你在清单中指定单个规则时，你必须使用 [xsi:type](https://www.w3.org/TR/xmlschema-1/) 属性来进一步定义某个以下类型的规则。
  > 
- > 例如，以下规则定义 [ItemIs](../reference/manifest/rule.md#itemis-rule) 规则。
+ > 例如，以下规则定义 [ItemIs](/javascript/api/manifest/rule#itemis-rule) 规则。
  > `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
- > 属性 `FormType` 适用于清单 v1.1 中的激活规则，但在 `VersionOverrides` v1.0 中未定义。 因此，当在节点中使用 [ItemIs](../reference/manifest/rule.md#itemis-rule) 时，它不能 `VersionOverrides` 使用。
+ > 属性 `FormType` 适用于清单 v1.1 中的激活规则，但在 `VersionOverrides` v1.0 中未定义。 因此，当在节点中使用 [ItemIs](/javascript/api/manifest/rule#itemis-rule) 时，它不能 `VersionOverrides` 使用。
 
 下表列出了可用的规则类型。你可以在表后面以及[创建适用于阅读窗体的 Outlook 外接程序](read-scenario.md)中指定的文章中查找更多信息。
 
@@ -67,7 +67,7 @@ ms.locfileid: "63746904"
  > [!NOTE]
  > ItemIs 属性 `FormType` 在架构 v1.1 及更高版本中定义，但不在 `VersionOverrides` v1.0 中定义。 定义外接程序命令 `FormType` 时，请勿包含 属性。
 
-激活外接程序后，可以使用 [mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 属性获取 Outlook 中的当前所选项，以及使用 [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性获取当前项的类型。
+激活外接程序后，可以使用 [mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) 属性获取 Outlook 中的当前所选项，以及使用 [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 属性获取当前项的类型。
 
 可以选择使用 属性`ItemClass``IncludeSubClasses`指定项目的邮件类，以及使用 属性指定当项目是指定类的子类时规则是否应该为 true。
 

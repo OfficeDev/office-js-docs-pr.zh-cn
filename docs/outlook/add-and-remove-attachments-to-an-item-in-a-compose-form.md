@@ -3,12 +3,12 @@ title: 在 Outlook 加载项中添加和删除附件
 description: 使用各种附件 API 管理文件或Outlook附加到用户正在撰写的项目的项目。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ebecb1b0674641b58c20c0d8d78681f2bbf48110
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: bf49b5ad099541602d94dea0cab5869dbd54a960
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744344"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483959"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>在邮件撰写窗体中管理项目的Outlook
 
@@ -18,9 +18,9 @@ Office JavaScript API 提供了多个 API，可用于在用户撰写时管理项
 
 您可以使用适用于附件Outlook的方法将文件或项目附加到撰写窗体。
 
-- [addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)：附加文件
-- [addFileAttachmentFromBase64Async](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)：使用文件的 base64 字符串附加文件
-- [addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)：附加Outlook项
+- [addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)：附加文件
+- [addFileAttachmentFromBase64Async](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)：使用文件的 base64 字符串附加文件
+- [addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)：附加Outlook项
 
 这些是异步方法，这意味着可以继续执行，而无需等待操作完成。 根据要添加的附件的原始位置和大小，异步调用可能需要一段时间才能完成。
 
@@ -81,7 +81,7 @@ function write(message){
 
 ### <a name="attach-an-outlook-item"></a>附加Outlook项
 
-您可以通过指定 Outlook Web 服务 (EWS) Exchange ID `addItemAttachmentAsync` 并使用此方法，将 Outlook 项目 (例如，电子邮件、日历或联系人项目) 附加到撰写窗体中的邮件或约会。 通过使用 [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法并访问 EWS 操作 [FindItem](/exchange/client-developer/web-service-reference/finditem-operation)，您可以获取用户邮箱中电子邮件、日历、联系人或任务项目的 EWS ID。 [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 属性还提供阅读窗体中某个现有项目的 EWS ID。
+您可以通过指定 Outlook Web 服务 (EWS) Exchange ID `addItemAttachmentAsync` 并使用此方法，将 Outlook 项目 (例如，电子邮件、日历或联系人项目) 附加到撰写窗体中的邮件或约会。 通过使用 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法并访问 EWS 操作 [FindItem](/exchange/client-developer/web-service-reference/finditem-operation)，您可以获取用户邮箱中电子邮件、日历、联系人或任务项目的 EWS ID。 [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 属性还提供阅读窗体中某个现有项目的 EWS ID。
 
 以下 JavaScript 函数 扩展 `addItemAttachment`了上述第一个示例，并将项目作为附件添加到正在撰写的电子邮件或约会中。 此函数将要附加的项目的 EWS ID 作为实参。 如果附加成功，它将获取附件 ID 以进一步处理，包括在同一会话中删除该附件。
 
@@ -116,14 +116,14 @@ function addItemAttachment(itemId) {
 
 ## <a name="get-attachments"></a>获取附件
 
-在撰写模式下获取附件的 API 可从要求集 [1.8 获取](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)。
+在撰写模式下获取附件的 API 可从要求集 [1.8 获取](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)。
 
-- [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
 
-您可以使用 [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法获取正在撰写的邮件或约会的附件。
+您可以使用 [getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 方法获取正在撰写的邮件或约会的附件。
 
-若要获取附件的内容，可以使用 [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法。 [AttachmentContentFormat 枚举中列出了支持](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)的格式。
+若要获取附件的内容，可以使用 [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 方法。 [AttachmentContentFormat 枚举中列出了支持](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat)的格式。
 
 您应提供一个回调方法，以使用 output 参数对象 `AsyncResult` 检查状态和任何错误。 您还可以使用可选参数将任何其他参数传递给回调 `asyncContext` 方法。
 
@@ -165,7 +165,7 @@ function handleAttachmentsCallback(result) {
 
 ## <a name="remove-an-attachment"></a>删除附件
 
-使用 [removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法时，可以通过指定相应的附件 ID 从撰写窗体中的邮件或约会项目中删除文件或项目附件。
+使用 [removeAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 方法时，可以通过指定相应的附件 ID 从撰写窗体中的邮件或约会项目中删除文件或项目附件。
 
 > [!IMPORTANT]
 > 如果使用的是要求集 1.7 或更早版本，则只应删除同一外接程序在同一会话中添加的附件。

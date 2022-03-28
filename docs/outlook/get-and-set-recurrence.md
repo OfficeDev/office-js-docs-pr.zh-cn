@@ -3,19 +3,19 @@ title: 获取和设置 Outlook 加载项中的定期
 description: 本主题介绍如何使用 Office JavaScript API 获取和设置 Outlook 加载项中某个项目的不同定期属性。
 ms.date: 08/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b211e72304e22874f847f2231e3a800efaceb4d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0c763abd238d007fd397c17278472db1fb97e04e
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152404"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484665"
 ---
 # <a name="get-and-set-recurrence"></a>获取和设置定期
 
-有时候，你需要创建和更新某个定期约会，例如团队项目的每周状态会议或每年生日提醒。 可以使用 Office JavaScript API 管理外接程序中约会系列的定期模式。
+有时候，你需要创建和更新某个定期约会，例如团队项目的每周状态会议或每年生日提醒。 可以使用 Office JavaScript API 管理外接程序中的约会系列的定期模式。
 
 > [!NOTE]
-> 要求集 1.7 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> 要求集 1.7 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="available-recurrence-patterns"></a>可用定期模式
 
@@ -42,12 +42,12 @@ ms.locfileid: "59152404"
 
 |约会状态|约会是否可编辑？|约会是否可查看？|
 |---|---|---|
-|约会组织者 - 撰写系列|是 [`setAsync`][setAsync link] () |是 [`getAsync`][getAsync link] () |
-|约会组织者 - 撰写实例|否（`setAsync` 返回错误）|是 [`getAsync`][getAsync link] () |
-|约会参与者 - 读取系列|否（`setAsync` 不可用）|是 [`item.recurrence`][item.recurrence link] () |
-|约会参与者 - 读取实例|否（`setAsync` 不可用）|是 [`item.recurrence`][item.recurrence link] () |
-|会议请求 - 读取系列|否（`setAsync` 不可用）|是 [`item.recurrence`][item.recurrence link] () |
-|会议请求 - 读取实例|否（`setAsync` 不可用）|是 [`item.recurrence`][item.recurrence link] () |
+|约会组织者 - 撰写系列|是 ([`setAsync`][setAsync link]) |是 ([`getAsync`][getAsync link]) |
+|约会组织者 - 撰写实例|否（`setAsync` 返回错误）|是 ([`getAsync`][getAsync link]) |
+|约会参与者 - 读取系列|否（`setAsync` 不可用）|是 ([`item.recurrence`][item.recurrence link]) |
+|约会参与者 - 读取实例|否（`setAsync` 不可用）|是 ([`item.recurrence`][item.recurrence link]) |
+|会议请求 - 读取系列|否（`setAsync` 不可用）|是 ([`item.recurrence`][item.recurrence link]) |
+|会议请求 - 读取实例|否（`setAsync` 不可用）|是 ([`item.recurrence`][item.recurrence link]) |
 
 ## <a name="set-recurrence-as-the-organizer"></a>以组织者身份设置定期
 
@@ -201,7 +201,7 @@ var recurrenceType = recurrence.recurrenceType;
 [RecurrenceChanged 事件](/javascript/api/office/office.eventtype)
 
 [getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
-[item.recurrence link]: ../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties
+[item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item.md#properties
 [setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
 
 [dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth

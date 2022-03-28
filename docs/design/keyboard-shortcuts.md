@@ -3,12 +3,12 @@ title: 加载项中的Office快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）Office加载项。
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 5282d803900e3f18ecbf8799520eae71779f8f73
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 98d799f62710b124b8836583d2d30cac7976100d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743231"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483880"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到Office加载项
 
@@ -35,7 +35,7 @@ ms.locfileid: "63743231"
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>将映射文件链接到清单
 
-在 *紧* (不在 `<VersionOverrides>`) 元素内，添加 [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素。 将 属性 `Url` 设置为项目中将在稍后步骤创建的 JSON 文件的完整 URL。
+在 *紧* (不在 `<VersionOverrides>`) 元素内，添加 [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) 元素。 将 属性 `Url` 设置为项目中将在稍后步骤创建的 JSON 文件的完整 URL。
 
 ```xml
     ...
@@ -46,7 +46,7 @@ ms.locfileid: "63743231"
 
 ## <a name="create-or-edit-the-shortcuts-json-file"></a>创建或编辑快捷方式 JSON 文件
 
-在项目中创建 JSON 文件。 确保文件的路径与为 `Url` [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素的 属性指定的位置相匹配。 此文件将描述键盘快捷方式以及这些快捷方式将调用的操作。
+在项目中创建 JSON 文件。 确保文件的路径与为 `Url` [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) 元素的 属性指定的位置相匹配。 此文件将描述键盘快捷方式以及这些快捷方式将调用的操作。
 
 1. 在 JSON 文件中，有两个数组。 actions 数组将包含定义要调用的操作的对象，快捷方式数组将包含将键组合映射到操作的对象。 以下是示例。
     ```json
@@ -270,7 +270,7 @@ ms.locfileid: "63743231"
 > 试用预览版功能的好方法是使用 Microsoft 365 订阅。 如果还没有 Microsoft 365 订阅，可以通过加入[Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。
 
 > [!NOTE]
-> 本节中所述的 API 需要 [KeyboardShortcuts 1.1](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) 要求集。
+> 本节中所述的 API 需要 [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/keyboard-shortcuts-requirement-sets) 要求集。
 
 使用 [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) 方法将用户的自定义键盘组合分配给您的外接程序操作。 方法采用类型 参数`{[actionId:string]: string|null}``actionId`，其中 是必须在加载项扩展清单 JSON 中定义的操作 ID 的子集。 值是用户的首选组合键。 值还可以是 `null`，这将 `actionId` 删除任何自定义项，并恢复为在加载项扩展清单 JSON 中定义的默认键盘组合。
 

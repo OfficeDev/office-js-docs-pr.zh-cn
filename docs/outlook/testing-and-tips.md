@@ -3,12 +3,12 @@ title: 部署和安装 Outlook 加载项以进行测试
 description: 创建清单文件，将加载项 UI 文件部署到 Web 服务器，在邮箱中安装加载项，然后测试加载项。
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: f9c9fa23dc59a36bee608fe8115b3ad77cfab623
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7d612fcfa8f5bb79cded469e203371a499703ad0
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149489"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484427"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>部署和安装 Outlook 加载项以进行测试
 
@@ -24,7 +24,7 @@ ms.locfileid: "59149489"
 
 ## <a name="create-a-manifest-file-for-the-add-in"></a>创建加载项清单文件
 
-每个外接程序都通过一个 XML 清单进行描述，该文档为服务器提供有关外接程序的信息，为用户提供外接程序的描述性信息，并标识外接程序 UI HTML 文件的位置。 可以在本地文件夹或服务器上存储该清单，只要所测试的邮箱的 Exchange 服务器能够访问这个位置即可。 我们假定您在本地文件夹中存储清单。 有关如何创建清单文件的信息，请参阅 [Outlook 外接程序清单](manifests.md)。
+每个外接程序都通过一个 XML 清单进行描述，该文档为服务器提供有关外接程序的信息，为用户提供外接程序的描述性信息，并标识外接程序 UI HTML 文件的位置。您可以在本地文件夹或服务器上存储该清单，只要所测试的邮箱的 Exchange 服务器能够访问这个位置即可。我们假定您在本地文件夹中存储清单。有关如何创建清单文件的信息，请参阅 [Outlook 外接程序清单](manifests.md)。
 
 ## <a name="deploy-an-add-in-to-a-web-server"></a>将加载项部署到 Web 服务器
 
@@ -76,7 +76,7 @@ New-App -URL:"http://<fully-qualified URL">
 
 - 若要开发供私人使用或仅供组织成员使用的外接程序，请务必测试公司使用的 Outlook 版本。请注意，某些用户可能会使用 Outlook 网页版。因此，还请务必测试公司的标准浏览器版本。
 
-- 如果开发的是要在 [AppSource](https://appsource.microsoft.com) 中列出的加载项，必须测试[商业市场认证策略 1120.3](/legal/marketplace/certification-policies#11203-functionality) 中指定的必需版本。 这包括：
+- 如果开发的是要在 [AppSource](https://appsource.microsoft.com) 中列出的加载项，必须测试 [商业市场认证策略 1120.3](/legal/marketplace/certification-policies#11203-functionality) 中指定的必需版本。这包括:
   - 最新版 Windows 版 Outlook 和前一个版本。
   - 最新版 Mac 版 Outlook。
   - 最新 iOS 版和 Android 版 Outlook（如果加载项[支持移动设备规格](add-mobile-support.md)）。
@@ -96,7 +96,7 @@ New-App -URL:"http://<fully-qualified URL">
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
 - [Hostway](https://hostway.com/microsoft-exchange/)
 
-此外，如果不想面向连接到本地 Exchange 的用户提供自己的加载项，可将加载项清单中的[要求集](../reference/requirement-sets/outlook-api-requirement-sets.md#exchange-server-support)设置为 1.6 或更高版本。 在经典 Outlook 网页版上，不会对此类加载项进行测试或验证。
+此外，如果不想面向连接到本地 Exchange 的用户提供自己的加载项，可将加载项清单中的[要求集](/javascript/api/requirement-sets/outlook-api-requirement-sets#exchange-server-support)设置为 1.6 或更高版本。 在经典 Outlook 网页版上，不会对此类加载项进行测试或验证。
 
 ## <a name="see-also"></a>另请参阅
 

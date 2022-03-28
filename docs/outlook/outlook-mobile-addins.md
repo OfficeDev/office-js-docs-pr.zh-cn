@@ -1,20 +1,20 @@
 ---
 title: 适用于 Outlook Mobile 的 Outlook 外接程序
-description: Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。
+description: Outlook所有商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2894e85acccea9879d2c35b425ed8b3af5dfaf65
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 90e88b3b3596f2b11718b9fcf1af7402d7594fe7
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892522"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483994"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>适用于 Outlook Mobile 的外接程序
 
 现在，外接程序在 Outlook Mobile 上可用，它们使用适用于其他 Outlook 终结点的相同 API。如果已经生成适用于 Outlook 的外接程序，那么则可以很轻松地在 Outlook Mobile 上使用该外接程序。
 
-Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但是，当前不支持 Gmail 帐户。
+Outlook所有商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但是，当前不支持 Gmail 帐户。
 
 **iOS 版 Outlook 中的任务窗格示例**
 
@@ -32,13 +32,13 @@ Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但�
   - 外接程序 **必须** 遵循 [UI 准则](outlook-addin-design.md)。
   - 外接程序的方案 **必须**[能够在移动电话上实现](#what-makes-a-good-scenario-for-mobile-add-ins)。
 
-- 一般情况下，目前仅支持邮件阅读模式。 这意味着 `MobileMessageReadCommandSurface` 是唯一应在清单的移动部分中声明的 [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) 。 但是，联机会议提供商集成外接程序支持约会管理器模式，这些外接程序改为声明 [MobileOnlineMeetingCommandSurface 扩展点](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface)。 有关[此方案Outlook](online-meeting.md)请参阅为联机会议提供商创建移动外接程序一文。
+- 一般情况下，目前仅支持邮件阅读模式。 这意味着 `MobileMessageReadCommandSurface` 是唯一应在清单的移动部分中声明的 [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) 。 但是，联机会议提供商集成外接程序支持约会管理器模式，这些外接程序改为声明 [MobileOnlineMeetingCommandSurface 扩展点](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface)。 有关[此方案Outlook](online-meeting.md)，请参阅为联机会议提供商创建移动外接程序一文。
 
-- [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) API 在移动电话上不受支持，因为移动应用使用 REST API 与服务器进行通信。如果应用后端需要连接到 Exchange 服务器，则可以使用回调令牌进行 REST API 调用。有关详细信息，请参阅[从 Outlook 外接程序使用 Outlook REST API](use-rest-api.md)。
+- [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) API 在移动电话上不受支持，因为移动应用使用 REST API 与服务器进行通信。如果应用后端需要连接到 Exchange 服务器，则可以使用回调令牌进行 REST API 调用。有关详细信息，请参阅[从 Outlook 外接程序使用 Outlook REST API](use-rest-api.md)。
 
-- 如果将外接程序和清单中的 [MobileFormFactor](../reference/manifest/mobileformfactor.md) 一起提交至应用商店，则需要同意我们添加针对 iOS 上的外接程序的开发人员附录，并且必须提交你的 Apple 开发人员 ID 以进行验证。
+- 如果将外接程序和清单中的 [MobileFormFactor](/javascript/api/manifest/mobileformfactor) 一起提交至应用商店，则需要同意我们添加针对 iOS 上的外接程序的开发人员附录，并且必须提交你的 Apple 开发人员 ID 以进行验证。
 
-- 最后，清单将需要声明 `MobileFormFactor`，并包含正确的[控件](../reference/manifest/control.md)和[图标大小](../reference/manifest/icon.md)类型。
+- 最后，清单将需要声明 `MobileFormFactor`，并包含正确的[控件](/javascript/api/manifest/control)和[图标大小](/javascript/api/manifest/icon)类型。
 
 ## <a name="what-makes-a-good-scenario-for-mobile-add-ins"></a>适用于移动外接程序的优秀方案应具备哪些特点？
 
@@ -62,14 +62,14 @@ Outlook商业帐户和 Outlook.com 帐户Microsoft 365移动外接程序。 但�
 
 ## <a name="testing-your-add-ins-on-mobile"></a>在移动电话上测试外接程序
 
-若要在 Outlook Mobile 上测试外接程序，请首先将外接程序旁加载[](sideload-outlook-add-ins-for-testing.md)到 web、Windows 或 Mac 上的 Microsoft 365 或 Outlook.com 帐户。 请确保清单的格式正确，以包含 ，`MobileFormFactor`否则它不会在移动设备上的 Outlook客户端中加载。
+若要在 Outlook Mobile 上测试外接程序，请首先将外接程序旁加载[](sideload-outlook-add-ins-for-testing.md)到 web、Windows 或 Mac 上的 Microsoft 365 或 Outlook.com 帐户。 请确保清单的格式正确，以包含 ，`MobileFormFactor`否则它不会在移动设备上的 Outlook 客户端中加载。
 
 在加载项正常运行后，请务必在不同尺寸的屏幕（包括电话和平板电脑）上测试加载项。应确保加载项符合与对比度、字号和颜色有关的辅助功能准则，并且还适用于屏幕阅读器（如 iOS 上的 VoiceOver 或 Android 上的 TalkBack）。
 
 在移动设备上进行故障排除可能很难，因为您可能没有习惯使用的工具。 但是，在 iOS 上进行疑难解答的一个选项是使用 Fiddler (查看本教程中有关将 [Fiddler 与 iOS 设备](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)) 。
 
 > [!NOTE]
-> Outlook 网页版和 Android iPhone上的新式设备不再需要或不再可用于测试Outlook外接程序。有关受支持的设备的信息，请参阅运行加载项[Office要求](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)。
+> Outlook 网页版 Android iPhone上的新式设备不再需要或不再可用于测试Outlook外接程序。有关受支持的设备的信息，请参阅运行加载项[Office要求](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet)。
 
 ## <a name="next-steps"></a>后续步骤
 

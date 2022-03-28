@@ -3,16 +3,16 @@ title: Outlook 加载项中的 Exchange 标识令牌揭秘
 description: 了解从 Outlook 加载项生成的 Exchange 用户标识令牌的内容。
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c8b42d5c9d3cd08bc229acb55963b115fd16234a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 843bd76b66f784b1e380bdde5e33adf05755e268
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149520"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484057"
 ---
 # <a name="inside-the-exchange-identity-token"></a>Exchange 标识令牌揭秘
 
-由 [getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法返回的 Exchange 用户标识令牌为加载项代码提供了一种将用户的标识包含在后端服务调用中的方法。 本文将探讨令牌的格式和内容。
+由 [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法返回的 Exchange 用户标识令牌为加载项代码提供了一种将用户的标识包含在后端服务调用中的方法。 本文将探讨令牌的格式和内容。
 
 Exchange 用户标识令牌是一个 Base 64 URL 编码的字符串，由发送它的 Exchange 服务器签名。 该令牌未加密，用于验证签名的公钥存储在颁发该令牌的 Exchange 服务器上。 该令牌由三部分组成：标头、有效负载和签名。 在令牌字符串中，各部分由句点字符 (`.`) 分隔，以便于拆分令牌。
 
@@ -66,7 +66,7 @@ Exchange 使用标识令牌的 JSON Web 令牌 (JWT) 格式。 有关 JWT 令牌
 
 | 声明 | 说明 |
 |:-----|:-----|
-| `aud` | 请求该令牌的加载项的 URL。 只有客户端的浏览器运行的加载项发送的令牌有效。 如果加载项使用 Office 加载项清单 v1.1，则此 URL 为加载项清单的 [FormSettings](../reference/manifest/formsettings.md) 元素中首先出现的 `ItemRead` 或 `ItemEdit` 窗体类型下的第一个 `SourceLocation` 元素指定的 URL。 |
+| `aud` | 请求该令牌的加载项的 URL。 只有客户端的浏览器运行的加载项发送的令牌有效。 如果加载项使用 Office 加载项清单 v1.1，则此 URL 为加载项清单的 [FormSettings](/javascript/api/manifest/formsettings) 元素中首先出现的 `ItemRead` 或 `ItemEdit` 窗体类型下的第一个 `SourceLocation` 元素指定的 URL。 |
 | `iss` | 颁发令牌的 Exchange 服务器的唯一标识符。此 Exchange 服务器颁发的所有令牌将具有相同标识符。 |
 | `nbf` | 令牌开始生效的日期和时间。值是自 1970 年 1 月 1 日以来的秒数。 |
 | `exp` | 标记失效的日期和时间，值是自 1970 年 1 月 1 日以来的秒数。 |

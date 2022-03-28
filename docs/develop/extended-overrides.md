@@ -3,12 +3,12 @@ title: 使用清单的扩展替代
 description: 了解如何使用清单的扩展替代来配置扩展性功能。
 ms.date: 02/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 43a922f559100157dbdacbb401d38c4d9ba22010
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 34002ffcb621fad9f318aad80b32feb22ac45f67
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743792"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483717"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>使用清单的扩展替代
 
@@ -30,7 +30,7 @@ ms.locfileid: "63743792"
 
 ## <a name="tell-office-where-to-find-the-json-file"></a>告知Office JSON 文件的位置
 
-使用清单告知Office JSON 文件的位置。 在 *紧* (不在 `<VersionOverrides>`) 元素内，添加 [ExtendedOverrides](../reference/manifest/extendedoverrides.md) 元素。 将 属性 `Url` 设置为 JSON 文件的完整 URL。 下面是最简单的可能元素的示例 `<ExtendedOverrides>` 。
+使用清单告知Office JSON 文件的位置。 在 *紧* (不在 `<VersionOverrides>`) 元素内，添加 [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) 元素。 将 属性 `Url` 设置为 JSON 文件的完整 URL。 下面是最简单的可能元素的示例 `<ExtendedOverrides>` 。
 
 ```xml
     ...

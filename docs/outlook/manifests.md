@@ -3,12 +3,12 @@ title: Outlook 外接程序清单
 description: 该清单介绍 Outlook 外接程序如何跨 Outlook 客户端进行集成；其中包括一个示例。
 ms.date: 05/27/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 1b89a351ad19c6038c4ffe0942e5b7335c4206b6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 837ceac37375052b31acb0c243f4d5b2e2601511
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148843"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484210"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook 外接程序清单
 
@@ -386,7 +386,7 @@ Outlook 加载项指定如下所示的 **Hosts** 元素：
 
 ## <a name="permissions"></a>权限
 
-**Permissions** 元素包含外接程序所需的权限。通常情况下，应指定外接程序所需的最低权限，具体视计划要使用的确切方法而定。例如，如果在撰写窗体中激活的邮件外接程序对 [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 等项属性只执行读取操作，而不执行写入操作，也不调用 [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 访问任何 Exchange Web 服务操作，应指定 **ReadItem** 权限。若要详细了解可用权限，请参阅 [了解 Outlook 外接程序权限](understanding-outlook-add-in-permissions.md)。
+**Permissions** 元素包含外接程序所需的权限。通常情况下，应指定外接程序所需的最低权限，具体视计划要使用的确切方法而定。例如，如果在撰写窗体中激活的邮件外接程序对 [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 等项属性只执行读取操作，而不执行写入操作，也不调用 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 访问任何 Exchange Web 服务操作，应指定 **ReadItem** 权限。若要详细了解可用权限，请参阅 [了解 Outlook 外接程序权限](understanding-outlook-add-in-permissions.md)。
 
 **邮件外接程序的 4 层权限模型**
 

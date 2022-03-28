@@ -3,22 +3,22 @@ title: 在加载项中启用共享文件夹Outlook邮箱方案
 description: 讨论如何为共享文件夹配置外接程序支持 (。。。 委派访问) 和共享邮箱。
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e949f4f3c1800a2c1fa83ba8bdf6df17e1ed5498
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: e359f4b63aec979d68b0798866fb06bf559a0f67
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745851"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484656"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在加载项中启用共享文件夹Outlook邮箱方案
 
-本文介绍如何在 Outlook 外接程序的[预览) 方案中](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)启用共享文件夹 (也称为委派访问) 和共享邮箱 (，包括 Office JavaScript API 支持哪些权限。
+本文介绍如何在 Outlook 外接程序的[预览) 方案中](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#shared-mailboxes)启用共享文件夹 (也称为委派访问) 和共享邮箱 (，包括 Office JavaScript API 支持哪些权限。
 
 ## <a name="supported-clients-and-platforms"></a>支持的客户端和平台
 
 下表显示了此功能支持的客户端-服务器组合，包括所需的最低累积更新（如果适用）。 不支持排除的组合。
 
-| 客户端 | Exchange Online | Exchange 2019 本地部署<br> (累积更新 1 或更高版本)  | Exchange 2016 本地部署<br> (累积更新 6 或更高版本)  | Exchange 2013 本地部署 |
+| Client | Exchange Online | Exchange 2019 本地部署<br> (累积更新 1 或更高版本)  | Exchange 2016 本地部署<br> (累积更新 6 或更高版本)  | Exchange 2013 本地部署 |
 |---|:---:|:---:|:---:|:---:|
 |Windows：<br>版本 1910 (版本 12130.20272) 或更高版本|是|否|否|否|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|是|
@@ -26,7 +26,7 @@ ms.locfileid: "63745851"
 |Web 浏览器：<br>经典Outlook UI|不适用|否|否|否|
 
 > [!IMPORTANT]
-> 要求集 [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) 中引入了对此功能 (有关详细信息，请参阅客户端和 [平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)) 。 但是，请注意，功能的支持矩阵是要求集的超集。
+> 要求集 [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) 中引入了对此功能 (有关详细信息，请参阅客户端和 [平台](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)) 。 但是，请注意，功能的支持矩阵是要求集的超集。
 
 ## <a name="supported-setups"></a>支持的安装程序
 
@@ -92,7 +92,7 @@ Exchange管理员可以为要访问的用户集创建和管理共享邮箱。 �
 
 |权限|值|说明|
 |---|---:|---|
-|Read|1 (000001) |可读取项目。|
+|阅读|1 (000001) |可读取项目。|
 |写入|2 (000010) |可以创建项目。|
 |DeleteOwn|4 (000100) |只能删除他们创建的项。|
 |DeleteAll|8 (001000) |可以删除任何项目。|
@@ -115,9 +115,9 @@ Exchange管理员可以为要访问的用户集创建和管理共享邮箱。 �
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要在加载项中启用共享文件夹和共享邮箱方案，必须在父元素 下的清单中将 [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` 元素设置为 `DesktopFormFactor`。 目前，不支持其他外形因素。
+若要在加载项中启用共享文件夹和共享邮箱方案，必须在父元素 下的清单中将 [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) `true` 元素设置为 `DesktopFormFactor`。 目前，不支持其他外形因素。
 
-若要支持从代理进行 REST 调用，将清单中的 ["权限](../reference/manifest/permissions.md) "节点设置为 `ReadWriteMailbox`。
+若要支持从代理进行 REST 调用，将清单中的 ["权限](/javascript/api/manifest/permissions) "节点设置为 `ReadWriteMailbox`。
 
 以下示例显示清单 `SupportsSharedFolders` 的一节中 `true` 设置为 的 元素。
 
@@ -148,7 +148,7 @@ Exchange管理员可以为要访问的用户集创建和管理共享邮箱。 �
 
 ## <a name="perform-an-operation-as-delegate-or-shared-mailbox-user"></a>以委派邮箱用户或共享邮箱用户模式执行操作
 
-可以通过调用 [item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) 方法在撰写或阅读模式下获取项目的共享属性。 这将返回 [一个 SharedProperties](/javascript/api/outlook/office.sharedproperties) 对象，该对象当前提供用户的权限、所有者的电子邮件地址、REST API 的基本 URL 和目标邮箱。
+可以通过调用 [item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 方法在撰写或阅读模式下获取项目的共享属性。 这将返回 [一个 SharedProperties](/javascript/api/outlook/office.sharedproperties) 对象，该对象当前提供用户的权限、所有者的电子邮件地址、REST API 的基本 URL 和目标邮箱。
 
 以下示例演示如何获取邮件或约会的共享属性、检查代理或共享邮箱用户是否具有写入权限以及进行 REST 调用。
 

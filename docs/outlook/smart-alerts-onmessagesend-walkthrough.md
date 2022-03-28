@@ -4,12 +4,12 @@ description: 了解如何使用基于事件的激活在 Outlook外接程序中�
 ms.topic: article
 ms.date: 03/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b57cd683dd344d61ebcf7cf957a60522ed9c69da
-ms.sourcegitcommit: 7f4794f73ca3b6090619f790adb4a97c80b9c056
+ms.openlocfilehash: 2a9d44844c7fff3d5305de53f57c2950ae1909fb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "63400005"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484502"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>在外接程序预览版中Outlook智能警报 (OnMessageSend) 
 
@@ -137,7 +137,7 @@ ms.locfileid: "63400005"
 
 > [!TIP]
 >
-> - 有关 **事件提供的 SendMode** 选项 `OnMessageSend` ，请参阅 [可用 SendMode 选项](../reference/manifest/launchevent.md#available-sendmode-options-preview)。
+> - 有关 **事件提供的 SendMode** 选项 `OnMessageSend` ，请参阅 [可用 SendMode 选项](/javascript/api/manifest/launchevent#available-sendmode-options-preview)。
 > - 若要了解有关加载项清单Outlook，请参阅Outlook[加载项清单](manifests.md)。
 
 ## <a name="implement-event-handling"></a>实现事件处理
@@ -261,7 +261,7 @@ ms.locfileid: "63400005"
     > 如果加载项未自动旁加载，请按照旁加载 [Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) 加载项进行测试中的说明，在加载项中手动旁加载Outlook。
 
 1. 在Outlook中Windows新建邮件并设置主题。 在正文中，添加类似"你好，查看我的 dog 的此图片！"这样的文本。
-1. 发送邮件。 应弹出一个对话框，建议你添加附件。
+1. 发送消息. 应弹出一个对话框，建议你添加附件。
 
     !["使用对话框打开Outlook Windows窗口的屏幕截图。](../images/outlook-win-smart-alert.png)
 

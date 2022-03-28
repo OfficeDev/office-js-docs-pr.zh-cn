@@ -3,12 +3,12 @@ title: 比较Outlook Mac 上 Outlook 中的外接程序支持
 description: 了解 Mac 上支持加载项Outlook与其他客户端Outlook比较。
 ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 55e647e5932cbbf1d51fe3158d76a664e54a9516
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 12d81015f70e3f23dd39c06e2429033ca2d9ef05
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744778"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484069"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>比较Outlook Mac 上的 Outlook 与其他客户端Outlook外接程序支持
 
@@ -21,7 +21,7 @@ ms.locfileid: "63744778"
 | 领域 | Outlook 网页版、Windows和移动设备 | Mac 版 Outlook |
 |:-----|:-----|:-----|
 | office.js 和 Office 外接程序清单架构支持的版本 | Office.js 和架构 v1.1 中的所有 API。 | Office.js 和架构 v1.1 中的所有 API。<br><br>**注意**：Outlook Mac 上，仅内部版本 16.35.308 或更高版本支持保存会议。 否则，在 `saveAsync` 撰写模式下从会议调用方法时失败。 若需解决办法，请参阅[无法在 Outlook for Mac 中使用 Office JS API 将会议另存为草稿](https://support.microsoft.com/help/4505745)。 |
-| 定期约会系列实例 | <ul><li>可以获得主约会的项目 ID 和其他属性或定期系列约会的实例</li><li>可以使用 [mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 显示定期序列的实例或主项目。</li></ul> | <ul><li>可以获得主约会的项目 ID 和其他属性，但无法获得定期系列约会的实例</li><li>可以显示定期系列的主约会。不显示项目 ID 和定期系列的实例。</li></ul> |
+| 定期约会系列实例 | <ul><li>可以获得主约会的项目 ID 和其他属性或定期系列约会的实例</li><li>可以使用 [mailbox.displayAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 显示定期序列的实例或主项目。</li></ul> | <ul><li>可以获得主约会的项目 ID 和其他属性，但无法获得定期系列约会的实例</li><li>可以显示定期系列的主约会。不显示项目 ID 和定期系列的实例。</li></ul> |
 | 约会参与者的收件人类型 | 可以使用 [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#outlook-office-emailaddressdetails-recipienttype-member) 标识与会者的收件人类型。 | `EmailAddressDetails.recipientType` 为约会与会者返回 `undefined`。 |
 | 客户端应用程序的版本字符串 | [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) 返回的版本字符串的格式取决于客户端的实际类型。 例如：<ul><li>Outlook上Windows：`15.0.4454.1002`</li><li>Outlook 网页版：`15.0.918.2`</li></ul> |Mac 上由 mac 上的 Outlook`Diagnostics.hostVersion`返回的版本字符串的示例：`15.0 (140325)` |
 | 项目自定义属性 | 如果网络出现故障，外接程序仍可以访问缓存的自定义属性。 | 由于Outlook Mac 上的加载项不会缓存自定义属性，因此如果网络关闭，加载项将无法访问它们。 |

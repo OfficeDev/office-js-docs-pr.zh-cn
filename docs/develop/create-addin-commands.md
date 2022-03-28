@@ -3,16 +3,16 @@ title: 在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 description: 在清单中，使用 VersionOverrides 定义用于 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
 ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fde330cb33018f33e5de156e5b15dd1f1819efa
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 248fd3cf36e27cfbb345a5379591b30619584d6b
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743921"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483783"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 
-在 **[清单中，使用 VersionOverrides](../reference/manifest/versionoverrides.md)** 定义用于 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令提供了使用执行操作的特定 UI 元素来自定义默认的 Office 用户界面 (UI) 的简单方法。 可以使用加载项命令执行以下操作：
+在 **[清单中，使用 VersionOverrides](/javascript/api/manifest/versionoverrides)** 定义用于 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令提供了使用执行操作的特定 UI 元素来自定义默认的 Office 用户界面 (UI) 的简单方法。 可以使用加载项命令执行以下操作：
 
 - 创建 UI 元素或入口点，以便能够更易于使用你的外接程序功能。
 - 向功能区中添加按钮或下拉列表按钮。
@@ -164,7 +164,7 @@ ms.locfileid: "63743921"
 > [!IMPORTANT]
 > 请确保 JavaScript 代码调用了 `Office.initialize`。
 
-**FunctionFile** 元素引用的 HTML 文件中的 JavaScript 必须调用 `Office.initialize`。**FunctionName** 元素（请参阅 [按钮控件](../reference/manifest/control-button.md)查看相关说明）使用 **FunctionFile** 中的函数。
+**FunctionFile** 元素引用的 HTML 文件中的 JavaScript 必须调用 `Office.initialize`。**FunctionName** 元素（请参阅 [按钮控件](/javascript/api/manifest/control-button)查看相关说明）使用 **FunctionFile** 中的函数。
 
 下面的代码展示了如何实现 **FunctionName** 使用的函数。
 
@@ -249,13 +249,13 @@ ms.locfileid: "63743921"
 |元素|说明|
 |:-----|:-----|
 |**CustomTab** <br/> |如果想要（使用 **PrimaryCommandSurface**）向功能区添加自定义选项卡，则为必需项。如果使用 **CustomTab** 元素，则不能使用 **OfficeTab** 元素。**id** 属性是必需的。 <br/> |
-|**OfficeTab** <br/> |如果要使用 **PrimaryCommandSurface** Office 应用扩展默认功能 (选项卡，) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 有关与 id 属性一同使用的更多 **选项卡** 值，请参阅默认选项卡Office 应用 [选项卡的值](../reference/manifest/officetab.md)。  <br/> |
+|**OfficeTab** <br/> |如果要使用 **PrimaryCommandSurface** Office 应用扩展默认功能 (选项卡，) 。 如果使用 **OfficeTab** 元素，则不能使用 **CustomTab** 元素。 <br/> 有关与 id 属性一同使用的更多 **选项卡** 值，请参阅默认选项卡Office 应用 [选项卡的值](/javascript/api/manifest/officetab)。  <br/> |
 |**OfficeMenu** <br/> | 如果要（使用 **ContextMenu**）将外接程序命令添加到默认上下文菜单中，则为必需项。**id** 属性必须设置为： <br/> 当用户选定文本，然后右键单击所选文本时，适用于 Excel 或 Word 的 **ContextMenuText** 显示上下文菜单上的项。<br/> 适用于 Excel 的 **ContextMenuCell**。当用户右键单击电子表格中的某个单元格时显示上下文菜单上的项。 <br/> |
 |**Group** <br/> |选项卡上的一组用户界面扩展点。一组可以有多达六个控件。**id** 属性是必需的。它是一个最多为 125 个字符的字符串。 <br/> |
 |**Label** <br/> |必需。组标签。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **ShortStrings** 元素的子元素，而 ShortStrings 元素是 **Resources** 元素的子元素。 <br/> |
 |**Icon** <br/> |必需。指定将在小型设备上使用或在显示过多按钮的情况下使用的组图标。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性给出图像的大小（以像素为单位）。要求三种图像大小：16、32 和 80。也同样支持五种可选大小：20、24、40、48 和 64。 <br/> |
 |**Tooltip** <br/> |可选。组的工具提示 **resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。 <br/> |
-|**Control** <br/> |每个组需要至少一个控件。 **Control** 元素可以是 **Button 或** **Menu**。 使用 **Menu** 指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 有关详细信息 [，请参阅](../reference/manifest/control-button.md) 按钮 [控件和](../reference/manifest/control-menu.md) 菜单控件。 <br/>**注意：** 建议一次添加一个 **Control** 元素及相关 **Resources** 子元素，以便于进行故障排除。          |
+|**Control** <br/> |每个组需要至少一个控件。 **Control** 元素可以是 **Button 或** **Menu**。 使用 **Menu** 指定按钮控件的下拉列表。 目前，仅支持“按钮”和“菜单”。 有关详细信息 [，请参阅](/javascript/api/manifest/control-button) 按钮 [控件和](/javascript/api/manifest/control-menu) 菜单控件。 <br/>**注意：** 建议一次添加一个 **Control** 元素及相关 **Resources** 子元素，以便于进行故障排除。          |
 
 ### <a name="button-controls"></a>按钮控件
 
@@ -380,7 +380,7 @@ ms.locfileid: "63743921"
 |**Tooltip** <br/> |可选。菜单的工具提示。**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。 <br/> |
 |**SuperTip** <br/> | 必需。菜单的 SuperTip，定义如下： <br/> **标题** <br/>  必需。supertip 的文本。必须将“resid”属性设置为 String 元素的 id 属性值。String 元素是 ShortStrings 元素的子元素，而  元素是“Resources”元素的子元素。 <br/> **说明** <br/>  必需。supertip 的说明。必须将“resid”属性设置为 String 元素的 id 属性值。String 元素是 LongStrings 元素的子元素，而  元素是“Resources”元素的子元素。 <br/> |
 |**Icon** <br/> | 必需。包含菜单的 **Image** 元素。图像文件必须为 .png 格式。 <br/> **Image** <br/>  菜单的图像。**resid** 属性必须设置为 **Image** 元素的 **id** 属性的值。**Image** 元素是 **Images** 元素的子元素，而 Images 元素是 **Resources** 元素的子元素。**size** 属性指示图像的大小（以像素为单位）。要求三种图像大小（以像素为单位）：16、32 和 80。也同样支持五种可选大小（以像素为单位）：20、24、40、48 和 64。 <br/> |
-|**Items** <br/> |必需。包含每个子菜单项的 **Item** 元素。每个 **Item** 元素包含的子元素均与 [按钮控件](../reference/manifest/control-button.md)相同。  <br/> |
+|**Items** <br/> |必需。包含每个子菜单项的 **Item** 元素。每个 **Item** 元素包含的子元素均与 [按钮控件](/javascript/api/manifest/control-button)相同。  <br/> |
 
 ## <a name="step-7-add-the-resources-element"></a>步骤 7：添加 Resources 元素
 

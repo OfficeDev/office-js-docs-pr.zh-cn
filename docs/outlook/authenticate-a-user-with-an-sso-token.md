@@ -3,12 +3,12 @@ title: 使用单一登录令牌对用户进行身份验证
 description: 了解如何使用 Outlook 外接程序提供的单一登录令牌为服务实现 SSO。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 108b11327087972ac064420357c822ff5bfe67d8
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 278c00a5add972aa527582a3b2031435c78a1281
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745829"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483373"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>使用加载项中的单一登录令牌Outlook用户
 
@@ -35,7 +35,7 @@ ms.locfileid: "63745829"
 
 ## <a name="update-the-add-in-manifest"></a>更新加载项清单
 
-若要在加载项中启用 SSO，下一步在 `VersionOverridesV1_1` [VersionOverrides](../reference/manifest/versionoverrides.md) 元素末尾添加 `WebApplicationInfo` 元素。 有关详细信息，请参阅[配置加载项](../develop/sso-in-office-add-ins.md#configure-the-add-in)。
+若要在加载项中启用 SSO，下一步在 `VersionOverridesV1_1` [VersionOverrides](/javascript/api/manifest/versionoverrides) 元素末尾添加 `WebApplicationInfo` 元素。 有关详细信息，请参阅[配置加载项](../develop/sso-in-office-add-ins.md#configure-the-add-in)。
 
 ## <a name="get-the-sso-token"></a>获取 SSO 令牌
 
@@ -57,5 +57,5 @@ ms.locfileid: "63745829"
 - [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))
 - 有关使用 SSO Outlook访问 Microsoft Graph API 的加载项示例，请参阅 Outlook [Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
 - [SSO API 参考](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
-- [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)
+- [IdentityAPI 要求集](/javascript/api/requirement-sets/identity-api-requirement-sets)
 - [在使用基于事件的 () Outlook加载项中启用单一登录或 SSO 登录](use-sso-in-event-based-activation.md)

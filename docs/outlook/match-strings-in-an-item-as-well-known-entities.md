@@ -3,18 +3,18 @@ title: 将字符串作为 Outlook 加载项中的已知实体进行匹配
 description: 通过使用 Office JavaScript API，您可以获取与特定已知实体匹配的字符串，以进一步进行处理。
 ms.date: 04/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 636414f3e90fba9ffa78338b20f23d2bd63e4983
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5c8d504b8d49e829311500aa036d2e99a016e4d6
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148842"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484566"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>将 Outlook 项中的字符串作为已知实体进行匹配
 
 发送邮件或会议请求项之前，Exchange Server 将分析项目的内容、标识和标记类似于 Exchange 已知实体的主题和正文中的特定字符串，例如，电子邮件地址、电话号码和 URL。邮件和会议请求通过标有已知实体的 Outlook 收件箱中的 Exchange Server 传递。 
 
-通过使用 Office JavaScript API，你可以获取与特定已知实体匹配的字符串，以进一步进行处理。 还可以在外接程序清单中的某个规则中指定已知实体，以便当用户查看某个包含该实体匹配项的项目时，Outlook 可以激活外接程序。 然后您可以提取实体匹配项并对其执行操作。 
+通过使用 Office JavaScript API，你可以获取与特定已知实体匹配的字符串，以进一步处理。 还可以在外接程序清单中的某个规则中指定已知实体，以便当用户查看某个包含该实体匹配项的项目时，Outlook 可以激活外接程序。 然后您可以提取实体匹配项并对其执行操作。 
 
 能够识别或从所选的邮件或约会中提取此类实例是很方便的。 例如，可以构建一个反向电话查找服务，作为 Outlook 外接程序。 该外接程序可从项目主题或正文中提取类似于电话号码的字符串，执行反向搜索并显示每个电话号码的注册所有者。
 
@@ -39,7 +39,7 @@ ms.locfileid: "59148842"
 |**MeetingSuggestion**|对事件或会议的引用。例如，Exchange 2013 会将以下文本识别为会面建议： _我们明天一起吃午饭吧。_|[MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) 对象|
 |**PhoneNumber**|美国电话号码；例如：_(235) 555-0110_|[PhoneNumber](/javascript/api/outlook/office.phonenumber) 对象|
 |**TaskSuggestion**|电子邮件中的可操作语句。例如：_请更新电子表格。_|[TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) 对象|
-|**Url**|明确指定了 Web 资源的网络位置和标识符的 Web 地址。 Exchange Server不需要 Web 地址中的访问协议，并且无法将链接文本中嵌入的 URL 识别为实体 `Url` 的实例。 Exchange Server可以匹配以下示例： `www.youtube.com/user/officevideos``https://www.youtube.com/user/officevideos` |JavaScript `String` 对象|
+|**Url**|明确指定了 Web 资源的网络位置和标识符的 Web 地址。 Exchange Server不需要 Web 地址中的访问协议，并且无法将链接文本中嵌入的 URL `Url` 识别为实体的实例。 Exchange Server可以匹配以下示例： `www.youtube.com/user/officevideos` `https://www.youtube.com/user/officevideos` |JavaScript `String` 对象|
 
 <br/>
 
@@ -54,7 +54,7 @@ ms.locfileid: "59148842"
 
 若要提取 JavaScript 代码中的实体，或根据特定已知实体的存在情况激活外接程序，请确保已在外接程序清单中请求了相应的权限。
 
-指定默认的受限权限允许外接程序提取 `Address` 、 `MeetingSuggestion` 或 `TaskSuggestion` 实体。 若要提取任何其他实体，请指定读取项目、读/写项目或读/写邮箱权限。 为此，在清单中，请使用 [Permissions](../reference/manifest/permissions.md)元素并指定适当的权限 &mdash; Restricted、ReadItem、ReadWriteItem 或 **ReadWriteMailbox，** 如 &mdash; 以下示例所示。
+指定默认的受限权限允许外接程序 `Address`提取 、 `MeetingSuggestion`或 实体 `TaskSuggestion` 。 若要提取任何其他实体，请指定读取项目、读/写项目或读/写邮箱权限。 为此，请使用 [Permissions](/javascript/api/manifest/permissions) 元素，并指定以下示例中相应的 **permissionRestricted**&mdash;、**ReadItem**、**ReadWriteItem** 或 **ReadWriteMailboxas**&mdash;。
 
 ```xml
 <Permissions>ReadItem</Permissions>
@@ -63,15 +63,15 @@ ms.locfileid: "59148842"
 
 ## <a name="retrieving-entities-in-your-add-in"></a>在外接程序中检索实体
 
-只要用户查看的项目的主题或正文包含 Exchange 和 Outlook 可以识别为已知实体的字符串，这些实例就可供加载项使用。即使加载项未基于已知实体激活，它们也可用。 通过相应的权限，可以使用 或 方法来检索当前邮件或约会中的已知 `getEntities` `getEntitiesByType` 实体。
+只要用户查看的项目的主题或正文包含 Exchange 和 Outlook 可以识别为已知实体的字符串，这些实例就可供加载项使用。即使加载项未基于已知实体激活，它们也可用。 通过相应的权限，可以使用 `getEntities` 或 `getEntitiesByType` 方法来检索当前邮件或约会中的已知实体。
 
-`getEntities`方法返回包含项中所有已知实体的[Entities](/javascript/api/outlook/office.entities)对象的数组。
+方法 `getEntities` 返回包含项中所有已知实体的 [Entities](/javascript/api/outlook/office.entities) 对象的数组。
 
-如果您对特定类型的实体感兴趣，请使用方法，该方法仅返回您需要 `getEntitiesByType` 的实体的数组。 [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) 枚举表示可以提取的所有已知实体类型。
+如果您对特定类型的实体 `getEntitiesByType`感兴趣，请使用方法，该方法仅返回您需要的实体的数组。 [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) 枚举表示可以提取的所有已知实体类型。
 
-调用 `getEntities` 后，可以使用 对象的对应属性获取一组实体 `Entities` 类型的实例。 根据实体的类型，数组中的实例可以只是字符串，也可以映射到特定对象。 
+`getEntities`调用 后，可以使用 对象的对应`Entities`属性获取一组实体类型的实例。 根据实体的类型，数组中的实例可以只是字符串，也可以映射到特定对象。 
 
-作为前面的图中的示例，若要获取该项目中的地址，请访问由 `getEntities().addresses[]` 返回的数组。 `Entities.addresses`属性返回一个字符串数组，Outlook识别为邮政地址。 同样， `Entities.contacts` 该属性返回一 `Contact` 组对象，Outlook识别为联系人信息。 表 1 列出了每个受支持实体的实例的对象类型。
+作为前面的图中的示例，若要获取该项目中的地址，请访问由 `getEntities().addresses[]` 返回的数组。 属性`Entities.addresses`返回一个字符串数组，Outlook识别为邮政地址。 同样，`Entities.contacts`该属性返回一组`Contact`对象，Outlook识别为联系人信息。 表 1 列出了每个受支持实体的实例的对象类型。
 
 以下示例显示如何检索在邮件中发现的任何地址。
 
@@ -88,11 +88,11 @@ if (null != entities && null != entities.addresses && undefined != entities.addr
 
 ## <a name="activating-an-add-in-based-on-the-existence-of-an-entity"></a>根据实体的存在情况激活外接程序
 
-使用已知实体的另一种方法是，根据当前查看的项目的主题或正文的一个或多个类型的实体的存在情况，使 Outlook 激活外接程序。 您可以通过在外接程序清单中 `ItemHasKnownEntity` 指定规则来这样做。 [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype)简单类型表示规则支持的不同类型的已知 `ItemHasKnownEntity` 实体。 激活外接程序后，还可以根据需要检索此类实体的实例，如上一节" [在外接程序中检索实体](#retrieving-entities-in-your-add-in)"中所述。
+使用已知实体的另一种方法是，根据当前查看的项目的主题或正文的一个或多个类型的实体的存在情况，使 Outlook 激活外接程序。 您可以通过在外接程序清单中 `ItemHasKnownEntity` 指定规则来这样做。 [EntityType](/javascript/api/outlook/office.mailboxenums.entitytype) 简单类型表示规则支持的不同类型的已知`ItemHasKnownEntity`实体。 激活外接程序后，还可以根据需要检索此类实体的实例，如上一节" [在外接程序中检索实体](#retrieving-entities-in-your-add-in)"中所述。
 
-可以选择在规则中应用正则表达式，以便进一步筛选实体的实例，并且使 Outlook 仅在实体实例的子集上激活 `ItemHasKnownEntity` 外接程序。 例如，可为邮件中包含以"98"开头的华盛顿州邮政编码的街道地址实体指定筛选器。 若要对实体实例应用筛选器，请使用 `RegExFilter` `FilterName` `Rule` [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 类型的 元素中的 和 属性。
+`ItemHasKnownEntity`可以选择在规则中应用正则表达式，以便进一步筛选实体的实例，并且使 Outlook 仅在实体实例的子集上激活外接程序。 例如，可为邮件中包含以"98"开头的华盛顿州邮政编码的街道地址实体指定筛选器。 若要对实体实例应用筛选器，请使用 `RegExFilter` `FilterName` `Rule` [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) 类型的 元素中的 和 属性。
 
-类似于其他激活规则，您可以指定多个规则，为外接程序形成一个规则集合。 以下示例对两个规则应用"AND"操作： `ItemIs` 一个规则和一 `ItemHasKnownEntity` 个规则。 只要当前项目为邮件，且 Outlook 识别该项目主题或正文中的地址时，此规则集合就将激活外接程序。
+类似于其他激活规则，您可以指定多个规则，为外接程序形成一个规则集合。 以下示例对两个规则应用"AND"操作： `ItemIs` 一个规则和一个 `ItemHasKnownEntity` 规则。 只要当前项目为邮件，且 Outlook 识别该项目主题或正文中的地址时，此规则集合就将激活外接程序。
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="And">
@@ -103,7 +103,7 @@ if (null != entities && null != entities.addresses && undefined != entities.addr
 
 <br/>
 
-下面的示例使用 `getEntitiesByType` 当前项将变量 `addresses` 设置为上一个规则集合的结果。
+下面的示例使用当前 `getEntitiesByType` 项将变量 `addresses` 设置为上一个规则集合的结果。
 
 ```js
 var addresses = Office.context.mailbox.item.getEntitiesByType(Office.MailboxEnums.EntityType.Address);
@@ -111,7 +111,7 @@ var addresses = Office.context.mailbox.item.getEntitiesByType(Office.MailboxEnum
 
 <br/>
 
-下面的规则示例在当前项目的主题或正文中包含 URL 且该 URL 包含字符串"youtube"时激活外接程序，而不考虑字符串 `ItemHasKnownEntity` 的大小写。
+`ItemHasKnownEntity`下面的规则示例在当前项目的主题或正文中包含 URL 且该 URL 包含字符串"youtube"时激活外接程序，而不考虑字符串的大小写。
 
 ```XML
 <Rule xsi:type="ItemHasKnownEntity" 
@@ -123,7 +123,7 @@ var addresses = Office.context.mailbox.item.getEntitiesByType(Office.MailboxEnum
 
 <br/>
 
-以下示例使用当前项设置变量，获取与前面规则中的正则表达式匹配 `getFilteredEntitiesByName(name)` `videos` 的结果 `ItemHasKnownEntity` 数组。
+以下示例使用当前 `getFilteredEntitiesByName(name)` 项设置 `videos` 变量，获取与前面规则中的正则表达式匹配的结果 `ItemHasKnownEntity` 数组。
 
 ```js
 var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
@@ -132,28 +132,28 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 
 ## <a name="tips-for-using-well-known-entities"></a>使用已知实体的提示
 
-在外接程序中使用已知实体时，应了解一些事实和限制。 只要在用户读取包含已知实体匹配项的项目时激活外接程序，无论是否使用规则，均适用 `ItemHasKnownEntity` 以下内容。
+在外接程序中使用已知实体时，应了解一些事实和限制。 只要在 `ItemHasKnownEntity` 用户读取包含已知实体匹配项的项目时激活外接程序，无论是否使用规则，均适用以下内容。
 
 
 - 仅当字符串为英文形式时，您才可以提取已知实体字符串。
     
-- 您可以从项目正文的前 2,000 个字符中提取已知实体，但不能超过此限制。 此大小限制有助于平衡功能和性能之间的需求，因此 Exchange Server 和 Outlook 不会因分析和确定大型邮件和约会中的已知实体实例而停滞。 请注意，此限制与加载项是否指定规则 `ItemHasKnownEntity` 无关。 如果外接程序使用此类规则，还要注意以下项目 2 中针对 Outlook 富客户端的的规则处理限制。
+- 您可以从项目正文的前 2,000 个字符中提取已知实体，但不能超过此限制。 此大小限制有助于平衡功能和性能之间的需求，因此 Exchange Server 和 Outlook 不会因分析和确定大型邮件和约会中的已知实体实例而停滞。 请注意，此限制与加载项是否指定规则无关 `ItemHasKnownEntity` 。 如果外接程序使用此类规则，还要注意以下项目 2 中针对 Outlook 富客户端的的规则处理限制。
     
 - 您可以从约会（由邮箱所有者之外的人员组织的会议）中提取实体。如果日历项目不是会议或不是由邮箱所有者组织的会议，则不能从中提取实体。
     
-- 只能从邮件中提取类型 `MeetingSuggestion` 实体，但不能从约会中提取实体。
+- 只能从邮件中提取 `MeetingSuggestion` 类型实体，但不能从约会中提取实体。
     
-- 您可以提取项目正文中明确存在的 URL，但无法提取 HTML 项目正文中内嵌在超链接文本中的 URL。 请考虑改为 `ItemHasRegularExpressionMatch` 使用规则获取显式和嵌入的 URL。 将 `BodyAsHTML` 指定为 _PropertyName_，并指定与 URL 匹配的正则表达式作为  _RegExValue_。
+- 您可以提取项目正文中明确存在的 URL，但无法提取 HTML 项目正文中内嵌在超链接文本中的 URL。 请考虑改为使用 `ItemHasRegularExpressionMatch` 规则获取显式和嵌入的 URL。 将 `BodyAsHTML` 指定为 _PropertyName_，将匹配 URL 的正则表达式指定为  _RegExValue_。
     
 - 不能从"已发送邮件"文件夹中的邮件提取实体。
     
-此外，如果使用 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 规则，则适用以下规则，并且可能会影响预期外接程序被激活的方案。
+此外，如果使用 [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) 规则，则适用以下规则，并且可能会影响预期外接程序被激活的方案。
 
-- 使用规则时，Outlook匹配仅采用英语的实体字符串，而不考虑清单中 `ItemHasKnownEntity` 指定的默认区域设置。
+- 使用规则`ItemHasKnownEntity`时，Outlook匹配仅采用英语的实体字符串，而不考虑清单中指定的默认区域设置。
     
-- 当外接程序在富客户端Outlook时，Outlook将规则应用到项目正文的第一 MB，而不是超过该限制的正文的其余部分。 `ItemHasKnownEntity`
+- `ItemHasKnownEntity`当外接程序在富客户端Outlook时，Outlook将规则应用到项目正文的第一个兆字节，而不是超过该限制的正文的其余部分。
     
-- 不能使用规则为"已发送项目" `ItemHasKnownEntity` 文件夹中的项目激活外接程序。
+- 不能使用规则为 `ItemHasKnownEntity` "已发送项目"文件夹中的项目激活外接程序。
     
 
 ## <a name="see-also"></a>另请参阅

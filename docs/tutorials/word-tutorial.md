@@ -4,12 +4,12 @@ description: 本教程将介绍如何生成 Word 加载项，用于插入（和�
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: ccea2575e62a433ae2d6d2fe541a33e90d53f031
-ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
+ms.openlocfilehash: 6fc01db700475d4ff2dda49e471a68d9ae59aa77
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2022
-ms.locfileid: "63511254"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484023"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -386,7 +386,7 @@ ms.locfileid: "63511254"
 
    - “End”和“After”的区别在于，“End”在现有区域末尾插入新文本，而“After”则是新建包含字符串的区域，并在现有区域后面插入新区域。 同样，“Start”是在现有区域的开头位置插入文本，而“Before”插入的是新区域。 “Replace”将现有区域文本替换为第一个参数中的字符串。
 
-   - 在本教程之前阶段步骤中，正文对象的 insert* 方法没有“Before”和“After”选项。 这是因为不能将内容置于文档正文外。
+   - 在本教程之前阶段中，正文对象的 insert* 方法没有“Before”和“After”选项。 这是因为不能将内容置于文档正文外。
 
     ```js
     const doc = context.document;
@@ -404,11 +404,11 @@ ms.locfileid: "63511254"
 
 在本系列教程前面的所有函数中，都是将命令排入队列，以 *将* 写入 Office 文档。每个函数结束时都会调用 `context.sync()` 方法，从而将排入队列的命令发送到文档，以供执行。不过，在上一步中添加的代码调用的是 `originalRange.text` 属性，这与之前编写的函数明显不同，因为 `originalRange` 对象只是任务窗格脚本中的代理对象。由于它并不了解文档中区域的实际文本，因此它的 `text` 属性无法有实际值。有必要先从文档中提取区域的文本值，再用它设置  `originalRange.text` 的值。 只有这样才能调用 `originalRange.text`，而又不会引发异常。 此提取过程分为三步：
 
-   1. 将命令排入队列，以加载（即提取）代码需要读取的属性。
+1. 将命令排入队列，以加载 (即提取) 代码需要读取的属性。
 
-   1. 调用上下文对象的 `sync`方法，从而向文档发送已排入队列的命令以供执行，并返回请求获取的信息。
+1. 调用上下文对象的 `sync`方法，从而向文档发送已排入队列的命令以供执行，并返回请求获取的信息。
 
-   1. 由于 `sync` 是异步方法，因此请先确保它已完成，然后代码才能调用已提取的属性。
+1. 由于 `sync` 是异步方法，因此请先确保它已完成，然后代码才能调用已提取的属性。
 
 只要代码需要从 Office 文档 *读取* 信息，就必须完成这些步骤。
 
@@ -587,11 +587,11 @@ async function insertTextIntoRange() {
 
 1. 在任务窗格中，选择“插入段落”按钮，以确保文档开头有一个段落。
 
-1. 在文档中，选择短语“即点即用”。 请注意不要包含选定区域前的空格和其后的逗号。
+1. 在文档中，选择短语“即点即用”。*注意在选择时不要包括前面的空格或后面的逗号。*
 
 1. 选择 **“插入缩写”** 按钮。 观察“(C2R)”是否已添加。 此外，还请观察，文档底部是否添加了包含整个扩展文本的新段落，因为新字符串已添加到现有区域中。
 
-1. 在文档中，选择短语“Microsoft 365”。 请注意不要包含选定区域前后的空格。
+1. 在文档中，选择短语“Microsoft 365”。*注意不要在所选内容中包含前导或尾随空格。*
 
 1. 选择“**添加版本信息**” 按钮。观察是否已在“Office 2016”和“Microsoft 365”之间插入“Office 2019”。此外，还请观察，文档底部是否添加了仅包含最初选定文本的新段落，因为新字符串已变成新区域，而不是添加到原始区域中。
 

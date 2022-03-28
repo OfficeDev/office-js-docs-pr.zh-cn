@@ -3,12 +3,12 @@ title: 添加对 Outlook 外接程序的移动支持
 description: 添加对 Outlook Mobile 的支持需要更新外接程序清单，并且可能会更改移动方案的代码。
 ms.date: 07/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ae8fbc6635e568cc6a9e8888ed52f0877f817320
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 451476e9cd7eda9902ad156966558c182752547f
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745971"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484304"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>添加对适用于 Outlook Mobile 的外接程序命令的支持
 
@@ -16,7 +16,7 @@ ms.locfileid: "63745971"
 
 ## <a name="updating-the-manifest"></a>更新清单
 
-启用 Outlook Mobile 中的外接程序命令的第一步是在外接程序清单中对其进行定义。[VersionOverrides](../reference/manifest/versionoverrides.md) v1.1 架构为移动电话定义新的外形规格，[MobileFormFactor](../reference/manifest/mobileformfactor.md)。
+启用 Outlook Mobile 中的外接程序命令的第一步是在外接程序清单中对其进行定义。[VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 架构为移动电话定义新的外形规格，[MobileFormFactor](/javascript/api/manifest/mobileformfactor)。
 
 此元素包含在移动客户端中加载外接程序所需的所有信息。这使你可以为移动体验定义完全不同的 UI 元素和 JavaScript 文件。
 
@@ -56,12 +56,12 @@ ms.locfileid: "63745971"
 </VersionOverrides>
 ```
 
-这与 [DesktopFormFactor](../reference/manifest/desktopformfactor.md) 元素中出现的元素非常相似，但具有一些明显的区别。
+这与 [DesktopFormFactor](/javascript/api/manifest/desktopformfactor) 元素中出现的元素非常相似，但具有一些明显的区别。
 
-- 不使用 [OfficeTab](../reference/manifest/officetab.md) 元素。
-- [ExtensionPoint](../reference/manifest/extensionpoint.md) 元素必须仅具有一个子元素。如果外接程序仅添加一个按钮，则子元素应为 [Control](../reference/manifest/control.md) 元素。如果外接程序添加多个按钮，则子元素应为包含多个 `Control` 元素的 [Group](../reference/manifest/group.md) 元素。
+- 不使用 [OfficeTab](/javascript/api/manifest/officetab) 元素。
+- [ExtensionPoint](/javascript/api/manifest/extensionpoint) 元素必须仅具有一个子元素。如果外接程序仅添加一个按钮，则子元素应为 [Control](/javascript/api/manifest/control) 元素。如果外接程序添加多个按钮，则子元素应为包含多个 `Control` 元素的 [Group](/javascript/api/manifest/group) 元素。
 - 没有与 `Control` 元素等效的 `Menu` 类型。
-- 不使用 [Supertip](../reference/manifest/supertip.md) 元素。
+- 不使用 [Supertip](/javascript/api/manifest/supertip) 元素。
 - 要求的图标大小不同。移动外接程序最少必须支持 25x25、32x32 和 48x48 像素的图标。
 
 ## <a name="code-considerations"></a>代码注意事项
@@ -70,9 +70,9 @@ ms.locfileid: "63745971"
 
 ### <a name="use-rest-instead-of-exchange-web-services"></a>使用 REST 代替 Exchange Web 服务
 
-Outlook Mobile 中不支持 [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法。外接程序应在可能的情况下首选从 Office.js API 获取信息。如果外接程序需要 Office.js API 未公开的信息，则应使用 [Outlook REST API](/outlook/rest/) 来访问用户邮箱。
+Outlook Mobile 中不支持 [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法。外接程序应在可能的情况下首选从 Office.js API 获取信息。如果外接程序需要 Office.js API 未公开的信息，则应使用 [Outlook REST API](/outlook/rest/) 来访问用户邮箱。
 
-邮箱要求集 1.5 引入了可请求与 REST API 兼容的访问令牌的 [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 新版本，以及可用于查找用户的 REST API 终结点的新 [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) 属性。
+邮箱要求集 1.5 引入了可请求与 REST API 兼容的访问令牌的 [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 新版本，以及可用于查找用户的 REST API 终结点的新 [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) 属性。
 
 ### <a name="pinch-zoom"></a>收缩缩放
 
@@ -90,23 +90,23 @@ Outlook Mobile 中不支持 [Office.context.mailbox.makeEwsRequestAsync](../refe
 
 要求集 1.6 或更高版本中引入的 API 不受 Outlook Mobile 支持。 还不支持来自早期要求集的以下 API。
 
-- [Office.context.officeTheme](../reference/objectmodel/preview-requirement-set/office.context.md#officetheme-officetheme)
-- [Office.context.mailbox.ewsUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
-- [Office.context.mailbox.convertToEwsId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.displayMessageForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.displayNewAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.item.dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-- [Office.context.mailbox.item.displayReplyAllForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.displayReplyForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.getEntitiesByType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.getFilteredEntitiesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.getRegexMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.getRegexMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [Office.context.officeTheme](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context#officetheme-officetheme)
+- [Office.context.mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties)
+- [Office.context.mailbox.convertToEwsId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.convertToRestId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.displayAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.displayMessageForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.displayNewAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.item.dateTimeModified](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+- [Office.context.mailbox.item.displayReplyAllForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.displayReplyForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.getEntities](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.getEntitiesByType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.getFilteredEntitiesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.getRegexMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.getRegexMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
 
 ## <a name="see-also"></a>另请参阅
 
-[Exchange 服务器和 Outlook 客户端支持的要求集](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+[Exchange 服务器和 Outlook 客户端支持的要求集](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

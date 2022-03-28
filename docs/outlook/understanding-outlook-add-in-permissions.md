@@ -3,8 +3,13 @@ title: 了解 Outlook 加载项权限
 description: Outlook 加载项在清单中指定所需的权限级别，其中包括受限、ReadItem、ReadWriteItem 或 ReadWriteMailbox。
 ms.date: 02/19/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: 6350e0d3aed499d831c13e440945fda1f60742ca
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484186"
 ---
-
 # <a name="understanding-outlook-add-in-permissions"></a>了解 Outlook 加载项权限
 
 Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **Restricted**、**ReadItem**、**ReadWriteItem** 或 **ReadWriteMailbox**。这些权限级别可累计：“**Restricted**”是最低的级别，并且每个更高级别包括所有较低级别的权限。“**ReadWriteMailbox**”包含所有受支持的权限。
@@ -13,7 +18,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 ## <a name="restricted-permission"></a>“Restricted”权限
 
-**Restricted** 权限是最基本级别的权限。在清单的 [权限](../reference/manifest/permissions.md)元素中指定 **Restricted** 可以请求获取此权限。如果外接程序不请求其清单中的将特定权限，在默认情况下，Outlook 会将此权限分配给邮件外接程序。
+**Restricted** 权限是最基本级别的权限。在清单的 [权限](/javascript/api/manifest/permissions)元素中指定 **Restricted** 可以请求获取此权限。如果外接程序不请求其清单中的将特定权限，在默认情况下，Outlook 会将此权限分配给邮件外接程序。
 
 ### <a name="can-do"></a>可以执行的操作
 
@@ -25,31 +30,31 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 ### <a name="cant-do"></a>不能执行的操作
 
-- 对联系人、电子邮件地址、会议建议或任务建议实体使用 [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) 规则。
+- 对联系人、电子邮件地址、会议建议或任务建议实体使用 [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) 规则。
 
-- 使用 [ItemHasAttachment](../reference/manifest/rule.md#itemhasattachment-rule) 或 [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) 规则。
+- 使用 [ItemHasAttachment](/javascript/api/manifest/rule#itemhasattachment-rule) 或 [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) 规则。
 
 - 访问以下列表中与用户或邮件具体信息相关的属性和方法。尝试访问此列表中的成员将返回 **null**，并生成指明 Outlook 要求邮件外接程序具有提升的权限的错误消息。
 
-  - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.bcc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.body](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.from](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.getRegExMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.optionalAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.organizer](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.sender](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [mailbox.getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [mailbox.userProfile](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
+  - [item.addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.bcc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.body](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.from](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.getRegExMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.organizer](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.removeAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.sender](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+  - [mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+  - [mailbox.getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+  - [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+  - [mailbox.userProfile](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties)
   - [Body](/javascript/api/outlook/office.body) 及其所有子成员
   - [Location](/javascript/api/outlook/office.location) 及其所有子成员
   - [Recipients](/javascript/api/outlook/office.recipients) 及其所有子成员
@@ -62,7 +67,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 ### <a name="can-do"></a>可以执行的操作
 
-- 在读取或 [撰写窗体](item-data.md)[中读取当前项目的所有属性](get-and-set-item-data-in-a-compose-form.md)，例如阅读窗体中的 [item.to](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) 和撰写窗体中的 [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1))。
+- 在读取或 [撰写窗体](item-data.md)[中读取当前项目的所有属性](get-and-set-item-data-in-a-compose-form.md)，例如阅读窗体中的 [item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 和撰写窗体中的 [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1))。
 
 - [获取回调令牌](get-attachments-of-an-outlook-item.md)，以使用 Exchange Web 服务 (EWS) 或 [Outlook REST API](use-rest-api.md) 获取邮件附件或整个邮件。
 
@@ -70,7 +75,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 - 从该邮件的主题或正文中[获取所有现有已知实体](match-strings-in-an-item-as-well-known-entities.md)，而不仅仅是一个子集。
 
-- 使用 [ItemHasKnownEntity](activation-rules.md#itemhasknownentity-rule) 规则中所有的 [已知实体](../reference/manifest/rule.md#itemhasknownentity-rule)，或者 [ItemHasRegularExpressionMatch](activation-rules.md#itemhasregularexpressionmatch-rule) 规则中的 [正则表达式](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule)。 以下示例遵循架构 v1.1。 它显示在所选邮件的主题或正文中发现一个或多个已知实体时激活外接程序的规则。
+- 使用 [ItemHasKnownEntity](activation-rules.md#itemhasknownentity-rule) 规则中所有的 [已知实体](/javascript/api/manifest/rule#itemhasknownentity-rule)，或者 [ItemHasRegularExpressionMatch](activation-rules.md#itemhasregularexpressionmatch-rule) 规则中的 [正则表达式](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule)。 以下示例遵循架构 v1.1。 它显示在所选邮件的主题或正文中发现一个或多个已知实体时激活外接程序的规则。
 
   ```XML
     <Permissions>ReadItem</Permissions>
@@ -98,9 +103,9 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
   - 使用 Outlook REST API 获取当前日历事件项。
 
 - 使用以下任一 API。
-  - [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [item.addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [item.addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+  - [item.addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [item.addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
   - [item.bcc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
   - [item.bcc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
   - [item.body.prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependasync-member(1))
@@ -112,7 +117,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
   - [item.location.setAsync](/javascript/api/outlook/office.location#outlook-office-location-setasync-member(1))
   - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
   - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
-  - [item.removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+  - [item.removeAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
   - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
   - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
   - [item.start.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))
@@ -130,7 +135,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 - [添加或删除该邮件的附件](add-and-remove-attachments-to-an-item-in-a-compose-form.md)。
 
-- 使用适用于邮件外接程序的 Office JavaScript API 的所有其他成员，**Mailbox.makeEWSRequestAsync** 除外。
+- 使用适用于邮件外接程序的 Office JavaScript API 的所有其他成员，**Mailbox.makeEWSRequestAsync 除外**。
 
 ### <a name="cant-do"></a>禁止事项
 

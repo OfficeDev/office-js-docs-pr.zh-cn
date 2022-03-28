@@ -3,16 +3,16 @@ title: 将邮件从主机页传递到对话框的替代方法
 description: 了解在 messageChild 方法不受支持时使用的解决方法。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e17cb81ab781c6b9acf0ae76a29c601a61c9f931
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 36500ac554c9e96de2c20ba76f80dd9dcb628a5a
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743366"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483634"
 ---
 # <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>将邮件从主机页传递到对话框的替代方法
 
-建议通过 `messageChild` 方法将数据和消息从父页面传递到子对话框，如在 Office 外接程序中使用 [Office 对话框 API 中所述](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)。如果加载项在不支持 [DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md) 要求集的平台或主机上运行，可通过其他两种方法将信息传递到对话框。
+建议通过 `messageChild` 方法将数据和消息从父页面传递到子对话框，如在 Office 外接程序中使用 [Office 对话框 API 中所述](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box)。如果加载项在不支持 [DialogApi 1.2](/javascript/api/requirement-sets/dialog-api-requirement-sets) 要求集的平台或主机上运行，可通过其他两种方法将信息传递到对话框。
 
 - 向传递给 `displayDialogAsync` 的 URL 添加查询参数。
 - 将信息存储在主机窗口和对话框都可访问的位置。 这两个窗口不共享 [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性 (的常见会话存储) 但如果它们具有相同的 *域 (包括* 端口号，如果有) ，则它们共享一个公共 [本地 存储](https://www.w3schools.com/html/html5_webstorage.asp)。\*

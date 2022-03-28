@@ -3,12 +3,12 @@ title: 在加载项中Office上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到Office外接程序。
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: aa301996d653170d02280efbdb7e94733b5dd924
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 3591c320fbe0c2ade41725ef2da32c31b059ac7d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742934"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483893"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>在加载项中Office上下文选项卡
 
@@ -29,8 +29,8 @@ ms.locfileid: "63742934"
 > [!NOTE]
 > 自定义上下文选项卡仅适用于支持以下要求集的平台。 有关要求集及其使用方法的更多信息，请参阅指定Office[和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。
 >
-> - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
-> - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
+> - [RibbonApi 1.2](/javascript/api/requirement-sets/ribbon-api-requirement-sets)
+> - [SharedRuntime 1.1](/javascript/api/requirement-sets/shared-runtime-requirement-sets)
 >
 > 可以在代码中使用运行时检查来测试用户的主机和平台组合是否支持这些要求集，如运行时检查方法和要求集支持 [中所述](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。  (在清单中指定要求集的技术（也如该文章中所述）当前对 RibbonApi 1.2.) 不起作用，或者，当不支持自定义上下文选项卡时，您可以实现备用 [UI 体验](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)。
 
@@ -62,7 +62,7 @@ ms.locfileid: "63742934"
 与在清单中用 XML 定义的自定义核心选项卡不同，自定义上下文选项卡是在运行时使用 JSON blob 定义的。 代码将 blob 解析为 JavaScript 对象，然后将该对象传递给 [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) 方法。 自定义上下文选项卡仅存在于当前运行加载项的文档中。 这不同于在安装外接程序时添加到 Office 应用程序功能区中的自定义核心选项卡，当打开另一个文档时，这些选项卡将一直存在。 此外， `requestCreateControls` 方法只能在加载项会话中运行一次。 如果再次调用它，将引发错误。
 
 > [!NOTE]
-> JSON blob 的属性和子属性 (以及密钥名称) 的结构大致与清单 XML 中 [CustomTab](../reference/manifest/customtab.md) 元素及其后代元素的结构平行。
+> JSON blob 的属性和子属性 (以及密钥名称) 的结构大致与清单 XML 中 [CustomTab](/javascript/api/manifest/customtab) 元素及其后代元素的结构平行。
 
 我们将分步构造上下文选项卡 JSON blob 的示例。 上下文选项卡 JSON 的完整架构位于 [dynamic-ribbon.schema.json。](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json) 如果你使用 Visual Studio Code，可以使用此文件获取IntelliSense并验证 JSON。 有关详细信息，请参阅使用 [JSON 架构Visual Studio Code JSON 编辑 JSON](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)。
 
@@ -530,9 +530,9 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 
 #### <a name="use-noncontextual-tabs-or-controls"></a>使用非上下文选项卡或控件
 
-有一个清单元素 [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md)，旨在当外接程序在不支持自定义上下文选项卡的应用程序或平台上运行时，在外接程序中实现自定义上下文选项卡的回退体验。
+有一个清单元素 [OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi)，旨在当外接程序在不支持自定义上下文选项卡的应用程序或平台上运行时，在外接程序中实现自定义上下文选项卡的回退体验。
 
-使用此元素的最简单策略是定义一个或多个自定义核心选项卡 (即清单中与外接程序中自定义上下文选项卡的功能区自定义项重复的非上下文自定义选项卡) 。 但添加为 `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 自定义核心选项卡上重复 [的 Group](../reference/manifest/group.md)、 [Control](../reference/manifest/control.md) 和 menu **Item** 元素的第一个子元素。 这样做的效果如下：
+使用此元素的最简单策略是定义一个或多个自定义核心选项卡 (即清单中与外接程序中自定义上下文选项卡的功能区自定义项重复的非上下文自定义选项卡) 。 但添加为 `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` 自定义核心选项卡上重复 [的 Group](/javascript/api/manifest/group)、 [Control](/javascript/api/manifest/control) 和 menu **Item** 元素的第一个子元素。 这样做的效果如下：
 
 - 如果外接程序在支持自定义上下文选项卡的应用程序和平台上运行，则自定义核心组和控件将不会显示在功能区上。 相反，自定义上下文选项卡将在外接程序调用 方法时 `requestCreateControls` 创建。
 - 如果外接程序在不支持  `requestCreateControls`的应用程序或平台上运行，则元素会显示在自定义核心选项卡上。
@@ -561,7 +561,7 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 </OfficeApp>
 ```
 
-有关更多示例，请参阅 [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md)。
+有关更多示例，请参阅 [OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi)。
 
 当父组 `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`或菜单标记为 时，它将不可见，并且当自定义上下文选项卡不受支持时，将忽略其所有子标记。 因此，这些子元素中的任一元素是否具有 **OverriddenByRibbonApi** 元素或其值是什么并不重要。 其含义是 `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`，如果某个菜单项或控件必须在所有上下文中可见，则不仅不应使用 标记它，而且其上级菜单和组也必须不按此方式 *标记*。
 

@@ -3,12 +3,12 @@ title: Outlook 加载项的隐私、权限和安全性
 description: 了解如何管理 Outlook 加载项中的隐私、权限和安全性。
 ms.date: 07/27/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 594c5715336533931d68acaffc5b8688cf1a40a1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 07f1565432d5b6b1e0371e9238fffb835b7d8931
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149492"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484672"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook 外接程序的隐私、权限和安全性
 
@@ -81,7 +81,7 @@ ms.locfileid: "59149492"
   > [!IMPORTANT]
   > - 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
   >
-  > - 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)。
+  > - 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm)。
 
 - 从 AppSource 安装外接程序之前，最终用户能够查看外接程序可以对其数据进行的访问和采取的操作，且必须明确确认后才能继续操作。未经用户或管理员手动验证，Outlook 外接程序不会自动推送到客户端计算机。
 
@@ -119,7 +119,7 @@ ms.locfileid: "59149492"
 
 - 开发人员根据 Outlook 外接程序应激活的方式、Outlook 外接程序读取或写入项目特定属性的需求，或者创建和发送项目的需求来针对 Outlook 外接程序请求适当级别的权限。
 
-- 开发人员使用 Outlook 加载项清单中的 [Permissions](../reference/manifest/permissions.md) 元素，并根据需要分配 **Restricted**、**ReadItem**、**ReadWriteItem** 或 **ReadWriteMailbox** 的值来请求权限。
+- 开发人员使用 Outlook 加载项清单中的 [Permissions](/javascript/api/manifest/permissions) 元素，并根据需要分配 **Restricted**、**ReadItem**、**ReadWriteItem** 或 **ReadWriteMailbox** 的值来请求权限。
 
   > [!NOTE]
   > 请注意，从清单架构 v1.1 开始就提供 **ReadWriteItem** 权限。
@@ -148,7 +148,7 @@ ms.locfileid: "59149492"
 
 - 如果 Outlook 加载项需要向撰写的项目的属性（如收件人姓名、电子邮件地址、正文和主题）写入，或需要添加或删除项目附件，那么开发人员应请求“**读/写项目**”权限。
 
-- 仅在 Outlook 外接程序需要使用 [mailbox.makeEWSRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) 方法执行下列一个或多个操作时，开发人员才请求 **“读/写邮箱”** 权限。
+- 仅在 Outlook 外接程序需要使用 [mailbox.makeEWSRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法执行下列一个或多个操作时，开发人员才请求 **“读/写邮箱”** 权限。
 
   - 读取或写入邮箱中项目的属性。
   - 创建、读取、写入或发送邮箱中的项目。

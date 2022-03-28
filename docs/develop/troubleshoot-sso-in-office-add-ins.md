@@ -3,19 +3,19 @@ title: 排查单一登录 (SSO) 错误消息
 description: 有关如何解决加载项中单一登录 (SSO) 问题Office处理特殊条件或错误的指导。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 181eeb5f45884c2f54b90a07578a5c2844cc17dd
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: dd32fb1ff3b3f0522085f9940b91f7e01dde21ab
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744185"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483523"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>排查单一登录 (SSO) 错误消息
 
 本文提供了一些指南，介绍了如何排查 Office 加载项中出现的单一登录 (SSO) 问题，以及如何让已启用 SSO 的加载项可靠地处理特殊条件或错误。
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
+> 目前，Word、Excel、Outlook 和 PowerPoint 支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](/javascript/api/requirement-sets/identity-api-requirement-sets)。
 > 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
 ## <a name="debugging-tools"></a>调试工具
@@ -36,7 +36,7 @@ ms.locfileid: "63744185"
 加载项或 Office 版本不支持 [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) API。
 
 - Office 版本不支持 SSO。 所需版本是Microsoft 365频道订阅的必需版本。
-- 加载项清单缺少适当的 [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) 部分。
+- 加载项清单缺少适当的 [WebApplicationInfo](/javascript/api/manifest/webapplicationinfo) 部分。
 
 加载项应该通过回退到用户身份验证备用系统来响应此错误。 有关详细信息，请参阅[要求和最佳做法](../develop/sso-in-office-add-ins.md#requirements-and-best-practices)。
 
@@ -98,7 +98,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 
 有几种可能的原因。
 
-- 加载项在不支持 `getAccessToken` API的平台上运行。 例如，在 iPad 上它不受支持。 另请参阅 [Identity API 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)。
+- 加载项在不支持 `getAccessToken` API的平台上运行。 例如，在 iPad 上它不受支持。 另请参阅 [Identity API 要求集](/javascript/api/requirement-sets/identity-api-requirement-sets)。
 - `forMSGraphAccess` 选项在调用中传递给 `getAccessToken`，并且用户从 AppSource 获得了加载项。 在此方案中，对于所需的 Microsoft Graph 范围（权限），租户管理员未向加载项授予许可。 撤回具有 `allowConsentPrompt` 的 `getAccessToken` 将无法解决此问题，因为允许 Office 提示用户仅同意 AAD `profile` 范围。
 
 代码应回退到用户身份验证备用系统。
@@ -140,7 +140,7 @@ Office应用程序无法获取对外接程序 Web 服务的访问令牌。
 应该只会在开发中看到此类错误。
 
 - 服务器端代码应向客户端发送 `403 Forbidden` 响应，它应该会在控制台或日志中记录此错误。
-- 请确保加载项清单 [Scopes](../reference/manifest/scopes.md) 部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 如需了解更多信息，请参阅[向 Azure AD v2.0 终结点注册加载项](register-sso-add-in-aad-v2.md)。
+- 请确保加载项清单 [Scopes](/javascript/api/manifest/scopes) 部分指定了所需的全部权限。 此外，还请确保加载项 Web 服务注册指定了相同的权限。 同时检查是否有拼写错误。 如需了解更多信息，请参阅[向 Azure AD v2.0 终结点注册加载项](register-sso-add-in-aad-v2.md)。
 
 ### <a name="invalid-audience-error-in-the-access-token-for-microsoft-graph"></a>Microsoft 应用程序访问令牌中的访问群体错误Graph
 

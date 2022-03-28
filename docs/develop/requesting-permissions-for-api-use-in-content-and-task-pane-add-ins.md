@@ -3,12 +3,12 @@ title: 在加载项中请求获取 API 使用权限
 description: 了解在内容或任务窗格外接程序的清单中声明的不同权限级别，以指定 JavaScript API 访问级别。
 ms.date: 03/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b9fa0276c7ec130621affdcd6070e034cd30b79
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 1e4f0bf7f9f8d1142f5fa4f252a6d1f0a11c4aa3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743980"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483614"
 ---
 # <a name="requesting-permissions-for-api-use-in-add-ins"></a>在加载项中请求获取 API 使用权限
 
@@ -22,7 +22,7 @@ ms.locfileid: "63743980"
 
 ![任务窗格应用程序的权限级别。](../images/office15-app-sdk-task-pane-app-permission.png)
 
-这些权限指定加载项运行时在用户插入然后激活（信任）加载项时允许内容或任务窗格加载项使用的 API 子集。若要声明内容或任务窗格加载项所需的权限级别，请在加载项清单的 [Permissions](../reference/manifest/permissions.md) 元素中指定任一权限文本值。以下示例要求 **WriteDocument** 权限，仅允许可以对文档进行写入（而非阅读）的方法。
+这些权限指定加载项运行时在用户插入然后激活（信任）加载项时允许内容或任务窗格加载项使用的 API 子集。若要声明内容或任务窗格加载项所需的权限级别，请在加载项清单的 [Permissions](/javascript/api/manifest/permissions) 元素中指定任一权限文本值。以下示例要求 **WriteDocument** 权限，仅允许可以对文档进行写入（而非阅读）的方法。
 
 ```XML
 <Permissions>WriteDocument</Permissions>

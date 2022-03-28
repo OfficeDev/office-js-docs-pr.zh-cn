@@ -4,19 +4,19 @@ description: 了解如何在加载项中实现附加的Outlook功能。
 ms.topic: article
 ms.date: 02/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ff3411ba2527e0b6c99e5e5674811ff76e240ccf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3054742a90f66e9ee1bfc75bded5090bd18947f3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152438"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484164"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>在加载项中实现Outlook On-send
 
 在此演练结束时，您将拥有一个Outlook外接程序，该外接程序可以在邮件发送时插入免责声明。
 
 > [!NOTE]
-> 要求集 1.9 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> 要求集 1.9 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
@@ -24,9 +24,9 @@ ms.locfileid: "59152438"
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要在加载项中启用附加 Onss 功能，必须在 `AppendOnSend` [ExtendedPermissions](../reference/manifest/extendedpermissions.md)集合中包括 权限。
+若要在加载项中启用附加 Onss 功能 `AppendOnSend` ，必须在 [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) 集合中包括 权限。
 
-对于此方案，你将运行 函数，而不是在选择"执行操作"按钮时运行 `action`  `appendOnSend` 函数。
+对于此方案，你将`action`运行 函数，而不是在选择"执行 **操作**`appendOnSend`"按钮时运行 函数。
 
 1. 在代码编辑器中，打开快速启动项目。
 
@@ -127,11 +127,11 @@ ms.locfileid: "59152438"
 接下来，在发送事件上实现追加。
 
 > [!IMPORTANT]
-> 如果外接程序还使用 实现[Onss `ItemSend` ons](outlook-on-send-addins.md)发送事件处理，则 Onss ons handler 中的调用将返回错误，因为不支持此 `AppendOnSendAsync` 方案。
+> 如果外接程序还使用 实现 [Onss ons `ItemSend`](outlook-on-send-addins.md)`AppendOnSendAsync` 发送事件处理，则 Onss ons handler 中的调用将返回错误，因为不支持此方案。
 
 对于此方案，你将在用户发送时实现向项目附加免责声明。
 
-1. 从同一快速启动项目中，在代码编辑器中打开 **commands.js./src/commands/commands.js** 文件。
+1. 从同一快速启动项目中，在代码编辑器中打开commands.js **./src/commands/commands.js** 文件。
 
 1. 在 函数 `action` 后插入以下 JavaScript 函数。
 
@@ -175,7 +175,7 @@ ms.locfileid: "59152438"
 
 1. 创建新邮件，并将自己添加到 **"收件人"** 行。
 
-1. 从功能区或溢出菜单中，选择 **"执行操作"。**
+1. 从功能区或溢出菜单中，选择 **"执行操作"**。
 
 1. 发送邮件，然后从"收件箱"或"已发送邮件"文件夹中 **打开** 邮件，以查看附加的免责声明。
 

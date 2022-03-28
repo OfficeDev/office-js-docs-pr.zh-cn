@@ -3,12 +3,12 @@ title: JavaScript API Excel错误处理
 description: 了解如何Excel JavaScript API 错误处理逻辑，以考虑运行时错误。
 ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 829e8ccc947ffd7997146de1aafaf517fd7ebf06
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: f826968ae5137931fc334e62c9594461850cf649
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744974"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484073"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>JavaScript API Excel错误处理
 
@@ -68,7 +68,7 @@ async function tryCatch(callback) {
 |`AccessDenied` |无法执行所请求的操作。| |
 |`ActivityLimitReached`|已达到活动限制。| |
 |`ApiNotAvailable`|请求的 API 不可用。| |
-|`ApiNotFound`|找不到您尝试使用的 API。 它可能在更高版本的 Excel 中提供。 有关详细信息[，Excel JavaScript API](../reference/requirement-sets/excel-api-requirement-sets.md) 要求集文章。| |
+|`ApiNotFound`|找不到您尝试使用的 API。 它可能在更高版本的 Excel 中提供。 有关详细信息[，Excel JavaScript API](/javascript/api/requirement-sets/excel-api-requirement-sets) 要求集文章。| |
 |`BadPassword`|你提供的密码不正确。| |
 |`Conflict`|由于冲突，无法处理请求。| |
 |`ContentLengthRequired`|HTTP `Content-length` 标头缺失。| |

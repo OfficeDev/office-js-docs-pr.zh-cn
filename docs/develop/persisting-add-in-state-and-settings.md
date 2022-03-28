@@ -3,12 +3,12 @@ title: 保留加载项状态和设置
 description: 了解如何将数据保留Office浏览器控件的无状态环境中运行的外接程序 Web 应用程序中。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b09520d997354e5acc7ec68e3408d97230e4c9dc
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 512d23a361239399c77dba9bb831f1b630aa6796
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743680"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483646"
 ---
 # <a name="persist-add-in-state-and-settings"></a>保留加载项状态和设置
 
@@ -28,7 +28,7 @@ Office 加载项实质上是在浏览器控件的无状态环境中运行的 Web
 
 ## <a name="persist-add-in-state-and-settings-with-the-office-javascript-api"></a>使用 JavaScript API 保留Office状态和设置
 
-JavaScript API Office提供了用于[跨](/javascript/api/office/office.settings)设置保存外接程序状态（如下表所述）的 设置、[RoamingSettings](/javascript/api/outlook/office.roamingsettings) 和 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](../reference/manifest/id.md) 相关联。
+JavaScript API Office提供了用于[跨](/javascript/api/office/office.settings)设置保存外接程序状态（如下表所述）的 设置、[RoamingSettings](/javascript/api/outlook/office.roamingsettings) 和 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](/javascript/api/manifest/id) 相关联。
 
 |**对象**|**外接程序类型支持**|**存储位置**|**Office应用程序支持**|
 |:-----|:-----|:-----|:-----|

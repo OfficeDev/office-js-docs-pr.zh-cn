@@ -3,12 +3,12 @@ title: 使用 SSO 对 Microsoft Graph 授权
 description: 了解加载项Office如何使用 SSO (单一登录) Microsoft Graph。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dfdfda7ff01f07873da7bd5dd32a5878c29a88b1
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 07655b270e4de96656b7ed2930fdf4fd6cc6c97d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743550"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483792"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>使用 SSO 对 Microsoft Graph 授权
 
@@ -82,4 +82,4 @@ ms.locfileid: "63743550"
 
 * [OAuth2 令牌Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)
 * [Microsoft 标识平台和 OAuth 2.0 代表流](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
-* [IdentityAPI 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)
+* [IdentityAPI 要求集](/javascript/api/requirement-sets/identity-api-requirement-sets)

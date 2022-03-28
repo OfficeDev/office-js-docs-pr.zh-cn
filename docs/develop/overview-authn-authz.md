@@ -3,12 +3,12 @@ title: Office 加载项中的身份验证和授权概述
 description: 了解 Office 加载项中的身份验证和授权工作原理。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: b0bd85ae144f45554a48e05d7fad866c3f67fe6b
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: ba7f55a0b8ca163b994bcfb91879c675b777a7c9
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743699"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483641"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office 加载项中的身份验证和授权概述
 
@@ -26,7 +26,7 @@ ms.locfileid: "63743699"
 
 ## <a name="sso-scenarios"></a>SSO 方案
 
-用户使用单一登录(SSO)非常方便，因为他们只需登录一次即可使用 Office。 他们无需单独登录加载项。 所有版本的 Office 均不支持 SSO，因此仍需通过[使用 Microsoft 标识平台](#authenticate-with-the-microsoft-identity-platform)采用另一种登录方法。 有关支持的 Office 版本的详细信息，请参阅 [标识 API 要求集](../reference/requirement-sets/identity-api-requirement-sets.md)
+用户使用单一登录(SSO)非常方便，因为他们只需登录一次即可使用 Office。 他们无需单独登录加载项。 所有版本的 Office 均不支持 SSO，因此仍需通过[使用 Microsoft 标识平台](#authenticate-with-the-microsoft-identity-platform)采用另一种登录方法。 有关支持的 Office 版本的详细信息，请参阅 [标识 API 要求集](/javascript/api/requirement-sets/identity-api-requirement-sets)
 
 ### <a name="get-the-users-identity-through-sso"></a>通过 SSO 获取用户标识
 

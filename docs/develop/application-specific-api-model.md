@@ -3,19 +3,19 @@ title: 使用应用程序专用 API 模型
 description: 了解 Excel、OneNote 和 Word 加载项基于承诺的 API 模型。
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a89ad869305d88736c72619f9f86ecd7121437
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 2a300791eced4504faa75973cb4184f6965e39f3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743654"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483823"
 ---
 # <a name="application-specific-api-model"></a>特定于应用程序的 API 模型
 
 本文介绍如何使用 API 模型在 Excel、Word、PowerPoint 和 OneNote 中生成OneNote。 本文介绍核心概念，这些概念是使用基于承诺的 API 的基础。
 
 > [!NOTE]
-> Office 2013 客户端不支持此模型。 使用 [API 模型](office-javascript-api-object-model.md) 这些 Office 版本。 有关完整的平台可用性说明，请参阅 [Office 客户端应用程序和平台可用性的 Office 加载项组](../overview/office-add-in-availability.md)。
+> Office 2013 客户端不支持此模型。 使用 [API 模型](office-javascript-api-object-model.md) 这些 Office 版本。 有关完整的平台可用性说明，请参阅 [Office 客户端应用程序和平台可用性的 Office 加载项组](/javascript/api/requirement-sets)。
 
 > [!TIP]
 > 本页中的示例使用 Excel JavaScript API，但概念也适用于 OneNote、PowerPoint、Visio 和 Word JavaScript API。

@@ -1,26 +1,32 @@
 ---
 title: 使用 Office Open XML 创建更优质的 Word 加载项
-description: 有关如何使用 Open XML 改进 Word 加载项Office概述。
-ms.date: 11/19/2021
+description: 如何使用 Open XML 改进 Word Office概述。
+ms.date: 02/15/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 4f742c4a295e3f6312a4bcb01effc35d8b650b61
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484578"
 ---
-
-
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>使用 Office Open XML 创建更优质的 Word 加载项
 
 **提供者：** Stephanie Krieger，Microsoft Corporation | Juan Balmori Labra，Microsoft Corporation
 
-如果你要构建 Office 外接程序以在 Word 中运行，你可能已经知道 Office JavaScript API (Office.js) 提供了多种阅读和写入文档内容的格式。 这些称为强制类型，包括纯文本、表格、HTML 以及 Office Open XML。
+如果要生成在 Word 中运行的 Office 外接程序，您可能已经知道 Office JavaScript API (Office.js) 提供了多种阅读和写入文档内容的格式。 这些称为强制类型，包括纯文本、表格、HTML 以及 Office Open XML。
 
-因此，当您需要向文档添加多种格式的内容（如图像、格式化表格、图表，甚至仅为格式化文本）时，会进行什么选择？
-使用 HTML 插入某些类型的丰富内容，如图片。 HTML 强制转换可能有一些缺点，例如对内容可用的格式设置和定位选项的限制，具体取决于你的方案。
+因此，当您需要向文档添加多种格式的内容（如图像、格式化表格、图表，甚至仅为格式化文本）时，会进行什么选择？ 从通过 [WordApi](/javascript/api/requirement-sets/word-api-requirement-sets) 要求集提供的 API 开始，以查看它们是否提供你的需求。 有关示例，请参阅 Word 的 [](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) Script lab 中的插入格式化[文本](https://appsource.microsoft.com/product/office/wa104380862)代码段。
+
+如果 API 尚不可用，可以使用 HTML 插入某些类型的丰富内容，如图片。 HTML 强制转换可能有一些缺点，例如对内容可用的格式设置和定位选项的限制，具体取决于你的方案。
+
 由于 Office Open XML 是用于编写 Word 文档（例如 .docx 和 .dotx）的语言，因此您可以使用用户可以应用的几乎任何类型的格式设置插入用户可以添加到 Word 文档中的几乎任何类型的内容。 确定需要完成的 Office Open XML 标记比你想象的容易。
 
 > [!NOTE]
-> Office Open XML 也是 PowerPoint 和 Excel（以及 Office 2013 及更高版本中的 Visio）文档的技术支持语言。不过，目前只能在 Office Word 加载项中将内容强制转换为 Office Open XML。若要详细了解 Office Open XML（包括完整语言参考文档），请参阅[其他资源](#see-also)。
+> Office Open XML 也是 PowerPoint 和 Excel（以及 Office 2013 及更高版本中的 Visio）文档的技术支持语言。 不过，目前只能在 Office Word 加载项中将内容强制转换为 Office Open XML。 有关 Open XML Office，包括完整的语言参考文档，请参阅另[请参阅部分](#see-also)。
 
 开始之前，请查看可以使用 Office Open XML 强制转换插入的内容类型。
-下载代码示例 在 Word 外接程序中加载和写入 [Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)，其中包含将下列任何示例插入 Word 所需的 Office Open XML 标记和 Office.js 代码。
+下载代码示例 在 Word 外接程序中加载和写入 [Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)，其中包含在 Word 中插入下列任何示例所需的 Office Open XML 标记和 Office.js 代码。
 
 > [!NOTE]
 > 在整篇文章中，术语 **内容** 类型和 **丰富** 内容指可以插入到 Word 文档中的丰富内容类型。
@@ -124,7 +130,7 @@ Office提供了各种 SmartArt 图表布局 (并且您可以使用 Office Open X
 > [!NOTE]
 > 包标记上方有两行标记（版本 XML 声明和 Office 程序 ID）的前提是，使用 Office Open XML 强制转换类型，因此无需将它们包括在内。若要将编辑过的标记打开为 Word 文档以进行测试，请保留这两行标记。
 
-本主题的开始部分中显示的一些其他类型的内容还需要其他部件 (图 13) 之外的其他部分，您将在本主题的稍后部分介绍这些内容。 同时，您将看到图 13 中所示的任何 Word 文档包标记中的大部分部件，因此此处有一个关于每个部件的作用以及何时需要这些部件的快速摘要。
+本主题开始部分中显示的一些其他类型的内容还需要其他部件以及 (图 13) ，您将在本主题的稍后部分介绍这些内容。 同时，您将看到图 13 中所示的任何 Word 文档包标记中的大部分部件，因此此处有一个关于每个部件的作用以及何时需要这些部件的快速摘要。
 
 - 数据包标记内部的第一个部件是 .rels 文件，它定义数据包顶级各部件之间的关系（通常为文档属性、缩略图(如果有)，以及主文档正文）。标记中始终需要部件中的一些内容，因为您需要将（内容所在的）主文档部件的关系定义为文档包。
 
@@ -145,7 +151,7 @@ Office提供了各种 SmartArt 图表布局 (并且您可以使用 Office Open X
 
 ### <a name="simplified-office-open-xml-markup"></a>简化的 Office Open XML 标记
 
-您编辑了此处Office Open XML 示例，如上一节所述，将只需要的文档部件和仅必需的元素保留在每个部件中。 您将演练如何自己编辑标记 (我们将在本主题的下一节中进一步说明此处) 部分的内容。
+您编辑了此处Office Open XML 示例，如上一节所述，将只需要的文档部件和所需的元素保留在每个部件中。 您将演练如何自己编辑标记 (我们将在本主题的下一节中进一步解释此处) 部分的内容。
 
 ```XML
 <pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">
@@ -188,7 +194,7 @@ Office提供了各种 SmartArt 图表布局 (并且您可以使用 Office Open X
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>使用 setSelectedDataAsync 所需的 JavaScript
 
-将上述 Office Open XML 另存为可从解决方案访问的 XML 文件后，请使用以下函数使用 Office Open XML 强制转换设置文档中的格式文本内容。
+将上述 Office Open XML 另存为可从解决方案访问的 XML 文件后，请使用以下函数使用 Office Open XML 强制转换来设置文档中的格式文本内容。
 
 在此函数中，请注意，除最后一行外的所有代码都用于获取保存的标记，以用于函数末尾的 [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) 方法调用。 `setSelectedDataASync` 仅要求您指定要插入的内容和强制类型。
 
@@ -277,8 +283,8 @@ function writeContent() {
 
     请注意，文档部分的标记前缀引用回命名空间。 本示例中，整个 document.xml 部分标记中使用的唯一前缀是 **w：**，因此在打开 **的 w：document** 标记中需要保留的唯一命名空间是 **xmlns：w**。
 
-> [!TIP]
-> 若要在 Visual Studio 中编辑标记，请在删除任何部分中的命名空间后，仔细检查相应部分的所有标记。如果删除的是标记的必需命名空间，受影响标记的相关前缀下面会显示红色的弯曲下划线。如果删除 **xmlns:mc** 命名空间，还必须删除命名空间列表前面的 **mc:Ignorable** 属性。
+    > [!TIP]
+    > 若要在 Visual Studio 中编辑标记，请在删除任何部分中的命名空间后，仔细检查相应部分的所有标记。如果删除的是标记的必需命名空间，受影响标记的相关前缀下面会显示红色的弯曲下划线。如果删除 **xmlns:mc** 命名空间，还必须删除命名空间列表前面的 **mc:Ignorable** 属性。
 
 - 可以在打开的正文标记内看到段落标记 (**w:p**)，其中包含此示例的内容。
 
@@ -310,7 +316,7 @@ function writeContent() {
 2. 在“Word 选项”对话框中，选择“**信任中心**”，然后选择“**信任中心设置**”。
 3. 在“信任中心”对话框中，选择“隐私选项”，然后禁用“存储随机数以提高组合精确性”设置。
 
-若要从现有文档中删除 RSID 标记，请尝试以下快捷方式，该文档在 Open XML 中Office打开。
+若要从现有文档中删除 RSID 标记，请尝试在 Open XML 中打开文档时Office快捷方式。
 
 1. 在文档正文中的插入点处按 **Ctrl+Home** 转到文档顶端。
 2. 在键盘上依次按“**空格**”、“**Delete**”、“**空格**”。然后保存文档。
@@ -327,7 +333,7 @@ function writeContent() {
 
 ### <a name="understand-drawingml-markup-office-graphics-in-word-what-are-fallbacks"></a>了解 Word 中的 drawingML (Office图形) ：什么是回退？
 
-如果形状或文本框的标记看起来要比预期的复杂得多，这是有原因的。我们看到在 Office 2007 版本中引入了 Office Open XML 格式，以及 PowerPoint 和 Excel 完全采用的新 Office 图形引擎。在 2007 版本中，Word 仅并入部分图形引擎，即采用更新的 Excel 图表引擎、SmartArt 图形，以及高级图片工具。对于形状和文本框，Word 2007 继续使用旧的绘图对象 (VML)。Word 在 2010 版本中使用图形引擎执行了其他步骤，以合并更新的图形和绘图工具。
+如果形状或文本框的标记看起来比预期复杂得多，则有此原因。 我们看到在 Office 2007 版本中引入了 Office Open XML 格式，以及 PowerPoint 和 Excel 完全采用的新 Office 图形引擎。 在 2007 版本中，Word 仅并入部分图形引擎，即采用更新的 Excel 图表引擎、SmartArt 图形，以及高级图片工具。 对于形状和文本框，Word 2007 继续使用旧的绘图对象 (VML)。 Word 在 2010 版本中使用图形引擎执行了其他步骤，以合并更新的图形和绘图工具。
 
 因此，为了在 Word 2007 中打开 Office Open XML 格式 Word 文档时支持形状和文本框，形状（包括文本框）需要回退 VML 标记。
 
@@ -340,7 +346,7 @@ function writeContent() {
 
 #### <a name="about-graphic-positioning"></a>关于图形位置
 
-在代码示例的 Word 外接程序和 [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) 中加载和写入 [Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)，文本框和形状使用不同类型的文本换行和定位设置进行设置。  (还请注意，这些代码示例中的图像示例是使用与文本格式一起设置的，文本格式将图形对象放在文本基线上) 
+在代码示例的 Word 外接程序和 [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) 中加载和写入 [Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)，文本框和形状使用不同类型的文本换行和定位设置进行设置。  (请注意，这些代码示例中的图像示例是使用与文本格式一起设置的，文本格式将图形对象放在文本基线上。) 
 
 这些代码示例中的形状的位置相对于页面右边距和下边距进行调整。相对位置可让您更容易协调用户的未知文档设置，因为它将调整用户的边距，并降低由于纸张大小、方向或边距设置而带来的外观突兀的风险。若要在插入图形对象时保留相对位置设置，必须保留存储位置（在 Word 中称为“定位标记”）的段落标记 (w:p)。如果将内容插入现有段落标记，而不是包含自己的标记，您可能可以保留相同的初始可视状态，但很多使位置自动调整用户布局的相对引用类型可能会丢失。
 
@@ -360,14 +366,14 @@ Word 中的内容控件类型包括格式文本、纯文本、图片、构建基
 
 - 启用“设计模式”编辑控件中的占位符内容。
 
-If your add-in works with a Word template, you can include controls in that template to enhance the behavior of the content. You can also use XML data binding in a Word document to bind content controls to data, such as document properties, for easy form completion or similar tasks.  (在"文档部件"下的"插入"选项卡上，在 Word 中查找已绑定到内置 **文档属性)**
+If your add-in works with a Word template, you can include controls in that template to enhance the behavior of the content. You can also use XML data binding in a Word document to bind content controls to data, such as document properties, for easy form completion or similar tasks.  (在"文档部件"下的"插入"选项卡上查找已绑定到 Word 中的内置 **文档属性的** 控件) 
 
 您在通过外接程序使用内容控件时，还可以使用不同类型的绑定大幅扩展外接程序可以进行操作的选项。可以从外接程序中绑定内容控件，然后将内容写入到绑定（而不是活动的选定内容）。
 
 > [!NOTE]
 > 请勿将 Word 中的 XML 数据绑定与通过加载项绑定到控件的功能混淆。它们是完全独立的两种功能。不过，可以将命名内容控件添加到通过加载项使用 OOXML 强制转换插入的内容中，再使用加载项中的代码绑定到这些控件。
 
-还要注意 XML 数据绑定和 Office.js 都可以与您应用程序中的自定义 XML 部件交互，因此可以集成这些强大的工具。若要了解有关如何使用 Office JavaScript API 中的自定义 XML 部件的信息，请参阅本主题的[其他资源](#see-also)一节。
+另请注意，XML 数据绑定和Office.js都可以与应用中的自定义 XML 部件交互，因此可以集成这些强大的工具。 若要了解有关如何使用 Office JavaScript API 中的自定义 XML 部件的信息，请参阅本主题的[其他资源](#see-also)一节。
 
 本主题的下一节介绍如何在 Word 外接程序中使用绑定。 首先，查看插入可以使用外接程序绑定到Office格式文本内容控件所需的 Open XML 示例。
 
@@ -427,9 +433,9 @@ If your add-in works with a Word template, you can include controls in that temp
 - 如果您想要绑定控件，则控件的默认内容（位于 **sdtContent** 标记中）必须至少包括一个完整的段落（如此示例中所示），以使绑定接受多段落多种格式的内容。
 
 > [!NOTE]
-> 从此示例 **w:sdt** 标记中删除的文档部分属性可能显示在内容控件中，以在可以存储占位符内容信息的包中引用单独部分（各部分位于 Office Open XML 包的词汇表目录下）。尽管文档部分是用于 Office Open XML 包中 XML 部分（即文件）的术语，sdt 属性中使用的术语“文档部分”是指 Word 中的相同术语，用于描述一些内容类型，包括构建基块和文档属性快速部分（例如，内置 XML 数据绑定控件）。如果在 Office Open XML 包中的词汇表目录下看到部分，可能需要在插入的内容包含这些功能时保留这些部分。对于要在加载项中绑定到的典型内容控件，它们不是必需的。只需注意，如果确实从包中删除词汇表部分，还必须从 w:sdt 标记中删除文档部分属性。
+> 从此示例 **w:sdt** 标记中删除的文档部分属性可能显示在内容控件中，以在可以存储占位符内容信息的包中引用单独部分（各部分位于 Office Open XML 包的词汇表目录下）。 尽管文档部件是 XML 部件 (（即 Office Open XML 包中的文件) ）的术语，但 sdt 属性中使用的术语文档部件指 Word 中用于描述某些内容类型（包括构建基块和文档属性快速部件 (例如，内置 XML 数据绑定控件) ）的同一术语。 如果您在 Office Open XML 数据包中的 glossary 目录下看到部件，则可能需要在插入的内容包含这些功能时保留这些部件。 对于您想要用于从外接程序绑定的典型内容控件来说，它们不是必需的。 请记住，如果从数据包中删除词汇表部分，则还必须从 w:sdt 标记删除文档部件属性。
 
-下一部分将介绍如何在 Word 加载项中创建和使用绑定。
+下一节将讨论如何在 Word 外接程序中创建和使用绑定。
 
 ## <a name="insert-content-at-a-designated-location"></a>在指定位置插入内容
 
@@ -479,9 +485,9 @@ function addAndBindControl() {
 
 - 尝试使用 [addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1)) 绑定到命名内容控件。
 
-  如果你的外接程序有可能出现这样一种情况，在执行代码时，文档中已存在命名控件，那么请先执行此步骤。例如，如果外接程序已插入并使用已设计为与该外接程序一起使用的模板进行保存，其中事先放置了该控件，那么你需要执行此操作。如果你需要绑定到该外接程序之前放置的控件，那么你也需要执行此操作。
+  如果加载项可能存在这样一种情况，即代码执行时文档中已存在命名控件，请首先执行此步骤。 例如，如果外接程序已插入并使用已设计为与该外接程序一起使用的模板进行保存，其中事先放置了该控件，那么你需要执行此操作。 如果你需要绑定到该外接程序之前放置的控件，那么你也需要执行此操作。
 
-- `addFromNamedItemAsync`对方法的第一次调用中的回调将检查结果的状态，以查看绑定是否由于文档 (（即此示例中名为 MyContentControlTitle 的内容控件）不存在而失败) 。 如果是，则代码使用 (`setSelectedDataAsync` 在活动选择) 控件，然后绑定它。
+- `addFromNamedItemAsync`对方法的第一次调用中的回调将检查结果的状态，以查看绑定是否由于文档 (（即此示例中名为 MyContentControlTitle 的内容控件）不存在而失败) 。 如果是，则代码使用 (在活动选择) 控件 `setSelectedDataAsync` ，然后绑定它。
 
 > [!NOTE]
 > 如前所述，以及如前面的代码中所示，内容控件的名称用于确定创建绑定的位置。但是，在 Office Open XML 标记中，代码使用内容控件的名称和 ID 属性添加绑定到文档。
@@ -538,7 +544,7 @@ function populateBinding(filename) {
 
 ### <a name="working-with-styles"></a>使用样式
 
-使用段落样式或表格样式设置内容格式时，使用直接格式化文本编辑前面示例中所查看的标记的方法同样适用。 但是，使用段落样式的标记相当简单，因此在此处作为说明的示例。
+使用段落样式或表格样式设置内容格式时，使用直接格式化文本编辑前面示例中所查看的标记的方法同样适用。 但是，使用段落样式的标记要简单很多，因此此处描述了此示例。
 
 #### <a name="editing-the-markup-for-content-using-paragraph-styles"></a>使用段落样式编辑内容标记
 
@@ -573,7 +579,7 @@ function populateBinding(filename) {
 - 在隐藏的样式信息后面，可以看到生成标记的文档中所使用的每个样式的定义。这包括创建新文档时使用的一些可能与内容不相关的默认样式。您可以删除内容未使用的任何样式的定义。
 
    > [!NOTE]
-   > 每个内置标题样式都有关联的字符样式，即相同标题格式的字符样式版本。除非已将标题样式应用为字符样式，否则可以删除它。如果将样式用作字符样式，它显示在 document.xml 中的 run 属性标记 (**w:rPr**)（而不是 paragraph 属性 (**w:pPr**) 标记）内。仅当已将样式应用到部分段落时，才能这么做，但这也会在没有正确应用样式时无意间发生。
+   > 每个内置标题样式都有一个关联的 Char 样式，该样式是同一标题格式的字符样式版本。 除非已经将标题样式应用为字符样式，否则无法删除它。 如果样式作为字符样式使用，则会以 run 属性标记 (**w:rPr**)（而不是 paragraph 属性 (**w:pPr**) 标记）显示在 document.xml 中。 仅当已将样式应用到段落的一部分时，才会出现这种情况，但也会在没有正确应用样式时无意中发生。
 
 - 如果在内容中使用内置样式，则无需包括完整的定义，仅需包括样式名称、样式 ID，以及至少一个格式属性，以使强制转换的 Office Open XML 将此样式应用到插入的内容。
 
@@ -625,18 +631,18 @@ function populateBinding(filename) {
 
 ### <a name="work-with-images"></a>使用图像
 
-图像的标记包括一个对至少一个部件的引用，该部件包含用以说明图像的二进制数据。对于复杂的图像，可能有数百页的标记，并且无法进行编辑。由于无需涉及二进制部件，在使用结构化编辑器（如 Visual Studio）时可以简单地将其折叠，因此您仍可以很轻松地查看并编辑数据包的其余部分。
+图像的标记包括一个对至少一个部件的引用，该部件包含用以说明图像的二进制数据。 对于复杂的图像，可能有数百页的标记，并且无法进行编辑。 由于你不必接触二进制部件，因此，如果你使用的是结构化编辑器（如 Visual Studio），则只需折叠它，这样你仍然可以轻松查看和编辑数据包的其余部分。
 
-如果查看前面图 3 中所示的简单图像的示例标记（在之前引用的代码示例中可用，在 Word 外接程序中加载和写入 [Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) 中提供）将看到 document.xml 中的图像标记包括大小和位置信息，以及一个对包含二进制图像数据的部件的关系引用。 该引用包括在 **a:blip** 标记中，如下所示：
+如果您查看前面图 3 中所示的简单图像的示例标记（可在前面引用的代码示例中获取，在 Word 外接程序中加载和写入 [Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) 中提供）将看到 document.xml 中的图像标记包括大小和位置信息，以及一个对包含二进制图像数据的部件的关系引用。 该引用包括在 **a:blip** 标记中，如下所示：
 
 ```XML
 <a:blip r:embed="rId4" cstate="print">
 ```
 
-请注意，由于关系引用由 (**r:embed="rID4"**) 明确使用，并且为了呈现图像，相关部件是必需的，如果 Office Open XML 数据包中未包括二进制数据，则会出现错误。这与前面所述的 styles.xml 有所不同，在 styles.xml 中不会引发错误，因为没有明确引用关系，且关系是为内容提供属性的部件，而非其本身成为内容的一部分。
+请注意，由于关系引用是显式使用的 ( **r：embed="rID4"** ) 并且需要相关部件才能呈现图像，因此，如果您未在 Office Open XML 包中包括二进制数据，将发生错误。 这与前面所述的 styles.xml 有所不同，在 styles.xml 中不会引发错误，因为没有明确引用关系，且关系是为内容提供属性的部件，而非其本身成为内容的一部分。
 
 > [!NOTE]
-> 查看标记时，请注意 a:blip 标记中使用的其他命名空间。 你将在 document.xml 看到 **xlmns：a** 命名空间 (主 drawingML 命名空间) 被动态放置在 drawingML 引用的开头，而不是 document.xml 部件的顶部。 然而，关系命名空间 (r) 必须保留在其所显示的 document.xml 开头位置。 检查其他命名空间要求的图片标记。 请注意，无需记住哪种内容类型需要哪个命名空间，您通过查看整个 document.xml 中的标记前缀就能很容易地分辨出来。
+> 查看标记时，请注意 a:blip 标记中使用的其他命名空间。 你将在 document.xml 看到 **xlmns：a** 命名空间 (主 drawingML 命名空间) 被动态置于 drawingML 引用的使用开始处，而不是 document.xml 部件的顶部。 然而，关系命名空间 (r) 必须保留在其所显示的 document.xml 开头位置。 检查其他命名空间要求的图片标记。 请注意，无需记住哪种内容类型需要哪个命名空间，您通过查看整个 document.xml 中的标记前缀就能很容易地分辨出来。
 
 ### <a name="understanding-additional-image-parts-and-formatting"></a>了解其他图像部分和格式
 
@@ -646,7 +652,7 @@ function populateBinding(filename) {
 <a14:imgLayer r:embed="rId5">
 ```
 
-请参阅图 4 中所示的格式化图像所需的标记 (该标记在 [Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) 外接程序代码示例中使用分层效果和其他) 。
+请参阅图 4 中所示的格式化图像所需的标记 (该标记在 Word 外接程序代码示例中使用分层效果和其他) 并写入 [Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) 。
 
 ### <a name="work-with-smartart-diagrams"></a>使用 SmartArt 图表
 
@@ -685,11 +691,11 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。 �
 
 可以在本机 Word 中创建并编辑的图表为 Excel 图表，其数据在作为二进制数据嵌入 Office Open XML 数据包的 Excel 工作簿上进行维护。与图像的二进制数据部件类似，此 Excel 二进制数据也是必需的，但此部件中没有要编辑的内容。因此您只需在编辑器中折叠此部件，从而避免需要手动滚动全部内容来检查 Office Open XML 数据包的剩余部分。
 
-但是，类似于 SmartArt，您可以删除颜色和样式部件。如果使用了可用的图表样式和颜色样式来为图表设置格式，则图表将在插入目标文档时自动呈现为适用的格式。
+但是，类似于 SmartArt，您可以删除颜色和样式部件。 如果你已使用可用于设置图表格式的图表样式和颜色样式，则图表在插入目标文档时将自动采用适用的格式。
 
 有关图 11 中所示的示例图表，请参阅 Word 加载项代码示例中的 [加载和写入 Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) 的已编辑标记。
 
-## <a name="edit-the-office-open-xml-for-use-in-your-task-pane-add-in"></a>编辑Office Open XML 以在任务窗格外接程序中使用
+## <a name="edit-the-office-open-xml-for-use-in-your-task-pane-add-in"></a>编辑Office Open XML 以用于任务窗格外接程序
 
 您已经了解如何标识并编辑标记中的内容。 如果查看为文档生成的大量 Office Open XML 包时任务仍似乎有困难，以下是推荐步骤的快速摘要，可帮助你快速编辑该包。
 
@@ -715,11 +721,11 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。 �
 无论是保留，还是选择深入内容以查找可以剪切的每一行标记，都请记住，您可以使用前面引用的代码示例 [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) 作为便签簿以快速简单地测试已编辑标记。
 
 > [!TIP]
-> 如果在开发期间更新现有解决方案中的 Office Open XML 代码片段，请先清除 Internet 临时文件，再重新运行解决方案，以更新代码使用的 Office Open XML。 解决方案中 XML 文件包含的标记会缓存到计算机。 当然，您可以从默认 Web 浏览器中清除 Internet 临时文件。 若要访问 Internet 选项，并删除 2019 Visual Studio内部设置，在"调试"菜单上，选择"选项 **"**。 然后，在“环境”下，选择“Web 浏览器”，然后选择“Internet Explorer 选项”。
+> 如果在开发期间更新现有解决方案中的 Office Open XML 代码片段，请先清除 Internet 临时文件，再重新运行解决方案，以更新代码使用的 Office Open XML。 解决方案中 XML 文件包含的标记会缓存到计算机。 当然，您可以从默认 Web 浏览器中清除 Internet 临时文件。 若要访问 Internet 选项，并删除 Visual Studio 2019 中的这些设置，在"调试"菜单上，选择"选项 **"**。 然后，在“环境”下，选择“Web 浏览器”，然后选择“Internet Explorer 选项”。
 
 ## <a name="create-an-add-in-for-both-template-and-stand-alone-use"></a>为模板和独立使用创建外接程序
 
-在本主题中，您了解到外接程序中可以使用 Office Open XML 进行操作的多个示例。 您查看了可以使用 Office Open XML 强制转换类型插入到文档中的多种格式内容类型示例，以及用于将内容插入到所选内容或指定的 (绑定) 位置的 JavaScript 方法。
+在本主题中，您了解到外接程序中可以使用 Office Open XML 进行操作的多个示例。 您查看了可以使用 Office Open XML 强制转换类型插入到文档中的多种丰富内容类型示例，以及用于将内容插入到所选内容或指定的 (绑定) 位置的 JavaScript 方法。
 
 如果您创建的是可独立使用（即从应用商店或专有服务器位置插入的），也可在预先创建的模板（设计为与外接程序一起使用）中使用的外接程序，您还需要了解什么内容？答案应该是，您已经了解了所有所需的内容。
 

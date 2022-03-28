@@ -3,12 +3,12 @@ title: 在 Visual Studio 中调试 Office 加载项
 description: 使用 Visual Studio 调试Office桌面客户端中的Office加载项Windows。
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 49d52bd9b34b6f03dcf8b333cff816632c47c1c9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c0f5d0545c67ee64de40fa27c8bf3ae34fa62414
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743528"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483776"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中调试 Office 加载项
 
@@ -88,7 +88,7 @@ ms.locfileid: "63743528"
 
 接下来，Visual Studio 会执行以下操作：
 
-1. 将令牌替换为起始页的完全限定地址 ( (`https://localhost:44302/Home.html` 例如，) ，修改 XML 清单文件)  (`_ProjectName_\bin\Debug\OfficeAppManifests` `~remoteAppUrl` 的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素。
+1. 将令牌替换为起始页的完全限定地址 ( (`https://localhost:44302/Home.html` 例如，) ，修改 XML 清单文件)  (`_ProjectName_\bin\Debug\OfficeAppManifests` `~remoteAppUrl` 的 [SourceLocation](/javascript/api/manifest/sourcelocation) 元素。
 
 2. 在 IIS Express 中启动 Web 应用程序项目。
 
@@ -144,7 +144,7 @@ ms.locfileid: "63743528"
 
 接下来，Visual Studio 会执行以下操作：
 
-1. 将令牌替换为起始页的完全限定地址 ( (`https://localhost:44302/Home.html` 例如，) ，修改 XML 清单文件)  (`_ProjectName_\bin\Debug\OfficeAppManifests` `~remoteAppUrl` 的 [SourceLocation](../reference/manifest/sourcelocation.md) 元素。
+1. 将令牌替换为起始页的完全限定地址 ( (`https://localhost:44302/Home.html` 例如，) ，修改 XML 清单文件)  (`_ProjectName_\bin\Debug\OfficeAppManifests` `~remoteAppUrl` 的 [SourceLocation](/javascript/api/manifest/sourcelocation) 元素。
 
 2. 在 IIS Express 中启动 Web 应用程序项目。
 

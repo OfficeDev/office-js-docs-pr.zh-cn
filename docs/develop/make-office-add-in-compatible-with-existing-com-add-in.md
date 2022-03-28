@@ -3,12 +3,12 @@ title: 确认 Office 加载项与已有的COM 加载项兼容
 description: 启用加载项Office COM 加载项之间的兼容性。
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f78f41532f916dc5df43cf5a6d4e455b6f16864f
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: d6c2b891fa12f4ec79b52bbff8cac02a8eb45861
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743801"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483668"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>确认 Office 加载项与已有的COM 加载项兼容
 
@@ -27,7 +27,7 @@ ms.locfileid: "63743801"
 
 若要在加载项Office COM 加载项之间实现兼容性，请确定加载项清单中的等效 COM Office加载项。[](add-in-manifests.md) 然后Office加载项Windows COM 加载项，而不是Office加载项（如果两者均已安装）。
 
-以下示例显示清单中将 COM 加载项指定为等效加载项的部分。 元素的值 `ProgId` 标识 COM 加载项， [而 EquivalentAddins](../reference/manifest/equivalentaddins.md) 元素必须紧接在结束标记的 `VersionOverrides` 之前。
+以下示例显示清单中将 COM 加载项指定为等效加载项的部分。 元素的值 `ProgId` 标识 COM 加载项， [而 EquivalentAddins](/javascript/api/manifest/equivalentaddins) 元素必须紧接在结束标记的 `VersionOverrides` 之前。
 
 ```xml
 <VersionOverrides>

@@ -3,12 +3,12 @@ title: Office 加载项中的任务窗格
 description: 任务窗格允许用户访问界面控件，此类控件运行代码以修改文档或电子邮件，或显示数据源中的数据。
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c7994073dde86c76368f0a0e6ea4a4b71b8ca71b
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 640c39e993a69b0204a5f3447abc1935d0922fd4
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743240"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404693"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Office 加载项中的任务窗格
 
@@ -53,7 +53,7 @@ ms.locfileid: "63743240"
 
 ## <a name="personality-menu"></a>“个性”菜单
 
-“个性”菜单可能会妨碍靠近外接程序右上角的导航和命令元素。以下是 Windows 和 Mac 上的“个性”菜单的当前尺寸。
+“个性”菜单可能会妨碍靠近外接程序右上角的导航和命令元素。 以下是 Windows 和 Mac 上的“个性”菜单的当前尺寸。  (个性化菜单在 Outlook.) 
 
 对于 Windows，个性菜单尺寸为 12x32 像素，如下所示。
 

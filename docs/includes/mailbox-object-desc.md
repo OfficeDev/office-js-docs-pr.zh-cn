@@ -1,4 +1,4 @@
-Outlook加载项主要使用通过[Mailbox](/javascript/api/outlook/office.mailbox)对象公开的 API。 要访问专用于 Outlook 外接程序的对象和成员（例如 [Item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) 对象），可以使用 [Context](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) 对象的 **mailbox** 属性访问 **Mailbox** 对象，如下面的代码行所示。
+Outlook加载项主要使用通过 [Mailbox](/javascript/api/outlook/office.mailbox) 对象公开的 API。 要访问专用于 Outlook 外接程序的对象和成员（例如 [Item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) 对象），可以使用 [Context](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox) 对象的 **mailbox** 属性访问 **Mailbox** 对象，如下面的代码行所示。
 
 ```js
 // Access the Item object.
@@ -14,4 +14,4 @@ var item = Office.context.mailbox.item;
 
 -  **RoamingSettings** 对象：用于将 Outlook 加载项专用自定义设置保存到安装了加载项的用户邮箱。
 
-有关使用 JavaScript API Outlook，请参阅Outlook[加载项](../outlook/outlook-add-ins-overview.md)。
+有关使用 Outlook JavaScript API 的信息，请参阅Outlook[加载项](../outlook/outlook-add-ins-overview.md)。

@@ -3,12 +3,12 @@ title: 创建适用于撰写窗体的 Outlook 加载项
 description: 了解有关适用于撰写窗体的 Outlook 加载项的方案和功能。
 ms.date: 02/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 7f34c46c720a650890d2b991cb539862e3cb8187
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 4dd39bd73cbc1c37783c13adb9b4f9f98925b9cf
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746788"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484005"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>创建适用于撰写窗体的 Outlook 加载项
 
@@ -39,10 +39,10 @@ ms.locfileid: "63746788"
 
 ## <a name="types-of-add-ins-available-in-compose-mode"></a>撰写模式下可用的外接程序的类型
 
-撰写加载项作为[用于 Outlook 的加载项命令](add-in-commands-for-outlook.md)实现。 若要激活用于撰写电子邮件或会议答复的加载项，则加载项在清单中包括 [MessageComposeCommandSurface 扩展点元素](../reference/manifest/extensionpoint.md#messagecomposecommandsurface)。 若要激活用于撰写或编辑用户是组织者的约会或会议的加载项，则加载项包括 [AppointmentOrganizerCommandSurface 扩展点元素](../reference/manifest/extensionpoint.md#appointmentorganizercommandsurface)。
+撰写加载项作为[用于 Outlook 的加载项命令](add-in-commands-for-outlook.md)实现。 若要激活用于撰写电子邮件或会议答复的加载项，则加载项在清单中包括 [MessageComposeCommandSurface 扩展点元素](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface)。 若要激活用于撰写或编辑用户是组织者的约会或会议的加载项，则加载项包括 [AppointmentOrganizerCommandSurface 扩展点元素](/javascript/api/manifest/extensionpoint#appointmentorganizercommandsurface)。
 
 > [!NOTE]
-> 为不支持加载项命令在包含在 [OfficeApp](../reference/manifest/officeapp.md) 元素中的 [Rule](../reference/manifest/rule.md) 元素使用[激活规则](activation-rules.md)的服务器或客户端开发的加载项。 除非加载项是为较早的客户端和服务器专门开发的，否则新加载项应使用加载项命令。
+> 为不支持加载项命令在包含在 [OfficeApp](/javascript/api/manifest/officeapp) 元素中的 [Rule](/javascript/api/manifest/rule) 元素使用[激活规则](activation-rules.md)的服务器或客户端开发的加载项。 除非加载项是为较早的客户端和服务器专门开发的，否则新加载项应使用加载项命令。
 
 ## <a name="api-features-available-to-compose-add-ins"></a>撰写加载项可用的 API 功能
 

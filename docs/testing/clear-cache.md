@@ -3,12 +3,12 @@ title: 清除 Office 缓存
 description: 了解如何清除计算机上的 Office 缓存。
 ms.date: 03/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: f0264ff5d8dd58419ede370cb28a2ceec888cd13
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 87cffbe8d28961f8469fbe149ece029bcaaa481d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746246"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484032"
 ---
 # <a name="clear-the-office-cache"></a>清除 Office 缓存
 
@@ -63,7 +63,7 @@ Excel、Word 和 PowerPoint 的手动方法与 Outlook 不同。
 > 如果只希望旁加载的加载项反映对其 HTML 或 JavaScript 源文件的最新更改，则应该不需要清除缓存。 相反，只需将焦点放在加载项的任务窗格中（通过单击任务窗格中的任意位置），然后按 **Ctrl+F5** 重新加载加载项。
 
 > [!NOTE]
-> 要使用以下步骤清除 Office 缓存，加载项必须具有任务窗格。如果加载项是无 UI 的加载项（例如，使用 [on-send](../outlook/outlook-on-send-addins.md) 功能的加载项），将需要先为加载项添加一个任务窗格，且该任务窗格使用与 [SourceLocation](../reference/manifest/sourcelocation.md) 相同的域，然后才能使用以下步骤来清除缓存。
+> 要使用以下步骤清除 Office 缓存，加载项必须具有任务窗格。如果加载项是无 UI 的加载项（例如，使用 [on-send](../outlook/outlook-on-send-addins.md) 功能的加载项），将需要先为加载项添加一个任务窗格，且该任务窗格使用与 [SourceLocation](/javascript/api/manifest/sourcelocation) 相同的域，然后才能使用以下步骤来清除缓存。
 
 1. 安装 [Microsoft Edge 开发工具](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj)。
 

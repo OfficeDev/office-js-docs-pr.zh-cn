@@ -3,12 +3,12 @@ title: 更新到最新的 Office JavaScript API 库和版本 1.1 外接程序清
 description: 将在 Office 加载项项目中的 JavaScript 文件（Office.js 和特定于应用程序的 .js 文件）和加载项清单验证文件更新到版本 1.1。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5466b010cb0364d78819942f0a1dcc941e1c1269
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8545c3249b9d03e7c0014a38c4944e64b3348124
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742927"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483515"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>更新到最新的 Office JavaScript API 库和版本 1.1 外接程序清单架构
 
@@ -74,7 +74,7 @@ ms.locfileid: "63742927"
 ```
 
 > [!NOTE]
-> 将外接程序清单架构的版本更新为 1.1 后，您需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](../reference/manifest/hosts.md) 和 [Host](../reference/manifest/host.md) 元素或 [Requirements 和 Requirement 元素](specify-office-hosts-and-api-requirements.md)。
+> 将外接程序清单架构的版本更新为 1.1 后，您需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](/javascript/api/manifest/hosts) 和 [Host](/javascript/api/manifest/host) 元素或 [Requirements 和 Requirement 元素](specify-office-hosts-and-api-requirements.md)。
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>更新使用文本编辑器或其他 IDE 创建的 Office 加载项项目
 
@@ -116,7 +116,7 @@ ms.locfileid: "63742927"
 ```
 
 > [!NOTE]
-> 将外接程序清单架构的版本更新为 1.1 后，您需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](../reference/manifest/hosts.md) 和 [Host](../reference/manifest/host.md) 元素或 [Requirements 和 Requirement 元素](specify-office-hosts-and-api-requirements.md)。
+> 将外接程序清单架构的版本更新为 1.1 后，您需要删除 **Capabilities** 和 **Capability** 元素，并将其替换为 [Hosts](/javascript/api/manifest/hosts) 和 [Host](/javascript/api/manifest/host) 元素或 [Requirements 和 Requirement 元素](specify-office-hosts-and-api-requirements.md)。
 
 ## <a name="see-also"></a>另请参阅
 

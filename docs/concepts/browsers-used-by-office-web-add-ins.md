@@ -3,12 +3,12 @@ title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
 ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ff3bd07ff10e46705ac9a23139bf3cafaf7ef8b
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a6dd2eceb320b9f88575c80f1f4a17becc06cbe5
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742834"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483368"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -48,7 +48,7 @@ Office外接程序是 Web 应用程序，当在外接程序中运行时，它们
 
 <sup>2</sup> 有关更多详细信息[，](/officeupdates/update-history-office365-proplus-by-date)请参阅更新历史记录页Office[客户端版本和更新](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)通道。
 
-<sup>3</sup> 如果加载项在`<Runtimes>`清单中包含 元素，则它将不会将 Microsoft Edge与原始 WebView (EdgeHTML) 。 如果满足将 webView2 Microsoft Edge WebView2 (Chromium的条件) ，则外接程序会使用该浏览器。 否则，它将使用 Internet Explorer 11，而不考虑Windows或Microsoft 365版本。 有关详细信息，请参阅[运行时](../reference/manifest/runtimes.md)。
+<sup>3</sup> 如果加载项在`<Runtimes>`清单中包含 元素，则它将不会将 Microsoft Edge与原始 WebView (EdgeHTML) 。 如果满足将 webView2 Microsoft Edge WebView2 (Chromium的条件) ，则外接程序会使用该浏览器。 否则，它将使用 Internet Explorer 11，而不考虑Windows或Microsoft 365版本。 有关详细信息，请参阅[运行时](/javascript/api/manifest/runtimes)。
 
 <sup>4</sup> Windows之前的版本Windows 11，必须安装 WebView2 控件，以便Office嵌入它。 它随 Microsoft 365 版本 2101 或更高版本一起安装，并且具有一次购买 Office 2021 或更高版本;但它不会自动随 Microsoft Edge 一起安装。 如果你有早期版本的 Microsoft 365 或一次购买 Office，请按照说明在 [Microsoft Edge WebView2 / 嵌入 Web 内容 ...使用 Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)。 在Microsoft 365 16.0.14326.xxxxx 之前生成，还必须创建注册表项HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2，并设置其值。**** `dword:00000001`
 

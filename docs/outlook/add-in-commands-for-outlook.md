@@ -3,12 +3,12 @@ title: Outlook 加载项命令
 description: Outlook 加载项命令提供了通过添加按钮或下拉菜单从功能区启动特定加载项操作的方法。
 ms.date: 07/07/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 52c1bda4a21fba869d67cb3a15d9573d660b8471
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 41e1b3d200e75b214a8619021b2ccf5514e30055
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745768"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483531"
 ---
 # <a name="add-in-commands-for-outlook"></a>适用于 Outlook 的外接程序命令
 
@@ -28,7 +28,7 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 ## <a name="creating-the-add-in-command"></a>创建外接程序命令
 
-加载项命令已在 [VersionOverrides 元素](../reference/manifest/versionoverrides.md)的加载项清单中声明。该元素是对清单架构 v1.1 的额外添加，用以确保向后兼容性。在不支持 `VersionOverrides` 的客户端中，现有的加载项会照常像没有加载项命令一样正常运行。
+加载项命令已在 [VersionOverrides 元素](/javascript/api/manifest/versionoverrides)的加载项清单中声明。该元素是对清单架构 v1.1 的额外添加，用以确保向后兼容性。在不支持 `VersionOverrides` 的客户端中，现有的加载项会照常像没有加载项命令一样正常运行。
 
 `VersionOverrides` 清单条目会为加载项指定很多内容，如应用程序、要添加到功能区的控件的类型、文本、图标以及任何相关联的功能。
 
