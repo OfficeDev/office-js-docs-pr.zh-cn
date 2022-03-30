@@ -3,12 +3,12 @@ title: 使用 Office Open XML 创建更优质的 Word 加载项
 description: 如何使用 Open XML 改进 Word Office概述。
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f742c4a295e3f6312a4bcb01effc35d8b650b61
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8747f4c7f98cdb88a02e4fe55ec2bf09514c9eb3
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484578"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496948"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>使用 Office Open XML 创建更优质的 Word 加载项
 
@@ -16,7 +16,7 @@ ms.locfileid: "64484578"
 
 如果要生成在 Word 中运行的 Office 外接程序，您可能已经知道 Office JavaScript API (Office.js) 提供了多种阅读和写入文档内容的格式。 这些称为强制类型，包括纯文本、表格、HTML 以及 Office Open XML。
 
-因此，当您需要向文档添加多种格式的内容（如图像、格式化表格、图表，甚至仅为格式化文本）时，会进行什么选择？ 从通过 [WordApi](/javascript/api/requirement-sets/word-api-requirement-sets) 要求集提供的 API 开始，以查看它们是否提供你的需求。 有关示例，请参阅 Word 的 [](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) Script lab 中的插入格式化[文本](https://appsource.microsoft.com/product/office/wa104380862)代码段。
+因此，当您需要向文档添加多种格式的内容（如图像、格式化表格、图表，甚至仅为格式化文本）时，会进行什么选择？ 从通过 [WordApi](/javascript/api/requirement-sets/word/word-api-requirement-sets) 要求集提供的 API 开始，以查看它们是否提供你的需求。 有关示例，请参阅 Word 的 [](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) Script lab 中的插入格式化[文本](https://appsource.microsoft.com/product/office/wa104380862)代码段。
 
 如果 API 尚不可用，可以使用 HTML 插入某些类型的丰富内容，如图片。 HTML 强制转换可能有一些缺点，例如对内容可用的格式设置和定位选项的限制，具体取决于你的方案。
 

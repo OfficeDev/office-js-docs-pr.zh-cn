@@ -3,12 +3,12 @@ title: 在加载项中启用共享文件夹Outlook邮箱方案
 description: 讨论如何为共享文件夹配置外接程序支持 (。。。 委派访问) 和共享邮箱。
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e359f4b63aec979d68b0798866fb06bf559a0f67
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8ff71ad12fc3c0488c8c73040b125a1ae4674d88
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484656"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496927"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在加载项中启用共享文件夹Outlook邮箱方案
 
@@ -26,7 +26,7 @@ ms.locfileid: "64484656"
 |Web 浏览器：<br>经典Outlook UI|不适用|否|否|否|
 
 > [!IMPORTANT]
-> 要求集 [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) 中引入了对此功能 (有关详细信息，请参阅客户端和 [平台](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)) 。 但是，请注意，功能的支持矩阵是要求集的超集。
+> 要求集 [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) 中引入了对此功能 (有关详细信息，请参阅客户端和 [平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)) 。 但是，请注意，功能的支持矩阵是要求集的超集。
 
 ## <a name="supported-setups"></a>支持的安装程序
 
@@ -90,7 +90,7 @@ Exchange管理员可以为要访问的用户集创建和管理共享邮箱。 �
 
 下表介绍了 JavaScript API 支持Office和共享邮箱用户的权限。
 
-|权限|值|说明|
+|权限|值|Description|
 |---|---:|---|
 |阅读|1 (000001) |可读取项目。|
 |写入|2 (000010) |可以创建项目。|

@@ -3,12 +3,12 @@ title: 使用单一登录令牌对用户进行身份验证
 description: 了解如何使用 Outlook 外接程序提供的单一登录令牌为服务实现 SSO。
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 278c00a5add972aa527582a3b2031435c78a1281
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 4b98a11786b4fdaa7ecb1e7b1924c18b706ba637
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483373"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496962"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>使用加载项中的单一登录令牌Outlook用户
 
@@ -57,5 +57,5 @@ ms.locfileid: "64483373"
 - [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))
 - 有关使用 SSO Outlook访问 Microsoft Graph API 的加载项示例，请参阅 Outlook [Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)。
 - [SSO API 参考](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
-- [IdentityAPI 要求集](/javascript/api/requirement-sets/identity-api-requirement-sets)
+- [IdentityAPI 要求集](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
 - [在使用基于事件的 () Outlook加载项中启用单一登录或 SSO 登录](use-sso-in-event-based-activation.md)

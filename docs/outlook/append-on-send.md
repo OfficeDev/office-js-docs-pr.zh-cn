@@ -4,19 +4,19 @@ description: 了解如何在加载项中实现附加的Outlook功能。
 ms.topic: article
 ms.date: 02/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3054742a90f66e9ee1bfc75bded5090bd18947f3
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 1a7ec463c3998d9f85f1a085b6b28c43637651bd
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484164"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496892"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>在加载项中实现Outlook On-send
 
 在此演练结束时，您将拥有一个Outlook外接程序，该外接程序可以在邮件发送时插入免责声明。
 
 > [!NOTE]
-> 要求集 1.9 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> 要求集 1.9 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="set-up-your-environment"></a>设置环境
 

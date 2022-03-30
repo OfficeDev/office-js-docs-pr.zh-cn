@@ -3,12 +3,12 @@ title: 排查 Office 加载项中的开发错误
 description: 了解如何解决加载项中的Office错误。
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b16dbcbb9bf1c80e9d82f96fb0e6fa317b364840
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: c1eb77a6d92926e83e3a0465112cc976fcaa8446
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484329"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496955"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>排查 Office 加载项中的开发错误
 
@@ -68,7 +68,7 @@ myChart.id = "5";
 - 清单 [中 ID](/javascript/api/manifest/id) 元素的值已在已部署的副本中直接更改。 如果出于任何原因需要更改此 ID，请首先从主机中删除Office，然后将原始清单替换为已更改的清单。 许多用户需要清除Office缓存以删除原始缓存的所有跟踪。 有关[为操作系统清除Office](clear-cache.md)的说明，请参阅清除缓存缓存文章。
 - 加载项的`resid` [](/javascript/api/manifest/resources) `resid` `<Resources>`清单有 一个 未在清单的"资源"部分的任何位置定义的 ，或者其使用位置和在部分中定义位置的拼写不匹配。
 - 清单中的 `resid` 某位置有一个超过 32 个字符的属性。 属性`resid`和节中`id``<Resources>`相应资源的属性不能超过 32 个字符。
-- 加载项具有自定义加载项命令，但尝试在不支持命令的平台上运行。 有关详细信息，请参阅 [外接程序命令要求集](/javascript/api/requirement-sets/add-in-commands-requirement-sets)。
+- 加载项具有自定义加载项命令，但尝试在不支持命令的平台上运行。 有关详细信息，请参阅 [外接程序命令要求集](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)。
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>外接程序在 Edge 上不起作用，但它适用于其他浏览器
 

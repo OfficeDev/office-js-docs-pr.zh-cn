@@ -3,12 +3,12 @@ title: 添加对 Outlook 外接程序的移动支持
 description: 添加对 Outlook Mobile 的支持需要更新外接程序清单，并且可能会更改移动方案的代码。
 ms.date: 07/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 451476e9cd7eda9902ad156966558c182752547f
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 6e99c862d4cd63590a86c757bf2b720c096826a9
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484304"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496969"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>添加对适用于 Outlook Mobile 的外接程序命令的支持
 
@@ -109,4 +109,4 @@ Outlook Mobile 中不支持 [Office.context.mailbox.makeEwsRequestAsync](/javasc
 
 ## <a name="see-also"></a>另请参阅
 
-[Exchange 服务器和 Outlook 客户端支持的要求集](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+[Exchange 服务器和 Outlook 客户端支持的要求集](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

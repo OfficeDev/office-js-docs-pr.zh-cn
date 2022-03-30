@@ -1,28 +1,28 @@
 ---
 title: Microsoft Office外接程序社区通话
 description: 每月Microsoft Office外接程序社区通话日程、日程安排和资源。
-ms.date: 03/03/2022
+ms.date: 03/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cf5f15d44ddd24d9a34efc86ddac8b5a38e3005
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 4572c1fd7c3b65a07eb2d655ab94a74c4980a80a
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63341042"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496843"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office外接程序社区通话
 
 外接程序Microsoft Office通话是每月一次通话，你可以在这里了解有关新功能、开发实践以及有关创建外接程序Office其他信息。社区通话在每月的第二个星期三太平洋时间上午 8：00 进行。 可以从 下载日历邀请 https://aka.ms/officeaddinscommunitycall。
 
-## <a name="agenda-for-march-9th-call"></a>3 月 9 日通话日程
+## <a name="agenda-for-april-13th-call"></a>4 月 13 日通话日程
 
-- 从Graph加载项使用 SSO 和 CORS Outlook服务。
-- Excel API 1.15 预览版。
+4 月议程将在通话前大约一周发布。
 
 ## <a name="previous-calls"></a>以前的调用
 
 错过以前的社区通话？ 查看以下博客资源以跟进讨论！
 
+- [2022 年 3 月 9 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-9-2022/ba-p/3255173)
 - [2022 年 2 月 9 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-february-9-2022/ba-p/3164559)
 - [2022 年 1 月 12 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-january-12-2022/ba-p/3061097)
 - [2021 年 12 月 8 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-december-8-2021/ba-p/3032949)

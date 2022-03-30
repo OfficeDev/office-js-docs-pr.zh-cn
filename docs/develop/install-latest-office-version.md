@@ -3,12 +3,12 @@ title: 安装最新版本 Office
 description: 与如何选择获取最新版 Office 相关的信息。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c558da4540638c91ed3519685de007379d1e1061
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: d5579026eeb74080ab7fd1f165b021b4d2cf457c
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483660"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496759"
 ---
 # <a name="install-the-latest-version-of-office"></a>安装最新版本 Office
 
@@ -39,10 +39,10 @@ ms.locfileid: "64483660"
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Office JavaScript API 要求集对应的最低 Office 内部版本
 
-- [Excel JavaScript API 要求集](/javascript/api/requirement-sets/excel-api-requirement-sets)
-- [OneNote JavaScript API 要求集](/javascript/api/requirement-sets/onenote-api-requirement-sets)
-- [Outlook JavaScript API 要求集](/javascript/api/requirement-sets/outlook-api-requirement-sets)
-- [PowerPoint JavaScript API 要求集](/javascript/api/requirement-sets/powerpoint-api-requirement-sets)
-- [Word JavaScript API 要求集](/javascript/api/requirement-sets/word-api-requirement-sets)
-- [对话框 API 要求集](/javascript/api/requirement-sets/dialog-api-requirement-sets)
-- [Office 通用 API 要求集](/javascript/api/requirement-sets/office-add-in-requirement-sets)
+- [Excel JavaScript API 要求集](/javascript/api/requirement-sets/excel/excel-api-requirement-sets)
+- [OneNote JavaScript API 要求集](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets)
+- [Outlook JavaScript API 要求集](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
+- [PowerPoint JavaScript API 要求集](/javascript/api/requirement-sets/powerpoint/powerpoint-api-requirement-sets)
+- [Word JavaScript API 要求集](/javascript/api/requirement-sets/word/word-api-requirement-sets)
+- [对话框 API 要求集](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [Office 通用 API 要求集](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)

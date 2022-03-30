@@ -3,12 +3,12 @@ title: Outlook 加载项 API
 description: 了解如何引用 Outlook 加载项 API 并声明 Outlook 加载项中的权限。
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dffc494778d02feaedb302a4c42ca843637caa71
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2c3f1d445ca86c04caa3950a05278fe309ff2af5
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484294"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496311"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook 外接程序 API
 
@@ -48,7 +48,7 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > 对于清单中所指定的要求集版本中的任何 API，无需执行此类检查。
 
-指定支持你的方案的关键 API 集的最低要求集，如果缺少该要求集，加载项的功能将无法工作。 指定 `<Requirements>` 元素的清单中的要求集。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)和[了解 Outlook API 要求集](/javascript/api/requirement-sets/outlook-api-requirement-sets)。
+指定支持你的方案的关键 API 集的最低要求集，如果缺少该要求集，加载项的功能将无法工作。 指定 `<Requirements>` 元素的清单中的要求集。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)和[了解 Outlook API 要求集](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)。
 
 `<Methods>` 元素不适用于 Outlook 加载项，因此，无法声明对特定方法的支持。
 
@@ -74,5 +74,5 @@ if (item.somePropertyOrFunction) {
 ## <a name="see-also"></a>另请参阅
 
 - [Outlook 加载项清单](manifests.md)
-- [了解 Outlook API 要求集](/javascript/api/requirement-sets/outlook-api-requirement-sets)
+- [了解 Outlook API 要求集](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
 - [Office 加载项的隐私和安全](../concepts/privacy-and-security.md)

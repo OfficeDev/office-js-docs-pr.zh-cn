@@ -3,12 +3,12 @@ title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
 ms.date: 08/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 904e108e623324c6cfc241f81c794edf30c1a3c9
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 583cf08e02ae72a65dcd3a6e006cd411ee824a74
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483475"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496864"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -33,7 +33,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 |Web 浏览器：<br>经典Outlook UI|不适用|是|是|
 
 > [!NOTE]
-> Ons ons ons feature was officially released in requirement set 1.8 (see [current server and client support](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details) . 但是，请注意，功能的支持矩阵是要求集的超集。
+> Ons ons ons feature was officially released in requirement set 1.8 (see [current server and client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details) . 但是，请注意，功能的支持矩阵是要求集的超集。
 
 > [!IMPORTANT]
 > AppSource 中不允许使用 Ons onss 功能 [加载项](https://appsource.microsoft.com)。

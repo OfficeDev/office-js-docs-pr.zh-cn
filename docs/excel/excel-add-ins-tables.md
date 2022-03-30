@@ -3,12 +3,12 @@ title: 使用 Excel JavaScript API 处理表格
 description: 显示如何使用 JavaScript API 对表执行常见Excel示例。
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf67b3b64d9038f8caa028b656668d51564e11b
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 9352be37c4a0d86dbbf9a1c1d62d0ccb640387aa
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484085"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496934"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
@@ -16,7 +16,7 @@ ms.locfileid: "64484085"
 
 ## <a name="create-a-table"></a>创建表
 
-下面的代码示例在名为 **Sample** 的工作表中创建一个表。 此表包含标题，并且包含四列和七行数据。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例在名为 **Sample** 的工作表中创建一个表。 此表包含标题，并且包含四列和七行数据。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
 
 > [!NOTE]
 > 若要指定表的名称 `name` ，必须先创建表，然后设置其属性，如以下示例所示。
@@ -56,7 +56,7 @@ await Excel.run(async (context) => {
 
 ## <a name="add-rows-to-a-table"></a>向表添加行
 
-下面的代码示例将七个新行添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新行被添加到表的末尾。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例将七个新行添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新行被添加到表的末尾。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
 
 > [!NOTE]
 > `index` [TableRow 对象的 属性](/javascript/api/excel/excel.tablerow)指示表的行集合中行的索引号。 对象 `TableRow` 不包含可用于标识 `id` 行的唯一键的属性。
@@ -98,7 +98,7 @@ await Excel.run(async (context) => {
 
 ### <a name="add-a-column-that-contains-static-values"></a>添加包含静态值的列
 
-下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表中所有现有列后面，并且包含一个标题（“星期几”），以及用于填充列中单元格的数据。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表中所有现有列后面，并且包含一个标题（“星期几”），以及用于填充列中单元格的数据。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
 
 ```js
 await Excel.run(async (context) => {
@@ -131,7 +131,7 @@ await Excel.run(async (context) => {
 
 ### <a name="add-a-column-that-contains-formulas"></a>添加包含公式的列
 
-下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表的末尾，包含标题（“日期类型”），并使用一个公式来填充列中的每个数据单元格。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表的末尾，包含标题（“日期类型”），并使用一个公式来填充列中的每个数据单元格。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
 
 ```js
 await Excel.run(async (context) => {
@@ -188,7 +188,7 @@ await Excel.run(async (context) => {
 
 ## <a name="update-column-name"></a>更新列名称
 
-下面的代码示例将表中第一列的名称更新为 **购买日期**。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例将表中第一列的名称更新为 **购买日期**。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
 
 ```js
 await Excel.run(async (context) => {
@@ -471,7 +471,7 @@ await Excel.run(async (context) => {
 
 ## <a name="import-json-data-into-a-table"></a>将 JSON 数据导入表
 
-下面的代码示例在名为 **Sample** 的工作表中创建一个表，然后使用定义了两行数据的 JSON 对象来填充表。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例在名为 **Sample** 的工作表中创建一个表，然后使用定义了两行数据的 JSON 对象来填充表。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
 
 ```js
 await Excel.run(async (context) => {

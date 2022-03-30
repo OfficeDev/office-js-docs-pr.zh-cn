@@ -4,12 +4,12 @@ description: 学习如何在Microsoft Excel中的自定义函数和任务窗格�
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 7ff1c7cf217e855eb8c9d208ae7d3ca4deca0659
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 012112ff97ba1b9941674fb0c0f35536b04c8a92
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484135"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496913"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
@@ -33,7 +33,7 @@ ms.locfileid: "64484135"
 
 1. 启动 Visual Studio Code 并打开生成的加载项项目。
 1. 打开 **manifest.xml** 文件。
-1. 替换（或添加）以下 `<Requirements>` 部分 XML，以要求 [共享运行时要求集](/javascript/api/requirement-sets/shared-runtime-requirement-sets)。
+1. 替换（或添加）以下 `<Requirements>` 部分 XML，以要求 [共享运行时要求集](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)。
 
     ```xml
     <Requirements>

@@ -3,12 +3,12 @@ title: Office 版本和要求集
 description: 使用 JavaScript API 支持的 Office.js 平台。
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 62dbac6c5f08596792c29ce5451cdaca077ddcdb
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 956a58433aca10895a1badeb0492a2c7b0883679
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483655"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496815"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
@@ -36,18 +36,18 @@ Office 加载项可使用 API 要求集，以确定 Office 应用程序是否支
 
 加载项使用的要求集中的 API 只能是受运行加载项的 Office 应用程序版本支持的 API。若要确切了解适用于特定 Office 应用程序版本的要求集，请参阅以下特定于应用程序的要求集文章。
 
-- [Excel JavaScript API 要求集](/javascript/api/requirement-sets/excel-api-requirement-sets) (ExcelApi)
-- [Word JavaScript API 要求集](/javascript/api/requirement-sets/word-api-requirement-sets) (WordApi)
-- [OneNote JavaScript API 要求集](/javascript/api/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [PowerPoint JavaScript API 要求集](/javascript/api/requirement-sets/powerpoint-api-requirement-sets) (PowerPointApi)
-- [了解 Outlook API 要求集](/javascript/api/requirement-sets/outlook-api-requirement-sets) (MailBox)
+- [Excel JavaScript API 要求集](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) (ExcelApi)
+- [Word JavaScript API 要求集](/javascript/api/requirement-sets/word/word-api-requirement-sets) (WordApi)
+- [OneNote JavaScript API 要求集](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets) (OneNoteApi)
+- [PowerPoint JavaScript API 要求集](/javascript/api/requirement-sets/powerpoint/powerpoint-api-requirement-sets) (PowerPointApi)
+- [了解 Outlook API 要求集](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets) (MailBox)
 
 一些要求集包含任何 Office 应用程序都能使用的 API。若要了解这些要求集，请参阅以下文章。
 
-- [Office 通用要求集](/javascript/api/requirement-sets/office-add-in-requirement-sets)
-- [加载项命令要求集](/javascript/api/requirement-sets/add-in-commands-requirement-sets)
-- [对话框 API 要求集](/javascript/api/requirement-sets/dialog-api-requirement-sets)
-- [标识 API 要求集](/javascript/api/requirement-sets/identity-api-requirement-sets)
+- [Office 通用要求集](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
+- [加载项命令要求集](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)
+- [对话框 API 要求集](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [标识 API 要求集](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
 
 要求集的版本号（如 `ExcelApi 1.1` 中的“1.1”）是相对于 Office 应用程序而言。给定要求集的版本号（例如，`ExcelApi 1.1`）既不对应于 Office.js 的版本号，也不对应于其他 Office 应用程序（例如，Word、Outlook 等）的要求集。各个 Office 应用程序的要求集的发布速率不同。例如，`ExcelApi 1.5` 要求集先于 `WordApi 1.3` 要求集发布。
 

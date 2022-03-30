@@ -3,12 +3,12 @@ title: 在功能区上定位自定义选项卡
 description: 了解如何控制自定义选项卡在功能区的Office位置，以及默认情况下它是否具有焦点。
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1309e0e12817b9a1434f7865b1a578b3aba3f1
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: a250a3fbffc0a2aef140c8f0ac0286f61e2c5dbc
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483854"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496738"
 ---
 # <a name="position-a-custom-tab-on-the-ribbon"></a>在功能区上定位自定义选项卡
 
@@ -55,4 +55,4 @@ Office始终为紧接在"文件"选项卡右边的选项卡提供 **默认** 焦
 
 ## <a name="behavior-on-unsupported-platforms"></a>不受支持的平台上的行为
 
-如果外接程序安装在不支持要求集 [AddinCommands 1.3](/javascript/api/requirement-sets/add-in-commands-requirement-sets) 的平台上，则本文中描述的标记将被忽略，您的自定义选项卡将显示为功能区最右边的选项卡。 若要防止外接程序安装在不支持标记的平台上，请添加对清单的"要求"部分的要求集的引用。 有关说明，请参阅[指定Office哪些版本和平台可以托管你的外接程序](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 或者，在不支持 **AddinCommands 1.3** 时，将外接程序设计成备用体验，如设计 [备用体验中所述](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 例如，如果您的外接程序包含假定自定义选项卡位于您需要的位置的说明，则您可能具有假定该选项卡最右边的备用版本。
+如果外接程序安装在不支持要求集 [AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets) 的平台上，则本文中描述的标记将被忽略，您的自定义选项卡将显示为功能区最右边的选项卡。 若要防止外接程序安装在不支持标记的平台上，请添加对清单的"要求"部分的要求集的引用。 有关说明，请参阅[指定Office哪些版本和平台可以托管你的外接程序](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 或者，在不支持 **AddinCommands 1.3** 时，将外接程序设计成备用体验，如设计 [备用体验中所述](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 例如，如果您的外接程序包含假定自定义选项卡位于您需要的位置的说明，则您可能具有假定该选项卡最右边的备用版本。

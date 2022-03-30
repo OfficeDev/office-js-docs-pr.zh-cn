@@ -3,12 +3,12 @@ title: 将内置控件Office集成到自定义控件组和选项卡中
 description: 了解如何在自定义命令组Office自定义命令组和自定义功能区上的选项卡Office按钮。
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 98a40b7c455cf56457595ae55f8d7d2799b270b4
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 91e64e3939ea83c6468b1f8b35ac189ad7d3d373
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483921"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496724"
 ---
 # <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>将内置控件Office集成到自定义控件组和选项卡中
 
@@ -76,4 +76,4 @@ ms.locfileid: "64483921"
 
 ## <a name="behavior-on-unsupported-platforms"></a>不受支持的平台上的行为
 
-如果外接程序安装在不支持要求集 [AddinCommands 1.3](/javascript/api/requirement-sets/add-in-commands-requirement-sets) 的平台上，则本文中描述的标记将被忽略，并且内置 Office 控件/组将不会显示在自定义组/选项卡中。 若要防止外接程序安装在不支持标记的平台上，请添加对清单的"要求"部分的要求集的引用。 有关说明，请参阅[指定Office哪些版本和平台可以托管你的外接程序](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 或者，设计外接程序以在 **AddinCommands 1.3** 不受支持时获得体验，如设计 [备用体验中所述](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 例如，如果您的外接程序包含假定内置按钮在自定义组中的说明，您可以设计一个版本，假定内置按钮仅在其常用位置。
+如果外接程序安装在不支持要求集 [AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets) 的平台上，则本文中描述的标记将被忽略，并且内置 Office 控件/组将不会显示在自定义组/选项卡中。 若要防止外接程序安装在不支持标记的平台上，请添加对清单的"要求"部分的要求集的引用。 有关说明，请参阅[指定Office哪些版本和平台可以托管你的外接程序](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)。 或者，设计外接程序以在 **AddinCommands 1.3** 不受支持时获得体验，如设计 [备用体验中所述](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences)。 例如，如果您的外接程序包含假定内置按钮在自定义组中的说明，您可以设计一个版本，假定内置按钮仅在其常用位置。

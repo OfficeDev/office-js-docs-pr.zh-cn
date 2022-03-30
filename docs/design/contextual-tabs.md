@@ -3,12 +3,12 @@ title: 在加载项中Office上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到Office外接程序。
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3591c320fbe0c2ade41725ef2da32c31b059ac7d
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 57d95db1e425f1ca4f5111a79d99de44f8f09e31
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483893"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496745"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>在加载项中Office上下文选项卡
 
@@ -29,8 +29,8 @@ ms.locfileid: "64483893"
 > [!NOTE]
 > 自定义上下文选项卡仅适用于支持以下要求集的平台。 有关要求集及其使用方法的更多信息，请参阅指定Office[和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。
 >
-> - [RibbonApi 1.2](/javascript/api/requirement-sets/ribbon-api-requirement-sets)
-> - [SharedRuntime 1.1](/javascript/api/requirement-sets/shared-runtime-requirement-sets)
+> - [RibbonApi 1.2](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
+> - [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 >
 > 可以在代码中使用运行时检查来测试用户的主机和平台组合是否支持这些要求集，如运行时检查方法和要求集支持 [中所述](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。  (在清单中指定要求集的技术（也如该文章中所述）当前对 RibbonApi 1.2.) 不起作用，或者，当不支持自定义上下文选项卡时，您可以实现备用 [UI 体验](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)。
 

@@ -3,12 +3,12 @@ title: 部署和安装 Outlook 加载项以进行测试
 description: 创建清单文件，将加载项 UI 文件部署到 Web 服务器，在邮箱中安装加载项，然后测试加载项。
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 7d612fcfa8f5bb79cded469e203371a499703ad0
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: b627dbf4b32daee4327cb139db58a56c4a704580
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484427"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496878"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>部署和安装 Outlook 加载项以进行测试
 
@@ -96,7 +96,7 @@ New-App -URL:"http://<fully-qualified URL">
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
 - [Hostway](https://hostway.com/microsoft-exchange/)
 
-此外，如果不想面向连接到本地 Exchange 的用户提供自己的加载项，可将加载项清单中的[要求集](/javascript/api/requirement-sets/outlook-api-requirement-sets#exchange-server-support)设置为 1.6 或更高版本。 在经典 Outlook 网页版上，不会对此类加载项进行测试或验证。
+此外，如果不想面向连接到本地 Exchange 的用户提供自己的加载项，可将加载项清单中的[要求集](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#exchange-server-support)设置为 1.6 或更高版本。 在经典 Outlook 网页版上，不会对此类加载项进行测试或验证。
 
 ## <a name="see-also"></a>另请参阅
 

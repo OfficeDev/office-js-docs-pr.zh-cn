@@ -1,15 +1,15 @@
 ---
-ms.date: 10/05/2021
+ms.date: 03/23/2022
 title: 将 Office 加载项配置为使用共享 JavaScript 运行时
 ms.prod: non-product-specific
 description: 将 Office 加载项配置为使用共享 JavaScript 运行时，以支持其他功能区、任务窗格和自定义函数功能。
 ms.localizationpriority: high
-ms.openlocfilehash: db4ed73459c76089c67820cbf3099c071ad01ad2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 58715c7c7eaf89dd4ce6bc3545121be03f12af78
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743929"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496852"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>将 Office 加载项配置为使用共享 JavaScript 运行时
 
@@ -23,11 +23,14 @@ ms.locfileid: "63743929"
 
 执行下列操作之一：
 
-- 要生成带自定义函数的 Excel 加载项，请运行命令 `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true`。
+- 要生成带自定义函数的 Excel 加载项，请运行命令 `yo office --projectType excel-functions --name "NAME OF YOUR PROJECT HERE" --host excel --js true`。
 
     或者
 
-- 要生成 PowerPoint 加载项，请运行命令 `yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js true`。
+- 要生成 PowerPoint 加载项，请运行命令 `yo office --projectType taskpane --name "NAME OF YOUR PROJECT HERE" --host powerpoint --js true`。
+
+> [!IMPORTANT]
+> `--name` 参数值必须采用双引号，即使没有空格也是如此。
 
 生成器将创建项目并安装支持的 Node 组件。
 
@@ -40,7 +43,7 @@ ms.locfileid: "63743929"
 
 1. 启动 Visual Studio Code 并打开你生成的 Excel 或 PowerPoint 加载项项目。
 1. 打开 **manifest.xml** 文件。
-1. 如果生成 Excel 加载项，请更新要求部分，以使用 [共享运行时](../reference/requirement-sets/shared-runtime-requirement-sets.md)，而不是自定义函数运行时。XML 应为如下所示。
+1. 如果生成 Excel 加载项，请更新要求部分，以使用 [共享运行时](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)，而不是自定义函数运行时。XML 应为如下所示。
 
     ```xml
     <Hosts>
@@ -200,7 +203,7 @@ ms.locfileid: "63743929"
 ```
 
 > [!NOTE]
-> 如果加载项包含清单中的 `Runtimes` 元素（共享运行时所需），并且满足将 Microsoft Edge 与 WebView2（基于 Chromium）一起使用的条件，则它使用该 WebView2 控件。 如果不满足条件，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅 [运行时](../reference/manifest/runtimes.md) 和 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+> 如果加载项包含清单中的 `Runtimes` 元素（共享运行时所需），并且满足将 Microsoft Edge 与 WebView2（基于 Chromium）一起使用的条件，则它使用该 WebView2 控件。 如果不满足条件，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅 [运行时](/javascript/api/manifest/runtimes) 和 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 ## <a name="about-the-shared-javascript-runtime"></a>关于共享 JavaScript 运行时
 

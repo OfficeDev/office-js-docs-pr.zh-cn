@@ -3,12 +3,12 @@ title: 上下文 Outlook 加载项
 description: 无需离开邮件本身即可启用与邮件相关的任务，以此带来更便捷、更丰富的用户体验。
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f85716feb31284492ae2faba1981d1b1ba12f1c
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: cb39c4ffd1a1bed3af23d6127f4fdef03187af10
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484687"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496899"
 ---
 # <a name="contextual-outlook-add-ins"></a>上下文 Outlook 加载项
 
@@ -24,7 +24,7 @@ ms.locfileid: "64484687"
 > [!NOTE]
 > 上下文加载项暂不适用于 Android 版和 iOS 版 Outlook。 今后将推出此功能。
 >
-> 要求集1.6 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> 要求集1.6 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="how-to-make-a-contextual-add-in"></a>如何生成上下文加载项
 

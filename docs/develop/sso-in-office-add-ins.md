@@ -3,12 +3,12 @@ title: 在 Office 加载项中启用单一登录 (SSO)
 description: 了解使用常用的 Microsoft 个人、工作或教育帐户为 Office 加载项启用单一登录 (SSO) 的关键步骤。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 50adb80137cc01db2ee0f36587e1b7a4cc359237
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 517677b01254862f29011a7773e3953fc59f4baa
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483603"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496325"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>在 Office 加载项中启用单一登录 (SSO)
 
@@ -85,7 +85,7 @@ ms.locfileid: "64483603"
 - **Scopes** - 一个或多个“**Scope**”元素的父元素。
 - **范围** - 指定加载项所需的权限。 始终需要 `profile` 和 `openID` 权限，并且可能是唯一需要的权限。 如果加载项需要访问 Microsoft Graph 或其他 Microsoft 365 资源，则将需要其他 **范围** 元素。 例如，对于 Microsoft Graph 权限，你可以请求 `User.Read` 和 `Mail.Read` 范围。 在代码中用于访问 Microsoft Graph 的库可能需要其他权限。 有关详细信息，请参阅[向 Office 加载项中的 Microsoft Graph 授权](authorize-to-microsoft-graph.md)。
 
-对于 Word、Excel 和 PowerPoint 加载项，将标记添加到 `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` 部分的末尾。 对于 Outlook 加载项，将标记添加到 `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` 部分的末尾。
+对于 Word、Excel 和 PowerPoint 加载项，请将标记添加到 `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` 部分的末尾。对于 Outlook 加载项，请将标记添加到 `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` 部分的末尾。
 
 下面是一个标注示例。
 
@@ -107,7 +107,7 @@ ms.locfileid: "64483603"
 
 ### <a name="include-the-identity-api-requirement-set"></a>包括标识 API 要求集
 
-若要使用 SSO，加载项需要标识 API 1.3 要求集。有关详细信息，请参阅 [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)。
+若要使用 SSO，加载项需要标识 API 1.3 要求集。有关详细信息，请参阅 [IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets)。
 
 ### <a name="add-client-side-code"></a>添加客户端代码
 
@@ -146,7 +146,7 @@ async function getUserData() {
 
 如果加载项需要已登录用户，则应从 `Office.initialize` 内部调用 `getAccessToken`。 还应在 `getAccessToken` 的 `options` 参数中传递 `allowSignInPrompt: true`。 例如; `OfficeRuntime.auth.getAccessToken( { allowSignInPrompt: true });` 这将确保如果用户尚未登录，Office 会通过 UI 提示用户立即登录。
 
-如果加载项具有不需要登录用户的某些功能，则你可在用户执行需要登录用户的操作时调用 `getAccessToken` **。 `getAccessToken` 的冗余调用不会导致性能严重降低，因为 Office 会缓存并重用访问令牌，直到其过期，而无需在调用 `getAccessToken` 时再次调用 [Microsoft 标识平台](/azure/active-directory/develop/)。 因此，可以将 `getAccessToken` 调用添加到所有在需要令牌时启动操作的函数和处理程序。
+如果加载项的一些功能不需要已登录用户，则可以 *在用户执行需要已登录用户的操作时* 调用 `getAccessToken`。对 `getAccessToken` 的冗余调用不会导致性能严重下降，因为 Office 在令牌过期之前将缓存并重用令牌，而无需在每次调用 `getAccessToken` 时都重新调用 [Microsoft 标识平台](/azure/active-directory/develop/)。因此，可以将 `getAccessToken` 调用添加到所有启动需要令牌的操作的函数和处理程序。
 
 > [!IMPORTANT]
 > 作为最佳安全做法，请始终在需要访问令牌时调用 `getAccessToken`。 Office 将为你缓存它。 请勿使用自己的代码缓存或存储访问令牌。
@@ -248,4 +248,4 @@ $.ajax({
 
 - [Microsoft 标识平台文档](/azure/active-directory/develop/)
 - [要求集](specify-office-hosts-and-api-requirements.md)
-- [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)
+- [IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets)

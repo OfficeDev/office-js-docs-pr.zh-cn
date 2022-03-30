@@ -3,12 +3,12 @@ title: 指定 Office 主机和 API 要求
 description: 了解如何指定Office应用和 API 要求，使加载项按预期运行。
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e4533f1de76b8d40c5b9c938ff0e113529d73d95
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7e43aa05d543eb55f10c6e700b5011733792a401
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483589"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496801"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>指定 Office 应用程序和 API 要求
 
@@ -91,7 +91,7 @@ Office加载项可能依赖于特定的 Office 应用程序 (也称为 Office �
 要求集支持Office应用程序、Office版本及其运行平台的不同而不同。 例如，在 Office 2021 之前，Office 的一次购买版本不支持 DialogApi 1.2，但返回到 Office 2013 的所有一次购买版本均支持 DialogApi 1.1。 您希望您的外接程序可安装在支持其使用的 API 的每个平台和 Office 版本组合上，因此应始终在清单中指定外接程序要求的每个要求集的最低版本。 本文稍后将详细介绍如何进行此操作。
 
 > [!TIP]
-> 有关要求集版本控制详细信息，请参阅 [Office](office-versions-and-requirement-sets.md#office-requirement-sets-availability) 要求集可用性，有关每个要求集和 API 的完整列表，请从 [Office 外接程序](/javascript/api/requirement-sets/office-add-in-requirement-sets)要求集开始。 大多数 API 的参考Office.js还指定它们所属的要求集 (（如果有) ）。
+> 有关要求集版本控制详细信息，请参阅 [Office](office-versions-and-requirement-sets.md#office-requirement-sets-availability) 要求集可用性，有关每个要求集和 API 的完整列表，请从 [Office 外接程序](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)要求集开始。 大多数 API 的参考Office.js还指定它们所属的要求集 (（如果有) ）。
 
 > [!NOTE]
 > 某些要求集还具有与其关联的清单元素。 有关 [此事实何时与](#specify-requirements-in-a-versionoverrides-element) 外接程序设计相关的信息，请参阅在 VersionOverrides 元素中指定要求。
@@ -107,7 +107,7 @@ Office加载项可能依赖于特定的 Office 应用程序 (也称为 Office �
 如果 Office 应用程序或平台不支持 **Requirements** 元素中指定的要求集或 API 成员，外接程序将不会在该应用程序或平台中运行，并且不会显示在"我的外接程序"**中**。
 
 > [!NOTE]
-> **Requirements** 元素对于所有外接程序都是可选的，但Outlook外接程序除外。当根`xsi:type`元素的 属性`OfficeApp``MailBox`为 时，必须存在 **一个 Requirements** 元素，该元素指定外接程序所需的 MailBox 要求集的最低版本。 有关详细信息，请参阅 Outlook [JavaScript API 要求集](/javascript/api/requirement-sets/outlook-api-requirement-sets)。
+> **Requirements** 元素对于所有外接程序都是可选的，但Outlook外接程序除外。当根`xsi:type`元素的 属性`OfficeApp``MailBox`为 时，必须存在 **一个 Requirements** 元素，该元素指定外接程序所需的 MailBox 要求集的最低版本。 有关详细信息，请参阅 Outlook [JavaScript API 要求集](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)。
 
 以下代码示例演示如何配置一个加载项，该加载项可安装在Office支持以下内容的所有应用程序：
 
@@ -167,7 +167,7 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 ```
 关于此代码，请注意以下几点：
 
-- 第一个参数是必需的。 它是表示要求集名称的字符串。 有关可用要求集的详细信息，请参阅 [Office 加载项要求集](/javascript/api/requirement-sets/office-add-in-requirement-sets)。
+- 第一个参数是必需的。 它是表示要求集名称的字符串。 有关可用要求集的详细信息，请参阅 [Office 加载项要求集](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)。
 - 第二个参数是可选的。 它是一个字符串，指定 Office `if` 应用程序必须支持的最低要求集版本，以便语句中的代码运行 (例如"**1.9**") 。 如果未使用，则假定版本"1.1"。
 
 > [!WARNING]
@@ -199,7 +199,7 @@ else
 > [!NOTE] 
 > 这些`isSetSupported`应用程序的 方法和要求集可在 Office.js 上的最新 CDN。 如果您不使用 `isSetSupported` Office.js 中的CDN，则当您使用的是未定义的旧版本的库时，外接程序可能会生成异常。 有关详细信息，请参阅使用最新 [Office JavaScript API 库](#use-the-latest-office-javascript-api-library)。
 
-当加载项依赖于不是要求集一部分的方法时，请使用运行时检查来确定 Office 应用程序是否支持该方法，如以下代码示例所示。 有关不属于要求集的方法的完整列表，请参阅 [Office 加载项要求集](/javascript/api/requirement-sets/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set)。
+当加载项依赖于不是要求集一部分的方法时，请使用运行时检查来确定 Office 应用程序是否支持该方法，如以下代码示例所示。 有关不属于要求集的方法的完整列表，请参阅 [Office 加载项要求集](/javascript/api/requirement-sets/common/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set)。
 
 > [!NOTE]
 > 建议限制在加载项代码中使用此类型运行时检查。
@@ -253,5 +253,5 @@ if (Office.context.document.setSelectedDataAsync)
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项 XML 清单](add-in-manifests.md)
-- [Office 加载项要求集](/javascript/api/requirement-sets/office-add-in-requirement-sets)
+- [Office 加载项要求集](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)

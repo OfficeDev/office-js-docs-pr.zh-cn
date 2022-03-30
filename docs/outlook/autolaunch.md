@@ -4,12 +4,12 @@ description: 了解如何配置Outlook加载项进行基于事件的激活。
 ms.topic: article
 ms.date: 03/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cf3454f68c76b40392ddd49586585d09a32a30e7
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: bd6dfab38d59d5e120ca9672df8eb3ac6e7654e7
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484278"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496906"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置Outlook加载项进行基于事件的激活
 
@@ -18,7 +18,7 @@ ms.locfileid: "64484278"
 在此演练结束时，您将具有一个加载项，只要创建一个新建项目并设置主题，就会运行该加载项。
 
 > [!NOTE]
-> 要求集 [1.10 中引入了](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> 要求集 [1.10 中引入了](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="supported-events"></a>支持的事件
 

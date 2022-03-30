@@ -3,19 +3,19 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在加载项中Office对话框的基础知识。
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f1972524db31226d3e850deb4f6a73057487fa7
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 03859956fbc005f33212343b83470d4f91ef65ee
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483751"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496829"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
 可以在 Office 加载项中使用 [Office 对话框 API](/javascript/api/office/office.ui) 打开对话框。 本文提供了有关如何在 Office 加载项中使用对话框 API 的指南。
 
 > [!NOTE]
-> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](/javascript/api/requirement-sets/dialog-api-requirement-sets)。 对话框 API 当前受 Excel、PowerPoint 和 Word 支持。 Outlook不同邮箱要求&mdash;集中包含的支持，请参阅 API 参考了解更多详细信息。
+> 若要了解对话框 API 目前的受支持情况，请参阅[对话框 API 要求集](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)。 对话框 API 当前受 Excel、PowerPoint 和 Word 支持。 Outlook不同邮箱要求&mdash;集中包含的支持，请参阅 API 参考了解更多详细信息。
 
 对话框 API 的主要应用场景是为 Google、Facebook 或 Microsoft Graph 等资源启用身份验证。 有关详细信息，请在熟悉本文 *之后*，参阅 [使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
@@ -218,7 +218,7 @@ function processMessage(arg) {
 对话框或父 JavaScript 运行时 (在任务窗格中或托管函数文件) 的无 UI 运行时中，在对话框打开后，可能会导航离开外接程序的域。 如果发生以上任 `messageParent` 一情况，则调用 将失败，除非你的代码指定父运行时的域。 为此，将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到 的调用中 `messageParent`。 此对象具有 `targetOrigin` 一个属性，该属性指定邮件应发送到的域。 如果未使用 参数，则Office假定目标与对话框当前托管的域相同。
 
 > [!NOTE]
-> 使用 `messageParent` 发送跨域邮件需要 [Dialog Origin 1.1 要求集](/javascript/api/requirement-sets/dialog-origin-requirement-sets)。 在`DialogMessageOptions`不支持要求集的早期版本Office参数将被忽略，因此，如果传递方法，此方法的行为将不受影响。
+> 使用 `messageParent` 发送跨域邮件需要 [Dialog Origin 1.1 要求集](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)。 在`DialogMessageOptions`不支持要求集的早期版本Office参数将被忽略，因此，如果传递方法，此方法的行为将不受影响。
 
 下面是使用 发送 `messageParent` 跨域邮件的示例。
 
@@ -331,17 +331,17 @@ function onRegisterMessageComplete(asyncResult) {
 由于可以从主机页`messageChild``DialogParentMessageReceived`进行多次调用，但在事件的对话框中只有一个处理程序，因此处理程序必须使用条件逻辑来区分不同的消息。 您可以以与对话框向主机页发送邮件时如何构造条件消息的方式完全一样的方式完成此操作，如条件邮件 [中所述](#conditional-messaging)。
 
 > [!NOTE]
-> 在某些情况下， `messageChild` API（即 [DialogApi 1.2](/javascript/api/requirement-sets/dialog-api-requirement-sets) 要求集的一部分）可能不受支持。 有关父级到对话框消息传递的一些替代方法，在将邮件从对话框的主机页传递到对话框 [的替代方法中进行了介绍](parent-to-dialog.md)。
+> 在某些情况下， `messageChild` API（即 [DialogApi 1.2](/javascript/api/requirement-sets/common/dialog-api-requirement-sets) 要求集的一部分）可能不受支持。 有关父级到对话框消息传递的一些替代方法，在将邮件从对话框的主机页传递到对话框 [的替代方法中进行了介绍](parent-to-dialog.md)。
 
 > [!IMPORTANT]
-> [DialogApi 1.2](/javascript/api/requirement-sets/dialog-api-requirement-sets) 要求集无法指定在外接程序清单的 **"** 要求"部分。 必须在运行时使用 方法检查对 DialogApi 1.2 `isSetSupported` 的支持，如运行时检查方法和要求集支持 [中所述](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 对清单要求的支持正在开发中。
+> [DialogApi 1.2](/javascript/api/requirement-sets/common/dialog-api-requirement-sets) 要求集无法指定在外接程序清单的 **"** 要求"部分。 必须在运行时使用 方法检查对 DialogApi 1.2 `isSetSupported` 的支持，如运行时检查方法和要求集支持 [中所述](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。 对清单要求的支持正在开发中。
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>到对话框运行时的跨域消息传送
 
 对话框或父 JavaScript 运行时 (在任务窗格中或托管函数文件) 的无 UI 运行时中，在对话框打开后，可能会导航离开外接程序的域。 如果发生上述 `messageChild` 任一情况，则调用 将失败，除非你的代码指定对话框运行时的域。 为此，将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到 的调用中 `messageChild`。 此对象具有 `targetOrigin` 一个属性，该属性指定邮件应发送到的域。 如果未使用 参数，则Office假定目标与父运行时当前托管的域相同。 
 
 > [!NOTE]
-> 使用 `messageChild` 发送跨域邮件需要 [Dialog Origin 1.1 要求集](/javascript/api/requirement-sets/dialog-origin-requirement-sets)。 在`DialogMessageOptions`不支持要求集的早期版本Office参数将被忽略，因此，如果传递方法，此方法的行为将不受影响。
+> 使用 `messageChild` 发送跨域邮件需要 [Dialog Origin 1.1 要求集](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)。 在`DialogMessageOptions`不支持要求集的早期版本Office参数将被忽略，因此，如果传递方法，此方法的行为将不受影响。
 
 下面是使用 发送 `messageChild` 跨域邮件的示例。
 

@@ -3,12 +3,12 @@ title: Office 外接程序的身份验证设计准则
 ms.date: 02/09/2021
 description: 了解如何在加载项中直观地设计登录Office注册页面。
 ms.localizationpriority: medium
-ms.openlocfilehash: 0188487f7a4a32bf16c00eed3f151d0a9a52be87
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 4973ba8f81ff075d7db8021b15fdfe0f8f0683c4
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483935"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496787"
 ---
 # <a name="authentication-patterns"></a>身份验证模式
 
@@ -49,7 +49,7 @@ ms.locfileid: "64483935"
 ## <a name="single-sign-on-authentication-flow"></a>单Sign-On身份验证流
 
 > [!NOTE]
-> Word、Excel、Outlook 和 PowerPoint 目前支持单一登录 API。 有关单一登录支持的信息，请参阅 [IdentityAPI 要求集](/javascript/api/requirement-sets/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
+> Word、Excel、Outlook 和 PowerPoint 目前支持单一登录 API。 有关单一登录支持的信息，请参阅 [IdentityAPI 要求集](/javascript/api/requirement-sets/common/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
 使用单一登录实现更流畅的最终用户体验。 Microsoft 帐户或 Office (中的用户标识Microsoft 365) 登录外接程序。 因此，用户只能登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
 

@@ -3,12 +3,12 @@ title: 加载项中的Office快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为组合键）Office加载项。
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 98d799f62710b124b8836583d2d30cac7976100d
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 69fbc94c0d0cda700ae3362168cc02a055c0e521
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483880"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496775"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到Office加载项
 
@@ -270,7 +270,7 @@ ms.locfileid: "64483880"
 > 试用预览版功能的好方法是使用 Microsoft 365 订阅。 如果还没有 Microsoft 365 订阅，可以通过加入[Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)获取一个订阅。
 
 > [!NOTE]
-> 本节中所述的 API 需要 [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/keyboard-shortcuts-requirement-sets) 要求集。
+> 本节中所述的 API 需要 [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) 要求集。
 
 使用 [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) 方法将用户的自定义键盘组合分配给您的外接程序操作。 方法采用类型 参数`{[actionId:string]: string|null}``actionId`，其中 是必须在加载项扩展清单 JSON 中定义的操作 ID 的子集。 值是用户的首选组合键。 值还可以是 `null`，这将 `actionId` 删除任何自定义项，并恢复为在加载项扩展清单 JSON 中定义的默认键盘组合。
 

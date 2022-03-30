@@ -3,12 +3,12 @@ title: 处理和返回自定义函数中的错误
 description: '处理和返回自定义函数中类似 #NULL! 来自自定义函数。'
 ms.date: 08/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b960cdda4f44b4e67ce3f0582b6c7a31d967d030
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: c8f2667f47c1c983b135f38ce2c67ad1f31502c9
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483501"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496290"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>处理和返回自定义函数中的错误
 
@@ -37,7 +37,7 @@ function getCity(zipCode: string): string {
 
 [CustomFunctions.Error](/javascript/api/custom-functions-runtime/customfunctions.error) 对象用于将错误返回给单元格。 创建对象时，通过选择以下枚举值 `ErrorCode` 之一来指定要使用哪个错误。
 
-|ErrorCode 枚举值  |Excel 单元格值  |说明  |
+|ErrorCode 枚举值  |Excel 单元格值  |Description  |
 |---------------|---------|---------|
 |`divisionByZero` | `#DIV/0`  | 函数试图除以零。 |
 |`invalidName`    | `#NAME?`  | 函数名称有一个拼写错误。 请注意，支持将此错误作为自定义函数输入错误，但不作为自定义函数输出错误。 |
@@ -135,5 +135,5 @@ function getComment(commentID) {
 ## <a name="see-also"></a>另请参阅
 
 * [自定义函数调试](custom-functions-debugging.md)
-* [自定义函数要求集](/javascript/api/requirement-sets/custom-functions-requirement-sets)
+* [自定义函数要求集](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
 * [在 Excel 中创建自定义函数](custom-functions-overview.md)

@@ -3,19 +3,19 @@ title: 获取和设置类别
 description: 如何管理邮箱和项目的类别。
 ms.date: 01/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f39fba37e209b4f23955aebb54e8f88807f24dd
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 82e6403ad0ac46cd713b9617c089cd4a3884789a
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484524"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496885"
 ---
 # <a name="get-and-set-categories"></a>获取和设置类别
 
 在Outlook中，用户可以将类别应用于邮件和约会，以用作组织其邮箱数据的方式。 用户定义其邮箱的颜色编码类别主列表，然后可以将这些类别的一个或多个应用于任何邮件或约会项目。 [主](/javascript/api/outlook/office.categorydetails)列表中的每个类别都由用户[指定的](/javascript/api/outlook/office.mailboxenums.categorycolor)名称和颜色表示。 可以使用 JavaScript API Office邮箱上的类别主列表以及应用于项目的类别。
 
 > [!NOTE]
-> 要求集 1.8 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> 要求集 1.8 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="manage-categories-in-the-master-list"></a>管理主列表中的类别
 
