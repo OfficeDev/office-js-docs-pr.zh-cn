@@ -3,12 +3,12 @@ title: 指定 Office 主机和 API 要求
 description: 了解如何指定Office应用和 API 要求，使加载项按预期运行。
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e43aa05d543eb55f10c6e700b5011733792a401
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 9f08a4c5f52d52022b33285faf3d3914056a03e2
+ms.sourcegitcommit: f32123f2b7254e76965dc95c21108f081507feed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496801"
+ms.lasthandoff: 03/30/2022
+ms.locfileid: "64536543"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>指定 Office 应用程序和 API 要求
 
@@ -104,7 +104,7 @@ Office加载项可能依赖于特定的 Office 应用程序 (也称为 Office �
 
 使用 [Requirements](/javascript/api/manifest/requirements) 元素及其子元素 [Sets](/javascript/api/manifest/sets) 和 [Methods](/javascript/api/manifest/methods) 指定安装外接程序时 Office 应用程序必须支持的最低要求集或 API 成员。 
 
-如果 Office 应用程序或平台不支持 **Requirements** 元素中指定的要求集或 API 成员，外接程序将不会在该应用程序或平台中运行，并且不会显示在"我的外接程序"**中**。
+如果 Office 应用程序或平台不支持 **Requirements** 元素中指定的要求集或 API 成员，外接程序将不会在该应用程序或平台中运行，也不会显示在"我的外接程序"**中**。
 
 > [!NOTE]
 > **Requirements** 元素对于所有外接程序都是可选的，但Outlook外接程序除外。当根`xsi:type`元素的 属性`OfficeApp``MailBox`为 时，必须存在 **一个 Requirements** 元素，该元素指定外接程序所需的 MailBox 要求集的最低版本。 有关详细信息，请参阅 Outlook [JavaScript API 要求集](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)。
