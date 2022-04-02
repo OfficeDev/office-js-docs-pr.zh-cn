@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 和 Vue 生成简单的 Excel 任�
 ms.date: 08/04/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: baf265db082b73c02a8d16da83fc9884684a707d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7a463ab61b90914c6fcaebff42599723a3a7e9ee
+ms.sourcegitcommit: 8f7d84c33c61c9f724f956740ced01a83f62ddc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152523"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "64605526"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>使用 Vue 生成 Excel 任务窗格加载项
 
@@ -82,11 +82,12 @@ vue create my-add-in
     module.exports = {
       devServer: {
         port: 3000,
-        https: true,
-        key: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.key`)),
-        cert: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.crt`)),
-        ca: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/ca.crt`))
-      }
+        https: {
+          key: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.key`)),
+          cert: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/localhost.crt`)),
+          ca: fs.readFileSync(path.resolve(`${homedir}/.office-addin-dev-certs/ca.crt`)),
+         }
+       }
     }
     ```
 
