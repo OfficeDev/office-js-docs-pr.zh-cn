@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
-description: 了解如何创建使用Node.js登录的基于Office加载项。
-ms.date: 01/25/2022
+description: 了解如何创建使用Office单一登录的基于Node.js的加载项。
+ms.date: 03/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 911268198d5607953f34461ccaf8bcbc67dfe478
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: e03d023d6050f6b74ba401b1f2e0a5ed87a5cc0f
+ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743903"
+ms.lasthandoff: 04/06/2022
+ms.locfileid: "64682243"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 Node.js Office 加载项
 
@@ -31,7 +31,7 @@ ms.locfileid: "63743903"
 
 * 一个代码编辑器。 建议使用 Visual Studio Code。
 
-* 至少存储在你的 OneDrive for Business 订阅中的Microsoft 365文件夹。
+* Microsoft 365订阅中至少存储在OneDrive for Business上的几个文件和文件夹。
 
 * 一个 Microsoft Azure 订阅。 此加载项需要 Azure Active Directory (AD)。 Azure AD 为应用程序提供了用于进行身份验证和授权的标识服务。 你还可在 [Microsoft Azure](https://account.windowsazure.com/SignUp) 获得试用订阅。
 
@@ -42,11 +42,11 @@ ms.locfileid: "63743903"
     > [!NOTE]
     > 示例有三个版本：
     >
-    > * **Begin 文件夹** 是初学者项目。 未直接连接到 SSO 或授权的外接程序的 UI 和其他方面已经完成。 本文后续章节将引导你完成此过程。
-    > * 如果完成了本文中的过程，该示例的 **已完成** 版本会与所生成的加载项类似，只不过完成的项目具有对本文文本冗余的代码注释。 若要使用已完成的版本，请按照本文中的说明操作，但将"Begin"替换为"Completed"，并跳过编写客户端代码和编写 **服务器端** 代码部分。
+    > * **Begin** 文件夹是一个初学者项目。 未直接连接到 SSO 或授权的外接程序的 UI 和其他方面已经完成。 本文后续章节将引导你完成此过程。
+    > * 如果完成了本文中的过程，该示例的 **已完成** 版本会与所生成的加载项类似，只不过完成的项目具有对本文文本冗余的代码注释。 若要使用已完成的版本，只需按照本文中的说明操作，但将"Begin"替换为"Completed"，并跳过" **代码客户端** "和 **"编码服务器** 端"部分。
     > * **SSOAutoSetup** 版本是一个完整示例，可自动执行大多数步骤以在 Azure AD 中注册加载项并对其进行配置。 如果想要快速查看使用 SSO 的加载项，请使用此版本。 按照文件夹自述文件中的步骤操作即可。 我们建议你在某些时候完成本文中的手动注册和设置步骤，以更好地了解 Azure AD 与加载项之间的关系。
 
-1. 打开 Begin 文件夹中 **的命令** 提示符。
+1. 在 **Begin** 文件夹中打开命令提示符。
 
 1. 在该控制台中输入 `npm install` 以安装 package.json 文件中列出明细的所有依赖项。
 
@@ -56,40 +56,40 @@ ms.locfileid: "63743903"
 
 1. 导航到“Azure 门户 - 应用注册”[](https://go.microsoft.com/fwlink/?linkid=2083908)页面以注册你的应用。
 
-1. 使用管理员 ***凭据*** 登录到您的Microsoft 365租户。 例如，MyName@contoso.onmicrosoft.com。
+1. 使用 ***管理员*** 凭据登录到Microsoft 365租户。 例如，MyName@contoso.onmicrosoft.com。
 
 1. 选择“新注册”。 在“注册应用”页上，按如下方式设置值。
 
     * 将“名称”设置为“`Office-Add-in-NodeJS-SSO`”。
     * 将“**受支持的帐户类型**”设置为“**任何组织目录中的帐户和个人 Microsoft 帐户**”（例如，Skype、Xbox、Outlook.com）。
-    * 将应用程序类型设置为 **Web** ，然后将" **重定向 URI"** 设置为 `https://localhost:44355/dialog.html`。
+    * 将应用程序类型设置为 **Web** ，然后将 **重定向 URI** 设置为 `https://localhost:44355/dialog.html`。
     * 选择“**注册**”。
 
 1. 在 **Office-Add-in-NodeJS-SSO** 页面上，复制并保存“**应用程序（客户端）ID**”和“**目录（租户）ID**”的值。 你将在后面的过程中使用它们。
 
     > [!NOTE]
-    > 当其他应用程序（如 Office 客户端应用程序 (例如 PowerPoint、Word、Excel) ）寻求应用程序的授权访问权限时，此应用程序客户端) ID 是"受众"值。 **(** 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
+    > 当其他应用程序 **（例如Office客户** 端应用程序 (（例如，PowerPoint、Word、Excel) ）寻求对应用程序的授权访问时，此应用程序 (客户端) ID 是"受众"值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
 
-1. 选择“**管理**”下的“**身份验证**”。 在 **隐式授予** 部分中，为访问令牌和 ID 令牌 **启用****复选框**。 该示例具有一个回退授权系统，当 SSO 不可用时，将调用此系统。 该系统使用隐式流。
+1. 选择“**管理**”下的“**身份验证**”。 在 **"隐式授予"** 部分中，启用 **Access 令牌** 和 **ID 令牌** 的复选框。 该示例具有一个回退授权系统，当 SSO 不可用时，将调用此系统。 该系统使用隐式流。
 
 1. 在窗体顶部，选择“**保存**”。
 
 1. 选择“管理”下的“证书和密码”。 选择“新客户端密码”按钮。 输入“描述”的值，然后选择“到期”的适当选项，并选择“添加”。 在继续操作前，*立即复制客户端机密码值并使用应用程序 ID 保存它*，因为在后面的过程中，将需要用到它。
 
-1. 在“管理”下选择“公开 API”。 选择" **设置"** 链接。 这将以"api：//$App ID GUID$"的形式生成应用程序 ID URI，其中 $App ID GUID$ 是应用程序 (**客户端) ID**。
+1. 在“管理”下选择“公开 API”。 选择 **"设置** "链接。 这将以"api：//$App ID GUID$"的形式生成应用程序 ID URI，其中$App ID GUID$ 是 **应用程序 (客户端) ID**。
 
-1. 在生成的 ID `localhost:44355/` 中， (注意双正斜杠和 GUID) 末尾附加的正斜杠"/"。 完成后，整个 ID 应格式为 `api://localhost:44355/$App ID GUID$`;例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`。
+1. 在生成的 ID 中，插入 `localhost:44355/` (记下追加到两个正斜杠和 GUID 之间的结束) 的正斜杠"/"。 完成后，整个 ID 应具有窗体 `api://localhost:44355/$App ID GUID$`，例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`。
 
 1. 选择“**添加一个作用域**”按钮。 在打开的面板中，输入 `access_as_user` 作为 **作用域** 名称。
 
 1. 将“谁能同意?”设置为“管理员和用户”。
 
-1. `access_as_user`使用适用于范围的值填写用于配置管理员和用户同意提示的字段，使 Office 客户端应用程序能够使用与当前用户相同的权限使用外接程序的 Web API。 建议：
+1. 填写用于配置管理员和用户同意提示的字段，其中包含适合`access_as_user`作用域的值，使Office客户端应用程序能够使用与当前用户具有相同权限的外接程序的 Web API。 建议：
 
-    * **管理员显示名称**：Office可以充当用户。
+    * **管理员同意显示名称**：Office可以充当用户。
     * **管理员许可描述**：使 Office 能够借助与当前用户相同的权限调用加载项的 Web API。
     * **用户同意显示名称**：Office可以充当你。
-    * **用户同意** 描述：Office以您具有的相同权限调用外接程序的 Web API。
+    * **用户同意说明**：启用Office使用你拥有的相同权限调用外接程序的 Web API。
 
 1. 确保将“**状态**”设置为“**已启用**”。
 
@@ -98,27 +98,24 @@ ms.locfileid: "63743903"
     > [!NOTE]
     > 显示在文本字段正下方的 **作用域** 名称的域部分应自动与你先前设置的“应用 ID URI”匹配，并将 `/access_as_user` 附加到末尾；例如，`api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`。
 
-1. 在“授权客户端应用程序”部分中，确定要授权给加载项 Web 应用程序的应用程序。 下面每个 ID 都需要进行预授权。
+1. 在 **"授权客户端应用程序**"部分中，输入以下 ID 以预先授权所有Microsoft Office应用程序终结点。
 
-    * `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
-    * `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (Microsoft Office)
-    * `93d53678-613d-4013-afc1-62e9e444a0a5`（Office 网页版）
-    * `57fb890c-0dab-4253-a5e0-7188c88b2bb4`（Office 网页版）
-    * `08e18876-6177-487e-b8b5-cf950c1e598c`（Office 网页版）
-    * `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Outlook 网页版）
+   - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (所有Microsoft Office应用程序终结点) 
 
     > [!NOTE]
-    > ID ea5a67f6-b6f3-4338-b240-c655ddc3cc8e 包括列出的所有其他 ID，并可以单独用于预授权所有 Office 主机终结点，以用于 Office 外接程序 SSO 流中的服务。
+    > ID `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` 在以下所有平台上预先授权Office。 或者，如果出于任何原因想要拒绝授权在某些平台上Office，则可以输入以下 ID 的适当子集。 只需保留要从中隐瞒授权的平台的 ID 即可。 这些平台上外接程序的用户将无法调用 Web API，但外接程序中的其他功能仍将有效。
+    >
+    > - `d3590ed6-52b3-4102-aeff-aad2292ab01c` (Microsoft Office)
+    > - `93d53678-613d-4013-afc1-62e9e444a0a5`（Office 网页版）
+    > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3`（Outlook 网页版）
 
-    对于每个 ID，请执行以下步骤。
+1. 选择“**添加客户端应用程序**”按钮，然后在打开的面板中，将“客户端 ID”设置为相应的 GUID 并勾选 `api://localhost:44355/$App ID GUID$/access_as_user` 框。
 
-    a. 选择“**添加客户端应用程序**”按钮，然后在打开的面板中，将“客户端 ID”设置为相应的 GUID 并勾选 `api://localhost:44355/$App ID GUID$/access_as_user` 框。
-
-    b. 选择“添加应用程序”。
+1. 选择“添加应用程序”。
 
 1. 选择“管理”下的“API 权限”，然后选择“添加权限”。 在打开的面板上，选择 **Microsoft Graph**，然后选择“委派权限”。
 
-1. 使用“选择权限”搜索框来搜索加载项需要的权限。 选择以下选项。 外接程序本身确实只需要第一项;`profile`但应用程序需要权限Office才能获取外接程序 Web 应用程序的令牌。
+1. 使用“选择权限”搜索框来搜索加载项需要的权限。 选择以下选项。 加载项本身仅需要第一个加载项;`profile`但Office应用程序需要权限才能获取加载项 Web 应用程序的令牌。
 
     * Files.Read.All
     * profile
@@ -144,7 +141,7 @@ ms.locfileid: "63743903"
 
 1. 打开 `\public\javascripts\fallbackAuthDialog.js` 文件。 在 `msalConfig` 声明中，将占位符 $application_GUID here$ 替换为在注册加载项时复制的应用程序 ID。 该值应该用引号引起来。
 
-1. 打开加载项清单文件“manifest\manifest_local.xml”，然后滚动到该文件的底部。 在结束 `</VersionOverrides>` 标记的正上方，你将找到以下标记。
+1. 打开加载项清单文件“manifest\manifest_local.xml”，然后滚动到该文件的底部。 在结束标记的正上方 `</VersionOverrides>` ，你会发现以下标记。
 
     ```xml
     <WebApplicationInfo>
@@ -157,7 +154,7 @@ ms.locfileid: "63743903"
     </WebApplicationInfo>
     ```
 
-1. 将标记中的 *两处* 占位符“$application_GUID here$”均替换为在注册加载项时复制的应用程序 ID。 由于 ID 并不包含“$”符号，因此请勿包含它们。 这是用于 中"用户"和"CLIENT_ID访问群体"的相同 ID。ENV 文件。
+1. 将标记中的 *两处* 占位符“$application_GUID here$”均替换为在注册加载项时复制的应用程序 ID。 由于 ID 并不包含“$”符号，因此请勿包含它们。 这是用于CLIENT_ID和受众的相同 ID。ENV 文件。
 
    > [!NOTE]
    > **资源** 值是注册加载项时设置的 **应用程序 ID URI**。 仅在通过 AppSource 销售加载项时，才使用 **作用域** 部分生成许可对话框。
@@ -174,7 +171,7 @@ ms.locfileid: "63743903"
 1. 在 Office.onReady 方法下方添加以下代码。
 
     > [!NOTE]
-    > 为了区分本文中你使用两个访问令牌，从 getAccessToken () 返回的令牌称为启动令牌。 它稍后通过代表流进行交换，以使用访问 Microsoft Graph。
+    > 为了区分本文中使用的两个访问令牌，从 getAccessToken () 返回的令牌称为启动令牌。 之后，它通过"代表"流交换，以获取有权访问 Microsoft Graph 的新令牌。
 
     ```javascript
     async function getGraphData() {
@@ -201,12 +198,12 @@ ms.locfileid: "63743903"
     }
     ```
 
-1. 将 `TODO 1` 替换为下面的代码。 关于此代码，请注意以下几点：
+1. 将 `TODO 1` 替换为下面的代码。 关于此代码，请注意以下内容：
 
-    * `Office.auth.getAccessToken` 指示 Office 从 Azure AD 获取引导令牌。 启动令牌是一个 ID `scp` 令牌，但它也有一个 (作用域) 值为 的 。`access-as-user` Web 应用程序可以交换此令牌，以使用对 Microsoft Graph 的访问令牌。
-    * 将选项`allowSignInPrompt`设置为 true 意味着如果当前没有用户登录Office，Office将打开弹出窗口登录提示。
-    * `allowConsentPrompt`将选项设置为 true 意味着如果用户未同意允许外接程序访问用户的 AAD 配置文件，Office将打开同意提示。  (提示仅允许用户同意用户的 AAD 配置文件，而不是 Microsoft Graph范围。) 
-    * `forMSGraphAccess`将 选项设置为 true 可指示Office加载项打算使用启动令牌获取具有 Microsoft Graph 权限的其他访问令牌，而不只是将其用作 ID 令牌。 如果租户管理员未向加载项授予对 Microsoft Graph 的访问许可，则 `Office.auth.getAccessToken` 将返回错误 **13012**。 该加载项可通过回退到备用的授权系统来做出响应，这是必需的，因为 Office 可以提示仅同意访问用户的 Azure AD 配置文件，而不是任何 Microsoft Graph 作用域。 回退授权系统要求用户重新登录，并且可以提示用户同意 Microsoft Graph作用域。 因此，`forMSGraphAccess` 选项可确保加载项不会进行令牌交换，交换会因缺乏许可而失败。 （由于先前步骤中已授予管理员许可，此加载项不会发生此情况。 但这里包含了一个选项来说明最佳实践。）
+    * `Office.auth.getAccessToken` 指示 Office 从 Azure AD 获取引导令牌。 引导令牌是一个 ID 令牌，但它也有一个 `scp` (范围) 属性与值 `access-as-user`。 Web 应用程序可以将此令牌交换为具有 Microsoft Graph 权限的访问令牌。
+    * `allowSignInPrompt`将选项设置为 true 意味着，如果当前没有用户登录到Office，则Office将打开弹出窗口登录提示。
+    * `allowConsentPrompt`将选项设置为 true 意味着，如果用户未同意允许外接程序访问用户的AAD配置文件，则Office将打开同意提示。  (提示仅允许用户同意用户的AAD配置文件，而不允许 Microsoft Graph范围。) 
+    * `forMSGraphAccess`将选项设置为 true 信号，以Office外接程序打算使用启动令牌获取具有 Microsoft Graph 权限的其他访问令牌，而不只是将其用作 ID 令牌。 如果租户管理员未向加载项授予对 Microsoft Graph 的访问许可，则 `Office.auth.getAccessToken` 将返回错误 **13012**。 该加载项可通过回退到备用的授权系统来做出响应，这是必需的，因为 Office 可以提示仅同意访问用户的 Azure AD 配置文件，而不是任何 Microsoft Graph 作用域。 回退授权系统要求用户再次登录，*并且可以* 提示用户同意 Microsoft Graph 范围。 因此，`forMSGraphAccess` 选项可确保加载项不会进行令牌交换，交换会因缺乏许可而失败。 （由于先前步骤中已授予管理员许可，此加载项不会发生此情况。 但这里包含了一个选项来说明最佳实践。）
 
     ```javascript
     let bootstrapToken = await Office.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
@@ -220,7 +217,7 @@ ms.locfileid: "63743903"
 
 1. 将 `TODO 3` 替换为以下代码。 关于此代码，请注意以下几点：
 
-    * 如果Microsoft 365租户已配置为需要`exchangeResponse``claims`多重身份验证，则 将包括一个 属性，该属性包含有关其他必需因素的信息。 在这种情况下，应该再次调用 `Office.auth.getAccessToken`，并将 `authChallenge` 选项设置为 claims 属性的值。 这就指示 AAD 提示用户进行所有必需形式的身份验证。
+    * 如果已将Microsoft 365租户配置为需要多重身份验证，则`exchangeResponse`该租户将包含一个`claims`属性，其中包含有关其他必需因素的信息。 在这种情况下，应该再次调用 `Office.auth.getAccessToken`，并将 `authChallenge` 选项设置为 claims 属性的值。 这就指示 AAD 提示用户进行所有必需形式的身份验证。
 
     ```javascript
     if (exchangeResponse.claims) {
@@ -243,7 +240,7 @@ ms.locfileid: "63743903"
     }
     ```
 
-1. 将 `TODO 5` 替换为以下内容：
+1. 替换 `TODO 5` 为以下内容：
 
     * 来自 `getAccessToken` 调用的错误将具有 `code` 属性，其错误号通常处于 13xxx 范围内。 将在后续步骤中创建 `handleClientSideErrors` 方法。
     * `showMessage` 方法在任务窗格上显示文本。
@@ -257,7 +254,7 @@ ms.locfileid: "63743903"
     }
     ```
 
-1. 在 `getGraphData` 方法下方，添加下列函数。 请注意，`/auth`这是一个服务器端 Express 路由，该路由将启动令牌与 Azure AD 交换具有 Microsoft Graph 权限的访问令牌。
+1. 在 `getGraphData` 方法下方，添加下列函数。 请注意，`/auth`这是一个服务器端 Express 路由，可将启动令牌与具有 Microsoft Graph 权限的访问令牌Azure AD交换。
 
     ```javascript
     async function getGraphToken(bootstrapToken) {
@@ -339,7 +336,7 @@ ms.locfileid: "63743903"
     }
     ```
 
-1. 在极少数情况下，Office缓存的启动令牌在 Office 验证时未过期，但在到达 exchange Azure AD 时过期。 Azure AD 将以错误 **AADSTS500133** 做出响应。 在这种情况下，加载项只需再次调用 `getGraphData` 。 由于缓存的引导令牌现在已过期，Office 将从 Azure AD 获取一个新令牌。 因此，将 `TODO 8` 替换为以下内容。
+1. 在极少数情况下，Office缓存的启动令牌在Office验证时未过期，但在到达Azure AD进行交换时过期。 Azure AD 将以错误 **AADSTS500133** 做出响应。 在这种情况下，加载项应只是再次调用 `getGraphData` 。 由于缓存的引导令牌现在已过期，Office 将从 Azure AD 获取一个新令牌。 因此，请替换 `TODO 8` 为以下内容。
 
     ```javascript
     if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
@@ -371,7 +368,7 @@ ms.locfileid: "63743903"
     }
     ```
 
-1. 将 `TODO 9` 替换为以下内容：
+1. 替换 `TODO 9` 为以下内容：
 
     ```javascript
     else {
@@ -469,12 +466,12 @@ ms.locfileid: "63743903"
     } 
     ```
 
-1. 将 `TODO 13` 替换为下面的代码。 关于此代码，请注意以下几点：
+1. 将 `TODO 13` 替换为下面的代码。 关于此代码，请注意以下内容：
 
     * 这是一个长 `else` 块的开头，但是结尾 `}` 尚未结束，因为你将向其添加更多代码。
     * `authorization` 字符串是“持有者”，后跟引导令牌，因此 `else` 块的第一行将令牌分配给 `jwt`。 （“JWT”代表“JSON Web 令牌”。）
     * 两个 `process.env.*` 值是你配置加载项时分配的常量。
-    * `requested_token_use` 窗体参数设置为“on_behalf_of”。 这将Azure AD OBO 加载项请求 Microsoft Graph访问令牌 (访问) 。 Azure 通过验证分配给 form `scp` 参数的启动`assertion`令牌是否具有设置为 的属性来做出响应`access-as-user`。
+    * `requested_token_use` 窗体参数设置为“on_behalf_of”。 这会告知Azure AD外接程序正在使用 OBO) 的代理流 (请求 Microsoft Graph的访问令牌。 Azure 通过验证分配给 `assertion` 窗体参数的启动令牌是否具有 `scp` 设置为 `access-as-user`的属性来做出响应。
     * `scope` 窗体参数设置为“Files.Read.All”，这是加载项唯一需要的 Microsoft Graph 作用域。
 
     ```javascript
@@ -490,9 +487,9 @@ ms.locfileid: "63743903"
         };
     ```
 
-1. 将 `TODO 14` 替换为以下代码，它将完成 `else` 块。 关于此代码，请注意以下几点：
+1. 将 `TODO 14` 替换为以下代码，它将完成 `else` 块。 关于此代码，请注意以下内容：
 
-    * 常量 `tenant` 设置为“通用”，因为你在 Azure AD 中注册加载项时已将其配置为多租户；特别是当你将“**支持的帐户类型**”设置为“**任何组织目录中的帐户和个人 Microsoft 帐户（例如，Skype、Xbox、Outlook.com）**”时。 如果改为选择`tenant`仅支持注册加载项Microsoft 365租户中的帐户，则此代码将设置为租户的 GUID。
+    * 常量 `tenant` 设置为“通用”，因为你在 Azure AD 中注册加载项时已将其配置为多租户；特别是当你将“**支持的帐户类型**”设置为“**任何组织目录中的帐户和个人 Microsoft 帐户（例如，Skype、Xbox、Outlook.com）**”时。 如果选择仅支持注册加载项的同一Microsoft 365租户中的帐户，则在此代码`tenant`中将设置为租户的 GUID。
     * 如果 POST 请求没有错误，那么 Azure AD 的响应将转换为 JSON 并发送到客户端。 此 JSON 对象具有 `access_token` 属性，Azure AD 已为其分配 Microsoft Graph 访问令牌。
 
     ```javascript
@@ -582,7 +579,7 @@ ms.locfileid: "63743903"
 
 1. 在 Office 应用程序的“**主页**”功能区上，选择“**SSO Node.js**”组中的“**显示加载项**”按钮以打开任务窗格加载项。
 
-1. 单击“**获取 OneDrive 文件名**”按钮。 如果使用 Microsoft 365 教育版 或工作帐户或 Microsoft 帐户登录 Office并且 SSO 正常工作，OneDrive for Business 中的前 10 个文件和文件夹名称将插入到文档中。  (首次登录可能需要 15 秒。) 如果您未登录，或者您位于不支持 SSO 的方案中，或者 SSO 因任何原因无法工作，系统将提示您登录。 登录后，将显示文件和文件夹名称。
+1. 单击“**获取 OneDrive 文件名**”按钮。 如果使用Microsoft 365 教育版或工作帐户或 Microsoft 帐户登录到Office，并且 SSO 按预期工作，则OneDrive for Business中的前 10 个文件和文件夹名称将插入文档中。  (第一次登录可能需要多达 15 秒的时间。) 如果未登录，或者处于不支持 SSO 或 SSO 因任何原因无法运行的方案中，系统会提示你登录。 登录后，将显示文件和文件夹名称。
 
 > [!NOTE]
 > 如果先前使用其他 ID 登录过 Office，并且当时打开的一些 Office 应用现在仍处于打开状态，Office 可能无法可靠地更改 ID，即使看似已更改过，也不例外。 在这种情况下，可能无法调用 Microsoft Graph，或者可能返回以前 ID 的数据。 为了防止发生这种情况，请务必先 *关闭其他所有 Office 应用程序*，然后再按“**获取 OneDrive 文件名**”。
