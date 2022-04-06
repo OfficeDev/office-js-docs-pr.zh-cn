@@ -1,18 +1,18 @@
 ---
-title: 在 Visual Studio 2019 中获取 JavaScript IntelliSense
-description: 了解如何使用 JSDoc 为 JavaScript IntelliSense、对象、参数和返回值创建属性。
-ms.date: 10/11/2019
+title: 在 Visual Studio 中获取 JavaScript IntelliSense
+description: 了解如何使用 JSDoc 为 JavaScript 变量、对象、参数和返回值创建 IntelliSense。
+ms.date: 04/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 142f4cf81f83cdc518fb94f65a8e6f67f41a4783
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 4fb18199c53b7b836079754b5fb4561b76a968b1
+ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743490"
+ms.lasthandoff: 04/06/2022
+ms.locfileid: "64682257"
 ---
-# <a name="get-javascript-intellisense-in-visual-studio-2019"></a>在 Visual Studio 2019 中获取 JavaScript IntelliSense
+# <a name="get-javascript-intellisense-in-visual-studio"></a>在 Visual Studio 中获取 JavaScript IntelliSense
 
-当使用 Visual Studio 2019 开发 Office 外接程序时，可以使用 JSDoc 来启用 IntelliSense，以获取 JavaScript 变量、对象、参数和返回值。本文概述了 JSDoc 以及如何使用它在 Visual Studio 中创建 IntellSense。有关详细信息，请参阅 [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) 和 [JavaScript 中的 JSDoc 支持](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript)。 
+使用 Visual Studio 2019 及更高版本开发Office外接程序时，可以使用 JSDoc 为 JavaScript 变量、对象、参数和返回值启用 IntelliSense。 本文概述了 JSDoc 以及如何使用它在 Visual Studio 中创建 IntellSense。 有关详细信息，请参阅 [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense) 和 [JavaScript 中的 JSDoc 支持](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript)。 
 
 ## <a name="officejs-type-definitions"></a>Office.js 类型定义
 
@@ -49,7 +49,7 @@ ms.locfileid: "63743490"
 var subsetRange;
 ```
 
-![Screenshot showing excerpt of IntelliSense for 'subsetRange' variable.](../images/intellisense-vs17-var.png)
+![显示"subsetRange"变量的 IntelliSense 摘录的屏幕截图。](../images/intellisense-vs17-var.png)
 
 ### <a name="parameter"></a>参数
 
@@ -60,7 +60,7 @@ function myFunc(paragraphs){
 }
 ```
 
-![显示 JavaScript 示例 IntelliSense"paragraphs"参数中"paras"参数 (摘录的屏幕截图) 。](../images/intellisense-vs17-param.png)
+![显示 JavaScript 示例) 中"paras"参数 ("paragraphs"参数的 IntelliSense 摘录的屏幕截图。](../images/intellisense-vs17-param.png)
 
 ### <a name="return-value"></a>返回值
 
@@ -71,7 +71,7 @@ function myFunc() {
 }
 ```
 
-![屏幕截图显示"myFunc #IntelliSense () "返回值的值的摘录。](../images/intellisense-vs17-return.png)
+![显示"myFunc () "返回值的 IntelliSense 摘录的屏幕截图。](../images/intellisense-vs17-return.png)
 
 ### <a name="complex-types"></a>复杂类型
 
@@ -84,7 +84,7 @@ function myFunc() {
 }
 ```
 
-![Screenshot showing IntelliSense for complex type declaration of 'var myVar;' for example.](../images/intellisense-vs17-complex-type.png)
+![例如，显示"var myVar;"复杂类型声明的 IntelliSense 的屏幕截图。](../images/intellisense-vs17-complex-type.png)
 
 ## <a name="see-also"></a>另请参阅
 
