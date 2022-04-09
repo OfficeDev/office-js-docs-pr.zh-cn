@@ -1,15 +1,15 @@
 ---
-ms.date: 03/23/2022
+ms.date: 04/04/2022
 title: 将 Office 加载项配置为使用共享 JavaScript 运行时
 ms.prod: non-product-specific
 description: 将 Office 加载项配置为使用共享 JavaScript 运行时，以支持其他功能区、任务窗格和自定义函数功能。
 ms.localizationpriority: high
-ms.openlocfilehash: 58715c7c7eaf89dd4ce6bc3545121be03f12af78
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: b91fffdd79053a600a52086021cbd9712beb7df1
+ms.sourcegitcommit: 82ef88cbdc7c1b77ffa5b624c0c010bd32212692
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496852"
+ms.lasthandoff: 04/08/2022
+ms.locfileid: "64715528"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>将 Office 加载项配置为使用共享 JavaScript 运行时
 
@@ -19,31 +19,28 @@ ms.locfileid: "64496852"
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
-如果要启动新项目，请按照以下步骤使用[适用于 Office 加载项的 Yeoman 生成器](yeoman-generator-overview.md)创建 Excel 或 PowerPoint 加载项项目。
+如果要启动新项目，请使用 [适用于 Office 加载项的Yeoman 生成器](yeoman-generator-overview.md)创建 Excel、PowerPoint 或 Word 加载项项目。
 
-执行下列操作之一：
+运行命令 `yo office --projectType taskpane --name "my office add in" --host <host> --js true`，其中 `<host>` 是以下值之一。
 
-- 要生成带自定义函数的 Excel 加载项，请运行命令 `yo office --projectType excel-functions --name "NAME OF YOUR PROJECT HERE" --host excel --js true`。
-
-    或者
-
-- 要生成 PowerPoint 加载项，请运行命令 `yo office --projectType taskpane --name "NAME OF YOUR PROJECT HERE" --host powerpoint --js true`。
+- Excel
+- Powerpoint
+- Word
 
 > [!IMPORTANT]
 > `--name` 参数值必须采用双引号，即使没有空格也是如此。
 
-生成器将创建项目并安装支持的 Node 组件。
+对于 **--projecttype**、**--name**、**--js** 命令行选项，你可以使用不同的选项。 有关选项的完整列表，请参阅 [Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)。
 
-> [!NOTE]
-> 还可以使用本文中的步骤更新现有Visual Studio项目以使用共享运行时。 但是，可能需要更新清单的 XML 架构。 有关详细信息，请参阅 [排除 Office 加载项开发错误故障](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects)。
+生成器将创建项目并安装支持的 Node 组件。 还可以使用本文中的步骤更新 Visual Studio 项目以使用共享运行时。 但是，可能需要更新清单的 XML 架构。 有关详细信息，请参阅 [排除 Office 加载项开发错误故障](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects)。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
 对于新项目或现有项目，请按照以下步骤将其配置为使用共享运行时。 以下步骤能确保你使用[适用于 Office 加载项的 Yeoman 生成器](yeoman-generator-overview.md)生成你的项目。
 
-1. 启动 Visual Studio Code 并打开你生成的 Excel 或 PowerPoint 加载项项目。
+1. 启动 Visual Studio Code 并打开加载项项目。
 1. 打开 **manifest.xml** 文件。
-1. 如果生成 Excel 加载项，请更新要求部分，以使用 [共享运行时](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)，而不是自定义函数运行时。XML 应为如下所示。
+1. 对于 Excel 或 PowerPoint 外接程序，请更新要求部分，以包括[共享运行时](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)。 请务必删除 `CustomFunctionsRuntime` 要求（如果存在）。 XML 应该如下所示。
 
     ```xml
     <Hosts>
@@ -57,7 +54,10 @@ ms.locfileid: "64496852"
     <DefaultSettings>
     ```
 
-1. 查找 `<VersionOverrides>` 部分并添加以下 `<Runtimes>` 部分。 生存期需要 **较长**，以便在关闭任务窗格时加载项代码仍可运行。 `resid` 值是 **Taskpane.Url**，它引用 **manifest.xml** 文件底部附近的 ` <bt:Urls>` 部分中指定的 **taskpane.html** 文件位置。
+    > [!NOTE]
+    > 不要将 `SharedRuntime` 要求集添加到 Word 加载项的清单。 加载加载项时会导致错误，这是一个目前已知的问题。
+
+1. 查找 `<VersionOverrides>` 部分并添加以下 `<Runtimes>` 部分。 生存期需要 **较长**，以便在关闭任务窗格时加载项代码仍可运行。 `resid` 值是 **Taskpane.Url**，它引用 **manifest.xml** 文件底部附近的 `<bt:Urls>` 部分中指定的 **taskpane.html** 文件位置。
 
     > [!IMPORTANT]
     > 必须按照以下 XML 中显示的确切顺序在 `<Host>` 元素之后输入 `<Runtimes>` 部分。
@@ -99,7 +99,7 @@ ms.locfileid: "64496852"
 
 **webpack.config.js** 将生成多个运行时加载程序。 你需要对其进行修改，以通过 **taskpane.html** 文件仅加载共享 JavaScript 运行时。 
 
-1. 启动 Visual Studio Code 并打开你生成的 Excel 或 PowerPoint 加载项项目。
+1. 启动 Visual Studio Code 并打开生成的加载项项目。
 1. 打开 **webpack.config.js** 文件。
 1. 如果你的 **webpack.config.js** 文件有以下 **functions.html** 插件代码，请将其删除。
 
@@ -144,40 +144,29 @@ ms.locfileid: "64496852"
 
 你可以通过使用以下指令，确认你正在正确使用共享 JavaScript 运行时。
 
-1. 打开 **manifest.xml** 文件。
-1. 找到 `<Control xsi:type="Button" id="TaskpaneButton">` 部分并更改以下 `<Action ...>` XML。
-
-    来自：
-
-    ```xml
-    <Action xsi:type="ShowTaskpane">
-      <TaskpaneId>ButtonId1</TaskpaneId>
-      <SourceLocation resid="Taskpane.Url"/>
-    </Action>
-    ```
-
-    更改为：
-
-    ```xml
-    <Action xsi:type="ExecuteFunction">
-      <FunctionName>action</FunctionName>
-    </Action>
-    ```
-
-1. 打开 **./src/commands/commands.js** 文件。
-1. 将 **操作** 函数替换成以下代码。 这将更新函数，以打开并修改任务窗格按钮，从而增加一个计数器。 使用一个命令打开并访问任务窗格 DOM 仅适用于共享 JavaScript 运行时。
+1. 打开 **taskpane.js** 文件。
+1. 使用以下代码替换文件的全部内容。 这将显示任务窗格已被打开次数的计数。 仅在共享的 JavaScript 运行时中支持添加 onVisibilityModeChanged 事件。
 
     ```javascript
-    var _count=0;
-    
-    function action(event) {
-      // Your code goes here.
+    /*global document, Office*/
+
+    var _count = 0;
+
+    Office.onReady(() => {
+      document.getElementById("sideload-msg").style.display = "none";
+      document.getElementById("app-body").style.display = "flex";
+
+      updateCount(); // Update count on first open.
+      Office.addin.onVisibilityModeChanged(function (args) {
+        if (args.visibilityMode === "Taskpane") {
+          updateCount(); // Update count on subsequent opens.
+        }
+      });
+    });
+
+    function updateCount() {
       _count++;
-      Office.addin.showAsTaskpane();
-      document.getElementById("run").textContent="Go"+_count;
-    
-      // Be sure to indicate when the add-in command function is complete.
-      event.completed();
+      document.getElementById("run").textContent = "Task pane opened " + _count + " times.";
     }
     ```
 
@@ -187,14 +176,14 @@ ms.locfileid: "64496852"
    npm start
    ```
 
-每次选择加载项按钮，它都会将 **运行** 按钮文本更改为 **转到** ，并在其后增加一个计数器。
+每次打开任务窗格时，其打开次数的计数都将递增。 **_count** 的值不会丢失，因为即使任务窗格关闭，共享运行时也会使代码保持运行状态。
 
 ## <a name="runtime-lifetime"></a>运行时生存期
 
 在添加 `Runtime` 元素时，还指定了值为 `long` 或 `short` 的生存期。将此值设置为 `long` 以利用相关功能，例如在文档打开时启动加载项、在关闭任务窗格后继续运行代码，或从自定义函数中使用 CORS 和 DOM。
 
 > [!NOTE]
-> 默认生存期值为`short`，但我们建议在 Excel 加载项中使用`long`。如果在此例中将运行时设置为`short`，则当按下某个功能区按钮时，Excel 加载项将启动，但在功能区处理程序运行完毕后，它可能会关闭。 同样，打开任务窗格时，加载项将启动，但关闭任务窗格时，加载项可能会关闭。
+> 默认生存期值为 `short`，但我们建议在 Excel、PowerPoint、Word 加载项中使用 `long`。如果在此例中将运行时设置为 `short`，则当按下某个功能区按钮时，加载项将启动，但在功能区处理程序运行完毕后，它可能会关闭。 同样，打开任务窗格时，加载项将启动，但关闭任务窗格时，加载项可能会关闭。
 
 ```xml
 <Runtimes>
@@ -213,13 +202,13 @@ ms.locfileid: "64496852"
 
 配置共享运行时可实现以下方案。
 
-- Office 加载项可使用其他 UI 功能：
-  - [将自定义键盘快捷方式添加到 Office 加载项（预览）](../design/keyboard-shortcuts.md)
-  - [在 Office 加载项中创建自定义上下文选项卡（预览）](../design/contextual-tabs.md)
+- Office 加载项可使用其他 UI 功能。
   - [启用和禁用加载项命令](../design/disable-add-in-commands.md)
   - [文档打开时在 Office 加载项中运行代码](run-code-on-document-open.md)
   - [显示或隐藏 Office 加载项的任务窗格](show-hide-add-in.md)
-- 对于 Excel 加载项：
+- 以下内容仅适用于 Excel 加载项。
+  - [将自定义键盘快捷方式添加到 Office 加载项（预览）](../design/keyboard-shortcuts.md)
+  - [在 Office 加载项中创建自定义上下文选项卡（预览）](../design/contextual-tabs.md)
   - 自定义函数将具有完整的 CORS 支持。
   - 自定义函数可调用 Office.js API 以读取电子表格文档数据。
 
@@ -234,10 +223,6 @@ ms.locfileid: "64496852"
 ### <a name="multiple-task-panes"></a>多个任务窗格
 
 如果计划使用共享运行时，请勿将你的加载项设计为使用多个任务窗格。 共享运行时仅支持使用一个任务窗格。 请注意，不含 `<TaskpaneID>` 的任何任务窗格都被视为不同的任务窗格。
-
-## <a name="give-us-feedback"></a>向我们提供反馈
-
-我们非常乐于听取你关于此功能的反馈。如果发现此功能存在任何 bug、问题或具有相关请求，请通过在 [office-js repo](https://github.com/OfficeDev/office-js) 中创建 GitHub 问题来告诉我们。
 
 ## <a name="see-also"></a>另请参阅
 
