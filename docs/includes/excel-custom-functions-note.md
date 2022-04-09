@@ -5,4 +5,4 @@
 > - Mac 版 Office
 > - Office 网页版
 >
-> 目前，iPad 或一次性购买版本的 Office 2019 或更早版本 Excel 自定义函数。
+> 目前，iPad 或一次性购买版本的 Office 2019 或更早版本不支持 Excel 自定义函数。
