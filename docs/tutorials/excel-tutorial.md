@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 02/26/2022
+ms.date: 04/13/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 5ca9ea0fdc600d6044cf3a5ef405dd0f3a98e2b3
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: d0308468ace3612a69c3059c730fd56e8f61a39f
+ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746416"
+ms.lasthandoff: 04/15/2022
+ms.locfileid: "64863285"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -717,7 +717,11 @@ ms.locfileid: "63746416"
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
-1. 如果本地 web 服务器已在运行，通过关闭节点命令窗口以停止。
+1. 如果本地 Web 服务器已在运行，请在命令提示符下输入以下命令来停止它。 这应关闭节点命令窗口。
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. 因为清单文件已更新，必须使用已更新的清单文件，重新旁加载加载项。 启动本地 Web 服务器并旁加载你的加载项：
 
@@ -884,7 +888,11 @@ ms.locfileid: "63746416"
     ],
     ```
 
-1. 如果本地 web 服务器正在运行，通过关闭节点命令窗口以停止。
+1. 如果本地 Web 服务器正在运行，请在命令提示符下输入以下命令来停止它。 这应关闭节点命令窗口。
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. 运行以下命令以重建项目。
 
