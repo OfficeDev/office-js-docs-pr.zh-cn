@@ -1,24 +1,22 @@
 ---
 title: Microsoft Office加载项社区呼叫
 description: 每月Microsoft Office加载项社区呼叫议程、计划和资源。
-ms.date: 04/08/2022
+ms.date: 04/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 225d3aa87101ba1c168435be7f27fb741e54a7e1
-ms.sourcegitcommit: 87f6a53a4df3966ff0dc1e12903198b2b94e9662
+ms.openlocfilehash: 4b96854c2d341b228bd2f70fe8f2010e0dbc5de9
+ms.sourcegitcommit: 345f950b4722903dda77af81ef7d700e6ea4bc83
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2022
-ms.locfileid: "64743881"
+ms.lasthandoff: 04/15/2022
+ms.locfileid: "64884326"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office加载项社区呼叫
 
 Microsoft Office外接程序社区呼叫是每月通话，你可以在其中详细了解新功能、开发实践以及有关创建Office外接程序的其他信息。社区呼叫发生在每月的第二个星期三（太平洋时间上午 8：00）。 可以下载日历邀请 https://aka.ms/officeaddinscommunitycall。
 
-## <a name="agenda-for-april-13th-call"></a>4 月 13 日通话议程
+## <a name="agenda-for-may-11th-call"></a>5 月 11 日通话议程
 
-- 功能区 API 更新
-- PowerPoint选择 API
-- Outlook移动版上读取的“约会”加载项
+五月的议程将在通话前一周公布。
 
 ## <a name="previous-calls"></a>以前的调用
 
