@@ -866,6 +866,8 @@ items:
       - name: 在 Excel 中打开
         href: excel/pnp-open-in-excel.md
         displayName: Excel
+      - name: 将脚本实验室代码片段复制到 Yo Office
+        href: overview/create-an-office-add-in-from-script-lab.md
   - name: 资源
     items:
       - name: 术语表
