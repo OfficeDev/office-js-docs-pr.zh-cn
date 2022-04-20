@@ -1,14 +1,14 @@
 ---
 title: 运行 Office 加载项的要求
-description: 了解最终用户在加载项中运行所需的客户端和Office要求。
-ms.date: 02/15/2022
+description: 了解最终用户需要运行Office外接程序的客户端和服务器要求。
+ms.date: 04/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e1bd7eb5f2949d6b0c70654c3aa3a276a3ee83c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 9bc093b3e04dd1a67ba63bebbe2e44acf5137a07
+ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742827"
+ms.lasthandoff: 04/20/2022
+ms.locfileid: "64963489"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -16,7 +16,7 @@ ms.locfileid: "63742827"
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-有关当前支持Office外接程序的高级别视图，请参阅 Office 外接程序的 Office [客户端应用程序和平台可用性](../overview/office-add-in-availability.md)。
+有关当前支持Office外接程序的高级别视图，请[参阅Office外接程序Office客户端应用程序和平台可用性](/javascript/api/requirement-sets)。
 
 ## <a name="server-requirements"></a>服务器要求
 
@@ -29,22 +29,22 @@ ms.locfileid: "63742827"
 > [!TIP]
 > 在 Visual Studio 中开发和调试加载项时，Visual Studio 使用 IIS Express 在本地部署并运行加载项的网页文件，无需使用其他 Web 服务器。
 
-对于内容和任务窗格外接程序，在受支持的 Office 客户端应用程序（Excel、PowerPoint、Project 或 Word）中，您还需要 SharePoint 上的应用程序目录来上载外接程序的 XML 清单文件，或者您需要使用集成应用程序部署[](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)外接程序。[](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+对于内容和任务窗格外接程序，在受支持的Office客户端应用程序（Excel、PowerPoint、Project或 Word）中，还需要SharePoint上的[应用目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)来上传外接程序的 XML 清单文件，或者需要使用[集成应用](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)部署外接程序。
 
-若要测试和运行 Outlook 外接程序，用户的 Outlook 电子邮件帐户必须驻留在 Exchange 2013 或更高版本上，这可以通过 Microsoft 365、Exchange Online 或本地安装获得。 用户或管理员在该服务器上安装 Outlook 外接程序的清单文件。
+若要测试和运行Outlook外接程序，用户的Outlook电子邮件帐户必须驻留在 2013 或更高版本Exchange，可通过Microsoft 365、Exchange Online或本地安装使用。 用户或管理员在该服务器上安装 Outlook 外接程序的清单文件。
 
 > [!NOTE]
 > Outlook 中的 POP 和 IMAP 电子邮件帐户不支持 Office 加载项。
 
 ## <a name="client-requirements-windows-desktop-and-tablet"></a>客户端要求：Windows 台式机和平板电脑
 
-为基于 Windows 的台式机、笔记本电脑或平板电脑设备上运行的受支持的 Office 桌面客户端或 Web 客户端开发 Office 外接程序需要以下软件。
+为在基于Windows桌面、笔记本电脑或平板电脑设备上运行的支持Office桌面客户端或 Web 客户端开发Office外接程序时，需要以下软件。
 
 - 对于 Windows x86 和 x64 台式机与平板电脑（如 Surface Pro）：
   - 在 Windows 7 或更高版本上运行的 32 位或 64 位版本 Office 2013。
   - Excel 2013、Outlook 2013、PowerPoint 2013、Project Professional 2013、Project 2013 SP1、Word 2013 或更高版本的 Office 客户端，（如果您正在专门为这些 Office 桌面客户端测试或运行 Office 外接程序）。Office 桌面客户端可以在本地安装或通过即点即用安装在客户端计算机上。
 
-  如果你有有效的 Microsoft 365 订阅，并且你无法访问 Office 客户端，你可以下载并安装最新版本的 [Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658)。
+  如果有有效的Microsoft 365订阅，但无法访问Office客户端，则可以[下载并安装最新版本的Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658)。
 
 - 必须安装 Internet Explorer 11 或 Microsoft Edge（由 Windows 和 Office 版本而定），但它们不能是默认浏览器。 为支持 Office 加载项，充当主机的 Office 客户端使用了 Internet Explorer 11 或 Microsoft Edge 所包含的浏览器组件。 有关更多详细信息，请参阅 [Office加载项使用的浏览器](browsers-used-by-office-web-add-ins.md)。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63742827"
 
 ## <a name="client-requirements-os-x-desktop"></a>客户端要求：OS X 桌面
 
-Outlook作为加载项的一部分分发的 Mac Microsoft 365支持Outlook加载项。在 Mac 上的 Outlook 中运行 Outlook 加载项的要求与 Mac 上的 Outlook 相同：操作系统必须至少为 OS X v10.10 "Yosemite"。 由于 Mac 版 Outlook 使用 WebKit 作为布局引擎以呈现加载项页，因此没有其他浏览器依赖项。
+Mac 上的Outlook作为Microsoft 365的一部分分发，它支持Outlook加载项。在 Mac 上Outlook中运行Outlook外接程序的要求与 Mac 本身Outlook的要求相同：操作系统必须至少为 OS X v10.10“Yosemite”。 由于 Mac 版 Outlook 使用 WebKit 作为布局引擎以呈现加载项页，因此没有其他浏览器依赖项。
 
 以下是支持 Office 加载项的 Mac 版 Office 的最低客户端版本。
 
@@ -66,28 +66,39 @@ Outlook作为加载项的一部分分发的 Mac Microsoft 365支持Outlook加载
 
 ## <a name="client-requirements-browser-support-for-office-web-clients-and-sharepoint"></a>客户端要求：针对 Office Web 客户端和 SharePoint 的浏览器支持
 
-支持 ECMAScript 5.1、HTML5 和 CSS3 的任何浏览器（Internet Explorer 除外），例如 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 。
+支持 ECMAScript 5.1、HTML5 和 CSS3 的任何浏览器（例如Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) ）。
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>客户端要求：非Windows智能手机和平板电脑
 
-特别是Outlook运行在智能手机和非Windows平板电脑设备上，需要以下软件来测试和运行Outlook外接程序。
+专用于在智能手机和非Windows平板电脑设备上运行的Outlook，测试和运行Outlook外接程序需要以下软件。
 
 | Office 应用程序 | 设备 | 操作系统 | Exchange 帐户 | 移动浏览器 |
 |:-----|:-----|:-----|:-----|:-----|
-|Android 版 Outlook|- Android 平板电脑<br>- Android 智能手机|- Android 4.4 KitKat 或更高版本|有关更新或更新Microsoft 365 商业应用版Exchange Online|浏览器不适用。 使用适用于 Android 的本机应用。<sup>1</sup>|
-|iOS 版 Outlook|- iPad平板电脑<br>- iPhone智能手机|- iOS 11 或更高版本|有关更新或更新Microsoft 365 商业应用版Exchange Online|浏览器不适用。 使用 iOS 本机应用。<sup>1</sup>|
-|Outlook 网页版 (新式) <sup>2</sup>|- iPad 2 或更高版本<br>- Android 平板电脑 |- iOS 5 或更高版本<br>- Android 4.4 KitKat 或更高版本|在Microsoft 365上，Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
-|Outlook 网页版（经典）|- iPhone 4 或更高版本<br>- iPad 2 或更高版本<br>- iPod Touch 4 或更高版本|- iOS 5 或更高版本|本地部署 Exchange Server 2013 或更高版本|- Safari|
+|Android 版 Outlook|- Android 平板电脑<br>- Android 智能手机|- Android 4.4 KitKat 或更高版本|最新更新Microsoft 365 商业应用版或Exchange Online|浏览器不适用。 使用适用于 Android 的本机应用。<sup>1</sup>|
+|iOS 版 Outlook|- iPad平板电脑<br>- iPhone智能手机|- iOS 11 或更高版本|最新更新Microsoft 365 商业应用版或Exchange Online|浏览器不适用。 使用适用于 iOS 的本机应用。<sup>1</sup>|
+|Outlook 网页版 (现代) <sup>2</sup>|- iPad 2 或更高版本<br>- Android 平板电脑 |- iOS 5 或更高版本<br>- Android 4.4 KitKat 或更高版本|Microsoft 365，Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
+|Outlook 网页版（经典）|- iPhone 4 或更高版本<br>- iPad 2 或更高版本<br>- iPod Touch 4 或更高版本|- iOS 5 或更高版本|本地Exchange Server 2013 或更高版本 <sup>3</sup>|- Safari|
 
 > [!NOTE]
-> <sup>1</sup> OWA for Android、OWA for iPad 和 OWA for iPhone应用程序已被[弃用](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b)。
+> <sup>1</sup> 个 OWA for Android、OWA for iPad 和 OWA for iPhone 本机应用已[弃用](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b)。
 >
-> <sup>2</sup> Outlook 网页版和 IPhone Android 智能手机上的新式设备不再需要或不再可用于测试Outlook外接程序。
+> <sup>2</sup> iPhone和 Android 智能手机上的新式Outlook 网页版不再需要或可用于测试Outlook加载项。
+>
+> <sup>3</sup> 个加载项在 Android 上的 Outlook、iOS 和具有本地Exchange帐户的新式移动 Web 中不受支持。
 
-[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../includes/classic-versus-modern-Outlook-on-the-web.md)]
+> [!TIP]
+> 可通过查看邮箱工具栏，在 Web 浏览器中区分经典和新式 Outlook。
+>
+> **新式**
+>
+> ![新式 Outlook 工具栏的部分屏幕截图。](../images/outlook-on-the-web-new-toolbar.png)
+>
+> **经典**
+>
+> ![经典 Outlook 工具栏的部分屏幕截图。](../images/outlook-on-the-web-classic-toolbar.png)
 
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项平台概述](../overview/office-add-ins.md)
-- [Office 客户端应用程序和平台的 Office 加载项可用性](../overview/office-add-in-availability.md)
+- [Office 客户端应用程序和平台的 Office 加载项可用性](/javascript/api/requirement-sets)
 - [Office 加载项使用的浏览器](browsers-used-by-office-web-add-ins.md)

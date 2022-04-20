@@ -656,8 +656,6 @@ items:
                 href: outlook/add-mobile-support.md
           - name: 加载项要求
             href: outlook/add-in-requirements.md
-          - name: 加载项 API
-            href: outlook/apis.md
           - name: 调用 Outlook REST API
             href: outlook/use-rest-api.md
           - name: 调用 Exchange Web 服务
