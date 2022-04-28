@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
-description: 显示如何使用 JavaScript API 对工作表执行常见Excel示例。
-ms.date: 02/17/2022
+description: 演示如何使用 Excel JavaScript API 使用工作表执行常见任务的代码示例。
+ms.date: 04/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 565a186220fb9b9a33d97ad73954fe405658cf97
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 932666d178da827b314339bfc05c12b5553bdaa7
+ms.sourcegitcommit: d7e5c243ad65f81d479b4fead283003fc494074e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743391"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "65076685"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -295,17 +295,17 @@ function onWorksheetChanged(eventArgs) {
 
 ## <a name="detect-formula-changes"></a>检测公式更改
 
-加载项可以跟踪对工作表中的公式所做的更改。 当工作表连接到外部数据库时，这很有用。 当工作表中的公式发生更改时，此方案中的事件将触发外部数据库中的相应更新。
+外接程序可以跟踪工作表中公式的更改。 当工作表连接到外部数据库时，这很有用。 当工作表中的公式发生更改时，此方案中的事件会在外部数据库中触发相应的更新。
 
-若要检测对公式的更改， [请](excel-add-ins-events.md#register-an-event-handler) 为工作表的 [onFormulaChanged 事件注册](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onformulachanged-member) 事件处理程序。 事件的事件处理程序在 `onFormulaChanged` 事件触发时接收 [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) 对象。
+若要检测对公式的更改，请为工作表的 [onFormulaChanged](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onformulachanged-member) 事件[注册事件处理程序](excel-add-ins-events.md#register-an-event-handler)。 事件的事件处理程序 `onFormulaChanged` 在事件触发时接收 [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) 对象。
 
 > [!IMPORTANT]
-> 该事件 `onFormulaChanged` 检测公式本身何时更改，而不是由公式计算产生的数据值。
+> 该 `onFormulaChanged` 事件检测公式本身何时更改，而不是公式计算生成的数据值。
 
-下面的代码示例演示如何注册事件处理程序，使用 对象检索已更改公式的 [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#excel-excel-worksheetformulachangedeventargs-formuladetails-member) 数组，然后使用 [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) 属性打印有关已更改公式的详细信息。`onFormulaChanged` `WorksheetFormulaChangedEventArgs`
+下面的代码示例演示如何注册 `onFormulaChanged` 事件处理程序，使用 `WorksheetFormulaChangedEventArgs` 该对象检索已更改公式的 [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#excel-excel-worksheetformulachangedeventargs-formuladetails-member) 数组，然后使用 [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) 属性输出有关已更改公式的详细信息。
 
 > [!NOTE]
-> 此代码示例仅在更改单个公式时有效。
+> 此代码示例仅在更改单个公式时才有效。
 
 ```js
 async function run() {
@@ -349,13 +349,13 @@ async function formulaChangeHandler(event) {
 
 下图显示了排序事件的 `address` 属性返回的范围。 首先是排序前的示例数据：
 
-![排序前Excel表中的数据。](../images/excel-sort-event-before.png)
+![排序之前，Excel中的表数据。](../images/excel-sort-event-before.png)
 
-如果对"**Q1**"执行从上到下排序 (**"B**") 中，则返回以下突出显示的行 `WorksheetRowSortedEventArgs.address`。
+如果对“**Q1**”执行从上到下排序 (“**B**”) 中的值，则会返回 `WorksheetRowSortedEventArgs.address`以下突出显示的行。
 
 ![从上到下排序后 Excel 中的表格数据。 已移动的行会突出显示。](../images/excel-sort-event-after-row.png)
 
-如果对"**Quinces**"对象执行从左到右排序 (原始数据上的"**4**") 中的值，则返回以下突出显示的列 `WorksheetColumnsSortedEventArgs.address`。
+如果对“**Quinces**”执行从左到右的排序， (原始数据的“**4**”) 中的值，则会 `WorksheetColumnsSortedEventArgs.address`返回以下突出显示的列。
 
 ![从左到右排序后 Excel 中的表格数据。 已移动的列会突出显示。](../images/excel-sort-event-after-column.png)
 
@@ -387,31 +387,33 @@ await Excel.run(async (context) => {
 
 ## <a name="find-all-cells-with-matching-text"></a>查找所有包含匹配文本的单元格
 
-`Worksheet` 对象具有 `find` 方法在工作表内搜索指定字符串。 返回 `RangeAreas` 对象，也就是可以进行一次性全部编辑的 `Range` 对象集。 以下代码示例查找值等于字符串 **完成** 的所有单元格，并标记为绿色。 请注意，若指定的字符串不存在于工作表中，`findAll` 将引发 `ItemNotFound` 错误。 若您预计到指定的字符串可能不存在工作表中，则可使用 [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) 方法，以便您的代码可正常处理该情况。
+该 `Worksheet` 对象具有在 [`findAll`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-findall-member(1)) 工作表中搜索指定字符串的方法。 返回 `RangeAreas` 对象，也就是可以进行一次性全部编辑的 `Range` 对象集。
+
+以下代码示例查找值等于字符串 **完成** 的所有单元格，并标记为绿色。 请注意， `findAll` 如果工作表中不存在指定的字符串，则会引发 `ItemNotFound` 错误。 如果不确定工作表中是否存在指定字符串，请使用 [findAllOrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) 方法正常处理该方案。
 
 ```js
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getItem("Sample");
     let foundRanges = sheet.findAll("Complete", {
-        completeMatch: true, // findAll will match the whole cell value
-        matchCase: false // findAll will not match case
+        completeMatch: true, /* Match the whole cell value, not any part of the text. */
+        matchCase: false /* Make the search case-insensitive. */
     });
 
     await context.sync();
-    foundRanges.format.fill.color = "green"
+    foundRanges.format.fill.color = "green";
 });
 ```
 
 > [!NOTE]
 > 本节介绍如何使用 `Worksheet` 对象函数查找单元格与区域。 更多区域检索信息可在特定对象文章中找到。
 >
-> - 有关显示如何使用 对象获取`Range`工作表中的区域的示例，请参阅使用 [JavaScript API](excel-add-ins-ranges-get.md) 获取Excel区域。
+> - 有关演示如何使用该对象在工作表中获取区域的`Range`示例，请参阅[使用 Excel JavaScript API 获取区域](excel-add-ins-ranges-get.md)。
 > - 有关展示如何从 `Table` 对象获取区域的示例，请参阅 [使用 Excel JavaScript API 处理表](excel-add-ins-tables.md)。
 > - 有关显示如何基于单元格特性进行多个子区域的较大区域搜索示例，请参阅 [使用 Excel 加载项同时处理多个区域](excel-add-ins-multiple-ranges.md)。
 
 ## <a name="filter-data"></a>筛选数据
 
-[自动筛选](/javascript/api/excel/excel.autofilter)在工作表的一个范围内应用数据筛选器。 这是通过 创建的 `Worksheet.autoFilter.apply`，它具有以下参数。
+[自动筛选](/javascript/api/excel/excel.autofilter)在工作表的一个范围内应用数据筛选器。 这是使用 `Worksheet.autoFilter.apply`以下参数创建的。
 
 - `range`：应用筛选器的范围，指定为 `Range` 对象或字符串。
 - `columnIndex`：从零开始的列索引，根据该索引评估筛选条件。
@@ -443,7 +445,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-下面的代码示例演示如何 `clearColumnCriteria` 使用 方法从一个列清除自动筛选，同时使筛选器在其他列上保持活动状态。
+下面的代码示例演示如何使用 `clearColumnCriteria` 该方法只清除一列中的自动筛选器，同时将筛选器保留在其他列上。
 
 ```js
 // This method clears the AutoFilter setting from one column.
@@ -493,11 +495,11 @@ await Excel.run(async (context) => {
 
 [保护工作表](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6)一文详细介绍了工作表保护，以及如何通过 Excel UI 更改保护。
 
-### <a name="detect-changes-to-the-worksheet-protection-state"></a>检测对工作表保护状态所做的更改
+### <a name="detect-changes-to-the-worksheet-protection-state"></a>检测对工作表保护状态的更改
 
-加载项可以通过加载项或加载项 UI 更改工作表Excel状态。 若要检测对保护状态所做的更改，请 [为](excel-add-ins-events.md#register-an-event-handler) 工作表的事件注册 [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member) 事件处理程序。 事件的事件处理程序在 `onProtectionChanged` 事件触发时 [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) 接收对象。
+工作表的保护状态可以通过加载项或通过 Excel UI 进行更改。 若要检测对保护状态的更改，请为[`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member)工作表的事件[注册事件处理程序](excel-add-ins-events.md#register-an-event-handler)。 事件的事件处理程序在 `onProtectionChanged` 事件触发时接收 [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) 对象。
 
-下面的代码示例演示如何注册`onProtectionChanged`事件处理程序并使用 `WorksheetProtectionChangedEventArgs` 对象`isProtected`检索事件的 `worksheetId``source` 、 和 属性。
+下面的代码示例演示如何注册`onProtectionChanged`事件处理程序并使用该`WorksheetProtectionChangedEventArgs`对象检索事件的`isProtected``worksheetId`属性和`source`属性。
 
 ```js
 // This method registers an event handler for the onProtectionChanged event of a worksheet.
