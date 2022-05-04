@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office加载项社区呼叫
 description: 每月Microsoft Office加载项社区呼叫议程、计划和资源。
-ms.date: 04/14/2022
+ms.date: 05/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b96854c2d341b228bd2f70fe8f2010e0dbc5de9
-ms.sourcegitcommit: 345f950b4722903dda77af81ef7d700e6ea4bc83
+ms.openlocfilehash: 0912acca84090b8b73b6209b98a715c0124fc254
+ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2022
-ms.locfileid: "64884326"
+ms.lasthandoff: 05/04/2022
+ms.locfileid: "65187306"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office加载项社区呼叫
 
@@ -22,6 +22,7 @@ Microsoft Office外接程序社区呼叫是每月通话，你可以在其中详�
 
 错过了以前的社区呼叫？ 查看以下博客资源以赶上讨论！
 
+- [2022 年 4 月 13 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-13-2022/ba-p/3288498)
 - [2022 年 3 月 9 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-9-2022/ba-p/3255173)
 - [2022 年 2 月 9 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-february-9-2022/ba-p/3164559)
 - [2022 年 1 月 12 日](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-january-12-2022/ba-p/3061097)
