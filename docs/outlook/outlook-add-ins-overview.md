@@ -1,16 +1,16 @@
 ---
 title: Outlook 加载项概述
 description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。
-ms.date: 07/16/2021
+ms.date: 04/28/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 1f1d909f655558dd96705cc83ea2996cd21d6c85
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: ead0787a84b51c890e7951bdaa52bd3e51407916
+ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496304"
+ms.lasthandoff: 05/04/2022
+ms.locfileid: "65187334"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -63,7 +63,7 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
 - 在 [组邮箱](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes)、共享邮箱\*、另一用户邮箱\*、 [存档邮箱](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox)或公用文件夹中。
 
   > [!IMPORTANT]
-  > [要求集 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)中引入了 \* 对委托访问方案的支持（例如，从其他用户的邮箱共享的文件夹）。 共享邮箱支持现已提供预览版。 要了解详细信息，请参阅 [启用共享文件夹和共享邮箱方案](delegate-access.md)。
+  > [要求集 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)中引入了 \* 对委托访问方案的支持（例如，从其他用户的邮箱共享的文件夹）。 现在，共享邮箱支持在 Windows 版和 Mac 版 Outlook 中进行预览。 要了解详细信息，请参阅 [启用共享文件夹和共享邮箱方案](delegate-access.md)。
 
 - 使用自定义窗体。
 

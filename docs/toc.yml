@@ -350,6 +350,8 @@ items:
             href: /legal/marketplace/certification-policies
           - name: 将加载项发布到 SharePoint 应用目录
             href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+          - name: 维护 Office 加载项
+            href: publish/maintain-breaking-changes.md
   - name: Excel
     items:
       - name: Excel 加载项文档
