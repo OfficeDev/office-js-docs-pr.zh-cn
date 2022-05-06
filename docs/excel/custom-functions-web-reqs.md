@@ -1,43 +1,44 @@
 ---
-ms.date: 07/08/2021
-description: 使用工作簿中的自定义函数请求、流式传输和取消对工作簿的外部Excel。
+ms.date: 05/02/2022
+description: 使用Excel中的自定义函数请求、流式传输和取消将外部数据流式传输到工作簿。
 title: 使用自定义函数接收和处理数据
 ms.localizationpriority: medium
-ms.openlocfilehash: 641c6da717ede364d59591838849cd47d887f63c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 78f8f5f97bfeb690873091ff7c59555e1683c05f
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744653"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244847"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
-自定义函数增强 Excel 功能的方法之一是从工作簿以外的位置接收数据，例如 Web 或服务器（通过 WebSockets）。 你可以通过 API（如 [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)）或使用 `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。
+自定义函数增强Excel能力的方法之一是从工作簿以外的位置接收数据，例如 Web 或服务器 (通过 [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API)) 。 你可以通过 API（如 [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)）或使用 `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-![从 API 流式传输时间自定义函数的 GIF。](../images/custom-functions-web-api.gif)
+![从 API 流式传输时间的自定义函数的 GIF。](../images/custom-functions-web-api.gif)
 
 ## <a name="functions-that-return-data-from-external-sources"></a>从外部源返回数据的函数
 
 如果自定义函数从外部源（如 Web）检索数据，则必须：
 
-1. 将 JavaScript Promise 返回到 Excel。
-2. 使用回调函数解析带有最终值的 Promise。
+1. 将 [JavaScript `Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) 返回到Excel。
+2. `Promise`使用回调函数解析最终值。
 
 ### <a name="fetch-example"></a>Fetch 示例
 
-在下面的代码示例中 `webRequest` ，函数将到达假设的 Contoso"空间内人员数"API，该 API 跟踪当前位于国际空间站中的人数。 该函数返回一个 JavaScript Promise 并使用 fetch 从 API 请求信息。 生成的数据被转换成 JSON，而 `names` 属性则被转换成一个字符串，用于解析 Promise。
+在下面的代码示例中，该 `webRequest` 函数可接触到一个假设的外部 API，该 API 跟踪国际空间站上当前的人数。 该函数返回 JavaScript `Promise` ，并用于 `fetch` 从假设 API 请求信息。 生成的数据将转换为 JSON， `names` 并将属性转换为字符串，用于解析承诺。
 
 在开发自己的函数时，可能需要在相应 Web 请求没有及时完成时执行某个操作，或者需要考虑[批处理多个 API 请求](custom-functions-batching.md)。
 
 ```JS
 /**
- * Requests the names of the people currently on the International Space Station from a hypothetical API.
+ * Requests the names of the people currently on the International Space Station.
+ * Note: This function requests data from a hypothetical URL. In practice, replace the URL with a data source for your scenario.
  * @customfunction
  */
 function webRequest() {
-  let url = "https://www.contoso.com/NumberOfPeopleInSpace";
+  let url = "https://www.contoso.com/NumberOfPeopleInSpace"; // This is a hypothetical URL.
   return new Promise(function (resolve, reject) {
     fetch(url)
       .then(function (response){
@@ -52,11 +53,11 @@ function webRequest() {
 ```
 
 > [!NOTE]
-> 使用 `Fetch` 可以避免嵌套回调，在某些情况下可能优于 XHR。
+> 使用 `fetch` 可以避免嵌套回调，在某些情况下可能优于 XHR。
 
 ### <a name="xhr-example"></a>XHR 示例
 
-在下面的代码示例中， `getStarCount` 函数调用 Github API 来发现给定给特定用户存储库的星数。 这是一个可返回 JavaScript Promise 的异步函数。 当从 Web 调用中获取数据时，系统将对 Promise 进行解析，以将数据返回到单元格。
+在下面的代码示例中，该 `getStarCount` 函数调用 Github API 来发现给特定用户存储库的星数。 这是一个返回 JavaScript `Promise`的异步函数。 从 Web 调用获取数据时，会解析承诺，以便将数据返回到单元格。
 
 ```TS
 /**
@@ -99,17 +100,17 @@ async function getStarCount(userName: string, repoName: string) {
 
 流式处理自定义函数使用户能够在不需要用户显式刷新数据的情况下，向重复更新的单元格输出数据。 这对于检查联机服务中的实时数据非常有用，如[自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)中的函数。
 
-若要声明流式处理函数，可以使用：
+若要声明流式处理函数，可以使用以下两个选项之一。
 
 - 标记 `@streaming` 。
-- 调用 `CustomFunctions.StreamingInvocation` 参数。
+- `CustomFunctions.StreamingInvocation`调用参数。
 
 以下代码示例是一个自定义函数，它每秒向结果添加一个数字。 对于此代码，请注意以下事项。
 
 - Excel 使用 `setResult` 方法自动显示每个新值。
-- 当最终用户从自动完成菜单中选择函数时，不会在 Excel 中向其显示第二个输入参数“invocation”。
-- `onCanceled` 回调定义取消函数时执行的函数。
-- 流式处理不一定与发出 Web 请求有关：在本例中，该函数不会发出 Web 请求，但仍以设置的时间间隔获取数据，因此需要使用流式处理 `invocation` 参数。
+- 当最终用户从自动完成菜单中选择函数时，不会在 Excel 中向其显示第二个输入参数 `invocation`。
+- 回 `onCanceled` 调定义在取消函数时运行的函数。
+- 流式处理不一定与发出 Web 请求相关。 在这种情况下，函数不会发出 Web 请求，但仍按设置的时间间隔获取数据，因此需要使用流式处理 `invocation` 参数。
 
 ```JS
 /**
@@ -133,7 +134,7 @@ function increment(incrementBy, invocation) {
 
 ## <a name="cancel-a-function"></a>取消函数
 
-Excel在下列情况下取消函数的执行。
+Excel在以下情况下取消执行函数。
 
 - 用户编辑或删除引用函数的单元格。
 - 函数的参数（输入）之一发生变化。 在这种情况下，取消之后还会触发新的函数调用。
@@ -141,17 +142,18 @@ Excel在下列情况下取消函数的执行。
 
 你还可以考虑设置默认流式处理值，以在发出请求但你处于脱机状态时处理案例。
 
-请注意，还有一类函数被称为可取消函数，它们与流式处理函数 _无_ 关。 只有返回一个值的异步自定义函数是可取消的。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
+> [!NOTE]
+> 还有一类称为可取消函数的函数，这些函数 _与_ 流式处理函数无关。 只有返回一个值的异步自定义函数才可取消。 可取消函数允许在请求中间终止 Web 请求，它使用 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) 来决定取消时需要采取的操作。 使用标记 `@cancelable` 声明可取消函数。
 
 ### <a name="use-an-invocation-parameter"></a>使用调用参数
 
-默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 参数 `invocation` 提供有关单元格 (，如其地址和) ，并允许你使用 `setResult` `onCanceled` 和 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
+默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 该 `invocation` 参数提供有关单元格 (的上下文，例如其地址和内容) ，并允许你使用 `setResult` 和 `onCanceled` 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
 
-如果使用的是 TypeScript，则调用处理程序的类型 [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) 为 或 [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)。
+如果使用的是 TypeScript，则调用处理程序的类型或[`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)类型[`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation)。
 
 ## <a name="receiving-data-via-websockets"></a>通过 WebSocket 接收数据
 
-在自定义函数内，可使用 WebSocket 来通过与服务器的持久连接交换数据。 使用 WebSockets，自定义函数可以打开与服务器的连接，然后在某些事件发生时自动从服务器接收消息，而无需显式轮询服务器获取数据。
+在自定义函数内，可使用 [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API) 来通过与服务器的持久连接交换数据。 使用 WebSocket，自定义函数可以打开与服务器的连接，然后在发生某些事件时自动从服务器接收消息，而无需显式轮询服务器中的数据。
 
 ### <a name="websockets-example"></a>WebSocket 示例
 
@@ -178,6 +180,6 @@ ws.onerror(error){
 
 - [函数中的可变值](custom-functions-volatile.md)
 - [创建自定义函数的 JSON 元数据](custom-functions-json-autogeneration.md)
-- [手动为自定义函数创建 JSON 元数据](custom-functions-json.md)
+- [为自定义函数手动创建 JSON 元数据](custom-functions-json.md)
 - [在 Excel 中创建自定义函数](custom-functions-overview.md)
 - [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

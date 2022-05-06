@@ -1,30 +1,30 @@
 ---
 title: 随文档自动打开任务窗格
-description: 了解如何配置Office打开文档时自动打开的加载项。
+description: 了解如何将Office加载项配置为在打开文档时自动打开。
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 71834e1bd47e09e4ace5ac4b81d6018eea66f634
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 5cea50c514e266b6f72b31e537ddb2b02b9715f5
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496836"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244731"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
-可以在加载项中添加按钮，在Office功能区中添加按钮，Office UI Office 应用 UI。 当用户单击命令按钮时，会执行一个操作，如打开任务窗格。
+可以通过向Office 应用功能区添加按钮，在Office外接程序中使用外接程序命令来扩展Office UI。 当用户单击命令按钮时，会执行一个操作，如打开任务窗格。
 
-某些情况下，需要在文档打开时自动打开一个任务窗格，而无需进行显式用户交互。 您可以使用 [AddInCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets) 要求集引入的 Autoopen 任务窗格功能，以在方案需要时自动打开任务窗格。
+某些情况下，需要在文档打开时自动打开一个任务窗格，而无需进行显式用户交互。 可以使用 [AddInCommands 1.1 要求集中](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)引入的自动执行任务窗格功能在方案需要时自动打开任务窗格。
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>AutoOpen 功能与插入任务窗格有何不同？
 
-如果用户启动不使用外接程序命令的外接程序（例如，在 Office 2013 中运行的外接程序），外接程序会插入并保留在文档中。 因此，当其他用户打开文档时，系统会提示他们安装外接程序，随后会打开任务窗格。 此模型的挑战在于，在许多情况下，用户不希望外接程序在文档中保留。 例如，在 Word 文档中使用字典外接的学生可能不希望系统他们的同学或老师在打开该文档时提示他们安装该外接程序。
+如果用户启动不使用外接程序命令的外接程序（例如，在 Office 2013 中运行的外接程序），外接程序会插入并保留在文档中。 因此，当其他用户打开文档时，系统会提示他们安装外接程序，随后会打开任务窗格。 此模型面临的挑战是，在许多情况下，用户不希望加载项保留在文档中。 例如，在 Word 文档中使用字典外接的学生可能不希望系统他们的同学或老师在打开该文档时提示他们安装该外接程序。
 
 使用 Autoopen 功能，可以显式定义或允许用户定义特定任务窗格外接程序是否保留在特定文档中。
 
 ## <a name="support-and-availability"></a>支持和可用性
 
-以下产品和平台当前支持 Autoopen 功能。
+以下产品和平台目前支持自动执行功能。
 
 |产品|平台|
 |:-----------|:------------|
@@ -32,21 +32,21 @@ ms.locfileid: "64496836"
 
 ## <a name="best-practices"></a>最佳做法
 
-使用 Autoopen 功能时，请应用以下最佳做法。
+使用 autoopen 功能时，请应用以下最佳做法。
 
 - 当 Autoopen 功能可帮助外接程序用户工作更高效时使用此功能，如：
   - 当文档需要外接程序才能正常工作时。例如，包括由外接程序定期刷新的股票值的电子表格。外接程序应在电子表格打开时自动打开，以保持值处于最新状态。
   - 当用户很可能始终将外接程序与某个特定文档一同使用时。例如，可帮助用户通过从后台系统中获取信息来填写或更改文档中数据的外接程序。
 - 允许用户打开或关闭 Autoopen 功能。用户可以选择 UI 中包含的一个选项来停止自动打开外接程序任务窗格。  
-- 使用要求集检测确定 AutoOpen 功能是否可用，并提供回退行为（如果不可用）。
-- 不要使用 Autoopen 功能来人为地增加外接程序的使用率。 如果外接程序对某些文档自动打开没有意义，此功能可能会令用户生厌。
+- 使用要求集检测来确定 autoopen 功能是否可用，如果不可用，则提供回退行为。
+- 不要使用 Autoopen 功能来人为地增加外接程序的使用率。 如果加载项使用某些文档自动打开没有意义，则此功能可能会使用户感到恼火。
 
     > [!NOTE]
     > 如果 Microsoft 检测到滥用 AutoOpen 功能，加载项可能会从 AppSource 下架。
 
 - 请勿使用此功能来固定多个任务窗格。只能设置一个外接程序窗格随文档自动打开。  
 
-## <a name="implement-the-autoopen-feature"></a>实现 Autoopen 功能
+## <a name="implement-the-autoopen-feature"></a>实现 autoopen 功能
 
 - 指定要自动打开的任务窗格。
 - 标记要自动打开任务窗格的文档。
@@ -86,7 +86,7 @@ Office.context.document.settings.saveAsync();
 
 可以使用 Open XML 来创建或修改文档，并添加适当的 Open Office XML 标记来触发 Autoopen 功能。有关演示如何执行此操作的示例，请参阅 [Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin)。
 
-向文档中添加两个 Open XML 部件。
+向文档添加两个 Open XML 部件。
 
 - 一个 `webextension` 部件
 - 一个 `taskpane` 部件
@@ -109,12 +109,12 @@ Office.context.document.settings.saveAsync();
 
 `webextension` 部件还包括对具有 `id`、`storeType`、`store` 和 `version` 的属性的应用商店或目录的引用。 在 `storeType` 值中，只有四个与 AutoOpen 功能相关。 其他三个属性的值取决于 `storeType` 的值，如下表所示。
 
-|`storeType` 值|`id` value|`store` value|`version` 值|
+|`storeType` 值|`id` 值|`store` 值|`version` 值|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (AppSource)|加载项应用的 AppSource 资产 ID (注意) 。|AppSource 的区域设置；例如，“en-us”。|AppSource 目录中的版本 (注意) 。|
-|WOPICatalog (第 [三方 WOPI](/microsoft-365/cloud-storage-partner-program/online/) 主机) | 加载项应用的 AppSource 资产 ID (注意) 。 | "wopicatalog"。 对在应用程序源中发布并安装在第三方 WOPI 主机中的外接程序使用此值。 有关详细信息，请参阅与 Office [Online 集成](/microsoft-365/cloud-storage-partner-program/online/overview)。 | 加载项清单中的版本。|
+|OMEX (AppSource)|加载项的 AppSource 资产 ID (请参阅注释) 。|AppSource 的区域设置；例如，“en-us”。|AppSource 目录中的版本 (请参阅注释) 。|
+|WOPICatalog (合作伙伴 [WOPI](/microsoft-365/cloud-storage-partner-program/online/) 主机) | 加载项的 AppSource 资产 ID (请参阅注释) 。 | “wopicatalog”。 将此值用于在应用源中发布且安装在 WOPI 主机中的加载项。 有关详细信息，请参阅[与 Office Online 集成](/microsoft-365/cloud-storage-partner-program/online/overview)。 | 加载项清单中的版本。|
 |FileSystem（网络共享）|外接程序清单中外接程序的 GUID。|网络共享路径。例如，“\\\\MyComputer\\MySharedFolder”。|外接程序清单中的版本。|
-|EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”。 EXCatalog 行是一行，用于在加载项集中部署Microsoft 365 管理中心。|外接程序清单中的版本。|
+|EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”。 EXCatalog 行是与在Microsoft 365 管理中心中使用集中部署的加载项一起使用的行。|外接程序清单中的版本。|
 |Registry（系统注册表）|外接程序清单中外接程序的 GUID。|“developer”|加载项清单中的版本。|
 
 > [!NOTE]
@@ -139,11 +139,11 @@ Office.context.document.settings.saveAsync();
 > [!NOTE]
 > 若要将加载项与文档一起分发，以便提示用户进行安装，必须将“visibility”属性设置为 1。只能通过 Open XML 执行此操作。
 
-编写 XML 的一种简单方法就是先运行加载项，在客户端上标记[](#tag-the-document-on-the-client-side)文档以写入值，然后保存文档并检查生成的 XML。Office检测并提供相应的属性值。 您还可以使用 [Open XML SDK Productivity Tool](https://www.nuget.org/packages/Open-XML-SDK) 生成C#代码，以编程方式添加基于生成的 XML 的标记。
+编写 XML 的一种简单方法是先运行外接程序并在[客户端标记文档](#tag-the-document-on-the-client-side)以写入值，然后保存文档并检查生成的 XML。Office将检测并提供相应的属性值。 还可以使用 [Open XML SDK Productivity Tool](https://www.nuget.org/packages/Open-XML-SDK) 生成 C# 代码，以基于生成的 XML 以编程方式添加标记。
 
 ## <a name="test-and-verify-opening-task-panes"></a>对打开任务窗格进行测试和验证
 
-您可以部署外接程序的测试版本，该版本将自动使用集中部署打开任务Microsoft 365 管理中心。 以下示例演示如何使用 EXCatalog 应用商店版本从集中部署目录插入外接程序。
+可以部署加载项的测试版本，该版本将通过Microsoft 365 管理中心使用集中部署自动打开任务窗格。 以下示例演示如何使用 EXCatalog 应用商店版本从集中部署目录插入外接程序。
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -155,7 +155,7 @@ Office.context.document.settings.saveAsync();
 </we:webextension>
 ```
 
-您可以使用您的 Microsoft 365 订阅测试上一个示例，以尝试集中部署并验证您的外接程序是否按预期工作。 如果你还没有免费订阅，Microsoft 365开发人员计划获取为期 90 天的免费可续订 Microsoft 365 [订阅Microsoft 365订阅](https://developer.microsoft.com/office/dev-program)。
+可以使用Microsoft 365订阅来测试上一示例，以试用集中部署并验证外接程序是否按预期工作。 如果还没有Microsoft 365订阅，可以通过加入Microsoft 365[开发人员计划](https://developer.microsoft.com/office/dev-program)获得免费的 90 天可续订Microsoft 365订阅。
 
 ## <a name="see-also"></a>另请参阅
 

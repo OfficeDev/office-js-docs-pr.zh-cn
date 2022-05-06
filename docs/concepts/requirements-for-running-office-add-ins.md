@@ -3,12 +3,12 @@ title: 运行 Office 加载项的要求
 description: 了解最终用户需要运行Office外接程序的客户端和服务器要求。
 ms.date: 04/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bc093b3e04dd1a67ba63bebbe2e44acf5137a07
-ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
+ms.openlocfilehash: fc13f28f1d0ae22307b4add6f0367bc1fee211bd
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2022
-ms.locfileid: "64963489"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244770"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -52,7 +52,7 @@ ms.locfileid: "64963489"
   > 必须关闭 Internet Explorer 的增强安全配置 (ESC) 才能使 Office Web 加载项正常工作。 如果在开发加载项时使用 Windows Server 计算机作为客户端，请注意 Windows Server 中会默认打开 ESC。
 
 - 默认浏览器是下述软件之一：Internet Explorer 11，或者 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版。
-- HTML 和 JavaScript 编辑器（如记事本）、[Visual Studio 和 Microsoft 开发人员工具](https://www.visualstudio.com/features/office-tools-vs) 或第三方 Web 开发工具。
+- HTML 和 JavaScript 编辑器[，例如 Visual Studio Code](https://code.visualstudio.com/)、[Visual Studio 和 Microsoft 开发人员工具](https://www.visualstudio.com/features/office-tools-vs)，或非 Microsoft Web 开发工具。
 
 ## <a name="client-requirements-os-x-desktop"></a>客户端要求：OS X 桌面
 
