@@ -1,28 +1,28 @@
 ---
 title: Office 加载项平台概述
 description: 使用熟悉的 Web 技术，例如 HTML、CSS 和 JavaScript 来扩展 Word、Excel、PowerPoint、OneNote、Project 和 Outlook，并与其进行交互。
-ms.date: 10/14/2020
+ms.date: 04/14/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 237650f1ee3b2577a51bb4e6625b96be54a11838
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 8216abbce1147280c722b2ac8450379e2425172b
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514101"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244854"
 ---
 # <a name="office-add-ins-platform-overview"></a>Office 加载项平台概述
 
-可以使用 Office 加载项平台来生成解决方案，用于扩展 Office 应用程序，并与 Office 文档中的内容进行交互。通过 Office 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）来扩展 Word、Excel、PowerPoint、OneNote，Project 和 Outlook，并与之交互。解决方案可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）在 Office 中运行。
+可以使用 Office 加载项平台来生成解决方案，用于扩展 Office 应用程序，并与 Office 文档中的内容进行交互。通过 Office 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）来扩展 Outlook、Excel、Word、PowerPoint、OneNote、Project，并与它们交互。解决方案可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）在 Office 中运行。
 
 ![Office 应用程序加上嵌入式网站（外接程序）可实现无限扩展性。](../images/addins-overview.png)
 
 网页在浏览器中能执行的操作，Office 加载项差不多都能执行。使用 Office 加载项平台可以执行下列操作：
 
--  **将新功能添加到 Office 客户端** - 将外部数据引入 Office、自动处理 Office 文档、在 Office 客户端中公开第三方功能等。例如，使用 Microsoft Graph API，可以连接到提升工作效率的数据。
+- **将新功能添加到 Office 客户端** - 将外部数据引入 Office、自动处理 Office 文档、在 Office 客户端中公开 Microsoft 和第三方的功能等。例如，使用 Microsoft Graph API，可以连接到提升工作效率的数据。
 
--  **新建可嵌入到 Office 文档的丰富、交互式对象** - 用户可添加到其自己的 Excel 电子表格和 PowerPoint 演示文稿的嵌入式地图、图表和交互式可视化效果。
+- **新建可嵌入到 Office 文档的丰富、交互式对象** - 用户可添加到其自己的 Excel 电子表格和 PowerPoint 演示文稿的嵌入式地图、图表和交互式可视化效果。
 
 ## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>Office 加载项与 COM 和 VSTO 加载项有何不同？
 
@@ -58,8 +58,6 @@ Office 外接程序包括两个基本组件：XML 清单文件和你自己的 We
 
 最基本的 Office 加载项包括在 Office 应用中显示的静态 HTML 页面，但此页面并不与 Office 文档或其他任何 Internet 资源交互。不过，若要创建与 Office 文档交互的体验，或创建允许用户通过 Office 客户端应用程序与在线资源交互的体验，可以使用托管提供程序支持的任何客户端和服务器端技术（如 ASP.NET、PHP 或 Node.js）。若要与 Office 客户端和文档交互，可以使用 Office.js JavaScript API。
 
-*图 2：Hello World Office 加载项的组件*
-
 ![Hello World 加载项的组件。](../images/about-addins-componentshelloworldoffice.png)
 
 ## <a name="extending-and-interacting-with-office-clients"></a>扩展并与 Office 客户端交互
@@ -69,7 +67,7 @@ Office 加载项可以在 Office 客户端应用程序中执行下列操作。
 - 扩展功能（任何 Office 应用程序）
 
 - 创建新的对象（Excel 或 PowerPoint）
- 
+
 ### <a name="extend-office-functionality"></a>扩展 Office 功能
 
 可以通过以下方式向 Office 应用程序添加新功能：  
@@ -84,15 +82,11 @@ Office 加载项可以在 Office 客户端应用程序中执行下列操作。
 
 可以向 Office 网页版和 Windows 版 Office 中的功能区添加自定义功能区按钮和菜单项。这样一来，用户可以直接从 Office 应用程序访问加载项。命令按钮可以启动不同的操作，如显示包含自定义 HTML 的任务窗格或执行 JavaScript 函数。  
 
-*图 3. 功能区中的加载项命令*
-
 ![自定义按钮和菜单命令。](../images/about-addins-addincommands.png)
 
 #### <a name="task-panes"></a>任务窗格  
 
 除了通过加载项命令以外，用户还可以使用任务窗格与解决方案进行交互。不支持加载项命令的客户端（Office 2013 和 iPad 版 Office）以任务窗格的形式运行加载项。用户通过“插入”选项卡上的“我的加载项”按钮，启动任务窗格加载项。
-
-*图 4：任务窗格*
 
 ![除加载项命令之外，还可以使用任务窗格。](../images/about-addins-taskpane.png)
 
@@ -107,8 +101,6 @@ Outlook 加载项可以访问邮件项目中的上下文信息（如地址或跟
 ### <a name="create-new-objects-in-office-documents"></a>在 Office 文档中新建对象
 
 可以在 Excel 和 PowerPoint 文档中嵌入基于 Web 的对象（称为“内容加载项”）。通过内容加载项，可以集成基于 Web 的丰富数据可视化、媒体（如 YouTube 视频播放器或图片库）和其他外部内容。
-
-*图 5：内容加载项*
 
 ![嵌入称为内容加载项的基于 Web 的对象。](../images/about-addins-contentaddin.png)
 
