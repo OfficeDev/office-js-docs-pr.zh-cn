@@ -3,16 +3,16 @@ title: Outlook 外接程序设计
 description: 可帮助你设计和构建引人入胜的外接程序的准则，通过遵循这些准则，你可以将自己的最佳的应用引入到 Windows、Web、iOS、Mac 和 Android 上的 Outlook 中。
 ms.date: 08/12/2021
 ms.localizationpriority: high
-ms.openlocfilehash: d18c361f0c33275f588d7fb2157f870c4ed3de57
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 486913934be9be5c1150a2037d8a913ac234c645
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59148838"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244826"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Outlook 外接程序设计准则
 
-外接程序是一种可供合作伙伴在我们的核心功能集之外进一步扩展 Outlook 功能的绝佳方式。通过外接程序，用户无需离开收件箱即可访问第三方体验、任务和内容。安装后，Outlook 外接程序将在所有平台和设备上可用。  
+加载项是一种可供合作伙伴在我们的核心功能集之外进一步扩展 Outlook 功能的绝佳方式。通过加载项，用户无需离开收件箱即可访问外部体验、任务和内容。安装后，Outlook 加载项将在所有平台和设备上可用。  
 
 以下高级指南将有助于设计和生成引人注目的加载项，可将应用的最佳功能直接引入 Windows、Web、iOS、Mac 和 Android 设备上的 Outlook。
 

@@ -1,15 +1,15 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 02/23/2022
+ms.date: 05/01/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 987084c16f3e8f1af1809866ac248b4f1a4995b0
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: a143ff743c5dfb692709d0291534fd060352f264
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63511380"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244791"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -538,7 +538,7 @@ ul {
     },
     ```
 
-1. 在 `config` 对象中找到 `plugins` 数组。 在 `new CopyWebpackPlugin` 对象的 `patterns` 数组中，为 **taskpane.css** 和 **dialog.css** 添加新条目。
+1. 在 `config` 对象中找到 `plugins` 数组。在 `new CopyWebpackPlugin` 对象的 `patterns` 数组中，为 **taskpane.css** 和 **dialog.css** 添加新条目。
 
     ```js
     {
@@ -833,6 +833,9 @@ function insertDefaultGist(event) {
   }
 }
 
+// Register the function.
+Office.actions.associate("insertDefaultGist", insertDefaultGist);
+
 function receiveMessage(message) {
   config = JSON.parse(message.message);
   setConfig(config, function(result) {
@@ -848,18 +851,6 @@ function dialogClosed(message) {
   btnEvent.completed();
   btnEvent = null;
 }
-
-function getGlobal() {
-  return (typeof self !== "undefined") ? self :
-    (typeof window !== "undefined") ? window :
-    (typeof global !== "undefined") ? global :
-    undefined;
-}
-
-var g = getGlobal();
-
-// The add-in command functions need to be available in global scope.
-g.insertDefaultGist = insertDefaultGist;
 ```
 
 ### <a name="create-a-file-to-manage-configuration-settings"></a>创建文件以管理配置设置

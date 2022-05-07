@@ -3,16 +3,16 @@ title: 设计 Office 加载项的 UI
 description: 了解 Office 加载项视觉设计的最佳做法。
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 77e54e39531ef6308fdc79d73ed3bc3ef2d3a0ae
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: efbb0ee5f0ba75170b8bd4343392c07d9eda8501
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743063"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244749"
 ---
 # <a name="design-the-ui-of-office-add-ins"></a>设计 Office 加载项的 UI
 
-Office 外接程序可通过提供用户可在 Office 客户端内访问的上下文功能来扩展 Office 体验。通过外接程序，用户可以访问 Office 内的第三方功能以完成更多操作，而无需进行成本高昂的上下文切换。
+Office 加载项可通过提供用户可在 Office 客户端内访问的上下文功能来扩展 Office 体验。借助加载项，用户可以访问 Office 内的外部功能以完成更多操作，而无需进行成本高昂的上下文切换。
 
 你的外接程序 UX 设计必须与 Office 无缝集成，为用户提供高效、自然的交互。利用[外接程序命令](add-in-commands.md)提供对外接程序的访问权限，并应用创建基于 HTML 的自定义 UI 时建议的最佳实践。
 

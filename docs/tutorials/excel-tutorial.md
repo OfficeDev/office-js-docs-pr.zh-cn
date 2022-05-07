@@ -1,15 +1,15 @@
 ---
 title: Excel 加载项教程
 description: 构建一个 Excel 外接程序，用于创建、填充、筛选和排序表格、创建图表、冻结表格标题、保护工作表并打开对话框。
-ms.date: 04/13/2022
+ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: d0308468ace3612a69c3059c730fd56e8f61a39f
-ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
+ms.openlocfilehash: bcec39ef8cbdeb92636cc57abe8f007e56bbfbe2
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2022
-ms.locfileid: "64863285"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244798"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -624,11 +624,11 @@ ms.locfileid: "64863285"
         args.completed();
     }
     ```
-
-1. 添加下列行至文件结尾：
+    
+1. 立即在函数下方添加以下行以将其注册。
 
     ```js
-    g.toggleProtection = toggleProtection;
+    Office.actions.associate("toggleProtection", toggleProtection);
     ```
 
 1. 在 `toggleProtection` 函数中，使用以下代码替换 `TODO1`。此代码使用处于标准切换模式的工作表对象的保护属性。有关`TODO2` 的说明，请参阅下一节。
@@ -888,7 +888,7 @@ ms.locfileid: "64863285"
     ],
     ```
 
-1. 如果本地 Web 服务器正在运行，请在命令提示符下输入以下命令来停止它。 这应关闭节点命令窗口。
+1. 如果本地 Web 服务器正在运行，请通过在命令提示符中输入以下命令来停止它。此操作应关闭节点命令窗口。
 
     ```command&nbsp;line
     npm stop

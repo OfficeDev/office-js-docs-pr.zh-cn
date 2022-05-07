@@ -3,12 +3,12 @@ title: Outlook 加载项中的身份验证选项
 description: Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: dc5920408af4f5fd48e13a30741321269fe07a58
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 71b6a8a270bd044a972356db4e6d4394a01d8ace
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496297"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244840"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook 加载项中的身份验证选项
 
@@ -53,9 +53,9 @@ Exchange 用户标识令牌为加载项提供了一种创建用户标识的方�
 
 ## <a name="access-tokens-obtained-via-oauth2-flows"></a>通过 OAuth2 流获取的访问令牌
 
-加载项也可以访问支持 OAuth2 进行授权的第三方服务。 如果你的加载项符合以下情况，请考虑使用 OAuth2 令牌：
+加载项还可以访问 Microsoft 和其他支持使用 OAuth2 进行授权的服务。 如果你的加载项符合以下情况，请考虑使用 OAuth2 令牌：
 
-- 需要访问不受你控制的第三方服务
+- 需要访问不受控制的服务。
 
 使用此方法，加载项会提示用户通过使用 [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) 方法初始化 OAuth2 流或使用 [office-js-helpers 库](https://github.com/OfficeDev/office-js-helpers) 转到 OAuth2 隐式流来登录到服务。
 
