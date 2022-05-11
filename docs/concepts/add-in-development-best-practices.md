@@ -1,14 +1,14 @@
 ---
 title: Office 加载项开发最佳做法
-description: 在开发时应用最佳做法以创建Office外接程序。
-ms.date: 01/14/2022
+description: 在开发时应用最佳做法来创建Office加载项。
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 32aaedea3ec4d8b0f1a68efdc5cbc4adf0429551
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 251bb17507e2d54a2442b568673f0fe73ec98a1f
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742846"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313203"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -21,7 +21,7 @@ ms.locfileid: "63742846"
 - 创建可帮助用户快速、高效地完成任务的外接程序。专注于对 Office 应用程序有用的方案。例如：
   - 使核心创作任务更快、更简单，且中断更少。
   - 在 Office 内启用新方案。
-  - 在应用程序内嵌入Office服务。
+  - 在Office应用程序中嵌入补充服务。
   - 改善 Office 体验来提高工作效率。
 - 通过[创建极具吸引力的首次运行体验](#create-an-engaging-first-run-experience)，确保用户能够快速明确加载项的价值。
 - 创建[有效的 AppSource 一览](/office/dev/store/create-effective-office-store-listings)。在标题和说明中明确介绍加载项的优势。请勿依赖品牌来传达加载项的用途。
@@ -36,11 +36,11 @@ ms.locfileid: "63742846"
 
 - 提供用以指导用户的教学 UI，并使您的 UI 富有个性化。
 
-  ![显示"执行"与"不"比较的屏幕截图。 "执行"示例显示了一个外接程序，其中包含用户可单击以开始使用的按钮。 "请勿"示例显示没有介绍性步骤或按钮的外接程序。](../images/contoso-part-catalog-do-dont.png)
+  ![显示“Do”与“不要”比较的屏幕截图。 “Do”示例显示一个加载项，其中包含用户可以单击以开始操作的按钮。 “不要”示例显示没有介绍性步骤或按钮的外接程序。](../images/contoso-part-catalog-do-dont.png)
 
 - 如果内容外接程序绑定到用户文档中的数据，请将那些用于向用户显示要使用的数据格式的示例数据或模板包含在内。
 
-  ![显示"执行"与"不"比较的屏幕截图。 "执行"示例显示了一个外接程序，其中包括一个按钮，用户可以单击该按钮来插入示例数据。 "不"示例显示没有示例数据或按钮的外接程序。](../images/add-in-title.png)
+  ![显示“Do”与“不要”比较的屏幕截图。 “Do”示例显示一个加载项，其中包含用户可以单击的按钮以插入示例数据。 “不要”示例显示没有示例数据或按钮的加载项。](../images/add-in-title.png)
 
 - 提供[免费试用版](/office/dev/store/decide-on-a-pricing-model)。如果加载项需要订阅，请让某些功能无需订阅也可使用。
 
@@ -56,7 +56,7 @@ ms.locfileid: "63742846"
 
 ## <a name="apply-ux-design-principles"></a>应用用户体验设计原则
 
-- 确保你的外接程序的外观和功能很好地补充了 Office 体验。 请参阅[设计加载项Office UI](../design/add-in-design.md)。
+- 确保你的外接程序的外观和功能很好地补充了 Office 体验。 请参阅[“设计Office加载项的 UI](../design/add-in-design.md)。
 
 - 支持内容胜过支持部件版式。避免使用对用户体验毫无价值的不必要的 UI 元素。
 
@@ -76,7 +76,7 @@ ms.locfileid: "63742846"
 
 ### <a name="optimize-for-touch"></a>触摸优化
 
-- 使用 [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) 属性可检测Office运行加载项的加载项应用程序是否启用了触摸功能。
+- 使用 [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) 属性检测外接程序运行的Office应用程序是否已启用触摸。
 
   > [!NOTE]
   > Outlook 不支持此属性。
@@ -90,7 +90,7 @@ ms.locfileid: "63742846"
 - 使用[旁加载](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)在实际设备上测试加载项。
 
 > [!NOTE]
-> 如果你为设计[元素Fluent UI](../design/using-office-ui-fabric-react.md) React，许多这些元素都内置在设计系统中。
+> 如果对设计元素使用[Fluent UI React](../design/using-office-ui-fabric-react.md)，则其中许多元素都内置于设计系统中。
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>优化和监视加载项性能
 
@@ -100,7 +100,7 @@ ms.locfileid: "63742846"
 
 - 为长时间运行的操作提供加载指示器。
 
-- 使用内容传送网络 (CDN) 托管图像、资源和公用库。 尽可能地从一个位置进行加载。
+- 使用内容分发网络 (CDN) 托管图像、资源和公共库。 尽可能地从一个位置进行加载。
 
 - 请按照标准 Web 实践来优化您的网页。在生产中，仅使用库的缩小版本。仅加载所需的资源，并优化加载资源的方式。
 
@@ -119,7 +119,7 @@ ms.locfileid: "63742846"
 
 - 监视您的服务运行状况，并使用遥测监视用户的成功。
 
-- 最大程度地减少加载项和加载项文档之间的Office交换。 有关详细信息，请参阅 [避免在循环中使用 context.sync 方法](correlated-objects-pattern.md)。
+- 最大程度地减少加载项与Office文档之间的数据交换。 有关详细信息，请参阅 [避免在循环中使用 context.sync 方法](correlated-objects-pattern.md)。
 
 ## <a name="market-your-add-in"></a>加载项市场营销
 
@@ -133,9 +133,9 @@ ms.locfileid: "63742846"
 
 - 创建有助于用户查找和使用加载项的网站。
 
-## <a name="use-javascript-that-supports-internet-explorer"></a>使用支持此平台的 JavaScript Internet Explorer
+## <a name="support-internet-explorer-recommended-but-not-required"></a>建议支持 Internet Explorer (但不需要) 
 
-[!INCLUDE [How to support IE](../includes/es5-support.md)]
+请参阅 [支持 Internet Explorer 11](../develop/support-ie-11.md)。
 
 ## <a name="see-also"></a>另请参阅
 

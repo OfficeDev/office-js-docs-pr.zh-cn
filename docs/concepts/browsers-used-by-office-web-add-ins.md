@@ -1,14 +1,14 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 10/22/2021
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 38eefad27511935289d74a06744d1afc686dc5b7
-ms.sourcegitcommit: c1a41d3c52a1d3bd7ef8bebff257777bcde15e0a
+ms.openlocfilehash: 5e563c836b48a16f572aca492fa39f33b9661052
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2022
-ms.locfileid: "64822400"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313182"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -22,10 +22,13 @@ Office加载项是在Office web 版中运行时使用 iFrame 显示的 Web 应�
 > [!IMPORTANT]
 > **Internet Explorer 仍在Office加载项中使用**
 >
-> Microsoft 正在终止对 Internet Explorer 的支持，但这不会对Office加载项产生重大影响。如本文所述，平台和Office版本（包括 2019 Office的一次性购买版本）的一些组合将继续使用 Internet Explorer 11 附带的 Webview 控件来托管加载项。 此外，对于提交到 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 的加载项，仍需要支持这些组合，因此也需要 Internet Explorer 的支持。 有两种情况 *正在* 发生变化：
+> 如本文所述，平台和Office版本的某些组合（包括到 2019 Office的一次性购买版本）仍使用 Internet Explorer 11 附带的 Webview 控件来托管加载项。 建议 (但不需要) 继续支持这些组合（至少以最小方式）在 Internet Explorer Webview 中启动外接程序时为外接程序的用户提供正常故障消息。 请记住以下附加点：
 >
-> - Office web 版不再在 Internet Explorer 中打开。 因此，AppSource 不再使用 Internet Explorer 作为浏览器在Office web 版中测试加载项。 但 AppSource 仍在测试使用 Internet Explorer 的平台和Office *桌面* 版本的组合。
+> - Office web 版不再在 Internet Explorer 中打开。 因此，[AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 不再使用 Internet Explorer 作为浏览器在Office web 版中测试加载项。
+> - AppSource 仍在测试使用 Internet Explorer 的平台和Office *桌面* 版本的组合，但是仅当外接程序不支持 Internet Explorer 时才会发出警告;AppSource 不会拒绝该外接程序。
 > - [Script Lab工具](../overview/explore-with-script-lab.md)不再支持 Internet Explorer。
+>
+> 有关在外接程序上支持 Internet Explorer 和配置正常故障消息的详细信息，请参阅 [支持 Internet Explorer 11](../develop/support-ie-11.md)。
 
 下表显示在不同平台和操作系统中使用的浏览器。
 
@@ -44,7 +47,7 @@ Office加载项是在Office web 版中运行时使用 iFrame 显示的 Web 应�
 |Windows 10 ver。&nbsp;>=&nbsp;1903,<br>窗口 11 | Microsoft 365 ver。&nbsp;>=&nbsp;16.0.13530.204242<sup></sup>| 否 |Microsoft Edge <sup>1， 3</sup> 与原始 WebView (EdgeHTML) |
 |Windows 8.1<br>Windows 10、<br>Windows 11| Microsoft 365 ver。&nbsp;>=&nbsp;16.0.13530.204242<sup></sup>| 是<sup>4</sup>|  使用基于 WebView2 (Chromium的 Microsoft Edge <sup>1</sup>)  |
 
-<sup>1</sup> 使用Microsoft Edge时，Windows讲述人 (有时称为“屏幕阅读器”，) 在任务窗格中打开的页面中读`<title>`取标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
+<sup>1</sup> 使用Microsoft Edge时，Windows 讲述人 (有时称为“屏幕阅读器”，) 在任务窗格中打开的页面中读取`<title>`标记。 如果使用的是 Internet Explorer 11，则Narrator 将会读取任务窗格的标题栏，它来自加载项清单中的 `<DisplayName>` 值。
 
 <sup>2</sup> 有关更多详细信息，请参阅[更新历史记录页](/officeupdates/update-history-office365-proplus-by-date)以及如何[查找Office客户端版本和更新通道](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)。
 
