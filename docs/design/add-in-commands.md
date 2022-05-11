@@ -1,14 +1,14 @@
 ---
 title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
-ms.date: 12/13/2021
+ms.date: 05/10/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 620452cee57532eee02c72d32dcbd4854b3ae909
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 5d08ba9958d8c2f7002e32f726b087a15dbf27e0
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483403"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313189"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
@@ -64,14 +64,14 @@ ms.locfileid: "64483403"
 > [!NOTE]
 > 并非所有 Office 应用程序或方案均支持此功能。 有关详细信息，请参阅[在功能区上定位自定义选项卡](custom-tab-placement.md)。
 
-### <a name="integration-of-built-in-office-buttons-preview"></a>内置 Office 按钮集成（预览）
+### <a name="integration-of-built-in-office-buttons"></a>内置 Office 按钮集成
 
 可将内置的 Office 功能区按钮插入到自定义命令组和自定义功能区选项卡中。
 
 > [!NOTE]
 > 并非所有 Office 应用程序或方案均支持此功能。 有关详细信息，请参阅[将内置 Office 按钮集成到自定义选项卡中](built-in-button-integration.md)。
 
-### <a name="contextual-tabs-preview"></a>上下文选项卡（预览）
+### <a name="contextual-tabs"></a>上下文选项卡
 
 可指定一个选项卡在某些情况下只在功能区中可见，例如在Excel中选择图表时。
 
