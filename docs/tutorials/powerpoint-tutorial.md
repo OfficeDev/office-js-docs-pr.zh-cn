@@ -1,15 +1,15 @@
 ---
 title: PowerPoint 加载项教程
 description: 在本教程中，将生成 PowerPoint 加载项，用于插入图像、插入文本、获取幻灯片元数据，以及在幻灯片之间导航。
-ms.date: 02/18/2022
+ms.date: 05/11/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: a42d7e0187779687fa179252879d969ea8c0828e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: fc5709e77dd123ed94808a86d49c15309205e0d8
+ms.sourcegitcommit: bc9beb8d82e1901e641f57d2dc5f087999ce7d12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745086"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "65393930"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -24,7 +24,19 @@ ms.locfileid: "63745086"
 
 ## <a name="prerequisites"></a>先决条件
 
-[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
+- 安装了 [Visual Studio 2019 *版本 16.10.3 或更早版本* 或 Visual Studio 2022](https://www.visualstudio.com/vs/) 以及 **Office/SharePoint 开发** 工作负载。 
+
+    > [!IMPORTANT]
+    > 16.10.3 之后的某些 Visual Studio 2019 版本存在导致本教程无法完成的 bug。 使用早期版本的 Visual Studio 2019 或使用 Visual Studio 2022。
+
+    > [!NOTE]
+    > 如果之前已安装 Visual Studio，请 [使用 Visual Studio 安装程序](/visualstudio/install/modify-visual-studio)，以确保安装 **Office/SharePoint 开发** 工作负载。
+
+- 已连接到 Microsoft 365 订阅的 Office (包括 Office 网页版)。
+
+    > [!NOTE]
+    > 如果你还没有 Office，可以[加入 Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)以免费获得为期 90 天的可续订 Microsoft 365 订阅，以便在开发期间使用。
+
 
 ## <a name="create-your-add-in-project"></a>创建加载项项目
 
@@ -124,6 +136,9 @@ ms.locfileid: "63745086"
 3. 在“添加基架”对话框窗口中，依次选择“Web API 2 控制器 - 空”和“添加”按钮。 
 
 4. 在“添加控制器”对话框窗口中，输入“PhotoController”作为控制器名称，再选择“添加”按钮。 此时，Visual Studio 创建并打开 **PhotoController.cs** 文件。
+
+    > [!NOTE]
+    > 在版本 16.10.3 之后的某些 Visual Studio 2019 版本上，基架进程未正确完成。 Visual Studio 2022 不受影响。
 
 5. 将 **PhotoController.cs** 文件的全部内容替换为下列代码，以调用必应服务来检索 Base64 编码字符串形式的一天中照片。 使用 Office JavaScript API 将图像插入文档时，必须将图像数据指定为 Base64 编码字符串。
 
@@ -433,7 +448,7 @@ ms.locfileid: "63745086"
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-3. 在 **Home.js** 文件中，将 `TODO9` 替换为下列代码，以定义导航函数。 以下各函数均使用 `goToByIdAsync` 函数，以根据幻灯片在文档中的位置（第一张、最后一张、上一张和下一张）选择幻灯片。
+3. 在 **Home.js** 文件中，将 `TODO9` 替换为下列代码，以定义导航函数。以下各函数均使用 `goToByIdAsync` 函数，以根据幻灯片在文档中的位置（第一张、最后一张、上一张、下一张）选择幻灯片。
 
     ```js
     function goToFirstSlide() {
