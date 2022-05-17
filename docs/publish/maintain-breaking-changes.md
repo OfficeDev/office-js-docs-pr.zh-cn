@@ -1,16 +1,16 @@
 ---
-title: 维护Office加载项
+title: 维护 Office 加载项
 description: 了解我们对兼容性的承诺，以及如何使加载项保持最新。
-ms.date: 04/29/2022
+ms.date: 05/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 55da05d5c0b220adbeb0b4dbe248aa79f05b6b74
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: c7f70eab252af516ab8dda591668d48392ce9f04
+ms.sourcegitcommit: e63d8e32b25a9987f4a39b92a342a82b37a3404c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187353"
+ms.lasthandoff: 05/17/2022
+ms.locfileid: "65432188"
 ---
-# <a name="maintain-your-office-add-in"></a>维护Office加载项
+# <a name="maintain-your-office-add-in"></a>维护 Office 加载项
 
 发布加载项后，应通过上游库中的任何重要更改使其保持最新。 修补安全问题对于建立客户信任至关重要。 由于这些更改对已发布的清单没有影响，因此客户无需执行任何操作即可获取最新版本的外接程序。
 
@@ -21,6 +21,17 @@ Microsoft 365开发人员平台致力于确保加载项的兼容性。 我们努
 - 有关受影响功能和建议更改的公告，请在[Microsoft 365开发人员博客](https://devblogs.microsoft.com/microsoft365dev/)上进行。
 - 如果加载项已在 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 中发布，将通过你提供的信息与你联系。
 - 如果可能，将通过[消息中心](/microsoft-365/admin/manage/message-center)联系受影响的Microsoft 365租户的管理员 (包括[开发人员租户](https://developer.microsoft.com/microsoft-365/dev-program)) 。 管理员负责联系 AppSource 外部发布的外接程序解决方案提供商。
+
+### <a name="deprecation-policy"></a>弃用策略
+
+可以弃用具有更好替代方法的 API 或工具。 在停用之前至少 24 个月，Microsoft 会尽最大努力声明某些内容已弃用。 同样，对于通常可用的 (GA) 单个 API，Microsoft 会在从 GA 版本将其删除之前至少 24 个月时声明其为弃用产品。
+
+弃用并不一定意味着开发人员将删除该功能或 API 且不可用。 它确实表明，在 24 个月的时间段后，Microsoft 将不再支持 API 或功能。
+
+当 API 被标记为已弃用时，我们强烈建议你尽快迁移到最新版本。 在某些情况下，我们将宣布，在弃用原始 API 后，新应用程序必须在短时间内开始使用新 API。 在这些情况下，仅当前使用已弃用 API 的活动应用程序能够继续使用它们。
+
+> [!IMPORTANT]
+> 如果等待时间过长会对加载项或 Microsoft 造成安全风险，则 24 个月的弃用期将会加速。
 
 ### <a name="app-assure"></a>应用保证
 
@@ -39,7 +50,7 @@ Microsoft 的 [App Assure](https://www.microsoft.com/fasttrack/microsoft-365/app
 
 [用于Office加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)依赖于 Microsoft 和其他部门提供的多个库。 这些库独立于任何Microsoft 365活动进行更新。 在开发、发布和维护外接程序时，使用生成器创建的任何项目都应保持最新。 以下工具可帮助确保项目使用任何依赖库的安全版本。
 
-- [npm 审核](https://docs.npmjs.com/cli/v6/commands/npm-audit/)
+- [npm审核](https://docs.npmjs.com/cli/v6/commands/npm-audit/)
 - [Dependabot 和其他GitHub安全功能](https://github.com/features/security)
 
 本指南还适用于从[Office加载项代码示例和其他源提取的示例](https://github.com/OfficeDev/Office-Add-in-samples)副本。
@@ -51,3 +62,7 @@ Microsoft 的 [App Assure](https://www.microsoft.com/fasttrack/microsoft-365/app
 ## <a name="current-best-practices"></a>当前最佳做法
 
 虽然我们努力保持向后兼容性，但我们建议不断改进的模式和做法。 我们的文档致力于介绍当前的最佳做法。 若要随时了解可能改进现有功能的新功能，请加入我们的每月[Office加载项Community呼叫](../overview/office-add-ins-community-call.md)。
+
+## <a name="community-engagement"></a>Community参与
+
+随着Microsoft 365开发人员平台的更新建议，我们将听取反馈。 请向[Office加载项其他资源](../resources/resources-links-help.md)中列出的频道报告问题、潜在后果或其他问题。

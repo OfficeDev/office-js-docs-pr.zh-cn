@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中启用单一登录 (SSO)
 description: 了解使用常用的 Microsoft 个人、工作或教育帐户为 Office 加载项启用单一登录 (SSO) 的关键步骤。
-ms.date: 01/25/2022
+ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 517677b01254862f29011a7773e3953fc59f4baa
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 0f969b59c718eea0b011fee4ef1b30db021e0571
+ms.sourcegitcommit: e63d8e32b25a9987f4a39b92a342a82b37a3404c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496325"
+ms.lasthandoff: 05/17/2022
+ms.locfileid: "65432204"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>在 Office 加载项中启用单一登录 (SSO)
 
@@ -20,7 +20,7 @@ ms.locfileid: "64496325"
 
 以下关系图显示了 SSO 流程的工作方式。 蓝色元素表示 Office 或 Microsoft 标识平台。 灰色元素表示你编写的代码，包括客户端代码（任务窗格）和加载项的服务器端代码。
 
-![显示 SSO 流程的关系图。](../images/sso-overview-diagram.svg)
+:::image type="content" source="../images/sso-overview-diagram.svg" alt-text="显示 SSO 流程的关系图。" border="false":::
 
 1. 在加载项中，JavaScript 代码调用 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))。 如果用户已登录到 Office，则 Office 主机将返回具有已登录用户声明的访问令牌。
 2. 如果用户未登录，Office 主机应用程序会打开一个对话框供用户登录。 Office 重定向到 Microsoft 标识平台以完成登录过程。
