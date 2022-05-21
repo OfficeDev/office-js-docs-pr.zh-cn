@@ -1,14 +1,14 @@
 ---
 title: 指定 Office 主机和 API 要求
 description: 了解如何为外接程序指定Office应用程序和 API 要求以按预期方式工作。
-ms.date: 04/04/2022
+ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 090557aca861e0d71ec011ed6d1d55c9a1f1df4c
-ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
+ms.openlocfilehash: 60ad00c918b04b6f12ecb6eec6c40772448b2ab8
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "64682222"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628045"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>指定 Office 应用程序和 API 要求
 
@@ -77,16 +77,16 @@ Office外接程序可能依赖于特定的Office应用程序 (也称为Office主
 
 ## <a name="specify-which-office-versions-and-platforms-can-host-your-add-in"></a>指定哪些Office版本和平台可以托管加载项
 
-无法显式指定加载项应安装的Office版本和版本或平台，并且不希望这样做，因为每当对外接程序使用的外接程序功能的支持扩展到新版本或平台时，你都必须修改清单。 而是在清单中指定外接程序需要的 API。 Office防止在不支持 API 的Office版本和平台的组合上安装外接程序，并确保外接程序不会显示在 **"我的外接程序"中**。
+无法显式指定加载项应安装的Office版本和版本或平台，并且不希望这样做，因为每当对外接程序使用的外接程序功能的支持扩展到新版本或平台时，你都必须修改清单。 而是在清单中指定外接程序需要的 API。 Office防止在不支持 API 的Office版本和平台的组合上安装外接程序，并确保外接程序不会显示在 **“我的外接程序”中**。
 
 > [!IMPORTANT]
-> 仅使用基清单来指定加载项必须具有任何重要值的 API 成员。 如果外接程序对某些功能使用 API，但具有其他不需要 API 的有用功能，则应设计外接程序，使其可在不支持 API 的平台和Office版本组合上安装，但会减少这些组合的体验。 有关详细信息，请参阅 ["设计"以获取备用体验](#design-for-alternate-experiences)。
+> 仅使用基清单来指定加载项必须具有任何重要值的 API 成员。 如果外接程序对某些功能使用 API，但具有其他不需要 API 的有用功能，则应设计外接程序，使其可在不支持 API 的平台和Office版本组合上安装，但会减少这些组合的体验。 有关详细信息，请参阅 [“设计”以获取备用体验](#design-for-alternate-experiences)。
 
 ### <a name="requirement-sets"></a>要求集
 
-为了简化指定外接程序需要的 API 的过程，Office在 *要求集中* 将大多数 API 组合在一起。 [公共 API 对象模型中的 API](understanding-the-javascript-api-for-office.md#api-models) 按其支持的开发功能进行分组。 例如，连接到表绑定的所有 API 都位于名为"TableBindings 1.1"的要求集中。 [应用程序特定对象模型](understanding-the-javascript-api-for-office.md#api-models)中的 API 在发布以用于生产外接程序时分组。
+为了简化指定外接程序需要的 API 的过程，Office在 *要求集中* 将大多数 API 组合在一起。 [公共 API 对象模型中的 API](understanding-the-javascript-api-for-office.md#api-models) 按其支持的开发功能进行分组。 例如，连接到表绑定的所有 API 都位于名为“TableBindings 1.1”的要求集中。 [应用程序特定对象模型](understanding-the-javascript-api-for-office.md#api-models)中的 API 在发布以用于生产外接程序时分组。
 
-要求集已进行版本控制。 例如，支持 [对话框](../design/dialog-boxes.md) 的 API 位于要求集 DialogApi 1.1 中。 当释放启用从任务窗格到对话框的消息的其他 API 时，它们与 DialogApi 1.1 中的所有 API 分组到 DialogApi 1.2 中。 *要求集的每个版本都是所有早期版本的超集。*
+要求集已进行版本控制。 例如，支持 [对话框](../develop/dialog-api-in-office-add-ins.md) 的 API 位于要求集 DialogApi 1.1 中。 当释放启用从任务窗格到对话框的消息的其他 API 时，它们与 DialogApi 1.1 中的所有 API 分组到 DialogApi 1.2 中。 *要求集的每个版本都是所有早期版本的超集。*
 
 要求集支持因Office应用程序、Office应用程序的版本及其运行的平台而异。 例如，在Office 2021之前，Office的一次性购买版本不支持 DialogApi 1.2，但在返回到 2013 Office的所有一次性购买版本上都支持 DialogApi 1.1。 你希望加载项可安装在支持其使用的 API 的平台和Office版本的每个组合上，因此应始终在清单中指定加载项所需的每个要求集的 *最低* 版本。 本文稍后将介绍有关如何执行此操作的详细信息。
 
@@ -104,15 +104,15 @@ Office外接程序可能依赖于特定的Office应用程序 (也称为Office主
 
 使用 [Requirements](/javascript/api/manifest/requirements) 元素及其子元素[集](/javascript/api/manifest/sets)和[方法](/javascript/api/manifest/methods)来指定Office应用程序必须支持的最低要求集或 API 成员才能安装加载项。 
 
-如果Office应用程序或平台不支持 **Requirements 元素中** 指定的要求集或 API 成员，则外接程序不会在该应用程序或平台中运行，并且不会显示在 **"我的外接程序"中**。
+如果Office应用程序或平台不支持 **Requirements 元素中** 指定的要求集或 API 成员，则外接程序不会在该应用程序或平台中运行，并且不会显示在 **“我的外接程序”中**。
 
 > [!NOTE]
 > **Requirements** 元素对于所有加载项都是可选的，Outlook外接程序除外。`xsi:type`如果根元素的属性为`MailApp`根`OfficeApp`元素，则必须有一个 **Requirements** 元素，该元素指定加载项所需的邮箱要求集的最小版本。 有关详细信息，请参阅 [Outlook JavaScript API 要求集](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)。
 
 以下代码示例演示如何在支持以下内容的所有Office应用程序中配置可安装的加载项：
 
--  `TableBindings` 要求集，其最低版本为"1.1"。
--  `OOXML` 要求集，其最低版本为"1.1"。
+-  `TableBindings` 要求集，其最低版本为“1.1”。
+-  `OOXML` 要求集，其最低版本为“1.1”。
 -  `Document.getSelectedDataAsync` 方法。
 
 ```XML
@@ -143,7 +143,7 @@ Office外接程序可能依赖于特定的Office应用程序 (也称为Office主
 Office外接程序平台提供的可扩展性功能可分为三种：
 
 - 安装加载项后立即可用的扩展性功能。 可以通过在清单中配置 [VersionOverrides](/javascript/api/manifest/versionoverrides) 元素来使用此类功能。 此类功能的一个示例是 [外接程序命令](../design/add-in-commands.md)，它是自定义功能区按钮和菜单。
-- 扩展性功能，仅当加载项正在运行且使用 Office.js JavaScript API 实现时才可用;例如， [对话框](../design/dialog-boxes.md)。
+- 扩展性功能，仅当加载项正在运行且使用 Office.js JavaScript API 实现时才可用;例如， [对话框](../develop/dialog-api-in-office-add-ins.md)。
 - 可扩展性功能仅在运行时可用，但使用 Office.js JavaScript 和 **VersionOverrides** 元素中的配置组合实现。 这些示例[包括Excel自定义函数](../excel/custom-functions-overview.md)、[单一登录](sso-in-office-add-ins.md)和[自定义上下文选项卡](../design/contextual-tabs.md)。
 
 如果外接程序对其某些功能使用特定的扩展性功能，但具有其他不需要扩展性功能的有用功能，则应设计外接程序，使其可安装在不支持扩展功能的平台和Office版本组合上。 它可以提供一个有价值的，虽然减少，在这些组合的经验。 
@@ -168,10 +168,10 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 关于此代码，请注意以下几点：
 
 - 第一个参数是必需的。 它是表示要求集名称的字符串。 有关可用要求集的详细信息，请参阅 [Office 加载项要求集](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)。
-- 第二个参数是可选的。 它是一个字符串，指定Office应用程序必须支持的最低要求集版本，以便语句中的`if`代码运行 (，例如"**1.9**") 。 如果未使用，则假定版本"1.1"。
+- 第二个参数是可选的。 它是一个字符串，指定Office应用程序必须支持的最低要求集版本，以便语句中的`if`代码运行 (，例如“**1.9**”) 。 如果未使用，则假定版本“1.1”。
 
 > [!WARNING]
-> 调用 `isSetSupported` 该方法时，如果指定的) 应为字符串而不是数字，则 (第二个参数的值。 JavaScript 分析器无法区分数字值（如 1.1 和 1.10），而对于字符串值（如"1.1"和"1.10"）则可以区分。
+> 调用 `isSetSupported` 该方法时，如果指定的) 应为字符串而不是数字，则 (第二个参数的值。 JavaScript 分析器无法区分数字值（如 1.1 和 1.10），而对于字符串值（如“1.1”和“1.10”）则可以区分。
 
 下表显示了特定于应用程序的 API 模型的要求集名称。
 
@@ -248,7 +248,7 @@ if (Office.context.document.setSelectedDataAsync)
 > 在 **VersionOverrides** 中使用 **Requirements** 元素之前，请谨慎使用，因为在不支持要求的平台和版本组合上，*不会安装任何* 外接程序命令，*即使是那些调用不需要要求的功能的命令*。 例如，请考虑具有两个自定义功能区按钮的加载项。 其中一个调用在要求集 **ExcelApi 1.4** (和更高版本) 中可用Office JavaScript API。 其他调用仅在 **ExcelApi 1.9** (及更高版本) 中可用的 API。 如果在 **VersionOverrides** 中对 **ExcelApi 1.9** 提出了要求，则当不支持 1.9 时，功能区上不会显示 *任何* 按钮。 在此方案中，更好的策略是使用运行时检查中所述 [的方法和要求集支持](#runtime-checks-for-method-and-requirement-set-support)。 第二个按钮调用的代码首先用于 `isSetSupported` 检查 **ExcelApi 1.9** 的支持。 如果不支持，代码会向用户发送一条消息，指出加载项的此功能在其版本的Office上不可用。 
 
 > [!TIP]
-> 在已出现在基清单中的 **VersionOverrides** 中重复 **"要求**"元素是没意义的。 如果在基清单中指定了要求，则加载项无法安装不支持要求的位置，因此Office甚至无法分析 **VersionOverrides** 元素。 
+> 在已出现在基清单中的 **VersionOverrides** 中重复 **“要求**”元素是没意义的。 如果在基清单中指定了要求，则加载项无法安装不支持要求的位置，因此Office甚至无法分析 **VersionOverrides** 元素。 
 
 ## <a name="see-also"></a>另请参阅
 

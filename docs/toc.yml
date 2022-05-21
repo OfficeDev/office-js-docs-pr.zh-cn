@@ -230,8 +230,6 @@ items:
                     href: design/content-add-ins.md
                   - name: 对话框
                     items:
-                      - name: 概述
-                        href: design/dialog-boxes.md
                       - name: 在 Office 加载项中使用 Office 对话框 API
                         href: develop/dialog-api-in-office-add-ins.md
                       - name: Office 对话框 API 最佳做法和规则
@@ -413,6 +411,9 @@ items:
                 displayName: Excel
               - name: 概念（预览）
                 href: excel/excel-data-types-concepts.md
+                displayName: Excel
+              - name: 实体值卡片（预览）
+                href: excel/excel-data-types-entity-card.md
                 displayName: Excel
           - name: 数据有效性
             href: excel/excel-add-ins-data-validation.md

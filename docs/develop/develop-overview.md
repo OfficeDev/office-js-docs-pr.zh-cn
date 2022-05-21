@@ -1,14 +1,14 @@
 ---
 title: 开发 Office 加载项
 description: Office 加载项开发简介。
-ms.date: 03/11/2022
+ms.date: 05/19/2022
 ms.localizationpriority: high
-ms.openlocfilehash: e5f053535afd852b2c71edcfa52d8b4f4a1e54dd
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 1ea32ff4a77116c922b36257048b99a70e5fe304
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743517"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628066"
 ---
 # <a name="develop-office-add-ins"></a>开发 Office 加载项
 
@@ -97,7 +97,7 @@ Office 加载项可使用加载项命令和 HTML 容器（如任务窗格、内�
 
 - [加载项命令](../design/add-in-commands.md)可用于向 Office 中的默认功能区添加自定义选项卡、按钮和菜单，或者扩展当用户右键单击 Office 文档中的文本或 Excel 中的对象时显示的默认上下文菜单。 当用户选择加载项命令时，他们将启动该加载项命令指定的任务，例如运行 JavaScript 代码、打开任务窗格或启动对话框。
 
-- [任务窗格](../design/task-pane-add-ins.md)、[内容加载项](../design/content-add-ins.md)和[对话框](../design/dialog-boxes.md)等 HTML 容器可用于显示自定义 UI 和探索 Office 应用程序中的附加功能。 每个任务窗格、内容加载项或对话框的内容和功能派生自你指定的网页。 这些网页可使用 Office JavaScript API 来与其中正在运行加载项的 Office 文档中的内容进行交互，还可执行网页通常可实现的其他操作，例如调用外部 Web 服务和简化用户身份验证等等。
+- [任务窗格](../design/task-pane-add-ins.md)、[内容加载项](../design/content-add-ins.md)和[对话框](../develop/dialog-api-in-office-add-ins.md)等 HTML 容器可用于显示自定义 UI 和探索 Office 应用程序中的附加功能。 每个任务窗格、内容加载项或对话框的内容和功能派生自你指定的网页。 这些网页可使用 Office JavaScript API 来与其中正在运行加载项的 Office 文档中的内容进行交互，还可执行网页通常可实现的其他操作，例如调用外部 Web 服务和简化用户身份验证等等。
 
 下图显示功能区中有一个加载项命令、文档右侧有一个任务窗格，且文档上方有一个对话框或内容加载项。
 

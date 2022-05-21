@@ -1,25 +1,25 @@
 ---
 title: 使用 Excel JavaScript API 处理表格
-description: 显示如何使用 JavaScript API 对表执行常见Excel示例。
-ms.date: 02/17/2022
+description: 代码示例演示如何使用 Excel JavaScript API 通过表执行常见任务。
+ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9352be37c4a0d86dbbf9a1c1d62d0ccb640387aa
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: f4cbed134c8ca9f53e89fa97bd4c7ccaa35e45c7
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496934"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628108"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理表格
 
-本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关 和 对象支持的属性和方法的完整列表，请参阅 [Table Object (JavaScript API for Excel) ](/javascript/api/excel/excel.table) 和 [TableCollection Object (JavaScript API for Excel) ](/javascript/api/excel/excel.tablecollection)。`Table` `TableCollection`
+本文中的代码示例展示了如何使用 Excel JavaScript API 对表格执行常见任务。 有关这些属性和对象支持的属性和方法的完整列表，请参阅适用于 [Excel) 的表对象 (JavaScript API](/javascript/api/excel/excel.table)，以及适用于[Excel) 的 JavaScript API (TableCollection 对象](/javascript/api/excel/excel.tablecollection)。`Table` `TableCollection`
 
 ## <a name="create-a-table"></a>创建表
 
-下面的代码示例在名为 **Sample** 的工作表中创建一个表。 此表包含标题，并且包含四列和七行数据。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例在名为 **Sample** 的工作表中创建一个表。 此表包含标题，并且包含四列和七行数据。 如果运行代码的Excel应用程序支持 [要求集](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则将列的宽度和行的高度设置为最适合表中的当前数据。
 
 > [!NOTE]
-> 若要指定表的名称 `name` ，必须先创建表，然后设置其属性，如以下示例所示。
+> 若要指定表的名称，必须先创建该表，然后设置其 `name` 属性，如以下示例所示。
 
 ```js
 await Excel.run(async (context) => {
@@ -52,34 +52,38 @@ await Excel.run(async (context) => {
 
 ### <a name="new-table"></a>新表
 
-![Excel 中的新表。](../images/excel-tables-create.png)
+![Excel中的新表。](../images/excel-tables-create.png)
 
 ## <a name="add-rows-to-a-table"></a>向表添加行
 
-下面的代码示例将七个新行添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新行被添加到表的末尾。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例将七个新行添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 方法 `index` 的 [`add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) 参数设置为 `null`，该参数指定在表中的现有行之后添加行。 参数 `alwaysInsert` 设置为 `true`，指示将新行插入到表中，而不是在表下方。 然后，将列的宽度和行的高度设置为最适合表中的当前数据。
 
 > [!NOTE]
-> `index` [TableRow 对象的 属性](/javascript/api/excel/excel.tablerow)指示表的行集合中行的索引号。 对象 `TableRow` 不包含可用于标识 `id` 行的唯一键的属性。
+> `index` [TableRow](/javascript/api/excel/excel.tablerow) 对象的属性指示表的行集合中的行的索引号。 对象 `TableRow` 不包含 `id` 可用作唯一键来标识行的属性。
 
 ```js
+// This code sample shows how to add rows to a table that already exists 
+// on a worksheet named Sample.
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getItem("Sample");
     let expensesTable = sheet.tables.getItem("ExpensesTable");
 
-    expensesTable.rows.add(null /*add rows to the end of the table*/, [
-        ["1/16/2017", "THE PHONE COMPANY", "Communications", "$120"],
-        ["1/20/2017", "NORTHWIND ELECTRIC CARS", "Transportation", "$142"],
-        ["1/20/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$27"],
-        ["1/21/2017", "COHO VINEYARD", "Restaurant", "$33"],
-        ["1/25/2017", "BELLOWS COLLEGE", "Education", "$350"],
-        ["1/28/2017", "TREY RESEARCH", "Other", "$135"],
-        ["1/31/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$97"]
-    ]);
+    expensesTable.rows.add(
+        null, // index, Adds rows to the end of the table.
+        [
+            ["1/16/2017", "THE PHONE COMPANY", "Communications", "$120"],
+            ["1/20/2017", "NORTHWIND ELECTRIC CARS", "Transportation", "$142"],
+            ["1/20/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$27"],
+            ["1/21/2017", "COHO VINEYARD", "Restaurant", "$33"],
+            ["1/25/2017", "BELLOWS COLLEGE", "Education", "$350"],
+            ["1/28/2017", "TREY RESEARCH", "Other", "$135"],
+            ["1/31/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$97"]
+        ], 
+        true, // alwaysInsert, Specifies that the new rows be inserted into the table.
+    );
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -87,7 +91,7 @@ await Excel.run(async (context) => {
 
 ### <a name="table-with-new-rows"></a>包含新行的表
 
-![包含新行的表Excel。](../images/excel-tables-add-rows.png)
+![Excel中包含新行的表。](../images/excel-tables-add-rows.png)
 
 ## <a name="add-a-column-to-a-table"></a>向表添加列
 
@@ -98,7 +102,7 @@ await Excel.run(async (context) => {
 
 ### <a name="add-a-column-that-contains-static-values"></a>添加包含静态值的列
 
-下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表中所有现有列后面，并且包含一个标题（“星期几”），以及用于填充列中单元格的数据。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表中所有现有列后面，并且包含一个标题（“星期几”），以及用于填充列中单元格的数据。 然后，将列的宽度和行的高度设置为最适合表中的当前数据。
 
 ```js
 await Excel.run(async (context) => {
@@ -116,10 +120,8 @@ await Excel.run(async (context) => {
         ["Monday"]
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -127,11 +129,11 @@ await Excel.run(async (context) => {
 
 #### <a name="table-with-new-column"></a>包含新列的表
 
-![包含新列的Excel。](../images/excel-tables-add-column.png)
+![Excel中包含新列的表。](../images/excel-tables-add-column.png)
 
 ### <a name="add-a-column-that-contains-formulas"></a>添加包含公式的列
 
-下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表的末尾，包含标题（“日期类型”），并使用一个公式来填充列中的每个数据单元格。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例将一个新列添加到名为 **Sample** 的工作表内的 **ExpensesTable** 表中。 新列添加到表的末尾，包含标题（“日期类型”），并使用一个公式来填充列中的每个数据单元格。 然后，将列的宽度和行的高度设置为最适合表中的当前数据。
 
 ```js
 await Excel.run(async (context) => {
@@ -149,10 +151,8 @@ await Excel.run(async (context) => {
         ['=IF(OR((TEXT([DATE], "dddd") = "Saturday"), (TEXT([DATE], "dddd") = "Sunday")), "Weekend", "Weekday")']
     ]);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -160,11 +160,11 @@ await Excel.run(async (context) => {
 
 #### <a name="table-with-new-calculated-column"></a>包含新的计算列的表
 
-![包含新计算列的表Excel。](../images/excel-tables-add-calculated-column.png)
+![Excel中包含新计算列的表。](../images/excel-tables-add-calculated-column.png)
 
-## <a name="resize-a-table"></a>调整表格大小
+## <a name="resize-a-table"></a>调整表的大小
 
-加载项可以调整表格大小，而无需向表格添加数据或更改单元格值。 若要调整表格的大小，请使用 [Table.resize](/javascript/api/excel/excel.table#excel-excel-table-resize-member(1)) 方法。 下面的代码示例演示如何调整表的大小。 此代码示例使用本文前面"创建表 [](#create-a-table)"部分中的 **ExpensesTable**，将表的新范围设置 **为 A1：D20**。
+外接程序可以调整表的大小，而无需将数据添加到表或更改单元格值。 若要调整表大小，请使用 [Table.resize](/javascript/api/excel/excel.table#excel-excel-table-resize-member(1)) 方法。 下面的代码示例演示如何调整表的大小。 此代码示例使用本文前面的 [“创建表](#create-a-table)”部分中的 **ExpensesTable**，并将表的新范围设置为 **A1：D20**。
 
 ```js
 await Excel.run(async (context) => {
@@ -180,15 +180,15 @@ await Excel.run(async (context) => {
 ```
 
 > [!IMPORTANT]
-> 表格的新区域必须与原始区域重叠，并且表格标题 (或表格顶部) 必须在同一行中。
+> 表的新范围必须与原始范围重叠，表 (或表顶部) 必须在同一行中。
 
-### <a name="table-after-resize"></a>调整大小后的表格
+### <a name="table-after-resize"></a>调整大小后的表
 
-![表中有多个空行的Excel。](../images/excel-tables-resize.png)
+![Excel中包含多个空行的表。](../images/excel-tables-resize.png)
 
 ## <a name="update-column-name"></a>更新列名称
 
-下面的代码示例将表中第一列的名称更新为 **购买日期**。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例将表中第一列的名称更新为 **购买日期**。 然后，将列的宽度和行的高度设置为最适合表中的当前数据。
 
 ```js
 await Excel.run(async (context) => {
@@ -201,10 +201,8 @@ await Excel.run(async (context) => {
         
     expensesTable.columns.items[0].name = "Purchase date";
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     await context.sync();
 });
@@ -212,7 +210,7 @@ await Excel.run(async (context) => {
 
 ### <a name="table-with-new-column-name"></a>包含新列名称的表
 
-![包含新列名称的表Excel。](../images/excel-tables-update-column-name.png)
+![Excel中包含新列名的表。](../images/excel-tables-update-column-name.png)
 
 ## <a name="get-data-from-a-table"></a>从表中获取数据
 
@@ -257,7 +255,7 @@ await Excel.run(async (context) => {
 
 ### <a name="table-and-data-output"></a>表和数据输出
 
-![数据表中的Excel。](../images/excel-tables-get-data.png)
+![Excel中的表数据。](../images/excel-tables-get-data.png)
 
 ## <a name="detect-data-changes"></a>检测数据更改
 
@@ -305,7 +303,7 @@ await Excel.run(async (context) => {
 
 ### <a name="table-data-sorted-by-amount-descending"></a>按金额排序的表数据（降序）
 
-![排序表中的Excel。](../images/excel-tables-sort.png)
+![Excel中的表数据排序。](../images/excel-tables-sort.png)
 
 在工作表中对数据进行排序时，会触发事件通知。 要详细了解有关排序的事件以及加载项如何注册事件处理程序来响应此类事件，请参阅[处理排序事件](excel-add-ins-worksheets.md#handle-sorting-events)。
 
@@ -339,7 +337,7 @@ await Excel.run(async (context) => {
 
 ### <a name="table-data-with-filters-applied-for-category-and-amount"></a>将筛选器应用于类别和金额的表数据
 
-![在数据记录中筛选的Excel。](../images/excel-tables-filters-apply.png)
+![在Excel中筛选的表数据。](../images/excel-tables-filters-apply.png)
 
 ## <a name="clear-table-filters"></a>清除表筛选器
 
@@ -358,11 +356,11 @@ await Excel.run(async (context) => {
 
 ### <a name="table-data-with-no-filters-applied"></a>没有应用任何筛选器的表数据
 
-![表中未筛选的表Excel。](../images/excel-tables-filters-clear.png)
+![Excel中未筛选的表数据。](../images/excel-tables-filters-clear.png)
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>从筛选表中获取可见区域
 
-下面的代码示例获取一个区域，其中只包含当前在指定表中可见的单元格数据，然后将该区域的值写入控制台。 可以使用如下所示的方法 `getVisibleView()` ，在应用列筛选器时获取表的可见内容。
+下面的代码示例获取一个区域，其中只包含当前在指定表中可见的单元格数据，然后将该区域的值写入控制台。 只要应用列筛选器，就可以使用 `getVisibleView()` 如下所示的方法获取表的可见内容。
 
 ```js
 await Excel.run(async (context) => {
@@ -423,11 +421,11 @@ await Excel.run(async (context) => {
 
 ### <a name="table-after-formatting-is-applied"></a>应用了格式设置的表
 
-![表格格式应用于Excel。](../images/excel-tables-formatting-after.png)
+![在Excel中应用格式设置后的表。](../images/excel-tables-formatting-after.png)
 
 ## <a name="convert-a-range-to-a-table"></a>将区域转换为表
 
-下面的代码示例创建一个数据区域，然后将该区域转换为表。
+下面的代码示例创建一个数据区域，然后将该区域转换为表。 然后，将列的宽度和行的高度设置为最适合表中的当前数据。
 
 ```js
 await Excel.run(async (context) => {
@@ -446,10 +444,8 @@ await Excel.run(async (context) => {
     let range = sheet.getRange("A1:E7");
     range.values = values;
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     sheet.activate();
 
@@ -463,15 +459,15 @@ await Excel.run(async (context) => {
 
 ### <a name="data-in-the-range-before-the-range-is-converted-to-a-table"></a>区域内的数据（在区域转换为表之前）
 
-![Excel 中的Excel。](../images/excel-ranges.png)
+![Excel范围内的数据。](../images/excel-ranges.png)
 
 ### <a name="data-in-the-table-after-the-range-is-converted-to-a-table"></a>表中的数据（在区域转换为表之后）
 
-![数据表中的Excel。](../images/excel-tables-from-range.png)
+![Excel中的表中的数据。](../images/excel-tables-from-range.png)
 
 ## <a name="import-json-data-into-a-table"></a>将 JSON 数据导入表
 
-下面的代码示例在名为 **Sample** 的工作表中创建一个表，然后使用定义了两行数据的 JSON 对象来填充表。 如果运行Excel的应用程序支持要求集 [](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) **ExcelApi 1.2**，则列宽和行高将设置为最适合表格中的当前数据。
+下面的代码示例在名为 **Sample** 的工作表中创建一个表，然后使用定义了两行数据的 JSON 对象来填充表。 然后，将列的宽度和行的高度设置为最适合表中的当前数据。
 
 ```js
 await Excel.run(async (context) => {
@@ -501,10 +497,8 @@ await Excel.run(async (context) => {
 
     expensesTable.rows.add(null, newData);
 
-    if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
-        sheet.getUsedRange().format.autofitColumns();
-        sheet.getUsedRange().format.autofitRows();
-    }
+    sheet.getUsedRange().format.autofitColumns();
+    sheet.getUsedRange().format.autofitRows();
 
     sheet.activate();
 
@@ -514,7 +508,7 @@ await Excel.run(async (context) => {
 
 ### <a name="new-table"></a>新表
 
-![从导入的 JSON 数据的新表Excel。](../images/excel-tables-create-from-json.png)
+![Excel中导入的 JSON 数据中的新表。](../images/excel-tables-create-from-json.png)
 
 ## <a name="see-also"></a>另请参阅
 

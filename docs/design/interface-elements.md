@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的 Office UI 元素
-description: 大致了解加载项中不同类型的 UI Office。
-ms.date: 12/24/2019
+description: 获取Office加载项中不同类型的 UI 元素的概述。
+ms.date: 05/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 92ba1d85b534f70c6fca511c03dbcb25d3fd4e33
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: f6a5df7a5543859910a5759ebe91fd25c010ea2e
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743221"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628059"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Office 加载项的 Office UI 元素
 
@@ -16,11 +16,11 @@ ms.locfileid: "63743221"
 
 下图显示了可以创建的 Office UI 元素的类型。
 
-![显示文档功能区、任务窗格和对话框/内容加载项中的加载项命令的Office图。](../images/add-in-ui-elements.png)
+![显示功能区中的外接程序命令、任务窗格和Office文档中的对话框/内容加载项的示意图。](../images/add-in-ui-elements.png)
 
-## <a name="add-in-commands"></a>外接程序命令
+## <a name="add-in-commands"></a>加载项命令
 
-[使用外接程序命令](add-in-commands.md)将外接程序的入口点添加到"Office 应用"功能区。 命令通过运行 JavaScript 代码，或启动 HTML 容器开始在外接程序中操作。 可以创建以下两种类型的外接程序命令。
+使用[外接程序命令](add-in-commands.md)将加载项的入口点添加到Office 应用功能区。 命令通过运行 JavaScript 代码，或启动 HTML 容器开始在外接程序中操作。 可以创建以下两种类型的外接程序命令。
 
 |命令类型|说明|
 |:---------------|:--------------|
@@ -35,11 +35,11 @@ ms.locfileid: "63743221"
 |:-----------------|:--------------|
 |[任务窗格](task-pane-add-ins.md)|在 Office 文档右侧窗格中显示自定义 UI。使用任务窗格以便用户与 Office 文档并行的外接程序进行交互。|
 |[内容加载项](content-add-ins.md)|显示 Office 文档内嵌入的自定义 UI。使用内容外接程序以便用户直接与 Office 文档中的外接程序进行交互。例如，你可能想要显示外部内容，如其他来源的视频或数据可视化。 |
-|[对话框](dialog-boxes.md)|在覆盖 Office 文档的对话框中显示自定义 UI。对需要焦点和更多空间的交互，但不需要与文档进行并行交互的交互使用对话框。|
+|[对话框](../develop/dialog-api-in-office-add-ins.md)|在覆盖 Office 文档的对话框中显示自定义 UI。对需要焦点和更多空间的交互，但不需要与文档进行并行交互的交互使用对话框。|
 
 ## <a name="see-also"></a>另请参阅
 
 - [Excel、Word 和 PowerPoint 加载项命令](add-in-commands.md)
 - [任务窗格](task-pane-add-ins.md)
 - [内容外接程序](content-add-ins.md)
-- [对话框](dialog-boxes.md)
+- [对话框](../develop/dialog-api-in-office-add-ins.md)
