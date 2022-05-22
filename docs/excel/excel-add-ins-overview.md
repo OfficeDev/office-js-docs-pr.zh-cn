@@ -1,16 +1,16 @@
 ---
 title: Excel 加载项概述
 description: 使用 Excel 加载项，可以跨多个平台（包括 Windows、Mac、iPad 和浏览器）扩展 Excel 应用程序功能。
-ms.date: 02/16/2022
+ms.date: 05/19/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: db4b26ed605a50c1d127c6b37f9022294e49d420
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a95a49d386cfd1c57d007f4728f716c32db11d5c
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745083"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628101"
 ---
 # <a name="excel-add-ins-overview"></a>Excel 加载项概述
 
@@ -87,7 +87,7 @@ Web 应用程序可以托管在任何 Web 服务器上，并且可以使用客�
 
 ![Excel 中的加载项对话框。](../images/excel-add-in-dialog-choose-number.png)
 
-有关对话框和对话框 API 的详细信息，请参阅 [Office 加载项中的对话框](../design/dialog-boxes.md)和[在 Office 加载项中使用对话框 API](../develop/dialog-api-in-office-add-ins.md)。
+有关对话框和对话框 API 的详细信息，请参阅[在 Office 加载项中使用对话框 API](../develop/dialog-api-in-office-add-ins.md)。
 
 ### <a name="content-add-ins"></a>内容加载项
 
