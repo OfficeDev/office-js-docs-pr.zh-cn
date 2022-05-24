@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项命令
 description: Outlook 加载项命令提供了通过添加按钮或下拉菜单从功能区启动特定加载项操作的方法。
-ms.date: 07/07/2020
+ms.date: 05/19/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 41e1b3d200e75b214a8619021b2ccf5514e30055
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 4d4ffc8e518e5a8d11b3a45630b1a7b42e6bee13
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483531"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650610"
 ---
 # <a name="add-in-commands-for-outlook"></a>适用于 Outlook 的外接程序命令
 
@@ -120,3 +120,5 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 - [加载项命令演示 Outlook 加载项](https://github.com/officedev/outlook-add-in-command-demo)
 - [在清单中创建 Excel、PowerPoint 和 Word 加载项命令](../develop/create-addin-commands.md)
+- [调试无 UI Outlook 加载项](debug-ui-less.md)
+- [教程：生成邮件撰写 Outlook 外接程序](../tutorials/outlook-tutorial.md)

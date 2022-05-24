@@ -3,16 +3,16 @@ title: 在 Office 加载项中启用单一登录 (SSO)
 description: 了解使用常用的 Microsoft 个人、工作或教育帐户为 Office 加载项启用单一登录 (SSO) 的关键步骤。
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 0f969b59c718eea0b011fee4ef1b30db021e0571
-ms.sourcegitcommit: e63d8e32b25a9987f4a39b92a342a82b37a3404c
+ms.openlocfilehash: 14b65da74cf627b7830ef013580558e8e6097ed1
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2022
-ms.locfileid: "65432204"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650596"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>在 Office 加载项中启用单一登录 (SSO)
 
-用户可以使用自己的个人 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office（在线、移动和桌面平台）。可以利用这一点，使用单点登录 (SSO) 进行身份验证并将用户授权给加载项，让用户无需登录第二次。
+用户可以使用自己的个人 Microsoft 帐户或 Microsoft 365 教育版或工作帐户登录 Office。可以利用这一点，使用单点登录 (SSO) 进行身份验证并将用户授权给加载项，让用户无需登录第二次。
 
 ![显示加载项登录过程的图像。](../images/sso-for-office-addins.png)
 

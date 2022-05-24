@@ -1,15 +1,15 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 05/01/2022
+ms.date: 05/19/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: a143ff743c5dfb692709d0291534fd060352f264
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 22d650d7727c4fdaf099e3ed49d7cd8390deea9d
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244791"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650638"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -1309,3 +1309,10 @@ ul {
 
 > [!div class="nextstepaction"]
 > [Outlook 外接程序 API](../outlook/apis.md)
+
+## <a name="see-also"></a>另请参阅
+
+- [Outlook 加载项清单](../outlook/manifests.md)
+- [Outlook 外接程序设计准则](../outlook/outlook-addin-design.md)
+- [适用于 Outlook 的外接程序命令](../outlook/add-in-commands-for-outlook.md)
+- [调试无 UI Outlook 加载项](../outlook/debug-ui-less.md)
