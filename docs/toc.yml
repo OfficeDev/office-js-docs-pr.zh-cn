@@ -741,6 +741,8 @@ items:
                 href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
               - name: 加载项激活故障排除
                 href: outlook/troubleshoot-outlook-add-in-activation.md
+              - name: 调试无 UI 加载项
+                href: outlook/debug-ui-less.md
               - name: 调试基于事件的激活
                 href: outlook/debug-autolaunch.md
   - name: PowerPoint
