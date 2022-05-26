@@ -105,6 +105,9 @@ items:
             items:
               - name: 概述
                 href: develop/add-in-manifests.md
+              - name: 适用于 Office 加载项的 Teams 清单
+                href: develop/json-manifest-overview.md
+                displayName: preview
               - name: 清单参考
                 href: reference/manifest-reference.md
               - name: 扩展替代项
@@ -404,17 +407,18 @@ items:
           - name: 备注
             href: excel/excel-add-ins-comments.md
             displayName: Excel
-          - name: 数据类型（预览）
+          - name: 数据类型
+            displayName: preview
             items:
-              - name: 概述（预览）
+              - name: 概述
                 href: excel/excel-data-types-overview.md
-                displayName: Excel
-              - name: 概念（预览）
+                displayName: 'Excel, preview'
+              - name: 概念
                 href: excel/excel-data-types-concepts.md
-                displayName: Excel
-              - name: 实体值卡片（预览）
+                displayName: 'Excel, preview'
+              - name: 实体值卡片
                 href: excel/excel-data-types-entity-card.md
-                displayName: Excel
+                displayName: 'Excel, preview'
           - name: 数据有效性
             href: excel/excel-add-ins-data-validation.md
             displayName: Excel
@@ -532,9 +536,9 @@ items:
           - name: 自动生成 JSON 元数据
             href: excel/custom-functions-json-autogeneration.md
             displayName: 'Excel, Custom Functions'
-          - name: 数据类型（预览）
+          - name: 数据类型
             href: excel/custom-functions-data-types-concepts.md
-            displayName: 'Excel, Custom Functions'
+            displayName: 'Excel, Custom Functions, preview'
           - name: 调用 Excel JavaScript API
             href: excel/call-excel-apis-from-custom-function.md
             displayName: 'Excel, Custom Functions'
@@ -603,6 +607,9 @@ items:
       - name: 生成首个 Outlook 加载项
         href: quickstarts/outlook-quickstart.md
         displayName: Outlook
+      - name: 使用 Teams 清单生成 Outlook 加载项
+        href: quickstarts/outlook-quickstart-json-manifest.md
+        displayName: 'Outlook, preview'
       - name: Outlook 加载项教程
         href: tutorials/outlook-tutorial.md
         displayName: Outlook
