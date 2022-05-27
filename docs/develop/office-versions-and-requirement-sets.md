@@ -1,14 +1,14 @@
 ---
 title: Office 版本和要求集
 description: 使用 JavaScript API 支持的 Office.js 平台。
-ms.date: 07/08/2021
+ms.date: 05/26/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 956a58433aca10895a1badeb0492a2c7b0883679
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: bedf4378c60d39a121f4d9b7031d5a6aba7e44b8
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496815"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752846"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Office 版本和要求集
 
@@ -47,7 +47,13 @@ Office 加载项可使用 API 要求集，以确定 Office 应用程序是否支
 - [Office 通用要求集](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
 - [加载项命令要求集](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)
 - [对话框 API 要求集](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [对话框源要求集](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)
 - [标识 API 要求集](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
+- [图像强制要求集](/javascript/api/requirement-sets/common/image-coercion-requirement-sets)
+- [键盘快捷方式要求集](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)
+- [打开浏览器窗口要求集](/javascript/api/requirement-sets/common/open-browser-window-api-requirement-sets)
+- [功能区 API 要求集](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
+- [共享运行时要求集](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 
 要求集的版本号（如 `ExcelApi 1.1` 中的“1.1”）是相对于 Office 应用程序而言。给定要求集的版本号（例如，`ExcelApi 1.1`）既不对应于 Office.js 的版本号，也不对应于其他 Office 应用程序（例如，Word、Outlook 等）的要求集。各个 Office 应用程序的要求集的发布速率不同。例如，`ExcelApi 1.5` 要求集先于 `WordApi 1.3` 要求集发布。
 

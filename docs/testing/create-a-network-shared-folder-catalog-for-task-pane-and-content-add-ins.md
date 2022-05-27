@@ -1,29 +1,29 @@
 ---
-title: 从Office旁加载外接程序以进行测试
-description: 了解如何旁加载Office外接程序以从网络共享进行测试。
-ms.date: 06/02/2020
+title: 旁加载Office加载项，用于从网络共享进行测试
+description: 了解如何旁加载Office加载项以从网络共享进行测试。
+ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 839caa3c693682c06071d13b7fc2bde8a131636e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a8b6e61464633a18e29c72b9e983368ea803b258
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745660"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752881"
 ---
-# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>从Office旁加载外接程序以进行测试
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>旁加载Office加载项，用于从网络共享进行测试
 
-可以在 Windows 上的 Office 客户端中测试 Office 外接程序，具体方法为将清单发布到网络文件共享 (以下) 。 此部署选项用于完成对 localhost 的开发和测试，并且希望从非本地服务器或云帐户测试外接程序。
+可以通过将清单发布到网络文件共享 () 下面的说明，在Windows的Office客户端中测试Office加载项。 在本地主机上完成开发和测试并想要从非本地服务器或云帐户测试外接程序时，应使用此部署选项。
 
 > [!IMPORTANT]
-> 生产加载项不支持通过网络共享进行部署。此方法具有以下限制。
+> 生产加载项不支持按网络共享进行部署。此方法具有以下限制。
 >
 > - 加载项只能安装在Windows计算机上。
-> - 如果加载项的新版本更改功能区，每个用户必须重新安装加载项。
+> - 如果加载项的新版本更改了功能区，例如向功能区添加自定义选项卡或自定义按钮，则每个用户都必须重新安装外接程序。
 
 > [!NOTE]
 > 如果你的外接程序项目是使用[外接程序的 Yeoman 生成器](../develop/yeoman-generator-overview.md)的足够使用的版本，运行 `npm start` 时将自动在 Office 桌面客户端中旁加载外接程序。
 
-本文仅适用于测试 Word、Excel、PowerPoint 和 Project 加载项，仅适用于 Windows。 如果你想要在另一个平台上进行测试，或者想要测试Outlook外接程序，请参阅以下主题之一以旁加载你的外接程序。
+本文仅适用于测试 Word、Excel、PowerPoint 和Project加载项，并且仅适用于Windows。 如果要在另一个平台上进行测试或想要测试Outlook加载项，请参阅以下主题之一来旁加载加载项。
 
 - [在 Office 网页版中旁加载 Office 加载项进行测试](sideload-office-add-ins-for-testing.md)
 - [在 iPad 和 Mac 上旁加载 Office 外接程序进行测试](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -41,13 +41,13 @@ ms.locfileid: "63745660"
 
 1. 在“**属性**”对话框窗口中，打开“**共享**”选项卡，然后选择“**共享**”按钮。
 
-    ![突出显示"共享"选项卡和"共享"按钮的文件夹属性对话框。](../images/sideload-windows-properties-dialog.png)
+    ![“文件夹属性”对话框，其中突出显示了“共享”选项卡和“共享”按钮。](../images/sideload-windows-properties-dialog.png)
 
 1. 在 **网络访问** 对话框窗口中，添加你自己以及要与其共享加载项的任何其他用户和/或组。 你至少需要对该文件夹的 **读/写** 权限。 选择要与其共享的人员后，请选择“**共享**”按钮。
 
 1. 当你看到确认 **你的文件夹已共享** 的消息时，请记下紧跟文件夹名称显示的完整网络路径。 （当你 [将共享文件夹指定为受信任的目录](#specify-the-shared-folder-as-a-trusted-catalog)时，你需要将此值输入为 **目录UR**，如本文下一节所述。）选择“**完成**”按钮以关闭“**网络访问**”对话框窗口。
 
-   ![突出显示共享路径的网络访问对话框。](../images/sideload-windows-network-access-dialog.png)
+   ![突出显示了共享路径的网络访问对话框。](../images/sideload-windows-network-access-dialog.png)
 
 1. 选择“**关闭**”按钮以关闭“**属性**”对话框窗口。
 
@@ -65,15 +65,15 @@ ms.locfileid: "63745660"
 
 1. 在“**目录 Url**”框中，输入你之前 [共享](#share-a-folder)的文件夹的完整网络路径。 如果在共享文件夹时未能记下文件夹的完整网络路径，则可以从文件夹的“**属性**”对话框窗口中获取它，如以下屏幕截图所示。
 
-    ![突出显示"共享"选项卡和网络路径的文件夹属性对话框。](../images/sideload-windows-properties-dialog-2.png)
+    ![“文件夹属性”对话框，其中突出显示了“共享”选项卡和网络路径。](../images/sideload-windows-properties-dialog-2.png)
 
 1. 在“**目录 Url**”框中输入文件夹的完整网络路径后，选择“**添加目录**”按钮。
 
 1. 选中新添加项目的“**在菜单中显示**”复选框，然后选择“**确定**”按钮以关闭“**信任中心**”对话框窗口。 
 
-    ![已选择目录的信任中心对话框。](../images/sideload-windows-trust-center-dialog.png)
+    ![“信任中心”对话框，其中选择了目录。](../images/sideload-windows-trust-center-dialog.png)
 
-1. 选择" **确定"** 按钮以关闭 **"选项** "对话框窗口。
+1. 选择 **“确定** ”按钮以关闭 **“选项** ”对话框窗口。
 
 1. 关闭并重新打开 Office 应用程序，以使更改生效。
 
@@ -96,7 +96,7 @@ ms.locfileid: "63745660"
 
 1. 将 `Url` 值替换为你之前[共享](#share-a-folder)的文件夹的完整网络路径。 （请注意，URL 中的所有 `\` 字符都必须成双出现。）如果在共享文件夹时未能记下文件夹的完整网络路径，则可从文件夹的“**属性**”对话框窗口中获取它，如以下屏幕截图所示。
 
-    ![突出显示"共享"选项卡和网络路径的文件夹属性对话框。](../images/sideload-windows-properties-dialog-2.png)
+    ![“文件夹属性”对话框，其中突出显示了“共享”选项卡和网络路径。](../images/sideload-windows-properties-dialog-2.png)
 
 1. 文件现应如下所示。 将其保存。
 
@@ -121,7 +121,7 @@ ms.locfileid: "63745660"
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
     > [!NOTE]
-    > 对于Visual Studio，请使用 文件夹中的项目所构建的`{projectfolder}\bin\Debug\OfficeAppManifests`清单。
+    > 对于Visual Studio项目，请使用项目在文件夹中生成的`{projectfolder}\bin\Debug\OfficeAppManifests`清单。
 
 1. 在 Excel、Word 或 PowerPoint 中，选择功能区上“**插入**”选项卡中的“**我的加载项**”。 在 Project 中，选择功能区“**Project**”选项卡上的“**我的加载项**”。
 
@@ -129,9 +129,9 @@ ms.locfileid: "63745660"
 
 1. 选择加载项的名称，然后选择“**添加**”以插入加载项。
 
-## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的外接程序
+## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的加载项
 
-可以通过清除您计算机上以前旁加载的Office加载的外接程序。 有关在缓存上清除Windows的详细信息，请参阅清除缓存Office[文章](clear-cache.md#clear-the-office-cache-on-windows)。
+可以通过清除计算机上的Office缓存来删除以前旁加载的加载项。 有关如何清除Windows缓存的详细信息，请参阅“[清除Office缓存](clear-cache.md#clear-the-office-cache-on-windows)”一文。
 
 ## <a name="see-also"></a>另请参阅
 
