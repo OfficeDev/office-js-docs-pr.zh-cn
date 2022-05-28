@@ -1,14 +1,14 @@
 ---
 title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
-ms.date: 05/10/2022
+ms.date: 05/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 5d08ba9958d8c2f7002e32f726b087a15dbf27e0
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: 8a0d2c425b8603ea5aae30f6e92fdff37c3f54f5
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313189"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752853"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
@@ -37,7 +37,7 @@ ms.locfileid: "65313189"
 
 ### <a name="extension-points"></a>扩展点
 
-- 功能区选项卡 - 扩展内置选项卡或新建自定义选项卡。
+- 功能区选项卡 - 扩展内置选项卡或创建新的自定义选项卡。加载项只能有一个自定义选项卡。
 - 上下文菜单 - 扩展所选上下文菜单。
 
 ### <a name="control-types"></a>控件类型
@@ -66,7 +66,7 @@ ms.locfileid: "65313189"
 
 ### <a name="integration-of-built-in-office-buttons"></a>内置 Office 按钮集成
 
-可将内置的 Office 功能区按钮插入到自定义命令组和自定义功能区选项卡中。
+可将内置 Office 功能区按钮插入到自定义命令组和自定义功能区选项卡中。
 
 > [!NOTE]
 > 并非所有 Office 应用程序或方案均支持此功能。 有关详细信息，请参阅[将内置 Office 按钮集成到自定义选项卡中](built-in-button-integration.md)。

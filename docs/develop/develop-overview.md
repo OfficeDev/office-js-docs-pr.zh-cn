@@ -1,14 +1,14 @@
 ---
 title: 开发 Office 加载项
 description: Office 加载项开发简介。
-ms.date: 05/19/2022
+ms.date: 05/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 1ea32ff4a77116c922b36257048b99a70e5fe304
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 012060c2326192329a53c4d6056a1978fe6d60c2
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628066"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752874"
 ---
 # <a name="develop-office-add-ins"></a>开发 Office 加载项
 
@@ -58,7 +58,7 @@ Office 加载项的清单是一个 XML 文件，它定义了加载项的设置�
 - 描述加载项的元数据（例如 ID、版本、说明、显示名称和默认区域设置）。
 - 将在其中运行加载项的 Office 应用程序。
 - 加载项所需的权限。
-- 加载项与 Office 集成的方式，包括与加载项创建的自定义选项卡和功能区按钮等自定义 UI 的集成。
+- 加载项与 Office 的集成方式，包括加载项创建的任何自定义 UI（例如自定义选项卡或自定义功能区按钮）。
 - 加载项对品牌和命令图标使用的图像的位置。
 - 加载项的尺寸（例如内容加载项的尺寸、Outlook 加载项请求的高度）。
 - 指定何时在消息或约会上下文中激活加载项的规则（仅限 Outlook 加载项）。
@@ -95,7 +95,7 @@ Script Lab 是一款加载项，在 Excel 或 Word 等 Office 程序中工作时
 
 Office 加载项可使用加载项命令和 HTML 容器（如任务窗格、内容加载项或对话框）来扩展 Office UI。
 
-- [加载项命令](../design/add-in-commands.md)可用于向 Office 中的默认功能区添加自定义选项卡、按钮和菜单，或者扩展当用户右键单击 Office 文档中的文本或 Excel 中的对象时显示的默认上下文菜单。 当用户选择加载项命令时，他们将启动该加载项命令指定的任务，例如运行 JavaScript 代码、打开任务窗格或启动对话框。
+- [加载项命令](../design/add-in-commands.md) 可用于向 Office 中的默认功能区添加自定义选项卡、按钮和菜单，或用于扩展当用户右键单击 Office 文档中的文本或 Excel 中的对象时显示的默认上下文菜单。 当用户选择加载项命令时，他们将启动该加载项命令指定的任务，例如运行 JavaScript 代码、打开任务窗格或启动对话框。
 
 - [任务窗格](../design/task-pane-add-ins.md)、[内容加载项](../design/content-add-ins.md)和[对话框](../develop/dialog-api-in-office-add-ins.md)等 HTML 容器可用于显示自定义 UI 和探索 Office 应用程序中的附加功能。 每个任务窗格、内容加载项或对话框的内容和功能派生自你指定的网页。 这些网页可使用 Office JavaScript API 来与其中正在运行加载项的 Office 文档中的内容进行交互，还可执行网页通常可实现的其他操作，例如调用外部 Web 服务和简化用户身份验证等等。
 
