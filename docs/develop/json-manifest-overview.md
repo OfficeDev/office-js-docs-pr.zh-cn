@@ -3,12 +3,12 @@ title: 适用于 Office 加载项的 Teams 清单（预览版）
 description: 获取预览版 JSON 清单的概述。
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: f5c529a982956922ae3a76de6d09e15e710f1f03
-ms.sourcegitcommit: d06a37cd52f7389435bbbb3da3a90815ca2dce4a
+ms.openlocfilehash: 8a40f28674892545dee00e5a3138b55400d04352
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/25/2022
-ms.locfileid: "65672091"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833897"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>适用于 Office 加载项的 Teams 清单（预览版）
 
@@ -33,7 +33,7 @@ Microsoft 正在对 Microsoft 365 开发人员平台进行大量改进。 这些
 
 ### <a name="schemas-and-general-points"></a>架构和常规点
 
-[预览版 JSON 清单](/microsoftteams/platform/resources/dev-preview/developer-preview-intro.md) 只有一个架构，而当前 XML 清单总共有七个 [架构](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)。  
+[预览版 JSON 清单](/microsoftteams/platform/resources/dev-preview/developer-preview-intro) 只有一个架构，而当前 XML 清单总共有七个 [架构](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)。  
 
 ### <a name="conceptual-mapping-of-the-preview-json-and-current-xml-manifests"></a>预览版 JSON 和当前 XML 清单的概念映射
 

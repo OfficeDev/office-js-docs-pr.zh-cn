@@ -1,40 +1,40 @@
 ---
-title: '在外接程序预览版中Outlook智能警报 (OnMessageSend) '
-description: 了解如何使用基于事件的激活在 Outlook外接程序中处理发送邮件事件。
+title: '在Outlook外接程序中使用智能警报和 OnMessageSend 和 OnAppointmentSend 事件 (预览) '
+description: 了解如何使用基于事件的激活处理Outlook加载项中的发送事件。
 ms.topic: article
-ms.date: 03/07/2022
+ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a9d44844c7fff3d5305de53f57c2950ae1909fb
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 0174d766423a9b70c67b0c2cf559f5b1ea24c9fe
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484502"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833919"
 ---
-# <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>在外接程序预览版中Outlook智能警报 (OnMessageSend) 
+# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>在Outlook外接程序中使用智能警报和 OnMessageSend 和 OnAppointmentSend 事件 (预览) 
 
-事件`OnMessageSend`利用智能警报，允许用户在用户选择其邮件中的"发送"后Outlook逻辑。 事件处理程序允许你为用户提供在发送电子邮件之前改进其电子邮件的机会。 事件 `OnAppointmentSend` 相似，但适用于约会。
+这些`OnMessageSend`事件和`OnAppointmentSend`事件利用智能警报，在用户选择 **发送** Outlook消息或约会后，你可以运行逻辑。 通过事件处理程序，你可以为用户提供在发送电子邮件和会议邀请之前改进电子邮件和会议邀请的机会。
 
-在此演练结束时，您将拥有一个外接程序，该外接程序在邮件发送时运行，并检查用户是否忘记添加电子邮件中提到的文档或图片。
+以下演练使用该 `OnMessageSend` 事件。 本演练结束时，你将拥有一个在发送消息时运行的加载项，并检查用户是否忘记添加他们在电子邮件中提到的文档或图片。
 
 > [!IMPORTANT]
-> `OnAppointmentSend`和 `OnMessageSend` 事件仅在预览版中提供，Microsoft 365订阅位于 Outlook Windows。 有关详细信息，请参阅 [如何预览](autolaunch.md#how-to-preview)。 预览事件不应在生产外接程序中使用。
+> 这些`OnMessageSend`和`OnAppointmentSend`事件仅在预览版中提供，Windows Outlook中包含Microsoft 365订阅。 有关更多详细信息，请参阅 [如何预览](autolaunch.md#how-to-preview)。 不应在生产外接程序中使用预览事件。
 
 ## <a name="prerequisites"></a>先决条件
 
-该事件 `OnMessageSend` 通过基于事件的激活功能提供。 若要了解如何将加载项配置为使用此功能、可用事件、如何预览此事件、调试、功能限制等，请参阅配置 Outlook 加载项进行基于事件的[激活](autolaunch.md)。
+该 `OnMessageSend` 事件可通过基于事件的激活功能获得。 若要了解如何将外接程序配置为使用此功能，请使用其他可用事件，为此事件配置预览版，调试外接程序等，请参阅[配置Outlook外接程序以进行基于事件的激活](autolaunch.md)。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)使用适用于加载项的 Yeoman 生成器创建加载项Office快速入门。
+完成[Outlook快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)门，使用 Yeoman 生成器为Office加载项创建加载项项目。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
 1. 在代码编辑器中，打开快速启动项目。
 
-1. 打开 **manifest.xml** 根目录下的文件。
+1. 打开位于项目根 **目录的manifest.xml** 文件。
 
-1. Select the entire **VersionOverrides** node (including open and close tags) and replace it with the following XML， then save your changes.
+1. 选择整个 **VersionOverrides** 节点 (包括打开和关闭标记) 并将其替换为以下 XML，然后保存所做的更改。
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -137,20 +137,20 @@ ms.locfileid: "64484502"
 
 > [!TIP]
 >
-> - 有关 **事件提供的 SendMode** 选项 `OnMessageSend` ，请参阅 [可用 SendMode 选项](/javascript/api/manifest/launchevent#available-sendmode-options-preview)。
-> - 若要了解有关加载项清单Outlook，请参阅Outlook[加载项清单](manifests.md)。
+> - 有关可用的 `OnMessageSend` **SendMode** 选项和`OnAppointmentSend`事件，请参阅 [“可用 SendMode”选项](/javascript/api/manifest/launchevent#available-sendmode-options-preview)。
+> - 若要详细了解Outlook加载项的清单，请[参阅Outlook加载项清单](manifests.md)。
 
 ## <a name="implement-event-handling"></a>实现事件处理
 
-您必须对所选事件实现处理。
+必须为所选事件实现处理。
 
-在此方案中，您将添加用于发送邮件的处理。 外接程序将检查邮件中的某些关键字。 如果找到其中任何关键字，它将检查是否有附件。 如果没有附件，外接程序将建议用户添加可能缺少的附件。
+在此方案中，你将添加发送消息的处理。 加载项将检查消息中的某些关键字。 如果找到这些关键字中的任何一个，它将检查是否有任何附件。 如果没有附件，外接程序将建议用户添加可能缺失的附件。
 
-1. 从同一快速启动项目中，在 **./src** 目录下新建一个名为 **launchevent** 的文件夹。
+1. 在同一快速入门项目中，在 **./src** 目录下创建名为 **launchevent** 的新文件夹。
 
-1. 在 **"./src/launchevent** "文件夹中，新建一个名为"launchevent.js **"**。
+1. 在 **./src/launchevent** 文件夹中，创建名为 **launchevent.js** 的新文件。
 
-1. 在代码编辑器 **中打开文件 ./src/launchevent/launchevent.js** 并添加以下 JavaScript 代码。
+1. 在代码编辑器中打开文件 **./src/launchevent/launchevent.js** ，并添加以下 JavaScript 代码。
 
     ```js
     /*
@@ -229,9 +229,9 @@ ms.locfileid: "64484502"
 
 ## <a name="update-webpack-config-settings"></a>更新 webpack 配置设置
 
-1. 打开 **webpack.config.js** 根目录中找到的目录文件，并完成以下步骤。
+1. 打开在项目的根目录中找到的 **webpack.config.js** 文件并完成以下步骤。
 
-1. 在 对象 `plugins` 内找到 数组 `config` ，将此新对象添加到数组的开头。
+1. `plugins`在对象中`config`找到数组，并将此新对象添加到数组的开头。
 
     ```js
     new CopyWebpackPlugin({
@@ -248,28 +248,82 @@ ms.locfileid: "64484502"
 
 ## <a name="try-it-out"></a>试用
 
-1. 在项目的根目录中运行以下命令。 运行 时 `npm start`，如果本地 Web 服务器尚未运行 (将启动) 外接程序将旁加载。
+1. 在项目的根目录中运行以下命令。 运行 `npm start`时，如果本地 Web 服务器尚未运行) 并且加载项将旁加载，则会启动 (。
 
     ```command&nbsp;line
     npm run build
     ```
+
     ```command&nbsp;line
     npm start
     ```
 
     > [!NOTE]
-    > 如果加载项未自动旁加载，请按照旁加载 [Outlook](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) 加载项进行测试中的说明，在加载项中手动旁加载Outlook。
+    > 如果加载项未自动旁加载，请按照[旁加载Outlook加载项中的说明进行测试](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually)，手动将外接程序旁加载到Outlook中。
 
-1. 在Outlook中Windows新建邮件并设置主题。 在正文中，添加类似"你好，查看我的 dog 的此图片！"这样的文本。
-1. 发送消息. 应弹出一个对话框，建议你添加附件。
+1. 在Windows的Outlook中，创建一条新消息并设置主题。 在身体里，添加文本，如“嘿，看看这张我的狗的照片！
+1. 发送消息. 应该会弹出一个对话框，其中包含添加附件的建议。
 
-    !["使用对话框打开Outlook Windows窗口的屏幕截图。](../images/outlook-win-smart-alert.png)
+    ![建议用户包含附件的对话框。](../images/outlook-win-smart-alert.png)
 
-1. 添加附件，然后再次发送邮件。 此时应该没有警报。
+1. 添加附件，然后再次发送消息。 这次不应有警报。
+
+## <a name="smart-alerts-feature-behavior-and-scenarios"></a>智能警报功能行为和方案
+
+有关 **SendMode** 选项的说明以及何时使用它们的建议，请参阅 [“可用 SendMode”选项](/javascript/api/manifest/launchevent)。 下面介绍了某些方案的功能行为。
+
+### <a name="add-in-is-unavailable"></a>加载项不可用
+
+例如，如果在发送消息或约会时加载项不可用 (，则会发生错误，阻止加载项加载) ，则会向用户发出警报。 用户可用的选项因应用于加载项的 **SendMode** 选项而异。
+
+如果使用此 `PromptUser` 或 `SoftBlock` 选项，则用户可以选择 **“发送还是** 发送”以在不检查外接程序的情况下发送项目，或者在加载项再次可用时 **，请稍后尝试** 允许外接程序检查该项目。
+
+![该对话框提醒用户加载项不可用，并为用户提供立即或更高版本发送该项的选项。](../images/outlook-soft-block-promptUser-unavailable.png)
+
+如果使用此 `Block` 选项，则在加载项可用之前，用户无法发送该项。
+
+![提醒用户加载项不可用的对话框。 仅当加载项再次可用时，用户才能发送该项。](../images/outlook-hard-block-unavailable.png)
+
+### <a name="long-running-add-in-operations"></a>长时间运行的加载项操作
+
+如果加载项运行时间超过 5 秒，但不到 5 分钟，则会提醒用户加载项处理消息或约会所需的时间比预期要长。
+
+如果使用此 `PromptUser` 选项，则用户可以选择 **“无论如何发送** ”以发送项目，而无需加载项完成其检查。 或者，用户可以选择 **“不发送** ”来阻止加载项处理。
+
+![该对话框提醒用户加载项的处理时间比预期的要长。 用户可以选择在加载项未完成检查的情况下发送项目，或阻止加载项处理该项。](../images/outlook-promptUser-long-running.png)
+
+但是，如果使用此 `SoftBlock` 或 `Block` 选项，则在加载项完成处理之前，用户将无法发送该项目。
+
+![该对话框提醒用户加载项的处理时间比预期的要长。 用户必须等到加载项完成处理后才能发送。](../images/outlook-soft-hard-block-long-running.png)
+
+`OnMessageSend` 加 `OnAppointmentSend` 载项应为短运行和轻型。 若要避免长时间运行的操作对话框，请使用其他事件在激活或`OnAppointmentSend`事件之前`OnMessageSend`处理条件检查。 例如，如果要求用户对每条消息或约会的附件进行加密，请考虑使用 `OnMessageAttachmentsChanged` 或 `OnAppointmentAttachmentsChanged` 事件执行检查。
+
+### <a name="add-in-timed-out"></a>加载项超时
+
+如果外接程序运行 5 分钟或更长时间，则会超时。如果使用此 `PromptUser` 选项，则用户可以选择 **“无论如何发送** ”以发送项目，而无需加载项完成其检查。 或者，用户可以选择 **“不发送**”。
+
+![提醒用户加载项进程超时的对话框。用户可以选择在加载项未完成检查的情况下发送项目，或者不发送该项。](../images/outlook-promptUser-timeout.png)
+
+如果使用该 `SoftBlock` 或 `Block` 选项，则在加载项完成检查之前，用户无法发送该项目。 用户必须再次尝试发送项以重新激活加载项。
+
+![提醒用户加载项进程超时的对话框。用户必须尝试再次发送项目以激活加载项，然后才能发送消息或约会。](../images/outlook-soft-hard-block-timeout.png)
+
+## <a name="limitations"></a>限制
+
+`OnMessageSend`由于基于事件的激活功能支持这些事件和`OnAppointmentSend`事件，因此，由于这些事件而激活的外接程序也适用相同的功能限制。 有关这些限制的说明，请参阅 [基于事件的激活行为和限制](autolaunch.md#event-based-activation-behavior-and-limitations)。
+
+除了这些约束之外，清单中每个实例和`OnAppointmentSend`事件只能声明一个`OnMessageSend`实例。 如果需要多个或`OnAppointmentSend`多个`OnMessageSend`事件，则必须在单独的清单或加载项中声明每个事件。
+
+虽然可以使用 event.completed 方法 [的 errorMessage 属性](/javascript/api/office/office.addincommands.eventcompletedoptions) 更改“智能警报”对话框消息以适应外接程序方案，但无法自定义以下内容。
+
+- 对话框的标题栏。 加载项的名称始终显示在该处。
+- 消息的格式。 例如，不能更改文本的字号和颜色，也不能插入项目符号列表。
+- 对话框选项。 例如，“ **无论如何发送** ”和 **“不发送** ”选项是固定的，并且取决于所选 [的 SendMode 选项](/javascript/api/manifest/launchevent) 。
+- 基于事件的激活处理和进度信息对话框。 例如，无法更改超时和长时间运行的操作对话框中显示的文本和选项。
 
 ## <a name="see-also"></a>另请参阅
 
 - [Outlook 加载项清单](manifests.md)
-- [配置Outlook加载项进行基于事件的激活](autolaunch.md)
-- [如何调试基于事件的外接程序](debug-autolaunch.md)
-- [基于事件的加载项的 AppSource Outlook选项](autolaunch-store-options.md)
+- [为基于事件的激活配置Outlook加载项](autolaunch.md)
+- [如何调试基于事件的加载项](debug-autolaunch.md)
+- [基于事件的Outlook加载项的 AppSource 列表选项](autolaunch-store-options.md)
