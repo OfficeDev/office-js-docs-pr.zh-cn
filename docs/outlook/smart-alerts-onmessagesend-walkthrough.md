@@ -2,14 +2,14 @@
 title: '在Outlook外接程序中使用智能警报和 OnMessageSend 和 OnAppointmentSend 事件 (预览) '
 description: 了解如何使用基于事件的激活处理Outlook加载项中的发送事件。
 ms.topic: article
-ms.date: 05/26/2022
+ms.date: 06/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0174d766423a9b70c67b0c2cf559f5b1ea24c9fe
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: 1adced1e138ad41cef38947ddb3ffe8c273be871
+ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833919"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "65872006"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>在Outlook外接程序中使用智能警报和 OnMessageSend 和 OnAppointmentSend 事件 (预览) 
 
@@ -327,3 +327,4 @@ ms.locfileid: "65833919"
 - [为基于事件的激活配置Outlook加载项](autolaunch.md)
 - [如何调试基于事件的加载项](debug-autolaunch.md)
 - [基于事件的Outlook加载项的 AppSource 列表选项](autolaunch-store-options.md)
+- [Office加载项代码示例：使用Outlook智能警报](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
