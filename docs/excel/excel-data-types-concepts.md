@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API 数据类型核心概念
 description: 了解在 Office 加载项中使用 Excel 数据类型的核心概念。
-ms.date: 05/18/2022
+ms.date: 05/26/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 61485451bf5e0d7dff96a5f4f215def49425e571
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 2259d28bc87e6452e526786c0b32135e4bb27d45
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628082"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833904"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel 数据类型核心概念（预览版）
 
@@ -91,6 +91,10 @@ const myEntity: Excel.EntityCellValue = {
 ```
 
 实体值还提供可创建实体的卡片的 `layouts` 属性。 该卡片在 Excel UI 中显示为模式窗口，并且可以显示实体值中包含的其他信息，而不仅显示单元格中可见的信息。 要了解详细信息，请参阅 [使用具有实体值数据类型的卡片](excel-data-types-entity-card.md)。
+
+### <a name="linked-entities"></a>已链接实体
+
+已链接实体值或 [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) 对象是实体值的一种类型。 这些对象集成外部服务提供的数据，并可以将此数据显示为[实体卡片](excel-data-types-entity-card.md)，例如常规实体值。 通过 Excel UI 提供的[股票和地理位置数据类型](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877)是已链接实体值。
 
 ## <a name="web-image-values"></a>Web 图像值
 
