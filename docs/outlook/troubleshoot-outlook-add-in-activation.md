@@ -1,24 +1,24 @@
 ---
 title: Outlook 上下文加载项激活故障排查
-description: 外接程序未按预期激活的可能原因。
-ms.date: 09/02/2020
+description: 加载项未按预期激活的可能原因。
+ms.date: 06/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d5f52f9697b33711a69a9d07b831229a26c7d450
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 40175139f83a026226bf500c7f949ff37e3f21b2
+ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484557"
+ms.lasthandoff: 06/04/2022
+ms.locfileid: "65891933"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook 加载项激活故障排查
 
-Outlook上下文外接程序激活基于外接程序清单中的激活规则。 当当前所选项目的条件满足外接程序的激活规则时，应用程序将在适用于撰写外接程序的 Outlook UI (外接程序选择窗格中激活并显示外接程序按钮，阅读外接程序的外接程序栏) 。 但是，如果你的外接程序未按预期激活，则应调查以下方面，确定可能的原因。
+Outlook 上下文外接程序激活基于加载项清单中的激活规则。 当当前所选项的条件满足外接程序的激活规则时，应用程序会在 Outlook UI (外接程序选择窗格中激活并显示外接程序按钮，用于撰写加载项，外接程序栏用于读取外接程序) 。 但是，如果你的外接程序未按预期激活，则应调查以下方面，确定可能的原因。
 
 ## <a name="is-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>用户邮箱是否位于不低于 Exchange 2013 版本的 Exchange Server 上？
 
 首先，确保你正在测试的用户电子邮件帐户位于至少为 Exchange 2013 的某个版本的 Exchange Server 上。如果你正在使用在Exchange 2013 之后发布的特定功能，那么请确保用户的帐户使用合适的 Exchange 版本。
 
-您可以使用以下方法之一Exchange 2013 版本。
+可以使用以下方法之一验证 Exchange 2013 的版本。
 
 - 咨询你的 Exchange Server 管理员。
 
@@ -26,7 +26,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 - 也可以使用 [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) 属性来验证版本。在 Outlook 网页版和移动设备版上，此属性会返回 Exchange Server 版本。
 
-- If you can test the add-in on Outlook， you can use the following simple debugging technique that uses the Outlook object model and Visual Basic Editor.
+- 如果可以在 Outlook 上测试外接程序，可以使用以下使用 Outlook 对象模型和 Visual Basic 编辑器的简单调试技术。
 
     1. 首先，确认已对 Outlook 启用了宏。依次选择“**文件**”、“**选项**”、“**信任中心**”、“**信任中心设置**”、“**宏设置**”。确保在“信任中心”中选择了“**为所有宏提供通知**”。还应确保在 Outlook 启动过程中选择了“**启用宏**”。
 
@@ -58,15 +58,15 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 > [!NOTE]
 > 仅 Outlook 富客户端可监视资源使用状况，但如果在 Outlook 富客户端中禁用加载项，也会在 Outlook 网页版和移动设备版中禁用此加载项。
 
-使用以下方法之一验证外接程序是否已禁用。
+使用以下方法之一验证是否禁用了加载项。
 
-- 在 Outlook 网页版中，直接登录电子邮件帐户，选择“设置”图标，然后选择“**管理加载项**”转到 Exchange 管理中心，可在此处验证管理加载项是否已启用。
+- 在 Outlook 网页版中，直接登录到电子邮件帐户，然后从功能区中选择 **“获取加载项** ”。
 
-- 在 Windows 版 Outlook 中，转到 Backstage 视图并选择“**管理加载项**”。登录 Exchange 管理中心验证加载项是否已启用。
+- 在 Outlook on Windows 中，从功能区中选择 **“更多应用** ”，然后选择 **“获取加载项**”。
 
-- 在 Mac 版 Outlook 中，选择加载项栏中的“**管理加载项**”。登录 Exchange 管理中心验证加载项是否已启用。
+- 在 Outlook on Mac 中，从功能区中选择省略号按钮 (`...`) ，然后选择 **“获取加载项**”。
 
-## <a name="does-the-tested-item-support-outlook-add-ins-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>已测试项是否支持 Outlook 加载项？所选项目是否由至少为 Exchange 2013 的某个版本的 Exchange Server 提供？
+## <a name="does-the-tested-item-support-outlook-add-ins-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>已测试项是否支持 Outlook 外接程序？所选项目是否由至少为 Exchange 2013 的某个版本的 Exchange Server 提供？
 
 如果你的 Outlook 加载项为阅读加载项，并且应该在用户查看消息（包括电子邮件、会议请求、响应和取消）或约会时激活，尽管这些项目通常支持加载项，但还是存在例外情况。 检查所选的项目是否是 [Outlook 加载项未激活列表](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)中的一项。
 
@@ -74,14 +74,14 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 即使某邮件项不是以上类型之一，如果该项不是使用至少为 Exchange 2013 的某个版本的 Exchange Server 传递，则不会在该项上确定已知实体和属性（如发件人的 SMTP 地址）。依赖这些实体或属性的任何激活规则将不会得到满足，并且加载项将不会激活。
 
-如果您的加载项为撰写加载项并且应该在用户撰写邮件或会议请求时激活，请确保该项目未受 IRM 保护。 但是，有一些例外情况。
+如果您的加载项为撰写加载项并且应该在用户撰写邮件或会议请求时激活，请确保该项目未受 IRM 保护。 但是，有几个例外。
 
 1. 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
-1. 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。  有关预览版中的此支持的详细信息，请参阅受信息权限管理中心 [IRM (保护 ](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm)) 。
+1. 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。  有关预览版中此支持的详细信息，请参阅信息 [权限管理 (IRM) 保护的项的加载项激活 ](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm)。
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>加载项清单是否安装正确，Outlook 是否有已缓存副本？
 
-此方案仅适用于Outlook Windows。 正常情况下，为邮箱安装 Outlook 外接程序时，Exchange Server 会将外接程序清单从你指示的位置复制到该 Exchange Server 上的邮箱。 每次Outlook时，它会将为此邮箱安装的所有清单读取到以下位置的临时缓存中。
+此方案仅适用于 Windows 上的 Outlook。 正常情况下，为邮箱安装 Outlook 外接程序时，Exchange Server 会将外接程序清单从你指示的位置复制到该 Exchange Server 上的邮箱。 每次 Outlook 启动时，它都会将为该邮箱安装的所有清单读取到以下位置的临时缓存中。
 
 ```text
 %LocalAppData%\Microsoft\Office\16.0\WEF
@@ -90,7 +90,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 例如，对于用户 John，缓存可能位于 C：\Users\john\AppData\Local\Microsoft\Office\16.0\WEF。
 
 > [!IMPORTANT]
-> For Outlook 2013 on Windows， use 15.0 instead of 16.0 so the location would be：
+> 对于 Windows 上的 Outlook 2013，请使用 15.0 而不是 16.0，以便位置为：
 >
 > ```text
 > %LocalAppData%\Microsoft\Office\15.0\WEF
@@ -102,7 +102,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 **图 1.验证 Outlook 是否已正确缓存清单的步骤的流程图**
 
-![Flow检查清单的图表。](../images/troubleshoot-manifest-flow.png)
+![用于检查清单的流程图。](../images/troubleshoot-manifest-flow.png)
 
 以下过程描述详细信息。
 
@@ -110,20 +110,20 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 1. 重新启动 Outlook 并测试 Outlook 现在是否已激活加载项。
 
-1. 如果 Outlook 无法激活外接程序，则检查 Outlook 是否具有外接程序清单的正确缓存副本。 查看以下路径。
+1. 如果 Outlook 无法激活外接程序，则检查 Outlook 是否具有外接程序清单的正确缓存副本。 在以下路径下查看。
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF
     ```
 
-    您可以在以下子文件夹找到清单。
+    可以在以下子文件夹中找到清单。
 
     ```text
     \<insert your guid>\<insert base 64 hash>\Manifests\<ManifestID>_<ManifestVersion>
     ```
 
     > [!NOTE]
-    > 下面是为用户 John 的邮箱安装的清单的路径示例。
+    > 下面是为用户 John 安装的清单的路径示例。
     >
     > ```text
     > C:\Users\john\appdata\Local\Microsoft\Office\16.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
@@ -139,7 +139,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
     1. 查找其事件 ID 等于 63（表示 Outlook 从 Exchange Server 下载清单）的近期事件。
 
-    1. 如果Outlook成功读取清单，则记录的事件应具有以下说明。
+    1. 如果 Outlook 成功读取清单，则记录的事件应具有以下说明。
 
         ```text
         The Exchange web service request GetAppManifests succeeded.
@@ -147,7 +147,7 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
         然后，跳过本节的其余部分，并考虑本节后面的其他可能原因。
 
-1. 如果未看到成功事件，请关闭Outlook并删除以下路径中的所有清单。
+1. 如果看不到成功的事件，请关闭 Outlook，并删除以下路径中的所有清单。
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
@@ -183,13 +183,13 @@ Outlook上下文外接程序激活基于外接程序清单中的激活规则。 
 
 Outlook 富客户端使用的正则表达式引擎与 Outlook 网页版和移动设备版使用的正则表达式引擎不同。Outlook 富客户端使用作为 Visual Studio 标准模板库的一部分提供的 C++ 正则表达式引擎。此引擎符合 ECMAScript 5 标准。Outlook 网页版和移动设备版使用属于 JavaScript 一部分的正则表达式评估，由浏览器提供，且支持 ECMAScript 5 超集。
 
-在大多数情况下，这些Outlook客户端在激活规则中为同一正则表达式找到相同的匹配项，但存在例外情况。 例如，如果正则表达式包含基于预定义字符类的自定义字符类，Outlook富客户端可能会返回不同于Outlook 网页版和移动设备的结果。 举例来说，其中包含速记字符类 `[\d\w]` 的字符类将返回不同的结果。 在这种情况下，为避免在不同应用程序上产生不同结果，请改为 `(\d|\w)` 使用 。
+虽然在大多数情况下，这些 Outlook 客户端在激活规则中为同一正则表达式查找相同的匹配项，但存在异常。 例如，如果正则表达式包含基于预定义字符类的自定义字符类，则 Outlook 富客户端可能会返回不同于 Outlook 网页版和移动设备的结果。 举例来说，其中包含速记字符类 `[\d\w]` 的字符类将返回不同的结果。 在这种情况下，若要避免不同应用程序上出现不同的结果，请改用 `(\d|\w)` 。
 
 全面测试正则表达式。如果返回不同的结果，请重写正则表达式以兼容两个引擎。要验证 Outlook 富客户端上的评估结果，请编写一个小型 C++ 程序，该程序可将正则表达式应用于你尝试匹配的文本示例。在 Visual Studio 上运行时，C++ 测试程序将使用标准模板库，在运行相同正则表达式时模拟 Outlook 富客户端的行为。要验证 Outlook 网页版或移动设备版上的评估结果，请使用你喜爱的 JavaScript 正则表达式测试程序。
 
 ## <a name="if-you-use-an-itemis-itemhasattachment-or-itemhasregularexpressionmatch-rule-have-you-verified-the-related-item-property"></a>如果使用 ItemIs、ItemHasAttachment 或 ItemHasRegularExpressionMatch 规则，是否已验证相关项属性？
 
-如果使用 **ItemHasRegularExpressionMatch** 激活规则，请验证 **PropertyName** 属性的值是否为选定项的预期值。 以下是调试相应属性的一些提示。
+如果使用 **ItemHasRegularExpressionMatch** 激活规则，请验证 **PropertyName** 属性的值是否为选定项的预期值。 下面是调试相应属性的一些提示。
 
 - 如果选定项是邮件，并且你在 **PropertyName** 属性中指定 **BodyAsHTML**，请打开该邮件，然后选择“**查看源代码**”验证该项的 HTML 形式的邮件正文。
 
@@ -235,15 +235,15 @@ Outlook 富客户端使用的正则表达式引擎与 Outlook 网页版和移动
 
 验证属性值后，即可使用正则表达式评估工具来测试正则表达式是否在该值中找到匹配项。
 
-## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>是否Outlook如你预期一样将所有正则表达式应用到项目正文部分？
+## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>Outlook 是否按预期将所有正则表达式应用到项目正文部分？
 
-本节适用于使用正则表达式的所有激活规则，尤其是应用于项目正文的那些规则，这些规则可能较大，需要较长时间才能对匹配项进行评估。 您应该知道，即使激活规则所依赖的项目属性具有您期望的值，Outlook也可能无法计算项目属性的整个值上的所有正则表达式。 为了提供合理的性能并控制读取外接程序的过多资源使用率，Outlook遵循以下有关运行时处理激活规则中的正则表达式的限制。
+本节适用于使用正则表达式的所有激活规则，尤其是应用于项目正文的那些规则，这些规则可能较大，需要较长时间才能对匹配项进行评估。 应注意，即使激活规则所依赖的项属性具有预期值，Outlook 也可能无法评估项目属性的整个值的所有正则表达式。 为了提供合理的性能并控制读取加载项的过度资源使用，Outlook 会在运行时遵守以下在激活规则中处理正则表达式的限制。
 
-- 评估的项目正文的大小 -- 项目正文中用于计算正则表达式Outlook部分存在限制。 这些限制取决于Outlook正文的客户端、外形和格式。 请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 中表 2 中的详细信息。
+- 评估的项正文的大小 - Outlook 评估正则表达式的项正文部分有限制。 这些限制取决于 Outlook 客户端、外形因子和项目正文的格式。 请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 中表 2 中的详细信息。
 
 - 正则表达式匹配的数量 - Outlook 富客户端、Outlook 网页版和移动设备版分别返回最多 50 个正则表达式匹配项。这些匹配项是唯一的，重复的匹配不计入此限制。请勿假定返回的匹配项有任何顺序，也不要假定 Outlook 富客户端中的顺序与 Outlook 网页版和移动设备版中的顺序相同。如果希望激活规则中存在与正则表达式匹配的许多匹配项，并且丢失匹配项，则可能会超出此限制。
 
-- 正则表达式匹配项的长度 - 对正则表达式匹配项的长度有限制，Outlook将返回。 Outlook不包括超过此限制的任何匹配项，并且不显示任何警告消息。 你可以使用其他正则表达式评估工具或独立的 C++ 测试程序运行你的正则表达式，以验证你是否具有超出此类限制的匹配项。 表 3 总结了这些限制。 有关详细信息，请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 中的表 3。
+- 正则表达式匹配的长度 -- Outlook 应用程序将返回的正则表达式匹配的长度有限制。 Outlook 不包括任何超出限制的匹配项，也不会显示任何警告消息。 你可以使用其他正则表达式评估工具或独立的 C++ 测试程序运行你的正则表达式，以验证你是否具有超出此类限制的匹配项。 表 3 总结了这些限制。 有关详细信息，请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) 中的表 3。
 
     **表 3.正则表达式匹配的长度限制**
 
