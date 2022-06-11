@@ -2,14 +2,14 @@
 title: 为基于事件的激活配置Outlook加载项
 description: 了解如何为基于事件的激活配置Outlook加载项。
 ms.topic: article
-ms.date: 06/02/2022
+ms.date: 06/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ce15f2b0f64459280714fc9e7734c9b7e52a6a1
-ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
+ms.openlocfilehash: 2565c1938071918d15731606c16833be3b9c8982
+ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2022
-ms.locfileid: "65872020"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "66019617"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>为基于事件的激活配置Outlook加载项
 
@@ -29,8 +29,8 @@ ms.locfileid: "65872020"
 
 |事件|说明|最低要求集和支持的客户端|
 |---|---|---|
-|`OnNewMessageCompose`|在撰写新消息时 (包括答复、全部答复和转发) 但不包括在编辑时（例如草稿）。|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI 预览版|
-|`OnNewAppointmentOrganizer`|在创建新约会时，而不是在编辑现有约会时。|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI 预览版|
+|`OnNewMessageCompose`|在撰写新消息时 (包括答复、全部答复和转发) 但不包括在编辑时（例如草稿）。|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI |
+|`OnNewAppointmentOrganizer`|在创建新约会时，而不是在编辑现有约会时。|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI |
 |`OnMessageAttachmentsChanged`|在撰写邮件时添加或删除附件。<br><br>特定于事件的数据对象： [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Web 浏览器|
 |`OnAppointmentAttachmentsChanged`|在撰写约会时添加或删除附件。<br><br>特定于事件的数据对象： [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Web 浏览器|
 |`OnMessageRecipientsChanged`|在撰写邮件时添加或删除收件人。<br><br>特定于事件的数据对象： [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Web 浏览器|
@@ -42,7 +42,7 @@ ms.locfileid: "65872020"
 |`OnAppointmentSend`|发送约会项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows <sup>1</sup>|
 
 > [!NOTE]
-> <sup>Windows</sup>上的 Outlook 1 个基于事件的加载项需要Windows 10版本 1809 (内部版本 17763.2989) 或更高版本才能运行。
+> <sup>Windows</sup>上Outlook的 1 个基于事件的加载项至少需要Windows 10版本 1903 (内部版本 18362) 或 Windows Server 2019 版本 1903 才能运行。
 
 ### <a name="how-to-preview"></a>如何预览
 
@@ -53,7 +53,7 @@ ms.locfileid: "65872020"
 - 对于Outlook 网页版：
   - [在Microsoft 365租户上配置有针对性的发布。](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - 引用CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)上的 **beta** 库。 用于 TypeScript 编译和 IntelliSense 的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)位于 CDN 和 [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) 中。 可以使用 `npm install --save-dev @types/office-js-preview` 来安装这些类型。
-- 对于新 Mac UI 预览版的Outlook：
+- 对于新 Mac UI 上的Outlook：
   - 所需的最小版本为 16.54 (21101001) 。 加入 [Office Insider 计划](https://insider.office.com/join/Mac)，并选择 **Beta 通道** 以访问Office beta 生成。
 - 对于Windows上的Outlook：
   - 所需的最低版本为 16.0.14511.10000。 加入 [Office Insider 计划](https://insider.office.com/join/windows)，并选择 **Beta 通道** 以访问Office beta 生成。
@@ -85,7 +85,7 @@ ms.locfileid: "65872020"
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -189,7 +189,7 @@ ms.locfileid: "65872020"
 </VersionOverrides>
 ```
 
-Windows上的Outlook使用 JavaScript 文件，而Outlook 网页版和在新的 Mac UI 预览版上使用可引用同一 JavaScript 文件的 HTML 文件。 必须提供对清单节点中的`Resources`这两个文件的引用，因为Outlook平台最终确定是使用基于Outlook客户端的 HTML 还是 JavaScript。 因此，若要配置事件处理，请提供 HTML 在元素中 `Runtime` 的位置，然后在其 `Override` 子元素中提供 HTML 内联或引用的 JavaScript 文件的位置。
+Windows上的Outlook使用 JavaScript 文件，而Outlook 网页版和在新的 Mac UI 上使用可引用同一 JavaScript 文件的 HTML 文件。 必须提供对清单节点中的`Resources`这两个文件的引用，因为Outlook平台最终确定是使用基于Outlook客户端的 HTML 还是 JavaScript。 因此，若要配置事件处理，请提供 HTML 在元素中 `Runtime` 的位置，然后在其 `Override` 子元素中提供 HTML 内联或引用的 JavaScript 文件的位置。
 
 > [!TIP]
 > 若要详细了解Outlook加载项的清单，请[参阅Outlook加载项清单](manifests.md)。
@@ -292,15 +292,15 @@ Windows上的Outlook使用 JavaScript 文件，而Outlook 网页版和在新的 
 
 1. 在 Outlook 网页版中，创建新邮件。
 
-    ![Outlook 网页版中具有撰写主题集的消息窗口的屏幕截图。](../images/outlook-web-autolaunch-1.png)
+    ![Outlook 网页版中包含撰写主题集的消息窗口。](../images/outlook-web-autolaunch-1.png)
 
-1. 在新的 Mac UI 预览Outlook中，创建一条新消息。
+1. 在新的 Mac UI 上Outlook，创建一条新消息。
 
-    ![新 Mac UI 预览版上Outlook消息窗口的屏幕截图，主题设置为撰写。](../images/outlook-mac-autolaunch.png)
+    ![新 Mac UI 上Outlook的消息窗口，主题设置为撰写。](../images/outlook-mac-autolaunch.png)
 
 1. 在Windows上的Outlook中，创建一条新消息。
 
-    ![Windows上Outlook邮件窗口的屏幕截图，主题设置为撰写。](../images/outlook-win-autolaunch.png)
+    ![Windows上Outlook的消息窗口，主题设置为撰写。](../images/outlook-win-autolaunch.png)
 
 ## <a name="debug"></a>调试
 
@@ -374,4 +374,4 @@ JavaScript 文件中不支持导入，在该文件中，你可在Windows客户�
   - [使用基于事件Outlook激活来加密附件、处理会议请求与会者和对约会日期/时间更改做出反应](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
   - [使用 Outlook 基于事件的激活设置签名](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
   - [使用 Outlook 基于事件的激活标记外部收件人](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
-  - [使用Outlook智能警报](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
+  - [使用 Outlook 智能警报](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)

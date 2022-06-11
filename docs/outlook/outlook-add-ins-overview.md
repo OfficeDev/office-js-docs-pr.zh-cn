@@ -1,16 +1,16 @@
 ---
 title: Outlook 加载项概述
 description: Outlook 加载项由第三方使用基于 Web 的平台集成到 Outlook 中。
-ms.date: 04/28/2022
+ms.date: 06/08/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: ead0787a84b51c890e7951bdaa52bd3e51407916
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: fcdc6dc87deff67138f18a2bc1b7bd58ea0fd85c
+ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187334"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "66019624"
 ---
 # <a name="outlook-add-ins-overview"></a>Outlook 加载项概述
 
@@ -67,7 +67,7 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
 
 - 使用自定义窗体。
 
-- 通过[简单 MAPI](https://support.microsoft.com/topic/a3d3f856-eaf6-b6d8-3617-186c0a1123c5) 创建。 如果 Outlook 关闭时，Office 用户从 Windows 上的 Office 应用程序创建或发送电子邮件，则将使用简单 MAPI。 例如，用户在 Word 中工作时可以创建 Outlook 电子邮件，这会触发 Outlook 撰写窗口，而无需启动完整的 Outlook 应用程序。 但是，如果用户从 Word 创建电子邮件时 Outlook 已在运行，则这不属于简单 MAPI 方案，因此只要满足其他激活要求，Outlook 加载项就会在撰写窗体中工作。
+- 通过简单 MAPI 创建。 如果 Outlook 关闭时，Office 用户从 Windows 上的 Office 应用程序创建或发送电子邮件，则将使用简单 MAPI。 例如，用户在 Word 中工作时可以创建 Outlook 电子邮件，这会触发 Outlook 撰写窗口，而无需启动完整的 Outlook 应用程序。 但是，如果用户从 Word 创建电子邮件时 Outlook 已在运行，则这不属于简单 MAPI 方案，因此只要满足其他激活要求，Outlook 加载项就会在撰写窗体中工作。
 
 通常，Outlook 可以为“已发送邮件”文件夹中的项目在阅读窗体中激活加载项，基于已知实体字符串匹配激活的加载项除外。有关其背后的具体原因，请参阅[将 Outlook 项目中的字符串作为已知实体进行匹配](match-strings-in-an-item-as-well-known-entities.md)中的“支持已知实体”。
 
