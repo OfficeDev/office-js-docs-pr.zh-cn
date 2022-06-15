@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Outlook 加载项
 description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗格加载项。
-ms.date: 02/28/2022
+ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 356373320919507b81c69cca323965c4d087c7d4
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 56f43e157db9875165689af59ade50b0752fe8dc
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63511393"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091095"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -17,7 +17,7 @@ ms.locfileid: "63511393"
 
 ## <a name="create-the-add-in"></a>创建加载项
 
-可以使用[适用于 Office 加载项的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)或 Visual Studio 创建 Office 加载项。 Yeoman 生成器将创建一个可通过 Visual Studio Code 或任何其他编辑器管理的 Node.js 项目，而 Visual Studio 将创建一个 Visual Studio 解决方案。 选择适合于想要使用的方法的选项卡，然后按照说明创建加载项并在本地测试。
+可以使用[适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)或 Visual Studio 创建 Office 加载项。 Yeoman 生成器将创建一个可通过 Visual Studio Code 或任何其他编辑器管理的 Node.js 项目，而 Visual Studio 将创建一个 Visual Studio 解决方案。 选择适合于想要使用的方法的选项卡，然后按照说明创建加载项并在本地测试。
 
 # <a name="yeoman-generator"></a>[Yeoman 生成器](#tab/yeomangenerator)
 
@@ -293,3 +293,7 @@ ms.locfileid: "63511393"
 祝贺！已成功创建首个 Outlook 任务窗格加载项！ 接下来，了解有关[使用 Visual Studio 开发 Office 加载项](../develop/develop-add-ins-visual-studio.md)的详细信息。
 
 ---
+
+## <a name="see-also"></a>另请参阅
+
+- [使用 Visual Studio Code 发布](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
