@@ -1,15 +1,15 @@
 ---
 title: 使用 Vue 生成 Excel 任务窗格加载项
 description: 了解如何使用 Office JS API 和 Vue 生成简单的 Excel 任务窗格加载项。
-ms.date: 08/04/2021
+ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 7a463ab61b90914c6fcaebff42599723a3a7e9ee
-ms.sourcegitcommit: 8f7d84c33c61c9f724f956740ced01a83f62ddc6
+ms.openlocfilehash: 57f87d12a5712fb329726a0f405e17b69eddb865
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2022
-ms.locfileid: "64605526"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090857"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>使用 Vue 生成 Excel 任务窗格加载项
 
@@ -240,3 +240,4 @@ vue create my-add-in
 - [Excel 加载项中的 Word JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
 - [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
+- [使用Visual Studio Code发布](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

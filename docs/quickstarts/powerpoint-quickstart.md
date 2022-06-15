@@ -1,15 +1,15 @@
 ---
 title: 生成首个 PowerPoint 任务加载项
 description: 了解如何使用 Office JS API 生成简单的 PowerPoint 任务窗格加载项。
-ms.date: 01/13/2022
+ms.date: 06/10/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: c85205ac6e7adf5a265e6b68a185d1cacf7298a1
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: df4e7ced6c244f4ccf286ce2a9718e22459a144e
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222204"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091165"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>生成首个 PowerPoint 任务加载项
 
@@ -98,7 +98,7 @@ ms.locfileid: "62222204"
 
 1. 在 Visual Studio 中，选择“**新建项目**”。
 
-2. 使用搜索框，输入 **外接程序**。 选择“**PowerPoint 外接程序**”，然后选择“**下一步**”。
+2. 使用搜索框，输入“**加载项**”。 选择“**PowerPoint 外接程序**”，然后选择“**下一步**”。
 
 3. 对项目命名，然后选择“**创建**”。
 
@@ -259,3 +259,4 @@ ms.locfileid: "62222204"
 
 - [Office 加载项平台概述](../overview/office-add-ins.md)
 - [开发 Office 加载项](../develop/develop-overview.md)
+- [使用Visual Studio Code发布](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

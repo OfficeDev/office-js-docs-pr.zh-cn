@@ -1,15 +1,15 @@
 ---
 title: 使用 Teams 清单（预览版）生成 Outlook 加载项
 description: 了解如何使用 JSON 清单生成简单的 Outlook 任务窗格加载项。
-ms.date: 06/02/2022
+ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 203440e8fca2277b2abd0ed10af3199cc8751b61
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: 41c39a6cf13854dd24a327e95f1857b92806b9ae
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891954"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091046"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>使用 Teams 清单（预览版）生成 Outlook 加载项
 
@@ -274,3 +274,4 @@ ms.locfileid: "65891954"
 ## <a name="see-also"></a>另请参阅
 
 - [适用于 Office 加载项的 Teams 清单（预览版）](../develop/json-manifest-overview.md)
+- [使用Visual Studio Code发布](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

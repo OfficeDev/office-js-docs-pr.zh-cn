@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: cf24d7db9a3c6b26c080020b3cc31a6b3916561a
-ms.sourcegitcommit: d06a37cd52f7389435bbbb3da3a90815ca2dce4a
+ms.openlocfilehash: a89207dc575e103ca7b29fa1ce69ca18aba2c0c0
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/25/2022
-ms.locfileid: "65672057"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090955"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -19,17 +19,17 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 
 XML 清单文件支持 Office 加载项执行以下操作：
 
-* 通过提供 ID、版本、说明、显示名称和默认区域设置进行自我描述。
+- 通过提供 ID、版本、说明、显示名称和默认区域设置进行自我描述。
 
-* 指定用于为加载项塑造品牌的图像，以及用于 Office 应用功能区中[加载项命令](create-addin-commands.md)的图标。
+- 指定用于为加载项塑造品牌的图像，以及用于 Office 应用功能区中[加载项命令](create-addin-commands.md)的图标。
 
-* 指定外接程序如何与 Office 集成，包括任何自定义 UI，如外接程序创建的功能区按钮。
+- 指定外接程序如何与 Office 集成，包括任何自定义 UI，如外接程序创建的功能区按钮。
 
-* 指定内容外接程序请求的默认尺寸和 Outlook 外接程序请求的高度。
+- 指定内容外接程序请求的默认尺寸和 Outlook 外接程序请求的高度。
 
-* 声明 Office 外接程序所需的权限，例如读取或写入文档。
+- 声明 Office 外接程序所需的权限，例如读取或写入文档。
 
-* 对于 Outlook 外接程序，定义一个或多个规则，以指定将在其中激活规则并与邮件、约会或会议请求项目交互的上下文。
+- 对于 Outlook 外接程序，定义一个或多个规则，以指定将在其中激活规则并与邮件、约会或会议请求项目交互的上下文。
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -44,28 +44,26 @@ XML 清单文件支持 Office 加载项执行以下操作：
 
 ### <a name="required-elements-by-office-add-in-type"></a>Office 加载项类型的必需元素
 
-| 元素                                                                                      | 内容 | 任务窗格 | Outlook |
-| :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
-| [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| [Id][]                                                                                       |    X    |     X     |    X    |
-| [版本][]                                                                                  |    X    |     X     |    X    |
-| [ProviderName][]                                                                             |    X    |     X     |    X    |
-| [DefaultLocale][]                                                                            |    X    |     X     |    X    |
-| [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [说明][]                                                                              |    X    |     X     |    X    |
-| [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [SupportUrl][]\*\*                                                                           |    X    |     X     |    X    |
-| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
-| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
-| [DesktopSettings][]                                                                          |         |           |    X    |
-| [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
-| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] |    X    |     X     |    X    |
-| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
-| [Requirements (MailApp)*][]                                                                  |         |           |    X    |
-| [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
-| [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
-| [Sets (Requirements)*][]                                                                     |    X    |     X     |         |
-| [Hosts*][]                                                                                   |    X    |     X     |         |
+| 元素                                                                                      | 内容    | 任务窗格    | Outlook      |
+| :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
+| [OfficeApp][]                                                                                | 必需   | 必需     | 必需     |
+| [Id][]                                                                                       | 必需   | 必需     | 必需     |
+| [版本][]                                                                                  | 必需   | 必需     | 必需     |
+| [ProviderName][]                                                                             | 必需   | 必需     | 必需     |
+| [DefaultLocale][]                                                                            | 必需   | 必需     | 必需     |
+| [DisplayName][]                                                                              | 必需   | 必需     | 必需     |
+| [Description][]                                                                              | 必需   | 必需     | 必需     |
+| [IconUrl][]                                                                                  | 必需   | 必需     | 必需     |
+| [SupportUrl][]\*\*                                                                           | 必需   | 必需     | 必需     |
+| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       | 必需   | 必需     | 不可用|
+| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]<br/>[SourceLocation (MailApp)][]| 必需 | 必需 | 必需   |
+| [DesktopSettings][]                                                                          | 不可用 | 不可用 | 必需 |
+| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] | 必需   | 必需     | 必需     |
+| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             | 不可用 | 不可用 | 必需 |
+| [要求 （MailApp）][]\*                                                                 | 不适用| 不可用 | 必需 |
+| [设置][]\*<br/>[集（要求）][]\*<br/>[集 （MailAppRequirements）][]\*                 | 必需   | 必需     | 必需     |
+| [表单][]\*<br/>[FormSettings][]\*                                                            | 不可用 | 不可用 | 必需 |
+| [主机][]\*                                                                                  | 必需   | 必需     | 可选     |
 
 _\*Office 加载项清单架构版本 1.1 中新增_
 
@@ -86,20 +84,20 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 [defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
 [sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation
 [sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation
-[desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
-[sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
+[sourcelocation (mailapp)]: /javascript/api/manifest/sourcelocation
+[desktopsettings]: /javascript/api/manifest/desktopsettings
 [permissions (contentapp)]: /javascript/api/manifest/permissions
 [permissions (taskpaneapp)]: /javascript/api/manifest/permissions
 [permissions (mailapp)]: /javascript/api/manifest/permissions
 [rule (rulecollection)]: /javascript/api/manifest/rule
 [rule (mailapp)]: /javascript/api/manifest/rule
-[requirements (mailapp)*]: /javascript/api/manifest/requirements
-[set*]: /javascript/api/manifest/set
-[sets (mailapprequirements)*]: /javascript/api/manifest/sets
-[form*]: /javascript/api/manifest/form
-[formsettings*]: /javascript/api/manifest/formsettings
-[sets (requirements)*]: /javascript/api/manifest/sets
-[hosts*]: /javascript/api/manifest/hosts
+[要求 （mailapp）]: /javascript/api/manifest/requirements
+[set]: /javascript/api/manifest/set
+[集 （mailapprequirements）]: /javascript/api/manifest/sets
+[表单]: /javascript/api/manifest/form
+[formsettings]: /javascript/api/manifest/formsettings
+[集（要求）]: /javascript/api/manifest/sets
+[主机]: /javascript/api/manifest/hosts
 
 ## <a name="hosting-requirements"></a>托管要求
 
@@ -154,9 +152,9 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 可选的 [VersionOverrides](/javascript/api/manifest/versionoverrides) 元素值得特别提及。 它包含支持其他加载项功能的子标记。 其中一些为：
 
- - 自定义 Office 功能区和菜单。
- - 自定义 Office 与加载项在其中运行的嵌入式浏览器运行时一起工作的方式。
- - 配置加载项如何与 Azure Active Directory 和 Microsoft Graph 交互以进行单一登录。
+- 自定义 Office 功能区和菜单。
+- 自定义 Office 与加载项在其中运行的嵌入式浏览器运行时一起工作的方式。
+- 配置加载项如何与 Azure Active Directory 和 Microsoft Graph 交互以进行单一登录。
 
 `VersionOverrides` 的一些子代元素具有替代父级 `OfficeApp` 元素值的值。 例如，`VersionOverrides` 中的 `Hosts` 元素替代 `OfficeApp` 中的 `Hosts` 元素。
 
@@ -548,12 +546,12 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="see-also"></a>另请参阅
 
-* [如何查找清单元素的正确顺序](manifest-element-ordering.md)
-* [在清单中创建外接程序命令](create-addin-commands.md)
-* [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)
-* [Office 外接程序的本地化](localization.md)
-* [Office 外接程序清单的架构参考](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
-* [更新 API 和清单版本](update-your-javascript-api-for-office-and-manifest-schema-version.md)
-* [标识等效的 COM 加载项](make-office-add-in-compatible-with-existing-com-add-in.md)
-* [在加载项中请求获取 API 使用权限](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* [验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)
+- [如何查找清单元素的正确顺序](manifest-element-ordering.md)
+- [在清单中创建外接程序命令](create-addin-commands.md)
+- [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)
+- [Office 外接程序的本地化](localization.md)
+- [Office 外接程序清单的架构参考](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
+- [更新 API 和清单版本](update-your-javascript-api-for-office-and-manifest-schema-version.md)
+- [标识等效的 COM 加载项](make-office-add-in-compatible-with-existing-com-add-in.md)
+- [在加载项中请求获取 API 使用权限](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- [验证 Office 加载项的清单](../testing/troubleshoot-manifest.md)

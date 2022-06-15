@@ -1,15 +1,15 @@
 ---
 title: 单一登录 (SSO) 快速入门
 description: 使用 Yeoman 生成器生成使用单一登录的 Node.js Office 加载项。
-ms.date: 01/25/2022
+ms.date: 06/10/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 86094d4aea8addc4dee670845f33b24a6f31d84a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 852cd9057d8f215f8ff3d637ea344c6f5c879eda
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747195"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091109"
 ---
 # <a name="single-sign-on-sso-quick-start"></a>单一登录 (SSO) 快速入门
 
@@ -162,3 +162,4 @@ Yeoman 生成器简化了 SSO 加载项的创建流程，能够自动执行在 A
 - [自定义启用了 Node.js SSO 的加载项](sso-quickstart-customize.md)
 - [创建使用单一登录的 Node.js Office 加载项](../develop/create-sso-office-add-ins-nodejs.md)
 - [排查单一登录 (SSO) 错误消息](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [使用Visual Studio Code发布](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
