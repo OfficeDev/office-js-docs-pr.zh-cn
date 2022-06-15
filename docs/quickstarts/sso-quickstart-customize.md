@@ -1,15 +1,15 @@
 ---
 title: 将 Microsoft Graph 功能添加到 SSO 快速入门项目
 description: 了解如何将新的 Microsoft Graph 功能添加到创建的已启用 SSO 的加载项。
-ms.date: 05/19/2022
+ms.date: 06/10/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: dbcb32c14824448d2c4309df437c93d01b868288
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: 6f8784dae3f947baaedc3232e06a5208988ba9e9
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650621"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091137"
 ---
 # <a name="add-microsoft-graph-functionality-to-your-sso-quick-start-project"></a>将 Microsoft Graph 功能添加到 SSO 快速入门项目
 
@@ -349,3 +349,4 @@ export function writeDataToOfficeDocument(result: Object): void {
 - [单一登录 (SSO) 快速入门](sso-quickstart.md)
 - [创建使用单一登录的 Node.js Office 加载项](../develop/create-sso-office-add-ins-nodejs.md)
 - [排查单一登录 (SSO) 错误消息](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [使用Visual Studio Code发布](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

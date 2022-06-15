@@ -2,21 +2,21 @@
 title: 为联机会议提供商创建Outlook移动加载项
 description: 讨论如何为联机会议服务提供商设置Outlook移动加载项。
 ms.topic: article
-ms.date: 05/01/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ada539c323ce6fdf578c26c221eb6090280b5a0a
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 3a8f21caf40b9a0b9a351e4ac6a405201923335b
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244861"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091116"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>为联机会议提供商创建Outlook移动加载项
 
 对于Outlook用户来说，设置联机会议是一种核心体验，并且可以轻松[地使用Outlook移动设备创建Teams会议](/microsoftteams/teams-add-in-for-outlook)。 但是，使用非 Microsoft 服务在Outlook中创建联机会议可能很麻烦。 通过实现此功能，服务提供商可以简化其Outlook外接程序用户的联机会议创建体验。
 
 > [!IMPORTANT]
-> 此功能仅在具有Microsoft 365订阅的 Android 和 iOS 上受支持。
+> 此功能仅在具有Microsoft 365订阅的Android和iOS上受支持。
 
 本文介绍如何设置Outlook移动外接程序，使用户能够使用联机会议服务组织和加入会议。 在本文中，我们将使用虚构的联机会议服务提供商“Contoso”。
 
@@ -194,34 +194,33 @@ ms.locfileid: "65244861"
 
 ## <a name="testing-and-validation"></a>测试和验证
 
-按照通常的指南 [测试和验证加载项](testing-and-tips.md)。 在 Outlook 网页版、Windows 或 Mac 中[旁加载](sideload-outlook-add-ins-for-testing.md)后，在 Android 或 iOS 移动设备上重启Outlook。 然后，在新的会议屏幕上，验证Microsoft Teams或Skype切换是否已替换为自己的切换。
+按照通常的指南 [测试和验证加载项](testing-and-tips.md)。 在 Outlook 网页版、Windows 或 Mac 中[旁加载](sideload-outlook-add-ins-for-testing.md)后，在Android或iOS移动设备上重启Outlook。 然后，在新的会议屏幕上，验证Microsoft Teams或Skype切换是否已替换为自己的切换。
 
 ### <a name="create-meeting-ui"></a>创建会议 UI
 
 作为会议组织者，在创建会议时，应会看到类似于以下三个图像的屏幕。
 
-[![Android 上的“创建会议”屏幕 - Contoso 关闭。](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![Android 上的创建会议屏幕 - 加载 Contoso 切换。](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Android 上的创建会议屏幕 - Contoso 切换。](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[![关闭 Contoso 切换Android上的“创建会议”屏幕。](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![带有加载 Contoso 切换Android上的“创建会议”屏幕。](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![打开 Contoso 切换Android上的“创建会议”屏幕。](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>加入会议 UI
 
 作为会议与会者，在查看会议时，应会看到类似于下图的屏幕。
 
-[![Android 上加入会议屏幕的屏幕截图。](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[![Android上的联接会议屏幕。](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
 > 如果未看到 **“加入** ”链接，则可能是服务的联机会议模板未在我们的服务器上注册。 有关详细信息，请参阅 [“注册联机会议模板”](#register-your-online-meeting-template) 部分。
 
 ## <a name="register-your-online-meeting-template"></a>注册联机会议模板
 
-若要为服务注册联机会议模板，可以创建GitHub详细信息问题。 之后，我们将与你联系以协调注册时间线。
+注册联机会议加载项是可选的。 它仅适用于想要在会议中显示 **“加入** ”按钮（除了会议链接）时。 开发联机会议加载项并想要注册后，请使用以下指南创建GitHub问题。 我们将与你联系以协调注册时间线。
 
-1. 转到本文末尾的 **“反馈** ”部分。
-1. 按 **此页** 链接。
+1. 创建[新的GitHub问题](https://github.com/OfficeDev/office-js/issues/new)。
 1. 将新问题的 **标题** 设置为“注册我的服务的联机会议模板”，替换 `my-service` 为服务名称。
-1. 在问题正文中，将字符串“[[在此处输入反馈]”替换为在本文前面的“[实现添加联机会议详细信息](#implement-adding-online-meeting-details)”部分中`newBody`设置的字符串或类似变量中设置的字符串。
+1. 在问题正文中，将现有文本替换为在本文前面的[“实现添加联机会议详细信息](#implement-adding-online-meeting-details)”部分的或类似变量中`newBody`设置的字符串。
 1. 单击 **“提交新问题**”。
 
-![包含 Contoso 示例内容的新GitHub问题屏幕的屏幕截图。](../images/outlook-request-to-register-online-meeting-template.png)
+![具有 Contoso 示例内容的新GitHub问题屏幕。](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## <a name="available-apis"></a>可用 API
 

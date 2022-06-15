@@ -1,14 +1,14 @@
 ---
-ms.date: 03/30/2021
-description: 排查自定义函数Excel常见问题。
+ms.date: 06/09/2022
+description: 排查Excel自定义函数的常见问题。
 title: 自定义函数疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: e2332d6e7696ba630953f4fd69154a9bb736c229
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c4d07417efbc641919051c96e5da0eb910ff9ccc
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744479"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090885"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -17,6 +17,12 @@ ms.locfileid: "63744479"
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 若要解决这些问题，可以[启用运行时日志记录以捕获错误](#enable-runtime-logging)，并参考[Excel 的本机错误消息](#check-for-excel-error-messages)。 另外，检查常见错误，例如[没有解析 promise](#ensure-promises-return)。
+
+## <a name="debugging-custom-functions"></a>调试自定义函数
+
+若要调试使用共享运行时的自定义函数加载项，请参阅[将Office加载项配置为使用共享 JavaScript 运行时：调试](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug)。
+
+若要调试不使用共享运行时的自定义函数加载项，请参阅 [自定义函数调试](custom-functions-debugging.md)。
 
 ## <a name="enable-runtime-logging"></a>启用运行时日志记录
 
@@ -39,9 +45,9 @@ Excel 有许多内置错误消息，如果存在计算错误，系统会将向�
 
 ## <a name="common-problems-and-solutions"></a>常见问题和解决方案
 
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>无法从 localhost 打开外接程序：使用本地环回豁免
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>无法从 localhost 打开加载项：使用本地环回豁免
 
-如果看到错误"无法从 localhost 打开此外接程序"，则需要启用本地环回豁免。 有关如何执行此操作的详细信息，请参阅[此 Microsoft 支持文章](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost)。
+如果看到错误“无法从 localhost 打开此加载项”，则需要启用本地环回豁免。 有关如何执行此操作的详细信息，请参阅[此 Microsoft 支持文章](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost)。
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Windows 版 Excel 上的运行时日志记录报告“TypeError:网络请求失败”
 
@@ -53,7 +59,7 @@ Excel 有许多内置错误消息，如果存在计算错误，系统会将向�
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>错误：开发服务器已在端口 3000 上运行
 
-有时候，运行 `npm start` 时，你可能会看到开发服务器已在端口 3000（或加载项使用的任何端口）上运行的错误。 可以通过运行 `npm stop` 或关闭 Node.js 窗口停止开发服务器运行。 在某些情况下，可能需要几分钟时间，开发人员服务器才能停止运行。
+有时候，运行 `npm start` 时，你可能会看到开发服务器已在端口 3000（或加载项使用的任何端口）上运行的错误。 可以通过运行 `npm stop` 或关闭 Node.js 窗口停止开发服务器运行。 在某些情况下，开发服务器可能需要几分钟才能停止运行。
 
 ### <a name="my-functions-wont-load-associate-functions"></a>我的函数无法加载：关联函数
 
@@ -76,11 +82,11 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-有关此过程详细信息，请参阅 [将函数名称与 JSON 元数据相关联](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
+有关此过程的详细信息，请参阅 [将函数名称与 JSON 元数据关联](../excel/custom-functions-json.md#associating-function-names-with-json-metadata)。
 
 ## <a name="known-issues"></a>已知问题
 
-已知问题在自定义函数Excel库中进行GitHub[报告](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
+已知问题在[Excel自定义函数GitHub存储库](https://github.com/OfficeDev/Excel-Custom-Functions/issues)中进行跟踪和报告。
 
 ## <a name="reporting-feedback"></a>报告反馈
 
@@ -95,9 +101,11 @@ CustomFunctions.associate("ADD", add);
 可以随时通过任何文档页底部的“内容反馈”功能提交所遇到的问题，也可以[直接向自定义功能存储库提交新问题](https://github.com/OfficeDev/Excel-Custom-Functions/issues)。
 
 ## <a name="next-steps"></a>后续步骤
+
 了解如何[让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-* [为自定义函数自动生成 JSON 元数据](custom-functions-json-autogeneration.md)
-* [在 Excel 中创建自定义函数](custom-functions-overview.md)
+- [为自定义函数自动生成 JSON 元数据](custom-functions-json-autogeneration.md)
+- [在 Excel 中创建自定义函数](custom-functions-overview.md)
+- [自定义函数调试](custom-functions-debugging.md)

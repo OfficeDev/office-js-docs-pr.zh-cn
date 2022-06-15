@@ -1,57 +1,57 @@
 ---
 title: 使用 SSO 对 Microsoft Graph 授权
-description: 了解加载项Office如何使用 SSO (单一登录) Microsoft Graph。
-ms.date: 01/25/2022
+description: 了解Office加载项的用户如何使用单一登录 (SSO) 从 Microsoft Graph 提取数据。
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dbe52d9fb4e223052d92249bb98311e91bd665d
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 4c7bfc51e67755c2a50875f11d3a5477bd5885a4
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496766"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090941"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>使用 SSO 对 Microsoft Graph 授权
 
-用户可以使用自己的个人 Microsoft 帐户或 Microsoft 365 教育或工作帐户，登录 Office（在线、移动和桌面平台）。 在 Office 加载项中获取对 [Microsoft Graph](https://developer.microsoft.com/graph/docs) 的访问权限的最佳方式是使用用户的 Office 登录凭据。 这使用户能够访问其 Microsoft Graph 数据，而无需再次登录。
+用户使用其个人 Microsoft 帐户或其Microsoft 365 教育版或工作帐户登录到Office。 在 Office 加载项中获取对 [Microsoft Graph](https://developer.microsoft.com/graph/docs) 的访问权限的最佳方式是使用用户的 Office 登录凭据。 这使用户能够访问其 Microsoft Graph 数据，而无需再次登录。
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>SSO 和 Microsoft Graph 的加载项体系结构
 
 除了托管 Web 应用程序的页面和 JavaScript 之外，外接程序还必须以相同的[完全限定的域名](/windows/desktop/DNS/f-gly#_dns_fully_qualified_domain_name_fqdn__gly)托管一个或多个 Web API，这些 API 可获取 Microsoft Graph 的访问令牌，并向它发出请求。
 
-外接程序清单包含 **一个 WebApplicationInfo** 元素，该元素向 Office 提供重要的 Azure 应用注册信息，包括外接程序所需的 Microsoft Graph 权限。
+外接程序清单包含 **WebApplicationInfo** 元素，该元素为Office提供重要的 Azure 应用注册信息，包括加载项所需的 Microsoft Graph权限。
 
 ### <a name="how-it-works-at-runtime"></a>运行时的工作方式
 
-下图显示了登录和访问 Microsoft Graph。 整个过程使用 OAuth 2.0 和 JWT 访问令牌。
+下图显示了登录和访问 Microsoft Graph所涉及的步骤。 整个过程使用 OAuth 2.0 和 JWT 访问令牌。
 
-:::image type="content" source="../images/sso-access-to-microsoft-graph.svg" alt-text="显示 SSO 过程的图表。" border="false":::
+:::image type="content" source="../images/sso-access-to-microsoft-graph.svg" alt-text="显示 SSO 进程的示意图。" border="false":::
 
-1. 外接程序的客户端代码调用 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))。 这将告知Office主机获取外接程序的访问令牌。
+1. 外接程序的客户端代码调用 Office.js API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))。 这会告知Office主机获取加载项的访问令牌。
 
-    如果用户未登录，Office主机与 Microsoft 标识平台会为用户提供 UI 进行登录和同意。
+    如果用户未登录，Office主机与Microsoft 标识平台一起为用户提供登录和同意的 UI。
 
-2. 该Office主机从应用程序请求访问Microsoft 标识平台。
-3. 该Microsoft 标识平台将访问令牌 *A* 返回到 Office 主机。 访问 *令牌 A* 仅提供对外接程序自己的服务器端 API 的访问。 它不提供对 Microsoft Graph。
-4. Office主机将访问令牌 *A* 返回到外接程序的客户端代码。 现在，客户端代码可以调用经过身份验证的服务器端 API。
-5. 客户端代码向需要身份验证的服务器端 Web API 发送 HTTP 请求。 它包括访问令牌 *A* 作为授权证明。 服务器端代码验证访问令牌 *A*。
-6. 服务器端代码使用 OAuth 2.0 代表流 (OBO) 请求具有 Microsoft Graph 权限的新访问令牌。
-7. 如果Microsoft 标识平台请求获取 Microsoft Graph (权限，则返回新的访问令牌 *B* 和刷新 *offline_access刷新)*。 服务器可以选择缓存访问令牌 *B*。
-8. 服务器端代码向 Microsoft Graph API 提出请求，并包含对 Microsoft Graph 具有权限的访问令牌 *B*。
-9. Microsoft Graph将数据返回给服务器端代码。
-10. 服务器端代码将数据返回回客户端代码。
+2. Office主机从Microsoft 标识平台请求访问令牌。
+3. Microsoft 标识平台向Office主机返回访问令牌 *A*。 访问令牌 *A* 仅提供对加载项自己的服务器端 API 的访问权限。 它不提供对 Microsoft Graph 的访问权限。
+4. Office主机将访问令牌 *A* 返回到加载项的客户端代码。 现在，客户端代码可以对服务器端 API 进行经过身份验证的调用。
+5. 客户端代码向服务器端需要身份验证的 Web API 发出 HTTP 请求。 它包括访问令牌 *A* 作为授权证明。 服务器端代码验证访问令牌 *A*。
+6. 服务器端代码使用 OAuth 2.0 代理流 (OBO) 请求具有 Microsoft Graph 权限的新访问令牌。
+7. 如果加载 *项请求offline_access* 权限) ，则Microsoft 标识平台返回具有 Microsoft Graph (权限和刷新令牌的新访问令牌 *B*。 服务器可以选择性地缓存访问令牌 *B*。
+8. 服务器端代码向 Microsoft 图形 API发出请求，并包含具有 Microsoft Graph 权限的访问令牌 *B*。
+9. Microsoft Graph将数据返回到服务器端代码。
+10. 服务器端代码将数据返回到客户端代码。
 
-在后续请求中，客户端代码在向服务器端代码执行经过身份验证的调用时将始终传递访问令牌 *A* 。 服务器端代码可以缓存令牌 *B* ，因此它无需在将来的 API 调用时再次请求它。
+在后续请求中，对服务器端代码进行经过身份验证的调用时，客户端代码将始终传递访问令牌 *A* 。 服务器端代码可以缓存令牌 *B* ，这样就不需要在将来的 API 调用中再次请求它。
 
 ## <a name="develop-an-sso-add-in-that-accesses-microsoft-graph"></a>开发可访问 Microsoft Graph 的 SSO 加载项
 
-您开发一个可以访问 Microsoft Graph的外接程序，就像使用 SSO 的其他任何应用程序一样。 有关完整的说明，请参阅为加载项启用Office[登录](../develop/sso-in-office-add-ins.md)。区别在于，加载项必须拥有服务器端 Web API。
+开发一个可访问 Microsoft Graph的加载项，就像使用 SSO 的任何其他应用程序一样。 有关全面说明，请参阅[为Office加载项启用单一登录](../develop/sso-in-office-add-ins.md)。区别在于，外接程序必须具有服务器端 Web API。
 
 根据所用的语言和框架，可能存在一些库，可简化必须编写的服务器端代码。 代码应执行以下操作：
 
-* 每次从客户端代码传递访问令牌 A 时，验证令牌 *A* 。 有关详细信息，请参阅[验证访问令牌](sso-in-office-add-ins.md#pass-the-access-token-to-server-side-code)。
-* 通过调用 Microsoft 标识平台 启动 OAuth 2.0 代表流 (OBO) ，其中包括访问令牌、有关用户的一些元数据以及外接程序的凭据 (其 ID 和密码) 。 有关 OBO 流详细信息，请参阅 Microsoft 标识平台 [和 OAuth 2.0 代表流](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)。
-* （可选）在流完成后，缓存返回的访问令牌 *B*，并授予对 Microsoft Graph。 如果加载项对 Microsoft Graph 进行多次调用，则需要执行此操作。 有关详细信息，请参阅使用 MICROSOFT 身份验证库获取和缓存令牌 ([MSAL) ](/azure/active-directory/develop/msal-acquire-cache-tokens)
-* 创建一个或多个 Web API 方法，用于将可能缓存Graph的 Web API (*访问令牌 B*) Microsoft Graph。
+* 每次从客户端代码传递访问令牌 *A* 时，都会对其进行验证。 有关详细信息，请参阅[验证访问令牌](sso-in-office-add-ins.md#pass-the-access-token-to-server-side-code)。
+* 启动 OAuth 2.0 代理流 (OBO) ，并调用Microsoft 标识平台，其中包括访问令牌、有关用户的一些元数据，以及加载项的凭据 (其 ID 和机密) 。 有关 OBO 流的详细信息，请参阅 [Microsoft 标识平台 和 OAuth 2.0 代理流](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)。
+* （可选）流完成后，使用 Microsoft Graph 的权限缓存返回的访问令牌 *B*。 如果加载项对 Microsoft Graph 进行多次调用，则需要执行此操作。 有关详细信息，请参阅 [使用 Microsoft 身份验证库 (MSAL) 获取和缓存令牌 ](/azure/active-directory/develop/msal-acquire-cache-tokens)
+* 通过将可能缓存的 () 访问令牌 *B* 传递给 Microsoft Graph，创建一个或多个用于获取 Microsoft Graph数据的 Web API 方法。
 
 有关详细演练和应用场景的示例，请参阅：
 
@@ -59,24 +59,24 @@ ms.locfileid: "64496766"
 * [创建使用单一登录的 ASP.NET Office 加载项](create-sso-office-add-ins-aspnet.md)
 * [应用场景：为 Outlook 加载项中的服务实现单一登录](../outlook/implement-sso-in-outlook-add-in.md)
 
-## <a name="distributing-sso-enabled-add-ins-in-microsoft-appsource"></a>在 Microsoft AppSource 中分发支持 SSO 的加载项
+## <a name="distributing-sso-enabled-add-ins-in-microsoft-appsource"></a>在 Microsoft AppSource 中分发已启用 SSO 的加载项
 
-当Microsoft 365从 [AppSource](https://appsource.microsoft.com) 获取加载项时，管理员可以通过集成应用重新分发它，并授予加载项管理员同意以访问 [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) Microsoft Graph作用域。 但是，最终用户也可以直接从 AppSource 获取加载项，在这种情况下，用户必须同意加载项。 这可以创建一个潜在的性能问题，我们提供了一个解决方案。
+当Microsoft 365管理员从 [AppSource](https://appsource.microsoft.com) 获取加载项时，管理员可以通过[集成应用](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)重新分发该加载项，并向加载项授予管理员许可，以访问 Microsoft Graph 范围。 但是，最终用户也可以直接从 AppSource 获取加载项，在这种情况下，用户必须同意外接程序。 这可能会造成潜在的性能问题，我们为此提供了解决方案。
 
-`allowConsentPrompt` `getAccessToken``OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );`如果代码在 调用 中传递 选项，例如 ，Office 如果 Microsoft 标识平台 向 Office报告尚未向加载项授予同意，Office 可以提示用户同意。 但是，出于安全Office，用户只能提示用户同意 Microsoft `profile` Graph作用域。 *Office无法提示同意其他 Microsoft Graph范围，* 甚至无法提示`User.Read`。 这意味着，如果用户对提示授予同意，Office返回访问令牌。 但是，尝试将访问令牌交换为具有其他 Microsoft Graph 作用域的新访问令牌失败，并出现错误 AADSTS65001，这意味着尚未授予 (同意 Microsoft Graph 作用域) 。
+如果代码在调用时传递`allowConsentPrompt`了该选项，则`OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );`Office可以在Microsoft 标识平台报告Office该许可尚未授予外接程序时提示用户`getAccessToken`同意。 但是，出于安全原因，Office只能提示用户同意 Microsoft Graph`profile`范围。 *Office不能提示同意其他 Microsoft Graph范围*，甚至`User.Read`不能。 这意味着，如果用户在提示时授予同意，Office返回访问令牌。 但是，尝试将新访问令牌与其他 Microsoft Graph 范围交换访问令牌失败，并出现错误 AADSTS65001，这意味着尚未授予对 Microsoft Graph 范围) 的许可 (。
 
 > [!NOTE]
-> 即使管理员已关闭`{ allowConsentPrompt: true }``profile`最终用户同意，同意请求仍可能会失败，即使范围失败。 有关详细信息，请参阅 [Configure how end-users consent to applications using Azure Active Directory](/azure/active-directory/manage-apps/configure-user-consent)。
+> 即使管理员已关闭最终用户同意，该范围的同意 `{ allowConsentPrompt: true }` 请求仍可能失败 `profile` 。 有关详细信息，请参阅[配置最终用户如何使用Azure Active Directory同意应用程序](/azure/active-directory/manage-apps/configure-user-consent)。
 
-代码可以并且应该通过回滚到备用身份验证系统来处理此错误，这将提示用户同意 Microsoft Graph作用域。 有关代码示例，请参阅[](create-sso-office-add-ins-nodejs.md)创建Node.js Office单一登录的加载项和创建使用单一登录的 [ASP.NET Office](create-sso-office-add-ins-aspnet.md) 加载项及其链接到的示例。 整个过程需要多次往返于Microsoft 标识平台。 若要避免这种性能损失，在 `forMSGraphAccess` `getAccessToken`调用中包括 选项;例如， `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )`。 这表示Office加载项需要 Microsoft Graph作用域。 Office请求Microsoft 标识平台验证是否Graph向加载项授予了对 Microsoft 许可范围。 如果已返回，则返回访问令牌。 如果没有，则 `getAccessToken` 调用 将返回错误 13012。 代码可以通过立即回滚到备用身份验证系统来处理此错误，而无需尝试与代理交换Microsoft 标识平台。
+代码可以通过回退到备用的身份验证系统来处理此错误，这会提示用户同意 Microsoft Graph范围。 有关代码示例，请参阅[创建使用单一登录的Node.js Office加](create-sso-office-add-ins-nodejs.md)载项，并[创建使用单一登录的 ASP.NET Office加](create-sso-office-add-ins-aspnet.md)载项及其链接到的示例。 整个过程需要多次往返Microsoft 标识平台。 若要避免此性能损失，请在调用`getAccessToken`中包括`forMSGraphAccess`选项，例如。 `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )` 这向Office表明加载项需要 Microsoft Graph作用域。 Office将要求Microsoft 标识平台验证是否已向加载项授予对 Microsoft Graph 范围的许可。 如果有，则返回访问令牌。 如果没有，则调用 `getAccessToken` 返回错误 13012。 代码可以通过立即回退到备用的身份验证系统来处理此错误，而无需尝试将令牌与Microsoft 标识平台交换。
 
-最佳做法是，始终传递到`forMSGraphAccess``getAccessToken`加载项在 AppSource 中分发并需要 Microsoft Graph范围。
+最佳做法是，始终传递`forMSGraphAccess`到`getAccessToken`加载项将在 AppSource 中分发并需要 Microsoft Graph 范围。
 
-## <a name="details-on-sso-with-an-outlook-add-in"></a>有关使用加载项Outlook SSO 的详细信息
+## <a name="details-on-sso-with-an-outlook-add-in"></a>有关具有Outlook加载项的 SSO 的详细信息
 
-如果您开发使用 SSO 的 Outlook 外接程序并旁加载它进行测试，Office 在传递到时将始终返回错误 13012  `forMSGraphAccess` `getAccessToken`，即使已授予管理员同意。 因此，在开发加载项时`forMSGraphAccess`**，** 应该Outlook选项。 请确保在部署用于生产时取消对选项的注释。 只有在旁加载时，才能使用 Outlook。
+如果开发一个使用 SSO 的Outlook加载项并旁加载它进行测试，Office在传递给`getAccessToken`管理员许可时`forMSGraphAccess`*始终* 返回错误 13012。 因此，在开发Outlook加载项 **时**，应注释掉`forMSGraphAccess`该选项。 部署生产时，请务必取消注释该选项。 仅当您在Outlook中旁加载时，才会发生虚假的 13012。
 
-对于Outlook，请务必为租户启用新式Microsoft 365身份验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
+对于Outlook外接程序，请务必为Microsoft 365租户启用新式身份验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
 ## <a name="see-also"></a>另请参阅
 

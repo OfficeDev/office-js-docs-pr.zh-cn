@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 有关如何使用 ASP.NET 后端创建 (或转换) Office外接程序以使用单一登录 (SSO) 的分步指南。
-ms.date: 03/28/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b948b6beb22437b3b9bf7e6472c6e00e4bed7a0a
-ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
+ms.openlocfilehash: 66ddd0e7bb4db54b48b56b493f3818523d7eb76c
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "64682250"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090892"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
@@ -46,39 +46,39 @@ ms.locfileid: "64682250"
 对应用注册使用以下设置。
 
 * 名称：`Office-Add-in-ASPNET-SSO`
-* 支持的帐户类型：**任何组织目录中的帐户 (任何Azure AD目录 - 多租户) 和个人 Microsoft 帐户 (，例如Skype、Xbox)**
+* 支持的帐户类型：**任何组织目录中的帐户 (任何 Azure AD 目录 - 多租户) 和个人 Microsoft 帐户 (，例如Skype、Xbox)**
 
     > [!NOTE]
     >  如果希望加载项仅供你正在注册的租户中的用户使用，则 **只能在此组织目录中选择帐户...** 请参阅本文后面 **的单租户安装程序** 。
 
 * 平台： **Web**
 * 重定向 URI： **https://localhost:44355/AzureADAuth/Authorize**
-* 客户端机密： `*********` (创建后记录此值 - 仅显示一次) 
+* 客户端机密： `*********` (Web 应用程序在请求令牌时使用客户端机密来证明其标识。 *记录此值以便在后续步骤中使用 - 它只显示一次。*) 
 
 ### <a name="expose-a-web-api"></a>公开 Web API
 
-1. 在创建的应用注册中，选择 **"公开 API >添加范围**。
+1. 在创建的应用注册中，选择 **“公开 API >添加范围**。
    如果尚未配置应用程序 **ID URI** ，系统会提示你设置该 URI。
 
     应用 ID URI 充当将在 API 代码中引用的范围的前缀，并且它必须全局唯一。 使用窗体 `api://localhost:44355/[application-id-guid]`;例如 `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`。
 
-1. 在 **"添加范围** "窗格中指定作用域的属性。
+1. 在 **“添加范围** ”窗格中指定作用域的属性。
 
     |字段          |值  |
     |---------------|---------|
     |**范围名称** | `access_as_user`|
     |**谁可以同意** | **管理员和用户**|
-    |**管理员同意显示名称** | Office可以充当用户。|
-    |**管理员同意说明** | 启用Office以与当前用户相同的权限调用加载项的 Web API。|
+    |**管理员许可显示名称** | Office可以充当用户。|
+    |**管理员许可说明** | 启用Office以与当前用户相同的权限调用加载项的 Web API。|
     |**用户同意显示名称** | Office可以充当你。|
     |**用户同意说明** | 启用Office以具有与你相同的权限调用加载项的 Web API。|
 
-1. 将 **状态** 设置为 **"已启用**"，然后选择 **"添加范围**"。
+1. 将 **状态** 设置为 **“已启用**”，然后选择 **“添加范围**”。
 
     > [!NOTE]
     > 显示在文本字段正下方的 **作用域** 名称的域部分应自动与你先前设置的“应用 ID URI”匹配，并将 `/access_as_user` 附加到末尾；例如，`api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`。
 
-1. 在 **"授权客户端应用程序**"部分中，输入以下 ID 以预先授权所有Microsoft Office应用程序终结点。
+1. 在 **“授权客户端应用程序**”部分中，输入以下 ID 以预先授权所有Microsoft Office应用程序终结点。
 
    - `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` (所有Microsoft Office应用程序终结点) 
 
@@ -99,7 +99,7 @@ ms.locfileid: "64682250"
 
 1. 选择“**委托的权限**”。 Microsoft Graph公开许多权限，其中最常用的权限显示在列表顶部。
 
-1. 在 **"选择权限**"下，选择以下权限。
+1. 在 **“选择权限**”下，选择以下权限。
 
     |权限     |说明  |
     |---------------|-------------|
@@ -109,7 +109,7 @@ ms.locfileid: "64682250"
     > [!NOTE]
     > `User.Read` 权限可能已默认列出。 根据最佳做法，最好不要请求授予不需要的权限，因此，如果加载项实际上不需要此权限，我们建议取消选中此权限对应的框。
 
-1. 选择 **"添加权限** "以完成此过程。
+1. 选择 **“添加权限** ”以完成此过程。
 
 每当你配置权限时，都会在登录时要求应用的用户同意允许应用代表他们访问资源 API。 作为管理员，你还可以代表所有用户授予同意，这样就不会提示他们这样做。
 
@@ -126,14 +126,14 @@ ms.locfileid: "64682250"
 
 1. 返回 **解决方案资源管理器**，选择 (不要右键单击 **Office-Add-in-ASPNET-SSO-WebAPI** 项目) 。 随后将打开“**属性**”窗格。 确保“**已启用 SSL**”为“**True**”。 验证“**SSL URL**”是否为 `http://localhost:44355/`。
 
-1. 在“Web.config”中，使用先前复制的值。 将“**ida:ClientID**”和“**ida:Audience**”均设置为“**应用程序(客户端) ID**”，并将“**ida:Password**”设置为客户端密码。 此外，将 **ida：Domain** 设置为 `http://localhost:44355` (末尾没有正斜杠"/"，) 。
+1. 在“Web.config”中，使用先前复制的值。 将“**ida:ClientID**”和“**ida:Audience**”均设置为“**应用程序(客户端) ID**”，并将“**ida:Password**”设置为客户端密码。 此外，将 **ida：Domain** 设置为 `http://localhost:44355` (末尾没有正斜杠“/”，) 。
 
     > [!NOTE]
-    > 当其他应用程序 **（例如Office客户** 端应用程序 (（例如，PowerPoint、Word、Excel) ）寻求对应用程序的授权访问时，应用程序 (客户端) ID 是"受众"值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
+    > 当其他应用程序 **（例如Office客户** 端应用程序 (（例如，PowerPoint、Word、Excel) ）寻求对应用程序的授权访问时，应用程序 (客户端) ID 是“受众”值。 当它反过来寻求 Microsoft Graph 的授权访问权限时，它同时也是应用程序的“客户端 ID”。
 
 1. 如果在注册该加载项时，“**受支持的帐户类型**”未选择“仅限此组织目录中的帐户”，请保存并关闭 web.config。否则，请保存，但将其保持打开状态。
 
-1. 在 **解决方案资源管理器** 中，选择 **Office-外接程序-ASPNET-SSO** 项目并打开外接程序清单文件"Office-Add-in-ASPNET-SSO.xml"，然后滚动到文件底部。 在结束 `</VersionOverrides>` 标记的正上方，你会发现以下标记。
+1. 在 **解决方案资源管理器** 中，选择 **Office-外接程序-ASPNET-SSO** 项目并打开外接程序清单文件“Office-Add-in-ASPNET-SSO.xml”，然后滚动到文件底部。 在结束 `</VersionOverrides>` 标记的正上方，你会发现以下标记。
 
     ```xml
     <WebApplicationInfo>
@@ -155,7 +155,7 @@ ms.locfileid: "64682250"
 
 ### <a name="setup-for-single-tenant"></a>单租户设置
 
-如果在注册外接程序时为 **支持的帐户类型** 选择了"仅此组织目录中的帐户"，则需要执行这些额外的设置步骤。
+如果在注册外接程序时为 **支持的帐户类型** 选择了“仅此组织目录中的帐户”，则需要执行这些额外的设置步骤。
 
 1. 返回 Azure 门户，并打开加载项注册界面的“**概述**”边栏选项卡。 复制“**目录(租户) ID**”。
 
@@ -190,7 +190,7 @@ ms.locfileid: "64682250"
 1. 在 `getGraphData` 函数下方，添加下列函数。 请注意，你将在稍后的步骤中创建 `handleClientSideErrors` 函数。
 
     > [!NOTE]
-    > 为了区分本文中使用的两个访问令牌，从 getAccessToken () 返回的令牌称为启动令牌。 之后，它通过"代表"流交换，以获取有权访问 Microsoft Graph 的新令牌。
+    > 为了区分本文中使用的两个访问令牌，从 getAccessToken () 返回的令牌称为启动令牌。 之后，它通过“代表”流交换，以获取有权访问 Microsoft Graph 的新令牌。
 
     ```javascript
     async function getDataWithToken(options) {
@@ -535,7 +535,7 @@ ms.locfileid: "64682250"
     string[] graphScopes = { "https://graph.microsoft.com/Files.Read.All" };
     ```
 
-1. 将 `TODO 3` 替换为以下代码。关于此代码，请注意以下几点：
+1. 将 `TODO 3` 替换为下面的代码。 关于此代码，请注意以下几点：
 
     * `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` 方法将首先查找内存中的 MSAL 缓存，获取匹配的访问令牌。 仅当不存在任何令牌时，该方法才会通过 Azure AD V2 终结点启动代理流。
     * 任何不属于类型 `MsalServiceException` 的异常都是有意不捕获的，这样才能作为 `500 Server Error` 消息传播到客户端。
@@ -558,7 +558,7 @@ ms.locfileid: "64682250"
     }
     ```
 
-1. 将 `TODO 3a` 替换为以下代码。关于此代码，请注意以下几点：
+1. 将 `TODO 3a` 替换为下面的代码。 关于此代码，请注意以下几点：
 
     * 如果 Microsoft Graph 资源要求进行多重身份验证，但用户尚未提供，则 Azure AD 会返回“400 错误请求”以及错误 `AADSTS50076` 和 **Claims** 属性。 MSAL 抛出包含此信息的 **MsalUiRequiredException**（继承自 **MsalServiceException**）。
     * **Claims** 属性值必须传递给客户端，客户端应将其传递给Office应用程序，然后在请求新的启动令牌时包含该属性值。 Azure AD 会提示用户进行所有必需形式的身份验证。
@@ -573,7 +573,7 @@ ms.locfileid: "64682250"
     }
     ```
 
-1. 将 `TODO 3b` 替换为以下代码。关于此代码，请注意以下几点：
+1. 将 `TODO 3b` 替换为下面的代码。 关于此代码，请注意以下几点：
 
     * 如果 Azure AD 调用包含至少一个作用域（权限）未获得用户和租户管理员的许可（或许可被撤消），则 Azure AD 将返回“400 错误请求”和错误 `AADSTS65001`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。
     * 如果 Azure AD 调用包含至少一个 Azure AD 无法识别的作用域，则 AAD 将返回“400 错误请求”和错误 `AADSTS70011`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。
@@ -639,4 +639,4 @@ ms.locfileid: "64682250"
 
 与所有Office Web 加载项一样，当你准备好移动到过渡或生产服务器时，必须使用新域更新`localhost:44355`清单中的域。 同样，必须更新web.config文件中的域。
 
-由于域显示在AAD注册中，因此需要更新该注册，以使用新域来代替`localhost:44355`它出现的位置。
+由于域显示在 AAD 注册中，因此需要更新该注册以使用新域来代替 `localhost:44355` 它出现的位置。

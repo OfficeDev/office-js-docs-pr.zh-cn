@@ -1,30 +1,28 @@
 ---
-title: 使用 JavaScript API PowerPoint形状
-description: 了解如何在幻灯片上添加、删除形状和PowerPoint格式。
-ms.date: 02/22/2022
+title: 使用 PowerPoint JavaScript API 处理形状
+description: 了解如何在PowerPoint幻灯片上添加、删除和设置形状的格式。
+ms.date: 06/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e2ad48cf4a33fe17c06538d3a22321aebd5561
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 7f314cfebb26450e79dbabe1e65ac9e4c8fe9799
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746989"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091102"
 ---
-# <a name="work-with-shapes-using-the-powerpoint-javascript-api-preview"></a>使用 JavaScript API PowerPoint预览 (形状) 
+# <a name="work-with-shapes-using-the-powerpoint-javascript-api"></a>使用 PowerPoint JavaScript API 处理形状
 
-本文介绍如何将几何形状、线条和文本框与 Shape 和 [ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection) API 结合使用[](/javascript/api/powerpoint/powerpoint.shape)。
-
-[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
+本文介绍如何将几何形状、线条和文本框与 [Shape](/javascript/api/powerpoint/powerpoint.shape) 和 [ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection) API 结合使用。
 
 ## <a name="create-shapes"></a>创建形状
 
-形状通过幻灯片的形状集合创建并存储在幻灯片中 () `slide.shapes` 。 `ShapeCollection` 为此， `.add*` 有几个方法。 所有形状在添加到集合时都有为它们生成的名称和 ID。 它们分别为 `name` 和 `id` 属性。 `name` 可通过加载项进行设置。
+形状是通过幻灯片的形状集合 () `slide.shapes` 创建和存储的。 `ShapeCollection` 有几 `.add*` 种方法用于此目的。 所有形状在添加到集合时都会为它们生成名称和 ID。 这些是分别的 `name` 属性和 `id` 属性。 `name` 可由加载项设置。
 
 ### <a name="geometric-shapes"></a>几何形状
 
-使用 的重载之一创建几何形状 `ShapeCollection.addGeometricShape`。 第一个参数是 [GeometricShapeType](/javascript/api/powerpoint/powerpoint.geometricshapetype) 枚举或等价于该枚举值之一的字符串。 有一个 [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) 类型的可选第二个参数，该参数可指定形状的初始大小及其相对于幻灯片顶部和左侧的位置（以点为单位）。 也可以创建形状后设置这些属性。
+使用其中一个重载 `ShapeCollection.addGeometricShape`创建几何形状。 第一个参数是 [GeometricShapeType](/javascript/api/powerpoint/powerpoint.geometricshapetype) 枚举或等效于枚举值之一的字符串。 有一个可选的第二个参数，类型 [为 ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) ，可以指定形状的初始大小及其相对于幻灯片顶部和左侧的位置（以磅为单位）。 也可以在创建形状后设置这些属性。
 
-下面的代码示例创建一个名为" **Square"** 的矩形，该矩形位于从幻灯片的上边缘和左边 100 个点处。 方法返回对象 `Shape` 。
+下面的代码示例创建一个名为 **“Square”** 的矩形，该矩形从幻灯片的顶部和左侧放置 100 磅。 该方法返回一个 `Shape` 对象。
 
 ```js
 // This sample creates a rectangle positioned 100 points from the top and left sides
@@ -43,12 +41,12 @@ await PowerPoint.run(async (context) => {
 
 ### <a name="lines"></a>Lines
 
-使用 的重载之一创建行 `ShapeCollection.addLine`。 第一个参数是 [ConnectorType](/javascript/api/powerpoint/powerpoint.connectortype) 枚举或等价于枚举值之一的字符串，用于指定线在终结点之间如何相互连接。 有一个 [类型为 ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) 的可选第二个参数，该参数可指定线条的起始点和终点。 也可以创建形状后设置这些属性。 方法返回对象 `Shape` 。
+使用其中一个重载 `ShapeCollection.addLine`创建行。 第一个参数是 [ConnectorType](/javascript/api/powerpoint/powerpoint.connectortype) 枚举或等效于枚举值之一的字符串，用于指定行在终结点之间的串串方式。 有一个可选的第二个参数，类型 [为 ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) ，可以指定行的起始点和终点。 也可以在创建形状后设置这些属性。 该方法返回一个 `Shape` 对象。
 
 > [!NOTE]
-> 当形状是线条时 `top` `left` `Shape` `ShapeAddOptions` ，和 对象的 和 属性指定线条相对于幻灯片的上边缘和左边缘的起始点。 和 `height` `width` 属性指定线条相对于 *起点的终点*。 因此，相对于幻灯片的上边缘和左 `top` + `height` 边缘的终点 ()  (`left` + `width`) 。 所有属性的度量单位都是点，允许使用负值。
+> 当形状为线条时，`top``left`和`ShapeAddOptions`对象的`Shape`属性指定相对于幻灯片的上边缘和左边缘的线条的起始点。 和`height``width`属性指定 *相对于起点* 的行的终结点。 因此，相对于幻灯片顶部和左边缘的终结点 (`top` + `height`)  () 。`left` + `width` 所有属性的度量单位为磅，允许负值。
 
-下面的代码示例在幻灯片上创建一条直线。
+以下代码示例在幻灯片上创建直线。
 
 ```js
 // This sample creates a straight line on the first slide.
@@ -62,9 +60,9 @@ await PowerPoint.run(async (context) => {
 
 ### <a name="text-boxes"></a>文本框
 
-使用 [addTextBox](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1)) 方法创建一个文本框。 第一个参数是最初应显示在框中的文本。 有一个 [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) 类型的可选第二个参数，该参数可以指定文本框的初始大小及其相对于幻灯片顶部和左侧的位置。 也可以创建形状后设置这些属性。
+使用 [addTextBox](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1)) 方法创建文本框。 第一个参数是最初应显示在框中的文本。 有一个可选的第二个参数类型 [为 ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) ，可以指定文本框的初始大小及其相对于幻灯片顶部和左侧的位置。 也可以在创建形状后设置这些属性。
 
-下面的代码示例演示如何创建第一张幻灯片上的文本框。
+以下代码示例演示如何在第一张幻灯片上创建文本框。
 
 ```js
 // This sample creates a text box with the text "Hello!" and sizes it appropriately.
@@ -80,15 +78,15 @@ await PowerPoint.run(async (context) => {
 });
 ```
 
-## <a name="move-and-resize-shapes"></a>移动形状并调整形状大小
+## <a name="move-and-resize-shapes"></a>移动和调整形状的大小
 
-形状位于幻灯片顶部。 它们的位置由 和 `left` 属性 `top` 定义。 它们充当幻灯片`left: 0``top: 0`各自边缘的边距（以点为单位）以及左上角。 形状大小由 和 属性`height``width`指定。 您的代码可以通过重置这些属性来移动或调整形状的大小。  (形状是线条时，这些属性的含义略有不同。 请参阅 [Lines](#lines).) 
+形状位于幻灯片顶部。 它们的位置由 `left` 属性和 `top` 属性定义。 这些作为幻灯片各自边缘的边距，以磅为单位，`left: 0``top: 0`左上角。 形状大小由`height``width`和属性指定。 代码可以通过重置这些属性来移动或调整形状的大小。  (当形状为线条时，这些属性的含义略有不同。 请参阅 [Lines](#lines).) 
 
 ## <a name="text-in-shapes"></a>形状中的文本
 
-几何形状可以包含文本。 形状具有 TextFrame `textFrame` [类型的属性](/javascript/api/powerpoint/powerpoint.textframe)。 对象 `TextFrame` 管理文本显示选项 (如边距和文本溢出) 。 `TextFrame.textRange` 是文本内容和字体设置的 [TextRange](/javascript/api/powerpoint/powerpoint.textrange) 对象。
+几何形状可以包含文本。 形状的 `textFrame` 属性类型为 [TextFrame](/javascript/api/powerpoint/powerpoint.textframe)。 该 `TextFrame` 对象管理文本显示选项 (如边距和文本溢出) 。 `TextFrame.textRange` 是包含文本内容和字体设置的 [TextRange](/javascript/api/powerpoint/powerpoint.textrange) 对象。
 
-下面的代码示例创建一个名为 **"大** 括号"的几何形状，其文本为 **"Shape text"**。 它还调整形状和文本颜色，以及将文本的垂直对齐方式设置到中心。
+下面的代码示例创建一个名为 **“大括号”** 的几何形状，其文本 **为“形状文本”。** 它还调整形状和文本颜色，并设置文本与中心的垂直对齐方式。
 
 ```js
 // This sample creates a light blue rectangle with braces ("{}") on the left and right ends
@@ -111,7 +109,7 @@ await PowerPoint.run(async (context) => {
 
 ## <a name="delete-shapes"></a>删除形状
 
-使用对象的方法从幻灯片 `Shape` 中删除形状 `delete` 。
+使用对象`delete`的方法从幻灯片中`Shape`删除形状。
 
 下面的代码示例演示如何删除形状。
 

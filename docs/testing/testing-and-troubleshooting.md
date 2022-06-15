@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的用户错误
-description: 了解如何解决加载项中的Office错误。
-ms.date: 09/23/2021
+description: 了解如何排查Office加载项中的用户错误。
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0afef158938818a85ac0ac7ac79596f5911c0c45
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8b8be1c092bf18ae806e6dcd1b0462fba9193edd
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746392"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091144"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>排查 Office 加载项中的用户错误
 
@@ -30,8 +30,8 @@ ms.locfileid: "63746392"
 ## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>安装加载项时，状态栏中会显示“加载加载项时出错”
 
 1. 关闭 Office。
-1. 验证清单是否有效
-1. 重启加载项
+1. 验证清单是否有效。 请参阅[验证Office加载项的清单](troubleshoot-manifest.md)。
+1. 重新启动外接程序。
 1. 再次安装加载项。
 
 你还可以向我们提供反馈：如果使用 Windows 版 Excel 或 Mac 版 Excel，可以直接从 Excel 向 Office 扩展性团队报告反馈。 若要执行此操作，请选择“**文件**” | “**反馈**” | “**发送哭脸**”。 发送哭脸将提供必要的日志，以帮助我们了解该问题。
@@ -40,14 +40,14 @@ ms.locfileid: "63746392"
 
 如果在 Windows 上运行并[使用 Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) 的 Outlook 加载项不能正常工作，请尝试在 Internet Explorer 中启用脚本调试。
 
-- 转到"工具> **Internet 选项** > **""继续"**。
+- 转到“工具>**高级 Internet 选项** > **。**
 - 在“浏览”下，取消选中“禁用脚本调试 (Internet Explorer)”和“禁用脚本调试 (其他)”。
 
 我们建议您仅在解决问题时取消选中这些设置。如果您将其保持未选中状态，您在浏览时将会收到提示。解决此问题后，再次选中“禁用脚本调试 (Internet Explorer)”和“禁用脚本调试 (其他)”。
 
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>外接程序在 Office 2013 中无法激活
 
-如果用户执行以下步骤时外接程序未激活。
+如果用户执行以下步骤时加载项未激活。
 
 1. 使用 Microsoft 帐户在 Office 2013 中登录。
 
@@ -59,7 +59,7 @@ ms.locfileid: "63746392"
 
 ## <a name="add-in-dialog-box-cannot-be-displayed"></a>无法显示外接程序对话框
 
-使用 Office 外接程序时，将要求用户允许显示对话框。 用户选择" **允许"**，会出现以下错误消息。
+使用 Office 外接程序时，将要求用户允许显示对话框。 用户选择 **“允许**”，并出现以下错误消息。
 
 “浏览器中的安全设置阻止创建对话框。请尝试使用其他浏览器，或者配置浏览器，使地址栏中显示的 [URL] 和域处于同一安全区域。”
 
@@ -69,7 +69,7 @@ ms.locfileid: "63746392"
 |:--------------------|:---------------------|
 |Microsoft Edge|Office 网页版|
 
-若要解决此问题，最终用户或管理员可以将加载项的域添加到加载项浏览器的受信任Microsoft Edge列表中。
+若要解决此问题，最终用户或管理员可以将加载项的域添加到Microsoft Edge浏览器中的受信任站点列表。
 
 > [!IMPORTANT]
 > 请勿将不信任的加载项的 URL 添加到受信任网站列表中。

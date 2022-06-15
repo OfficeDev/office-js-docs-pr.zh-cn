@@ -559,9 +559,6 @@ items:
               - name: 无 UI 函数的身份验证
                 href: excel/custom-functions-authentication.md
                 displayName: 'Excel, Custom Functions'
-              - name: 调试无 UI 函数
-                href: excel/custom-functions-debugging.md
-                displayName: 'Excel, Custom Functions'
               - name: 运行时
                 href: excel/custom-functions-runtime.md
                 displayName: 'Excel, Custom Functions'
@@ -570,6 +567,9 @@ items:
             displayName: 'Excel, Custom Functions'
           - name: Web 请求
             href: excel/custom-functions-web-reqs.md
+            displayName: 'Excel, Custom Functions'
+          - name: 调试
+            href: excel/custom-functions-debugging.md
             displayName: 'Excel, Custom Functions'
           - name: 疑难解答
             href: excel/custom-functions-troubleshooting.md

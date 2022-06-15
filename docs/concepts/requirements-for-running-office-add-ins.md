@@ -1,14 +1,14 @@
 ---
 title: 运行 Office 加载项的要求
 description: 了解最终用户需要运行Office外接程序的客户端和服务器要求。
-ms.date: 05/01/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a9a86c7a68282135904dba981eeecb27a28e94e5
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: 06699e8a2c498eb6ad2f9832a8369beef5af4786
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313196"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091032"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
@@ -49,8 +49,8 @@ ms.locfileid: "65313196"
 - 必须安装Microsoft Edge，但不必是默认浏览器。 为了支持Office外接程序，充当主机的Office客户端使用属于Microsoft Edge的浏览器组件。
 
   > [!NOTE]
+  >
   > - 严格地说，可以在安装了 Internet Explorer 11 但未Microsoft Edge的计算机上开发加载项。 但是，IE 仅用于在某些较旧的Windows和Office版本组合上运行加载项。 有关更多详细信息，请参阅 [Office加载项使用的浏览器](browsers-used-by-office-web-add-ins.md)。 我们不建议使用此类旧环境作为主要加载项开发环境。 但是，如果你的外接程序的客户可能在这些较旧的组合中工作，我们建议你支持 Internet Explorer。 有关详细信息，请参阅 [支持 Internet Explorer 11](../develop/support-ie-11.md)。
-  > 
   > - 必须关闭 Internet Explorer 的增强安全配置 (ESC) 才能使 Office Web 加载项正常工作。 如果在开发加载项时使用 Windows Server 计算机作为客户端，请注意 Windows Server 中会默认打开 ESC。
 
 - 默认浏览器是下述软件之一：Internet Explorer 11，或者 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版。
@@ -79,7 +79,7 @@ Mac 上的Outlook作为Microsoft 365的一部分分发，它支持Outlook加载�
 |Android 版 Outlook|- Android平板电脑<br>- Android智能手机|- Android 4.4 KitKat 或更高版本|最新更新Microsoft 365 商业应用版或Exchange Online|浏览器不适用。 使用本机应用进行Android。<sup>1</sup>|
 |iOS 版 Outlook|- iPad平板电脑<br>- iPhone智能手机|- iOS 11 或更高版本|最新更新Microsoft 365 商业应用版或Exchange Online|浏览器不适用。 将本机应用用于iOS。<sup>1</sup>|
 |Outlook 网页版 (现代) <sup>2</sup>|- iPad 2 或更高版本<br>- Android平板电脑 |- iOS 5 或更高版本<br>- Android 4.4 KitKat 或更高版本|Microsoft 365，Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
-|Outlook 网页版（经典）|- iPhone 4 或更高版本<br>- iPad 2 或更高版本<br>- iPod Touch 4 或更高版本|- iOS 5 或更高版本|本地Exchange Server 2013 或更高版本 <sup>3</sup>|- Safari|
+|Outlook 网页版（经典）|- iPhone 4 或更高版本<br>- iPad 2 或更高版本<br>- iPod Touch 4 或更高版本|- iOS 5 或更高版本|本地Exchange Server 2013 或更高版本<sup>3</sup>|- Safari|
 
 > [!NOTE]
 > <sup>已</sup>弃用适用于Android的 1 个 OWA、iPad的 OWA 和用于iPhone本机应用[的](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b) OWA。

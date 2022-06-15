@@ -1,23 +1,22 @@
 ---
-title: Microsoft Office 加载项社区呼叫
-description: 每月 Microsoft Office 加载项社区呼叫议程、计划和资源。
-ms.date: 06/03/2022
+title: Microsoft Office加载项社区呼叫
+description: 每月Microsoft Office加载项社区呼叫议程、计划和资源。
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ece7a43eef1ae8823975fdb185c81cf2503de2
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: 4c3cdcb49aef2fce79eb761be3962084519594e9
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891940"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090836"
 ---
-# <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office 加载项社区呼叫
+# <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office加载项社区呼叫
 
-Microsoft Office 外接程序社区呼叫是每月通话，你可以在其中详细了解新功能、开发实践以及有关创建 Office 加载项的其他信息。社区呼叫发生在每月的第二个星期三（太平洋时间上午 8：00）。 可以下载日历邀请 https://aka.ms/officeaddinscommunitycall。
+Microsoft Office外接程序社区呼叫是每月通话，你可以在其中详细了解新功能、开发实践以及有关创建Office外接程序的其他信息。社区呼叫发生在每月的第二个星期三（太平洋时间上午 8：00）。 可以下载日历邀请 https://aka.ms/officeaddinscommunitycall。
 
-## <a name="agenda-for-june-8th-call"></a>6 月 8 日通话议程
+## <a name="agenda-for-july-13th-call"></a>7 月 13 日通话议程
 
-- Outlook 智能警报演示示例。
-- 使用 .NET Blazor 的 Excel 加载项演示。
+7月的议程将在通话前一周公布。
 
 ## <a name="previous-calls"></a>以前的调用
 
@@ -38,13 +37,13 @@ Microsoft Office 外接程序社区呼叫是每月通话，你可以在其中详
 - [2021 年 5 月 12 日](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-may-2021/)
 - [2021 年 4 月 14 日](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-april-14-2021/)
 - [2021 年 3 月 10 日](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-march-10-2021/)
-- [存档的 Office 加载项社区电话 - 2020 年 6 月 10 日 - 2021 年 2 月 10 日](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
+- [存档Office加载项社区呼叫 - 2020 年 6 月 10 日 - 2021 年 2 月 10 日](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
 
 ## <a name="see-also"></a>另请参阅
 
 - [定期的每月社区呼叫日历邀请](https://aka.ms/officeaddinscommunitycall)
-- [社区呼叫主题请求和问题](https://aka.ms/officeaddinsform)
-- [Microsoft 365 开发人员 YouTube 频道](https://aka.ms/m365devyoutube)
-- [Microsoft 365 社区 YouTube 频道](https://aka.ms/m365pnp/videos)
-- [Microsoft 365 社区网站](https://aka.ms/m365pnp/community)
-- [Microsoft 365 社区博客](https://aka.ms/m365pnp/community/blog)
+- [Community调用主题请求和问题](https://aka.ms/officeaddinsform)
+- [Microsoft 365开发人员 YouTube 频道](https://aka.ms/m365devyoutube)
+- [Microsoft 365社区 YouTube 频道](https://aka.ms/m365pnp/videos)
+- [Microsoft 365社区网站](https://aka.ms/m365pnp/community)
+- [Microsoft 365社区博客](https://aka.ms/m365pnp/community/blog)
