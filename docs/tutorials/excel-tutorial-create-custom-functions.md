@@ -1,15 +1,15 @@
 ---
 title: Excel 自定义函数教程
 description: 在本教程中，你将创建一个 Excel 外接程序，其中包含可执行计算、请求 Web 数据或流式传输 Web 数据的自定义函数。
-ms.date: 03/23/2022
+ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 984a2090a70360af4f361bb531190a7ee2a05c4c
-ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
+ms.openlocfilehash: 9550986edcbbed56c69e25e183c304ebe6f6cc07
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "64404728"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091057"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>教程：在 Excel 中创建自定义函数
 
@@ -42,9 +42,9 @@ ms.locfileid: "64404728"
 
     - **选择项目类型:** `Excel Custom Functions Add-in project`
     - **选择脚本类型:** `JavaScript`
-    - **要如何命名加载项?** `starcount`
+    - **要如何命名加载项?** `My custom functions add-in`
 
-    :::image type="content" source="../images/starcountPrompt.png" alt-text="Yeoman Office 加载项生成器命令行界面提示自定义函数项目的屏幕截图。":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="Yeoman Office 加载项生成器命令行界面提示自定义函数项目的屏幕截图。":::
 
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
@@ -53,7 +53,7 @@ ms.locfileid: "64404728"
 1. 导航到项目的根文件夹。
 
     ```command&nbsp;line
-    cd starcount
+    cd "My custom functions add-in"
     ```
 
 1. 生成项目。
@@ -105,7 +105,7 @@ npm run start:desktop
 
 集成来自 Web 的数据是通过自定义函数来扩展 Excel 的好方法。 接下来，需要创建一个名为“`getStarCount`”的自定义函数，显示给定 Github 存储库所拥有的星星数量。
 
-1. 在 **starcount** 项目中，找到 **./src/functions/functions.js** 文件，然后在代码编辑器中将其打开。
+1. 在“**我的自定义函数加载项**”项目中，找到文件 **./src/functions/functions.js**，并在代码编辑器中将其打开。
 
 1. 在 **function.js** 中，添加以下代码。
 
@@ -151,9 +151,9 @@ npm run start:desktop
 
     :::image type="content" source="../images/select-insert.png" alt-text="Windows 上 Excel 中插入功能区的屏幕截图，其中突出显示了“我的外接程序”向下箭头。":::
 
-1. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择“**starcount**”加载项进行注册。
+1. 在可用加载项列表中，查找“**开发人员加载项**”部分，并选择“**我的自定义函数加载项**”以进行注册。
 
-    :::image type="content" source="../images/list-starcount.png" alt-text=" Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项。":::
+    :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示了 Excel 自定义函数加载项。":::
 
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
@@ -177,7 +177,7 @@ npm run start:desktop
 
 在下面的代码示例中，请注意，有两个函数：`currentTime` 和 `clock`。 `currentTime` 函数是不使用流式处理的静态函数。 它将以字符串形式返回日期。 `clock` 函数使用 `currentTime` 函数每秒向 Excel 中的单元格提供一次新时间。 它使用 `invocation.setResult` 将时间传递给 Excel 单元格，并使用 `invocation.onCanceled` 处理函数取消。 
 
-**starcount** 项目已在 **./src/functions/functions.js** 文件中包含以下两个函数。
+**我的自定义函数加载项** 项目已在 **./src/functions/functions.js** 文件中包含以下两个函数。
 
 ```JS
 /**

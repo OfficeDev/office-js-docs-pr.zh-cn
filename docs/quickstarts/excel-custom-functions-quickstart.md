@@ -1,15 +1,15 @@
 ---
-ms.date: 03/23/2022
+ms.date: 06/10/2022
 description: 在 Excel 中开发自定义函数快速入门指南。
 title: 自定义函数快速入门
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: cac81cb25b9880a3057e2246d39ac226666a4cb4
-ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
+ms.openlocfilehash: aa44caf014a6d617112a616e96e1c67079c4c385
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "64404702"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091081"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>开始开发 Excel 自定义函数
 
@@ -33,16 +33,16 @@ ms.locfileid: "64404702"
 
     - **选择项目类型:** `Excel Custom Functions Add-in project`
     - **选择脚本类型:** `JavaScript`
-    - **要如何命名加载项?** `starcount`
+    - **要如何命名加载项?** `My custom functions add-in`
 
-    :::image type="content" source="../images/starcountPrompt.png" alt-text="Yeoman Office 加载项生成器命令行界面提示自定义函数项目的屏幕截图。":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="Yeoman Office 加载项生成器命令行界面提示自定义函数项目的屏幕截图。":::
 
     Yeoman 生成器将创建项目文件并安装支持的 Node 组件。
 
 1. Yeoman 生成器将在命令行中为你提供有关如何处理项目的说明，但请忽略它们并继续按照我们的说明进行操作。导航到项目的根文件夹。
 
     ```command&nbsp;line
-    cd starcount
+    cd "My custom functions add-in"
     ```
 
 1. 生成项目。
@@ -105,3 +105,4 @@ npm run start:desktop
 - [自定义函数概述](../excel/custom-functions-overview.md)
 - [自定义函数元数据](../excel/custom-functions-json.md)
 - [Excel 自定义函数的运行时](../excel/custom-functions-runtime.md)
+- [使用 Visual Studio Code 发布](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

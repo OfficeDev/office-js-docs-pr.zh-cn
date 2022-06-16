@@ -1,15 +1,15 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 05/19/2022
+ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 22d650d7727c4fdaf099e3ed49d7cd8390deea9d
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: a24ac28c5b1cc44e4ba6563106c5b805b3376191
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650638"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091088"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -772,10 +772,9 @@ var config;
 var btnEvent;
 
 // The initialize function must be run each time a new page is loaded.
-Office.initialize = function (reason) {
+Office.initialize = function () {
 };
 
-// Add any UI-less function here.
 function showError(error) {
   Office.context.mailbox.item.notificationMessages.replaceAsync('github-error', {
     type: 'errorMessage',
@@ -954,7 +953,7 @@ function buildBodyContent(gist, callback) {
 
 ## <a name="implement-a-task-pane"></a>实现任务窗格
 
-此外接程序的“**插入 gist**”按钮将打开任务窗格并显示用户的 gist。 然后，用户可以选择要插入到邮件正文中的其中一个 gist。 如果用户尚未配置外接程序，系统将提示他们进行配置。
+此外接程序的“**插入 gist**”按钮将打开任务窗格并显示用户的 gist。 然后，用户可以选择要插入到邮件正文中的其中一个 gist。 如果用户尚未配置加载项，系统将提示他们进行配置。
 
 ### <a name="specify-the-html-for-the-task-pane"></a>为任务窗格创建 HTML
 
@@ -1098,83 +1097,97 @@ ul {
   -webkit-flex-wrap: nowrap;
           flex-wrap: nowrap;
   height: 100%; }
-  .ms-landing-page__main {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-            flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-    -webkit-flex: 1 1 0;
-            flex: 1 1 0;
-    height: 100%; }
 
-  .ms-landing-page__content {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-            flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-    height: 100%;
-    -webkit-flex: 1 1 0;
-            flex: 1 1 0;
-    padding: 20px; }
-    .ms-landing-page__content h2 {
-      margin-bottom: 20px; }
-  .ms-landing-page__footer {
-    display: -webkit-inline-flex;
-    display: inline-flex;
-    -webkit-justify-content: center;
-            justify-content: center;
-    -webkit-align-items: center;
-            align-items: center; }
-    .ms-landing-page__footer--left {
-      transition: background ease 0.1s, color ease 0.1s;
-      display: -webkit-inline-flex;
-      display: inline-flex;
-      -webkit-justify-content: flex-start;
-              justify-content: flex-start;
-      -webkit-align-items: center;
-              align-items: center;
-      -webkit-flex: 1 0 0px;
-              flex: 1 0 0px;
-      padding: 20px; }
-      .ms-landing-page__footer--left:active {
-        cursor: default; }
-      .ms-landing-page__footer--left--disabled {
-        opacity: 0.6;
-        pointer-events: none;
-        cursor: not-allowed; }
-        .ms-landing-page__footer--left--disabled:active, .ms-landing-page__footer--left--disabled:hover {
-          background: transparent; }
-      .ms-landing-page__footer--left img {
-        width: 40px;
-        height: 40px; }
-      .ms-landing-page__footer--left h1 {
-        -webkit-flex: 1 0 0px;
-                flex: 1 0 0px;
-        margin-left: 15px;
-        text-align: left;
-        width: auto;
-        max-width: auto;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis; }
-    .ms-landing-page__footer--right {
-      transition: background ease 0.1s, color ease 0.1s;
-      padding: 29px 20px; }
-      .ms-landing-page__footer--right:active, .ms-landing-page__footer--right:hover {
-        background: #005ca4;
-        cursor: pointer; }
-      .ms-landing-page__footer--right:active {
-        background: #005ca4; }
-      .ms-landing-page__footer--right--disabled {
-        opacity: 0.6;
-        pointer-events: none;
-        cursor: not-allowed; }
-        .ms-landing-page__footer--right--disabled:active, .ms-landing-page__footer--right--disabled:hover {
-          background: transparent; }
+.ms-landing-page__main {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-flex: 1 1 0;
+          flex: 1 1 0;
+  height: 100%; }
+
+.ms-landing-page__content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  height: 100%;
+  -webkit-flex: 1 1 0;
+          flex: 1 1 0;
+  padding: 20px; }
+
+.ms-landing-page__content h2 {
+  margin-bottom: 20px; }
+
+.ms-landing-page__footer {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center; }
+
+.ms-landing-page__footer--left {
+  transition: background ease 0.1s, color ease 0.1s;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-flex: 1 0 0px;
+          flex: 1 0 0px;
+  padding: 20px; }
+
+.ms-landing-page__footer--left:active {
+  cursor: default; }
+
+.ms-landing-page__footer--left--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed; }
+
+.ms-landing-page__footer--left--disabled:active, .ms-landing-page__footer--left--disabled:hover {
+  background: transparent; }
+
+.ms-landing-page__footer--left img {
+  width: 40px;
+  height: 40px; }
+
+.ms-landing-page__footer--left h1 {
+  -webkit-flex: 1 0 0px;
+          flex: 1 0 0px;
+  margin-left: 15px;
+  text-align: left;
+  width: auto;
+  max-width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.ms-landing-page__footer--right {
+  transition: background ease 0.1s, color ease 0.1s;
+  padding: 29px 20px; }
+
+.ms-landing-page__footer--right:active, .ms-landing-page__footer--right:hover {
+  background: #005ca4;
+  cursor: pointer; }
+
+.ms-landing-page__footer--right:active {
+  background: #005ca4; }
+
+.ms-landing-page__footer--right--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed; }
+
+.ms-landing-page__footer--right--disabled:active, .ms-landing-page__footer--right--disabled:hover {
+  background: transparent; }
 ```
 
 ### <a name="specify-the-javascript-for-the-task-pane"></a>为任务窗格指定 JavaScript
@@ -1293,7 +1306,7 @@ ul {
 
 ### <a name="test-the-insert-gist-button"></a>测试“插入 gist”按钮
 
-请保存所有更改并从命令提示符运行 `npm start`（如果服务器尚未处于运行状态）。 然后完成以下步骤以测试“**插入 gist**”按钮。
+请保存所有更改并从命令提示符运行 `npm start`（如果服务器尚未处于运行状态）。 然后，完成以下步骤以测试“**插入 gist**”按钮。
 
 1. 打开 Outlook 并撰写一封新邮件。
 

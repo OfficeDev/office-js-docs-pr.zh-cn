@@ -6,9 +6,9 @@
 
     :::image type="content" source="../images/select-insert.png" alt-text="Windows 上 Excel 中插入功能区的屏幕截图，其中突出显示了“我的外接程序”向下箭头。":::
 
-1. 在可用加载项列表中，找到“**开发人员加载项**”部分并选择“**starcount**”加载项进行注册。
+1. 在可用加载项列表中，查找“**开发人员加载项**”部分，并选择“**我的自定义函数加载项**”以进行注册。
 
-    :::image type="content" source="../images/list-starcount.png" alt-text=" Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项。":::
+    :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text=" Windows 版 Excel 中的“插入”功能区屏幕截图，在“我的加载项”列表中突出显示“Excel 自定义函数”加载项。":::
 
 # <a name="excel-on-the-web"></a>[Excel 网页版](#tab/excel-online)
 
