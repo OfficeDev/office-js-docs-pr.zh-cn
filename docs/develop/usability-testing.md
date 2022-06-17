@@ -1,20 +1,20 @@
 ---
 title: Office 加载项的可用性测试
-description: 了解如何使用真实用户测试外接程序设计。
+description: 了解如何使用实际用户测试外接程序设计。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fbdb8f7474412e95aba03d2a409ac2e5bc4b25a6
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: b884ae8232360b8778b832b8ded90f3d3a857911
+ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483509"
+ms.lasthandoff: 06/17/2022
+ms.locfileid: "66136326"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office 加载项的可用性测试
 
 出色的外接程序设计会考虑到用户行为。因为自己的预想会影响设计决策，所以务必要通过实际用户测试设计来确保客户可正常使用外接程序。
 
-可以使用不同方法运行可用性测试。 对于许多外接程序开发人员而言，远程、未经审阅的可用性研究最为节省时间且最具有成本效益。 多个热门测试服务使这一点变得简单;下面是一些示例。
+可以使用不同方法运行可用性测试。 对于许多外接程序开发人员而言，远程、未经审阅的可用性研究最为节省时间且最具有成本效益。 一些常用的测试服务使这一点变得简单;下面是一些示例。
 
 - [UserTesting.com](https://www.UserTesting.com)
 - [Optimalworkshop.com](https://www.Optimalworkshop.com)
@@ -35,7 +35,7 @@ ms.locfileid: "64483509"
 
 研究问题定义研究的目标并指导测试计划。这些问题将帮助你确定要招募的参与者及其要执行的任务。将研究问题尽可能地具体化。还可以尽量回答较为宽泛的问题。
 
-下面是研究问题的一些示例。
+下面是一些研究问题的示例。
 
 **具体**
 
@@ -48,7 +48,7 @@ ms.locfileid: "64483509"
 - 用户在单击命令栏中的图标前是否了解他们的含义？
 - 用户能否轻松地找到设置菜单？
 
-获取从发现外接程序到安装并使用外接程序的整个用户操作体验的相关数据至关重要。 请考虑可解决外接程序用户体验以下方面的研究问题。
+获取从发现外接程序到安装并使用外接程序的整个用户操作体验的相关数据至关重要。 考虑解决外接程序用户体验的以下方面的研究问题。
 
 - 在 AppSource 中查找加载项
 - 选择安装加载项
@@ -108,7 +108,7 @@ ms.locfileid: "64483509"
 
 通常，逐步指导用户如何安装外接程序需要大约 5 分钟。以下是简洁明了的安装步骤示例。请根据测试的具体情况调整步骤。
 
-**请按照以下 (，将加载项名称) 此处PowerPoint外接程序中。**
+**请按照以下说明安装 (在此处插入外接程序名称，) 外接程序PowerPoint。**
 
 1. 打开 Microsoft PowerPoint。
 1. 选择“**空白演示文稿**”。
@@ -140,5 +140,5 @@ ms.locfileid: "64483509"
 ## <a name="see-also"></a>另请参阅
 
 - [如何执行可用性测试](https://whatpixel.com/howto-conduct-usability-testing/)  
-- [用户测试的最佳做法](https://help.usertesting.com/hc/en-us/articles/115003370231-Best-practices-for-UserTesting)  
+- [用户测试的最佳做法](https://help.usertesting.com/hc/articles/115003370231-Best-practices-for-UserTesting)  
 - [最小化偏差](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  

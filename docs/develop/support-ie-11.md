@@ -3,12 +3,12 @@ title: 支持 Internet Explorer 11
 description: 了解如何在加载项中支持 Internet Explorer 11 和 ES5 Javascript。
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 70fea604c17525836857b7cff4c8670da757f2a6
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: 1cb641f1ed1a75fcff23291d1fa566bbf6dc008b
+ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313175"
+ms.lasthandoff: 06/17/2022
+ms.locfileid: "66136423"
 ---
 # <a name="support-internet-explorer-11"></a>支持 Internet Explorer 11
 
@@ -79,9 +79,9 @@ if (navigator.userAgent.indexOf("Trident") === -1) {
 ```
 
 > [!IMPORTANT]
-> 读取属性通常不是一个好的做法 `userAgent` 。 请确保你熟悉文章， [使用用户代理进行浏览器检测](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent)，包括阅读的建议和替代方法 `userAgent`。 特别是，如果在上述子句中 `else` 采用选项 1，请考虑使用功能检测，而不是对用户代理进行测试。
+> 读取属性通常不是一个好的做法 `userAgent` 。 请确保你熟悉文章， [使用用户代理进行浏览器检测](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent)，包括阅读的建议和替代方法 `userAgent`。 特别是，如果在上述子句中 `else` 采用选项 1，请考虑使用功能检测，而不是对用户代理进行测试。
 >
-> 自 2021 年 9 月 30 日起， [用户代理的哪个部分包含要查找的信息](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) 部分中的文本？日期从 Internet Explorer 11 发布之前开始。 它通常仍然准确，并且本文英文版部分中的 *表* 是最新的。 同样，在大多数情况下，本文的非英语版本中的文本和表已过时。
+> 自 2021 年 9 月 30 日起， [用户代理的哪个部分包含要查找的信息](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) 部分中的文本？日期从 Internet Explorer 11 发布之前开始。 它通常仍然准确，并且本文英文版部分中的 *表* 是最新的。 同样，在大多数情况下，本文的非英语版本中的文本和表已过时。
 
 ## <a name="test-an-add-in-on-internet-explorer"></a>在 Internet Explorer 上测试加载项
 
