@@ -1,18 +1,18 @@
 ---
-ms.date: 05/17/2020
-description: 在不使用任务窗格Excel自定义函数对用户进行身份验证。
-title: 无 UI 自定义函数的身份验证
+ms.date: 06/15/2022
+description: 使用不使用共享运行时的自定义函数对用户进行身份验证。
+title: 对没有共享运行时的自定义函数进行身份验证
 ms.localizationpriority: medium
-ms.openlocfilehash: 946800cf884f903e0794702d32ffb7e1075e1ca3
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 0f4493f9cf68236a9d9d83ebd3299c9ce3371560
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340272"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229678"
 ---
-# <a name="authentication-for-ui-less-custom-functions"></a>无 UI 自定义函数的身份验证
+# <a name="authentication-for-custom-functions-without-a-shared-runtime"></a>对没有共享运行时的自定义函数进行身份验证
 
-在某些情况下，不使用任务窗格或其他用户界面元素的自定义函数 (无 UI 自定义函数) 将需要对用户进行身份验证，才能访问受保护的资源。 请注意，无 UI 自定义函数在仅 JavaScript 运行时中运行。 因此，你需要在仅 JavaScript `OfficeRuntime.storage` 运行时和使用 对象和对话框 API 的外接程序使用的典型浏览器引擎运行时之间来回传递数据。
+在某些情况下，不使用共享运行时的自定义函数需要对用户进行身份验证才能访问受保护的资源。 在仅限 JavaScript 的运行时中不使用共享运行时的自定义函数。 因此，如果外接程序具有任务窗格，则需要在仅限 JavaScript 的运行时和任务窗格使用的支持 HTML 的运行时之间来回传递数据。 使用 [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) 对象和特殊对话框 API 执行此操作。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -20,34 +20,34 @@ ms.locfileid: "63340272"
 
 ## <a name="officeruntimestorage-object"></a>OfficeRuntime.storage 对象
 
-无 UI 自定义 `localStorage` 函数使用的仅 JavaScript 运行时在全局窗口（通常存储数据）上没有可用的对象。 相反，您应使用 [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) 设置和获取数据，在无 UI 自定义函数和任务窗格之间共享数据。
+仅限 JavaScript 的运行时在全局窗口中没有 `localStorage` 可用的对象，通常会在其中存储数据。 相反，代码应使用 `OfficeRuntime.storage` 设置和获取数据在自定义函数和任务窗格之间共享数据。
 
 ### <a name="suggested-usage"></a>建议的用法
 
-当你需要从无 UI 自定义函数进行身份验证时 `storage` ，请检查是否获取了访问令牌。 如果没有，请使用对话框 API 对用户进行身份验证，检索访问令牌，然后将令牌存储在 `storage` 中以备将来使用。
+当需要从不使用共享运行时的自定义函数外接程序进行身份验证时，代码应检查 `OfficeRuntime.storage` 是否已获取访问令牌。 如果没有，请使用 [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) 对用户进行身份验证，检索访问令牌，然后将令牌存储在 `OfficeRuntime.storage` 其中供将来使用。
 
 ## <a name="dialog-api"></a>对话框 API
 
-如果令牌不存在，则应使用对话框 API 让用户登录。 用户输入凭据后，生成的访问令牌可以存储在 `storage` 中。
+如果某个令牌不存在，则应使用 `OfficeRuntime.dialog` API 要求用户登录。 用户输入凭据后，生成的访问令牌可以存储为项 `OfficeRuntime.storage`。
 
 > [!NOTE]
-> 仅 JavaScript 运行时使用的 Dialog 对象与任务窗格使用的浏览器引擎运行时中的 Dialog 对象略有不同。 它们都称为"对话框 API" `OfficeRuntime.Dialog` ，但用于对仅 JavaScript 运行时中的用户进行身份验证。
+> 仅限 JavaScript 的运行时使用与任务窗格使用的浏览器引擎运行时中的对话框对象略有不同的对话对象。 它们都称为“对话框 API”，但使用 [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) 在仅限 JavaScript 的运行时（*而不是* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1))）中对用户进行身份验证。
 
-下图概述了此基本过程。 虚线表示无 UI 自定义函数和加载项的任务窗格都是整个加载项的一部分，尽管它们使用单独的运行时。
+下图概述了此基本过程。 虚线表示自定义函数和外接程序的任务窗格都是加载项整体的一部分，尽管它们使用单独的运行时。
 
-1. 从工作簿中的单元格发出无 UI 自定义函数Excel调用。
-2. 无 UI 自定义函数用于 `Dialog` 将用户凭据传递到网站。
-3. 然后，此网站会向无 UI 自定义函数返回访问令牌。
-4. 然后，无 UI 自定义函数将此访问令牌设置到 `storage`。
-5. 加载项的任务窗格将从 `storage` 访问该令牌。
+1. 你可以从 Excel 工作簿中的单元格发出自定义函数调用。
+2. 自定义函数使用 `OfficeRuntime.dialog` 将你的用户凭据传递给网站。
+3. 该网站随后会将访问令牌返回给自定义函数。
+4. 然后，自定义函数将此访问令牌设置为其中 `OfficeRuntime.storage`的项。
+5. 加载项的任务窗格将从 `OfficeRuntime.storage` 访问该令牌。
 
-![使用对话框 API 获取访问令牌，然后通过 OfficeRuntime.storage API 与任务窗格共享令牌的自定义函数关系图。](../images/authentication-diagram.png "身份验证图表。")
+![使用对话框 API 获取访问令牌，然后通过 OfficeRuntime.storage API 与任务窗格共享令牌的自定义函数示意图。](../images/authentication-diagram.png "身份验证图。")
 
 ## <a name="storing-the-token"></a>存储令牌
 
-以下示例来自[在自定义函数中使用 OfficeRuntime.storage](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage) 代码示例。 有关在无 UI 自定义函数和任务窗格之间共享数据的完整示例，请参阅此代码示例。
+以下示例来自[在自定义函数中使用 OfficeRuntime.storage](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage) 代码示例。 有关在不使用共享运行时的加载项中的自定义函数和任务窗格之间共享数据的完整示例，请参阅此代码示例。
 
-如果无 UI 自定义函数进行身份验证，则它会收到访问令牌，并且将需要将令牌存储在 中 `storage`。 以下代码示例演示如何调用 `storage.setItem` 方法来存储值。 函数 `storeValue` 是无 UI 的自定义函数，例如用于存储用户的值。 你可以对其进行修改以存储所需的任何令牌值。
+如果使用自定义函数进行身份验证，则它会收到访问令牌，并且需要将其存储在 `OfficeRuntime.storage` 中。 以下代码示例演示如何调用 `storage.setItem` 方法来存储值。 该 `storeValue` 函数是一个自定义函数，用于存储用户的值。 你可以对其进行修改以存储所需的任何令牌值。
 
 ```js
 /**
@@ -65,7 +65,7 @@ function storeValue(key, value) {
 }
 ```
 
-当任务窗格需要访问令牌时，它可以从 `storage` 检索令牌。 以下代码示例演示如何使用 `storage.getItem` 方法来检索令牌。
+当任务窗格需要访问令牌时，它可以从 `OfficeRuntime.storage` 项中检索令牌。 以下代码示例演示如何使用 `storage.getItem` 方法来检索令牌。
 
 ```js
 /**
@@ -86,20 +86,20 @@ function receiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>一般指导
 
-Office 加载项基于 Web，你可以使用任何 Web 身份验证技术。 没有特定的模式或方法必须遵循，以使用无 UI 自定义函数实现你自己的身份验证。 你可能希望查阅有关各种身份验证模式的文档，请先参阅[这篇关于通过外部服务进行授权的文章](../develop/auth-external-add-ins.md)。  
+Office 加载项基于 Web，你可以使用任何 Web 身份验证技术。 使用自定义函数实施自己的身份验证时，不必遵循特定的模式或方法。 你可能希望查阅有关各种身份验证模式的文档，请先参阅[这篇关于通过外部服务进行授权的文章](../develop/auth-external-add-ins.md)。  
 
-在开发自定义函数时，请避免使用下列位置来存储数据：。
+在开发自定义函数时，避免使用以下位置存储数据：
 
-- `localStorage`：无 UI 的自定义函数无法访问全局 `window` 对象，因此无法访问 中存储的数据 `localStorage`。
-- `Office.context.document.settings`：此位置不安全，使用加载项的任何人员都可以提取相关信息。
+- `localStorage`：不使用共享运行时的自定义函数无权访问全局 `window` 对象，因此无法访问存储在其中 `localStorage`的数据。
+- `Office.context.document.settings`：此位置不安全，任何使用加载项的人都可以提取信息。
 
 ## <a name="dialog-box-api-example"></a>对话框 API 示例
 
-在下面的代码示例中，函数 `getTokenViaDialog` 使用 `Dialog` API 函数 `displayWebDialogOptions` 显示对话框。 提供此示例是显示对象 `Dialog` 的功能，而不是演示如何进行身份验证。
+在以下代码示例中，函 `getTokenViaDialog` 数使用该 `OfficeRuntime.displayWebDialog` 函数显示对话框。 提供此示例是为了显示方法的功能，而不是演示如何进行身份验证。
 
 ```JavaScript
 /**
- * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this is not a sufficient example of authentication but is intended to show the capabilities of the Dialog object.
+ * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this isn't a sufficient example of authentication but is intended to show the capabilities of the displayWebDialog method.
  * @param {string} url URL for a stored token.
  */
 function getTokenViaDialog(url) {
@@ -143,9 +143,9 @@ function getTokenViaDialog(url) {
 
 ## <a name="next-steps"></a>后续步骤
 
-了解如何调试 [无 UI 自定义函数](custom-functions-debugging.md)。
+了解如何 [调试自定义函数](custom-functions-debugging.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-* [无 UI 的运行时Excel自定义函数](custom-functions-runtime.md)
+* [自定义函数的仅限 JavaScript 的运行时](custom-functions-runtime.md)
 * [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

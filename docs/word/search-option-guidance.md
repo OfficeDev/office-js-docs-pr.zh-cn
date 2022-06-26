@@ -1,19 +1,18 @@
 ---
-title: 使用搜索选项在 Word 加载项中查找文本
+title: 在 Word 加载项中使用搜索选项查找文本
 description: 了解如何在 Word 加载项中使用搜索选项。
 ms.date: 02/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f9dd2605af9307a49fabfafdecb0df4e97fe9f
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: 988349275dc350a342dfcb80e8e999c76de78e7d
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187341"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229706"
 ---
-# <a name="use-search-options-to-find-text-in-your-word-add-in"></a>使用搜索选项在 Word 加载项中查找文本
+# <a name="use-search-options-in-your-word-add-in-to-find-text"></a>在 Word 加载项中使用搜索选项查找文本
 
-加载项经常需要基于文档文本运行。
-每种内容控件均有公开的搜索函数（这些内容控件包括 [Body](/javascript/api/word/word.body)、[Paragraph](/javascript/api/word/word.paragraph)、[Range](/javascript/api/word/word.range)、[Table](/javascript/api/word/word.table)、[TableRow](/javascript/api/word/word.tablerow) 和基本 [ContentControl](/javascript/api/word/word.contentcontrol) 对象）。 此函数接受一个代表所搜索文本的字符串（如通配符表达式）和 [SearchOptions](/javascript/api/word/word.searchoptions) 对象。 它返回与搜索文本匹配的区域集合。
+加载项经常需要基于文档文本运行。 每种内容控件均有公开的搜索函数（这些内容控件包括 [Body](/javascript/api/word/word.body)、[Paragraph](/javascript/api/word/word.paragraph)、[Range](/javascript/api/word/word.range)、[Table](/javascript/api/word/word.table)、[TableRow](/javascript/api/word/word.tablerow) 和基本 [ContentControl](/javascript/api/word/word.contentcontrol) 对象）。 此函数接受一个代表所搜索文本的字符串（如通配符表达式）和 [SearchOptions](/javascript/api/word/word.searchoptions) 对象。 它返回与搜索文本匹配的区域集合。
 
 ## <a name="search-options"></a>搜索选项
 

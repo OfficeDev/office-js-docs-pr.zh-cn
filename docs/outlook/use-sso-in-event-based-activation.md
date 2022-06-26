@@ -1,29 +1,32 @@
 ---
-title: 在使用基于事件的 () Outlook加载项中启用单一登录或 SSO 登录
-description: 了解如何在基于事件的激活加载项中操作时启用 SSO。
-ms.date: 03/17/2022
+title: '在使用基于事件的激活的Outlook加载项中启用单一登录 (SSO) '
+description: 了解如何在基于事件的激活加载项中工作时启用 SSO。
+ms.date: 06/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 38c717e0d626f4c135f76350e30398db26cac24f
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 477ecb8c0ab84ab472763f83e342258998749861
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746538"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229727"
 ---
-# <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>在使用基于事件的 () Outlook加载项中启用单一登录或 SSO 登录
+# <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>在使用基于事件的激活的Outlook加载项中启用单一登录 (SSO) 
 
-当Outlook加载项使用基于事件的激活时，事件在单独的 JavaScript 运行时中运行。 完成使用 Outlook 加载项中的单一登录[令牌](authenticate-a-user-with-an-sso-token.md)对用户进行身份验证中的步骤后，请按照本文中所述的其他步骤操作，为事件处理代码启用 SSO。 启用 SSO 后，可以调用 `getAccessToken()` API 获取具有用户标识的访问令牌。
+当Outlook加载项使用基于事件的激活时，事件在单独的 JavaScript 运行时中运行。 完成在Outlook加载项[中使用单一登录令牌对用户进行身份验证](authenticate-a-user-with-an-sso-token.md)的步骤后，请按照本文中所述的其他步骤为事件处理代码启用 SSO。 启用 SSO 后，可以调用 [getAccessToken () API](/javascript/api/office-runtime/officeruntime.auth) 以获取具有用户标识的访问令牌。
+
+> [!IMPORTANT]
+> 虽然 `OfficeRuntime.auth.getAccessToken` 检索访问令牌并 `Office.auth.getAccessToken` 执行相同的功能，但我们建议在基于事件的加载项中调用 `OfficeRuntime.auth.getAccessToken` 。 支持基于事件的激活和 SSO 的所有Outlook客户端版本都支持此 API。 另一方面，`Office.auth.getAccessToken`仅从版本 2111 (内部版本 14701.20000) 开始Windows Outlook支持。
+
+对于Windows上的Outlook，请在Outlook加载项清单中标识要加载的单个 JavaScript 文件以进行基于事件的激活。 还需要指定Office允许此文件支持 SSO。 为此，请创建所有加载项及其 JavaScript 文件的列表，以便通过已知的 URI 提供Office。
 
 > [!NOTE]
-> 本文中的步骤仅适用于在加载项Outlook加载项Windows。 这是因为Outlook Windows使用 JavaScript 文件，而 Outlook 网页版 使用可引用同一 JavaScript 文件的 HTML 文件。
+> 本文中的步骤仅适用于在Windows上运行Outlook加载项时。 这是因为Windows上的Outlook使用 JavaScript 文件，而Outlook 网页版使用可引用同一 JavaScript 文件的 HTML 文件。
 
-For Outlook on Windows， in the manifest for your Outlook add-in， you identify a single JavaScript file to load for event-based activation. 还需要指定是否Office此文件支持 SSO。 为此，请创建所有加载项及其 JavaScript 文件的列表，以Office已知 URI 访问加载项。
+## <a name="list-allowed-add-ins-with-a-well-known-uri"></a>使用已知 URI 列出允许的加载项
 
-## <a name="list-allowed-add-ins-with-a-well-known-uri"></a>列出具有已知 URI 的允许加载项
+若要列出允许使用 SSO 的加载项，请创建一个 JSON 文件，用于标识每个加载项的每个 JavaScript 文件。 然后在已知 URI 中托管该 JSON 文件。 众所周知的 URI 允许对所有已授权获取当前 Web 源令牌的托管 JS 文件进行规范。 这可确保源的所有者能够完全控制哪些托管 JS 文件应用于加载项，哪些文件不是，从而防止了模拟周围的任何安全漏洞，例如。
 
-若要列出允许哪些加载项使用 SSO，请创建一个 JSON 文件，用于标识每个加载项的每个 JavaScript 文件。 然后，在已知 URI 上托管该 JSON 文件。 已知 URI 允许指定授权获取当前 Web 源令牌的所有托管 JS 文件。 这将确保源所有者对哪些托管 JS 文件应用于外接程序以及哪些不用于外接程序具有完全控制权，例如，防止有关模拟的任何安全漏洞。
-
-以下示例演示如何在主版本和 beta (中为两个外接程序启用 SSO) 。 您可以列出所需多的加载项，具体取决于从 Web 服务器提供的加载项数。
+以下示例演示如何为主版本和 beta 版本)  (两个加载项启用 SSO。 可以根据需要列出任意数量的加载项，具体取决于从 Web 服务器提供的加载项数。
 
 ```json
 {
@@ -35,11 +38,11 @@ For Outlook on Windows， in the manifest for your Outlook add-in， you identif
 }
 ```
 
-将 JSON 文件托管在 `.well-known` 源根目录的 URI 中命名的位置下。 例如，如果原点为 `https://addin.contoso.com:8000/`，则已知 URI 为 `https://addin.contoso.com:8000/.well-known/microsoft-officeaddins-allowed.json`。
+在源根目录的 URI 中命名 `.well-known` 的位置下托管 JSON 文件。 例如，如果源是 `https://addin.contoso.com:8000/`，则已知的 URI 为 `https://addin.contoso.com:8000/.well-known/microsoft-officeaddins-allowed.json`。
 
-源引用方案 + 子域 + 域 + 端口的模式。 位置的名称 **必须为** `.well-known`，资源文件的名称`microsoft-officeaddins-allowed.json`必须为 。 此文件必须包含一个 JSON 对象，其属性名为 `allowed` ，其值是授权 SSO 用于其各自外接程序的所有 JavaScript 文件的数组。
+源是指方案 + 子域 + 域 + 端口的模式。 位置的名称 **必须** 是 `.well-known`，资源文件的名称 **必须** 是 `microsoft-officeaddins-allowed.json`。 此文件必须包含一个 JSON 对象，其属性名为 `allowed` 其值是为其各自的外接程序为 SSO 授权的所有 JavaScript 文件的数组。
 
 ## <a name="see-also"></a>另请参阅
 
-- [使用加载项中的单一登录令牌Outlook用户](authenticate-a-user-with-an-sso-token.md)
-- [配置Outlook加载项进行基于事件的激活](autolaunch.md)
+- [在Outlook加载项中使用单一登录令牌对用户进行身份验证](authenticate-a-user-with-an-sso-token.md)
+- [为基于事件的激活配置Outlook加载项](autolaunch.md)

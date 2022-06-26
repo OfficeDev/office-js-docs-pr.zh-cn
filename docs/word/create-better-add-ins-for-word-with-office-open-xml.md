@@ -1,22 +1,22 @@
 ---
-title: 使用 Office Open XML 创建更优质的 Word 加载项
-description: 概述如何使用 Office Open XML 改进 Word 加载项。
+title: 了解何时以及如何在 Word 加载项中使用 Office Open XML
+description: 概述在 Word 加载项中何时以及如何使用 Office Open XML。
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e127eb7a05e513daa38f65ea092e7ede8a3133c5
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: aa78a530e32dfc07f1f885c3bbdbc5cf74a0e213
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187327"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229734"
 ---
-# <a name="create-better-add-ins-for-word-with-office-open-xml"></a>使用 Office Open XML 创建更优质的 Word 加载项
+# <a name="understand-when-and-how-to-use-office-open-xml-in-your-word-add-in"></a>了解何时以及如何在 Word 加载项中使用 Office Open XML
 
 **提供者：** Stephanie Krieger，Microsoft Corporation | Juan Balmori Labra，Microsoft Corporation
 
 如果要生成要在 Word 中运行的Office加载项，你可能已经知道，Office JavaScript API (Office.js) 提供了多种格式来读取和写入文档内容。 这些称为强制类型，包括纯文本、表格、HTML 以及 Office Open XML。
 
-因此，当您需要向文档添加多种格式的内容（如图像、格式化表格、图表，甚至仅为格式化文本）时，会进行什么选择？ 从通过 [WordApi 要求集提供的 API](/javascript/api/requirement-sets/word/word-api-requirement-sets) 开始，看看它们是否提供所需的内容。 有关示例，请参阅 Word 上的[脚本实验室](https://appsource.microsoft.com/product/office/wa104380862)中的[插入格式文本](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml)代码片段。
+因此，当您需要向文档添加多种格式的内容（如图像、格式化表格、图表，甚至仅为格式化文本）时，会进行什么选择？ "开始"菜单通过 [WordApi 要求集提供的 API](/javascript/api/requirement-sets/word/word-api-requirement-sets)，看看它们是否提供所需的内容。 有关示例，请参阅 Word 上的[脚本实验室](https://appsource.microsoft.com/product/office/wa104380862)中的[插入格式文本](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml)代码片段。
 
 如果 API 尚不可用，则可以使用 HTML 插入某些类型的丰富内容，例如图片。 HTML 强制转换可能有一些缺点，例如对内容可用的格式设置和定位选项的限制，具体取决于你的方案。
 
@@ -192,7 +192,7 @@ Office提供了各种 SmartArt 图表布局 (，你可以使用 Office Open XML 
 ```
 
 > [!NOTE]
-> 如果将此处所示的标记与 version XML 声明标记和 mso-application 一起添加到 XML 文件（如图 13 所示，后两行标记位于文件顶部），可以在 Word 中将它打开为 Word 文档。 或者，如果没有这些标记，你仍然可以在 Word 中使用 **FileOpen**  >  打开它。 在 Word 的标题栏上会看到 **兼容性模式** ，因为你删除了告诉 Word 这是 Word 文档的设置。 由于要将此标记添加到现有 Word 文档，因此不会影响内容。
+> 如果将此处所示的标记与 version XML 声明标记和 mso-application 一起添加到 XML 文件（如图 13 所示，后两行标记位于文件顶部），可以在 Word 中将它打开为 Word 文档。 或者，如果没有这些标记，你仍然可以使用 Word 中 **的文件** > **打开** 来打开它。 在 Word 的标题栏上会看到 **兼容性模式** ，因为你删除了告诉 Word 这是 Word 文档的设置。 由于要将此标记添加到现有 Word 文档，因此不会影响内容。
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>使用 setSelectedDataAsync 所需的 JavaScript
 
@@ -729,7 +729,7 @@ SmartArt 图表具有四个关联的部件，但始终需要的只有两个。 �
 
 在本主题中，你已看到多个示例，说明如何在加载项中使用 Office Open XML。你已查看了各种丰富的内容类型示例，可使用 Office Open XML 强制类型以及 JavaScript 方法插入文档中的所选内容或指定的 (绑定) 位置。
 
-那么，如果要创建外接程序以独立使用 (（即从应用商店插入或专有服务器位置) ，以及用于设计用于加载项的预创建模板，还需要了解哪些内容？ 答案应该是，您已经了解了所有所需的内容。
+那么，如果要创建外接程序以独立使用 (（即从Microsoft Store插入或专有服务器位置) ，以及用于设计用于外接程序的预创建模板，还需要了解哪些内容？ 答案应该是，您已经了解了所有所需的内容。
 
 无论加载项设计为独立还是使用模板，给定内容类型和插入方法的标记都是相同的。 如果您使用的模板是设计为与外接程序一起使用，请确保 JavaScript 包括回退，该回退用于说明引用的内容可能存在于文档中的方案（如“[添加并绑定到命名内容控件](#add-and-bind-to-a-named-content-control)”一节中所示的绑定示例中所演示的）。
 

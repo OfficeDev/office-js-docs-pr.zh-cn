@@ -2,14 +2,14 @@
 title: 为基于事件的激活配置Outlook加载项
 description: 了解如何为基于事件的激活配置Outlook加载项。
 ms.topic: article
-ms.date: 06/09/2022
+ms.date: 06/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2565c1938071918d15731606c16833be3b9c8982
-ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
+ms.openlocfilehash: 0329817cc4906becdbaa1bb9d25ae34af5ea7719
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "66019617"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229692"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>为基于事件的激活配置Outlook加载项
 
@@ -319,7 +319,7 @@ Windows上的Outlook使用 JavaScript 文件，而Outlook 网页版和在新的 
 
 可以通过Microsoft 365 管理中心上传清单来部署基于事件的加载项。 在管理门户中，展开导航窗格中的 **“设置**”部分，然后选择 **“集成应用**”。 在 **“集成应用**”页上，选择 **Upload自定义应用** 操作。
 
-![Microsoft 365 管理中心上“集成应用”页的屏幕截图，其中包括Upload自定义应用操作。](../images/outlook-deploy-event-based-add-ins.png)
+![Microsoft 365 管理中心上的“集成应用”页，包括Upload自定义应用操作。](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource 和应用内Office Microsoft Store：应尽快提供部署基于事件的加载项或更新现有加载项以包括基于事件的激活功能的功能。
 
@@ -342,7 +342,7 @@ JavaScript 文件中不支持导入，在该文件中，你可在Windows客户�
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > `OfficeRuntime.auth` 受支持。 有关详细信息，请参阅[使用基于事件的激活Outlook加载项中启用单一登录 (SSO) ](use-sso-in-event-based-activation.md)。
+    > 支持基于事件的激活和单一登录的所有Outlook版本都支持 [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) (SSO) ，而 [Office.auth](/javascript/api/office/office.auth) 仅在某些Outlook版本中受支持。 有关详细信息，请参阅[使用基于事件的激活Outlook加载项中启用单一登录 (SSO) ](use-sso-in-event-based-activation.md)。
 - 下 `Office.context.mailbox`：
   - `displayAppointmentForm`
   - `displayMessageForm`

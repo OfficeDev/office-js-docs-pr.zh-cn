@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 05/19/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e167c5611e2c3950a4f8f20119fc4a4483d1d779
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: ae4149afd5bb6303706fec7288441727f09d6bcd
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650603"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229650"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -25,7 +25,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 下表显示了发送功能支持的客户端-服务器组合，包括在适用的情况下所需的最小累积更新。 不支持排除的组合。
 
-| 客户端 | Exchange Online | Exchange 2016 本地<br> (累积更新 6 或更高版本)  | Exchange 2019 本地<br> (累积更新 1 或更高版本)  |
+| Client | Exchange Online | Exchange 2016 本地<br> (累积更新 6 或更高版本)  | Exchange 2019 本地<br> (累积更新 1 或更高版本)  |
 |---|:---:|:---:|:---:|
 |Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是|是|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|
@@ -53,11 +53,11 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 以下屏幕截图显示了通知发件人添加主题的信息栏。
 
-![显示提示用户输入缺失主题行的错误消息的屏幕截图。](../images/block-on-send-subject-cc-inforbar.png)
+![提示用户输入缺失主题行的错误消息。](../images/block-on-send-subject-cc-inforbar.png)
 
 以下屏幕截图显示了一个信息栏，通知发件人已找到禁止使用的词语。
 
-![显示一条错误消息的屏幕截图，该消息告知用户已找到被阻止的单词。](../images/block-on-send-body.png)
+![一条错误消息，告知用户已找到被阻止的单词。](../images/block-on-send-body.png)
 
 ## <a name="limitations"></a>限制
 
@@ -300,7 +300,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 1. 下载最新的[管理模板工具](https://www.microsoft.com/download/details.aspx?id=49030)。
 1. 打开本地组策略编辑器 (**gpedit.msc**) 。
-1. 导航到 **User** **ConfigurationAdministrative TemplatesMicrosoft**  >  **Outlook 2016** >  **SecurityTrust** >  **Center**。 > 
+1. 导航到 **用户配置** > **管理模板**  > **Microsoft Outlook 2016** >  **Security** > **信任中心**。
 1. 在 **Web 加载项无法加载设置时选择“阻止发送** ”。
 1. 打开链接以编辑策略设置。
 1. 在 **“阻止发送”中，当 Web 加载项无法加载** 对话框窗口时，请根据需要选择 **“已启用** ”或“ **已禁** 用”，然后选择 **“确定** ”或“ **应用** ”以使更新生效。
@@ -332,6 +332,12 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 ## <a name="on-send-feature-scenarios"></a>Onsend 功能的应用场景
 
 以下是支持和不支持使用 Onsend 功能的加载项的应用场景。
+
+### <a name="event-handlers-are-dynamically-defined"></a>动态定义事件处理程序
+
+加载项的事件处理程序必须按时间`Office.initialize`定义或`Office.onReady()`调用 (以获取详细信息，请参阅[Outlook加载项的启动](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in)并[初始化Office加载](../develop/initialize-add-in.md)项) 。 如果处理程序代码在初始化过程中由特定情况动态定义，则必须在完全定义处理程序后创建存根函数来调用处理程序。 必须在清单 **的事件** 元素属性 `FunctionName` 中引用存根函数。 此解决方法可确保定义处理程序并准备好被引用一次 `Office.initialize` 或 `Office.onReady()` 运行。
+
+如果加载项初始化后未定义处理程序，将通过邮件项中的信息栏通知发件人“回调函数不可访问”。
 
 ### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-but-no-add-ins-are-installed"></a>用户邮箱启用了 Onsend 加载项功能，但未安装任何加载项
 
@@ -606,6 +612,9 @@ function subjectOnSendChange(subject, event) {
 ## <a name="debug-outlook-add-ins-that-use-on-send"></a>调试使用 on-send 的Outlook加载项
 
 有关如何调试本地加载项的说明，请参阅[调试无 UI Outlook加载项](debug-ui-less.md)。
+
+> [!TIP]
+> 如果当用户运行外接程序并动态定义外接程序的事件处理程序时出现错误“回调函数不可访问”，则必须创建存根函数作为解决方法。 有关详细信息，请参阅 [动态定义的事件处理程序](#event-handlers-are-dynamically-defined) 。
 
 ## <a name="see-also"></a>另请参阅
 
