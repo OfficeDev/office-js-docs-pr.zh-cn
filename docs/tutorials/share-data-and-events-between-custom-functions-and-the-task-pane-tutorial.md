@@ -1,19 +1,19 @@
 ---
 title: 教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 description: 学习如何在Microsoft Excel中的自定义函数和任务窗格之间共享数据和事件。
-ms.date: 11/29/2021
+ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 012112ff97ba1b9941674fb0c0f35536b04c8a92
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 5491624934d2d3f3b209f92e37c9c033d6a3c879
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496913"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229713"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
-共享全局数据，并通过共享运行时在 Excel 加载项的任务窗格和自定义函数之间发送事件。 对于大多数自定义函数方案，建议使用共享运行时，除非有特定的理由需要使用非任务窗格 (UI-less) 自定义函数。 本教程假定你已经熟悉使用 [适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 来创建加载项项目。 如果尚未完成[Excel 自定义函数教程](excel-tutorial-create-custom-functions.md)，请考虑完成它。
+共享全局数据，并通过共享运行时在 Excel 加载项的任务窗格和自定义函数之间发送事件。 对于大多数自定义函数方案，建议使用共享运行时，除非有特定的理由需要使用仅自定义函数加载项。 本教程假定你已经熟悉使用 [适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 来创建加载项项目。 如果尚未完成[Excel 自定义函数教程](excel-tutorial-create-custom-functions.md)，请考虑完成它。
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 

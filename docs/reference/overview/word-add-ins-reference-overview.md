@@ -4,12 +4,12 @@ description: Word Javascript API 概述。
 ms.date: 09/04/2020
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: df250b282c01501155b7e9bd67822dbefb4da84e
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2bb9b016b8711822164bccbcae45cdc8eb822a8e
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484631"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229720"
 ---
 # <a name="word-javascript-api-overview"></a>Word JavaScript API 概述
 
@@ -27,7 +27,7 @@ Word 加载项通过使用 Office JavaScript API 与 Word 中的对象进行交�
 
 ## <a name="learn-about-api-capabilities"></a>了解 API 功能
 
-阅读此文档部分中的其他文章，了解如何[通过加载项获取文档](../../word/get-the-whole-document-from-an-add-in-for-word.md)、[使用搜索选项查找 Word 加载项中的文本](../../word/search-option-guidance.md)等。有关可用文章的完整列表，请参阅目录。
+阅读此文档部分中的其他文章，以了解如何 [通过加载项获取整篇文档](../../word/get-the-whole-document-from-an-add-in-for-word.md)、[使用 Word 加载项中的搜索选项查找文本](../../word/search-option-guidance.md) 等。 有关可用文章的完整列表，请参阅目录。
 
 有关使用 Word JavaScript API 访问 Word 中的对象的实践体验，请完成 [Word 加载项教程](../../tutorials/word-tutorial.md)。
 

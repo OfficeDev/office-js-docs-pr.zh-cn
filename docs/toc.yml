@@ -554,12 +554,12 @@ items:
           - name: 返回动态数组
             href: excel/custom-functions-dynamic-arrays.md
             displayName: 'Excel, Custom Functions'
-          - name: 无 UI 的自定义函数
+          - name: 没有共享运行时的自定义函数
             items:
-              - name: 无 UI 函数的身份验证
+              - name: 没有共享运行时的自定义函数的身份验证
                 href: excel/custom-functions-authentication.md
                 displayName: 'Excel, Custom Functions'
-              - name: 运行时
+              - name: 自定义函数的仅 JavaScript 运行时
                 href: excel/custom-functions-runtime.md
                 displayName: 'Excel, Custom Functions'
           - name: 可变函数
@@ -850,9 +850,6 @@ items:
           - name: Word 对象模型
             href: word/word-add-ins-core-concepts.md
             displayName: Word
-          - name: 通过 Office Open XML 创建适用于 Word 的更好的加载项
-            href: word/create-better-add-ins-for-word-with-office-open-xml.md
-            displayName: Word
           - name: 字典任务窗格加载项
             href: word/dictionary-task-pane-add-ins.md
             displayName: Word
@@ -862,11 +859,14 @@ items:
           - name: 读取并将数据写入活动选择
             href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
             displayName: Word
-          - name: Null 值
+          - name: 了解 null 值
             href: word/null-values.md
             displayName: Word
-          - name: 使用搜索选项在 Word 加载项中查找文本
+          - name: 使用搜索选项查找文本
             href: word/search-option-guidance.md
+            displayName: Word
+          - name: 何时以及如何使用 Office Open XML
+            href: word/create-better-add-ins-for-word-with-office-open-xml.md
             displayName: Word
   - name: 示例
     items:

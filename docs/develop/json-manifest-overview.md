@@ -1,14 +1,14 @@
 ---
 title: 适用于 Office 加载项的 Teams 清单（预览版）
 description: 获取预览版 JSON 清单的概述。
-ms.date: 05/24/2022
+ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 8a40f28674892545dee00e5a3138b55400d04352
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: 7ecf985d63601f032c1296ffe0c1ba73fb7e25cc
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833897"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229636"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>适用于 Office 加载项的 Teams 清单（预览版）
 
@@ -108,7 +108,7 @@ Microsoft 正在对 Microsoft 365 开发人员平台进行大量改进。 这些
 | "requirements.scopes" | 标识可在其中安装加载项的 Office 应用程序。 | **Hosts** |  |
 | "ribbons" | 加载项自定义的功能区。 | **Hosts**、**ExtensionPoints** 和各种 **\*FormFactor** 元素 | "ribbons" 属性是匿名对象的数组，每个对象合并这三个元素的目的。 请参阅 [“功能区”表](#ribbons-table)。|
 | "alternatives" | 指定与等效的 COM 加载项、XLL 或两者的向后兼容性。 | **EquivalentAddins** | 请参阅 [EquivalentAddins - 另请参阅](/javascript/api/manifest/equivalentaddins#see-also) 背景信息。 |
-| "runtimes"  | 配置各种“无 UI”加载项，例如，自定义函数和函数直接从自定义功能区按钮运行。 | **运行时**。 **FunctionFile** 和 **ExtensionPoint** （CustomFunctions 类型） |  |
+| "runtimes"  | 配置各种“无 UI”加载项，例如，仅自定义函数加载项和直接从自定义功能区按钮运行的函数。 | **运行时**。 **FunctionFile** 和 **ExtensionPoint** （CustomFunctions 类型） |  |
 | "autoRunEvents" | 配置指定事件的事件处理程序。 | **事件** 和 **扩展点**（事件类型） |  |
 
 ##### <a name="ribbons-table"></a>"ribbons" 表

@@ -1,14 +1,14 @@
 ---
 title: 调试 Office 加载项
 description: 查找开发环境的 Office 加载项调试指南。
-ms.date: 02/17/2022
+ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 87265e8aeb760aa9449c86a7991b3ad6ed8943ee
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c6e9a870b322bc99bafd9bd80b0ba9030433ec12
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744703"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229699"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>调试 Office 加载项概述
 
@@ -40,7 +40,7 @@ ms.locfileid: "63744703"
 
 ## <a name="debug-on-windows"></a>在 Windows 上调试
 
-下面提供了有关在 Windows 上进行调试的常规指南。 有关在 Excel 中调试无 UI 的自定义函数和 Outlook 中基于事件的加载项，有一些特殊说明。 请参阅本部分后面 [Windows 中的特殊事例](#special-cases-in-windows)。 在 Windows 上调试取决于 IDE：
+下面提供了有关在 Windows 上进行调试的常规指南。 有关在 Excel 中调试自定义函数和 Outlook 中基于事件的加载项，提供了一些特殊说明。 请参阅本部分后面 [Windows 中的特殊事例](#special-cases-in-windows)。 在 Windows 上调试取决于 IDE：
 
 - **Visual Studio**：使用浏览器的 F12 工具进行调试。 请参阅 [在 Visual Studio 中调试 Office 加载项](../develop/debug-office-add-ins-in-visual-studio.md)。
 - **Visual Studio Code**：使用 [适用于 Visual Studio Code 的加载项调试器扩展](debug-with-vs-extension.md) 进行调试。
@@ -57,20 +57,20 @@ ms.locfileid: "63744703"
 
 ### <a name="special-cases-in-windows"></a>Windows 中的特殊事例
 
-如果要在 Windows 上调试无 UI 的自定义函数，请参阅 [无 UI 的自定义函数调试](../excel/custom-functions-debugging.md)。
+要在 Windows 上调试没有共享运行时的自定义函数，请参阅 [自定义函数调试](../excel/custom-functions-debugging.md)。
 
 如果要在 Outlook 中调试基于事件的加载项，请参阅 [调试基于事件的 Outlook 加载项](../outlook/debug-autolaunch.md)。 该过程需要 Visual Studio Code。
 
 ## <a name="debug-on-mac"></a>在 Mac 上调试
 
-下面提供了有关在 Mac 上进行调试的常规指南。 在 Excel 中调试无 UI 自定义函数方面，有一些特殊说明。 请参阅本部分后面 [Mac 中的特殊事例](#special-cases-in-mac)。
+下面提供了有关在 Mac 上进行调试的常规指南。 有关在 Excel 中调试没有共享运行时的自定义函数，提供了特殊说明。 请参阅本部分后面 [Mac 中的特殊事例](#special-cases-in-mac)。
 
 - 如果使用 Visual Studio Code，请使用 [适用于 Visual Studio Code 的加载项调试器扩展](debug-with-vs-extension.md) 进行调试。
 - 对于任何其他 IDE，请使用 Safari Web 检查器。 说明位于 [在 Mac 上调试 Office 加载项](debug-office-add-ins-on-ipad-and-mac.md) 中。
 
 ### <a name="special-cases-in-mac"></a>Mac 中的特殊事例
 
-如果要在 Mac 上调试无 UI 的自定义函数，请参阅 [无 UI 的自定义函数调试](../excel/custom-functions-debugging.md)。
+要在 Mac 上调试没有共享运行时的自定义函数，请参阅 [自定义函数调试](../excel/custom-functions-debugging.md)。
 
 ## <a name="debug-on-linux"></a>在 Linux 上调试
 
