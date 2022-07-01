@@ -1,38 +1,112 @@
 ---
-title: 为联机会议提供商创建Outlook移动加载项
-description: 讨论如何为联机会议服务提供商设置Outlook移动加载项。
+title: 为联机会议提供商创建 Outlook 加载项
+description: 讨论如何为联机会议服务提供商设置 Outlook 加载项。
 ms.topic: article
-ms.date: 06/10/2022
+ms.date: 06/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a8f21caf40b9a0b9a351e4ac6a405201923335b
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 884e27b75f3fc44a645021f8211d7aaf748f3a1d
+ms.sourcegitcommit: e8ce48605f7f33bc5c9af8bfd75d54d4b6b15039
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091116"
+ms.lasthandoff: 07/01/2022
+ms.locfileid: "66574423"
 ---
-# <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>为联机会议提供商创建Outlook移动加载项
+# <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>为联机会议提供商创建 Outlook 加载项
 
-对于Outlook用户来说，设置联机会议是一种核心体验，并且可以轻松[地使用Outlook移动设备创建Teams会议](/microsoftteams/teams-add-in-for-outlook)。 但是，使用非 Microsoft 服务在Outlook中创建联机会议可能很麻烦。 通过实现此功能，服务提供商可以简化其Outlook外接程序用户的联机会议创建体验。
+对于 Outlook 用户来说，设置联机会议是一种核心体验，并且可以轻松地 [使用 Outlook 创建 Teams 会议](/microsoftteams/teams-add-in-for-outlook)。 但是，使用非 Microsoft 服务在 Outlook 中创建联机会议可能很麻烦。 通过实现此功能，服务提供商可以简化 Outlook 外接程序用户的联机会议创建和加入体验。
 
 > [!IMPORTANT]
-> 此功能仅在具有Microsoft 365订阅的Android和iOS上受支持。
+> 此功能在具有 Microsoft 365 订阅的 Outlook 网页版、Windows、Mac、Android 和 iOS 中受支持。
 
-本文介绍如何设置Outlook移动外接程序，使用户能够使用联机会议服务组织和加入会议。 在本文中，我们将使用虚构的联机会议服务提供商“Contoso”。
+本文介绍如何设置 Outlook 加载项，使用户能够使用联机会议服务组织和加入会议。 在本文中，我们将使用虚构的联机会议服务提供商“Contoso”。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)门，使用 yeoman 生成器为Office加载项创建加载项项目。
+完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) 门，使用 Office 外接程序的 Yeoman 生成器创建加载项项目。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要使用户能够使用外接程序创建联机会议，必须在父元素`MobileFormFactor`下的清单中配置 [MobileOnlineMeetingCommandSurface 扩展点](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface)。 不支持其他外形因素。
+若要使用户能够使用外接程序创建联机会议，必须在清单中配置 **VersionOverrides** 节点。 如果创建的加载项仅在 Outlook 网页版、Windows 和 Mac 中受支持，请选择 **Windows、Mac、Web** 选项卡以获取指导。 但是，如果外接程序在 Outlook on Android 和 iOS 中也受支持，请选择 **“移动”** 选项卡。
 
-1. 在代码编辑器中，打开快速启动项目。
+# <a name="windows-mac-web"></a>[Windows、Mac、Web](#tab/non-mobile)
+
+1. 在代码编辑器中，打开创建的 Outlook 快速入门项目。
 
 1. 打开位于项目根 **目录的manifest.xml** 文件。
 
-1. 选择整个 `<VersionOverrides>` 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
+1. 选择整个 **VersionOverrides** 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
+
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <Description resid="residDescription"></Description>
+    <Requirements>
+      <bt:Sets>
+        <bt:Set Name="Mailbox" MinVersion="1.3"/>
+      </bt:Sets>
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <FunctionFile resid="residFunctionFile"/>
+          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="apptComposeGroup">
+                <Label resid="residDescription"/>
+                <Control xsi:type="Button" id="insertMeetingButton">
+                  <Label resid="residLabel"/>
+                  <Supertip>
+                    <Title resid="residLabel"/>
+                    <Description resid="residTooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon-16"/>
+                    <bt:Image size="32" resid="icon-32"/>
+                    <bt:Image size="64" resid="icon-64"/>
+                    <bt:Image size="80" resid="icon-80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>insertContosoMeeting</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
+        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
+        <bt:Image id="icon-64" DefaultValue="https://contoso.com/assets/icon-64.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
+        <bt:String id="residLabel" DefaultValue="Add a contoso meeting"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</VersionOverrides>
+```
+
+# <a name="mobile"></a>[移动设备](#tab/mobile)
+
+若要允许用户从其移动设备创建联机会议，在父元素 **MobileFormFactor** 下的清单中配置 [MobileOnlineMeetingCommandSurface 扩展点](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface)。 其他外形因素不支持此扩展点。
+
+1. 在代码编辑器中，打开创建的 Outlook 快速入门项目。
+
+1. 打开位于项目根 **目录的manifest.xml** 文件。
+
+1. 选择整个 **VersionOverrides** 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -121,12 +195,14 @@ ms.locfileid: "66091116"
 </VersionOverrides>
 ```
 
+---
+
 > [!TIP]
-> 若要详细了解Outlook加载项的清单，请[参阅Outlook加载项清单](manifests.md)和[添加对 Outlook Mobile 加载项命令的支持](add-mobile-support.md)。
+> 若要详细了解 Outlook 外接程序的清单，请参阅 [Outlook 外接程序清单](manifests.md) 和 [添加对 Outlook Mobile 外接程序命令的支持](add-mobile-support.md)。
 
 ## <a name="implement-adding-online-meeting-details"></a>实现添加联机会议详细信息
 
-在本部分中，了解外接程序脚本如何更新用户的会议以包含联机会议详细信息。
+在本部分中，了解外接程序脚本如何更新用户的会议以包含联机会议详细信息。 以下内容适用于所有受支持的平台。
 
 1. 在同一快速入门项目中，在代码编辑器中打开文件 **./src/commands/commands.js** 。
 
@@ -194,40 +270,43 @@ ms.locfileid: "66091116"
 
 ## <a name="testing-and-validation"></a>测试和验证
 
-按照通常的指南 [测试和验证加载项](testing-and-tips.md)。 在 Outlook 网页版、Windows 或 Mac 中[旁加载](sideload-outlook-add-ins-for-testing.md)后，在Android或iOS移动设备上重启Outlook。 然后，在新的会议屏幕上，验证Microsoft Teams或Skype切换是否已替换为自己的切换。
+按照通常的指南[测试和验证加载项](testing-and-tips.md)，然后在 Outlook 网页版、Windows 或 Mac 中[旁加载](sideload-outlook-add-ins-for-testing.md)清单。 如果外接程序还支持移动设备，请在旁加载后在 Android 或 iOS 设备上重启 Outlook。 旁加载后，创建新的会议，并验证 Microsoft Teams 或 Skype 切换是否已替换为你自己的。
 
 ### <a name="create-meeting-ui"></a>创建会议 UI
 
 作为会议组织者，在创建会议时，应会看到类似于以下三个图像的屏幕。
 
-[![关闭 Contoso 切换Android上的“创建会议”屏幕。](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![带有加载 Contoso 切换Android上的“创建会议”屏幕。](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![打开 Contoso 切换Android上的“创建会议”屏幕。](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[![Android 上的“创建会议”屏幕，并关闭 Contoso。](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![Android 上带有加载 Contoso 开关的“创建会议”屏幕。](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Android 上的“创建会议”屏幕，其中启用了 Contoso 切换。](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>加入会议 UI
 
 作为会议与会者，在查看会议时，应会看到类似于下图的屏幕。
 
-[![Android上的联接会议屏幕。](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[![Android 上的联接会议屏幕。](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
-> 如果未看到 **“加入** ”链接，则可能是服务的联机会议模板未在我们的服务器上注册。 有关详细信息，请参阅 [“注册联机会议模板”](#register-your-online-meeting-template) 部分。
+> “**加入**”按钮仅在 Outlook 网页版、Mac、Android 和 iOS 中受支持。 如果只看到会议链接，但在受支持的客户端中看不到“ **加入** ”按钮，则可能是服务的联机会议模板未在我们的服务器上注册。 有关详细信息，请参阅 [“注册联机会议模板”](#register-your-online-meeting-template) 部分。
 
 ## <a name="register-your-online-meeting-template"></a>注册联机会议模板
 
-注册联机会议加载项是可选的。 它仅适用于想要在会议中显示 **“加入** ”按钮（除了会议链接）时。 开发联机会议加载项并想要注册后，请使用以下指南创建GitHub问题。 我们将与你联系以协调注册时间线。
+注册联机会议加载项是可选的。 它仅适用于想要在会议中显示 **“加入** ”按钮（除了会议链接）时。 开发联机会议加载项并想要注册后，请使用以下指南创建 GitHub 问题。 我们将与你联系以协调注册时间线。
 
-1. 创建[新的GitHub问题](https://github.com/OfficeDev/office-js/issues/new)。
-1. 将新问题的 **标题** 设置为“注册我的服务的联机会议模板”，替换 `my-service` 为服务名称。
+> [!IMPORTANT]
+> “**加入**”按钮仅在 Outlook 网页版、Mac、Android 和 iOS 中受支持。
+
+1. 创建 [新的 GitHub 问题](https://github.com/OfficeDev/office-js/issues/new)。
+1. 将新问题的 **标题** 设置为“Outlook：注册我的服务的联机会议模板”，替换 `my-service` 为服务名称。
 1. 在问题正文中，将现有文本替换为在本文前面的[“实现添加联机会议详细信息](#implement-adding-online-meeting-details)”部分的或类似变量中`newBody`设置的字符串。
 1. 单击 **“提交新问题**”。
 
-![具有 Contoso 示例内容的新GitHub问题屏幕。](../images/outlook-request-to-register-online-meeting-template.png)
+![包含 Contoso 示例内容的新 GitHub 问题屏幕。](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## <a name="available-apis"></a>可用 API
 
 以下 API 可用于此功能。
 
 - 约会组织者 API
-  - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-body-member) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-getasync-member(1))、[Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-setasync-member(1))) 
+  - [Office.context.mailbox.item.body](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-body-member) ([Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-getasync-member(1))、 [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#outlook-office-body-setasync-member(1))) 
   - [Office.context.mailbox.item.end](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-end-member) ([时间](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true)) 
   - [Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-loadcustompropertiesasync-member(1)) ([CustomProperties](/javascript/api/outlook/office.customproperties?view=outlook-js-preview&preserve-view=true)) 
   - [Office.context.mailbox.item.location](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-location-member) ([位置](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true)) 
@@ -244,7 +323,7 @@ ms.locfileid: "66091116"
 有几个限制适用。
 
 - 仅适用于联机会议服务提供商。
-- 会议撰写屏幕上将仅显示管理员安装的加载项，替换默认Teams或Skype选项。 用户安装的加载项不会激活。
+- 只有管理员安装的加载项才会显示在会议撰写屏幕上，替换默认的 Teams 或 Skype 选项。 用户安装的加载项不会激活。
 - 外接程序图标应使用十六进制代码 `#919191` 或 [以其他颜色格式](https://convertingcolors.com/hex-color-919191.html)等效的灰度。
 - 约会组织者 (撰写) 模式中仅支持一个无 UI 命令。
 - 加载项应在一分钟的超时时间内更新约会表单中的会议详细信息。 但是，为身份验证打开的加载项等在对话框中花费的任何时间都排除在超时时间段之外。
