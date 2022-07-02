@@ -632,7 +632,7 @@ items:
             href: outlook/extension-module-outlook-add-ins.md
           - name: 适用于 Outlook Mobile 的加载项
             href: outlook/outlook-mobile-addins.md
-          - name: 移动设备上的在线会议
+          - name: 创建联机会议加载项
             href: outlook/online-meeting.md
           - name: Onsend 加载项
             href: outlook/outlook-on-send-addins.md
