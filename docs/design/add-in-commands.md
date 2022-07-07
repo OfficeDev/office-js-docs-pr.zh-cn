@@ -1,21 +1,22 @@
 ---
 title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
-ms.date: 05/25/2022
+ms.date: 07/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 8a0d2c425b8603ea5aae30f6e92fdff37c3f54f5
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
+ms.openlocfilehash: a85c3e5cf4bf1a22ac3e6fe440514e19d80b2448
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752853"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659673"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
 外接程序命令是 UI 元素，可扩展 Office UI，并在外接程序中启动操作。使用外接程序命令，可以在功能区上添加按钮，也可以向上下文菜单添加项。当用户选择外接程序命令时，将启动操作，如运行 JavaScript 代码或在任务窗格中显示外接程序页面。外接程序命令可帮助用户查找和使用外接程序，从而提高外接程序的采用率和重用率以及客户保留率。
 
 > [!NOTE]
-> SharePoint 目录不支持加载项命令。可以通过 [集成的应用](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) 或 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 部署加载项命令，也可以使用 [旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) 部署加载项命令以供测试。
+> - SharePoint 目录不支持加载项命令。可以通过 [集成的应用](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) 或 [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 部署加载项命令，也可以使用 [旁加载](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) 部署加载项命令以供测试。
+> - 内容加载项暂不支持加载项命令。
 
 > [!IMPORTANT]
 > Outlook 中也支持加载项命令。 有关详细信息，请参阅[适用于 Outlook 的加载项命令](../outlook/add-in-commands-for-outlook.md)。
@@ -28,12 +29,19 @@ ms.locfileid: "65752853"
 
 ![显示 Excel 网页版中加载项命令的屏幕截图。](../images/add-in-commands-2.png)
 
+## <a name="types-of-add-in-commands"></a>加载项命令的类型
+
+根据命令触发的操作类型，有两种类型的加载项命令。
+
+- **任务窗格命令**：按钮或菜单项将打开加载项的任务窗格。 在清单中添加带有标记的此类加载项命令。 “代码隐藏”命令由 Office 提供。
+- **函数命令**：按钮或菜单项运行任意 JavaScript。 代码几乎总是在 Office JavaScript 库中调用 API，但并非必须如此。 此类型的加载项通常不显示按钮或菜单项本身以外的 UI。 请注意以下有关函数命令的内容：
+
+   - 触发的函数可以调用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) 方法来显示对话框，这是显示错误、显示进度或提示用户输入的好方法。 如果加载项配置为使用共享运行时，该函数还可以调用 [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) 方法。
+   - 运行函数命令的 JavaScript 运行时是基于浏览器的完整运行时。 它可以呈现 HTML 并调用 Internet 以发送或获取数据。
+
 ## <a name="command-capabilities"></a>命令功能
 
 目前支持下列命令功能。
-
-> [!NOTE]
-> 内容加载项暂不支持加载项命令。
 
 ### <a name="extension-points"></a>扩展点
 
@@ -44,11 +52,6 @@ ms.locfileid: "65752853"
 
 - 简单按钮 - 触发特定操作。
 - 菜单 - 简单的下拉菜单，内含可触发操作的按钮。
-
-### <a name="actions"></a>操作
-
-- ShowTaskpane - 显示一个或多个在其中加载自定义 HTML 页的窗格。
-- ExecuteFunction - 加载一个不可见的 HTML 页，然后在其中执行一个 JavaScript 函数。若要在你的函数（例如错误、进度或其他输入）中显示 UI，你可以使用 [displayDialog](/javascript/api/office/office.ui) API。  
 
 ### <a name="default-enabled-or-disabled-status"></a>默认启用或禁用状态
 

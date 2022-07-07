@@ -5,12 +5,12 @@ ms.date: 10/14/2019
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: ba6c01ea05174e9d965032c02c403c1bfe121dac
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: efa149a9a59ee578319e637ff922e034d64cbb43
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744288"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659932"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Project 任务窗格加载项
 
@@ -68,7 +68,7 @@ Project 加载项方案包括以下几种：
 
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>过程 1. 创建用于 Bing 搜索的加载项清单文件
 
-- 在本地目录中创建一个 XML 文件。该 XML 文件包括 **OfficeApp** 元素和子元素，[Office 加载项 XML 清单](../develop/add-in-manifests.md)中对其进行了介绍。例如，创建一个名为 BingSearch.xml 的文件，其中包含以下 XML。
+- 在本地目录中创建一个 XML 文件。 该 XML 文件包括在 [Office 加载项 XML 清单](../develop/add-in-manifests.md)中描述的 **\<OfficeApp\>** 元素和子元素。 例如，创建一个名为 BingSearch.xml 的文件，其中包含以下 XML。
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -99,16 +99,16 @@ Project 加载项方案包括以下几种：
     ```
 
 - 下面是加载项清单中的必需元素。
-  - 在 **OfficeApp** 元素中，`xsi:type="TaskPaneApp"` 属性指定该加载项属于任务窗格类型。
-  - **Id** 元素是 UUID，并且必须唯一。
-  - **Version** 元素是加载项的版本。**ProviderName** 元素是提供加载项的公司或开发人员的名称。**DefaultLocale** 元素指定清单中字符串的默认区域设置。
-  - **DisplayName** 元素是在 Project 2013 的功能区中的“**视图**”选项卡的“**任务窗格加载项**”下拉列表中显示的名称。该值最多可以包含 32 个字符。
-  - **Description** 元素包含加载项默认区域设置说明。该值最多可以包含 2000 个字符。
+  - 在 **\<OfficeApp\>** 元素中，`xsi:type="TaskPaneApp"` 属性指定该加载项属于任务窗格类型。
+  - 该 **\<Id\>** 元素是 UUID，并且必须是唯一的。
+  - 该 **\<Version\>** 元素是加载项的版本。 该 **\<ProviderName\>** 元素是提供加载项的公司或开发人员的名称。 该 **\<DefaultLocale\>** 元素指定清单中字符串的默认区域设置。
+  - 该 **\<DisplayName\>** 元素是在 Project 2013 的功能区中的“**视图**”选项卡的“**任务窗格加载项**”下拉列表中显示的名称。 该值最多可以包含 32 个字符。
+  - 该 **\<Description\>** 元素包含用于默认区域设置的加载项说明。 该值最多可以包含 2000 个字符。
   - **Capabilities** 元素包含一个或多个指定 Office 应用程序的 **Capability** 子元素。
-  - **DefaultSettings** 元素包括 **SourceLocation** 元素，后者指定 HTML 文件在文件共享中的路径或加载项使用的网页的 URL。任务窗格加载项将忽略 **RequestedHeight** 元素和 **RequestedWidth** 元素。
-  - **IconUrl** 元素为可选元素。它可为文件共享中的图标或 Web 应用程序中图标的 URL。
+  - 该 **\<DefaultSettings\>** 元素包括 **\<SourceLocation\>** 元素，后者指定 HTML 文件在文件共享中的路径或加载项使用的网页的 URL。 任务窗格加载项将忽略 **\<RequestedHeight\>** 元素和 **\<RequestedWidth\>** 元素。
+  - 该 **\<IconUrl\>** 元素是可选的。 它可为文件共享中的图标或 Web 应用程序中图标的 URL。
 
-- （可选）添加具有其他区域设置的值的 **Override** 元素。例如，以下清单为 **DisplayName**、**Description**、**IconUrl** 和 **SourceLocation** 的法语值提供 **Override** 元素。
+- （可选）添加具有用于其他区域设置的值的 **\<Override\>** 元素。 例如，以下清单为法语值 **\<DisplayName\>**、**\<Description\>**、**\<IconUrl\>** 和 **\<SourceLocation\>** 提供 **\<Override\>** 元素。
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -146,7 +146,7 @@ Project 加载项方案包括以下几种：
 
 在 Project 2013 中，可以将加载项安装为文件共享或专用加载项目录中的独立解决方案。还可以在 AppSource 中评论和购买加载项。
 
-在文件共享中可以有多个加载项清单 XML 文件和子目录。可以通过使用 Project 2013 中的“**信任中心**“对话框中“**受信任的加载项目录**”选项卡来添加或删除清单目录位置和目录。若要显示 Project 中的加载项，清单中的 **SourceLocation** 元素必须指向现有网站或 HTML 源文件。
+在文件共享中可以有多个外接程序清单 XML 文件和子目录。 可以通过使用 Project 2013 中的“**信任中心**”对话框中的“**受信任的加载项目录**”选项卡来添加或删除清单目录位置和目录。 若要显示 Project 中的加载项，清单中的 **\<SourceLocation\>** 元素必须指向现有网站或 HTML 源文件。
 
 > [!NOTE]
 > 如果要在 Windows 计算机上开发，则必须安装 Internet Explorer 或 Microsoft Edge。 有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
