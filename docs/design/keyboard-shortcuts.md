@@ -1,29 +1,29 @@
 ---
-title: Office加载项中的自定义键盘快捷方式
-description: 了解如何将自定义键盘快捷方式（也称为键组合）添加到Office外接程序。
+title: Office 加载项中的自定义键盘快捷方式
+description: 了解如何将自定义键盘快捷方式（也称为键组合）添加到 Office 外接程序。
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: bd3131ea8e5f0c2f1caadca58ab2e47f588fbfc6
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
+ms.openlocfilehash: 5e813e1f4af040bb546f60eb2db40862ba1a237e
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752867"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659981"
 ---
-# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>向Office加载项添加自定义键盘快捷方式
+# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到 Office 加载项
 
 键盘快捷方式（也称为键组合）使外接程序的用户能够更高效地工作。 键盘快捷方式还通过提供鼠标的替代方法，提高残障用户的外接程序的辅助功能。
 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> 若要从已启用键盘快捷方式的加载项的工作版本开始，请克隆并运行示例[Excel键盘快捷方式](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)。 准备好向自己的外接程序添加键盘快捷方式时，请继续阅读本文。
+> 若要从已启用键盘快捷方式的外接程序的工作版本开始，请克隆并运行示例 [Excel 键盘快捷方式](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)。 准备好向自己的外接程序添加键盘快捷方式时，请继续阅读本文。
 
 向加载项添加键盘快捷方式有三个步骤。
 
 1. [配置加载项的清单](#configure-the-manifest)。
 1. [创建或编辑快捷方式 JSON 文件](#create-or-edit-the-shortcuts-json-file) 以定义操作及其键盘快捷方式。
-1. 添加 [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API 的[一个或多个运行时调](#create-a-mapping-of-actions-to-their-functions)用，以便将函数映射到每个操作。
+1. 添加 [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API 的[一个或多个运行时调用](#create-a-mapping-of-actions-to-their-functions)，以将函数映射到每个操作。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -35,7 +35,7 @@ ms.locfileid: "65752867"
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>将映射文件链接到清单
 
-*紧接着* (不在清单中元素) `<VersionOverrides>`内，添加 [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) 元素。 将属性 `Url` 设置为项目中将在后续步骤中创建的 JSON 文件的完整 URL。
+紧 *接着* (不在清单中元素) **\<VersionOverrides\>** 内，添加 [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) 元素。 将属性 `Url` 设置为项目中将在后续步骤中创建的 JSON 文件的完整 URL。
 
 ```xml
     ...
@@ -89,7 +89,7 @@ ms.locfileid: "65752867"
 
 ## <a name="create-a-mapping-of-actions-to-their-functions"></a>创建操作到其函数的映射
 
-1. 在项目中，打开元素中由 HTML 页面加载的 `<FunctionFile>` JavaScript 文件。
+1. 在项目中，打开元素中由 HTML 页面加载的 **\<FunctionFile\>** JavaScript 文件。
 1. 在 JavaScript 文件中，使用 [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API 将 JSON 文件中指定的每个操作映射到 JavaScript 函数。 将以下 JavaScript 添加到文件中。 请注意以下代码。
 
     - 第一个参数是 JSON 文件中的操作之一。
@@ -116,7 +116,7 @@ ms.locfileid: "65752867"
     });
     ```
 
-1. 添加第二个函数`Office.actions.associate`调用，将操作映射`HIDETASKPANE`到调[用Office.addin.hide](/javascript/api/office/office.addin#office-office-addin-hide-member(1)) 的函数。 示例如下。
+1. 添加第二次函数 `Office.actions.associate` 调用以将操作映射 `HIDETASKPANE` 到调用 [Office.addin.hide](/javascript/api/office/office.addin#office-office-addin-hide-member(1)) 的函数。 示例如下。
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -130,7 +130,7 @@ ms.locfileid: "65752867"
     });
     ```
 
-按照前面的步骤，外接程序可以通过按 **Ctrl+Alt+Up** 和 **Ctrl+Alt+Down** 来切换任务窗格的可见性。 GitHub中Office加载项 PnP 存储库中的[Excel键盘快捷方式](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)示例中显示了相同的行为。
+按照前面的步骤，外接程序可以通过按 **Ctrl+Alt+Up** 和 **Ctrl+Alt+Down** 来切换任务窗格的可见性。 在 GitHub 中的 Office 外接程序 PnP 存储库的 [Excel 键盘快捷方式](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) 示例中显示了相同的行为。
 
 ## <a name="details-and-restrictions"></a>详细信息和限制
 
@@ -172,7 +172,7 @@ ms.locfileid: "65752867"
 - 该 `default` 属性必须包含至少一个修饰符键的名称 (Alt、Ctrl、Shift) ，并且仅包含另一个键。
 - 不能将 Shift 用作唯一的修饰符键。 将 Shift 与 Alt 或 Ctrl 合并。
 - 对于 Mac，我们还支持命令修饰符密钥。
-- 对于 Mac，Alt 将映射到“选项”键。 对于Windows，命令映射到 Ctrl 键。
+- 对于 Mac，Alt 将映射到“选项”键。 对于 Windows，命令映射到 Ctrl 键。
 - 当两个字符链接到标准键盘中的同一物理键时，它们是属性中的 `default` 同义词;例如，Alt+a 和 Alt+A 是相同的快捷方式，Ctrl+和 Ctrl+\_ 也是如此，因为“-”和“_”是相同的物理键。
 - “+”字符指示同时按下其两侧的键。
 
@@ -198,32 +198,32 @@ ms.locfileid: "65752867"
 快捷方式 JSON 的完整架构位于 [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json) 中。
 
 > [!NOTE]
-> Office外接程序不支持键提示（也称为顺序键快捷方式），例如选择填充颜色 **Alt+H、H** 的Excel快捷方式。
+> Office 外接程序不支持键提示（也称为顺序键快捷方式），例如用于选择填充颜色 **Alt+H、H** 的 Excel 快捷方式。
 
 ## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>避免其他加载项使用的密钥组合
 
-Office已使用许多键盘快捷方式。 避免为已在使用的外接程序注册键盘快捷方式，但在某些情况下，可能需要重写现有键盘快捷方式或处理已注册同一键盘快捷方式的多个加载项之间的冲突。
+Office 已使用许多键盘快捷方式。 避免为已在使用的外接程序注册键盘快捷方式，但在某些情况下，可能需要重写现有键盘快捷方式或处理已注册同一键盘快捷方式的多个加载项之间的冲突。
 
 如果出现冲突，用户会在首次尝试使用冲突键盘快捷方式时看到对话框。 请注意，此对话框中显示的加载项选项的文本来自 `name` 文件中的操作对象中的 `shortcuts.json` 属性。
 
 ![显示一个冲突模式的插图，其中包含单个快捷方式的两个不同的操作。](../images/add-in-shortcut-conflict-modal.png)
 
-用户可以选择键盘快捷方式将执行的操作。 进行选择后，将保存首选项以供将来使用相同的快捷方式。 每个用户（每个平台）保存快捷方式首选项。 如果用户希望更改首选项，则可以从“**告诉我**”搜索框调用 **“重置”Office加载项快捷方式首选项** 命令。 调用命令可清除用户的所有加载项快捷方式首选项，下次尝试使用冲突快捷方式时，系统会再次提示用户使用冲突对话框。
+用户可以选择键盘快捷方式将执行的操作。 进行选择后，将保存首选项以供将来使用相同的快捷方式。 每个用户（每个平台）保存快捷方式首选项。 如果用户希望更改首选项，则可以从“**告诉我**”搜索框调用 **“重置 Office 加载项快捷方式首选项**”命令。 调用命令可清除用户的所有加载项快捷方式首选项，下次尝试使用冲突快捷方式时，系统会再次提示用户使用冲突对话框。
 
-![Excel中的“告诉我”搜索框，显示重置Office加载项快捷方式首选项操作。](../images/add-in-reset-shortcuts-action.png)
+![Excel 中的“告诉我”搜索框，显示“重置 Office 外接程序快捷方式首选项”操作。](../images/add-in-reset-shortcuts-action.png)
 
-为了获得最佳用户体验，建议尽量减少与这些良好做法Excel冲突。
+为了获得最佳用户体验，我们建议将与 Excel 的冲突与这些良好做法最小化。
 
 - 使用以下模式的键盘快捷方式：**Ctrl+Shift+Alt+* x***，其中 *x* 是一些其他键。
-- 如果需要更多的键盘快捷方式，请查看[Excel键盘快捷方式列表](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)，并避免在加载项中使用其中任何一个。
+- 如果需要更多键盘快捷方式，请检查 [Excel 键盘快捷方式列表](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)，避免在外接程序中使用任何键盘快捷方式。
 - 当键盘焦点位于加载项 UI 内时， **Ctrl+空格键** 和 **Ctrl+Shift+F10** 将不起作用，因为这些是必不可少的辅助功能快捷方式。
-- 在Windows或 Mac 计算机上，如果搜索菜单上没有“重置Office加载项快捷方式首选项”命令，用户可以通过上下文菜单自定义功能区，手动将命令添加到功能区。
+- 在 Windows 或 Mac 计算机上，如果搜索菜单上没有“重置 Office 加载项快捷方式首选项”命令，用户可以通过上下文菜单自定义功能区，手动将命令添加到功能区。
 
 ## <a name="customize-the-keyboard-shortcuts-per-platform"></a>自定义每个平台的键盘快捷方式
 
 可以自定义特定于平台的快捷方式。 下面是自定义以下每个平台的快捷方式的对象示例`shortcuts`： `windows`， ， `mac``web`。 请注意，每个快捷方式仍必须有 `default` 快捷键。
 
-在以下示例中 `default` ，密钥是未指定的任何平台的回退键。 唯一未指定的平台Windows，因此密`default`钥仅适用于Windows。
+在以下示例中 `default` ，密钥是未指定的任何平台的回退键。 唯一未指定的平台是 Windows，因此该 `default` 密钥将仅应用于 Windows。
 
 ```json
     "shortcuts": [
@@ -270,7 +270,7 @@ Office已使用许多键盘快捷方式。 避免为已在使用的外接程序�
 
 使用 [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) 方法将用户的自定义键盘组合分配给加载项操作。 该方法采用类型 `{[actionId:string]: string|null}`参数，其中 `actionId`s 是必须在外接程序的扩展清单 JSON 中定义的操作 ID 的子集。 这些值是用户首选的键组合。 该值也可以是 `null`，它将删除任何自定义项， `actionId` 并还原到外接程序的扩展清单 JSON 中定义的默认键盘组合。
 
-如果用户登录到Office，则自定义组合将保存在每个平台用户的漫游设置中。 匿名用户目前不支持自定义快捷方式。
+如果用户登录到 Office，则自定义组合将保存在每个平台用户的漫游设置中。 匿名用户目前不支持自定义快捷方式。
 
 ```javascript
 const userCustomShortcuts = {
@@ -323,5 +323,5 @@ Office.actions.areShortcutsInUse(shortcuts)
 
 ## <a name="next-steps"></a>后续步骤
 
-- 请参阅[Excel键盘快捷方式](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)示例加载项。
+- 请参阅 [Excel 键盘快捷方式](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) 示例加载项。
 - 获取有关在 [使用清单的扩展替代的 Work](../develop/extended-overrides.md) 中使用扩展替代的概述。

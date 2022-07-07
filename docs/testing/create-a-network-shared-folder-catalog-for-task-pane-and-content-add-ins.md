@@ -1,29 +1,29 @@
 ---
-title: 旁加载Office加载项，用于从网络共享进行测试
-description: 了解如何旁加载Office加载项以从网络共享进行测试。
+title: 旁加载 Office 加载项以从网络共享进行测试
+description: 了解如何旁加载 Office 加载项以从网络共享进行测试。
 ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b6e61464633a18e29c72b9e983368ea803b258
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
+ms.openlocfilehash: e32e91a542ec4c3557ff945b93d69fc12eac766c
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752881"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659834"
 ---
-# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>旁加载Office加载项，用于从网络共享进行测试
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>旁加载 Office 加载项以从网络共享进行测试
 
-可以通过将清单发布到网络文件共享 () 下面的说明，在Windows的Office客户端中测试Office加载项。 在本地主机上完成开发和测试并想要从非本地服务器或云帐户测试外接程序时，应使用此部署选项。
+可以通过将清单发布到网络文件共享，在 Windows 上的 Office 客户端中测试 Office 外接程序， (下面的说明) 。 在本地主机上完成开发和测试并想要从非本地服务器或云帐户测试外接程序时，应使用此部署选项。
 
 > [!IMPORTANT]
 > 生产加载项不支持按网络共享进行部署。此方法具有以下限制。
 >
-> - 加载项只能安装在Windows计算机上。
+> - 加载项只能安装在 Windows 计算机上。
 > - 如果加载项的新版本更改了功能区，例如向功能区添加自定义选项卡或自定义按钮，则每个用户都必须重新安装外接程序。
 
 > [!NOTE]
 > 如果你的外接程序项目是使用[外接程序的 Yeoman 生成器](../develop/yeoman-generator-overview.md)的足够使用的版本，运行 `npm start` 时将自动在 Office 桌面客户端中旁加载外接程序。
 
-本文仅适用于测试 Word、Excel、PowerPoint 和Project加载项，并且仅适用于Windows。 如果要在另一个平台上进行测试或想要测试Outlook加载项，请参阅以下主题之一来旁加载加载项。
+本文仅适用于测试 Word、Excel、PowerPoint 和 Project 加载项，仅适用于 Windows。 如果要在另一个平台上进行测试或想要测试 Outlook 加载项，请参阅以下主题之一来旁加载外接程序。
 
 - [在 Office 网页版中旁加载 Office 加载项进行测试](sideload-office-add-ins-for-testing.md)
 - [在 iPad 和 Mac 上旁加载 Office 外接程序进行测试](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -115,13 +115,13 @@ ms.locfileid: "65752881"
 
 ## <a name="sideload-your-add-in"></a>旁加载加载项
 
-1. 放入在共享文件夹目录中进行测试的所有加载项的清单 XML 文件。 请务必将 Web 应用程序本身部署到 Web 服务器。 务必在清单文件的 **SourceLocation** 元素中指定 URL。
+1. 放入在共享文件夹目录中进行测试的所有加载项的清单 XML 文件。 请务必将 Web 应用程序本身部署到 Web 服务器。 请务必在清单文件的元素中 **\<SourceLocation\>** 指定 URL。
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
     > [!NOTE]
-    > 对于Visual Studio项目，请使用项目在文件夹中生成的`{projectfolder}\bin\Debug\OfficeAppManifests`清单。
+    > 对于 Visual Studio 项目，请使用项目在文件夹中生成的 `{projectfolder}\bin\Debug\OfficeAppManifests` 清单。
 
 1. 在 Excel、Word 或 PowerPoint 中，选择功能区上“**插入**”选项卡中的“**我的加载项**”。 在 Project 中，选择功能区“**Project**”选项卡上的“**我的加载项**”。
 
@@ -131,7 +131,7 @@ ms.locfileid: "65752881"
 
 ## <a name="remove-a-sideloaded-add-in"></a>删除旁加载的加载项
 
-可以通过清除计算机上的Office缓存来删除以前旁加载的加载项。 有关如何清除Windows缓存的详细信息，请参阅“[清除Office缓存](clear-cache.md#clear-the-office-cache-on-windows)”一文。
+可以通过清除计算机上的 Office 缓存来删除以前旁加载的加载项。 有关如何清除 Windows 上的缓存的详细信息，请参阅“ [清除 Office 缓存](clear-cache.md#clear-the-office-cache-on-windows)”一文。
 
 ## <a name="see-also"></a>另请参阅
 

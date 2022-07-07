@@ -3,48 +3,48 @@ title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e5699c8ab6a817f604da1b1dbb58924242cb2ed
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: ca9e35026acb91a54affa8215178f2eaa6cbd4c9
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496731"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659820"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
 如果加载项中的某些功能应仅适用于某些上下文，则能够以编程方式启用或禁用自定义加载项命令。 例如，仅当光标位于表格中时，才启用用于更改表格标题的函数。
 
-还可以指定在客户端应用程序打开时是启用还是禁用Office命令。
+还可以指定在 Office 客户端应用程序打开时是否启用或禁用该命令。
 
 > [!NOTE]
 > 本文假定你熟悉以下文档。 如果你最近未使用加载项命令（自定义菜单项和功能区按钮），请查看该文档。
 >
 > - [加载项命令的基本概念](add-in-commands.md)
 
-## <a name="office-application-and-platform-support-only"></a>Office应用程序和平台仅支持
+## <a name="office-application-and-platform-support-only"></a>仅限 Office 应用程序和平台支持
 
-本文中介绍的 API 仅在 Excel、PowerPoint 和 Word 中可用。
+本文中所述的 API 仅在 Excel、PowerPoint 和 Word 中可用。
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>使用要求集测试平台支持
 
-要求集是指各组已命名的 API 成员。 Office外接程序使用清单中指定的要求集或使用运行时检查来确定 Office 应用程序和平台组合是否支持外接程序所需的 API。 有关详细信息，请参阅Office[和要求集](../develop/office-versions-and-requirement-sets.md)。
+要求集是指各组已命名的 API 成员。 Office 外接程序使用清单中指定的要求集，或使用运行时检查来确定 Office 应用程序和平台组合是否支持外接程序需要的 API。 有关详细信息，请参阅 [Office 版本和要求集](../develop/office-versions-and-requirement-sets.md)。
 
 启用/禁用 API 属于 [RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) 要求集。
 
 > [!NOTE]
-> **RibbonApi 1.1** 要求集在清单中尚不受支持，因此您无法在清单的"要求"部分 **指定它**。 若要测试支持，代码应调用 `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 如果 *且仅在该* 调用返回 `true`时，你的代码可以调用启用/禁用 API。 如果 调用 返回 `isSetSupported` `false`，则所有自定义外接程序命令将一向启用。 您必须设计生产外接程序以及任何应用内说明，以考虑当 **RibbonApi 1.1** 要求集不受支持时它如何工作。 有关使用 有关详细信息和示例`isSetSupported`，请参阅指定 Office [应用程序和 API](../develop/specify-office-hosts-and-api-requirements.md) 要求，尤其是运行时[检查方法和要求集支持](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。  (指定哪些[Office](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in)版本和平台可以托管该文章的外接程序一节不适用于功能区 1.1.) 
+> 清单中尚不支持 **RibbonApi 1.1** 要求集，因此不能在清单部分 **\<Requirements\>** 中指定它。 若要测试支持，代码应调用 `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`。 如果该调用返回， *并且仅当* 该调用返回 `true`时，代码可以调用启用/禁用 API。 如果调用 `isSetSupported` 返回 `false`，则所有自定义加载项命令将一直启用。 必须设计生产外接程序和任何应用内说明，以考虑在不支持 **RibbonApi 1.1** 要求集时其工作原理。 有关使用的 `isSetSupported`详细信息和示例，请参阅 [指定 Office 应用程序和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)，特别是 [运行时检查方法和要求集支持](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support)。  (“ [指定哪些 Office 版本和平台可以托管该](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) 文章的外接程序不适用于功能区 1.1.) 
 
 ## <a name="shared-runtime-required"></a>需要共享运行时
 
 本文介绍的 API 和清单标记，需要加载项清单指定它们应使用共享运行时。 为此，请执行以下步骤。
 
-1. 在清单中的 [Runtimes](/javascript/api/manifest/runtimes) 元素中，添加以下子元素：`<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`。  (如果清单中还没有 **Runtimes** 元素，请创建它作为 **VersionOverrides** 部分 **中的 Host** 元素下的第一个子元素) 
+1. 在清单中的 [Runtimes](/javascript/api/manifest/runtimes) 元素中，添加以下子元素：`<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`。  (如果清单中还没有元素，请将其创建为 section.) 中元素 **\<VersionOverrides\>** 下 **\<Host\>** 的第一个 **\<Runtimes\>** 子元素。
 2. 在清单的 [Resources.Urls](/javascript/api/manifest/resources) 部分中，添加以下子元素：`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`，其中 `{MyDomain}` 是加载项的域，`{path-to-start-page}` 是加载项的起始页路径；例如，`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`。
-3. 根据加载项是包含任务窗格、函数文件还是自定义Excel，必须执行以下三个步骤中的一个或多个操作。
+3. 根据外接程序是否包含任务窗格、函数文件或 Excel 自定义函数，必须执行以下三个步骤中的一个或多个步骤。
 
-    - 如果加载项包含任务窗格，请设置 `resid` [Action 的 属性](/javascript/api/manifest/action)。[SourceLocation](/javascript/api/manifest/sourcelocation) 元素与 `resid` 步骤 1 中 **用于 Runtime** 元素的 字符串完全相同;例如， `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
-    - 如果加载项包含自定义Excel，请设置 `resid` [Page 的 属性](/javascript/api/manifest/page)。[SourceLocation](/javascript/api/manifest/sourcelocation) 元素与`resid`步骤 1 中 **用于 Runtime** 元素的 的 字符串完全相同;例如， `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
-    - 如果外接程序包含 `resid` 函数文件，将 [FunctionFile](/javascript/api/manifest/functionfile) `resid` 元素的 属性设置为与步骤 1 中 **用于 Runtime** 元素的 完全相同的字符串;例如， `Contoso.SharedRuntime.Url`。 该元素应如下所示：`<FunctionFile resid="Contoso.SharedRuntime.Url"/>`。
+    - 如果加载项包含任务窗格，请设置 `resid` [Action](/javascript/api/manifest/action) 的属性。[SourceLocation](/javascript/api/manifest/sourcelocation) 元素与在步骤 1 中用于`resid`元素的 **\<Runtime\>** 字符串完全相同;例如。 `Contoso.SharedRuntime.Url` 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
+    - 如果外接程序包含 Excel 自定义函数，请设置 `resid` [Page](/javascript/api/manifest/page) 的属性。[SourceLocation](/javascript/api/manifest/sourcelocation) 元素与在步骤 1 中用于`resid`元素的 **\<Runtime\>** 字符串完全相同;例如。 `Contoso.SharedRuntime.Url` 该元素应如下所示：`<SourceLocation resid="Contoso.SharedRuntime.Url"/>`。
+    - 如果外接程序包含函数文件，请将 [FunctionFile](/javascript/api/manifest/functionfile) 元素的属性设置`resid`为`resid`与步骤 1 中用于元素的 **\<Runtime\>** 字符串完全相同的字符串;例如。 `Contoso.SharedRuntime.Url` 该元素应如下所示：`<FunctionFile resid="Contoso.SharedRuntime.Url"/>`。
 
 ## <a name="set-the-default-state-to-disabled"></a>将默认状态设置为“已禁用”
 
@@ -76,10 +76,10 @@ ms.locfileid: "64496731"
 
 更改加载项命令的启用状态的基本步骤如下：
 
-1. 创建 [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) 对象，该对象 (1) 指定命令及其父组和选项卡，按清单中声明的其 ID;和 (2) 指定命令的启用或禁用状态。
+1. 创建一个 [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) 对象，该对象 (1) 按清单中声明的命令及其父组和选项卡指定其 ID： (2) 指定命令的启用或禁用状态。
 2. 将 **RibbonUpdaterData** 对象传递到 [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestupdate-member(1)) 方法。
 
-下面展示了一个非常简单的示例。 请注意，"MyButton"、"OfficeAddinTab1"和"CustomGroup111"从清单中复制。
+下面展示了一个非常简单的示例。 请注意，“MyButton”、“OfficeAddinTab1”和“CustomGroup111”是从清单中复制的。
 
 ```javascript
 function enableButton() {
@@ -116,7 +116,7 @@ const enableButton = async () => {
 }
 ```
 
-如果父`await`函数是异步的，您可以调用 **requestUpdate ()**，但请注意，Office 应用程序控制它更新功能区的状态。 **requestUpdate()** 方法会将更新请求加入队列中。 一旦将请求排入队列，方法将解析承诺对象，而不是功能区实际更新时。
+如果父函数是异步的，则可以 `await` 调用 **requestUpdate ()** ，但请注意，Office 应用程序在更新功能区状态时会进行控制。 **requestUpdate()** 方法会将更新请求加入队列中。 该方法将在请求排队后立即解析 promise 对象，而不是当功能区实际更新时。
 
 ## <a name="change-the-state-in-response-to-an-event"></a>更改状态以响应事件
 
@@ -162,13 +162,13 @@ function enableChartFormat() {
 
 第四步是定义 `disableChartFormat` 处理程序。 除了将按钮对象的 **enabled** 属性设置为 `false` 之外，其他操作与 `enableChartFormat` 相同。
 
-### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>切换选项卡可见性和按钮的启用状态
+### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>同时切换选项卡可见性和按钮的启用状态
 
-**requestUpdate** 方法还用于切换自定义上下文选项卡的可见性。有关此代码和示例代码的详细信息，请参阅在加载项Office [上下文选项卡](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
+**requestUpdate** 方法还用于切换自定义上下文选项卡的可见性。有关此代码和示例代码的详细信息，请参阅 [Office 加载项中的“创建自定义上下文”选项卡](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)。
 
 ## <a name="best-practice-test-for-control-status-errors"></a>最佳做法：测试控件状态错误
 
-在某些情况下，调用 `requestUpdate` 后，功能区不会重画，因此控件的可单击状态不会发生更改。 因此，加载项的最佳做法是跟踪其控件的状态。 外接程序应符合以下规则。
+在某些情况下，调用 `requestUpdate` 后，功能区不会重画，因此控件的可单击状态不会发生更改。 因此，加载项的最佳做法是跟踪其控件的状态。 加载项应符合以下规则。
 
 1. 每当调用 `requestUpdate` 时，代码都应记录自定义按钮和菜单项的预期状态。
 2. 单击自定义控件时，处理程序中的第一个代码应检查该按钮是否应为可单击按钮。 如果不是，则该代码应报告或记录错误，然后再次尝试将按钮设置为预期状态。

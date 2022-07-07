@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: 了解 Office 外接程序平台的隐私和安全方面。
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b4b473c6981e5dd1782e059a73393dc82ff919f8
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: 84c3a17678b0cc83f3217e7885d524a6815578f0
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891947"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659666"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -72,7 +72,7 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 
 ## <a name="optional-connected-experiences"></a>可选连接体验
 
-最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Office 外接程序，禁用 **可选连接体验** 设置的影响是用户无法再通过这些客户端访问加载项或 Office 应用商店。 但是，某些被视为重要或业务关键型的 Microsoft 加载项以及组织 IT 管理员通过 [集中部署](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) 部署的加载项仍将可用。 此外，无论设置的状态如何，外接程序和应用商店仍可在 Outlook 网页版中使用。
+最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Office 外接程序，禁用 **可选连接体验** 设置的影响是用户无法再通过这些客户端访问加载项或 Office 应用商店。 但是，某些被视为重要或业务关键型的 Microsoft 加载项以及组织 IT 管理员通过 [集中部署](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) 部署的加载项仍将可用。 此外，无论设置的状态如何，外接程序和应用商店在Outlook 网页版中都保持可用。
 
 有关特定于 Outlook 的行为的详细信息，请参阅 [Outlook 加载项的隐私、权限和安全性](../outlook/privacy-and-security.md#optional-connected-experiences)。
 
@@ -87,7 +87,7 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术而生成。因此，使用加载项与转到 Internet 或 Intranet 上的网站类似。加载项可以位于组织外部（如果从 AppSource 获取加载项的话），也可以位于组织内部（如果从 Exchange Server 加载项目录、SharePoint 应用目录或组织网络上的文件共享获取加载项的话）。加载项对网络的访问权限受限，大部分加载项都可以对活动文档或邮件项执行读取或写入操作。在用户或管理员安装或启动加载项前，加载项平台就施加了特定约束。不过，与任何扩展性模型一样，用户在启动未知加载项之前应非常谨慎。
 
 > [!NOTE]
-> 首次加载加载项时，用户可能会看到安全提示来信任域。 如果外接程序的域主机不在本地 Exchange 或 Office Online Server 的域之外，则会发生这种情况。
+> 首次加载加载项时，用户可能会看到安全提示来信任域。 如果外接程序的域主机在本地或Office Online Server的 Exchange 域之外，则会发生这种情况。
 
 外接程序平台通过以下方式解决最终用户的隐私问题。
 
@@ -101,7 +101,7 @@ Office 加载项是使用浏览器控件或 **iframe** 中运行的 Web 技术�
 
   - 在 Outlook on Windows 中，从功能区中选择 **“更多应用** ”，然后选择 **“获取加载项**”。
   - 在 Outlook on Mac 中，从功能区中选择省略号按钮 (`...`) ，然后选择 **“获取加载项**”。
-  - 在 Outlook 网页版中，从功能区 **中选择“获取加载项** ”。
+  - 在Outlook 网页版中，从功能区 **中选择“获取加载项**”。
 
   管理员还可以 [使用组](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office)策略管理此访问权限。
 
@@ -232,9 +232,9 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 - 开发人员不得在 Office 加载项中使用 ActiveX 控件，因为 ActiveX 控件不支持加载项平台的跨平台特性。
 
-- 内容和任务窗格加载项使用浏览器默认使用的相同 SSL 设置，并允许大部分内容仅通过 SSL 传送。Outlook 加载项要求所有内容都通过 SSL 传送。开发人员必须在加载项清单的 **SourceLocation** 元素中指定使用 HTTPS 的 URL，以标识加载项的 HTML 文件位置。
+- 内容和任务窗格加载项假定浏览器默认使用的相同 SSL 设置，并允许大多数内容仅由 SSL 传送。 Outlook 外接程序要求所有内容都通过 SSL 交付。 开发人员必须在外接程序清单的元素中 **\<SourceLocation\>** 指定使用 HTTPS 的 URL，以确定外接程序的 HTML 文件的位置。
 
-  为了确保加载项不使用 HTTP 传送内容，开发人员在测试外接程序时应确保在 **控制面板** 的 **Internet 选项** 中选择了以下设置，并且测试方案中不会显示安全警告。
+  为了确保加载项不使用 HTTP 传送内容，开发人员在测试外接程序时应确保在 **控制面板** 中的 **Internet 选项** 中选择了以下设置，并且测试方案中不会显示安全警告。
 
   - 确保针对“Internet”区域的安全设置“显示混合内容”设置为“提示”。 为此，可在 **“Internet 选项**”中选择以下内容：在 **“安全** ”选项卡上，选择 **“Internet** ”区域，选择 **“自定义”级别**，滚动查找 **“显示混合内容**”，然后选择“ **提示** ”（如果尚未选择）。
 

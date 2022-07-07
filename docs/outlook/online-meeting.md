@@ -4,12 +4,12 @@ description: 讨论如何为联机会议服务提供商设置 Outlook 加载项�
 ms.topic: article
 ms.date: 06/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 884e27b75f3fc44a645021f8211d7aaf748f3a1d
-ms.sourcegitcommit: e8ce48605f7f33bc5c9af8bfd75d54d4b6b15039
+ms.openlocfilehash: ad96cbd385f53959501dcb5ac8b7e9be22d4585a
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2022
-ms.locfileid: "66574423"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660275"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>为联机会议提供商创建 Outlook 加载项
 
@@ -26,7 +26,7 @@ ms.locfileid: "66574423"
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要使用户能够使用外接程序创建联机会议，必须在清单中配置 **VersionOverrides** 节点。 如果创建的加载项仅在 Outlook 网页版、Windows 和 Mac 中受支持，请选择 **Windows、Mac、Web** 选项卡以获取指导。 但是，如果外接程序在 Outlook on Android 和 iOS 中也受支持，请选择 **“移动”** 选项卡。
+若要使用户能够使用外接程序创建联机会议，必须在清单中配置 **\<VersionOverrides\>** 节点。 如果创建的加载项仅在 Outlook 网页版、Windows 和 Mac 中受支持，请选择 **Windows、Mac、Web** 选项卡以获取指导。 但是，如果外接程序在 Outlook on Android 和 iOS 中也受支持，请选择 **“移动”** 选项卡。
 
 # <a name="windows-mac-web"></a>[Windows、Mac、Web](#tab/non-mobile)
 
@@ -34,7 +34,7 @@ ms.locfileid: "66574423"
 
 1. 打开位于项目根 **目录的manifest.xml** 文件。
 
-1. 选择整个 **VersionOverrides** 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
+1. 选择整个 **\<VersionOverrides\>** 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -100,13 +100,13 @@ ms.locfileid: "66574423"
 
 # <a name="mobile"></a>[移动设备](#tab/mobile)
 
-若要允许用户从其移动设备创建联机会议，在父元素 **MobileFormFactor** 下的清单中配置 [MobileOnlineMeetingCommandSurface 扩展点](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface)。 其他外形因素不支持此扩展点。
+若要允许用户从其移动设备创建联机会议，在父元素 **\<MobileFormFactor\>** 下的清单中配置 [MobileOnlineMeetingCommandSurface 扩展点](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface)。 其他外形因素不支持此扩展点。
 
 1. 在代码编辑器中，打开创建的 Outlook 快速入门项目。
 
 1. 打开位于项目根 **目录的manifest.xml** 文件。
 
-1. 选择整个 **VersionOverrides** 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
+1. 选择整个 **\<VersionOverrides\>** 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

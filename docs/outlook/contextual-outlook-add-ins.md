@@ -3,18 +3,18 @@ title: 上下文 Outlook 加载项
 description: 无需离开邮件本身即可启用与邮件相关的任务，以此带来更便捷、更丰富的用户体验。
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cb39c4ffd1a1bed3af23d6127f4fdef03187af10
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 1a9e9e29862449911550c8c3a6dd44819816bd69
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496899"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660135"
 ---
 # <a name="contextual-outlook-add-ins"></a>上下文 Outlook 加载项
 
 上下文加载项是一些根据邮件或约会中的文本进行激活的 Outlook 外接程序。通过使用上下文加载项，用户无需离开邮件本身即可启动与邮件相关的任务，这会带来更便捷、更丰富的用户体验。
 
-下面是上下文外接程序的示例。
+下面是上下文加载项的示例。
 
 - 选择地址以打开位置地图。
 - 选择会打开会议建议加载项的字符串。
@@ -28,9 +28,9 @@ ms.locfileid: "64496899"
 
 ## <a name="how-to-make-a-contextual-add-in"></a>如何生成上下文加载项
 
-上下文外接程序的清单必须包含将 `xsi:type` 属性设置为 `DetectedEntity` 的 [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) 元素。 在 **ExtensionPoint** 元素中，该外接程序指定可以激活它的实体或正则表达式。 如果指定实体，则该实体可以是 [Entities](/javascript/api/outlook/office.entities) 对象中的任何属性。
+上下文外接程序的清单必须包含将 `xsi:type` 属性设置为 `DetectedEntity` 的 [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) 元素。 在元素中 **\<ExtensionPoint\>** ，外接程序指定可以激活它的实体或正则表达式。 如果指定实体，则该实体可以是 [Entities](/javascript/api/outlook/office.entities) 对象中的任何属性。
 
-因此，外接程序清单必须包含类型为 **ItemHasKnownEntity** 或 **ItemHasRegularExpressionMatch** 的规则。 以下示例演示如何指定外接程序应在检测到的实体为电话号码的邮件上激活。
+因此，外接程序清单必须包含类型为 **ItemHasKnownEntity** 或 **ItemHasRegularExpressionMatch** 的规则。 以下示例演示如何指定加载项应在具有检测到的实体（即电话号码）的消息上激活。
 
 ```XML
 <ExtensionPoint xsi:type="DetectedEntity">
@@ -64,7 +64,7 @@ ms.locfileid: "64496899"
 
 **含有突出显示实体（地址）的文本示例**
 
-![在电子邮件中显示突出显示的实体。](../images/outlook-detected-entity-highlight.png)
+![显示电子邮件中突出显示的实体。](../images/outlook-detected-entity-highlight.png)
     
 当邮件中含有多个实体或上下文外接程序时，用户交互规则如下所示：
 
@@ -84,7 +84,7 @@ ms.locfileid: "64496899"
 
 ## <a name="current-contextual-add-ins"></a>当前上下文外接程序
 
-默认情况下，会为具有加载项的用户安装Outlook加载项。
+默认情况下，为具有 Outlook 外接程序的用户安装以下上下文加载项。
 
 - 必应地图
 - 建议的会议

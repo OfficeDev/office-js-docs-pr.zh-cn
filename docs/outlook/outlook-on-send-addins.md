@@ -3,12 +3,12 @@ title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
 ms.date: 06/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ae4149afd5bb6303706fec7288441727f09d6bcd
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: eda6444a84632de5349af42deab7744c712551ad
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229650"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660261"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -25,12 +25,12 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 下表显示了发送功能支持的客户端-服务器组合，包括在适用的情况下所需的最小累积更新。 不支持排除的组合。
 
-| Client | Exchange Online | Exchange 2016 本地<br> (累积更新 6 或更高版本)  | Exchange 2019 本地<br> (累积更新 1 或更高版本)  |
+| 客户端 | Exchange Online | 本地 Exchange 2016<br> (累积更新 6 或更高版本)  | 本地 Exchange 2019<br> (累积更新 1 或更高版本)  |
 |---|:---:|:---:|:---:|
 |Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是|是|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|
-|Web 浏览器：<br>新式Outlook UI|是|不适用|不适用|
-|Web 浏览器：<br>经典Outlook UI|不适用|是|是|
+|Web 浏览器：<br>新式 Outlook UI|是|不适用|不适用|
+|Web 浏览器：<br>经典 Outlook UI|不适用|是|是|
 
 > [!NOTE]
 > 发送功能已在要求集 1.8 中正式发布， (查看 [当前服务器和客户端对](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) 详细信息的支持) 。 但是，请注意，该功能的支持矩阵是要求集的超集。
@@ -46,10 +46,10 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 - 验证消息是否包含主题行。
 - 设置预先确定的收件人。
 
-在触发发送事件时，Outlook在客户端执行验证，加载项在超时前最多需要 5 分钟的时间。如果验证失败，则阻止发送项目，并在提示用户采取行动的信息栏中显示错误消息。
+触发发送事件时，会在 Outlook 中的客户端进行验证，加载项最多需要 5 分钟才能超时。如果验证失败，则阻止发送项目，并在提示用户采取行动的信息栏中显示错误消息。
 
 > [!NOTE]
-> 在Outlook 网页版中，当在Outlook浏览器选项卡中撰写的消息中触发发送功能时，该项目会弹出到自己的浏览器窗口或选项卡中，以便完成验证和其他处理。
+> 在Outlook 网页版中，当在 Outlook 浏览器选项卡中撰写的邮件中触发发送功能时，该项目会弹出到自己的浏览器窗口或选项卡中，以便完成验证和其他处理。
 
 以下屏幕截图显示了通知发件人添加主题的信息栏。
 
@@ -73,11 +73,11 @@ Onsend 功能目前具有以下限制。
 
 ### <a name="mailbox-typemode-limitations"></a>邮箱类型/模式限制
 
-只有 Outlook 网页版、Windows 版和 Mac 版中的用户邮箱支持 Onsend 功能。 除了加载项未按Outlook加载项概述页的[“邮箱”项](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)中所述激活的情况外，该功能目前不支持该模式可用的脱机模式。
+只有 Outlook 网页版、Windows 版和 Mac 版中的用户邮箱支持 Onsend 功能。 除了外接程序未像 Outlook 外接程序概述页的 [“邮箱”项目](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) 中所述激活外接程序之外，该模式可用的脱机模式目前不支持此功能。
 
-如果Outlook加载项未激活，则不会运行发送的外接程序，并且将发送消息。
+如果 Outlook 加载项未激活，则不会运行本地加载项，并且将发送消息。
 
-但是，如果启用并提供发送功能，但邮箱方案不受支持，Outlook将不允许发送。
+但是，如果启用并提供发送功能，但邮箱方案不受支持，Outlook 将不允许发送。
 
 ## <a name="multiple-on-send-add-ins"></a>多个 Onsend 加载项
 
@@ -287,12 +287,12 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 #### <a name="what-the-policy-does"></a>策略的用途
 
-出于合规性原因，管理员可能需要在用户具有可供运行的最新 Onsend 加载项前，确保其无法发送邮件或会议项目。 **当 Web 加载项无法加载时**，管理员必须启用组策略阻止发送，以便从Exchange更新所有加载项，并可用于验证每个消息或会议项目是否符合发送的预期规则和法规。
+出于合规性原因，管理员可能需要在用户具有可供运行的最新 Onsend 加载项前，确保其无法发送邮件或会议项目。 **当 Web 加载项无法加载时**，管理员必须启用组策略阻止发送，以便从 Exchange 更新所有加载项，并可用于验证每个消息或会议项目是否符合发送的预期规则和法规。
 
 |策略状态|结果|
 |---|---|
 |已禁用|当前下载的发送加载项清单 (不一定是最新版本) 在发送的消息或会议项目上运行。 这是默认状态/行为。|
-|已启用|从Exchange下载发送的加载项的最新清单后，外接程序会在发送的消息或会议项目上运行。 否则，将阻止发送。|
+|已启用|从 Exchange 下载发送的加载项的最新清单后，外接程序会在发送的消息或会议项上运行。 否则，将阻止发送。|
 
 #### <a name="manage-the-on-send-policy"></a>管理 Onsend 策略
 
@@ -325,7 +325,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 |键的状态|结果|
 |---|---|
 |false|当前下载的发送加载项清单 (不一定是最新版本) 在发送的消息或会议项目上运行。 这是默认状态/行为。|
-|true|从Exchange下载发送的加载项的最新清单后，外接程序会在发送的消息或会议项目上运行。 否则，将阻止发送，并禁用 **“发送** ”按钮。|
+|true|从 Exchange 下载发送的加载项的最新清单后，外接程序会在发送的消息或会议项上运行。 否则，将阻止发送，并禁用 **“发送** ”按钮。|
 
 ---
 
@@ -335,7 +335,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="event-handlers-are-dynamically-defined"></a>动态定义事件处理程序
 
-加载项的事件处理程序必须按时间`Office.initialize`定义或`Office.onReady()`调用 (以获取详细信息，请参阅[Outlook加载项的启动](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in)并[初始化Office加载](../develop/initialize-add-in.md)项) 。 如果处理程序代码在初始化过程中由特定情况动态定义，则必须在完全定义处理程序后创建存根函数来调用处理程序。 必须在清单 **的事件** 元素属性 `FunctionName` 中引用存根函数。 此解决方法可确保定义处理程序并准备好被引用一次 `Office.initialize` 或 `Office.onReady()` 运行。
+外接程序的事件处理程序必须按时间 `Office.initialize` 定义或 `Office.onReady()` 调用 (以获取详细信息，请参阅 [启动 Outlook 加载项](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in) 并 [初始化 Office 加载](../develop/initialize-add-in.md) 项) 。 如果处理程序代码在初始化过程中由特定情况动态定义，则必须在完全定义处理程序后创建存根函数来调用处理程序。 必须在清单的元素`FunctionName`属性中 **\<Event\>** 引用存根函数。 此解决方法可确保定义处理程序并准备好被引用一次 `Office.initialize` 或 `Office.onReady()` 运行。
 
 如果加载项初始化后未定义处理程序，将通过邮件项中的信息栏通知发件人“回调函数不可访问”。
 
@@ -383,10 +383,10 @@ Onsend 加载项将根据用户、加载项后端和 Exchange 的联机状态运
 
 ### <a name="user-can-edit-item-while-on-send-add-ins-are-working-on-it"></a>用户可以在发送加载项处理时编辑项目
 
-当发送的加载项正在处理项目时，用户可以通过添加不适当的文本或附件来编辑该项目。 如果要阻止用户在加载项处理发送时编辑项目，可以使用对话实现解决方法。 此解决方法可用于Outlook 网页版 (经典) 、Windows和 Mac。
+当发送的加载项正在处理项目时，用户可以通过添加不适当的文本或附件来编辑该项目。 如果要阻止用户在加载项处理发送时编辑项目，可以使用对话实现解决方法。 此解决方法可用于Outlook 网页版 (经典) 、Windows 和 Mac。
 
 > [!IMPORTANT]
-> 新式Outlook 网页版：若要防止用户在加载项处理发送时编辑项目，应将 *OnSendAddinsEnabled* 标志`true`设置为本文前面 [使用 on-send 部分的“安装Outlook加载项](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)”中所述。
+> 新式Outlook 网页版：若要防止用户在加载项处理发送时编辑项目，应将 *OnSendAddinsEnabled* 标志`true`设置为本文前面 [使用“发送”部分的“安装 Outlook 加载项](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)”中所述。
 
 在发送处理程序中：
 
@@ -431,7 +431,7 @@ Onsend 加载项将根据用户、加载项后端和 Exchange 的联机状态运
 ```
 
 > [!IMPORTANT]
-> 如果使用 Visual Studio 2019 开发本地加载项，可能会收到如下所示的验证警告：“这是无效的 xsi：type'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events”。若要解决此问题，需要更新版本的 MailAppVersionOverridesV1_1.xsd，该版本已在[有关此警告的博客](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)中作为GitHub gist 提供。
+> 如果使用 Visual Studio 2019 开发本地加载项，可能会收到如下所示的验证警告：“这是无效的 xsi：type'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events”。若要解决此问题，需要更新版本的 MailAppVersionOverridesV1_1.xsd，该版本已作为 GitHub gist 在 [有关此警告的博客](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)中提供。
 
 对于 `Contoso Subject and CC Checker.xml` 清单文件，以下示例中显示了邮件发送事件中要调用的函数文件和函数名称。
 
@@ -609,9 +609,9 @@ function subjectOnSendChange(subject, event) {
 
 若要详细了解如何将收件人添加到抄送行、验证电子邮件在发送时是否包主题行，以及查看可以使用的 API，请参阅 [Outlook-Add-in-On-Send 示例](https://github.com/OfficeDev/Outlook-Add-in-On-Send)。已充分注释代码。
 
-## <a name="debug-outlook-add-ins-that-use-on-send"></a>调试使用 on-send 的Outlook加载项
+## <a name="debug-outlook-add-ins-that-use-on-send"></a>调试使用 On-send 的 Outlook 加载项
 
-有关如何调试本地加载项的说明，请参阅[调试无 UI Outlook加载项](debug-ui-less.md)。
+有关如何调试本地加载项的说明，请参阅 [调试无 UI 的 Outlook 外接程序](debug-ui-less.md)。
 
 > [!TIP]
 > 如果当用户运行外接程序并动态定义外接程序的事件处理程序时出现错误“回调函数不可访问”，则必须创建存根函数作为解决方法。 有关详细信息，请参阅 [动态定义的事件处理程序](#event-handlers-are-dynamically-defined) 。

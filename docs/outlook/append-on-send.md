@@ -1,26 +1,26 @@
 ---
-title: 在Outlook加载项中实现追加发送
-description: 了解如何在Outlook加载项中实现追加发送功能。
+title: 在 Outlook 外接程序中实现追加发送
+description: 了解如何在 Outlook 加载项中实现追加发送功能。
 ms.topic: article
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 968b730aca1fc36640e43ff45404c8d4c7b92d47
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 2ea493f4d6b395b2e2f3e596435f15adbfc600dd
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244833"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659827"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in"></a>在Outlook加载项中实现追加发送
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>在 Outlook 外接程序中实现追加发送
 
-本演练结束时，你将有一个Outlook加载项，该加载项可以在发送消息时插入免责声明。
+本演练结束时，你将拥有一个 Outlook 加载项，该加载项可以在发送消息时插入免责声明。
 
 > [!NOTE]
 > 要求集 1.9 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)门，使用 yeoman 生成器为Office加载项创建加载项项目。
+完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) 门，使用 Office 外接程序的 Yeoman 生成器创建加载项项目。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -32,7 +32,7 @@ ms.locfileid: "65244833"
 
 1. 打开位于项目根 **目录的manifest.xml** 文件。
 
-1. 选择整个 `<VersionOverrides>` 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
+1. 选择整个 **\<VersionOverrides\>** 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -120,7 +120,7 @@ ms.locfileid: "65244833"
     ```
 
 > [!TIP]
-> 若要详细了解Outlook加载项的清单，请[参阅Outlook加载项清单](manifests.md)。
+> 若要详细了解 Outlook 外接程序的清单，请参阅 [Outlook 加载项清单](manifests.md)。
 
 ## <a name="implement-append-on-send-handling"></a>实现追加发送处理
 

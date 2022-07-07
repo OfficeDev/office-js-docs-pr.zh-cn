@@ -1,25 +1,25 @@
 ### YamlMime:Landing
 title: Outlook 加载项文档
-summary: 借助 Outlook 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）构建可在 Outlook 中跨多个平台（包括 Web、Windows、Mac 和 iOS）运行的解决方案。 了解如何构建、测试、调试和发布 Outlook 加载项。
+summary: 借助 Outlook 加载项，可以使用熟悉的 Web 技术（如 HTML、CSS 和 JavaScript）构建一个解决方案，该解决方案可以在 Outlook 中跨多个平台（包括 Web、Windows、Mac 和 iOS）运行。 了解如何构建、测试、调试和发布 Outlook 加载项。
 metadata:
   title: Outlook 加载项文档
   description: 用于了解 Outlook 加载项的资源。
   ms.prod: outlook
   ms.topic: landing-page
-  ms.date: 03/29/2021
+  ms.date: 06/30/2022
   ms.localizationpriority: high
-  ms.openlocfilehash: ac60bd35b7140dbdd2d2ca46196e5fd90318efa8
-  ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+  ms.openlocfilehash: d675d9c5a32c1e341d36e7c54f93dd3b3beaff85
+  ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/23/2022
-  ms.locfileid: "63745059"
+  ms.lasthandoff: 07/06/2022
+  ms.locfileid: "66660289"
 landingContent:
-- title: 关于Outlook加载项
+- title: 关于 Outlook 加载项
   linkLists:
   - linkListType: overview
     links:
-    - text: 什么是Outlook加载项？
+    - text: 什么是 Outlook 加载项？
       url: outlook-add-ins-overview.md
   - linkListType: quickstart
     links:
@@ -31,11 +31,13 @@ landingContent:
     links:
     - text: 使用 Outlook JavaScript API 与对象交互
       url: apis.md
-    - text: 测试和调试Outlook加载项
+    - text: 导航并使用邮箱要求集
+      url: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
+    - text: 测试和调试 Outlook 加载项
       url: ../testing/test-debug-office-add-ins.md
-    - text: 部署和Outlook加载项
+    - text: 部署和发布 Outlook 加载项
       url: ../publish/publish.md
-- title: 关键Office加载项概念
+- title: 密钥 Office 加载项概念
   linkLists:
   - linkListType: overview
     links:

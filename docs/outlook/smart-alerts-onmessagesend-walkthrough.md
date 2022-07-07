@@ -1,32 +1,32 @@
 ---
-title: '在Outlook外接程序中使用智能警报和 OnMessageSend 和 OnAppointmentSend 事件 (预览) '
-description: 了解如何使用基于事件的激活处理Outlook加载项中的发送事件。
+title: '在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件 (预览) '
+description: 了解如何使用基于事件的激活处理 Outlook 外接程序中的发送事件。
 ms.topic: article
 ms.date: 06/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ed1ce7e1c05bec9a09eefd36e935d1037cf80d98
-ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
+ms.openlocfilehash: 00afc7614da18ed90808bd64b72ae0e3e1aab852
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "66019610"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660247"
 ---
-# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>在Outlook外接程序中使用智能警报和 OnMessageSend 和 OnAppointmentSend 事件 (预览) 
+# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件 (预览) 
 
-这些`OnMessageSend`事件和`OnAppointmentSend`事件利用智能警报，在用户选择 **发送** Outlook消息或约会后，你可以运行逻辑。 通过事件处理程序，你可以为用户提供在发送电子邮件和会议邀请之前改进电子邮件和会议邀请的机会。
+这些 `OnMessageSend` 事件和 `OnAppointmentSend` 事件利用智能警报，在用户选择 **“在其** Outlook 消息或约会中发送”后，可以运行逻辑。 通过事件处理程序，你可以为用户提供在发送电子邮件和会议邀请之前改进电子邮件和会议邀请的机会。
 
 以下演练使用该 `OnMessageSend` 事件。 本演练结束时，你将拥有一个在发送消息时运行的加载项，并检查用户是否忘记添加他们在电子邮件中提到的文档或图片。
 
 > [!IMPORTANT]
-> 这些`OnMessageSend`和`OnAppointmentSend`事件仅在预览版中提供，Windows Outlook中包含Microsoft 365订阅。 有关更多详细信息，请参阅 [如何预览](autolaunch.md#how-to-preview)。 不应在生产外接程序中使用预览事件。
+> 这些 `OnMessageSend` 和 `OnAppointmentSend` 事件仅在 Outlook on Windows 中使用 Microsoft 365 订阅以预览版提供。 有关更多详细信息，请参阅 [如何预览](autolaunch.md#how-to-preview)。 不应在生产外接程序中使用预览事件。
 
 ## <a name="prerequisites"></a>先决条件
 
-该 `OnMessageSend` 事件可通过基于事件的激活功能获得。 若要了解如何将外接程序配置为使用此功能，请使用其他可用事件，为此事件配置预览版，调试外接程序等，请参阅[配置Outlook外接程序以进行基于事件的激活](autolaunch.md)。
+该 `OnMessageSend` 事件可通过基于事件的激活功能获得。 若要了解如何将外接程序配置为使用此功能，请使用其他可用事件，为此事件配置预览版，调试外接程序等，请参阅 [配置 Outlook 外接程序以进行基于事件的激活](autolaunch.md)。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成[Outlook快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)门，使用 Yeoman 生成器为Office加载项创建加载项项目。
+完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)门，使用 Office 外接程序的 Yeoman 生成器创建加载项项目。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -34,7 +34,7 @@ ms.locfileid: "66019610"
 
 1. 打开位于项目根 **目录的manifest.xml** 文件。
 
-1. 选择整个 **VersionOverrides** 节点 (包括打开和关闭标记) 并将其替换为以下 XML，然后保存所做的更改。
+1. 选择整个 **\<VersionOverrides\>** 节点 (包括打开和关闭标记) 并将其替换为以下 XML，然后保存所做的更改。
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -138,7 +138,7 @@ ms.locfileid: "66019610"
 > [!TIP]
 >
 > - 有关可用的 `OnMessageSend` **SendMode** 选项和`OnAppointmentSend`事件，请参阅 [“可用 SendMode”选项](/javascript/api/manifest/launchevent#available-sendmode-options-preview)。
-> - 若要详细了解Outlook加载项的清单，请[参阅Outlook加载项清单](manifests.md)。
+> - 若要详细了解 Outlook 外接程序的清单，请参阅 [Outlook 加载项清单](manifests.md)。
 
 ## <a name="implement-event-handling"></a>实现事件处理
 
@@ -259,9 +259,9 @@ ms.locfileid: "66019610"
     ```
 
     > [!NOTE]
-    > 如果加载项未自动旁加载，请按照[旁加载Outlook加载项中的说明进行测试](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually)，手动将外接程序旁加载到Outlook中。
+    > 如果加载项未自动旁加载，请按照 [Sideload Outlook 加载项中的说明进行测试](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) ，以便在 Outlook 中手动旁加载加载项。
 
-1. 在Windows的Outlook中，创建一条新消息并设置主题。 在身体里，添加文本，如“嘿，看看这张我的狗的照片！
+1. 在 Outlook on Windows 中，创建新消息并设置主题。 在身体里，添加文本，如“嘿，看看这张我的狗的照片！
 1. 发送消息. 应该会弹出一个对话框，其中包含添加附件的建议。
 
     ![建议用户包含附件的对话框。](../images/outlook-win-smart-alert.png)
@@ -324,7 +324,7 @@ ms.locfileid: "66019610"
 ## <a name="see-also"></a>另请参阅
 
 - [Outlook 加载项清单](manifests.md)
-- [为基于事件的激活配置Outlook加载项](autolaunch.md)
+- [配置 Outlook 外接程序以进行基于事件的激活](autolaunch.md)
 - [如何调试基于事件的加载项](debug-autolaunch.md)
-- [基于事件的Outlook加载项的 AppSource 列表选项](autolaunch-store-options.md)
-- [Office加载项代码示例：使用Outlook智能警报](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
+- [基于事件的 Outlook 外接程序的 AppSource 列表选项](autolaunch-store-options.md)
+- [Office 加载项代码示例：使用 Outlook 智能警报](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)

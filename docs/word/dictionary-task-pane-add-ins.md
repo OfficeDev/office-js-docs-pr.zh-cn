@@ -3,12 +3,12 @@ title: 创建字典任务窗格加载项
 description: 了解如何创建字典任务窗格加载项。
 ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6df6ec5e3fc90899475e3fd089a8e5c0ca766b
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: 755b98ec2e3d5e032ca5adbf349b61a583a03ccd
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187320"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660058"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -250,11 +250,11 @@ public class WebService : System.Web.Services.WebService {
 
 **父元素**
 
-`<OfficeApp>`
+**\<OfficeApp\>**
 
 **子元素**
 
-`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`
+**\<TargetDialects\>**, **\<QueryUri\>**, **\<CitationText\>**, **\<Name\>**, **\<DictionaryHomePage\>**
 
 **备注**
 
@@ -266,11 +266,11 @@ public class WebService : System.Web.Services.WebService {
 
 **父元素**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **子元素**
 
-`<TargetDialect>`
+**\<TargetDialect\>**
 
 **备注**
 
@@ -307,7 +307,7 @@ public class WebService : System.Web.Services.WebService {
 
 **父元素**
 
-`<TargetDialects>`
+**\<TargetDialects\>**
 
 **备注**
 
@@ -325,7 +325,7 @@ public class WebService : System.Web.Services.WebService {
 
 **父元素**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **备注**
 
@@ -343,7 +343,7 @@ public class WebService : System.Web.Services.WebService {
 
 **父元素**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **备注**
 
@@ -363,7 +363,7 @@ public class WebService : System.Web.Services.WebService {
 
 **父元素**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **备注**
 
@@ -383,7 +383,7 @@ public class WebService : System.Web.Services.WebService {
 
 **父元素**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **备注**
 

@@ -3,12 +3,12 @@ title: 了解 Outlook 加载项权限
 description: Outlook 加载项在清单中指定所需的权限级别，其中包括受限、ReadItem、ReadWriteItem 或 ReadWriteMailbox。
 ms.date: 02/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6350e0d3aed499d831c13e440945fda1f60742ca
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: b515ef470331a513d6b57007f372b3e4dec1d25b
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484186"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660226"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>了解 Outlook 加载项权限
 
@@ -63,7 +63,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 ## <a name="readitem-permission"></a>“ReadItem”权限
 
-**ReadItem** 权限是权限模型中的下一级别权限。在清单的“权限”元素中指定“ReadItem”可以请求获取此权限。
+“ReadItem”**** 权限是权限模型中的下一级别权限。 在清单中的元素中 **\<Permissions\>** 指定 **ReadItem** 以请求此权限。
 
 ### <a name="can-do"></a>可以执行的操作
 
@@ -75,7 +75,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 - 从该邮件的主题或正文中[获取所有现有已知实体](match-strings-in-an-item-as-well-known-entities.md)，而不仅仅是一个子集。
 
-- 使用 [ItemHasKnownEntity](activation-rules.md#itemhasknownentity-rule) 规则中所有的 [已知实体](/javascript/api/manifest/rule#itemhasknownentity-rule)，或者 [ItemHasRegularExpressionMatch](activation-rules.md#itemhasregularexpressionmatch-rule) 规则中的 [正则表达式](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule)。 以下示例遵循架构 v1.1。 它显示在所选邮件的主题或正文中发现一个或多个已知实体时激活外接程序的规则。
+- 使用 [ItemHasKnownEntity](activation-rules.md#itemhasknownentity-rule) 规则中所有的 [已知实体](/javascript/api/manifest/rule#itemhasknownentity-rule)，或者 [ItemHasRegularExpressionMatch](activation-rules.md#itemhasregularexpressionmatch-rule) 规则中的 [正则表达式](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule)。 以下示例遵循架构 v1.1。 它显示一个规则，如果在所选消息的主题或正文中找到一个或多个已知实体，则该规则将激活加载项。
 
   ```XML
     <Permissions>ReadItem</Permissions>
@@ -102,7 +102,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
   - 使用 Outlook REST API 更新或删除当前邮件，或访问用户邮箱中的其他任何邮件。
   - 使用 Outlook REST API 获取当前日历事件项。
 
-- 使用以下任一 API。
+- 使用以下任何 API。
   - [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
   - [item.addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
   - [item.addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
@@ -127,7 +127,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 ## <a name="readwriteitem-permission"></a>ReadWriteItem 权限
 
-可以在清单中的 **Permissions** 元素中指定 **ReadWriteItem** 以请求此权限。在使用撰写方法（例如，**Message.to.addAsync** 或 **Message.to.setAsync**）的撰写窗体中激活的邮件加载项必须使用至少这个等级的权限。
+在清单中的元素中 **\<Permissions\>** 指定 **ReadWriteItem** 以请求此权限。 在使用撰写方法（例如，**Message.to.addAsync** 或 **Message.to.setAsync**）的撰写窗体中激活的邮件加载项必须使用至少这个等级的权限。
 
 ### <a name="can-do"></a>允许事项
 
@@ -135,7 +135,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 - [添加或删除该邮件的附件](add-and-remove-attachments-to-an-item-in-a-compose-form.md)。
 
-- 使用适用于邮件外接程序的 Office JavaScript API 的所有其他成员，**Mailbox.makeEWSRequestAsync 除外**。
+- 使用适用于邮件外接程序的 Office JavaScript API 的所有其他成员， **Mailbox.makeEWSRequestAsync** 除外。
 
 ### <a name="cant-do"></a>禁止事项
 
@@ -147,7 +147,7 @@ Outlook 外接程序在清单中指定所需的权限级别。可用级别为 **
 
 ## <a name="readwritemailbox-permission"></a>“ReadWriteMailbox”权限
 
-**ReadWriteMailbox** 是最高级别权限。在清单的“权限”元素中指定 **ReadWriteMailbox** 可以请求获取此权限。
+“ReadWriteMailbox”**** 是最高级别权限。 在清单中的元素中 **\<Permissions\>** 指定 **ReadWriteMailbox** 以请求此权限。
 
 除了可以执行 **ReadWriteItem** 权限支持的操作外，还可以使用 **mailbox.getCallbackTokenAsync** 提供的令牌，通过 Exchange Web 服务 (EWS) 操作或 Outlook REST API 执行以下操作：
 
