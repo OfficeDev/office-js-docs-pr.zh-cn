@@ -619,6 +619,9 @@ items:
           - name: 概述
             href: outlook/apis.md
             displayName: Outlook
+          - name: 邮箱要求集
+            href: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
+            displayName: Outlook
           - name: API 参考 - 最新版本
             href: reference/outlook-api-reference-1-11.md
             displayName: Outlook
