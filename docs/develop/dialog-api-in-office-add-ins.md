@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在 Office 加载项中创建对话框的基础知识。
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 72b5fa49a4667a0333ebe04114820912db3c15a7
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 8fbc9114d2cdedcaa8ad5be9c035e9e14430266c
+ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659960"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "66689388"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -215,7 +215,7 @@ function processMessage(arg) {
 
 ### <a name="cross-domain-messaging-to-the-host-runtime"></a>到主机运行时的跨域消息传送
 
-对话框或父 JavaScript 运行时 (在任务窗格中，或者托管函数文件的无 UI 运行时) 在对话打开后可以从外接程序的域导航。 如果发生上述任一情况，则调用 `messageParent` 将失败，除非代码指定父运行时的域。 为此，请将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到调用 。`messageParent` 此对象具有一个 `targetOrigin` 属性，该属性指定应向其发送消息的域。 如果未使用该参数，Office 假定目标与对话当前托管的域相同。
+对话框或父 JavaScript 运行时可以在对话框打开后从外接程序的域中导航。 如果发生上述任一情况，则调用 `messageParent` 将失败，除非代码指定父运行时的域。 为此，请将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到调用 。`messageParent` 此对象具有一个 `targetOrigin` 属性，该属性指定应向其发送消息的域。 如果未使用该参数，Office 假定目标与对话当前托管的域相同。
 
 > [!NOTE]
 > 用于 `messageParent` 发送跨域消息需要 [对话框源 1.1 要求集](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)。 在 `DialogMessageOptions` 不支持要求集的较旧版本的 Office 上忽略该参数，因此，如果传递该参数，该方法的行为将不受影响。
@@ -338,7 +338,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>跨域消息传送到对话框运行时
 
-对话框或父 JavaScript 运行时 (在任务窗格中，或者托管函数文件的无 UI 运行时) 在对话打开后可以从外接程序的域导航。 如果发生上述任一情况，则调用 `messageChild` 将失败，除非代码指定对话运行时的域。 为此，请将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到调用 。`messageChild` 此对象具有一个 `targetOrigin` 属性，该属性指定应向其发送消息的域。 如果未使用该参数，Office 假定目标与父运行时当前托管的域相同。 
+对话框或父 JavaScript 运行时可以在对话框打开后从外接程序的域中导航。 如果发生上述任一情况，则除非代码指定对话运行时的域，否则调 `messageChild` 用将失败。 为此，请将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到调用 。`messageChild` 此对象具有一个 `targetOrigin` 属性，该属性指定应向其发送消息的域。 如果未使用该参数，Office 假定目标与父运行时当前托管的域相同。 
 
 > [!NOTE]
 > 用于 `messageChild` 发送跨域消息需要 [对话框源 1.1 要求集](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)。 在 `DialogMessageOptions` 不支持要求集的较旧版本的 Office 上忽略该参数，因此，如果传递该参数，该方法的行为将不受影响。

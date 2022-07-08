@@ -4,12 +4,12 @@ description: 构建一个 Excel 外接程序，用于创建、填充、筛选和
 ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: bcec39ef8cbdeb92636cc57abe8f007e56bbfbe2
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: fce53d78af29cceea12f0067d22e9ced0f9c1ace
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244798"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659715"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -509,7 +509,7 @@ ms.locfileid: "65244798"
 
 1. 打开清单文件 **./manifest.xml**。
 
-1. 查找 `<Control>` 元素。 此元素定义了“主页”功能区上一直用于启动加载项的“显示任务窗格”按钮。 将向“主页”功能区上的相同组添加第二个按钮。 在结束 `</Control>` 标记和结束 `</Group>` 标记之间，添加以下标记。
+1. 查找 **\<Control\>** 元素。 此元素定义了“主页”功能区上一直用于启动加载项的“显示任务窗格”按钮。 将向“主页”功能区上的相同组添加第二个按钮。 在结束 **\</Control\>** 标记和结束 **\</Group\>** 标记之间，添加以下标记。
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">

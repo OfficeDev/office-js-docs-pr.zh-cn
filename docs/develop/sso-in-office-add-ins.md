@@ -3,12 +3,12 @@ title: 在 Office 加载项中启用单一登录 (SSO)
 description: 了解使用常用的 Microsoft 个人、工作或教育帐户为 Office 加载项启用单一登录 (SSO) 的关键步骤。
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 14b65da74cf627b7830ef013580558e8e6097ed1
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: e2a7715b6baaaf5ec4f6b398a1570c3bb4a08630
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650596"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659967"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>在 Office 加载项中启用单一登录 (SSO)
 
@@ -79,11 +79,11 @@ ms.locfileid: "65650596"
 
 向加载项清单添加新标记。
 
-- **WebApplicationInfo** - 下列元素的父元素。
-- **ID** - 向 Microsoft 标识平台注册加载项时收到的应用程序 (客户端) ID。 有关详细信息，请参阅[向 Microsoft 标识平台注册使用 SSO 的 Office 加载项](register-sso-add-in-aad-v2.md)。
-- **资源** - 加载项的 URI。 这是你在向 Microsoft 标识平台注册加载项时使用的相同 URI（包括 `api:` 协议）。 此 URI 的域部分必须与加载项清单的 `<Resources>` 部分中的 URL 中使用的域（包括任何子域）匹配，并且该 URI 必须以 `<Id>` 元素中指定的客户端 ID 结尾。
-- **Scopes** - 一个或多个“**Scope**”元素的父元素。
-- **范围** - 指定加载项所需的权限。 始终需要 `profile` 和 `openID` 权限，并且可能是唯一需要的权限。 如果加载项需要访问 Microsoft Graph 或其他 Microsoft 365 资源，则将需要其他 **范围** 元素。 例如，对于 Microsoft Graph 权限，你可以请求 `User.Read` 和 `Mail.Read` 范围。 在代码中用于访问 Microsoft Graph 的库可能需要其他权限。 有关详细信息，请参阅[向 Office 加载项中的 Microsoft Graph 授权](authorize-to-microsoft-graph.md)。
+- **\<WebApplicationInfo\>** - 下列元素的父元素。
+- **\<Id\>** - 向 Microsoft 标识平台注册加载项时收到的应用程序 (客户端) ID。 有关详细信息，请参阅[向 Microsoft 标识平台注册使用 SSO 的 Office 加载项](register-sso-add-in-aad-v2.md)。
+- **\<Resource\>** - 加载项的 URI。 这是你在向 Microsoft 标识平台注册加载项时使用的相同 URI（包括 `api:` 协议）。 此 URI 的域部分必须与加载项清单的 **\<Resources\>** 部分中的 URL 中使用的域（包括任何子域）匹配，并且该 URI 必须以 **\<Id\>** 元素中指定的客户端 ID 结尾。
+- **\<Scopes\>** - 一个或多个 **\<Scope\>** 元素的父元素。
+- **\<Scope\>** - 指定加载项所需的权限。 始终需要 `profile` 和 `openID` 权限，并且可能是唯一需要的权限。 如果加载项需要访问 Microsoft Graph 或其他 Microsoft 365 资源，则将需要其他 **\<Scope\>** 元素。 例如，对于 Microsoft Graph 权限，你可以请求 `User.Read` 和 `Mail.Read` 范围。 在代码中用于访问 Microsoft Graph 的库可能需要其他权限。 有关详细信息，请参阅[向 Office 加载项中的 Microsoft Graph 授权](authorize-to-microsoft-graph.md)。
 
 对于 Word、Excel 和 PowerPoint 加载项，请将标记添加到 `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` 部分的末尾。对于 Outlook 加载项，请将标记添加到 `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` 部分的末尾。
 

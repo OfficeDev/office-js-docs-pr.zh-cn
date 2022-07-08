@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 和 Vue 生成简单的 Excel 任�
 ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 57f87d12a5712fb329726a0f405e17b69eddb865
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 8fb4bd545e1fab44884dd4a5dc388910d71c8336
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090857"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659792"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>使用 Vue 生成 Excel 任务窗格加载项
 
@@ -112,7 +112,7 @@ vue create my-add-in
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-1. 打开 **manifest.xml**，并在`<Resources>`标记中查找`<bt:Urls>`标记。 找到 ID 为`Taskpane.Url`的`<bt:Url>`标记，并更新其`DefaultValue`属性。 新`DefaultValue`是`https://localhost:3000/index.html`。 整个更新后的标记应与以下行匹配。
+1. 打开 **manifest.xml**，并在 **\<Resources\>** 标记中查找`<bt:Urls>`标记。 找到 ID 为`Taskpane.Url`的`<bt:Url>`标记，并更新其`DefaultValue`属性。 新`DefaultValue`是`https://localhost:3000/index.html`。 整个更新后的标记应与以下行匹配。
 
    ```html
    <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
@@ -240,4 +240,4 @@ vue create my-add-in
 - [Excel 加载项中的 Word JavaScript 对象模型](../excel/excel-add-ins-core-concepts.md)
 - [Excel 加载项代码示例](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
-- [使用Visual Studio Code发布](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
+- [使用 Visual Studio Code 发布](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
