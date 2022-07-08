@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗�
 ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 56f43e157db9875165689af59ade50b0752fe8dc
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 2752c81a95cb7f65172d775efa3160b4b7dec10b
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091095"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660149"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -244,11 +244,11 @@ ms.locfileid: "66091095"
 
 1. 打开加载项项目中的 XML 清单文件。 此文件定义的是加载项设置和功能。
 
-1. **ProviderName** 元素具有占位符值。请将其替换为你的姓名。
+1. **\<ProviderName\>** 元素具有占位符值。 将其替换为你的姓名。
 
-1. **DisplayName** 元素的 **DefaultValue** 属性具有占位符。 将其替换为 `My Office Add-in`。
+1. **\<DisplayName\>** 元素的 **DefaultValue** 属性具有占位符。 将其替换为 `My Office Add-in`。
 
-1. **Description** 元素的 **DefaultValue** 属性具有占位符。 将其替换为 `My First Outlook add-in`。
+1. **\<Description\>** 元素的 **DefaultValue** 属性具有占位符。 将其替换为 `My First Outlook add-in`。
 
 1. 保存文件。
 

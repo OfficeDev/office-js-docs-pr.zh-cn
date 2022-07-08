@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 839f88eb1f4e46f50ca08321b48f62e15c07fd89
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 3eb87c0f2a40dd7650582bb564710aefe43ede0f
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496822"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660268"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -73,7 +73,7 @@ function add(first, second){
 用于定义自定义函数的加载项的 XML 清单文件（[适用于 Office 的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 创建的项目中的 **./manifest.xml**）会执行以下操作。
 
 - 定义自定义函数的命名空间。命名空间在自定义函数前加上自己的名字，可帮助客户识别加载项的的函数。
-- 使用自定义函数清单特有的 `<ExtensionPoint>` 和 `<Resources>` 元素。 这些元素包含有关 JavaScript、JSON 和 HTML 文件的位置的信息。
+- 使用自定义函数清单特有的 **\<ExtensionPoint\>** 和 **\<Resources\>** 元素。 这些元素包含有关 JavaScript、JSON 和 HTML 文件的位置的信息。
 - 指定用于自定义函数的运行时。除非你对另一运行时有特殊需求，否则建议始终使用共享运行时，因为共享运行时允许在函数和任务窗格之间共享数据。
 
 如果使用 [适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 创建文件，则建议将清单调整为使用共享运行时，因为这不是这些文件的默认设置。 若要更改清单，请按照[将 Excel 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)中的说明进行操作。

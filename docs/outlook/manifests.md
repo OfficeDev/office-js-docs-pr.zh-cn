@@ -3,12 +3,12 @@ title: Outlook 外接程序清单
 description: 该清单介绍 Outlook 外接程序如何跨 Outlook 客户端进行集成；其中包括一个示例。
 ms.date: 05/27/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 837ceac37375052b31acb0c243f4d5b2e2601511
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 330e40c4377edf832d91196ba4599ea351629296
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484210"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660282"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook 外接程序清单
 
@@ -229,7 +229,7 @@ Outlook 外接程序包括两个组件：XML 外接程序清单和网页，它�
 
 并非所有 Outlook 客户端均支持最新功能，某些 Outlook 用户可能使用的是旧版本的 Outlook。通过架构版本，开发人员可以使用可用的最新功能生成向后兼容的外接程序，同时仍能在旧版本上正常工作。
 
-清单中的 **VersionOverrides** 元素是此类型的一个示例。**VersionOverrides** 中定义的所有元素将都重写清单另一部分中的同一元素。这意味着，只要有可能，Outlook 都将使用 **VersionOverrides** 部分中的内容设置加载项。但是，如果 Outlook 版本不支持 **VersionOverrides** 的某个版本，Outlook 会将其忽略，具体取决于清单其余部分中的信息。 
+清单中的 **\<VersionOverrides\>** 元素就是此类情况的示例。 **\<VersionOverrides\>** 中定义的所有元素将替代清单另一部分中的同一元素。 这意味着，只要有可能，Outlook 就会使用 **\<VersionOverrides\>** 部分中的内容设置加载项。 但是，如果 Outlook 版本不支持 **\<VersionOverrides\>** 的某个版本，Outlook 则会将其忽略，具体取决于清单其余部分中的信息。 
 
 此方法意味着开发人员无需创建多个单独的清单，而是将定义的所有内容保留在一个文件中。
 
@@ -239,18 +239,18 @@ Outlook 外接程序包括两个组件：XML 外接程序清单和网页，它�
 |版本|说明|
 |:-----|:-----|
 |v1.0|支持 Office JavaScript API 版本 1.0。对于 Outlook 外接程序，它支持阅读窗体。 |
-|v1.1|支持 Office JavaScript API 版本 1.1 和 **VersionOverrides**。对于 Outlook 外接程序，现已开始支持撰写窗体。|
-|**VersionOverrides** 1.0|支持 Office JavaScript API 的更高版本。这支持外接程序命令。|
-|**VersionOverrides** 1.1|支持 Office JavaScript API 的更高版本。这支持外接程序命令并添加了对较新功能的支持，如[可固定的任务窗格](pinnable-taskpane.md)和移动外接程序。|
+|v1.1|支持 Office JavaScript API 版本 1.1 和 **\<VersionOverrides\>**。 对于 Outlook 外接程序，它将添加对撰写窗体的支持。|
+|**\<VersionOverrides\>** 1.0|支持 Office JavaScript API 的更高版本。 这支持外接程序命令。|
+|**\<VersionOverrides\>** 1.1|支持 Office JavaScript API 的更高版本。这支持外接程序命令并添加了对较新功能的支持，如[可固定的任务窗格](pinnable-taskpane.md)和移动外接程序。|
 
-本文将介绍 v1.1 清单的要求。即使你的加载项清单使用 **VersionOverrides** 元素，仍需将 v1.1 清单元素包括在内，以允许加载项使用不支持 **VersionOverrides** 的旧版客户端。
+本文将介绍 v1.1 清单的要求。 即使加载项清单使用 **\<VersionOverrides\>** 元素，仍需将 v1.1 清单元素包括在内，以允许加载项使用不支持 **\<VersionOverrides\>** 的旧版客户端。
 
 > [!NOTE]
 > Outlook 使用架构来验证清单。此架构要求清单中的元素按特定顺序显示。如果未按规定顺序添加元素，可能会在旁加载加载项时出现错误。可下载 [XML 架构定义 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)，帮助创建所含元素按规定顺序排列的清单。
 
 ## <a name="root-element"></a>根元素
 
-Outlook 外接程序清单的根元素是 **OfficeApp**。此元素还声明默认命名空间、架构版本和外接程序类型。请将清单中的其他所有元素都置于开始标记和结束标记内。根元素示例如下。
+Outlook 加载项清单的根元素是 **\<OfficeApp\>**。 此元素还声明默认命名空间、架构版本和外接程序类型。 将清单中的所有其他元素置于其开始标记和结束标记中。 下面是根元素的一个示例。
 
 
 ```XML
@@ -274,7 +274,7 @@ Outlook 外接程序清单的根元素是 **OfficeApp**。此元素还声明默�
 
 ## <a name="versionoverrides"></a>VersionOverrides
 
-**VersionOverrides** 元素是 [外接程序命令](add-in-commands-for-outlook.md)信息的位置。
+**\<VersionOverrides\>** 元素是 [加载项命令](add-in-commands-for-outlook.md) 的信息的位置。
 
 此元素也是外接程序为[移动外接程序](add-mobile-support.md)定义支持所使用的元素。
 
@@ -282,7 +282,7 @@ Outlook 外接程序清单的根元素是 **OfficeApp**。此元素还声明默�
 
 ## <a name="localization"></a>本地化
 
-加载项的某些方面需要进行本地化以适用于不同的区域设置，例如名称、介绍以及所加载的 URL。可通过指定默认值并在 **VersionOverrides** 元素内的 **Resources** 元素中进行局部替换来轻松地实现这些元素的本地化。下面介绍了如何替换图像、URL 和字符串。
+外接程序的某些方面需要进行本地化以适用于不同的区域设置，例如名称、介绍以及所加载的 URL。 可通过指定默认值，然后在 **\<VersionOverrides\>** 元素的 **\<Resources\>** 元素中指定区域设置替代来轻松地实现这些元素的本地化。 下面介绍了如何替代图像、URL 和字符串。
 
 
 ```XML
@@ -314,7 +314,7 @@ Outlook 外接程序清单的根元素是 **OfficeApp**。此元素还声明默�
 
 ## <a name="hosts"></a>Hosts
 
-Outlook 加载项指定如下所示的 **Hosts** 元素：
+Outlook 加载项指定如下所示的 **\<Hosts\>** 元素：
 
 ```XML
 <OfficeApp>
@@ -326,15 +326,15 @@ Outlook 加载项指定如下所示的 **Hosts** 元素：
 </OfficeApp>
 ```
 
-这与 **VersionOverrides** 元素中的 **Hosts** 元素有所不同，后者将在 [在清单中为 Excel、PowerPoint 和 Word 创建加载项命令](../develop/create-addin-commands.md)中进行讨论。
+这与 **\<VersionOverrides\>** 元素中的 **\<Hosts\>** 元素有所不同，后者将在 [在清单中为 Excel、PowerPoint 和 Word 创建加载项命令](../develop/create-addin-commands.md) 中进行讨论。
 
-## <a name="requirements"></a>Requirements
+## <a name="requirements"></a>要求
 
-**Requirements** 元素指定外接程序可用的 API 集。对于 Outlook 外接程序，要求集必须是邮箱版本 1.1 或更高版本。请参阅最新要求集版本的 API 参考。若要详细了解要求集，请参阅 [Outlook 外接程序 API](apis.md)。
+**\<Requirements\>** 元素指定可用于加载项的 API 集。 对于 Outlook 外接程序，要求集必须是邮箱和 1.1 或以上的值。 请参阅最新要求集版本的 API 引用。 有关要求集的详细信息，请参阅 [Outlook 外接程序 API](apis.md)。
 
-**Requirements** 元素也可能出现在 **VersionOverrides** 元素中，因此加载项可以在加载到支持 **VersionOverrides** 的客户端中时指定不同的要求。
+**\<Requirements\>** 元素也可能出现在 **\<VersionOverrides\>** 元素中，因此加载项可以在加载到支持 **\<VersionOverrides\>** 的客户端中时指定不同的要求。
 
-下面的示例使用 **Sets** 元素的 **DefaultMinVersion** 属性要求 office.js 版本 1.1 或更高版本，使用 **Set** 元素的 **MinVersion** 属性要求邮箱要求集版本 1.1。
+下面的示例使用 **\<Sets\>** 元素的 **DefaultMinVersion** 属性来要求 office.js 版本 1.1 或更高版本，并使用 **\<Set\>** 元素的 **MinVersion** 属性来要求邮箱要求集版本 1.1。
 
 ```XML
 <OfficeApp>
@@ -350,15 +350,15 @@ Outlook 加载项指定如下所示的 **Hosts** 元素：
 
 ## <a name="form-settings"></a>表单设置
 
-旧版 Outlook 客户端使用的 **FormSettings** 元素仅支持架构 1.1，而不支持 **VersionOverrides**。使用此元素，开发人员可以定义加载项在此类客户端中显示的方式。包含两个部分：**ItemRead** 和 **ItemEdit**。**ItemRead** 用于指定当用户阅读邮件和约会时加载项的显示方式。**ItemEdit** 说明当用户在撰写回复、新邮件、新约会或用户作为组织者编辑约会时加载项的显示方式。
+旧版 Outlook 客户端使用 **\<FormSettings\>** 元素，这仅支持架构 1.1，而不支持 **\<VersionOverrides\>**。 使用此元素，开发人员可以定义外接程序在此类客户端中显示的方式。 包含两个部分 - **ItemRead** 和 **ItemEdit**。 **ItemRead** 用于指定当用户阅读邮件和约会时外接程序的显示方式。 **ItemEdit** 说明当用户在撰写回复、新邮件、新约会或用户作为组织者编辑约会时外接程序的显示方式。
 
-这些设置与 **Rule** 元素中的激活规则直接相关。例如，如果加载项指定其应出现在撰写模式下的邮件中，则必须指定一个 **ItemEdit** 窗体。
+这些设置与 **\<Rule\>** 元素中的激活规则直接相关。 如果外接程序指定其应出现在撰写模式下的邮件中，则必须指定一个 **ItemEdit** 窗体。
 
 有关更多详细信息，请参阅 Schema reference for Office Add-ins manifests (v1.1)。
 
 ## <a name="app-domains"></a>应用域
 
-在 **SourceLocation** 元素中指定的加载项起始页的域为该上下文的默认域。在未使用 **AppDomains** 和 **AppDomain** 元素的情况下，如果加载项尝试导航到其他域，浏览器将在加载项窗格以外打开一个新窗口。要允许加载项导航到加载项窗格中的另一个域，请在加载项清单中添加 **AppDomains** 元素，并在其自己的 **AppDomain** 子元素中添加其他每个域。
+在 **\<SourceLocation\>** 元素中指定的加载项起始页的域为该加载项的默认域。 在未使用 **\<AppDomains\>** 和 **\<AppDomain\>** 元素的情况下，如果加载项尝试导航到其他域，浏览器将在加载项窗格以外打开一个新窗口。 要允许加载项导航到加载项窗格中的另一个域，请在加载项清单中添加 **\<AppDomains\>** 元素，并在其自己的 **\<AppDomain\>** 子元素中包括其他每个域。
 
 以下示例指定域  `https://www.contoso2.com` 作为外接程序可以在外接程序窗格内导航到的第二个域。
 
@@ -386,7 +386,7 @@ Outlook 加载项指定如下所示的 **Hosts** 元素：
 
 ## <a name="permissions"></a>权限
 
-**Permissions** 元素包含外接程序所需的权限。通常情况下，应指定外接程序所需的最低权限，具体视计划要使用的确切方法而定。例如，如果在撰写窗体中激活的邮件外接程序对 [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 等项属性只执行读取操作，而不执行写入操作，也不调用 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 访问任何 Exchange Web 服务操作，应指定 **ReadItem** 权限。若要详细了解可用权限，请参阅 [了解 Outlook 外接程序权限](understanding-outlook-add-in-permissions.md)。
+**\<Permissions\>** 元素包含加载项所需的权限。 通常情况下，你应指定外接程序所需的最低权限，这取决于你计划使用的具体方法。 例如，如果在撰写窗体中激活的邮件外接程序仅读取但不写入 [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 等项目属性，也不调用 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 访问任何 Exchange Web 服务操作，则应指定 **ReadItem** 权限。 有关可用权限的详细信息，请参阅[了解 Outlook 外接程序的权限](understanding-outlook-add-in-permissions.md)。
 
 **邮件外接程序的 4 层权限模型**
 
@@ -402,12 +402,12 @@ Outlook 加载项指定如下所示的 **Hosts** 元素：
 
 ## <a name="activation-rules"></a>激活规则
 
-**Rule** 元素中指定了激活规则。**Rule** 元素可以显示为 1.1 清单中的 **OfficeApp** 元素的子元素。
+激活规则在 **\<Rule\>** 元素中指定。 **\<Rule\>** 元素可显示为 1.1 清单中 **\<OfficeApp\>** 元素的子元素。
 
 激活规则可用于根据当前所选项目的下列一个或多个条件激活外接程序。
 
 > [!NOTE]
-> 激活规则只适用于不支持 **VersionOverrides** 元素的客户端。
+> 激活规则只适用于不支持 **\<VersionOverrides\>** 元素的客户端。
 
 - 项目类型和/或邮件类别
 

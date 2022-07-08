@@ -4,12 +4,12 @@ description: 在本教程中，你将生成一个可将 GitHub gist 插入到新
 ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: a24ac28c5b1cc44e4ba6563106c5b805b3376191
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 69b8fbc36eba542ca6b665f3ac2e741c9257a920
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091088"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659701"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -139,13 +139,13 @@ ms.locfileid: "66091088"
 
 请在 **manifest.xml** 文件中进行以下更新，以指定有关该加载项的一些基本信息。
 
-1. 找到 **ProviderName** 元素并将默认值替换为公司名称。
+1. 找到 **\<ProviderName\>** 元素并将默认值替换为你的公司名称。
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. 找到 **Description** 元素，将默认值替换为外接程序的说明，然后保存文件。
+1. 找到 **\<Description\>** 元素，将默认值替换为加载项的说明，然后保存文件。
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -183,21 +183,21 @@ ms.locfileid: "66091088"
 
 ### <a name="remove-the-messagereadcommandsurface-extension-point"></a>删除 MessageReadCommandSurface 扩展点
 
-打开 **manifest.xml** 文件并找到类型为 **MessageReadCommandSurface** 的 **ExtensionPoint** 元素。 删除此 **ExtensionPoint** 元素（包括其结束标记）以从“读取邮件”窗口删除按钮。
+打开 **manifest.xml** 文件并找到类型为 **MessageReadCommandSurface** 的 **\<ExtensionPoint\>** 元素。 删除此 **\<ExtensionPoint\>** 元素（包括其结束标记）以从“读取邮件”窗口删除按钮。
 
 ### <a name="add-the-messagecomposecommandsurface-extension-point"></a>添加 MessageReadCommandSurface 扩展点
 
 在清单中查找显示为 `</DesktopFormFactor>` 的行。 紧靠此行前面，插入以下 XML 标记。 关于此标记，请注意以下几点。
 
-- 类型为 `xsi:type="MessageComposeCommandSurface"` 的 **ExtensionPoint** 指示你已将按钮定义为添加到“撰写邮件”窗口。
+- 类型为 `xsi:type="MessageComposeCommandSurface"` 的 **\<ExtensionPoint\>** 指示你将按钮定义为添加到“邮件撰写”窗口。
 
-- 通过使用类型为 `id="TabDefault"` 的 **OfficeTab** 元素，表明想要将按钮添加到功能区上的默认选项卡。
+- 通过使用类型为 `id="TabDefault"` 的 **\<OfficeTab\>** 元素，你正在指示希望将按钮添加到功能区上的默认选项卡。
 
-- **Group** 元素使用 **groupLabel** 资源设置的标签定义新按钮的分组。
+- **\<Group\>** 元素使用 **groupLabel** 资源设置的标签定义新按钮的分组。
 
-- 第一个 **Control** 元素包含类型为 `xsi:type="ShowTaskPane"` 的 **Action** 元素，因此此按钮将打开任务窗格。
+- 第一个 **\<Control\>** 元素包含类型为 `xsi:type="ShowTaskPane"` 的 **\<Action\>** 元素，因此，此按钮将打开任务窗格。
 
-- 第二个 **Control** 元素包含类型为 `xsi:type="ExecuteFunction"` 的 **Action** 元素，因此此按钮将调用函数文件中包含的 JavaScript 函数。
+- 第二个 **\<Control\>** 元素包含类型为 `xsi:type="ExecuteFunction"` 的 **\<Action\>** 元素，因此，此按钮将调用函数文件中包含的 JavaScript 函数。
 
 ```xml
 <!-- Message Compose -->
@@ -242,11 +242,11 @@ ms.locfileid: "66091088"
 
 ### <a name="update-resources-in-the-manifest"></a>更新清单中的资源
 
-前面的代码引用了需要在清单生效前定义的标签、工具提示和 URL。 你将在清单的“**资源**”部分中指定此信息。
+前面的代码引用了需要在清单生效前定义的标签、工具提示和 URL。 你将在清单的 **\<Resources\>** 部分指定此信息。
 
-1. 在清单文件中找到 **Resources** 元素，并删除整个元素（包括其结束标记）。
+1. 在清单文件中找到 **\<Resources\>** 元素并删除整个元素（包括其结束标记）。
 
-1. 在相同的位置，添加以下标记以替换你刚刚删除的 **Resources** 元素。
+1. 在相同的位置，添加以下标记以替换刚刚删除的 **\<Resources\>** 元素。
 
     ```xml
     <Resources>
@@ -731,7 +731,7 @@ npm run build
 
 ### <a name="update-the-function-file-html"></a>更新函数文件 (HTML)
 
-无 UI 按钮调用的函数必须都在对应的外形规格清单的 **FunctionFile** 元素指定的文件中进行定义。此外接程序的清单将 `https://localhost:3000/commands.html` 指定为函数文件。
+通过无 UI 按钮调用的函数必须在由对应的外形规格清单的 **\<FunctionFile\>** 元素指定的文件中进行定义。 此外接程序的清单指定 `https://localhost:3000/commands.html` 作为函数文件。
 
 打开文件 **./src/commands/commands.html** 并使用以下标记替换全部内容。
 

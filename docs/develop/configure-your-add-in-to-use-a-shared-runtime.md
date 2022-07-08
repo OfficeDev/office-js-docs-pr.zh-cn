@@ -4,12 +4,12 @@ title: 将 Office 加载项配置为使用共享 JavaScript 运行时
 ms.prod: non-product-specific
 description: 将 Office 加载项配置为使用共享 JavaScript 运行时，以支持其他功能区、任务窗格和自定义函数功能。
 ms.localizationpriority: high
-ms.openlocfilehash: b91fffdd79053a600a52086021cbd9712beb7df1
-ms.sourcegitcommit: 82ef88cbdc7c1b77ffa5b624c0c010bd32212692
+ms.openlocfilehash: 3ca5358071d495c409d2a4ece98e600f367b8675
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2022
-ms.locfileid: "64715528"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659841"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>将 Office 加载项配置为使用共享 JavaScript 运行时
 
@@ -57,10 +57,10 @@ ms.locfileid: "64715528"
     > [!NOTE]
     > 不要将 `SharedRuntime` 要求集添加到 Word 加载项的清单。 加载加载项时会导致错误，这是一个目前已知的问题。
 
-1. 查找 `<VersionOverrides>` 部分并添加以下 `<Runtimes>` 部分。 生存期需要 **较长**，以便在关闭任务窗格时加载项代码仍可运行。 `resid` 值是 **Taskpane.Url**，它引用 **manifest.xml** 文件底部附近的 `<bt:Urls>` 部分中指定的 **taskpane.html** 文件位置。
+1. 查找 **\<VersionOverrides\>** 部分并添加以下 **\<Runtimes\>** 部分。 生存期需要 **较长**，以便在关闭任务窗格时加载项代码仍可运行。 `resid` 值是 **Taskpane.Url**，它引用 **manifest.xml** 文件底部附近的 `<bt:Urls>` 部分中指定的 **taskpane.html** 文件位置。
 
     > [!IMPORTANT]
-    > 必须按照以下 XML 中显示的确切顺序在 `<Host>` 元素之后输入 `<Runtimes>` 部分。
+    > 必须按照以下 XML 中显示的确切顺序在 **\<Host\>** 元素之后输入 **\<Runtimes\>** 部分。
 
    ```xml
    <VersionOverrides ...>
@@ -73,7 +73,7 @@ ms.locfileid: "64715528"
        </Host>
    ```
 
-1. 如果你生成带自定义函数的 Excel 加载项，请查找 `<Page>` 元素。 然后将源位置从 **Functions.Page.Url** 更改为 **Taskpane.Url**。
+1. 如果已生成带自定义函数的 Excel 加载项，请查找 **\<Page\>** 元素。 然后将源位置从 **Functions.Page.Url** 更改为 **Taskpane.Url**。
 
    ```xml
    <AllFormFactors>
@@ -84,7 +84,7 @@ ms.locfileid: "64715528"
    ...
    ```
 
-1. 查找 `<FunctionFile ...>` 标记并将 `resid` 从 **Commands.Url** 更改为  **Taskpane.Url**。 请注意，如果你没有操作命令，则不会有 **FunctionFile** 条目，可跳过此步骤。
+1. 查找 **\<FunctionFile\>** 标记并将 `resid` 从 **Commands.Url** 更改为 **Taskpane.Url**。 请注意，如果你没有操作命令，则将不会具有 **\<FunctionFile\>** 条目，并且可跳过此步骤。
 
     ```xml
     </GetStarted>
