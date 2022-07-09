@@ -3,12 +3,12 @@ title: 适用于 Office 加载项的 Teams 清单（预览版）
 description: 获取预览版 JSON 清单的概述。
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c739ace05992812e0de733edea2f60cf393f3c48
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 8e10d553673b2c6a67166bb8d5e30a3f655c550d
+ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659638"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "66689381"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>适用于 Office 加载项的 Teams 清单（预览版）
 
@@ -82,7 +82,7 @@ Microsoft 正在对 Microsoft 365 开发人员平台进行大量改进。 这些
 |"$schema"| 标识清单架构。 | **\<OfficeApp\>** 和 **\<VersionOverrides\>** 的属性 | |
 |"id"| 外接程序的 GUID。 | **\<Id\>**| |
 |"version"| 加载项的版本。 | **\<Version\>** | |
-|"manifestVersion"| 清单架构的版本。 |  **\<OfficeApp\>** 的 attributes | |
+|"manifestVersion"| 清单架构的版本。 |  **\<OfficeApp\>** 的属性 | |
 |"name"| 加载项的公共名称。 | **\<DisplayName\>** | |
 |"description"| 加载项的公共说明。  | **\<Description\>** | |
 |"accentColor"||| 此属性在当前 XML 清单中没有等效项，并且不用于 JSON 清单的预览版。 但它必须存在。 |
@@ -95,7 +95,7 @@ Microsoft 正在对 Microsoft 365 开发人员平台进行大量改进。 这些
 
 #### <a name="extension-property"></a>"extension" 属性
 
-预览版 JSON 清单中的“extension”属性主要表示与其他类型的 Microsoft 365 扩展无关的外接程序的特征。 例如，外接程序扩展的 Office 应用程序（如 Excel、PowerPoint、Word 和 Outlook）在 "extension" 属性中指定，Office 应用程序功能区的自定义项也指定。 "extension" 属性的配置目的与当前 XML 清单中 **\<VersionOverrides\>** 元素的配置目的非常匹配。
+预览版 JSON 清单中的“extension”属性主要表示与其他类型的 Microsoft 365 扩展无关的外接程序的特征。 例如，外接程序扩展的 Office 应用程序（如 Excel、PowerPoint、Word 和 Outlook）在 "extension" 属性中指定，Office 应用程序功能区的自定义项也指定。 “extension”属性的配置目的与当前 XML 清单中 **\<VersionOverrides\>** 元素的配置目的非常匹配。
 
 > [!NOTE]
 > 当前 XML 清单的 **\<VersionOverrides\>** 部分对许多字符串资源具有“双跳转”系统。 在 **\<VersionOverrides\>** 的 **\<Resources\>** 子级中指定字符串（包括 URL）并为其分配 ID。 需要字符串的元素具有与 `resid` 元素中字符串 ID 匹配的 **\<Resources\>** 属性。 预览版 JSON 清单的 "extension" 属性通过将字符串直接定义为属性值来简化操作。 JSON 清单中没有任何等效于 **\<Resources\>** 的元素。
@@ -108,7 +108,7 @@ Microsoft 正在对 Microsoft 365 开发人员平台进行大量改进。 这些
 | "requirements.scopes" | 标识可在其中安装加载项的 Office 应用程序。 | **\<Hosts\>** |  |
 | "ribbons" | 加载项自定义的功能区。 | **\<Hosts\>**、 **ExtensionPoint** 和各种 **\*FormFactor** 元素 | "ribbons" 属性是匿名对象的数组，每个对象合并这三个元素的目的。 请参阅 [“功能区”表](#ribbons-table)。|
 | "alternatives" | 指定与等效的 COM 加载项、XLL 或两者的向后兼容性。 | **\<EquivalentAddins\>** | 请参阅 [EquivalentAddins - 另请参阅](/javascript/api/manifest/equivalentaddins#see-also) 背景信息。 |
-| "runtimes"  | 配置各种“无 UI”加载项，例如，仅自定义函数加载项和直接从自定义功能区按钮运行的函数。 | **\<Runtimes\>**. **\<FunctionFile\>** 和 **\<ExtensionPoint\>**（CustomFunctions 类型） |  |
+| "runtimes"  | 配置具有少量或无 UI 的各种加载项，例如仅限自定义函数的加载项和 [函数命令](../design/add-in-commands.md#types-of-add-in-commands)。 | **\<Runtimes\>**. **\<FunctionFile\>** 和 **\<ExtensionPoint\>**（CustomFunctions 类型） |  |
 | "autoRunEvents" | 配置指定事件的事件处理程序。 | **\<Event\>** 和 **\<ExtensionPoint\>**（事件类型） |  |
 
 ##### <a name="ribbons-table"></a>"ribbons" 表
@@ -118,7 +118,7 @@ Microsoft 正在对 Microsoft 365 开发人员平台进行大量改进。 这些
 |JSON 属性|用途|XML 元素|备注|
 |:-----|:-----|:-----|:-----|
 | "contexts" | 指定加载项自定义的命令图面。 | 各种 **\*CommandSurface** 元素，如 **PrimaryCommandSurface** 和 **MessageReadCommandSurface** |  |
-| "tabs" | 配置自定义功能区选项卡。 | **\<CustomTab\>** | "tabs" 的后代属性的名称和层次结构与 **\<CustomTab\>** 的后代非常匹配。  |
+| "tabs" | 配置自定义功能区选项卡。 | **\<CustomTab\>** | “选项卡”的后代属性的名称和层次结构与 **\<CustomTab\>** 的后代非常匹配。  |
 
 ## <a name="sample-preview-json-manifest"></a>示例预览 JSON 清单
 
