@@ -1,14 +1,14 @@
 ---
 title: 在 Mac 上调试 Office 加载项
-description: 了解如何使用 Mac 调试Office加载项。
+description: 了解如何使用 Mac 调试 Office 加载项。
 ms.date: 03/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b0925e53c4e50a5cddc52173b66d5ad9fbfeaef9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 32d896743932abc7cf8be6bd62a491fc93fe0d1b
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746928"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712998"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>在 Mac 上调试 Office 加载项
 
@@ -18,7 +18,7 @@ ms.locfileid: "63746928"
 
 如果有在任务窗格或内容加载项中显示 UI 的加载项，可以使用 Safari Web 检查器调试 Office 加载项。
 
-为了能够在 Mac Office加载项，你必须拥有 Mac OS High Sierra 和 Mac Office 版本 16.9.1 (版本18012504) 或更高版本。 如果你没有 Mac Office，可以通过加入开发人员计划Microsoft 365[一个。](https://developer.microsoft.com/office/dev-program)
+若要能够在 Mac 上调试 Office 加载项，必须将 Mac OS High Sierra AND Mac Office 版本 16.9.1 (生成18012504) 或更高版本。 如果没有 Office Mac 版本，可以通过加入 [Microsoft 365 开发人员计划](https://developer.microsoft.com/office/dev-program)来获取一个版本。
 
 首先，打开终端，设置相关 Office 应用程序的 `OfficeWebAddinDeveloperExtras` 属性，如下所示：
 
@@ -31,12 +31,12 @@ ms.locfileid: "63746928"
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
     > [!IMPORTANT]
-    > Mac 应用商店版本Office不支持 标志`OfficeWebAddinDeveloperExtras`。
+    > Mac App Store版本的 Office 不支持该`OfficeWebAddinDeveloperExtras`标志。
 
-然后，打开 Office 应用程序并[旁加载你的加载项](sideload-an-office-add-in-on-ipad-and-mac.md)。 右键单击加载项，应在上下文菜单中看到一个“**检查元素**”选项。 选择该选项，它将弹出检查器，可以在其中设置断点并调试加载项。
+然后，打开 Office 应用程序并[旁加载你的加载项](sideload-an-office-add-in-on-mac.md)。 右键单击加载项，应在上下文菜单中看到一个“**检查元素**”选项。 选择该选项，它将弹出检查器，可以在其中设置断点并调试加载项。
 
 > [!NOTE]
-> 如果你尝试使用检查器时对话框闪烁，请将 Office 更新到最新版本。 如果无法解决闪烁问题，请尝试以下解决方法。
+> 如果你尝试使用检查器时对话框闪烁，请将 Office 更新到最新版本。 如果这不能解决闪烁问题，请尝试以下解决方法。
 >
 > 1. 缩小对话框大小。
 > 1. 选择“检查元素”，这将在新窗口中打开。

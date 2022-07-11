@@ -1,25 +1,25 @@
 ---
-title: 管理加载项的状态Outlook设置
-description: 了解如何保留加载项的加载项状态Outlook设置。
-ms.date: 05/17/2021
+title: 管理 Outlook 加载项的状态和设置
+description: 了解如何保留 Outlook 加载项的加载项状态和设置。
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 896c473baad95515b199d8934c81745c619374a0
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7fc283588d2d5425fbf57b16b199dcd797f3893a
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484675"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713082"
 ---
-# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>管理加载项的状态Outlook设置
+# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>管理 Outlook 加载项的状态和设置
 
 > [!NOTE]
-> 阅读[本文之前，请查看](../develop/persisting-add-in-state-and-settings.md)本文档的核心概念部分中的保留加载项状态和设置。
+> 阅读本文之前，请查看本文的 **“核心概念**”部分中的 [“保留加载项状态”和设置](../develop/persisting-add-in-state-and-settings.md)。
 
-对于Outlook，Office JavaScript API 提供了 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 和 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象，用于跨会话保存外接程序状态，如下表所述。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](/javascript/api/manifest/id) 相关联。
+对于 Outlook 外接程序，Office JavaScript API 提供 [RoamingSettings](/javascript/api/outlook/office.roamingsettings) 和 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象，用于跨会话保存加载项状态，如下表所述。 在所有情况下，保存的设置值仅与创建它们的外接程序 [Id](/javascript/api/manifest/id) 相关联。
 
 |**对象**|**存储位置**|
 |:-----|:-----|
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|安装了加载项的用户 Exchange 服务器邮箱。 由于这些设置存储在用户的服务器邮箱中，因此它们可以随用户一起"漫游"，并且可在外接程序在访问该用户邮箱的任何受支持客户端的上下文中运行时使用。<br/><br/> Outlook 加载项漫游设置只可供创建它们的加载项使用，且只能从安装了加载项的邮箱访问。|
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|安装了加载项的用户 Exchange 服务器邮箱。 由于这些设置存储在用户的服务器邮箱中，因此它们可以与用户“漫游”，并在加载项在访问该用户邮箱的任何受支持客户端上下文中运行时可供该加载项使用。<br/><br/> Outlook 加载项漫游设置只可供创建它们的加载项使用，且只能从安装了加载项的邮箱访问。|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|加载项使用的邮件、约会或会议请求项目。 Outlook 外接程序项目自定义属性仅供创建它们的外接程序使用，并且只能从保存它们的项目使用。|
 
 ## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>如何将 Outlook 加载项用户邮箱中的设置保存为漫游设置
@@ -31,7 +31,7 @@ Outlook 加载项可以使用 [RoamingSettings](/javascript/api/outlook/office.r
 以下 JavaScript 代码示例演示了如何加载现有漫游设置。
 
 ```js
-var _settings = Office.context.roamingSettings;
+const _settings = Office.context.roamingSettings;
 ```
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>创建或分配漫游设置
@@ -81,7 +81,7 @@ function removeAppSetting()
 使用这些函数的 Outlook 加载项通过对 `_customProps` 变量调用 **get** 方法来检索任何自定义属性，如下面的示例所示。
 
 ```js
-var property = _customProps.get("propertyName");
+const property = _customProps.get("propertyName");
 ```
 
 此示例包括以下函数。
@@ -95,11 +95,11 @@ var property = _customProps.get("propertyName");
 | `saveCallback`|对 `updateProperty` 和 `removeProperty` 函数中 **saveAsync** 方法调用的回调。|
 
 ```js
-var _mailbox;
-var _customProps;
+let _mailbox;
+let _customProps;
 
 // The initialize function is required for all add-ins.
-Office.initialize = function (reason) {
+Office.initialize = function () {
     // Checks for the DOM to load using the jQuery ready function.
     $(document).ready(function () {
     // After the DOM is loaded, add-in-specific code can run.
@@ -137,22 +137,22 @@ function saveCallback(asyncResult) {
 
 ### <a name="platform-behavior-in-emails"></a>电子邮件中的平台行为
 
-下表汇总了不同客户端的电子邮件中保存的自定义Outlook行为。
+下表汇总了各种 Outlook 客户端的电子邮件中保存的自定义属性行为。
 
 |应用场景|Windows|Web|Mac|
 |---|---|---|---|
-|新撰写|空|空|空|
-|全部答复、全部答复|空|空|空|
+|新建撰写|空|空|空|
+|答复，全部答复|空|空|空|
 |转发|加载父级的属性|空|空|
-|来自新撰写的已发送项目|空|空|空|
-|全部答复或全部答复发送的项目|空|空|空|
+|从新撰写中发送的项目|空|空|空|
+|从答复或全部答复发送的项目|空|空|空|
 |从转发发送的项目|如果未保存，则删除父级的属性|空|空|
 
-若要在管理上处理Windows：
+若要处理 Windows 上的情况，请执行以下操作：
 
 1. 在初始化外接程序时检查现有属性，并根据需要保留或清除它们。
-1. 设置自定义属性时，请包含一个附加属性，以指示自定义属性是在邮件阅读过程中添加的，还是通过外接程序的读取模式添加的。 这将帮助你区分属性是在撰写期间创建的还是从父级继承的。
-1. 若要检查用户是否正在转发电子邮件或答复，可以使用 [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-getcomposetypeasync-member(1)) (要求集 1.10) 。
+1. 设置自定义属性时，请添加一个附加属性，以指示是在消息读取期间还是通过加载项的读取模式添加了自定义属性。 这有助于区分是在撰写过程中创建的还是从父级继承的属性。
+1. 若要检查用户是转发电子邮件还是答复，可以使用 [要求集 1.10) 提供的 item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-getcomposetypeasync-member(1)) (。
 
 ## <a name="see-also"></a>另请参阅
 

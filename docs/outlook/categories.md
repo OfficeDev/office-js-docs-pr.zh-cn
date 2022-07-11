@@ -1,35 +1,35 @@
 ---
 title: 获取和设置类别
-description: 如何管理邮箱和项目的类别。
-ms.date: 01/14/2020
+description: 如何管理邮箱和项上的类别。
+ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e6403ad0ac46cd713b9617c089cd4a3884789a
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: d31cb8da4cdaf4a88141a1eac927748b1399e0d9
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496885"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712823"
 ---
 # <a name="get-and-set-categories"></a>获取和设置类别
 
-在Outlook中，用户可以将类别应用于邮件和约会，以用作组织其邮箱数据的方式。 用户定义其邮箱的颜色编码类别主列表，然后可以将这些类别的一个或多个应用于任何邮件或约会项目。 [主](/javascript/api/outlook/office.categorydetails)列表中的每个类别都由用户[指定的](/javascript/api/outlook/office.mailboxenums.categorycolor)名称和颜色表示。 可以使用 JavaScript API Office邮箱上的类别主列表以及应用于项目的类别。
+在 Outlook 中，用户可以将类别应用于邮件和约会，作为组织其邮箱数据的一种手段。 用户为其邮箱定义颜色编码类别的主列表，然后可以将其中一个或多个类别应用于任何邮件或约会项目。 主列表中的每个 [类别](/javascript/api/outlook/office.categorydetails) 都由用户指定的名称和 [颜色](/javascript/api/outlook/office.mailboxenums.categorycolor) 表示。 可以使用 Office JavaScript API 管理邮箱上的类别主列表以及应用于项目的类别。
 
 > [!NOTE]
 > 要求集 1.8 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="manage-categories-in-the-master-list"></a>管理主列表中的类别
 
-只有邮箱上主列表中的类别可以应用于邮件或约会。 可以使用 API 添加、获取和删除主类别。
+只有邮箱上主列表中的类别可供你应用到邮件或约会。 可以使用 API 添加、获取和删除主类别。
 
 > [!IMPORTANT]
-> 若要使加载项管理类别主列表 `Permissions` ，必须将清单中的 `ReadWriteMailbox`节点设置为 。
+> 若要使加载项管理类别主列表，必须将清单中的节点设置 `Permissions` 为 `ReadWriteMailbox`。
 
 ### <a name="add-master-categories"></a>添加主类别
 
-以下示例演示如何添加名为"Urgent！"的类别。 通过调用 [mailbox.masterCategories](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-mastercategories-member) 上的 [addAsync](/javascript/api/outlook/office.mastercategories#outlook-office-mastercategories-addasync-member(1)) 来访问主列表。
+以下示例演示如何添加名为“紧急！” 的类别 通过在 [mailbox.masterCategories](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-mastercategories-member) 上调用 [addAsync](/javascript/api/outlook/office.mastercategories#outlook-office-mastercategories-addasync-member(1)) 来访问主列表。
 
 ```js
-var masterCategoriesToAdd = [
+const masterCategoriesToAdd = [
     {
         "displayName": "Urgent!",
         "color": Office.MailboxEnums.CategoryColor.Preset0
@@ -47,14 +47,14 @@ Office.context.mailbox.masterCategories.addAsync(masterCategoriesToAdd, function
 
 ### <a name="get-master-categories"></a>获取主类别
 
-以下示例演示如何通过调用 [mailbox.masterCategories](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-mastercategories-member) 上的 [getAsync](/javascript/api/outlook/office.mastercategories#outlook-office-mastercategories-getasync-member(1)) 获取类别列表。
+以下示例演示如何通过在 [mailbox.masterCategories](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-mastercategories-member) 上调用 [getAsync](/javascript/api/outlook/office.mastercategories#outlook-office-mastercategories-getasync-member(1)) 来获取类别列表。
 
 ```js
 Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
     if (asyncResult.status === Office.AsyncResultStatus.Failed) {
         console.log("Action failed with error: " + asyncResult.error.message);
     } else {
-        var masterCategories = asyncResult.value;
+        const masterCategories = asyncResult.value;
         console.log("Master categories:");
         masterCategories.forEach(function (item) {
             console.log("-- " + JSON.stringify(item));
@@ -65,10 +65,10 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 
 ### <a name="remove-master-categories"></a>删除主类别
 
-以下示例演示如何删除名为"Urgent！"的类别。 通过调用 [mailbox.masterCategories](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-mastercategories-member) 上的 [removeAsync](/javascript/api/outlook/office.mastercategories#outlook-office-mastercategories-removeasync-member(1)) 从主列表。
+以下示例演示如何删除名为“紧急！” 的类别 通过在 [mailbox.masterCategories](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-mastercategories-member) 上调用 [removeAsync](/javascript/api/outlook/office.mastercategories#outlook-office-mastercategories-removeasync-member(1)) 从主列表中。
 
 ```js
-var masterCategoriesToRemove = ["Urgent!"];
+const masterCategoriesToRemove = ["Urgent!"];
 
 Office.context.mailbox.masterCategories.removeAsync(masterCategoriesToRemove, function (asyncResult) {
     if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
@@ -79,21 +79,21 @@ Office.context.mailbox.masterCategories.removeAsync(masterCategoriesToRemove, fu
 });
 ```
 
-## <a name="manage-categories-on-a-message-or-appointment"></a>管理邮件或约会上的类别
+## <a name="manage-categories-on-a-message-or-appointment"></a>管理邮件或约会的类别
 
 可以使用 API 添加、获取和删除邮件或约会项目的类别。
 
 > [!IMPORTANT]
-> 只有邮箱上主列表中的类别可以应用于邮件或约会。 有关详细信息，请参阅上 [一节"管理主列表中的](#manage-categories-in-the-master-list) 类别"。
+> 只有邮箱上主列表中的类别可供你应用到邮件或约会。 有关详细信息，请参阅 [母版列表中“管理类别](#manage-categories-in-the-master-list) ”的前面部分。
 >
-> 在Outlook 网页版中，你无法以阅读模式使用 API 管理邮件的类别。
+> 在Outlook 网页版中，不能使用 API 在读取模式下管理邮件的类别。
 
-### <a name="add-categories-to-an-item"></a>向项目添加类别
+### <a name="add-categories-to-an-item"></a>向项添加类别
 
-以下示例演示如何应用名为"Urgent！"的类别。 调用 上的 [addAsync，以访问当前](/javascript/api/outlook/office.categories#outlook-office-categories-addasync-member(1)) 项 `item.categories`。
+以下示例演示如何应用名为“紧急！” 的类别 通过调用 [addAsync](/javascript/api/outlook/office.categories#outlook-office-categories-addasync-member(1)) on `item.categories`调用当前项。
 
 ```js
-var categoriesToAdd = ["Urgent!"];
+const categoriesToAdd = ["Urgent!"];
 
 Office.context.mailbox.item.categories.addAsync(categoriesToAdd, function (asyncResult) {
     if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
@@ -104,16 +104,16 @@ Office.context.mailbox.item.categories.addAsync(categoriesToAdd, function (async
 });
 ```
 
-### <a name="get-an-items-categories"></a>获取项目的类别
+### <a name="get-an-items-categories"></a>获取项的类别
 
-以下示例演示如何通过调用 上的 [getAsync](/javascript/api/outlook/office.categories#outlook-office-categories-getasync-member(1)) 获取应用于当前项目的类别 `item.categories`。
+以下示例演示如何通过调用 [getAsync](/javascript/api/outlook/office.categories#outlook-office-categories-getasync-member(1)) `item.categories`来获取应用于当前项的类别。
 
 ```js
 Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
     if (asyncResult.status === Office.AsyncResultStatus.Failed) {
         console.log("Action failed with error: " + asyncResult.error.message);
     } else {
-        var categories = asyncResult.value;
+        const categories = asyncResult.value;
         console.log("Categories:");
         categories.forEach(function (item) {
             console.log("-- " + JSON.stringify(item));
@@ -122,12 +122,12 @@ Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
 });
 ```
 
-### <a name="remove-categories-from-an-item"></a>从项目中删除类别
+### <a name="remove-categories-from-an-item"></a>从项中删除类别
 
-以下示例演示如何删除名为"Urgent！"的类别。 通过调用 上的 [removeAsync 从当前](/javascript/api/outlook/office.categories#outlook-office-categories-removeasync-member(1))项。`item.categories`
+以下示例演示如何删除名为“紧急！” 的类别 通过调用 [removeAsync](/javascript/api/outlook/office.categories#outlook-office-categories-removeasync-member(1)) on 从当前项。`item.categories`
 
 ```js
-var categoriesToRemove = ["Urgent!"];
+const categoriesToRemove = ["Urgent!"];
 
 Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function (asyncResult) {
     if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
@@ -140,5 +140,5 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 
 ## <a name="see-also"></a>另请参阅
 
-- [Outlook权限](understanding-outlook-add-in-permissions.md)
+- [Outlook 权限](understanding-outlook-add-in-permissions.md)
 - [清单中的 Permissions 元素](/javascript/api/manifest/permissions)

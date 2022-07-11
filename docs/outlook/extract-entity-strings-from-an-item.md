@@ -1,14 +1,14 @@
 ---
 title: 从 Outlook 项中提取实体字符串
 description: 了解如何从 Outlook 加载项中的某个 Outlook 项中提取实体字符串。
-ms.date: 10/31/2019
+ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3270409dcd24cb0cde4f0e7693400e49efb5c868
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: c51094adefbc60bad0716e2d65af0f40ed868d66
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484479"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713117"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>从 Outlook 项中提取实体字符串
 
@@ -17,28 +17,28 @@ ms.locfileid: "64484479"
 受支持的实体包括：
 
 - **地址**：美国通信地址，至少包含街道号码、街道名称、城市、州和邮政编码等部分元素。
-    
+
 - **联系人**：个人联系信息，在地址或公司名称等其他实体的上下文中。
-    
+
 - **电子邮件地址**：SMTP 电子邮件地址。
-    
+
 - **会议建议**：提及活动等会议建议。请注意，只有邮件（而不是约会）支持提取会议建议。
-    
+
 - **电话号码**：北美电话号码。
-    
+
 - **任务建议**：通常以可操作短语表述的任务建议。
-    
+
 - **URL**
-    
+
 大多数这些实体依赖于基于大量数据机器学习的自然语言识别。因此，识别是非确定性的，有时候依赖于 Outlook 项目中的上下文。
 
-无论用户选择查看约会、电子邮件或会议要求、响应或取消，Outlook 均会激活实体外接程序。在初始化期间，示例实体外接程序从当前项读取受支持的实体的所有实例。 
+无论用户选择查看约会、电子邮件或会议要求、响应或取消，Outlook 均会激活实体外接程序。在初始化期间，示例实体外接程序从当前项读取受支持的实体的所有实例。
 
 外接程序为用户提供按钮以选择实体类型。当用户选择一个实体时，外接程序在外接程序窗格中显示所选实体的实例。以下各节列出了实体外接程序的 XML 清单及 HTML 和 JavaScript 文件，并突出显示支持各自实体提取的代码。
 
 ## <a name="xml-manifest"></a>XML 清单
 
-实体外接程序具有两个由逻辑 OR 运算连接的激活规则。 
+实体外接程序具有两个由逻辑 OR 运算连接的激活规则。
 
 ```xml
 <!-- Activate the add-in if the current item in Outlook is an email or appointment item. -->
@@ -94,12 +94,11 @@ xsi:type="MailApp">
 </OfficeApp>
 ```
 
-
 ## <a name="html-implementation"></a>HTML 实现
 
 实体外接程序的 HTML 文件为用户指定按钮以选择每种类型的实体，另外还指定另一个按钮以清除显示的实体实例。它包括 JavaScript 文件 default_entities.js，这在下一节的 [JavaScript 实现](#javascript-implementation)中进行介绍。JavaScript 文件包括其中每个按钮的事件处理程序。
 
-请注意，所有 Outlook 外接程序都必须包含 office.js。 以下 HTML 文件包括内容交付网络传输office.js版本 1.1 (CDN) 。
+请注意，所有 Outlook 外接程序都必须包含 office.js。 下面的 HTML 文件包括内容分发网络 (CDN) 上office.js版本 1.1。
 
 ```html
 <!DOCTYPE html>
@@ -140,15 +139,11 @@ xsi:type="MailApp">
 </html>
 ```
 
-
 ## <a name="style-sheet"></a>样式表
-
 
 实体外接程序使用可选 CSS 文件 default_entities.css 指定输出的布局。下面为 CSS 文件的列表。
 
-
 ```CSS
-*
 {
     color: #FFFFFF;
     margin: 0px;
@@ -198,24 +193,22 @@ div#meeting_suggestions
 }
 ```
 
-
 ## <a name="javascript-implementation"></a>JavaScript 实现
 
 其余部分介绍此示例（default_entities.js 文件）如何从用户查看的邮件或约会的主题和正文中提取已知实体。
 
 ## <a name="extracting-entities-upon-initialization"></a>初始化时提取实体
 
-[Office.initialize](/javascript/api/office#Office_initialize_reason_) 事件发生时，实体外接程序调用当前项目的 [getEntities](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 方法。 方法 `getEntities` 返回全局变量 `_MyEntities` 受支持实体的实例数组。 以下为相关的 JavaScript 代码。
-
+[Office.initialize](/javascript/api/office#Office_initialize_reason_) 事件发生时，实体外接程序调用当前项目的 [getEntities](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 方法。 该 `getEntities` 方法返回全局变量 `_MyEntities` 支持的实体实例数组。 以下为相关的 JavaScript 代码。
 
 ```js
 // Global variables
-var _Item;
-var _MyEntities;
+let _Item;
+let _MyEntities;
 
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
-    var _mailbox = Office.context.mailbox;
+    const _mailbox = Office.context.mailbox;
     // Obtains the current item.
     Item = _mailbox.item;
     // Reads all instances of supported entities from the subject 
@@ -227,25 +220,21 @@ Office.initialize = function () {
     // After the DOM is loaded, app-specific code can run.
     });
 }
-
 ```
-
 
 ## <a name="extracting-addresses"></a>提取地址
 
-
 当用户单击“获取地址”按钮时，`myGetAddresses` 事件处理程序从 `_MyEntities` 对象的 [addressess](/javascript/api/outlook/office.entities#outlook-office-entities-addresses-member) 属性获取一组地址（如果已提取任何地址的话）。 提取的每个地址都存储为数组中的字符串。 `myGetAddresses` 在 `htmlText` 中形成本地 HTML 字符串以显示提取的地址的列表。 以下是相关的 JavaScript 代码。
-
 
 ```js
 // Gets instances of the Address entity on the item.
 function myGetAddresses()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of postal addresses. Each address is a string.
-    var addressesArray = _MyEntities.addresses;
-    for (var i = 0; i < addressesArray.length; i++)
+    const addressesArray = _MyEntities.addresses;
+    for (let i = 0; i < addressesArray.length; i++)
     {
         htmlText += "Address : <span>" + addressesArray[i] + "</span><br/>";
     }
@@ -254,12 +243,9 @@ function myGetAddresses()
 }
 ```
 
-
 ## <a name="extracting-contact-information"></a>提取联系人信息
 
-
-当用户单击"**获取**`myGetContacts`联系人信息"按钮时，事件处理程序从对象的 [contacts](/javascript/api/outlook/office.entities#outlook-office-entities-contacts-member) `_MyEntities` 属性获取一组联系人及其信息（如果已提取任何联系人）。 每个提取的联系人在数组中被存储为 [Contact](/javascript/api/outlook/office.contact) 对象。 获取有关每个联系人的更多数据。 请注意，上下文确定 Outlook是否可以从电子邮件末尾的 itema&mdash; 签名中提取联系人，或者联系人附近至少必须存在以下部分信息。
-
+当用户单击 **“获取联系人信息”** 按钮时， `myGetContacts` 事件处理程序会从对象 [的联系](/javascript/api/outlook/office.entities#outlook-office-entities-contacts-member) 人属性 `_MyEntities` （如果提取了任何联系人）获取联系人数组及其信息。 每个提取的联系人在数组中被存储为 [Contact](/javascript/api/outlook/office.contact) 对象。 获取有关每个联系人的更多数据。 请注意，上下文确定 Outlook 是可以从邮件末尾的签名项目&mdash;中提取联系人，还是至少以下某些信息必须存在于联系人附近。
 
 - 表示 [Contact.personName](/javascript/api/outlook/office.contact#outlook-office-contact-personname-member) 属性中联系人名称的字符串。
 
@@ -277,18 +263,15 @@ function myGetAddresses()
 
 `myGetContacts` 在 `htmlText` 中形成一个本地 HTML 字符串，以显示每个联系人的数据。以下为相关的 JavaScript 代码。
 
-
-
-
 ```js
 // Gets instances of the Contact entity on the item.
 function myGetContacts()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of contacts and their information.
-    var contactsArray = _MyEntities.contacts;
-    for (var i = 0; i < contactsArray.length; i++)
+    const contactsArray = _MyEntities.contacts;
+    for (let i = 0; i < contactsArray.length; i++)
     {
         // Gets the name of the person. The name is a string.
         htmlText += "Name : <span>" + contactsArray[i].personName +
@@ -301,8 +284,8 @@ function myGetContacts()
         // Gets an array of phone numbers associated with the 
         // contact. Each phone number is represented by a 
         // PhoneNumber object.
-        var phoneNumbersArray = contactsArray[i].phoneNumbers;
-        for (var j = 0; j < phoneNumbersArray.length; j++)
+        let phoneNumbersArray = contactsArray[i].phoneNumbers;
+        for (let j = 0; j < phoneNumbersArray.length; j++)
         {
             htmlText += "PhoneString : <span>" + 
                 phoneNumbersArray[j].phoneString + "</span><br/>";
@@ -312,24 +295,24 @@ function myGetContacts()
         }
 
         // Gets the URLs associated with the contact.
-        var urlsArray = contactsArray[i].urls;
-        for (var j = 0; j < urlsArray.length; j++)
+        let urlsArray = contactsArray[i].urls;
+        for (let j = 0; j < urlsArray.length; j++)
         {
             htmlText += "Url : <span>" + urlsArray[j] + 
                 "</span><br/>";
         }
 
         // Gets the email addresses of the contact.
-        var emailAddressesArray = contactsArray[i].emailAddresses;
-        for (var j = 0; j < emailAddressesArray.length; j++)
+        let emailAddressesArray = contactsArray[i].emailAddresses;
+        for (let j = 0; j < emailAddressesArray.length; j++)
         {
            htmlText += "E-mail Address : <span>" + 
                emailAddressesArray[j] + "</span><br/>";
         }
 
         // Gets postal addresses of the contact.
-        var addressesArray = contactsArray[i].addresses;
-        for (var j = 0; j < addressesArray.length; j++)
+        let addressesArray = contactsArray[i].addresses;
+        for (let j = 0; j < addressesArray.length; j++)
         {
           htmlText += "Address : <span>" + addressesArray[j] + 
               "</span><br/>";
@@ -342,22 +325,19 @@ function myGetContacts()
 }
 ```
 
-
 ## <a name="extracting-email-addresses"></a>提取电子邮件地址
 
-
 当用户单击“获取电子邮件地址”按钮时，`myGetEmailAddresses` 事件处理程序从 `_MyEntities` 对象的 [emailAddresses](/javascript/api/outlook/office.entities#outlook-office-entities-emailaddresses-member) 属性获取一组 SMTP 电子邮件地址（如果已提取任何电子邮件地址的话）。提取的每个电子邮件地址都存储为数组中的字符串。`myGetEmailAddresses` 在 `htmlText` 中构成本地 HTML 字符串，以列出提取的电子邮件地址。下面展示了相关 JavaScript 代码。
-
 
 ```js
 // Gets instances of the EmailAddress entity on the item.
 function myGetEmailAddresses() {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of email addresses. Each email address is a 
     // string.
-    var emailAddressesArray = _MyEntities.emailAddresses;
-    for (var i = 0; i < emailAddressesArray.length; i++) {
+    const emailAddressesArray = _MyEntities.emailAddresses;
+    for (let i = 0; i < emailAddressesArray.length; i++) {
         htmlText += "E-mail Address : <span>" + emailAddressesArray[i] + "</span><br/>";
     }
 
@@ -365,18 +345,14 @@ function myGetEmailAddresses() {
 }
 ```
 
-
 ## <a name="extracting-meeting-suggestions"></a>提取会议建议
-
 
 当用户单击“获取会议建议”按钮时，`myGetMeetingSuggestions` 事件处理程序从 `_MyEntities` 对象的 [meetingSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-meetingsuggestions-member) 属性获取一组会议建议（如果已提取任何会议建议的话）。
 
-
  > [!NOTE]
- > 只有邮件（而非约会）才支持 `MeetingSuggestion` 实体类型。
+ > 只有消息而不支持约会支持 `MeetingSuggestion` 实体类型。
 
 每个提取的会议建议都存储为数组中的一个 [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) 对象。`myGetMeetingSuggestions` 获取有关每个会议建议的更多数据：
-
 
 - [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-meetingstring-member) 属性中已识别为会议建议的字符串。
 
@@ -396,30 +372,27 @@ function myGetEmailAddresses() {
 
 `myGetMeetingSuggestions` 在 `htmlText` 中形成一个本地 HTML 字符串，以显示其中每个会议建议的数据。以下是相关的 JavaScript 代码。
 
-
-
-
 ```js
 // Gets instances of the MeetingSuggestion entity on the 
 // message item.
 function myGetMeetingSuggestions() {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of MeetingSuggestion objects, each array 
     // element containing an instance of a meeting suggestion 
     // entity from the current item.
-    var meetingsArray = _MyEntities.meetingSuggestions;
+    const meetingsArray = _MyEntities.meetingSuggestions;
 
     // Iterates through each instance of a meeting suggestion.
-    for (var i = 0; i < meetingsArray.length; i++) {
+    for (let i = 0; i < meetingsArray.length; i++) {
         // Gets the string that was identified as a meeting suggestion.
         htmlText += "MeetingString : <span>" + meetingsArray[i].meetingString + "</span><br/>";
 
         // Gets an array of attendees for that instance of a 
         // meeting suggestion. Each attendee is represented 
         // by an EmailUser object.
-        var attendeesArray = meetingsArray[i].attendees;
-        for (var j = 0; j < attendeesArray.length; j++) {
+        let attendeesArray = meetingsArray[i].attendees;
+        for (let j = 0; j < attendeesArray.length; j++) {
             htmlText += "Attendee : ( ";
 
             // Gets the displayName property of the attendee.
@@ -451,12 +424,9 @@ function myGetMeetingSuggestions() {
 }
 ```
 
-
 ## <a name="extracting-phone-numbers"></a>提取电话号码
 
-
 当用户单击“获取电话号码”按钮时，`myGetPhoneNumbers` 事件处理程序从 `_MyEntities` 对象的 [phoneNumbers](/javascript/api/outlook/office.entities#outlook-office-entities-phonenumbers-member) 属性获取一组电话号码（如果已提取任何电话号码的话）。提取的每个电话号码都存储为数组中的 [PhoneNumber](/javascript/api/outlook/office.phonenumber) 对象。`myGetPhoneNumbers` 获取每个电话号码的更多数据：
-
 
 - [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-type-member) 属性中表示电话号码种类的字符串（例如家庭电话号码）。
 
@@ -466,19 +436,16 @@ function myGetMeetingSuggestions() {
 
 `myGetPhoneNumbers` 在 `htmlText` 中形成一个本地 HTML 字符串，以显示每个电话号码的数据。以下是相关的 JavaScript 代码。
 
-
-
-
 ```js
 // Gets instances of the phone number entity on the item.
 function myGetPhoneNumbers()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of phone numbers. 
     // Each phone number is a PhoneNumber object.
-    var phoneNumbersArray = _MyEntities.phoneNumbers;
-    for (var i = 0; i < phoneNumbersArray.length; i++)
+    const phoneNumbersArray = _MyEntities.phoneNumbers;
+    for (let i = 0; i < phoneNumbersArray.length; i++)
     {
         htmlText += "Phone Number : ( ";
         // Gets the type of phone number, for example, home, office.
@@ -499,15 +466,11 @@ function myGetPhoneNumbers()
 
     document.getElementById("entities_box").innerHTML = htmlText;
 }
-
 ```
-
 
 ## <a name="extracting-task-suggestions"></a>提取任务建议
 
-
 当用户单击“获取任务建议”按钮时，`myGetTaskSuggestions` 事件处理程序从 `_MyEntities` 对象的 [taskSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-tasksuggestions-member) 属性获取一组任务建议（如果已提取任何任务建议的话）。提取每个的任务建议都存储为数组中的 [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) 对象。`myGetTaskSuggestions` 获取每个任务建议的更多数据：
-
 
 - [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-taskstring-member) 属性中最初识别为任务建议的字符串。
 
@@ -519,22 +482,19 @@ function myGetPhoneNumbers()
 
 `myGetTaskSuggestions` 在 `htmlText` 中形成一个本地 HTML 字符串，以显示每个任务建议的数据。以下为相关的 JavaScript 代码。
 
-
-
-
 ```js
 // Gets instances of the task suggestion entity on the item.
 function myGetTaskSuggestions()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of TaskSuggestion objects, each array element 
     // containing an instance of a task suggestion entity from 
     // the current item.
-    var tasksArray = _MyEntities.taskSuggestions;
+    const tasksArray = _MyEntities.taskSuggestions;
 
     // Iterates through each instance of a task suggestion.
-    for (var i = 0; i < tasksArray.length; i++)
+    for (let i = 0; i < tasksArray.length; i++)
     {
         // Gets the string that was identified as a task suggestion.
         htmlText += "TaskString : <span>" + 
@@ -543,8 +503,8 @@ function myGetTaskSuggestions()
         // Gets an array of assignees for that instance of a task 
         // suggestion. Each assignee is represented by an 
         // EmailUser object.
-        var assigneesArray = tasksArray[i].assignees;
-        for (var j = 0; j < assigneesArray.length; j++)
+        let assigneesArray = tasksArray[i].assignees;
+        for (let j = 0; j < assigneesArray.length; j++)
         {
             htmlText += "Assignee : ( ";
             // Gets the displayName property of the assignee.
@@ -564,40 +524,32 @@ function myGetTaskSuggestions()
 
     document.getElementById("entities_box").innerHTML = htmlText;
 }
-
 ```
-
 
 ## <a name="extracting-urls"></a>提取 URL
 
-
 当用户单击“获取 URL”按钮时，`myGetUrls` 事件处理程序从 `_MyEntities` 对象的 [urls](/javascript/api/outlook/office.entities#outlook-office-entities-urls-member) 属性获取一组 URL（如果已提取任何 URL 的话）。提取每个的 URL 都存储为数组中的字符串。`myGetUrls` 在 `htmlText` 中构成本地 HTML 字符串，以列出提取的 URL。
-
 
 ```js
 // Gets instances of the URL entity on the item.
 function myGetUrls()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of URLs. Each URL is a string.
-    var urlArray = _MyEntities.urls;
-    for (var i = 0; i < urlArray.length; i++)
+    const urlArray = _MyEntities.urls;
+    for (let i = 0; i < urlArray.length; i++)
     {
         htmlText += "Url : <span>" + urlArray[i] + "</span><br/>";
     }
 
     document.getElementById("entities_box").innerHTML = htmlText;
 }
-
 ```
-
 
 ## <a name="clearing-displayed-entity-strings"></a>清除显示的实体字符串
 
-
 最后，实体外接程序指定一个 `myClearEntitiesBox` 事件处理程序，以清除任何显示的字符串。以下是相关的代码。
-
 
 ```js
 // Clears the div with id="entities_box".
@@ -607,21 +559,18 @@ function myClearEntitiesBox()
 }
 ```
 
-
 ## <a name="javascript-listing"></a>JavaScript 列表
-
 
 以下是 JavaScript 实现的完整列表。
 
-
 ```js
 // Global variables
-var _Item;
-var _MyEntities;
+let _Item;
+let _MyEntities;
 
 // Initializes the add-in.
 Office.initialize = function () {
-    var _mailbox = Office.context.mailbox;
+    const _mailbox = Office.context.mailbox;
     // Obtains the current item.
     _Item = _mailbox.item;
     // Reads all instances of supported entities from the subject 
@@ -634,7 +583,6 @@ Office.initialize = function () {
     });
 }
 
-
 // Clears the div with id="entities_box".
 function myClearEntitiesBox()
 {
@@ -644,11 +592,11 @@ function myClearEntitiesBox()
 // Gets instances of the Address entity on the item.
 function myGetAddresses()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of postal addresses. Each address is a string.
-    var addressesArray = _MyEntities.addresses;
-    for (var i = 0; i < addressesArray.length; i++)
+    const addressesArray = _MyEntities.addresses;
+    for (let i = 0; i < addressesArray.length; i++)
     {
         htmlText += "Address : <span>" + addressesArray[i] + 
             "</span><br/>";
@@ -657,16 +605,15 @@ function myGetAddresses()
     document.getElementById("entities_box").innerHTML = htmlText;
 }
 
-
 // Gets instances of the EmailAddress entity on the item.
 function myGetEmailAddresses()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of email addresses. Each email address is a 
     // string.
-    var emailAddressesArray = _MyEntities.emailAddresses;
-    for (var i = 0; i < emailAddressesArray.length; i++)
+    const emailAddressesArray = _MyEntities.emailAddresses;
+    for (let i = 0; i < emailAddressesArray.length; i++)
     {
         htmlText += "E-mail Address : <span>" + 
             emailAddressesArray[i] + "</span><br/>";
@@ -679,15 +626,15 @@ function myGetEmailAddresses()
 // message item.
 function myGetMeetingSuggestions()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of MeetingSuggestion objects, each array 
     // element containing an instance of a meeting suggestion 
     // entity from the current item.
-    var meetingsArray = _MyEntities.meetingSuggestions;
+    const meetingsArray = _MyEntities.meetingSuggestions;
 
     // Iterates through each instance of a meeting suggestion.
-    for (var i = 0; i < meetingsArray.length; i++)
+    for (let i = 0; i < meetingsArray.length; i++)
     {
         // Gets the string that was identified as a meeting 
         // suggestion.
@@ -697,8 +644,8 @@ function myGetMeetingSuggestions()
         // Gets an array of attendees for that instance of a 
         // meeting suggestion.
         // Each attendee is represented by an EmailUser object.
-        var attendeesArray = meetingsArray[i].attendees;
-        for (var j = 0; j < attendeesArray.length; j++)
+        let attendeesArray = meetingsArray[i].attendees;
+        for (let j = 0; j < attendeesArray.length; j++)
         {
             htmlText += "Attendee : ( ";
             // Gets the displayName property of the attendee.
@@ -735,16 +682,15 @@ function myGetMeetingSuggestions()
     document.getElementById("entities_box").innerHTML = htmlText;
 }
 
-
 // Gets instances of the phone number entity on the item.
 function myGetPhoneNumbers()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of phone numbers. 
     // Each phone number is a PhoneNumber object.
-    var phoneNumbersArray = _MyEntities.phoneNumbers;
-    for (var i = 0; i < phoneNumbersArray.length; i++)
+    const phoneNumbersArray = _MyEntities.phoneNumbers;
+    for (let i = 0; i < phoneNumbersArray.length; i++)
     {
         htmlText += "Phone Number : ( ";
         // Gets the type of phone number, for example, home, office.
@@ -769,15 +715,15 @@ function myGetPhoneNumbers()
 // Gets instances of the task suggestion entity on the item.
 function myGetTaskSuggestions()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of TaskSuggestion objects, each array element 
     // containing an instance of a task suggestion entity from the 
     // current item.
-    var tasksArray = _MyEntities.taskSuggestions;
+    const tasksArray = _MyEntities.taskSuggestions;
 
     // Iterates through each instance of a task suggestion.
-    for (var i = 0; i < tasksArray.length; i++)
+    for (let i = 0; i < tasksArray.length; i++)
     {
         // Gets the string that was identified as a task suggestion.
         htmlText += "TaskString : <span>" + 
@@ -786,8 +732,8 @@ function myGetTaskSuggestions()
         // Gets an array of assignees for that instance of a task 
         // suggestion. Each assignee is represented by an 
         // EmailUser object.
-        var assigneesArray = tasksArray[i].assignees;
-        for (var j = 0; j < assigneesArray.length; j++)
+        let assigneesArray = tasksArray[i].assignees;
+        for (let j = 0; j < assigneesArray.length; j++)
         {
             htmlText += "Assignee : ( ";
             // Gets the displayName property of the assignee.
@@ -811,20 +757,18 @@ function myGetTaskSuggestions()
 // Gets instances of the URL entity on the item.
 function myGetUrls()
 {
-    var htmlText = "";
+    let htmlText = "";
 
     // Gets an array of URLs. Each URL is a string.
-    var urlArray = _MyEntities.urls;
-    for (var i = 0; i < urlArray.length; i++)
+    const urlArray = _MyEntities.urls;
+    for (let i = 0; i < urlArray.length; i++)
     {
         htmlText += "Url : <span>" + urlArray[i] + "</span><br/>";
     }
 
     document.getElementById("entities_box").innerHTML = htmlText;
 }
-
 ```
-
 
 ## <a name="see-also"></a>另请参阅
 

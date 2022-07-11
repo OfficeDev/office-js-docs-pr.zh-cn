@@ -3,12 +3,12 @@ title: 排查 Office 加载项中的开发错误
 description: 了解如何排查 Office 加载项中的开发错误。
 ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 427d35d49339c1130733a3b33aa1bfedc1bd8317
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 3fb077802ab48c257911c10627308a606630cbb6
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660072"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712760"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>排查 Office 加载项中的开发错误
 
@@ -113,7 +113,8 @@ myChart.id = "5";
 ## <a name="see-also"></a>另请参阅
 
 - [在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)
-- [将 Office 外接程序旁加载到 iPad 和 Mac 上](sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [在 Mac 上旁加载 Office 加载项](sideload-an-office-add-in-on-mac.md)  
+- [在 iPad 上旁加载 Office 加载项](sideload-an-office-add-in-on-ipad.md)  
 - [在 Mac 上调试 Office 加载项](debug-office-add-ins-on-ipad-and-mac.md)  
 - [适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展](debug-with-vs-extension.md)
 - [验证 Office 加载项的清单](troubleshoot-manifest.md)

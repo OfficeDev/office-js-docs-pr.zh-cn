@@ -1,24 +1,22 @@
 ---
 title: 使用正则表达式激活规则显示加载项
 description: 了解如何为 Outlook 上下文加载项使用正则表达式激活规则。
-ms.date: 07/28/2020
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cdf15fd2ab46fbad679ea6214cde9b9da50a0cfc
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: f145df063f550351941eee5132a7b6b9d3267c04
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484421"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713068"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>使用正则表达式激活规则显示 Outlook 外接程序
 
-可以将正则表达式规则指定为在邮件的特定字段中找到匹配项时激活[上下文外接程序](contextual-outlook-add-ins.md)。 上下文外接程序仅在阅读模式下激活，Outlook 不会在用户撰写某个项目时激活上下文外接程序。 还有其他一些情况，Outlook激活加载项，例如，数字签名项目。 有关详细信息，请参阅 [Outlook 外接程序的激活规则](activation-rules.md)。
+可以将正则表达式规则指定为在邮件的特定字段中找到匹配项时激活[上下文外接程序](contextual-outlook-add-ins.md)。 上下文外接程序仅在阅读模式下激活，Outlook 不会在用户撰写某个项目时激活上下文外接程序。 还有一些其他方案：Outlook 不激活外接程序，例如数字签名项目。 有关详细信息，请参阅 [Outlook 外接程序的激活规则](activation-rules.md)。
 
 你可以将正则表达式指定为外接程序 XML 清单中的 [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) 规则或 [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) 规则的一部分。 在 [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity) 扩展点中指定了这些规则。
 
 Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的规则计算正则表达式。 Outlook 支持所有 XML 处理器也支持的相同特殊字符列表。 下表列出了这些特殊字符。 你可以通过为相应字符指定转义序列以在正则表达式中使用这些字符，如下表中所述。
-
-<br/>
 
 |字符|说明|要使用的转义序列|
 |:-----|:-----|:-----|
@@ -32,8 +30,6 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 
 `ItemHasRegularExpressionMatch` 规则对于基于受支持属性的特定值控制外接程序的激活很有用。 `ItemHasRegularExpressionMatch` 规则具有以下属性。
 
-<br/>
-
 |属性名|说明|
 |:-----|:-----|
 |`RegExName`|指定正则表达式的名称，以便能够在外接程序的代码中引用该表达式。|
@@ -44,7 +40,7 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 
 ### <a name="best-practices-for-using-regular-expressions-in-rules"></a>在规则中使用正则表达式的最佳做法
 
-在使用正则表达式时，请特别注意以下几点。
+使用正则表达式时，请特别注意以下事项。
 
 - 如果在项目的正文中指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。 使用正则表达式（如 `.*`）来尝试获取项目的整个正文并不总是返回预期的结果。
 - 一个浏览器上返回的纯文本正文与另一个浏览器上返回的纯文本正文可能略有不同。 如果使用含有 `BodyAsPlaintext` 的 `ItemHasRegularExpressionMatch` 规则作为 `PropertyName` 属性，请在你的外接程序支持的所有浏览器上测试正则表达式。
@@ -53,7 +49,7 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 
 - Outlook 富客户端与 Outlook 网页版或 Outlook Mobile 之间的项目的 HTML 正文略有不同。 请仔细定义正则表达式。
 
-- 根据 Outlook 客户端、设备类型或要应用正则表达式的属性，在设计正则表达式作为激活规则时，您应该了解每个客户端的其他最佳实践和限制。 有关详细信息，请参阅 [Outlook 外接程序的激活和 JavaScript API 的限制](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)。
+- 根据应用正则表达式的 Outlook 客户端、设备类型或属性，在将正则表达式设计为激活规则时，应注意每个客户端的其他最佳做法和限制。 有关详细信息，请参阅 [Outlook 外接程序的激活和 JavaScript API 的限制](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)。
 
 ### <a name="examples"></a>示例
 
@@ -67,8 +63,6 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 />
 ```
 
-<br/>
-
 以下是使用 `IgnoreCase` 属性指定同一正则表达式的另一种方式。
 
 ```XML
@@ -79,8 +73,6 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
     IgnoreCase="true"
 />
 ```
-
-<br/>
 
 以下 `ItemHasRegularExpressionMatch` 规则将在股票代号包含在当前项目的正文中时激活外接程序。
 
@@ -100,8 +92,6 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 > Outlook 只能提取用英语编写的实体字符串，无论清单中指定的默认区域设置如何。 仅邮件支持 `MeetingSuggestion` 实体类型；约会不支持该类型。 你无法从“已发送邮件”文件夹的邮件中提取实体，也不能使用 `ItemHasKnownEntity` 规则来激活“已发送邮件”文件夹中邮件的外接程序。
 
 `ItemHasKnownEntity` 规则支持下表中的属性。 请注意，尽管在 `ItemHasKnownEntity` 规则中指定正则表达式是可选项，如果选择使用正则表达式作为实体筛选器，则必须同时指定 `RegExFilter` 和 `FilterName` 属性。
-
-<br/>
 
 |属性名|说明|
 |:-----|:-----|
@@ -124,7 +114,7 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 
 ## <a name="using-regular-expression-results-in-code"></a>在代码中使用正则表达式结果
 
-可以通过对当前项使用下列方法获取正则表达式的匹配项。
+可在当前项上使用以下方法获取与正则表达式的匹配项。
 
 - [getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 为在外接程序的 `ItemHasRegularExpressionMatch` 和 `ItemHasKnownEntity` 规则中指定的所有正则表达式返回当前项目中的匹配项。
 
@@ -148,38 +138,32 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 </Rule>
 ```
 
-<br/>
-
 以下示例使用当前项目的 `getRegExMatches` 将变量 `videos` 设置为上一个 `ItemHasRegularExpressionMatch` 规则的结果。
 
 ```js
-var videos = Office.context.mailbox.item.getRegExMatches().videoURL;
+const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
 ```
-
-<br/>
 
 多个匹配项将作为数组元素存储在该对象中。以下代码示例说明如何对名为  `reg1` 的正则表达式循环访问匹配项以生成将显示为 HTML 的字符串。
 
 ```js
 function initDialer()
 {
-    var myEntities;
-    var myString;
-    var myCell;
+    let myEntities;
+    let myString;
+    let myCell;
     myEntities = Office.context.mailbox.item.getRegExMatches();
 
     myString = "";
     myCell = document.getElementById('dialerholder');
     // Loop over the myEntities collection.
-    for (var i in myEntities.reg1) {
+    for (let i in myEntities.reg1) {
         myString += "<p><a href='callto:tel:" + myEntities.reg1[i] + "'>" + myEntities.reg1[i] + "</a></p>";
     }
 
     myCell.innerHTML = myString;
 }
 ```
-
-<br/>
 
 以下是指定 `MeetingSuggestion` 实体和名为 `CampSuggestion` 的正则表达式的 `ItemHasKnownEntity` 规则的示例。 Outlook 在检测到当前所选项目包含会议建议，并且主题或正文包含术语 `WonderCamp` 时将激活外接程序。
 
@@ -191,12 +175,10 @@ function initDialer()
     IgnoreCase="false"/>
 ```
 
-<br/>
-
 以下代码示例使用当前项目中的 `getFilteredEntitiesByName` 设置变量 `suggestions`，以获取针对上一个 `ItemHasKnownEntity` 规则检测到的一组会议建议。
 
 ```js
-var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName("CampSuggestion");
+const suggestions = Office.context.mailbox.item.getFilteredEntitiesByName("CampSuggestion");
 ```
 
 ## <a name="see-also"></a>另请参阅

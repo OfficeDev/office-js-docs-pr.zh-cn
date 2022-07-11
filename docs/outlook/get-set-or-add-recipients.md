@@ -1,14 +1,14 @@
 ---
 title: 在 Outlook 加载项中获取或修改收件人
 description: 了解如何在 Outlook 加载项中获取、设置或添加邮件或约会的收件人。
-ms.date: 06/27/2022
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cd51bd20d90d0183cbe0794b644eaa307e2d6b7
-ms.sourcegitcommit: 2a0bd3155c732b6010b7e1e612f4bd7e45f79c52
+ms.openlocfilehash: e7c59765d38e32e7552b5fdf67b6085529ccf03b
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "66241286"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712781"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取、设置或添加收件人
 
@@ -65,7 +65,7 @@ item.cc.getAsync
 > 有关详细信息，请参阅 [相关的 GitHub 问题](https://github.com/OfficeDev/office-js/issues/2201)。
 
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -82,7 +82,7 @@ function getAllRecipients() {
     // Local objects to point to recipients of either
     // the appointment or message that is being composed.
     // bccRecipients applies to only messages, not appointments.
-    var toRecipients, ccRecipients, bccRecipients;
+    let toRecipients, ccRecipients, bccRecipients;
     // Verify if the composed item is an appointment or message.
     if (item.itemType == Office.MailboxEnums.ItemType.Appointment) {
         toRecipients = item.requiredAttendees;
@@ -143,7 +143,7 @@ function getAllRecipients() {
 // Recipients are in an array of EmailAddressDetails
 // objects passed in asyncResult.value.
 function displayAddresses (asyncResult) {
-    for (var i=0; i<asyncResult.value.length; i++)
+    for (let i=0; i<asyncResult.value.length; i++)
         write (asyncResult.value[i].emailAddress);
 }
 
@@ -166,7 +166,7 @@ function write(message){
 可以选择性地将回调方法作为方法的输入参数 `setAsync` 提供，以确保任何依赖于成功设置收件人的代码仅在发生这种情况时才执行。 还可以为使用可选 _asyncContext_ 形参的回调方法提供任意实参。 如果使用回调方法，则可以访问 _asyncResult_ 输出参数，并使用参数对象的`AsyncResult`**状态** 和 **错误** 属性来检查异步调用的状态和任何错误消息。
 
 ```js
-var item;
+let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
@@ -184,7 +184,7 @@ function setRecipients() {
     // Local objects to point to recipients of either
     // the appointment or message that is being composed.
     // bccRecipients applies to only messages, not appointments.
-    var toRecipients, ccRecipients, bccRecipients;
+    let toRecipients, ccRecipients, bccRecipients;
 
     // Verify if the composed item is an appointment or message.
     if (item.itemType == Office.MailboxEnums.ItemType.Appointment) {
@@ -269,7 +269,6 @@ function setRecipients() {
 function write(message){
     document.getElementById('message').innerText += message; 
 }
-
 ```
 
 ## <a name="add-recipients"></a>添加收件人

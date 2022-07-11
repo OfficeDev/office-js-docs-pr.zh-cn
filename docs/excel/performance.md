@@ -1,21 +1,21 @@
 ---
 title: Excel JavaScript API 性能优化
-description: 使用 javaScript API Excel优化加载项性能。
+description: 使用 JavaScript API 优化 Excel 加载项性能。
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dbaa566138666a049aa5a0c1d940adff056c92e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: bad5d35ec1cc3f99cd37b3571dee78d3432102e6
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745633"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712725"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 优化性能
 
 有多种方法可以使用 Excel JavaScript API 执行常见任务。 你将发现不同方法之间的显著性能差异。 本文提供指导和代码示例，展示如何使用 Excel JavaScript API 来高效执行常见任务。
 
 > [!IMPORTANT]
-> 可以通过建议的用法和调用解决许多`load``sync`性能问题。 有关有效使用特定于应用程序的 API 的建议[，请参阅 Office](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) 外接程序的资源限制和性能优化的"使用特定于应用程序的 API 的性能改进"部分。
+> 可以通过建议使用和`sync`调用`load`来解决许多性能问题。 请参阅 [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) 的“使用特定于应用程序的 API 的性能改进”部分，以获取有关以有效方式使用特定于应用程序的 API 的建议。
 
 ## <a name="suspend-excel-processes-temporarily"></a>暂时挂起 Excel 进程
 
@@ -25,7 +25,7 @@ Excel 中的多个后台任务将反应来自用户和外接程序的输入。 �
 
 如果你试图在大量单元格上执行操作（例如，设置一个大范围对象的值），而且不介意在操作完成时暂停 Excel 中的计算，建议暂停计算，直到调用下一个 `context.sync()`。
 
-有关如何使用 `suspendApiCalculationUntilNextSync()` API 以便捷的方式暂停和重新激活计算的信息，请参阅[应用程序对象](/javascript/api/excel/excel.application)参考文档。 以下代码演示了如何暂时暂停计算。
+有关如何使用 `suspendApiCalculationUntilNextSync()` API 以便捷的方式暂停和重新激活计算的信息，请参阅[应用程序对象](/javascript/api/excel/excel.application)参考文档。 以下代码演示如何暂时暂停计算。
 
 ```js
 await Excel.run(async (context) => {
@@ -66,14 +66,14 @@ await Excel.run(async (context) => {
 });
 ```
 
-请注意，仅暂停公式计算。 仍将重新生成任何更改的引用。 例如，重命名工作表仍将更新公式中对此工作表的任何引用。
+请注意，仅暂停公式计算。 仍会重新生成任何更改的引用。 例如，重命名工作表仍会更新公式中对该工作表的任何引用。
 
 ### <a name="suspend-screen-updating"></a>暂停屏幕更新
 
 Excel 大约会在代码发生更改时显示外接程序所进行的这些更改。 对于大型迭代数据集，你无需实时在屏幕上查看此进度。 在外接程序调用 `context.sync()` 或者在 `Excel.run` 结束（隐式调用 `context.sync`）之前，`Application.suspendScreenUpdatingUntilNextSync()` 将暂停对 Excel 的可视化更新。 请注意，在下次同步之前，Excel 不会显示任何活动迹象。你的外接程序应为用户提供相关指南，以便为此延迟做好准备，或者提供一个状态栏，以演示相关活动。
 
 > [!NOTE]
-> 不要重复调用 `suspendScreenUpdatingUntilNextSync` (，如在循环) 。 重复调用将导致Excel闪烁。
+> 请勿重复调用 `suspendScreenUpdatingUntilNextSync` (，例如循环) 。 重复调用将导致 Excel 窗口闪烁。
 
 ### <a name="enable-and-disable-events"></a>启用和禁用事件
 
@@ -109,9 +109,9 @@ await Excel.run(async (context) => {
 > [!NOTE]
 > 可以使用 [Table.convertToRange()](/javascript/api/excel/excel.table#excel-excel-table-converttorange-member(1)) 方法将 Table 对象转换为 Range 对象，此做法非常方便。
 
-## <a name="payload-size-limit-best-practices"></a>有效负载大小限制最佳实践
+## <a name="payload-size-limit-best-practices"></a>有效负载大小限制最佳做法
 
-JavaScript API Excel API 调用的大小限制。 Excel web 版请求和响应的有效负载大小限制为 5MB，如果超出此限制，API `RichAPI.Error` 将返回错误。 在所有平台上，一个范围限制为五百万个单元格，用于获取操作。 较大区域通常超过这两个限制。
+Excel JavaScript API 对 API 调用有大小限制。 Excel web 版请求和响应的有效负载大小限制为 5MB，如果超出此限制，API 将返回`RichAPI.Error`错误。 在所有平台上，范围限制为 500 万个单元格以进行获取操作。 大范围通常超过这两个限制。
 
 请求的有效负载大小是以下三个组件的组合。
 
@@ -119,11 +119,11 @@ JavaScript API Excel API 调用的大小限制。 Excel web 版请求和响应�
 * 对象的数量，例如 `Range` 对象
 * 要设置或获取的值的长度
 
-如果 API 返回错误 `RequestPayloadSizeLimitExceeded` ，请使用本文中介绍的最佳实践策略来优化脚本并避免错误。
+如果 API 返回 `RequestPayloadSizeLimitExceeded` 错误，请使用本文中记录的最佳做法策略来优化脚本并避免错误。
 
 ### <a name="strategy-1-move-unchanged-values-out-of-loops"></a>策略 1：将未更改的值移出循环
 
-限制循环内发生的进程数以提高性能。 在下面的代码示例中， `context.workbook.worksheets.getActiveWorksheet()` 可以移 `for` 出循环，因为它不会在此循环中更改。
+限制循环中发生的进程数，以提高性能。 在下面的代码示例中`for`，`context.workbook.worksheets.getActiveWorksheet()`可以移出循环，因为它不会在该循环中更改。
 
 ```js
 // DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
@@ -140,7 +140,7 @@ async function run() {
 }
 ```
 
-下面的代码示例演示了与前面的代码示例类似的逻辑，但具有改进的性能策略。 该值`context.workbook.worksheets.getActiveWorksheet()`在循环之前检索`for``for`，因为每次循环运行时都不需要检索此值。 仅应在该循环中检索在循环上下文中更改的值。
+下面的代码示例显示了与前面的代码示例类似的逻辑，但改进了性能策略。 在循环之前`for`检索该值`context.workbook.worksheets.getActiveWorksheet()`，因为每次`for`循环运行时都不需要检索此值。 只有在循环上下文中发生更改的值才应在该循环中检索。
 
 ```js
 // This code sample shows a good performance strategy.
@@ -159,18 +159,18 @@ async function run() {
 }
 ```
 
-### <a name="strategy-2-create-fewer-range-objects"></a>策略 2：创建更少的 range 对象
+### <a name="strategy-2-create-fewer-range-objects"></a>策略 2：创建更少的范围对象
 
-创建更少的 range 对象以提高性能并最小化有效负载大小。 以下文章部分和代码示例介绍了两种创建较少的 range 对象的方法。
+创建更少的范围对象来提高性能并最大程度地减少有效负载大小。 以下文章部分和代码示例介绍了创建较少范围对象的两种方法。
 
-#### <a name="split-each-range-array-into-multiple-arrays"></a>将每个区域数组拆分为多个数组
+#### <a name="split-each-range-array-into-multiple-arrays"></a>将每个范围数组拆分为多个数组
 
-创建较少的 range 对象的一种方式是，将每个区域数组拆分为多个数组，然后使用循环和新调用处理每个新 `context.sync()` 数组。
+创建更少范围对象的一种方法是将每个范围数组拆分为多个数组，然后使用循环和新调用处理每个新 `context.sync()` 数组。
 
 > [!IMPORTANT]
-> 仅在首次确定超出有效负载请求大小限制时使用此策略。 使用多个循环可以减少每个有效负载请求的大小，以避免超出 5MB `context.sync()` 的限制，但使用多个循环和多个调用也会对性能产生负面影响。
+> 仅当首次确定超出有效负载请求大小限制时，才使用此策略。 使用多个循环可以减小每个有效负载请求的大小以避免超过 5MB 限制，但使用多个循环和多个 `context.sync()` 调用也会对性能产生负面影响。
 
-下面的代码示例尝试在一个循环中处理一个大型区域数组，然后处理一个 `context.sync()` 调用。 在一次调用中 `context.sync()` 处理过多的范围值会导致有效负载请求大小超过 5MB 限制。
+下面的代码示例尝试在单个循环和单 `context.sync()` 个调用中处理大型范围数组。 在一次 `context.sync()` 调用中处理过多的范围值会导致有效负载请求大小超过 5MB 限制。
 
 ```js
 // This code sample does not show a recommended strategy.
@@ -189,7 +189,7 @@ async function run() {
 }
 ```
 
-下面的代码示例演示了类似于前面的代码示例的逻辑，但具有避免超过 5 MB 有效负载请求大小限制的策略。 在下面的代码示例中，范围在两个单独的循环中进行处理，每个循环后跟一个 `context.sync()` 调用。
+下面的代码示例显示了与前面的代码示例类似的逻辑，但具有避免超过 5MB 有效负载请求大小限制的策略。 在下面的代码示例中，范围以两个单独的循环进行处理，每个循环后跟一个 `context.sync()` 调用。
 
 ```js
 // This code sample shows a strategy for reducing payload request size.
@@ -216,11 +216,11 @@ async function run() {
 }
 ```
 
-#### <a name="set-range-values-in-an-array"></a>设置数组中的区域值
+#### <a name="set-range-values-in-an-array"></a>在数组中设置范围值
 
-创建较少的 range 对象的另一种方式是创建一个数组，使用循环设置该数组中的所有数据，然后将数组值传递到一个范围。 这有利于性能和有效负载大小。 不是在 `range.values` 循环中调用每个区域 `range.values` ，而是在循环外调用一次。
+创建更少范围对象的另一种方法是创建数组，使用循环设置该数组中的所有数据，然后将数组值传递给某个区域。 这有利于性能和有效负载大小。 不是在循环中调用 `range.values` 每个范围， `range.values` 而是在循环外部调用一次。
 
-下面的代码示例演示如何创建数组 `for` 、在循环中设置该数组的值，然后将数组值传递到循环外部的范围。
+下面的代码示例演示如何创建数组、在循环中 `for` 设置该数组的值，然后将数组值传递到循环外部的区域。
 
 ```js
 // This code sample shows a good performance strategy.
@@ -246,6 +246,6 @@ async function run() {
 ## <a name="see-also"></a>另请参阅
 
 * [Excel 加载项中的 Word JavaScript 对象模型](excel-add-ins-core-concepts.md)
-* [JavaScript API Excel错误处理](excel-add-ins-error-handling.md)
+* [使用特定于应用程序的 JavaScript API 进行错误处理](../testing/application-specific-api-error-handling.md)
 * [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md)
 * [工作表函数对象（适用于 Excel 的 JavaScript API）](/javascript/api/excel/excel.functions)

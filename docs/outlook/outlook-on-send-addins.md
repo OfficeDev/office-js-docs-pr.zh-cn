@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 06/15/2022
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: eda6444a84632de5349af42deab7744c712551ad
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: cb67a813c876809440b29e029ff899cd34d7e365
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660261"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712753"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -467,13 +467,12 @@ Onsend API 需要 `VersionOverrides v1_1`。 以下显示如何在清单中添�
 > - [Outlook 外接程序清单](manifests.md)
 > - [Office 加载项 XML 清单](../develop/add-in-manifests.md)
 
-
 ### <a name="event-and-item-objects-and-bodygetasync-and-bodysetasync-methods"></a>`Event` 和 `item` 对象以及 `body.getAsync` 和 `body.setAsync` 方法
 
 若要访问当前选择的邮件或会议项目（在本示例中为新撰写的邮件），请使用 `Office.context.mailbox.item` 命名空间。 `ItemSend` 事件由 Onsend 功能自动传递到清单中指定的函数&mdash;在本示例中为 `validateBody` 函数。
 
 ```js
-var mailboxItem;
+let mailboxItem;
 
 Office.initialize = function (reason) {
     mailboxItem = Office.context.mailbox.item;
@@ -491,7 +490,6 @@ function validateBody(event) {
 > [!NOTE]
 > 有关详细信息，请参阅 [Event 对象](/javascript/api/office/office.addincommands.event)和 [Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1))。
   
-
 ### <a name="notificationmessages-object-and-eventcompleted-method"></a>`NotificationMessages` 对象和 `event.completed` 方法
 
 `checkBodyOnlyOnSendCallBack` 函数使用正则表达式来确定邮件正文是否包含禁止使用的词语。 如果该函数发现受限词语数组的匹配项，则将阻止发送电子邮件，并通过信息栏通知发件人。 为了做到这一点，它使用 `Item` 对象的 `notificationMessages` 属性来返回 `NotificationMessages` 对象。 然后，通过调用 `addAsync` 方法向该项目添加通知，如以下示例所示。
@@ -500,13 +498,13 @@ function validateBody(event) {
 // Determine whether the body contains a specific set of blocked words. If it contains the blocked words, block email from being sent. Otherwise allow sending.
 // <param name="asyncResult">ItemSend event passed from the calling function.</param>
 function checkBodyOnlyOnSendCallBack(asyncResult) {
-    var listOfBlockedWords = new Array("blockedword", "blockedword1", "blockedword2");
-    var wordExpression = listOfBlockedWords.join('|');
+    const listOfBlockedWords = new Array("blockedword", "blockedword1", "blockedword2");
+    const wordExpression = listOfBlockedWords.join('|');
 
     // \b to perform a "whole words only" search using a regular expression in the form of \bword\b.
     // i to perform case-insensitive search.
-    var regexCheck = new RegExp('\\b(' + wordExpression + ')\\b', 'i');
-    var checkBody = regexCheck.test(asyncResult.value);
+    const regexCheck = new RegExp('\\b(' + wordExpression + ')\\b', 'i');
+    const checkBody = regexCheck.test(asyncResult.value);
 
     if (checkBody) {
         mailboxItem.notificationMessages.addAsync('NoSend', { type: 'errorMessage', message: 'Blocked words have been found in the body of this email. Please remove them.' });
@@ -534,7 +532,6 @@ function checkBodyOnlyOnSendCallBack(asyncResult) {
 
 除了 `addAsync` 方法之外，`NotificationMessages` 对象还包括 `replaceAsync`、`removeAsync` 和 `getAllAsync` 方法。  此代码示例中不使用这些方法。  有关详细信息，请参阅 [NotificationMessages](/javascript/api/outlook/office.notificationmessages)。
 
-
 ### <a name="subject-and-cc-checker-code"></a>主题和抄送检查器代码
 
 以下代码示例介绍如何将收件人添加到抄送行，并验证邮件在发送时是否包含主题。 此示例使用 Onsend 功能允许或禁止发送电子邮件。  
@@ -555,7 +552,7 @@ function shouldChangeSubjectOnSend(event) {
             addCCOnSend(asyncResult.asyncContext);
             //console.log(asyncResult.value);
             // Match string.
-            var checkSubject = (new RegExp(/\[Checked\]/)).test(asyncResult.value)
+            const checkSubject = (new RegExp(/\[Checked\]/)).test(asyncResult.value)
             // Add [Checked]: to subject line.
             subject = '[Checked]: ' + asyncResult.value;
 

@@ -1,14 +1,14 @@
 ---
 title: 获取和设置 Outlook 加载项中的元数据
 description: 可以使用以下漫游设置或自定义属性，管理 Outlook 加载项中的自定义数据。
-ms.date: 10/31/2019
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b07322733f741747568fd57a99f03dc2d3e4d3bb
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: a7ae9f2377c40d22b091f994de958b882507938a
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484146"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712718"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>获取和设置 Outlook 加载项的元数据
 
@@ -25,13 +25,11 @@ ms.locfileid: "64484146"
 
 对该数据的更改存储在当前 Outlook 会话的这些设置的内存副本中。您应该在更新后显式保存所有漫游设置，以便用户下次在同一设备或任何其他受支持设备上打开您的外接程序时可以使用这些设置。
 
-
 ### <a name="roaming-settings-format"></a>漫游设置格式
 
-**RoamingSettings** 对象中的数据存储为序列化的 JavaScript 对象表示法 (JSON) 字符串。 
+**RoamingSettings** 对象中的数据存储为序列化的 JavaScript 对象表示法 (JSON) 字符串。
 
 下面的结构示例假定有分别名为 `add-in_setting_name_0`、`add-in_setting_name_1` 和 `add-in_setting_name_2` 的三个已定义漫游设置。
-
 
 ```json
 {
@@ -41,17 +39,15 @@ ms.locfileid: "64484146"
 }
 ```
 
-
 ### <a name="loading-roaming-settings"></a>加载漫游设置
 
-邮件加载项通常在 [Office.initialize](/javascript/api/office#Office_initialize_reason_) 事件处理程序中加载漫游设置。 以下 JavaScript 代码示例演示如何加载现有漫游设置并获取 2 个设置的值， **即 customerName** 和 **customerBalance**。
-
+邮件加载项通常在 [Office.initialize](/javascript/api/office#Office_initialize_reason_) 事件处理程序中加载漫游设置。 以下 JavaScript 代码示例演示如何加载现有漫游设置并获取两个设置的值： **customerName** 和 **customerBalance**。
 
 ```js
-var _mailbox;
-var _settings;
-var _customerName;
-var _customerBalance;
+let _mailbox;
+let _settings;
+let _customerName;
+let _customerBalance;
 
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
@@ -61,15 +57,13 @@ Office.initialize = function () {
   _customerName = _settings.get("customerName");
   _customerBalance = _settings.get("customerBalance");
 }
-
 ```
-
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>创建或分配漫游设置
 
 紧接着前面的示例，下面的 JavaScript 函数 `setAddInSetting` 演示了如何使用 [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings) 方法通过当天的日期设置名为 `cookie` 的设置，并使用 [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)) 方法将所有漫游设置重新保存到服务器，以使数据持续存在。
 
-如果 `set` 设置不存在，该方法将创建该设置，并将该设置分配给指定的值。 方法 `saveAsync` 异步保存漫游设置。 此代码示例使用一`saveMyAddInSettingsCallback`个参数 _asyncResult_ 调用回调方法 ，`saveAsync``saveMyAddInSettingsCallback`以在异步调用完成时调用 。 此参数是一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象，其中包含异步调用的结果和所有详细信息。 可以使用可选的 _userContext_ 参数从异步调用向回调函数传递任何状态信息。
+如果设置尚不存在，则 `set` 该方法将创建设置，并将设置分配给指定的值。 该 `saveAsync` 方法以异步方式保存漫游设置。 此代码示例将回调方法 `saveMyAddInSettingsCallback`传递给 `saveAsync` 异步调用完成时，  `saveMyAddInSettingsCallback` 使用一个参数 _asyncResult_ 调用。 此参数是一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象，其中包含异步调用的结果和所有详细信息。 可以使用可选的 _userContext_ 参数从异步调用向回调函数传递任何状态信息。
 
 ```js
 // Set a roaming setting.
@@ -89,11 +83,9 @@ function saveMyAddInSettingsCallback(asyncResult) {
 }
 ```
 
-
 ### <a name="removing-a-roaming-setting"></a>删除漫游设置
 
 通过扩展前面的示例，以下 JavaScript 函数  `removeAddInSetting` 显示了如何使用 [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-remove-member(1)) 方法删除 `cookie` 设置并将所有漫游设置保存回 Exchange Server。
-
 
 ```js
 // Remove an add-in setting.
@@ -107,31 +99,26 @@ function removeAddInSetting()
 }
 ```
 
-
 ## <a name="custom-data-per-item-in-a-mailbox-custom-properties"></a>邮箱中每个项目的自定义数据：自定义属性
 
 可以使用 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象指定用户邮箱中某个项目的特定数据。例如，邮件加载项可以对特定邮件进行分类，并使用自定义属性 `messageCategory` 标记类别。或者，如果邮件加载项使用邮件中的会议建议创建约会，则可以使用自定义属性跟踪这些约会。这可以确保当用户再次打开邮件时，邮件加载项不会再次创建约会。
 
 与漫游设置类似，对自定义属性的更改将存储在当前 Outlook 会话的属性的内存副本中。为确保这些自定义属性在下次会话中可用，请使用 [CustomProperties.saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1))。
 
-这些特定于加载项、特定于项目的自定义属性只能使用 对象 `CustomProperties` 访问。 这些属性不同于 Outlook 对象模型中基于 MAPI 的自定义 [UserProperties](/office/vba/api/Outlook.UserProperties)，以及 Exchange Web 服务 (EWS) 。 您不能通过使用对象`CustomProperties`模型、EWS 或 REST Outlook直接访问。 若要了解如何使用 `CustomProperties` EWS 或 REST 访问，请参阅使用 [EWS 或 REST 获取自定义属性一节](#get-custom-properties-using-ews-or-rest)。
+这些特定于加载项的特定自定义属性只能使用 `CustomProperties` 该对象进行访问。 这些属性不同于 Outlook 对象模型中的自定义、基于 MAPI 的 [UserProperties](/office/vba/api/Outlook.UserProperties) ，以及 Exchange Web Services (EWS) 中的扩展属性。 无法使用 Outlook 对象模型、EWS 或 REST 直接访问 `CustomProperties` 。 若要了解如何使用 EWS 或 REST 访问 `CustomProperties` ，请参阅使用 [EWS 或 REST 获取自定义属性](#get-custom-properties-using-ews-or-rest)部分。
 
 ### <a name="using-custom-properties"></a>使用自定义属性
 
 使用自定义属性之前，必须通过调用 [loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) 方法加载这些自定义属性。 创建属性包后，可以使用 [set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) 和 [get](/javascript/api/outlook/office.customproperties) 方法添加和检索自定义属性。 必须使用 [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) 方法才能保存对属性包所做的任何更改。
 
-
  > [!NOTE]
  > 由于 Mac 版 Outlook 不缓存自定义属性，如果用户的网络断开，则 Mac 版 Outlook 中的邮件加载项将无法访问其自定义属性。
 
-
 ### <a name="custom-properties-example"></a>自定义属性示例
-
 
 下面的示例演示使用自定义属性的 Outlook 外接程序的一组简化的方法。可以将此示例用作使用自定义属性的外接程序的起点。
 
 此示例包括以下方法。
-
 
 - [Office.initialize](/javascript/api/office#Office_initialize_reason_) -- 初始化外接程序并从 Exchange 服务器中加载自定义属性包。
 
@@ -141,10 +128,9 @@ function removeAddInSetting()
 
 - **removeProperty** -- 从属性包中删除特定属性，然后将该删除操作保存到服务器。
 
-
 ```js
-var _mailbox;
-var _customProps;
+let _mailbox;
+let _customProps;
 
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
@@ -166,7 +152,7 @@ function customPropsCallback(asyncResult) {
 
 // Get individual custom property.
 function getProperty() {
-  var myProp = _customProps.get("myProp");
+  const myProp = _customProps.get("myProp");
 }
 
 // Set individual custom property.
@@ -197,11 +183,11 @@ function saveCallback() {
 
 #### <a name="how-custom-properties-are-stored-on-an-item"></a>如何存储项的自定义属性
 
-通过加载项设置的自定义属性并不等同于常规的基于 MAPI 的属性。 外接程序 API `CustomProperties` 将序列化所有外接程序作为 JSON 有效负载，然后将它们保存在一个基于 MAPI `cecp-<app-guid>` 的扩展属性中，其名称为 (`<app-guid>` 是外接程序的 ID) 且属性集 GUID 为 `{00020329-0000-0000-C000-000000000046}`。 （有关此对象的详细信息，请参阅 [MS-OXCEXT 2.2.5 邮件应用程序自定义属性](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481)。）随后可使用 EWS 或 REST 获取此基于 MAPI 的属性。
+通过加载项设置的自定义属性并不等同于常规的基于 MAPI 的属性。 外接程序 API 将所有外接程序序列化为 JSON 有效负载，然后将其保存在单个基于 MAPI 的 `CustomProperties` 扩展属性中，其名称 `cecp-<app-guid>` (`<app-guid>` 是外接程序的 ID) 和属性集 GUID `{00020329-0000-0000-C000-000000000046}`。 （有关此对象的详细信息，请参阅 [MS-OXCEXT 2.2.5 邮件应用程序自定义属性](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481)。）随后可使用 EWS 或 REST 获取此基于 MAPI 的属性。
 
 #### <a name="get-custom-properties-using-ews"></a>使用 EWS 获取自定义属性
 
-您的邮件外接程序可以使用 `CustomProperties` EWS [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作获取基于 MAPI 的扩展属性。 使用 `GetItem` 回调令牌访问服务器端，或在客户端使用 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法访问。 在请求 `GetItem` 中，使用 `CustomProperties` 上一节如何存储项目的自定义属性中提供的详细信息，在其属性集内指定基于 MAPI [的属性](#how-custom-properties-are-stored-on-an-item)。
+邮件加载项可以使用 EWS [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作获取`CustomProperties`基于 MAPI 的扩展属性。 使用回调令牌在服务器端或客户端使用 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法进行访问`GetItem`。 `GetItem`在请求中，`CustomProperties`使用上一部分中提供的详细信息指定其属性集中基于 MAPI 的属性[：如何在项上存储自定义属性](#how-custom-properties-are-stored-on-an-item)。
 
 以下示例显示如何获取某个项目及其自定义属性。
 

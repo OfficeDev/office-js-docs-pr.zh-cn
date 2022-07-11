@@ -1,14 +1,14 @@
 ---
 title: Office 加载项开发最佳做法
-description: 在开发时应用最佳做法来创建Office加载项。
+description: 在开发以创建 Office 加载项时应用最佳做法。
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 251bb17507e2d54a2442b568673f0fe73ec98a1f
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: aab262f2f5020e7dc95ee8f716f0de40d2140291
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313203"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712956"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Office 加载项开发最佳做法
 
@@ -21,7 +21,7 @@ ms.locfileid: "65313203"
 - 创建可帮助用户快速、高效地完成任务的外接程序。专注于对 Office 应用程序有用的方案。例如：
   - 使核心创作任务更快、更简单，且中断更少。
   - 在 Office 内启用新方案。
-  - 在Office应用程序中嵌入补充服务。
+  - 在 Office 应用程序中嵌入补充服务。
   - 改善 Office 体验来提高工作效率。
 - 通过[创建极具吸引力的首次运行体验](#create-an-engaging-first-run-experience)，确保用户能够快速明确加载项的价值。
 - 创建[有效的 AppSource 一览](/office/dev/store/create-effective-office-store-listings)。在标题和说明中明确介绍加载项的优势。请勿依赖品牌来传达加载项的用途。
@@ -56,7 +56,7 @@ ms.locfileid: "65313203"
 
 ## <a name="apply-ux-design-principles"></a>应用用户体验设计原则
 
-- 确保你的外接程序的外观和功能很好地补充了 Office 体验。 请参阅[“设计Office加载项的 UI](../design/add-in-design.md)。
+- 确保你的外接程序的外观和功能很好地补充了 Office 体验。 请参阅 [“设计 Office 加载项的 UI](../design/add-in-design.md)”。
 
 - 支持内容胜过支持部件版式。避免使用对用户体验毫无价值的不必要的 UI 元素。
 
@@ -76,7 +76,7 @@ ms.locfileid: "65313203"
 
 ### <a name="optimize-for-touch"></a>触摸优化
 
-- 使用 [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) 属性检测外接程序运行的Office应用程序是否已启用触摸。
+- 使用 [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) 属性检测外接程序运行的 Office 应用程序是否已启用触摸。
 
   > [!NOTE]
   > Outlook 不支持此属性。
@@ -87,10 +87,10 @@ ms.locfileid: "65313203"
 
 - 确保外接程序可以在纵向和横向模式中正常工作。请注意在触控设备上，外接程序的一部分可能通过软键盘隐藏。
 
-- 使用[旁加载](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)在实际设备上测试加载项。
+- 使用[旁加载](../testing/sideload-an-office-add-in-on-ipad.md)在实际设备上测试加载项。
 
 > [!NOTE]
-> 如果对设计元素使用[Fluent UI React](../design/using-office-ui-fabric-react.md)，则其中许多元素都内置于设计系统中。
+> 如果对设计元素使用 [Fluent UI React](../design/using-office-ui-fabric-react.md)，其中许多元素都内置于设计系统中。
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>优化和监视加载项性能
 
@@ -119,7 +119,7 @@ ms.locfileid: "65313203"
 
 - 监视您的服务运行状况，并使用遥测监视用户的成功。
 
-- 最大程度地减少加载项与Office文档之间的数据交换。 有关详细信息，请参阅 [避免在循环中使用 context.sync 方法](correlated-objects-pattern.md)。
+- 最大程度地减少加载项与 Office 文档之间的数据交换。 有关详细信息，请参阅 [避免在循环中使用 context.sync 方法](correlated-objects-pattern.md)。
 
 ## <a name="market-your-add-in"></a>加载项市场营销
 

@@ -3,12 +3,12 @@ title: 旁加载 Office 加载项以从网络共享进行测试
 description: 了解如何旁加载 Office 加载项以从网络共享进行测试。
 ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e32e91a542ec4c3557ff945b93d69fc12eac766c
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 87bdeb6cbd33bcd9b1828c7afa0a9f879d4c05e4
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659834"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712774"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>旁加载 Office 加载项以从网络共享进行测试
 
@@ -26,7 +26,8 @@ ms.locfileid: "66659834"
 本文仅适用于测试 Word、Excel、PowerPoint 和 Project 加载项，仅适用于 Windows。 如果要在另一个平台上进行测试或想要测试 Outlook 加载项，请参阅以下主题之一来旁加载外接程序。
 
 - [在 Office 网页版中旁加载 Office 加载项进行测试](sideload-office-add-ins-for-testing.md)
-- [在 iPad 和 Mac 上旁加载 Office 外接程序进行测试](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [在 Mac 上旁加载 Office 加载项以进行测试](sideload-an-office-add-in-on-mac.md)
+- [在 iPad 上旁加载 Office 加载项以进行测试](sideload-an-office-add-in-on-ipad.md)
 - [旁加载 Outlook 加载项以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)
 
 下面的视频逐步展示了如何使用共享文件夹目录在 Office 网页版或桌面上旁加载加载项。  
