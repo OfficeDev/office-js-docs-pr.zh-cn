@@ -4,12 +4,12 @@ description: 了解如何使用 Office JS API 和 Vue 生成简单的 Excel 任�
 ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8fb4bd545e1fab44884dd4a5dc388910d71c8336
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 3024e759acd787a61992b84f31850ef7f0bfbe3b
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659792"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713054"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>使用 Vue 生成 Excel 任务窗格加载项
 
@@ -214,7 +214,8 @@ vue create my-add-in
 
    - Windows：[在 Windows 上旁加载 Office 加载项](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
    - Web 浏览器：[在 Office 网页版中旁加载 Office 加载项](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
-   - iPad 和 Mac：[在 iPad 和 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+   - iPad：[在 iPad 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-ipad.md)
+   - Mac：[在 Mac 上旁加载 Office 加载项](../testing/sideload-an-office-add-in-on-mac.md)
 
 1. 在 Excel 中打开加载项任务窗格。 在“**主页**”选项卡上，选择“**显示任务窗格**”按钮。
 

@@ -3,12 +3,12 @@ title: 测试 Office 加载项
 description: 了解如何测试 Office 加载项。
 ms.date: 12/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: ab730a9acc141195c378a490c670fada82ecc90f
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: d69d57e677e7f06457f49fef60df63bc6f9577fa
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484551"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712732"
 ---
 # <a name="test-office-add-ins"></a>测试 Office 加载项
 
@@ -34,7 +34,9 @@ Office 加载项跨主要平台运行，因此需要在用户可能运行 Office
 
 - [在 Office 网页版中旁加载 Office 加载项](sideload-office-add-ins-for-testing.md)
 
-- [在 iPad 和 Mac 上旁加载 Office 加载项](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [在 Mac 上旁加载 Office 加载项](sideload-an-office-add-in-on-mac.md)
+
+- [在 iPad 上旁加载 Office 加载项](sideload-an-office-add-in-on-ipad.md)
 
 - [旁加载 Outlook 加载项以供测试](../outlook/sideload-outlook-add-ins-for-testing.md)
 
