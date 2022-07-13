@@ -1,29 +1,32 @@
 ---
-title: 在Outlook加载项中启用共享文件夹和共享邮箱方案
+title: 在 Outlook 外接程序中启用共享文件夹和共享邮箱方案
 description: 讨论如何配置对共享文件夹 (a.k.a 的外接程序支持。 委托访问) 和共享邮箱。
-ms.date: 04/28/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f981d1b1b691e3d2ebb4e292be44c338932453ff
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: 7a01c81dcc1bcae4fa92e2d659c1aa40af4cdac5
+ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187299"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "66765277"
 ---
-# <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在Outlook加载项中启用共享文件夹和共享邮箱方案
+# <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在 Outlook 外接程序中启用共享文件夹和共享邮箱方案
 
-本文介绍如何启用共享文件夹 (也称为委托访问) 和共享邮箱 (现在在[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#shared-mailboxes)) 方案，在Outlook外接程序，包括哪些权限Office JavaScript API 支持。
+本文介绍如何在 Outlook 外接程序的 [预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#shared-mailboxes)) 方案（包括 Office JavaScript API 支持的权限）中启用共享文件夹 (也称为委托访问) 和共享邮箱 (。
 
 ## <a name="supported-clients-and-platforms"></a>支持的客户端和平台
 
 下表显示了此功能支持的客户端-服务器组合，包括在适用的情况下所需的最低累积更新。 不支持排除的组合。
 
-| Client | Exchange Online | Exchange 2019 本地<br> (累积更新 1 或更高版本)  | Exchange 2016 本地<br> (累积更新 6 或更高版本)  | Exchange 2013 本地 |
+| 客户端 | Exchange Online | 本地 Exchange 2019<br> (累积更新 1 或更高版本)  | 本地 Exchange 2016<br> (累积更新 6 或更高版本)  | 本地 Exchange 2013 |
 |---|:---:|:---:|:---:|:---:|
-|Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|否|否|否|
+|Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|预览版\*|预览版\*|预览版\*|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|是|
-|Web 浏览器：<br>新式Outlook UI|是|不适用|不适用|不适用|
-|Web 浏览器：<br>经典Outlook UI|不适用|否|否|否|
+|Web 浏览器：<br>新式 Outlook UI|是|不适用|不适用|不适用|
+|Web 浏览器：<br>经典 Outlook UI|不适用|否|否|否|
+
+> [!NOTE]
+> \* 从版本 2205 (内部版本 15228.10000) 开始，在本地 Exchange 环境中支持此功能目前处于预览状态。
 
 > [!IMPORTANT]
 > 要求 [集 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (中引入了对此功能的支持，有关详细信息，请参阅 [客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)) 。 但是，请注意，该功能的支持矩阵是要求集的超集。
@@ -40,9 +43,9 @@ ms.locfileid: "65187299"
 
 #### <a name="shared-mailboxes-preview"></a>共享邮箱 (预览) 
 
-Exchange服务器管理员可以创建和管理共享邮箱，供用户集访问。 目前，[Exchange Online](/exchange/collaboration-exo/shared-mailboxes)是此功能的唯一受支持的服务器版本。
+Exchange 服务器管理员可以创建和管理共享邮箱，以便用户集访问。 [支持在](/exchange/collaboration-exo/shared-mailboxes)[预览版中 (Exchange Online和本地 Exchange 环境) ](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes)。
 
-默认情况下，将启用名为“自动映射”的Exchange Server功能，这意味着在关闭并重新打开Outlook后，[共享邮箱应自动显示](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)在用户的Outlook应用中。 但是，如果管理员关闭自动映射，则用户必须按照文章“将共享邮箱添加到Outlook”部分中所述的手动步骤进行操作，[并在Outlook中使用共享邮箱](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)。
+默认情况下，将启用名为“自动映射”的Exchange Server功能，这意味着在 Outlook 关闭并重新打开后，[共享邮箱应自动显示](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)在用户的 Outlook 应用中。 但是，如果管理员关闭自动映射，则用户必须按照“将共享邮箱添加到 Outlook”一文中所述的手动步骤进行 [操作，并在 Outlook 中使用共享邮箱](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)。
 
 > [!WARNING]
 > **请勿** 使用密码登录到共享邮箱。 在这种情况下，功能 API 将不起作用。
@@ -55,7 +58,7 @@ Exchange服务器管理员可以创建和管理共享邮箱，供用户集访问
 
 #### <a name="shared-mailboxes"></a>共享邮箱
 
-新式Outlook 网页版目前不支持Outlook加载项中的共享邮箱方案。
+新式Outlook 网页版目前不支持 Outlook 加载项中的共享邮箱方案。
 
 ### <a name="mac"></a>[Mac](#tab/unix)
 
@@ -79,15 +82,15 @@ Exchange服务器管理员可以创建和管理共享邮箱，供用户集访问
 
 ---
 
-若要详细了解加载项在一般情况下执行和不激活的位置，请参阅Outlook加载项概述页的“外接程序”部分[可用的邮箱项目](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)。
+若要详细了解加载项在一般情况下执行和不激活的位置，请参阅 Outlook 外接程序概述页的“外接程序 [”部分可用的邮箱项](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) 。
 
 ## <a name="supported-permissions"></a>支持的权限
 
-下表介绍了 Office JavaScript API 为委托和共享邮箱用户支持的权限。
+下表描述了 Office JavaScript API 为委托和共享邮箱用户支持的权限。
 
 |权限|值|说明|
 |---|---:|---|
-|阅读|1 (000001) |可以读取项目。|
+|读取|1 (000001) |可以读取项目。|
 |写入|2 (000010) |可以创建项。|
 |DeleteOwn|4 (000100) |只能删除他们创建的项。|
 |DeleteAll|8 (001000) |可以删除任何项。|
@@ -103,7 +106,7 @@ Exchange服务器管理员可以创建和管理共享邮箱，供用户集访问
 
 委托对所有者邮箱的更新通常会立即跨邮箱同步。
 
-但是，如果使用 REST 或 Exchange Web 服务 (EWS) 操作在项上设置扩展属性，则此类更改可能需要几个小时才能同步。建议改用 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象和相关 API 以避免此类延迟。 若要了解详细信息，请参阅“在Outlook加载项中获取和设置元数据”一文的[自定义属性部分](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties)。
+但是，如果使用 REST 或 Exchange Web Services (EWS) 操作在项上设置扩展属性，则此类更改可能需要几个小时才能同步。建议改用 [CustomProperties](/javascript/api/outlook/office.customproperties) 对象和相关 API 以避免此类延迟。 若要了解详细信息，请参阅“在 Outlook 加载项中获取和设置元数据”一文的 [自定义属性部分](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) 。
 
 > [!IMPORTANT]
 > 在委托方案中，不能将 EWS 与 office.js API 当前提供的令牌配合使用。
@@ -197,7 +200,7 @@ function performOperation() {
 ```
 
 > [!TIP]
-> 作为委托，可以使用 REST [获取附加到Outlook项或组帖子的Outlook消息的内容](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
+> 作为委托，可以使用 REST [获取附加到 Outlook 项目或组帖子的 Outlook 消息的内容](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)。
 
 ## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>处理对共享项和非共享项调用 REST
 
@@ -223,7 +226,7 @@ if (item.getSharedPropertiesAsync) {
 
 ### <a name="message-compose-mode"></a>消息撰写模式
 
-在消息撰写模式下，除非满足以下条件，否则Outlook 网页版或Windows不支持 [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1))。
+在消息撰写模式下，除非满足以下条件，否则在 Outlook 网页版 或 Windows 上不支持 [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1))。
 
 a. **委托访问/共享文件夹**
 
@@ -231,7 +234,7 @@ a. **委托访问/共享文件夹**
 1. 保存消息，然后将其从自己的 **Drafts** 文件夹移动到与委托共享的文件夹。
 1. 委托从共享文件夹打开草稿，然后继续撰写。
 
-b. **共享邮箱 (仅适用于Windows上的Outlook)**
+b. **共享邮箱 (仅适用于 Windows 上的 Outlook)**
 
 1. 共享邮箱用户启动邮件。 这可以是新消息、答复或转发。
 1. 保存邮件，然后将其从自己的 **Drafts** 文件夹移动到共享邮箱中的文件夹。
@@ -249,9 +252,9 @@ b. **共享邮箱 (仅适用于Windows上的Outlook)**
 
 ## <a name="see-also"></a>另请参阅
 
-- [允许其他人管理邮件和日历](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)
-- [Microsoft 365中的日历共享](https://support.microsoft.com/office/b576ecc3-0945-4d75-85f1-5efafb8a37b4)
-- [将共享邮箱添加到Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
+- [允许其他人管理你的邮件和日历](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)
+- [Microsoft 365 中的日历共享](https://support.microsoft.com/office/b576ecc3-0945-4d75-85f1-5efafb8a37b4)
+- [将共享邮箱添加到 Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
 - [如何对清单元素进行排序](../develop/manifest-element-ordering.md)
 - [掩码 (计算) ](https://en.wikipedia.org/wiki/Mask_(computing))
 - [JavaScript 按位运算符](https://www.w3schools.com/js/js_bitwise.asp)
