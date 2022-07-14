@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API 数据类型核心概念
 description: 了解在 Office 加载项中使用 Excel 数据类型的核心概念。
-ms.date: 05/26/2022
+ms.date: 07/11/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 2259d28bc87e6452e526786c0b32135e4bb27d45
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: a251f13540989aa30c3e213e1572747e08c121c4
+ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833904"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "66765270"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel 数据类型核心概念（预览版）
 
@@ -19,17 +19,30 @@ ms.locfileid: "65833904"
 
 本文介绍如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 来处理数据类型。 它引入了对数据类型开发至关重要的核心概念。
 
-## <a name="core-concepts"></a>核心概念
+## <a name="the-valuesasjson-property"></a>`valuesAsJson` 属性
 
-使用 [`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) 属性处理数据类型值。 此属性类似于 [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member)，但 `Range.values` 只返回四种基本类型：字符串、数字、布尔或错误值。 `Range.valuesAsJson` 返回有关这四种基本类型的扩展信息，并且此属性可以返回数据类型，例如带格式数字值、实体和 Web 图像。
+`valuesAsJson` 属性对于在 Excel 中创建数据类型是不可或缺的。 此属性是 `values` 属性的扩展，例如 [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member)。 `values` 和 `valuesAsJson` 属性都用于访问单元格中的值， 但 `values` 属性仅返回以下四种基本类型之一：字符串、数字、布尔或错误（作为字符串）。 对比来看，`valuesAsJson` 返回有关这四种基本类型的扩展信息，并且此属性可以返回数据类型，例如带格式的数值、实体和 Web 图像。
+
+以下对象提供 `valuesAsJson` 属性。
+
+- [NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)
+- [Range](/javascript/api/excel/excel.range)
+- [RangeView](/javascript/api/excel/excel.rangeview)
+- [TableColumn](/javascript/api/excel/excel.tablecolumn)
+- [TableRow](/javascript/api/excel/excel.tablerow)
+
+> [!NOTE]
+> 某些单元格值会根据用户的区域设置而更改。 `valuesAsJsonLocal` 属性提供本地化支持，并且可用于与 `valuesAsJson` 相同的所有对象。
+
+## <a name="cell-values"></a>单元格值
 
 `valuesAsJson` 属性返回 [CellValue](/javascript/api/excel/excel.cellvalue) 类型别名，而这是以下数据类型的 [联合](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types)。
 
 - [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)
 - [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)
 - [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)
-- [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
 - [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)
+- [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
 - [ErrorCellValue](/javascript/api/excel/excel.errorcellvalue)
 - [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)
 - [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)
@@ -38,13 +51,17 @@ ms.locfileid: "65833904"
 - [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)
 - [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)
 
-[CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) 对象是和 `*CellValue` 类型其余部分的 [交集](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types)。 它本身不是数据类型。 `CellValueExtraProperties` 对象的属性与所有数据类型一起使用，用于指定与覆盖单元格值相关的详细信息。
+`CellValue` 类型别名还返回 [CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) 对象，这是和 `*CellValue` 类型其余部分的 [交集](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types)。 它本身不是数据类型。 `CellValueExtraProperties` 对象的属性与所有数据类型一起使用，用于指定与覆盖单元格值相关的详细信息。
 
 ### <a name="json-schema"></a>JSON 架构
 
-每个数据类型都使用为该类型设计的 JSON 元数据架构。 这将定义数据的 [CellValueType](/javascript/api/excel/excel.cellvaluetype) 以及有关单元格的其他信息，例如 `basicValue`、`numberFormat` 或 `address`。 每个 `CellValueType` 都具有符合该类型的可用属性。 例如，`webImage` 类型包括 [altText](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-alttext-member) 和 [attribution](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-attribution-member) 属性。 以下部分显示带格式数字值、实体值和 Web 图像数据类型的 JSON 代码示例。
+`valuesAsJson` 返回的每个单元格值类型使用为该类型设计的 JSON 元数据架构。 除了每个数据类型特有的附加属性，这些 JSON 元数据架构都具有共同的 `type`、`basicType` 和 `basicValue` 属性。
 
-每个数据类型的 JSON 元数据架构还包括一个或多个只读属性，这些属性在计算遇到不兼容的方案时使用，例如 Excel 版本不符合数据类型功能的最低内部版本号要求。 属性 `basicType` 是每个数据类型的 JSON 元数据的一部分，它始终是只读属性。 当 `basicType` 数据类型不受支持或格式不正确时，属性用作回退。
+`type` 定义数据的 [CellValueType](/javascript/api/excel/excel.cellvaluetype)。 当数据类型不受支持或格式不正确时，`basicType` 属性始终为只读，并用作回退。 `basicValue` 与将由 `values` 属性返回的值匹配。 `basicValue` 在计算遇到不兼容方案时用作回退，例如不支持数据类型功能的较旧版本的 Excel。 `basicValue` 对于 `ArrayCellValue`、`EntityCellValue`、`LinkedEntityCellValue` 和 `WebImageCellValue` 数据类型为只读。
+
+除了所有数据类型共享的三个字段之外，每个 `*CellValue` 的 JSON 元数据架构都有根据该类型的可用属性。 例如，[WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) 类型包括 `altText` 和 `attribution` 属性，而 [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) 类型则提供 `properties` 和 `text` 字段。
+
+以下部分显示带格式数字值、实体值和 Web 图像数据类型的 JSON 代码示例。
 
 ## <a name="formatted-number-values"></a>带格式数字值
 
