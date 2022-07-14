@@ -3,12 +3,12 @@ title: 在 Office 加载项中启用单一登录 (SSO)
 description: 了解使用常用的 Microsoft 个人、工作或教育帐户为 Office 加载项启用单一登录 (SSO) 的关键步骤。
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: e2a7715b6baaaf5ec4f6b398a1570c3bb4a08630
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 6667862adf0a89a2cf34dae9ee4413cf7a0c8036
+ms.sourcegitcommit: d1541634997c26f8ea22057b1d39074b01757c27
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659967"
+ms.lasthandoff: 07/14/2022
+ms.locfileid: "66789099"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>在 Office 加载项中启用单一登录 (SSO)
 
@@ -59,9 +59,6 @@ ms.locfileid: "66659967"
 
 - [创建使用单一登录的 Node.js Office 加载项](create-sso-office-add-ins-nodejs.md)
 - [创建使用单一登录的 ASP.NET Office 加载项](create-sso-office-add-ins-aspnet.md)
-
-> [!NOTE]
-> 可使用 Yeoman 生成器创建启用了 SSO 的  Node.js Office 加载项。 Yeoman 生成器简化了启用了 SSO 的加载项创建流程，能够自动执行在 Azure 内配置所需的步骤，并生成加载项使用 SSO 所需的代码。 有关详细信息，请参阅“[单一登录（SSO）快速入门](../quickstarts/sso-quickstart.md)”。
 
 ### <a name="register-your-add-in-with-the-microsoft-identity-platform"></a>向 Microsoft 标识平台注册加载项
 

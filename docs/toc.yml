@@ -25,8 +25,6 @@ items:
             href: quickstarts/project-quickstart.md
           - name: Word 加载项
             href: quickstarts/word-quickstart.md
-          - name: 单一登录 (SSO)
-            href: quickstarts/sso-quickstart.md
       - name: 使用 Script Lab 探索 Office JS API
         href: overview/explore-with-script-lab.md
         displayName: 'Excel, Word, PowerPoint'
@@ -133,10 +131,6 @@ items:
                 items:
                   - name: 在 Office 加载项中启用 SSO
                     href: develop/sso-in-office-add-ins.md
-                  - name: 快速启动
-                    href: quickstarts/sso-quickstart.md
-                  - name: 自定义快速入门
-                    href: quickstarts/sso-quickstart-customize.md
                   - name: 注册到 Microsoft 标识平台
                     href: develop/register-sso-add-in-aad-v2.md
                   - name: 授予管理员同意
