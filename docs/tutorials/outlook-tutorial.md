@@ -1,15 +1,15 @@
 ---
 title: 教程：生成邮件撰写 Outlook 外接程序
 description: 在本教程中，你将生成一个可将 GitHub gist 插入到新邮件正文中的 Outlook 外接程序。
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 69b8fbc36eba542ca6b665f3ac2e741c9257a920
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 1fb2acde8b79450741f244562467903ea6abf55c
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659701"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797650"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -103,7 +103,7 @@ ms.locfileid: "66659701"
 
     - **要支持哪一个 Office 客户端应用程序?** - `Outlook`
 
-    ![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图。](../images/yeoman-prompts-2.png)
+    ![命令行界面中 Yeoman 生成器的提示和回答。](../images/yeoman-prompts-2.png)
 
     完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -171,7 +171,7 @@ ms.locfileid: "66659701"
 
     如果所有内容都已正确设置，则任务窗格将打开并呈现外接程序的欢迎页。
 
-    ![“显示任务窗格”按钮和示例添加的对 Gist 执行 Git 处理任务窗格的屏幕截图。](../images/button-and-pane.png)
+    ![示例添加的“显示任务窗格”按钮和 Git gist 任务窗格。](../images/button-and-pane.png)
 
 ## <a name="define-buttons"></a>定义按钮
 
@@ -291,11 +291,11 @@ ms.locfileid: "66659701"
 
 - 如果是在 Windows 版 Outlook 2016 或更高版本中运行此外接程序，则应在“邮件撰写”窗口的功能区中看到两个新按钮：“**插入 gist**”和“**插入默认 gist**”。
 
-    ![Windows 版 Outlook 中突出显示加载项按钮的功能区溢出菜单的屏幕截图。](../images/add-in-buttons-in-windows.png)
+    ![Windows 版 Outlook 中的功能区溢出菜单，其中突出显示了加载项的按钮。](../images/add-in-buttons-in-windows.png)
 
 - 如果在 Outlook 网页版中运行此外接程序，则应该会在“邮件撰写”窗口的底部看到一个新按钮。 选择该按钮可查看选项“**插入 gist**”和“**插入默认 gist**”。
 
-    ![突出显示加载项按钮和弹出菜单的 Outlook 网页版邮件撰写窗体屏幕截图。](../images/add-in-buttons-in-owa.png)
+    ![Outlook 网页版中的邮件撰写窗体，其中突出显示了加载项按钮和弹出菜单。](../images/add-in-buttons-in-owa.png)
 
 ## <a name="implement-a-first-run-experience"></a>实现首次运行体验
 
@@ -424,14 +424,14 @@ ul {
     jQuery(document).ready(function(){
       if (window.location.search) {
         // Check if warning should be displayed.
-        var warn = getParameterByName('warn');
+        const warn = getParameterByName('warn');
         if (warn) {
           $('.not-configured-warning').show();
         } else {
           // See if the config values were passed.
           // If so, pre-populate the values.
-          var user = getParameterByName('gitHubUserName');
-          var gistId = getParameterByName('defaultGistId');
+          const user = getParameterByName('gitHubUserName');
+          const gistId = getParameterByName('defaultGistId');
 
           $('#github-user').val(user);
           loadGists(user, function(success){
@@ -450,7 +450,7 @@ ul {
       // try to load gists.
       $('#github-user').on('change', function(){
         $('#gist-list').empty();
-        var ghUser = $('#github-user').val();
+        const ghUser = $('#github-user').val();
         if (ghUser.length > 0) {
           loadGists(ghUser);
         }
@@ -460,11 +460,11 @@ ul {
       // values back to the caller as a serialized
       // object.
       $('#settings-done').on('click', function() {
-        var settings = {};
+        const settings = {};
 
         settings.gitHubUserName = $('#github-user').val();
 
-        var selectedGist = $('.ms-ListItem.is-selected');
+        const selectedGist = $('.ms-ListItem.is-selected');
         if (selectedGist) {
           settings.defaultGistId = selectedGist.val();
 
@@ -508,7 +508,7 @@ ul {
       url = window.location.href;
     }
     name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
       results = regex.exec(url);
     if (!results) return null;
     if (!results[2]) return '';
@@ -649,7 +649,7 @@ ul {
 
 ```js
 function getUserGists(user, callback) {
-  var requestUrl = 'https://api.github.com/users/' + user + '/gists';
+  const requestUrl = 'https://api.github.com/users/' + user + '/gists';
 
   $.ajax({
     url: requestUrl,
@@ -664,10 +664,10 @@ function getUserGists(user, callback) {
 function buildGistList(parent, gists, clickFunc) {
   gists.forEach(function(gist) {
 
-    var listItem = $('<div/>')
+    const listItem = $('<div/>')
       .appendTo(parent);
 
-    var radioItem = $('<input>')
+    const radioItem = $('<input>')
       .addClass('ms-ListItem')
       .addClass('is-selectable')
       .attr('type', 'radio')
@@ -676,19 +676,19 @@ function buildGistList(parent, gists, clickFunc) {
       .val(gist.id)
       .appendTo(listItem);
 
-    var desc = $('<span/>')
+    const descPrimary = $('<span/>')
       .addClass('ms-ListItem-primaryText')
       .text(gist.description)
       .appendTo(listItem);
 
-    var desc = $('<span/>')
+    const descSecondary = $('<span/>')
       .addClass('ms-ListItem-secondaryText')
       .text(' - ' + buildFileList(gist.files))
       .appendTo(listItem);
 
-    var updated = new Date(gist.updated_at);
+    const updated = new Date(gist.updated_at);
 
-    var desc = $('<span/>')
+    const descTertiary = $('<span/>')
       .addClass('ms-ListItem-tertiaryText')
       .text(' - Last updated ' + updated.toLocaleString())
       .appendTo(listItem);
@@ -699,9 +699,9 @@ function buildGistList(parent, gists, clickFunc) {
 
 function buildFileList(files) {
 
-  var fileList = '';
+  let fileList = '';
 
-  for (var file in files) {
+  for (let file in files) {
     if (files.hasOwnProperty(file)) {
       if (fileList.length > 0) {
         fileList = fileList + ', ';
@@ -768,8 +768,8 @@ npm run build
 打开文件 **./src/commands/commands.js** 并使用以下代码替换全部内容。 请注意，如果 **insertDefaultGist** 函数确定外接程序尚未完成配置，则该函数会将 `?warn=1` 参数添加到对话框 URL。 执行此操作可使“设置”对话框呈现在 **./src/settings/dialog.html** 中定义的消息栏，告诉用户他们看到此对话框的原因。
 
 ```js
-var config;
-var btnEvent;
+let config;
+let btnEvent;
 
 // The initialize function must be run each time a new page is loaded.
 Office.initialize = function () {
@@ -783,7 +783,7 @@ function showError(error) {
   });
 }
 
-var settingsDialog;
+let settingsDialog;
 
 function insertDefaultGist(event) {
 
@@ -821,8 +821,8 @@ function insertDefaultGist(event) {
     btnEvent = event;
     // Not configured yet, display settings dialog with
     // warn=1 to display warning.
-    var url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
-    var dialogOptions = { width: 20, height: 40, displayInIframe: true };
+    const url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
+    const dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
       settingsDialog = result.value;
@@ -858,7 +858,7 @@ HTML 函数文件引用一个名为 **addin-config.js** 的文件，该文件尚
 
 ```js
 function getConfig() {
-  var config = {};
+  const config = {};
 
   config.gitHubUserName = Office.context.roamingSettings.get('gitHubUserName');
   config.defaultGistId = Office.context.roamingSettings.get('defaultGistId');
@@ -886,7 +886,7 @@ function setConfig(config, callback) {
 
 ```js
 function getGist(gistId, callback) {
-  var requestUrl = 'https://api.github.com/gists/' + gistId;
+  const requestUrl = 'https://api.github.com/gists/' + gistId;
 
   $.ajax({
     url: requestUrl,
@@ -901,9 +901,9 @@ function getGist(gistId, callback) {
 function buildBodyContent(gist, callback) {
   // Find the first non-truncated file in the gist
   // and use it.
-  for (var filename in gist.files) {
+  for (let filename in gist.files) {
     if (gist.files.hasOwnProperty(filename)) {
-      var file = gist.files[filename];
+      const file = gist.files[filename];
       if (!file.truncated) {
         // We have a winner.
         switch (file.language) {
@@ -913,13 +913,13 @@ function buildBodyContent(gist, callback) {
             break;
           case 'Markdown':
             // Convert Markdown to HTML.
-            var converter = new showdown.Converter();
-            var html = converter.makeHtml(file.content);
+            const converter = new showdown.Converter();
+            const html = converter.makeHtml(file.content);
             callback(html);
             break;
           default:
             // Insert contents as a <code> block.
-            var codeBlock = '<pre><code>';
+            let codeBlock = '<pre><code>';
             codeBlock = codeBlock + file.content;
             codeBlock = codeBlock + '</code></pre>';
             callback(codeBlock);
@@ -940,11 +940,11 @@ function buildBodyContent(gist, callback) {
 
 1. 在“撰写邮件”窗口中，选择“**插入默认 gist**”。 您应该会看到对话框，您可以在其中配置外接程序，从提示设置 GitHub 用户名开始。
 
-    ![配置外接程序的对话框提示屏幕截图。](../images/addin-prompt-configure.png)
+    ![配置加载项的对话框提示。](../images/addin-prompt-configure.png)
 
 1. 在“设置”对话框中，输入你的 GitHub 用户名，然后按 **Tab** 或单击对话框中的其他位置以调用 **change** 事件，该事件应加载你的公用 gist 列表。请选择要作为默认值的 gist，然后选择“**完成**”。
 
-    ![外接程序设置对话框的屏幕截图。](../images/addin-settings.png)
+    ![加载项的设置对话框。](../images/addin-settings.png)
 
 1. 再次选择“**插入默认 gist**”按钮。此时应看到插入到电子邮件正文的 gist 内容。
 
@@ -1198,8 +1198,8 @@ ul {
 (function(){
   'use strict';
 
-  var config;
-  var settingsDialog;
+  let config;
+  let settingsDialog;
 
   Office.initialize = function(reason){
 
@@ -1219,7 +1219,7 @@ ul {
       // When insert button is selected, build the content
       // and insert into the body.
       $('#insert-button').on('click', function(){
-        var gistId = $('.ms-ListItem.is-selected').val();
+        const gistId = $('.ms-ListItem.is-selected').val();
         getGist(gistId, function(gist, error) {
           if (gist) {
             buildBodyContent(gist, function (content, error) {
@@ -1243,14 +1243,14 @@ ul {
       // When the settings icon is selected, open the settings dialog.
       $('#settings-icon').on('click', function(){
         // Display settings dialog.
-        var url = new URI('dialog.html').absoluteTo(window.location).toString();
+        let url = new URI('dialog.html').absoluteTo(window.location).toString();
         if (config) {
           // If the add-in has already been configured, pass the existing values
           // to the dialog.
           url = url + '?gitHubUserName=' + config.gitHubUserName + '&defaultGistId=' + config.defaultGistId;
         }
 
-        var dialogOptions = { width: 20, height: 40, displayInIframe: true };
+        const dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
         Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
           settingsDialog = result.value;
@@ -1314,7 +1314,7 @@ ul {
 
 1. 在任务窗格中，选择 **Hello World Html** gist 并选择“**插入**”以将该 gist 插入到邮件正文中。
 
-![外接程序任务窗格和消息正文中显示的选定 gist 内容的屏幕截图。](../images/addin-taskpane.png)
+![加载项任务窗格和消息正文中显示的选定 gist 内容。](../images/addin-taskpane.png)
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -1328,4 +1328,4 @@ ul {
 - [Outlook 加载项清单](../outlook/manifests.md)
 - [Outlook 外接程序设计准则](../outlook/outlook-addin-design.md)
 - [适用于 Outlook 的外接程序命令](../outlook/add-in-commands-for-outlook.md)
-- [调试无 UI Outlook 加载项](../outlook/debug-ui-less.md)
+- [Outlook 加载项中的调试函数命令](../outlook/debug-ui-less.md)

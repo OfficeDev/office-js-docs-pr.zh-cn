@@ -2,18 +2,18 @@
 title: 配置 Outlook 外接程序以进行基于事件的激活
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
-ms.date: 06/17/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 04f2dc7e6c2745df9394135b46dbd4d99b6d790a
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: e31b5b305f4128e40ea3274c125e07fcaaa12aa5
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660079"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797615"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置 Outlook 外接程序以进行基于事件的激活
 
-如果没有基于事件的激活功能，用户必须显式启动加载项才能完成其任务。 此功能使加载项能够基于某些事件运行任务，尤其是适用于每个项的操作。 还可以与任务窗格和无 UI 功能集成。
+如果没有基于事件的激活功能，用户必须显式启动加载项才能完成其任务。 此功能使加载项能够基于某些事件运行任务，尤其是适用于每个项的操作。 还可以与任务窗格和函数命令集成。
 
 本演练结束时，你将拥有一个加载项，该加载项将在创建新项并设置主题时运行。
 

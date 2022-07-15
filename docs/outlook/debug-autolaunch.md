@@ -2,14 +2,14 @@
 title: 调试基于事件的 Outlook 加载项
 description: 了解如何调试实现基于事件的激活的 Outlook 加载项。
 ms.topic: article
-ms.date: 04/28/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dbd74036cf56b5ff492315f928324a3aa1e7312
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 5d36a23b34132071077e3eb192e562288befb8a5
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659680"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797489"
 ---
 # <a name="debug-your-event-based-outlook-add-in"></a>调试基于事件的 Outlook 加载项
 
@@ -25,13 +25,13 @@ ms.locfileid: "66659680"
 - [附加Visual Studio Code](#attach-visual-studio-code)
 - [Debug](#debug)
 
-有多个用于创建加载项项目的选项。 根据所使用的选项，这些步骤可能会有所不同。 在这种情况下，如果使用 Office 外接程序的 Yeoman 生成器创建外接程序项目 (例如，通过执行 [基于事件的激活演练](autolaunch.md)) ，然后按照 **yo office** 步骤操作，否则请执行 **其他** 步骤。 Visual Studio Code应至少为版本 1.56.1。
+例如，如果使用适用于 Office 外接程序的 Yeoman 生成器创建外接程序项目 (，请执行 [基于事件的激活演练](autolaunch.md)) ，然后在本文中遵循 **“使用 Yeoman 创建”生成器** 选项。 否则，请执行 **其他** 步骤。 Visual Studio Code应至少为版本 1.56.1。
 
 ## <a name="mark-your-add-in-for-debugging"></a>标记加载项以进行调试
 
 1. 设置注册表项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`。 `[Add-in ID]`**\<Id\>** 是加载项清单中。
 
-    **yo office**：在命令行窗口中，导航到加载项文件夹的根目录，然后运行以下命令。
+    **使用 Yeoman 生成器创建**：在命令行窗口中，导航到加载项文件夹的根，然后运行以下命令。
 
     ```command&nbsp;line
     npm start
@@ -50,7 +50,7 @@ ms.locfileid: "66659680"
 
 ## <a name="configure-visual-studio-code"></a>配置Visual Studio Code
 
-### <a name="yo-office"></a>yo office
+### <a name="created-with-yeoman-generator"></a>使用 Yeoman 生成器创建
 
 1. 返回命令行窗口，打开Visual Studio Code。
 

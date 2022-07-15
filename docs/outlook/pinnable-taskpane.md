@@ -3,28 +3,28 @@ title: 在 Outlook 外接程序中实现可固定的任务窗格
 description: 用于加载项命令的任务窗格用户体验形状会在打开的邮件或会议请求的右侧打开一个垂直任务窗格，以便用户可以在加载项 UI 中进行更详细的交互。
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ab14f121c9f4e9ae32fc5b26740da80a0df72ce3
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 5c295094a9568487b043fdfb0b5f07620c50ea76
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484154"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797461"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>在 Outlook 中实现可固定的任务窗格
 
-用于加载项命令的[任务窗格](add-in-commands-for-outlook.md#launching-a-task-pane)用户体验形状会在打开的邮件或会议请求的右侧打开一个垂直任务窗格，以便用户可以在加载项 UI 中进行更详细的交互（填充多个字段等）。查看邮件列表时，可以在阅读窗格中看到此任务窗格，从而能够快速处理邮件。
+用于加载项命令的[任务窗格](add-in-commands-for-outlook.md#launch-a-task-pane)用户体验形状会在打开的邮件或会议请求的右侧打开一个垂直任务窗格，以便用户可以在加载项 UI 中进行更详细的交互（填充多个字段等）。查看邮件列表时，可以在阅读窗格中看到此任务窗格，从而能够快速处理邮件。
 
 不过，默认情况下，如果用户在阅读窗格中为某封邮件打开了外接程序任务窗格，然后选择新邮件，此任务窗格会自动关闭。如果频繁使用外接程序，用户可能更倾向于让此任务窗格一直处于打开状态，这样就无需在每封邮件中都重新激活外接程序了。使用可固定的任务窗格，外接程序就可以让用户如愿以偿。
 
 > [!NOTE]
-> 尽管可固定的任务窗格功能是在要求集 [1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5) 中引入的，但它当前仅适用于以下Microsoft 365订阅者：
+> 尽管 [在要求集 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5) 中引入了可固定任务窗格功能，但目前仅适用于 Microsoft 365 订阅者，使用以下命令：
 >
-> - Outlook 2016当前或 Office 预览体验成员频道中用户的 Windows (内部版本 7668.2000 或更高版本，延期频道中用户的内部版本 7900.xxxx 或) 
-> - Outlook 2016版本 16.13.503 或更高版本 (Mac 版本或更高版本) 
+> - Windows 版 Outlook 2016 或更高版本（适用于当前或 Office 预览体验计划频道中的用户的内部版本 7668.2000 或更高版本，适用于延期频道中的用户的内部版本 7900.xxxx 或更高版本）
+> - Mac 版 Outlook 2016 或更高版本（版本 16.13.503 或更高版本）
 > - 新式 Outlook 网页版
 
 > [!IMPORTANT]
-> 可固定的任务窗格对以下内容不可用：
+> 可固定任务窗格不适用于以下内容：
 >
 > - 约会/会议
 > - Outlook.com

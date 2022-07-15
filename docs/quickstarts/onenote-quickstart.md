@@ -1,15 +1,15 @@
 ---
 title: 生成首个 OneNote 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 OneNote 任务窗格加载项。
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: onenote
 ms.localizationpriority: high
-ms.openlocfilehash: 9b5f4dd941ed8cc107bee04bc67a368520439948
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 294b315c3d5ebc80d908d0bd4f3d4ee36a32b908
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090850"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797629"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>生成首个 OneNote 任务窗格加载项
 
@@ -29,7 +29,7 @@ ms.locfileid: "66090850"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `OneNote`
 
-![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图。](../images/yo-office-onenote.png)
+![命令行界面中 Yeoman 生成器的提示和回答。](../images/yo-office-onenote.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -53,13 +53,13 @@ try {
     await OneNote.run(async (context) => {
 
         // Get the current page.
-        var page = context.application.getActivePage();
+        const page = context.application.getActivePage();
 
         // Queue a command to set the page title.
         page.title = "Hello World";
 
         // Queue a command to add an outline to the page.
-        var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
+        const html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
         page.addOutline(40, 90, html);
 
         // Run the queued commands.
@@ -96,7 +96,7 @@ try {
 
     下图展示了使用者笔记本的“**我的加载项**”选项卡。
 
-    ![显示“我的外接程序”选项卡的 Office 加载项的屏幕截图。](../images/onenote-office-add-ins-dialog.png)
+    ![显示“我的加载项”选项卡的 Office 加载项对话框。](../images/onenote-office-add-ins-dialog.png)
 
 1. 在“**上传加载项**”对话框中，转到项目文件夹中的 manifest.xml，然后选择“**上传**”。
 
@@ -104,7 +104,7 @@ try {
 
 1. 在任务窗格底部，选择“**运行**”链接以设置页面标题并在页面正文中添加大纲。
 
-    ![显示根据本演练生成的加载项的屏幕截图：在 OneNote 中显示任务窗格功能区按钮和任务窗格](../images/onenote-first-add-in-4.png)
+    ![本演练中生成的加载项，其中使用“显示任务窗格”功能区按钮在 OneNote 中打开任务窗格。](../images/onenote-first-add-in-4.png)
 
 ## <a name="next-steps"></a>后续步骤
 

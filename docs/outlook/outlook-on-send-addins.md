@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 07/08/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cb67a813c876809440b29e029ff899cd34d7e365
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: fc0d81a2dedd80c1f4afa2f3fd9205ff6773f933
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712753"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797608"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -608,7 +608,7 @@ function subjectOnSendChange(subject, event) {
 
 ## <a name="debug-outlook-add-ins-that-use-on-send"></a>调试使用 On-send 的 Outlook 加载项
 
-有关如何调试本地加载项的说明，请参阅 [调试无 UI 的 Outlook 外接程序](debug-ui-less.md)。
+有关如何调试本地加载项的说明，请参阅 [Outlook 外接程序中的“调试函数”命令](debug-ui-less.md)。
 
 > [!TIP]
 > 如果当用户运行外接程序并动态定义外接程序的事件处理程序时出现错误“回调函数不可访问”，则必须创建存根函数作为解决方法。 有关详细信息，请参阅 [动态定义的事件处理程序](#event-handlers-are-dynamically-defined) 。

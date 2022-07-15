@@ -2,14 +2,14 @@
 title: 为联机会议提供商创建 Outlook 加载项
 description: 讨论如何为联机会议服务提供商设置 Outlook 加载项。
 ms.topic: article
-ms.date: 07/08/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3afc58af0db7725b8e66ddbd557cfd1e75e128
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: d4934e3e04e566cb6badf46cd7447b754b0c94b6
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713040"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797657"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>为联机会议提供商创建 Outlook 加载项
 
@@ -231,7 +231,7 @@ ms.locfileid: "66713040"
         }
     );
 
-    // 2. How to define and register a UI-less function named `insertContosoMeeting` (referenced in the manifest)
+    // 2. How to define and register a function command named `insertContosoMeeting` (referenced in the manifest)
     //    to update the meeting body with the online meeting details.
     function insertContosoMeeting(event) {
         // Get HTML body from the client.
@@ -325,7 +325,7 @@ ms.locfileid: "66713040"
 - 仅适用于联机会议服务提供商。
 - 只有管理员安装的加载项才会显示在会议撰写屏幕上，替换默认的 Teams 或 Skype 选项。 用户安装的加载项不会激活。
 - 外接程序图标应使用十六进制代码 `#919191` 或 [以其他颜色格式](https://convertingcolors.com/hex-color-919191.html)等效的灰度。
-- 约会组织者 (撰写) 模式中仅支持一个无 UI 命令。
+- 约会组织者 (撰写) 模式中仅支持一个函数命令。
 - 加载项应在一分钟的超时时间内更新约会表单中的会议详细信息。 但是，为身份验证打开的加载项等在对话框中花费的任何时间都排除在超时时间段之外。
 
 ## <a name="see-also"></a>另请参阅
