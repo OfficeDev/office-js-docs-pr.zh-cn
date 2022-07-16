@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Outlook 加载项
 description: 了解如何使用 Office JS API 生成简单的 Outlook 任务窗格加载项。
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 2752c81a95cb7f65172d775efa3160b4b7dec10b
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 33f5e0f08bbb1472dcefc764941c8b7d6b6d4dbc
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660149"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797510"
 ---
 # <a name="build-your-first-outlook-add-in"></a>生成首个 Outlook 加载项
 
@@ -85,7 +85,7 @@ ms.locfileid: "66660149"
 
     ```js
     // Get a reference to the current message
-    var item = Office.context.mailbox.item;
+    const item = Office.context.mailbox.item;
 
     // Write message property value to the task pane
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
@@ -160,7 +160,7 @@ ms.locfileid: "66660149"
 ### <a name="update-the-code"></a>更新代码
 
 1. **MessageRead.html** 指定将在加载项的任务窗格中呈现的 HTML。 在 **MessageRead.html** 中，将 **\<body\>** 元素替换为以下标记，并保存文件。
- 
+
     ```HTML
     <body class="ms-font-m ms-welcome">
         <div class="ms-Fabric content-main">
@@ -275,15 +275,15 @@ ms.locfileid: "66660149"
 
 1. 在邮件中，查找包含加载项按钮的溢出菜单的省略号。
 
-    ![Outlook 网页版中邮件窗口的屏幕截图，其中突出显示省略号。](../images/quick-start-button-owa-1.png)
+    ![Outlook 网页版中的邮件窗口，其中突出显示省略号。](../images/quick-start-button-owa-1.png)
 
 1. 在"溢出"菜单中，找到加载项的按钮。
 
-    ![Outlook 网页版中邮件窗口的屏幕截图，其中突出显示加载项按钮。](../images/quick-start-button-owa-2.png)
+    ![Outlook 网页版中的邮件窗口，其中突出显示加载项按钮。](../images/quick-start-button-owa-2.png)
 
 1. 单击此按钮，打开加载项的任务窗格。
 
-    ![Outlook 网页版中加载项任务窗格的屏幕截图，其中显示邮件属性。](../images/quick-start-task-pane-owa-1.png)
+    ![Outlook 网页版中的加载项任务窗格，其中显示邮件属性。](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > 如果任务窗格未加载，请尝试通过在同一台计算机上的浏览器中打开它来进行验证。

@@ -311,6 +311,10 @@ items:
             displayName: 'uninstall, sideload'
           - name: 使用运行时日志记录功能进行调试
             href: testing/runtime-logging.md
+          - name: 使用非共享运行时调试函数命令
+            href: testing/debug-function-command.md
+          - name: 调试 initialize 和 onReady 方法
+            href: testing/debug-initialize-onready.md
           - name: 错误
             items:
               - name: 特定于应用程序的 API 错误处理
@@ -748,7 +752,7 @@ items:
                 href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
               - name: 加载项激活故障排除
                 href: outlook/troubleshoot-outlook-add-in-activation.md
-              - name: 调试无 UI 加载项
+              - name: 调试函数命令
                 href: outlook/debug-ui-less.md
               - name: 调试基于事件的激活
                 href: outlook/debug-autolaunch.md

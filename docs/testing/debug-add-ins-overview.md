@@ -1,14 +1,14 @@
 ---
 title: 调试 Office 加载项
 description: 查找开发环境的 Office 加载项调试指南。
-ms.date: 06/15/2022
+ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c6e9a870b322bc99bafd9bd80b0ba9030433ec12
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: e8f4270a133e068333703796c10b091bae31ed0a
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229699"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797482"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>调试 Office 加载项概述
 
@@ -32,15 +32,28 @@ ms.locfileid: "66229699"
 
 本文的其余部分仅涉及调试客户端 JavaScript（可从 TypeScript 转译）。
 
+## <a name="special-cases"></a>特殊情况
+
+在某些特殊情况下，对于给定的平台、Office 应用程序和开发环境组合，调试过程不同于正常情况。 如果要调试这些特殊情况中的任何一种，请使用本部分中的链接来查找适当的指南。 否则，请继续使用 [常规指南](#general-guidance)。
+
+- **调试 `Office.initialize` 或 `Office.onReady` 方法**：[调试 initialize 和 onReady 方法](debug-initialize-onready.md)。
+- **在 _非共享_ 运行时中调试 Excel 自定义函数**：[非共享运行时中的自定义函数调试](../excel/custom-functions-debugging.md)。
+- **在 _非共享_ 运行时中调试 [函数命令](../design/add-in-commands.md#types-of-add-in-commands)**： 
+    - Windows 开发计算机上的 Outlook 加载项：[在 Outlook 加载项中调试函数命令](../outlook/debug-ui-less.md) 
+    - Mac 开发计算机上的其他 Office 应用程序加载项或 Outlook：[使用非共享运行时调试函数命令](debug-function-command.md)。
+- **调试基于事件的 Outlook 加载项**：[调试基于事件的 Outlook 加载项](../outlook/debug-autolaunch.md)。 
+ 
+## <a name="general-guidance"></a>一般指导
+
 如果要查找有关调试客户端代码的指南，则第一个变量是开发计算机的操作系统。
 
 - [Windows](#debug-on-windows)
 - [Mac](#debug-on-mac)
 - [Linux 或其他 Unix 变体](#debug-on-linux)
 
-## <a name="debug-on-windows"></a>在 Windows 上调试
+### <a name="debug-on-windows"></a>在 Windows 上调试
 
-下面提供了有关在 Windows 上进行调试的常规指南。 有关在 Excel 中调试自定义函数和 Outlook 中基于事件的加载项，提供了一些特殊说明。 请参阅本部分后面 [Windows 中的特殊事例](#special-cases-in-windows)。 在 Windows 上调试取决于 IDE：
+下面提供了有关在 Windows 上进行调试的常规指南。 在 Windows 上调试取决于 IDE。
 
 - **Visual Studio**：使用浏览器的 F12 工具进行调试。 请参阅 [在 Visual Studio 中调试 Office 加载项](../develop/debug-office-add-ins-in-visual-studio.md)。
 - **Visual Studio Code**：使用 [适用于 Visual Studio Code 的加载项调试器扩展](debug-with-vs-extension.md) 进行调试。
@@ -55,24 +68,15 @@ ms.locfileid: "66229699"
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-### <a name="special-cases-in-windows"></a>Windows 中的特殊事例
+### <a name="debug-on-mac"></a>在 Mac 上调试
 
-要在 Windows 上调试没有共享运行时的自定义函数，请参阅 [自定义函数调试](../excel/custom-functions-debugging.md)。
-
-如果要在 Outlook 中调试基于事件的加载项，请参阅 [调试基于事件的 Outlook 加载项](../outlook/debug-autolaunch.md)。 该过程需要 Visual Studio Code。
-
-## <a name="debug-on-mac"></a>在 Mac 上调试
-
-下面提供了有关在 Mac 上进行调试的常规指南。 有关在 Excel 中调试没有共享运行时的自定义函数，提供了特殊说明。 请参阅本部分后面 [Mac 中的特殊事例](#special-cases-in-mac)。
+下面提供了有关在 Mac 上进行调试的常规指南。
 
 - 如果使用 Visual Studio Code，请使用 [适用于 Visual Studio Code 的加载项调试器扩展](debug-with-vs-extension.md) 进行调试。
 - 对于任何其他 IDE，请使用 Safari Web 检查器。 说明位于 [在 Mac 上调试 Office 加载项](debug-office-add-ins-on-ipad-and-mac.md) 中。
 
-### <a name="special-cases-in-mac"></a>Mac 中的特殊事例
 
-要在 Mac 上调试没有共享运行时的自定义函数，请参阅 [自定义函数调试](../excel/custom-functions-debugging.md)。
-
-## <a name="debug-on-linux"></a>在 Linux 上调试
+### <a name="debug-on-linux"></a>在 Linux 上调试
 
 没有适用于 Linux 的 Office 桌面版本，因此需要 [将加载项旁加载到 Office 网页版](sideload-office-add-ins-for-testing.md)才能对其进行测试和调试。调试指南位于[在 Office 网页版中调试加载项](debug-add-ins-in-office-online.md)中。
 

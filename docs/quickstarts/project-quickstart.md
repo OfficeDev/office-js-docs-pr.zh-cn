@@ -1,15 +1,15 @@
 ---
 title: 生成首个 Project 任务窗格加载项
 description: 了解如何使用 Office JS API 生成简单的 Project 任务窗格加载项。
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: project
 ms.localizationpriority: high
-ms.openlocfilehash: 486752d53b49d305ed4cc52c07fd8043264f1e58
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: c2f0e31b5a4c958cd155dfeb6d1648f7a2697c69
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091039"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797475"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>生成首个 Project 任务窗格加载项
 
@@ -31,7 +31,7 @@ ms.locfileid: "66091039"
 - **要如何命名加载项?** `My Office Add-in`
 - **要支持哪一个 Office 客户端应用程序?** `Project`
 
-![显示命令行界面中 Yeoman 生成器的提示和回答的屏幕截图。](../images/yo-office-project.png)
+![命令行界面中 Yeoman 生成器的提示和回答。](../images/yo-office-project.png)
 
 完成此向导后，生成器会创建项目，并安装支持的 Node 组件。
 
@@ -44,49 +44,7 @@ ms.locfileid: "66091039"
 - 项目根目录中的 **./manifest.xml** 文件定义加载项的设置和功能。
 - **./src/taskpane/taskpane.html** 文件包含组成任务窗格的 HTML。
 - **./src/taskpane/taskpane.css** 文件包含应用于任务窗格中的内容的 CSS。
-- **./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Office 客户端应用程序之间的交互的 Office JavaScript API 代码。
-
-## <a name="update-the-code"></a>更新代码
-
-在代码编辑器中，打开文件 **./src/taskpane/taskpane.js** 并在 `run` 函数中添加以下代码。 此代码使用 Office JavaScript API 设置所选任务的 `Name` 字段和 `Notes` 字段。
-
-```js
-var taskGuid;
-
-// Get the GUID of the selected task
-Office.context.document.getSelectedTaskAsync(
-    function (result) {
-        if (result.status === Office.AsyncResultStatus.Succeeded) {
-            taskGuid = result.value;
-
-            // Set the specified fields for the selected task.
-            var targetFields = [Office.ProjectTaskFields.Name, Office.ProjectTaskFields.Notes];
-            var fieldValues = ['New task name', 'Notes for the task.'];
-
-            // Set the field value. If the call is successful, set the next field.
-            for (var i = 0; i < targetFields.length; i++) {
-                Office.context.document.setTaskFieldAsync(
-                    taskGuid,
-                    targetFields[i],
-                    fieldValues[i],
-                    function (result) {
-                        if (result.status === Office.AsyncResultStatus.Succeeded) {
-                            i++;
-                        }
-                        else {
-                            var err = result.error;
-                            console.log(err.name + ' ' + err.code + ' ' + err.message);
-                        }
-                    }
-                );
-            }
-        } else {
-            var err = result.error;
-            console.log(err.name + ' ' + err.code + ' ' + err.message);
-        }
-    }
-);
-```
+- **./src/taskpane/taskpane.js** 文件包含用于加快任务窗格与 Office 客户端应用程序之间的交互的 Office JavaScript API 代码。 在本快速入门中，代码设置了项目所选任务的 `Name` 字段和 `Notes` 字段。
 
 ## <a name="try-it-out"></a>试用
 
@@ -114,7 +72,7 @@ Office.context.document.getSelectedTaskAsync(
 
 1. 在任务窗格的底部，选择“**运行**”链接以重命名所选任务并向所选任务添加备注。
 
-    ![加载了任务窗格加载项的 Project 应用程序的屏幕截图。](../images/project-quickstart-addin-1.png)
+    ![加载了任务窗格加载项的 Project 应用程序。](../images/project-quickstart-addin-1.png)
 
 ## <a name="next-steps"></a>后续步骤
 

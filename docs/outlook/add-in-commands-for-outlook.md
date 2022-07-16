@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项命令
 description: Outlook 加载项命令提供了通过添加按钮或下拉菜单从功能区启动特定加载项操作的方法。
-ms.date: 05/19/2022
+ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 4d4ffc8e518e5a8d11b3a45630b1a7b42e6bee13
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: d58f8cd76f965007fdc9621c53fe52ed18dd6dd9
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650610"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797685"
 ---
 # <a name="add-in-commands-for-outlook"></a>适用于 Outlook 的外接程序命令
 
@@ -26,11 +26,11 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 加载项命令仅适用于不使用 [ItemHasAttachment、ItemHasKnownEntity 或 ItemHasRegularExpressionMatch 规则](activation-rules.md)限制其激活的项目类型的加载项。不过，[上下文加载项](contextual-outlook-add-ins.md)可以显示不同的命令（具体取决于当前选定的项是邮件还是约会），并且可以选择是在阅读还是在撰写应用场景中显示命令。如可能，使用加载项命令将是[最佳做法](../concepts/add-in-development-best-practices.md)。
 
-## <a name="creating-the-add-in-command"></a>创建外接程序命令
+## <a name="create-the-add-in-command"></a>创建加载项命令
 
-加载项命令已在 [VersionOverrides 元素](/javascript/api/manifest/versionoverrides)的加载项清单中声明。该元素是对清单架构 v1.1 的额外添加，用以确保向后兼容性。在不支持 `VersionOverrides` 的客户端中，现有的加载项会照常像没有加载项命令一样正常运行。
+加载项命令在 [VersionOverrides 元素](/javascript/api/manifest/versionoverrides) 的加载项清单中声明。 该元素是对清单架构 v1.1 的额外添加，用以确保向后兼容性。 在不支持 **\<VersionOverrides\>** 的环境中，现有的加载项将照常像在没有加载项命令的情况下正常运行。
 
-`VersionOverrides` 清单条目会为加载项指定很多内容，如应用程序、要添加到功能区的控件的类型、文本、图标以及任何相关联的功能。
+**\<VersionOverrides\>** 清单条目为加载项指定许多内容，如应用程序、要添加到功能区的控件的类型、文本、图标以及任何关联的功能。
 
 当加载项需要提供状态更新（例如进度指示器或错误消息）时，它必须通过[通知 API](/javascript/api/outlook/office.notificationmessages) 来执行此操作。此外，必须在清单的 `FunctionFile` 节点中指定的单独 HTML 文件中定义对通知的处理。
 
@@ -38,7 +38,7 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 ## <a name="how-do-add-in-commands-appear"></a>加载项命令的显示方式
 
-加载项命令在功能区中显示为一个按钮。当用户安装加载项时，其命令在 UI 中显示为一组按钮。这可以是在功能区的默认选项卡上或在自定义选项卡上。对于邮件，默认为“**主页**”或“**邮件**”选项卡。对于日历，默认为“**会议**”、“**会议事件**”、“**会议序列**”或“**约会**”选项卡。对于模块扩展，默认为自定义选项卡。在默认选项卡上，每个加载项可以包含一个具有最多 6 个命令的功能区组。在自定义选项卡上，加载项最多具有 10 个组，每个组具有 6 个命令。加载项限定为仅一个自定义选项卡。
+加载项命令在功能区中显示为按钮，或在下拉菜单中显示为菜单项。 当用户安装加载项时，其命令将作为一组按钮显示在 UI 中。 这可能出现在功能区的默认选项卡上，也可能出现在自定义选项卡上。对于消息，默认为“**开始**”或“**消息**”选项卡。对于日历，则默认为“**会议**”、“**会议事件**”、“**会议系列**”或“**约会**”选项卡。对于模块扩展，默认为自定义选项卡。在默认选项卡上，每个加载项可以具有一个功能区组，最多包含 6 个命令。 在自定义选项卡上，外接程序最多具有 10 个组，每个组具有 6 个命令。 外接程序限定为仅一个自定义选项卡。
 
 当功能区变得拥挤时，加载项命令将显示在溢出菜单中。 用于加载项的加载项命令通常将组合在一起。
 
@@ -56,15 +56,17 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 ![显示加载项命令按钮的溢出菜单。](../images/commands-overflow-menu-expand-web.png)
 
-## <a name="what-ux-shapes-exist-for-add-in-commands"></a>外接程序命令存在哪些 UX 形状？
+## <a name="what-are-the-types-of-add-in-commands"></a>加载项命令的类型是什么？
 
-加载项命令的 UX 形状由 Office 应用程序中的一个功能区选项卡组成，其中包含可执行各种功能的按钮。目前支持三种 UI 形状：
+加载项命令的 UI 包括功能区按钮或下拉菜单中的项。 根据命令触发的操作类型，有两种类型的加载项命令。
 
-- 一个可执行 JavaScript 函数的按钮
-- 一个启动任务窗格的按钮
-- 显示另外两种类型的一个或多个按钮的下拉菜单的按钮
+- **任务窗格命令**：按钮或菜单项将打开加载项的任务窗格。 在清单中添加带有标记的此类加载项命令。 “代码隐藏”命令由 Office 提供。
+- **函数命令**：按钮或菜单项运行任意 JavaScript。 代码几乎总是在 Office JavaScript 库中调用 API，但并非必须如此。 此类型的加载项通常不显示按钮或菜单项本身以外的 UI。 请注意以下有关函数命令的内容：
 
-### <a name="executing-a-javascript-function"></a>执行 JavaScript 函数
+   - 触发的函数可以调用 [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) 方法来显示对话框，这是显示错误、显示进度或提示用户输入的好方法。
+   - 运行函数命令的 JavaScript 运行时是基于浏览器的完整运行时。 它可以呈现 HTML 并调用 Internet 以发送或获取数据。
+
+### <a name="run-a-function-command"></a>运行函数命令
 
 使用执行 JavaScript 函数的外接程序命令按钮用于用户无需进行任何其他选择就可以启动操作的方案。这可能适用于诸如跟踪、提醒我或打印，或在用户希望从某个服务获取详细信息之类的情况下使用的一些操作。
 
@@ -72,7 +74,7 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 ![用于执行 Outlook 功能区上的功能的按钮。](../images/commands-uiless-button-1.png)
 
-### <a name="launching-a-task-pane"></a>启动任务窗格
+### <a name="launch-a-task-pane"></a>启动任务窗格
 
 使用外接程序命令按钮启动适用于用户需要与外接程序进行较长时间交互的方案的任务窗格。例如，外接程序要求更改设置或填写多个字段。
 
@@ -88,7 +90,7 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 ### <a name="drop-down-menu"></a>下拉菜单
 
-下拉菜单外接程序命令定义按钮静态列表。菜单中的按钮可为执行函数或打开任务窗格的按钮的组合。不支持子菜单。
+下拉菜单加载项命令定义静态的项目列表。 菜单可以是执行函数或打开任务窗格的任何项组合。 不支持子菜单。
 
 ![用于下拉 Outlook 功能区上的菜单的按钮。](../images/commands-menu-button-1.png)
 
@@ -120,5 +122,5 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 - [加载项命令演示 Outlook 加载项](https://github.com/officedev/outlook-add-in-command-demo)
 - [在清单中创建 Excel、PowerPoint 和 Word 加载项命令](../develop/create-addin-commands.md)
-- [调试无 UI Outlook 加载项](debug-ui-less.md)
+- [Outlook 加载项中的调试函数命令](debug-ui-less.md)
 - [教程：生成邮件撰写 Outlook 外接程序](../tutorials/outlook-tutorial.md)
