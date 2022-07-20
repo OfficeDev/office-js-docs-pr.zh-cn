@@ -1,24 +1,24 @@
 ---
 title: 使用应用程序专用 API 模型
 description: 了解 Excel、OneNote 和 Word 加载项基于承诺的 API 模型。
-ms.date: 02/11/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a300791eced4504faa75973cb4184f6965e39f3
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8035a334f3314382f48d6cd796f46188bea9b091
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483823"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889336"
 ---
 # <a name="application-specific-api-model"></a>特定于应用程序的 API 模型
 
-本文介绍如何使用 API 模型在 Excel、Word、PowerPoint 和 OneNote 中生成OneNote。 本文介绍核心概念，这些概念是使用基于承诺的 API 的基础。
+本文介绍如何使用 API 模型在 Excel、Word、PowerPoint 和 OneNote 中生成加载项。 本文介绍核心概念，这些概念是使用基于承诺的 API 的基础。
 
 > [!NOTE]
 > Office 2013 客户端不支持此模型。 使用 [API 模型](office-javascript-api-object-model.md) 这些 Office 版本。 有关完整的平台可用性说明，请参阅 [Office 客户端应用程序和平台可用性的 Office 加载项组](/javascript/api/requirement-sets)。
 
 > [!TIP]
-> 本页中的示例使用 Excel JavaScript API，但概念也适用于 OneNote、PowerPoint、Visio 和 Word JavaScript API。
+> 本页中的示例使用 Excel JavaScript API，但这些概念也适用于 OneNote、PowerPoint、Visio 和 Word JavaScript API。
 
 ## <a name="asynchronous-nature-of-the-promise-based-apis"></a>基于承诺的 API 的异步性质
 
@@ -54,7 +54,7 @@ Office 应用程序和加载项在两个不同过程中运行。 由于加载项
 例如，以下代码片段声明本地 JavaScript [Excel.Range](/javascript/api/excel/excel.range) 对象 `selectedRange`引用 Excel 工作簿中的选定区域，然后针对该对象设置一些属性。 对象 `selectedRange` 代理对象，因此在调用加载项之前，不会在 Excel 文档中反映已设置的属性和在该对象上调用 `context.sync()`。
 
 ```js
-var selectedRange = context.workbook.getSelectedRange();
+const selectedRange = context.workbook.getSelectedRange();
 selectedRange.format.fill.color = "#4472C4";
 selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
@@ -71,7 +71,7 @@ worksheet.getRange("A1").numberFormat = "0.00%";
 worksheet.getRange("A1").values = [[1]];
 
 // GOOD: Create the range proxy object once and assign to a variable.
-var range = worksheet.getRange("A1")
+const range = worksheet.getRange("A1");
 range.format.fill.color = "red";
 range.numberFormat = "0.00%";
 range.values = [[1]];
@@ -96,7 +96,7 @@ worksheet.getRange("A1").set({
 
 ```js
 await Excel.run(async (context) => {
-    var selectedRange = context.workbook.getSelectedRange();
+    const selectedRange = context.workbook.getSelectedRange();
     selectedRange.load('address');
     await context.sync();
     console.log('The selected range is: ' + selectedRange.address);
@@ -117,9 +117,9 @@ await Excel.run(async (context) => {
 
 ```js
 await Excel.run(async (context) => {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:B2';
-    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    const sheetName = 'Sheet1';
+    const rangeAddress = 'A1:B2';
+    const myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
     myRange.load('address');
     await context.sync();
@@ -155,7 +155,7 @@ someRange.load("format/font/name")
 如果在不 `load()` 参数的情况下调用对象（或集合）上的标量方法，将加载该对象或集合对象的所有标量属性。 加载不需要的数据会降低加载项的加载速度。 应始终显式指定要加载的属性。
 
 > [!IMPORTANT]
-> 无参数 `load` 语句返回的数据量可能超过该服务的大小限制。 为了降低较旧加载项的风险，`load` 不会在明确请求它们之前返回某些属性。 以下属性从此类加载操作中排除。
+> 无参数 `load` 语句返回的数据量可能超过该服务的大小限制。 为了降低较旧加载项的风险，`load` 不会在明确请求它们之前返回某些属性。 从此类负载操作中排除以下属性。
 >
 > * `Excel.Range.numberFormatCategories`
 
@@ -166,7 +166,7 @@ someRange.load("format/font/name")
 以下代码获取 Excel 工作簿中的表总数，并对此数目的日志记录到控制台。
 
 ```js
-var tableCount = context.workbook.tables.getCount();
+const tableCount = context.workbook.tables.getCount();
 
 // This sync call implicitly loads tableCount.value.
 // Any other ClientResult values are loaded too.
@@ -184,8 +184,8 @@ console.log (tableCount.value);
 
 ```js
 await Excel.run(async (context) => {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:E2");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const range = sheet.getRange("B2:E2");
     range.set({
         format: {
             fill: {
@@ -205,7 +205,7 @@ await Excel.run(async (context) => {
 
 ### <a name="some-properties-cannot-be-set-directly"></a>某些属性不能直接设置
 
-尽管可写的属性，但某些属性不能设置。 这些属性是必须将设置为单个对象的父属性的一部分。 这是因为父属性依赖于具有特定逻辑关系的子属性。 必须使用对象文字表示法设置这些父属性来设置整个对象，而不是设置该对象的单个子问题。 PageLayout [中可找到此示例](/javascript/api/excel/excel.pagelayout)。 必须使用 `zoom` 单个 [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) 对象设置该属性，如下所示。
+尽管可写的属性，但某些属性不能设置。 这些属性是必须将设置为单个对象的父属性的一部分。 这是因为父属性依赖于具有特定逻辑关系的子属性。 必须使用对象文字表示法设置这些父属性来设置整个对象，而不是设置该对象的单个子问题。 PageLayout [中可找到此示例](/javascript/api/excel/excel.pagelayout)。 `zoom`必须使用单个 [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) 对象设置该属性，如下所示。
 
 ```js
 // PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
@@ -214,7 +214,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 在上一示例中，***无法*** 直接分配为值`zoom`：`sheet.pageLayout.zoom.scale = 200;`。 该语句会引发错误， `zoom` 加载错误。 即使 `zoom` ，该比例也会生效。 所有上下文操作 `zoom`、刷新加载项中的代理对象并覆盖本地设置的值。
 
-此行为与 [Range.format](application-specific-api-model.md#scalar-and-navigation-properties) 等 [导航属性](/javascript/api/excel/excel.range#excel-excel-range-format-member)。 `format`可以使用对象导航设置 的属性，如下所示。
+此行为与 [Range.format](application-specific-api-model.md#scalar-and-navigation-properties) 等 [导航属性](/javascript/api/excel/excel.range#excel-excel-range-format-member)。 `format`可以使用对象导航设置属性，如下所示。
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.
@@ -239,7 +239,7 @@ range.format.font.size = 10;
 
 ```js
 await Excel.run(async (context) => {
-    var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
+    let dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
     
     await context.sync();
     
@@ -254,5 +254,5 @@ await Excel.run(async (context) => {
 
 ## <a name="see-also"></a>另请参阅
 
-* [常见的 JavaScript API 对象模型](office-javascript-api-object-model.md)
-* [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md)
+- [常见的 JavaScript API 对象模型](office-javascript-api-object-model.md)
+- [Office 外接程序的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md)

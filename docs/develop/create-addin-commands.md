@@ -1,14 +1,14 @@
 ---
 title: 在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 description: 使用清单中的 VersionOverrides 定义 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
-ms.date: 07/05/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e14abf670ba0fe205f728461e228623604ed465
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 44cd5818879af6788ef58050b5ca475b5f4d3dbd
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659659"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889507"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 
@@ -18,7 +18,6 @@ ms.locfileid: "66659659"
 使用清单中的 **[VersionOverrides](/javascript/api/manifest/versionoverrides)** 定义 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令提供了使用执行操作的特定 UI 元素来自定义默认的 Office 用户界面 (UI) 的简单方法。 有关外接程序命令的简介，请参阅 [Excel、PowerPoint 和 Word 的外接程序命令](../design/add-in-commands.md)。
 
 本文介绍如何编辑清单以定义外接程序命令，以及如何为 [函数命令](../design/add-in-commands.md#types-of-add-in-commands)创建代码。 下图显示了用来定义外接程序命令的元素的层次结构。 本文将具体介绍这些元素。
-
 
 ![清单中的外接程序命令元素概述。 此处的顶部节点是包含子主机和资源的 VersionOverrides。 主机下是主机，然后是 DesktopFormFactor。 DesktopFormFactor 下是 FunctionFile 和 ExtensionPoint。 ExtensionPoint 下是 CustomTab、OfficeTab 和 Office 菜单。 在“CustomTab”或“Office”选项卡下是“组”，然后控制“操作”。 在“Office 菜单”下是“控制”，然后执行“操作”。 在“资源”下 (VersionOverrides 的子级) 是图像、URL、ShortString 和 LongStrings。](../images/version-overrides.png)
 
@@ -172,7 +171,7 @@ ms.locfileid: "66659659"
         // Implement your custom code here. The following code is a simple example.  
         Office.context.document.setSelectedDataAsync("Function command works. Button ID=" + event.source.id,
             function (asyncResult) {
-                var error = asyncResult.error;
+                const error = asyncResult.error;
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                     // Show error message.
                 }

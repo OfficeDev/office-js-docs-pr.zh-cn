@@ -3,12 +3,12 @@ title: 创建将 REST 与本地 Project Server OData 服务结合使用的 Proje
 description: 了解如何为 Project Professional 2013 构建任务窗格加载项，以便将活动项目中的成本和工作数据与当前Project Web App实例中所有项目的平均值进行比较。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d1c24d738bc919e927c50d17f0e25ead4eba44c
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: ed0df5aa9957a0ab326f2d2191421087061aeae2
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659848"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889567"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>创建将 REST 与本地 Project Server OData 服务结合使用的 Project 加载项
 
@@ -37,7 +37,7 @@ ms.locfileid: "66659848"
 
 1. 若要使浏览器直接显示来自 REST 查询的 XML 数据，请关闭源阅读视图。 有关如何在 Internet Explorer 中执行此操作的信息，请参阅 [Project 报告数据的查询 OData 源](/previous-versions/office/project-odata/jj163048(v=office.15))中的过程 1、步骤 4。
 
-2. 通过将浏览器与以下 URL 配合使用来查询 **ProjectData** 服务： **http://ServerName /ProjectServerName /_api/ProjectData**。 例如，如果Project Web App实例，`http://MyServer/pwa`浏览器将显示以下结果。
+1. 通过将浏览器与以下 URL 配合使用来查询 **ProjectData** 服务： **http://ServerName /ProjectServerName /_api/ProjectData**。 例如，如果Project Web App实例，`http://MyServer/pwa`浏览器将显示以下结果。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -57,7 +57,7 @@ ms.locfileid: "66659848"
         </service>
     ```
 
-3. 必须提供网络凭据，才能查看结果。如果浏览器显示“错误 403，访问遭拒”，要么是因为无权登录相应 Project Web App 实例，要么是因为网络出现问题，需要获取管理员的帮助。
+1. 必须提供网络凭据，才能查看结果。如果浏览器显示“错误 403，访问遭拒”，要么是因为无权登录相应 Project Web App 实例，要么是因为网络出现问题，需要获取管理员的帮助。
 
 ## <a name="use-visual-studio-to-create-a-task-pane-add-in-for-project"></a>使用 Visual Studio 为 Project 创建任务窗格加载项
 
@@ -71,23 +71,23 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 
 1. 以管理员身份运行 Visual Studio 2015，然后在“开始”页上选择 **“新建项目** ”。
 
-2. 在 **“新建项目**”对话框中，展开 **模板**、**Visual C#** 和 **Office/SharePoint** 节点，然后选择 **Office 加载项**。在中心窗格顶部的目标框架下拉列表中选择 **.NET Framework 4.5.2**，然后选择 **Office 加载** 项 (查看下一个屏幕截图) 。
+1. 在 **“新建项目**”对话框中，展开 **模板**、**Visual C#** 和 **Office/SharePoint** 节点，然后选择 **Office 加载项**。在中心窗格顶部的目标框架下拉列表中选择 **.NET Framework 4.5.2**，然后选择 **Office 加载** 项 (查看下一个屏幕截图) 。
 
-3. 若要将这两个 Visual Studio 项目置于同一目录中，请选择“创建解决方案的目录”，然后浏览到所需位置。
+1. 若要将这两个 Visual Studio 项目置于同一目录中，请选择“创建解决方案的目录”，然后浏览到所需位置。
 
-4. 在 **“名称”** 字段中，键入HelloProjectOData，然后选择 **“确定**”。
+1. 在 **“名称”** 字段中，键入HelloProjectOData，然后选择 **“确定**”。
 
     *图 1.创建 Office 加载项*
 
     ![创建 Office 加载项。](../images/pj15-hello-project-o-data-creating-app.png)
 
-5. 在“选择外接程序类型”对话框中，选择“任务窗格”，然后选择“下一步”（请参阅下一个屏幕截图）。
+1. 在“选择外接程序类型”对话框中，选择“任务窗格”，然后选择“下一步”（请参阅下一个屏幕截图）。
 
     *图 2：选择要创建的加载项类型*
 
     ![选择要创建的加载项的类型。](../images/pj15-hello-project-o-data-choose-project.png)
 
-6. 在“选择主机应用程序”对话框中，清除除“项目”复选框以外的所有复选框（请参阅下一个屏幕截图），然后选择“完成”。
+1. 在“选择主机应用程序”对话框中，清除除“项目”复选框以外的所有复选框（请参阅下一个屏幕截图），然后选择“完成”。
 
     *图 3：选择主机应用*
 
@@ -109,23 +109,23 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 
 1. 在 Visual Studio 中，打开 HelloProjectOData.xml 文件。
 
-2. 默认显示名称是 Visual Studio 项目名称（"HelloProjectOData"）。 例如，将元素的 **\<DisplayName\>** 默认值更改为“Hello ProjectData”。
+1. 默认显示名称是 Visual Studio 项目名称（"HelloProjectOData"）。 例如，将元素的 **\<DisplayName\>** 默认值更改为“Hello ProjectData”。
 
-3. 默认描述也是"HelloProjectOData"。例如，将 Description 元素的默认值更改为"测试 ProjectData 服务的 REST 查询"。
+1. 默认描述也是"HelloProjectOData"。例如，将 Description 元素的默认值更改为"测试 ProjectData 服务的 REST 查询"。
 
-4. 添加一个要在功能区“项目”选项卡上的“Office 加载项”下拉列表中显示的图标。 可以在 Visual Studio 解决方案中添加图标文件或为图标使用 URL。 
+1. 添加一个要在功能区“项目”选项卡上的“Office 加载项”下拉列表中显示的图标。 可以在 Visual Studio 解决方案中添加图标文件或为图标使用 URL。
 
 以下步骤演示如何将图标文件添加到 Visual Studio 解决方案。
 
 1. 在 **解决方案资源管理器** 中，转到名为“图像”的文件夹。
 
-2. 若要在“Office 加载项”下拉列表中显示，该图标必须是 32 x 32 像素。 例如，安装 Project 2013 SDK，然后选择“**图像**”文件夹并添加 SDK 的以下文件：`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
+1. 若要在“Office 加载项”下拉列表中显示，该图标必须是 32 x 32 像素。 例如，安装 Project 2013 SDK，然后选择“**图像**”文件夹并添加 SDK 的以下文件：`\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
 
     或者，使用自己的 32 x 32 图标;或者，将以下图像复制到名为 NewIcon.png 的文件，然后将该文件添加到  `HelloProjectODataWeb\Images` 文件夹。
 
     ![HelloProjectOData 应用的图标。](../images/pj15-hello-project-data-new-icon.jpg)
 
-3. 在HelloProjectOData.xml清单中，在元素下方 **\<Description\>** 添加一个 **\<IconUrl\>** 元素，其中图标 URL 的值是 32x32 图标文件的相对路径。 例如，添加以下行：`<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`。 HelloProjectOData.xml清单文件现在包含以下 (值 **\<Id\>** 将不同) ：
+1. 在HelloProjectOData.xml清单中，在元素下方 **\<Description\>** 添加一个 **\<IconUrl\>** 元素，其中图标 URL 的值是 32x32 图标文件的相对路径。 例如，添加以下行：`<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`。 HelloProjectOData.xml清单文件现在包含以下 (值 **\<Id\>** 将不同) ：
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -173,7 +173,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 
 1. 在Home.html文件的 **头** 元素中，为加载项使用的 CSS 文件添加任何其他 **链接** 元素。 Visual Studio 项目模板包含一个指向可用于自定义 CSS 样式的 App.css 文件的链接。
 
-2. 为加载项使用的 JavaScript 库添加任何其他 **脚本** 元素。 项目模板包括 jQuery- _[version]_.js、office.js 和脚本文件夹中MicrosoftAjax.js文件 **的** 链接。
+1. 为加载项使用的 JavaScript 库添加任何其他 **脚本** 元素。 项目模板包括 jQuery- _[version]_.js、office.js 和脚本文件夹中MicrosoftAjax.js文件 **的** 链接。
 
     > [!NOTE]
     > 部署加载项之前，请将 office.js 引用和 jQuery 引用更改为内容发布网络 (CDN) 引用。CDN 引用可提供最新的版本和更好的性能。
@@ -216,7 +216,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
     </html>
     ```
 
-3. 在 **正文** 元素中，从模板中删除现有代码，然后添加用户界面的代码。 如果某个元素要用数据来填充或由 jQuery 语句控制，则该元素必须包含唯一的 **id** 属性。 在下面的代码中，**jQuery** 函数使用的 (个表单元格 **定义) 元素** 的 **ID** 属性以粗体显示。
+1. 在 **正文** 元素中，从模板中删除现有代码，然后添加用户界面的代码。 如果某个元素要用数据来填充或由 jQuery 语句控制，则该元素必须包含唯一的 **id** 属性。 在下面的代码中，**jQuery** 函数使用的 (个表单元格 **定义) 元素** 的 **ID** 属性以粗体显示。
 
    以下 HTML 添加图形图像，这可以是公司徽标。 可以使用所选徽标，或从 Project 2013 SDK 下载中复制NewLogo.png文件，然后使用 **解决方案资源管理器** 将文件添加到`HelloProjectODataWeb\Images`文件夹。
 
@@ -284,7 +284,7 @@ HelloProjectOData.js文件的其余部分包括两个函数： `retrieveOData` �
 
 ### <a name="procedure-5-create-the-javascript-code"></a>过程 5. 创建 JavaScript 代码
 
-1. 删除默认HelloProjectOData.js文件中的所有代码，然后添加全局变量和 `**`Office.initialize 函数。 变量名称全部大写表示它们是常量；稍后它们将与 **_pwa** 变量一起用于在此示例中创建 REST 查询。
+1. 删除默认HelloProjectOData.js文件中的所有代码，然后添加全局变量和 `Office.initialize` 函数。 变量名称都是大写字母，表示它们是常量;稍后将它们与变量一起 `_pwa` 使用，以在此示例中创建 REST 查询。
 
     ```js
     var PROJDATA = "/_api/ProjectData";
@@ -306,10 +306,10 @@ HelloProjectOData.js文件的其余部分包括两个函数： `retrieveOData` �
     }
     ```
 
-2. 添加 `setOdataUrl` 和相关函数。 函 `setOdataUrl` 数调用 `getProjectGuid` 并 `getDocumentUrl` 初始化全局变量。 在 [getProjectFieldAsync 方法](/javascript/api/office/office.document)中，_回调_ 参数的匿名函数通过使用 jQuery 库中的方法启用`removeAttr`**“比较所有项目**”按钮，然后显示 **ProjectData** 服务的 URL。 如果 Project 未连接 Project Web App，则函数会提示错误，该错误会显示一个弹出错误消息。 SurfaceErrors.js文件包含该 `throwError` 方法。
+1. 添加 `setOdataUrl` 和相关函数。 函 `setOdataUrl` 数调用 `getProjectGuid` 并 `getDocumentUrl` 初始化全局变量。 在 [getProjectFieldAsync 方法](/javascript/api/office/office.document)中，_回调_ 参数的匿名函数通过使用 jQuery 库中的方法启用`removeAttr`**“比较所有项目**”按钮，然后显示 **ProjectData** 服务的 URL。 如果 Project 未连接 Project Web App，则函数会提示错误，该错误会显示一个弹出错误消息。 SurfaceErrors.js文件包含该 `throwError` 方法。
 
    > [!NOTE]
-   > 如果在 Project Server 计算机上运行 Visual Studio，要使用 **F5** 调试，可取消注释初始化 **_pwa** 全局变量的行后的代码。 若要在 Project Server 计算机上调试时使用 jQuery `ajax` 方法启用，必须设置 `localhost` PWA URL 的值。如果在远程计算机上运行 Visual Studio，  `localhost` 则不需要 URL。 Before you deploy the add-in, comment out that code.
+   > 如果在 Project Server 计算机上运行 Visual Studio，若要使用 **F5** 调试，请在初始化 `_pwa` 全局变量的行后取消注释代码。 若要在 Project Server 计算机上调试时使用 jQuery `ajax` 方法启用，必须设置 `localhost` PWA URL 的值。如果在远程计算机上运行 Visual Studio， `localhost` 则不需要 URL。 Before you deploy the add-in, comment out that code.
 
     ```js
     function setOdataUrl() {
@@ -367,7 +367,7 @@ HelloProjectOData.js文件的其余部分包括两个函数： `retrieveOData` �
     }
     ```
 
-3. 添加函 `retrieveOData` 数，该函数连接 REST 查询的值，然后在 jQuery 中调用 `ajax` 函数以从 **ProjectData** 服务获取请求的数据。 **support.cors** 变量启用与函数 (CORS) `ajax`的跨源资源共享。 如果 **support.cors** 语句缺失或设置为 **false**，则函 `ajax` 数返回 **“无传输** ”错误。
+1. 添加函 `retrieveOData` 数，该函数连接 REST 查询的值，然后在 jQuery 中调用 `ajax` 函数以从 **ProjectData** 服务获取请求的数据。 该 `support.cors` 变量启用与函数 (CORS) `ajax` 的跨源资源共享。 如果语 `support.cors` 句缺失或设置为 `false`，函 `ajax` 数将返回 **“无传输** ”错误。
 
    > [!NOTE]
    > 下面的代码适用于 Project Server 2013 本地安装。对于 Project 网页版，可以使用 OAuth 执行基于令牌的身份验证。有关详细信息，请参阅[解决 Office 加载项中的同源策略限制](../develop/addressing-same-origin-policy-limitations.md)。
@@ -428,7 +428,7 @@ HelloProjectOData.js文件的其余部分包括两个函数： `retrieveOData` �
     }
     ```
 
-4. 添加方法 `parseODataResult` ，用于反序列化和处理来自 OData 服务的 JSON 响应。 该 `parseODataResult` 方法将成本和工作数据的平均值计算为一个或两个十进制位置的准确性，使用正确的颜色格式化值，并添加单位 ( **$**、 **hrs** 或 **%**) ，然后在指定的表单元格中显示值。
+1. 添加方法 `parseODataResult` ，用于反序列化和处理来自 OData 服务的 JSON 响应。 该 `parseODataResult` 方法将成本和工作数据的平均值计算为一个或两个十进制位置的准确性，使用正确的颜色格式化值，并添加单位 ( **$**、 **hrs** 或 **%**) ，然后在指定的表单元格中显示值。
 
    如果活动项目的 GUID 与值匹配 `ProjectId` ， `myProjectIndex` 则变量将设置为项目索引。 如果 `myProjectIndex` 指示活动项目已在 Project Server 上发布， `parseODataResult` 则该方法将格式化并显示该项目的成本和工作数据。 如果活动项目尚未发布，则活动项目的值会显示为一个蓝色 **NA**。
 
@@ -547,9 +547,9 @@ HelloProjectOData.js文件的其余部分包括两个函数： `retrieveOData` �
 
 1. 在 **“文件”** 选项卡上，选择 Backstage 视图中的 **“信息** ”选项卡，然后选择 **“管理帐户**”。
 
-2. 在 **“项目 Web 应用帐户**”对话框中，“**可用帐户**”列表除了本地 **计算机** 帐户外，还可以有多个Project Web App帐户。 在“**准备工作**”部分，选择“**选择帐户**”。
+1. 在 **“项目 Web 应用帐户**”对话框中，“**可用帐户**”列表除了本地 **计算机** 帐户外，还可以有多个Project Web App帐户。 在“**准备工作**”部分，选择“**选择帐户**”。
 
-3. 关闭 Project 以便 Visual Studio 能够启动它以对加载项进行调试。
+1. 关闭 Project 以便 Visual Studio 能够启动它以对加载项进行调试。
 
 基本测试应当包括以下内容：
 
@@ -563,23 +563,23 @@ HelloProjectOData.js文件的其余部分包括两个函数： `retrieveOData` �
 
 1. 运行 Project Professional 2013，与 Project Web App 连接，然后创建一个测试项目。将任务分配到本地资源或企业资源，对部分任务设置不同的完成百分比值，然后发布该项目。退出 Project，从而让 Visual Studio 启动 Project 以对加载项进行调试。
 
-2. 在 Visual Studio 中，按 **F5**。 登录 Project Web App，然后打开在上一步中创建的项目。 您可以只读模式或编辑模式打开该项目。
+1. 在 Visual Studio 中，按 **F5**。 登录 Project Web App，然后打开在上一步中创建的项目。 您可以只读模式或编辑模式打开该项目。
 
-3. 在功能区的 **“项目** ”选项卡上的 **“Office 外接** 程序”下拉列表中，选择 **“Hello ProjectData** ” (查看图 5) 。 “**比较所有项目**”按钮应禁用。
+1. 在功能区的 **“项目** ”选项卡上的 **“Office 外接** 程序”下拉列表中，选择 **“Hello ProjectData** ” (查看图 5) 。 “**比较所有项目**”按钮应禁用。
 
     *图 5.启动 HelloProjectOData 加载项*
 
     ![测试 HelloProjectOData 应用。](../images/pj15-hello-project-data-test-the-app.png)
 
-4. 在“Hello ProjectData”任务窗格中，选择“获取 ProjectData 终结点”。 **projectDataEndPoint** 行应显示 **ProjectData** 服务的 URL，应启用“**比较所有项目**”按钮 (请参阅图 6) 。
+1. 在“Hello ProjectData”任务窗格中，选择“获取 ProjectData 终结点”。 **projectDataEndPoint** 行应显示 **ProjectData** 服务的 URL，应启用“**比较所有项目**”按钮 (请参阅图 6) 。
 
-5. 选择“比较所有项目”。 加载项在从 **ProjectData** 服务中检索数据时可能会暂停，然后会在表格中显示带有格式的平均值和当前值。
+1. 选择“比较所有项目”。 加载项在从 **ProjectData** 服务中检索数据时可能会暂停，然后会在表格中显示带有格式的平均值和当前值。
 
     *图 6.查看 REST 查询的结果*
 
     ![查看 REST 查询的结果。](../images/pj15-hello-project-data-rest-results.png)
 
-6. 查看文本框中的输出。 它应显示对 **ajax** 和 **parseODataResult** 调用的文档路径、REST 查询、状态信息和 JSON 结果。 输出有助于理解、创建和调试方法中的 `parseODataResult` 代码，例如 `projCost += Number(res.d.results[i].ProjectCost);`。
+1. 查看文本框中的输出。 它应显示调用和调用 `ajax` 的文档路径、REST 查询、状态信息和 `parseODataResult`JSON 结果。 输出有助于理解、创建和调试方法中的 `parseODataResult` 代码，例如 `projCost += Number(res.d.results[i].ProjectCost);`。
 
     下面是输出的一个示例，其中为Project Web App实例中的三个项目添加了换行符和为清晰度添加了空格。
 
@@ -629,13 +629,13 @@ HelloProjectOData.js文件的其余部分包括两个函数： `retrieveOData` �
     ]}}
     ```
 
-7. 停止调试（按 **Shift + F5**），然后再次按 **F5** 以运行 Project 的新实例。 在“**登录**”对话框中，选择本地的“**计算机**”配置文件，而不是 Project Web App。 创建或打开本地项目 .mpp 文件，打开“**Hello ProjectData**”任务窗格，然后选择“**获取 ProjectData 终结点**”。 外接程序应显示 **无连接！** 错误 (请参阅图 7) ，并且“ **比较所有项目** ”按钮应保持禁用状态。
+1. 停止调试（按 **Shift + F5**），然后再次按 **F5** 以运行 Project 的新实例。 在“**登录**”对话框中，选择本地的“**计算机**”配置文件，而不是 Project Web App。 创建或打开本地项目 .mpp 文件，打开“**Hello ProjectData**”任务窗格，然后选择“**获取 ProjectData 终结点**”。 外接程序应显示 **无连接！** 错误 (请参阅图 7) ，并且“ **比较所有项目** ”按钮应保持禁用状态。
 
    *图 7.在没有 Project Web 应用连接的情况下使用外接程序*
 
    ![在没有Project Web App连接的情况下使用应用。](../images/pj15-hello-project-data-no-connection.png)
 
-8. 停止调试，然后再次按 **F5**。 登录 Project Web App，然后创建一个包含成本和工作数据的项目。 您可以保存该项目，但不发布它。
+1. 停止调试，然后再次按 **F5**。 登录 Project Web App，然后创建一个包含成本和工作数据的项目。 您可以保存该项目，但不发布它。
 
    在 **Hello ProjectData** 任务窗格中，选择 **“比较所有项目**”时，应会看到 **当前** 列中字段的蓝色 **NA**， (请参阅图 8) 。
 

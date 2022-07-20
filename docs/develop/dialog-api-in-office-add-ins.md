@@ -1,14 +1,14 @@
 ---
 title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在 Office 加载项中创建对话框的基础知识。
-ms.date: 01/22/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fbc9114d2cdedcaa8ad5be9c035e9e14430266c
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
+ms.openlocfilehash: 363f58f94f7e0bfc6fe4c7b9a410114b8d027b52
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689388"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889483"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -30,7 +30,7 @@ ms.locfileid: "66689388"
 
 下图展示了对话框示例。
 
-![显示在 Word 前面显示 3 个登录选项的对话框的屏幕截图。](../images/auth-o-dialog-open.png)
+![Word 前面显示 3 个登录选项的对话框。](../images/auth-o-dialog-open.png)
 
 请注意，对话框总是在屏幕的中心打开。 用户可以移动并重设对话框的大小。 窗口是 *非模式的*-如果有，用户可以继续与 Office 应用程序中的文档和任务窗格中的页面进行交互。
 
@@ -47,6 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
+>
 > - URL 使用 HTTP **S** 协议。 对话框中加载的所有页面都必须要遵循此要求，而不仅仅是加载的第一个页面。
 > - 对话框域与宿主页的域相同，宿主页可以是任务窗格中的页面，也可以是加载项命令的[函数文件](/javascript/api/manifest/functionfile)。 这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。
 
@@ -97,6 +98,7 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
+>
 > - 该 `messageParent` 函数是对话框中 *只能* 调用的两个 Office JS API 之一。
 > - 可在对话框中调用的其他 JS API 是 `Office.context.requirements.isSetSupported`。 有关它的信息，请参阅 [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在对话框中，OUTLOOK 2016一次性购买 (（即 MSI 版本) ）不支持此 API。
 
@@ -111,7 +113,7 @@ if (loginSuccess) {
 必须将主机页配置为接收消息。 为此，可以向 `displayDialogAsync` 的原始调用添加回调参数。 回叫会为 `DialogMessageReceived` 事件分配处理程序。 示例如下。
 
 ```js
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20},
     function (asyncResult) {
         dialog = asyncResult.value;
@@ -131,7 +133,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     showUserName(messageFromDialog.name);
 }
 ```
@@ -176,14 +178,14 @@ function processMessage(arg) {
 
 ```js
 if (loginSuccess) {
-    var userProfile = getProfile();
-    var messageObject = {messageType: "signinSuccess", profile: userProfile};
-    var jsonMessage = JSON.stringify(messageObject);
+    const userProfile = getProfile();
+    const messageObject = {messageType: "signinSuccess", profile: userProfile};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 } else {
-    var errorDetails = getError();
-    var messageObject = {messageType: "signinFailure", error: errorDetails};
-    var jsonMessage = JSON.stringify(messageObject);
+    const errorDetails = getError();
+    const messageObject = {messageType: "signinFailure", error: errorDetails};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
 ```
@@ -198,7 +200,7 @@ if (loginSuccess) {
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "signinSuccess") {
         dialog.close();
         showUserName(messageFromDialog.profile.name);
@@ -255,7 +257,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 调用 Office 对话 API 以打开对话框时，将返回 [Dialog](/javascript/api/office/office.dialog) 对象。 应将其分配给范围大于 [displayDialogAsync 方法的](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) 变量，因为其他方法将引用该对象。 示例如下。
 
 ```javascript
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
     function (asyncResult) {
         dialog = asyncResult.value;
@@ -277,7 +279,7 @@ function processMessage(arg) {
 
 ```javascript
 function sheetPropertiesChanged() {
-    var messageToDialog = JSON.stringify({
+    const messageToDialog = JSON.stringify({
                                name: "My Sheet",
                                position: 2
                            });
@@ -303,7 +305,7 @@ Office.onReady()
 
 ```javascript
 function onMessageFromParent(arg) {
-    var messageFromParent = JSON.parse(arg.message);
+    const messageFromParent = JSON.parse(arg.message);
     $('h1').text(messageFromParent.name);
 }
 ```
@@ -338,7 +340,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>跨域消息传送到对话框运行时
 
-对话框或父 JavaScript 运行时可以在对话框打开后从外接程序的域中导航。 如果发生上述任一情况，则除非代码指定对话运行时的域，否则调 `messageChild` 用将失败。 为此，请将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到调用 。`messageChild` 此对象具有一个 `targetOrigin` 属性，该属性指定应向其发送消息的域。 如果未使用该参数，Office 假定目标与父运行时当前托管的域相同。 
+对话框或父 JavaScript 运行时可以在对话框打开后从外接程序的域中导航。 如果发生上述任一情况，则除非代码指定对话运行时的域，否则调 `messageChild` 用将失败。 为此，请将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到调用 。`messageChild` 此对象具有一个 `targetOrigin` 属性，该属性指定应向其发送消息的域。 如果未使用该参数，Office 假定目标与父运行时当前托管的域相同。
 
 > [!NOTE]
 > 用于 `messageChild` 发送跨域消息需要 [对话框源 1.1 要求集](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)。 在 `DialogMessageOptions` 不支持要求集的较旧版本的 Office 上忽略该参数，因此，如果传递该参数，该方法的行为将不受影响。
@@ -387,8 +389,8 @@ function onMessageFromParent(arg) {
 
 ```js
 function closeButtonClick() {
-    var messageObject = {messageType: "dialogClosed"};
-    var jsonMessage = JSON.stringify(messageObject);
+    const messageObject = {messageType: "dialogClosed"};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
 ```
@@ -397,7 +399,7 @@ function closeButtonClick() {
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "dialogClosed") {
        dialog.close();
     }

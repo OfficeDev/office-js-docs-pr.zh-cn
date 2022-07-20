@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 有关如何使用 ASP.NET 后端创建 (或转换) Office 加载项以使用单一登录 (SSO) 的分步指南。
-ms.date: 06/10/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e84c3a0bef488a07d1dd1118bd1bb254dd704d9a
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 980ae1b9c36dfdf7fcf84ad4fb1ba9088687cf7a
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659974"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889378"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
@@ -17,17 +17,17 @@ ms.locfileid: "66659974"
 
 ## <a name="prerequisites"></a>先决条件
 
-* Visual Studio 2019 或更高版本。
+- Visual Studio 2019 或更高版本。
 
-* 配置 Visual Studio 时的 **Office/SharePoint 开发** 工作负荷。
+- 配置 Visual Studio 时的 **Office/SharePoint 开发** 工作负荷。
 
-* [Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs.aspx)
+- [Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
-* Microsoft 365 订阅中至少存储在OneDrive for Business上的几个文件和文件夹。
+- Microsoft 365 订阅中至少存储在OneDrive for Business上的几个文件和文件夹。
 
-* 具有活动订阅的 Azure 帐户 - [免费创建帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
+- 具有活动订阅的 Azure 帐户 - [免费创建帐户](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)。
 
 ## <a name="set-up-the-starter-project"></a>设置初学者项目
 
@@ -36,8 +36,8 @@ ms.locfileid: "66659974"
 > [!NOTE]
 > 示例有两个版本。
 >
-> * **Before** 文件夹是初学者项目。未直接连接到 SSO 或授权的外接程序的 UI 和其他方面已经完成。本文后续章节将引导你完成此过程。
-> * 如果完成了本文中的过程，该示例的 **已完成** 版本会与所生成的加载项类似，只不过完成的项目具有对本文文本冗余的代码注释。 若要使用已完成的版本，请按照本文中的说明进行操作即可，但需要将“Before”替换为“Complete”，并跳过 **编写客户端代码** 和 **编写服务器端代码** 部分。
+> - **Before** 文件夹是初学者项目。未直接连接到 SSO 或授权的外接程序的 UI 和其他方面已经完成。本文后续章节将引导你完成此过程。
+> - 如果完成了本文中的过程，该示例的 **已完成** 版本会与所生成的加载项类似，只不过完成的项目具有对本文文本冗余的代码注释。 若要使用已完成的版本，请按照本文中的说明进行操作即可，但需要将“Before”替换为“Complete”，并跳过 **编写客户端代码** 和 **编写服务器端代码** 部分。
 
 ## <a name="register-the-add-in-through-an-app-registration"></a>通过应用注册注册加载项
 
@@ -45,15 +45,15 @@ ms.locfileid: "66659974"
 
 对应用注册使用以下设置。
 
-* 名称：`Office-Add-in-ASPNET-SSO`
-* 支持的帐户类型： **任何组织目录中的帐户 (任何 Azure AD 目录 - 多租户) 和个人 Microsoft 帐户 (，例如 Skype、Xbox)**
+- 名称：`Office-Add-in-ASPNET-SSO`
+- 支持的帐户类型： **任何组织目录中的帐户 (任何 Azure AD 目录 - 多租户) 和个人 Microsoft 帐户 (，例如 Skype、Xbox)**
 
     > [!NOTE]
     >  如果希望加载项仅供你正在注册的租户中的用户使用，则 **只能在此组织目录中选择帐户...** 请参阅本文后面 **的单租户安装程序** 。
 
-* 平台： **Web**
-* 重定向 URI： **https://localhost:44355/AzureADAuth/Authorize**
-* 客户端机密： `*********` (Web 应用程序在请求令牌时使用客户端机密来证明其标识。 *记录此值以便在后续步骤中使用 - 它只显示一次。*) 
+- 平台： **Web**
+- 重定向 URI： **https://localhost:44355/AzureADAuth/Authorize**
+- 客户端机密： `*********` (Web 应用程序在请求令牌时使用客户端机密来证明其标识。 *记录此值以便在后续步骤中使用 - 它只显示一次。*) 
 
 ### <a name="expose-a-web-api"></a>公开 Web API
 
@@ -167,20 +167,19 @@ ms.locfileid: "66659974"
 
 1. 打开 **Scripts** 文件夹中的 HomeES6.js 文件。 其中已有一些代码。
 
-    * 有一些填充代码用于向全局窗口对象分配 Office.Promise 对象，以便在 Office 为 UI 使用 Internet Explorer 时可运行该加载项。 （有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。）
-    * 针对 `Office.initialize` 方法的分配，反过来又将一个处理程序分配给 `getGraphAccessTokenButton` 按钮的 Click 事件。
-    * `showResult` 方法，用于在任务窗格底部显示从 Microsoft Graph 返回的数据（或错误消息）。
-    * `logErrors` 方法，用于记录最终用户不应看到的控制台错误。
-    * 在不支持 SSO 或发生错误的情况下实现外接程序将使用的回退授权系统的代码。
+    - 有一些填充代码用于向全局窗口对象分配 Office.Promise 对象，以便在 Office 为 UI 使用 Internet Explorer 时可运行该加载项。 （有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。）
+    - 针对 `Office.initialize` 方法的分配，反过来又将一个处理程序分配给 `getGraphAccessTokenButton` 按钮的 Click 事件。
+    - `showResult` 方法，用于在任务窗格底部显示从 Microsoft Graph 返回的数据（或错误消息）。
+    - `logErrors` 方法，用于记录最终用户不应看到的控制台错误。
+    - 在不支持 SSO 或发生错误的情况下实现外接程序将使用的回退授权系统的代码。
 
 1. 在针对 `Office.initialize` 的分配下面，添加下面的代码。 关于此代码，请注意以下几点：
 
-
-    * 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `retryGetAccessToken` 用于确保用户不会重复循环失败的尝试来获取令牌。
-    * `getGraphData` 函数通过 ES6 `async` 关键字进行定义。 使用 ES6 语法可以使 Office 加载项中的 SSO API 更易于使用。 此文件是该解决方案中唯一会使用 Internet Explorer 不支持的语法的文件。 我们在文件名中放入“ES6”作为提醒用途。 该解决方案使用 tsc 转译器将此文件转译为 ES5，以便在 Office 为 UI 使用 Internet Explorer 时可运行加载项。 （请查看项目根目录中的 tsconfig.json 文件。）
+    - 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `retryGetAccessToken` 用于确保用户不会重复循环失败的尝试来获取令牌。
+    - `getGraphData` 函数通过 ES6 `async` 关键字进行定义。 使用 ES6 语法可以使 Office 加载项中的 SSO API 更易于使用。 此文件是该解决方案中唯一会使用 Internet Explorer 不支持的语法的文件。 我们在文件名中放入“ES6”作为提醒用途。 该解决方案使用 tsc 转译器将此文件转译为 ES5，以便在 Office 为 UI 使用 Internet Explorer 时可运行加载项。 （请查看项目根目录中的 tsconfig.json 文件。）
 
     ```javascript
-    var retryGetAccessToken = 0;
+    let retryGetAccessToken = 0;
 
     async function getGraphData() {
         await getDataWithToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true });
@@ -212,17 +211,16 @@ ms.locfileid: "66659974"
     }
     ```
 
-
 1. 替换 `TODO 1` 为以下代码以从 Office 主机获取访问令牌。 **options** 参数包含从上一 **个 getGraphData ()** 函数传递的以下设置。
 
-    * `allowSignInPrompt` 设置为 true。 这会告知 Office 在用户尚未登录 Office 时提示用户登录。
-    * `allowConsentPrompt` 设置为 true。 这会指示 Office 在尚未授予许可的情况下，提示用户同意允许外接程序访问用户的Microsoft Azure Active Directory配置文件。  (生成的提示 *不允许* 用户同意任何 Microsoft Graph 范围。) 
-    * `forMSGraphAccess` 设置为 true。 如果用户或管理员尚未授予对加载项的 Graph 范围的同意，则此操作会通知 Office 返回 (代码 13012) 的错误。 若要访问 Microsoft Graph，外接程序必须通过代表流交换新访问令牌的访问令牌。 设置 `forMSGraphAccess` 为 true 有助于避免 **getAccessToken ()** 成功，但随后 Microsoft Graph 代表流失败的情况。 加载项的客户端代码可以通过分支到回退授权系统来响应 13012。
+    - `allowSignInPrompt` 设置为 true。 这会告知 Office 在用户尚未登录 Office 时提示用户登录。
+    - `allowConsentPrompt` 设置为 true。 这会指示 Office 在尚未授予许可的情况下，提示用户同意允许外接程序访问用户的Microsoft Azure Active Directory配置文件。  (生成的提示 *不允许* 用户同意任何 Microsoft Graph 范围。) 
+    - `forMSGraphAccess` 设置为 true。 如果用户或管理员尚未授予对加载项的 Graph 范围的同意，则此操作会通知 Office 返回 (代码 13012) 的错误。 若要访问 Microsoft Graph，外接程序必须通过代表流交换新访问令牌的访问令牌。 设置 `forMSGraphAccess` 为 true 有助于避免 **getAccessToken ()** 成功，但随后 Microsoft Graph 代表流失败的情况。 加载项的客户端代码可以通过分支到回退授权系统来响应 13012。
 
     另请注意以下代码：
 
-    * 你将在稍后的步骤中创建 `getData` 函数。
-    * 该 `/api/values` 参数是服务器端控制器的 URL，该控制器将使用代表流交换令牌以调用 Microsoft Graph 的新访问令牌。
+    - 你将在稍后的步骤中创建 `getData` 函数。
+    - 该 `/api/values` 参数是服务器端控制器的 URL，该控制器将使用代表流交换令牌以调用 Microsoft Graph 的新访问令牌。
 
     ```javascript
     let bootstrapToken = await Office.auth.getAccessToken(options);
@@ -232,11 +230,11 @@ ms.locfileid: "66659974"
 
 1. 在 `getGraphData` 函数下方，添加以下内容。 关于此代码，请注意以下几点：
 
-    * SSO 和回退授权系统均会使用它。
-    * `relativeUrl` 参数是服务器端控制器。
-    * `accessToken` 参数可以是启动令牌或完全访问令牌。
-    * `writeFileNamesToOfficeDocument` 已是项目的一部分。
-    * 你将在稍后的步骤中创建 `handleServerSideErrors` 函数。
+    - SSO 和回退授权系统均会使用它。
+    - `relativeUrl` 参数是服务器端控制器。
+    - `accessToken` 参数可以是启动令牌或完全访问令牌。
+    - `writeFileNamesToOfficeDocument` 已是项目的一部分。
+    - 你将在稍后的步骤中创建 `handleServerSideErrors` 函数。
 
     ```javascript
     function getData(relativeUrl, accessToken) {
@@ -335,8 +333,8 @@ ms.locfileid: "66659974"
 1. 将 `TODO 4` 替换为以下代码。 关于此代码，请注意，ASP.NET 错误类是在有类似于 MFA 的功能之前创建的。 服务器端逻辑处理针对第二种身份验证因素的请求时有一个副作用，即发送到客户端的服务器端错误有 **Message** 属性，但没有 **ExceptionMessage** 属性。 但是，所有其他错误都有 **ExceptionMessage** 属性，因此客户端代码必须分析这两者的响应。 一个或另一个变量将是未定义的。
 
     ```javascript
-    var message = JSON.parse(result.responseText).Message;
-    var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
+    const message = JSON.parse(result.responseText).Message;
+    const exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     ```
 
 1. 将 `TODO 5` 替换为以下代码。 Microsoft Graph 要求进行其他形式的身份验证时，将发送错误 AADSTS50076。 其中包括 **Message.Claims** 属性中的附加要求的相关信息。 为处理这种情况，该代码会再次尝试获取启动令牌，但这一次还包括请求额外的因素作为 `authChallenge` 选项的值，这会告诉 Azure AD 提示用户输入所有必需的身份验证形式。
@@ -344,8 +342,8 @@ ms.locfileid: "66659974"
     ```javascript
     if (message) {
         if (message.indexOf("AADSTS50076") !== -1) {
-            var claims = JSON.parse(message).Claims;
-            var claimsAsString = JSON.stringify(claims);
+            const claims = JSON.parse(message).Claims;
+            const claimsAsString = JSON.stringify(claims);
             getDataWithToken({ authChallenge: claimsAsString });
             return;
         }
@@ -434,10 +432,10 @@ ms.locfileid: "66659974"
 
 1. 将 `TODO 1` 替换为以下代码。 关于此代码，请注意以下几点：
 
-    * 代码指示 OWIN 确保来自 Office 应用程序的启动令牌中指定的受众必须与web.config中指定的值匹配。
-    * Microsoft 帐户具有不同于任何组织租户 GUID 的颁发者 GUID，因此为了支持这两种类型的帐户，我们不验证颁发者。
-    * 导致 `true` OWIN 从 Office 应用程序保存原始启动令牌的设置`SaveSigninToken`。 加载项需要该令牌来获取具有代理流的 Microsoft Graph 访问令牌。
-    * OWIN 中间件不验证作用域。 启动令牌作用域应包括 `access_as_user`，在控制器中加以验证。
+    - 代码指示 OWIN 确保来自 Office 应用程序的启动令牌中指定的受众必须与web.config中指定的值匹配。
+    - Microsoft 帐户具有不同于任何组织租户 GUID 的颁发者 GUID，因此为了支持这两种类型的帐户，我们不验证颁发者。
+    - 导致 `true` OWIN 从 Office 应用程序保存原始启动令牌的设置`SaveSigninToken`。 加载项需要该令牌来获取具有代理流的 Microsoft Graph 访问令牌。
+    - OWIN 中间件不验证作用域。 启动令牌作用域应包括 `access_as_user`，在控制器中加以验证。
 
     ```csharp
     TokenValidationParameters tvps = new TokenValidationParameters
@@ -450,8 +448,8 @@ ms.locfileid: "66659974"
 
 1. 将 `TODO 2` 替换为以下代码。 关于此代码，请注意以下几点：
 
-    * 调用的是方法 `UseOAuthBearerAuthentication`，而不是更常见的 `UseWindowsAzureActiveDirectoryBearerAuthentication`，因为后者与 Azure AD V2 终结点不兼容。
-    * 传递给方法的 URL 是 OWIN 中间件获取获取密钥的说明的位置，它需要验证从 Office 应用程序收到的启动令牌上的签名。 此 URL 的 Authority 区段来自 web.config。它可能是“common”字符串，而对于单租户加载项，则是一个 GUID。
+    - 调用的是方法 `UseOAuthBearerAuthentication`，而不是更常见的 `UseWindowsAzureActiveDirectoryBearerAuthentication`，因为后者与 Azure AD V2 终结点不兼容。
+    - 传递给方法的 URL 是 OWIN 中间件获取获取密钥的说明的位置，它需要验证从 Office 应用程序收到的启动令牌上的签名。 此 URL 的 Authority 区段来自 web.config。它可能是“common”字符串，而对于单租户加载项，则是一个 GUID。
 
     ```csharp
     string[] endAuthoritySegments = { "oauth2/v2.0" };
@@ -506,7 +504,6 @@ ms.locfileid: "66659974"
 
 1. 将 `TODO1` 替换为以下代码，以验证令牌中指定的作用域是否包括 `access_as_user`。 请注意，`SendErrorToClient` 方法的第二个参数是 **Exception** 对象。 在此示例中，代码传递 `null`，因为添加 **Exception** 对象会阻止在生成的 HTTP Response 中添加 **Message** 属性。
 
-
     ```csharp
     string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
     if (!(addinScopes.Contains("access_as_user")))
@@ -517,10 +514,10 @@ ms.locfileid: "66659974"
 
 1. 将 `TODO 2` 替换为以下代码，以便整合在使用代理流来获取 Microsoft Graph 的令牌时所需的所有信息。 关于此代码，请注意以下几点：
 
-    * 加载项不再扮演资源 (或受众) Office 应用程序和用户需要访问的角色。 现在它本身就是一个需要访问 Microsoft Graph 的客户端。 是 MSAL“客户端上下文”对象。
-    * 从 MSAL.NET 3.x.x 开始，`bootstrapContext` 仅仅是启动令牌本身。
-    * Authority 来自 web.config。它可能是“common”字符串，而对于单租户加载项，则是一个 GUID。
-    * 如果代码请求 `profile`，MSAL 将引发错误，而此错误仅在 Office 客户端应用程序获取加载项 Web 应用程序的令牌时才使用。 因此，只会显式请求获取 `Files.Read.All`。
+    - 加载项不再扮演资源 (或受众) Office 应用程序和用户需要访问的角色。 现在它本身就是一个需要访问 Microsoft Graph 的客户端。 是 MSAL“客户端上下文”对象。
+    - 从 MSAL.NET 3.x.x 开始，`bootstrapContext` 仅仅是启动令牌本身。
+    - Authority 来自 web.config。它可能是“common”字符串，而对于单租户加载项，则是一个 GUID。
+    - 如果代码请求 `profile`，MSAL 将引发错误，而此错误仅在 Office 客户端应用程序获取加载项 Web 应用程序的令牌时才使用。 因此，只会显式请求获取 `Files.Read.All`。
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -537,8 +534,8 @@ ms.locfileid: "66659974"
 
 1. 将 `TODO 3` 替换为下面的代码。 关于此代码，请注意以下几点：
 
-    * `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` 方法将首先查找内存中的 MSAL 缓存，获取匹配的访问令牌。 仅当不存在任何令牌时，该方法才会通过 Azure AD V2 终结点启动代理流。
-    * 任何不属于类型 `MsalServiceException` 的异常都是有意不捕获的，这样才能作为 `500 Server Error` 消息传播到客户端。
+    - `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` 方法将首先查找内存中的 MSAL 缓存，获取匹配的访问令牌。 仅当不存在任何令牌时，该方法才会通过 Azure AD V2 终结点启动代理流。
+    - 任何不属于类型 `MsalServiceException` 的异常都是有意不捕获的，这样才能作为 `500 Server Error` 消息传播到客户端。
 
     ```csharp
     AcquireTokenOnBehalfOfParameterBuilder parameterBuilder = null;
@@ -560,10 +557,10 @@ ms.locfileid: "66659974"
 
 1. 将 `TODO 3a` 替换为下面的代码。 关于此代码，请注意以下几点：
 
-    * 如果 Microsoft Graph 资源要求进行多重身份验证，但用户尚未提供，则 Azure AD 会返回“400 错误请求”以及错误 `AADSTS50076` 和 **Claims** 属性。 MSAL 抛出包含此信息的 **MsalUiRequiredException**（继承自 **MsalServiceException**）。
-    * 声明 **属性值** 必须传递给客户端，客户端应将其传递给 Office 应用程序，然后在请求新的启动令牌时包含该属性值。 Azure AD 会提示用户进行所有必需形式的身份验证。
-    * 由于创建异常 HTTP Response 的 API 并不知道 **Claims** 属性，因此它们不会在 Response 对象中添加这个属性。 必须手动创建消息来添加它。 不过，自定义 **Message** 属性会阻止创建 **ExceptionMessage** 属性，因此向客户端发送错误 ID `AADSTS50076` 的唯一方法是，将它添加到自定义 **Message** 中。 客户端中的 JavaScript 需要发现响应是否包含 **Message** 或 **ExceptionMessage**，这样才能了解要读取的内容。
-    * 自定义消息被格式化为 JSON，以便客户端 JavaScript 能够使用已知的 JavaScript `JSON` 对象方法分析它。
+    - 如果 Microsoft Graph 资源要求进行多重身份验证，但用户尚未提供，则 Azure AD 会返回“400 错误请求”以及错误 `AADSTS50076` 和 **Claims** 属性。 MSAL 抛出包含此信息的 **MsalUiRequiredException**（继承自 **MsalServiceException**）。
+    - 声明 **属性值** 必须传递给客户端，客户端应将其传递给 Office 应用程序，然后在请求新的启动令牌时包含该属性值。 Azure AD 会提示用户进行所有必需形式的身份验证。
+    - 由于创建异常 HTTP Response 的 API 并不知道 **Claims** 属性，因此它们不会在 Response 对象中添加这个属性。 必须手动创建消息来添加它。 不过，自定义 **Message** 属性会阻止创建 **ExceptionMessage** 属性，因此向客户端发送错误 ID `AADSTS50076` 的唯一方法是，将它添加到自定义 **Message** 中。 客户端中的 JavaScript 需要发现响应是否包含 **Message** 或 **ExceptionMessage**，这样才能了解要读取的内容。
+    - 自定义消息被格式化为 JSON，以便客户端 JavaScript 能够使用已知的 JavaScript `JSON` 对象方法分析它。
 
     ```csharp
     if (e.Message.StartsWith("AADSTS50076"))
@@ -575,10 +572,10 @@ ms.locfileid: "66659974"
 
 1. 将 `TODO 3b` 替换为下面的代码。 关于此代码，请注意以下几点：
 
-    * 如果 Azure AD 调用包含至少一个作用域（权限）未获得用户和租户管理员的许可（或许可被撤消），则 Azure AD 将返回“400 错误请求”和错误 `AADSTS65001`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。
-    * 如果 Azure AD 调用包含至少一个 Azure AD 无法识别的作用域，则 AAD 将返回“400 错误请求”和错误 `AADSTS70011`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。
-    * 其中包含完整说明，因为 70011 也会在其他情况下返回，只有在它表示存在无效范围时，才需要在此加载项中处理它。
-    * **MsalUiRequiredException** 对象传递给 `SendErrorToClient`。这样可确保 HTTP 响应中有包含错误消息的 **ExceptionMessage** 属性。
+    - 如果 Azure AD 调用包含至少一个作用域（权限）未获得用户和租户管理员的许可（或许可被撤消），则 Azure AD 将返回“400 错误请求”和错误 `AADSTS65001`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。
+    - 如果 Azure AD 调用包含至少一个 Azure AD 无法识别的作用域，则 AAD 将返回“400 错误请求”和错误 `AADSTS70011`。 MSAL 抛出包含此信息的 **MsalUiRequiredException**。
+    - 其中包含完整说明，因为 70011 也会在其他情况下返回，只有在它表示存在无效范围时，才需要在此加载项中处理它。
+    - **MsalUiRequiredException** 对象传递给 `SendErrorToClient`。这样可确保 HTTP 响应中有包含错误消息的 **ExceptionMessage** 属性。
 
     ```csharp
     if ((e.Message.StartsWith("AADSTS65001")) || (e.Message.StartsWith("AADSTS70011: The provided value for the input parameter 'scope' is not valid.")))

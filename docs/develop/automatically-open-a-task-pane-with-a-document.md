@@ -1,18 +1,18 @@
 ---
 title: 随文档自动打开任务窗格
-description: 了解如何将Office加载项配置为在打开文档时自动打开。
+description: 了解如何将 Office 加载项配置为在打开文档时自动打开。
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cea50c514e266b6f72b31e537ddb2b02b9715f5
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 8cc40ce6ed3188118cd9cc6384805ac15130fcb2
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244731"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889490"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
-可以通过向Office 应用功能区添加按钮，在Office外接程序中使用外接程序命令来扩展Office UI。 当用户单击命令按钮时，会执行一个操作，如打开任务窗格。
+可以通过将按钮添加到 Office 应用功能区来使用 Office 外接程序中的外接程序命令来扩展 Office UI。 当用户单击命令按钮时，会执行一个操作，如打开任务窗格。
 
 某些情况下，需要在文档打开时自动打开一个任务窗格，而无需进行显式用户交互。 可以使用 [AddInCommands 1.1 要求集中](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)引入的自动执行任务窗格功能在方案需要时自动打开任务窗格。
 
@@ -73,7 +73,7 @@ ms.locfileid: "65244731"
 
 #### <a name="tag-the-document-on-the-client-side"></a>在客户端上标记文档
 
-使用 Office.js [settings.set](/javascript/api/office/office.settings) 方法将 **Office.AutoShowTaskpaneWithDocument** 设置为“**true**”，如以下示例所示。
+使用 Office.js [settings.set](/javascript/api/office/office.settings) 方法将 **Office.AutoShowTaskpaneWithDocument** 设置为 `true`，如以下示例所示。
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -112,7 +112,7 @@ Office.context.document.settings.saveAsync();
 |`storeType` 值|`id` 值|`store` 值|`version` 值|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|加载项的 AppSource 资产 ID (请参阅注释) 。|AppSource 的区域设置；例如，“en-us”。|AppSource 目录中的版本 (请参阅注释) 。|
-|WOPICatalog (合作伙伴 [WOPI](/microsoft-365/cloud-storage-partner-program/online/) 主机) | 加载项的 AppSource 资产 ID (请参阅注释) 。 | “wopicatalog”。 将此值用于在应用源中发布且安装在 WOPI 主机中的加载项。 有关详细信息，请参阅[与 Office Online 集成](/microsoft-365/cloud-storage-partner-program/online/overview)。 | 加载项清单中的版本。|
+|WOPICatalog (合作伙伴 [WOPI](/microsoft-365/cloud-storage-partner-program/online/) 主机) | 加载项的 AppSource 资产 ID (请参阅注释) 。 | “wopicatalog”。 将此值用于在应用源中发布且安装在 WOPI 主机中的加载项。 有关详细信息，请参阅 [与 Office Online 集成](/microsoft-365/cloud-storage-partner-program/online/overview)。 | 加载项清单中的版本。|
 |FileSystem（网络共享）|外接程序清单中外接程序的 GUID。|网络共享路径。例如，“\\\\MyComputer\\MySharedFolder”。|外接程序清单中的版本。|
 |EXCatalog（通过 Exchange 服务器部署） |外接程序清单中外接程序的 GUID。|“EXCatalog”。 EXCatalog 行是与在Microsoft 365 管理中心中使用集中部署的加载项一起使用的行。|外接程序清单中的版本。|
 |Registry（系统注册表）|外接程序清单中外接程序的 GUID。|“developer”|加载项清单中的版本。|
@@ -139,7 +139,7 @@ Office.context.document.settings.saveAsync();
 > [!NOTE]
 > 若要将加载项与文档一起分发，以便提示用户进行安装，必须将“visibility”属性设置为 1。只能通过 Open XML 执行此操作。
 
-编写 XML 的一种简单方法是先运行外接程序并在[客户端标记文档](#tag-the-document-on-the-client-side)以写入值，然后保存文档并检查生成的 XML。Office将检测并提供相应的属性值。 还可以使用 [Open XML SDK Productivity Tool](https://www.nuget.org/packages/Open-XML-SDK) 生成 C# 代码，以基于生成的 XML 以编程方式添加标记。
+编写 XML 的一种简单方法是先运行外接程序并在 [客户端标记文档](#tag-the-document-on-the-client-side) 以写入值，然后保存文档并检查生成的 XML。Office 将检测并提供相应的属性值。 还可以使用 [Open XML SDK Productivity Tool](https://www.nuget.org/packages/Open-XML-SDK) 生成 C# 代码，以基于生成的 XML 以编程方式添加标记。
 
 ## <a name="test-and-verify-opening-task-panes"></a>对打开任务窗格进行测试和验证
 
@@ -155,9 +155,9 @@ Office.context.document.settings.saveAsync();
 </we:webextension>
 ```
 
-可以使用Microsoft 365订阅来测试上一示例，以试用集中部署并验证外接程序是否按预期工作。 如果还没有Microsoft 365订阅，可以通过加入Microsoft 365[开发人员计划](https://developer.microsoft.com/office/dev-program)获得免费的 90 天可续订Microsoft 365订阅。
+可以使用 Microsoft 365 订阅来测试上一示例，以试用集中部署并验证加载项是否按预期工作。 如果还没有 Microsoft 365 订阅，可以通过加入 Microsoft 365 开发人员计划获得免费的 90 天可续订 [Microsoft 365](https://developer.microsoft.com/office/dev-program) 订阅。
 
 ## <a name="see-also"></a>另请参阅
 
 - 有关演示如何使用 AutoOpen 功能的示例，请参阅 [Office 外接程序命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)。
-- [加入Microsoft 365开发人员计划。](/office/developer-program/office-365-developer-program)
+- [加入 Microsoft 365 开发人员计划。](/office/developer-program/office-365-developer-program)

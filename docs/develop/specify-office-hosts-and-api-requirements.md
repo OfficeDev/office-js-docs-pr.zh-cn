@@ -3,12 +3,12 @@ title: 指定 Office 主机和 API 要求
 description: 了解如何指定外接程序按预期运行的 Office 应用程序和 API 要求。
 ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 602ff640e588d67b0473bb9cf6cb343ee971fb84
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 7b1520160e75c0e67eddfae8f8413bc929f35f7f
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660093"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889364"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>指定 Office 应用程序和 API 要求
 
@@ -42,7 +42,7 @@ Office 加载项可能依赖于特定的 Office 应用程序 (也称为 Office �
 
 ## <a name="specify-which-office-applications-can-host-your-add-in"></a>指定哪些 Office 应用程序可以托管加载项
 
-默认情况下，加载项可安装在指定加载项类型 (（即邮件、任务窗格或内容) ）支持的所有 Office 应用程序中。 例如，默认情况下，可在 Access、Excel、OneNote、PowerPoint、Project 和 Word 上安装任务窗格加载项。 
+默认情况下，加载项可安装在指定加载项类型 (（即邮件、任务窗格或内容) ）支持的所有 Office 应用程序中。 例如，默认情况下，可在 Access、Excel、OneNote、PowerPoint、Project 和 Word 上安装任务窗格加载项。
 
 若要确保外接程序可安装在 Office 应用程序的子集中，请使用清单中的 [主机](/javascript/api/manifest/hosts) 和 [主机](/javascript/api/manifest/host) 元素。
 
@@ -102,7 +102,7 @@ Office 加载项可能依赖于特定的 Office 应用程序 (也称为 Office �
 
 ### <a name="requirements-element"></a>Requirements 元素
 
-使用 [Requirements](/javascript/api/manifest/requirements) 元素及其子元素 [集](/javascript/api/manifest/sets) 和 [方法](/javascript/api/manifest/methods) 指定必须由 Office 应用程序支持的最低要求集或 API 成员才能安装外接程序。 
+使用 [Requirements](/javascript/api/manifest/requirements) 元素及其子元素 [集](/javascript/api/manifest/sets) 和 [方法](/javascript/api/manifest/methods) 指定必须由 Office 应用程序支持的最低要求集或 API 成员才能安装外接程序。
 
 如果 Office 应用程序或平台不支持元素中 **\<Requirements\>** 指定的要求集或 API 成员，则外接程序不会在该应用程序或平台中运行，也不会显示在 **“我的外接程序”中**。
 
@@ -111,9 +111,9 @@ Office 加载项可能依赖于特定的 Office 应用程序 (也称为 Office �
 
 以下代码示例演示如何配置在支持以下内容的所有 Office 应用程序中可安装的加载项：
 
--  `TableBindings` 要求集，其最低版本为“1.1”。
--  `OOXML` 要求集，其最低版本为“1.1”。
--  `Document.getSelectedDataAsync` 方法。
+- `TableBindings` 要求集，其最低版本为“1.1”。
+- `OOXML` 要求集，其最低版本为“1.1”。
+- `Document.getSelectedDataAsync` 方法。
 
 ```XML
 <OfficeApp ... >
@@ -130,6 +130,7 @@ Office 加载项可能依赖于特定的 Office 应用程序 (也称为 Office �
     ...
 </OfficeApp>
 ```
+
 请注意以下有关此示例的信息。
 
 - 该 **\<Requirements\>** 元素包含元素 **\<Sets\>** 和 **\<Methods\>** 子元素。
@@ -146,16 +147,16 @@ Office 外接程序平台提供的扩展性功能可以分为三种类型：
 - 扩展性功能，仅当加载项正在运行且使用 Office.js JavaScript API 实现时才可用;例如， [对话框](../develop/dialog-api-in-office-add-ins.md)。
 - 可扩展性功能仅在运行时可用，但通过元素中的 **\<VersionOverrides\>** Office.js JavaScript 和配置的组合实现。 这些示例包括 [Excel 自定义函数](../excel/custom-functions-overview.md)、 [单一登录](sso-in-office-add-ins.md)和 [自定义上下文选项卡](../design/contextual-tabs.md)。
 
-如果外接程序对其某些功能使用特定的扩展性功能，但具有其他不需要扩展性功能的有用功能，则应设计外接程序，使其可安装在不支持扩展功能的平台和 Office 版本组合上。 它可以提供一个有价值的，虽然减少，在这些组合的经验。 
+如果外接程序对其某些功能使用特定的扩展性功能，但具有其他不需要扩展性功能的有用功能，则应设计外接程序，使其可安装在不支持扩展功能的平台和 Office 版本组合上。 它可以提供一个有价值的，虽然减少，在这些组合的经验。
 
-根据扩展性功能的实现方式，以不同的方式实现此设计： 
+根据扩展性功能的实现方式，以不同的方式实现此设计：
 
 - 有关完全使用 JavaScript 实现的功能，请参阅 [运行时检查方法和要求集支持](#runtime-checks-for-method-and-requirement-set-support)。
 - 有关需要配置元素的 **\<VersionOverrides\>** 功能，请参阅 [VersionOverrides 元素中的指定要求](#specify-requirements-in-a-versionoverrides-element)。
 
-### <a name="runtime-checks-for-method-and-requirement-set-support"></a>运行时检查方法和要求集支持 
+### <a name="runtime-checks-for-method-and-requirement-set-support"></a>运行时检查方法和要求集支持
 
-在运行时进行测试，以发现用户的 Office 是否支持使用 [isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) 方法的要求集。 将要求集的名称和最低版本作为参数传递。 如果支持要求集，则 `isSetSupported` 返回 **true**。 以下代码是一个示例。
+在运行时进行测试，以发现用户的 Office 是否支持使用 [isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) 方法的要求集。 将要求集的名称和最低版本作为参数传递。 如果支持要求集，则 `isSetSupported` 返回 `true`。 以下代码是一个示例。
 
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
@@ -165,6 +166,7 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
    // Provide diminished experience here. E.g., run alternate code when the user's Word is one-time purchase Word 2013 (which does not support WordApi 1.1).
 }
 ```
+
 关于此代码，请注意以下几点：
 
 - 第一个参数是必需的。 它是表示要求集名称的字符串。 有关可用要求集的详细信息，请参阅 [Office 加载项要求集](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)。
@@ -196,7 +198,7 @@ else
 }
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > CDN `isSetSupported` 上的最新Office.js文件中提供了这些应用程序的方法和要求集。 如果不使用 CDN 中的Office.js，则如果使用未定义的库 `isSetSupported` 的旧版本，外接程序可能会生成异常。 有关详细信息，请参阅 [使用最新的 Office JavaScript API 库](#use-the-latest-office-javascript-api-library)。
 
 当外接程序依赖于不属于要求集的方法时，请使用运行时检查来确定该方法是否受 Office 应用程序的支持，如以下代码示例所示。 有关不属于要求集的方法的完整列表，请参阅 [Office 加载项要求集](/javascript/api/requirement-sets/common/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set)。
@@ -215,7 +217,7 @@ if (Office.context.document.setSelectedDataAsync)
 
 ### <a name="specify-requirements-in-a-versionoverrides-element"></a>在 VersionOverrides 元素中指定要求
 
-[VersionOverrides](/javascript/api/manifest/versionoverrides) 元素主要添加到清单架构中，但不只支持安装加载项后必须立即提供的功能，例如外接程序命令 (自定义功能区按钮和菜单) 。 Office 在分析外接程序清单时必须了解这些功能。 
+[VersionOverrides](/javascript/api/manifest/versionoverrides) 元素主要添加到清单架构中，但不只支持安装加载项后必须立即提供的功能，例如外接程序命令 (自定义功能区按钮和菜单) 。 Office 在分析外接程序清单时必须了解这些功能。
 
 假设您的外接程序使用这些功能之一，但外接程序很有价值，应该可安装，即使在不支持该功能的 Office 版本上也可安装。 在此方案中，使用 [Requirements](/javascript/api/manifest/requirements) 元素 (及其子 [集](/javascript/api/manifest/sets) 和 [方法](/javascript/api/manifest/methods) 元素来标识该功能，) 作为元素本身的 **\<VersionOverrides\>** 子元素而非作为基 `OfficeApp` 元素的子元素包含的元素。 这样做的效果是 Office 将允许安装外接程序，但 Office 将忽略 Office 版本中不支持该功能的元素的 **\<VersionOverrides\>** 某些子元素。
 
@@ -245,10 +247,10 @@ if (Office.context.document.setSelectedDataAsync)
 ```
 
 > [!WARNING]
-> 在使用 **\<Requirements\>** 某个元素 **\<VersionOverrides\>** 之前请谨慎使用，因为在不支持要求的平台和版本组合上， *不会安装任何* 外接程序命令， *即使是那些调用不需要要求的功能的命令*。 例如，请考虑具有两个自定义功能区按钮的加载项。 其中一个调用在要求集 **ExcelApi 1.4** (及更高版本) 中可用的 Office JavaScript API。 其他调用仅在 **ExcelApi 1.9** (及更高版本) 中可用的 API。 如果在其中对 **ExcelApi 1.9** **\<VersionOverrides\>** 提出了要求，则在不支持 1.9 时，功能区上不会显示 *任何* 按钮。 在此方案中，更好的策略是使用运行时检查中所述 [的方法和要求集支持](#runtime-checks-for-method-and-requirement-set-support)。 第二个按钮调用的代码首先用于 `isSetSupported` 检查 **ExcelApi 1.9** 的支持。 如果不支持，代码会向用户发送一条消息，指出加载项的此功能在其 Office 版本上不可用。 
+> 在使用 **\<Requirements\>** 某个元素 **\<VersionOverrides\>** 之前请谨慎使用，因为在不支持要求的平台和版本组合上， *不会安装任何* 外接程序命令， *即使是那些调用不需要要求的功能的命令*。 例如，请考虑具有两个自定义功能区按钮的加载项。 其中一个调用在要求集 **ExcelApi 1.4** (及更高版本) 中可用的 Office JavaScript API。 其他调用仅在 **ExcelApi 1.9** (及更高版本) 中可用的 API。 如果在其中对 **ExcelApi 1.9** **\<VersionOverrides\>** 提出了要求，则在不支持 1.9 时，功能区上不会显示 *任何* 按钮。 在此方案中，更好的策略是使用运行时检查中所述 [的方法和要求集支持](#runtime-checks-for-method-and-requirement-set-support)。 第二个按钮调用的代码首先用于 `isSetSupported` 检查 **ExcelApi 1.9** 的支持。 如果不支持，代码会向用户发送一条消息，指出加载项的此功能在其 Office 版本上不可用。
 
 > [!TIP]
-> 在基清单中 **\<VersionOverrides\>** 已显示的 **Requirement** 元素是没意义的。 如果要求在基清单中指定，则加载项无法安装不支持要求的位置，因此 Office 甚至不分析该 **\<VersionOverrides\>** 元素。 
+> 在基清单中 **\<VersionOverrides\>** 已显示的 **Requirement** 元素是没意义的。 如果要求在基清单中指定，则加载项无法安装不支持要求的位置，因此 Office 甚至不分析该 **\<VersionOverrides\>** 元素。
 
 ## <a name="see-also"></a>另请参阅
 

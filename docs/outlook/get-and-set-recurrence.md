@@ -3,12 +3,12 @@ title: 获取和设置 Outlook 加载项中的定期
 description: 本主题介绍如何使用 Office JavaScript API 获取和设置 Outlook 加载项中某个项目的不同定期属性。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: de6bf8722578729159078396bb2f14a52cb648a3
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: f0fbafcb761a74e5a28294c25b480f4cb35a92fa
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713110"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889355"
 ---
 # <a name="get-and-set-recurrence"></a>获取和设置定期
 
@@ -25,14 +25,14 @@ ms.locfileid: "66713110"
 
 |定期类型|有效的定期属性|用法|
 |---|---|---|
-|`daily`|-&nbsp;[`interval`][间隔链接]|每 *interval* 天进行一次约会。 示例：每 **_2_** 天进行一次约会。|
+|`daily`|-&nbsp;[`interval`][interval link]|每 *interval* 天进行一次约会。 示例：每 **_2_** 天进行一次约会。|
 |`weekday`|无。|每个工作日进行一次约会。|
-|`monthly`|-&nbsp;[`interval`][间隔链接]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth 链接]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek 链接]<br/>-&nbsp;[`weekNumber`][weekNumber 链接]|- 每 *interval* 个月在 *dayOfMonth* 号进行一次约会。 示例：每 **_4_** 个月在 **_5_** 号进行一次约会。<br/><br/>- 每 *interval* 个月在第 *weekNumber* 周的周 *dayOfWeek* 进行一次约会。 示例：每 **_2_** 个月在第 **_三_** 周的周 **_四_** 进行一次约会。|
-|`weekly`|-&nbsp;[`interval`][间隔链接]<br/>-&nbsp;[`days`][天链接]|每 *interval* 个星期在第 *days* 天进行一次约会。 示例：每 **_2_** 个星期在周 **_二_ 和 _四_** 进行一次约会。|
-|`yearly`|-&nbsp;[`interval`][间隔链接]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth 链接]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek 链接]<br/>-&nbsp;[`weekNumber`][weekNumber 链接]<br/>-&nbsp;[`month`][月链接]|- 每 *interval* 年在 *month* 月的 *dayOfMonth* 号进行一次约会。 示例：每 **_4_** 年在 **_9_** 月 **_7_** 号进行一次约会。<br/><br/>- 每 *interval* 年在 *month* 月第 *weekNumber* 周的周 *dayOfWeek* 进行一次约会。 示例：每 **_2_** 年在 **_9_** 月第 **_一_** 周的周 **_四_** 进行一次约会。|
+|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|- 每 *interval* 个月在 *dayOfMonth* 号进行一次约会。 示例：每 **_4_** 个月在 **_5_** 号进行一次约会。<br/><br/>- 每 *interval* 个月在第 *weekNumber* 周的周 *dayOfWeek* 进行一次约会。 示例：每 **_2_** 个月在第 **_三_** 周的周 **_四_** 进行一次约会。|
+|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|每 *interval* 个星期在第 *days* 天进行一次约会。 示例：每 **_2_** 个星期在周 **_二_ 和 _四_** 进行一次约会。|
+|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|- 每 *interval* 年在 *month* 月的 *dayOfMonth* 号进行一次约会。 示例：每 **_4_** 年在 **_9_** 月 **_7_** 号进行一次约会。<br/><br/>- 每 *interval* 年在 *month* 月第 *weekNumber* 周的周 *dayOfWeek* 进行一次约会。 示例：每 **_2_** 年在 **_9_** 月第 **_一_** 周的周 **_四_** 进行一次约会。|
 
 > [!NOTE]
-> 还可以将 [`firstDayOfWeek`][firstDayOfWeek 链接] 属性与 `weekly` 定期类型配合使用。 指定的某一天将从定期对话框中显示的天数列表开始算起。
+> 你还可以使用 [`firstDayOfWeek`][firstDayOfWeek link] 属性及 `weekly` 定期类型。 指定的某一天将从定期对话框中显示的天数列表开始算起。
 
 ## <a name="access-recurrence"></a>访问定期
 
@@ -42,8 +42,8 @@ ms.locfileid: "66713110"
 
 |约会状态|约会是否可编辑？|约会是否可查看？|
 |---|---|---|
-|约会组织者 - 撰写系列|是 ([`setAsync`][setAsync link]) |是 ([`getAsync`][getAsync 链接]) |
-|约会组织者 - 撰写实例|否（`setAsync` 返回错误）|是 ([`getAsync`][getAsync 链接]) |
+|约会组织者 - 撰写系列|是 ([`setAsync`][setAsync link]) |是 ([`getAsync`][getAsync link]) |
+|约会组织者 - 撰写实例|否（`setAsync` 返回错误）|是 ([`getAsync`][getAsync link]) |
 |约会参与者 - 读取系列|否（`setAsync` 不可用）|是 ([`item.recurrence`][item.recurrence link]) |
 |约会参与者 - 读取实例|否（`setAsync` 不可用）|是 ([`item.recurrence`][item.recurrence link]) |
 |会议请求 - 读取系列|否（`setAsync` 不可用）|是 ([`item.recurrence`][item.recurrence link]) |
@@ -51,7 +51,7 @@ ms.locfileid: "66713110"
 
 ## <a name="set-recurrence-as-the-organizer"></a>以组织者身份设置定期
 
-除了定期模式之外，你还需要确定约会系列的开始和结束日期和时间。 [`SeriesTime`][SeriesTime link] 对象用于管理该信息。
+除了定期模式之外，你还需要确定约会系列的开始和结束日期和时间。 可通过 [`SeriesTime`][SeriesTime link] 对象管理此信息。
 
 约会组织者只能在撰写模式下指定约会的定期模式。 在以下示例中，约会系列已设置为在 2019 年 11 月 2 日至 2019 年 12 月 2 日之间的每个周二和周四上午 10:30 至上午 11:00（太平洋标准时间）进行。
 
@@ -121,7 +121,7 @@ function callback(asyncResult){
 以下示例展示了用于检索某个系列定期的 `getAsync` 调用的结果。
 
 > [!NOTE]
-> 在此实例中，`seriesTimeObject` 是表示 `recurrence.seriesTime` 属性的 JSON 的占位符。 应使用 [`SeriesTime`][SeriesTime 链接] 方法获取定期日期和时间属性。
+> 在此实例中，`seriesTimeObject` 是表示 `recurrence.seriesTime` 属性的 JSON 的占位符。 应使用 [`SeriesTime`][SeriesTime link] 方法获取定期日期和时间属性。
 
 ```json
 {
@@ -158,7 +158,7 @@ function outputRecurrence(item) {
 以下示例展示了约会系列的 `item.recurrence` 属性值。
 
 > [!NOTE]
-> 在此实例中，`seriesTimeObject` 是表示 `recurrence.seriesTime` 属性的 JSON 的占位符。 应使用 [`SeriesTime`][SeriesTime 链接] 方法获取定期日期和时间属性。
+> 在此实例中，`seriesTimeObject` 是表示 `recurrence.seriesTime` 属性的 JSON 的占位符。 应使用 [`SeriesTime`][SeriesTime link] 方法获取定期日期和时间属性。
 
 ```json
 {
@@ -175,7 +175,7 @@ function outputRecurrence(item) {
 
 ### <a name="get-the-recurrence-details"></a>获取定期详细信息
 
-检索到定期对象（通过 `getAsync` 回调或通过 `item.recurrence`）之后，可以获取定期的特定属性。 例如，可以通过在属性上 `recurrence.seriesTime` 使用 [methods][SeriesTime 链接] 获取系列的开始和结束日期和时间。
+检索到定期对象（通过 `getAsync` 回调或通过 `item.recurrence`）之后，可以获取定期的特定属性。 例如，可以使用  属性上的[方法][SeriesTime link]`recurrence.seriesTime`获取系列的开始和结束日期和时间。
 
 ```js
 // Get series date and time info
@@ -201,3 +201,17 @@ const recurrenceType = recurrence.recurrenceType;
 - [RecurrenceChanged 事件](/javascript/api/office/office.eventtype)
 - [Recurrence 对象](/javascript/api/outlook/office.recurrence)
 - [SeriesTime 对象](/javascript/api/outlook/office.seriestime)
+
+[getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
+[item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties
+[setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
+
+[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth
+[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayOfWeek
+[days link]: /javascript/api/outlook/office.recurrenceproperties#days
+[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstDayOfWeek
+[interval link]: /javascript/api/outlook/office.recurrenceproperties#interval
+[month link]: /javascript/api/outlook/office.recurrenceproperties#month
+[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weekNumber
+
+[SeriesTime link]: /javascript/api/outlook/office.seriestime

@@ -1,14 +1,14 @@
 ---
 title: 在iPad 中加载项的特殊要求
 description: 了解创建在 iPad 上运行的 Office 加载项的一些要求。
-ms.date: 09/03/2020
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 17df8855a987bd44e657f6ddfdec9925a979449a
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: cc75cc75daec756efcb066f3e3a77f865672e501
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712991"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889301"
 ---
 # <a name="special-requirements-for-add-ins-on-the-ipad"></a>在iPad 中加载项的特殊要求
 
@@ -31,8 +31,8 @@ ms.locfileid: "66712991"
 > [!NOTE]
 > 外接程序可以根据运行它的设备来提供备用 UI。 若要检测加载项是否在 iPad 上运行，可以使用以下 API。
 >
-> - var isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member)
-> - var allowCommerce = [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member)
+> - const isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member)
+> - const allowCommerce = [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member)
 >
 > 在 iPad 上， `touchEnabled` 返回 `true` 并 `commerceAllowed` 返回 `false`。
 >
@@ -42,10 +42,10 @@ ms.locfileid: "66712991"
 
 应用以下最佳做法来开发在 iPad 上运行的加载项。
 
--  **在 Windows 或 Mac 上开发和调试外接程序，并将其旁加载到 iPad。**
+- **在 Windows 或 Mac 上开发和调试外接程序，并将其旁加载到 iPad。**
 
     不能直接在 iPad 上开发外接程序，但可以在 Windows 或 Mac 计算机上开发和调试它，并将其旁加载到 iPad 进行测试。 由于在 iOS 或 Mac 上的 Office 中运行的加载项支持与在 Windows 上的 Office 中运行的外接程序相同的 API，因此外接程序的代码应在这些平台上以相同的方式运行。 有关详细信息，请参阅 iPad 上的 [测试和调试 Office 加载项](../testing/test-debug-office-add-ins.md) 和 [旁加载 Office 加载项以进行测试](../testing/sideload-an-office-add-in-on-ipad.md)。
 
--  **在外接程序清单中或通过运行时检查指定 API 要求。**
+- **在外接程序清单中或通过运行时检查指定 API 要求。**
 
     在加载项清单中指定 API 要求时，Office 将确定 Office 客户端应用程序是否支持这些 API 成员。 如果 API 成员在应用程序中可用，则外接程序将可用。 或者，在加载项中使用方法之前，可以执行运行时检查以确定应用程序中是否有可用的方法。 运行时检查可确保加载项始终在应用程序中可用，并在方法可用时提供其他功能。 有关详细信息，请参阅 [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。

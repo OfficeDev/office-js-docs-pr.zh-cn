@@ -1,22 +1,22 @@
 ---
 title: Excel JavaScript API 数据类型实体值卡
-description: 了解如何将实体值卡与Excel加载项中的数据类型结合使用。
-ms.date: 05/19/2022
+description: 了解如何将实体值卡与 Excel 外接程序中的数据类型配合使用。
+ms.date: 07/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f9b2c146826c8247abee6ece105d04a335c41f1
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 7eb6251467b73af5e592d4cf013e899207944192
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628154"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889156"
 ---
 # <a name="use-cards-with-entity-value-data-types-preview"></a>使用具有实体值数据类型的卡片 (预览) 
 
 [!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
 
-本文介绍如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 在具有实体值数据类型的Excel UI 中创建卡模式窗口。 这些卡片可以显示实体值中包含的其他信息，除了单元格中已经可见的信息，例如相关图像、产品类别信息和数据归属。
+本文介绍如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 在 Excel UI 中使用实体值数据类型创建卡模式窗口。 这些卡片可以显示实体值中包含的其他信息，除了单元格中已经可见的信息，例如相关图像、产品类别信息和数据归属。
 
 实体值（即 [EntityCellValue）](/javascript/api/excel/excel.entitycellvalue)是数据类型的容器，类似于面向对象的编程中的对象。 本文介绍如何使用实体值卡属性、布局选项和数据归属功能创建显示为卡片的实体值。
 
@@ -49,6 +49,10 @@ const entity: Excel.EntityCellValue = {
             type: Excel.CellValueType.string,
             basicValue: productName || ""
         },
+        "Image": {
+            type: Excel.CellValueType.webImage,
+            address: product.productImage || ""
+        },
         "Quantity Per Unit": {
             type: Excel.CellValueType.string,
             basicValue: product.quantityPerUnit || ""
@@ -69,7 +73,7 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-以下屏幕截图显示了使用上述代码片段的实体值卡。 屏幕截图显示了前面代码片段中 **的产品 ID**、 **产品名称**、 **每单位数量** 和 **单价** 信息。
+以下屏幕截图显示了使用上述代码片段的实体值卡。 屏幕截图显示了前面代码片段中 **的产品 ID**、 **产品名称**、 **图像**、 **每单位数量** 和 **单价** 信息。
 
 :::image type="content" source="../images/excel-data-types-entity-card-properties.png" alt-text="显示实体值数据类型的屏幕截图，其中显示了卡片布局窗口。该卡片显示产品名称、产品 ID、单位数量和单价信息。":::
 
@@ -82,9 +86,9 @@ const entity: Excel.EntityCellValue = {
 
 在属性中 `card` ，使用 [`CardLayoutStandardProperties`](/javascript/api/excel/excel.cardlayoutstandardproperties) 该对象定义卡片的组件，例如 `title`， `subTitle`以及 `sections`。
 
-以下实体值 JSON 代码片段显示一个 `card` 布局，其中包含嵌套 `title` 对象和三 `sections` 个卡片。 请注意，该 `title` 属性 `"Product Name"` 在前面的 [“卡片属性](#card-properties) ”文章部分中具有相应的数据类型。 该 `sections` 属性采用嵌套数组，并使用 [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) 该对象来定义每个部分的外观。
+以下实体值 JSON 代码片段显示包含嵌`title`套和`mainImage`对象的布局，以及卡片中的三`sections`个`card`布局。 请注意，该 `title` 属性 `"Product Name"` 在前面的 [“卡片属性](#card-properties) ”文章部分中具有相应的数据类型。 该 `mainImage` 属性在上一部分中也有相应的 `"Image"` 数据类型。 该 `sections` 属性采用嵌套数组，并使用 [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) 该对象来定义每个部分的外观。
 
-在每个卡片部分中，可以指定元素，例如 `layout`， `title`以及 `properties`。 键 `layout` 使用 [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) 该对象并接受该值 `"List"`。 密 `properties` 钥接受字符串数组。 请注意， `properties` 这些值（例如 `"Product ID"`）在前面的 [“卡片属性](#card-properties) ”一文部分中具有相应的数据类型。 分区也可以折叠，并且可以在实体卡在 Excel UI 中打开时使用布尔值定义为折叠或未折叠。
+在每个卡片部分中，可以指定元素，例如 `layout`， `title`以及 `properties`。 键 `layout` 使用 [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) 该对象并接受该值 `"List"`。 密 `properties` 钥接受字符串数组。 请注意， `properties` 这些值（例如 `"Product ID"`）在前面的 [“卡片属性](#card-properties) ”一文部分中具有相应的数据类型。 分区也可以折叠，并且可以在 Excel UI 中打开实体卡时使用布尔值定义为折叠或未折叠。
 
 > [!NOTE]
 > 若要了解如何在完整的代码示例中使用此 JSON，请访问 [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) 存储库。
@@ -100,6 +104,9 @@ const entity: Excel.EntityCellValue = {
         card: {
             title: { 
                 property: "Product Name" 
+            },
+            mainImage: { 
+                property: "Image" 
             },
             sections: [
                 {
@@ -126,7 +133,7 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-以下屏幕截图显示了使用上述代码片段的实体值卡。 屏幕截图显示了 `title` 使用 **产品名称** 并设置为 **Pavlova** 的对象。 屏幕截图还显示 `sections`。 **“数量”和“价格**”部分可折叠，包含 **每单位数量** 和 **单价**。 **“其他信息**”字段可折叠，并在卡片打开时折叠。
+以下屏幕截图显示了使用上述代码片段的实体值卡。 屏幕截图显示顶部的 `mainImage` 对象，后跟 `title` 使用 **产品名称** 并设置为 **Tofu** 的对象。 屏幕截图还显示 `sections`。 **“数量”和“价格**”部分可折叠，包含 **每单位数量** 和 **单价**。 **“其他信息**”字段可折叠，并在卡片打开时折叠。
 
 :::image type="content" source="../images/excel-data-types-entity-card-sections.png" alt-text="显示实体值数据类型的屏幕截图，其中显示了卡片布局窗口。该卡片显示卡片标题和分区。":::
 

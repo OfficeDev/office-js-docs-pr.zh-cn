@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 07/11/2022
+ms.date: 07/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fc0d81a2dedd80c1f4afa2f3fd9205ff6773f933
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 5a5b9d964c48496658157b4a8506bf283419fbb2
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797608"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889602"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -25,7 +25,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 下表显示了发送功能支持的客户端-服务器组合，包括在适用的情况下所需的最小累积更新。 不支持排除的组合。
 
-| 客户端 | Exchange Online | 本地 Exchange 2016<br> (累积更新 6 或更高版本)  | 本地 Exchange 2019<br> (累积更新 1 或更高版本)  |
+| Client | Exchange Online | 本地 Exchange 2016<br> (累积更新 6 或更高版本)  | 本地 Exchange 2019<br> (累积更新 1 或更高版本)  |
 |---|:---:|:---:|:---:|
 |Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是|是|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|
@@ -65,6 +65,10 @@ Onsend 功能目前具有以下限制。
 
 - **如果在发送**&ndash;处理程序中调用 [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1))，则返回错误。
 - **AppSource** &ndash; 无法在 [AppSource](https://appsource.microsoft.com) 中发布使用 Onsend 功能的 Outlook 加载项，因为它们将无法通过 AppSource 验证。 使用 Onsend 功能的加载项应由管理员部署。
+  
+  > [!IMPORTANT]
+  > 运行 `npm run validate` 以 [验证外接程序的清单](../testing/troubleshoot-manifest.md)时，你会收到错误：“包含 ItemSend 事件的邮箱加载项无效。 邮箱外接程序清单包含 VersionOverrides 中的 ItemSend 事件，这是不允许的。 出现此消息是因为无法将使用 `ItemSend` 该事件的加载项发布到 AppSource，这是此版本的本地发送功能所必需的。 如果未找到其他验证错误，你仍能够旁加载和运行加载项。
+
 - **清单**&ndash; - 每个加载项仅支持一个 `ItemSend` 事件。 如果清单中有两个或多个 `ItemSend` 事件，则该清单将无法通过验证。
 - **性能** &ndash; 多次往返到托管加载项的 Web 服务器可能会影响加载项的性能。创建需要多个基于邮件或会议操作的加载项时，请考虑性能影响。
 - **稍后发送**（仅适用于 Mac）&ndash; 如果有 Onsend 加载项，**稍后发送** 功能将不可用。
@@ -98,7 +102,7 @@ Outlook 中的 Onsend 功能要求针对发送事件类型配置加载项。 选
 
 ### <a name="web-browser---classic-outlook"></a>[Web 浏览器 - 经典 Outlook](#tab/classic)
 
-对于分配了将 *OnSendAddinsEnabled* 标志设置为 **true** 的 Outlook 网页版邮箱策略的用户，系统会为其运行使用 Onsend 功能的 Outlook 网页版（经典）的加载项。
+使用“发送”功能的Outlook 网页版 (经典) 的加载项将为分配有 *OnSendAddinsEnabled* 标志的`true`Outlook 网页版邮箱策略的用户运行。
 
 若要安装新的外接程序，请运行以下 Exchange Online PowerShell cmdlet。
 
@@ -128,13 +132,13 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
     > [!NOTE]
     > 管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能。 系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。
 
-2. 启用 Onsend 功能。
+1. 启用 Onsend 功能。
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. 将策略分配给用户。
+1. 将策略分配给用户。
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -153,13 +157,13 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
    > [!NOTE]
    > 管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能（有关详细信息，请参阅本文前面介绍的[邮箱类型限制](#multiple-on-send-add-ins)）。 系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。
 
-2. 启用 Onsend 功能。
+1. 启用 Onsend 功能。
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. 将策略分配给用户。
+1. 将策略分配给用户。
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
@@ -218,13 +222,13 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
     > [!NOTE]
     > 管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能。 系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。
 
-2. 在发送时强制执行符合性。
+1. 在发送时强制执行符合性。
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. 将策略分配给用户。
+1. 将策略分配给用户。
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -243,13 +247,13 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
    > [!NOTE]
    > 管理员可以使用现有策略，但只有某些邮箱类型才支持 Onsend 功能（有关详细信息，请参阅本文前面介绍的[邮箱类型限制](#multiple-on-send-add-ins)）。 系统将默认阻止 Outlook 网页版中不受支持的邮箱进行发送。
 
-2. 在发送时强制执行符合性。
+1. 在发送时强制执行符合性。
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. 将策略分配给用户。
+1. 将策略分配给用户。
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members

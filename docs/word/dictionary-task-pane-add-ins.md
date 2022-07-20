@@ -1,14 +1,14 @@
 ---
 title: 创建字典任务窗格加载项
 description: 了解如何创建字典任务窗格加载项。
-ms.date: 09/26/2019
+ms.date: 07/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 755b98ec2e3d5e032ca5adbf349b61a583a03ccd
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 7ab542e37236aa4df2404ec14553c51202bcf1a6
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660058"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889532"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -29,22 +29,19 @@ ms.locfileid: "66660058"
 
 ![定义上下文菜单。](../images/dictionary-agave-02.jpg)
 
-
 *图 3.“拼写”和“语法”窗格中的定义*
 
 ![拼写和语法窗格中的定义。](../images/dictionary-agave-03.jpg)
-
 
 *图 4.“同义词库”窗格中的定义*
 
 ![同义词库窗格中的定义。](../images/dictionary-agave-04.jpg)
 
-
 *图 5.“阅读模式”中的定义*
 
 ![读取模式下的定义。](../images/dictionary-agave-05.jpg)
 
-若要创建可提供字典查找的任务窗格外接程序，需创建两个主要组件： 
+若要创建可提供字典查找的任务窗格外接程序，需创建两个主要组件：
 
 - XML Web 服务，该服务从字典服务中查找定义，然后以字典加载项可以使用和显示的 XML 格式返回这些值。
 - 任务窗格加载项，它将用户的当前选择提交至字典 Web 服务，显示定义，还可以选择将这些值插入文档。
@@ -329,7 +326,7 @@ public class WebService : System.Web.Services.WebService {
 
 **备注**
 
-这是字典提供程序的 XML Web 服务的 URI。被正确转义的查询将被追加到此 URI。 
+这是字典提供程序的 XML Web 服务的 URI。被正确转义的查询将被追加到此 URI。
 
 **示例**
 
@@ -487,27 +484,27 @@ a:hover, a:active
 
 ### <a name="writing-the-javascript-implementation"></a>编写 JavaScript 实现
 
-以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。 该脚本重新使用以前介绍的 XML Web 服务。 脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。 它可以通过修改文件顶部的 `xmlServiceURL` 变量来使用符合 XML Web 服务的公用 OfficeDefinitions，然后将拼音的 Bing API 键替换为正确注册的键。
+以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。 该脚本重新使用以前介绍的 XML Web 服务。 脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。 它可与符合 OfficeDefinitions 的公共 XML Web 服务一起使用，方法是修改 `xmlServiceURL` 文件顶部的变量，然后将发音的必应 API 密钥替换为正确注册的发音。
 
 从此实现调用的 Office JavaScript API (Office.js) 的主要成员如下所示：
 
 - 对象的`Office`[初始化](/javascript/api/office)事件，在初始化外接程序上下文时引发，并提供对文[档](/javascript/api/office/office.document)对象实例的访问权限，该实例代表加载项正在与之交互的文档。
 - 对象的 `Document` [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) 方法，该方法在函数中`initialize`调用，用于为文档的 [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) 事件添加事件处理程序，以侦听用户选择更改。
 - 对象[的 getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 方法，在引发事件处理程序以获取用户所选的单词或短语时`SelectionChanged`在函数中`tryUpdatingSelectedWord()`调用该方法，将其强制转换为纯文本，然后执行`selectedTextCallback`异步回调函数。`Document`
-- 当作为方法的`selectTextCallback`_回调_ 参数传递的`getSelectedDataAsync`异步回调函数执行时，它会在回调返回时获取所选文本的值。 它通过使用返回的对象的 [值属性](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member)`AsyncResult`从回调的 _selectedText_ 参数 (中获取该值，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 。
+- 当作为方法的`selectTextCallback`*回调* 参数传递的`getSelectedDataAsync`异步回调函数执行时，它会在回调返回时获取所选文本的值。 它通过使用返回的对象的 [值属性](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member)`AsyncResult`从回调的 *selectedText* 参数 (中获取该值，该参数的类型为 [AsyncResult](/javascript/api/office/office.asyncresult)) 。
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
 - Dictionary.js 中的其余代码会在外接程序的 HTML UI 中显示定义的列表和拼音链接。
 
 ```js
 // The document the dictionary add-in is interacting with.
-var _doc;
+let _doc;
 // The last looked-up word, which is also the currently displayed word.
-var lastLookup;
+let lastLookup;
 // For demo purposes only!! Get an AppID if you intend to use the Pronunciation service for your feature.
-var appID="3D8D4E1888B88B975484F0CA25CDD24AAC457ED8";
+const appID="3D8D4E1888B88B975484F0CA25CDD24AAC457ED8";
 
 // The base URL for the OfficeDefinitions-conforming XML web service to query for definitions.
-var xmlServiceUrl = "WebService.asmx/Define?Word=";
+const xmlServiceUrl = "WebService.asmx/Define?Word=";
 
 // Initialize the add-in.
 // The initialize function is required for all add-ins.

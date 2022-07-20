@@ -1,16 +1,16 @@
 ---
 title: PowerPoint 加载项
 description: 了解如何使用 PowerPoint 加载项跨平台（包括 Windows、iPad、Mac 和浏览器）生成极具吸引力的解决方案，从而有效展示演示文稿。
-ms.date: 10/14/2020
+ms.date: 07/18/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: a1bfa8f17f6a63896025a374a9fe8a6bdbf36f55
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 54e840c62a78af289a1c401ceb0961d610292f99
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746997"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889588"
 ---
 # <a name="powerpoint-add-ins"></a>PowerPoint 加载项
 
@@ -43,13 +43,12 @@ ms.locfileid: "63746997"
 
 - `registerActiveViewChanged` 函数调用 [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) 方法，以注册 [Document.ActiveViewChanged](/javascript/api/office/office.document) 事件的处理程序。
 
-
 ```js
 //general Office.initialize function. Fires on load of the add-in.
 Office.initialize = function(){
 
     //Gets whether the current view is edit or read.
-    var currentView = getActiveFileView();
+    const currentView = getActiveFileView();
 
     //register for the active view changed handler
     registerActiveViewChanged();
@@ -130,10 +129,10 @@ function goToFirstSlide() {
 
 ```js
 function goToSlideByIndex() {
-    var goToFirst = Office.Index.First;
-    var goToLast = Office.Index.Last;
-    var goToPrevious = Office.Index.Previous;
-    var goToNext = Office.Index.Next;
+    const goToFirst = Office.Index.First;
+    const goToLast = Office.Index.Last;
+    const goToPrevious = Office.Index.Previous;
+    const goToNext = Office.Index.Next;
 
     Office.context.document.goToByIdAsync(goToNext, Office.GoToType.Index, function (asyncResult) {
         if (asyncResult.status == "failed") {
@@ -154,7 +153,7 @@ function goToSlideByIndex() {
 function getFileUrl() {
     //Get the URL of the current file.
     Office.context.document.getFilePropertiesAsync(function (asyncResult) {
-        var fileUrl = asyncResult.value.url;
+        const fileUrl = asyncResult.value.url;
         if (fileUrl == "") {
             app.showNotification("The file hasn't been saved yet. Save the file and try again");
         }
@@ -176,13 +175,13 @@ PowerPoint.createPresentation();
 此外，`createPresentation` 方法还可创建现有演示文稿的副本。 此方法接受 .pptx 文件的 base64 编码字符串表示形式作为可选参数。 若字符串参数为有效的 .pptx 文件，则生成的演示文稿是该文件的副本。 可以使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 类将文件转换为所需的 base64 编码字符串，如以下示例所示。
 
 ```js
-var myFile = document.getElementById("file");
-var reader = new FileReader();
+const myFile = document.getElementById("file");
+const reader = new FileReader();
 
 reader.onload = function (event) {
     // strip off the metadata before the base64-encoded string
-    var startIndex = reader.result.toString().indexOf("base64,");
-    var copyBase64 = reader.result.toString().substr(startIndex + 7);
+    const startIndex = reader.result.toString().indexOf("base64,");
+    const copyBase64 = reader.result.toString().substr(startIndex + 7);
 
     PowerPoint.createPresentation(copyBase64);
 };

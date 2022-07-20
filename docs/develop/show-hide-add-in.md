@@ -1,14 +1,14 @@
 ---
 title: 显示或隐藏 Office 加载项的任务窗格
 description: 了解如何在加载项持续运行时以编程方式隐藏或显示其用户界面。
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f8c716bf1a0331fe47bc74e5aad49c17b65437
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 76243d9e593f06eec52fe558832a722317b88c69
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660128"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889224"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>显示或隐藏 Office 加载项的任务窗格
 
@@ -55,7 +55,7 @@ function onCurrentQuarterDeactivated() {
 
 请考虑以下方案：任务窗格是使用选项卡设计的。 首次启动加载项时，“ **开始** ”选项卡处于打开状态。 假设用户打开 **“设置”** 选项卡，然后在任务窗格中调用 `hide()` 代码以响应某些事件。 稍后还会调用 `showAsTaskpane()` 代码以响应另一个事件。 任务窗格将重新出现，并且“ **设置”** 选项卡仍处于选中状态。
 
-![任务窗格的屏幕截图，其中包含四个标签为“开始”、“设置”、“收藏夹”和“帐户”的选项卡。](../images/TaskpaneWithTabs.png)
+![一个任务窗格，其中包含四个标签为“开始”、“设置”、“收藏夹”和“帐户”的选项卡。](../images/TaskpaneWithTabs.png)
 
 此外，即使任务窗格处于隐藏状态，在任务窗格中注册的任何事件侦听器仍会继续运行。
 
@@ -80,7 +80,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 该函数返回另一个 *取消注册* 处理程序的函数。 下面是一个简单但不可靠的示例。
 
 ```javascript
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.
@@ -97,7 +97,7 @@ removeVisibilityModeHandler();
 ```javascript
 // await the promise from onVisibilityModeChanged and assign
 // the returned deregister handler to removeVisibilityModeHandler.
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.

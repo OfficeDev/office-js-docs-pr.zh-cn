@@ -1,14 +1,14 @@
 ---
 title: 解决 Office 加载项中的同源策略限制
-description: 了解如何通过 JSONP、CORS、IFRAMEs 和其他技术适应同源策略限制。
-ms.date: 10/17/2019
+description: 了解如何使用 JSONP、CORS、IFRAME 和其他技术来适应同源策略限制。
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fa152bf42b1d0f7ad16172324c7a9e75314e4f34
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: cd6d8eabfc7f3be145405eeb38ca6b202b0af6c4
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743663"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889343"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>解决 Office 加载项中的同源策略限制
 
@@ -28,7 +28,7 @@ ms.locfileid: "63743663"
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
 function loadVideoDetails(videoIndex) {
     // Dynamically create a new HTML SCRIPT element in the webpage.
-    var script = document.createElement("script");
+    const script = document.createElement("script");
     // Specify the URL to retrieve the indicated video from a feed of a current list of videos,
     // as the value of the src attribute of the SCRIPT element. 
     script.setAttribute("src", "https://gdata.youtube.com/feeds/api/videos/" + 
@@ -36,28 +36,20 @@ function loadVideoDetails(videoIndex) {
     // Insert the SCRIPT element at the end of the HEAD section.
     document.getElementsByTagName('head')[0].appendChild(script);
 }
-
 ```
-
 
 ## <a name="implement-server-side-code-using-a-token-based-authorization-scheme"></a>使用基于令牌的授权架构实施服务器端代码
 
-解决同一来源策略限制的另一个方法是提供使用 [OAuth 2.0](https://oauth.net/2/) 流的服务器端代码，让一个域获取对另一个域上托管的资源的授权访问。 
-
+解决同一来源策略限制的另一个方法是提供使用 [OAuth 2.0](https://oauth.net/2/) 流的服务器端代码，让一个域获取对另一个域上托管的资源的授权访问。
 
 ## <a name="use-cross-origin-resource-sharing-cors"></a>使用跨源资源共享 (CORS)
 
-
 有关使用 [XmlHttpRequest2](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html) 的跨源资源共享功能的示例，请参阅 [XMLHttpRequest2 中的新技巧](https://www.html5rocks.com/en/tutorials/file/xhr2/)的“跨源资源共享 (CORS)”部分。
-
 
 ## <a name="build-your-own-proxy-using-iframe-and-post-message-cross-window-messaging"></a>使用 IFRAME 和 POST MESSAGE 生成您自己的代理（跨 Window 消息传递）。
 
-
 有关如何使用 IFRAME 和 POST MESSAGE 生成自己代理的示例，请参阅[跨窗口消息传送](http://ejohn.org/blog/cross-window-messaging/)。
-
 
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项的隐私和安全](../concepts/privacy-and-security.md)
-    

@@ -1,14 +1,14 @@
 ---
 title: Office 加载项的隐私和安全
 description: 了解 Office 外接程序平台的隐私和安全方面。
-ms.date: 01/26/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c3a17678b0cc83f3217e7885d524a6815578f0
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 77e484244f76e399eb1f3cdb7e5de1de25619a1f
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659666"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889203"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -133,7 +133,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 
 加载项平台中提供了一个权限模型，供加载项用于声明实现其功能所需的对用数据的访问级别。 每个权限级别对应适用于 Office 的 JavaScript API 的子集，加载项通过这些权限级别实现其功能。 例如，内容和任务窗格外接程序的 **WriteDocument** 权限允许访问 [Document.setSelectedDataAsync](/javascript/api/office/office.document) 方法，该方法允许外接程序写入用户文档，但不允许访问任何用于从文档读取数据的方法。 此权限级别对于只需要对文档执行写入操作的加载项很有用，例如用户可以查询要插入到其文档的数据的加载项。
 
-最佳做法是应该基于“_最小特权_”原则请求权限。即应该请求外接程序正常运行所需的 API 的最小子集的访问权限。例如，如果外接程序只需要读取其功能的用户文档中的数据，则应仅请求“**ReadDocument**”权限。（但是，请注意如果请求权限不足，则会导致外接程序平台阻止外接程序使用部分 API 并将生成运行时错误。）
+作为最佳做法，应该根据 *最小特权* 原则请求权限。 也就是说，应该请求仅可访问加载项正常运行所需的 API 最小子集的权限。 For example, if your add-in needs only to read data in a user's document for its features, you should request no more than the **ReadDocument** permission. (But, keep in mind that requesting insufficient permissions will result in the add-in platform blocking your add-in's use of some APIs and will generate errors at run time.)
 
 在外接程序清单中指定权限，如以下部分中的示例所示，最终用户在决定首次安装或激活外接程序之前，可以看到外接程序的请求权限级别。 此外，请求 **ReadWriteMailbox** 权限的 Outlook 加载项需要显式管理员权限才能安装。
 
@@ -172,7 +172,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
 function loadVideoDetails(videoIndex) {
     // Dynamically create a new HTML SCRIPT element in the webpage.
-    var script = document.createElement("script");
+    const script = document.createElement("script");
     // Specify the URL to retrieve the indicated video from a feed of a current list of videos,
     // as the value of the src attribute of the SCRIPT element. 
     script.setAttribute("src", "https://gdata.youtube.com/feeds/api/videos/" + 
