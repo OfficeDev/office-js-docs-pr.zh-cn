@@ -14,7 +14,7 @@
 
 - 共享网络文件夹或外接程序目录中提供的外接程序的 XML 清单文件 (GetDoc_App.xml)。该清单文件必须指向前面提到的 HTML 文件的位置。
 
-此外，还可以通过将 [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio) 或 [Yeoman 生成器用于Office加载项](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator)或 Word，使用 [Visual Studio](../quickstarts/word-quickstart.md?tabs=visualstudio) 或 [Yeoman 生成器Office外接程序来创建用于PowerPoint的加载项](../quickstarts/word-quickstart.md?tabs=yeomangenerator)。
+还可以使用 [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio) 或适用于 Office 外接程序的 [Yeoman 生成器](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator) ，或使用 Office 外接程序的 [Visual Studio](../quickstarts/word-quickstart.md?tabs=visualstudio) 或 [Yeoman 生成器为](../quickstarts/word-quickstart.md?tabs=yeomangenerator) Word 创建适用于 PowerPoint 的外接程序。
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>创建任务窗格加载项需要了解的核心概念
 
@@ -128,10 +128,10 @@ PowerPoint 外接程序的 XML 清单文件提供有关外接程序的重要信�
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
 
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
 
-        // Execute sendFile when submit is clicked
+        // Execute sendFile when submit is clicked.
         $('#submit').click(function () {
             sendFile();
         });
@@ -148,13 +148,13 @@ function updateStatus(message) {
 }
 ```
 
-在 UI 中选择 **“提交** ”按钮时，外接程序将调用 `sendFile` 函数，该函数包含对 [Document.getFileAsync 方法的](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) 调用。 该`getFileAsync`方法使用异步模式，类似于适用于Office的 JavaScript API 中的其他方法。 It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_.
+在 UI 中选择 **“提交** ”按钮时，外接程序将调用 `sendFile` 函数，该函数包含对 [Document.getFileAsync 方法的](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) 调用。 该 `getFileAsync` 方法使用异步模式，类似于适用于 Office 的 JavaScript API 中的其他方法。 It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_.
 
-_fileType_ 参数需要 [FileType](/javascript/api/office/office.filetype) 枚举中的三个常量之一： `Office.FileType.Compressed` (“压缩”) 、 **Office.FileType.PDF** (“pdf”) 或 **Office。FileType.Text** (“text”) 。 [Document.getFileType](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) 注释下列出了每个平台的当前文件类型支持。 为 _fileType_ 参数传入 **压缩** 后，`getFileAsync`该方法通过在本地计算机上创建文件的临时副本，将文档作为 PowerPoint 2013 演示文稿文件 (*.pptx) 或 Word 2013 文档文件 (*.docx) 返回。
+_fileType_ 参数需要 [FileType](/javascript/api/office/office.filetype) 枚举中的三个常量之一： `Office.FileType.Compressed` (“压缩”) 、 **Office.FileType.PDF** (“pdf”) 或 **Office.FileType.Text** (“text”) 。 [Document.getFileType](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) 注释下列出了每个平台的当前文件类型支持。 为 _fileType_ 参数传入 **压缩** 时，`getFileAsync`该方法通过在本地计算机上创建文件的临时副本，将文档作为 PowerPoint 2013 演示文稿文件 (*.pptx) 或 Word 2013 文档文件 (*.docx) 。
 
 该 `getFileAsync` 方法以 [File](/javascript/api/office/office.file) 对象形式返回对文件的引用。 该 `File` 对象公开四个成员： [size](/javascript/api/office/office.file#office-office-file-size-member) 属性、 [sliceCount](/javascript/api/office/office.file#office-office-file-slicecount-member) 属性、 [getSliceAsync](/javascript/api/office/office.file#office-office-file-getsliceasync-member(1)) 方法和 [closeAsync](/javascript/api/office/office.file#office-office-file-closeasync-member(1)) 方法。 该 `size` 属性返回文件中的字节数。 返回 `sliceCount` 本文后面 (文件中) 讨论的 [Slice](/javascript/api/office/office.slice) 对象数。
 
-使用以下代码使用该方法将PowerPoint或 Word 文档作为`File`对象`Document.getFileAsync`获取，然后调用本地定义`getSlice`的函数。 请注意，在 `File` 匿名对象的调用 `getSlice` 中，将传递对象、计数器变量和文件中切片总数。
+使用以下代码使用该方法将 PowerPoint 或 Word 文档作为 `File` 对象 `Document.getFileAsync` 获取，然后调用本地定义 `getSlice` 的函数。 请注意，在 `File` 匿名对象的调用 `getSlice` 中，将传递对象、计数器变量和文件中切片总数。
 
 ```js
 // Get all of the content from a PowerPoint or Word document in 100-KB chunks of text.
@@ -183,8 +183,8 @@ function sendFile() {
 }
 ```
 
-本地函数 `getSlice` 调 `File.getSliceAsync` 用该方法以从 `File` 对象中检索切片。 该 `getSliceAsync` 方法从切片集合中返回一个 `Slice` 对象。 它具有两个必需参数： _sliceIndex_ 和 _callback_。 _sliceIndex_ 参数将整数作为切块集合中的索引器。 与适用于Office的 JavaScript API 中的其他函数一样，`getSliceAsync`该方法还采用回调函数作为参数来处理方法调用的结果。
-ion `getSlice` 调用 **File.getSliceAsync** 方法以从 **File** 对象中检索切片。 **getSliceAsync** 方法返回切片集合中的 **Slice** 对象。 它具有两个必需参数： _sliceIndex_ 和 _callback_。 _sliceIndex_ 参数将整数作为切块集合中的索引器。 与 Office JavaScript API 中的其他函数一样，**getSliceAsync** 方法还采用回调函数作为参数来处理方法调用的结果。
+本地函数 `getSlice` 调 `File.getSliceAsync` 用该方法以从 `File` 对象中检索切片。 该 `getSliceAsync` 方法从切片集合中返回一个 `Slice` 对象。 它具有两个必需参数： _sliceIndex_ 和 _callback_。 _sliceIndex_ 参数将整数作为切块集合中的索引器。 与 JavaScript API for Office 中的其他方法一样，该 `getSliceAsync` 方法还采用回调函数作为参数来处理方法调用的结果。
+ion `getSlice` 调用 **File.getSliceAsync** 方法以从 **File** 对象中检索切片。 **getSliceAsync** 方法返回切片集合中的 **Slice** 对象。 它具有两个必需参数： _sliceIndex_ 和 _callback_。 _sliceIndex_ 参数将整数作为切块集合中的索引器。 与 Office JavaScript API 中的其他方法一样， **getSliceAsync** 方法还采用回调函数作为参数来处理方法调用的结果。
 
 该 `Slice` 对象允许你访问文件中包含的数据。 除非方法的 _options_ 参数 `getFileAsync` 中另有指定，否则 `Slice` 该对象的大小为 4 MB。 该 `Slice` 对象公开三个属性： [大小](/javascript/api/office/office.slice#office-office-slice-size-member)、 [数据](/javascript/api/office/office.slice#office-office-slice-data-member)和 [索引](/javascript/api/office/office.slice#office-office-slice-index-member)。 该 `size` 属性获取切片的大小（以字节为单位）。 该 `index` 属性获取一个整数，该整数表示切片在切片集合中的位置。
 
@@ -203,7 +203,7 @@ function getSlice(state) {
 }
 ```
 
-该 `Slice.data` 属性将文件的原始数据作为字节数组返回。 如果数据采用文本格式（即 XML 或纯文本），则切片包含原始文本。 如果传入 **Office。FileType.Compressed** for the _fileType_ parameter of`Document.getFileAsync`， the slice contains the binary data of the file as a byte array. 对于 PowerPoint 或 Word 文件，切片包含字节数组。
+该 `Slice.data` 属性将文件的原始数据作为字节数组返回。 如果数据采用文本格式（即 XML 或纯文本），则切片包含原始文本。 如果传入 **Office.FileType.Compressed** 作为 _fileType_ 参数 `Document.getFileAsync`，则切片包含文件的二进制数据作为字节数组。 对于 PowerPoint 或 Word 文件，切片包含字节数组。
 
 您必须实施自己的函数（或使用可用库），将字节数组数据转换为 Base64 编码的字符串。有关使用 JavaScript 进行 Base64 编码的信息，请参阅 [Base64 编码和解码](https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding)。
 
@@ -212,7 +212,7 @@ function getSlice(state) {
 添加以下代码，将切片发送到 Web 服务。
 
 > [!NOTE]
-> 此代码将PowerPoint或 Word 文件发送到多个切片中的 Web 服务器。 Web 服务器或服务必须将每个单个切片追加到单个文件中，然后将其另存为.pptx或.docx文件，然后才能对其执行任何操作。
+> 此代码将 PowerPoint 或 Word 文件发送到多个切片中的 Web 服务器。 Web 服务器或服务必须将每个单个切片追加到单个文件中，然后将其另存为.pptx或.docx文件，然后才能对其执行任何操作。
 
 ```js
 function sendSlice(slice, state) {
