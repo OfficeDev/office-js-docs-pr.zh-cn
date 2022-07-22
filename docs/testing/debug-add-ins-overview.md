@@ -3,12 +3,12 @@ title: 调试 Office 加载项
 description: 查找开发环境的 Office 加载项调试指南。
 ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: e8f4270a133e068333703796c10b091bae31ed0a
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 18738896789e6b3e00734d0f7d4af0ce5cdd7458
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797482"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958760"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>调试 Office 加载项概述
 
@@ -36,7 +36,7 @@ ms.locfileid: "66797482"
 
 在某些特殊情况下，对于给定的平台、Office 应用程序和开发环境组合，调试过程不同于正常情况。 如果要调试这些特殊情况中的任何一种，请使用本部分中的链接来查找适当的指南。 否则，请继续使用 [常规指南](#general-guidance)。
 
-- **调试 `Office.initialize` 或 `Office.onReady` 方法**：[调试 initialize 和 onReady 方法](debug-initialize-onready.md)。
+- **调试 `Office.initialize` 或 `Office.onReady` 函数**：[调试 initialize 和 onReady 函数](debug-initialize-onready.md)。
 - **在 _非共享_ 运行时中调试 Excel 自定义函数**：[非共享运行时中的自定义函数调试](../excel/custom-functions-debugging.md)。
 - **在 _非共享_ 运行时中调试 [函数命令](../design/add-in-commands.md#types-of-add-in-commands)**： 
     - Windows 开发计算机上的 Outlook 加载项：[在 Outlook 加载项中调试函数命令](../outlook/debug-ui-less.md) 

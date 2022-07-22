@@ -4,12 +4,12 @@ description: 构建一个 Excel 外接程序，用于创建、填充、筛选和
 ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: fce53d78af29cceea12f0067d22e9ced0f9c1ace
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 554fa885cb91671f97103425d572d8bf1f3b6437
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659715"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958388"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>教程：创建 Excel 任务窗格加载项
 
@@ -77,7 +77,7 @@ ms.locfileid: "66659715"
 
     - 查找并删除整个 `run()` 函数。
 
-1. 在 `Office.onReady` 方法调用中，找到 `if (info.host === Office.HostType.Excel) {` 一行，并紧贴该行后添加以下代码：
+1. 在 `Office.onReady` 函数调用中，找到行 `if (info.host === Office.HostType.Excel) {` 并紧跟该行添加下列代码。 注意：
 
     - 此代码的第一部分确定用户的 Excel 版本是否支持某一版本的 Excel.js，其中包含此系列教程所使用全部 API。在生产性加载项中，使用条件块的文本块隐藏或启用调用不受支持的 API 的UI。这将使用户仍然能够使用其版本 Excel 所支持加载项的某些部分。
 
@@ -225,7 +225,7 @@ ms.locfileid: "66659715"
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `create-table` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `create-table` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("filter-table").onclick = filterTable;
@@ -276,7 +276,7 @@ ms.locfileid: "66659715"
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `filter-table` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `filter-table` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("sort-table").onclick = sortTable;
@@ -352,7 +352,7 @@ ms.locfileid: "66659715"
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `sort-table` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `sort-table` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("create-chart").onclick = createChart;
@@ -447,7 +447,7 @@ ms.locfileid: "66659715"
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `create-chart` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `create-chart` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("freeze-header").onclick = freezeHeader;
@@ -792,7 +792,7 @@ ms.locfileid: "66659715"
 
 1. 将下面的代码添加到 **popup.js** 中。 对于此代码，请注意以下事项。
 
-   - *每个调用 Office.JS 库中的 API 的页面均必须首先确保该库已完成初始化。* 执行此操作的最佳方法是调用 `Office.onReady()` 方法。 如果加载项具有其自己的初始化任务，则代码应位于链接至 `Office.onReady()` 调用的 `then()` 方法中。 必须在调用 Office.js 之前运行 `Office.onReady()` 调用；因此，作业位于由页面加载的脚本文件中，如同本示例中一样。
+   - *每个调用 Office.JS 库中的 API 的页面均必须首先确保该库已完成初始化。* 执行此操作的最佳方法是调用 `Office.onReady()` 函数。 如果加载项具有其自己的初始化任务，则代码应位于链接至 `Office.onReady()` 调用的 `then()` 方法中。 必须在调用 Office.js 之前运行 `Office.onReady()` 调用；因此，作业位于由页面加载的脚本文件中，如同本示例中一样。
 
     ```js
     (function () {
@@ -918,7 +918,7 @@ ms.locfileid: "66659715"
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配单机处理程序至 `freeze-header` 按钮的行，并在行后添加以下代码。将在后续步骤中创建 `openDialog` 方法。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `freeze-header` 按钮的行，并在该行后添加以下代码。 将在后续步骤中创建 `openDialog` 方法。
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;

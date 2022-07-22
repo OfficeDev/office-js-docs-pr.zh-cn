@@ -4,12 +4,12 @@ description: 本教程将介绍如何生成 Word 加载项，用于插入（和�
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 6fc01db700475d4ff2dda49e471a68d9ae59aa77
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 1f7950007a9139767cd31901ccf64c9fb1ebdf7c
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484023"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958381"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>教程：创建 Word 任务窗格加载项
 
@@ -76,7 +76,7 @@ ms.locfileid: "64484023"
 
     - 查找并删除整个 `run()` 函数。
 
-1. 在 `Office.onReady` 方法调用中，找到 `if (info.host === Office.HostType.Word) {` 一行，并紧贴该行后添加以下代码：
+1. 在 `Office.onReady` 函数调用中，找到行 `if (info.host === Office.HostType.Word) {` 并紧跟该行添加下列代码。 注意：
 
     - 此代码的第一部分用于确定用户的 Word 版本是否支持包含本教程所有阶段使用的全部 API 的 Word.js 版本。在生产加载项中，若要隐藏或禁用调用不受支持的 API 的 UI，请使用条件块的主体。这样一来，用户仍可以使用 Word 版本支持的加载项部分。
     - 此代码的第二部分为 `insert-paragraph` 按钮添加了事件处理程序。
@@ -183,7 +183,7 @@ ms.locfileid: "64484023"
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `insert-paragraph` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `insert-paragraph` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("apply-style").onclick = applyStyle;
@@ -227,7 +227,7 @@ ms.locfileid: "64484023"
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `apply-style` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `apply-style` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("apply-custom-style").onclick = applyCustomStyle;
@@ -273,7 +273,7 @@ ms.locfileid: "64484023"
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `apply-custom-style` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `apply-custom-style` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("change-font").onclick = changeFont;
@@ -345,7 +345,7 @@ ms.locfileid: "64484023"
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `change-font` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `change-font` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
@@ -378,7 +378,7 @@ ms.locfileid: "64484023"
 
 1. 在 `insertTextIntoRange()` 函数中，将 `TODO1` 替换为以下代码。注意：
 
-   - 此方法用于在“即点即用”文本区域末尾插入缩写 ["(C2R)"]。 它做了一个简化假设，即存在字符串，且用户已选择它。
+   - 此函数用于在“即点即用”文本区域末尾插入缩写 [“(C2R)”]。 它做了一个简化假设，即存在字符串，且用户已选择它。
 
    - `Range.insertText` 方法的第一个参数是要插入到 `Range` 对象的字符串。
 
@@ -465,7 +465,7 @@ async function insertTextIntoRange() {
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `insert-text-into-range` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `insert-text-into-range` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("insert-text-outside-range").onclick = insertTextBeforeRange;
@@ -495,7 +495,7 @@ async function insertTextIntoRange() {
 
 1. 在 `insertTextBeforeRange()` 函数中，将 `TODO1` 替换为以下代码。注意：
 
-   - 此方法用于在文本为“Microsoft 365”的区域前添加文本为“Office 2019”的区域。它做了一个简化假设，即存在字符串，且用户已选择它。
+   - 此函数用于带有文本“Microsoft 365”的区域前添加文本为“Office 2019”的区域。 它做了一个简化假设，即存在字符串，且用户已选择它。
 
    - `Range.insertText` 方法的第一个参数是要添加的字符串。
 
@@ -544,7 +544,7 @@ async function insertTextIntoRange() {
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `insert-text-outside-range` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `insert-text-outside-range` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("replace-text").onclick = replaceText;
@@ -569,7 +569,7 @@ async function insertTextIntoRange() {
     }
     ```
 
-1. 在 `replaceText()` 函数中，将 `TODO1` 替换为以下代码。请注意，该方法旨在将字符串“several”替换为字符串“many”。它做了一个简化的假设，假设字符串存在并且用户已经选择了它。
+1. 在 `replaceText()` 函数中，将 `TODO1` 替换为以下代码。 请注意，此函数用于将字符串“几个”替换为字符串“许多”。 它做了一个简化假设，即存在字符串，且用户已选择它。
 
     ```js
     const doc = context.document;
@@ -628,15 +628,15 @@ async function insertTextIntoRange() {
     <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
     ```
 
-1. 打开 ./src/taskpane/taskpane.js 文件。
+1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在文件顶部附近找到 `Office.onReady` 方法调用，然后在该行的前一行添加以下代码。 此代码将导入你先前在文件 /base64Image.js 中定义的变量。
+1. 在文件顶部附近找到 `Office.onReady` 函数调用，然后在该行之前添加以下代码。 此代码将导入你先前在文件 /base64Image.js 中定义的变量。
 
     ```js
     import { base64Image } from "../../base64Image";
     ```
 
-1. 在 `Office.onReady` 方法调用中，查找要单击处理程序的`replace-text`按钮行，并在该行之后添加以下代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `replace-text` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("insert-image").onclick = insertImage;
@@ -679,7 +679,7 @@ async function insertTextIntoRange() {
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `insert-image` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `insert-image` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
@@ -727,7 +727,7 @@ async function insertTextIntoRange() {
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `insert-html` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `insert-html` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("insert-table").onclick = insertTable;
@@ -819,7 +819,7 @@ async function insertTextIntoRange() {
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `insert-table` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `insert-table` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
@@ -877,7 +877,7 @@ async function insertTextIntoRange() {
 
 1. 打开 **./src/taskpane/taskpane.js** 文件。
 
-1. 在 `Office.onReady` 方法调用中，定位分配点击事件至 `create-content-control` 按钮的行，并在行后添加虾类代码。
+1. 在 `Office.onReady` 函数调用中，定位将单击处理程序分配到 `create-content-control` 按钮的行，并在该行后添加以下代码。
 
     ```js
     document.getElementById("replace-content-in-control").onclick = replaceContentInControl;

@@ -4,12 +4,12 @@ description: 在本教程中，将生成 PowerPoint 加载项，用于插入图�
 ms.date: 07/13/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 14a0b249aaecce61f6f7892752970b445955d27c
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: add58a3fc15f70b9c395e2f85c5eb5b2bb6e2bd5
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797664"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958879"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>教程：创建 PowerPoint 任务窗格加载项
 
@@ -447,7 +447,7 @@ ms.locfileid: "66797664"
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-1. 在 **Home.js** 文件中，将 `TODO9` 替换为下列代码，以定义导航函数。以下各函数均使用 `goToByIdAsync` 函数，以根据幻灯片在文档中的位置（第一张、最后一张、上一张、下一张）选择幻灯片。
+1. 在 **Home.js** 文件中，将 `TODO9` 替换为下列代码，以定义导航函数。 这些函数中每一个都使用 `goToByIdAsync` 方法，以根据幻灯片在文档中的位置（第一张、最后一张、上一张和下一张）选择幻灯片。
 
     ```js
     function goToFirstSlide() {

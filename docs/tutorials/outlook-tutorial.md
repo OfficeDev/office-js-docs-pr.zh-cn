@@ -4,12 +4,12 @@ description: 在本教程中，你将生成一个可将 GitHub gist 插入到新
 ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 1fb2acde8b79450741f244562467903ea6abf55c
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 53b1b30c940ef3b6b1fdaeeecf95e5afb172c472
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797650"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958374"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>教程：生成邮件撰写 Outlook 外接程序
 
@@ -413,7 +413,7 @@ ul {
 }
 ```
 
-现在你已经定义了对话框 UI，可以编写使其实际执行某些操作的代码。 在 **./src/settings** 文件夹中创建一个名为 **dialog.js** 的文件，并添加以下代码。 请注意，此代码将使用 jQuery 注册事件，并使用 **messageParent** 函数将用户的选择发送回调用方。
+现在你已经定义了对话框 UI，可以编写使其实际执行某些操作的代码。 在 **./src/settings** 文件夹中创建一个名为 **dialog.js** 的文件，并添加以下代码。 请注意，此代码将使用 jQuery 注册事件，并使用 `messageParent` 方法将用户的选择发送回调用方。
 
 ```js
 (function(){

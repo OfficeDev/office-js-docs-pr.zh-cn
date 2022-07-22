@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 666b525dde96c6d281d5acf6d905e592b172bea3
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 0743057c2f562485c3edb5d3bd82266c13b7e13f
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889623"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958886"
 ---
 # <a name="visio-javascript-api-overview"></a>Visio JavaScript API 概述
 
@@ -23,10 +23,10 @@ ms.locfileid: "66889623"
 
 可以使用 Visio JavaScript API 执行以下操作：
 
-* 与页面、形状等 Visio 图表元素进行交互。
-* 在 Visio 图表画布上创建视觉标记。
-* 为绘图中的鼠标事件编写自定义处理程序。
-* 向解决方案公开图表数据，如形状文本、形状数据和超链接。
+- 与页面、形状等 Visio 图表元素进行交互。
+- 在 Visio 图表画布上创建视觉标记。
+- 为绘图中的鼠标事件编写自定义处理程序。
+- 向解决方案公开图表数据，如形状文本、形状数据和超链接。
 
 本文介绍了如何通过结合使用 Visio JavaScript API 和 Visio 网页版来生成 SharePoint Online 解决方案。具体介绍了有关使用 API（如 `EmbeddedSession`、`RequestContext`、JavaScript 代理对象、`sync()`、`Visio.run()` 和 `load()` 方法）的基本概念。下面这些代码示例展示了如何应用这些概念。
 
@@ -45,7 +45,7 @@ session.init().then(function () {
 
 `Visio.run()` 运行一个对 Visio 对象模型执行操作的批处理脚本。 批处理命令包括定义本地 JavaScript 代理对象、在本地和 Visio 对象之间同步状态的 `sync()` 方法以及承诺实现。 `Visio.run()` 中的批处理请求的优势在于，当实现承诺时，在执行期间分配的任何被跟踪的页面对象将会自动释放。
 
-运行方法获取会话和 RequestContext 对象并返回一个承诺（通常就是 `context.sync()` 的结果）。 可以在 `Visio.run()` 之外运行批处理操作。 不过，在这种情况下，需要手动跟踪和管理任何页面对象引用。
+`run` 函数获取会话和 RequestContext 对象，并返回一个承诺（通常就是 `context.sync()` 的结果）。 可以在 `Visio.run()` 之外运行批处理操作。 不过，在这种情况下，需要手动跟踪和管理任何页面对象引用。
 
 ## <a name="requestcontext"></a>RequestContext
 
@@ -97,7 +97,7 @@ object.load(string: properties); //or object.load(array: properties); //or objec
 ## <a name="example-printing-all-shapes-text-in-active-page"></a>示例：打印活动页中的所有形状文本
 
 下面的示例展示了如何打印数组形状对象的形状文本值。
-`Visio.run()` 方法包含一批指令。 在此次批处理期间，将会创建一个代理对象，引用活动文档中的形状。
+`Visio.run()` 函数包含一批指令。 在此次批处理期间，将会创建一个代理对象，引用活动文档中的形状。
 
 所有这些命令将在调用 `context.sync()` 时排入队列和运行。 `sync()` 方法返回一个承诺，可用于将其与其他操作关联起来。
 
@@ -137,7 +137,7 @@ Visio.run(session, function (context) {
 
 可以从本部分中的示例入手。 此示例展示了如何在 Visio 图表中以编程方式显示选定形状的形状文本。 首先，在 SharePoint Online 中创建一个经典页面，或编辑现有页面。 在页面上添加脚本编辑器 Web 部件，复制并粘贴下面的代码。
 
-```js
+```HTML
 <script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
 
 Enter Visio File Url:<br/>

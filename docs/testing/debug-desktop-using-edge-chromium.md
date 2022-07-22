@@ -3,12 +3,12 @@ title: 使用 Visual Studio Code 和 Microsoft Edge WebView2（基于 Chromium�
 description: 了解如何在 VS Code 中调试使用 Microsoft Edge WebView2（基于 Chromium）的 Office 加载项。
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c30875e385ecb4d73c492a8a2b6a4a4391bc60ea
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 10c65ef26e59433e1215daa4b7a49b17413e102d
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711012"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959075"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>使用 Visual Studio Code 和 Microsoft Edge WebView2（基于 Chromium）在 Windows 上调试加载项
 
@@ -77,7 +77,7 @@ ms.locfileid: "63711012"
 1. 在加载项中运行调用断点行的功能。 你将看到已命中断点，可以检查局部变量。
 
    > [!NOTE]
-   > `Office.initialize` 或 `Office.onReady` 调用中的断点将被忽略。 有关这些方法的详细信息，请参阅 [初始化 Office 加载项](../develop/initialize-add-in.md)。
+   > `Office.initialize` 或 `Office.onReady` 调用中的断点将被忽略。 有关这些函数的详细信息，请参阅 [初始化 Office 加载项](../develop/initialize-add-in.md)。
 
 > [!IMPORTANT]
 > 停止调试会话的最佳方式是选择 **Shift+F5** 或从菜单中选择“**运行”>“停止调试**”。 此操作应关闭节点服务器窗口并尝试关闭主机应用程序，但主机应用程序上会出现提示，询问是否保存文档。 请做出适当选择，让主机应用程序关闭。 避免手动关闭节点窗口或主机应用程序。 这样做可能会导致 bug，尤其是在重复停止和启动调试会话时。

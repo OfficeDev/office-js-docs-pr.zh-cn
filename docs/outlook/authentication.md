@@ -3,12 +3,12 @@ title: Outlook 加载项中的身份验证选项
 description: Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 708b02cabdfafad599171839b29195d49009f37c
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: 17ab09a1f0cdbf7668fa80080e587dd3d800f2c6
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650582"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958360"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook 加载项中的身份验证选项
 
@@ -57,7 +57,7 @@ Exchange 用户标识令牌为加载项提供了一种创建用户标识的方�
 
 - 需要访问不受控制的服务。
 
-使用此方法时，外接程序会提示用户使用 [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) 方法初始化 OAuth2 流来登录到该服务。
+使用此方法时，加载项会提示用户通过使用 [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) 方法初始化 OAuth2 流来登录到该服务。
 
 ## <a name="callback-tokens"></a>回调令牌
 
