@@ -1,14 +1,14 @@
 ---
 title: 对文档或电子表格中的活动选择执行数据读取和写入操作
-description: 了解如何在 Word 文档或Excel电子表格中读取和写入活动选择的数据。
+description: 了解如何在 Word 文档或 Excel 电子表格中读取和写入活动选择的数据。
 ms.date: 01/31/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 360701bc43a7fc63f8447ff9a068256d187e2a70
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: 220f768352aa3cf8a077f2e37ec812878cbeffba
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187313"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958459"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>对文档或电子表格中的活动选择执行数据读取和写入操作
 
@@ -41,9 +41,9 @@ function write(message){
 > [!TIP]
 > **何时应使用矩阵与表格 coercionType 数据访问？** 如果需要在添加行和列时动态增长所选表格数据，并且必须使用表标头，则应通过将方法的 _coercionType_ 参数 `getSelectedDataAsync` 指定为 `"table"` 或 `Office.CoercionType.Table`) 来使用表数据类型 (。 表格数据和矩阵数据中都支持在数据结构内添加行和列，但仅支持对表格数据追加行和列。 如果不打算添加行和列，并且数据不需要标头功能，则应通过将方法的  _coercionType_ 参数 `getSelectedDataAsync` 指定为 `"matrix"` 或 `Office.CoercionType.Matrix`) 来使用矩阵数据类型 (，从而提供与数据交互的更简单的模型。
 
-作为第二个参数（ _回调_）传递到函数中的匿名函数在操作完成时 `getSelectedDataAsync` 执行。 调用该函数时使用单个参数 _asyncResult_，后者包含调用的结果和状态。 如果调用失败，则该对象 [的错误](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) 属性 `AsyncResult` 提供对 [Error](/javascript/api/office/office.error) 对象的访问权限。 您可以检查 [Error.name](/javascript/api/office/office.error#office-office-error-name-member) 和 [Error.message](/javascript/api/office/office.error#office-office-error-message-member) 属性的值，以确定设置操作失败的原因。 否则，会显示文档中选定的文本。
+作为第二个参数（ _回调_）传递到方法中的 `getSelectedDataAsync` 匿名函数将在操作完成时执行。 调用该函数时使用单个参数 _asyncResult_，后者包含调用的结果和状态。 如果调用失败，则该对象 [的错误](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) 属性 `AsyncResult` 提供对 [Error](/javascript/api/office/office.error) 对象的访问权限。 您可以检查 [Error.name](/javascript/api/office/office.error#office-office-error-name-member) 和 [Error.message](/javascript/api/office/office.error#office-office-error-message-member) 属性的值，以确定设置操作失败的原因。 否则，会显示文档中选定的文本。
 
-[AsyncResult.status](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) 属性在 **if** 语句中用于测试调用是否成功。 [Office。AsyncResultStatus](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) 是可用`AsyncResult.status`属性值的枚举。 `Office.AsyncResultStatus.Failed` 计算结果为字符串“失败” (，同样，也可以指定为该文本字符串) 。
+[AsyncResult.status](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) 属性在 **if** 语句中用于测试调用是否成功。 [Office.AsyncResultStatus](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) 是可用 `AsyncResult.status` 属性值的枚举。 `Office.AsyncResultStatus.Failed` 计算结果为字符串“失败” (，同样，也可以指定为该文本字符串) 。
 
 ## <a name="write-data-to-the-selection"></a>向选定内容中写入数据
 
@@ -62,7 +62,7 @@ function write(message){
 }
 ```
 
-为  _data_ 参数传入不同对象类型会得到不同结果。 结果取决于当前在文档中选择的内容，该文档Office客户端应用程序托管加载项，以及传入的数据是否可以强制执行当前选择。
+为  _data_ 参数传入不同对象类型会得到不同结果。 结果取决于文档中当前选择的内容、Office 客户端应用程序托管你的外接程序，以及传入的数据是否可以强制执行当前选择。
 
 作为  [callback](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) 参数传入 _setSelectedDataAsync_ 方法的匿名函数在异步调用完成时执行。 使用 `setSelectedDataAsync` 方法将数据写入所选内容时，回调的 _asyncResult_ 参数仅提供对调用状态的访问权限，如果调用失败，则提供对 [Error](/javascript/api/office/office.error) 对象的访问权限。
 
@@ -88,9 +88,9 @@ function write(message){
 }
 ```
 
-第一个参数 _eventType_ 指定要订阅的事件的名称。 传递此参数的字符串`"documentSelectionChanged"`等效于传递`Office.EventType.DocumentSelectionChanged`Office的事件类型[。EventType](/javascript/api/office/office.eventtype) 枚举。
+第一个参数 _eventType_ 指定要订阅的事件的名称。 传递此参数的字符串 `"documentSelectionChanged"` 等效于传递 `Office.EventType.DocumentSelectionChanged` [Office.EventType](/javascript/api/office/office.eventtype) 枚举的事件类型。
 
-`myHandler()`作为第二个参数处理 _程序_ 传递到函数中的函数是在文档上更改所选内容时执行的事件处理程序。 调用该函数时使用单个参数 _eventArgs_，后者在异步操作完成时将包含对 [DocumentSelectionChangedEventArgs](/javascript/api/office/office.documentselectionchangedeventargs) 对象的引用。 可以使用 [DocumentSelectionChangedEventArgs.document](/javascript/api/office/office.documentselectionchangedeventargs#office-office-documentselectionchangedeventargs-document-member) 属性访问引发事件的文档。
+`myHandler()`作为第二个参数处理 _程序_ 传递到方法中的函数是在文档上更改所选内容时执行的事件处理程序。 调用该函数时使用单个参数 _eventArgs_，后者在异步操作完成时将包含对 [DocumentSelectionChangedEventArgs](/javascript/api/office/office.documentselectionchangedeventargs) 对象的引用。 可以使用 [DocumentSelectionChangedEventArgs.document](/javascript/api/office/office.documentselectionchangedeventargs#office-office-documentselectionchangedeventargs-document-member) 属性访问引发事件的文档。
 
 > [!NOTE]
 > 可以通过再次调用 `addHandlerAsync` 该方法并传入处理 _程序_ 参数的附加事件处理程序函数，为给定事件添加多个事件处理程序。 只要每个事件处理程序函数的名称保持唯一，此方法就有用。

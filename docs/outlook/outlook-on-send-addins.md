@@ -3,12 +3,12 @@ title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
 ms.date: 07/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a5b9d964c48496658157b4a8506bf283419fbb2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 8382e32953d74885098f053319e5c2718636f780
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889602"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958970"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
@@ -489,7 +489,7 @@ function validateBody(event) {
 }
 ```
 
-`validateBody` 函数以指定格式 (HTML) 获取当前正文，并在回调方法中传递代码想要访问的 `ItemSend` 事件对象。 除 `getAsync` 方法之外，`Body` 对象还提供了 `setAsync` 方法，可用于将正文替换为指定的文本。
+该 `validateBody` 函数以指定格式 (HTML) 获取当前正文，并传递 `ItemSend` 代码要在回调函数中访问的事件对象。 除 `getAsync` 方法之外，`Body` 对象还提供了 `setAsync` 方法，可用于将正文替换为指定的文本。
 
 > [!NOTE]
 > 有关详细信息，请参阅 [Event 对象](/javascript/api/office/office.addincommands.event)和 [Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1))。

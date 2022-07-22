@@ -1,30 +1,30 @@
 ---
-title: 从Excel调用 JavaScript API
-description: 了解Excel函数调用哪些 JavaScript API。
-ms.date: 08/30/2021
+title: 从自定义函数调用 Excel JavaScript API
+description: 了解可以从自定义函数调用的 Excel JavaScript API。
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b60f3fbdeb317169800c688b77982580dfbf8c4
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 04edd5104e0def7631352bc315a0c451ae067d98
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744396"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958416"
 ---
-# <a name="call-excel-javascript-apis-from-a-custom-function"></a>从Excel调用 JavaScript API
+# <a name="call-excel-javascript-apis-from-a-custom-function"></a>从自定义函数调用 Excel JavaScript API
 
-从Excel函数调用 JavaScript API 以获取区域数据，并获取用于计算的更多上下文。 在Excel函数调用 JavaScript API 可能会有所帮助：
+从自定义函数调用 Excel JavaScript API 以获取范围数据并获取更多计算上下文。 在以下情况下，通过自定义函数调用 Excel JavaScript API 会很有帮助：
 
-- 自定义函数需要在计算之前从Excel信息。 此信息可能包括文档属性、范围格式、自定义 XML 部件、工作簿名称或其他Excel特定的信息。
-- 自定义函数将在计算后设置返回值的单元格编号格式。
+- 自定义函数需要在计算前从 Excel 获取信息。 此信息可能包括文档属性、范围格式、自定义 XML 部件、工作簿名称或其他特定于 Excel 的信息。
+- 自定义函数将在计算后为返回值设置单元格的数字格式。
 
 > [!IMPORTANT]
-> 若要从Excel调用 JavaScript API，你需要使用共享的 JavaScript 运行时。 查看 [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md) 以了解更多信息。
+> 若要从自定义函数调用 Excel JavaScript API，需要使用共享 JavaScript 运行时。 查看 [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md) 以了解更多信息。
 
 ## <a name="code-sample"></a>代码示例
 
-若要从Excel调用 JavaScript API，首先需要上下文。 使用[Excel。获取上下文的 RequestContext](/javascript/api/excel/excel.requestcontext) 对象。 然后，使用上下文调用工作簿中所需的 API。
+若要从自定义函数调用 Excel JavaScript API，首先需要上下文。 使用 [Excel.RequestContext](/javascript/api/excel/excel.requestcontext) 对象获取上下文。 然后使用上下文调用工作簿中所需的 API。
 
-下面的代码示例演示如何使用 从 `Excel.RequestContext` 工作簿的单元格获取值。 在此示例中，参数`address`将传递到 JavaScript API [Worksheet.getRange Excel中](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1))，并且必须以字符串形式输入。 例如，在用户界面中输入的Excel函数`=CONTOSO.GETRANGEVALUE("A1")``"A1"`必须遵循 模式，其中 是从中检索值的单元格的地址。
+下面的代码示例演示如何使用 `Excel.RequestContext` 它从工作簿中的单元格获取值。 在此示例中 `address` ，参数将传递到 Excel JavaScript API [Worksheet.getRange 方法中](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) ，并且必须以字符串的形式输入。 例如，在 Excel UI 中输入的自定义函数必须遵循模式 `=CONTOSO.GETRANGEVALUE("A1")`，从中检索值的单元格的地址在哪里 `"A1"` 。
 
 ```JavaScript
 /**
@@ -34,10 +34,10 @@ ms.locfileid: "63744396"
  **/
 async function getRangeValue(address) {
  // Retrieve the context object. 
- var context = new Excel.RequestContext();
+ const context = new Excel.RequestContext();
  
  // Use the context object to access the cell at the input address. 
- var range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
+ const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
  range.load("values");
  await context.sync();
  
@@ -46,20 +46,20 @@ async function getRangeValue(address) {
 }
 ```
 
-## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>通过自定义函数Excel JavaScript API 的限制
+## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>通过自定义函数调用 Excel JavaScript API 的限制
 
-不要从更改Excel环境自定义函数调用 JavaScript Excel。 这意味着自定义函数不应执行下列任何操作：
+不要从更改 Excel 环境的自定义函数调用 Excel JavaScript API。 这意味着自定义函数不应执行以下任一操作：
 
-- 在电子表格中插入、删除或设置单元格的格式。
+- 在电子表格上插入、删除或设置单元格的格式。
 - 更改另一个单元格的值。
-- 移动、重命名、删除工作表或向工作簿添加工作表。
-- 更改任何环境选项，如计算模式或屏幕视图。
-- 向工作簿添加名称。
+- 将工作表移动、重命名、删除或添加到工作簿。
+- 更改任何环境选项，例如计算模式或屏幕视图。
+- 将名称添加到工作簿。
 - 设置属性或执行大多数方法。
 
-更改Excel可能会导致性能不佳、时间不足和无限循环。 自定义函数计算不应在重新计算Excel运行，因为它会导致不可预知的结果。
+更改 Excel 可能会导致性能不佳、超时和无限循环。 执行 Excel 重新计算时不应运行自定义函数计算，因为它将导致不可预知的结果。
 
-相反，请Excel功能区按钮或任务窗格的上下文中对自定义项进行更改。
+而是从功能区按钮或任务窗格的上下文对 Excel 进行更改。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -67,5 +67,5 @@ async function getRangeValue(address) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [在自定义函数和任务Excel之间共享数据和事件教程](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [在 Excel 自定义函数和任务窗格教程之间共享数据和事件](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

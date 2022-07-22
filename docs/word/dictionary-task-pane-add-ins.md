@@ -3,12 +3,12 @@ title: 创建字典任务窗格加载项
 description: 了解如何创建字典任务窗格加载项。
 ms.date: 07/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ab542e37236aa4df2404ec14553c51202bcf1a6
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: f02b128166ba66eca5db54ceb98ee25e4f3bea56
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889532"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959005"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格加载项
 
@@ -509,7 +509,7 @@ const xmlServiceUrl = "WebService.asmx/Define?Word=";
 // Initialize the add-in.
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
     // After the DOM is loaded, app-specific code can run.
     // Store a reference to the current document.
@@ -522,7 +522,7 @@ Office.initialize = function (reason) {
 }
 
 // Executes when event is raised on user's selection changes, and at initialization time. 
-// Gets the current selection and passes that to asynchronous callback method.
+// Gets the current selection and passes that to asynchronous callback function.
 function tryUpdatingSelectedWord() {
     _doc.getSelectedDataAsync(Office.CoercionType.Text, selectedTextCallback); 
 }

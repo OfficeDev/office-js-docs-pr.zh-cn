@@ -3,12 +3,12 @@ title: 在 Office 加载项中创建自定义上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到 Office 外接程序。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a079930bbb4523893f25604aefcff0a68f0316b
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 23f6c64d1b3f0e95b8dcae6bc36563566acb8b3f
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889189"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958530"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>在 Office 加载项中创建自定义上下文选项卡
 
@@ -253,7 +253,7 @@ ms.locfileid: "66889189"
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>使用 requestCreateControls 向 Office 注册上下文选项卡
 
-上下文选项卡通过调用 [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) 方法注册到 Office。 这通常在分配给 `Office.initialize` 方法或方法的函数中 `Office.onReady` 完成。 有关这些方法和初始化加载项的详细信息，请参阅 [“初始化 Office 加载项](../develop/initialize-add-in.md)”。 但是，可以在初始化后随时调用该方法。
+上下文选项卡通过调用 [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) 方法注册到 Office。 这通常在分配给 `Office.initialize` 函数或与函数一起分配的函数中 `Office.onReady` 完成。 有关这些函数和初始化加载项的详细信息，请参阅 [“初始化 Office 加载项](../develop/initialize-add-in.md)”。 但是，可以在初始化后随时调用该方法。
 
 > [!IMPORTANT]
 > 在 `requestCreateControls` 加载项的给定会话中，只能调用该方法一次。 如果再次调用错误，则会引发错误。
@@ -272,7 +272,7 @@ Office.onReady(async () => {
 
 通常，当用户发起的事件更改加载项上下文时，应显示自定义上下文选项卡。 假设在激活 Excel 工作簿) 的默认工作表上的图表 (时，该选项卡应可见。
 
-首先分配处理程序。 此操作通常在方法中 `Office.onReady` 完成，如以下示例所示，该示例将 (在后续步骤中创建的处理程序分配给 `onActivated` 工作表中所有图表的和 `onDeactivated` 事件) 。
+首先分配处理程序。 此操作通常在函数中`Office.onReady`完成，如以下示例所示，该示例将 (在后续步骤中创建的处理程序分配给`onActivated``onDeactivated`工作表中所有图表的和事件) 。
 
 ```javascript
 Office.onReady(async () => {

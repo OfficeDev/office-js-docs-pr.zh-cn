@@ -1,16 +1,16 @@
 ---
 ms.date: 06/15/2022
-description: 了解Excel不使用共享运行时及其特定 JavaScript 运行时的自定义函数。
-title: 自定义函数的仅限 JavaScript 的运行时
+description: 了解不使用共享运行时及其特定 JavaScript 运行时的 Excel 自定义函数。
+title: 自定义函数的仅 JavaScript 运行时
 ms.localizationpriority: medium
-ms.openlocfilehash: 614e96937c769307b58e66943caa499f1f12d92c
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 0d3298e95ab39f976c3fbfd5c0cc4ecdd1369721
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229664"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958409"
 ---
-# <a name="javascript-only-runtime-for-custom-functions"></a>自定义函数的仅限 JavaScript 的运行时
+# <a name="javascript-only-runtime-for-custom-functions"></a>自定义函数的仅 JavaScript 运行时
 
 不使用共享运行时的自定义函数使用仅限 JavaScript 的运行时，该运行时旨在优化计算性能。
 
@@ -28,7 +28,7 @@ ms.locfileid: "66229664"
 
 简单的 CORS 实现不能使用 Cookie，并且仅支持 GET、HEAD、POST)  (简单方法。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 还可以在简单 CORS 中使用`Content-Type`标头，前提是内容类型为`application/x-www-form-urlencoded`或 `text/plain``multipart/form-data`。
 
-## <a name="store-and-access-data"></a>Microsoft Store和访问数据
+## <a name="store-and-access-data"></a>存储和访问数据
 
 在不使用共享运行时的自定义函数中，可以使用 [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) 对象存储和访问数据。 该 `Storage` 对象是一个永久性的、未加密的密钥值存储系统，它提供了 [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) 的替代方法，使用仅限 JavaScript 的运行时的自定义函数无法使用该存储。 该 `Storage` 对象为每个域提供 10 MB 的数据。 域可由多个加载项共享。
 
@@ -51,7 +51,7 @@ ms.locfileid: "66229664"
 
 ### <a name="officeruntimestorage-example"></a>OfficeRuntime.storage 示例
 
-下面的代码示例调用函 `OfficeRuntime.storage.setItem` 数以将键和值设置为 `storage`。
+下面的 `OfficeRuntime.storage.setItem` 代码示例调用将键和值设置为 `storage`的方法。
 
 ```js
 function StoreValue(key, value) {
@@ -70,6 +70,6 @@ function StoreValue(key, value) {
 
 ## <a name="see-also"></a>另请参阅
 
-* [对没有共享运行时的自定义函数进行身份验证](custom-functions-authentication.md)
-* [在 Excel 中创建自定义函数](custom-functions-overview.md)
-* [自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
+- [没有共享运行时的自定义函数的身份验证](custom-functions-authentication.md)
+- [在 Excel 中创建自定义函数](custom-functions-overview.md)
+- [自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

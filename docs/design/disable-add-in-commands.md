@@ -3,12 +3,12 @@ title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c16d82b1c6dacc3e46f2a5170c4b43d1be899191
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 97aa591bfe734e3211d2e1b4e5aabac03c625ff3
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889147"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958837"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
@@ -124,7 +124,7 @@ const enableButton = async () => {
 
 考虑这样一种场景：当且仅当激活图表时，才应启用按钮。 第一步是将清单中按钮的 [Enabled](/javascript/api/manifest/enabled) 元素设置为 `false`。 请参阅上面的示例。
 
-第二步是分配处理程序。 这通常在 **Office.onReady** 方法中完成，如以下示例所示，该示例将处理程序（在后续步骤中创建）分配给工作表中所有图表的 **onActivated** 和 **onDeactivated** 事件。
+第二步是分配处理程序。 通常在 **Office.onReady 函** 数中执行此操作，如以下示例所示，该示例将 (在后续步骤中创建的处理程序分配) 到工作表中所有图表的 **onActivated** 和 **onDeactivated** 事件。
 
 ```javascript
 Office.onReady(async () => {

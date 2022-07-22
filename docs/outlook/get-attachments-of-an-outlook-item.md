@@ -3,12 +3,12 @@ title: 获取 Outlook 加载项中的附件
 description: 加载项可使用附件 API 将与附件相关的信息发送至远程服务。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 14329134513718ad4025c27abf7621a8ebf4b18f
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 637513a5ee94f4a3b9fa6b913f4c419dd5ec4d8e
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713103"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958823"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>从服务器获取 Outlook 项的附件
 
@@ -22,13 +22,13 @@ ms.locfileid: "66713103"
 
     如果 EWS/REST 不可用，则此 API 可能很方便 (例如，由于 Exchange 服务器) 的管理员配置，或者外接程序希望直接在 HTML 或 JavaScript 中使用 base64 内容。 此外， `getAttachmentContentAsync` API 在撰写方案中可用，其中附件可能尚未同步到 Exchange;请参阅 [Outlook 中的撰写窗体中管理项目的附件](add-and-remove-attachments-to-an-item-in-a-compose-form.md) 以了解详细信息。
 
-本文详细介绍了第一个选项。 若要将附件信息发送到远程服务，请使用以下属性和函数。
+本文详细介绍了第一个选项。 若要将附件信息发送到远程服务，请使用以下属性和方法。
 
 - [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities) 属性 &ndash; 提供托管邮箱的 Exchange 服务器上 Exchange Web 服务 (EWS) 的 URL。服务使用此 URL 调用 [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) 方法或 [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) EWS 操作。
 
 - [Office.context.mailbox.item.attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 属性 &ndash; 获取一组 [AttachmentDetails](/javascript/api/outlook/office.attachmentdetails) 对象，每个对象对应于一个项附件。
 
-- [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 函数 &ndash; 对托管邮箱的 Exchange 服务执行异步调用，以获取服务器发回给 Exchange 服务器的回调令牌，从而验证附件请求。
+- [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法 &ndash; 对承载邮箱的 Exchange 服务器进行异步调用，以获取服务器发回到 Exchange 服务器的回调令牌，以对附件请求进行身份验证。
 
 ## <a name="using-the-attachments-api"></a>使用附件 API
 
@@ -49,7 +49,7 @@ ms.locfileid: "66713103"
 
 ## <a name="get-a-callback-token"></a>获取回调令牌
 
-[Office.context.mailbox](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox) 对象提供 `getCallbackTokenAsync` 函数来获取远程服务器可以用来对 Exchange Server 进行身份验证的令牌。 以下代码显示了加载项中的一个函数，它启动异步请求来获取回调令牌以及用于获取响应的回调函数。 回调令牌存储在在下一部分定义的服务请求对象中。
+[Office.context.mailbox](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox) 对象提供了`getCallbackTokenAsync`获取远程服务器可用于对 Exchange 服务器进行身份验证的令牌的方法。 以下代码显示了加载项中的一个函数，它启动异步请求来获取回调令牌以及用于获取响应的回调函数。 回调令牌存储在在下一部分定义的服务请求对象中。
 
 ```js
 function getAttachmentToken() {

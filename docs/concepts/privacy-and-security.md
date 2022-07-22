@@ -3,12 +3,12 @@ title: Office 加载项的隐私和安全
 description: 了解 Office 外接程序平台的隐私和安全方面。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 77e484244f76e399eb1f3cdb7e5de1de25619a1f
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: e505678cf13df39334a19a41dd5b018dcb12dfba
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889203"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958719"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Office 加载项的隐私和安全
 
@@ -20,7 +20,7 @@ Office 外接程序受到外接程序运行时环境、多层权限模型和性�
 
 - 仅允许间接访问 Office 客户端应用程序的 UI 线程。
 
-- 不允许模式交互，例如调用 JavaScript `alert`， `confirm`并且 `prompt` 不允许函数，因为它们是模式。
+- 不允许模式交互，例如调用 JavaScript `alert`， `confirm`不允许 `prompt` 使用方法，因为它们是模式。
 
 此外，运行时框架提供以下优势，以确保 Office 加载项不会损害用户的环境。
 

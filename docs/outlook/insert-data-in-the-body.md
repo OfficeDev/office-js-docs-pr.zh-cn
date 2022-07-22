@@ -3,12 +3,12 @@ title: 在 Outlook 加载项的正文中插入数据
 description: 了解如何将数据插入到 Outlook 加载项的邮件或约会的正文中。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a60401156603e85975d0efad7cb721d6d27666c1
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 7319a3bb41d857fcae32ea118a3f3e60197bf751
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712739"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958325"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时将数据插入到正文中
 
@@ -33,9 +33,9 @@ ms.locfileid: "66712739"
 
 此部分显示的代码示例使用 **getTypeAsync** 验证正在撰写的项的正文类型，然后使用 **setSelectedDataAsync** 在当前光标位置插入数据。
 
-可以将回调方法和可选输入参数传递到 **getTypeAsync**，并获取 _asyncResult_ 输出参数中的任意状态和结果。如果该方法成功，你可以获取 [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) 属性中项正文的类型，即“文本”或“html”。
+可以将回调函数和可选输入参数传递给 **getTypeAsync**，并获取  _asyncResult_ 输出参数中的任何状态和结果。 如果该方法成功，您可以获取 [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) 属性中项目正文的类型，即"文本"或"html"。
 
-必须将数据字符串传递到 **setSelectedDataAsync**，作为输入参数。根据项正文的类型，你可以相应地将此数据字符串指定为文本或 HTML 格式。如上所述，还可以选择指定要插入到 _coercionType_ 参数中的数据的类型。此外，你可以提供回调方法及其任意参数，作为可选输入参数。
+必须将数据字符串作为输入参数传递给 **setSelectedDataAsync**。 根据项目正文的类型，您可以相应地将此数据字符串指定为文本或 HTML 格式。 如上所述，还可以选择指定要插入到  _coercionType_ 参数中的数据的类型。 此外，还可以提供回调函数及其任何参数作为可选输入参数。
 
 如果用户尚未将光标放置在项正文中，**setSelectedDataAsync** 会将数据插入到正文的顶部。如果用户已经在项正文中选择了文本，**setSelectedDataAsync** 会用你指定的数据替换所选文本。请注意，如果用户在撰写项的同时更改光标位置，**setSelectedDataAsync** 可能会失败。一次最多可以插入 1,000,000 个字符。
 
@@ -53,7 +53,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set data in the body of the composed item.
@@ -127,7 +127,7 @@ function write(message){
 
 - 如果在邮件正文中预先使用 HTML 数据，则应首先检查消息正文的类型，以避免将 HTML 数据以文本格式预置到邮件中。
 
-- 提供以下内容，作为 **prependAsync** 的输入参数：文本格式或 HTML 格式的数据字符串、要插入的数据的格式（可选）、回调方法及其任意参数。
+- 为 **prependAsync** 提供以下输入参数：文本或 HTML 格式的数据字符串，以及可选插入的数据格式、回调函数及其任何参数。
 
 - 一次最多可以预置 1,000,000 个字符。
 
@@ -138,7 +138,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Insert data in the top of the body of the composed 

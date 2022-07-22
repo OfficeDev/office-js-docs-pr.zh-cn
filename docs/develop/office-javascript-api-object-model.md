@@ -3,12 +3,12 @@ title: 常见 JavaScript API 对象模型
 description: 了解 Office JavaScript 通用 API 对象模型。
 ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ab311c548ec0ff8448f10f3ce64e3cd33ad32b12
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 1b856866c903a61a04bcbb232790649147fdb7fc
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712979"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958620"
 ---
 # <a name="common-javascript-api-object-model"></a>常见 JavaScript API 对象模型
 
@@ -46,7 +46,7 @@ Office JavaScript API 允许访问 Office 客户端应用程序的基础功能�
 
 所有这些形式的数据访问都是从抽象 `Document` 对象的实例开始的。
 
-使用对象的 `Document` 文 [档](/javascript/api/office/office.context#office-office-context-document-member) 属性初始化任务窗格或内容外接程序时，可以访问对象的 `Context` 实例。 该 `Document` 对象定义跨 Word 和 Excel 文档共享的常见数据访问函数，并提供对 `CustomXmlParts` Word 文档对象的访问权限。
+使用对象的 `Document` 文 [档](/javascript/api/office/office.context#office-office-context-document-member) 属性初始化任务窗格或内容外接程序时，可以访问对象的 `Context` 实例。 该 `Document` 对象定义跨 Word 和 Excel 文档共享的常见数据访问方法，并提供对 `CustomXmlParts` Word 文档的对象的访问权限。
 
 该 `Document` 对象支持开发人员访问文档内容的四种方法。
 
@@ -103,7 +103,7 @@ Office JavaScript API 允许访问 Office 客户端应用程序的基础功能�
 
 建立绑定还允许您订阅仅限文档或电子表格的特定区域的数据和选择更改事件。这意味着，加载项只会收到绑定区域内发生的更改的通知，而不是收到整个文档或电子表格内的常规更改的通知。
 
-[Bindings](/javascript/api/office/office.bindings) 对象公开 [getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。 可使用 [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) 或 [Office.select](/javascript/api/office) 方法按 ID 访问单个绑定。 可以使用以下对象方法 `Bindings` 之一来建立新的绑定以及删除现有绑定： [addFromSelectionAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1))、 [addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1))、 [addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1)) 或 [releaseByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-releasebyidasync-member(1))。
+[Bindings](/javascript/api/office/office.bindings) 对象公开 [getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。 可以使用 [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) 方法或 [Office.select](/javascript/api/office) 函数通过其 ID 访问单个绑定。 可以使用以下对象方法 `Bindings` 之一来建立新的绑定以及删除现有绑定： [addFromSelectionAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1))、 [addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1))、 [addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1)) 或 [releaseByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-releasebyidasync-member(1))。
 
 在使用绑定或`addFromNamedItemAsync`方法创建绑定时，可使用 _bindingType_ 参数指定三种不同类型的绑定`addFromSelectionAsync``addFromPromptAsync`。
 

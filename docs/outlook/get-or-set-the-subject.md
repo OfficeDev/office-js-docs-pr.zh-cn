@@ -3,12 +3,12 @@ title: 在 Outlook 加载项中获取或设置主题
 description: 了解如何在 Outlook 加载项中获取或设置邮件或约会的主题。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a8f0e3166e142978873d390040c58d263d416e0d
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: cf221b03753fd76966eb5c6270da68e94abfe0f9
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713089"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959068"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取或设置主题
 
@@ -41,14 +41,14 @@ item.subject.getAsync
 </Rule>
 ```
 
-若要使用 **item.subject.getAsync**，可提供一个检查异步调用状态和结果的回调方法。可以通过 _asyncContext_ 可选形参向回调方法提供任何必要实参。可以使用回调的输出形参 _asyncResult_ 获取状态、结果和任何错误。如果异步调用成功，则可以使用 [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) 属性获取纯文本字符串形式的主题。
+若要使用 **item.subject.getAsync**，请提供一个回调函数，用于检查异步调用的状态和结果。 可以通过  _asyncContext_ 可选参数向回调函数提供任何必要的参数。 可以使用回调的输出形参 _asyncResult_ 获取状态、结果和任何错误。 如果异步调用成功，则可以使用 [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member) 属性获取纯文本字符串形式的主题。
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the subject of the item being composed.
@@ -80,14 +80,14 @@ function write(message){
 
 本节演示设置用户正在撰写的约会或邮件的主题的代码示例。与上一示例类似，此代码示例假定外接程序清单中的某个规则将在撰写窗体中为约会或邮件激活外接程序。
 
-若要使用 **item.subject.setAsync**，可在数据形参中指定一个最多 255 字符的字符串。也可以在 _asyncContext_ 形参中为回调方法提供一个回调方法和任何实参。应在回调的 _asyncResult_ 输出形参中检查状态、结果和所有错误消息。如果异步调用成功，**setAsync** 会将指定的主题字符串作为纯文本插入，并覆盖该项目的任何现有主题。
+若要使用 **item.subject.setAsync**，请在数据参数中指定最多 255 个字符的字符串。 （可选）可以在  _asyncContext_ 参数中为回调函数提供回调函数和任何参数。 您应在回调的 _asyncResult_ 输出形参中检查状态、结果和所有错误消息。 如果异步调用成功， **setAsync** 会将指定的主题字符串作为纯文本插入，并覆盖该项目的任何现有主题。
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set the subject of the item being composed.

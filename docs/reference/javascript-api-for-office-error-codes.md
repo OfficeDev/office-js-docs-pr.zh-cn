@@ -3,12 +3,12 @@ title: Office 常用 API 错误代码
 description: 本文记录了在使用 Office 通用 API 时可能会遇到的错误消息。
 ms.date: 02/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 80637e1573e120664ee89685a9c9579dbcfe6b2e
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: a6161c658bad35be8f7ca5193a1b03889f186d12
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889609"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959061"
 ---
 # <a name="office-common-api-error-codes"></a>Office 常用 API 错误代码
 

@@ -3,12 +3,12 @@ title: 在 Excel 中手动为自定义函数创建 JSON 元数据
 description: 在 Excel 中定义自定义函数的 JSON 元数据，并关联函数 ID 和名称属性。
 ms.date: 12/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fdb3861a7924473b556020fea0ec5916e9291082
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 2cd3b5266334e3397cd90fc24e29858250dfb284
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660219"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958578"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>为自定义函数手动创建 JSON 元数据
 
@@ -176,12 +176,12 @@ ms.locfileid: "66660219"
 
 `options` 对象使用户能够自定义 Excel 执行函数的方式和时间。 下表列出了 `options` 对象的属性。
 
-| 属性          | 数据类型 | 必需                               | 说明 |
+| 属性          | 数据类型 | 必需                               | Description |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
 | `cancelable`      | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `CancelableInvocation` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 可取消函数通常仅用于返回单个结果并需要处理数据请求取消的异步函数。 函数不能同时使用这些 `stream` 属性和 `cancelable` 属性。 |
 | `requiresAddress` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true`是，自定义函数可以访问调用它的单元格的地址。 `address` [调用参数](custom-functions-parameter-options.md#invocation-parameter)的属性包含调用自定义函数的单元格的地址。 函数不能同时使用这些 `stream` 属性和 `requiresAddress` 属性。 |
 | `requiresParameterAddresses` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true`是，自定义函数可以访问函数输入参数的地址。 此属性必须与`dimensionality`[结果](#result)对象的属性结合使用，并且`dimensionality`必须设置为 `matrix`。 有关详细信息，请参阅 [“检测参数的地址](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) ”。 |
-| `stream`          | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 相反，结果值将作为 `StreamingInvocation.setResult` 回调方法的参数传递。 有关详细信息，请参阅 [“创建流式处理”函数](custom-functions-web-reqs.md#make-a-streaming-function)。 |
+| `stream`          | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，即使只调用一次，该函数也可能会重复输出到单元格。 此选项对于快速变化的数据源（如股票价格）非常有用。 函数不应存在 `return` 语句。 而是将结果值作为回调函数的 `StreamingInvocation.setResult` 参数传递。 有关详细信息，请参阅 [“创建流式处理”函数](custom-functions-web-reqs.md#make-a-streaming-function)。 |
 | `volatile`        | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true`，函数会在每次 Excel 重新计算时重新计算，而不是仅在公式的依赖值发生更改时重新计算。 函数不能同时使用这些 `stream` 属性和 `volatile` 属性。 如果这 `stream` 两个属性都 `volatile` 设置为 `true`，则会忽略易失性属性。 |
 
 ### <a name="parameters"></a>参数
@@ -208,7 +208,7 @@ ms.locfileid: "66660219"
 
 ## <a name="associating-function-names-with-json-metadata"></a>将函数名称与 JSON 元数据相关联
 
-若要使函数正常工作，需要将函数的 `id` 属性与 JavaScript 实现相关联。 请确保存在关联，否则该函数不会注册且在 Excel 中不可用。 下面的代码示例演示如何使用 `CustomFunctions.associate()` 该方法建立关联。 该示例定义了自定义函数 `add`，并将其与 JSON 元数据文件中的对象关联，其中 `id` 属性的值为 **ADD**。
+若要使函数正常工作，需要将函数的 `id` 属性与 JavaScript 实现相关联。 请确保存在关联，否则该函数不会注册且在 Excel 中不可用。 下面的代码示例演示如何使用该 `CustomFunctions.associate()` 函数建立关联。 该示例定义了自定义函数 `add`，并将其与 JSON 元数据文件中的对象关联，其中 `id` 属性的值为 **ADD**。
 
 ```js
 /**

@@ -1,18 +1,18 @@
 ---
 ms.date: 05/02/2022
-description: 使用Excel中的自定义函数请求、流式传输和取消将外部数据流式传输到工作簿。
+description: 使用 Excel 中的自定义函数请求、流式传输和取消将外部数据流式传输到工作簿。
 title: 使用自定义函数接收和处理数据
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f8f5f97bfeb690873091ff7c59555e1683c05f
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: fbe319e79d4cded5fe4b37ce5a654e633996f22a
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244847"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958543"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>使用自定义函数接收和处理数据
 
-自定义函数增强Excel能力的方法之一是从工作簿以外的位置接收数据，例如 Web 或服务器 (通过 [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API)) 。 你可以通过 API（如 [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)）或使用 `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。
+自定义函数增强 Excel 功能的方法之一是从工作簿以外的位置接收数据，例如 Web 或服务器 (通过 [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API)) 。 你可以通过 API（如 [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)）或使用 `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)（一种发出与服务器交互的 HTTP 请求的标准 Web API）来请求外部数据。
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -22,7 +22,7 @@ ms.locfileid: "65244847"
 
 如果自定义函数从外部源（如 Web）检索数据，则必须：
 
-1. 将 [JavaScript `Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) 返回到Excel。
+1. 将 [JavaScript `Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) 返回到 Excel。
 2. `Promise`使用回调函数解析最终值。
 
 ### <a name="fetch-example"></a>Fetch 示例
@@ -134,7 +134,7 @@ function increment(incrementBy, invocation) {
 
 ## <a name="cancel-a-function"></a>取消函数
 
-Excel在以下情况下取消执行函数。
+Excel 在以下情况下取消执行函数。
 
 - 用户编辑或删除引用函数的单元格。
 - 函数的参数（输入）之一发生变化。 在这种情况下，取消之后还会触发新的函数调用。
@@ -147,7 +147,7 @@ Excel在以下情况下取消执行函数。
 
 ### <a name="use-an-invocation-parameter"></a>使用调用参数
 
-默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 该 `invocation` 参数提供有关单元格 (的上下文，例如其地址和内容) ，并允许你使用 `setResult` 和 `onCanceled` 方法。 这些方法可定义在函数流式传输 (`setResult`) 或被取消 (`onCanceled`) 时它所执行的操作。
+默认情况下，`invocation` 参数是任何自定义函数的最后一个参数。 该 `invocation` 参数提供有关单元格 (的上下文，例如其地址和内容) ，并允许你使用 `setResult` 该方法和 `onCanceled` 事件来定义函数在流式传输 () `setResult` 或在)  (`onCanceled` 取消时的作用。
 
 如果使用的是 TypeScript，则调用处理程序的类型或[`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation)类型[`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation)。
 

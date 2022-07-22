@@ -3,12 +3,12 @@ title: 获取和设置 Outlook 加载项中的元数据
 description: 可以使用以下漫游设置或自定义属性，管理 Outlook 加载项中的自定义数据。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a7ae9f2377c40d22b091f994de958b882507938a
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: b2cbb79288f7e62de8b4baae164ec9747cb83190
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712718"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959047"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>获取和设置 Outlook 加载项的元数据
 
@@ -63,7 +63,7 @@ Office.initialize = function () {
 
 紧接着前面的示例，下面的 JavaScript 函数 `setAddInSetting` 演示了如何使用 [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings) 方法通过当天的日期设置名为 `cookie` 的设置，并使用 [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)) 方法将所有漫游设置重新保存到服务器，以使数据持续存在。
 
-如果设置尚不存在，则 `set` 该方法将创建设置，并将设置分配给指定的值。 该 `saveAsync` 方法以异步方式保存漫游设置。 此代码示例将回调方法 `saveMyAddInSettingsCallback`传递给 `saveAsync` 异步调用完成时，  `saveMyAddInSettingsCallback` 使用一个参数 _asyncResult_ 调用。 此参数是一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象，其中包含异步调用的结果和所有详细信息。 可以使用可选的 _userContext_ 参数从异步调用向回调函数传递任何状态信息。
+如果设置尚不存在，则 `set` 该方法将创建设置，并将设置分配给指定的值。 该 `saveAsync` 方法以异步方式保存漫游设置。 此代码示例使用一个参数 _asyncResult_ 将回调函`saveMyAddInSettingsCallback`数传递到`saveAsync`异步调用完成`saveMyAddInSettingsCallback`时调用。 此参数是一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象，其中包含异步调用的结果和所有详细信息。 可以使用可选的 _userContext_ 参数从异步调用向回调函数传递任何状态信息。
 
 ```js
 // Set a roaming setting.
@@ -75,7 +75,7 @@ function setAddInSetting() {
   _settings.saveAsync(saveMyAddInSettingsCallback);
 }
 
-// Callback method after saving custom roaming settings.
+// Callback function after saving custom roaming settings.
 function saveMyAddInSettingsCallback(asyncResult) {
   if (asyncResult.status == Office.AsyncResultStatus.Failed) {
     // Handle the failure.
@@ -116,9 +116,9 @@ function removeAddInSetting()
 
 ### <a name="custom-properties-example"></a>自定义属性示例
 
-下面的示例演示使用自定义属性的 Outlook 外接程序的一组简化的方法。可以将此示例用作使用自定义属性的外接程序的起点。
+以下示例演示了使用自定义属性的 Outlook 外接程序的一组简化的函数和方法。 可以将此示例用作使用自定义属性的外接程序的起点。
 
-此示例包括以下方法。
+此示例包括以下函数和方法。
 
 - [Office.initialize](/javascript/api/office#Office_initialize_reason_) -- 初始化外接程序并从 Exchange 服务器中加载自定义属性包。
 

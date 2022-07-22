@@ -3,12 +3,12 @@ title: Office 对话框 API 最佳做法和规则
 description: 为 Office 对话框 API 提供规则和最佳做法，例如单页应用程序 (SPA) 的最佳做法。
 ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe9841d12865c488a86a203026684e0b3570352
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
+ms.openlocfilehash: bdb92ba89faa63a5ca869be869f0a03cce91dba2
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689395"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958676"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
@@ -57,7 +57,7 @@ Office 会自动向传递给 `_host_info` 的 URL 添加查询参数 `displayDia
 
 不能从给定的主机页打开多个对话框，因此代码应在打开的对话框中调用 [Dialog.close](/javascript/api/office/office.dialog#office-office-dialog-close-member(1)) ，然后再调用 `displayDialogAsync` 该对话框以打开另一个对话框。 该 `close` 方法是异步的。 因此，如果在呼叫`close`后立即呼叫`displayDialogAsync`，则当 Office 尝试打开第二个对话框时，第一个对话可能尚未完全关闭。 如果发生这种情况，Office 将返回 [12007](dialog-handle-errors-events.md#12007) 错误：“操作失败，因为此加载项已具有活动对话框。
 
-该`close`方法不接受回调参数，也不会返回 Promise 对象，因此无法使用关键字或`then`方法等待`await`它。 因此，当需要在关闭对话框后立即打开新对话框时，我们建议使用以下技术：封装代码以在方法中打开新对话框，并在调用 `displayDialogAsync` 返回 `12007`时设计以递归方式调用自己的方法。 示例如下。
+该`close`方法不接受回调参数，也不会返回 Promise 对象，因此无法使用关键字或`then`方法等待`await`它。 因此，当需要在关闭对话框后立即打开新对话框时，我们建议使用以下技术：封装代码以在函数中打开新对话框，并在调用 `displayDialogAsync` 返回 `12007`时设计函数以递归方式调用自身。 示例如下。
 
 ```javascript
 function openFirstDialog() {

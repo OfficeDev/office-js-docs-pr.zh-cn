@@ -1,14 +1,14 @@
 ---
 ms.date: 06/09/2022
-description: 排查Excel自定义函数的常见问题。
+description: 排查 Excel 自定义函数的常见问题。
 title: 自定义函数疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: c4d07417efbc641919051c96e5da0eb910ff9ccc
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 89d90b6ee94efac0230933313d2c16b5054dda61
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090885"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958557"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -20,7 +20,7 @@ ms.locfileid: "66090885"
 
 ## <a name="debugging-custom-functions"></a>调试自定义函数
 
-若要调试使用共享运行时的自定义函数加载项，请参阅[将Office加载项配置为使用共享 JavaScript 运行时：调试](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug)。
+若要调试使用共享运行时的自定义函数加载项，请参阅 [配置 Office 外接程序以使用共享 JavaScript 运行时：调试](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug)。
 
 若要调试不使用共享运行时的自定义函数加载项，请参阅 [自定义函数调试](custom-functions-debugging.md)。
 
@@ -63,7 +63,7 @@ Excel 有许多内置错误消息，如果存在计算错误，系统会将向�
 
 ### <a name="my-functions-wont-load-associate-functions"></a>我的函数无法加载：关联函数
 
-如果尚未注册 JSON 并且已编写了自己的 JSON 元数据，则可能会看到 `#VALUE!` 错误，或收到无法加载加载项的通知。 这通常意味着需要将每个自定义函数与为其在 [JSON 元数据文件](custom-functions-json.md)中指定的 `id` 属性相关联。 使用 `CustomFunctions.associate()` 方法可实现此操作。 通常，在每个函数之后或脚本文件的末尾调用此方法。 如果没有关联自定义函数，它将不起作用。
+如果尚未注册 JSON 并且已编写了自己的 JSON 元数据，则可能会看到 `#VALUE!` 错误，或收到无法加载加载项的通知。 这通常意味着需要将每个自定义函数与为其在 [JSON 元数据文件](custom-functions-json.md)中指定的 `id` 属性相关联。 这是通过使用函数完成的 `CustomFunctions.associate()` 。 通常，此函数调用是在每个函数之后或脚本文件的末尾进行的。 如果没有关联自定义函数，它将不起作用。
 
 下面的示例显示了一个 add 函数，后跟一个与相应的 JSON ID `ADD` 相关联的函数名称 `add`。
 
@@ -86,7 +86,7 @@ CustomFunctions.associate("ADD", add);
 
 ## <a name="known-issues"></a>已知问题
 
-已知问题在[Excel自定义函数GitHub存储库](https://github.com/OfficeDev/Excel-Custom-Functions/issues)中进行跟踪和报告。
+[在 Excel 自定义函数 GitHub 存储库](https://github.com/OfficeDev/Excel-Custom-Functions/issues)中跟踪和报告已知问题。
 
 ## <a name="reporting-feedback"></a>报告反馈
 

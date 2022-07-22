@@ -3,14 +3,14 @@ ms.date: 07/08/2021
 description: 将自定义函数集体进行批处理，以减少对远程服务的网络调用。
 title: 对远程服务的自定义函数调用进行批处理
 ms.localizationpriority: medium
-ms.openlocfilehash: c22a2d52ca0b144eb8ccb8acf88225cca75f0980
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 71af149154ea39dc71b682502c54bb3a03282652
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744386"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958599"
 ---
-# <a name="batch-custom-function-calls-for-a-remote-service"></a>批处理远程服务的自定义函数调用
+# <a name="batch-custom-function-calls-for-a-remote-service"></a>远程服务的 Batch 自定义函数调用
 
 如果自定义函数调用远程服务，可以使用批处理模式来减少对远程服务的网络调用次数。 为了减少网络往返，你可以将所有调用批处理为对 Web 服务的单个调用。 当重新计算电子表格时，此方法非常合适。
 
@@ -20,9 +20,9 @@ ms.locfileid: "63744386"
 
 ## <a name="view-the-completed-sample"></a>查看已完成的示例
 
-若要查看已完成的示例，请遵循本文，然后将代码示例粘贴到您自己的项目中。 例如，若要为 TypeScript 创建新的自定义函数项目，请使用 [Office 加载项的 Yeoman](../develop/yeoman-generator-overview.md) 生成器，然后将本文的所有代码添加到该项目中。 运行代码并试用。
+若要查看已完成的示例，请按照本文操作，并将代码示例粘贴到自己的项目中。 例如，若要为 TypeScript 创建新的自定义函数项目，请使用 [Office 外接程序的 Yeoman 生成器](../develop/yeoman-generator-overview.md)，然后将本文中的所有代码添加到项目。 运行代码并试用。
 
-或者，在自定义函数批处理模式中下载或查看 [完整的示例项目](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching)。 如果要在进一步阅读之前查看完整代码，请查看[脚本文件](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)。
+或者，下载或查看 [自定义函数批处理模式下的](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching)完整示例项目。 如果要在进一步阅读之前查看完整代码，请查看[脚本文件](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js)。
 
 ## <a name="create-the-batching-pattern-in-this-article"></a>创建本文中所述的批处理模式
 
@@ -32,7 +32,7 @@ ms.locfileid: "63744386"
 2. 用以在批处理就绪时发出远程请求的函数。
 3. 用以响应批处理请求、计算所有运算结果并返回值的服务器代码。
 
-以下各节将了解如何一次构建一个示例代码。 你将把各个代码示例添加到 **functions.ts** 文件中。 建议使用适用于加载项生成器的 [Yeoman](../develop/yeoman-generator-overview.md) 生成器创建全新的自定义函数Office项目。 若要创建新项目，请参阅开始[开发自定义Excel并使用](../quickstarts/excel-custom-functions-quickstart.md) TypeScript 而不是 JavaScript。
+在以下部分中，你将了解如何一次构造一个示例的代码。 你将把各个代码示例添加到 **functions.ts** 文件中。 建议使用 [适用于 Office 外接程序生成器的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 创建全新的自定义函数项目。 若要创建新项目，请参阅 [开始开发 Excel 自定义函数](../quickstarts/excel-custom-functions-quickstart.md) ，并使用 TypeScript 而不是 JavaScript。
 
 ## <a name="batch-each-call-to-your-custom-function"></a>批处理对自定义函数的每次调用
 
@@ -152,7 +152,7 @@ function _makeRemoteRequest() {
 
 ### <a name="modify-_makeremoterequest-for-your-own-solution"></a>根据自己的解决方案修改 `_makeRemoteRequest`
 
-`_makeRemoteRequest` 函数调用 `_fetchFromRemoteService`，正如稍后将会看到的，后者只是一个表示远程服务的模拟。 这使得研究和运行本文中的代码更加容易。 但是，当您希望将此代码用于实际远程服务时，应进行以下更改。
+`_makeRemoteRequest` 函数调用 `_fetchFromRemoteService`，正如稍后将会看到的，后者只是一个表示远程服务的模拟。 这使得研究和运行本文中的代码更加容易。 但是，如果要将此代码用于实际远程服务，应进行以下更改。
 
 - 决定如何通过网络将批处理运算序列化。 例如，你可能希望将数组放入 JSON 主体中。
 - 你不需要调用 `_fetchFromRemoteService`，而是需要对传递批量运算的远程服务进行实际的网络调用。
@@ -206,7 +206,7 @@ function pause(ms: number) {
 
 ### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>根据自己的实时远程服务修改 `_fetchFromRemoteService`
 
-若要修改 `_fetchFromRemoteService` 函数以在实时远程服务中运行，请进行以下更改。
+若要修改要 `_fetchFromRemoteService` 在实时远程服务中运行的函数，请进行以下更改。
 
 - 根据服务器平台（Node.js 或其他平台），将客户端网络调用映射到此函数。
 - 删除作为模拟的一部分来模拟网络延迟的 `pause` 函数。
@@ -221,6 +221,6 @@ function pause(ms: number) {
 
 ## <a name="see-also"></a>另请参阅
 
-* [函数中的可变值](custom-functions-volatile.md)
-* [在 Excel 中创建自定义函数](custom-functions-overview.md)
-* [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
+- [函数中的可变值](custom-functions-volatile.md)
+- [在 Excel 中创建自定义函数](custom-functions-overview.md)
+- [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

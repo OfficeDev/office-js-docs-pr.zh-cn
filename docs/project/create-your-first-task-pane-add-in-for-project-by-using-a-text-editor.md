@@ -3,12 +3,12 @@ title: 使用文本编辑器为 Microsoft Project 创建首个任务窗格加载
 description: 使用适用于 Office 外接程序的 Yeoman 生成器为 Project Standard 2013、Project Professional 2013 或更高版本创建任务窗格加载项。
 ms.date: 07/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d4b1c392413c05a190b032ed9e3a0343470b02f
-ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
+ms.openlocfilehash: 69353b94da05dd0a8cfd6347beb7c5b3f4fd81e0
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "66765291"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959026"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>使用文本编辑器为 Microsoft Project 创建首个任务窗格加载项
 
@@ -107,7 +107,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
 1. 在 JSOMCall.html 文件所在的相同目录中，创建 JavaScript 文件 JSOM_Sample.js。
 
-   下面的代码使用 Office.js 文件中的函数来获取应用程序上下文和文档信息。 对象 `text` 是 HTML 文件中控件的 ID `textarea` 。
+   以下代码使用Office.js文件中的方法获取应用程序上下文和文档信息。 对象 `text` 是 HTML 文件中控件的 ID `textarea` 。
 
    使用对象初始化 `ProjectDocument` **projDoc 变量。\_** 代码包括一些简单的错误处理函数，以及 `getContextValues` 获取应用程序上下文和项目文档上下文属性的函数。 有关 Project 的 JavaScript 对象模型的详细信息，请参阅 [适用于 Office 的 JavaScript API](../reference/javascript-api-for-office.md)。
 
@@ -124,7 +124,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
     // The initialize function is required for all add-ins.
     Office.initialize = function (reason) {
-        // Checks for the DOM to load using the jQuery ready function.
+        // Checks for the DOM to load using the jQuery ready method.
         $(document).ready(function () {
             // After the DOM is loaded, app-specific code can run.
             _projDoc = Office.context.document;
@@ -173,25 +173,25 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
 
    有关Office.debug.js文件中的函数的信息，请参阅 [Office JavaScript API](../reference/javascript-api-for-office.md)。 例如，函 `getDocumentUrl` 数获取打开项目的 URL 或文件路径。
 
-1. 添加调用 Office.js 和 Project-15.js 中异步函数的 JavaScript 函数来获取选定数据：
+1. 添加在Office.js中调用异步方法的 JavaScript 函数，并Project-15.js以获取所选数据：
 
-   - 例如， `getSelectedDataAsync` 是Office.js中的一个常规函数，用于获取所选数据的未格式化文本。 有关详细信息，请参阅 [AsyncResult 对象](/javascript/api/office/office.asyncresult)。
+   - 例如， `getSelectedDataAsync` 是Office.js中的一种常规方法，用于获取所选数据的未格式化文本。 有关详细信息，请参阅 [Document 对象](/javascript/api/office/office.document#office-office-document-getselectedtaskasync-member(1))。
 
    - `getSelectedTaskAsync`Project-15.js中的函数获取所选任务的 GUID。 同样，函 `getSelectedResourceAsync` 数获取所选资源的 GUID。 如果在未选定任务或资源时调用这些函数，函数将显示未定义错误。
 
    - 该 `getTaskAsync` 函数获取任务名称和分配的资源的名称。 如果任务位于同步的 SharePoint 任务列表中， `getTaskAsync` 则获取 SharePoint 列表中的任务 ID;否则，SharePoint 任务 ID 为 0。
 
      > [!NOTE]
-     > 出于演示目的，此示例代码包括一个错误。 如果 `taskGuid` 未定义，则 `getTaskAsync` 函数错误关闭。 如果获取有效的任务 GUID，然后选择其他任务，则该 `getTaskAsync` 函数将获取由 `getSelectedTaskAsync` 函数操作的最新任务的数据。
+     > 出于演示目的，此示例代码包括一个错误。 如果 `taskGuid` 未定义，则 `getTaskAsync` 函数出错。如果获取有效的任务 GUID，然后选择其他任务，则该 `getTaskAsync` 函数将获取由 `getSelectedTaskAsync` 函数操作的最新任务的数据。
   
    - `getTaskFields`，`getResourceFields`并且`getProjectFields`是调用`getTaskFieldAsync``getResourceFieldAsync`或`getProjectFieldAsync`多次获取任务或资源的指定字段的本地函数。 在project-15.debug.js文件中 `ProjectTaskFields` ，枚举和 `ProjectResourceFields` 枚举显示支持哪些字段。
 
    - 该 `getSelectedViewAsync` 函数获取project-15.debug.js) 枚举中 `ProjectViewTypes` 定义的视图 (的类型和视图的名称。
 
-   - 如果项目与 SharePoint 任务列表同步，则该 `getWSSUrlAsync` 函数将获取 URL 和任务列表的名称。 如果项目未与 SharePoint 任务列表同步，则 `getWSSUrlAsync` 函数将出错。
+   - 如果项目与 SharePoint 任务列表同步，则该 `getWSSUrlAsync` 函数将获取 URL 和任务列表的名称。 如果项目未与 SharePoint 任务列表同步，则函 `getWSSUrlAsync` 数将出错。
 
      > [!NOTE]
-     > 若要获取 SharePoint URL 和任务列表的名称，建议将该`getProjectFieldAsync`函数与 [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) 枚举中的函数和`WSSList`常量一起`WSSUrl`使用。
+     > 若要获取任务列表的 SharePoint URL 和名称，建议将该方法与 [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) 枚举中的常`WSSList`量一起`WSSUrl`使用`getProjectFieldAsync`。
 
    以下代码的每个函数中都包含由 `function (asyncResult)` 指定的匿名函数，该函数是获取异步结果的回叫。你可以使用命名函数，而不是匿名函数，前者有助于实现复杂外接程序的可维护性。
 
@@ -548,9 +548,9 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     }
     ```
 
-1. 添加 JavaScript 事件处理程序回调和函数，以注册任务选择、资源选择和查看选择更改事件处理程序，以及取消注册事件处理程序。 该 `manageEventHandlerAsync` 函数根据 _操作_ 参数添加或删除指定的事件处理程序。 操作可以是 `addHandlerAsync` 或 `removeHandlerAsync`。
+1. 添加 JavaScript 事件处理程序回调和函数，以注册任务选择、资源选择和查看选择更改事件处理程序，以及取消注册事件处理程序。 该 `manageEventHandlerAsync` 函数根据 *操作* 参数添加或删除指定的事件处理程序。 操作可以是 `addHandlerAsync` 或 `removeHandlerAsync`。
 
-   和函数可以添加或删除由 _docMethod_ 参数指定的事件处理程序。`manageTaskEventHandler``manageResourceEventHandler``manageViewEventHandler`
+   和函数可以添加或删除由 *docMethod* 参数指定的事件处理程序。`manageTaskEventHandler``manageResourceEventHandler``manageViewEventHandler`
 
     ```js
     // Task selection changed event handler.
@@ -759,7 +759,7 @@ JSOMCall.html 示例使用 office.js 文件和 project-15.js 文件中包含的 
     - WSS ID：`0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-1. 选择“ **获取任务字段** ”按钮。 该 `getTaskFields` 函数针对任务名称、索引、开始日期、持续时间、优先级和任务说明多次调用 `getTaskfieldAsync` 函数。
+1. 选择“ **获取任务字段** ”按钮。 该 `getTaskFields` 函数多次为任务名称、索引、开始日期、持续时间、优先级和任务说明调 `getTaskFieldAsync` 用该方法。
 
     - 名称：`T2`
     - ID：`2`

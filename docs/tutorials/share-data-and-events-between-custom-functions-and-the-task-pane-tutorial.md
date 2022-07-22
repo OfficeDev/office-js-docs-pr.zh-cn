@@ -4,12 +4,12 @@ description: 学习如何在Microsoft Excel中的自定义函数和任务窗格�
 ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 0afb6bcd46873dd968c242e57ac1a6f8d7f41627
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: b61ac6305586e5de2f53a0950fd6a52a0503eafd
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659925"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958721"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>教程：Microsoft Excel自定义函数和任务窗格之间共享数据和事件
 
@@ -20,7 +20,7 @@ ms.locfileid: "66659925"
 使用 [Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 来创建 Excel 加载项项目。
 
 - 要生成带自定义函数的 Excel 加载项，请运行以下命令。
-    
+
     ```command&nbsp;line
     yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true
     ```
@@ -33,7 +33,7 @@ ms.locfileid: "66659925"
 
 1. 启动 Visual Studio Code 并打开生成的加载项项目。
 1. 打开 **manifest.xml** 文件。
-1. 替换（或添加）以下 **\<Requirements\>** 部分 XML，以要求[共享运行时要求集](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)。
+1. 替换（或添加）以下 **\<Requirements\>** 部分 XML，以要求 [共享运行时要求集](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)。
 
     ```xml
     <Requirements>
@@ -58,13 +58,13 @@ ms.locfileid: "66659925"
     ```
 
 1. 查找 **\<VersionOverrides\>** 部分并添加以下 **\<Runtimes\>** 部分。 生存期需要 **较长**，以便在关闭任务窗格时加载项代码仍可运行。 `resid` 值是 **Taskpane.Url**，它引用 **manifest.xml** 文件底部附近的 `<bt:Urls>` 部分中指定的 **taskpane.html** 文件位置。
-    
+
     ```xml
     <Runtimes>
       <Runtime resid="Taskpane.Url" lifetime="long" />
     </Runtimes>
     ```
-    
+
     > [!IMPORTANT]
     > 必须按照以下 XML 中显示的确切顺序在 `<Host xsi:type="...">` 元素之后输入 **\<Runtimes\>** 部分。
 
@@ -78,20 +78,20 @@ ms.locfileid: "66659925"
         ...
         </Host>
     ```
-    
+
     > [!NOTE]
     > 如果加载项包含清单中的 `Runtimes` 元素（共享运行时所需），并且满足将 Microsoft Edge 与 WebView2（基于 Chromium）一起使用的条件，则它使用该 WebView2 控件。 如果不满足条件，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅 [运行时](/javascript/api/manifest/runtimes) 和 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 1. 查找 **\<Page\>** 元素。 然后将源位置从 **Functions.Page.Url** 更改为 **Taskpane.Url**。
 
-   ```xml
-   <AllFormFactors>
-   ...
-   <Page>
-     <SourceLocation resid="Taskpane.Url"/>
-   </Page>
-   ...
-   ```
+    ```xml
+    <AllFormFactors>
+    ...
+    <Page>
+      <SourceLocation resid="Taskpane.Url"/>
+    </Page>
+    ...
+    ```
 
 1. 查找 `<FunctionFile ...>` 标记并将 `resid` 从 **Commands.Url** 更改为  **Taskpane.Url**。
 
@@ -111,7 +111,7 @@ ms.locfileid: "66659925"
 1. 打开 **webpack.config.js** 文件。
 1. 转到 `plugins:` 部分。
 1. 删除以下 `functions.html` 插件（如果存在）。
-    
+
     ```javascript
     new HtmlWebpackPlugin({
         filename: "functions.html",
@@ -131,7 +131,7 @@ ms.locfileid: "66659925"
     ```
 
 1. 如果删除了 `functions` 或 `commands` 插件，请将其添加为 `chunks`。 如果同时删除了 `functions` 和 `commands` 插件，则以下 JavaScript 将显示更新的条目。
-    
+
     ```javascript
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
@@ -139,18 +139,18 @@ ms.locfileid: "66659925"
         chunks: ["polyfill", "taskpane", "commands", "functions"]
       })
     ```
-    
+
 1. 保存更改并重新生成项目。
 
-   ```command&nbsp;line
-   npm run build
-   ```
-    
+    ```command&nbsp;line
+    npm run build
+    ```
+
     > [!NOTE]
     > 还可以删除 **functions.html** 和 **commands.html** 文件。 **taskpane.html** 将通过你刚才进行的 webpack 更新将 **functions.js** 和 **commands.js** 代码加载到共享 JavaScript 运行时中。
-    
+
 1. 保存更改并运行项目。 确保加载和运行时没有错误。
-    
+
    ```command&nbsp;line
    npm run start
    ```
@@ -162,99 +162,99 @@ ms.locfileid: "66659925"
 ### <a name="create-custom-functions-to-get-or-store-shared-state"></a>创建用于获取或存储共享状态的自定义函数
 
 1. 在 Visual Studio Code 中，打开文件 **src/functions/functions.js**。
-2. 在第 1 行，将以下代码插入到最顶部。 这将初始化一个名为 **sharedState** 的全局变量。
+1. 在第 1 行，将以下代码插入到最顶部。 这将初始化一个名为 **sharedState** 的全局变量。
 
-   ```js
-   window.sharedState = "empty";
-   ```
+    ```js
+    window.sharedState = "empty";
+    ```
 
-3. 添加以下代码，创建将值存储到 **sharedState** 变量的自定义函数。
+1. 添加以下代码，创建将值存储到 **sharedState** 变量的自定义函数。
 
-   ```js
-   /**
-    * Saves a string value to shared state with the task pane
-    * @customfunction STOREVALUE
-    * @param {string} value String to write to shared state with task pane.
-    * @return {string} A success value
-    */
-   function storeValue(sharedValue) {
-     window.sharedState = sharedValue;
-     return "value stored";
-   }
-   ```
+    ```js
+    /**
+     * Saves a string value to shared state with the task pane
+     * @customfunction STOREVALUE
+     * @param {string} value String to write to shared state with task pane.
+     * @return {string} A success value
+     */
+    function storeValue(sharedValue) {
+      window.sharedState = sharedValue;
+      return "value stored";
+    }
+    ```
 
-4. 添加以下代码，创建获取 **sharedState** 变量的当前值的自定义函数。
+1. 添加以下代码，创建获取 **sharedState** 变量的当前值的自定义函数。
 
-   ```js
-   /**
-    * Gets a string value from shared state with the task pane
-    * @customfunction GETVALUE
-    * @returns {string} String value of the shared state with task pane.
-    */
-   function getValue() {
-     return window.sharedState;
-   }
-   ```
+    ```js
+    /**
+     * Gets a string value from shared state with the task pane
+     * @customfunction GETVALUE
+     * @returns {string} String value of the shared state with task pane.
+     */
+    function getValue() {
+      return window.sharedState;
+    }
+    ```
 
-5. 保存文件。
+1. 保存文件。
 
 ### <a name="create-task-pane-controls-to-work-with-global-data"></a>创建任务窗格控件以处理全局数据
 
 1. 打开 **src/taskpane/taskpane.html** 文件。
-2. 紧贴在结尾的 `</head>` 元素前，添加以下脚本元素。
+1. 紧贴在结尾的 `</head>` 元素前，添加以下脚本元素。
 
-   ```html
-   <script src="../functions/functions.js"></script>
-   ```
+    ```HTML
+    <script src="../functions/functions.js"></script>
+    ```
 
-3. 关闭 `</main>` 元素后，添加以下 HTML。 该 HTML 创建两个用于获取或存储全局数据的文本框和按钮。
+1. 关闭 `</main>` 元素后，添加以下 HTML。 该 HTML 创建两个用于获取或存储全局数据的文本框和按钮。
 
-   ```html
-   <ol>
-     <li>
-       Enter a value to send to the custom function and select
-       <strong>Store</strong>.
-     </li>
-     <li>
-       Enter <strong>=CONTOSO.GETVALUE()</strong> into a cell to retrieve it.
-     </li>
-     <li>
-       To send data to the task pane, in a cell, enter
-       <strong>=CONTOSO.STOREVALUE("new value")</strong>
-     </li>
-     <li>Select <strong>Get</strong> to display the value in the task pane.</li>
-   </ol>
+    ```HTML
+    <ol>
+      <li>
+        Enter a value to send to the custom function and select
+        <strong>Store</strong>.
+      </li>
+      <li>
+        Enter <strong>=CONTOSO.GETVALUE()</strong> into a cell to retrieve it.
+      </li>
+      <li>
+        To send data to the task pane, in a cell, enter
+        <strong>=CONTOSO.STOREVALUE("new value")</strong>
+      </li>
+      <li>Select <strong>Get</strong> to display the value in the task pane.</li>
+    </ol>
 
-   <p>Store new value to shared state</p>
-   <div>
-     <input type="text" id="storeBox" />
-     <button onclick="storeSharedValue()">Store</button>
-   </div>
+    <p>Store new value to shared state</p>
+    <div>
+      <input type="text" id="storeBox" />
+      <button onclick="storeSharedValue()">Store</button>
+    </div>
 
-   <p>Get shared state value</p>
-   <div>
-     <input type="text" id="getBox" />
-     <button onclick="getSharedValue()">Get</button>
-   </div>
-   ```
+    <p>Get shared state value</p>
+    <div>
+      <input type="text" id="getBox" />
+      <button onclick="getSharedValue()">Get</button>
+    </div>
+    ```
 
-4. 在结束 `</body>` 元素之前，添加以下脚本。当用户要存储或获取全局数据时，此代码将处理按钮单击事件。
+1. 在结束 `</body>` 元素之前，添加以下脚本。当用户要存储或获取全局数据时，此代码将处理按钮单击事件。
 
-   ```js
-   <script>
-   function storeSharedValue() {
-     let sharedValue = document.getElementById('storeBox').value;
-     window.sharedState = sharedValue;
-   }
+    ```HTML
+    <script>
+      function storeSharedValue() {
+        let sharedValue = document.getElementById('storeBox').value;
+        window.sharedState = sharedValue;
+      }
 
-   function getSharedValue() {
-     document.getElementById('getBox').value = window.sharedState;
-   }
+      function getSharedValue() {
+        document.getElementById('getBox').value = window.sharedState;
+      }
    </script>
    ```
 
-5. 保存文件。
-6. 生成项目
+1. 保存文件。
+1. 生成项目。
 
    ```command line
    npm run build
@@ -264,9 +264,9 @@ ms.locfileid: "66659925"
 
 - 使用以下命令启动项目。
 
-  ```command line
-  npm run start
-  ```
+    ```command line
+    npm run start
+    ```
 
 Excel 启动后，可使用“任务窗格”按钮来存储或获取共享数据。 在自定义函数的单元格中输入 `=CONTOSO.GETVALUE()`，以检索相同的共享数据。 或使用 `=CONTOSO.STOREVALUE("new value")` 将共享数据更改为新值。
 

@@ -3,12 +3,12 @@ title: Office 加载项中的异步编程
 description: 了解 Office JavaScript 库如何在 Office 加载项中使用异步编程。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 64965d06544126584d7b17d078f4db9d464b39f0
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: f2d8682488f41786d60c8fcec02b120f35e696ae
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889497"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958858"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Office 加载项中的异步编程
 
@@ -191,7 +191,7 @@ function write(message){
 
 在继续执行之前，承诺编程模式会立即返回表示其预期结果的承诺对象，而不是传递回调函数并等待函数返回。然而，与真正同步编程不同的是，在 Office 外接程序运行时环境完成请求之前，承诺结果的实现在后台实际上是延迟的。提供 *onError* 处理程序来覆盖请求无法满足的情况。
 
-Office JavaScript API 提供 [Office.select](/javascript/api/office#Office_select_expression__callback_) 方法，用于支持使用现有绑定对象的承诺模式。 返回到 `Office.select` 该方法的 promise 对象仅支持可直接从 [Binding](/javascript/api/office/office.binding) 对象访问的四种方法： [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1))、 [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1))、 [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) 和 [removeHandlerAsync](/javascript/api/office/office.binding#office-office-binding-removehandlerasync-member(1))。
+Office JavaScript API 提供 [Office.select](/javascript/api/office#Office_select_expression__callback_) 函数，以支持使用现有绑定对象的承诺模式。 返回到函数的 `Office.select` promise 对象仅支持可直接从 [Binding](/javascript/api/office/office.binding) 对象访问的四种方法： [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1))、 [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1))、 [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) 和 [removeHandlerAsync](/javascript/api/office/office.binding#office-office-binding-removehandlerasync-member(1))。
 
 使用绑定的承诺模式采用此形式。
 
@@ -199,7 +199,7 @@ Office JavaScript API 提供 [Office.select](/javascript/api/office#Office_selec
 
 *selectorExpression* 参数采用窗体`"bindings#bindingId"`，其中 *bindingId* 是之前在文档或电子表格中创建的绑定的名称 ( `id`) ， (使用集合的“addFrom”方法`Bindings`之一：`addFromNamedItemAsync``addFromPromptAsync`或`addFromSelectionAsync`) 。 例如，选择器表达式 `bindings#cities` 指定要访问 **ID** 为“cities”的绑定。
 
-*onError* 参数是一个错误处理函数，如果`select`该方法无法访问指定的绑定，则该函数采用一个可用于访问对象的类型的`AsyncResult`单个`Error`参数。 以下示例显示了一个可传递给 *onError* 参数的基本错误处理程序函数。
+*onError* 参数是一个错误处理函数，如果`select`该函数无法访问指定的绑定，则该函数采用一个可用于访问对象的类型的`AsyncResult`单个`Error`参数。 以下示例显示了一个可传递给 *onError* 参数的基本错误处理程序函数。
 
 ```js
 function onError(result){
@@ -217,7 +217,7 @@ function write(message){
 
 `Binding`实现对象承诺后，可以在链接的方法调用中重复使用它，就好像它是绑定 (加载项运行时不会异步重试履行承诺) 。 `Binding`如果无法实现对象承诺，加载项运行时将在下次调用其异步方法之一时再次尝试访问绑定对象。
 
-下面的`select`代码示例使用该方法从`Bindings`集合中检索具有`id`“`cities`”的绑定，然后调用 [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) 方法为绑定的 [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) 事件添加事件处理程序。
+下面的代码示例使用该`select`函数从`Bindings`集合中检索包含`id`“`cities`”的绑定，然后调用 [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) 方法为绑定的 [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) 事件添加事件处理程序。
 
 ```js
 function addBindingDataChangedEventHandler() {
@@ -230,7 +230,7 @@ function addBindingDataChangedEventHandler() {
 ```
 
 > [!IMPORTANT]
-> 方法 `Binding` 返回的 `Office.select` 对象承诺仅提供对该对象的 `Binding` 四种方法的访问权限。 如果需要访问对象的任何其他成员 `Binding` ，则必须使用 `Document.bindings` 该属性和 `Bindings.getByIdAsync` 方法 `Bindings.getAllAsync` 来检索 `Binding` 该对象。 例如，如果需要访问对象的任何`Binding`属性 (`type` `id``document`) 或需要访问 [MatrixBinding](/javascript/api/office/office.matrixbinding) 或 [TableBinding](/javascript/api/office/office.tablebinding) 对象的属性，则必须使用`getByIdAsync`或`getAllAsync`方法来检索`Binding`对象。
+> 函 `Binding` 数返回的 `Office.select` 对象承诺仅提供对对象的四种方法的访问 `Binding` 权限。 如果需要访问对象的任何其他成员 `Binding` ，则必须使用 `Document.bindings` 该属性和 `Bindings.getByIdAsync` 方法 `Bindings.getAllAsync` 来检索 `Binding` 该对象。 例如，如果需要访问对象的任何`Binding`属性 (`type` `id``document`) 或需要访问 [MatrixBinding](/javascript/api/office/office.matrixbinding) 或 [TableBinding](/javascript/api/office/office.tablebinding) 对象的属性，则必须使用`getByIdAsync`或`getAllAsync`方法来检索`Binding`对象。
 
 ## <a name="pass-optional-parameters-to-asynchronous-methods"></a>将可选参数传递给异步方法
 
@@ -363,10 +363,10 @@ function getDocumentFilePath() {
 }
 ```
 
-当需要等待此方法时，可以使用关键字或作为传递给函数的函数调`then`用`await`它。
+当需要等待此函数时，可以使用关键字调用 `await` 该函数，也可以传递给函数 `then` 。
 
 > [!NOTE]
-> 当需要在某个特定于应用程序的对象模型中调用方法的调用 `run` 中调用一个公用 API 时，此技术特别有用。 有关以这种方式使用上述函数的示例，请参阅 [ 示例 Word-Add-in-JavaScript-MDConversion 中的文件Home.js](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js)。
+> 当需要在特定于应用程序的对象模型中的函数调用中调用公共 API 时， `run` 此技术特别有用。 有关以这种方式使用的函数的 `getDocumentFilePath` 示例，请参阅 [ 示例 Word-Add-in-JavaScript-MDConversion 中的文件Home.js](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js)。
 
 下面是使用 TypeScript 的示例。
 

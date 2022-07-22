@@ -3,12 +3,12 @@ title: 绑定到文档或电子表格中的区域
 description: 了解如何使用绑定来确保通过标识符一致地访问文档或电子表格的特定区域或元素。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3516a06c74c23f7b5a72a51bbe5dd5d244e82ea5
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: b1624624a5664444f811b20d405fb6aefbd23d91
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889371"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958851"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
@@ -20,7 +20,7 @@ ms.locfileid: "66889371"
 
 建立绑定还允许您订阅仅限文档或电子表格的特定区域的数据和选择更改事件。这意味着，加载项只会收到绑定区域内发生的更改的通知，而不是收到整个文档或电子表格内的常规更改的通知。
 
-[Bindings] 对象公开 [getAllAsync] 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。可使用 Bindings.[getByIdAsync] 或 [Office.select] 方法通过 ID 访问单个绑定。可使用 [Bindings] 对象的以下方法之一建立新绑定和删除现有绑定：[addFromSelectionAsync]、[addFromPromptAsync]、[addFromNamedItemAsync] 或 [releaseByIdAsync]。
+[Bindings] 对象公开 [getAllAsync] 方法，通过该方法可以访问在文档或电子表格中建立的所有绑定的集合。 单个绑定可以通过其 ID 使用绑定来访问。[getByIdAsync] 方法或 [Office.select] 函数。 可使用 [Bindings] 对象的以下方法之一建立新绑定和删除现有绑定：[addFromSelectionAsync]、[addFromPromptAsync]、[addFromNamedItemAsync] 或 [releaseByIdAsync]。
 
 ## <a name="binding-types"></a>绑定类型
 
@@ -66,7 +66,7 @@ function write(message){
 
 第二个可选参数是一个对象，它指定要创建的新绑定的 ID。如果不指定 ID，则会自动生成一个。
 
-作为最后一个 _callback_ 参数传入函数的匿名函数会在绑定创建完成时执行。该函数用单个参数 `asyncResult` 来调用，通过该参数可访问提供调用状态的 [AsyncResult] 对象。`AsyncResult.value` 属性包含对 [Binding] 对象的引用，该对象属于为新创建的绑定指定的类型。可以使用此 [Binding] 对象来获取和设置数据。
+当绑定创建完成时，将执行作为最终  _回调_ 参数传递到方法中的匿名函数。 该函数用单个参数 `asyncResult` 来调用，通过该参数可访问提供调用状态的 [AsyncResult] 对象。 `AsyncResult.value` 属性包含对 [Binding] 对象的引用，该对象属于为新创建的绑定指定的类型。 可以使用此 [Binding] 对象来获取和设置数据。
 
 ## <a name="add-a-binding-from-a-prompt"></a>从提示中添加绑定
 
@@ -93,7 +93,7 @@ function write(message){
 
 第二个参数是一个对象，它包含创建的新绑定的 ID。如果不指定 ID，则会自动生成一个。
 
-当绑定创建完成时，将执行第三 _个回调_ 参数时传递到函数中的匿名函数。 执行回调函数时， [AsyncResult] 对象包含调用的状态和新创建的绑定。
+当创建绑定完成时，将执行第三 _个回调_ 参数时传递到方法中的匿名函数。 执行回调函数时， [AsyncResult] 对象包含调用的状态和新创建的绑定。
 
 图 1 显示 Excel 中内置的范围选择提示。
 
@@ -198,7 +198,7 @@ function write(message){
 }
 ```
 
-在操作完成时执行参数时 `callback` 传递到函数中的匿名函数。 该函数使用单个参数调用， `asyncResult`其中包含文档中的绑定数组。 通过循环访问该数组可以生成包含绑定 ID 的字符串。 然后，会在消息框中显示该字符串。
+在操作完成时执行参数时 `callback` 传递到方法中的匿名函数。 该函数使用单个参数调用， `asyncResult`其中包含文档中的绑定数组。 通过循环访问该数组可以生成包含绑定 ID 的字符串。 然后，会在消息框中显示该字符串。
 
 ## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>使用 Bindings 对象的 getByIdAsync 方法按 ID 获取绑定
 
@@ -222,11 +222,11 @@ function write(message){
 
 在本示例中，第一个 `id` 参数是要检索的绑定的 ID。
 
-操作完成后，将作为第二 _个回调_ 参数传入函数的匿名函数执行。 该函数用单个参数 _asyncResult_ 来调用，其中包含调用状态和 ID 为"myBinding"的绑定。
+操作完成后，将作为第二 _个回调_ 参数传递到方法中的匿名函数。 该函数用单个参数 _asyncResult_ 来调用，其中包含调用状态和 ID 为"myBinding"的绑定。
 
-## <a name="get-a-binding-by-id-using-the-select-method-of-the-office-object"></a>使用 Office 对象的 select 方法按 ID 获取绑定
+## <a name="get-a-binding-by-id-using-the-select-function-of-the-office-object"></a>使用 Office 对象的 select 函数按 ID 获取绑定
 
-以下示例演示如何使用 [Office.select] 方法通过在选择器字符串中指定 [Binding] 对象目标 ID 来获取文档中的该目标。然后，它会调用 Binding.[getDataAsync] 方法，从指定绑定中获取数据。此示例假定已使用本主题前面介绍的方法之一将名为 `'myBinding'` 的绑定添加到文档。
+以下示例演示如何使用 [Office.select] 函数通过在选择器字符串中指定其 ID 来获取文档中的 [Binding] 对象承诺。 然后，它会调用 Binding.[getDataAsync] 方法，从指定绑定中获取数据。 此示例假定已使用本主题前面介绍的方法之一将名为 `'myBinding'` 的绑定添加到文档。
 
 ```js
 Office.select("bindings#myBinding", function onError(){}).getDataAsync(function (asyncResult) {
@@ -244,7 +244,7 @@ function write(message){
 ```
 
 > [!NOTE]
-> `select`如果方法承诺成功返回 [Binding] 对象，则该对象仅公开该对象的以下四种方法：[getDataAsync]、[setDataAsync]、[addHandlerAsync] 和 [removeHandlerAsync]。 如果 promise 无法返回 Binding 对象，`onError`则回调可用于访问 [asyncResult.error] 对象以获取详细信息。如果需要调用 Binding 对象的成员，而不是方法返回的 [Binding] 对象承诺公开的`select`四种方法，请改用 [Document.bindings 属性和 Bindings] 来使用 [getByIdAsync] 方法。[用于检索 Binding 对象的 getByIdAsync] 方法。[]
+> 如果函 `select` 数承诺成功返回 [Binding] 对象，则该对象仅公开该对象的以下四种方法： [getDataAsync]、 [setDataAsync]、 [addHandlerAsync] 和 [removeHandlerAsync]。 如果 promise 无法返回 Binding 对象， `onError` 则回调可用于访问 [asyncResult.error] 对象以获取详细信息。 如果需要调用 Binding 对象的成员，而不是函数返回的 [Binding] 对象承诺公开的`select`四种方法，请改用 [Document.bindings 属性和 Bindings] 来使用 [getByIdAsync] 方法。[用于检索 Binding 对象的 getByIdAsync] 方法。[]
 
 ## <a name="release-a-binding-by-id"></a>按 ID 释放绑定
 
@@ -263,7 +263,7 @@ function write(message){
 
 在此示例中，第一个 `id` 参数是要释放的绑定的 ID。
 
-作为第二个参数传入函数的匿名函数是在操作完成时执行的回调。该函数用单个参数  [asyncResult] 来调用，其中包含调用的状态。
+作为第二个参数传递到方法中的匿名函数是操作完成时执行的回调。 该函数用单个参数  [asyncResult] 来调用，其中包含调用的状态。
 
 ## <a name="read-data-from-a-binding"></a>从绑定中读取数据
 
@@ -290,7 +290,7 @@ function write(message){
 Office.select("bindings#myBindingID").getDataAsync
 ```
 
-传入函数的匿名函数是在操作完成时执行的回调。[AsyncResult].value 属性包含 `myBinding` 中的数据。值的类型取决于绑定类型。此示例中的绑定是文本绑定。因此，该值将包含字符串。有关使用矩阵和表格绑定的其他示例，请参阅 [getDataAsync] 方法主题。
+传递到方法中的匿名函数是操作完成时执行的回调。 [AsyncResult].value 属性包含 `myBinding` 中的数据。 值的类型取决于绑定类型。 此示例中的绑定是文本绑定。 因此，该值将包含字符串。 有关使用矩阵和表格绑定的其他示例，请参阅 [getDataAsync] 方法主题。
 
 ## <a name="write-data-to-a-binding"></a>向绑定中写入数据
 
@@ -304,7 +304,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 在该示例中，第一个参数是要设置的 `myBinding`值。 由于这是文本绑定，因此值为 `string`。 不同绑定类型接受不同类型的数据。
 
-传入函数的匿名函数是在操作完成时执行的回调。 该函数使用单个参数调用， `asyncResult`其中包含结果的状态。
+传递到方法中的匿名函数是操作完成时执行的回调。 该函数使用单个参数调用， `asyncResult`其中包含结果的状态。
 
 > [!NOTE]
 > 自 Excel 2013 SP1 发行版及相应的 Excel 网页版内部版本起，现在可以[在绑定表中写入和更新数据时设置格式](../excel/excel-add-ins-tables.md)。
@@ -331,7 +331,7 @@ function write(message){
 
 [addHandlerAsync] 方法的第一个 _eventType_ 参数指定要订阅的事件的名称。 [Office.EventType] 是可用事件类型值的枚举。 `Office.EventType.BindingDataChanged` 计算结果为字符串“bindingDataChanged”。
 
-`dataChanged`作为第二个 _处理程序_ 参数传递到函数中的函数是一个事件处理程序，该处理程序在绑定中的数据发生更改时执行。 该函数用单个参数 _eventArgs_ 来调用，其中包含对绑定的引用。 此绑定可用来检索更新的数据。
+`dataChanged`作为第二个 _处理程序_ 参数传递到方法中的函数是一个事件处理程序，该处理程序在绑定中的数据发生更改时执行。 该函数用单个参数 _eventArgs_ 来调用，其中包含对绑定的引用。 此绑定可用来检索更新的数据。
 
 类似地，你可以通过向绑定的 [SelectionChanged] 事件附加事件处理程序来检测用户是否更改绑定中的选择。为此，请将 [addHandlerAsync] 方法的 `eventType` 参数指定为 `Office.EventType.BindingSelectionChanged` 或 `"bindingSelectionChanged"`。
 

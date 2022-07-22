@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在 Office 加载项中创建对话框的基础知识。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 363f58f94f7e0bfc6fe4c7b9a410114b8d027b52
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 61b9da4d3d6f3182cb97402c7173bce250a52061
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889483"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958480"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -193,7 +193,7 @@ if (loginSuccess) {
 > [!NOTE]
 >
 > - `loginSuccess` 变量通过读取标识提供程序返回的 HTTP 响应进行初始化。
-> - 未显示 `getProfile` 和 `getError` 函数的实现。这两个函数均从查询参数或 HTTP 响应的正文获取数据。
+> - 不显示这些函数和`getError`函数的`getProfile`实现。 这两个函数均从查询参数或 HTTP 响应的正文获取数据。
 > - 根据登录是否成功，发送不同类型的匿名对象。两者都有 `messageType` 属性。不同之处在于，一个有 `profile` 属性，另一个有 `error` 属性。
 
 主机页中的处理程序代码使用 `messageType` 属性的值设置分支，如下面的示例所示。请注意，`showUserName` 函数的用法与之前的示例相同，`showNotification` 函数在主机页的 UI 中显示错误。
@@ -290,7 +290,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>在对话框中处理 DialogParentMessageReceived
 
-在对话框的 JavaScript 中，使用 [UI.addHandlerAsync](/javascript/api/office/office.ui#office-office-ui-addhandlerasync-member(1)) 方法注册`DialogParentMessageReceived`事件的处理程序。 这通常在 [Office.onReady 或 Office.initialize 方法](initialize-add-in.md)中完成，如下所示。  (下面是一个更可靠的示例。) 
+在对话框的 JavaScript 中，使用 [UI.addHandlerAsync](/javascript/api/office/office.ui#office-office-ui-addhandlerasync-member(1)) 方法注册`DialogParentMessageReceived`事件的处理程序。 这通常在 [Office.onReady 或 Office.initialize 函](initialize-add-in.md)数中完成，如下所示。  (本文稍后将包含一个更可靠的示例。) 
 
 ```javascript
 Office.onReady()
@@ -370,7 +370,7 @@ function onMessageFromParent(arg) {
 }
 ```
 
-例如，代码可以使用 [Office.onReady 或 Office.initialize 方法](initialize-add-in.md) 将受信任域数组存储在全局变量中。 `arg.origin`然后，可以针对处理程序中的该列表检查该属性。
+例如，代码可以使用 [Office.onReady 或 Office.initialize 函](initialize-add-in.md) 数将受信任域数组存储在全局变量中。 `arg.origin`然后，可以针对处理程序中的该列表检查该属性。
 
 > [!TIP]
 > 该 `DialogMessageOptions` 参数在 2021 年年中作为必需参数添加到 `messageChild` 该方法。 使用该方法发送跨域消息的较旧加载项在更新为使用新参数之前不再工作。 在加载项更新之前， *仅在 Office for Windows 上*，用户和系统管理员可以通过使用注册表设置指定受信任域 () 来使这些加载项继续工作： **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**。 为此，请创建具有扩展名的文件，将其保存到 Windows 计算机，然后双击该文件 `.reg` 以运行它。 下面是此类文件的内容示例。

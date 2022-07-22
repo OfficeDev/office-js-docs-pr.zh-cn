@@ -3,12 +3,12 @@ title: 在 Outlook 加载项中获取或修改收件人
 description: 了解如何在 Outlook 加载项中获取、设置或添加邮件或约会的收件人。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e7c59765d38e32e7552b5fdf67b6085529ccf03b
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: bcc4a76ef89e3bfaf7e884ad2fa4e1595782c62f
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712781"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958318"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取、设置或添加收件人
 
@@ -45,9 +45,9 @@ item.cc.getAsync
 
 在 Office JavaScript API 中，由于表示约会的收件人 ( **optionalAttendees** 和 **requiredAttendees**) 的属性不同于消息 ([bcc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)、 **cc** **和)** 的属性，因此应首先使用 [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 属性来标识正在撰写的项目是约会还是消息。 在撰写模式下，约会和邮件的所有这些属性都是 [收件人](/javascript/api/outlook/office.recipients) 对象，因此你可以应用异步方法 `Recipients.getAsync`来获取相应的收件人。
 
-若要使用 `getAsync`，请提供回调方法来检查异步 `getAsync` 调用返回的状态、结果和任何错误。 您可以使用可选 _asyncContext_ 形参为回调方法提供任意实参。 回调方法会返回 _asyncResult_ 输出形参。 可以使用 `status` [AsyncResult](/javascript/api/office/office.asyncresult) 参数对象的和`error`属性来检查异步调用的状态和任何错误消息，以及`value`获取实际收件人的属性。 收件人以 [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) 对象数组的形式表示。
+若要使用 `getAsync`，请提供回调函数来检查异步 `getAsync` 调用返回的状态、结果和任何错误。 可以使用可选 _的 asyncContext_ 参数向回调函数提供任何参数。 回调函数返回 _asyncResult_ 输出参数。 可以使用 `status` [AsyncResult](/javascript/api/office/office.asyncresult) 参数对象的和`error`属性来检查异步调用的状态和任何错误消息，以及`value`获取实际收件人的属性。 收件人以 [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) 对象数组的形式表示。
 
-请注意，由于 `getAsync` 该方法是异步的，如果后续操作依赖于成功获取收件人，则应组织代码，以便仅在异步调用成功完成后，才在相应的回调方法中启动此类操作。
+请注意，由于 `getAsync` 该方法是异步的，如果后续操作依赖于成功获取收件人，则应组织代码，以便仅在异步调用成功完成时在相应的回调函数中启动此类操作。
 
 > [!IMPORTANT]
 > 该 `getAsync` 方法仅返回 Outlook 客户端解析的收件人。 已解析的收件人具有以下特征。
@@ -69,7 +69,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get all the recipients of the composed item.
@@ -163,14 +163,14 @@ function write(message){
 - 字典的数组，每个字典都包含显示名称和电子邮件地址，如下面的代码示例中所示。
 - 对象数组 `EmailAddressDetails` ，类似于方法返回的 `getAsync` 对象数组。
   
-可以选择性地将回调方法作为方法的输入参数 `setAsync` 提供，以确保任何依赖于成功设置收件人的代码仅在发生这种情况时才执行。 还可以为使用可选 _asyncContext_ 形参的回调方法提供任意实参。 如果使用回调方法，则可以访问 _asyncResult_ 输出参数，并使用参数对象的`AsyncResult`**状态** 和 **错误** 属性来检查异步调用的状态和任何错误消息。
+可以选择提供回调函数作为方法的输入参数 `setAsync` ，以确保任何依赖于成功设置收件人的代码仅在发生这种情况时才执行。 还可以使用可选 _的 asyncContext_ 参数为回调函数提供任何参数。 如果使用回调函数，则可以访问 _asyncResult_ 输出参数，并使用参数对象的`AsyncResult`**状态** 和 **错误** 属性来检查异步调用的状态和任何错误消息。
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set recipients of the composed item.
@@ -273,7 +273,7 @@ function write(message){
 
 ## <a name="add-recipients"></a>添加收件人
 
-如果不想覆盖约会或邮件中的任何现有收件人，则可以使用异步方法来追加收件人，而不是使用`Recipients.setAsync``Recipients.addAsync`此方法。 `addAsync` 工作方式类似 `setAsync` ，因为它需要 _收件人_ 输入参数。 还可以选择使用 asyncContext 形参为回调提供回调方法和任意实参。 然后，可以使用回调方法的 _asyncResult_ 输出参数检查异步`addAsync`调用的状态、结果和任何错误。 以下示例检查正在撰写的项目是否是约会，并为该约会追加两个必需参与者。
+如果不想覆盖约会或邮件中的任何现有收件人，则可以使用异步方法来追加收件人，而不是使用`Recipients.setAsync``Recipients.addAsync`此方法。 `addAsync` 工作方式类似 `setAsync` ，因为它需要 _收件人_ 输入参数。 可以选择使用 asyncContext 参数为回调提供回调函数和任何参数。 然后，可以使用回调函数的 _asyncResult_ 输出参数检查异步`addAsync`调用的状态、结果和任何错误。 以下示例检查正在撰写的项目是否是约会，并为该约会追加两个必需参与者。
 
 ```js
 // Add specified recipients as required attendees of

@@ -3,12 +3,12 @@ title: 管理 Outlook 加载项的状态和设置
 description: 了解如何保留 Outlook 加载项的加载项状态和设置。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fc283588d2d5425fbf57b16b199dcd797f3893a
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 59349e4b23182bf53b5863430d3d847563188b08
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713082"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958809"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>管理 Outlook 加载项的状态和设置
 
@@ -100,7 +100,7 @@ let _customProps;
 
 // The initialize function is required for all add-ins.
 Office.initialize = function () {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
     // After the DOM is loaded, add-in-specific code can run.
     _mailbox = Office.context.mailbox;

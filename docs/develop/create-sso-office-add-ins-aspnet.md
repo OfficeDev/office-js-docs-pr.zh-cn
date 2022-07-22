@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 有关如何使用 ASP.NET 后端创建 (或转换) Office 加载项以使用单一登录 (SSO) 的分步指南。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 980ae1b9c36dfdf7fcf84ad4fb1ba9088687cf7a
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 403730f953a4f53d853a0ecd3b12cd477f7e7176
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889378"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958830"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
@@ -76,7 +76,7 @@ ms.locfileid: "66889378"
 1. 将 **状态** 设置为 **“已启用**”，然后选择 **“添加范围**”。
 
     > [!NOTE]
-    > 文本字段正下方显示的名称的 **\<Scope\>** 域部分应自动匹配之前设置的应用程序 ID URI，`/access_as_user`并追加到末尾;例如。 `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`
+    > 在文本字段之后显示的 **\<Scope\>** 名称的域部分应自动匹配之前设置的应用程序 ID URI，`/access_as_user`并追加到末尾;例如。 `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`
 
 1. 在 **“授权客户端应用程序** ”部分中，输入以下 ID 以预授权所有 Microsoft Office 应用程序终结点。
 
@@ -168,12 +168,12 @@ ms.locfileid: "66889378"
 1. 打开 **Scripts** 文件夹中的 HomeES6.js 文件。 其中已有一些代码。
 
     - 有一些填充代码用于向全局窗口对象分配 Office.Promise 对象，以便在 Office 为 UI 使用 Internet Explorer 时可运行该加载项。 （有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。）
-    - 针对 `Office.initialize` 方法的分配，反过来又将一个处理程序分配给 `getGraphAccessTokenButton` 按钮的 Click 事件。
+    - 对函数的 `Office.initialize` 分配，该函数又为按钮单击事件分配处理程序 `getGraphAccessTokenButton` 。
     - `showResult` 方法，用于在任务窗格底部显示从 Microsoft Graph 返回的数据（或错误消息）。
     - `logErrors` 方法，用于记录最终用户不应看到的控制台错误。
     - 在不支持 SSO 或发生错误的情况下实现外接程序将使用的回退授权系统的代码。
 
-1. 在针对 `Office.initialize` 的分配下面，添加下面的代码。 关于此代码，请注意以下几点：
+1. 分配到 `Office.initialize`后，添加以下代码。 关于此代码，请注意以下几点：
 
     - 加载项中的错误处理有时会自动尝试使用一组不同的选项，重新获取访问令牌。 计数器变量 `retryGetAccessToken` 用于确保用户不会重复循环失败的尝试来获取令牌。
     - `getGraphData` 函数通过 ES6 `async` 关键字进行定义。 使用 ES6 语法可以使 Office 加载项中的 SSO API 更易于使用。 此文件是该解决方案中唯一会使用 Internet Explorer 不支持的语法的文件。 我们在文件名中放入“ES6”作为提醒用途。 该解决方案使用 tsc 转译器将此文件转译为 ES5，以便在 Office 为 UI 使用 Internet Explorer 时可运行加载项。 （请查看项目根目录中的 tsconfig.json 文件。）
@@ -186,7 +186,7 @@ ms.locfileid: "66889378"
     }
     ```
 
-1. 在 `getGraphData` 函数下方，添加下列函数。 请注意，你将在稍后的步骤中创建 `handleClientSideErrors` 函数。
+1. 在函数之后 `getGraphData` ，添加以下函数。 请注意，你将在稍后的步骤中创建 `handleClientSideErrors` 函数。
 
     > [!NOTE]
     > 为了区分本文中使用的两个访问令牌，从 getAccessToken () 返回的令牌称为启动令牌。 稍后会通过代表流交换该令牌，以获取有权访问 Microsoft Graph 的新令牌。
@@ -211,7 +211,8 @@ ms.locfileid: "66889378"
     }
     ```
 
-1. 替换 `TODO 1` 为以下代码以从 Office 主机获取访问令牌。 **options** 参数包含从上一 **个 getGraphData ()** 函数传递的以下设置。
+
+1. 替换 `TODO 1` 为以下代码以从 Office 主机获取访问令牌。 *options* 参数包含从上一`getGraphData()`函数传递的以下设置。
 
     - `allowSignInPrompt` 设置为 true。 这会告知 Office 在用户尚未登录 Office 时提示用户登录。
     - `allowConsentPrompt` 设置为 true。 这会指示 Office 在尚未授予许可的情况下，提示用户同意允许外接程序访问用户的Microsoft Azure Active Directory配置文件。  (生成的提示 *不允许* 用户同意任何 Microsoft Graph 范围。) 
@@ -228,7 +229,7 @@ ms.locfileid: "66889378"
     getData("/api/values", bootstrapToken);
     ```
 
-1. 在 `getGraphData` 函数下方，添加以下内容。 关于此代码，请注意以下几点：
+1. 在函数之后 `getGraphData` ，添加以下内容。 关于此代码，请注意以下几点：
 
     - SSO 和回退授权系统均会使用它。
     - `relativeUrl` 参数是服务器端控制器。
@@ -261,7 +262,7 @@ ms.locfileid: "66889378"
 
 ### <a name="handle-client-side-errors"></a>处理客户端错误
 
-1. 在 `getData` 函数下方，添加下列函数。 请注意，`error.code` 是一个数字，通常处于 13xxx 范围内。
+1. 在函数之后 `getData` ，添加以下函数。 请注意，`error.code` 是一个数字，通常处于 13xxx 范围内。
 
     ```javascript
     function handleClientSideErrors(error) {
@@ -284,12 +285,12 @@ ms.locfileid: "66889378"
         // No one is signed into Office. If the add-in cannot be effectively used when no one
         // is logged into Office, then the first call of getAccessToken should pass the
         // `allowSignInPrompt: true` option.
-        showResult(["No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
+        showResult(["No one is signed into Office. But you can use many of the add-in's functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
         break;
     case 13002:
         // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
         // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
-        showResult(["You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
+        showResult(["You can use many of the add-in's functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
         break;
     case 13006:
         // Only seen in Office on the web.
@@ -315,7 +316,7 @@ ms.locfileid: "66889378"
 
 ### <a name="handle-server-side-errors"></a>处理服务器端错误
 
-1. 在 `handleClientSideErrors` 函数下方，添加下列函数。
+1. 在函数之后 `handleClientSideErrors` ，添加以下函数。
 
     ```javascript
     function handleServerSideErrors(result) {

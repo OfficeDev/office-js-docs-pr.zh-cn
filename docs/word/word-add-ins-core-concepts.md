@@ -3,12 +3,12 @@ title: Office 加载项中的 Word JavaScript 对象模型
 description: 了解特定于 Word 的 JavaScript 对象模型中的关键组件。
 ms.date: 3/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d3c2a43e2febbf31fe132dfb5c220bffcc7a1fef
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 07055ee2c8b16315b5c4efea5f62a85331e48445
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746099"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958956"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Office 加载项中的 Word JavaScript 对象模型
 
@@ -44,8 +44,8 @@ Word 加载项使用 Office JavaScript API 与 Word 中的对象进行交互。�
 
 ## <a name="see-also"></a>另请参阅
 
-- [Word JavaScript API 概述](../reference/overview/word-add-ins-reference-overview.md)
-- [生成首个 Word 加载项](../quickstarts/word-quickstart.md)
-- [Word 加载项教程](../tutorials/word-tutorial.md)
-- [Word JavaScript API 参考](/javascript/api/word)
-- [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
+* [Word JavaScript API 概述](../reference/overview/word-add-ins-reference-overview.md)
+* [生成首个 Word 加载项](../quickstarts/word-quickstart.md)
+* [Word 加载项教程](../tutorials/word-tutorial.md)
+* [Word JavaScript API 参考](/javascript/api/word)
+* [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)

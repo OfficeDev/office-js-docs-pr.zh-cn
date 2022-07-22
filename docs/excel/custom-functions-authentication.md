@@ -1,16 +1,16 @@
 ---
-ms.date: 06/15/2022
+title: 没有共享运行时的自定义函数的身份验证
 description: 使用不使用共享运行时的自定义函数对用户进行身份验证。
-title: 对没有共享运行时的自定义函数进行身份验证
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f4493f9cf68236a9d9d83ebd3299c9ce3371560
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 7ff7b1dca67e9e25f14ef07bd1c088608f254427
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229678"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958423"
 ---
-# <a name="authentication-for-custom-functions-without-a-shared-runtime"></a>对没有共享运行时的自定义函数进行身份验证
+# <a name="authentication-for-custom-functions-without-a-shared-runtime"></a>没有共享运行时的自定义函数的身份验证
 
 在某些情况下，不使用共享运行时的自定义函数需要对用户进行身份验证才能访问受保护的资源。 在仅限 JavaScript 的运行时中不使用共享运行时的自定义函数。 因此，如果外接程序具有任务窗格，则需要在仅限 JavaScript 的运行时和任务窗格使用的支持 HTML 的运行时之间来回传递数据。 使用 [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) 对象和特殊对话框 API 执行此操作。
 
@@ -31,7 +31,7 @@ ms.locfileid: "66229678"
 如果某个令牌不存在，则应使用 `OfficeRuntime.dialog` API 要求用户登录。 用户输入凭据后，生成的访问令牌可以存储为项 `OfficeRuntime.storage`。
 
 > [!NOTE]
-> 仅限 JavaScript 的运行时使用与任务窗格使用的浏览器引擎运行时中的对话框对象略有不同的对话对象。 它们都称为“对话框 API”，但使用 [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) 在仅限 JavaScript 的运行时（*而不是* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1))）中对用户进行身份验证。
+> 仅限 JavaScript 的运行时使用与任务窗格使用的浏览器引擎运行时中的对话框对象略有不同的对话对象。 它们都称为“对话框 API”，但使用 [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) 在仅限 JavaScript 的运行时（ *而不是* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1))）中对用户进行身份验证。
 
 下图概述了此基本过程。 虚线表示自定义函数和外接程序的任务窗格都是加载项整体的一部分，尽管它们使用单独的运行时。
 
@@ -73,8 +73,8 @@ function storeValue(key, value) {
  * @customfunction GETTOKEN
  */
 function receiveTokenFromCustomFunction() {
-  var key = "token";
-  var tokenSendStatus = document.getElementById('tokenSendStatus');
+  const key = "token";
+  const tokenSendStatus = document.getElementById('tokenSendStatus');
   OfficeRuntime.storage.getItem(key).then(function (result) {
      tokenSendStatus.value = "Success: Item with key '" + key + "' read from storage.";
      document.getElementById('tokenTextBox2').value = result;
@@ -108,7 +108,7 @@ function getTokenViaDialog(url) {
       // Can only have one dialog box open at once. Wait for previous dialog box's token.
       let timeout = 5;
       let count = 0;
-      var intervalId = setInterval(function () {
+      const intervalId = setInterval(function () {
         count++;
         if(_cachedToken) {
           resolve(_cachedToken);
@@ -147,5 +147,5 @@ function getTokenViaDialog(url) {
 
 ## <a name="see-also"></a>另请参阅
 
-* [自定义函数的仅限 JavaScript 的运行时](custom-functions-runtime.md)
-* [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)
+- [自定义函数的仅 JavaScript 运行时](custom-functions-runtime.md)
+- [Excel 自定义函数教程](../tutorials/excel-tutorial-create-custom-functions.md)

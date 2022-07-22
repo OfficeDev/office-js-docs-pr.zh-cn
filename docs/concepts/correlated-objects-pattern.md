@@ -3,12 +3,12 @@ title: 避免在循环中使用 context.sync
 description: 了解如何使用拆分循环和关联对象模式避免在循环中调用 context.sync。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d8327ad0b6c91a23452cf3efc791876f30408ceb
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 6b0239e05a597949160afbb2604143f3d6626462
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889210"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958697"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>避免在循环中使用 context.sync
 
@@ -42,7 +42,7 @@ ms.locfileid: "66889210"
 在最简单的情况下，你只写入集合对象的成员，而不是读取其属性。 例如，以下代码以黄色突出显示 Word 文档中每个“the”实例。
 
 > [!NOTE]
-> 通常，最好在应用程序`run`方法 (的结尾“}”字符之前进行最后`context.sync`一个“}”字符，例如`Excel.run`，`Word.run`等等) 。 这是因为， `run` 如果存在尚未同步的 `context.sync` 排队命令，则该方法将隐藏调用作为最后一项操作进行。 此调用隐藏的事实可能会令人困惑，因此我们通常建议添加显式 `context.sync`调用。 然而，鉴于这篇文章是关于尽量减少呼吁 `context.sync`，它实际上是更令人困惑，添加一个完全不必要的最终 `context.sync`。 因此，在本文中，当末尾 `run`没有未同步的命令时，我们将其排除。
+> 通常，在应用程序`run`函数 (（如`Word.run``Excel.run`等）的结束“}”字符) 之前，有一个决赛`context.sync`是一个好的做法。 这是因为函 `run` 数发出隐藏调用 `context.sync` 是它做的最后一件事，前提是，只有当有排队的命令尚未同步时。 此调用隐藏的事实可能会令人困惑，因此我们通常建议添加显式 `context.sync`调用。 然而，鉴于这篇文章是关于尽量减少呼吁 `context.sync`，它实际上是更令人困惑，添加一个完全不必要的最终 `context.sync`。 因此，在本文中，当末尾 `run`没有未同步的命令时，我们将其排除。
 
 ```javascript
 await Word.run(async function (context) {

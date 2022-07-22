@@ -3,12 +3,12 @@ title: 从 Outlook 加载项使用 Exchange Web 服务 (EWS)
 description: 提供的示例显示 Outlook 加载项如何通过 Exchange Web 服务请求信息。
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ab576f1c47bda85a0a33e527f483d384b264fbf2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: a6e8c28469859ca5ff8a4413fae8feee73c1d5e3
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889630"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958942"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>从 Outlook 加载项调用 Web 服务
 
@@ -34,11 +34,11 @@ EWS 服务支持 Exchange 服务器中的不同操作；例如复制、查找、
 
 - 针对该 EWS 操作的 SOAP 请求的 XML，作为  _data_ 形参的实参
 
-- 回调方法（作为  _callback_ 实参）
+- 回调函数 (作为  _回调_ 参数) 
 
-- 该回调方法的任何可选输入数据（作为  _userContext_ 实参）
+- 该回调函数的任何可选输入数据 (作为  _userContext_ 参数) 
 
-EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用该回调方法。 回调方法可以访问对象的`AsyncResult`两个属性：`value`包含 EWS 操作的 XML SOAP 响应的属性，以及包含作为`userContext`参数传递的任何数据的属性（可选）`asyncContext`。 通常，回调方法稍后会解析 SOAP 响应中的 XML 以获取所有相关信息，并相应地处理这些信息。
+EWS SOAP 请求完成后，Outlook 使用一个参数（ [AsyncResult](/javascript/api/office/office.asyncresult) 对象）调用回调函数。 回调函数可以访问对象的`AsyncResult`两个属性：`value`包含 EWS 操作的 XML SOAP 响应的属性，以及包含作为`userContext`参数传递的任何数据的属性（可选）`asyncContext`。 通常，回调函数随后会分析 SOAP 响应中的 XML 以获取任何相关信息，并相应地处理这些信息。
 
 ## <a name="tips-for-parsing-ews-responses"></a>解析 EWS 响应的提示
 
@@ -91,7 +91,7 @@ EWS SOAP 请求完成后，Outlook 将使用一个实参（是一个 [AsyncResul
 
 - `getSubjectRequest`&ndash;将项 ID 作为输入，并返回要调用指定项的 SOAP 请求`GetItem`的 XML。
 
-- `sendRequest`&ndash;调用`getSubjectRequest`以获取所选项的 SOAP 请求，然后传递 SOAP 请求和回调方法`callback`，以`makeEwsRequestAsync`获取指定项的主题。
+- `sendRequest`&ndash;调用`getSubjectRequest`以获取所选项的 SOAP 请求，然后传递 SOAP 请求和回调函数，`callback`以`makeEwsRequestAsync`获取指定项的主题。
 
 - `callback` &ndash; 处理包含有关指定项目的任何主题和其他信息的 SOAP 响应。
 
@@ -148,9 +148,9 @@ Outlook 外接程序可以通过该方法访问 EWS `makeEwsRequestAsync` 中可
 
 1. 将 SOAP 请求作为  _数据_ 参数的 `makeEwsRequestAsync`参数包括在内。
 
-1. 指定回调方法和调用 `makeEwsRequestAsync`。
+1. 指定回调函数和调用 `makeEwsRequestAsync`。
 
-1. 在回调方法中，验证 SOAP 响应中操作的结果。
+1. 在回调函数中，验证 SOAP 响应中的操作结果。
 
 1. 根据需要使用 EWS 操作的结果。
 

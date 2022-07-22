@@ -3,18 +3,18 @@ title: 显示或隐藏 Office 加载项的任务窗格
 description: 了解如何在加载项持续运行时以编程方式隐藏或显示其用户界面。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 76243d9e593f06eec52fe558832a722317b88c69
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 001e77553bf6e1a0eda91c9459885ccd46de6f47
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889224"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958606"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>显示或隐藏 Office 加载项的任务窗格
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-可以通过调用 `Office.addin.showAsTaskpane()` 该函数来显示 Office 加载项的任务窗格。
+可以通过调用 `Office.addin.showAsTaskpane()` 该方法来显示 Office 外接程序的任务窗格。
 
 ```javascript
 function onCurrentQuarter() {
@@ -28,7 +28,7 @@ function onCurrentQuarter() {
 
 前面的代码假定存在名为 **CurrentQuarterSales** 的 Excel 工作表的场景。 每当激活此工作表时，加载项将使任务窗格可见。 该方法 `onCurrentQuarter` 是已为工作表注册的 [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-onactivated-member) 事件的处理程序。
 
-也可以通过调用 `Office.addin.hide()` 函数来隐藏任务窗格。
+也可以通过调用 `Office.addin.hide()` 方法来隐藏任务窗格。
 
 ```javascript
 function onCurrentQuarterDeactivated() {
@@ -43,7 +43,7 @@ function onCurrentQuarterDeactivated() {
 调用 `Office.addin.showAsTaskpane()`时，Office 会在任务窗格中显示分配为资源 ID 的文件 (`resid` 任务窗格的) 值。 可以通过打开 **manifest.xml** 文件并在元素中定位来 **\<SourceLocation\>** 分配或更改此`resid``<Action xsi:type="ShowTaskpane">`值。
  (请参阅 [配置 Office 加载项以使用共享运行时](configure-your-add-in-to-use-a-shared-runtime.md) 获取其他详细信息。) 
 
-由于 `Office.addin.showAsTaskpane()` 是异步方法，因此代码将继续运行，直到函数完成。 请使用关键字或`then()`方法等待此完成`await`，具体取决于使用的 JavaScript 语法。
+由于 `Office.addin.showAsTaskpane()` 是异步方法，因此代码将继续运行，直到方法完成。 请使用关键字或`then()`方法等待此完成`await`，具体取决于使用的 JavaScript 语法。
 
 ## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>将外接程序配置为使用共享运行时
 

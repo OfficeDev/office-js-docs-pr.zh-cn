@@ -3,12 +3,12 @@ title: 在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 description: 使用清单中的 VersionOverrides 定义 Excel、PowerPoint 和 Word 的外接程序命令。 加载项命令可用于创建 UI 元素，也可用于添加按钮或列表，同时还能执行操作。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 44cd5818879af6788ef58050b5ca475b5f4d3dbd
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 4df14158d6a9fde9d18e75632c44e40fca235b8d
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889507"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958704"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>在清单中创建 Excel、PowerPoint 和 Word 加载项命令
 
@@ -75,7 +75,7 @@ ms.locfileid: "66889507"
 |:-----|:-----|
 |**\<Description\>** <br/> |Optional. Describes the add-in. 此子 **\<Description\>** 元素覆盖清单父部分中的上 **\<Description\>** 一个元素。 此 **\<Description\>** 元素 **的 resid** 属性设置为元素的 **\<String\>** **ID**。 该 **\<String\>** 元素包含用于 **\<Description\>**. 的文本。 <br/> |
 |**\<Requirements\>** <br/> |可选。 指定外接程序要求的最低要求集和 Office.js 的版本。 此子 **\<Requirements\>** 元素替代 **\<Requirements\>** 清单父部分中的元素。 有关详细信息，请参阅 [指定 Office 应用程序和 API 要求](../develop/specify-office-hosts-and-api-requirements.md)。  <br/> |
-|**\<Hosts\>** <br/> |必需。 指定 Office 应用程序的集合。 子 **\<Hosts\>** 元素替代 **\<Hosts\>** 清单父部分中的元素。 必须包含已设置为“Workbook”或“Document”的 **xsi:type** 属性 <br/> |
+|**\<Hosts\>** <br/> |必填。 指定 Office 应用程序的集合。 子 **\<Hosts\>** 元素替代 **\<Hosts\>** 清单父部分中的元素。 必须包含已设置为“Workbook”或“Document”的 **xsi:type** 属性 <br/> |
 |**\<Resources\>** <br/> |定义其他清单元素引用的资源集合（字符串、URL 和图像）。 例如，元素 **\<Description\>** 的值引用其中 **\<Resources\>** 的子元素。 在 **\<Resources\>** 本文后面 [的步骤 7：添加 Resources 元素](#step-7-add-the-resources-element) 中介绍了该元素。 <br/> |
 
 以下示例演示如何使用元素 **\<VersionOverrides\>** 及其子元素。
@@ -156,7 +156,7 @@ ms.locfileid: "66889507"
 
 以下代码演示如何实现所使用的函数 **\<FunctionName\>**。
 
-```js
+```html
 <script>
     // The initialize function must be run each time a new page is loaded.
     (function () {
@@ -299,7 +299,7 @@ ms.locfileid: "66889507"
 |**\<Label\>** <br/> |必需。 按钮的文本。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<String\>** 值。 该 **\<String\>** 元素是元素的 **\<ShortStrings\>** 子元素，它是元素的 **\<Resources\>** 子元素。 <br/> |
 |**\<Tooltip\>** <br/> |Optional. 按钮的工具提示。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<String\>** 值。 该 **\<String\>** 元素是元素的 **\<LongStrings\>** 子元素，它是元素的 **\<Resources\>** 子元素。 <br/> |
 |**\<Supertip\>** <br/> | 必需。此按钮的 SuperTip，定义如下： <br/> **标题** <br/>  必需。 supertip 的文本。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<String\>** 值。 该 **\<String\>** 元素是元素的 **\<ShortStrings\>** 子元素，它是元素的 **\<Resources\>** 子元素。 <br/> **\<Description\>** <br/>  必需。 supertip 的说明。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<String\>** 值。 该 **\<String\>** 元素是元素的 **\<LongStrings\>** 子元素，它是元素的 **\<Resources\>** 子元素。 <br/> |
-|**\<Icon\>** <br/> | 必需。 **\<Image\>** 包含按钮的元素。 图像文件必须为 .png 格式。 <br/> **\<Image\>** <br/>  定义要显示在按钮上的图像。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<Image\>** 值。 该 **\<Image\>** 元素是元素的 **\<Images\>** 子元素，它是元素的 **\<Resources\>** 子元素。 The **size** attribute indicates the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. 也同样支持五种可选大小：20、24、40、48 和 64。 <br/> |
+|**\<Icon\>** <br/> | 必填。 **\<Image\>** 包含按钮的元素。 图像文件必须为 .png 格式。 <br/> **\<Image\>** <br/>  定义要显示在按钮上的图像。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<Image\>** 值。 该 **\<Image\>** 元素是元素的 **\<Images\>** 子元素，它是元素的 **\<Resources\>** 子元素。 The **size** attribute indicates the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. 也同样支持五种可选大小：20、24、40、48 和 64。 <br/> |
 |**\<Action\>** <br/> | 必需。指定用户选择按钮时将执行的操作。可以为 **xsi:type** 属性指定下列任意值之一： <br/> **ExecuteFunction**，它运行位于所 **\<FunctionFile\>** 引用的文件中的 JavaScript 函数。 子 **\<FunctionName\>** 元素指定要执行的函数的名称。 <br/> **ShowTaskPane**，其中显示了加载项的任务窗格。 子 **\<SourceLocation\>** 元素指定要显示的页面的源文件位置。 **resid** 属性必须设置为元素中元素中元素的 **\<Url\>** **\<Urls\>** **ID** 属性的 **\<Resources\>** 值。 <br/> |
 
 ### <a name="menu-controls"></a>菜单控件
@@ -370,8 +370,8 @@ ms.locfileid: "66889507"
 |**\<Label\>** <br/> |必需。 根菜单项的文本。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<String\>** 值。 该 **\<String\>** 元素是元素的 **\<ShortStrings\>** 子元素，它是元素的 **\<Resources\>** 子元素。 <br/> |
 |**\<Tooltip\>** <br/> |Optional. 菜单的工具提示。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<String\>** 值。 该 **\<String\>** 元素是元素的 **\<LongStrings\>** 子元素，它是元素的 **\<Resources\>** 子元素。 <br/> |
 |**\<SuperTip\>** <br/> | 必需。 菜单的 SuperTip，定义如下： <br/> **\<Title\>** <br/>  必需。 supertip 的文本。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<String\>** 值。 该 **\<String\>** 元素是元素的 **\<ShortStrings\>** 子元素，它是元素的 **\<Resources\>** 子元素。 <br/> **\<Description\>** <br/>  必需。 supertip 的说明。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<String\>** 值。 该 **\<String\>** 元素是元素的 **\<LongStrings\>** 子元素，它是元素的 **\<Resources\>** 子元素。 <br/> |
-|**\<Icon\>** <br/> | 必需。 **\<Image\>** 包含菜单的元素。 图像文件必须为 .png 格式。 <br/> **\<Image\>** <br/>  菜单的图像。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<Image\>** 值。 该 **\<Image\>** 元素是元素的 **\<Images\>** 子元素，它是元素的 **\<Resources\>** 子元素。 The **size** attribute indicates the size in pixels of the image. Three image sizes, in pixels, are required: 16, 32, and 80. 还支持五个可选大小（以像素为单位）：20、24、40、48 和 64。 <br/> |
-|**\<Items\>** <br/> |必需。 **\<Item\>** 包含每个子菜单项的元素。 每个 **\<Item\>** 元素都包含与 [Button 控件](/javascript/api/manifest/control-button)相同的子元素。  <br/> |
+|**\<Icon\>** <br/> | 必填。 **\<Image\>** 包含菜单的元素。 图像文件必须为 .png 格式。 <br/> **\<Image\>** <br/>  菜单的图像。 **resid** 属性必须设置为元素的 **ID** 属性的 **\<Image\>** 值。 该 **\<Image\>** 元素是元素的 **\<Images\>** 子元素，它是元素的 **\<Resources\>** 子元素。 The **size** attribute indicates the size in pixels of the image. Three image sizes, in pixels, are required: 16, 32, and 80. 还支持五个可选大小（以像素为单位）：20、24、40、48 和 64。 <br/> |
+|**\<Items\>** <br/> |必填。 **\<Item\>** 包含每个子菜单项的元素。 每个 **\<Item\>** 元素都包含与 [Button 控件](/javascript/api/manifest/control-button)相同的子元素。  <br/> |
 
 ## <a name="step-7-add-the-resources-element"></a>步骤 7：添加 Resources 元素
 

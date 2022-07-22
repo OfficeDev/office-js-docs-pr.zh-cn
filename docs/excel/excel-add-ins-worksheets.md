@@ -1,14 +1,14 @@
 ---
 title: 使用 Excel JavaScript API 处理工作表
-description: 演示如何使用 Excel JavaScript API 使用工作表执行常见任务的代码示例。
+description: 显示如何使用 Excel JavaScript API 使用工作表执行常见任务的代码示例。
 ms.date: 04/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 932666d178da827b314339bfc05c12b5553bdaa7
-ms.sourcegitcommit: d7e5c243ad65f81d479b4fead283003fc494074e
+ms.openlocfilehash: b90970c3a168c3d82d0001c0e985583e3d23f8f0
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "65076685"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958395"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>使用 Excel JavaScript API 处理工作表
 
@@ -349,7 +349,7 @@ async function formulaChangeHandler(event) {
 
 下图显示了排序事件的 `address` 属性返回的范围。 首先是排序前的示例数据：
 
-![排序之前，Excel中的表数据。](../images/excel-sort-event-before.png)
+![排序前 Excel 中的表数据。](../images/excel-sort-event-before.png)
 
 如果对“**Q1**”执行从上到下排序 (“**B**”) 中的值，则会返回 `WorksheetRowSortedEventArgs.address`以下突出显示的行。
 
@@ -405,9 +405,9 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> 本节介绍如何使用 `Worksheet` 对象函数查找单元格与区域。 更多区域检索信息可在特定对象文章中找到。
+> 本部分介绍如何使用 `Worksheet` 对象的方法查找单元格和区域。 更多区域检索信息可在特定对象文章中找到。
 >
-> - 有关演示如何使用该对象在工作表中获取区域的`Range`示例，请参阅[使用 Excel JavaScript API 获取区域](excel-add-ins-ranges-get.md)。
+> - 有关演示如何使用该对象获取工作表中的区域的 `Range` 示例，请参阅 [使用 Excel JavaScript API 获取区域](excel-add-ins-ranges-get.md)。
 > - 有关展示如何从 `Table` 对象获取区域的示例，请参阅 [使用 Excel JavaScript API 处理表](excel-add-ins-tables.md)。
 > - 有关显示如何基于单元格特性进行多个子区域的较大区域搜索示例，请参阅 [使用 Excel 加载项同时处理多个区域](excel-add-ins-multiple-ranges.md)。
 
@@ -497,12 +497,12 @@ await Excel.run(async (context) => {
 
 ### <a name="detect-changes-to-the-worksheet-protection-state"></a>检测对工作表保护状态的更改
 
-工作表的保护状态可以通过加载项或通过 Excel UI 进行更改。 若要检测对保护状态的更改，请为[`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member)工作表的事件[注册事件处理程序](excel-add-ins-events.md#register-an-event-handler)。 事件的事件处理程序在 `onProtectionChanged` 事件触发时接收 [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) 对象。
+工作表的保护状态可以通过加载项或 Excel UI 进行更改。 若要检测对保护状态的更改，请为[`onProtectionChanged`](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member)工作表的事件[注册事件处理程序](excel-add-ins-events.md#register-an-event-handler)。 事件的事件处理程序在 `onProtectionChanged` 事件触发时接收 [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) 对象。
 
 下面的代码示例演示如何注册`onProtectionChanged`事件处理程序并使用该`WorksheetProtectionChangedEventArgs`对象检索事件的`isProtected``worksheetId`属性和`source`属性。
 
 ```js
-// This method registers an event handler for the onProtectionChanged event of a worksheet.
+// This function registers an event handler for the onProtectionChanged event of a worksheet.
 async function run() {
     await Excel.run(async (context) => {
         // Retrieve the worksheet named "Sample".
@@ -514,7 +514,7 @@ async function run() {
     });
 }
 
-// This method is an event handler that returns the protection state of a worksheet 
+// This function is an event handler that returns the protection state of a worksheet 
 // and information about the changed worksheet.
 async function checkProtection(event) {
     await Excel.run(async (context) => {

@@ -1,27 +1,27 @@
 ---
 title: 使用 Angular 开发 Office 加载项
-description: 使用 Angular创建一Office外接程序作为单个页面应用程序。
+description: 使用Angular创建 Office 加载项作为单个页面应用程序。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: daaeac63055edeadc12dcff727f63b19ffd5a00a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: b9b139dfcd97971fca4e97ac0c6ebe175d836a5a
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743646"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958473"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
 本文介绍了如何使用 Angular 2+ 将 Office 加载项创建为单页应用。
 
 > [!NOTE]
-> 根据自身体验，是否要参与有关使用 Angular 创建 Office 加载项的文章？ 你可以为本文做[贡献GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/master/docs/develop/add-ins-with-angular2.md)或在存储库提交问题[来提供](https://github.com/OfficeDev/office-js-docs-pr/issues)反馈。
+> 根据自身体验，是否要参与有关使用 Angular 创建 Office 加载项的文章？ 可以在 [GitHub 中参与本文](https://github.com/OfficeDev/office-js-docs-pr/blob/master/docs/develop/add-ins-with-angular2.md) ，或通过在存储库中提交 [问题](https://github.com/OfficeDev/office-js-docs-pr/issues) 来提供反馈。
 
 有关使用 Angular 框架生成的 Office 加载项示例，请参阅[使用 Angular 生成的 Word 样式检查加载项](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)。
 
 ## <a name="install-the-typescript-type-definitions"></a>安装 TypeScript 类型定义
 
-打开Node.js窗口，在命令行中输入以下内容。
+打开Node.js窗口，并在命令行中输入以下内容。
 
 ```command&nbsp;line
 npm install --save-dev @types/office-js
@@ -29,9 +29,9 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>启动代码必须位于 Office.initialize 内
 
-在调用 JavaScript API Office、Word Excel的任何页面上，代码必须先为 属性分配`Office.initialize`方法。  (如果没有初始化代码，则方法正文可以只是空的"`{}`" `Office.initialize` 符号，但不得使属性保持未定义状态。 有关详细信息，请参阅 [Initialize your Office Add-in](initialize-add-in.md).) Office this method immediately after it has initialized the Office JavaScript libraries.
+在调用 Office、Word 或 Excel JavaScript API 的任何页面上，代码必须首先向其分配函数 `Office.initialize`。  (如果没有初始化代码，则函数正文可以是空的“`{}`”符号，但不得保留未定义的 `Office.initialize` 函数。 有关详细信息，请参阅 [初始化 Office 加载项](initialize-add-in.md).) Office 在初始化 Office JavaScript 库后立即调用此函数。
 
-**Angular bootstrapping 代码必须在你分配到 `Office.initialize` 的方法内调用**，以确保 Office JavaScript 库首先进行了初始化。以下是演示如何执行该操作的简单示例。此代码应在项目的 main.ts 文件中。
+**必须在分配`Office.initialize`的函数中调用Angular启动代码，** 以确保 Office JavaScript 库已先初始化。 以下是演示如何执行该操作的简单示例。 此代码应在项目的 main.ts 文件中。
 
 ```js
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -76,13 +76,13 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-## <a name="use-the-office-dialog-api-with-angular"></a>将Office对话框 API 与 Angular
+## <a name="use-the-office-dialog-api-with-angular"></a>将 Office 对话框 API 与Angular配合使用
 
 Office 加载项对话框 API 可使加载项打开非模态对话框中的页面，该页面可与主页面交换信息，这在任务窗格中是典型操作。
 
 [displayDialogAsync](/javascript/api/office/office.ui) 方法采用指定应在对话框中打开的页面的 URL 的参数。外接程序可具有单独的 HTML 页面（与基本页不同）来传递此参数，或在 Angular 应用程序中传递路由的 URL。
 
-要记住的重要一点是，如果传递路由，则该对话框将创建具有自身执行上下文的新窗口。 基本页及其所有初始化和引导代码将在新上下文中再次运行，且任何变量都将被设置为对话框中的初始值。 所以，此技术在对话框中启动了单页应用程序的第二个实例。 更改了对话框中的变量的代码不会更改同一变量的任务窗格版本。 同样，对话框具有其自己的会话存储 ([Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性) ，任务窗格中的代码无法访问该存储。  
+要记住的重要一点是，如果传递路由，则该对话框将创建具有自身执行上下文的新窗口。 基本页及其所有初始化和引导代码将在新上下文中再次运行，且任何变量都将被设置为对话框中的初始值。 所以，此技术在对话框中启动了单页应用程序的第二个实例。 更改了对话框中的变量的代码不会更改同一变量的任务窗格版本。 同样，对话框具有自己的会话存储 ([Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性) ，无法从任务窗格中的代码访问。  
 
 ## <a name="trigger-the-ui-update"></a>触发 UI 更新
 
@@ -108,7 +108,7 @@ Angular 使用 RxJS (Reactive Extensions for JavaScript)，而 RxJS 引入了 `O
 
 `Observable` 在某种程度上类似一个 `Promise` 对象 - 它立即从异步调用返回，但它可能在以后才能进行解析。不过，`Promise` 是一个值（可以是一个数组对象），而 `Observable` 是对象数组（可能仅有一个成员）。这可使代码调用 `Observable` 对象上的 [数组方法](https://www.w3schools.com/jsref/jsref_obj_array.asp)，如 `concat`、`map` 和 `filter`。
 
-### <a name="push-instead-of-pull"></a>推送而不是下拉
+### <a name="push-instead-of-pull"></a>推送而不是拉取
 
 代码“拉取” `Promise` 对象（通过将其分配到变量），而 `Observable` 对象将其值“推送”到 *订阅* `Observable` 的对象。订阅服务器是 `Observer` 对象。推送体系结构的优势是，随着时间的推移，新成员可以添加到 `Observable` 数组。添加了新成员后，订阅 `Observable` 的所有 `Observer` 对象都将收到一条通知。
 
@@ -152,9 +152,9 @@ ng serve --aot
 > [!NOTE]
 > 若要了解有关 Angular Ahead-of-Time (AOT) 编译器的详细信息，请参阅[官方指南](https://angular.io/guide/aot-compiler)。
 
-## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>如果你Internet Explorer加载内容，支持Office.js
+## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>如果要动态加载Office.js，请支持 Internet Explorer
 
-根据 Windows 版本和Office运行外接程序的桌面客户端，外接程序可能使用的是 Internet Explorer 11。  (有关详细信息，请参阅 [Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular `window.history` 使用的浏览器依赖于一些 API，但这些 API 在 Windows 桌面客户端中嵌入的 IE 运行时中不起作用。 当这些 API 不起作用时，您的外接程序可能无法正常运行，例如，它可能会加载一个空白任务窗格。 若要缓解此Office.js，请空值这些 API。 但是，如果你要动态加载 Office.js，AngularJS 可能会先加载，然后再Office.js。 在这种情况下，应该通过将 `window.history` 以下代码添加到加载项的加载项页面来禁用 **index.html** 。
+根据运行外接程序的 Windows 版本和 Office 桌面客户端，外接程序可能使用 Internet Explorer 11。  (有关更多详细信息，请参阅 [Office 外接程序.) Angular使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)取决于几个 `window.history` API，但这些 API 在 Windows 桌面客户端中嵌入的 IE 运行时中不起作用。 当这些 API 不起作用时，加载项可能无法正常工作，例如，它可能会加载空白任务窗格。 若要缓解此问题，Office.js将这些 API null 化。 但是，如果要动态加载Office.js，则 AngularJS 可能会在Office.js之前加载。 在这种情况下，应通过将以下代码添加到加载项的 **index.html** 页来禁`window.history`用 API。
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>
