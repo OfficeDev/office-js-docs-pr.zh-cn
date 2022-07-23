@@ -313,7 +313,7 @@ items:
             href: testing/runtime-logging.md
           - name: 使用非共享运行时调试函数命令
             href: testing/debug-function-command.md
-          - name: 调试 initialize 和 onReady 方法
+          - name: 调试 initialize 和 onReady 函数
             href: testing/debug-initialize-onready.md
           - name: 错误
             items:

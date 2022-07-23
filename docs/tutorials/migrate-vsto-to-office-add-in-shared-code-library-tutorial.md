@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: 有关如何在 VSTO 加载项与 Office 加载项之间共享代码的教程。
 title: 教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 ms.localizationpriority: high
-ms.openlocfilehash: 58400dfd1772ff5c3adbd846dd44c9cb0d57fff2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 2a115e31352cff6a256cb993b33839eb544d77b4
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746091"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959054"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 
@@ -88,7 +88,7 @@ UI 代码与用户进行交互。 在 VSTO 中，UI 代码可通过 Windows 窗�
 
 业务逻辑、算法、helper 函数和类似的代码通常构成 VSTO 加载项的核心。 此类代码独立于 UI 代码和文档代码，可用于执行分析、连接到后端服务、运行计算等。 这是可以共享的代码，因此无需用 JavaScript 重写。
 
-让我们看一看 VSTO 加载项。在以下代码中，每个部分标识为 DOCUMENT、UI 或 ALGORITHM 代码。
+让我们看一看 VSTO 加载项。 在以下代码中，每个部分标识为 DOCUMENT、UI 或 ALGORITHM 代码。
 
 ```csharp
 // *** UI CODE ***
@@ -308,7 +308,7 @@ VSTO 加载项可以直接使用共享类库，因为它们都是 .NET 项目。
 
 1. 在上面的代码中，输入你先前从 **launchSettings json** 文件保存的 **sslPort** 号。
 
-在上面的代码中将处理返回的字符串，以便将回车换行替换为 `<br>` HTML 标记。 偶尔在某些情况下，可能需要在 Office 加载项侧调整 VSTO 加载项中对 .NET 完全适用的返回值，才能使该返回值符合预期。 在此情况下，REST API 和共享类库仅关注返回字符串。 `showUnicode()` 方法负责正确设置返回值的格式以便显示。
+在上面的代码中将处理返回的字符串，以便将回车换行替换为 `<br>` HTML 标记。 偶尔在某些情况下，可能需要在 Office 加载项侧调整 VSTO 加载项中对 .NET 完全适用的返回值，才能使该返回值符合预期。 在此情况下，REST API 和共享类库仅关注返回字符串。 `showUnicode()` 函数负责正确设置返回值的格式以便显示。
 
 ### <a name="allow-cors-from-the-office-add-in"></a>允许来自 Office 加载项的 CORS
 
