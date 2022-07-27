@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项 API
 description: 了解如何引用 Outlook 加载项 API 并声明 Outlook 加载项中的权限。
-ms.date: 06/30/2022
+ms.date: 07/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 583d2b07a0590e7a04b052d5675320b8ea73a61f
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: bd0bcdd3dfac6def9443b09d9797bfd0667c3b3d
+ms.sourcegitcommit: 15714ef1118083032e640413ede69a162c43daed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660254"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "67037813"
 ---
 # <a name="outlook-add-in-apis"></a>Outlook 外接程序 API
 
@@ -48,24 +48,35 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > 对于清单中所指定的要求集版本中的任何 API，无需执行此类检查。
 
-指定支持你的方案的关键 API 集的最低要求集，如果缺少该要求集，加载项的功能将无法工作。 在元素的清单中 **\<Requirements\>** 指定要求集。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)和[了解 Outlook API 要求集](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)。
+指定支持你的方案的关键 API 集的最低要求集，如果缺少该要求集，加载项的功能将无法工作。 在清单中指定要求集。 标记因所使用的清单而异。 
 
-该 **\<Methods\>** 元素不适用于 Outlook 加载项，因此不能声明对特定方法的支持。
+- **XML 清单**：使用该 **\<Requirements\>** 元素。 请注意， **\<Methods\>** Outlook 外接程序不支持其子元素 **\<Requirements\>** ，因此不能声明对特定方法的支持。
+- **Teams 清单 (预览)**：使用“extensions.capabilities”属性。 
+
+有关详细信息，请参阅 [Outlook 加载项清单](manifests.md)和 [了解 Outlook API 要求集](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)。
 
 ## <a name="permissions"></a>权限
 
-外接程序需要相应的权限才能使用所需的 API。有四个级别的权限。有关详细信息，请参阅[了解 Outlook 外接程序权限](understanding-outlook-add-in-permissions.md)。
+外接程序需要相应的权限才能使用所需的 API。 一般情况下，应该指定加载项所需的最小权限。 权限在清单中声明。 标记因清单类型而异。
+
+- **XML 清单**：使用该 **\<Permissions\>** 元素。
+- **Teams 清单 (预览)**：使用“authorization.permissions.resourceSpecific”属性。 
+
+有四个级别的权限。 有关详细信息，请参阅[了解 Outlook 外接程序权限](understanding-outlook-add-in-permissions.md)。
 
 <br/>
 
-|权限级别|说明|
-|:-----|:-----|
-| **受限** | 允许使用实体，但不允许使用正则表达式。 |
-| **读取项** | 除了 **受限** 所允许的权限，它还允许：<ul><li>正则表达式</li><li>Outlook 外接程序 API 读取访问</li><li>获取项属性和回调令牌</li></ul> |
-| **读/写** | 除了 **读取项** 所允许的权限，它还允许：<ul><li>Outlook 加载项 API 的完全访问权限，但不包括 `makeEwsRequestAsync`</li><li>设置项属性</li></ul> |
-| **读/写邮箱** | 除了 **读/写** 所允许的权限，它还允许：<ul><li>创建、读取、写入项和文件夹</li><li>发送项目</li><li>调用 [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
+|权限级别</br>XML 清单名称|权限级别</br>Teams 清单名称|说明|
+|:-----|:-----|:-----|
+| **受限** | **MailboxItem.Restricted.User** | 允许使用实体，但不允许使用正则表达式。 |
+| **ReadItem** | **MailboxItem.Read.User** | 除了 **受限** 所允许的权限，它还允许：<ul><li>正则表达式</li><li>Outlook 外接程序 API 读取访问</li><li>获取项属性和回调令牌</li></ul> |
+| **ReadWriteItem** | **MailboxItem.ReadWrite.User** | 除了 **ReadItem** 中允许的内容外，它还允许：<ul><li>Outlook 加载项 API 的完全访问权限，但不包括 `makeEwsRequestAsync`</li><li>设置项属性</li></ul> |
+| **ReadWriteMailbox** | **Mailbox.ReadWrite.User** | 除了 **ReadWriteItem** 中允许的内容外，它还允许：<ul><li>创建、读取、写入项和文件夹</li><li>发送项目</li><li>调用 [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
 
-一般情况下，应该指定加载项所需的最小权限。 权限在清单中的 **\<Permissions\>** 元素中声明。 有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)。 有关安全问题的信息，请参阅 [Office 加载项的隐私和安全性](../concepts/privacy-and-security.md)。
+> [!NOTE]
+> 对于使用附加发送功能的加载项，需要一个补充权限。 使用 XML 清单，可以在 [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) 元素中指定权限。 有关详细信息，请参阅 [Outlook 外接程序中的“实现追加发送](append-on-send.md)”。 使用 Teams 清单 (预览) ，可在“authorization.permissions.resourceSpecific”数组的附加对象中使用名称 **Mailbox.AppendOnSend.User** 指定此权限。
+
+有关更多信息，请参阅 [Outlook 加载项清单](manifests.md)。 有关安全问题的信息，请参阅 [Office 加载项的隐私和安全性](../concepts/privacy-and-security.md)。
 
 ## <a name="mailbox-object"></a>Mailbox 对象
 
