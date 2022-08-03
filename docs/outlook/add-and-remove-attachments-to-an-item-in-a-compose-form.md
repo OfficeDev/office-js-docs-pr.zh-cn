@@ -1,14 +1,14 @@
 ---
 title: 在 Outlook 加载项中添加和删除附件
 description: 使用各种附件 API 管理附加到用户正在撰写的项目的文件或 Outlook 项目。
-ms.date: 07/07/2022
+ms.date: 08/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b82a9edb0a3ed43386b63d12f1a87b21b2ab634b
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 23a1ce1a64d308f0ea51152726bf4d99d7a6300b
+ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958339"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "67177684"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>在 Outlook 的撰写窗体中管理项目的附件
 
@@ -77,6 +77,39 @@ Office.initialize = function () {
 function write(message){
     document.getElementById('message').innerText += message;
 }
+```
+
+若要将内联 base64 映像添加到正在编写的消息的正文中，必须先使用 `Office.context.mailbox.item.body.getAsync` 该方法获取当前消息正文，然后才能使用 `addFileAttachmentFromBase64Async` 该方法插入图像。 否则，插入后，图像将不会在消息中呈现。 有关指南，请参阅以下 JavaScript 示例，该示例将内联 base64 图像添加到消息正文的开头。
+
+```js
+const mailItem = Office.context.mailbox.item;
+const base64String =
+  "iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAnUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN0S+bUAAAAMdFJOUwAQIDBAUI+fr7/P7yEupu8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVGhD7dfLdoMwDEVR6Cspzf9/b20QYOthS5Zn0Z2kVdY6O2WULrFYLBaLxd5ur4mDZD14b8ogWS/dtxV+dmx9ysA2QUj9TQRWv5D7HyKwuIW9n0vc8tkpHP0W4BOg3wQ8wtlvA+PC1e8Ao8Ld7wFjQtHvAiNC2e8DdqHqKwCrUPc1gE1AfRVgEXBfB+gF0lcCWoH2tYBOYPpqQCNwfT3QF9i+AegJfN8CtAWhbwJagtS3AbIg9o2AJMh9M5C+SVGBvx6zAfmT0r+Bv8JMwP4kyFPir+cswF5KL3WLv14zAFBCLf56Tw9cparFX4upgaJUtPhrOS1QlY5W+vWTXrGgBFB/b72ev3/0igUdQPppP/nfowfKUUEFcP207y/yxKmgAYQ+PywoAFOfCH3A2MdCFzD3kdADBvq10AGG+pXQBgb7pdAEhvuF0AIc/VtoAK7+JciAs38KIuDugyAC/v4hiMCE/i7IwLRBsh68N2WQjMVisVgs9i5bln8LGScNcCrONQAAAABJRU5ErkJggg==";
+
+// Get the current body of the message.
+mailItem.body.getAsync(Office.CoercionType.Html, (bodyResult) => {
+  if (bodyResult.status === Office.AsyncResultStatus.Succeeded) {
+    // Insert the base64 image to the beginning of the message body.
+    const options = { isInline: true, asyncContext: bodyResult.value };
+    mailItem.addFileAttachmentFromBase64Async(base64String, "sample.png", options, (attachResult) => {
+      if (attachResult.status === Office.AsyncResultStatus.Succeeded) {
+        let body = attachResult.asyncContext;
+        body = body.replace("<p class=MsoNormal>", `<p class=MsoNormal><img src="cid:sample.png">`);
+        mailItem.body.setAsync(body, { coercionType: Office.CoercionType.Html }, (setResult) => {
+          if (setResult.status === Office.AsyncResultStatus.Succeeded) {
+            console.log("Inline base64 image added to message.");
+          } else {
+            console.log(setResult.error.message);
+          }
+        });
+      } else {
+        console.log(attachResult.error.message);
+      }
+    });
+  } else {
+    console.log(bodyResult.error.message);
+  }
+});
 ```
 
 ### <a name="attach-an-outlook-item"></a>附加 Outlook 项

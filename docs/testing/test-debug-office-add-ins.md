@@ -1,14 +1,14 @@
 ---
 title: 测试 Office 加载项
 description: 了解如何测试 Office 加载项。
-ms.date: 12/02/2021
+ms.date: 07/28/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d69d57e677e7f06457f49fef60df63bc6f9577fa
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 0cb3241bf88edf10f165587ddac24d1261b30162
+ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712732"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "67177677"
 ---
 # <a name="test-office-add-ins"></a>测试 Office 加载项
 
@@ -24,7 +24,7 @@ Office 加载项跨主要平台运行，因此需要在用户可能运行 Office
 > [!IMPORTANT]
 > 通过 AppSource 营销的加载项通过了包括在所有平台上测试的验证过程。 此外，加载项已通过所有主要新式浏览器（包括 Microsoft Edge（基于 Chromium 的 WebView2）、Chrome 和 Safari）针对 Office 网页版进行了测试。 因此，提交 AppSource 之前，应在这些平台和浏览器上先进行测试。 有关验证详细信息，请参阅 [商业市场证书策略](/legal/marketplace/certification-policies)，尤其是 [第 1120.3 一节](/legal/marketplace/certification-policies#11203-functionality)，以及 [Office 加载项应用程序和可用性页面](/javascript/api/requirement-sets)。
 >
-> AppSource 不使用 Internet Explorer 或旧版 Microsoft Edge (WebView1) 测试 Office 网页版中的加载项。 但如果有大量用户使用旧版 Edge 在 Web 上打开 Office，则需要进行测试。 (Office 网页版无法在 Internet Explorer 中打开，因此你无法也不需要使用 Internet Explorer 在 Web 上测试 Office。) 有关详细信息，请参阅[支持Internet Explorer 11](../develop/support-ie-11.md)和[Microsoft Edge 疑难解答](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。 Office 仍然支持这些浏览器的加载项，因此，如果您认为加载项在浏览器中运行时遇到 bug，请为[ office-js](https://github.com/OfficeDev/office-js/issues/new/choose) 存储库创建问题。
+> AppSource 不使用 Internet Explorer 或旧版 Microsoft Edge (WebView1) 测试 Office 网页版中的加载项。 但如果有大量用户使用旧版 Edge 在 Web 上打开 Office，则需要进行测试。 (Office 网页版无法在 Internet Explorer 中打开，因此你无法也不需要使用 Internet Explorer 在 Web 上测试 Office。) 有关详细信息，请参阅[支持Internet Explorer 11](../develop/support-ie-11.md)和[Microsoft Edge 疑难解答](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-microsoft-edge-issues)。 Office 仍然支持这些浏览器的加载项，因此，如果您认为加载项在浏览器中运行时遇到 bug，请为[ office-js](https://github.com/OfficeDev/office-js/issues/new/choose) 存储库创建问题。
 
 ## <a name="sideload-an-office-add-in-for-testing"></a>旁加载 Office 加载项以供测试
 

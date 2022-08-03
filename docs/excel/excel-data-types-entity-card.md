@@ -1,16 +1,16 @@
 ---
 title: Excel JavaScript API 数据类型实体值卡
 description: 了解如何将实体值卡与 Excel 外接程序中的数据类型配合使用。
-ms.date: 07/14/2022
+ms.date: 07/28/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eb6251467b73af5e592d4cf013e899207944192
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 3e7f9446c884c7ab24df8d08a221a21fa8ed8156
+ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889156"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "67177650"
 ---
 # <a name="use-cards-with-entity-value-data-types-preview"></a>使用具有实体值数据类型的卡片 (预览) 
 
@@ -76,6 +76,31 @@ const entity: Excel.EntityCellValue = {
 以下屏幕截图显示了使用上述代码片段的实体值卡。 屏幕截图显示了前面代码片段中 **的产品 ID**、 **产品名称**、 **图像**、 **每单位数量** 和 **单价** 信息。
 
 :::image type="content" source="../images/excel-data-types-entity-card-properties.png" alt-text="显示实体值数据类型的屏幕截图，其中显示了卡片布局窗口。该卡片显示产品名称、产品 ID、单位数量和单价信息。":::
+
+### <a name="property-metadata"></a>属性元数据
+
+实体属性有一个可选 `propertyMetadata` 字段，该字段使用 [`CellValuePropertyMetadata`](/javascript/api/excel/excel.cellvaluepropertymetadata) 该对象并提供属性 `attribution`， `excludeFrom`以及 `sublabel`。 以下代码片段演示如何从前面的代码片段向`"Unit Price"`属性添加一个`sublabel`代码片段。 在这种情况下，子标签标识货币类型。
+
+> [!NOTE]
+> 该 `propertyMetadata` 字段仅适用于嵌套在实体属性中的数据类型。
+
+```TypeScript
+// This code snippet is an excerpt from the `properties` field of the 
+// preceding `EntityCellValue` snippet. "Unit Price" is a property of 
+// an entity value.
+        "Unit Price": {
+            type: Excel.CellValueType.formattedNumber,
+            basicValue: product.unitPrice,
+            numberFormat: "$* #,##0.00",
+            propertyMetadata: {
+              sublabel: "USD"
+            }
+        },
+```
+
+以下屏幕截图显示了使用上述代码片段的实体值卡，其中显示了 **单价** 属性旁边的 **USD** 属性元数据`sublabel`。
+
+:::image type="content" source="../images/excel-data-types-entity-card-property-metadata.png" alt-text="显示单价旁边的子标签 USD 的屏幕截图。":::
 
 ## <a name="card-layout"></a>卡片布局
 

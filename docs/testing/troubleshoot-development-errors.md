@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的开发错误
 description: 了解如何排查 Office 加载项中的开发错误。
-ms.date: 06/10/2022
+ms.date: 07/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fb077802ab48c257911c10627308a606630cbb6
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 18236787ad6ffa9139eb95299723c8935d584668
+ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712760"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "67177663"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>排查 Office 加载项中的开发错误
 
@@ -72,7 +72,7 @@ myChart.id = "5";
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>加载项在 Edge 上不起作用，但它适用于其他浏览器
 
-请参阅 [Microsoft Edge 问题疑难解答](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues)。
+请参阅 [Microsoft Edge 问题疑难解答](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-microsoft-edge-issues)。
 
 ## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel 加载项引发错误，但不一致
 
