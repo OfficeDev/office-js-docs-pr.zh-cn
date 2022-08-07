@@ -1,14 +1,14 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 07/27/2022
+ms.date: 08/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a4063720f8866d9538865f4514841d8dc8d0a84c
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
+ms.openlocfilehash: 7e5deab39ba1d28c4689a622ac9234509dcdba5c
+ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177670"
+ms.lasthandoff: 08/07/2022
+ms.locfileid: "67274160"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -20,10 +20,13 @@ Office 加载项是在Office web 版中运行时使用 iFrame 显示的 Web 应�
 - 无论外接程序是在 Office web 版、Microsoft 365 还是永久 (中运行，也称为“非订阅”或“一次性购买”) Office 2013 或更高版本。
 - 在 Office 的永久版本中，无论外接程序是在“使用者”还是“商业” (中运行，也称为“批量许可”或“LTSC”) 变体。
 
+> [!NOTE]
+> 本文假定外接程序在 *不受* [Windows 信息保护 (WIP)](/windows/uwp/enterprise/wip-hub)保护的文档中运行。 对于受 WIP 保护的文档，本文中的信息存在一些例外。 有关详细信息，请参阅 [受 WIP 保护的文档](#wip-protected-documents)。
+
 > [!IMPORTANT]
 > **仍在 Office 加载项中使用的 Internet Explorer**
 >
-> 如本文所述，平台和 Office 版本的某些组合（包括通过 Office 2019 的永久版本）仍使用 Internet Explorer 11 附带的 Webview 控件来托管加载项。 建议 (但不需要) 继续支持这些组合（至少以最小方式）在 Internet Explorer Webview 中启动外接程序时为外接程序的用户提供正常故障消息。 请记住以下附加点：
+> 如本文所述，平台和 Office 版本的某些组合（包括通过 Office 2019 商业永久版本）仍使用 Internet Explorer 11 附带的 Webview 控件来托管加载项。 建议 (但不需要) 继续支持这些组合（至少以最小方式）在 Internet Explorer Webview 中启动外接程序时为外接程序的用户提供正常故障消息。 请记住以下附加点：
 >
 > - Office web 版不再在 Internet Explorer 中打开。 因此，[AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 不再使用 Internet Explorer 作为浏览器在Office web 版中测试加载项。
 > - AppSource 仍会测试使用 Internet Explorer 的平台和 Office *桌面* 版本的组合，但仅当外接程序不支持 Internet Explorer 时才会发出警告;AppSource 不会拒绝加载项。
@@ -124,6 +127,17 @@ Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果加载�
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>获取尝试下载 PDF 文件的错误
 
 当 Edge 是浏览器时，不支持将 Blob 直接下载为加载项中的 PDF 文件。 解决方法是创建一个简单的 Web 应用程序，将 Blob 下载为 PDF 文件。 在外接程序中，调用该 `Office.context.ui.openBrowserWindow(url)` 方法并传递 Web 应用程序的 URL。 这将在 Office 外部的浏览器窗口中打开 Web 应用程序。
+
+## <a name="wip-protected-documents"></a>受 WIP 保护的文档
+
+在 [受 WIP 保护的](/windows/uwp/enterprise/wip-hub)文档中运行的加载项绝不会将 **Microsoft Edge 与基于 WebView2 (Chromium的)** 配合使用。 在本文前面部分 [的 Windows 上的 Office](#perpetual-versions-of-office-on-windows) 和 [Windows 上的 Microsoft 365 订阅](#microsoft-365-subscription-on-windows)的永久版本中，将 **Microsoft Edge 替换为原始 WebView (EdgeHTML)**，无论后者出现在何处，都 **基于 WebView2 (Chromium)**。
+
+若要确定文档是否受 WIP 保护，请执行以下步骤：
+
+1. 打开此文件。
+1. 选择功能区上的 **“文件”** 选项卡。
+1. 选择 **信息**。
+1. 在 **信息** 页左上角的文件名下方，启用 WIP 的文档将具有公文包图标，后跟 **“由工作管理 (...)**”。
 
 ## <a name="see-also"></a>另请参阅
 
