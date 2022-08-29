@@ -1,16 +1,16 @@
 ---
-title: 调试初始化和 onReady 函数
+title: 调试 initialize 和 onReady 函数
 description: 了解如何调试 Office.initialize 和 Office.onReady 函数。
 ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d26c0f2686477f74fbe65550b7d35cc69e7be71
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 4dca551d8a016e7aad16cfdc02590f0a51455852
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958844"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423249"
 ---
-# <a name="debug-the-initialize-and-onready-functions"></a>调试初始化和 onReady 函数
+# <a name="debug-the-initialize-and-onready-functions"></a>调试 initialize 和 onReady 函数
 
 > [!NOTE]
 > 本文假设你熟悉 [如何初始化 Office 加载项](../develop/initialize-add-in.md)。
@@ -26,3 +26,7 @@ ms.locfileid: "66958844"
 
 > [!TIP]
 > 有关更多详细信息，请参阅[Office web 版中的调试加载项](debug-add-ins-in-office-online.md)。
+
+## <a name="see-also"></a>另请参阅
+
+- [Office 加载项中的运行时](runtimes.md)

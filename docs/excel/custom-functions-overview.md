@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 3eb87c0f2a40dd7650582bb564710aefe43ede0f
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: 12740615215913b0201426f929dbcb803c866648
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660268"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422759"
 ---
 # <a name="create-custom-functions-in-excel"></a>在 Excel 中创建自定义函数
 
@@ -36,7 +36,7 @@ function sphereVolume(radius) {
 ```
 
 > [!TIP]
-> 如果自定义函数加载项将使用任务窗格或功能区按钮，除了运行自定义函数代码之外，还需要设置共享的 JavaScript 运行时。 查看 [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md) 以了解更多信息。
+> 如果自定义函数外接程序将使用任务窗格或功能区按钮，除了运行自定义函数代码外，还需要设置 [共享运行时](../testing/runtimes.md#shared-runtime)。 若要了解详细信息，请参阅 [配置 Office 加载项以使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>如何在代码中定义自定义函数
 
@@ -76,7 +76,7 @@ function add(first, second){
 - 使用自定义函数清单特有的 **\<ExtensionPoint\>** 和 **\<Resources\>** 元素。 这些元素包含有关 JavaScript、JSON 和 HTML 文件的位置的信息。
 - 指定用于自定义函数的运行时。除非你对另一运行时有特殊需求，否则建议始终使用共享运行时，因为共享运行时允许在函数和任务窗格之间共享数据。
 
-如果使用 [适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 创建文件，则建议将清单调整为使用共享运行时，因为这不是这些文件的默认设置。 若要更改清单，请按照[将 Excel 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)中的说明进行操作。
+如果使用 [Office 外接程序的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 创建文件，建议调整清单以使用共享运行时，因为这不是这些文件的默认值。 若要更改清单，请按照配置 [Excel 外接程序中的说明使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 要从示例加载项中查看完整的工作清单，请参阅 [我们的 Office 加载项示例 Github 存储库之一](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml) 中的清单。
 
@@ -96,8 +96,9 @@ function add(first, second){
 
 ## <a name="see-also"></a>另请参阅
 
-* [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
-* [自定义函数要求集](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
-* [自定义函数命名准则](custom-functions-naming.md)
-* [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)
-* [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [了解 Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program)
+- [自定义函数要求集](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
+- [自定义函数命名准则](custom-functions-naming.md)
+- [让自定义函数与 XLL 用户定义的函数兼容](make-custom-functions-compatible-with-xll-udf.md)
+- [将 Office 外接程序配置为使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Office 加载项中的运行时](../testing/runtimes.md)

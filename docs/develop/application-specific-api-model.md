@@ -3,12 +3,12 @@ title: 使用应用程序专用 API 模型
 description: 了解 Excel、OneNote 和 Word 加载项基于承诺的 API 模型。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8035a334f3314382f48d6cd796f46188bea9b091
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 4fc0733806b2b29de37f77ffa2864163cb544f12
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889336"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422941"
 ---
 # <a name="application-specific-api-model"></a>特定于应用程序的 API 模型
 
@@ -45,7 +45,7 @@ Excel.run(function (context) {
 
 ## <a name="request-context"></a>请求上下文
 
-Office 应用程序和加载项在两个不同过程中运行。 由于加载项使用不同的运行时环境，因此需要一个 `RequestContext` 对象才能将加载项连接到 Office 中的对象，例如工作表、区域、段落和表。 调用 `RequestContext` 时，此对象作为 `*.run`。
+Office 应用程序和外接程序在不同的进程中运行。 由于加载项使用不同的运行时环境，因此需要一个 `RequestContext` 对象才能将加载项连接到 Office 中的对象，例如工作表、区域、段落和表。 调用 `RequestContext` 时，此对象作为 `*.run`。
 
 ## <a name="proxy-objects"></a>代理对象
 

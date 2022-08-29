@@ -2,14 +2,14 @@
 title: '在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件 (预览) '
 description: 了解如何使用基于事件的激活处理 Outlook 外接程序中的发送事件。
 ms.topic: article
-ms.date: 06/09/2022
+ms.date: 08/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 00afc7614da18ed90808bd64b72ae0e3e1aab852
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 5e5c94cc13898ec64dcdedc0afdd627bfeb2323c
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660247"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67320649"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件 (预览) 
 
@@ -18,7 +18,7 @@ ms.locfileid: "66660247"
 以下演练使用该 `OnMessageSend` 事件。 本演练结束时，你将拥有一个在发送消息时运行的加载项，并检查用户是否忘记添加他们在电子邮件中提到的文档或图片。
 
 > [!IMPORTANT]
-> 这些 `OnMessageSend` 和 `OnAppointmentSend` 事件仅在 Outlook on Windows 中使用 Microsoft 365 订阅以预览版提供。 有关更多详细信息，请参阅 [如何预览](autolaunch.md#how-to-preview)。 不应在生产外接程序中使用预览事件。
+> 这些 `OnMessageSend` 和 `OnAppointmentSend` 事件仅在 Outlook on Windows 和 Web 上的 Microsoft 365 订阅的预览版中可用。 有关更多详细信息，请参阅 [如何预览](autolaunch.md#how-to-preview)。 不应在生产外接程序中使用预览事件。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -26,7 +26,7 @@ ms.locfileid: "66660247"
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)门，使用 Office 外接程序的 Yeoman 生成器创建加载项项目。
+完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)门，使用 [适用于 Office 外接程序的 Yeoman 生成器](../develop/yeoman-generator-overview.md)创建加载项项目。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -40,7 +40,7 @@ ms.locfileid: "66660247"
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.3">
+      <bt:Sets DefaultMinVersion="1.11">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -51,7 +51,7 @@ ms.locfileid: "66660247"
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -118,7 +118,7 @@ ms.locfileid: "66660247"
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook Desktop. -->
+        <!-- Entry needed for Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -224,6 +224,16 @@ ms.locfileid: "66660247"
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
     ```
+
+## <a name="update-the-commands-html-file"></a>更新命令 HTML 文件
+
+1. 在 **./src/commands** 文件夹中，打开 **commands.html**。
+
+1. 紧接在结束 **头** 标记 () `</head>` 之前，为事件处理 JavaScript 代码添加脚本条目。
+
+   ```js
+   <script type="text/javascript" src="../launchevent/launchevent.js"></script> 
+   ```
 
 1. 保存所做的更改。
 

@@ -1,21 +1,21 @@
 ---
-title: 将 Office 加载项配置为使用共享 JavaScript 运行时
-description: 将 Office 加载项配置为使用共享 JavaScript 运行时，以支持其他功能区、任务窗格和自定义函数功能。
+title: 将 Office 外接程序配置为使用共享运行时
+description: 将 Office 外接程序配置为使用共享运行时来支持其他功能区、任务窗格和自定义函数功能。
 ms.date: 07/18/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 70906199f27a5b84a9dcd71b2f36dcd16ff79f73
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
-ms.translationtype: HT
+ms.openlocfilehash: e6b10cc2d342d95a8542146ecbd95d750322421f
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889476"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422934"
 ---
-# <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>将 Office 加载项配置为使用共享 JavaScript 运行时
+# <a name="configure-your-office-add-in-to-use-a-shared-runtime"></a>将 Office 外接程序配置为使用共享运行时
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-你可以将 Office 加载项配置为在单个共享 JavaScript 运行时（也称为共享运行时）中运行它的所有代码。 这可在加载项中实现更好的协调，并且可从加载项的所有部分访问 DOM 和 CORS。 它还能启用其他功能，例如文档打开时运行代码，或者启用或禁用功能区按钮。 若要将加载项配置为使用共享 JavaScript 运行时，请按照本文中的说明进行操作。
+可以将 Office 加载项配置为在单个 [共享运行时](../testing/runtimes.md#shared-runtime)中运行其所有代码。 这可在加载项中实现更好的协调，并且可从加载项的所有部分访问 DOM 和 CORS。 它还能启用其他功能，例如文档打开时运行代码，或者启用或禁用功能区按钮。 若要将加载项配置为使用共享运行时，请按照本文中的说明进行操作。
 
 ## <a name="create-the-add-in-project"></a>创建加载项项目
 
@@ -97,7 +97,7 @@ ms.locfileid: "66889476"
 
 ## <a name="configure-the-webpackconfigjs-file"></a>配置 webpack.config.js 文件
 
-**webpack.config.js** 将生成多个运行时加载程序。 你需要对其进行修改，以通过 **taskpane.html** 文件仅加载共享 JavaScript 运行时。 
+**webpack.config.js** 将生成多个运行时加载程序。 需要对其进行修改，以便仅通过 **taskpane.html** 文件加载共享运行时。
 
 1. 启动 Visual Studio Code 并打开生成的加载项项目。
 1. 打开 **webpack.config.js** 文件。
@@ -138,14 +138,14 @@ ms.locfileid: "66889476"
    ```
 
 > [!NOTE]
-> 如果你的项目有 **functions.html** 文件或 **commands.html** 文件，可将其删除。 **taskpane.html** 将通过你刚才进行的 webpack 更新将 **functions.js** 和 **commands.js** 代码加载到 共享 JavaScript 运行时中。
+> 如果你的项目有 **functions.html** 文件或 **commands.html** 文件，可将其删除。 **taskpane.html** 将通过刚才进行的 Webpack 更新将 **functions.js** 和 **commands.js** 代码加载到共享运行时。
 
 ## <a name="test-your-office-add-in-changes"></a>测试 Office 加载项更改
 
-你可以通过使用以下指令，确认你正在正确使用共享 JavaScript 运行时。
+可以使用以下说明确认是否正确使用共享运行时。
 
 1. 打开 **taskpane.js** 文件。
-1. 使用以下代码替换文件的全部内容。 这将显示任务窗格已被打开次数的计数。 仅在共享的 JavaScript 运行时中支持添加 onVisibilityModeChanged 事件。
+1. 使用以下代码替换文件的全部内容。 这将显示任务窗格已被打开次数的计数。 仅在共享运行时支持添加 onVisibilityModeChanged 事件。
 
     ```javascript
     /*global document, Office*/
@@ -180,7 +180,7 @@ ms.locfileid: "66889476"
 
 ## <a name="runtime-lifetime"></a>运行时生存期
 
-在添加 `Runtime` 元素时，还指定了值为 `long` 或 `short` 的生存期。将此值设置为 `long` 以利用相关功能，例如在文档打开时启动加载项、在关闭任务窗格后继续运行代码，或从自定义函数中使用 CORS 和 DOM。
+添加元素 **\<Runtime\>** 时，还指定值为或`short`值的`long`生存期。 将此值设置为 `long` 以利用相关功能，例如在文档打开时启动加载项，在关闭任务窗格后继续运行代码，或从自定义函数中使用 CORS 和 DOM。
 
 > [!NOTE]
 > 默认生存期值为 `short`，但我们建议在 Excel、PowerPoint、Word 加载项中使用 `long`。如果在此例中将运行时设置为 `short`，则当按下某个功能区按钮时，加载项将启动，但在功能区处理程序运行完毕后，它可能会关闭。 同样，打开任务窗格时，加载项将启动，但关闭任务窗格时，加载项可能会关闭。
@@ -192,13 +192,13 @@ ms.locfileid: "66889476"
 ```
 
 > [!NOTE]
-> 如果加载项包含清单中的 `Runtimes` 元素（共享运行时所需），并且满足将 Microsoft Edge 与 WebView2（基于 Chromium）一起使用的条件，则它使用该 WebView2 控件。 如果不满足条件，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅 [运行时](/javascript/api/manifest/runtimes) 和 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+> 如果外接程序包含 **\<Runtimes\>** 共享运行时) 所需的清单 (元素，并且满足将 Microsoft Edge 与基于 WebView2 (Chromium的) 配合使用的条件，则它使用该 WebView2 控件。 如果不满足条件，则使用 Internet Explorer 11，而不考虑 Windows 或 Microsoft 365 版本。 有关详细信息，请参阅 [运行时](/javascript/api/manifest/runtimes) 和 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
-## <a name="about-the-shared-javascript-runtime"></a>关于共享 JavaScript 运行时
+## <a name="about-the-shared-runtime"></a>关于共享运行时
 
-在 Windows 或 Mac 上，加载项将在单独的 JavaScript 运行时环境中运行功能区按钮、自定义函数和任务窗格的代码。 这会产生一些局限性，例如无法轻松共享全局数据，也不能通过自定义函数访问所有 CORS 功能。
+在 Windows 或 Mac 上，外接程序将在单独的运行时环境中运行功能区按钮、自定义函数和任务窗格的代码。 这会产生一些局限性，例如无法轻松共享全局数据，也不能通过自定义函数访问所有 CORS 功能。
 
-但是，你可以将 Office 加载项配置为在同一 JavaScript 运行时（也称为共享运行时）中共享代码。 这可在加载项中实现更好的协调，并且可从加载项的所有部分访问任务窗格 DOM 和 CORS。
+但是，可以将 Office 外接程序配置为在同一运行时中共享代码 (也称为共享运行时) 。 这可在加载项中实现更好的协调，并且可从加载项的所有部分访问任务窗格 DOM 和 CORS。
 
 配置共享运行时可实现以下方案。
 
@@ -212,7 +212,7 @@ ms.locfileid: "66889476"
   - 自定义函数将具有完整的 CORS 支持。
   - 自定义函数可调用 Office.js API 以读取电子表格文档数据。
 
-对于 Windows 上的 Office，如果满足 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)中所述，共享运行时使用 WebView2（基于 Chromium）的Microsoft Edge。否则，它使用 Internet Explorer 11。 此外，外接程序在功能区上显示的任何按钮都将在同一共享运行时中运行。 下图显示了自定义函数、功能区 UI 和任务窗格代码如何在同一 JavaScript 运行时中运行。
+对于 Windows 上的 Office，如果满足 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)中所述，共享运行时使用 WebView2（基于 Chromium）的Microsoft Edge。否则，它使用 Internet Explorer 11。 此外，外接程序在功能区上显示的任何按钮都将在同一共享运行时中运行。 下图显示了自定义函数、功能区 UI 和任务窗格代码如何在同一运行时中运行。
 
 ![自定义函数、任务窗格和功能区按钮的示意图，这些按钮都在 Excel 的共享浏览器运行时中运行。](../images/custom-functions-in-browser-runtime.png)
 
@@ -233,3 +233,4 @@ ms.locfileid: "66889476"
 - [文档打开时在 Office 加载项中运行代码](run-code-on-document-open.md)
 - [显示或隐藏 Office 加载项的任务窗格](show-hide-add-in.md)
 - [教程：在 Excel 自定义函数和任务窗格之间共享数据和事件](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Office 加载项中的运行时](../testing/runtimes.md)

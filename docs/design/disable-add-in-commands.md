@@ -3,12 +3,12 @@ title: 启用和禁用加载项命令
 description: 了解如何更改 Office Web 加载项中的自定义功能区按钮和菜单项的启用或禁用状态。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 97aa591bfe734e3211d2e1b4e5aabac03c625ff3
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 502c9247a6c63775c562dab7479e0ca926f14154
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958837"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423046"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>启用和禁用加载项命令
 
@@ -36,7 +36,7 @@ ms.locfileid: "66958837"
 
 ## <a name="shared-runtime-required"></a>需要共享运行时
 
-本文介绍的 API 和清单标记，需要加载项清单指定它们应使用共享运行时。 为此，请执行以下步骤。
+本文中所述的 API 和清单标记要求外接程序的清单指定它应使用 [共享运行时](../testing/runtimes.md#shared-runtime)。 为此，请执行以下步骤。
 
 1. 在清单中的 [Runtimes](/javascript/api/manifest/runtimes) 元素中，添加以下子元素：`<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`。  (如果清单中还没有元素，请将其创建为 section.) 中元素 **\<VersionOverrides\>** 下 **\<Host\>** 的第一个 **\<Runtimes\>** 子元素。
 2. 在清单的 [Resources.Urls](/javascript/api/manifest/resources) 部分中，添加以下子元素：`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`，其中 `{MyDomain}` 是加载项的域，`{path-to-start-page}` 是加载项的起始页路径；例如，`<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`。

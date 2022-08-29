@@ -3,16 +3,16 @@ title: 开发 Office 加载项以在使用第三方 Cookie 时使用 ITP
 description: 使用第三方 Cookie 时如何使用 ITP 和 Office 加载项
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e2a949045fdb5bff87480d1077e692f5e8b9af6
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: b01051fa39441fddb2453b0bd95a0629ebf3ef65
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889267"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423088"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>开发 Office 加载项以在使用第三方 Cookie 时使用 ITP
 
-如果 Office 外接程序需要第三方 Cookie，则如果加载外接程序的浏览器运行时使用智能跟踪防护 (ITP) ，则会阻止这些 Cookie。 可以使用第三方 Cookie 对用户进行身份验证，或者针对其他方案（例如存储设置）进行身份验证。
+如果 Office 加载项需要第三方 Cookie，则如果加载加载项的 [运行时](../testing/runtimes.md) 使用智能跟踪防护 (ITP) ，则会阻止这些 Cookie。 可以使用第三方 Cookie 对用户进行身份验证，或者针对其他方案（例如存储设置）进行身份验证。
 
 如果 Office 加载项和网站必须依赖于第三方 Cookie，请使用以下步骤来处理 ITP。
 

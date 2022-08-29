@@ -1,23 +1,22 @@
 ---
 title: Microsoft Office 加载项社区呼叫
 description: 每月 Microsoft Office 加载项社区呼叫议程、计划和资源。
-ms.date: 08/04/2022
+ms.date: 08/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ad3d2c1113295c2e441a31317fc3c5ac9886b5e9
-ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
+ms.openlocfilehash: 4e69bf49c188d0ff9920f00bd33a38f78fc78556
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2022
-ms.locfileid: "67274153"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318870"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office 加载项社区呼叫
 
 Microsoft Office 外接程序社区呼叫是每月通话，你可以在其中详细了解新功能、开发实践以及有关创建 Office 加载项的其他信息。社区呼叫发生在每月的第二个星期三（太平洋时间上午 8：00）。 可以下载日历邀请 https://aka.ms/officeaddinscommunitycall。
 
-## <a name="agenda-for-august-10th-call"></a>8 月 10 日通话议程
+## <a name="agenda-for-september-14th-call"></a>9 月 14 日通话议程
 
-- OOXML 库的演示。
-- 将网站与 Excel 加载项集成。
+9月通话的议程将在通话前一周左右公布。
 
 ## <a name="previous-calls"></a>以前的调用
 

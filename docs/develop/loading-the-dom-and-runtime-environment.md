@@ -3,16 +3,16 @@ title: 加载 DOM 和运行时环境
 description: 加载 DOM 和 Office 加载项运行时环境。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: be93b261c8beacdb7b4e8cd08448abf06b14607e
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 707b6f6f743767571cf0ab7f465ddf84f117a63b
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958683"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423074"
 ---
-# <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
+# <a name="load-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
-外接程序在运行自己的自定义逻辑前必须确保 DOM 和 Office 外接程序运行时环境都已加载。
+在运行自己的自定义逻辑之前，加载项必须确保加载 DOM 和 Office 加载项 [运行时](../testing/runtimes.md) 环境。
 
 ## <a name="startup-of-a-content-or-task-pane-add-in"></a>启动内容或任务窗格加载项
 
@@ -62,3 +62,4 @@ Outlook 加载项启动时会发生以下事件。
 
 - [了解 Office JavaScript API](understanding-the-javascript-api-for-office.md)
 - [初始化 Office 加载项](initialize-add-in.md)
+- [Office 加载项中的运行时](../testing/runtimes.md)

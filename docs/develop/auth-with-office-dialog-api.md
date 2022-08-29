@@ -3,12 +3,12 @@ title: 使用 Office 对话框 API 进行身份验证和授权
 description: 了解如何使用 Office 对话框 API 使用户能够登录到 Google、Facebook、Microsoft 365 以及受 Microsoft 标识平台保护的其他服务。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 4788fbf42870c6b23faa4cd89c74a8547cb1a7bc
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: feb2859eb518cfd64f4b3682313452b1b452859f
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743629"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423130"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>使用 Office 对话框 API 进行身份验证和授权
 
@@ -23,7 +23,7 @@ ms.locfileid: "63743629"
 
 - 它是[非模态](https://en.wikipedia.org/wiki/Dialog_box)。
 - 它是完全独立于任务窗格的浏览器实例，这意味着：
-  - 它拥有自己的 JavaScript 运行时环境和窗口对象及全局变量。
+  - 它有自己的运行时环境、窗口对象和全局变量。
   - 没有与任务窗格共享的执行环境。
   - 它没有与任务窗格共享相同的会话存储（[Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) 属性）。
 - 对话框中打开的第一个页面必须与任务窗格位于同一域中，包括协议、子域和端口（如果有）。
@@ -68,7 +68,7 @@ ms.locfileid: "63743629"
 
 ## <a name="use-authentication-libraries-with-the-dialog-box"></a>将身份验证库与对话框结合使用
 
-Office 对话框和任务窗格在不同的浏览器、JavaScript 运行时实例中运行，你必须使用多个身份验证/授权库，必须与在同一窗口中进行身份验证和授权时使用它们的方式不同。 以下部分介绍了可以使用和不能使用这些库的方法。
+由于 Office 对话框和任务窗格在不同的 [浏览器运行时实例中运行](../testing/runtimes.md#browser-runtime)，因此必须使用与在同一窗口中进行身份验证和授权时使用的身份验证/授权库的方式不同。 以下部分介绍了可以使用和不能使用这些库的方法。
 
 ### <a name="you-usually-cannot-use-the-librarys-internal-cache-to-store-tokens"></a>通常无法使用库的内部缓存来存储令牌
 

@@ -1,26 +1,26 @@
 ---
-title: '在使用基于事件的激活的Outlook加载项中启用单一登录 (SSO) '
+title: '在使用基于事件的激活的 Outlook 加载项中启用单一登录 (SSO) '
 description: 了解如何在基于事件的激活加载项中工作时启用 SSO。
 ms.date: 06/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 477ecb8c0ab84ab472763f83e342258998749861
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 10fd973c0476878443d7238e8805aa4db9f62953
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229727"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423116"
 ---
-# <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>在使用基于事件的激活的Outlook加载项中启用单一登录 (SSO) 
+# <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>在使用基于事件的激活的 Outlook 加载项中启用单一登录 (SSO) 
 
-当Outlook加载项使用基于事件的激活时，事件在单独的 JavaScript 运行时中运行。 完成在Outlook加载项[中使用单一登录令牌对用户进行身份验证](authenticate-a-user-with-an-sso-token.md)的步骤后，请按照本文中所述的其他步骤为事件处理代码启用 SSO。 启用 SSO 后，可以调用 [getAccessToken () API](/javascript/api/office-runtime/officeruntime.auth) 以获取具有用户标识的访问令牌。
+当 Outlook 加载项使用基于事件的激活时，事件会在单独的 [运行时中运行](../testing/runtimes.md)。 完成在 Outlook 加载项 [中使用单一登录令牌对用户进行身份验证](authenticate-a-user-with-an-sso-token.md)的步骤后，请按照本文中所述的其他步骤为事件处理代码启用 SSO。 启用 SSO 后，可以调用 [getAccessToken () API](/javascript/api/office-runtime/officeruntime.auth) 以获取具有用户标识的访问令牌。
 
 > [!IMPORTANT]
-> 虽然 `OfficeRuntime.auth.getAccessToken` 检索访问令牌并 `Office.auth.getAccessToken` 执行相同的功能，但我们建议在基于事件的加载项中调用 `OfficeRuntime.auth.getAccessToken` 。 支持基于事件的激活和 SSO 的所有Outlook客户端版本都支持此 API。 另一方面，`Office.auth.getAccessToken`仅从版本 2111 (内部版本 14701.20000) 开始Windows Outlook支持。
+> 虽然 `OfficeRuntime.auth.getAccessToken` 检索访问令牌并 `Office.auth.getAccessToken` 执行相同的功能，但我们建议在基于事件的加载项中调用 `OfficeRuntime.auth.getAccessToken` 。 支持基于事件的激活和 SSO 的所有 Outlook 客户端版本都支持此 API。 另一方面， `Office.auth.getAccessToken` 仅从版本 2111 (内部版本 14701.20000) 开始，Outlook on Windows 才受支持。
 
-对于Windows上的Outlook，请在Outlook加载项清单中标识要加载的单个 JavaScript 文件以进行基于事件的激活。 还需要指定Office允许此文件支持 SSO。 为此，请创建所有加载项及其 JavaScript 文件的列表，以便通过已知的 URI 提供Office。
+对于 Outlook on Windows，在 Outlook 外接程序的清单中，标识要加载的单个 JavaScript 文件以进行基于事件的激活。 还需要向 Office 指定允许此文件支持 SSO。 为此，请创建所有加载项及其 JavaScript 文件的列表，以便通过已知的 URI 提供给 Office。
 
 > [!NOTE]
-> 本文中的步骤仅适用于在Windows上运行Outlook加载项时。 这是因为Windows上的Outlook使用 JavaScript 文件，而Outlook 网页版使用可引用同一 JavaScript 文件的 HTML 文件。
+> 本文中的步骤仅适用于在 Windows 上运行 Outlook 加载项时。 这是因为 Windows 上的 Outlook 使用 JavaScript 文件，而Outlook 网页版使用可引用同一 JavaScript 文件的 HTML 文件。
 
 ## <a name="list-allowed-add-ins-with-a-well-known-uri"></a>使用已知 URI 列出允许的加载项
 
@@ -44,5 +44,5 @@ ms.locfileid: "66229727"
 
 ## <a name="see-also"></a>另请参阅
 
-- [在Outlook加载项中使用单一登录令牌对用户进行身份验证](authenticate-a-user-with-an-sso-token.md)
-- [为基于事件的激活配置Outlook加载项](autolaunch.md)
+- [在 Outlook 加载项中使用单一登录令牌对用户进行身份验证](authenticate-a-user-with-an-sso-token.md)
+- [配置 Outlook 外接程序以进行基于事件的激活](autolaunch.md)

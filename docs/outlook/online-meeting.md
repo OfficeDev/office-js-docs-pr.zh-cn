@@ -2,14 +2,14 @@
 title: 为联机会议提供商创建 Outlook 加载项
 description: 讨论如何为联机会议服务提供商设置 Outlook 加载项。
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 08/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d4934e3e04e566cb6badf46cd7447b754b0c94b6
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: e1775d8cf8cc45887dfb1058603c103583d5e5dc
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797657"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67320656"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>为联机会议提供商创建 Outlook 加载项
 
@@ -326,7 +326,7 @@ ms.locfileid: "66797657"
 - 只有管理员安装的加载项才会显示在会议撰写屏幕上，替换默认的 Teams 或 Skype 选项。 用户安装的加载项不会激活。
 - 外接程序图标应使用十六进制代码 `#919191` 或 [以其他颜色格式](https://convertingcolors.com/hex-color-919191.html)等效的灰度。
 - 约会组织者 (撰写) 模式中仅支持一个函数命令。
-- 加载项应在一分钟的超时时间内更新约会表单中的会议详细信息。 但是，为身份验证打开的加载项等在对话框中花费的任何时间都排除在超时时间段之外。
+- 加载项应在一分钟的超时时间内更新约会表单中的会议详细信息。 但是，在对话框中花费的任何时间（例如，为身份验证打开的外接程序）都从超时期中排除。
 
 ## <a name="see-also"></a>另请参阅
 

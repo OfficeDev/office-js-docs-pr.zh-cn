@@ -1,18 +1,18 @@
 ---
 title: 显示或隐藏 Office 加载项的任务窗格
 description: 了解如何在加载项持续运行时以编程方式隐藏或显示其用户界面。
-ms.date: 07/18/2022
+ms.date: 08/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 001e77553bf6e1a0eda91c9459885ccd46de6f47
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 8122282414fcc9472fc300acd07da354d5a282f0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958606"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422880"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>显示或隐藏 Office 加载项的任务窗格
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
 可以通过调用 `Office.addin.showAsTaskpane()` 该方法来显示 Office 外接程序的任务窗格。
 
@@ -47,7 +47,7 @@ function onCurrentQuarterDeactivated() {
 
 ## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>将外接程序配置为使用共享运行时
 
-若要使用这些 `showAsTaskpane()` 方法和 `hide()` 方法，外接程序必须使用共享运行时。 有关详细信息，请参阅 [配置 Office 加载项以使用共享运行时](configure-your-add-in-to-use-a-shared-runtime.md)。
+若要使用这些 `showAsTaskpane()` 方法和 `hide()` 方法，外接程序必须使用 [共享运行时](../testing/runtimes.md#shared-runtime)。 有关详细信息，请参阅 [配置 Office 加载项以使用共享运行时](configure-your-add-in-to-use-a-shared-runtime.md)。
 
 ## <a name="preservation-of-state-and-event-listeners"></a>保留状态和事件侦听器
 
@@ -69,7 +69,7 @@ function onCurrentQuarterDeactivated() {
 
 ```javascript
 Office.addin.onVisibilityModeChanged(function(args) {
-    if (args.visibilityMode = "Taskpane"); {
+    if (args.visibilityMode == "Taskpane") {
         // Code that runs whenever the task pane is made visible.
         // For example, an Excel.run() that loads the names of
         // all worksheets and passes them to the task pane UI.
@@ -82,7 +82,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 ```javascript
 const removeVisibilityModeHandler =
     Office.addin.onVisibilityModeChanged(function(args) {
-        if (args.visibilityMode = "Taskpane"); {
+        if (args.visibilityMode == "Taskpane") {
             // Code that runs whenever the task pane is made visible.
         }
     });
@@ -99,7 +99,7 @@ removeVisibilityModeHandler();
 // the returned deregister handler to removeVisibilityModeHandler.
 const removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
-        if (args.visibilityMode = "Taskpane"); {
+        if (args.visibilityMode == "Taskpane") {
             // Code that runs whenever the task pane is made visible.
         }
     });
@@ -115,5 +115,5 @@ await removeVisibilityModeHandler();
 
 ## <a name="see-also"></a>另请参阅
 
-- [将 Office 加载项配置为使用共享 JavaScript 运行时](configure-your-add-in-to-use-a-shared-runtime.md)
+- [将 Office 外接程序配置为使用共享运行时](configure-your-add-in-to-use-a-shared-runtime.md)
 - [文档打开时在 Office 加载项中运行代码](run-code-on-document-open.md)

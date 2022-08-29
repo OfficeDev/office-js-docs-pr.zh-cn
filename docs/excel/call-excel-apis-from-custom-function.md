@@ -3,12 +3,12 @@ title: 从自定义函数调用 Excel JavaScript API
 description: 了解可以从自定义函数调用的 Excel JavaScript API。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 04edd5104e0def7631352bc315a0c451ae067d98
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: aa22cb007bb4803863c17e0f72876cc58c15b992
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958416"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423186"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>从自定义函数调用 Excel JavaScript API
 
@@ -18,7 +18,7 @@ ms.locfileid: "66958416"
 - 自定义函数将在计算后为返回值设置单元格的数字格式。
 
 > [!IMPORTANT]
-> 若要从自定义函数调用 Excel JavaScript API，需要使用共享 JavaScript 运行时。 查看 [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md) 以了解更多信息。
+> 若要从自定义函数调用 Excel JavaScript API，需要使用 [共享运行时](../testing/runtimes.md#shared-runtime)。 请参阅 [“配置 Office 外接程序”以使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md) 了解详细信息。
 
 ## <a name="code-sample"></a>代码示例
 
@@ -68,4 +68,4 @@ async function getRangeValue(address) {
 ## <a name="see-also"></a>另请参阅
 
 - [在 Excel 自定义函数和任务窗格教程之间共享数据和事件](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [将 Office 外接程序配置为使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

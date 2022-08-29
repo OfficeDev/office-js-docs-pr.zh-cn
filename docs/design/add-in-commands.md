@@ -3,12 +3,12 @@ title: 加载项命令的基本概念
 description: 了解如何将自定义功能区按钮和菜单项添加到 Office 作为 Office 加载项的一部分。
 ms.date: 07/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: a85c3e5cf4bf1a22ac3e6fe440514e19d80b2448
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: 30a548e9d831952e372d044257f520130882848c
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659673"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423060"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Excel、PowerPoint 和 Word 的加载项命令
 
@@ -36,8 +36,8 @@ ms.locfileid: "66659673"
 - **任务窗格命令**：按钮或菜单项将打开加载项的任务窗格。 在清单中添加带有标记的此类加载项命令。 “代码隐藏”命令由 Office 提供。
 - **函数命令**：按钮或菜单项运行任意 JavaScript。 代码几乎总是在 Office JavaScript 库中调用 API，但并非必须如此。 此类型的加载项通常不显示按钮或菜单项本身以外的 UI。 请注意以下有关函数命令的内容：
 
-   - 触发的函数可以调用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) 方法来显示对话框，这是显示错误、显示进度或提示用户输入的好方法。 如果加载项配置为使用共享运行时，该函数还可以调用 [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) 方法。
-   - 运行函数命令的 JavaScript 运行时是基于浏览器的完整运行时。 它可以呈现 HTML 并调用 Internet 以发送或获取数据。
+   - 触发的函数可以调用 [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) 方法来显示对话框，这是显示错误、显示进度或提示用户输入的好方法。 如果外接程序配置为使用 [共享运行时](../testing/runtimes.md#shared-runtime)，该函数还可以调用 [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) 方法。
+   - 函数命令运行的运行时是基于 [浏览器的完整运行时](../testing/runtimes.md#browser-runtime)。 它可以呈现 HTML 并调用 Internet 以发送或获取数据。
 
 ## <a name="command-capabilities"></a>命令功能
 

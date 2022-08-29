@@ -3,12 +3,12 @@ title: Office 加载项代码示例
 description: Office 加载项代码示例列表，可帮助你学习和生成自己的加载项。
 ms.date: 06/10/2022
 localization_priority: high
-ms.openlocfilehash: 9accbb7e0e5297af3dd4481b5f239af2710d601f
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
-ms.translationtype: HT
+ms.openlocfilehash: 16a1f92992c397772559468c27033aa58f6b6a6d
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091025"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423263"
 ---
 # <a name="office-add-in-code-samples"></a>Office 加载项代码示例
 
@@ -79,7 +79,7 @@ ms.locfileid: "66091025"
 | [带有 ASP.NET 的单一登录 (SSO) Office 加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | 在 Office.js 中使用 `getAccessToken` API 为加载项提供 Microsoft Graph 数据的访问权限。此示例基于 ASP.NET。 |
 | [带有 Node.js 的单一登录 (SSO) Office 加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | 在 Office.js 中使用 `getAccessToken` API 为加载项提供 Microsoft Graph 数据的访问权限。此示例基于 Node.js 构建。|
 
-## <a name="shared-javascript-runtime"></a>共享 JavaScript 运行时
+## <a name="shared-runtime"></a>共享运行时
 
 | 名称                | 说明         |
 |:--------------------|:--------------------|

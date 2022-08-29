@@ -3,12 +3,12 @@ title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
 ms.date: 08/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e5deab39ba1d28c4689a622ac9234509dcdba5c
-ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
+ms.openlocfilehash: c40ff7ccc8a3b88e6e9f7dcd4e107fdb13f99109
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2022
-ms.locfileid: "67274160"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422948"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -142,3 +142,4 @@ Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果加载�
 ## <a name="see-also"></a>另请参阅
 
 - [Office 加载项的运行要求](requirements-for-running-office-add-ins.md)
+- [Office 加载项中的运行时](../testing/runtimes.md)

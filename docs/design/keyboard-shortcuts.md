@@ -3,12 +3,12 @@ title: Office 加载项中的自定义键盘快捷方式
 description: 了解如何将自定义键盘快捷方式（也称为键组合）添加到 Office 外接程序。
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 5e813e1f4af040bb546f60eb2db40862ba1a237e
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 462e5bfdd4e7f825318d6affb631beafc7c08fe5
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659981"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423018"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>将自定义键盘快捷方式添加到 Office 加载项
 
@@ -31,7 +31,7 @@ ms.locfileid: "66659981"
 
 ### <a name="configure-the-add-in-to-use-a-shared-runtime"></a>将外接程序配置为使用共享运行时
 
-添加自定义键盘快捷方式需要外接程序使用共享运行时。 有关详细信息，请 [将加载项配置为使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
+添加自定义键盘快捷方式需要外接程序使用 [共享运行时](../testing/runtimes.md#shared-runtime)。 有关详细信息，请 [将加载项配置为使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>将映射文件链接到清单
 

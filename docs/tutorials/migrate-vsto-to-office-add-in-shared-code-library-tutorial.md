@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: 有关如何在 VSTO 加载项与 Office 加载项之间共享代码的教程。
 title: 教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 ms.localizationpriority: high
-ms.openlocfilehash: 2a115e31352cff6a256cb993b33839eb544d77b4
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: c3d73336975b7b544b3eabbf0b83a25df0b2962d
+ms.sourcegitcommit: 41b95d8bfd3ad525908ff165bd6c9318e1f0f792
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959054"
+ms.lasthandoff: 08/17/2022
+ms.locfileid: "67364668"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>教程：使用共享代码库在 VSTO 加载项与 Office 加载项之间共享代码
 
@@ -63,10 +63,6 @@ Office 加载项使用 HTML、JavaScript 和其他 Web 技术来构建所有平�
 1. 将 [Office 加载项的 VSTO 加载项共享库](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) PnP 解决方案下载到计算机上的工作文件夹。
 1. 启动 Visual Studio 2019 并打开 **/start/Cell-Analyzer.sln** 解决方案。
 1. 在“**调试**”菜单中，选择“**开始调试**”。
-1. 在“**解决方案资源管理器**”中，右键单击“**单元格分析器**”项目，然后选择“**属性**”。
-1. 在属性中选择“**签名**”类别。
-1. 选择“**为 ClickOnce 清单签名**”，然后选择“**创建测试证书**”。
-1. 在“**创建测试证书**”对话框中，输入并确认密码。然后选择“**确定**”。
 
 该加载项是 Excel 的自定义任务窗格。 你可以选择包含文本的任何单元格，然后选择“**显示 unicode**”按钮。 在“**结果**”部分中，该加载项将列出文本中的每个字符及其相应 Unicode 编号。
 

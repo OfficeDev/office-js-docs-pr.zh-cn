@@ -17,4 +17,4 @@ Office JavaScript API 包含两种不同的模型：
 - **通用** API 可用于访问在多种类型的 Office 应用程序中都很常见的 UI、对话框和客户端设置等功能。 此 API 模型使用的是[回调](https://developer.mozilla.org/docs/Glossary/Callback_function)，这样,你在发送给 Office 应用程序的每个请求中只能指定一个操作。 通用 API 是随 Office 2013 引入的，可用于与 Office 2013 或更高版本进行交互。 要详细了解通用 API 对象模型（其中包括用于与 Outlook、PowerPoint 和 Project 交互的 API），请参阅[常见 JavaScript API 对象模型](../develop/office-javascript-api-object-model.md)。
 
 > [!NOTE]
->没有共享运行时的自定义函数在仅限 JavaScript 的运行时中运行，该运行时优先执行计算。 这些函数使用略有不同的编程模型。
+>没有 [共享运行时的](../testing/runtimes.md#shared-runtime) 自定义函数在 [仅限 JavaScript 的运行时中运行，该运行时](../testing/runtimes.md#javascript-only-runtime) 可确定计算执行的优先级。 这些函数使用略有不同的编程模型。

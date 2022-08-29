@@ -3,12 +3,12 @@ title: 使用 Angular 开发 Office 加载项
 description: 使用Angular创建 Office 加载项作为单个页面应用程序。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b139dfcd97971fca4e97ac0c6ebe175d836a5a
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: bbac0f94b731b2853e17ed3db785b50ea99ef6e4
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958473"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422954"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>使用 Angular 开发 Office 加载项
 
@@ -154,7 +154,7 @@ ng serve --aot
 
 ## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>如果要动态加载Office.js，请支持 Internet Explorer
 
-根据运行外接程序的 Windows 版本和 Office 桌面客户端，外接程序可能使用 Internet Explorer 11。  (有关更多详细信息，请参阅 [Office 外接程序.) Angular使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)取决于几个 `window.history` API，但这些 API 在 Windows 桌面客户端中嵌入的 IE 运行时中不起作用。 当这些 API 不起作用时，加载项可能无法正常工作，例如，它可能会加载空白任务窗格。 若要缓解此问题，Office.js将这些 API null 化。 但是，如果要动态加载Office.js，则 AngularJS 可能会在Office.js之前加载。 在这种情况下，应通过将以下代码添加到加载项的 **index.html** 页来禁`window.history`用 API。
+根据运行外接程序的 Windows 版本和 Office 桌面客户端，外接程序可能使用 Internet Explorer 11。  (有关更多详细信息，请参阅 [Office 外接程序.) Angular使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)取决于几个 `window.history` API，但这些 API 在有时用于在 Windows 桌面客户端中运行 Office 加载项的 IE 运行时不起作用。 当这些 API 不起作用时，加载项可能无法正常工作，例如，它可能会加载空白任务窗格。 若要缓解此问题，Office.js将这些 API null 化。 但是，如果要动态加载Office.js，则 AngularJS 可能会在Office.js之前加载。 在这种情况下，应通过将以下代码添加到加载项的 **index.html** 页来禁`window.history`用 API。
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的隐私、权限和安全性
 description: 了解如何管理 Outlook 加载项中的隐私、权限和安全性。
-ms.date: 07/27/2021
+ms.date: 08/09/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 07f1565432d5b6b1e0371e9238fffb835b7d8931
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
-ms.translationtype: HT
+ms.openlocfilehash: 939d32d48275266b3c30a3e4a2c72a806a301cee
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484672"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318891"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook 外接程序的隐私、权限和安全性
 
@@ -45,7 +45,7 @@ ms.locfileid: "64484672"
 
 **将四层权限模型与最终用户、开发人员和管理员关联**
 
-![邮件应用程序架构 v1.1 的 4 层权限模型](../images/add-in-permission-tiers.png)
+![邮件应用架构 v1.1 的四层权限模型图。](../images/add-in-permission-tiers.png)
 
 ## <a name="appsource-add-in-integrity"></a>AppSource：加载项完整性
 
@@ -61,9 +61,9 @@ ms.locfileid: "64484672"
 
 ## <a name="optional-connected-experiences"></a>可选连接体验
 
-最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Outlook 加载项，禁用 **可选的连接体验** 设置的影响由客户端决定，但通常这意味着将不允许使用用户安装的加载项或访问 Office 应用商店。 组织的 IT 管理员通过[集中部署](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)而部署的加载项仍然可用。
+最终用户和 IT 管理员可在 Office 桌面和移动客户端中关闭[可选的已连接体验](/deployoffice/privacy/optional-connected-experiences)。 对于 Outlook 外接程序，禁用 **可选连接体验** 设置的影响取决于客户端，但通常意味着不允许用户安装的加载项和 Office 应用商店的访问权限。 组织的 IT 管理员通过[集中部署](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)而部署的加载项仍然可用。
 
-- Windows\*、Mac：**获取加载项** 按钮不会显示，因此用户不能再管理其加载项或访问 Office 应用商店。
+- Windows\*、Mac：未显示 **“获取加载项** ”按钮，因此用户无法再管理其加载项或访问 Office 应用商店。
 - Android、iOS：**“获取外接程序”** 对话框仅显示管理员部署的加载项。
 - 浏览器：加载项的可用性和对应用商店的访问不受影响，因此用户可以继续[管理其加载项](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce)（包括由管理员部署的加载项）。
 
@@ -76,16 +76,13 @@ ms.locfileid: "64484672"
 
 安全模型通过下列方式解决最终用户的安全、隐私和性能问题。
 
-- 受 Outlook 信息权限管理 (IRM) 保护的最终用户邮件不与 Outlook 外接程序交互。
+- 受 Outlook 信息权限管理 (IRM 保护的最终用户消息) 不会与非 Windows 客户端上的 Outlook 加载项交互。
 
-  > [!IMPORTANT]
-  > - 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
-  >
-  > - 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。 有关处于预览阶段的此功能的详细信息，请参阅[在受信息权限管理 (IRM) 保护的项目上激活加载项](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm)。
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 - 从 AppSource 安装外接程序之前，最终用户能够查看外接程序可以对其数据进行的访问和采取的操作，且必须明确确认后才能继续操作。未经用户或管理员手动验证，Outlook 外接程序不会自动推送到客户端计算机。
 
-- 授予“受限”权限可允许 Outlook 外接程序仅具有对当前项目的有限访问权限。授予“读取项目”权限可允许 Outlook 外接程序仅访问当前项目上的个人识别信息，例如发件人和收件人姓名以及电子邮件地址。
+- 授予“**受限**”权限可允许 Outlook 加载项仅具有对当前项目的有限访问权限。 授予 **读取项** 权限允许 Outlook 外接程序仅访问当前项上的个人可识别信息，例如发件人、收件人姓名和电子邮件地址。
 
 - 最终用户仅能为他/她自己安装低信任度的 Outlook 外接程序。对组织产生影响的 Outlook 外接程序由管理员安装。
 
@@ -130,7 +127,7 @@ ms.locfileid: "64484672"
     <Permissions>ReadItem</Permissions>
   ```
 
-- 如果针对特定类型的 Outlook 项目（约会或邮件）或者项目主题或正文中显示的特定已提取实体（电话号码、地址、URL）激活 Outlook 外接程序，那么开发人员可以请求 **“受限”** 权限。例如，如果在当前邮件的主题或正文中发现三种实体（电话号码、通信地址或 URL）中的一个或多个，那么以下规则会激活 Outlook 外接程序。
+- 如果 Outlook 外接程序在特定类型的 Outlook 项目 (约会或消息) 激活，或者在特定提取的实体上激活， (电话号码、地址、URL) 存在于项目的主题或正文中，则开发人员可以请求 **受限** 权限。 例如，如果在当前邮件的主题或正文中找到一个或多个实体（共三个）- 电话号码、邮寄地址或 URL，以下规则将激活 Outlook 外接程序。
 
   ```XML
     <Permissions>Restricted</Permissions>
@@ -144,7 +141,7 @@ ms.locfileid: "64484672"
     </Rule>
   ```
 
-- 如果 Outlook 外接程序需要读取当前项目的属性而非默认提取实体的属性，或者需要通过当前项目上的外接程序写入自定义属性集，但无需读写其他项目或在用户的邮箱中创建或发送邮件，则开发人员应请求“**读取项目**”权限。例如，如果 Outlook 外接程序需要寻找项目主体或正文中的会议建议、任务建议、电子邮件地址或联系人姓名等实体，或者需要使用一个正则表达式来激活，则开发人员应请求“**读取项目**”权限。
+- 如果 Outlook 外接程序需要读取除默认提取的实体以外的当前项目的属性，或者编写外接程序在当前项上设置的自定义属性，但不需要读取或写入其他项目，或者在用户的邮箱中创建或发送邮件，开发人员应请求 **读** 取项权限。 例如，如果 Outlook 外接程序需要寻找项目主体或正文中的会议建议、任务建议、电子邮件地址或联系人姓名等实体，或者需要使用一个正则表达式来激活，则开发人员应请求“**读取项目**”权限。
 
 - 如果 Outlook 加载项需要向撰写的项目的属性（如收件人姓名、电子邮件地址、正文和主题）写入，或需要添加或删除项目附件，那么开发人员应请求“**读/写项目**”权限。
 

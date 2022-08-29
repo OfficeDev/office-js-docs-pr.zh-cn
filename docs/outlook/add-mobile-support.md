@@ -1,18 +1,18 @@
 ---
 title: 添加对 Outlook 外接程序的移动支持
-description: 添加对 Outlook Mobile 的支持需要更新外接程序清单，并且可能会更改移动方案的代码。
-ms.date: 07/16/2021
+description: 了解如何添加对 Outlook Mobile 的支持，包括如何更新外接程序清单并根据需要更改移动方案的代码。
+ms.date: 04/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e99c862d4cd63590a86c757bf2b720c096826a9
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 50f1613e83d9b23178714cfb3da8110a4c561b05
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496969"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318877"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>添加对适用于 Outlook Mobile 的外接程序命令的支持
 
-使用 Outlook Mobile 中的外接程序命令，用户可以访问与 (、) 、Outlook 网页版、Windows 和 Mac 中已有的相同功能[](#code-considerations)。 添加对 Outlook Mobile 的支持需要更新外接程序清单，并且可能会更改移动方案的代码。
+使用 Outlook Mobile 中的外接程序命令，用户可以访问与在 Outlook 网页版、Windows 和 Mac 中已有一些[限制](#code-considerations)) 相同的功能 (。 添加对 Outlook Mobile 的支持需要更新外接程序清单，并且可能会更改移动方案的代码。
 
 ## <a name="updating-the-manifest"></a>更新清单
 
@@ -20,7 +20,7 @@ ms.locfileid: "64496969"
 
 此元素包含在移动客户端中加载外接程序所需的所有信息。这使你可以为移动体验定义完全不同的 UI 元素和 JavaScript 文件。
 
-以下示例显示了元素中的单个任务窗格 `MobileFormFactor` 按钮。
+以下示例显示元素中的 `MobileFormFactor` 单个任务窗格按钮。
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
@@ -72,7 +72,7 @@ ms.locfileid: "64496969"
 
 Outlook Mobile 中不支持 [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法。外接程序应在可能的情况下首选从 Office.js API 获取信息。如果外接程序需要 Office.js API 未公开的信息，则应使用 [Outlook REST API](/outlook/rest/) 来访问用户邮箱。
 
-邮箱要求集 1.5 引入了可请求与 REST API 兼容的访问令牌的 [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 新版本，以及可用于查找用户的 REST API 终结点的新 [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) 属性。
+邮箱要求集 1.5 引入了 [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 的新版本，可请求与 REST API 兼容的访问令牌，以及可用于查找用户 REST API 终结点的新 [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) 属性。
 
 ### <a name="pinch-zoom"></a>收缩缩放
 
@@ -84,11 +84,14 @@ Outlook Mobile 中不支持 [Office.context.mailbox.makeEwsRequestAsync](/javasc
 
 ### <a name="compose-mode-and-appointments"></a>撰写模式和约会
 
-目前，移动版中的Outlook仅在阅读邮件时支持激活。 在撰写邮件时或查看或撰写约会时，不会激活外接程序。 但是，联机会议提供商集成加载项可以在约会管理器模式下激活。 有关此异常 (包括可用的 API) ，请参阅为联机会议Outlook创建移动[外接程序。](online-meeting.md#available-apis)
+目前，Outlook Mobile 中的加载项仅支持在读取消息时激活。 在撰写邮件时或查看或撰写约会时，不会激活外接程序。 但是，有两个例外：
+
+1. 可在约会组织者模式下激活联机会议提供商集成的加载项。 有关此异常 (包括可用 API) 的详细信息，请参阅 [为联机会议提供商创建 Outlook 移动外接程序](online-meeting.md#available-apis)。
+1. 可在约会与会者模式下激活将约会笔记和其他详细信息记录到客户关系管理 (CRM) 或记事服务的加载项。 有关此异常 (包括可用 API) 的详细信息，请参阅 [Outlook 移动外接程序中的外部应用程序的日志约会说明](mobile-log-appointments.md#available-apis)。
 
 ### <a name="unsupported-apis"></a>不支持的 API
 
-要求集 1.6 或更高版本中引入的 API 不受 Outlook Mobile 支持。 还不支持来自早期要求集的以下 API。
+Outlook Mobile 不支持要求集 1.6 或更高版本中引入的 API。 也不支持来自早期要求集的以下 API。
 
 - [Office.context.officeTheme](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context#officetheme-officetheme)
 - [Office.context.mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties)

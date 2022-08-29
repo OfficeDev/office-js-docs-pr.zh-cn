@@ -3,16 +3,16 @@ title: 文档打开时在 Office 加载项中运行代码
 description: 了解如何在打开文档时在 Office 加载项加载项中运行代码。
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1c3277a349dc4054da5f089c62331296590021
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: ef580151a5b3289c801f3e872988cbb3474bd8e0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958437"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422914"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>文档打开时在 Office 加载项中运行代码
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
 可将 Office 加载项配置为在打开文档后立即加载和运行代码。 如果需要注册事件处理程序、为任务窗格预加载数据、同步 UI 或在外接程序可见之前执行其他任务，这非常有用。
 
@@ -104,6 +104,7 @@ let behavior = await Office.addin.getStartupBehavior();
 
 ## <a name="see-also"></a>另请参阅
 
-- [将 Office 加载项配置为使用共享 JavaScript 运行时](configure-your-add-in-to-use-a-shared-runtime.md)
+- [将 Office 外接程序配置为使用共享运行时](configure-your-add-in-to-use-a-shared-runtime.md)
 - [在 Excel 自定义函数和任务窗格教程之间共享数据和事件](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [使用 Excel JavaScript API 处理事件](../excel/excel-add-ins-events.md)
+- [Office 加载项中的运行时](../testing/runtimes.md)

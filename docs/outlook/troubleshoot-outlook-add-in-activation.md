@@ -1,14 +1,14 @@
 ---
 title: Outlook 上下文加载项激活故障排查
 description: 加载项未按预期激活的可能原因。
-ms.date: 06/03/2022
+ms.date: 08/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 40175139f83a026226bf500c7f949ff37e3f21b2
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: c0034eccc1143e3af9867702cdf7cefa6f6a8c53
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891933"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318884"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Outlook 加载项激活故障排查
 
@@ -60,24 +60,23 @@ Outlook 上下文外接程序激活基于加载项清单中的激活规则。 �
 
 使用以下方法之一验证是否禁用了加载项。
 
-- 在 Outlook 网页版中，直接登录到电子邮件帐户，然后从功能区中选择 **“获取加载项** ”。
+- 在Outlook 网页版中，直接登录到电子邮件帐户，然后从功能区中选择 **“获取加载项**”。
 
 - 在 Outlook on Windows 中，从功能区中选择 **“更多应用** ”，然后选择 **“获取加载项**”。
 
 - 在 Outlook on Mac 中，从功能区中选择省略号按钮 (`...`) ，然后选择 **“获取加载项**”。
 
-## <a name="does-the-tested-item-support-outlook-add-ins-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>已测试项是否支持 Outlook 外接程序？所选项目是否由至少为 Exchange 2013 的某个版本的 Exchange Server 提供？
+## <a name="does-the-tested-item-support-outlook-add-ins-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>已测试项是否支持 Outlook 加载项？所选项目是否由至少为 Exchange 2013 的某个版本的 Exchange Server 提供？
 
-如果你的 Outlook 加载项为阅读加载项，并且应该在用户查看消息（包括电子邮件、会议请求、响应和取消）或约会时激活，尽管这些项目通常支持加载项，但还是存在例外情况。 检查所选的项目是否是 [Outlook 加载项未激活列表](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)中的一项。
+如果你的 Outlook 加载项为阅读加载项，并且应该在用户查看消息（包括电子邮件、会议请求、响应和取消）或约会时激活，尽管这些项目通常支持加载项，但还是存在例外情况。 检查所选项目是否为 [未激活 Outlook 外接程序的列表](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins)项之一。
 
-此外，由于约会始终以 RTF 格式保存，因此指定 [BodyAsHTML](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) 的 **PropertyName** 值的 **ItemHasRegularExpressionMatch** 规则不会对以纯文本或 RTF 格式保存的约会或邮件激活加载项。
+此外，由于约会始终以富文本格式保存，因此指定 **BodyAsHTML** 的 **PropertyName** 值的 [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) 规则不会在以纯文本或富文本格式保存的约会或消息上激活加载项。
 
-即使某邮件项不是以上类型之一，如果该项不是使用至少为 Exchange 2013 的某个版本的 Exchange Server 传递，则不会在该项上确定已知实体和属性（如发件人的 SMTP 地址）。依赖这些实体或属性的任何激活规则将不会得到满足，并且加载项将不会激活。
+即使邮件项不是上述类型之一，如果该项不是由至少为 Exchange 2013 的Exchange Server版本传送的，该项上也不会标识已知实体和属性，例如发件人的 SMTP 地址。 任何依赖于这些实体或属性的激活规则都不会得到满足，并且不会激活加载项。
 
-如果您的加载项为撰写加载项并且应该在用户撰写邮件或会议请求时激活，请确保该项目未受 IRM 保护。 但是，有几个例外。
+在 Windows 以外的 Outlook 客户端中，如果加载项在用户撰写消息或会议请求时激活，请确保该项目不受信息权限管理 (IRM) 的保护。
 
-1. 加载项在与 Microsoft 365 订阅相关联的 Outlook 电子签名邮件上激活。 在Windows上，这个支持是通过8711.1000版本中引入的。
-1. 现在，Windows 版 Outlook 从内部版本 13229.10000 开始可以在受 IRM 保护的项目上激活加载项。  有关预览版中此支持的详细信息，请参阅信息 [权限管理 (IRM) 保护的项的加载项激活 ](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm)。
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>加载项清单是否安装正确，Outlook 是否有已缓存副本？
 
@@ -183,7 +182,7 @@ Outlook 上下文外接程序激活基于加载项清单中的激活规则。 �
 
 Outlook 富客户端使用的正则表达式引擎与 Outlook 网页版和移动设备版使用的正则表达式引擎不同。Outlook 富客户端使用作为 Visual Studio 标准模板库的一部分提供的 C++ 正则表达式引擎。此引擎符合 ECMAScript 5 标准。Outlook 网页版和移动设备版使用属于 JavaScript 一部分的正则表达式评估，由浏览器提供，且支持 ECMAScript 5 超集。
 
-虽然在大多数情况下，这些 Outlook 客户端在激活规则中为同一正则表达式查找相同的匹配项，但存在异常。 例如，如果正则表达式包含基于预定义字符类的自定义字符类，则 Outlook 富客户端可能会返回不同于 Outlook 网页版和移动设备的结果。 举例来说，其中包含速记字符类 `[\d\w]` 的字符类将返回不同的结果。 在这种情况下，若要避免不同应用程序上出现不同的结果，请改用 `(\d|\w)` 。
+虽然在大多数情况下，这些 Outlook 客户端在激活规则中为同一正则表达式查找相同的匹配项，但存在异常。 例如，如果正则表达式包含基于预定义字符类的自定义字符类，则 Outlook 富客户端可能会返回不同于Outlook 网页版和移动设备的结果。 举例来说，其中包含速记字符类 `[\d\w]` 的字符类将返回不同的结果。 在这种情况下，若要避免不同应用程序上出现不同的结果，请改用 `(\d|\w)` 。
 
 全面测试正则表达式。如果返回不同的结果，请重写正则表达式以兼容两个引擎。要验证 Outlook 富客户端上的评估结果，请编写一个小型 C++ 程序，该程序可将正则表达式应用于你尝试匹配的文本示例。在 Visual Studio 上运行时，C++ 测试程序将使用标准模板库，在运行相同正则表达式时模拟 Outlook 富客户端的行为。要验证 Outlook 网页版或移动设备版上的评估结果，请使用你喜爱的 JavaScript 正则表达式测试程序。
 

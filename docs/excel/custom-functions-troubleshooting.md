@@ -3,12 +3,12 @@ ms.date: 06/09/2022
 description: 排查 Excel 自定义函数的常见问题。
 title: 自定义函数疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 89d90b6ee94efac0230933313d2c16b5054dda61
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: a8d6121631c4d913402742f93598d3340956171c
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958557"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423137"
 ---
 # <a name="troubleshoot-custom-functions"></a>自定义函数疑难解答
 
@@ -20,7 +20,7 @@ ms.locfileid: "66958557"
 
 ## <a name="debugging-custom-functions"></a>调试自定义函数
 
-若要调试使用共享运行时的自定义函数加载项，请参阅 [配置 Office 外接程序以使用共享 JavaScript 运行时：调试](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug)。
+若要调试使用 [共享运行时的](../testing/runtimes.md#shared-runtime)自定义函数加载项，请参阅 [配置 Office 外接程序以使用共享运行时：调试](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug)。
 
 若要调试不使用共享运行时的自定义函数加载项，请参阅 [自定义函数调试](custom-functions-debugging.md)。
 

@@ -2,14 +2,14 @@
 title: 配置 Outlook 外接程序以进行基于事件的激活
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 08/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e31b5b305f4128e40ea3274c125e07fcaaa12aa5
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 2b0991c64bd4075f88a2965f3feacf1f27dc2bad
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797615"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423228"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置 Outlook 外接程序以进行基于事件的激活
 
@@ -18,7 +18,9 @@ ms.locfileid: "66797615"
 本演练结束时，你将拥有一个加载项，该加载项将在创建新项并设置主题时运行。
 
 > [!NOTE]
-> [要求集 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> [要求集 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) 中引入了对此功能的支持，要求[集 1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11) 现在支持其他事件。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+>
+> Outlook on iOS 或 Android 不支持基于事件的激活。
 
 ## <a name="supported-events"></a>支持的事件
 
@@ -38,8 +40,10 @@ ms.locfileid: "66797615"
 |`OnAppointmentTimeChanged`|在撰写约会时更改日期/时间。<br><br>特定于事件的数据对象： [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
 |`OnAppointmentRecurrenceChanged`|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间已更改， `OnAppointmentTimeChanged` 也会触发该事件。<br><br>特定于事件的数据对象： [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
 |`OnInfoBarDismissClicked`|在撰写邮件或约会项目时关闭通知。 只会通知添加通知的加载项。<br><br>特定于事件的数据对象： [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
-|`OnMessageSend`|发送消息项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup>|
-|`OnAppointmentSend`|发送约会项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup>|
+|`OnMessageSend`|发送消息项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
+|`OnAppointmentSend`|发送约会项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
+|`OnMessageCompose`|撰写新消息时 (包括答复、全部答复和转发) 或编辑草稿。|[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
+|`OnAppointmentOrganizer`|创建新约会或编辑现有约会时。|[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
 
 > [!NOTE]
 > Outlook on Windows 中<sup>基于事件的</sup> 1 个加载项至少需要Windows 10版本 1903 (内部版本 18362) 或 Windows Server 2019 版本 1903 才能运行。
@@ -76,7 +80,7 @@ ms.locfileid: "66797615"
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.3">
+      <bt:Sets DefaultMinVersion="1.10">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -87,7 +91,7 @@ ms.locfileid: "66797615"
           <!-- HTML file including reference to or inline JavaScript event handlers.
                This is used by Outlook on the web and Outlook on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
+            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -172,7 +176,7 @@ ms.locfileid: "66797615"
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook Desktop. -->
+        <!-- Entry needed for Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -189,10 +193,12 @@ ms.locfileid: "66797615"
 </VersionOverrides>
 ```
 
-Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页版和使用可引用同一 JavaScript 文件的 HTML 文件。 必须提供对清单节点中的 `Resources` 这两个文件的引用，因为 Outlook 平台最终决定是使用基于 Outlook 客户端的 HTML 还是 JavaScript。 因此，若要配置事件处理，请提供 HTML 在元素中 `Runtime` 的位置，然后在其 `Override` 子元素中提供 HTML 内联或引用的 JavaScript 文件的位置。
+Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页版和使用可引用同一 JavaScript 文件的 HTML 文件。 必须提供对清单节点中的 `Resources` 这两个文件的引用，因为 Outlook 平台最终决定是使用基于 Outlook 客户端的 HTML 还是 JavaScript。 因此，若要配置事件处理，请提供 HTML 在元素中 **\<Runtime\>** 的位置，然后在其 `Override` 子元素中提供 HTML 内联或引用的 JavaScript 文件的位置。
 
 > [!TIP]
-> 若要详细了解 Outlook 外接程序的清单，请参阅 [Outlook 加载项清单](manifests.md)。
+> 
+> - 若要了解加载项中的运行时，请参阅 [Office 加载项中的运行时](../testing/runtimes.md)。
+> - 若要详细了解 Outlook 外接程序的清单，请参阅 [Outlook 加载项清单](manifests.md)。
 
 ## <a name="implement-event-handling"></a>实现事件处理
 
@@ -321,8 +327,6 @@ Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页�
 
 ![Microsoft 365 管理中心上的“集成应用”页，包括“上传自定义应用”操作。](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource 和应用内 Office 应用商店：应尽快提供部署基于事件的加载项或更新现有加载项以包括基于事件的激活功能的功能。
-
 > [!IMPORTANT]
 > 基于事件的加载项仅限于管理员管理的部署。 目前，用户无法从 AppSource 或应用内 Office 应用商店获取基于事件的加载项。 若要了解详细信息，请参阅 [基于事件的 Outlook 外接程序的 AppSource 列表选项](autolaunch-store-options.md)。
 
@@ -356,13 +360,21 @@ JavaScript 文件中不支持导入，在该文件中，你在 Windows 客户端
 
 ### <a name="requesting-external-data"></a>请求外部数据
 
-可以使用 [提取等](https://developer.mozilla.org/docs/Web/API/Fetch_API) API 或使用 [XmlHttpRequest (XHR) ](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)（发出 HTTP 请求以与服务器交互的标准 Web API）来请求外部数据。
+可以使用 [提取等](https://developer.mozilla.org/docs/Web/API/Fetch_API) API 或使用 [XMLHttpRequest (XHR) ](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)（发出 HTTP 请求与服务器交互的标准 Web API）来请求外部数据。
 
-请注意，在创建 XmlHttpRequests 时，必须使用其他安全措施，这需要 [相同的源](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) 策略和简单的 [CORS](https://www.w3.org/TR/cors/)。
+请注意，在使用 XMLHttpRequest 对象时，必须使用其他安全措施，需要 [相同的源](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) 策略和简单的 [CORS (跨源资源共享) ](https://developer.mozilla.org/docs/Web/HTTP/CORS)。
 
-简单的 CORS 实现不能使用 Cookie，并且仅支持 GET、HEAD、POST)  (简单方法。 简单的 CORS 接受字段名称为 `Accept`、`Accept-Language`、`Content-Language` 的简单标题。 还可以在简单 CORS 中使用`Content-Type`标头，前提是内容类型为`application/x-www-form-urlencoded`或 `text/plain``multipart/form-data`。
+[简单的 CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#simple_requests) 实现：
 
-即将推出完整的 CORS 支持。
+- 不能使用 Cookie。
+- 仅支持简单的方法，例如 `GET`， `HEAD`和 `POST`。
+- 接受包含字段名称 `Accept`的简单标头， `Accept-Language`或 `Content-Language`。
+- 可以使用， `Content-Type`前提是内容类型是 `application/x-www-form-urlencoded`， `text/plain`或 `multipart/form-data`。
+- 无法在返回 `XMLHttpRequest.upload`的对象上注册事件侦听器。
+- 无法在请求中使用 `ReadableStream` 对象。
+
+> [!NOTE]
+> 从版本 2201（内部版本 16.0.14813.10000) ）开始，Outlook 网页版、Mac 和 Windows (中提供完整的 CORS 支持。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -4,12 +4,12 @@ description: 了解如何使用 JSON 清单生成简单的 Outlook 任务窗格�
 ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 41c39a6cf13854dd24a327e95f1857b92806b9ae
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
-ms.translationtype: HT
+ms.openlocfilehash: 0b78e36c5092e804c751569de66ef1ad41092776
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091046"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422752"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>使用 Teams 清单（预览版）生成 Outlook 加载项
 
@@ -177,7 +177,7 @@ ms.locfileid: "66091046"
 
 1. 如果写入邮件，需要提高加载项的权限。 滚动到属性 `authorization.permissions.resourceSpecific[0].name` 并将值更改为 `MailboxItem.ReadWrite.User`。
 
-1. 加载项命令运行代码而不是打开任务窗格时，必须在与运行任务窗格代码的嵌入式 Web 视图分开的 JavaScript 运行时中运行代码。 因此，清单必须指定其他运行时。 滚动到属性 `extension.runtimes` 并将以下对象添加到 `runtimes` 数组。 请务必在数组中已有的对象之后放置逗号。 关于此标记，请注意以下几点：
+1. 当加载项命令运行代码而不是打开任务窗格时，它必须在与运行任务窗格代码的嵌入式 Web 视图分开的运行时中运行代码。 因此，清单必须指定其他运行时。 滚动到属性 `extension.runtimes` 并将以下对象添加到 `runtimes` 数组。 请务必在数组中已有的对象之后放置逗号。 关于此标记，请注意以下几点。
 
     - `actions[0].id` 属性的值必须与添加到 **commands.ts** 文件的函数名称完全相同，在此情况中为 `insertHelloWorld`。 在后面的步骤中，将按此 ID 引用项目。
 

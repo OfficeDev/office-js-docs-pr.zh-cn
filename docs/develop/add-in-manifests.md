@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 09b4d5b2b9fc92c977217df94730b3e6e56cacaa
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: 2b429ce54ec03f7c5ba437b16451b0532ea3ce38
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659988"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422969"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -153,7 +153,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 可选的 [VersionOverrides](/javascript/api/manifest/versionoverrides) 元素值得特别提及。 它包含支持其他加载项功能的子标记。 其中一些为：
 
 - 自定义 Office 功能区和菜单。
-- 自定义 Office 与加载项在其中运行的嵌入式浏览器运行时一起工作的方式。
+- 自定义 Office 与在其中运行加载项的嵌入式运行时的工作方式。
 - 配置加载项如何与 Azure Active Directory 和 Microsoft Graph 交互以进行单一登录。
 
 `VersionOverrides` 的一些子代元素具有替代父级 `OfficeApp` 元素值的值。 例如，`VersionOverrides` 中的 `Hosts` 元素替代 `OfficeApp` 中的 `Hosts` 元素。

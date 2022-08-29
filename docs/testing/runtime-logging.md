@@ -3,22 +3,22 @@ title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f6fd5e2c184f9daceab999e371e0abab9146d5fb
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: cf917915ae875f9a3ea27c85e21c87f847eb4542
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745864"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423305"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 
 可以使用运行时日志记录调试加载项的清单以及多个安装错误。 此功能可以帮助你标识并修复清单中未被 XSD 架构验证检测到的问题，例如资源 ID 间的不匹配等。 运行时日志记录对于调试执行加载项命令的加载项和 Excel 自定义功能尤其有用。
 
 > [!NOTE]
-> 运行时日志记录功能当前适用于桌面Office 2016 或更高版本。
+> 运行时日志记录功能目前可用于桌面版 Office 2016 或更高版本。
 
 > [!IMPORTANT]
-> 运行时日志记录功能影响性能。仅在需要调试加载项清单问题时，才启用此功能。
+> 运行时日志记录影响性能。 请仅在需要调试外接程序清单中的问题时启用此功能。
 
 ## <a name="use-runtime-logging-from-the-command-line"></a>使用命令行中的运行时日志
 
@@ -71,7 +71,7 @@ ms.locfileid: "63745864"
 
 注册表应如下图所示。 若要禁用此功能，请从注册表中删除 `RuntimeLogging`。
 
-![具有 RuntimeLogging 注册表项的注册表编辑器的屏幕截图。](../images/runtime-logging-registry.png)
+![注册表编辑器的屏幕截图，其中包含运行时日志记录注册表项。](../images/runtime-logging-registry.png)
 
 ## <a name="runtime-logging-on-mac"></a>Mac 上的运行时日志记录
 
@@ -85,7 +85,7 @@ ms.locfileid: "63745864"
 
     `<bundle id>` 确定了主机要对哪些运行时日志记录。 `<file_name>` 是要将日志写入的文本文件的名称。
 
-    设置为 `<bundle id>` 以下值之一以启用相应应用程序的运行时日志记录。
+    设置 `<bundle id>` 为以下值之一，为相应的应用程序启用运行时日志记录。
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
@@ -146,3 +146,4 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 - [使用适用于 Internet Explorer 的开发人员工具调试加载项](debug-add-ins-using-f12-tools-ie.md)
 - [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
 - [使用 Microsoft Edge（基于 Chromium）中的开发人员工具调试加载项](debug-add-ins-using-devtools-edge-chromium.md) 
+- [Office 加载项中的运行时](runtimes.md)

@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在 Office 加载项中创建对话框的基础知识。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 61b9da4d3d6f3182cb97402c7173bce250a52061
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 0f4bdbcbcf725e04d0fd44886b6bf5520fe9ebd0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958480"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423102"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -86,7 +86,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 > [!NOTE]
 >
-> - 为了清楚起见，在本部分中，我们将消息调用主机 *页*，但严格地说，这些消息将转到任务窗格 (或托管函数 [文件](/javascript/api/manifest/functionfile)) 运行时的 *JavaScript 运行时*。 只有在跨域消息传送的情况下，这种区别才很重要。 有关详细信息，请参阅[向主机运行时间跨域消息传递](#cross-domain-messaging-to-the-host-runtime)。
+> - 为了清楚起见，在本部分中，我们将消息调用主机 *页*，但严格地说，消息将转到任务窗格中的 [运行时](../testing/runtimes.md) (或托管函数 [文件](/javascript/api/manifest/functionfile) 的运行时) 。 只有在跨域消息传送的情况下，这种区别才很重要。 有关详细信息，请参阅[向主机运行时间跨域消息传递](#cross-domain-messaging-to-the-host-runtime)。
 > - 除非在页面中加载了 Office JavaScript API 库，否则对话框无法与任务窗格中的主机页通信。  (与使用 Office JavaScript API 库的任何页面一样，该页面的脚本必须初始化加载项。 有关详细信息，请参阅 [“初始化 Office 加载项](initialize-add-in.md)) 
 
 对话框中的代码使用 [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) 函数将字符串消息发送到主机页。 该字符串可以是字词、句子、XML Blob、字符串化 JSON，也可以是可序列化为字符串或强制转换为字符串的任何其他内容。 示例如下。
@@ -217,7 +217,7 @@ function processMessage(arg) {
 
 ### <a name="cross-domain-messaging-to-the-host-runtime"></a>到主机运行时的跨域消息传送
 
-对话框或父 JavaScript 运行时可以在对话框打开后从外接程序的域中导航。 如果发生上述任一情况，则调用 `messageParent` 将失败，除非代码指定父运行时的域。 为此，请将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到调用 。`messageParent` 此对象具有一个 `targetOrigin` 属性，该属性指定应向其发送消息的域。 如果未使用该参数，Office 假定目标与对话当前托管的域相同。
+对话框打开后，对话框或父运行时可能会从外接程序的域中导航。 如果发生上述任一情况，则调用 `messageParent` 将失败，除非代码指定父运行时的域。 为此，请将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到调用 。`messageParent` 此对象具有一个 `targetOrigin` 属性，该属性指定应向其发送消息的域。 如果未使用该参数，Office 假定目标与对话当前托管的域相同。
 
 > [!NOTE]
 > 用于 `messageParent` 发送跨域消息需要 [对话框源 1.1 要求集](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)。 在 `DialogMessageOptions` 不支持要求集的较旧版本的 Office 上忽略该参数，因此，如果传递该参数，该方法的行为将不受影响。
@@ -340,7 +340,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>跨域消息传送到对话框运行时
 
-对话框或父 JavaScript 运行时可以在对话框打开后从外接程序的域中导航。 如果发生上述任一情况，则除非代码指定对话运行时的域，否则调 `messageChild` 用将失败。 为此，请将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到调用 。`messageChild` 此对象具有一个 `targetOrigin` 属性，该属性指定应向其发送消息的域。 如果未使用该参数，Office 假定目标与父运行时当前托管的域相同。
+对话框打开后，对话框或父运行时可能会从外接程序的域中导航。 如果发生上述任一情况，则除非代码指定对话运行时的域，否则调 `messageChild` 用将失败。 为此，请将 [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) 参数添加到调用 。`messageChild` 此对象具有一个 `targetOrigin` 属性，该属性指定应向其发送消息的域。 如果未使用该参数，Office 假定目标与父运行时当前托管的域相同。
 
 > [!NOTE]
 > 用于 `messageChild` 发送跨域消息需要 [对话框源 1.1 要求集](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)。 在 `DialogMessageOptions` 不支持要求集的较旧版本的 Office 上忽略该参数，因此，如果传递该参数，该方法的行为将不受影响。
@@ -357,7 +357,7 @@ dialog.messageChild(messageToDialog, { targetOrigin: "https://resource.contoso.c
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-由于托管对话框的 JavaScript 运行时无法访问 **\<AppDomains\>** 清单部分，从而确定 *消息来自的* 域是否受信任，因此必须使用 `DialogParentMessageReceived` 处理程序来确定这一点。 传递给处理程序的对象包含当前托管在父级中作为其 `origin` 属性的域。 下面是如何使用该属性的示例。
+由于托管对话框的运行时无法访问 **\<AppDomains\>** 清单部分，从而确定 *消息来自的* 域是否受信任，因此必须使用 `DialogParentMessageReceived` 处理程序来确定这一点。 传递给处理程序的对象包含当前托管在父级中作为其 `origin` 属性的域。 下面是如何使用该属性的示例。
 
 ```javascript
 function onMessageFromParent(arg) {
@@ -460,3 +460,7 @@ function processMessage(arg) {
 - [Office 外接程序 Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
 - [Office 加载项 OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 - [Office 加载项 UX 设计模式代码](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+
+** 另请参阅**
+
+- [Office 加载项中的运行时](../testing/runtimes.md)

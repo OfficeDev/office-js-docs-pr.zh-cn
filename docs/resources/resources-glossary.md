@@ -1,14 +1,14 @@
 ---
 title: Office 加载项术语表
 description: 常在 Office 加载项文档中使用的术语表。
-ms.date: 06/15/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 77bf8a04886e35b3678dfa3054ca166c2aed2512
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: db15b4afcdf37122edc563ae9257ce7a61fb4580
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660212"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423291"
 ---
 # <a name="office-add-ins-glossary"></a>Office 加载项术语表
 
@@ -74,9 +74,9 @@ Office 2013 引入了常见 API，用于与 Office 2013 或更高版本交互。
 
 ## <a name="custom-functions-runtime"></a>自定义函数运行时
 
-**自定义函数运行时** 是仅运行自定义函数的仅限 JavaScript 的运行时。 它没有 UI，无法与Office.js API 交互。 如果外接程序仅具有自定义函数，则这是一个不错的轻型运行时。 如果自定义函数需要与任务窗格交互或Office.js API，请配置共享 JavaScript 运行时。 查看 [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md) 以了解更多信息。
+**自定义函数运行时** 是 [仅限 JavaScript 的运行时](../testing/runtimes.md#javascript-only-runtime)，可在 Office 主机和平台的某些组合上运行自定义函数。 它没有 UI，无法与Office.js API 交互。 如果外接程序仅具有自定义函数，则这是一个不错的轻型运行时。 如果自定义函数需要与任务窗格或Office.js API 交互，请配置 [共享运行时](../testing/runtimes.md#shared-runtime)。 请参阅 [“配置 Office 外接程序”以使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md) 了解详细信息。
 
-另请参阅： [JavaScript 运行时](#javascript-runtime)、 [共享 JavaScript 运行时、共享运行时](#shared-javascript-runtime-shared-runtime)。
+另请参阅： [运行时](#runtime)、 [共享运行时](#shared-runtime)。
 
 ## <a name="host"></a>host
 
@@ -84,11 +84,7 @@ Office 2013 引入了常见 API，用于与 Office 2013 或更高版本交互。
 
 另请参阅： [应用程序](#application)、 [客户端](#client)、 [Office 应用程序、Office 客户端](#office-application-office-client)。
 
-## <a name="javascript-runtime"></a>JavaScript 运行时
 
-**JavaScript 运行时** 是外接程序在其中运行的浏览器主机环境。 在 Office on Windows 和 Office on Mac 中，JavaScript 运行时是嵌入式浏览器控件 (或 Web 视图) ，例如 Internet Explorer、Edge Legacy、Edge WebView2 或 Safari。 外接程序的不同部分在单独的 JavaScript 运行时中运行。 例如，外接程序命令、自定义函数和任务窗格代码通常使用单独的 JavaScript 运行时，除非配置共享 JavaScript 运行时。 有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md) 。
-
-另请参阅： [自定义函数运行时](#custom-functions-runtime)、 [共享 JavaScript 运行时、共享运行时](#shared-javascript-runtime-shared-runtime)、 [Web 视图](#webview)。
 
 ## <a name="office-application-office-client"></a>Office 应用程序、Office 客户端
 
@@ -116,13 +112,15 @@ Office 2013 引入了常见 API，用于与 Office 2013 或更高版本交互。
 
 ## <a name="runtime"></a>运行
 
-请参阅： [JavaScript 运行时](#javascript-runtime)。
+**运行时** 是主机环境 (包括 JavaScript 引擎，通常也是外接程序运行的 HTML 呈现引擎) 。 在 Office on Windows 和 Office on Mac 中，运行时是嵌入式浏览器控件 (或 Web 视图) ，例如 Internet Explorer、Edge Legacy、Edge WebView2 或 Safari。 外接程序的不同部分在单独的运行时中运行。 例如，外接程序命令、自定义函数和任务窗格代码通常使用单独的运行时，除非配置 [共享运行时](../testing/runtimes.md#shared-runtime)。 有关详细信息，请参阅 [Office 加载项使用的 Office 加载项](../testing/runtimes.md) 和 [浏览器中的](../concepts/browsers-used-by-office-web-add-ins.md) 运行时。
 
-## <a name="shared-javascript-runtime-shared-runtime"></a>共享 JavaScript 运行时、共享运行时
+另请参阅： [自定义函数运行时](#custom-functions-runtime)、 [共享运行时](#shared-runtime)、 [Webview](#webview)。
 
-**共享 JavaScript 运行时** 或 **共享运行时** 允许加载项中的所有代码（包括任务窗格、外接程序命令和自定义函数）在同一 JavaScript 运行时中运行，即使在任务窗格关闭时也继续运行。 请参阅 [配置 Office 外接程序以使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md) 和 [有关在 Office 外接程序中使用共享 JavaScript 运行时的提示](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) ，了解详细信息。
+## <a name="shared-runtime"></a>共享运行时
 
-另请参阅： [自定义函数运行时](#custom-functions-runtime)、 [JavaScript 运行时](#javascript-runtime)。
+**共享运行时** 允许加载项中的所有代码（包括任务窗格、外接程序命令和自定义函数）在同一运行时运行，即使在任务窗格关闭时也继续运行。 有关[在 Office 加载项中使用共享运行时的共享运行时](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/)，请参阅[共享运行时](../testing/runtimes.md#shared-runtime)和提示，了解详细信息。
+
+另请参阅： [自定义函数运行时](#custom-functions-runtime)、 [运行时](#runtime)。
 
 ## <a name="task-pane"></a>任务窗格
 
@@ -138,7 +136,7 @@ Office 2013 引入了常见 API，用于与 Office 2013 或更高版本交互。
 
 ## <a name="custom-functions-only-add-in"></a>仅自定义函数加载项
 
-包含自定义函数但不包含任务窗格等 UI 的加载项。 此类外接程序中的自定义函数在仅限 JavaScript 的运行时中运行。 包含 UI 的自定义函数可以使用共享运行时或仅限 JavaScript 的运行时和支持 HTML 的运行时的组合。 我们建议，如果有 UI，则使用共享运行时。 
+包含自定义函数但不包含任务窗格等 UI 的加载项。 此类外接程序中的自定义函数在 [仅限 JavaScript 的运行时中运行](../testing/runtimes.md#javascript-only-runtime)。 包含 UI 的自定义函数可以使用共享运行时或仅限 JavaScript 的运行时和支持 HTML 的运行时的组合。 我们建议，如果有 UI，则使用共享运行时。 
 
 另请参阅： [自定义函数](#custom-function)、 [自定义函数运行时](#custom-functions-runtime)。
 

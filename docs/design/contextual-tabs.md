@@ -3,12 +3,12 @@ title: 在 Office 加载项中创建自定义上下文选项卡
 description: 了解如何将自定义上下文选项卡添加到 Office 外接程序。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f6c64d1b3f0e95b8dcae6bc36563566acb8b3f
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 09cd7ad6e9c8f4e8370df430a5b79a70d7bf0dd0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958530"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423053"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>在 Office 加载项中创建自定义上下文选项卡
 
@@ -55,7 +55,7 @@ ms.locfileid: "66958530"
 
 ## <a name="configure-the-add-in-to-use-a-shared-runtime"></a>将外接程序配置为使用共享运行时
 
-添加自定义上下文选项卡需要外接程序使用共享运行时。 有关详细信息，请参阅 [配置加载项以使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
+添加自定义上下文选项卡需要外接程序使用 [共享运行时](../testing/runtimes.md#shared-runtime)。 有关详细信息，请参阅 [配置加载项以使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)。
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>定义显示在选项卡上的组和控件
 
@@ -419,7 +419,7 @@ function myContextChanges() {
 
 > [!IMPORTANT]
 >
-> - 为操作指定某个 `sourceLocation` 操作时，任务窗格 *不* 使用共享运行时。 它在新的 JavaScript 运行时中运行。
+> - 为操作指定某个 `sourceLocation` 操作时，任务窗格 *不* 使用共享运行时。 它在新的单独运行时中运行。
 > - 不能使用多个任务窗格来使用共享运行时，因此，任何类型 `ShowTaskpane` 操作都不能省略该 `sourceLocation` 属性。
 
 ```json

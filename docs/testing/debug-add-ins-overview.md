@@ -3,12 +3,12 @@ title: 调试 Office 加载项
 description: 查找开发环境的 Office 加载项调试指南。
 ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 18738896789e6b3e00734d0f7d4af0ce5cdd7458
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: f23e55b2d3ceb84e32365ffbbcb9efafedfebcfc
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958760"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423270"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>调试 Office 加载项概述
 
@@ -63,7 +63,7 @@ ms.locfileid: "66958760"
     - [使用旧版 Edge 开发人员工具调试加载项](debug-add-ins-using-devtools-edge-legacy.md)
     - [使用 Microsoft Edge（基于 Chromium）中的开发人员工具调试加载项](debug-add-ins-using-devtools-edge-chromium.md)
 
-有关正在使用哪个浏览器运行时的信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+有关要使用的运行时的信息，请参阅 Office 加载项和 [Office 加载项中的运行时](runtimes.md)[使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
@@ -86,3 +86,7 @@ ms.locfileid: "66958760"
 ## <a name="debug-add-ins-in-staging-or-production"></a>在暂存或生产中调试加载项
 
 要调试已在暂存或生产中的加载项，请从加载项的 UI 附加调试程序。 要了解说明，请参阅 [从任务窗格中附加调试程序](attach-debugger-from-task-pane.md)。
+
+## <a name="see-also"></a>另请参阅
+
+- [Office 加载项中的运行时](runtimes.md)

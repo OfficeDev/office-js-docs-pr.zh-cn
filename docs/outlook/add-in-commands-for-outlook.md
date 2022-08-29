@@ -3,12 +3,12 @@ title: Outlook 加载项命令
 description: Outlook 加载项命令提供了通过添加按钮或下拉菜单从功能区启动特定加载项操作的方法。
 ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d58f8cd76f965007fdc9621c53fe52ed18dd6dd9
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
-ms.translationtype: HT
+ms.openlocfilehash: 80f1e1f4386b41012b2aa777c16225d3f0fd8432
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797685"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423242"
 ---
 # <a name="add-in-commands-for-outlook"></a>适用于 Outlook 的外接程序命令
 
@@ -64,7 +64,7 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 - **函数命令**：按钮或菜单项运行任意 JavaScript。 代码几乎总是在 Office JavaScript 库中调用 API，但并非必须如此。 此类型的加载项通常不显示按钮或菜单项本身以外的 UI。 请注意以下有关函数命令的内容：
 
    - 触发的函数可以调用 [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) 方法来显示对话框，这是显示错误、显示进度或提示用户输入的好方法。
-   - 运行函数命令的 JavaScript 运行时是基于浏览器的完整运行时。 它可以呈现 HTML 并调用 Internet 以发送或获取数据。
+   - 函数命令运行的运行时是基于 [浏览器的完整运行时](../testing/runtimes.md#browser-runtime)。 它可以呈现 HTML 并调用 Internet 以发送或获取数据。
 
 ### <a name="run-a-function-command"></a>运行函数命令
 

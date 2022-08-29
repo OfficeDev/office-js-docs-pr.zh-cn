@@ -3,12 +3,12 @@ title: 排查 Office 加载项中的开发错误
 description: 了解如何排查 Office 加载项中的开发错误。
 ms.date: 07/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 18236787ad6ffa9139eb95299723c8935d584668
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
+ms.openlocfilehash: 8dc0c2b7614a4d1ea43219ccfd440fd019811d79
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177663"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423193"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>排查 Office 加载项中的开发错误
 
@@ -80,7 +80,7 @@ myChart.id = "5";
 
 ## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>Visual Studio 项目中的清单架构验证错误
 
-如果使用的是需要更改清单文件的较新功能，则可能会在 Visual Studio 中收到验证错误。 例如，添加 **\<Runtimes\>** 元素以实现共享 JavaScript 运行时时，可能会看到以下验证错误。
+如果使用的是需要更改清单文件的新功能，则可能会在 Visual Studio 中收到验证错误。 例如，添加 **\<Runtimes\>** 元素以实现 [共享运行时](runtimes.md#shared-runtime)时，可能会看到以下验证错误。
 
 **命名空间“”中的元素“http://schemas.microsoft.com/office/taskpaneappversionoverridesHost”在命名空间http://schemas.microsoft.com/office/taskpaneappversionoverrides“”中具有无效的子元素“Runtimes”**
 
@@ -120,4 +120,5 @@ myChart.id = "5";
 - [验证 Office 加载项的清单](troubleshoot-manifest.md)
 - [使用运行时日志记录功能调试加载项](runtime-logging.md)
 - [排查 Office 加载项中的用户错误](testing-and-troubleshooting.md)
+- [Office 加载项中的运行时](runtimes.md)
 - [Microsoft Q&A (office-js-dev) ](/answers/topics/office-js-dev.html)

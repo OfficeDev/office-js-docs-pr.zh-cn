@@ -5,12 +5,12 @@ ms.date: 12/27/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 393777730a6f4889d7d053382fd885de3714a4d9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: 361be486ee45cae87b5cd66e2099dc939418a491
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744359"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422871"
 ---
 # <a name="use-data-types-with-custom-functions-in-excel-preview"></a>在 Excel 中将数据类型与自定义函数配合使用（预览版）
 
@@ -99,4 +99,4 @@ function getEntityAttribute(value, attribute) {
 
 * [ Excel 加载项中的数据类型的概述](excel-data-types-overview.md)
 * [Excel 数据类型核心概念](excel-data-types-concepts.md)
-* [将 Office 加载项配置为使用共享 JavaScript 运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+* [将 Office 外接程序配置为使用共享运行时](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
