@@ -1,14 +1,14 @@
 ---
 title: 从自定义函数调用 Excel JavaScript API
 description: 了解可以从自定义函数调用的 Excel JavaScript API。
-ms.date: 07/18/2022
+ms.date: 08/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: aa22cb007bb4803863c17e0f72876cc58c15b992
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 8d1cbf6d07e4ede5b8309e899828f8f1d8ad1fa0
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423186"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464830"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>从自定义函数调用 Excel JavaScript API
 
@@ -48,18 +48,16 @@ async function getRangeValue(address) {
 
 ## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>通过自定义函数调用 Excel JavaScript API 的限制
 
-不要从更改 Excel 环境的自定义函数调用 Excel JavaScript API。 这意味着自定义函数不应执行以下任一操作：
+自定义函数外接程序可以调用 Excel JavaScript API，但应对其调用的 API 谨慎。 不要从自定义函数调用 Excel JavaScript API，该函数会更改运行自定义函数的单元格外部的单元格。 更改其他单元格或 Excel 环境可能会导致 Excel 应用程序中性能不佳、超时和无限循环。 这意味着自定义函数不应执行以下任一操作：
 
 - 在电子表格上插入、删除或设置单元格的格式。
 - 更改另一个单元格的值。
 - 将工作表移动、重命名、删除或添加到工作簿。
-- 更改任何环境选项，例如计算模式或屏幕视图。
 - 将名称添加到工作簿。
-- 设置属性或执行大多数方法。
+- 设置属性。
+- 更改任何 Excel 环境选项，例如计算模式或屏幕视图。
 
-更改 Excel 可能会导致性能不佳、超时和无限循环。 执行 Excel 重新计算时不应运行自定义函数计算，因为它将导致不可预知的结果。
-
-而是从功能区按钮或任务窗格的上下文对 Excel 进行更改。
+自定义函数外接程序可以从运行自定义函数的单元格外部的单元格中读取信息，但不应对其他单元格执行写入操作。 而是从功能区按钮或任务窗格的上下文更改其他单元格或 Excel 环境。 此外，自定义函数计算不应在执行 Excel 重新计算时运行，因为此方案会创建不可预知的结果。
 
 ## <a name="next-steps"></a>后续步骤
 

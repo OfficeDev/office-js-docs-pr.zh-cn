@@ -3,12 +3,12 @@ title: 创建使用单一登录的 ASP.NET Office 加载项
 description: 有关如何使用 ASP.NET 后端创建 (或转换) Office 加载项以使用单一登录 (SSO) 的分步指南。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 403730f953a4f53d853a0ecd3b12cd477f7e7176
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: e3ec0982aef53e729a20f58c6be3ddb4d9389849
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958830"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464809"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 ASP.NET Office 加载项
 
@@ -351,7 +351,7 @@ ms.locfileid: "66958830"
     }
     ```
 
-1. 将 `TODO 6` 替换为以下代码。
+1. 替换 `TODO 6` 为以下内容：
 
     ```javascript
     if (exceptionMessage) {
@@ -373,7 +373,7 @@ ms.locfileid: "66958830"
     }
     ```
 
-1. 将 `TODO 8` 替换为以下代码。
+1. 替换 `TODO 8` 为以下内容：
 
     ```javascript
     else {

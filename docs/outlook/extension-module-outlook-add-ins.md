@@ -1,18 +1,21 @@
 ---
 title: 模块扩展 Outlook 加载项
 description: 可以创建在 Outlook 中运行的应用程序，以便用户无需退出 Outlook 即可轻松地访问业务信息和工作效率工具。
-ms.date: 05/27/2020
+ms.date: 08/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6715a98cca70fbf5e7a2caae2fa2d37e35479d19
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d234f4e1aad77b3cc30d0e9bc9450ec79af958aa
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152414"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464802"
 ---
 # <a name="module-extension-outlook-add-ins"></a>模块扩展 Outlook 加载项
 
 模块扩展加载项与邮件、任务和日历一起显示在 Outlook 导航栏中。 模块扩展不限于使用邮件和约会信息。 可以创建在 Outlook 中运行的应用程序，以便用户无需退出 Outlook 即可轻松地访问业务信息和工作效率工具。
+
+> [!TIP]
+> Teams 清单中不支持模块扩展 [ (预览) ](../develop/json-manifest-overview.md)，但可以通过在 [Outlook 中打开个人选项卡](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab)为用户创建非常相似的体验。 在 Outlook 外接程序中 Teams 清单的早期预览期内，无法在同一清单中合并 Outlook 外接程序和个人选项卡，并将其安装为单元。 我们正在努力解决此问题，但与此同时，必须为加载项和个人选项卡创建单独的应用。它们都可以在同一域上使用文件。
 
 > [!NOTE]
 > 仅 Windows 上的 Outlook 2016 或更高版本支持模块扩展。  
@@ -31,7 +34,9 @@ ms.locfileid: "59152414"
 
 ![当多个模块扩展在 Outlook 中加载时，显示展开的导航栏。](../images/outlook-module-navigationbar-more.png)
 
-在单击扩展时，Outlook 会将内置模块替换为自定义模块，以便用户可以与该加载项进行交互。 你可以使用外接程序中 Outlook JavaScript API 的所有功能，可以在与外接程序内容交互的 Outlook 功能区中创建命令按钮。 以下屏幕截图显示集成在 Outlook 导航栏中的加载项，并拥有将更新该加载项内容的功能区命令。
+在单击扩展时，Outlook 会将内置模块替换为自定义模块，以便用户可以与该加载项进行交互。 可以在加载项中使用 Outlook JavaScript API 的一些功能。 逻辑上假定特定 Outlook 项（如消息或约会）的 API 在模块扩展中不起作用。 该模块还可以在 Outlook 功能区中包含与加载项页面交互的函数命令。 为此，函数命令调用 [Office.onReady 或 Office.initialize 方法](../develop/initialize-add-in.md) 和 [Event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) 方法。 若要演练如何配置模块扩展 Outlook 外接程序，请参阅 [Outlook 模块扩展计费小时示例](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension)。
+
+以下屏幕截图显示了一个外接程序，该外接程序集成在 Outlook 导航栏中，并具有用于更新外接程序页面的功能区命令。
 
 ![显示模块扩展的用户界面。](../images/outlook-module-extension.png)
 

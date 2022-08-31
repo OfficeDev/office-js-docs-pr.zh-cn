@@ -3,29 +3,29 @@ title: 在 Office 网页版中调试加载项
 description: 如何使用 Office 网页版来测试和调试加载项。
 ms.date: 03/06/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f7bfee127b69b965720ddc84c676c9f78de5bc
-ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
+ms.openlocfilehash: 3071509a22f0c563b1202bd29da996f3dbaaf9cc
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "66136460"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464823"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>在 Office 网页版中调试加载项
 
 本文介绍如何使用Office web 版调试加载项。使用此技术：
 
-- 在未运行Windows或Office桌面客户&mdash;端的计算机上调试加载项（例如，如果是在 Mac 或 Linux 上进行开发）。
-- 如果不能或不希望在 IDE 中进行调试，例如Visual Studio或Visual Studio Code，则作为替代调试过程。
+- 在未运行 Windows 或 Office 桌面客户&mdash;端的计算机上调试加载项（例如，如果是在 Mac 或 Linux 上进行开发）。
+- 如果不能或不希望在 IDE 中调试（如 Visual Studio 或 Visual Studio Code），则作为替代调试过程。
 
-本文假定你有一个需要调试的加载项项目。 如果只想在 Web 上练习调试，请使用特定Office应用程序的快速入门之一创建新项目，例如 [Word 的快速入门](../quickstarts/word-quickstart.md)。
+本文假定你有一个需要调试的加载项项目。 如果只想在 Web 上练习调试，请使用特定 Office 应用程序的快速入门之一创建新项目，例如 [Word 的快速入门](../quickstarts/word-quickstart.md)。
 
 ## <a name="debug-your-add-in"></a>调试加载项
 
 若要使用 Office 网页版调试加载项，请执行以下操作：
 
-1. 在 localhost 上运行该项目，并将其旁加载到Office web 版中的文档。 有关详细的旁加载说明，请参阅 [Web 上的旁加载Office加载项](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually)。
+1. 在 localhost 上运行该项目，并将其旁加载到Office web 版中的文档。 有关详细的旁加载说明，请参阅 [Web 上的旁加载 Office 加载项](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually)。
 
-2. 打开浏览器的开发人员工具。 这通常通过按 F12 来完成。 打开调试器工具并使用它来设置断点和监视变量。 有关使用浏览器工具的详细帮助，请参阅以下内容之一。  
+2. 打开浏览器的开发人员工具。 这通常通过按 F12 来完成。 打开调试器工具并使用它来设置断点和监视变量。 有关使用浏览器工具的详细帮助，请参阅以下内容之一：
 
    - [Firefox](https://firefox-source-docs.mozilla.org/devtools-user/index.html)
    - [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)

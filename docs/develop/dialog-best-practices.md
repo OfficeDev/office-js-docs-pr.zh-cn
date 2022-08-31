@@ -3,12 +3,12 @@ title: Office 对话框 API 最佳做法和规则
 description: 为 Office 对话框 API 提供规则和最佳做法，例如单页应用程序 (SPA) 的最佳做法。
 ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bdb92ba89faa63a5ca869be869f0a03cce91dba2
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: ca50e637d4b6557f508c682d2c3219f4f7dedca7
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958676"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464837"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Office 对话框 API 最佳做法和规则
 
@@ -41,7 +41,7 @@ ms.locfileid: "66958676"
 
 ### <a name="handle-pop-up-blockers-with-office-on-the-web"></a>使用Office web 版处理弹出窗口阻止程序
 
-尝试在使用Office web 版时显示对话框可能会导致浏览器的弹出窗口阻止程序阻止该对话框。 如果发生这种情况，Office web 版将打开如下所示的提示。
+尝试在使用Office web 版时显示对话框可能会导致浏览器的弹出窗口阻止程序阻止该对话框。 如果发生这种情况，Office web 版将打开如下所示的提示：
 
 ![显示提示的屏幕截图，其中包含简短说明以及加载项可以生成的“允许和忽略”按钮，以避免浏览器中弹出的阻止程序](../images/dialog-prompt-before-open.png)
 

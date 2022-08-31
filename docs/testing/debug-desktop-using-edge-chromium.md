@@ -3,12 +3,12 @@ title: 使用 Visual Studio Code 和 Microsoft Edge WebView2（基于 Chromium�
 description: 了解如何在 VS Code 中调试使用 Microsoft Edge WebView2（基于 Chromium）的 Office 加载项。
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 58c676ada092ff31737da4b257bbd6e5e158c0dc
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 314799922b8d3687d8a24e93c49143cd3aa37e06
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423298"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464816"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>使用 Visual Studio Code 和 Microsoft Edge WebView2（基于 Chromium）在 Windows 上调试加载项
 
@@ -37,7 +37,7 @@ ms.locfileid: "67423298"
 
 1. 第一步取决于项目及其创建方式。
 
-   - 如果要创建一个项目以在 Visual Studio Code 中试验调试，请使用 [适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)。若要执行此操作，请使用我们的任何快速入门指南（如 [Outlook 加载项快速入门](../quickstarts/outlook-quickstart.md)）。 
+   - 如果要创建一个项目来试验Visual Studio Code中的调试，请使用 [Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)。若要执行此操作，请使用任何一个快速入门指南（例如 [Outlook 加载项快速入](../quickstarts/outlook-quickstart.md)门）。
    - 如果要调试使用 Yo Office 创建的现有项目，请跳到下一步。
    - 如果要调试未使用 Yo Office 创建的现有项目，请完成 [附录 A](#appendix-a) 中的过程，然后返回到此过程的下一步。
 

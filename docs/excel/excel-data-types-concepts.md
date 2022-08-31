@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: a251f13540989aa30c3e213e1572747e08c121c4
-ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
-ms.translationtype: HT
+ms.openlocfilehash: 4efb3f29ee3791b78c45db01ca53f8c48c17b752
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "66765270"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464774"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel 数据类型核心概念（预览版）
 
@@ -57,7 +57,7 @@ ms.locfileid: "66765270"
 
 `valuesAsJson` 返回的每个单元格值类型使用为该类型设计的 JSON 元数据架构。 除了每个数据类型特有的附加属性，这些 JSON 元数据架构都具有共同的 `type`、`basicType` 和 `basicValue` 属性。
 
-`type` 定义数据的 [CellValueType](/javascript/api/excel/excel.cellvaluetype)。 当数据类型不受支持或格式不正确时，`basicType` 属性始终为只读，并用作回退。 `basicValue` 与将由 `values` 属性返回的值匹配。 `basicValue` 在计算遇到不兼容方案时用作回退，例如不支持数据类型功能的较旧版本的 Excel。 `basicValue` 对于 `ArrayCellValue`、`EntityCellValue`、`LinkedEntityCellValue` 和 `WebImageCellValue` 数据类型为只读。
+`type` 定义数据的 [CellValueType](/javascript/api/excel/excel.cellvaluetype)。 始终 `basicType` 为只读，在数据类型不受支持或格式不正确时用作回退。 `basicValue` 与将由 `values` 属性返回的值匹配。 `basicValue` 在计算遇到不兼容方案时用作回退，例如不支持数据类型功能的较旧版本的 Excel。 是`basicValue`只读的`ArrayCellValue`类型、`EntityCellValue``LinkedEntityCellValue`数据类型和`WebImageCellValue`数据类型。
 
 除了所有数据类型共享的三个字段之外，每个 `*CellValue` 的 JSON 元数据架构都有根据该类型的可用属性。 例如，[WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) 类型包括 `altText` 和 `attribution` 属性，而 [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) 类型则提供 `properties` 和 `text` 字段。
 
@@ -75,7 +75,7 @@ ms.locfileid: "66765270"
 const myDate: Excel.FormattedNumberCellValue = {
     type: Excel.CellValueType.formattedNumber,
     basicValue: 32889.0,
-    basicType: Excel.RangeValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.double, // A read-only property. Used as a fallback in incompatible scenarios.
     numberFormat: "m/d/yyyy"
 };
 ```
@@ -102,8 +102,8 @@ const myEntity: Excel.EntityCellValue = {
             basicValue: "I love llamas."
         }
     }, 
-    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
-    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A read-only property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A read-only property. Used as a fallback in incompatible scenarios.
 };
 ```
 
@@ -126,8 +126,8 @@ const myEntity: Excel.EntityCellValue = {
 const myImage: Excel.WebImageCellValue = {
     type: Excel.CellValueType.webImage,
     address: "https://bit.ly/2YGOwtw", 
-    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
-    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A read-only property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A read-only property. Used as a fallback in incompatible scenarios.
 };
 ```
 

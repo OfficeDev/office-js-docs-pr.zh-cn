@@ -3,12 +3,12 @@ title: 使用 Visual Studio Code 和 Microsoft Edge 旧版 WebView （EdgeHTML�
 description: 了解如何在 VS Code 中使用 Office 加载项调试器扩展调试使用 Microsoft Edge 旧版 WebView (EdgeHTML) 的 Office 加载项。
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e503d3a79b5fa4b797bb9c6ee657b7d8916109
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 8dc709893070e4bfd9d7ae39adb591496594c6ab
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423235"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464844"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>适用于 Visual Studio Code 的 Microsoft Office 加载项调试器扩展
 
@@ -37,7 +37,7 @@ ms.locfileid: "67423235"
 
 1. 第一步取决于项目及其创建方式。
 
-   - 如果要创建一个项目以在 Visual Studio Code 中试验调试，请使用 [适用于 Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)。若要执行此操作，请使用我们的任何快速入门指南（如 [Outlook 加载项快速入门](../quickstarts/outlook-quickstart.md)）。 
+   - 如果要创建一个项目来试验Visual Studio Code中的调试，请使用 [Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)。若要执行此操作，请使用任何一个快速入门指南（例如 [Outlook 加载项快速入](../quickstarts/outlook-quickstart.md)门）。
    - 如果要调试使用 Yo Office 创建的现有项目，请跳到下一步。
    - 如果要调试未使用 Yo Office 创建的现有项目，请在 [附录](#appendix) 中执行该过程，然后返回到此过程的下一步。
 
