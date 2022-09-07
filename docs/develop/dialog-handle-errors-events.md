@@ -1,14 +1,14 @@
 ---
 title: 处理 Office 对话框中的错误和事件
 description: 了解如何在打开和使用 Office 对话框时捕获和处理错误。
-ms.date: 07/18/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e8eefe4ee868a3cdc52ee8d425271435404bc04
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: d3bdae7d4dddcd92a54a46fec0d5854a1a18a0bc
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889455"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616033"
 ---
 # <a name="handle-errors-and-events-in-the-office-dialog-box"></a>在“Office”对话框中处理错误和事件
 
@@ -34,6 +34,7 @@ ms.locfileid: "66889455"
 |12005|传递给 `displayDialogAsync` 的 URL 使用 HTTP 协议。 必须使用 HTTPS。  (在某些版本的 Office 中，返回的错误消息文本与 12005 返回的错误消息文本相同，为 12004.) |
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|已从此主机窗口打开了一个对话框。主机窗口（如任务窗格）一次只能打开一个对话框。|
 |12009|用户已选择忽略对话框。 Office web 版中可能会出现此错误，用户可以选择不允许加载项显示对话框。 有关详细信息，请参阅[使用Office web 版处理弹出窗口阻止程序](dialog-best-practices.md#handle-pop-up-blockers-with-office-on-the-web)。|
+|12011| 加载项在Office web 版中运行，用户的浏览器配置阻止弹出窗口。 当浏览器是 Edge Legacy 且加载项的域与对话尝试打开的域位于不同的安全区域时，最常发生这种情况。 触发此错误的另一种方案是，浏览器为 Safari，它配置为阻止所有弹出窗口。 请考虑响应此错误，并提示用户更改浏览器配置或使用其他浏览器。|
 
 调用时 `displayDialogAsync` ，它会将 [AsyncResult](/javascript/api/office/office.asyncresult) 对象传递给其回调函数。 调用成功后，会打开对话框，并且 `value` 对象的 `AsyncResult` 属性是 [Dialog](/javascript/api/office/office.dialog) 对象。 有关此示例，请参阅将 [信息从对话框发送到主机页](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page)。 调用 `displayDialogAsync` 失败时，将不创建对话框， `status` 将对象的 `AsyncResult` 属性设置为 `Office.AsyncResultStatus.Failed`，并 `error` 填充对象的属性。 应始终提供一个回调，用于在错误时测试 `status` 和响应。 有关报告错误消息的示例，无论其代码号如何，请参阅以下代码。 `showNotification` (本文中未定义的函数显示或记录错误。 有关如何在外接程序中实现此函数的示例，请参阅 [Office 加载项对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)) 
 

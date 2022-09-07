@@ -1,14 +1,14 @@
 ---
 title: 从 Outlook 加载项使用 Outlook REST API
 description: 了解如何从 Outlook 加载项使用 Outlook REST API 获得访问令牌。
-ms.date: 07/08/2022
+ms.date: 09/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c2717bf5d3cb440022ac31f815b7bf4c32d9eb4e
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 8630cc6c075d80546e019ba41f57d46d97eb0f13
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797692"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67615999"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>从 Outlook 加载项使用 Outlook REST API
 
@@ -19,12 +19,9 @@ ms.locfileid: "66797692"
 >
 > 有关更多详细信息，请参阅 2020 年 11 月公告) ，Outlook REST 终结点将于 [2022 年 11 月 30](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/) 日完全停用 (。 应迁移现有加载项以使用 [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph)。 有关指南，请参阅 [“比较 Microsoft Graph”和“Outlook REST API”终结点](/outlook/rest/compare-graph)。
 >
-> 为了帮助你进行迁移，在 2022 年 11 月 30 日之前使用 REST 服务的活动加载项有资格获得豁免，以便继续使用该服务，直到 [2025 年 10 月 14 日 Outlook 2019 的扩展支持结束](/lifecycle/end-of-support/end-of-support-2025)。 此豁免基于外接程序的清单 ID，适用于私密发布和 AppSource 托管的外接程序。加载项必须满足以下条件才能获得豁免。
+> 为了帮助你进行迁移，使用 REST 服务的活动加载项有资格获得豁免，以继续使用该服务，直到 [2025 年 10 月 14 日 Outlook 2019 的扩展支持结束](/lifecycle/end-of-support/end-of-support-2025)。 这包括 2022 年 11 月 30 日之后开发的新加载项。 豁免基于加载项的清单 ID，适用于私密发布和 AppSource 托管的外接程序。
 >
-> - 外接程序的 [ID](/javascript/api/manifest/id) 必须有效且唯一。 AppSource 中托管的加载项会自动分配 GUID，而私密发布的加载项必须在清单中手动分配一个。
-> - 如果外接程序迎合了多个客户，但未托管在 AppSource 中，则每个客户使用的外接程序实例必须使用相同的清单 ID。 如果加载项对每个客户使用不同的 ID，则不符合豁免条件，必须在 2022 年 11 月之前迁移到 Microsoft Graph。
->
-> 若要确保外接程序的豁免，请在 2022 年 11 月之前完成 [REST API 加载项验证表](https://aka.ms/RESTCheck) 单。 有关详细信息，请参阅 [Office 加载项 2022 年 2 月社区呼叫博客文章](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-february-9-2022/)。
+> 目前，正在测试使用 REST 服务的 Outlook 加载项的自动流量标识以进行豁免验证。 如果要参与此测试阶段，请在 2022 年 11 月之前完成 [REST API 加载项验证表](https://aka.ms/RESTCheck) 单。 有关详细信息，请参阅 [Office 加载项 2022 年 8 月社区呼叫博客文章](https://pnp.github.io/blog/office-add-ins-community-call/2022-08-10/)。
 
 ## <a name="get-an-access-token"></a>获取访问令牌
 

@@ -1,14 +1,14 @@
 ---
 title: Office 加载项中的运行时
 description: 了解 Office 外接程序使用的运行时。
-ms.date: 08/10/2022
+ms.date: 08/29/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3507667aced648a9ca528eea9009b08d473bceb2
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 8d28f6db028d2f4c7036db51ccc5dbcc2144bdf3
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423319"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616040"
 ---
 # <a name="runtimes-in-office-add-ins"></a>Office 加载项中的运行时
 
@@ -18,8 +18,8 @@ Office 加载项在 Office 中嵌入的运行时中执行。 作为解释语言�
 
 Office 外接程序使用两种类型的运行时：
 
-- **仅限 JavaScript 的运行时**：JavaScript 引擎补充了对 [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [完整 CORS (跨源资源共享)](https://developer.mozilla.org/docs/Web/HTTP/CORS)和 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage)的支持。 
-- **浏览器运行时**：包括仅限 JavaScript 的运行时的所有功能，并添加呈现 HTML 的 [呈现引擎](https://developer.mozilla.org/docs/Glossary/Rendering_engine) 。
+- **仅限 JavaScript 的运行时**：JavaScript 引擎补充了对 [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [完整 CORS (跨源资源共享)](https://developer.mozilla.org/docs/Web/HTTP/CORS)和客户端存储数据的支持。  (它不支持 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage) 或 Cookie.)  
+- **浏览器运行时**：包括仅限 JavaScript 的运行时的所有功能，并添加对 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage)、呈现 HTML 的 [呈现引擎](https://developer.mozilla.org/docs/Glossary/Rendering_engine) 和 Cookie 的支持。
 
 本文稍后在 [仅限 JavaScript 的运行时](#javascript-only-runtime) 和 [浏览器运行时](#browser-runtime)中介绍了这些类型的详细信息。
 
@@ -118,7 +118,7 @@ Office 外接程序使用两种类型的运行时：
 
 ## <a name="javascript-only-runtime"></a>仅限 JavaScript 的运行时
 
-Office 外接程序中使用的仅限 JavaScript 的运行时是对最初为[React Native](https://reactnative.dev/)创建的开放源代码运行时的修改。 它包含一个 JavaScript 引擎，并补充了对 [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [完整 CORS (跨源资源共享) ](https://developer.mozilla.org/docs/Web/HTTP/CORS)和 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage)的支持。 它没有呈现引擎，也不支持 Cookie。
+Office 外接程序中使用的仅限 JavaScript 的运行时是对最初为[React Native](https://reactnative.dev/)创建的开放源代码运行时的修改。 它包含一个 JavaScript 引擎，该引擎补充了对 [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [完整 CORS (跨源资源共享) ](https://developer.mozilla.org/docs/Web/HTTP/CORS)和 [OfficeRuntime.storage 的支持](/javascript/api/office-runtime/officeruntime.storage)。 它没有呈现引擎，也不支持 Cookie 或 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage)。
 
 这种类型的运行时仅在 Windows 上的 Office 和 Excel 自定义函数中用于基于 Outlook 事件的任务， *除非* 自定义函数 [共享运行时](#shared-runtime)。 
 

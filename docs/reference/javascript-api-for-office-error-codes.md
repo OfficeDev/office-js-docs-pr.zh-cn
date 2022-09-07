@@ -1,14 +1,14 @@
 ---
 title: Office 常用 API 错误代码
 description: 本文记录了在使用 Office 通用 API 时可能会遇到的错误消息。
-ms.date: 02/08/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a6161c658bad35be8f7ca5193a1b03889f186d12
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 024d4ef9a2f83305a42cc1844e90f7b40ffbb86a
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959061"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67615991"
 ---
 # <a name="office-common-api-error-codes"></a>Office 常用 API 错误代码
 
@@ -93,6 +93,7 @@ ms.locfileid: "66959061"
 |12006|||对话框已关闭，通常是因为用户选择了 **X** 按钮。 在对话框中引发并在主机页面中触发 `DialogEventReceived` 事件。|
 |12007|||已从此主机窗口打开了一个对话框。 主机窗口（如任务窗格）一次只能打开一个对话框。 由 `displayDialogAsync` 的调用引发。|
 |12009|||用户已选择忽略对话框。 联机版本的 Office 中可能会发生此错误，用户可能会选择不允许加载项显示对话框。 由 `displayDialogAsync` 的调用引发。|
+|12011|||用户的浏览器的配置方式是阻止弹出窗口。 如果浏览器是 Safari 且已配置为阻止弹出窗口，或者浏览器为 Edge Legacy，并且外接程序域与对话框尝试打开的域位于不同的安全区域，则Office web 版可能会发生此错误。 由 `displayDialogAsync` 的调用引发。|
 |13nnn|||查看 [getAccessToken 中错误的原因和处理](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken)。|
 
 ## <a name="binding-creation-error-conditions"></a>绑定创建错误条件

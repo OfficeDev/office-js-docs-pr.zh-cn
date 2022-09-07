@@ -1,14 +1,14 @@
 ---
 title: 创建使用单一登录的 Node.js Office 加载项
 description: 了解如何创建使用 Office 单一登录的基于 Node.js 的加载项。
-ms.date: 07/01/2022
+ms.date: 08/31/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 470d6480308ed2695822aefd12e0b39b4abba32e
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 4e7ded29d9d2f021516348e2edbe847b6447e006
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958466"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616047"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>创建使用单一登录的 Node.js Office 加载项
 
@@ -144,7 +144,7 @@ ms.locfileid: "66958466"
    CLIENT_SECRET=X7szTuPwKNts41:-/fa3p.p@l6zsyI/p
    DIRECTORY_ID=478aa78e-20ba-4c0d-9ffe-c4f62e5de3d5
    NODE_ENV=development
-SERVER_SOURCE=https://localhost:44355   
+   SERVER_SOURCE=https://localhost:44355
 
 1. Open the add-in manifest file "manifest\manifest_local.xml" and then scroll to the bottom of the file. Just above the `</VersionOverrides>` end tag, you'll find the following markup.
 
@@ -178,290 +178,257 @@ SERVER_SOURCE=https://localhost:44355
    > [!NOTE]
    > 顾名思义，ssoAuthES6.js 使用 JavaScript ES6 语法，因为使用 `async` 和 `await` 可以最好地显示 SSO API 本质的简单性。 启动 localhost 服务器时，此文件将转译为 ES5 语法，以便该示例将支持 Internet Explorer 11。
 
-    示例代码的一个关键部分是客户端请求。 客户端请求是一个对象，用于跟踪有关在中间层服务器上调用 REST API 的请求的信息。 这是必要的，因为需要通过以下方案跟踪或更新客户端请求状态：
+    示例代码的一个关键部分是客户端请求。 客户端请求是一个对象，用于跟踪有关在中间层服务器上调用 REST API 的请求的信息。 这是必需的，因为需要通过以下方案跟踪或更新客户端请求状态：
 
-    - SSO 重试 REST API 调用失败的位置，因为它需要额外的同意。 使用更新的身份验证选项进行示例代码调 `getAccessToken` 用，获取所需的用户同意，然后再次调用 REST API。 目标是在 REST API 需要额外同意的情况下不失败。
     - SSO 失败，需要回退身份验证。 访问令牌通过 MSAL 在弹出对话框中获取。 目标是在此方案中不失败，并正常地回退到替代身份验证方法。
 
     客户端请求对象跟踪以下数据：
 
-    - `authOptions` - SSO [的身份验证配置参数](/javascript/api/office/office.authoptions)。
     - `authSSO` - 如果使用 SSO，则为 true，否则为 false。
-    - `accessToken` - 中间层服务器的访问令牌。 对于 SSO，获取此令牌的方法不同于回退身份验证。
-    - `url` - 要在中间层服务器上调用的 REST API 的 URL。
-    - `callbackHandler` - 传递 REST API 调用结果的函数。
+    - `verb` - REST API 谓词，例如 GET 和 POST。
+    - `accessToken`- ASP.NET Core服务器的访问令牌。
+    - `url`- 要在 ASP.NET Core服务器上调用的 REST API 的 URL。
+    - `callbackRESTApiHandler` - 传递 REST API 调用结果的函数。
     - `callbackFunction` - 准备就绪时要将客户端请求传递到的函数。
 
 1. 若要初始化客户端请求对象，请在函数中 `createRequest` 替换 `TODO 1` 为以下代码。
 
-   ```javascript
-   const clientRequest = {
-     authOptions: {
-       allowSignInPrompt: true,
-       allowConsentPrompt: true,
-       forMSGraphAccess: true,
-     },
-     authSSO: authSSO,
-     accessToken: null,
-     url: url,
-     callbackRESTApiHandler: restApiCallback,
-     callbackFunction: callbackFunction,
-   };
-   ```
+    ```javascript
+    const clientRequest = {
+      authSSO: authSSO,
+      verb: verb,
+      accessToken: null,
+      url: url,
+      callbackRESTApiHandler: restApiCallback,
+        callbackFunction: callbackFunction,
+    };
+    ```
 
 1. 将 `TODO 2` 替换为下面的代码。 关于此代码，请注意以下几点：
 
-   - 它检查是否正在使用 SSO。 对于 SSO，获取访问令牌的方法不同于回退身份验证。
-   - 如果 SSO 返回访问令牌，它将调用该 `callbackfunction` 函数。 对于它调用 `dialogFallback`的回退身份验证，最终会在用户通过 MSAL 登录后调用回调函数。
+    - 它检查是否正在使用 SSO。 对于 SSO，获取访问令牌的方法不同于回退身份验证。
+    - 如果 SSO 返回访问令牌，它将调用该 `callbackfunction` 函数。 对于它调用 `dialogFallback`的回退身份验证，最终会在用户通过 MSAL 登录后调用回调函数。
 
-   ```javascript
-   // Get access token.
+    ```javascript
+    // Get access token.
 
-   if (authSSO) {
-     try {
-       // Get access token from Office SSO.
-       clientRequest.accessToken = await getAccessTokenFromSSO(
-         clientRequest.authOptions
-       );
-       callbackFunction(clientRequest);
-     } catch {
-       // Use fallback authentication if SSO failed to get access token.
-       switchToFallbackAuth(clientRequest);
-     }
+    if (authSSO) {
+    try {
+      // Get access token from Office SSO.
+      clientRequest.accessToken = await Office.auth.getAccessToken({
+        allowSignInPrompt: true,
+        allowConsentPrompt: true,
+        forMSGraphAccess: true,
+      });
+      callbackFunction(clientRequest);
+    } catch (error) {
+      // handle the SSO error which will inform us if we need to switch to fallback auth.
+      let fallbackRequired = handleSSOErrors(error);
+      if (fallbackRequired) switchToFallbackAuth(clientRequest);
+    }
    } else {
-     // Use fallback authentication to get access token.
+     // Use fallback auth to get access token.
      dialogFallback(clientRequest);
    }
-   ```
+    ```
 
 1. 在 `getFileNameList` 函数中，将 `TODO 3` 替换为下列代码。 关于此代码，请注意以下几点：
 
-   - `getFileNameList`当用户选择任务窗格上的 **“获取 OneDrive 文件名**”按钮时，将调用该函数。
-   - 它会创建一个客户端请求来跟踪有关调用的信息，例如 REST API 的 URL。
-   - 当 REST API 返回结果时，它将传递给函 `handleGetFileNameResponse` 数。 此回调作为参数传递给`createRequest`并跟踪。`clientRequest.callbackRESTApiHandler`
-   - 使用客户端请求执行后续步骤并调用 REST API 的代码调 `callWebServer` 用。
+    - `getFileNameList`当用户选择任务窗格上的 **“获取 OneDrive 文件名**”按钮时，将调用该函数。
+    - 它会创建一个客户端请求来跟踪有关调用的信息，例如 REST API 的 URL。
+    - 当 REST API 返回结果时，它将传递给函 `handleGetFileNameResponse` 数。 此回调作为参数传递给`createRequest`并跟踪。`clientRequest.callbackRESTApiHandler`
+    - 使用客户端请求执行后续步骤并调用 REST API 的代码调 `callWebServer` 用。
 
-   ```javascript
-   createRequest(
-     "/getuserfilenames",
-     handleGetFileNameResponse,
-     async (clientRequest) => {
-       await callWebServer(clientRequest);
-     }
-   );
-   ```
+    ```javascript
+    createRequest(
+      "GET",
+      "/getuserfilenames",
+      handleGetFileNameResponse,
+      async (clientRequest) => {
+        await callWebServer(clientRequest);
+      }
+    );
+    ```
 
 1. 在 `handleGetFileNameResponse` 函数中，将 `TODO 4` 替换为下列代码。 关于此代码，请注意以下几点：
 
-   - 代码将响应传递 (其中包含要将 `writeFileNamesToOfficeDocument` 文件名写入文档的文件名) 列表。
-   - 代码检查错误。 如果写入文件名，则显示成功消息，否则显示错误。
+    - 代码将响应传递 (其中包含要将 `writeFileNamesToOfficeDocument` 文件名写入文档的文件名) 列表。
+    - 代码检查错误。 如果写入文件名，则显示成功消息，否则显示错误。
 
-   ```javascript
-   if (response != null) {
-     try {
-       await writeFileNamesToOfficeDocument(response);
-       showMessage("Your OneDrive filenames are added to the document.");
-     } catch (error) {
-       // The error from writeFileNamesToOfficeDocument will begin
-       // "Unable to add filenames to document."
-       showMessage(error);
-     }
-   } else
-     showMessage("A null response was returned to handleGetFileNameResponse.");
-   ```
+    ```javascript
+    if (response !== null) {
+      try {
+        await writeFileNamesToOfficeDocument(response);
+        showMessage("Your OneDrive filenames are added to the document.");
+      } catch (error) {
+        // The error from writeFileNamesToOfficeDocument will begin
+        // "Unable to add filenames to document."
+        showMessage(error);
+      }
+    } else
+    showMessage("A null response was returned to handleGetFileNameResponse.");
+    ```
 
-### <a name="get-the-sso-access-token"></a>获取 SSO 访问令牌
+1. 在 `handleSSOErrors` 函数中，将 `TODO 5` 替换为下列代码。 有关这些错误的详细信息，请参阅[对 Office 加载项中的 SSO 进行故障排除](troubleshoot-sso-in-office-add-ins.md)。
 
-1. 在 `getAccessTokenFromSSO` 函数中，将 `TODO 5` 替换为下列代码。 关于此代码，请注意以下几点：
+    ```javascript
+    let fallbackRequired = false;
 
-   - 它调用 `Office.auth.getAccessToken` 从 Office 获取访问令牌。
-   - 如果发生错误，它将调用 `handleSSOErrors` 函数。 如果无法处理该错误，它将向调用方引发错误。 这是指示调用方切换到回退身份验证。
-
-   ```javascript
-   try {
-     // The access token returned from getAccessToken only has permissions to your middle-tier server APIs,
-     // and it contains the identity claims of the signed-in user.
-
-     const accessToken = await Office.auth.getAccessToken(authOptions);
-     return accessToken;
-   } catch (error) {
-     let fallbackRequired = handleSSOErrors(error);
-     if (fallbackRequired) throw error; // Rethrow the error and caller will switch to fallback auth.
-     return null; // Returning a null token indicates no need for fallback (an explanation about the error condition was shown by handleSSOErrors).
-   }
-   ```
-
-1. 在 `handleSSOErrors` 函数中，将 `TODO 6` 替换为下列代码。 有关这些错误的详细信息，请参阅[对 Office 加载项中的 SSO 进行故障排除](troubleshoot-sso-in-office-add-ins.md)。
-
-   ```javascript
-   let fallbackRequired = false;
    switch (err.code) {
-   case 13001:
-     // No one is signed into Office. If the add-in cannot be effectively used when no one
-     // is logged into Office, then the first call of getAccessToken should pass the
-     // `allowSignInPrompt: true` option. Since this sample does that, you should not see
-     // this error.
-     showMessage(
-       "No one is signed into Office. But you can use many of the add-in's functions anyway. If you want to log in, press the Get OneDrive File Names button again."
-     );
-     break;
-   case 13002:
-     // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
-     // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
-     showMessage(
-       "You can use many of the add-in's functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."
-     );
-     break;
-   case 13006:
-     // Only seen in Office on the web.
-     showMessage(
-       "Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."
-     );
-     break;
-   case 13008:
-     // Only seen in Office on the web.
-     showMessage(
-       "Office is still working on the last operation. When it completes, try this operation again."
-     );
-     break;
-   case 13010:
-     // Only seen in Office on the web.
+     case 13001:
+       // No one is signed into Office. If the add-in cannot be effectively used when no one
+       // is logged into Office, then the first call of getAccessToken should pass the
+       // `allowSignInPrompt: true` option. Since this sample does that, you should not see
+       // this error.
+       showMessage(
+         "No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to log in, press the Get OneDrive File Names button again."
+       );
+       break;
+     case 13002:
+       // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
+       // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
+       showMessage(
+         "You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."
+       );
+       break;
+     case 13006:
+       // Only seen in Office on the web.
+       showMessage(
+         "Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."
+       );
+       break;
+     case 13008:
+       // Only seen in Office on the web.
+       showMessage(
+        "Office is still working on the last operation. When it completes, try this operation again."
+       );
+       break;
+     case 13010:
+       // Only seen in Office on the web.
        showMessage(
          "Follow the instructions to change your browser's zone configuration."
        );
        break;
-   ```
+    ```
 
-1. 将 `TODO 7` 替换为下面的代码。 有关这些错误的详细信息，请参阅 [Office 加载项中的 SSO 疑难解答](troubleshoot-sso-in-office-add-ins.md)。对于无法处理的任何错误， `true` 将返回给调用方。 这表示调用方应切换到使用 MSAL 作为回退身份验证。
+1. 将 `TODO 6` 替换为下面的代码。 有关这些错误的详细信息，请参阅 [Office 加载项中的 SSO 疑难解答](troubleshoot-sso-in-office-add-ins.md)。对于无法处理的任何错误， `true` 将返回给调用方。 这表示调用方应切换到使用 MSAL 作为回退身份验证。
 
-   ```javascript
+    ```javascript
      default:
-       // For all other errors, including 13000, 13003, 13005, 13007, 13012, and 50001, fall back
-       // to non-SSO sign-in.
-       fallbackRequired = true;
-       break;
-   }
-   return fallbackRequired;
-   ```
+      // For all other errors, including 13000, 13003, 13005, 13007, 13012, and 50001, fall back
+      // to non-SSO sign-in.
+      fallbackRequired = true;
+      break;
+    }
+    return fallbackRequired;
+    ```
 
 ### <a name="call-the-rest-api-on-the-middle-tier-server"></a>在中间层服务器上调用 REST API
 
-1. 在 `callWebServer` 函数中，将 `TODO 8` 替换为下列代码。 关于此代码，请注意以下几点：
+1. 在 `callWebServer` 函数中，将 `TODO 7` 替换为下列代码。 关于此代码，请注意以下几点：
 
-   - 实际的 AJAX 调用将由函 `ajaxCallToRESTApi` 数进行。
-   - 如果中间层服务器返回一个错误，指示当前令牌已过期，则此函数将尝试获取新的访问令牌。
-   - 如果无法成功完成 AJAX 调用， `switchToFallbackAuth` 将调用它来使用 MSAL 身份验证而不是 Office SSO。
+    - 实际的 AJAX 调用将由函 `ajaxCallToRESTApi` 数进行。
+    - 如果中间层服务器返回一个错误，指示当前令牌已过期，则此函数将尝试获取新的访问令牌。
+    - 如果无法成功完成 AJAX 调用， `switchToFallbackAuth` 将调用它来使用 MSAL 身份验证而不是 Office SSO。
 
-   ```javascript
-   try {
-     await ajaxCallToRESTApi(clientRequest);
-   } catch (error) {
-     if (error.statusText === "Internal Server Error") {
-       const retryCall = handleWebServerErrors(error, clientRequest);
-       if (retryCall && clientRequest.authSSO) {
-         try {
-           clientRequest.accessToken = await getAccessTokenFromSSO(
-             clientRequest.authOptions
-           );
-           await ajaxCallToRESTApi(clientRequest);
-         } catch {
-           // If still an error go to fallback.
-           switchToFallbackAuth(clientRequest);
-           return;
-         }
-       }
-     } else {
-       console.log(JSON.stringify(error)); // Log any errors.
-       showMessage(error.responseText);
-     }
-   }
-   ```
+    ```javascript
+    try {
+    const data = await $.ajax({
+      type: clientRequest.verb,
+      url: clientRequest.url,
+      headers: { Authorization: "Bearer " + clientRequest.accessToken },
+      cache: false,
+    });
+    clientRequest.callbackRESTApiHandler(data);
 
-1. 在 `ajaxCallToRESTApi` 函数中，将 `TODO 9` 替换为下列代码。 关于此代码，请注意以下几点：
+    } catch (error) {
+     // TODO 8: Check for expired SSO token and refresh if needed.
 
-   - 该函数显式重新引发调用方要处理的任何错误。
+    // TODO 9: Check for Microsoft Graph and other errors.
 
-   ```javascript
-   try {
-     await $.ajax({
-       type: "GET",
-       url: clientRequest.url,
-       headers: { Authorization: "Bearer " + clientRequest.accessToken },
-       cache: false,
-       success: function (data) {
-         result = data;
-         // Send result to the callback handler.
-         clientRequest.callbackRESTApiHandler(result);
-       },
-     });
-   } catch (error) {
-     // This function explicitly requires the caller to handle any errors
-     throw error;
-   }
-   ```
+    }
+    ```
 
-1. 在 `handleWebServerErrors` 函数中，将 `TODO 10` 替换为下列代码。 关于此代码，请注意以下几点：
+1. 将 `TODO 8` 替换为下面的代码。 关于此代码，请注意以下几点：
 
-   - 该错误由中间层服务器返回，该服务器指示错误的类型，并使此处更易于处理。
-   - 对于 **Microsoft Graph** 错误，请在任务窗格上显示消息。
-   - 对于 **AADSTS500133** 错误，返回 true，以便调用方知道令牌已过期，应获取新的令牌。
-   - 对于所有其他消息，请在任务窗格中显示消息。
+    - 当服务器标识过期的令牌时，它将返回类型为“TokenExpiredError”的错误。
+    - 试用...catch 将调用 Office.auth.getAccessToken 以获取新过期的刷新令牌。
+    - 代码将尝试再次调用服务器 API。
 
-   ```javascript
-   let retryCall = false;
-   // Our middle-tier server returns a type to help handle the known cases.
-   switch (err.responseJSON.type) {
-     case "Microsoft Graph":
-       // An error occurred when the middle-tier server called Microsoft Graph.
-       showMessage(
-         "Error from Microsoft Graph: " +
-           JSON.stringify(err.responseJSON.errorDetails)
-       );
-       retryCall = false;
-       break;
-     case "Missing access_as_user":
-       // The access_as_user scope was missing.
-       showMessage("Error: Access token is missing the access_as_user scope.");
-       retryCall = false;
-       break;
-     case "AADSTS500133": // expired token
-       // On rare occasions the access token could expire after it was sent to the middle-tier server.
-       // Microsoft identity platform will respond with
-       // "The provided value for the 'assertion' is not valid. The assertion has expired."
-       // Return true to indicate to caller they should refresh the token.
-       retryCall = true;
-       break;
-     default:
-       showMessage(
-         "Unknown error from web server: " +
-           JSON.stringify(err.responseJSON.errorDetails)
-       );
-       retryCall = false;
-       if (clientRequest.authSSO) switchToFallbackAuth(clientRequest);
-   }
-   return retryCall;
-   ```
+    ```javascript
+    // Check for expired SSO token. Refresh and retry the call if it expired.
+    if (
+      error.responseJSON &&
+      authSSO === true &&
+      error.responseJSON.type === "TokenExpiredError"
+    ) {
+      try {
+        const accessToken = await Office.auth.getAccessToken({
+          allowSignInPrompt: true,
+          allowConsentPrompt: true,
+          forMSGraphAccess: true,
+        });
+        const data = await $.ajax({
+          type: clientRequest.verb,
+          url: clientRequest.url,
+          headers: { Authorization: "Bearer " + accessToken },
+          cache: false,
+        });
+        clientRequest.callbackRESTApiHandler(data);
+      } catch (error) {
+        showMessage(error.responseText);
+        switchToFallbackAuth(clientRequest);
+        return;
+      }
+    }
+    ```
 
-回退身份验证将使用 MSAL 库登录用户。 外接程序本身是 SPA，使用 SPA 应用注册来访问中间层服务器。
+1. 将 `TODO 9` 替换为下面的代码。 关于此代码，请注意以下几点：
 
-1. 在 `switchToFallbackAuth` 函数中，将 `TODO 11` 替换为下列代码。 关于此代码，请注意以下几点：
+    - 对于 **Microsoft Graph** 错误，请在任务窗格上显示消息。
+    - 对于所有其他消息，请在任务窗格中显示消息。
 
-   - 它将全局 `authSSO` 设置为 false，并创建使用 MSAL 进行身份验证的新客户端请求。新请求具有对中间层服务器的 MSAL 访问令牌。
-   - 创建请求后，它会调用 `callWebServer` 继续尝试成功调用中间层服务器。
+    ```javascript
+    // Check for a Microsoft Graph API call error. which is returned as bad request (403)
+    if (error.status === 403) {
+      if (error.responseJSON && error.responseJSON.type === "Microsoft Graph") {
+        showMessage(error.responseJSON.errorDetails);
+      } else {
+        showMessage(error);
+      }
+      return;
+    }
 
-   ```javascript
-   showMessage("Switching from SSO to fallback auth.");
-   authSSO = false;
-   // Create a new request for fallback auth.
-   createRequest(
-     clientRequest.url,
-     clientRequest.callbackRESTApiHandler,
-     async (fallbackRequest) => {
-       // Hand off to call using fallback auth.
-       await callWebServer(fallbackRequest);
-     }
-   );
-   ```
+    // For all other error scenarios, display the message and use fallback auth.
+    showMessage("Unknown error from web server: " + JSON.stringify(error));
+    if (clientRequest.authSSO) switchToFallbackAuth(clientRequest);
+    ```
+
+回退身份验证使用 MSAL 库登录用户。 外接程序本身是 SPA，使用 SPA 应用注册来访问中间层服务器。
+
+1. 在 `switchToFallbackAuth` 函数中，将 `TODO 10` 替换为下列代码。 关于此代码，请注意以下几点：
+
+    - 它将全局 `authSSO` 设置为 false，并创建使用 MSAL 进行身份验证的新客户端请求。新请求具有对中间层服务器的 MSAL 访问令牌。
+    - 创建请求后，它会调用 `callWebServer` 继续尝试成功调用中间层服务器。
+
+    ```javascript
+    // Guard against accidental call to this function when fallback is already in use.
+
+    if (authSSO === false) return;
+
+    showMessage("Switching from SSO to fallback auth.");
+    authSSO = false;
+    // Create a new request for fallback auth.
+    createRequest(
+      clientRequest.verb,
+      clientRequest.url,
+      clientRequest.callbackRESTApiHandler,
+      async (fallbackRequest) => {
+        // Hand off to call using fallback auth.
+        await callWebServer(fallbackRequest);
+      }
+    );
+    ```
 
 ## <a name="code-the-middle-tier-server"></a>对中间层服务器进行编码
 
@@ -469,90 +436,101 @@ SERVER_SOURCE=https://localhost:44355
 
 ### <a name="create-the-route-and-implement-on-behalf-of-flow"></a>创建路由并实现代理流
 
-1. 打开文件 `routes\getFilesRoute.js` 并替换 `TODO 12` 为以下代码。 关于此代码，请注意以下几点：
+1. 打开文件 `routes\getFilesRoute.js` 并替换 `TODO 11` 为以下代码。 关于此代码，请注意以下几点：
 
-   - 它调用 `authHelper.validateJwt`。 这可确保访问令牌有效且未被篡改。
-   - 有关详细信息，请参阅 [验证令牌](/azure/active-directory/develop/access-tokens#validating-tokens)。
+    - 它调用 `authHelper.validateJwt`。 这可确保访问令牌有效且未被篡改。
+    - 有关详细信息，请参阅 [验证令牌](/azure/active-directory/develop/access-tokens#validating-tokens)。
 
-   ```javascript
-   router.get(
+    ```javascript
+    router.get(
      "/getuserfilenames",
      authHelper.validateJwt,
      async function (req, res) {
-       // TODO 13: Exchange the access token for a Microsoft Graph token
+       // TODO 12: Exchange the access token for a Microsoft Graph token
        //          by using the OBO flow.
      }
-   );
-   ```
+    );
+    ```
+
+1. 将 `TODO 12` 替换为下面的代码。 关于此代码，请注意以下几点：
+
+    - 它只请求所需的最小范围，例如 `files.read`。
+    - 它使用 MSAL `authHelper` 在调用 `acquireTokenOnBehalfOf`中执行 OBO 流。
+
+    ```javascript
+    try {
+      const authHeader = req.headers.authorization;
+      let oboRequest = {
+        oboAssertion: authHeader.split(" ")[1],
+        scopes: ["files.read"],
+      };
+
+      // The Scope claim tells you what permissions the client application has in the service.
+      // In this case we look for a scope value of access_as_user, or full access to the service as the user.
+      const tokenScopes = jwt.decode(oboRequest.oboAssertion).scp.split(" ");
+      const accessAsUserScope = tokenScopes.find(
+        (scope) => scope === "access_as_user"
+      );
+      if (!accessAsUserScope) {
+        res.status(401).send({ type: "Missing access_as_user" });
+        return;
+      }
+      const cca = authHelper.getConfidentialClientApplication();
+      const response = await cca.acquireTokenOnBehalfOf(oboRequest);
+      // TODO 13: Call Microsoft Graph to get list of filenames.
+    } catch (err) {
+      // TODO 14: Handle any errors.
+    }
+    ```
 
 1. 将 `TODO 13` 替换为下面的代码。 关于此代码，请注意以下几点：
 
-   - 它只请求所需的最小范围，例如 `files.read`。
-   - 它使用 MSAL `authHelper` 在调用 `acquireTokenOnBehalfOf`中执行 OBO 流。
+    - 它构造 Microsoft 图形 API 调用的 URL，然后通过函`getGraphData`数进行调用。
+    - 它通过发送 HTTP 500 响应以及详细信息来返回错误。
+    - 成功后，它将包含文件名列表的 JSON 返回到客户端。
 
-   ```javascript
-   try {
-     const authHeader = req.headers.authorization;
-     let oboRequest = {
-       oboAssertion: authHeader.split(" ")[1],
-       scopes: ["files.read"],
-     };
+    ```javascript
+    // Minimize the data that must come from MS Graph by specifying only the property we need ("name")
+    // and only the top 10 folder or file names.
+    const rootUrl = "/me/drive/root/children";
 
-     // The Scope claim tells you what permissions the client application has in the service.
-     // In this case we look for a scope value of access_as_user, or full access to the service as the user.
-     const tokenScopes = jwt.decode(oboRequest.oboAssertion).scp.split(" ");
-     const accessAsUserScope = tokenScopes.find(
-       (scope) => scope === "access_as_user"
-     );
-     if (!accessAsUserScope) {
-       res.status(401).send({ type: "Missing access_as_user" });
-       return;
-     }
-     const cca = authHelper.getConfidentialClientApplication();
-     const response = await cca.acquireTokenOnBehalfOf(oboRequest);
-     // TODO 14: Call Microsoft Graph to get list of filenames.
-   } catch (err) {
-     // TODO 15: Handle any errors.
-   }
-   ```
+    // Note that the last parameter, for queryParamsSegment, is hardcoded. If you reuse this code in
+    // a production add-in and any part of queryParamsSegment comes from user input, be sure that it is
+    // sanitized so that it cannot be used in a Response header injection attack.
+    const params = "?$select=name&$top=10";
 
-1. 将 `TODO 14` 替换为下面的代码。 关于此代码，请注意以下几点：
+    const graphData = await getGraphData(
+      response.accessToken,
+      rootUrl,
+      params
+    );
 
-   - 它构造 Microsoft 图形 API 调用的 URL，然后通过函`getGraphData`数进行调用。
-   - 它通过发送 HTTP 500 响应以及详细信息来返回错误。
-   - 成功后，它将包含文件名列表的 JSON 返回到客户端。
+    // If Microsoft Graph returns an error, such as invalid or expired token,
+    // there will be a code property in the returned object set to a HTTP status (e.g. 401).
+    // Return it to the client. On client side it will get handled in the fail callback of `makeWebServerApiCall`.
+    if (graphData.code) {
+      res
+        .status(403)
+        .send({
+          type: "Microsoft Graph",
+          errorDetails:
+            "An error occurred while calling the Microsoft Graph API.\n" +
+            graphData,
+        });
+    } else {
+      // MS Graph data includes OData metadata and eTags that we don't need.
+      // Send only what is actually needed to the client: the item names.
+      const itemNames = [];
+      const oneDriveItems = graphData["value"];
+      for (let item of oneDriveItems) {
+        itemNames.push(item["name"]);
+      }
 
-   ```javascript
-   // Minimize the data that must come from MS Graph by specifying only the property we need ("name")
-   // and only the top 10 folder or file names.
-   const rootUrl = "/me/drive/root/children";
+      res.status(200).send(itemNames);
+    }
+    ```
 
-   // Note that the last parameter, for queryParamsSegment, is hardcoded. If you reuse this code in
-   // a production add-in and any part of queryParamsSegment comes from user input, be sure that it is
-   // sanitized so that it cannot be used in a Response header injection attack.
-   const params = "?$select=name&$top=10";
-
-   const graphData = await getGraphData(response.accessToken, rootUrl, params);
-
-   // If Microsoft Graph returns an error, such as invalid or expired token,
-   // there will be a code property in the returned object set to a HTTP status (e.g. 401).
-   // Return it to the client. On client side it will get handled in the fail callback of `makeWebServerApiCall`.
-   if (graphData.code) {
-     res.status(500).send({ type: "Microsoft Graph", errorDetails: graphData });
-   } else {
-     // MS Graph data includes OData metadata and eTags that we don't need.
-     // Send only what is actually needed to the client: the item names.
-     const itemNames = [];
-     const oneDriveItems = graphData["value"];
-     for (let item of oneDriveItems) {
-       itemNames.push(item["name"]);
-     }
-
-     res.status(200).send(itemNames);
-   }
-   ```
-
-1. 将 `TODO 15` 替换为以下代码。 此代码专门检查令牌是否已过期，因为客户端可以请求新令牌并再次调用。
+1. 将 `TODO 14` 替换为下面的代码。 此代码专门检查令牌是否已过期，因为客户端可以请求新令牌并再次调用。
 
    ```javascript
    // On rare occasions the SSO access token is unexpired when Office validates it,
@@ -560,9 +538,9 @@ SERVER_SOURCE=https://localhost:44355
    // with "The provided value for the 'assertion' is not valid. The assertion has expired."
    // Construct an error message to return to the client so it can refresh the SSO token.
    if (err.errorMessage.indexOf("AADSTS500133") !== -1) {
-     res.status(500).send({ type: "AADSTS500133", errorDetails: err });
+     res.status(401).send({ type: "TokenExpiredError", errorDetails: err });
    } else {
-     res.status(500).send({ type: "Unknown", errorDetails: err });
+     res.status(403).send({ type: "Unknown", errorDetails: err });
    }
    ```
 
@@ -589,9 +567,9 @@ SERVER_SOURCE=https://localhost:44355
 
 ## <a name="security-notes"></a>安全说明
 
-* 其中的`/getuserfilenames``getFilesroute.js`路由使用文本字符串来撰写对 Microsoft Graph 的调用。 如果更改调用以使字符串的任何部分来自用户输入，请清理输入，使其不能用于响应标头注入攻击。
+- 其中的`/getuserfilenames``getFilesroute.js`路由使用文本字符串来撰写对 Microsoft Graph 的调用。 如果更改调用以使字符串的任何部分来自用户输入，请清理输入，使其不能用于响应标头注入攻击。
 
-* 以下 `app.js` 内容安全策略适用于脚本。 可能需要根据加载项安全需求指定其他限制。
+- 以下 `app.js` 内容安全策略适用于脚本。 可能需要根据加载项安全需求指定其他限制。
 
     `"Content-Security-Policy": "script-src https://appsforoffice.microsoft.com https://ajax.aspnetcdn.com https://alcdn.msauth.net " +  process.env.SERVER_SOURCE,`
 

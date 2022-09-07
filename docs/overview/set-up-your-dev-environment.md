@@ -1,32 +1,32 @@
 ---
 title: 设置开发环境
-description: 设置开发人员环境以生成Office加载项。
-ms.date: 05/27/2022
+description: 设置开发人员环境以生成 Office 加载项。
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 01b9fe0aff2696a521266bb3175ea0f61d891aa4
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: 4e03ea7f55786107354f9d5a92e0cb30ffb559ec
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833883"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616000"
 ---
 # <a name="set-up-your-development-environment"></a>设置开发环境
 
-本指南可帮助你设置工具，以便你可以按照我们的快速入门或教程创建Office加载项。 如果已安装这些设备，则可以快速入门，如此[Excel React快速入门](../quickstarts/excel-quickstart-react.md)。
+本指南可帮助你设置工具，以便你可以按照我们的快速入门或教程创建 Office 加载项。 如果已安装这些设备，则可以快速入门，例如此 [Excel React快速入门](../quickstarts/excel-quickstart-react.md)。
 
-## <a name="get-microsoft-365"></a>获取Microsoft 365
+## <a name="get-microsoft-365"></a>获取 Microsoft 365
 
-你需要一个Microsoft 365帐户。 你可以通过加入Microsoft 365[开发人员计划](https://developer.microsoft.com/office/dev-program)获得包含所有Office应用的免费 90 天可再生Microsoft 365订阅。
+需要 Microsoft 365 帐户。 你可以通过加入 Microsoft 365 开发人员计划获得包含所有 Office 应用的免费 90 天可再生 [Microsoft 365](https://developer.microsoft.com/office/dev-program) 订阅。
 
 ## <a name="install-the-environment"></a>安装环境
 
-有两种类型的开发环境可供选择。 在两个环境中创建的Office外接程序项目的基架不同，因此如果多人将处理加载项项目，则必须使用相同的环境。 
+有两种类型的开发环境可供选择。 在两个环境中创建的 Office 加载项项目的基架不同，因此如果多人将处理加载项项目，则必须使用相同的环境。 
 
-- **Node.js环境**：建议。 在此环境中，工具会安装并在命令行上运行。 外接程序的 Web 应用程序部件的服务器端以 JavaScript 或 TypeScript 编写，并托管在Node.js运行时中。 此环境中有许多有用的外接程序开发工具，例如Office linter 和名为 WebPack 的捆绑程序/任务运行程序。 项目创建和基架工具 Yo Office 会频繁更新。
-- **Visual Studio环境**：仅当开发计算机Windows时才选择此环境，并且要使用基于 .NET 的语言和框架（例如 ASP.NET）开发加载项的服务器端。 Visual Studio中的外接程序项目模板的更新频率不如Node.js环境中的更新频率。 无法使用内置Visual Studio调试器调试客户端代码，但可以使用浏览器的开发工具调试客户端代码。 稍后有关 **Visual Studio环境** 选项卡的详细信息。
+- **Node.js环境**：建议。 在此环境中，工具会安装并在命令行上运行。 外接程序的 Web 应用程序部件的服务器端以 JavaScript 或 TypeScript 编写，并托管在Node.js运行时中。 此环境中有许多有用的外接程序开发工具，例如 Office linter 和名为 WebPack 的捆绑程序/任务运行程序。 项目创建和基架工具 Yo Office 会频繁更新。
+- **Visual Studio 环境**：仅当开发计算机是 Windows 时才选择此环境，并且要使用基于 .NET 的语言和框架（例如 ASP.NET）开发外接程序的服务器端。 Visual Studio 中的外接程序项目模板的更新频率不如Node.js环境中的更新频率。 无法使用内置 Visual Studio 调试器调试客户端代码，但可以使用浏览器的开发工具调试客户端代码。 稍后在 **Visual Studio 环境** 选项卡上的详细信息。
 
 > [!NOTE]
-> Visual Studio for Mac不包括用于Office加载项的项目基架模板，因此，如果开发计算机是 Mac，则应使用Node.js环境。
+> Visual Studio for Mac不包括 Office 加载项的项目基架模板，因此，如果开发计算机是 Mac，则应使用Node.js环境。
 
 选择所选环境的选项卡。 
 
@@ -42,13 +42,13 @@ ms.locfileid: "65833883"
 
 本指南假定你知道如何使用命令行工具。
 
-### <a name="install-nodejs-and-npm"></a>安装Node.js和npm
+### <a name="install-nodejs-and-npm"></a>安装Node.js和 npm
 
-Node.js是用于开发新式Office加载项的 JavaScript 运行时。
+Node.js是用于开发新式 Office 加载项的 JavaScript 运行时。
 
 通过 [从其网站下载最新推荐版本来安装](https://nodejs.org)Node.js。 按照操作系统的安装说明操作。
 
-npm是一个开放源代码软件注册表，从中下载用于开发Office加载项的包。安装Node.js时，通常会自动安装它。 若要检查是否已安装npm并查看已安装的版本，请在命令行中运行以下命令。
+npm 是一个开放源代码软件注册表，从中下载用于开发 Office 加载项的包。安装Node.js时，通常会自动安装它。 若要检查是否已安装 npm 并查看已安装的版本，请在命令行中运行以下命令。
 
 ```command&nbsp;line
 npm -v
@@ -61,7 +61,7 @@ npm install npm -g
 ```
 
 > [!TIP]
-> 你可能希望使用节点版本管理器来允许在多个版本的Node.js和npm之间切换，但这不是绝对必要的。 有关如何执行此操作的详细信息，请[参阅npm的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
+> 你可能希望使用节点版本管理器来允许在多个版本的 Node.js 和 npm 之间切换，但这不是绝对必要的。 有关如何执行此操作的详细信息，请 [参阅 npm 的说明](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)。
 
 ### <a name="install-a-code-editor"></a>安装代码编辑器
 
@@ -73,7 +73,7 @@ npm install npm -g
 
 ### <a name="install-the-yeoman-generator-mdash-yo-office"></a>安装 Yeoman 生成器 &mdash; Yo Office
 
-项目创建和基架工具是 [用于Office外接程序的 Yeoman 生成器](../develop/yeoman-generator-overview.md)，亲切地称为 **Yo Office**。 需要安装最新版本的 [Yeoman](https://github.com/yeoman/yo) 和 Yo Office。 若要全局安装这些工具，请通过命令提示符运行以下命令。
+项目创建和基架工具是 [Office 加载项的 Yeoman 生成器](../develop/yeoman-generator-overview.md)，亲切地称为 **Yo Office**。 需要安装最新版本的 [Yeoman](https://github.com/yeoman/yo) 和 Yo Office。 若要全局安装这些工具，请通过命令提示符运行以下命令。
 
   ```command&nbsp;line
   npm install -g yo generator-office
@@ -81,14 +81,14 @@ npm install npm -g
 
 ### <a name="install-and-use-the-office-javascript-linter"></a>安装并使用 Office JavaScript linter
 
-Microsoft 提供了一个 JavaScript linter 来帮助你在使用 Office JavaScript 库时捕获常见错误。 若要安装 linter，请在[安装](#install-nodejs-and-npm)Node.js并npm) 后 (运行以下两个命令。
+Microsoft 提供了一个 JavaScript Linter 来帮助你在使用 Office JavaScript 库时捕获常见错误。 若要安装 linter，请在 [安装 Node.js 和 npm](#install-nodejs-and-npm)) 后 (运行以下两个命令。
 
 ```command&nbsp;line
 npm install office-addin-lint --save-dev
 npm install eslint-plugin-office-addins --save-dev
 ```
 
-如果使用 [Yeoman 生成器](../develop/yeoman-generator-overview.md)为Office加载项工具创建Office外接程序项目，则其余的设置将为你完成。 在编辑器的终端（如Visual Studio Code或命令提示符中）使用以下命令运行 linter。 Linter 发现的问题会显示在终端或提示符中，并且在使用支持 linter 消息的编辑器（例如Visual Studio Code）时也直接显示在代码中。  (有关安装 Yeoman 生成器的信息，请参阅[适用于 Office Add-ins.) 的 Yeoman 生成器](../develop/yeoman-generator-overview.md)
+如果使用 [适用于 Office 外接程序的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 工具创建 Office 外接程序项目，则其余的设置将为你完成。 在编辑器的终端（如Visual Studio Code或命令提示符中）使用以下命令运行 linter。 Linter 发现的问题会显示在终端或提示符中，并且在使用支持 linter 消息的编辑器（例如Visual Studio Code）时也直接显示在代码中。  (有关安装 Yeoman 生成器的信息，请参阅 [适用于 Office 外接程序的 Yeoman 生成器](../develop/yeoman-generator-overview.md)) 
 
 ```command&nbsp;line
 npm run lint
@@ -121,23 +121,23 @@ npm run lint
    npm run lint
    ```
 
-# <a name="visual-studio-environment"></a>[Visual Studio环境](#tab/visualstudio)
+# <a name="visual-studio-environment"></a>[Visual Studio 环境](#tab/visualstudio)
 
 ### <a name="install-visual-studio"></a>安装 Visual Studio
 
-如果未安装 Visual Studio 2017 (Windows) 或更高版本，请从[Visual Studio下载](https://visualstudio.microsoft.com/downloads/)中安装最新版本。 当安装程序要求指定工作负荷时，请务必包含 **Office/SharePoint开发** 工作负荷。 可能需要的其他工作负载是用于 .NET、**JavaScript 和 TypeScript 语言的** **Web 开发工具**， (用于对外接程序) 的客户端进行编码，以及 ASP.NET 相关工作负荷。
+如果未安装 Visual Studio 2017 (for Windows) 或更高版本，请从 [Visual Studio 下载](https://visualstudio.microsoft.com/downloads/)安装最新版本。 当安装程序要求指定工作负荷时，请务必包含 **Office/SharePoint 开发** 工作负荷。 可能需要的其他工作负载是用于 .NET、**JavaScript 和 TypeScript 语言的** **Web 开发工具**， (用于对外接程序) 的客户端进行编码，以及 ASP.NET 相关工作负荷。
 
 > [!TIP]
-> 从 2022 年夏季开始，随Visual Studio一起安装的 Office 外接程序清单的 XML 架构不是最新版本。 这可能会影响加载项，具体取决于它们使用的外接程序功能。 因此，可能需要更新清单的 XML 架构。 有关详细信息，请参阅[Visual Studio项目的清单架构验证错误](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects)。
+> 截至 2022 年 6 月，随 Visual Studio 一起安装的 Office 外接程序清单的 XML 架构不是最新版本。 这可能会影响加载项，具体取决于它们使用的外接程序功能。 因此，可能需要更新清单的 XML 架构。 有关详细信息，请参阅 [Visual Studio 项目中的清单架构验证错误](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects)。
 
 > [!NOTE]
-> 有关使用Visual Studio环境时调试客户端代码的信息，请参阅[Visual Studio中的调试Office加载项](../develop/debug-office-add-ins-in-visual-studio.md)。 调试服务器端代码的方式与在Visual Studio中创建的任何 Web 应用程序相同。 请参阅 [客户端或服务器端](../testing/debug-add-ins-overview.md#server-side-or-client-side)。
+> 有关在使用 Visual Studio 环境时调试客户端代码的信息，请参阅 [Visual Studio 中的调试 Office 加载项](../develop/debug-office-add-ins-in-visual-studio.md)。 调试服务器端代码的方式与在 Visual Studio 中创建的任何 Web 应用程序相同。 请参阅 [客户端或服务器端](../testing/debug-add-ins-overview.md#server-side-or-client-side)。
 
 ---
 
 ## <a name="install-script-lab"></a>安装Script Lab
 
-Script Lab是一种快速原型编写调用 Office JavaScript 库 API 的代码的工具。 Script Lab本身是一个Office加载项，可在 [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1) 从 AppSource 安装。 Excel、PowerPoint 和 Word 有一个版本，另外还有一个用于Outlook的单独版本。 有关如何使用Script Lab的信息，请[参阅使用Script Lab浏览Office JavaScript API](explore-with-script-lab.md)。
+Script Lab是一种快速原型编写调用 Office JavaScript 库 API 的代码的工具。 Script Lab本身就是一个 Office 加载项，可在 [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1) 从 AppSource 安装。 Excel、PowerPoint 和 Word 有一个版本，Outlook 有一个单独的版本。 有关如何使用Script Lab的信息，请参阅[使用Script Lab浏览 Office JavaScript API](explore-with-script-lab.md)。
 
 ## <a name="next-steps"></a>后续步骤
 

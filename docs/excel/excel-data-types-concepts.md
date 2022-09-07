@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API 数据类型核心概念
 description: 了解在 Office 加载项中使用 Excel 数据类型的核心概念。
-ms.date: 07/11/2022
+ms.date: 09/01/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 4efb3f29ee3791b78c45db01ca53f8c48c17b752
-ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
+ms.openlocfilehash: a5f742e47d698b215a999b966c424819e182ea49
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "67464774"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616019"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel 数据类型核心概念（预览版）
 
@@ -21,10 +21,11 @@ ms.locfileid: "67464774"
 
 ## <a name="the-valuesasjson-property"></a>`valuesAsJson` 属性
 
-`valuesAsJson` 属性对于在 Excel 中创建数据类型是不可或缺的。 此属性是 `values` 属性的扩展，例如 [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member)。 `values` 和 `valuesAsJson` 属性都用于访问单元格中的值， 但 `values` 属性仅返回以下四种基本类型之一：字符串、数字、布尔或错误（作为字符串）。 对比来看，`valuesAsJson` 返回有关这四种基本类型的扩展信息，并且此属性可以返回数据类型，例如带格式的数值、实体和 Web 图像。
+用于 `valuesAsJson` [NamedItem](/javascript/api/excel/excel.nameditem)) 的属性 (或单`valueAsJson`一属性对于在 Excel 中创建数据类型而言是不可或缺的。 此属性是 `values` 属性的扩展，例如 [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member)。 `values` 和 `valuesAsJson` 属性都用于访问单元格中的值， 但 `values` 属性仅返回以下四种基本类型之一：字符串、数字、布尔或错误（作为字符串）。 对比来看，`valuesAsJson` 返回有关这四种基本类型的扩展信息，并且此属性可以返回数据类型，例如带格式的数值、实体和 Web 图像。
 
 以下对象提供 `valuesAsJson` 属性。
 
+- [NamedItem](/javascript/api/excel/excel.nameditem) (为 `valueAsJson`) 
 - [NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)
 - [Range](/javascript/api/excel/excel.range)
 - [RangeView](/javascript/api/excel/excel.rangeview)
