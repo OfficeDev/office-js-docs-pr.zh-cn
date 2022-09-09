@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office 加载项社区呼叫
 description: 每月 Microsoft Office 加载项社区呼叫议程、计划和资源。
-ms.date: 08/11/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e69bf49c188d0ff9920f00bd33a38f78fc78556
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: d7b33a4d1ce69641b6750f15963f4e4695574512
+ms.sourcegitcommit: 2ea81c2bf181c185de9c1508ab8e618f3e396708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318870"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "67633741"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office 加载项社区呼叫
 
@@ -22,6 +22,8 @@ Microsoft Office 外接程序社区呼叫是每月通话，你可以在其中详
 
 错过了以前的社区呼叫？ 查看以下博客资源以赶上讨论！
 
+- [2022 年 8 月 10 日](https://pnp.github.io/blog/office-add-ins-community-call/2022-08-10/)
+- [2022 年 7 月 13 日](https://pnp.github.io/blog/office-add-ins-community-call/2022-07-13/)
 - [2022 年 6 月 8 日](https://pnp.github.io/blog/office-add-ins-community-call/2022-06-08/)
 - [2022 年 5 月 11 日](https://pnp.github.io/blog/office-add-ins-community-call/2022-05-11/)
 - [2022 年 4 月 13 日](https://pnp.github.io/blog/office-add-ins-community-call/2022-04-13/)
