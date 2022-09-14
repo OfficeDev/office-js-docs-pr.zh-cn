@@ -1,32 +1,32 @@
 ---
-title: '在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件 (预览) '
+title: 在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件
 description: 了解如何使用基于事件的激活处理 Outlook 外接程序中的发送事件。
 ms.topic: article
-ms.date: 08/10/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e5c94cc13898ec64dcdedc0afdd627bfeb2323c
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: cabe56d247a009886939f1738b5f135724c40f1d
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67320649"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674636"
 ---
-# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件 (预览) 
+# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件
 
 这些 `OnMessageSend` 事件和 `OnAppointmentSend` 事件利用智能警报，在用户选择 **“在其** Outlook 消息或约会中发送”后，可以运行逻辑。 通过事件处理程序，你可以为用户提供在发送电子邮件和会议邀请之前改进电子邮件和会议邀请的机会。
 
 以下演练使用该 `OnMessageSend` 事件。 本演练结束时，你将拥有一个在发送消息时运行的加载项，并检查用户是否忘记添加他们在电子邮件中提到的文档或图片。
 
-> [!IMPORTANT]
-> 这些 `OnMessageSend` 和 `OnAppointmentSend` 事件仅在 Outlook on Windows 和 Web 上的 Microsoft 365 订阅的预览版中可用。 有关更多详细信息，请参阅 [如何预览](autolaunch.md#how-to-preview)。 不应在生产外接程序中使用预览事件。
+> [!NOTE]
+> 要求`OnMessageSend`[集 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12) 中引入了这些事件和`OnAppointmentSend`事件。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)。
 
 ## <a name="prerequisites"></a>先决条件
 
-该 `OnMessageSend` 事件可通过基于事件的激活功能获得。 若要了解如何将外接程序配置为使用此功能，请使用其他可用事件，为此事件配置预览版，调试外接程序等，请参阅 [配置 Outlook 外接程序以进行基于事件的激活](autolaunch.md)。
+该 `OnMessageSend` 事件可通过基于事件的激活功能获得。 若要了解如何将外接程序配置为使用此功能，请使用其他可用事件、调试外接程序等，请参阅 [配置 Outlook 外接程序以进行基于事件的激活](autolaunch.md)。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)门，使用 [适用于 Office 外接程序的 Yeoman 生成器](../develop/yeoman-generator-overview.md)创建加载项项目。
+完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)门，使用 Office 外接程序的 [Yeoman 生成器](../develop/yeoman-generator-overview.md)创建加载项项目。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -40,7 +40,7 @@ ms.locfileid: "67320649"
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.11">
+      <bt:Sets DefaultMinVersion="1.12">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -137,7 +137,7 @@ ms.locfileid: "67320649"
 
 > [!TIP]
 >
-> - 有关可用的 `OnMessageSend` **SendMode** 选项和`OnAppointmentSend`事件，请参阅 [“可用 SendMode”选项](/javascript/api/manifest/launchevent#available-sendmode-options-preview)。
+> - 有关可用的 `OnMessageSend` **SendMode** 选项和`OnAppointmentSend`事件，请参阅 [“可用 SendMode”选项](/javascript/api/manifest/launchevent#available-sendmode-options)。
 > - 若要详细了解 Outlook 外接程序的清单，请参阅 [Outlook 加载项清单](manifests.md)。
 
 ## <a name="implement-event-handling"></a>实现事件处理
@@ -278,9 +278,16 @@ ms.locfileid: "67320649"
 
 1. 添加附件，然后再次发送消息。 这次不应有警报。
 
+## <a name="deploy-to-users"></a>部署到用户
+
+与其他基于事件的外接程序类似，使用智能警报功能的外接程序必须由组织的管理员部署。 有关如何通过Microsoft 365 管理中心部署外接程序的指南，请参阅“配置 Outlook 外接程序以 [进行基于事件的激活](autolaunch.md#deploy-to-users)”中的 **“部署到用户**”部分。
+
+> [!IMPORTANT]
+> 仅当清单的 [SendMode 属性](/javascript/api/manifest/launchevent#available-sendmode-options)设置为或`PromptUser`选项时，使用智能警报功能的外接程序才能发布到 `SoftBlock` AppSource。 如果外接程序的 **SendMode** 属性设置为 `Block`，则只能由组织的管理员部署，因为它将无法通过 AppSource 验证。 若要详细了解如何将基于事件的外接程序发布到 AppSource，请参阅 [基于事件的 Outlook 外接程序的 AppSource 列表选项](autolaunch-store-options.md)。
+
 ## <a name="smart-alerts-feature-behavior-and-scenarios"></a>智能警报功能行为和方案
 
-有关 **SendMode** 选项的说明以及何时使用它们的建议，请参阅 [“可用 SendMode”选项](/javascript/api/manifest/launchevent)。 下面介绍了某些方案的功能行为。
+有关 **SendMode** 选项的说明以及何时使用它们的建议，请参阅 [“可用 SendMode”选项](/javascript/api/manifest/launchevent#available-sendmode-options)。 下面介绍了某些方案的功能行为。
 
 ### <a name="add-in-is-unavailable"></a>加载项不可用
 
@@ -328,7 +335,7 @@ ms.locfileid: "67320649"
 
 - 对话框的标题栏。 加载项的名称始终显示在该处。
 - 消息的格式。 例如，不能更改文本的字号和颜色，也不能插入项目符号列表。
-- 对话框选项。 例如，“ **无论如何发送** ”和 **“不发送** ”选项是固定的，并且取决于所选 [的 SendMode 选项](/javascript/api/manifest/launchevent) 。
+- 对话框选项。 例如，“ **无论如何发送** ”和 **“不发送** ”选项是固定的，并且取决于所选 [的 SendMode 选项](/javascript/api/manifest/launchevent#available-sendmode-options) 。
 - 基于事件的激活处理和进度信息对话框。 例如，无法更改超时和长时间运行的操作对话框中显示的文本和选项。
 
 ## <a name="see-also"></a>另请参阅

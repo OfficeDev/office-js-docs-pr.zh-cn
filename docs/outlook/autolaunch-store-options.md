@@ -2,18 +2,18 @@
 title: 基于事件的 Outlook 外接程序的 AppSource 列表选项
 description: 了解适用于实现基于事件的激活的 Outlook 外接程序的 AppSource 列表选项。
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d8d2c2e9960d2aef2d32ede6e20eb5f1db125a6c
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: cf99959b31bae665df250941abf88405906acb5c
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797678"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674716"
 ---
 # <a name="appsource-listing-options-for-your-event-based-outlook-add-in"></a>基于事件的 Outlook 外接程序的 AppSource 列表选项
 
-目前，加载项必须由组织的管理员部署，最终用户才能访问基于事件的功能。 如果最终用户直接从 AppSource 获取加载项，我们将限制基于事件的激活。 例如，如果 Contoso 加载项包含`LaunchEvent`在节点下`LaunchEvents`至少定义`LaunchEvent Type`了一个扩展点，则仅当加载项由其组织的管理员为最终用户安装外接程序时才发生自动调用。否则，将阻止自动调用加载项。 请参阅示例加载项清单中的以下摘录。
+加载项必须由组织的管理员部署，最终用户才能访问基于事件的功能。 如果最终用户直接从 [AppSource](https://appsource.microsoft.com) 获取加载项，则限制基于事件的激活。 例如，如果 Contoso 加载项包含`LaunchEvent`在节点下`LaunchEvents`至少定义`LaunchEvent Type`了一个扩展点，则仅当加载项由其组织的管理员为最终用户安装外接程序时才发生自动调用。否则，将阻止自动调用加载项。 请参阅示例加载项清单中的以下摘录。
 
 ```xml
 ...
@@ -32,11 +32,13 @@ ms.locfileid: "66797678"
 > [!NOTE]
 > 虽然最终用户可以使用外部测试版代码安装外接程序，但外接程序不会包含基于事件的激活。
 
+[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
+
 ## <a name="specify-a-flight-code"></a>指定外部测试版代码
 
-若要指定加载项所需的外部测试版代码，请在发布加载项时，在 **“认证说明** ”中共享该信息。 _**重要** 提示：_ 外部测试版代码区分大小写。
+若要指定外接程序的外部测试版代码，请在发布加载项时在 **“备注”中共享代码以进行认证** 。 **重要** 说明：外部测试版代码区分大小写。
 
-![屏幕截图显示了在发布过程中针对证书屏幕的“备注”中外部测试版代码的示例请求。](../images/outlook-publish-notes-for-certification-1.png)
+![发布过程中用于认证屏幕的备注中外部测试代码的示例请求。](../images/outlook-publish-notes-for-certification.png)
 
 ## <a name="deploy-add-in-with-flight-code"></a>使用外部测试版代码部署加载项
 
@@ -61,7 +63,7 @@ ms.locfileid: "66797678"
 
 在已更新的加载项获得批准后，以前部署过外接程序的组织管理员将在管理中心的 **“集成应用** ”部分收到更新消息。 该消息向管理员提供有关基于事件的激活更改的建议。 管理员接受更改后，更新将部署到最终用户。
 
-![“集成应用”屏幕上应用更新通知的屏幕截图。](../images/outlook-deploy-update-notification.png)
+![“集成应用”屏幕上的应用更新通知。](../images/outlook-deploy-update-notification.png)
 
 对于自行安装外接程序的最终用户，即使加载项已更新，基于事件的激活功能也不会工作。
 
@@ -69,13 +71,13 @@ ms.locfileid: "66797678"
 
 每当从 **集成应用** 屏幕部署基于事件的外接程序时，管理员都会在部署向导中获取有关加载项基于事件的激活功能的详细信息。 详细信息显示在 **“应用权限和功能** ”部分。 管理员应看到加载项可以自动激活的所有事件。
 
-![部署新应用时“接受权限请求”屏幕的屏幕截图。](../images/outlook-deploy-accept-permissions-requests.png)
+![部署新应用时的“接受权限请求”屏幕。](../images/outlook-deploy-accept-permissions-requests.png)
 
 同样，当现有加载项更新为基于事件的功能时，管理员会在加载项上看到“更新挂起”状态。 仅当管理员同意应用 **权限和功能** 部分中所述的更改（包括加载项可以自动激活的事件集）时，才会部署更新的加载项。
 
 每次向外接程序添加任何新 `LaunchEvent Type` 内容时，管理员都会在管理门户中看到更新流，并且需要为其他事件提供许可。
 
-![部署更新后的应用时“更新”流的屏幕截图。](../images/outlook-deploy-update-flow.png)
+![部署更新后的应用时的“汇报”流。](../images/outlook-deploy-update-flow.png)
 
 ## <a name="see-also"></a>另请参阅
 

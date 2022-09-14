@@ -2,14 +2,14 @@
 title: 配置 Outlook 外接程序以进行基于事件的激活
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
-ms.date: 08/16/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b0991c64bd4075f88a2965f3feacf1f27dc2bad
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 11f3f96125aaf83a80586dbe70f4902e73ed7d17
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423228"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674750"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置 Outlook 外接程序以进行基于事件的激活
 
@@ -18,16 +18,13 @@ ms.locfileid: "67423228"
 本演练结束时，你将拥有一个加载项，该加载项将在创建新项并设置主题时运行。
 
 > [!NOTE]
-> [要求集 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) 中引入了对此功能的支持，要求[集 1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11) 现在支持其他事件。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
+> [要求集 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) 中引入了对此功能的支持，后续要求集中现在提供了其他事件。 有关事件的最低要求集以及支持事件的客户端和平台的详细信息，请参阅 [Exchange 服务器和 Outlook 客户端支持的](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)[受支持事件](#supported-events)和要求集。
 >
 > Outlook on iOS 或 Android 不支持基于事件的激活。
 
 ## <a name="supported-events"></a>支持的事件
 
 下表列出了当前可用的事件以及每个事件支持的客户端。 引发事件时，处理程序会接收一个 `event` 对象，其中可能包含特定于事件类型的详细信息。 “ **说明** ”列包含指向相关对象（如果适用）的链接。
-
-> [!IMPORTANT]
-> 仍处于预览状态的事件可能仅适用于 Microsoft 365 订阅和受支持客户端的有限集，如下表所述。 有关客户端配置详细信息，请参阅本文中的 [“如何预览](#how-to-preview) ”。 不应在生产外接程序中使用预览事件。
 
 |事件|说明|最低要求集和支持的客户端|
 |---|---|---|
@@ -40,31 +37,17 @@ ms.locfileid: "67423228"
 |`OnAppointmentTimeChanged`|在撰写约会时更改日期/时间。<br><br>特定于事件的数据对象： [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
 |`OnAppointmentRecurrenceChanged`|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间已更改， `OnAppointmentTimeChanged` 也会触发该事件。<br><br>特定于事件的数据对象： [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
 |`OnInfoBarDismissClicked`|在撰写邮件或约会项目时关闭通知。 只会通知添加通知的加载项。<br><br>特定于事件的数据对象： [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
-|`OnMessageSend`|发送消息项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
-|`OnAppointmentSend`|发送约会项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
-|`OnMessageCompose`|撰写新消息时 (包括答复、全部答复和转发) 或编辑草稿。|[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
-|`OnAppointmentOrganizer`|创建新约会或编辑现有约会时。|[预览](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
+|`OnMessageSend`|发送消息项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
+|`OnAppointmentSend`|发送约会项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
+|`OnMessageCompose`|撰写新消息时 (包括答复、全部答复和转发) 或编辑草稿。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
+|`OnAppointmentOrganizer`|创建新约会或编辑现有约会时。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
 
 > [!NOTE]
 > Outlook on Windows 中<sup>基于事件的</sup> 1 个加载项至少需要Windows 10版本 1903 (内部版本 18362) 或 Windows Server 2019 版本 1903 才能运行。
 
-### <a name="how-to-preview"></a>如何预览
-
-我们邀请你立即在预览版中试用这些事件！ 通过 GitHub 向我们提供反馈，让我们了解你的方案以及如何改进， (请参阅本页末尾的 **“反馈** ”部分) 。
-
-若要在可用的情况下预览这些事件，请执行以下操作：
-
-- 对于Outlook 网页版：
-  - [在 Microsoft 365 租户上配置目标版本。](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
-  - 引用 CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js)上的 **beta** 库。 用于 TypeScript 编译和 IntelliSense 的[类型定义文件](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts)位于 CDN 和 [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts) 中。 可以使用 `npm install --save-dev @types/office-js-preview` 来安装这些类型。
-- 对于新 Mac UI 上的 Outlook：
-  - 所需的最小版本为 16.54 (21101001) 。 加入 [Office 预览体验计划](https://insider.office.com/join/Mac) ，并选择 **Beta 频道** 以访问 Office beta 生成。
-- 对于 Windows 上的 Outlook：
-  - 所需的最低版本为 16.0.14511.10000。 加入 [Office 预览体验计划](https://insider.office.com/join/windows) ，并选择 **Beta 频道** 以访问 Office beta 生成。
-
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) 门，使用 Office 外接程序的 Yeoman 生成器创建加载项项目。
+完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) 门，使用 Office 外接程序的 [Yeoman 生成器](../develop/yeoman-generator-overview.md)创建加载项项目。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
@@ -140,10 +123,10 @@ ms.locfileid: "67423228"
           <!-- Enable launching the add-in on the included events. -->
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
-              <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
-              <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+              <LaunchEvent Type="OnNewMessageCompose" FunctionName="onNewMessageComposeHandler"/>
+              <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onNewAppointmentComposeHandler"/>
               
-              <!-- Other available events (currently released) -->
+              <!-- Other available events -->
               <!--
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
@@ -152,12 +135,10 @@ ms.locfileid: "67423228"
               <LaunchEvent Type="OnAppointmentTimeChanged" FunctionName="onAppointmentTimeChangedHandler" />
               <LaunchEvent Type="OnAppointmentRecurrenceChanged" FunctionName="onAppointmentRecurrenceChangedHandler" />
               <LaunchEvent Type="OnInfoBarDismissClicked" FunctionName="onInfobarDismissClickedHandler" />
-              -->
-
-              <!-- Other available events (currently in preview) -->
-              <!--
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
               <LaunchEvent Type="OnAppointmentSend" FunctionName="onAppointmentSendHandler" SendMode="PromptUser" />
+              <LaunchEvent Type="OnMessageCompose" FunctionName="onMessageComposeHandler" />
+              <LaunchEvent Type="OnAppointmentOrganizer" FunctionName="onAppointmentOrganizerHandler" />
               -->
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
@@ -218,10 +199,10 @@ Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页�
     * See LICENSE in the project root for license information.
     */
 
-    function onMessageComposeHandler(event) {
+    function onNewMessageComposeHandler(event) {
       setSubject(event);
     }
-    function onAppointmentComposeHandler(event) {
+    function onNewAppointmentComposeHandler(event) {
       setSubject(event);
     }
     function setSubject(event) {
@@ -242,8 +223,8 @@ Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页�
     }
 
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
-    Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
-    Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
+    Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
+    Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
     ```
 
 1. 保存所做的更改。
@@ -255,7 +236,7 @@ Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页�
 
 1. 在 **./src/commands** 文件夹中，打开 **commands.html**。
 
-1. 紧接在结束 **头** 标记 (`<\head>`) 之前，添加脚本条目以包含事件处理 JavaScript 代码。
+1. 紧接在结束 **头** 标记 (`</head>`) 之前，添加脚本条目以包含事件处理 JavaScript 代码。
 
     ```html
     <script type="text/javascript" src="../launchevent/launchevent.js"></script>
@@ -289,6 +270,7 @@ Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页�
     ```command&nbsp;line
     npm run build
     ```
+
     ```command&nbsp;line
     npm start
     ```
@@ -325,10 +307,12 @@ Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页�
 
 可以通过Microsoft 365 管理中心上传清单来部署基于事件的加载项。 在管理门户中，展开导航窗格中的 **“设置”** 部分，然后选择 **“集成应用**”。 在 **“集成应用** ”页上，选择 **“上传自定义应用** ”操作。
 
-![Microsoft 365 管理中心上的“集成应用”页，包括“上传自定义应用”操作。](../images/outlook-deploy-event-based-add-ins.png)
+![Microsoft 365 管理中心上的“集成应用”页，其中突出显示了“上传自定义应用”操作。](../images/outlook-deploy-event-based-add-ins.png)
 
 > [!IMPORTANT]
-> 基于事件的加载项仅限于管理员管理的部署。 目前，用户无法从 AppSource 或应用内 Office 应用商店获取基于事件的加载项。 若要了解详细信息，请参阅 [基于事件的 Outlook 外接程序的 AppSource 列表选项](autolaunch-store-options.md)。
+> 基于事件的加载项仅限于管理员管理的部署。 用户无法从 AppSource 或应用内 Office 应用商店激活基于事件的加载项。 若要了解详细信息，请参阅 [基于事件的 Outlook 外接程序的 AppSource 列表选项](autolaunch-store-options.md)。
+
+[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>基于事件的激活行为和限制
 

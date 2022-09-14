@@ -93,6 +93,9 @@ items:
               - name: 随文档自动打开任务窗格
                 href: develop/automatically-open-a-task-pane-with-a-document.md
                 displayName: manifest
+              - name: 在加载项安装时自动打开任务窗格
+                href: develop/automatically-open-on-installation.md
+                displayName: manifest
               - name: 配置加载项以使用共享运行时
                 href: develop/configure-your-add-in-to-use-a-shared-runtime.md
               - name: 在打开的文件上运行代码
@@ -626,7 +629,7 @@ items:
             href: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
             displayName: Outlook
           - name: API 参考 - 最新版本
-            href: reference/outlook-api-reference-1-11.md
+            href: reference/outlook-api-reference-latest.md
             displayName: Outlook
           - name: Outlook 外接程序设计准则
             href: outlook/outlook-addin-design.md

@@ -1,14 +1,14 @@
 ---
 title: 在 Outlook 外接程序中启用共享文件夹和共享邮箱方案
 description: 讨论如何配置对共享文件夹 (a.k.a 的外接程序支持。 委托访问) 和共享邮箱。
-ms.date: 07/11/2022
+ms.date: 09/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a01c81dcc1bcae4fa92e2d659c1aa40af4cdac5
-ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
+ms.openlocfilehash: bae8a0f8cd63eed5feea7460e57ecfc212a06d61
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "66765277"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674664"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在 Outlook 外接程序中启用共享文件夹和共享邮箱方案
 
@@ -18,15 +18,15 @@ ms.locfileid: "66765277"
 
 下表显示了此功能支持的客户端-服务器组合，包括在适用的情况下所需的最低累积更新。 不支持排除的组合。
 
-| 客户端 | Exchange Online | 本地 Exchange 2019<br> (累积更新 1 或更高版本)  | 本地 Exchange 2016<br> (累积更新 6 或更高版本)  | 本地 Exchange 2013 |
+| Client | Exchange Online | 本地 Exchange 2019<br> (累积更新 1 或更高版本)  | 本地 Exchange 2016<br> (累积更新 6 或更高版本)  | 本地 Exchange 2013 |
 |---|:---:|:---:|:---:|:---:|
-|Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|预览版\*|预览版\*|预览版\*|
+|Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是\*|是\*|是\*|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|是|
 |Web 浏览器：<br>新式 Outlook UI|是|不适用|不适用|不适用|
 |Web 浏览器：<br>经典 Outlook UI|不适用|否|否|否|
 
 > [!NOTE]
-> \* 从版本 2205 (内部版本 15228.10000) 开始，在本地 Exchange 环境中支持此功能目前处于预览状态。
+> \* 从版本 2206 开始，可在本地 Exchange 环境中支持此功能， (当前频道版本 15330.20000) 和版本 2207 (每月企业频道版本 15427.20000) 。
 
 > [!IMPORTANT]
 > 要求 [集 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (中引入了对此功能的支持，有关详细信息，请参阅 [客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)) 。 但是，请注意，该功能的支持矩阵是要求集的超集。
@@ -43,7 +43,7 @@ ms.locfileid: "66765277"
 
 #### <a name="shared-mailboxes-preview"></a>共享邮箱 (预览) 
 
-Exchange 服务器管理员可以创建和管理共享邮箱，以便用户集访问。 [支持在](/exchange/collaboration-exo/shared-mailboxes)[预览版中 (Exchange Online和本地 Exchange 环境) ](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes)。
+Exchange 服务器管理员可以创建和管理共享邮箱，以便用户集访问。 [支持Exchange Online](/exchange/collaboration-exo/shared-mailboxes)和[本地 Exchange 环境](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes)。
 
 默认情况下，将启用名为“自动映射”的Exchange Server功能，这意味着在 Outlook 关闭并重新打开后，[共享邮箱应自动显示](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)在用户的 Outlook 应用中。 但是，如果管理员关闭自动映射，则用户必须按照“将共享邮箱添加到 Outlook”一文中所述的手动步骤进行 [操作，并在 Outlook 中使用共享邮箱](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd)。
 

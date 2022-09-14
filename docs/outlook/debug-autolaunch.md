@@ -2,23 +2,23 @@
 title: 调试基于事件的 Outlook 加载项
 description: 了解如何调试实现基于事件的激活的 Outlook 加载项。
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d36a23b34132071077e3eb192e562288befb8a5
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 9b6a1d9a013b7c8e22632bdd04fb74e06c804a01
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797489"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674684"
 ---
 # <a name="debug-your-event-based-outlook-add-in"></a>调试基于事件的 Outlook 加载项
 
-本文提供调试指南，以便在加载项中实现 [基于事件的激活](autolaunch.md) 。 基于事件的激活功能已在 [要求集 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) 中引入，其他事件现在以预览版提供。 有关详细信息，请参阅 [支持的事件](autolaunch.md#supported-events)。
+本文提供调试指南，以便在加载项中实现 [基于事件的激活](autolaunch.md) 。 要求 [集 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) 中引入了基于事件的激活功能，后续要求集中现在提供了其他事件。 有关详细信息，请参阅 [支持的事件](autolaunch.md#supported-events)。
 
 > [!IMPORTANT]
 > 此调试功能仅在具有 Microsoft 365 订阅的 Outlook on Windows 中受支持。
 
-本文介绍启用调试的关键阶段。
+本文讨论启用调试的关键阶段。
 
 - [标记用于调试的加载项](#mark-your-add-in-for-debugging)
 - [配置Visual Studio Code](#configure-visual-studio-code)
@@ -43,10 +43,10 @@ ms.locfileid: "66797489"
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-1. 启动 Outlook 桌面 (或重启 Outlook（如果已打开) ）。
-1. 撰写新消息或约会。 应会看到以下对话框。 尚 *不* 与对话进行交互。
+1. 启动 Outlook 或重新启动它（如果已打开）。
+1. 撰写新消息或约会。 应显示“调试基于事件的处理程序”对话框。 尚 *不* 与对话进行交互。
 
-    ![“调试基于事件的处理程序”对话框的屏幕截图。](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![Windows 中的“调试基于事件的处理程序”对话框。](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## <a name="configure-visual-studio-code"></a>配置Visual Studio Code
 
@@ -77,13 +77,13 @@ ms.locfileid: "66797489"
 1. 可能在 **桌面** 文件夹) 中创建名为“**调试**”的新文件夹 (。
 1. 打开 Visual Studio Code。
 1. 转到 **“文件** > **打开文件夹**”，导航到刚创建的文件夹，然后选择 **“选择文件夹**”。
-1. 在活动栏上，选择“ **调试** ”项 (Ctrl+Shift+D) 。
+1. 在活动栏上，选择 **“运行和调试** ” (Ctrl+Shift+D) 。
 
-    ![活动栏上“调试”图标的屏幕截图。](../images/vs-code-debug.png)
+    ![活动栏上的“运行和调试”图标。](../images/vs-code-debug.png)
 
 1. 选择 **创建 launch.json 文件** 链接。
 
-    ![用于在Visual Studio Code中创建 launch.json 文件的链接的屏幕截图。](../images/vs-code-create-launch.json.png)
+    ![位于“运行和调试”选项下的链接，用于在Visual Studio Code中创建 launch.json 文件。](../images/vs-code-create-launch.json.png)
 
 1. 在 **“选择环境** ”下拉列表中，选择 **“边缘：启动** ”以创建 launch.json 文件。
 1. 将以下摘录添加到配置列表。 保存所做的更改。
@@ -113,9 +113,9 @@ ms.locfileid: "66797489"
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
 1. 将断点置于要在其中停止调试器的bundle.js。
-1. 在 **“调试”** 下拉列表中，选择“ **直接调试**”名称，然后选择 **“运行**”。
+1. 在 **“调试”** 下拉列表中，选择 **“直接调试**”，然后选择 **“开始调试** ”图标。
 
-    ![从“Visual Studio Code调试”下拉列表中的配置选项中选择“直接调试”的屏幕截图。](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![从“Visual Studio Code调试”下拉列表中的配置选项中选择的直接调试选项。](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## <a name="debug"></a>调试
 

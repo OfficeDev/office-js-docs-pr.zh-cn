@@ -1,20 +1,23 @@
 ---
 title: 随文档自动打开任务窗格
 description: 了解如何将 Office 加载项配置为在打开文档时自动打开。
-ms.date: 09/14/2021
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cc40ce6ed3188118cd9cc6384805ac15130fcb2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: ea5981fc8469d391ff03c1d3eefd70c57e41d4cb
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889490"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674627"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>随文档自动打开任务窗格
 
 可以通过将按钮添加到 Office 应用功能区来使用 Office 外接程序中的外接程序命令来扩展 Office UI。 当用户单击命令按钮时，会执行一个操作，如打开任务窗格。
 
 某些情况下，需要在文档打开时自动打开一个任务窗格，而无需进行显式用户交互。 可以使用 [AddInCommands 1.1 要求集中](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)引入的自动执行任务窗格功能在方案需要时自动打开任务窗格。
+
+> [!NOTE]
+> 若要将任务窗格配置为在安装外接程序时立即打开，但不一定在以后打开文档时，请参阅 [安装加载项时自动打开任务窗格](automatically-open-on-installation.md)。
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>AutoOpen 功能与插入任务窗格有何不同？
 
@@ -160,4 +163,5 @@ Office.context.document.settings.saveAsync();
 ## <a name="see-also"></a>另请参阅
 
 - 有关演示如何使用 AutoOpen 功能的示例，请参阅 [Office 外接程序命令示例](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane)。
+- [安装加载项时自动打开任务窗格](automatically-open-on-installation.md)
 - [加入 Microsoft 365 开发人员计划。](/office/developer-program/office-365-developer-program)

@@ -3,12 +3,12 @@ title: 在 Office 网页版中调试加载项
 description: 如何使用 Office 网页版来测试和调试加载项。
 ms.date: 03/06/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3071509a22f0c563b1202bd29da996f3dbaaf9cc
-ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
+ms.openlocfilehash: b365be937058f818a97dd7a73176a56f76b36098
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "67464823"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674623"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>在 Office 网页版中调试加载项
 
@@ -23,7 +23,7 @@ ms.locfileid: "67464823"
 
 若要使用 Office 网页版调试加载项，请执行以下操作：
 
-1. 在 localhost 上运行该项目，并将其旁加载到Office web 版中的文档。 有关详细的旁加载说明，请参阅 [Web 上的旁加载 Office 加载项](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually)。
+1. 在 localhost 上运行该项目，并将其旁加载到Office web 版中的文档。 有关详细的旁加载说明，请参阅 [在 Web 上手动旁加载 Office 加载项](sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web)。
 
 2. 打开浏览器的开发人员工具。 这通常通过按 F12 来完成。 打开调试器工具并使用它来设置断点和监视变量。 有关使用浏览器工具的详细帮助，请参阅以下内容之一：
 
