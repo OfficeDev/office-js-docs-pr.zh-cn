@@ -3,12 +3,12 @@ title: Office 加载项术语表
 description: 常在 Office 加载项文档中使用的术语表。
 ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: db15b4afcdf37122edc563ae9257ce7a61fb4580
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 41eb138dac6fc9c3ab14cd795549853f0358e75d
+ms.sourcegitcommit: 65f46911640bf4becc67b718b0eac9106fff3925
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423291"
+ms.lasthandoff: 09/16/2022
+ms.locfileid: "67735321"
 ---
 # <a name="office-add-ins-glossary"></a>Office 加载项术语表
 
@@ -78,13 +78,17 @@ Office 2013 引入了常见 API，用于与 Office 2013 或更高版本交互。
 
 另请参阅： [运行时](#runtime)、 [共享运行时](#shared-runtime)。
 
+## <a name="custom-functions-only-add-in"></a>仅自定义函数加载项
+
+包含自定义函数但不包含任务窗格等 UI 的加载项。 此类外接程序中的自定义函数在 [仅限 JavaScript 的运行时中运行](../testing/runtimes.md#javascript-only-runtime)。 包含 UI 的自定义函数可以使用共享运行时或仅限 JavaScript 的运行时和支持 HTML 的运行时的组合。 我们建议，如果有 UI，则使用共享运行时。
+
+另请参阅： [自定义函数](#custom-function)、 [自定义函数运行时](#custom-functions-runtime)。
+
 ## <a name="host"></a>host
 
 **\<Host\>** 通常是指 Office 应用程序。 支持 Office 外接程序的 Office 应用程序或主机包括 Excel、OneNote、Outlook、PowerPoint、Project 和 Word。
 
 另请参阅： [应用程序](#application)、 [客户端](#client)、 [Office 应用程序、Office 客户端](#office-application-office-client)。
-
-
 
 ## <a name="office-application-office-client"></a>Office 应用程序、Office 客户端
 
@@ -133,12 +137,6 @@ Office 2013 引入了常见 API，用于与 Office 2013 或更高版本交互。
 **教程** 是一种教学帮助，旨在帮助人们学习使用产品或过程。 在 Office 外接程序上下文中，教程指导外接程序开发人员完成特定应用程序（如 Excel）的完整外接程序开发过程。 这涉及到以下 20 个或更多步骤，比 [快速入门更投入](#quick-start)时间。
 
 另请参阅： [快速入门](#quick-start)。
-
-## <a name="custom-functions-only-add-in"></a>仅自定义函数加载项
-
-包含自定义函数但不包含任务窗格等 UI 的加载项。 此类外接程序中的自定义函数在 [仅限 JavaScript 的运行时中运行](../testing/runtimes.md#javascript-only-runtime)。 包含 UI 的自定义函数可以使用共享运行时或仅限 JavaScript 的运行时和支持 HTML 的运行时的组合。 我们建议，如果有 UI，则使用共享运行时。 
-
-另请参阅： [自定义函数](#custom-function)、 [自定义函数运行时](#custom-functions-runtime)。
 
 ## <a name="web-add-in"></a>Web 加载项
 
