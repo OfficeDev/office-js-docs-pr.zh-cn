@@ -1,6 +1,6 @@
 # <a name="office-add-ins-documentation"></a>Office 加载项文档
 
-欢迎使用 Office 加载项文档存储库。 在此存储库中，可以找到 Office JavaScript API 概念、快速入门、教程和操作指南的文档源文件。 为了获得最佳体验，建议在[Microsoft Docs](https://docs.microsoft.com/office/dev/add-ins)网站上查看此内容。
+欢迎使用 Office 加载项文档存储库。 在此存储库中，可以找到 Office JavaScript API 概念、快速入门、教程和操作指南的文档源文件。 为了获得最佳体验，建议在[Microsoft Docs](https://learn.microsoft.com/office/dev/add-ins)网站上查看此内容。
 
 > **注意**：可以在 [office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) 存储库中找到 Office JavaScript API 参考文档源文件。
 

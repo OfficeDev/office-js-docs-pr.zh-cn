@@ -4,12 +4,12 @@ description: 资深 VSTO 加载项开发人员了解 Office Web 加载项资源�
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 4cafa1221a24c7537d84fb662761e7ec66a0125d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: HT
+ms.openlocfilehash: 676fe794e2d4d813993432fb94c723b9b917789b
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152313"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857520"
 ---
 # <a name="vsto-add-in-developers-guide"></a>VSTO 加载项开发人员指南
 
@@ -50,7 +50,7 @@ ms.locfileid: "59152313"
 
 ## <a name="step-4-understand-the-javascript-library"></a>步骤 4：了解 JavaScript 库
 
-通过来自 Microsoft Learn 的本教程大致了解 Office JavaScript 库：[了解 Office JavaScript API](/learn/modules/intro-office-add-ins/3-apis)。
+通过 Microsoft Learn 培训中的本教程获取 Office JavaScript 库的大图： [了解 Office JavaScript API](/training/modules/intro-office-add-ins/3-apis)。
 
 然后，使用 [Script Lab 工具](explore-with-script-lab.md)（一种用于运行和探索 API 的沙箱）来探索 Office JavaScript API。
 

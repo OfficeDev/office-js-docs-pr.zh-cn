@@ -1,31 +1,31 @@
 ---
-title: 在演示文稿中PowerPoint幻灯片
+title: 在 PowerPoint 演示文稿中插入幻灯片
 description: 了解如何将幻灯片从一个演示文稿插入另一个演示文稿。
 ms.date: 03/07/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b08dd8bd82e5d4f4f86114630e9238b6c43b6ae7
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a31933de4272634394dc6c36aafa973c41265471
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747024"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857569"
 ---
-# <a name="insert-slides-in-a-powerpoint-presentation"></a>在演示文稿中PowerPoint幻灯片
+# <a name="insert-slides-in-a-powerpoint-presentation"></a>在 PowerPoint 演示文稿中插入幻灯片
 
-加载项PowerPoint应用程序特定的 JavaScript 库，将一个演示文稿中的幻灯片PowerPoint当前演示文稿中。 您可以控制插入的幻灯片是否保留源演示文稿的格式或目标演示文稿的格式。
+PowerPoint 外接程序可以使用 PowerPoint 的应用程序特定 JavaScript 库将一个演示文稿中的幻灯片插入到当前演示文稿中。 可以控制插入的幻灯片是保留源演示文稿的格式还是目标演示文稿的格式。
 
-幻灯片插入 API 主要用于演示文稿模板方案：少数已知演示文稿充当加载项可以插入的幻灯片池。 在这种情况下，您或客户必须创建和维护一个将选择条件关联在一起 (如幻灯片标题或图像) 幻灯片的数据源。 这些 API 还可用于以下方案：用户可以插入任意演示文稿中的幻灯片，但在这种情况下，用户实际上只能插入源演示文稿的所有幻灯片。 有关详细信息 [，请参阅](#selecting-which-slides-to-insert) 选择要插入的幻灯片。
+幻灯片插入 API 主要用于演示文稿模板方案：有少量的已知演示文稿用作可由外接程序插入的幻灯片池。 在这种情况下，您或客户必须创建和维护一个数据源，该数据源将选择条件 (相关联，例如幻灯片标题或图像) 幻灯片 ID。 也可以在用户可以从任何任意演示文稿插入幻灯片的情况下使用 API，但在这种情况下，用户实际上仅限于插入源演示文稿中 *的所有* 幻灯片。 有关详细信息，请参阅 [选择要插入的幻灯片](#selecting-which-slides-to-insert) 。
 
 将幻灯片从一个演示文稿插入另一个演示文稿有两个步骤。
 
 1. 将源演示文稿文件 (.pptx) 转换为 base64 格式的字符串。
-1. `insertSlidesFromBase64`使用 方法将 base64 文件中一个或多个幻灯片插入当前演示文稿。
+1. 使用该 `insertSlidesFromBase64` 方法将 base64 文件中的一张或多张幻灯片插入当前演示文稿中。
 
 ## <a name="convert-the-source-presentation-to-base64"></a>将源演示文稿转换为 base64
 
-有许多方法可以将文件转换为 base64。 使用哪种编程语言和库，以及是在外接程序的服务器端还是客户端进行转换取决于你的方案。 大多数情况下，你将使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 对象在客户端上的 JavaScript 中执行转换。 以下示例演示此做法。
+可通过多种方式将文件转换为 base64。 使用哪种编程语言和库，以及是要在外接程序的服务器端转换还是在客户端进行转换，都由你的方案决定。 大多数情况下，你将使用 [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) 对象在客户端的 JavaScript 中执行转换。 以下示例演示此做法。
 
-1. 首先，获取对源PowerPoint的引用。 本示例中，我们将使用 `<input>` 类型的控件 `file` 提示用户选择文件。 将以下标记添加到外接程序页面。
+1. 首先获取对源 PowerPoint 文件的引用。 在此示例中，我们将使用 `<input>` 类型的 `file` 控件提示用户选择文件。 将以下标记添加到加载项页面。
 
     ```html
     <section>
@@ -38,12 +38,12 @@ ms.locfileid: "63747024"
 
     此标记将以下屏幕截图中的 UI 添加到页面。
 
-    ![Screenshot showing an HTML file type input control preceded by an instructional sentence reading "Select a PowerPoint presentation from which to insert slides". 该控件包含一个标记为"选择文件"的按钮，后跟"未选择文件"一句。](../images/powerpoint-html-file-input-control.png)
+    ![显示 HTML 文件类型输入控件的屏幕截图，前面是一个说明性句子，上面写着“选择要从中插入幻灯片的 PowerPoint 演示文稿”。 控件包含一个标记为“选择文件”的按钮，后跟句子“未选择文件”。](../images/powerpoint-html-file-input-control.png)
 
     > [!NOTE]
-    > 有许多其他方法可以获取PowerPoint文件。 例如，如果该文件存储在OneDrive或SharePoint，可以使用 Microsoft Graph下载它。 有关详细信息，请参阅使用 [Microsoft](/graph/api/resources/onedrive) Graph 中的文件和[使用 Microsoft](/learn/modules/msgraph-access-file-data/) Graph。
+    > 还有许多其他方法可以获取 PowerPoint 文件。 例如，如果文件存储在 OneDrive 或 SharePoint 上，则可以使用 Microsoft Graph 下载它。 有关详细信息，请参阅 [使用 Microsoft Graph](/graph/api/resources/onedrive) 和 [Microsoft Graph 访问文件](/training/modules/msgraph-access-file-data/)中的文件。
 
-2. 将以下代码添加到外接程序的 JavaScript，以将函数分配给输入控件的事件 `change` 。  (您将在下 `storeFileAsBase64` 一步创建 函数。) 
+2. 将以下代码添加到加载项的 JavaScript，以便将函数分配给输入控 `change` 件的事件。  (下一步创建函 `storeFileAsBase64` 数。) 
 
     ```javascript
     $("#file").change(storeFileAsBase64);
@@ -51,9 +51,9 @@ ms.locfileid: "63747024"
 
 3. 添加以下代码。 对于此代码，请注意以下事项。
 
-    - 方法 `reader.readAsDataURL` 将文件转换为 base64，并将其存储在 `reader.result` 属性中。 方法完成后，将触发事件 `onload` 处理程序。
-    - 事件 `onload` 处理程序会修整已编码文件的元数据，将编码字符串存储在全局变量中。
-    - base64 编码的字符串全局存储，因为它由在稍后步骤创建的另一个函数读取。
+    - 该 `reader.readAsDataURL` 方法将文件转换为 base64，并将其存储在属性中 `reader.result` 。 方法完成后，将触发 `onload` 事件处理程序。
+    - 事件 `onload` 处理程序从编码的文件中剪裁元数据，并将编码的字符串存储在全局变量中。
+    - base64 编码的字符串全局存储，因为它将由在后续步骤中创建的另一个函数读取。
 
     ```javascript
     let chosenFileBase64;
@@ -75,7 +75,7 @@ ms.locfileid: "63747024"
 
 ## <a name="insert-slides-with-insertslidesfrombase64"></a>使用 insertSlidesFromBase64 插入幻灯片
 
-加载项使用 [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)) 方法将另一个演示文稿PowerPoint演示文稿中的幻灯片插入到当前演示文稿中。 下面是一个简单示例，其中源演示文稿的所有幻灯片都插入到当前演示文稿的开头，并且插入的幻灯片保留源文件的格式。 请注意，`chosenFileBase64`该变量是一个全局变量，它保留一个 base64 编码版本的PowerPoint演示文稿文件。
+外接程序使用 [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)) 方法将另一个 PowerPoint 演示文稿中的幻灯片插入当前演示文稿中。 下面是一个简单的示例，其中源演示文稿中的所有幻灯片都插入到当前演示文稿的开头，插入的幻灯片保留源文件的格式。 请注意， `chosenFileBase64` 这是一个全局变量，包含 PowerPoint 演示文稿文件的 base64 编码版本。
 
 ```javascript
 async function insertAllSlides() {
@@ -86,10 +86,10 @@ async function insertAllSlides() {
 }
 ```
 
-您可以通过将 [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) 对象作为第二个参数传递给 来控制插入结果的某些方面，包括幻灯片的插入位置以及幻灯片是获取源格式还是目标格式 `insertSlidesFromBase64`。 示例如下。 关于此代码，请注意以下几点：
+你可以通过将 [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) 对象作为第二个参数传递给 `insertSlidesFromBase64`插入结果的某些方面，包括插入幻灯片的位置以及它们是否获取源或目标格式。 示例如下。 关于此代码，请注意以下几点：
 
-- 该属性有两个可能的值 `formatting` ："UseDestinationTheme"和"KeepSourceFormatting"。 （可选）可以使用枚举 `InsertSlideFormatting` ， (例如，) `PowerPoint.InsertSlideFormatting.useDestinationTheme` 。
-- 函数将紧接在属性指定的幻灯片之后插入源演示文稿中的 `targetSlideId` 幻灯片。 此属性的值是三种可能形式之一的字符串：***nnn*#**、**#* mmmmmmmmm***或 **nnnmmmmmmmmm#****，其中 *nnn* 是幻灯片的 ID (通常为 3 个数字) *而 mmmmmmmmm* 是幻灯片的创建 ID (通常为 9 个数字) 。 一些示例包括 `267#763315295`、 `267#`和 `#763315295`。
+- 属性有两个可能的 `formatting` 值：“UseDestinationTheme”和“KeepSourceFormatting”。 （可选）可以使用 `InsertSlideFormatting` 枚举， (例如， `PowerPoint.InsertSlideFormatting.useDestinationTheme`) 。
+- 该函数将在属性指定的幻灯片之后立即插入源演示文稿中的 `targetSlideId` 幻灯片。 此属性的值是三种可能形式之一的字符串：***nnn*#**、**#* mmmmmmmmm***或 *nnn mmmmmmm***，其中 *_nnn_#* 是幻灯片的 ID， (通常为 3 位数字) ，*而 mmmmmmmmm* 是幻灯片的创建 ID，通常 (9 位数字) 。 一些示例包括 `267#763315295`， `267#`和 `#763315295`.
 
 ```javascript
 async function insertSlidesDestinationFormatting() {
@@ -106,9 +106,9 @@ async function insertSlidesDestinationFormatting() {
 }
 ```
 
-当然，在编码时，你通常不知道目标幻灯片的 ID 或创建 ID。 通常，加载项会要求用户选择目标幻灯片。 以下步骤演示了如何获取当前 **选定幻灯片的 *nnn*#** ID，并使用它作为目标幻灯片。
+当然，通常不会在编码时知道目标幻灯片的 ID 或创建 ID。 更常见的是，外接程序会要求用户选择目标幻灯片。 以下步骤演示如何获取当前所选幻灯片的 ***nnn*#** ID，并将其用作目标幻灯片。
 
-1. 使用通用 JavaScript API 的 [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 方法创建一个函数，以获取当前选定幻灯片的 ID。 示例如下。 请注意，对 的调用 `getSelectedDataAsync` 嵌入 Promise 返回函数中。 有关这样做的原因和如何操作，请参阅在承诺Common-APIs [中的 Wrap 对象](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)。
+1. 创建一个函数，该函数通过使用 Common JavaScript API 的 [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) 方法获取当前所选幻灯片的 ID。 示例如下。 请注意，调 `getSelectedDataAsync` 用嵌入到 Promise-returning 函数中。 有关为何以及如何执行此操作的详细信息，请参阅 [承诺返回函数中的 Wrap Common-APIs](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)。
 
  
     ```javascript
@@ -130,7 +130,7 @@ async function insertSlidesDestinationFormatting() {
     }
     ```
 
-1. 在主函数的 [PowerPoint.run () ](/javascript/api/powerpoint#PowerPoint_run_batch_) 内调用新函数，并传递它返回的 ID (连接了"#"符号) `targetSlideId` `InsertSlideOptions` 作为参数的 属性值。 示例如下。
+1. 在主函数的 [PowerPoint.run () ](/javascript/api/powerpoint#PowerPoint_run_batch_) 中调用新函数，并传递它返回的 ID (与“#”符号) 连接为参数属性的`targetSlideId``InsertSlideOptions`值。 示例如下。
 
     ```javascript
     async function insertAfterSelectedSlide() {
@@ -150,7 +150,7 @@ async function insertSlidesDestinationFormatting() {
 
 ### <a name="selecting-which-slides-to-insert"></a>选择要插入的幻灯片
 
-您还可以使用 [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) 参数控制插入源演示文稿中的哪些幻灯片。 为此，需要将源演示文稿幻灯片的一个数组分配给 `sourceSlideIds` 属性。 下面是插入四张幻灯片的示例。 请注意，数组中的每个字符串必须遵循用于 属性的一种或另一种 `targetSlideId` 模式。
+还可以使用 [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) 参数来控制从源演示文稿插入的幻灯片。 为此，请将源演示文稿的幻灯片 ID 数组分配给属性 `sourceSlideIds` 。 下面是插入四张幻灯片的示例。 请注意，数组中的每个字符串必须遵循用于属性 `targetSlideId` 的一个或另一个模式。
 
 ```javascript
 async function insertAfterSelectedSlide() {
@@ -168,8 +168,8 @@ async function insertAfterSelectedSlide() {
 ```
 
 > [!NOTE]
-> 幻灯片的插入顺序与它们在源演示文稿中的显示相对顺序相同，而不管它们在数组中的显示顺序如何。
+> 幻灯片将按在源演示文稿中显示的相对顺序插入，而不考虑它们在数组中的显示顺序。
 
-用户无法实际发现源演示文稿中幻灯片的 ID 或创建 ID。 因此，实际上 `sourceSlideIds` ，只有当在编码时知道源标识或加载项可以在运行时从某些数据源检索源标识时，才能使用 属性。 因为无法让用户记住幻灯片 ID，所以还需要一种方法让用户选择幻灯片（可能是按标题还是按图像选择）然后将每个标题或图像与幻灯片 ID 关联。
+用户无法在源演示文稿中发现幻灯片的 ID 或创建 ID。 因此，实际上只能在知道编码时的源 ID 或加载项可以在运行时从某些数据源检索它们时使用 `sourceSlideIds` 该属性。 由于不能期望用户记住幻灯片 ID，因此还需要一种方法来使用户能够选择幻灯片（可能按标题或图像选择幻灯片，然后将每个标题或图像与幻灯片的 ID 相关联）。
 
-因此， `sourceSlideIds` 该属性主要用于演示文稿模板方案：外接程序旨在处理一组特定的演示文稿，这些演示文稿充当可插入的幻灯片池。 在这种情况下，您或客户必须创建和维护一个数据源，该数据源将选择条件 (（如标题或图像) ）与从一组可能的源演示文稿构造的幻灯片 ID 或幻灯片创建 ID 相关联。
+因此，该 `sourceSlideIds` 属性主要用于演示文稿模板方案：外接程序旨在处理一组特定的演示文稿，这些演示文稿充当可插入的幻灯片池。 在这种情况下，你或客户必须创建和维护一个数据源，该数据源将选择条件 (相关联，例如标题或图像) 幻灯片 ID 或从可能源演示文稿集构造的幻灯片创建 ID。

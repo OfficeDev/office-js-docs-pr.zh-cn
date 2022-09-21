@@ -2,14 +2,14 @@
 title: 配置 Outlook 外接程序以进行基于事件的激活
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
-ms.date: 09/09/2022
+ms.date: 09/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f3f96125aaf83a80586dbe70f4902e73ed7d17
-ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.openlocfilehash: 17f6815728beeb722f79db4ddc3c61e0f8e96f59
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2022
-ms.locfileid: "67674750"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857576"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置 Outlook 外接程序以进行基于事件的激活
 
@@ -177,7 +177,7 @@ ms.locfileid: "67674750"
 Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页版和使用可引用同一 JavaScript 文件的 HTML 文件。 必须提供对清单节点中的 `Resources` 这两个文件的引用，因为 Outlook 平台最终决定是使用基于 Outlook 客户端的 HTML 还是 JavaScript。 因此，若要配置事件处理，请提供 HTML 在元素中 **\<Runtime\>** 的位置，然后在其 `Override` 子元素中提供 HTML 内联或引用的 JavaScript 文件的位置。
 
 > [!TIP]
-> 
+>
 > - 若要了解加载项中的运行时，请参阅 [Office 加载项中的运行时](../testing/runtimes.md)。
 > - 若要详细了解 Outlook 外接程序的清单，请参阅 [Outlook 加载项清单](manifests.md)。
 
@@ -230,7 +230,7 @@ Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页�
 1. 保存所做的更改。
 
 > [!IMPORTANT]
-> Windows：目前，在实现基于事件的激活处理的 JavaScript 文件中，不支持导入。
+> Windows：目前，在实现基于事件的激活处理的 JavaScript 文件中不支持导入。
 
 ## <a name="update-the-commands-html-file"></a>更新命令 HTML 文件
 
@@ -316,13 +316,13 @@ Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页�
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>基于事件的激活行为和限制
 
-外接程序启动事件处理程序应为短运行、轻型且尽可能非侵入性。 激活后，加载项将在大约 300 秒内超时，这是运行基于事件的外接程序所允许的最大时间长度。为了表示加载项已完成启动事件的处理，建议让关联的处理程序调用该 `event.completed` 方法。  (请注意，语句后 `event.completed` 包含的代码不能保证运行。) 每次触发外接程序句柄的事件时，加载项都会重新激活并运行关联的事件处理程序，并重置超时窗口。 加载项超时后结束，或者用户关闭撰写窗口或发送项。
+外接程序启动事件处理程序应为短运行、轻型且尽可能非侵入性。 激活后，加载项将在大约 300 秒内超时，这是运行基于事件的外接程序所允许的最大时间长度。若要指示加载项已完成处理启动事件，关联的事件处理程序必须调用该 `event.completed` 方法。  (请注意，语句后 `event.completed` 包含的代码不能保证运行。) 每次触发外接程序句柄的事件时，加载项都会重新激活并运行关联的事件处理程序，并重置超时窗口。 加载项超时后结束，或者用户关闭撰写窗口或发送项。
 
 如果用户有多个订阅同一事件的加载项，Outlook 平台将不按特定顺序启动加载项。 目前，只能主动运行五个基于事件的加载项。
 
 在所有受支持的 Outlook 客户端中，用户必须保留在已激活加载项以完成运行的当前邮件项上。 例如，从当前项导航 (切换到另一个撰写窗口或选项卡) 终止加载项操作。 当用户发送正在撰写的消息或约会时，加载项也会停止操作。
 
-JavaScript 文件中不支持导入，在该文件中，你在 Windows 客户端中实现基于事件的激活的处理。
+在 Windows 客户端中实现基于事件的激活的处理的 JavaScript 文件中不支持导入。
 
 某些更改或更改 UI 的Office.js API 是不允许从基于事件的加载项中获取的。以下是被阻止的 API。
 

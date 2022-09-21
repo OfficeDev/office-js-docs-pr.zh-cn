@@ -1,14 +1,14 @@
 ---
 title: Office 加载项代码示例
 description: Office 加载项代码示例列表，可帮助你学习和生成自己的加载项。
-ms.date: 06/10/2022
+ms.date: 09/16/2022
 localization_priority: high
-ms.openlocfilehash: 16a1f92992c397772559468c27033aa58f6b6a6d
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 25a2312d26578c25c0ed2a3098df0d43008f9ac4
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423263"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857562"
 ---
 # <a name="office-add-in-code-samples"></a>Office 加载项代码示例
 
@@ -23,21 +23,19 @@ ms.locfileid: "67423263"
 - [PowerPoint "Hello world" 加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world)
 - [Word "Hello world" 加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world)
 
-<br>
-
----
-
----
-
 ## <a name="blazor-webassembly"></a>Blazor WebAssembly
 
+如果开发背景是构建 VSTO 外接程序，以下示例演示如何使用 .NET Blazor WebAssembly 生成 Office Web 加载项。 可以将大部分代码保留在 C# 和 Visual Studio 中。
+
 - [创建 Blazor WebAssembly Excel 加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/excel-blazor-add-in)
+- [创建 Blazor WebAssembly Outlook 加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/outlook-blazor-add-in)
 - [创建 Blazor WebAssembly Word 加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/word-blazor-add-in)
 
 ## <a name="excel"></a>Excel
 
 | 名称                | 说明         |
 |:--------------------|:--------------------|
+| [数据类型资源管理器](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) (预览)  | 生成 Excel 加载项，使你可以在工作簿中创建和浏览数据类型。 数据类型使加载项开发人员能够组织复杂的数据结构，例如对象，例如格式化的数字值、Web 映像和实体值。 |
 | [在 Teams 中打开](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-open-in-teams) | 在 Microsoft Teams 中新建包含你定义的数据的 Excel 电子表格。|
 | [插入外部 Excel 文件并使用 JSON 数据填充](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-insert-file)  | 将外部 Excel 文件中的现有模板插入当前打开的 Excel 工作簿。 然后，使用来自 JSON Web 服务的数据填充模板。 |
 | [在功能区上创建自定义上下文选项卡](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs) | 在 Office UI 中的功能区上创建自定义上下文选项卡。 该示例创建一个表，并且当用户将焦点移动到表内时，将显示自定义选项卡。 当用户移出表外时，自定义选项卡将隐藏。 |
@@ -62,12 +60,6 @@ ms.locfileid: "67423263"
 | [使用 Word 加载项获取、编辑和设置 Word 文档中的 OOXML 内容](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-get-set-edit-openxml) | 此示例展示了如何获取、编辑和设置 Word 文档中的 OOXML 内容。 示例加载项提供了一个暂存区，用于获取自己的内容的 Office Open XML，并测试自己编辑的 Office Open XML 代码片段。|
 | [在 Word 加载项中加载和写入 Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)  | 本示例加载项显示如何通过将 setSelectedDataAsync 方法与 ooxml coercion 类型结合使用，将多种丰富的内容类型添加到 Word 文档。 还可以通过此加载项直接在页面上显示每个示例内容类型的 Office Open XML 标记。 |
 
-<br>
-
----
-
----
-
 ## <a name="authentication-authorization-and-single-sign-on-sso"></a>身份验证、授权和单一登录 (SSO)
 
 | 名称                | 说明         |
@@ -78,6 +70,12 @@ ms.locfileid: "67423263"
 | [Outlook 加载项对 Microsoft Graph 的身份验证](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)。 | 生成连接到 Microsoft Graph 的 Outlook 加载项，并访问存储在 OneDrive for Busines s中的工作簿以撰写新的电子邮件。 |
 | [带有 ASP.NET 的单一登录 (SSO) Office 加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | 在 Office.js 中使用 `getAccessToken` API 为加载项提供 Microsoft Graph 数据的访问权限。此示例基于 ASP.NET。 |
 | [带有 Node.js 的单一登录 (SSO) Office 加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | 在 Office.js 中使用 `getAccessToken` API 为加载项提供 Microsoft Graph 数据的访问权限。此示例基于 Node.js 构建。|
+
+## <a name="office"></a>办公室
+
+| 名称                | 说明         |
+|:--------------------|:--------------------|
+| [在 Office 加载项中保存自定义设置](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-save-custom-settings) | 在 Office 加载项中保存自定义设置。 外接程序使用 JavaScript API for Office 属性包、浏览器 Cookie、Web 存储 (localStorage 和 sessionStorage) ，或通过将数据存储在文档中的隐藏 div 中，将数据存储为键值对。 |
 
 ## <a name="shared-runtime"></a>共享运行时
 
