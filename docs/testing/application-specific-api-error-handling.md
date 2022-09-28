@@ -3,12 +3,12 @@ title: 使用特定于应用程序的 JavaScript API 进行错误处理
 description: 了解 Excel、Word、PowerPoint 和其他特定于应用程序的 JavaScript API 错误处理逻辑，以解释运行时错误。
 ms.date: 07/05/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 07e5443f8b13acd3c907c89ce12ca5da62f343b3
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: b6f25f5740892df4729b72ee5ad87403853f45fb
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713202"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092992"
 ---
 # <a name="error-handling-with-the-application-specific-javascript-apis"></a>使用特定于应用程序的 JavaScript API 进行错误处理
 
@@ -47,7 +47,7 @@ async function tryCatch(callback) {
 
 当 Office JavaScript API 请求无法成功运行时，API 将返回包含以下属性的错误对象。
 
-- **代码**：错误消息的 `code` 属性包含一个字符串，它属于 `OfficeExtension.ErrorCodes` 或 `Excel.ErrorCodes` 列表的一部分。 例如，错误代码“InvalidReference”指示引用对于指定操作无效。 错误代码尚未本地化。
+- **code**:  The `code` property of an error message contains a string that is part of the `OfficeExtension.ErrorCodes` or `Excel.ErrorCodes` list. For example, the error code "InvalidReference" indicates that the reference is not valid for the specified operation. Error codes are not localized.
 
 - **消息**：错误消息的 `message` 属性包含本地化字符串中的错误摘要。 错误消息并非针对最终用户的使用情况；应使用错误代码和相应的业务逻辑来确定外接程序显示给最终用户的错误消息。
 
@@ -65,49 +65,49 @@ async function tryCatch(callback) {
 
 |错误代码 | 错误消息 | 备注 |
 |:----------|:--------------|:------|
-|`AccessDenied` |无法执行所请求的操作。| |
-|`ActivityLimitReached`|已达到活动限制。| |
-|`ApiNotAvailable`|请求的 API 不可用。| |
-|`ApiNotFound`|找不到你尝试使用的 API。 它可能在较新版本的 Excel 中可用。 有关详细信息，请参阅 [Excel JavaScript API 要求集](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) 文章。| |
-|`BadPassword`|提供的密码不正确。| |
-|`Conflict`|由于冲突，无法处理请求。| |
-|`ContentLengthRequired`|`Content-length`缺少 HTTP 标头。| |
-|`GeneralException`|处理请求时出现内部错误。| |
-|`InsertDeleteConflict`|尝试的插入或删除操作导致冲突。| |
-|`InvalidArgument` |自变量无效、缺少或格式不正确。| |
-|`InvalidBinding` |由于之前的更新，此对象绑定不再有效。| |
-|`InvalidOperation`|尝试的操作对于对象无效。| |
-|`InvalidOperationInCellEditMode`|Excel 处于“编辑单元格”模式时，该操作不可用。 使用 **Enter** 或 **Tab** 键或选择其他单元格退出编辑模式，然后重试。| |
-|`InvalidReference`|此引用对于当前操作无效。| |
-|`InvalidRequest`  |无法处理此请求。| |
-|`InvalidSelection`|当前选定内容对于此操作无效。| |
-|`ItemAlreadyExists`|所创建的资源已存在。| |
-|`ItemNotFound` |所请求的资源不存在。| |
-|`MemoryLimitReached`|已达到内存限制。 无法完成操作。| |
+|`AccessDenied` |无法执行所请求的操作。|*没有。* |
+|`ActivityLimitReached`|已达到活动限制。|*没有。* |
+|`ApiNotAvailable`|请求的 API 不可用。|*没有。* |
+|`ApiNotFound`|找不到你尝试使用的 API。 它可能在较新版本的 Excel 中可用。 有关详细信息，请参阅 [Excel JavaScript API 要求集](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) 文章。|*没有。* |
+|`BadPassword`|提供的密码不正确。|*没有。* |
+|`Conflict`|由于冲突，无法处理请求。|*没有。* |
+|`ContentLengthRequired`|`Content-length`缺少 HTTP 标头。|*没有。* |
+|`GeneralException`|处理请求时出现内部错误。|*没有。* |
+|`InsertDeleteConflict`|尝试的插入或删除操作导致冲突。|*没有。* |
+|`InvalidArgument` |自变量无效、缺少或格式不正确。|*没有。* |
+|`InvalidBinding` |由于之前的更新，此对象绑定不再有效。|*没有。* |
+|`InvalidOperation`|尝试的操作对于对象无效。|*没有。* |
+|`InvalidOperationInCellEditMode`|Excel 处于“编辑单元格”模式时，该操作不可用。 使用 **Enter** 或 **Tab** 键或选择其他单元格退出编辑模式，然后重试。|*没有。* |
+|`InvalidReference`|此引用对于当前操作无效。|*没有。* |
+|`InvalidRequest`  |无法处理此请求。|*没有。* |
+|`InvalidSelection`|当前选定内容对于此操作无效。|*没有。* |
+|`ItemAlreadyExists`|所创建的资源已存在。|*没有。* |
+|`ItemNotFound` |所请求的资源不存在。|*没有。* |
+|`MemoryLimitReached`|已达到内存限制。 无法完成操作。|*没有。* |
 |`NotImplemented`|所请求的功能未实现。| 这可能意味着 API 处于预览状态，或者仅在特定平台上受支持 (如仅联机) 。 有关详细信息，请参阅 [Office 外接程序的 Office 客户端应用程序和平台可用性](/javascript/api/requirement-sets) 。|
-|`RequestAborted`|请求在运行时已中止。| |
+|`RequestAborted`|请求在运行时已中止。|*没有。* |
 |`RequestPayloadSizeLimitExceeded`|请求有效负载大小已超出限制。 有关详细信息，请参阅 [Office 加载项的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 文章。| 此错误仅在Office web 版中发生。|
 |`ResponsePayloadSizeLimitExceeded`|响应有效负载大小已超出限制。 有关详细信息，请参阅 [Office 加载项的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 文章。|  此错误仅在Office web 版中发生。|
-|`ServiceNotAvailable`|服务不可用。| |
-|`Unauthenticated` |所需的身份验证信息缺少或无效。| |
-|`UnsupportedFeature`|操作失败，因为源工作表包含一个或多个不受支持的功能。| |
-|`UnsupportedOperation`|不支持正在尝试的操作。| |
+|`ServiceNotAvailable`|服务不可用。|*没有。* |
+|`Unauthenticated` |所需的身份验证信息缺少或无效。|*没有。* |
+|`UnsupportedFeature`|操作失败，因为源工作表包含一个或多个不受支持的功能。|*没有。* |
+|`UnsupportedOperation`|不支持正在尝试的操作。|*没有。* |
 
 ### <a name="excel-specific-error-codes-and-messages"></a>特定于 Excel 的错误代码和消息
 
 |错误代码 | 错误消息 | 备注 |
 |:----------|:--------------|:------|
-|`EmptyChartSeries`|尝试的操作失败，因为图表系列为空。| |
-|`FilteredRangeConflict`|尝试的操作会导致与筛选范围冲突。| |
+|`EmptyChartSeries`|尝试的操作失败，因为图表系列为空。|*没有。* |
+|`FilteredRangeConflict`|尝试的操作会导致与筛选范围冲突。|*没有。* |
 |`FormulaLengthExceedsLimit`|应用公式的字节码超出了最大长度限制。 对于 32 位计算机上的 Office，字节码长度限制为 16384 个字符。 在 64 位计算机上，字节码长度限制为 32768 个字符。| 此错误发生在Excel web 版和桌面上。|
-|`InactiveWorkbook`|操作失败，因为多个工作簿处于打开状态，并且此 API 调用的工作簿已失去焦点。| |
-|`MergedRangeConflict`|无法完成操作。 表不能与其他表、数据透视表、查询结果、合并单元格或 XML 映射重叠。|
-|`NonBlankCellOffSheet`|Microsoft Excel 无法插入新单元格，因为它会将非空单元格推离工作表的末尾。 这些非空单元格可能显示为空，但具有空白值、某些格式或公式。 删除足够的行或列，为要插入的内容腾出空间，然后重试。| |
+|`InactiveWorkbook`|操作失败，因为多个工作簿处于打开状态，并且此 API 调用的工作簿已失去焦点。|*没有。* |
+|`MergedRangeConflict`|无法完成操作。 表不能与其他表、数据透视表、查询结果、合并单元格或 XML 映射重叠。|*没有。* |
+|`NonBlankCellOffSheet`|Microsoft Excel 无法插入新单元格，因为它会将非空单元格推离工作表的末尾。 这些非空单元格可能显示为空，但具有空白值、某些格式或公式。 删除足够的行或列，为要插入的内容腾出空间，然后重试。|*没有。* |
 |`OperationCellsExceedLimit`|尝试的操作影响超过 33554000 个单元格的限制。| `TableColumnCollection.add API`如果触发此错误，请确认工作表中没有意外数据，但在表外部。 特别是，检查工作表最右侧列中的数据。 删除意外数据以解决此错误。 验证操作进程的单元格数的一种方法是运行以下计算： `(number of table rows) x (16383 - (number of table columns))` 数字 16383 是 Excel 支持的最大列数。 <br><br>此错误仅在Excel web 版中发生。 |
-|`PivotTableRangeConflict`|尝试的操作会导致与数据透视表范围冲突。| |
-|`RangeExceedsLimit`|范围内的单元格计数已超过支持的最大数目。 有关详细信息，请参阅 [Office 加载项的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 文章。| |
-|`RefreshWorkbookLinksBlocked`|操作失败，因为用户尚未授予刷新外部工作簿链接的权限。| |
-|`UnsupportedSheet`|此工作表类型不支持此操作，因为它是宏或图表工作表。| |
+|`PivotTableRangeConflict`|尝试的操作会导致与数据透视表范围冲突。|*没有。* |
+|`RangeExceedsLimit`|范围内的单元格计数已超过支持的最大数目。 有关详细信息，请参阅 [Office 加载项的资源限制和性能优化](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) 文章。|*没有。* |
+|`RefreshWorkbookLinksBlocked`|操作失败，因为用户尚未授予刷新外部工作簿链接的权限。|*没有。* |
+|`UnsupportedSheet`|此工作表类型不支持此操作，因为它是宏或图表工作表。|*没有。* |
 
 ## <a name="error-notifications"></a>错误通知
 

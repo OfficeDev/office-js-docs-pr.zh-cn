@@ -3,12 +3,12 @@ title: 适用于 Office 加载项的 Teams 清单（预览版）
 description: 获取预览版 JSON 清单的概述。
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 8e10d553673b2c6a67166bb8d5e30a3f655c550d
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
-ms.translationtype: HT
+ms.openlocfilehash: 9eb2a886ed700bee0d7ba91d8a2c48e5de92fea1
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689381"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092880"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>适用于 Office 加载项的 Teams 清单（预览版）
 
@@ -79,19 +79,19 @@ Microsoft 正在对 Microsoft 365 开发人员平台进行大量改进。 这些
 
 |JSON 属性|用途|XML 元素|备注|
 |:-----|:-----|:-----|:-----|
-|"$schema"| 标识清单架构。 | **\<OfficeApp\>** 和 **\<VersionOverrides\>** 的属性 | |
-|"id"| 外接程序的 GUID。 | **\<Id\>**| |
-|"version"| 加载项的版本。 | **\<Version\>** | |
-|"manifestVersion"| 清单架构的版本。 |  **\<OfficeApp\>** 的属性 | |
-|"name"| 加载项的公共名称。 | **\<DisplayName\>** | |
-|"description"| 加载项的公共说明。  | **\<Description\>** | |
-|"accentColor"||| 此属性在当前 XML 清单中没有等效项，并且不用于 JSON 清单的预览版。 但它必须存在。 |
-|“developer”| 标识加载项的开发人员。 | **\<ProviderName\>** | |
-|"localizationInfo"| 配置默认区域设置和其他受支持的区域设置。 | **\<DefaultLocale\>** 和 **\<Override\>** | |
+|"$schema"| 标识清单架构。 | **\<OfficeApp\>** 和 **\<VersionOverrides\>** 的属性 |*没有。* |
+|"id"| 外接程序的 GUID。 | **\<Id\>**|*没有。* |
+|"version"| 加载项的版本。 | **\<Version\>** |*没有。* |
+|"manifestVersion"| 清单架构的版本。 |  **\<OfficeApp\>** 的属性 |*没有。* |
+|"name"| 加载项的公共名称。 | **\<DisplayName\>** |*没有。* |
+|"description"| 加载项的公共说明。  | **\<Description\>** |*没有。* |
+|"accentColor"|*没有。* |*没有。* | 此属性在当前 XML 清单中没有等效项，并且不用于 JSON 清单的预览版。 但它必须存在。 |
+|“developer”| 标识加载项的开发人员。 | **\<ProviderName\>** |*没有。* |
+|"localizationInfo"| 配置默认区域设置和其他受支持的区域设置。 | **\<DefaultLocale\>** 和 **\<Override\>** |*没有。* |
 |"webApplicationInfo"| 标识加载项的 Web 应用，因为它在 Azure Active Directory 中是已知的。 | **\<WebApplicationInfo\>** | 在当前 XML 清单中， **\<WebApplicationInfo\>** 元素位于 **\<VersionOverrides\>** 内部，而不是基本清单中。 |
 |"authorization"| 标识加载项所需的任何 Microsoft Graph 权限。 | **\<WebApplicationInfo\>** | 在当前 XML 清单中， **\<WebApplicationInfo\>** 元素位于 **\<VersionOverrides\>** 内部，而不是基本清单中。 |
 
-**\<Hosts\>**、**\<Requirements\>** 和 **\<ExtendedOverrides\>** 元素是当前 XML 清单中基本清单的一部分。 但与这些元素关联的概念和目的在预览版 JSON 清单的“扩展”属性中进行配置。 
+**\<Hosts\>**、**\<Requirements\>** 和 **\<ExtendedOverrides\>** 元素是当前 XML 清单中基本清单的一部分。 但与这些元素关联的概念和目的在预览版 JSON 清单的“扩展”属性中进行配置。
 
 #### <a name="extension-property"></a>"extension" 属性
 
@@ -104,12 +104,12 @@ Microsoft 正在对 Microsoft 365 开发人员平台进行大量改进。 这些
 
 |JSON 属性|用途|XML 元素|备注|
 |:-----|:-----|:-----|:-----|
-| "requirements.capabilities" | 标识加载项需要安装的要求集。 | **\<Requirements\>** 和 **\<Sets\>** | |
-| "requirements.scopes" | 标识可在其中安装加载项的 Office 应用程序。 | **\<Hosts\>** |  |
+| "requirements.capabilities" | 标识加载项需要安装的要求集。 | **\<Requirements\>** 和 **\<Sets\>** |*没有。* |
+| "requirements.scopes" | 标识可在其中安装加载项的 Office 应用程序。 | **\<Hosts\>** |*没有。* |
 | "ribbons" | 加载项自定义的功能区。 | **\<Hosts\>**、 **ExtensionPoint** 和各种 **\*FormFactor** 元素 | "ribbons" 属性是匿名对象的数组，每个对象合并这三个元素的目的。 请参阅 [“功能区”表](#ribbons-table)。|
 | "alternatives" | 指定与等效的 COM 加载项、XLL 或两者的向后兼容性。 | **\<EquivalentAddins\>** | 请参阅 [EquivalentAddins - 另请参阅](/javascript/api/manifest/equivalentaddins#see-also) 背景信息。 |
-| "runtimes"  | 配置具有少量或无 UI 的各种加载项，例如仅限自定义函数的加载项和 [函数命令](../design/add-in-commands.md#types-of-add-in-commands)。 | **\<Runtimes\>**. **\<FunctionFile\>** 和 **\<ExtensionPoint\>**（CustomFunctions 类型） |  |
-| "autoRunEvents" | 配置指定事件的事件处理程序。 | **\<Event\>** 和 **\<ExtensionPoint\>**（事件类型） |  |
+| "runtimes"  | 配置具有少量或无 UI 的各种加载项，例如仅限自定义函数的加载项和 [函数命令](../design/add-in-commands.md#types-of-add-in-commands)。 | **\<Runtimes\>**. **\<FunctionFile\>** 和 **\<ExtensionPoint\>**（CustomFunctions 类型） |*没有。* |
+| "autoRunEvents" | 配置指定事件的事件处理程序。 | **\<Event\>** 和 **\<ExtensionPoint\>**（事件类型） |*没有。* |
 
 ##### <a name="ribbons-table"></a>"ribbons" 表
 
@@ -117,7 +117,7 @@ Microsoft 正在对 Microsoft 365 开发人员平台进行大量改进。 这些
 
 |JSON 属性|用途|XML 元素|备注|
 |:-----|:-----|:-----|:-----|
-| "contexts" | 指定加载项自定义的命令图面。 | 各种 **\*CommandSurface** 元素，如 **PrimaryCommandSurface** 和 **MessageReadCommandSurface** |  |
+| "contexts" | 指定加载项自定义的命令图面。 | 各种 **\*CommandSurface** 元素，如 **PrimaryCommandSurface** 和 **MessageReadCommandSurface** |*没有。* |
 | "tabs" | 配置自定义功能区选项卡。 | **\<CustomTab\>** | “选项卡”的后代属性的名称和层次结构与 **\<CustomTab\>** 的后代非常匹配。  |
 
 ## <a name="sample-preview-json-manifest"></a>示例预览 JSON 清单

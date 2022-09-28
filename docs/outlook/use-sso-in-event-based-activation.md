@@ -3,12 +3,12 @@ title: '在使用基于事件的激活的 Outlook 加载项中启用单一登录
 description: 了解如何在基于事件的激活加载项中工作时启用 SSO。
 ms.date: 06/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 10fd973c0476878443d7238e8805aa4db9f62953
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 9a162e0ebe43c400f1b526d321cf049675047a6b
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423116"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092929"
 ---
 # <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>在使用基于事件的激活的 Outlook 加载项中启用单一登录 (SSO) 
 

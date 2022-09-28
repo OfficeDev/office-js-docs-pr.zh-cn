@@ -3,12 +3,12 @@ title: 在 Outlook 外接程序中启用共享文件夹和共享邮箱方案
 description: 讨论如何配置对共享文件夹 (a.k.a 的外接程序支持。 委托访问) 和共享邮箱。
 ms.date: 09/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c6884c18e4cb9916fcec20e6b732b0d20918e2f
-ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.openlocfilehash: 70efecda863e26f085b6f93cf26091fe0b9a9ea6
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "67857555"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092922"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在 Outlook 外接程序中启用共享文件夹和共享邮箱方案
 
@@ -23,10 +23,10 @@ ms.locfileid: "67857555"
 |Windows：<br>版本 1910 (内部版本 12130.20272) 或更高版本|是|是\*|是\*|是\*|
 |Mac：<br>内部版本 16.47 或更高版本|是|是|是|是|
 |Web 浏览器：<br>新式 Outlook UI|是|不适用|不适用|不适用|
-|Web 浏览器：<br>经典 Outlook UI|不适用|否|否|否|
+|Web 浏览器：<br>经典 Outlook UI|不适用|不支持|否|否|
 
 > [!NOTE]
-> \* 从版本 2206 开始，可在本地 Exchange 环境中支持此功能， (当前频道版本 15330.20000) 和版本 2207 (每月企业频道版本 15427.20000) 。
+> \* 从版本 2206 (内部版本 15330.20000) （适用于当前频道和版本 2207 (每月企业频道的版本 15427.20000) ）开始，可在本地 Exchange 环境中支持此功能。
 
 > [!IMPORTANT]
 > 要求 [集 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (中引入了对此功能的支持，有关详细信息，请参阅 [客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)) 。 但是，请注意，该功能的支持矩阵是要求集的超集。

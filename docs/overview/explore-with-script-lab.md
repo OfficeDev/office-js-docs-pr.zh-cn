@@ -1,16 +1,16 @@
 ---
 title: 使用 Script Lab 探索 Office JavaScript API
 description: 使用 Script Lab 探索 Office JS API 和原型功能。
-ms.date: 01/14/2022
+ms.date: 09/27/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 568628f60b36a3c6bcb7dd3ab3856e86d96956b7
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: 327810e43d87894f2850f93bd07000f1cdae98f3
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744634"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092985"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>使用 Script Lab 探索 Office JavaScript API
 
@@ -20,7 +20,7 @@ ms.locfileid: "63744634"
 
 Script Lab 是一款面向具有以下需求的用户的工具：希望了解如何在 Excel、Outlook、Word 和 PowerPoint 中开发使用 Office JavaScript API 的 Office 加载项。 它提供 IntelliSense，让你可以看到可用的内容；并且它是基于 Monaco 框架构建的（Visual Studio Code 也使用该框架）。 通过 Script Lab，可访问示例库以快速试用各项功能，也由示例开始编写自己的代码。 甚至可以通过 Script Lab 试用预览 API。
 
-到目前为止听起来不错？观看以下片长一分钟的视频，在操作中了解 Script Lab。
+听起来还不错吧？ 观看以下片长一分钟的视频，在操作中了解 Script Lab。
 
 [![展示 Script Lab 在 Excel、Word 和 PowerPoint 中运行的预览视频。](../images/screenshot-wide-youtube.png 'Script Lab 预览视频')](https://aka.ms/scriptlabvideo)
 
@@ -57,20 +57,20 @@ Script Lab 提供许多功能，可帮助你探索 Office JavaScript API 和原�
 
 以下客户端上的 Excel、Word 和 PowerPoint 支持 Script Lab。
 
-- Microsoft 365 Office 订阅
+- Windows 版 Office\*
 - Mac 上的 Office 2016 或更高版本
 - Office 网页版
 
 适用于 Outlook 的 Script Lab 在以下客户端上可用。
 
-- Microsoft 365 Office 订阅
+- Windows 版 Outlook\*
 - Mac 版 Outlook 2016 或更高版本
 - 使用 Chrome、Microsoft Edge 或 Safari 浏览器时的 Outlook 网页版
 
-有关适用于 Outlook 的 Script Lab 的更多详细信息，请参阅相关[博客文章](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/)。
+有关适用于 Outlook 的 Script Lab 的更多详细信息，请参阅相关[博客文章](https://devblogs.microsoft.com/microsoft365dev/script-lab-now-supports-outlook/)。
 
 > [!IMPORTANT]
-> 脚本实验室不再适用于平台和使用 Internet Explorer 托管加载项的 Office 版本的组合。这包括通过 Office 2019 一次性购买的 Office 版本。要了解详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+> \*Script Lab不再适用于使用 Internet Explorer 托管加载项的平台和 Office 版本的组合。这包括 Office 到 Office 2019 的永久版本。 有关详细信息，请参阅 [Office 加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 ## <a name="next-steps"></a>后续步骤
 

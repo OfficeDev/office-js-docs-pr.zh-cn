@@ -3,12 +3,12 @@ title: Outlook 加载项的隐私、权限和安全性
 description: 了解如何管理 Outlook 加载项中的隐私、权限和安全性。
 ms.date: 08/09/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 939d32d48275266b3c30a3e4a2c72a806a301cee
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: a19284c6a8371deadcb3986978eabaf605189df6
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318891"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092873"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook 外接程序的隐私、权限和安全性
 
@@ -26,7 +26,7 @@ ms.locfileid: "67318891"
 
 ## <a name="permissions-model"></a>权限模型
 
-客户对外接程序安全的理解可能会影响外接程序采用情况，因此 Outlook 外接程序安全依赖于一个多层权限模型。Outlook 外接程序可能会公开其所需的权限级别，从而确定外接程序可以对客户邮箱数据采取的可能访问和操作。
+Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data.
 
 清单架构版本 1.1 包含四个级别的权限。
 
@@ -68,7 +68,7 @@ ms.locfileid: "67318891"
 - 浏览器：加载项的可用性和对应用商店的访问不受影响，因此用户可以继续[管理其加载项](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce)（包括由管理员部署的加载项）。
 
   > [!NOTE]
-  > \* 对于 Windows，版本 2008（内部版本 13127.20296）提供了对此体验/行为的支持。 如需了解你的版本的更多详情，请参阅 [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) 的更新历史记录页，以及如何[查找 Office 客户端版本和更新频道](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)。
+  > \* 对于 Windows，版本 2008 (内部版本 13127.20296) 中提供了对此体验/行为的支持。 如需了解你的版本的更多详情，请参阅 [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) 的更新历史记录页，以及如何[查找 Office 客户端版本和更新频道](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)。
 
 有关常规加载项行为，请参阅 [Office 加载项的隐私和安全性](../concepts/privacy-and-security.md#optional-connected-experiences)。
 
@@ -80,11 +80,11 @@ ms.locfileid: "67318891"
 
 [!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
-- 从 AppSource 安装外接程序之前，最终用户能够查看外接程序可以对其数据进行的访问和采取的操作，且必须明确确认后才能继续操作。未经用户或管理员手动验证，Outlook 外接程序不会自动推送到客户端计算机。
+- Before installing an add-in from AppSource, end users can see the access and actions that the add-in can make on their data and must explicitly confirm to proceed. No Outlook add-in is automatically pushed onto a client computer without manual validation by the user or administrator.
 
 - 授予“**受限**”权限可允许 Outlook 加载项仅具有对当前项目的有限访问权限。 授予 **读取项** 权限允许 Outlook 外接程序仅访问当前项上的个人可识别信息，例如发件人、收件人姓名和电子邮件地址。
 
-- 最终用户仅能为他/她自己安装低信任度的 Outlook 外接程序。对组织产生影响的 Outlook 外接程序由管理员安装。
+- An end user can install an Outlook add-in for only himself or herself. Outlook add-ins that affect an organization are installed by an administrator.
 
 - 最终用户可以安装支持上下文相关方案的低信任度 Outlook 外接程序，这不仅对用户具有吸引力，同时还可以最大限度地降低用户的安全风险。
 
@@ -102,7 +102,7 @@ ms.locfileid: "67318891"
 
   - CPU 使用率  
 
-  管治可阻止拒绝服务攻击并将外接程序性能保持在合理的水平。业务栏通知最终用户 Outlook 富客户端已根据此类管治控制禁用的 Outlook 外接程序。
+  Governance deters denial-of-service attacks and maintains add-in performance at a reasonable level. The Business Bar alerts end users about Outlook add-ins that the Outlook rich client has disabled based on such governance control.
 
 - 无论何时，最终用户都可以验证所安装 Outlook 外接程序请求的权限，在 Exchange 管理中心禁用或随后启用任何 Outlook 外接程序。
 
@@ -153,7 +153,7 @@ ms.locfileid: "67318891"
 
 ### <a name="resource-usage-tuning"></a>资源使用调整
 
-开发人员应注意激活资源的使用限制，在他们的开发工作流中加入性能调整功能，以便减少主机对低性能外接程序的拒绝服务机会。开发人员应遵循 [Outlook 外接程序的激活和 JavaScript API 的限制](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)中所述的设计激活规则准则。如果 Outlook 外接程序适合运行于 Outlook 富客户端之上，那么开发人员应验证该外接程序能否在资源使用限制之内执行。
+Developers should be aware of resource usage limits for activation, incorporate performance tuning in their development workflow, so as to reduce the chance of a poorly performing add-in denying service of the host. Developers should follow the guidelines in designing activation rules as described in [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md). If an Outlook add-in is intended to run on an Outlook rich client, then developers should verify that the add-in performs within the resource usage limits.
 
 ### <a name="other-measures-to-promote-user-security"></a>提高用户安全性的其他措施
 

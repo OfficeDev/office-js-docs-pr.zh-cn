@@ -1,14 +1,14 @@
 ---
 title: 使用应用程序专用 API 模型
 description: 了解 Excel、OneNote 和 Word 加载项基于承诺的 API 模型。
-ms.date: 07/18/2022
+ms.date: 09/23/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fc0733806b2b29de37f77ffa2864163cb544f12
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: d7cb6f1f47c853d5c6e389c2c81ec2d36d21eb43
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422941"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092887"
 ---
 # <a name="application-specific-api-model"></a>特定于应用程序的 API 模型
 
@@ -26,9 +26,9 @@ Office 加载项是显示在 Office 应用程序（如 Excel）中的浏览器�
 
 ## <a name="run-function"></a>*.run 函数
 
-`Excel.run`、 `Word.run`和 `OneNote.run` 执行一个函数，指定针对 Excel、Word 和 OneNote 要执行的操作。 `*.run` 会自动创建可用于与 Office 对象交互的请求上下文。 当 `*.run` ，将做出承诺，并自动发布运行时分配的任何对象。
+`Excel.run``PowerPoint.run`，`OneNote.run`并`Word.run`执行一个函数，该函数指定要针对 Excel、Word 和 OneNote 执行的操作。 `*.run` 会自动创建可用于与 Office 对象交互的请求上下文。 当 `*.run` ，将做出承诺，并自动发布运行时分配的任何对象。
 
-以下示例显示了如何使用 `Excel.run`。 Word 和 OneNote 也使用同一模式。
+以下示例显示了如何使用 `Excel.run`。 OneNote、PowerPoint 和 Word 也使用相同的模式。
 
 ```js
 Excel.run(function (context) {
@@ -134,7 +134,7 @@ await Excel.run(async (context) => {
 > [!NOTE]
 > 如果只是调用代理对象或设置属性，则无需调用代理 `load()` 方法。 只有在想要读取代理对象上的属性时 `load()` 代理方法才必需。
 
-类似于对代理对象设置属性或调用方法的请求，加载代理对象属性的请求会被添加到请求上下文的挂起命令队列中，将在下一次调用 `sync()` 方法时运行。必要时，可以将请求上下文中尽可能多的 `load()` 调用排入队列。
+Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which will run the next time you call the `sync()` method. You can queue up as many `load()` calls on the request context as necessary.
 
 #### <a name="scalar-and-navigation-properties"></a>标量和导航属性
 
@@ -180,7 +180,7 @@ console.log (tableCount.value);
 
 在具有嵌套导航属性的对象上设置属性可能很麻烦。 除了使用上述导航路径设置单个属性， `object.set()` 基于承诺的 JavaScript API 中的对象上可用的另一种方法。 使用此方法，可以通过传递相同 Office.js 类型的另一个对象或 JavaScript 对象（其属性结构类似于调用该方法的对象的属性）一次设置对象的多个属性。
 
-下面的代码示例设置区域的多个格式属性，具体方法是调用 `set()` 方法，并传入 JavaScript 对象，其中包含可反映 `Range` 对象中属性结构的属性名称和类型。此示例假定区域 **B2:E2** 中有数据。
+The following code sample sets several format properties of a range by calling the `set()` method and passing in a JavaScript object with property names and types that mirror the structure of properties in the `Range` object. This example assumes that there is data in range **B2:E2**.
 
 ```js
 await Excel.run(async (context) => {

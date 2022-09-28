@@ -5,16 +5,16 @@ ms.date: 07/18/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: dc4c35d8ec68d9af1b349b13c8bbd8a0a18b6e1d
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
-ms.translationtype: HT
+ms.openlocfilehash: d44a01cf0f676057ca072cff74e2e80057f645f4
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889175"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092908"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>OneNote JavaScript API 编程概述
 
-OneNote 介绍了适用于 OneNote 加载项网页版的 JavaScript API。你可以创建任务窗格加载项、内容加载项、与 OneNote 对象交互并连接至 Web 服务或其他基于 Web 资源的加载项命令。
+OneNote introduces a JavaScript API for OneNote add-ins on the web. You can create task pane add-ins, content add-ins, and add-in commands that interact with OneNote objects and connect to web services or other web-based resources.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -22,9 +22,9 @@ OneNote 介绍了适用于 OneNote 加载项网页版的 JavaScript API。你可
 
 加载项由两个基本部分组成：
 
-- **Web 应用程序** 包含网页和任何所需的 JavaScript、CSS 或其他文件。这些文件托管在 Web 服务器或 Web 托管服务上，例如 Microsoft Azure。在 OneNote 网页版中，Web 应用程序在浏览器控件或 iframe 中显示。
+- A **web application** consisting of a webpage and any required JavaScript, CSS, or other files. These files are hosted on a web server or web hosting service, such as Microsoft Azure. In OneNote on the web, the web application displays in a browser control or iframe.
 
-- **XML 清单** 指定外接程序网页的 URL 和适用于外接程序的任何访问要求、设置和功能。此文件存储在客户端上。OneNote 外接程序使用与其他 Office 外接程序相同的 [清单](../develop/add-in-manifests.md)格式。
+- An **XML manifest** that specifies the URL of the add-in's webpage and any access requirements, settings, and capabilities for the add-in. This file is stored on the client. OneNote add-ins use the same [manifest](../develop/add-in-manifests.md) format as other Office Add-ins.
 
 ### <a name="office-add-in--manifest--webpage"></a>Office 加载项 = 清单 + 网页
 
@@ -32,25 +32,25 @@ OneNote 介绍了适用于 OneNote 加载项网页版的 JavaScript API。你可
 
 ## <a name="using-the-javascript-api"></a>使用 JavaScript API
 
-加载项使用 Office 应用程序的运行时上下文以访问 JavaScript API。API 有两层：
+Add-ins use the runtime context of the Office application to access the JavaScript API. The API has two layers:
 
 - 用于执行 OneNote 专属操作的 **应用程序特定 API**，可通过 `Application` 对象访问。
 - 跨 Office 应用程序分享的 **通用 API**，通过 `Document` 对象访问。
 
 ### <a name="accessing-the-application-specific-api-through-the-application-object"></a>通过 *Application* 对象访问应用程序特定 API。
 
-使用 `Application` 对象以访问 OneNote 对象，例如 **Notebook**、**节** 和 **Page**。通过特定应用 API，可在代理对象上运行批处理操作。基本流程类似如下：
+Use the `Application` object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With application-specific APIs, you run batch operations on proxy objects. The basic flow goes something like this:
 
 1. 从上下文中获取应用程序实例。
 
-2. 创建您想要使用的表示 OneNote 对象的代理。通过读取和写入代理对象的属性和调用其方法，您可以与其同步交互。
+2. Create a proxy that represents the OneNote object you want to work with. You interact synchronously with proxy objects by reading and writing their properties and calling their methods.
 
-3. 调用代理上的 `load` 以使用在参数中指定的属性值填充它。此调用将添加至命令队列中。
+3. Call `load` on the proxy to fill it with the property values specified in the parameter. This call is added to the queue of commands.
 
    > [!NOTE]
    > API 方法调用（如 `context.application.getActiveSection().pages;`）也会添加到队列中。
 
-4. 调用 `context.sync` 以按它们已排队的顺序运行所有排队的命令。这将同步您正在运行的脚本和真实对象之间的状态，并通过检索已加载的用于您的脚本的 OneNote 对象的属性实现。您可以使用返回的 promise 对象以链接其他操作。
+4. Call `context.sync` to run all queued commands in the order that they were queued. This synchronizes the state between your running script and the real objects, and by retrieving properties of loaded OneNote objects for use in your script. You can use the returned promise object for chaining additional actions.
 
 例如：
 
@@ -83,7 +83,7 @@ async function getPagesInSection() {
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
 
-要求集是指已命名的 API 成员组。Office 加载项使用清单中指定的要求集或执行运行时检查，以确定 Office 应用程序是否支持加载项所需的 API。有关 OneNote JavaScript API 要求集的详细信息，请参阅 [OneNote JavaScript API 要求集](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets)。
+Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets).
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>通过 *Document* 对象访问通用 API
 
@@ -114,7 +114,7 @@ OneNote 加载项仅支持以下通用 API。
 | [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | 仅 `Office.CoercionType.Text`、`Office.CoercionType.Image` 和 `Office.CoercionType.Html` |
 | [const mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | 设置仅受内容外接程序支持 |
 | [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | 设置仅受内容外接程序支持 |
-| [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
+| [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) |*没有。*|
 
 一般情况下，需要使用通用 API 执行应用程序特定 API 不支持的操作。 要详细了解如何使用通用 API，请参阅[常见 JavaScript API 对象模型](../develop/office-javascript-api-object-model.md)。
 

@@ -3,16 +3,16 @@ title: Office 加载项的资源限制和性能优化
 description: 了解 Office 外接程序平台的资源限制，包括 CPU 和内存。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f9bec9579db1461f16d36d97646c4fce418c2e11
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 8465eb654795b538182e01d33b2fc57ddb35eaa0
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889196"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092901"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Office 加载项的资源限制和性能优化
 
-为了向用户提供最佳体验，请确保 Office 加载项不超过 CPU 内核和内存使用、可靠性以及计算正则表达式的响应时间（对于 Outlook 加载项）方面的特定限制。这些运行时资源使用限制仅适用于在 Windows 和 OS X 的 Office 客户端上运行的加载项，而不适用于移动应用或浏览器上的加载项。
+To create the best experience for your users, ensure that your Office Add-in performs within specific limits for CPU core and memory usage, reliability, and, for Outlook add-ins, the response time for evaluating regular expressions. These run-time resource usage limits apply to add-ins running in Office clients on Windows and OS X, but not on mobile apps or in a browser.
 
 此外，还可以在加载项设计和实现中优化资源使用，从而优化加载项在台式机和移动设备上的性能。
 
@@ -38,14 +38,14 @@ ms.locfileid: "66889196"
 
 ### <a name="outlook-add-ins"></a>Outlook 外接程序
 
-如果任何 Outlook 外接程序超过上述 CPU 内核或内存使用率阈值，或者故障容忍度限制，则 Outlook 会禁用该外接程序。Exchange 管理中心会显示应用程序的禁用状态。
+If any Outlook add-in exceeds the preceding thresholds for CPU core or memory usage, or tolerance limit for crashes, Outlook disables the add-in. The Exchange Admin Center displays the disabled status of the app.
 
 > [!NOTE]
 > 尽管只有 Outlook 丰富客户端（而不是 Outlook 网页版或移动设备）监视资源使用，如果丰富客户端禁用 Outlook 加载项，加载项也禁用于Outlook 网页版和移动设备。
 
 除了 CPU 核心、内存和可靠性规则之外，Outlook 外接程序还应遵守以下有关激活的规则。
 
-- **正则表达式响应时间** - Outlook 计算 Outlook 外接程序清单中的所有正则表达式的默认阈值为 1,000 毫秒。超过该阈值会导致 Outlook 稍后重新尝试计算。
+- **Regular expressions response time** - A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
 
     通过使用组策略或 Windows 注册表中特定于应用程序的设置，管理员可以在 **OutlookActivationAlertThreshold** 设置中调整此 1,000 毫秒的默认阈值。
 
@@ -69,7 +69,7 @@ ms.locfileid: "66889196"
 如果任何内容或任务窗格加载项超过 CPU 核心或内存使用率的上述阈值，或崩溃的容错限制，则相应的 Office 应用程序会显示针对用户的警告。 此时，用户可以执行下列操作之一：
 
 - 重新启动外接程序。
-- 取消有关超出该阈值的后续警报。理想的情况是，用户应当从文档中删除该外接程序；继续使用该外接程序可能会遇到更多性能和稳定性问题。  
+- Cancel further alerts about exceeding that threshold. Ideally, the user should then delete the add-in from the document; continuing the add-in would risk further performance and stability issues.  
 
 ## <a name="verify-resource-usage-issues-in-the-telemetry-log"></a>验证遥测日志中的资源使用问题
 
@@ -77,25 +77,25 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 
-对于遥测日志跟踪的外接程序的每个事件，都有事件的发生日期/时间、事件 ID、严重性、事件的简短描述性标题、外接程序的友好名称和唯一 ID，以及记录事件的应用程序。可刷新遥测日志以查看当前跟踪的事件。下表显示了之前在遥测日志中跟踪的 Outlook 外接程序的示例。
+For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log.
 
-|**日期/时间**|**事件 ID**|**严重性**|**标题**|**文件**|**ID**|**应用程序**|
+|日期/时间|事件 ID|Severity|标题|文件|ID|Application|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|10/8/2012 5:57:10 PM|7 ||外接程序清单已成功下载|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|10/8/2012 5:57:01 PM|7 ||外接程序清单已成功下载|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|10/8/2012 5:57:10 PM|7 |*不适用*|外接程序清单已成功下载|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|10/8/2012 5:57:01 PM|7 |*不适用*|外接程序清单已成功下载|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 下表列出了遥测日志通常跟踪的 Office 外接程序的事件。
 
-|**事件 ID**|**标题**|**严重性**|**说明**|
+|事件 ID|标题|Severity|说明|
 |:-----|:-----|:-----|:-----|
-|7 |外接程序清单已成功下载||Office 加载项清单已由 Office 应用程序成功加载和读取。|
+|7 |外接程序清单已成功下载|*不适用*|Office 加载项清单已由 Office 应用程序成功加载和读取。|
 |8 |外接程序清单未下载|关键|Office 应用程序无法从 SharePoint 目录、公司目录或 AppSource 加载 Office 加载项的清单文件。|
 |9 |无法分析外接程序标记|关键|Office 应用程序加载了 Office 加载项清单，但无法读取应用的 HTML 标记。|
 |10|外接程序占用了太多 CPU|关键|在有限的时间内，Office 外接程序使用了超过 90% 的 CPU 资源。|
-|15|由于字符串搜索超时，外接程序已被禁用||Outlook 外接程序搜索电子邮件的主题行和消息，以确定是否应使用正则表达式来显示它们。“文件”列中列出的 Outlook 外接程序已被 Outlook 禁用，因为它在尝试匹配正则表达式时超时多次。|
-|18 |外接程序已成功关闭||Office 应用程序能够成功关闭 Office 加载项。|
-|19|外接程序遇到运行时错误|关键|Office 外接程序遇到一个导致它失败的问题。 有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“Microsoft Office 通知”日志。|
-|20|外接程序未能验证许可|关键|无法验证 Office 外接程序的许可信息，且其可能已过期。 有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“Microsoft Office 通知”日志。|
+|15|由于字符串搜索超时，外接程序已被禁用|*不适用*|Outlook add-ins search the subject line and message of an e-mail to determine whether they should be displayed by using a regular expression. The Outlook add-in listed in the **File** column was disabled by Outlook because it timed out repeatedly while trying to match a regular expression.|
+|18 |外接程序已成功关闭|*不适用*|Office 应用程序能够成功关闭 Office 加载项。|
+|19|外接程序遇到运行时错误|严重|Office 外接程序遇到一个导致它失败的问题。 有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“Microsoft Office 通知”日志。|
+|20|外接程序未能验证许可|严重|无法验证 Office 外接程序的许可信息，且其可能已过期。 有关详细信息，请使用遇到错误的计算机上的 Windows 事件查看器查看“Microsoft Office 通知”日志。|
 
 有关详细信息，请参阅[部署遥测仪表板](/previous-versions/office/office-2013-resource-kit/jj219431(v=office.15))和[使用遥测日志排查 Office 文件和自定义解决方案](/office/client-developer/shared/troubleshooting-office-files-and-custom-solutions-with-the-telemetry-log)。
 
@@ -105,7 +105,7 @@ Office 提供了遥测日志，以保留本地计算机上运行的 Office 解�
 
 - 在外接程序需要从无限制的数据集中读取大量数据的情况下，您可以在从表格中读取数据时应用分页，或者减小每次短暂读取操作中的数据大小，而不是试图在一次操作中完成全部读取。 可以通过全局对象的 [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) 方法执行此操作，以限制输入和输出的持续时间。 它还会处理定义区块中的数据，来代替随机无限数据。 另一种选择是使用 [异步](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) 处理承诺。
 
-- 如果外接程序使用大量占用 CPU 的算法来处理大量数据，则您可以使用 Web Worker 在后台执行长时间运行的任务，同时在前台运行单独的脚本，例如在用户界面中显示进度。Web Worker 不会阻止用户活动并允许 HTML 页面保持响应能力。有关 Web Worker 的示例，请参阅 [Web Worker 的基本信息](https://www.html5rocks.com/tutorials/workers/basics/)。有关 Web Worker API 的详细信息，请参阅 [Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API)。
+- If your add-in uses a CPU-intensive algorithm to process a large volume of data, you can use web workers to perform the long-running task in the background while running a separate script in the foreground, such as displaying progress in the user interface. Web workers do not block user activities and allow the HTML page to remain responsive. For an example of web workers, see [The Basics of Web Workers](https://www.html5rocks.com/tutorials/workers/basics/). See [Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) for more information about the Web Workers API.
 
 - 如果外接程序使用大量占用 CPU 的算法，但您可以将数据输入或输出划分成较小的集合，则可以考虑创建一个 Web 服务，将数据传递给该 Web 服务以减轻 CPU 负担，然后等待异步回调。
 

@@ -1,6 +1,6 @@
 # <a name="office-add-ins-documentation"></a>Office 加载项文档
 
-欢迎使用 Office 加载项文档存储库。 在此存储库中，可以找到 Office JavaScript API 概念、快速入门、教程和操作指南的文档源文件。 为了获得最佳体验，建议在[Microsoft Docs](https://learn.microsoft.com/office/dev/add-ins)网站上查看此内容。
+欢迎使用 Office 加载项文档存储库。 在此存储库中，可以找到 Office JavaScript API 概念、快速入门、教程和操作指南的文档源文件。 为了获得最佳体验，建议查看有关 Microsoft Learn [的 Office 加载项文档](https://learn.microsoft.com/office/dev/add-ins) 。
 
 > **注意**：可以在 [office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) 存储库中找到 Office JavaScript API 参考文档源文件。
 
@@ -19,7 +19,7 @@
 - 重现问题的步骤。
 - 控制台输出和错误消息。
 
-我们也鼓励你对所建议的更改进行分叉、修补及创建拉取请求。有关详细信息，请参阅 [归入该文档](Contributing.md)(#归入该文档)。
+We also encourage you to fork, make the fix, and do a pull request of your proposed changes. For details, see [Contribute to this documentation](Contributing.md).
 
 如果问题与 Office 加载项文档无关，请改为将其发布到以下频道之一。
 
@@ -39,7 +39,7 @@
 
 ## <a name="copyright"></a>版权
 
-版权所有 © 2016 Microsoft Corporation。保留所有权利。
+Copyright (c) 2016 Microsoft Corporation. All rights reserved.
 
 
-此项目已采用 [Microsoft 开放源代码行为准则](https://opensource.microsoft.com/codeofconduct/)。有关详细信息，请参阅[行为准则 FAQ](https://opensource.microsoft.com/codeofconduct/faq/)。如有其他任何问题或意见，也可联系 [opencode@microsoft.com](mailto:opencode@microsoft.com)。
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.

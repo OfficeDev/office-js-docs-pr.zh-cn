@@ -4,12 +4,12 @@ description: 了解如何配置 Outlook 外接程序以进行基于事件的激�
 ms.topic: article
 ms.date: 09/21/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c544f9c10a6fec30d26a994f8e29a48c0d02aa49
-ms.sourcegitcommit: 09bb0b5edd6af03c9822e1742095c7df94735120
+ms.openlocfilehash: 0e38f7e9c9d9f06ec7f427b12c04b30d6abf0112
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2022
-ms.locfileid: "67990425"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68093006"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置 Outlook 外接程序以进行基于事件的激活
 
@@ -43,7 +43,7 @@ ms.locfileid: "67990425"
 |`OnAppointmentOrganizer`|创建新约会或编辑现有约会时。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
 
 > [!NOTE]
-> Outlook on Windows 中<sup>基于事件的</sup> 1 个加载项至少需要Windows 10版本 1903 (内部版本 18362) 或 Windows Server 2019 版本 1903 才能运行。
+> Outlook on Windows 中基于事件的 <sup>1</sup> 个加载项至少需要Windows 10版本 1903 (内部版本 18362) 或 Windows Server 2019 版本 1903 才能运行。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
