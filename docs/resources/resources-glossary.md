@@ -1,14 +1,14 @@
 ---
 title: Office 加载项术语表
 description: 常在 Office 加载项文档中使用的术语表。
-ms.date: 08/19/2022
+ms.date: 09/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 41eb138dac6fc9c3ab14cd795549853f0358e75d
-ms.sourcegitcommit: 65f46911640bf4becc67b718b0eac9106fff3925
+ms.openlocfilehash: ef8df6e344698f7d67ebe7afe1759e13630b385d
+ms.sourcegitcommit: cff5d3450f0c02814c1436f94cd1fc1537094051
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2022
-ms.locfileid: "67735321"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "68234912"
 ---
 # <a name="office-add-ins-glossary"></a>Office 加载项术语表
 
@@ -96,6 +96,14 @@ Office 2013 引入了常见 API，用于与 Office 2013 或更高版本交互。
 
 另请参阅： [应用程序](#application)、 [客户端](#client)、 [主机](#host)。
 
+## <a name="perpetual"></a>永久
+
+**永久性** 是指通过批量许可协议或零售渠道提供的 Office 版本。
+
+其他 Microsoft 内容可能使用 **非订阅** 术语来表示此概念。
+
+另请参阅： [零售、零售永久](#retail-retail-perpetual)、 [批量许可、批量许可永久、批量许可](#volume-licensed-volume-licensed-perpetual-volume-licensing)
+
 ## <a name="platform"></a>平台
 
 **平台** 通常是指运行 Office 应用程序的操作系统。 支持 Office 外接程序的平台包括 Windows、Mac、iPad 和 Web 浏览器。
@@ -109,6 +117,14 @@ Office 2013 引入了常见 API，用于与 Office 2013 或更高版本交互。
 ## <a name="requirement-set"></a>要求集
 
 [!include[Requirement set note](../includes/office-js-requirement-sets.md)]
+
+## <a name="retail-retail-perpetual"></a>零售、零售永久
+
+**零售** 是指通过零售渠道提供的 Office 的永久版本。 这些版本不包括 Microsoft 365 订阅提供的版本或批量许可协议。
+
+其他 Microsoft 内容可以使用 **“一次性购买** ”一词或 **“使用者** ”一词来表示此概念。
+
+另请参阅： [永久](#perpetual)
 
 ## <a name="ribbon-ribbon-button"></a>功能区，功能区按钮
 
@@ -126,6 +142,10 @@ Office 2013 引入了常见 API，用于与 Office 2013 或更高版本交互。
 
 另请参阅： [自定义函数运行时](#custom-functions-runtime)、 [运行时](#runtime)。
 
+## <a name="subscription"></a>订阅
+
+**订阅** 是指 Microsoft 365 订阅提供的 Office 版本。
+
 ## <a name="task-pane"></a>任务窗格
 
 任务窗格是通常显示在 Excel、Outlook、PowerPoint 和 Word 中窗口右侧的接口图面或 Web 视图。 任务窗格允许用户访问界面控件，此类控件运行代码以修改文档或电子邮件，或显示数据源中的数据。 无需或不能将功能直接嵌入到文档中时，请使用任务窗格。 有关详细信息，请参阅 [Office 加载项中的任务窗格](../design/task-pane-add-ins.md) 。
@@ -137,6 +157,14 @@ Office 2013 引入了常见 API，用于与 Office 2013 或更高版本交互。
 **教程** 是一种教学帮助，旨在帮助人们学习使用产品或过程。 在 Office 外接程序上下文中，教程指导外接程序开发人员完成特定应用程序（如 Excel）的完整外接程序开发过程。 这涉及到以下 20 个或更多步骤，比 [快速入门更投入](#quick-start)时间。
 
 另请参阅： [快速入门](#quick-start)。
+
+## <a name="volume-licensed-volume-licensed-perpetual-volume-licensing"></a>批量许可、批量许可永久、批量许可
+
+**批量许可** 是指通过 Microsoft 与公司之间的批量许可协议提供的 Office 的永久版本。
+
+其他 Microsoft 内容可能使用 **商业** 术语来表示此概念。
+
+另请参阅： [永久](#perpetual)
 
 ## <a name="web-add-in"></a>Web 加载项
 

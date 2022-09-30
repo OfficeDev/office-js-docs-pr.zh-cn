@@ -1,14 +1,14 @@
 ---
-ms.date: 07/08/2021
+ms.date: 09/09/2022
 description: 将自定义函数集体进行批处理，以减少对远程服务的网络调用。
 title: 对远程服务的自定义函数调用进行批处理
 ms.localizationpriority: medium
-ms.openlocfilehash: 71af149154ea39dc71b682502c54bb3a03282652
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: f779351789350bbc591b1b5d7a975ff9f70cda26
+ms.sourcegitcommit: cff5d3450f0c02814c1436f94cd1fc1537094051
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958599"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "68234919"
 ---
 # <a name="batch-custom-function-calls-for-a-remote-service"></a>远程服务的 Batch 自定义函数调用
 
@@ -28,11 +28,11 @@ ms.locfileid: "66958599"
 
 若要为自定义函数设置批处理，需要编写三个主要的代码部分。
 
-1. 用以在 Excel 每次调用自定义函数时向一批调用添加新运算的推送运算。
-2. 用以在批处理就绪时发出远程请求的函数。
-3. 用以响应批处理请求、计算所有运算结果并返回值的服务器代码。
+1. [一个推送操作](#add-the-_pushoperation-function)，用于在每次 Excel 调用自定义函数时向一批调用添加新操作。
+2. 一个 [函数，用于在](#make-the-remote-request) 批处理准备就绪时发出远程请求。
+3. [服务器代码响应批处理请求](#process-the-batch-call-on-the-remote-service)，计算所有操作结果，并返回值。
 
-在以下部分中，你将了解如何一次构造一个示例的代码。 你将把各个代码示例添加到 **functions.ts** 文件中。 建议使用 [适用于 Office 外接程序生成器的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 创建全新的自定义函数项目。 若要创建新项目，请参阅 [开始开发 Excel 自定义函数](../quickstarts/excel-custom-functions-quickstart.md) ，并使用 TypeScript 而不是 JavaScript。
+在以下部分中，你将了解如何一次构造一个示例的代码。 建议使用 [适用于 Office 外接程序生成器的 Yeoman 生成器](../develop/yeoman-generator-overview.md) 创建全新的自定义函数项目。 若要创建新项目，请参阅 [开始开发 Excel 自定义函数](../quickstarts/excel-custom-functions-quickstart.md)。 可以使用 TypeScript 或 JavaScript。
 
 ## <a name="batch-each-call-to-your-custom-function"></a>批处理对自定义函数的每次调用
 
@@ -40,53 +40,51 @@ ms.locfileid: "66958599"
 
 在下面的代码中，自定义函数执行除法，但实际计算依赖于远程服务。 它调用 `_pushOperation`，从而将该运算与其他运算一起批处理到远程服务。 它将该运算命名为“div2”。 你可以为运算使用任何所需的命名方案，只要远程服务也使用相同的方案即可（稍后将对远程服务方面进行详细介绍）。 此外，还将传递远程服务运行该运算所需的参数。
 
-### <a name="add-the-div2-custom-function-to-functionsts"></a>将 div2 自定义函数添加到 functions.ts
+### <a name="add-the-div2-custom-function"></a>添加 div2 自定义函数
 
-```typescript
+将以下代码添加到 **functions.js** 或 **functions.ts** 文件 (，具体取决于使用 JavaScript 还是 TypeScript) 。
+
+```javascript
 /**
- * @CustomFunction
  * Divides two numbers using batching
+ * @CustomFunction
  * @param dividend The number being divided
  * @param divisor The number the dividend is divided by
  * @returns The result of dividing the two numbers
  */
-function div2(dividend: number, divisor: number) {
-  return _pushOperation(
-    "div2",
-    [dividend, divisor]
-  );
+function div2(dividend, divisor) {
+  return _pushOperation("div2", [dividend, divisor]);
 }
 ```
 
-接下来，你将定义批处理数组，该数组将存储要在一个网络调用中传递的所有运算。 以下代码展示了如何定义描述数组中每个批处理条目的接口。 接口定义了一个运算，是要运行的运算的字符串名称。 例如，如果有两个分别名为 `multiply` 和 `divide` 的自定义函数，则可以在批处理条目中将它们作为运算名称重复使用。 `args` 将保留从 Excel 传递到自定义函数的参数。 最后，`resolve` 或 `reject` 将存储一个承诺，其中存有远程服务返回的信息。
+### <a name="add-global-variables-for-tracking-batch-requests"></a>添加用于跟踪批处理请求的全局变量
 
-```typescript
-interface IBatchEntry {
-  operation: string;
-  args: any[];
-  resolve: (data: any) => void;
-  reject: (error: Error) => void;
-}
-```
+接下来，将两个全局变量添加到 **functions.js** 或 **functions.ts** 文件。 `_isBatchedRequestScheduled` 稍后对远程服务的批处理调用计时非常重要。
 
-接下来，创建使用上一个接口的批处理数组。 若要跟踪是否已安排某个批处理，请创建一个 `_isBatchedRequestSchedule` 变量。 这一点在稍后对远程服务的批处理调用进行计时时很重要。
-
-```typescript
-const _batch: IBatchEntry[] = [];
+```javascript
+let _batch = [];
 let _isBatchedRequestScheduled = false;
 ```
 
-最后，当 Excel 调用自定义函数时，你需要将该运算推送到批处理数组中。 以下代码展示了如何从自定义函数添加新运算。 它会创建一个新的批处理条目，创建一个新的承诺来解决或拒绝相应运算，并将该条目推送到批处理数组中。
+### <a name="add-the-_pushoperation-function"></a>添加函数`_pushOperation`
+
+当 Excel 调用自定义函数时，需要将操作推送到批处理数组。 以下 **_pushOperation函数** 代码演示如何从自定义函数添加新操作。 它会创建一个新的批处理条目，创建一个新的承诺来解决或拒绝相应运算，并将该条目推送到批处理数组中。
 
 此段代码还会检查是否对批处理进行了安排。 在本例中，将每个批处理安排为每 100 毫秒运行一次。 可以根据需要调整此值。 值越大，发送到远程服务的批处理越大，用户查看结果的等待时间越长。 较低的值倾向于向远程服务发送更多的批处理，但可为用户提供较快的响应时间。
 
-### <a name="add-the-_pushoperation-function-to-functionsts"></a>将 `_pushOperation` 函数添加到 functions.ts
+该函数创建一个 **invocationEntry** 对象，该对象包含要运行的操作的字符串名称。 例如，如果有两个分别名为 `multiply` 和 `divide` 的自定义函数，则可以在批处理条目中将它们作为运算名称重复使用。 `args` 保存从 Excel 传递到自定义函数的参数。 最后， `resolve` 或 `reject` 方法存储保存远程服务返回的信息的承诺。
 
-```typescript
-function _pushOperation(op: string, args: any[]) {
+将以下代码添加到 **functions.js** 或 **functions.ts** 文件。
+
+```javascript
+// This function encloses your custom functions as individual entries,
+// which have some additional properties so you can keep track of whether or not
+// a request has been resolved or rejected.
+function _pushOperation(op, args) {
   // Create an entry for your custom function.
-  const invocationEntry: IBatchEntry = {
-    operation: op, // e.g. sum
+  console.log("pushOperation");
+  const invocationEntry = {
+    operation: op, // e.g., sum
     args: args,
     resolve: undefined,
     reject: undefined,
@@ -103,8 +101,9 @@ function _pushOperation(op: string, args: any[]) {
   _batch.push(invocationEntry);
 
   // If a remote request hasn't been scheduled yet,
-  // schedule it after a certain timeout, e.g. 100 ms.
+  // schedule it after a certain timeout, e.g., 100 ms.
   if (!_isBatchedRequestScheduled) {
+    console.log("schedule remote request");
     _isBatchedRequestScheduled = true;
     setTimeout(_makeRemoteRequest, 100);
   }
@@ -118,13 +117,19 @@ function _pushOperation(op: string, args: any[]) {
 
 `_makeRemoteRequest` 函数的目的是将一批运算传递给远程服务，然后将结果返回给每个自定义函数。 它首先创建批处理数组的副本。 这样，来自 Excel 的并发自定义函数调用便可以立即在新数组中开始批处理。 然后将副本转换为不包含承诺信息的较简单的数组。 将这些承诺传递给远程服务是没有意义的，因为它们不会发生作用。 `_makeRemoteRequest` 将根据远程服务返回的内容拒绝或解决每个承诺。
 
-### <a name="add-the-following-_makeremoterequest-method-to-functionsts"></a>将以下 `_makeRemoteRequest` 方法添加到 functions.ts
+将以下代码添加到 **functions.js** 或 **functions.ts** 文件。
 
-```typescript
+```javascript
+// This is a private helper function, used only within your custom function add-in.
+// You wouldn't call _makeRemoteRequest in Excel, for example.
+// This function makes a request for remote processing of the whole batch,
+// and matches the response batch to the request batch.
 function _makeRemoteRequest() {
   // Copy the shared batch and allow the building of a new batch while you are waiting for a response.
   // Note the use of "splice" rather than "slice", which will modify the original _batch array
   // to empty it out.
+  try{
+  console.log("makeRemoteRequest");
   const batchCopy = _batch.splice(0, _batch.length);
   _isBatchedRequestScheduled = false;
 
@@ -132,21 +137,31 @@ function _makeRemoteRequest() {
   const requestBatch = batchCopy.map((item) => {
     return { operation: item.operation, args: item.args };
   });
-
+  console.log("makeRemoteRequest2");
   // Make the remote request.
   _fetchFromRemoteService(requestBatch)
     .then((responseBatch) => {
+      console.log("responseBatch in fetchFromRemoteService");
       // Match each value from the response batch to its corresponding invocation entry from the request batch,
       // and resolve the invocation promise with its corresponding response value.
       responseBatch.forEach((response, index) => {
         if (response.error) {
           batchCopy[index].reject(new Error(response.error));
+          console.log("rejecting promise");
         } else {
+          console.log("fulfilling promise");
           console.log(response);
+
           batchCopy[index].resolve(response.result);
         }
       });
     });
+    console.log("makeRemoteRequest3");
+  } catch (error) {
+    console.log("error name:" + error.name);
+    console.log("error message:" + error.message);
+    console.log(error);
+  }
 }
 ```
 
@@ -159,18 +174,23 @@ function _makeRemoteRequest() {
 
 ## <a name="process-the-batch-call-on-the-remote-service"></a>处理远程服务上的批处理调用
 
-最后一步是处理远程服务中的批处理调用。 下面的代码示例展示了 `_fetchFromRemoteService` 函数。 此函数会解包每个运算，执行指定的运算，并返回结果。 出于学习目的，在本文中，`_fetchFromRemoteService` 函数适用于在 Web 加载项中运行并模拟远程服务。 你可以将此代码添加到 **functions.ts** 文件中，这样就可以研究和运行本文中的所有代码，而无需设置实际的远程服务。
+最后一步是处理远程服务中的批处理调用。 下面的代码示例展示了 `_fetchFromRemoteService` 函数。 此函数会解包每个运算，执行指定的运算，并返回结果。 出于学习目的，在本文中，`_fetchFromRemoteService` 函数适用于在 Web 加载项中运行并模拟远程服务。 可以将此代码添加到 **functions.js** 或 **functions.ts** 文件，以便可以研究并运行本文中的所有代码，而无需设置实际的远程服务。
 
-### <a name="add-the-following-_fetchfromremoteservice-function-to-functionsts"></a>将以下 `_fetchFromRemoteService` 函数添加到 functions.ts
+将以下代码添加到 **functions.js** 或 **functions.ts** 文件。
 
-```typescript
-async function _fetchFromRemoteService(
-  requestBatch: Array<{ operation: string, args: any[] }>
-): Promise<IServerResponse[]> {
-  // Simulate a slow network request to the server;
+```javascript
+// This function simulates the work of a remote service. Because each service
+// differs, you will need to modify this function appropriately to work with the service you are using. 
+// This function takes a batch of argument sets and returns a promise that may contain a batch of values.
+// NOTE: When implementing this function on a server, also apply an appropriate authentication mechanism
+//       to ensure only the correct callers can access it.
+async function _fetchFromRemoteService(requestBatch) {
+  // Simulate a slow network request to the server.
+  console.log("_fetchFromRemoteService");
   await pause(1000);
-
-  return requestBatch.map((request): IServerResponse => {
+  console.log("postpause");
+  return requestBatch.map((request) => {
+    console.log("requestBatch server side");
     const { operation, args } = request;
 
     try {
@@ -181,10 +201,10 @@ async function _fetchFromRemoteService(
         };
       } else if (operation === "mul2") {
         // Multiply the arguments for the given entry.
-        const myresult = args[0] * args[1];
-        console.log(myresult);
+        const myResult = args[0] * args[1];
+        console.log(myResult);
         return {
-          result: myresult
+          result: myResult
         };
       } else {
         return {
@@ -199,7 +219,8 @@ async function _fetchFromRemoteService(
   });
 }
 
-function pause(ms: number) {
+function pause(ms) {
+  console.log("pause");
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 ```

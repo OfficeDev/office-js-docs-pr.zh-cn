@@ -1,14 +1,14 @@
 ---
 title: 使用特定于应用程序的 JavaScript API 进行错误处理
 description: 了解 Excel、Word、PowerPoint 和其他特定于应用程序的 JavaScript API 错误处理逻辑，以解释运行时错误。
-ms.date: 07/05/2022
+ms.date: 09/27/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f25f5740892df4729b72ee5ad87403853f45fb
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: f26c38e7582fbb372deae8b160b8a284d8ce4ce9
+ms.sourcegitcommit: cff5d3450f0c02814c1436f94cd1fc1537094051
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092992"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "68234891"
 ---
 # <a name="error-handling-with-the-application-specific-javascript-apis"></a>使用特定于应用程序的 JavaScript API 进行错误处理
 
@@ -100,6 +100,7 @@ async function tryCatch(callback) {
 |`EmptyChartSeries`|尝试的操作失败，因为图表系列为空。|*没有。* |
 |`FilteredRangeConflict`|尝试的操作会导致与筛选范围冲突。|*没有。* |
 |`FormulaLengthExceedsLimit`|应用公式的字节码超出了最大长度限制。 对于 32 位计算机上的 Office，字节码长度限制为 16384 个字符。 在 64 位计算机上，字节码长度限制为 32768 个字符。| 此错误发生在Excel web 版和桌面上。|
+|`GeneralException`|*各种。*|数据类型 API 返回 `GeneralException` 带有动态错误消息的错误。 这些消息引用错误源的单元格，以及导致错误的问题，例如：“单元格 A1 缺少所需的属性 `type`。|
 |`InactiveWorkbook`|操作失败，因为多个工作簿处于打开状态，并且此 API 调用的工作簿已失去焦点。|*没有。* |
 |`MergedRangeConflict`|无法完成操作。 表不能与其他表、数据透视表、查询结果、合并单元格或 XML 映射重叠。|*没有。* |
 |`NonBlankCellOffSheet`|Microsoft Excel 无法插入新单元格，因为它会将非空单元格推离工作表的末尾。 这些非空单元格可能显示为空，但具有空白值、某些格式或公式。 删除足够的行或列，为要插入的内容腾出空间，然后重试。|*没有。* |

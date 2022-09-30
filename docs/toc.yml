@@ -25,6 +25,8 @@ items:
             href: quickstarts/project-quickstart.md
           - name: Word 加载项
             href: quickstarts/word-quickstart.md
+          - name: 单一登录 (SSO)
+            href: quickstarts/sso-quickstart.md
       - name: 使用 Script Lab 探索 Office JS API
         href: overview/explore-with-script-lab.md
         displayName: 'Excel, Word, PowerPoint'
@@ -134,6 +136,8 @@ items:
                 items:
                   - name: 在 Office 加载项中启用 SSO
                     href: develop/sso-in-office-add-ins.md
+                  - name: 快速启动
+                    href: quickstarts/sso-quickstart.md
                   - name: 注册到 Microsoft 标识平台
                     href: develop/register-sso-add-in-aad-v2.md
                   - name: 授予管理员同意
@@ -889,6 +893,9 @@ items:
         displayName: Excel
       - name: 将脚本实验室代码片段复制到 Yo Office
         href: overview/create-an-office-add-in-from-script-lab.md
+      - name: 批处理自定义函数远程调用
+        href: excel/custom-functions-batching.md
+        displayName: 'Excel, Custom Functions'
   - name: 资源
     items:
       - name: 术语表
