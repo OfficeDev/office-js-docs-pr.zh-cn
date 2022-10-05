@@ -1,14 +1,14 @@
 ---
 title: 在 Outlook 外接程序中启用共享文件夹和共享邮箱方案
 description: 讨论如何配置对共享文件夹 (a.k.a 的外接程序支持。 委托访问) 和共享邮箱。
-ms.date: 09/12/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 70efecda863e26f085b6f93cf26091fe0b9a9ea6
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: 707be0fb71931b80314750b435dca18d23247a23
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092922"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467165"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>在 Outlook 外接程序中启用共享文件夹和共享邮箱方案
 
@@ -113,11 +113,18 @@ Exchange 服务器管理员可以创建和管理共享邮箱，以便用户集�
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要在外接程序中启用共享文件夹和共享邮箱方案，必须将 [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) 元素设置为 `true` 父元素 `DesktopFormFactor`下的清单中。 目前，不支持其他外形因素。
+若要在加载项中启用共享文件夹和共享邮箱方案，必须在清单中启用所需的权限。
 
-若要支持来自委托的 REST 调用，请将清单中的 [权限](/javascript/api/manifest/permissions) 节点设置为 `ReadWriteMailbox`。
+首先，若要支持来自委托的 REST 调用，外接程序必须请求 **读/写邮箱** 权限。 标记因清单类型而异。
 
-以下示例显示 `SupportsSharedFolders` 在清单的某个部分中设置 `true` 的元素。
+- **XML 清单**：将 **\<Permissions\>** 元素设置为 **ReadWriteMailbox**。
+- **Teams 清单 (预览)**：将“authorization.permissions.resourceSpecific”数组中对象的“name”属性设置为“Mailbox.ReadWrite.User”。
+
+其次，启用对共享文件夹的支持。 标记因清单类型而异。
+
+# <a name="xml-manifest"></a>[XML 清单](#tab/xmlmanifest)
+
+将 [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) 元素设置为 `true` 父元素 `DesktopFormFactor`下的清单中。 目前，不支持其他外形因素。
 
 ```XML
 ...
@@ -143,6 +150,26 @@ Exchange 服务器管理员可以创建和管理共享邮箱，以便用户集�
 </VersionOverrides>
 ...
 ```
+
+# <a name="teams-manifest-developer-preview"></a>[Teams 清单 (开发人员预览) ](#tab/jsonmanifest)
+
+将其他对象添加到“authorization.permissions.resourceSpecific”数组，并将其“name”属性设置为“Mailbox.SharedFolder”。
+
+```json
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "Mailbox.SharedFolder",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
+```
+
+---
 
 ## <a name="perform-an-operation-as-delegate-or-shared-mailbox-user"></a>以委托或共享邮箱用户身份执行操作
 
@@ -244,7 +271,12 @@ b. **共享邮箱 (仅适用于 Windows 上的 Outlook)**
 
 ### <a name="rest-and-ews"></a>REST 和 EWS
 
-外接程序可以使用 REST，并且必须设置外接程序的权限，以便 `ReadWriteMailbox` 根据需要启用对所有者邮箱或共享邮箱的 REST 访问。 不支持 EWS。
+加载项可以使用 REST。 若要根据需要对所有者的邮箱或共享邮箱启用 REST 访问权限，外接程序必须在清单中请求 **读/写邮箱** 权限。 标记因清单类型而异。
+
+- **XML 清单**：将 **\<Permissions\>** 元素设置为 **ReadWriteMailbox**。
+- **Teams 清单 (预览)**：将“authorization.permissions.resourceSpecific”数组中对象的“name”属性设置为“Mailbox.ReadWrite.User”。
+
+不支持 EWS。
 
 ### <a name="user-or-shared-mailbox-hidden-from-an-address-list"></a>从地址列表中隐藏的用户或共享邮箱
 

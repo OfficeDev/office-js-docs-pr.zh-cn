@@ -3,12 +3,12 @@ title: 测试 Office 加载项
 description: 了解如何测试 Office 加载项。
 ms.date: 07/28/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 0cb3241bf88edf10f165587ddac24d1261b30162
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
-ms.translationtype: HT
+ms.openlocfilehash: 56052182eafae59d42044ce4be40e086e51e8103
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177677"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467242"
 ---
 # <a name="test-office-add-ins"></a>测试 Office 加载项
 
@@ -16,7 +16,7 @@ ms.locfileid: "67177677"
 
 ## <a name="test-cross-platform-and-for-multiple-versions-of-office"></a>测试跨平台及多个版本的 Office
 
-Office 加载项跨主要平台运行，因此需要在用户可能运行 Office 的所有平台上测试加载项。 这通常包括 Office 网页版、Windows 版 Office（包括订阅和一次购买）、Mac 版 Office、iOS 版 Office 和 Android 版 Office（适用于 Outlook 加载项）。 但是，有些情况下，你可以确定你的任何用户都没有在某些平台上工作。 例如，如果你正在为一家公司创建加载项，该公司要求其用户使用 Windows 计算机和订阅 Office，则无需针对 Office on Mac 或 一次性购买的 Windows 进行测试。
+Office 加载项跨主要平台运行，因此需要在用户可能运行 Office 的所有平台上测试加载项。 这通常包括 Office web 版、Windows 上的 Office (永久订阅和 Microsoft 365 订阅) 、Mac 上的 Office、iOS 上的 Office 以及 Android 上 Office) Outlook 加载项 (。 但是，有些情况下，你可以确定你的任何用户都没有在某些平台上工作。 例如，如果要为要求其用户使用 Windows 计算机和订阅 Office 的公司创建加载项，则无需在 Mac 上测试 Office 或 Windows 上的永久 Office。
 
 > [!NOTE]
 > 在 Windows 计算机上，Windows 和 Office 版本将决定加载项使用哪个浏览器控件。有关详细信息，请参阅 [加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
@@ -28,7 +28,7 @@ Office 加载项跨主要平台运行，因此需要在用户可能运行 Office
 
 ## <a name="sideload-an-office-add-in-for-testing"></a>旁加载 Office 加载项以供测试
 
-可以通过旁加载来安装 Office 加载项以供测试，而无需先将它添加到加载项目录中。 加载项的旁加载过程因平台而异，在某些情况下，也因产品而异。 下面的文章分别介绍了如何在特定平台或产品中旁加载 Office 加载项。
+You can use sideloading to install an Office Add-in for testing without having to first put it in an add-in catalog. The procedure for sideloading an add-in varies by platform, and in some cases, by product as well. The following articles each describe how to sideload Office Add-ins on a specific platform or within a specific product.
 
 - [在 Windows 上旁加载 Office 加载项](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 

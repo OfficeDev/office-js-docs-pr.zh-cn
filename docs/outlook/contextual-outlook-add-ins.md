@@ -1,18 +1,20 @@
 ---
 title: 上下文 Outlook 加载项
 description: 无需离开邮件本身即可启用与邮件相关的任务，以此带来更便捷、更丰富的用户体验。
-ms.date: 04/09/2020
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a9e9e29862449911550c8c3a6dd44819816bd69
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 73a13787dac7a6e74db6b919cc01a6dd33d29ab5
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660135"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467020"
 ---
 # <a name="contextual-outlook-add-ins"></a>上下文 Outlook 加载项
 
-上下文加载项是一些根据邮件或约会中的文本进行激活的 Outlook 外接程序。通过使用上下文加载项，用户无需离开邮件本身即可启动与邮件相关的任务，这会带来更便捷、更丰富的用户体验。
+Contextual add-ins are Outlook add-ins that activate based on text in a message or appointment. By using contextual add-ins, a user can initiate tasks related to a message without leaving the message itself, which results in an easier and richer user experience.
+
+[!include[JSON manifest does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
 下面是上下文加载项的示例。
 
@@ -56,11 +58,11 @@ ms.locfileid: "66660135"
 由于未突出显示的实体或正则表达式无法启动上下文外接程序，因此外接程序至少必须包含一个将 `Highlight` 属性设置为 `all` 的 `Rule` 元素。
 
 > [!NOTE]
-> `EmailAddress` 和 `Url` 实体类型不支持突出显示，因此它们不能用于启动上下文外接程序。但是，它们也可以组合在 `RuleCollection` 规则类型中作为其他激活条件。
+> The `EmailAddress` and `Url` entity types do not support highlighting, so they cannot be used to launch a contextual add-in. They can however be combined in a `RuleCollection` rule type as an additional activation criteria.
 
 ## <a name="how-to-launch-a-contextual-add-in"></a>如何启动上下文外接程序
 
-用户通过文本（可以是已知实体或开发人员的正则表达式）启动上下文外接程序。用户通常标识某个上下文外接程序的原因是该实体突出显示。以下示例说明如何使邮件中的内容突出显示。这里的实体（地址）是蓝色的，并带有蓝线虚线下划线。用户通过单击突出显示实体启动上下文外接程序。 
+A user launches a contextual add-in through text, either a known entity or a developer's regular expression. Typically, a user identifies a contextual add-in because the entity is highlighted. The following example shows how highlighting appears in a message. Here the entity (an address) is colored blue and underlined with a dotted blue line. A user launches the contextual add-in by clicking the highlighted entity. 
 
 **含有突出显示实体（地址）的文本示例**
 
@@ -70,11 +72,11 @@ ms.locfileid: "66660135"
 
 - 如果有多个实体，用户必须单击不同的实体才能启动对应的外接程序。
 - 如果一个实体激活多个外接程序，则每个外接程序会打开一个新选项卡。用户可在选项卡之间切换，以在外接程序之间更改。例如，名称和地址可以触发电话外接程序和地图。
-- 如果单个字符串中包含激活多个外接程序的多个实体，则整个字符串将突出显示，单击字符串可在单独的选项卡上显示与此字符串相关的所有外接程序。例如，表达建议在餐厅集会的字符串将激活"建议的会议"外接程序和餐厅评级外接程序。
+- If a single string contains multiple entities that activate multiple add-ins, the entire string is highlighted, and clicking the string shows all add-ins relevant to the string on separate tabs. For example, a string that describes a proposed meeting at a restaurant might activate the Suggested Meeting add-in and a restaurant rating add-in.
 
 ## <a name="how-a-contextual-add-in-displays"></a>上下文外接程序的显示方式
 
-激活的上下文外接程序显示在卡片中，该卡片是靠近实体的单独窗口。该卡片通常会出现在实体下方，并尽可能地以实体为中心。如果实体下方没有足够的空间，则将卡片置于实体上方。以下屏幕截图显示了突出显示实体，并在其下方显示了卡片中激活的外接程序（必应地图）。
+An activated contextual add-in appears in a card, which is a separate window near the entity. The card will normally appear below the entity and centered with respect to the entity as much as possible. If there is not enough room below the entity, the card is placed above it. The following screenshot shows the highlighted entity, and below it, an activated add-in (Bing Maps) in a card.
 
 **显示在卡片中的外接程序示例**
 

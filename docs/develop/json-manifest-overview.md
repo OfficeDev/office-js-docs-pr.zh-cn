@@ -3,12 +3,12 @@ title: 适用于 Office 加载项的 Teams 清单（预览版）
 description: 获取预览版 JSON 清单的概述。
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 9eb2a886ed700bee0d7ba91d8a2c48e5de92fea1
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: c0b9b2432d29a1a02fb23fad506a05dfe4f41430
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092880"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466899"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>适用于 Office 加载项的 Teams 清单（预览版）
 
@@ -19,11 +19,11 @@ Microsoft 正在对 Microsoft 365 开发人员平台进行大量改进。 这些
 我们已针对这些目标执行了重要的第一步，让你能够使用 Teams JSON 清单的版本创建仅在 Windows 上运行的 Outlook 加载项。
 
 > [!NOTE]
-> 新清单提供预览版，可能会根据反馈进行更改。 我们鼓励经验丰富的加载项开发人员进行试验。 预览清单不应用于生产加载项。 
+> 新清单提供预览版，可能会根据反馈进行更改。 我们鼓励经验丰富的加载项开发人员进行试验。 预览清单不应用于生产加载项。
 
 在早期预览期间，以下限制适用。
 
-- Teams 清单的预览版仅支持 Outlook 加载项，并且仅支持订阅 Office for Windows。 我们正在努力扩展对 Excel、PowerPoint 和 Word 的支持。
+- Teams 清单的预览版仅支持 Outlook 加载项，并且仅支持 Windows 上的 Microsoft 365 订阅 Office。 我们正在努力扩展对 Excel、PowerPoint 和 Word 的支持。
 - 尚无法将加载项与 Teams 应用（如 Teams 个人选项卡或其他Microsoft 365扩展类型）合并和旁加载。 在接下来的几个月中，我们将继续扩展预览版以支持这些方案，并提供其他工具来将清单更新为预览格式。
 
 > [!TIP]

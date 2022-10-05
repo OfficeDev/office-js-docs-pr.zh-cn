@@ -1,34 +1,34 @@
 ---
 title: 从 Outlook 加载项使用 Exchange Web 服务 (EWS)
 description: 提供的示例显示 Outlook 加载项如何通过 Exchange Web 服务请求信息。
-ms.date: 07/08/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a6e8c28469859ca5ff8a4413fae8feee73c1d5e3
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 94fff26fc7f9c16e2e385d6c44c128e4b03f968e
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958942"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467011"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>从 Outlook 加载项调用 Web 服务
 
-您的外接程序可使用运行 Exchange Server 2013 的计算机中的 Exchange Web 服务 (EWS)，该 Web 服务可在为外接程序的 UI 提供源位置的服务器上获得，也可在 Internet 上获得。本文提供展示 Outlook 外接程序如何从 EWS 请求信息的示例。
+Your add-in can use Exchange Web Services (EWS) from a computer that is running Exchange Server 2013, a web service that is available on the server that provides the source location for the add-in's UI, or a web service that is available on the Internet. This article provides an example that shows how an Outlook add-in can request information from EWS.
 
-您用来调用 Web 服务的方法随 Web 服务所在的位置的不同而不同。表 1 列出了可以基于位置调用 Web 服务的不同方法。
+The way that you call a web service varies based on where the web service is located. Table 1 lists the different ways that you can call a web service based on location.
 
 **表 1.从 Outlook 外接程序调用 Web 服务的方式**
 
 |**Web 服务位置**|**调用 Web 服务的方法**|
 |:-----|:-----|
-|托管客户端邮箱的 Exchange 服务器|使用 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法可调用外接程序支持的 EWS 操作。承载邮箱的 Exchange 服务器还会公开 EWS。|
-|为加载项 UI 提供源位置的 Web 服务器|使用标准 JavaScript 技术调用 Web 服务。UI 框架中的 JavaScript 代码将在提供 UI 的 Web 服务器的上下文中运行。因此，此代码可以调用该服务器上的 Web 服务，而不会导致出现跨网站脚本错误。|
-|所有其他位置|为提供 UI 源位置的 Web 服务器上的 Web 服务创建代理。如果您不提供代理，跨网站脚本错误将阻止外接程序运行。提供代理的一种方式是使用 JSON/P。有关详细信息，请参阅 [Office 外接程序的隐私和安全性](../concepts/privacy-and-security.md)。|
+|托管客户端邮箱的 Exchange 服务器|Use the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to call EWS operations that add-ins support. The Exchange server that hosts the mailbox also exposes EWS.|
+|为加载项 UI 提供源位置的 Web 服务器|Call the web service by using standard JavaScript techniques. The JavaScript code in the UI frame runs in the context of the web server that provides the UI. Therefore, it can call web services on that server without causing a cross-site scripting error.|
+|所有其他位置|Create a proxy for the web service on the web server that provides the source location for the UI. If you do not provide a proxy, cross-site scripting errors will prevent your add-in from running. One way to provide a proxy is by using JSON/P. For more information, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).|
 
 ## <a name="using-the-makeewsrequestasync-method-to-access-ews-operations"></a>使用 makeEwsRequestAsync 方法访问 EWS 操作
 
 可以使用 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法向托管用户邮箱的 Exchange 服务器发出 EWS 请求。
 
-EWS 服务支持 Exchange 服务器中的不同操作；例如复制、查找、更新或发送项目的项目级操作，以及创建、获取或更新文件夹的文件夹级操作。若要执行 EWS 操作，请创建一个执行该操作的 XML SOAP 请求。当操作完成时，你将获得包含该操作相关数据的 XML SOAP 响应。EWS SOAP 请求和响应遵循 Messages.xsd 文件中定义的架构。正如其他 EWS 架构文件一样，Message.xsd 文件位于托管 EWS 的 IIS 虚拟目录中。
+EWS supports different operations on an Exchange server; for example, item-level operations to copy, find, update, or send an item, and folder-level operations to create, get, or update a folder. To perform an EWS operation, create an XML SOAP request for that operation. When the operation finishes, you get an XML SOAP response that contains data that is relevant to the operation. EWS SOAP requests and responses follow the schema defined in the Messages.xsd file. Like other EWS schema files, the Message.xsd file is located in the IIS virtual directory that hosts EWS.
 
 若要使用该 `makeEwsRequestAsync` 方法启动 EWS 操作，请提供以下内容：
 
@@ -154,7 +154,7 @@ Outlook 外接程序可以通过该方法访问 EWS `makeEwsRequestAsync` 中可
 
 1. 根据需要使用 EWS 操作的结果。
 
-下表列出了外接程序支持的 EWS 操作。若要查看 SOAP 请求和响应的示例，请选择各操作对应的链接。有关 EWS 操作的详细信息，请参阅 [在交换 EWS 操作](/exchange/client-developer/web-service-reference/ews-operations-in-exchange)。
+The following table lists the EWS operations that add-ins support. To see examples of SOAP requests and responses, choose the link for each operation. For more information about EWS operations, see [EWS operations in Exchange](/exchange/client-developer/web-service-reference/ews-operations-in-exchange).
 
 **表 2.支持的 EWS 操作**
 
@@ -188,7 +188,12 @@ Outlook 外接程序可以通过该方法访问 EWS `makeEwsRequestAsync` 中可
 > [!NOTE]
 > 服务器管理员必须使用 [New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) 或 [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) cmdlet 将 _OAuthAuthentication_ 参数 `true` 设置为客户端访问服务器 EWS 目录，以便使 `makeEwsRequestAsync` 该方法能够发出 EWS 请求。
 
-加载项必须在其外接程序清单中指定 `ReadWriteMailbox` 权限才能使用该 `makeEwsRequestAsync` 方法。 有关使用权`ReadWriteMailbox`限的信息，请参阅[了解 Outlook 外接程序权限](understanding-outlook-add-in-permissions.md)中的 [ReadWriteMailbox](understanding-outlook-add-in-permissions.md#readwritemailbox-permission) 权限部分。
+若要使用此 `makeEwsRequestAsync` 方法，外接程序必须在清单中请求 **读/写邮箱** 权限。 标记因清单类型而异。
+
+- **XML 清单**：将 **\<Permissions\>** 元素设置为 **ReadWriteMailbox**。
+- **Teams 清单 (预览)**：将“authorization.permissions.resourceSpecific”数组中对象的“name”属性设置为“Mailbox.ReadWrite.User”。
+
+有关使用 **读/写邮箱** 权限的信息，请参阅 [读/写邮箱权限](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission)。
 
 ## <a name="see-also"></a>另请参阅
 

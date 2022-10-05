@@ -1,25 +1,25 @@
 ---
 title: 创建适用于撰写窗体的 Outlook 加载项
 description: 了解有关适用于撰写窗体的 Outlook 加载项的方案和功能。
-ms.date: 02/09/2021
+ms.date: 10/03/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 4dd39bd73cbc1c37783c13adb9b4f9f98925b9cf
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
-ms.translationtype: HT
+ms.openlocfilehash: ef81b21eaa0bc63a5bf38757cb188e8850ade443
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484005"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467249"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>创建适用于撰写窗体的 Outlook 加载项
 
-从 Office 外接程序清单的版本 1.1 的架构和 office.js v1.1 开始，可以创建撰写外接程序（即在撰写窗体中激活的 Outlook 外接程序）。与阅读外接程序（用户查看邮件或约会时在阅读模式中激活的 Outlook 外接程序）相反，撰写外接程序在以下用户方案中可用。
+可以创建撰写加载项，这些外接程序是在撰写窗体中激活的 Outlook 加载项。 与读取外接程序 (在用户查看消息或约会) 时在读取模式下激活的 Outlook 加载项相比，撰写加载项在以下用户方案中可用。
 
 - 在撰写窗体中撰写新的邮件、会议请求或约会。
 
 - 查看或编辑现有约会或用户是组织者的会议项目。
 
    > [!NOTE]
-   > 如果用户在 Outlook 2013 和 Exchange 2013 的 RTM 版本上，并查看由用户组织的会议项目，则用户可以发现读取外接程序是可用的。从 Office 2013 SP1 版本开始进行了更改，在同一场景中，只有撰写外接程序能够激活并可用。
+   > If the user is on the RTM release of Outlook 2013 and Exchange 2013 and is viewing a meeting item organized by the user, the user can find read add-ins available. Starting in the Office 2013 SP1 release, there's a change such that in the same scenario, only compose add-ins can activate and be available.
 
 - 在单独的撰写窗体中撰写内嵌响应邮件或答复邮件。
 
@@ -29,7 +29,7 @@ ms.locfileid: "64484005"
 
 - 转发或答复会议请求或会议项目。
 
-在每个撰写方案中，显示由外接程序定义的任何外接程序命令按钮。对于未执行外接程序命令的较旧外接程序，用户可以选择功能区中的“**Office 外接程序**”打开外接程序选择窗格，然后选择并启动撰写外接程序。下图显示了撰写窗体中的外接程序命令。
+In each of these compose scenarios, any add-in command buttons defined by the add-in are shown. For older add-ins that do not implement add-in commands, users can choose **Office Add-ins** in the ribbon to open the add-in selection pane, and then choose and start a compose add-in. The following figure shows add-in commands in a compose form.
 
 ![显示 Outlook 撰写窗体，其中包含外接程序命令。](../images/compose-form-commands.png)
 

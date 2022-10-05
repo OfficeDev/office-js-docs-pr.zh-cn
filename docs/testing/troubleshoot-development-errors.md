@@ -1,14 +1,14 @@
 ---
 title: 排查 Office 加载项中的开发错误
 description: 了解如何排查 Office 加载项中的开发错误。
-ms.date: 07/28/2022
+ms.date: 09/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dc0c2b7614a4d1ea43219ccfd440fd019811d79
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 9271322bd37fece80decb527891a2f2faadce654
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423193"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467174"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>排查 Office 加载项中的开发错误
 
@@ -91,7 +91,10 @@ myChart.id = "5";
 1. 在 Visual Studio 中打开项目。
 1. 在 **解决方案资源管理器** 中，打开manifest.xml文件。 清单通常位于解决方案下的第一个项目中。
 1. 选择“ **查看** > **属性”窗口** (F4) 。
-1. 在 **“属性”窗口** 中，选择省略号 (...) 打开 **XML 架构编辑器** 。 可在此处找到项目使用的所有架构文件的确切文件夹位置。
+1. 在manifest.xml中设置光标选择，以便“ **属性** ”窗口显示 **XML 文档** 属性。
+1. 在 **“属性”** 窗口中，选择 **“架构** ”属性，然后选择省略号 (...) 打开 **XML 架构编辑器** 。 可在此处找到项目使用的所有架构文件的确切文件夹位置。
+
+:::image type="content" source="../images/visual-studio-xml-document-properties.png" alt-text="属性窗口显示 XML 文档属性。":::
 
 ### <a name="update-the-xsd-files"></a>更新 XSD 文件
 

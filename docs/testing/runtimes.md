@@ -1,32 +1,29 @@
 ---
 title: Office 加载项中的运行时
 description: 了解 Office 外接程序使用的运行时。
-ms.date: 08/29/2022
+ms.date: 09/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d28f6db028d2f4c7036db51ccc5dbcc2144bdf3
-ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
+ms.openlocfilehash: c20845e6df6adfa2fa382f10e8c7f5de786aeab8
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "67616040"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467228"
 ---
 # <a name="runtimes-in-office-add-ins"></a>Office 加载项中的运行时
 
-Office 加载项在 Office 中嵌入的运行时中执行。 作为解释语言，JavaScript 必须在 JavaScript 引擎中运行。 作为单线程同步语言，JavaScript 没有用于并发执行的固有容量;但新式 JavaScript 引擎可以请求并发操作 (包括来自主机操作系统的网络通信) 并接收来自 OS 的数据作为响应。 这种引擎使 JavaScript *能够有效地* 实现异步。 在本文中，此类引擎称为 *运行时*。 [Node.js](https://nodejs.org) 和新式浏览器是此类运行时的示例。 
+Office 加载项在 Office 中嵌入的运行时中执行。 作为解释语言，JavaScript 必须在 JavaScript 运行时中运行。 [Node.js](https://nodejs.org) 和新式浏览器是此类运行时的示例。 
 
 ## <a name="types-of-runtimes"></a>运行时类型
 
 Office 外接程序使用两种类型的运行时：
 
-- **仅限 JavaScript 的运行时**：JavaScript 引擎补充了对 [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [完整 CORS (跨源资源共享)](https://developer.mozilla.org/docs/Web/HTTP/CORS)和客户端存储数据的支持。  (它不支持 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage) 或 Cookie.)  
+- **仅限 JavaScript 的运行时**：JavaScript 引擎补充了对 [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [完整 CORS (跨源资源共享)](https://developer.mozilla.org/docs/Web/HTTP/CORS)和客户端存储数据的支持。 它不支持 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage) 或 Cookie。
 - **浏览器运行时**：包括仅限 JavaScript 的运行时的所有功能，并添加对 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage)、呈现 HTML 的 [呈现引擎](https://developer.mozilla.org/docs/Glossary/Rendering_engine) 和 Cookie 的支持。
 
 本文稍后在 [仅限 JavaScript 的运行时](#javascript-only-runtime) 和 [浏览器运行时](#browser-runtime)中介绍了这些类型的详细信息。
 
 下表显示了加载项的哪些可能功能使用每种类型的运行时。 
-
-> [!NOTE]
-> 选择要使用的运行时类型是 Microsoft 随时可以更改的实现详细信息。 Office JavaScript 库不假定同一类型的运行时将始终用于给定功能，外接程序体系结构也不应假定这一点。
 
 | 运行时类型 | 加载项功能 |
 |:-----|:-----|
@@ -118,7 +115,7 @@ Office 外接程序使用两种类型的运行时：
 
 ## <a name="javascript-only-runtime"></a>仅限 JavaScript 的运行时
 
-Office 外接程序中使用的仅限 JavaScript 的运行时是对最初为[React Native](https://reactnative.dev/)创建的开放源代码运行时的修改。 它包含一个 JavaScript 引擎，该引擎补充了对 [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [完整 CORS (跨源资源共享) ](https://developer.mozilla.org/docs/Web/HTTP/CORS)和 [OfficeRuntime.storage 的支持](/javascript/api/office-runtime/officeruntime.storage)。 它没有呈现引擎，也不支持 Cookie 或 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage)。
+Office 外接程序中使用的仅限 JavaScript 的运行时是对最初为[React Native](https://reactnative.dev/)创建的开放源代码运行时的修改。 它包含一个 JavaScript 引擎，该引擎补充了对 [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [完整 CORS (跨源资源共享) ](https://developer.mozilla.org/docs/Web/HTTP/CORS)和 [OfficeRuntime.storage 的支持](/javascript/api/office-runtime/officeruntime.storage)。 它没有呈现引擎，也不支持 Cookie 或 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage)。 
 
 这种类型的运行时仅在 Windows 上的 Office 和 Excel 自定义函数中用于基于 Outlook 事件的任务， *除非* 自定义函数 [共享运行时](#shared-runtime)。 
 
@@ -135,7 +132,7 @@ JavaScript 运行时使用的内存更少，启动速度比浏览器运行时快
 
 Office 外接程序使用不同的浏览器类型运行时，具体取决于 Office 运行 (Web、Mac 或 Windows) 的平台，以及 Windows 和 Office 的版本和版本。 例如，如果用户在 FireFox 浏览器中运行Office web 版，则使用 Firefox 运行时。 如果用户在 Mac 上运行 Office，则使用 Safari 运行时。 如果用户在 Windows 上运行 Office，则 Edge 或 Internet Explorer 将提供运行时，具体取决于 Windows 和 Office 的版本。 可在 [Office 加载项使用的浏览器中](../concepts/browsers-used-by-office-web-add-ins.md)找到详细信息。
 
-所有这些运行时都包括 HTML 呈现引擎，并支持 [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [完整 CORS (跨源资源共享) ](https://developer.mozilla.org/docs/Web/HTTP/CORS)、 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage)和 Cookie。 
+所有这些运行时都包括 HTML 呈现引擎，并支持 [WebSocket](https://developer.mozilla.org/docs/Web/API/WebSockets_API)、 [完整 CORS (跨源资源共享) ](https://developer.mozilla.org/docs/Web/HTTP/CORS)、 [本地存储](https://developer.mozilla.org/docs/Web/API/Window/localStorage)和 Cookie。
 
 浏览器运行时寿命因其实现的功能以及是否共享而异。
 

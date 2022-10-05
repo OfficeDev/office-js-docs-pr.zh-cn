@@ -1,18 +1,20 @@
 ---
 title: 使用正则表达式激活规则显示加载项
 description: 了解如何为 Outlook 上下文加载项使用正则表达式激活规则。
-ms.date: 08/19/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 74eb466201ec576599abb7d9efbcbc44ed0b5ae0
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: ed2fbbfcf7bf55e04f4ec6f225e29fb43ec99639
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423312"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467088"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>使用正则表达式激活规则显示 Outlook 外接程序
 
 可以将正则表达式规则指定为在邮件的特定字段中找到匹配项时激活[上下文外接程序](contextual-outlook-add-ins.md)。 上下文加载项仅在读取模式下激活。 当用户撰写项目时，Outlook 不会激活上下文加载项。 还有一些其他方案：Outlook 不激活外接程序，例如数字签名项目。 有关详细信息，请参阅 [Outlook 外接程序的激活规则](activation-rules.md)。
+
+[!include[JSON manifest does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
 你可以将正则表达式指定为外接程序 XML 清单中的 [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) 规则或 [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) 规则的一部分。 在 [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity) 扩展点中指定了这些规则。
 
@@ -144,7 +146,7 @@ Outlook 基于客户端计算机上浏览器所使用的 JavaScript 解释器的
 const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
 ```
 
-多个匹配项将作为数组元素存储在该对象中。以下代码示例说明如何对名为  `reg1` 的正则表达式循环访问匹配项以生成将显示为 HTML 的字符串。
+Multiple matches are stored as array elements in that object. The following code example shows how to iterate over the matches for a regular expression named  `reg1` to build a string to display as HTML.
 
 ```js
 function initDialer()

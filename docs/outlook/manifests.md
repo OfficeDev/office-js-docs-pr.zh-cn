@@ -3,19 +3,19 @@ title: Outlook 外接程序清单
 description: 该清单介绍 Outlook 外接程序如何跨 Outlook 客户端进行集成；其中包括一个示例。
 ms.date: 05/27/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 330e40c4377edf832d91196ba4599ea351629296
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: c09c483519e4d5cd0dce7dda840130698820b6ee
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660282"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466976"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook 外接程序清单
 
-Outlook 外接程序包括两个组件：XML 外接程序清单和网页，它们由 Office 外接程序的 JavaScript 库 (office.js) 提供支持。该清单介绍了外接程序如何跨 Outlook 客户端进行集成。示例如下。
+An Outlook add-in consists of two components: the XML add-in manifest and a web page supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients. The following is an example.
 
  > [!NOTE]
- > 以下示例中的所有 URL 值均以“https://appdemo.contoso.com”开头。该值是一个占位符。在实际的有效清单中，这些值将包含有效的 https Web URL。
+ > All URL values in the following sample begin with "https://appdemo.contoso.com". This value is a placeholder. In an actual valid manifest, these values would contain valid https web URLs.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -227,7 +227,7 @@ Outlook 外接程序包括两个组件：XML 外接程序清单和网页，它�
 
 ## <a name="schema-versions"></a>架构版本
 
-并非所有 Outlook 客户端均支持最新功能，某些 Outlook 用户可能使用的是旧版本的 Outlook。通过架构版本，开发人员可以使用可用的最新功能生成向后兼容的外接程序，同时仍能在旧版本上正常工作。
+Not all Outlook clients support the latest features, and some Outlook users will have an older version of Outlook. Having schema versions lets developers build add-ins that are backwards compatible, using the newest features where they are available but still functioning on older versions.
 
 清单中的 **\<VersionOverrides\>** 元素就是此类情况的示例。 **\<VersionOverrides\>** 中定义的所有元素将替代清单另一部分中的同一元素。 这意味着，只要有可能，Outlook 就会使用 **\<VersionOverrides\>** 部分中的内容设置加载项。 但是，如果 Outlook 版本不支持 **\<VersionOverrides\>** 的某个版本，Outlook 则会将其忽略，具体取决于清单其余部分中的信息。 
 
@@ -238,15 +238,15 @@ Outlook 外接程序包括两个组件：XML 外接程序清单和网页，它�
 
 |版本|说明|
 |:-----|:-----|
-|v1.0|支持 Office JavaScript API 版本 1.0。对于 Outlook 外接程序，它支持阅读窗体。 |
+|v1.0|Supports version 1.0 of the Office JavaScript API. For Outlook add-ins, this supports read form. |
 |v1.1|支持 Office JavaScript API 版本 1.1 和 **\<VersionOverrides\>**。 对于 Outlook 外接程序，它将添加对撰写窗体的支持。|
 |**\<VersionOverrides\>** 1.0|支持 Office JavaScript API 的更高版本。 这支持外接程序命令。|
-|**\<VersionOverrides\>** 1.1|支持 Office JavaScript API 的更高版本。这支持外接程序命令并添加了对较新功能的支持，如[可固定的任务窗格](pinnable-taskpane.md)和移动外接程序。|
+|**\<VersionOverrides\>** 1.1|Supports later versions of the Office JavaScript API. This supports add-in commands and adds support for newer features, such as [pinnable task panes](pinnable-taskpane.md) and mobile add-ins.|
 
 本文将介绍 v1.1 清单的要求。 即使加载项清单使用 **\<VersionOverrides\>** 元素，仍需将 v1.1 清单元素包括在内，以允许加载项使用不支持 **\<VersionOverrides\>** 的旧版客户端。
 
 > [!NOTE]
-> Outlook 使用架构来验证清单。此架构要求清单中的元素按特定顺序显示。如果未按规定顺序添加元素，可能会在旁加载加载项时出现错误。可下载 [XML 架构定义 (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)，帮助创建所含元素按规定顺序排列的清单。
+> Outlook uses a schema to validate manifests. The schema requires that elements in the manifest appear in a specific order. If you include elements out of the required order, you may get errors when sideloading your add-in. You can download the [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) to help create your manifest with elements in the required order.
 
 ## <a name="root-element"></a>根元素
 
@@ -266,11 +266,11 @@ Outlook 加载项清单的根元素是 **\<OfficeApp\>**。 此元素还声明�
 </OfficeApp>
 ```
 
-## <a name="version"></a>Version
+## <a name="version"></a>版本
 
-这是特定外接程序的版本。如果开发人员更新清单中的某些内容，版本也必须随之递增。因此，在安装新清单时，它将覆盖现有清单，并且用户将获得新功能。如果已将此外接程序提交至应用商店，则必须重新提交新清单并重新验证。然后，此外接程序的用户将在该清单被批准后几小时内自动获得新更新的清单。
+This is the version of the specific add-in. If a developer updates something in the manifest, the version must be incremented as well. This way, when the new manifest is installed, it will overwrite the existing one and the user will get the new functionality. If this add-in was submitted to the store, the new manifest will have to be re-submitted and re-validated. Then, users of this add-in will get the new updated manifest automatically in a few hours, after it is approved.
 
-如果外接程序所请求的权限发生了更改，则系统将提示用户对外接程序进行升级和重新许可。如果管理员为整个组织安装该外接程序，则管理员需首先对其重新许可。同时，用户将继续看到旧功能。
+If the add-in's requested permissions change, users will be prompted to upgrade and re-consent to the add-in. If the admin installed this add-in for the entire organization, the admin will have to re-consent first. Users will continue to see old functionality in the meantime.
 
 ## <a name="versionoverrides"></a>VersionOverrides
 
@@ -379,7 +379,7 @@ Outlook 加载项指定如下所示的 **\<Hosts\>** 元素：
 |Outlook 客户端|已定义的域<br>是否在 AppDomains 中？|浏览器行为|
 |---|---|---|
 |所有客户端|是|链接将在加载项任务窗格中打开。|
-|Windows 版 Outlook 2016（一次性购买）<br>Windows 上的 Outlook 2013|否|链接将在 Internet Explorer 11 中打开。|
+|- 在 Windows 上Outlook 2016 (批量许可的永久) <br>- Windows 上的 Outlook 2013 (永久) |否|链接将在 Internet Explorer 11 中打开。|
 |其他客户端|否|链接将在用户的默认浏览器中打开。|
 
 有关更多详细信息，请参阅[指定要在加载项窗口中打开的域](../develop/add-in-manifests.md?tabs=tabid-1#specify-domains-you-want-to-open-in-the-add-in-window)。
@@ -422,13 +422,13 @@ Outlook 加载项指定如下所示的 **\<Hosts\>** 元素：
 
 ## <a name="next-steps-add-in-commands"></a>后续步骤：外接程序命令
 
-定义基本清单后， 为外接程序定义外接程序命令。外接程序命令代表功能区中的按钮，因此用户以一种简单、直观的方式激活外接程序。有关详细信息，请参阅[用于 Outlook 的外接程序命令](add-in-commands-for-outlook.md)。
+After defining a basic manifest, define add-in commands for your add-in. Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
 有关定义外接程序命令的示例外接程序，请参阅 [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo)。
 
 ## <a name="next-steps-add-mobile-support"></a>后续步骤：添加移动支持
 
-外接程序可选择性的为 Outlook Mobile 添加支持。Outlook Mobile 支持外接程序命令的方式与在 Windows 和 Mac 上使用 Outlook 的方式类似。有关详细信息，请参阅[为 Outlook Mobile 的外接程序命令添加支持](add-mobile-support.md)
+Add-ins can optionally add support for Outlook mobile. Outlook mobile supports add-in commands in a similar fashion to Outlook on Windows and Mac. For more information, see [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
 
 ## <a name="see-also"></a>另请参阅
 

@@ -1,14 +1,14 @@
 ---
 title: 获取或设置 Outlook 加载项中的项目数据
 description: 根据加载项是在阅读窗体中激活还是在撰写窗体中激活，项目为加载项提供的属性也有所不同。
-ms.date: 12/10/2019
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dbd512f45dc9e77fc4a150da4ee8b8924799670a
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8349d81b376aa55d239a88a5d4598381fd8bfc4d
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483388"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467270"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>在阅读或撰写窗体中获取和设置 Outlook 项目数据
 
@@ -18,7 +18,7 @@ ms.locfileid: "64483388"
 
 ## <a name="item-properties-available-in-compose-and-read-forms"></a>撰写和阅读窗体中可用的项目属性
 
-表 1 显示了 Office JavaScript API 中的项目级属性，这些属性在邮件外接程序 (阅读和撰写) 模式下可用。通常，阅读窗体中可用的属性是只读的，撰写窗体中可用的属性是可读/写属性，[itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)、[conversationId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 和 [itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 属性除外，无论如何，这些属性始终为只读。
+表 1 显示了 Office JavaScript API 中的项级属性，这些属性在每个模式下都可用， (读取和撰写邮件加载项) 。通常，读取窗体中可用的属性是只读的，撰写表单中可用的属性是读/写，但 [itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)、 [conversationId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 和 [itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 属性除外，它们始终是只读的。
 
 对于撰写窗体中的其余项目级属性，由于加载项和用户可以同时读取或写入同一属性，在撰写模式下获取或设置这些属性的方法都是异步的，因此这些属性在撰写窗体中和阅读窗体中返回的对象类型可能也有所不同。 有关在撰写模式下使用异步方法获取或设置项目级属性的详细信息，请参阅[在 Outlook 的撰写窗体中获取和设置项目数据](get-and-set-item-data-in-a-compose-form.md)。
 
@@ -33,7 +33,7 @@ ms.locfileid: "64483388"
 |约会和邮件|[dateTimeModified](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|JavaScript **Date** 对象|属性不可用|
 |约会和邮件|[itemClass](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|字符串|属性不可用|
 |约会和邮件|[itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|字符串|属性不可用|
-|约会和邮件|[itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|[ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) 枚举中的字符串|[ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) 枚举中的 (只读) |
+|约会和邮件|[itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|[ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) 枚举中的字符串|[ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) 枚举中的字符串 (只读) |
 |约会和邮件|[attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)|属性不可用|
 |约会和邮件|[body](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|[Body](/javascript/api/outlook/office.body)|[Body](/javascript/api/outlook/office.body)|
 |约会和邮件|[normalizedSubject](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|字符串|属性不可用|
@@ -56,12 +56,11 @@ ms.locfileid: "64483388"
 
 如果 Outlook 加载项在读取表单中激活，则可以获取 Exchange 回调令牌。 该令牌可用于服务器端代码，以便通过 Exchange Web 服务 (EWS) 访问完整项目。
 
-通过在加载项清单中指定 **ReadItem** 权限，可以使用 [mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法获取 Exchange 回调令牌，使用 [mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) 属性获取用户邮箱 EWS 终结点的 URL，以及使用 [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 获取所选项目的 EWS ID。 然后，可以将回调令牌、EWS 终结点 URL 和 EWS 项目 ID 传递到服务器端代码，以访问 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作，从而获取项目的更多属性。
-
+通过在外接程序清单中指定 [读取项权限](understanding-outlook-add-in-permissions.md#read-item-permission) ，可以使用 [mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法获取 Exchange 回调令牌、用于获取用户邮箱的 EWS 终结点的 URL 的 [mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) 属性和 [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 以获取所选项目的 EWS ID。 然后，可以将回调令牌、EWS 终结点 URL 和 EWS 项目 ID 传递到服务器端代码，以访问 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 操作，从而获取项目的更多属性。
 
 ## <a name="access-ews-from-a-read-or-compose-add-in"></a>从阅读或撰写加载项访问 EWS
 
-另外，还可以使用 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法直接从加载项访问 Exchange Web 服务 (EWS) 操作 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 和 [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation)。 可以使用这两个操作获取并设置指定项目的多个属性。 无论加载项已在阅读还是撰写窗体中激活，只要在加载项清单中指定了 **ReadWriteMailbox** 权限，Outlook 加载项就可以使用此方法。
+另外，还可以使用 [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法直接从加载项访问 Exchange Web 服务 (EWS) 操作 [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) 和 [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation)。 可以使用这两个操作获取并设置指定项目的多个属性。 无论外接程序是在读取还是撰写窗体中激活，只要在加载项清单中指定 **读/写邮箱** 权限，Outlook 外接程序都可以使用此方法。 有关 **读/写邮箱** 权限的详细信息，请参阅 [了解 Outlook 加载项权限](understanding-outlook-add-in-permissions.md)
 
 有关使用 **makeEwsRequestAsync** 访问 EWS 操作的详细信息，请参阅 [从 Outlook 加载项调用 Web 服务](web-services.md)。
 

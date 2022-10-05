@@ -3,12 +3,12 @@ title: 在 Office 加载项中使用 Office 对话框 API
 description: 了解在 Office 加载项中创建对话框的基础知识。
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f4bdbcbcf725e04d0fd44886b6bf5520fe9ebd0
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 947b08575d100c639a440c1ca25d45199b4507ad
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423102"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466955"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>在 Office 加载项中使用 Office 对话框 API
 
@@ -62,9 +62,9 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20});
 ```
 
-有关实现这一点的示例外接程序，请参阅 [Office 外接程序对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。 有关使用的 `displayDialogAsync`更多示例，请参阅 [示例](#samples)。
+有关实现这一点的样本加载项，请参阅 [Office 加载项 Dialog API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。 有关使用的 `displayDialogAsync`更多示例，请参阅 [示例](#samples)。
 
-将两个值均设置为 100% 可有效提供全屏体验。（有效最大值为 99.5%，窗口仍可移动和调整大小。）
+Set both values to 100% to get what is effectively a full screen experience. (The effective maximum is 99.5%, and the window is still moveable and resizable.)
 
 > [!NOTE]
 > 只能从主机窗口打开一个对话框。 如果尝试再打开一个对话框，就会生成错误。 例如，如果用户从任务窗格打开对话框，则无法从任务窗格中其他页面打开第二个对话框。 不过，如果对话框是通过[加载项命令](../design/add-in-commands.md)打开，那么只要选择此命令，就会打开新 HTML 文件（但不可见）。 这会新建（不可见的）主机窗口，所以每个这样的窗口都可以启动自己的对话框。 有关详细信息，请参阅 [displayDialogAsync 返回的错误](dialog-handle-errors-events.md#errors-from-displaydialogasync)。
@@ -100,7 +100,7 @@ if (loginSuccess) {
 > [!IMPORTANT]
 >
 > - 该 `messageParent` 函数是对话框中 *只能* 调用的两个 Office JS API 之一。
-> - 可在对话框中调用的其他 JS API 是 `Office.context.requirements.isSetSupported`。 有关它的信息，请参阅 [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在对话框中，OUTLOOK 2016一次性购买 (（即 MSI 版本) ）不支持此 API。
+> - 可在对话框中调用的其他 JS API 是 `Office.context.requirements.isSetSupported`。 有关它的信息，请参阅 [指定 Office 应用程序和 API 要求](specify-office-hosts-and-api-requirements.md)。 但是，在对话框中，批量许可的永久Outlook 2016 (（即 MSI 版本) ）不支持此 API。
 
 在下一个示例中，`googleProfile` 是用户 Google 配置文件的字符串化版本。
 
@@ -126,7 +126,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 >
 > - Office 将 [AsyncResult ](/javascript/api/office/office.asyncresult) 对象传递给回叫。 表示尝试打开对话框的结果， 不表示对话框中任何事件的结果。 若要详细了解此区别，请参阅[处理错误和事件](dialog-handle-errors-events.md)。
 > - `asyncResult` 的 `value` 属性设置为 [Dialog](/javascript/api/office/office.dialog) 对象，此对象位于主机页（而不是对话框的执行上下文）中。
-> - `processMessage` 是用于处理事件的函数。可以根据需要任意命名。
+> - The `processMessage` is the function that handles the event. You can give it any name you want.
 > - `dialog` 变量的声明范围比回调更广，因为 `processMessage` 中也会引用此变量。
 
 下面是一个非常简单的示例，展示了 `DialogMessageReceived` 事件的处理程序。
@@ -159,7 +159,7 @@ function processMessage(arg) {
 
 有关使用这些技术的示例加载项，请参阅 [Office 加载项对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。
 
-如果外接程序在收到消息后需要打开任务窗格的其他页面，可以使用 `window.location.replace` 方法（或 `window.location.href`）作为处理程序的最后一行。示例如下。
+If the add-in needs to open a different page of the task pane after receiving the message, you can use the `window.location.replace` method (or `window.location.href`) as the last line of the handler. The following is an example.
 
 ```js
 function processMessage(arg) {
@@ -194,9 +194,9 @@ if (loginSuccess) {
 >
 > - `loginSuccess` 变量通过读取标识提供程序返回的 HTTP 响应进行初始化。
 > - 不显示这些函数和`getError`函数的`getProfile`实现。 这两个函数均从查询参数或 HTTP 响应的正文获取数据。
-> - 根据登录是否成功，发送不同类型的匿名对象。两者都有 `messageType` 属性。不同之处在于，一个有 `profile` 属性，另一个有 `error` 属性。
+> - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
 
-主机页中的处理程序代码使用 `messageType` 属性的值设置分支，如下面的示例所示。请注意，`showUserName` 函数的用法与之前的示例相同，`showNotification` 函数在主机页的 UI 中显示错误。
+The handler code in the host page uses the value of the `messageType` property to branch as shown in the following example. Note that the `showUserName` function is the same as in the previous example and `showNotification` function displays the error in the host page's UI.
 
 ```js
 function processMessage(arg) {
@@ -385,7 +385,7 @@ function onMessageFromParent(arg) {
 
 ## <a name="close-the-dialog-box"></a>关闭对话框
 
-可以在对话框中实现一个用于关闭对话框的按钮。为此，该按钮的单击事件处理程序应使用 `messageParent` 通知主机页该按钮已获得单击。示例如下。
+You can implement a button in the dialog box that will close it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button has been clicked. The following is an example.
 
 ```js
 function closeButtonClick() {

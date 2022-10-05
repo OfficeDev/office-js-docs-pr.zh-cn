@@ -1,18 +1,18 @@
 ---
 title: 从 Outlook 加载项使用 Outlook REST API
 description: 了解如何从 Outlook 加载项使用 Outlook REST API 获得访问令牌。
-ms.date: 09/02/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b460dbd150ec4806c562cf0fb2bc6e920beaa4c5
-ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.openlocfilehash: 9f62b2514f05341531a826c29e18c593a590fca0
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "67857548"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467214"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>从 Outlook 加载项使用 Outlook REST API
 
-[Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) 命名空间提供访问许多邮件和约会的公用字段的权限。但是，在某些方案中，外接程序可能需要访问命名空间未公开的数据。例如，外接程序可能依赖于外部应用设置的自定义属性，或需要搜索用户邮箱中来自同一发件人的邮件。在这些方案中，[Outlook REST API](/outlook/rest) 是推荐的检索信息的方法。
+The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) namespace provides access to many of the common fields of messages and appointments. However, in some scenarios an add-in may need to access data that is not exposed by the namespace. For example, the add-in may rely on custom properties set by an outside app, or it needs to search the user's mailbox for messages from the same sender. In these scenarios, the [Outlook REST APIs](/outlook/rest) is the recommended method to retrieve the information.
 
 > [!IMPORTANT]
 > **Outlook REST API 已弃用**
@@ -25,15 +25,16 @@ ms.locfileid: "67857548"
 
 ## <a name="get-an-access-token"></a>获取访问令牌
 
-Outlook REST API 需要 `Authorization` 标头中的持有者令牌。应用通常使用 OAuth2 流检索令牌。不过，加载项也可以使用邮箱要求集 1.5 中引入的新 [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法检索令牌，而无需实现 OAuth2。
+The Outlook REST APIs require a bearer token in the `Authorization` header. Typically apps use OAuth2 flows to retrieve a token. However, add-ins can retrieve a token without implementing OAuth2 by using the new [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method introduced in the Mailbox requirement set 1.5.
 
 通过将 `isRest` 选项设置为 `true`，可以请求获取与 REST API 兼容的令牌。
 
 ### <a name="add-in-permissions-and-token-scope"></a>外接程序权限和令牌范围
 
-请务必考虑外接程序通过 REST API 所需要的访问级别。在大多数情况下，由 `getCallbackTokenAsync` 返回的令牌将仅提供对当前项的只读访问权限。即使外接程序在其清单中指定了 `ReadWriteItem` 权限级别也是如此。
+请务必考虑外接程序通过 REST API 所需要的访问级别。 在大多数情况下，由 `getCallbackTokenAsync` 返回的令牌将仅提供对当前项的只读访问权限。 即使加载项在其清单中指定 [了读/写项权限](understanding-outlook-add-in-permissions.md#readwrite-item-permission) 级别，也是如此。
 
-如果外接程序需要当前项目或用户邮箱中的其他项目的写权限，则外接程序必须在其清单中指定 `ReadWriteMailbox` 权限级别。在这种情况下，所返回的令牌将包含用户的邮件、事件和联系人的读取/写入访问权限。
+如果外接程序需要对用户邮箱中的当前项目或其他项目进行写入访问，外接程序必须指定 [读/写邮箱权限](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission)。
+其清单中的级别。 在这种情况下，所返回的令牌将包含用户的邮件、事件和联系人的读取/写入访问权限。
 
 ### <a name="example"></a>示例
 
@@ -79,7 +80,7 @@ function getItemRestId() {
 
 ## <a name="get-the-rest-api-url"></a>获取 REST API URL
 
-外接程序调用 REST API 所需的最后一部分信息是其发送 API 请求应使用的主机名。此信息在 [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) 属性中。
+The final piece of information your add-in needs to call the REST API is the hostname it should use to send API requests. This information is in the [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) property.
 
 ### <a name="example"></a>示例
 

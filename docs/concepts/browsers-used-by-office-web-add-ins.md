@@ -1,14 +1,14 @@
 ---
 title: Office 加载项使用的浏览器
 description: 指定操作系统和 Office 版本如何确定 Office 加载项使用的浏览器。
-ms.date: 08/04/2022
+ms.date: 09/29/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c40ff7ccc8a3b88e6e9f7dcd4e107fdb13f99109
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: bd4f20c969acf07423e15269b361469ea17eee39
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422948"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466941"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Office 加载项使用的浏览器
 
@@ -17,8 +17,8 @@ Office 加载项是在Office web 版中运行时使用 iFrame 显示的 Web 应�
 要使用的浏览器取决于：
 
 - 计算机的操作系统。
-- 无论外接程序是在 Office web 版、Microsoft 365 还是永久 (中运行，也称为“非订阅”或“一次性购买”) Office 2013 或更高版本。
-- 在 Office 的永久版本中，无论外接程序是在“使用者”还是“商业” (中运行，也称为“批量许可”或“LTSC”) 变体。
+- 加载项是在 Office web 版 中运行、从 Microsoft 365 订阅下载的 Office 中，还是在永久 Office 2013 或更高版本中运行。
+- 在 Windows 上的 Office 的永久版本中，无论外接程序是在“零售”还是“批量许可”变体中运行。
 
 > [!NOTE]
 > 本文假定外接程序在 *不受* [Windows 信息保护 (WIP)](/windows/uwp/enterprise/wip-hub)保护的文档中运行。 对于受 WIP 保护的文档，本文中的信息存在一些例外。 有关详细信息，请参阅 [受 WIP 保护的文档](#wip-protected-documents)。
@@ -26,10 +26,10 @@ Office 加载项是在Office web 版中运行时使用 iFrame 显示的 Web 应�
 > [!IMPORTANT]
 > **仍在 Office 加载项中使用的 Internet Explorer**
 >
-> 如本文所述，平台和 Office 版本的某些组合（包括通过 Office 2019 商业永久版本）仍使用 Internet Explorer 11 附带的 Webview 控件来托管加载项。 建议 (但不需要) 继续支持这些组合（至少以最小方式）在 Internet Explorer Webview 中启动外接程序时为外接程序的用户提供正常故障消息。 请记住以下附加点：
+> 平台和 Office 版本的某些组合（包括通过 Office 2019 批量许可的永久版本）仍使用 Internet Explorer 11 附带的 Web 视图控件来托管加载项，如本文所述。 建议 (但不需要) 继续支持这些组合（至少以最小方式）在 Internet Explorer Webview 中启动外接程序时为外接程序的用户提供正常故障消息。 请记住以下附加点：
 >
 > - Office web 版不再在 Internet Explorer 中打开。 因此，[AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 不再使用 Internet Explorer 作为浏览器在Office web 版中测试加载项。
-> - AppSource 仍会测试使用 Internet Explorer 的平台和 Office *桌面* 版本的组合，但仅当外接程序不支持 Internet Explorer 时才会发出警告;AppSource 不会拒绝加载项。
+> - AppSource 仍在测试使用 Internet Explorer 的平台和 Office *桌面* 版本的组合。 但是，它仅在加载项不支持 Internet Explorer 时发出警告;AppSource 不会拒绝加载项。
 > - [Script Lab工具](../overview/explore-with-script-lab.md)不再支持 Internet Explorer。
 >
 > 有关在外接程序上支持 Internet Explorer 和配置正常故障消息的详细信息，请参阅 [支持 Internet Explorer 11](../develop/support-ie-11.md)。
@@ -49,24 +49,23 @@ Office 加载项是在Office web 版中运行时使用 iFrame 显示的 Web 应�
 
 ## <a name="perpetual-versions-of-office-on-windows"></a>Windows 上的 Office 的永久版本
 
-对于 Windows 上的 Office 的永久版本，使用的浏览器由 Office 版本决定，许可证是使用者还是商业版，以及是否安装了基于 Edge WebView2 (Chromium的) 。 Windows 版本并不重要，但请注意，早于 Windows 7 的版本不支持 Office Web 加载项，并且Office 2021在早于 Windows 10 的版本上不受支持。
+对于 Windows 上的 Office 的永久版本，使用的浏览器由 Office 版本决定，许可证是零售还是批量许可，以及是否安装了基于 Edge WebView2 (Chromium) 。 Windows 版本并不重要，但请注意，早于 Windows 7 的版本不支持 Office Web 加载项，并且Office 2021在早于 Windows 10 的版本上不受支持。
 
-若要确定 Office 2016 还是 Office 2019 是使用者还是商业版，请使用 Office 版本和内部版本号的格式。  (对于 Office 2013 和 Office 2021，商业和消费者之间的区别并不重要。) 
+若要确定 Office 2016 还是 Office 2019 是零售还是批量许可，请使用 Office 版本和内部版本号的格式。  (对于 Office 2013 和 Office 2021，批量许可与零售之间的区别并不重要。) 
 
-- **使用者**：对于 Office 2016 和 2019，格式为`YYMM (xxxxx.xxxxxx)`以两个块为五位数结尾;例如。 `2206 (Build 15330.20264`
-- **商业**： 
+- **零售**：对于 Office 2016 和 2019，格式为`YYMM (xxxxx.xxxxxx)`以两个块为五位数结尾;例如。 `2206 (Build 15330.20264`
+- **批量许可**：
+  - 对于 Office 2016，格式为`16.0.xxxx.xxxxx`以两个 *块（四* 位数字）结尾;例如。 `16.0.5197.1000`
+  - 对于 Office 2019，格式为`1808 (xxxxx.xxxxxx)`以两个 *块（五* 位数字）结尾;例如。 `1808 (Build 10388.20027)` 请注意，年份和月份始终 `1808`是。
 
-    - 对于 Office 2016，格式为`16.0.xxxx.xxxxx`以两个 *块（四* 位数字）结尾;例如。 `16.0.5197.1000`
-    - 对于 Office 2019，格式为`1808 (xxxxx.xxxxxx)`以两个 *块（五* 位数字）结尾;例如。 `1808 (Build 10388.20027)` 请注意，年份和月份始终 `1808`是。
-
-|Office 版本|使用者与商业|已安装基于 Edge WebView2 (Chromium) ？|浏览器|
-|:-----|:-----|:-----|:-----|:-----|
-|Office 2013 | 无所谓 |无所谓|Internet Explorer 11|
-|Office 2016| 商业 |无所谓|Internet Explorer 11|
-|Office 2019| 商业 |无所谓|Internet Explorer 11|
-|Office 2016 到 Office 2019| 消费者 |否 |Microsoft Edge<sup>1、2 和</sup> 原始 WebView (EdgeHTML) </br>如果未安装 Edge，则使用 Internet Explorer 11。|
-|Office 2016 到 Office 2019|  消费者 |是<sup>3</sup>|Microsoft Edge<sup>1</sup> 和基于 WebView2 (Chromium的) |
-|Office 2021| 无所谓 |是<sup>3</sup> |Microsoft Edge<sup>1</sup> 和基于 WebView2 (Chromium的) |
+| Office 版本 | 零售与批量许可 | 已安装基于 Edge WebView2 (Chromium) ？ | 浏览器 |
+|:-----|:-----|:-----|:-----|
+| Office 2013 | 无所谓 | 无所谓 | Internet Explorer 11 |
+| Office 2016 | 批量许可 | 无所谓 | Internet Explorer 11 |
+| Office 2019 | 批量许可 | 无所谓 | Internet Explorer 11 |
+| Office 2016 到 Office 2019 | 零售版 | 否 | Microsoft Edge<sup>1、2 和</sup> 原始 WebView (EdgeHTML) </br>如果未安装 Edge，则使用 Internet Explorer 11。 |
+| Office 2016 到 Office 2019 | 零售版 | 是<sup>3</sup> | Microsoft Edge<sup>1</sup> 和基于 WebView2 (Chromium的)  |
+| Office 2021 | 无所谓 | 是<sup>3</sup> | Microsoft Edge<sup>1</sup> 和基于 WebView2 (Chromium的)  |
 
 <sup>1</sup> 使用 Microsoft Edge 时，Windows 讲述人 (有时称为“屏幕阅读器”，) 在任务窗格中打开的页面中读取 `<title>` 标记。 在 Internet Explorer 11 中，讲述人读取任务窗格的标题栏，该标题栏来自 **\<DisplayName\>** 加载项清单中的值。
 
@@ -74,7 +73,7 @@ Office 加载项是在Office web 版中运行时使用 iFrame 显示的 Web 应�
 
 <sup>3</sup> 在Windows 11之前的 Windows 版本上，必须安装 WebView2 控件，以便 Office 可以嵌入它。 它随永久Office 2021或更高版本一起安装，但不会自动随 Microsoft Edge 一起安装。 如果具有早期版本的永久 Office，请使用有关在 [Microsoft Edge WebView2/Embed Web 内容上安装控件的说明...使用 Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)。
 
-## <a name="microsoft-365-subscription-on-windows"></a>Windows 上的 Microsoft 365 订阅
+## <a name="microsoft-365-subscription-office-on-windows"></a>Windows 上的 Microsoft 365 订阅 Office
 
 对于 Windows 上的订阅 Office，使用的浏览器由操作系统、Office 版本以及是否安装基于 Edge WebView2 (Chromium的) 来确定。
 
@@ -130,7 +129,7 @@ Internet Explorer 11 不支持高于 ES5 的 JavaScript 版本。 如果加载�
 
 ## <a name="wip-protected-documents"></a>受 WIP 保护的文档
 
-在 [受 WIP 保护的](/windows/uwp/enterprise/wip-hub)文档中运行的加载项绝不会将 **Microsoft Edge 与基于 WebView2 (Chromium的)** 配合使用。 在本文前面部分 [的 Windows 上的 Office](#perpetual-versions-of-office-on-windows) 和 [Windows 上的 Microsoft 365 订阅](#microsoft-365-subscription-on-windows)的永久版本中，将 **Microsoft Edge 替换为原始 WebView (EdgeHTML)**，无论后者出现在何处，都 **基于 WebView2 (Chromium)**。
+在 [受 WIP 保护的](/windows/uwp/enterprise/wip-hub)文档中运行的加载项绝不会将 **Microsoft Edge 与基于 WebView2 (Chromium的)** 配合使用。 在本文前面部分 [的 Windows 上的 Office](#perpetual-versions-of-office-on-windows) 和 [Windows 上的 Microsoft 365 订阅 Office](#microsoft-365-subscription-office-on-windows) 的永久版本中，将 **Microsoft Edge 替换为 Microsoft Edge 的原始 WebView (EdgeHTML)**，无论后者出现何处，都 **基于 WebView2 (Chromium)**。
 
 若要确定文档是否受 WIP 保护，请执行以下步骤：
 

@@ -3,27 +3,27 @@ title: 支持 Internet Explorer 11
 description: 了解如何在加载项中支持 Internet Explorer 11 和 ES5 Javascript。
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cb641f1ed1a75fcff23291d1fa566bbf6dc008b
-ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
+ms.openlocfilehash: 6d78083a23a660fc5d16ff1ad6e654ce02a58d25
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "66136423"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466885"
 ---
 # <a name="support-internet-explorer-11"></a>支持 Internet Explorer 11
 
 > [!IMPORTANT]
-> **Internet Explorer 仍在Office加载项中使用**
+> **仍在 Office 加载项中使用的 Internet Explorer**
 >
-> 一些平台和Office版本的组合，包括到 2019 Office的一次性购买版本，仍然使用 Internet Explorer 11 附带的 Webview 控件来托管加载项，如[Office加载项使用的浏览器中](../concepts/browsers-used-by-office-web-add-ins.md)所述。建议 (但不需要) 继续支持这些组合（至少以最小方式）在 Internet Explorer Webview 中启动外接程序时为外接程序的用户提供正常故障消息。 请记住以下附加点：
+> 平台和 Office 版本的某些组合（包括通过 Office 2019 的一次性购买版本）仍使用 Internet Explorer 11 附带的 Webview 控件来托管加载项，如 [Office 外接程序使用的浏览器中所](../concepts/browsers-used-by-office-web-add-ins.md)述。建议 (但不需要) 继续支持这些组合（至少以最小方式）在 Internet Explorer Webview 中启动外接程序时为外接程序的用户提供正常故障消息。 请记住以下附加点：
 >
 > - Office web 版不再在 Internet Explorer 中打开。 因此，[AppSource](/office/dev/store/submit-to-appsource-via-partner-center) 不再使用 Internet Explorer 作为浏览器在Office web 版中测试加载项。
-> - AppSource 仍在测试使用 Internet Explorer 的平台和Office *桌面* 版本的组合，但是仅当外接程序不支持 Internet Explorer 时才会发出警告;AppSource 不会拒绝该外接程序。
+> - AppSource 仍会测试使用 Internet Explorer 的平台和 Office *桌面* 版本的组合，但仅当外接程序不支持 Internet Explorer 时才会发出警告;AppSource 不会拒绝加载项。
 > - [Script Lab工具](../overview/explore-with-script-lab.md)不再支持 Internet Explorer。
 
-Office加载项是在 Office web 版 上运行时显示在 IFrame 中的 Web 应用程序。 Office在 Mac 上Windows或Office上Office中运行时，使用嵌入式浏览器控件显示加载项。 嵌入式浏览器控件由操作系统或用户计算机上安装的浏览器提供。
+Office 加载项是在 Office web 版 上运行时显示在 IFrame 中的 Web 应用程序。 在 Windows 上的 Office 或 Mac 上的 Office 中运行时，使用嵌入式浏览器控件显示 Office 加载项。 嵌入式浏览器控件由操作系统或用户计算机上安装的浏览器提供。
 
-如果计划支持较旧版本的Windows和Office，则加载项必须在基于 Internet Explorer 11 (IE11) 的可嵌入浏览器控件中工作。 有关Windows和Office使用基于 IE11 的浏览器控件的组合的信息，请参阅[Office加载项使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
+如果计划支持较旧版本的 Windows 和 Office，外接程序必须在基于 Internet Explorer 11 (IE11) 的可嵌入浏览器控件中工作。 有关 Windows 和 Office 使用基于 IE11 的浏览器控件的组合的信息，请参阅 [Office 外接程序使用的浏览器](../concepts/browsers-used-by-office-web-add-ins.md)。
 
 > [!IMPORTANT]
 > Internet Explorer 11 不支持某些 HTML5 功能，例如媒体、录制和位置。 如果外接程序必须支持 Internet Explorer 11，则必须设计外接程序以避免这些不受支持的功能，或者加载项必须检测何时使用 Internet Explorer，并提供不使用不受支持的功能的备用体验。 有关详细信息，请参阅 [在运行时确定外接程序是否在 Internet Explorer 中运行](#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer)。
@@ -36,15 +36,15 @@ Internet Explorer 11 不支持低于 ES5 的 JavaScript 版本。 如果要使�
 
 可以在 TypeScript 或新式 JavaScript 中编写代码，然后在生成时将其转译为 ES5 JavaScript。 生成的 ES5 文件是上传到外接程序的 Web 应用程序的内容。
 
-有两个流行的转译器。 两者都可以使用 TypeScript 或 帖子-ES5 JavaScript 的源文件。 它们还使用React文件 (.jsx 和 .tsx) 。
+有两个流行的转译器。 两者都可以使用 TypeScript 或 ES5 后 JavaScript 的源文件。 它们还使用React文件 (.jsx 和 .tsx) 。
 
 - [巴贝尔](https://babeljs.io/)
 - [Tsc](https://www.typescriptlang.org/index.html)
 
-有关在外接程序项目中安装和配置转译器的信息，请参阅其中任一文档。 建议使用任务运行程序（如 [Grunt](https://gruntjs.com/) 或 [WebPack）](https://webpack.js.org/) 自动执行转译。 有关使用 tsc 的示例加载项，请[参阅Office加载项 Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)。 有关使用 babel 的示例，请参阅[脱机存储加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/Excel.OfflineStorageAddin)。
+有关在外接程序项目中安装和配置转译器的信息，请参阅其中任一文档。 建议使用任务运行程序（如 [Grunt](https://gruntjs.com/) 或 [WebPack）](https://webpack.js.org/) 自动执行转译。 有关使用 tsc 的示例加载项，请参阅 [Office 加载项 Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)。 有关使用 babel 的示例，请参阅 [脱机存储加载项](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/Excel.OfflineStorageAddin)。
 
 > [!NOTE]
-> 如果使用的Visual Studio (不是Visual Studio Code) ，则 tsc 可能最容易使用。 可以使用 nuget 包安装对它的支持。 有关详细信息，请参阅 [Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019)。 若要将 babel 与Visual Studio配合使用，请创建生成脚本，或者将Visual Studio中的任务运行程序资源管理器与 [WebPack 任务运行程序](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebPackTaskRunner)或 [NPM 任务运行程序](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner)等工具配合使用。
+> 如果使用的是 Visual Studio (不Visual Studio Code) ，则 tsc 可能最容易使用。 可以使用 nuget 包安装对它的支持。 有关详细信息，请参阅 [Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019)。 若要将 babel 与 Visual Studio 配合使用，请在 Visual Studio 中创建生成脚本或将任务运行器资源管理器与 [WebPack 任务运行程序](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebPackTaskRunner) 或 [NPM 任务运行程序](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner)等工具配合使用。
 
 ### <a name="use-a-polyfill"></a>使用 polyfill
 
@@ -52,7 +52,7 @@ Internet Explorer 11 不支持低于 ES5 的 JavaScript 版本。 如果要使�
 
 若要使用多填充库，请像加载任何其他 JavaScript 文件或模块一样加载它。 例如，可以在外接程序的主页 HTML 文件 (（例如`<script src="/js/core-js.js"></script>`) ）中使用`<script>`标记，也可以在 JavaScript 文件 (中使用`import`语句，例如 `import 'core-js';`) 。 当 JavaScript 引擎看到类似 `startsWith`的方法时，它将首先查看该语言中是否内置了该名称的方法。 如果存在，它将调用本机方法。 如果该方法不是内置的，并且仅当该方法不是内置的，则引擎将查找所有已加载的文件。 因此，在支持本机版本的浏览器中不使用多填充版本。
 
-导入整个 core-js 库将导入所有 core-js 功能。 还可以仅导入Office外接程序所需的多文件。 有关如何执行此操作的说明，请参阅 [CommonJS API](https://github.com/zloirock/core-js#commonjs-api)。 core-js 库包含所需的大部分多文件。 core-js 文档的 [“缺少 Polyfills](https://github.com/zloirock/core-js#missing-polyfills) ”部分中详述了一些异常。 例如，它不支持 `fetch`，但可以使用 [提取](https://github.com/github/fetch) 多填充。
+导入整个 core-js 库将导入所有 core-js 功能。 还可以仅导入 Office 外接程序所需的多文件。 有关如何执行此操作的说明，请参阅 [CommonJS API](https://github.com/zloirock/core-js#commonjs-api)。 core-js 库包含所需的大部分多文件。 core-js 文档的 [“缺少 Polyfills](https://github.com/zloirock/core-js#missing-polyfills) ”部分中详述了一些异常。 例如，它不支持 `fetch`，但可以使用 [提取](https://github.com/github/fetch) 多填充。
 
 有关使用core.js的示例加载项，请 [参阅 Word 加载项 Angular2 StyleChecker](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)。
 
@@ -72,8 +72,8 @@ if (navigator.userAgent.indexOf("Trident") === -1) {
     //     features that are not supported in IE.
     //  2. Enable the add-in to gracefully fail by putting a message in the UI that
     //     says something similar to: 
-    //      "This add-in won't run in your version of Office. Please upgrade to 
-    //      either one-time purchase Office 2021 or to a Microsoft 365 account."          
+    //      "This add-in won't run in your version of Office. Please upgrade 
+    //      either to perpetual Office 2021 or to a Microsoft 365 account."          
 
 }
 ```

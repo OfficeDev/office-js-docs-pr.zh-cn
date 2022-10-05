@@ -1,14 +1,14 @@
 ---
 title: 获取和设置类别
 description: 如何管理邮箱和项上的类别。
-ms.date: 07/07/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d31cb8da4cdaf4a88141a1eac927748b1399e0d9
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: a94aba61d513becf2fa1af27ff388b1286e94707
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712823"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467102"
 ---
 # <a name="get-and-set-categories"></a>获取和设置类别
 
@@ -22,7 +22,10 @@ ms.locfileid: "66712823"
 只有邮箱上主列表中的类别可供你应用到邮件或约会。 可以使用 API 添加、获取和删除主类别。
 
 > [!IMPORTANT]
-> 若要使加载项管理类别主列表，必须将清单中的节点设置 `Permissions` 为 `ReadWriteMailbox`。
+> 若要使加载项管理类别主列表，它必须在清单中请求 **读/写邮箱** 权限。 标记因清单类型而异。
+>
+> - **XML 清单**：将 **\<Permissions\>** 元素设置为 **ReadWriteMailbox**。
+> - **Teams 清单 (预览)**：将“authorization.permissions.resourceSpecific”数组中对象的“name”属性设置为“Mailbox.ReadWrite.User”。
 
 ### <a name="add-master-categories"></a>添加主类别
 
@@ -141,4 +144,3 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 ## <a name="see-also"></a>另请参阅
 
 - [Outlook 权限](understanding-outlook-add-in-permissions.md)
-- [清单中的 Permissions 元素](/javascript/api/manifest/permissions)
