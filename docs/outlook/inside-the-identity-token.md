@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项中的 Exchange 标识令牌揭秘
 description: 了解从 Outlook 加载项生成的 Exchange 用户标识令牌的内容。
-ms.date: 10/31/2019
+ms.date: 10/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 843bd76b66f784b1e380bdde5e33adf05755e268
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7d586203395521deb14e18a3ae52b01459224b75
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484057"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68546429"
 ---
 # <a name="inside-the-exchange-identity-token"></a>Exchange 标识令牌揭秘
 
@@ -42,7 +42,7 @@ Exchange 使用标识令牌的 JSON Web 令牌 (JWT) 格式。 有关 JWT 令牌
 
 ## <a name="identity-token-payload"></a>标识令牌有效负载
 
-有效负载包含身份验证声明，标识电子邮件帐户和发送令牌的 Exchange 服务器。下面的示例显示有效负载部分的形式。
+The payload contains the authentication claims that identify the email account and identify the Exchange server that sent the token. The following example shows what the payload section looks like.
 
 ```JSON
 { 
@@ -66,10 +66,10 @@ Exchange 使用标识令牌的 JSON Web 令牌 (JWT) 格式。 有关 JWT 令牌
 
 | 声明 | 说明 |
 |:-----|:-----|
-| `aud` | 请求该令牌的加载项的 URL。 只有客户端的浏览器运行的加载项发送的令牌有效。 如果加载项使用 Office 加载项清单 v1.1，则此 URL 为加载项清单的 [FormSettings](/javascript/api/manifest/formsettings) 元素中首先出现的 `ItemRead` 或 `ItemEdit` 窗体类型下的第一个 `SourceLocation` 元素指定的 URL。 |
-| `iss` | 颁发令牌的 Exchange 服务器的唯一标识符。此 Exchange 服务器颁发的所有令牌将具有相同标识符。 |
-| `nbf` | 令牌开始生效的日期和时间。值是自 1970 年 1 月 1 日以来的秒数。 |
-| `exp` | 标记失效的日期和时间，值是自 1970 年 1 月 1 日以来的秒数。 |
+| `aud` | 请求该令牌的加载项的 URL。 只有客户端的浏览器运行的加载项发送的令牌有效。 加载项的 URL 在清单中指定。 标记取决于清单的类型。</br></br>**XML 清单：** 如果外接程序使用 Office 外接程序清单架构 v1.1，则此 URL 是在表单类型`ItemRead`下的第一个 **\<SourceLocation\>** 元素中指定的 URL，或者`ItemEdit`是首先作为外接程序清单中 [FormSettings](/javascript/api/manifest/formsettings) 元素的一部分出现的 URL。</br></br>**Teams 清单 (预览) ：** URL 在“extensions.audienceClaimUrl”属性中指定。 |
+| `iss` | 颁发令牌的 Exchange 服务器的唯一标识符。 此 Exchange 服务器颁发的所有令牌将具有相同标识符。 |
+| `nbf` | The date and time that the token is valid starting from. The value is the number of seconds since January 1, 1970. |
+| `exp` | The date and time that the token is valid until. The value is the number of seconds since January 1, 1970. |
 | `appctxsender` | 发送应用程序上下文的 Exchange 服务器的唯一标识符。 |
 | `isbrowserhostedapp` | 指示加载项是否托管在浏览器中。 |
 | `appctx` | 令牌的应用程序上下文。 |
@@ -84,7 +84,7 @@ appctx 声明中的信息提供了帐户的唯一标识符和用于为令牌签�
 
 ## <a name="identity-token-signature"></a>标识令牌签名
 
-通过使用标头中指定的算法，并使用有效负载中指定的服务器位置处的自签名 X 509 证书，对标头和有效负载部分进行哈希处理来创建签名。Web 服务可以验证此签名，以帮助确保标识令牌来自预期的服务器。
+The signature is created by hashing the header and payload sections with the algorithm specified in the header and using the self-signed X509 certificate located on the server at the location specified in the payload. Your web service can validate this signature to help make sure that the identity token comes from the server that you expect to send it.
 
 ## <a name="see-also"></a>另请参阅
 

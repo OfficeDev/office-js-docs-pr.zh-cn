@@ -1,14 +1,14 @@
 ---
 title: 比较 Outlook on Mac 中的 Outlook 外接程序支持
 description: 了解 Outlook on Mac 中的外接程序支持与其他 Outlook 客户端的比较方式。
-ms.date: 09/21/2022
+ms.date: 10/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f991865921583561e4c2db2132fad3ceba3625
-ms.sourcegitcommit: 09bb0b5edd6af03c9822e1742095c7df94735120
+ms.openlocfilehash: c38e546575446254d54ad13e5d75d997ca6cd6d8
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2022
-ms.locfileid: "67990411"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68546443"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>将 Outlook on Mac 中的 Outlook 外接程序支持与其他 Outlook 客户端进行比较
 
@@ -20,7 +20,7 @@ ms.locfileid: "67990411"
 
 | 领域 | Outlook 网页版、Windows 和移动设备 | Mac 版 Outlook |
 |:-----|:-----|:-----|
-| office.js 和 Office 外接程序清单架构支持的版本 | Office.js 和架构 v1.1 中的所有 API。 | Office.js 和架构 v1.1 中的所有 API。<br><br>**注意**：在 Outlook 网页版中，仅内部版本 16.35.308 或更高版本支持保存会议。 否则，方法在 `saveAsync` 撰写模式下从会议调用时失败。 若需解决办法，请参阅[无法在 Outlook for Mac 中使用 Office JS API 将会议另存为草稿](https://support.microsoft.com/help/4505745)。 |
+| 支持的office.js版本| Office.js中的所有 API。 | Office.js中的所有 API。<br><br>**注意**：在 Outlook 网页版中，仅内部版本 16.35.308 或更高版本支持保存会议。 否则，方法在 `saveAsync` 撰写模式下从会议调用时失败。 若需解决办法，请参阅[无法在 Outlook for Mac 中使用 Office JS API 将会议另存为草稿](https://support.microsoft.com/help/4505745)。 |
 | 定期约会系列实例 | <ul><li>可以获得主约会的项目 ID 和其他属性或定期系列约会的实例</li><li>可以使用 [mailbox.displayAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 显示定期序列的实例或主项目。</li></ul> | <ul><li>可以获得主约会的项目 ID 和其他属性，但无法获得定期系列约会的实例</li><li>Can display the master appointment of a recurring series. Without the item ID, cannot display an instance of a recurring series.</li></ul> |
 | 约会参与者的收件人类型 | 可以使用 [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#outlook-office-emailaddressdetails-recipienttype-member) 标识与会者的收件人类型。 | `EmailAddressDetails.recipientType` 为约会与会者返回 `undefined`。 |
 | 客户端应用程序的版本字符串 | [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) 返回的版本字符串的格式取决于客户端的实际类型。 例如：<ul><li>Windows 上的 Outlook： `15.0.4454.1002`</li><li>Outlook 网页版：`15.0.918.2`</li></ul> |Outlook on Mac 上返回 `Diagnostics.hostVersion` 的版本字符串示例： `15.0 (140325)` |
