@@ -1,18 +1,18 @@
 ---
 title: Outlook 加载项命令
 description: Outlook 加载项命令提供了通过添加按钮或下拉菜单从功能区启动特定加载项操作的方法。
-ms.date: 07/11/2022
+ms.date: 10/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 80f1e1f4386b41012b2aa777c16225d3f0fd8432
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: d029fd4acc1a32c912c73d6e5f468b9c217b9262
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423242"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68546457"
 ---
 # <a name="add-in-commands-for-outlook"></a>适用于 Outlook 的外接程序命令
 
-Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单从功能区启动特定外接程序操作。这使用户可以使用简单直观且不引人注目的方式访问外接程序。因为它们通过无缝的方式提供增强功能，因此您可以使用外接程序命令创建更具吸引力的解决方案。
+Outlook add-in commands provide ways to initiate specific add-in actions from the ribbon by adding buttons or drop-down menus. This lets users access add-ins in a simple, intuitive, and unobtrusive way. Because they offer increased functionality in a seamless manner, you can use add-in commands to create more engaging solutions.
 
 > [!NOTE]
 > 加载项命令仅适用于 Windows 版 Outlook 2013 或更高版本、Mac 版 Outlook 2016 或更高版本、iOS 版 Outlook、Android 版 Outlook、适用于 Exchange 2016 或更高版本的 Outlook 网页版、适用于 Microsoft 365 的 Outlook 网页版和 Outlook.com。
@@ -24,17 +24,31 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 >
 > 需要安装[累积更新 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd)，Exchange 2016 才支持加载项命令。
 
-加载项命令仅适用于不使用 [ItemHasAttachment、ItemHasKnownEntity 或 ItemHasRegularExpressionMatch 规则](activation-rules.md)限制其激活的项目类型的加载项。不过，[上下文加载项](contextual-outlook-add-ins.md)可以显示不同的命令（具体取决于当前选定的项是邮件还是约会），并且可以选择是在阅读还是在撰写应用场景中显示命令。如可能，使用加载项命令将是[最佳做法](../concepts/add-in-development-best-practices.md)。
+> [!TIP]
+> 如果外接程序使用 XML 清单，则外接程序命令仅适用于不使用 [ItemHasAttachment、ItemHasKnownEntity 或 ItemHasRegularExpressionMatch 规则](activation-rules.md) 的加载项，以限制其激活的项类型。 但是， [上下文加载项](contextual-outlook-add-ins.md) 可以显示不同的命令，具体取决于当前选定的项是消息还是约会，并且可以选择出现在读取或撰写方案中。 如可能，使用外接程序命令将是[最佳做法](../concepts/add-in-development-best-practices.md)。
 
-## <a name="create-the-add-in-command"></a>创建加载项命令
+## <a name="create-the-ui-for-the-add-in-command"></a>为加载项命令创建 UI
 
-加载项命令在 [VersionOverrides 元素](/javascript/api/manifest/versionoverrides) 的加载项清单中声明。 该元素是对清单架构 v1.1 的额外添加，用以确保向后兼容性。 在不支持 **\<VersionOverrides\>** 的环境中，现有的加载项将照常像在没有加载项命令的情况下正常运行。
+外接程序命令在加载项清单中声明。 标记取决于清单的类型。
+
+# <a name="xml-manifest"></a>[XML 清单](#tab/xmlmanifest)
+
+外接程序命令在 [VersionOverrides 元素](/javascript/api/manifest/versionoverrides)中声明。 此元素是 XML 清单架构 v1.1 的一个补充，可确保向后兼容性。 在不支持 **\<VersionOverrides\>** 的环境中，现有的加载项将照常像在没有加载项命令的情况下正常运行。
 
 **\<VersionOverrides\>** 清单条目为加载项指定许多内容，如应用程序、要添加到功能区的控件的类型、文本、图标以及任何关联的功能。
 
-当加载项需要提供状态更新（例如进度指示器或错误消息）时，它必须通过[通知 API](/javascript/api/outlook/office.notificationmessages) 来执行此操作。此外，必须在清单的 `FunctionFile` 节点中指定的单独 HTML 文件中定义对通知的处理。
+When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the `FunctionFile` node of the manifest.
 
-开发人员应定义适用于所有所需大小的图标，以便外接程序命令顺利地调整功能区。所需图标大小为 80 x 80 像素、32 x 32 像素和 16 x 16 像素（以上适用于桌面）和 48 x 48 像素、32 x 32 像素和 25 x 25 像素（以上适用于移动电话）。
+# <a name="teams-manifest-developer-preview"></a>[Teams 清单 (开发人员预览) ](#tab/jsonmanifest)
+
+外接程序命令使用“extensions.runtimes”和“extensions.ribbons”属性进行声明。 这些属性为加载项指定许多内容，例如应用程序、要添加到功能区中的控件类型、文本、图标和任何关联函数。
+
+当外接程序需要提供状态更新（例如进度指示器或错误消息）时，它必须通过 [通知 API](/javascript/api/outlook/office.notificationmessages) 来执行此操作。 通知的处理还必须在清单的“runtimes.code.page”属性中指定的单独 HTML 文件中定义。
+
+---
+### <a name="icons"></a>图标
+
+Developers should define icons for all required sizes so that the add-in commands will adjust smoothly along with the ribbon. The required icon sizes are 80 x 80 pixels, 32 x 32 pixels, and 16 x 16 pixels for desktop, and 48 x 48 pixels, 32 x 32 pixels, and 25 x 25 pixels for mobile.
 
 ## <a name="how-do-add-in-commands-appear"></a>加载项命令的显示方式
 
@@ -46,7 +60,7 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 ![功能区和溢出菜单中的加载项命令按钮。](../images/commands-collapsed.png)
 
-向某个外接程序添加了外接程序命令后，外接程序名称将从应用栏删除。仅在功能区上保留外接程序命令按钮。
+When an add-in command is added to an add-in, the add-in name is removed from the app bar. Only the add-in command button on the ribbon remains.
 
 ### <a name="modern-outlook-on-the-web"></a>新式 Outlook 网页版
 
@@ -68,7 +82,7 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 ### <a name="run-a-function-command"></a>运行函数命令
 
-使用执行 JavaScript 函数的外接程序命令按钮用于用户无需进行任何其他选择就可以启动操作的方案。这可能适用于诸如跟踪、提醒我或打印，或在用户希望从某个服务获取详细信息之类的情况下使用的一些操作。
+Use an add-in command button that executes a JavaScript function for scenarios where the user doesn't need to make any additional selections to initiate the action. This can be for actions such as track, remind me, or print, or scenarios when the user wants more in-depth information from a service.
 
 在模块扩展中，外接程序命令按钮可以执行与主要用户界面的内容交互的 JavaScript 函数。
 
@@ -76,17 +90,17 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 ### <a name="launch-a-task-pane"></a>启动任务窗格
 
-使用外接程序命令按钮启动适用于用户需要与外接程序进行较长时间交互的方案的任务窗格。例如，外接程序要求更改设置或填写多个字段。
+Use an add-in command button to launch a task pane for scenarios where a user needs to interact with an add-in for a longer period of time. For example, the add-in requires changes to settings or the completion of many fields.
 
-垂直任务窗格的默认宽度为 320 像素。在 Outlook 资源管理器和检查器中，可以调整垂直任务窗格的大小。 调整窗格的大小与调整待办事项窗格和列表视图大小的方法相同。
+The default width of the vertical task pane is 320 px. The vertical task pane can be resized in both the Outlook Explorer and inspector. The pane can be resized in the same way the to-do pane and list view resize.
 
 ![用于在 Outlook 功能区上打开任务窗格的按钮。](../images/commands-task-pane-button-1.png)
 
 <br/>
 
-上述屏幕截图展示了一个垂直任务窗格示例。打开的任务窗格在左上角显示外接程序命令的名称。使用完外接程序后，用户可以单击任务窗格右上角的 **X** 按钮，关闭外接程序。默认情况下，此窗格不会跨邮件显示。外接程序可以 [支持固定](pinnable-taskpane.md)任务窗格，并在用户选择新邮件时接收事件。除了外接程序名称和关闭按钮外，任务窗格中呈现的其他所有 UI 元素都由外接程序提供。
+This screenshot shows an example of a vertical task pane. The pane opens with the name of the add-in command in the top left corner. Users can use the **X** button in the upper-right corner of the pane to close the add-in when they are finished using it. By default, this pane will not persist across messages. Add-ins can [support pinning](pinnable-taskpane.md) for the task pane and receive events when a new message is selected. All UI elements rendered in the task pane, aside from the add-in name and the close button, are provided by the add-in.
 
-如果用户选择另一个可打开任务窗格的外接程序命令，任务窗格将被替换为最近使用过的命令。当任务窗格处于打开状态时，如果用户选择执行函数的外接程序命令按钮或选择下拉菜单，会完成操作且任务窗格仍将保持为打开状态。
+If a user chooses another add-in command that opens a task pane, the task pane is replaced with the recently used command. If a user chooses an add-in command button that executes a function, or drop-down menu while the task pane is open, the action will be completed and the task pane will remain open.
 
 ### <a name="drop-down-menu"></a>下拉菜单
 
@@ -108,11 +122,11 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 
 ### <a name="creating-or-viewing-an-appointment-or-meeting-as-the-organizer"></a>以组织者的身份创建或查看约会或会议
 
-以组织者身份创建或查看约会或会议时，添加到默认选项卡的加载项命令会显示在弹出式窗体的“会议”、“会议事件”、“会议序列”或“约会”选项卡上。但是，如果用户在日历中选择一个项目，但不打开弹出项，则加载项功能区组将不显示在功能区中。
+When creating or viewing an appointment or meeting as the organizer, add-in commands added to the default tab appear on the **Meeting**, **Meeting Occurrence**, **Meeting Series**, or **Appointment** tabs on pop-out forms. However, if the user selects an item in the calendar but doesn't open the pop-out, the add-in's ribbon group won't be visible in the ribbon.
 
 ### <a name="viewing-a-meeting-as-an-attendee"></a>以参与者的身份查看会议
 
-以参与者身份查看会议时，添加到默认选项卡的加载项命令会显示在弹出式窗体的“会议”、“会议事件”或“会议序列”选项卡上。但是，如果用户在日历中选择一个项目，但不打开弹出项，则加载项功能区组将不显示在功能区中
+When viewing a meeting as an attendee, add-in commands added to the default tab appear on the **Meeting**, **Meeting Occurrence**, or **Meeting Series** tabs on pop-out forms. However, if a user selects an item in the calendar but doesn't open the pop-out, the add-in's ribbon group won't be visible in the ribbon
 
 ### <a name="using-a-module-extension"></a>使用模块扩展
 

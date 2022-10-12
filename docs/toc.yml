@@ -421,17 +421,17 @@ items:
             href: excel/excel-add-ins-comments.md
             displayName: Excel
           - name: 数据类型
-            displayName: preview
+            displayName: Excel
             items:
               - name: 概述
                 href: excel/excel-data-types-overview.md
-                displayName: 'Excel, preview'
+                displayName: Excel
               - name: 概念
                 href: excel/excel-data-types-concepts.md
-                displayName: 'Excel, preview'
+                displayName: Excel
               - name: 实体值卡片
                 href: excel/excel-data-types-entity-card.md
-                displayName: 'Excel, preview'
+                displayName: Excel
           - name: 数据有效性
             href: excel/excel-add-ins-data-validation.md
             displayName: Excel
@@ -548,7 +548,7 @@ items:
             displayName: 'Excel, Custom Functions'
           - name: 数据类型
             href: excel/custom-functions-data-types-concepts.md
-            displayName: 'Excel, Custom Functions, preview'
+            displayName: 'Excel, Custom Functions'
           - name: 调用 Excel JavaScript API
             href: excel/call-excel-apis-from-custom-function.md
             displayName: 'Excel, Custom Functions'

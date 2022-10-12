@@ -4,12 +4,12 @@ description: 了解如何在选择多个消息时激活 Outlook 加载项。
 ms.topic: article
 ms.date: 10/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 335ee2303bfff9c5a4193e863c626e11133fa8fb
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: 2b77772aa2fc661e4be84c48555e3ddceda224c4
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/12/2022
-ms.locfileid: "68541281"
+ms.locfileid: "68546436"
 ---
 # <a name="activate-your-outlook-add-in-on-multiple-messages-preview"></a>在多条消息上激活 Outlook 加载项 (预览版) 
 
@@ -33,7 +33,7 @@ ms.locfileid: "68541281"
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要使外接程序能够在多个选定消息上激活，必须将 [SupportsMultiSelect](/javascript/api/manifest/action?view=outlook-js-preview&preserve-view=true#supportsmultiselect) 子元素添加到 **\<Action\>** 元素并将其值设置为 `true`。 由于项目多选目前仅支持消息， **\<ExtensionPoint\>** 因此元素的 `xsi:type` 属性值必须设置为 `MessageReadCommandSurface` 或 `MessageComposeCommandSurface`设置为 。
+若要使外接程序能够在多个选定消息上激活，必须将 [SupportsMultiSelect](/javascript/api/manifest/action?view=outlook-js-preview&preserve-view=true#supportsmultiselect-preview) 子元素添加到 **\<Action\>** 元素并将其值设置为 `true`。 由于项目多选目前仅支持消息， **\<ExtensionPoint\>** 因此元素的 `xsi:type` 属性值必须设置为 `MessageReadCommandSurface` 或 `MessageComposeCommandSurface`设置为 。
 
 1. 在首选代码编辑器中，打开创建的 Outlook 快速入门项目。
 
@@ -163,7 +163,7 @@ ms.locfileid: "68541281"
 
 ## <a name="retrieve-the-subject-line-of-selected-messages"></a>检索所选消息的主题行
 
-注册事件处理程序后，调用 [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#outlook-office-mailbox-getSelectedItemsAsync-member(1)) 方法以检索所选消息的主题行并将其记录到任务窗格。 该 `getSelectedItemsAsync` 方法还可用于获取其他消息属性，例如项目 ID、项目类型 (`Message` 是目前唯一支持的类型) ，以及项目模式 (`Read` 或 `Compose`) 。
+注册事件处理程序后，调用 [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#outlook-office-mailbox-getselecteditemsasync-member(1)) 方法以检索所选消息的主题行并将其记录到任务窗格。 该 `getSelectedItemsAsync` 方法还可用于获取其他消息属性，例如项目 ID、项目类型 (`Message` 是目前唯一支持的类型) ，以及项目模式 (`Read` 或 `Compose`) 。
 
 1. 在 **taskpane.js** 中，导航到函 `run` 数并插入以下代码。
 
