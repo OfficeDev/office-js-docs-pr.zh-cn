@@ -1,20 +1,18 @@
 ---
 title: Excel JavaScript API 数据类型实体值卡
 description: 了解如何将实体值卡与 Excel 外接程序中的数据类型配合使用。
-ms.date: 07/28/2022
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e7f9446c884c7ab24df8d08a221a21fa8ed8156
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
+ms.openlocfilehash: eb2b3e88953bee54c1efa54a419db2518a1d2518
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177650"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68540982"
 ---
-# <a name="use-cards-with-entity-value-data-types-preview"></a>使用具有实体值数据类型的卡片 (预览) 
-
-[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
+# <a name="use-cards-with-entity-value-data-types"></a>使用具有实体值数据类型的卡片
 
 本文介绍如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 在 Excel UI 中使用实体值数据类型创建卡模式窗口。 这些卡片可以显示实体值中包含的其他信息，除了单元格中已经可见的信息，例如相关图像、产品类别信息和数据归属。
 

@@ -1,20 +1,20 @@
 ---
 title: 获取或设置 Outlook 加载项中的约会时间
 description: 了解如何在 Outlook 加载项中获取或设置约会开始和结束时间。
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6109932c9a741a65b97095a1cb97dcdfc2306e1c
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: c7aa40fda15c613aca869af8b277d4deb6fbf833
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958332"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541231"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置时间
 
-Office JavaScript API ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) 和 [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) 提供异步方法，以获取和设置用户正在撰写约会的开始或结束时间。 这些异步方法仅可用于撰写加载项。若要使用这些方法，请确保已适当地为 Outlook 设置外接程序清单以激活撰写窗体中的外接程序，如 [创建撰写窗体的 Outlook 外](compose-scenario.md)接程序中所述。
+Office JavaScript API ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) 和 [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) 提供异步方法，以获取和设置用户正在撰写约会的开始或结束时间。 这些异步方法仅可用于撰写加载项。若要使用这些方法，请确保为 Outlook 适当地设置了外接程序 XML 清单以激活撰写窗体中的外接程序，如 [创建撰写窗体的 Outlook 外](compose-scenario.md)接程序中所述。 使用 Office 外接程序的 Teams 清单的外接程序不支持激活规则 [ (预览) ](../develop/json-manifest-overview.md)。
 
-[start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 和 [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 属性对撰写和阅读窗体中的约会均适用。在阅读窗体中，您可以直接从父对象访问属性，类似于：
+The [start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) properties are available for appointments in both compose and read forms. In a read form, you can access the properties directly from the parent object, as in:
 
 ```js
 item.start
@@ -42,7 +42,7 @@ item.end.getAsync
 
 ## <a name="get-the-start-or-end-time"></a>获取开始或结束时间
 
-本节演示一个代码示例，将获取用户正在撰写的约会的开始时间，并显示该时间。你可以使用相同的代码并将 **start** 属性替换为 **end** 属性来获取结束时间。此代码示例在加载项清单中假定了一个规则，将在撰写窗体中为约会激活加载项，如下所示。
+This section shows a code sample that gets the start time of the appointment that the user is composing and displays the time. You can use the same code and replace the **start** property by the **end** property to get the end time. This code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment, as shown below.
 
 ```XML
 <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
@@ -87,7 +87,7 @@ function write(message){
 
 ## <a name="set-the-start-or-end-time"></a>设置开始或结束时间
 
-本节演示一个代码示例，将设置用户正在撰写的约会或邮件的开始时间。你可以使用相同的代码并将 **start** 属性替换为 **end** 属性来设置结束时间。请注意，如果约会撰写窗体已有现有开始时间，随后设置开始时间将调整结束时间以保持约会的任何先前持续时间。如果约会撰写窗体已有现有结束时间，随后设置结束时间将同时调整持续时间和结束时间。如果已将约会设置为全天事件，那么设置开始时间会将结束时间调整为 24 小时后，并取消选中撰写窗体中全天事件的 UI。
+This section shows a code sample that sets the start time of the appointment or message that the user is composing. You can use the same code and replace the **start** property by the **end** property to set the end time. Note that if the appointment compose form already has an existing start time, setting the start time subsequently will adjust the end time to maintain any previous duration for the appointment. If the appointment compose form already has an existing end time, setting the end time subsequently will adjust both the duration and end time. If the appointment has been set as an all-day event, setting the start time will adjust the end time to 24 hours later, and uncheck the UI for the all-day event in the compose form.
 
 与上一示例类似，此代码示例假定外接程序清单中的某个规则将在撰写窗体中为约会激活外接程序。
 
