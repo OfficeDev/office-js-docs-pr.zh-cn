@@ -1,14 +1,14 @@
 ---
 title: 在 Excel 中手动为自定义函数创建 JSON 元数据
 description: 在 Excel 中定义自定义函数的 JSON 元数据，并关联函数 ID 和名称属性。
-ms.date: 12/28/2021
+ms.date: 10/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cd3b5266334e3397cd90fc24e29858250dfb284
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: b4bc9139b3e46bc64749a58537737db2f048ee82
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958578"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68540996"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>为自定义函数手动创建 JSON 元数据
 
@@ -56,7 +56,7 @@ ms.locfileid: "66958578"
 
 ```json
 {
-  "allowCustomDataForDataTypeAny": true, // This property is currently only available in public preview.
+  "allowCustomDataForDataTypeAny": true,
   "allowErrorForDataTypeAny": true,
   "functions": [
     {
@@ -140,16 +140,12 @@ ms.locfileid: "66958578"
 
 ## <a name="metadata-reference"></a>元数据参考
 
-### <a name="allowcustomdatafordatatypeany-preview"></a>allowCustomDataForDataTypeAny (预览) 
-
-> [!NOTE]
-> 该 `allowCustomDataForDataTypeAny` 属性目前以公共预览版提供，并且仅与 Windows 上的 Office 兼容。 预览功能可能会发生变更，不适合在生产环境中使用。 我们建议你仅在测试和开发环境中试用它们。 不要在生产环境或业务关键型文档中使用预览功能。
->
-> 若要在 Windows 上的 Office 中试用此属性，必须具有大于或等于 16.0.14623.20002 的 Excel 内部版本号。 若要使用此功能，需要加入 [Office 预览体验计划](https://insider.office.com/)，然后选择 **Beta 版频道** 预览体验级别。 若要了解详细信息，请参阅[加入 Office 预览体验计划](https://insider.office.com/join/windows)。
+### <a name="allowcustomdatafordatatypeany"></a>allowCustomDataForDataTypeAny
 
 该 `allowCustomDataForDataTypeAny` 属性是布尔数据类型。 将此值设置为 `true` 允许自定义函数接受数据类型作为参数并返回值。 若要了解详细信息，请参阅 [自定义函数和数据类型](custom-functions-data-types-concepts.md)。
 
-与其他大多数 JSON 元数据属性不同，它是顶级属性， `allowCustomDataForDataTypeAny` 不包含子属性。 有关如何设置此属性的格式的示例，请参阅前面的 [JSON 元数据代码示例](#json-metadata-example) 。
+> [!NOTE]
+> 与其他大多数 JSON 元数据属性不同，它是顶级属性， `allowCustomDataForDataTypeAny` 不包含子属性。 有关如何设置此属性的格式的示例，请参阅前面的 [JSON 元数据代码示例](#json-metadata-example) 。
 
 ### <a name="allowerrorfordatatypeany"></a>allowErrorForDataTypeAny
 
@@ -162,7 +158,7 @@ ms.locfileid: "66958578"
 
 `functions` 属性是自定义函数对象的一个数组。 下表列出了每个对象的属性。
 
-| 属性      | 数据类型 | 必需 | 说明                                                                                                                                                                      |
+| 属性      | 数据类型 | 是否必需 | 说明                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `description` | string    | 否       | 最终用户在 Excel 中看到的函数的说明。 例如，**将摄氏度值转换为华氏度**。                                                            |
 | `helpUrl`     | string    | 否       | 提供有关函数的信息的 URL。 （它显示在任务窗格中。）例如，`http://contoso.com/help/convertcelsiustofahrenheit.html`。                      |
@@ -176,7 +172,7 @@ ms.locfileid: "66958578"
 
 `options` 对象使用户能够自定义 Excel 执行函数的方式和时间。 下表列出了 `options` 对象的属性。
 
-| 属性          | 数据类型 | 必需                               | Description |
+| 属性          | 数据类型 | 是否必需                               | 说明 |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
 | `cancelable`      | boolean   | 否<br/><br/>默认值为 `false`。  | 如果为 `true`，则每次用户执行具有取消函数效果的操作时，Excel 都会调用 `CancelableInvocation` 处理程序；例如，手动触发重新计算或编辑函数引用的单元格。 可取消函数通常仅用于返回单个结果并需要处理数据请求取消的异步函数。 函数不能同时使用这些 `stream` 属性和 `cancelable` 属性。 |
 | `requiresAddress` | boolean   | 否 <br/><br/>默认值为 `false`。 | 如果 `true`是，自定义函数可以访问调用它的单元格的地址。 `address` [调用参数](custom-functions-parameter-options.md#invocation-parameter)的属性包含调用自定义函数的单元格的地址。 函数不能同时使用这些 `stream` 属性和 `requiresAddress` 属性。 |
@@ -188,7 +184,7 @@ ms.locfileid: "66958578"
 
 `parameters` 属性是参数对象的数组。 下表列出了每个对象的属性。
 
-|  属性  |  数据类型  |  必需  |  说明  |
+|  属性  |  数据类型  |  是否必需  |  说明  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  否 |  参数的说明。 这会显示在 Excel 的 IntelliSense 中。  |
 |  `dimensionality`  |  string  |  否  |  必须 `scalar` (非数组值) 或 `matrix` (二维数组) 。  |
@@ -197,11 +193,11 @@ ms.locfileid: "66958578"
 |  `optional`  | boolean | 否 | 如果为 `true`，则参数是可选的。 |
 |`repeating`| boolean | 否 | 如果 `true`是，则从指定数组填充参数。 请注意，按定义，所有重复参数的函数都被视为可选参数。  |
 
-### <a name="result"></a>结果
+### <a name="result"></a>result
 
 `result` 对象定义函数返回的信息类型。 下表列出了 `result` 对象的属性。
 
-| 属性         | 数据类型 | 必需 | 说明                                                                          |
+| 属性         | 数据类型 | 是否必需 | 说明                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
 | `dimensionality` | string    | 否       | 必须 `scalar` (非数组值) 或 `matrix` (二维数组) 。 |
 | `type` | string    | 否       | 结果的数据类型。 可以是`boolean`、`number``string`或`any` (，可用于使用前三种类型中的任何一种) 。 如果未指定此属性，则数据类型默认为 `any`。 |

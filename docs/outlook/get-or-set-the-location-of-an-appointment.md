@@ -1,14 +1,14 @@
 ---
 title: 在加载项获取或设置约会位置
 description: 了解如何在 Outlook 加载项中获取或设置约会位置。
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 045de4e01be1feb70237937d43ca111d3bea6316
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: bf03e0e470bb5aea811c09bb7b88cc5a915a7a13
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958984"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541237"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置位置
 
@@ -28,7 +28,7 @@ Office JavaScript API 提供属性和方法来管理用户正在撰写约会的�
 | [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | 组织者/撰写者 |
 | [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | 组织者/撰写者 |
 
-若要使用仅可用于撰写外接程序的方法，请将外接程序清单配置为在“组织者/撰写”模式下激活外接程序。 有关更多详细信息，请参阅 [“创建 Outlook 外接程序”以获取撰写表单](compose-scenario.md) 。
+若要使用仅可用于撰写外接程序的方法，请将外接程序 XML 清单配置为在“组织者/撰写”模式下激活外接程序。 有关更多详细信息，请参阅 [“创建 Outlook 外接程序”以获取撰写表单](compose-scenario.md) 。 使用 Office 外接程序的 Teams 清单的外接程序不支持激活规则 [ (预览) ](../develop/json-manifest-overview.md)。
 
 ## <a name="use-the-enhancedlocation-api"></a>`enhancedLocation`使用 API
 

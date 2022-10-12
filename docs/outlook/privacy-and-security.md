@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项的隐私、权限和安全性
 description: 了解如何管理 Outlook 加载项中的隐私、权限和安全性。
-ms.date: 08/09/2022
+ms.date: 10/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: a19284c6a8371deadcb3986978eabaf605189df6
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: 560c9bbdfcde849b66d86e9c000d78f094b3e561
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092873"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541247"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Outlook 外接程序的隐私、权限和安全性
 
@@ -28,16 +28,9 @@ ms.locfileid: "68092873"
 
 Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data.
 
-清单架构版本 1.1 包含四个级别的权限。
+有四个级别的权限。
 
-**表 1.外接程序权限级别**
-
-|**权限级别**|**Outlook 外接程序清单中的值**|
-|:-----|:-----|
-|受限|受限|
-|读取项目|ReadItem|
-|读/写项目|ReadWriteItem|
-|读/写邮箱|ReadWriteMailbox|
+[!include[Table of Outlook permissions](../includes/outlook-permission-levels-table.md)]
 
 四个级别的权限具有累积性：**读/写邮箱** 权限包括 **读/写项** 权限、**读取项** 权限和 **受限** 权限；**读/写项** 权限包括 **读取项** 权限和 **受限** 权限；**读取项** 权限包括 **受限** 权限。
 
@@ -116,18 +109,34 @@ Because customers' perception of add-in security can affect add-in adoption, Out
 
 - 开发人员根据 Outlook 外接程序应激活的方式、Outlook 外接程序读取或写入项目特定属性的需求，或者创建和发送项目的需求来针对 Outlook 外接程序请求适当级别的权限。
 
-- 开发人员使用 Outlook 加载项清单中的 [Permissions](/javascript/api/manifest/permissions) 元素，并根据需要分配 **Restricted**、**ReadItem**、**ReadWriteItem** 或 **ReadWriteMailbox** 的值来请求权限。
+- 如上所述，开发人员在清单中请求权限。
 
-  > [!NOTE]
-  > 请注意，从清单架构 v1.1 开始就提供 **ReadWriteItem** 权限。
-
-  下面的示例请求 **读取项** 权限。
+  以下示例请求 XML 清单中的 **读取项** 权限。
 
   ```XML
-    <Permissions>ReadItem</Permissions>
+  <Permissions>ReadItem</Permissions>
   ```
 
+  以下示例请求 Teams 清单中的 **读取项** 权限 (预览) 。
+
+```json
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "MailboxItem.Read.User",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
+```
+
 - 如果 Outlook 外接程序在特定类型的 Outlook 项目 (约会或消息) 激活，或者在特定提取的实体上激活， (电话号码、地址、URL) 存在于项目的主题或正文中，则开发人员可以请求 **受限** 权限。 例如，如果在当前邮件的主题或正文中找到一个或多个实体（共三个）- 电话号码、邮寄地址或 URL，以下规则将激活 Outlook 外接程序。
+
+> [!NOTE]
+> 使用 Office 外接程序的 Teams 清单的外接程序不支持激活规则 [， (预览版) ](../develop/json-manifest-overview.md)。
 
   ```XML
     <Permissions>Restricted</Permissions>

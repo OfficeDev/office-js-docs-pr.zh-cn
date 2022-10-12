@@ -6,14 +6,14 @@ metadata:
   description: 用于了解 Outlook 加载项的资源。
   ms.prod: outlook
   ms.topic: landing-page
-  ms.date: 06/30/2022
+  ms.date: 10/10/2022
   ms.localizationpriority: high
-  ms.openlocfilehash: d675d9c5a32c1e341d36e7c54f93dd3b3beaff85
-  ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+  ms.openlocfilehash: 3904d3b952003926fef3a09da6a928d2d0192646
+  ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/06/2022
-  ms.locfileid: "66660289"
+  ms.lasthandoff: 10/12/2022
+  ms.locfileid: "68541259"
 landingContent:
 - title: 关于 Outlook 加载项
   linkLists:
@@ -25,6 +25,8 @@ landingContent:
     links:
     - text: 生成首个 Outlook 加载项
       url: ../quickstarts/outlook-quickstart.md
+    - text: '使用 Teams 清单生成第一个 Outlook 加载项 (预览版) '
+      url: ../quickstarts/outlook-quickstart-json-manifest.md
     - text: 使用 Script Lab 探索 Office JavaScript API
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
@@ -33,6 +35,10 @@ landingContent:
       url: apis.md
     - text: 导航并使用邮箱要求集
       url: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
+    - text: 生成基于事件的加载项
+      url: autolaunch.md
+    - text: 使用 Microsoft Graph 扩展外接程序的功能
+      url: /graph/overview
     - text: 测试和调试 Outlook 加载项
       url: ../testing/test-debug-office-add-ins.md
     - text: 部署和发布 Outlook 加载项

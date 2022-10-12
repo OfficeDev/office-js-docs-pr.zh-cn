@@ -1,20 +1,20 @@
 ---
 title: 在 Outlook 加载项中获取或设置主题
 description: 了解如何在 Outlook 加载项中获取或设置邮件或约会的主题。
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cf221b03753fd76966eb5c6270da68e94abfe0f9
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 79e38a310bf62eae55ef020c2f6c978ace824255
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959068"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541127"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取或设置主题
 
-Office JavaScript API 提供异步方法， ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) 和 [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) 获取和设置用户正在撰写的约会或消息的主题。 这些异步方法仅可用于撰写加载项。若要使用这些方法，请确保为 Outlook 适当地设置了加载项清单，以激活撰写窗体中的外接程序。
+Office JavaScript API 提供异步方法， ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) 和 [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) 获取和设置用户正在撰写的约会或消息的主题。 这些异步方法仅可用于撰写加载项。若要使用这些方法，请确保已适当地为 Outlook 设置外接程序 XML 清单以 [激活撰写窗体中的外接程序](compose-scenario.md)。 使用 Office 外接程序的 Teams 清单的外接程序不支持激活规则 [ (预览) ](../develop/json-manifest-overview.md)。
 
-**subject** 属性可用于约会和邮件的撰写和阅读窗体中的读取权限。在阅读窗体中，可以从父对象直接访问此属性，如：
+The **subject** property is available for read access in both compose and read forms of appointments and messages. In a read form, you can access the property directly from the parent object, as in:
 
 ```js
 item.subject
@@ -32,7 +32,7 @@ item.subject.getAsync
 
 ## <a name="get-the-subject"></a>获取主题
 
-本节演示获取用户正在撰写的约会或邮件的主题并显示主题的代码示例。此代码示例假定外接程序清单中的某个规则将在撰写窗体中为约会或邮件激活外接程序，如下所述。
+本节演示获取用户正在撰写的约会或邮件的主题并显示主题的代码示例。 此代码示例假定外接程序清单中的某个规则将在撰写窗体中为约会或邮件激活外接程序，如下所述。 使用 Office 加载项的 Teams 清单的外接程序不支持激活规则 [ (预览) ](../develop/json-manifest-overview.md)。
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">
@@ -78,7 +78,7 @@ function write(message){
 
 ## <a name="set-the-subject"></a>设置主题
 
-本节演示设置用户正在撰写的约会或邮件的主题的代码示例。与上一示例类似，此代码示例假定外接程序清单中的某个规则将在撰写窗体中为约会或邮件激活外接程序。
+本节演示设置用户正在撰写的约会或邮件的主题的代码示例。 与上一示例类似，此代码示例假定外接程序清单中的某个规则将在撰写窗体中为约会或邮件激活外接程序。 使用 Office 加载项的 Teams 清单的外接程序不支持激活规则 [ (预览) ](../develop/json-manifest-overview.md)。
 
 若要使用 **item.subject.setAsync**，请在数据参数中指定最多 255 个字符的字符串。 （可选）可以在  _asyncContext_ 参数中为回调函数提供回调函数和任何参数。 您应在回调的 _asyncResult_ 输出形参中检查状态、结果和所有错误消息。 如果异步调用成功， **setAsync** 会将指定的主题字符串作为纯文本插入，并覆盖该项目的任何现有主题。
 

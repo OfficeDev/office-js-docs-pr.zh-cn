@@ -1,20 +1,18 @@
 ---
 title: 自定义函数和数据类型
 description: 将 Excel 数据类型与自定义函数和 Office 加载项配合使用。
-ms.date: 12/27/2021
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 361be486ee45cae87b5cd66e2099dc939418a491
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 5dbe42af2edcfc9860ce27dc5c8dbe2ad88b9ecf
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422871"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68540989"
 ---
-# <a name="use-data-types-with-custom-functions-in-excel-preview"></a>在 Excel 中将数据类型与自定义函数配合使用（预览版）
-
-[!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
+# <a name="use-data-types-with-custom-functions-in-excel"></a>在 Excel 中将数据类型与自定义函数配合使用
 
 数据类型扩展了 Excel JavaScript API，以支持原始的四个单元格值类型（字符串、数字、布尔值和错误）以外的数据类型。 数据类型包括支持 Web 图像、带格式数字值、实体值和实体值中的数组。
 
@@ -37,7 +35,7 @@ ms.locfileid: "67422871"
 
 自定义函数项目包括 JSON 元数据文件。 此 JSON 元数据文件不同于数据类型 API 使用的 JSON 架构。 若要将数据类型与自定义函数集成，必须手动更新自定义函数 JSON 元数据文件，以包括属性 `allowCustomDataForDataTypeAny`。 将此属性设置为 `true`。
 
-有关手动 JSON 创建过程的完整说明，请参阅 [为自定义函数手动创建 JSON 元数据](custom-functions-json.md)。有关此属性的其他详细信息，请参阅 [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview)。
+For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) for additional details about this property.
 
 ### <a name="script-lab-option"></a>脚本实验室选项
 

@@ -1,20 +1,20 @@
 ---
 title: 在 Outlook 外接程序中实现可固定的任务窗格
 description: 用于加载项命令的任务窗格用户体验形状会在打开的邮件或会议请求的右侧打开一个垂直任务窗格，以便用户可以在加载项 UI 中进行更详细的交互。
-ms.date: 07/07/2020
+ms.date: 10/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c295094a9568487b043fdfb0b5f07620c50ea76
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 834d43a6046ddaa63a7c8899cfd5b07d0ea80ef6
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797461"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541120"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>在 Outlook 中实现可固定的任务窗格
 
-用于加载项命令的[任务窗格](add-in-commands-for-outlook.md#launch-a-task-pane)用户体验形状会在打开的邮件或会议请求的右侧打开一个垂直任务窗格，以便用户可以在加载项 UI 中进行更详细的交互（填充多个字段等）。查看邮件列表时，可以在阅读窗格中看到此任务窗格，从而能够快速处理邮件。
+The [task pane](add-in-commands-for-outlook.md#launch-a-task-pane) UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This task pane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
 
-不过，默认情况下，如果用户在阅读窗格中为某封邮件打开了外接程序任务窗格，然后选择新邮件，此任务窗格会自动关闭。如果频繁使用外接程序，用户可能更倾向于让此任务窗格一直处于打开状态，这样就无需在每封邮件中都重新激活外接程序了。使用可固定的任务窗格，外接程序就可以让用户如愿以偿。
+However, by default, if a user has an add-in task pane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable task panes, your add-in can give the user that option.
 
 > [!NOTE]
 > 尽管 [在要求集 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5) 中引入了可固定任务窗格功能，但目前仅适用于 Microsoft 365 订阅者，使用以下命令：
@@ -29,14 +29,16 @@ ms.locfileid: "66797461"
 > - 约会/会议
 > - Outlook.com
 
+> [!TIP]
+> 如果计划将 Outlook 外接程序 [发布](../publish/publish.md) 到 [AppSource](https://appsource.microsoft.com)，并且它已配置为可固定任务窗格，为了传递 [AppSource 验证](/legal/marketplace/certification-policies)，外接程序内容不得为静态内容，并且必须清楚地显示与邮箱中打开或选择的消息相关的数据。
+
 ## <a name="support-task-pane-pinning"></a>支持固定任务窗格
 
-第一步是添加固定支持，此步操作是在外接程序[清单](manifests.md)中完成。为此，请向描述任务窗格按钮的 `Action` 元素添加 [ SupportsPinning](/javascript/api/manifest/action#supportspinning) 元素。
+第一步是添加固定支持，此步操作是在外接程序清单中完成。 标记因清单类型而异。
 
-由于 `SupportsPinning` 元素是在 VersionOverrides v1.1 架构中进行定义，因此需为 v1.0 和 v1.1 架构包含 [VersionOverrides](/javascript/api/manifest/versionoverrides) 元素。
+# <a name="xml-manifest"></a>[XML 清单](#tab/xmlmanifest)
 
-> [!NOTE]
-> 如果计划将 Outlook 加载项 [发布](../publish/publish.md)到 [AppSource](https://appsource.microsoft.com)，那么在使用 **SupportsPinning** 元素时，加载项内容不得为静态，且必须清晰显示与邮箱中打开或选择的邮件相关的数据，才能通过 [AppSource 验证](/legal/marketplace/certification-policies)。
+将 [SupportsPinning](/javascript/api/manifest/action#supportspinning) 元素添加到 **\<Action\>** 描述任务窗格按钮的元素。 示例如下。
 
 ```xml
 <!-- Task pane button -->
@@ -58,6 +60,26 @@ ms.locfileid: "66797461"
 </Control>
 ```
 
+该 **\<SupportsPinning\>** 元素在 VersionOverrides v1.1 架构中定义，因此需要包含适用于 v1.0 和 v1.1 的 [VersionOverrides](/javascript/api/manifest/versionoverrides) 元素。
+
+# <a name="teams-manifest-developer-preview"></a>[Teams 清单 (开发人员预览) ](#tab/jsonmanifest)
+
+将设置为的“可固定”属性添加到 `true`定义打开任务窗格的按钮或菜单项的“操作”数组中的对象。 示例如下。
+
+```json
+"actions": [
+    {
+        "id": "OpenTaskPane",
+        "type": "openPage",
+        "view": "TaskPaneView",
+        "displayName": "OpenTaskPane",
+        "pinnable": true
+    }
+]
+```
+
+---
+
 有关完整示例，请参阅[command-demo 示例清单](https://github.com/OfficeDev/outlook-add-in-command-demo/blob/master/command-demo-manifest.xml)中的 `msgReadOpenPaneButton` 控件。
 
 ## <a name="handling-ui-updates-based-on-currently-selected-message"></a>根据当前选择的邮件处理 UI 更新
@@ -66,7 +88,7 @@ ms.locfileid: "66797461"
 
 ### <a name="implement-the-event-handler"></a>实现事件处理程序
 
-事件处理程序应接受一个参数，即对象文本。该对象的 `type` 属性将设为 `Office.EventType.ItemChanged`。事件调用后，`Office.context.mailbox.item` 对象已更新，以反映当前选定项。
+The event handler should accept a single parameter, which is an object literal. The `type` property of this object will be set to `Office.EventType.ItemChanged`. When the event is called, the `Office.context.mailbox.item` object is already updated to reflect the currently selected item.
 
 ```js
 function itemChanged(eventArgs) {
@@ -89,7 +111,7 @@ function itemChanged(eventArgs) {
 
 ### <a name="register-the-event-handler"></a>注册事件处理程序
 
-使用 [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) 方法注册 `Office.EventType.ItemChanged` 事件的事件处理程序。这步操作应在任务窗格的 `Office.initialize` 函数内完成。
+Use the [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
 
 ```js
 Office.initialize = function (reason) {

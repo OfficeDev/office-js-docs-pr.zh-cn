@@ -2,14 +2,14 @@
 title: 在 Outlook 外接程序中实现追加发送
 description: 了解如何在 Outlook 加载项中实现追加发送功能。
 ms.topic: article
-ms.date: 07/07/2022
+ms.date: 10/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 762d8d14bb09d50c836b9a097534d1d23c493e66
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 18d3e8300a53d08cf484f14cd4fd05adf6382fe3
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712970"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541141"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>在 Outlook 外接程序中实现追加发送
 
@@ -22,7 +22,14 @@ ms.locfileid: "66712970"
 
 完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) 门，使用 Office 外接程序的 Yeoman 生成器创建加载项项目。
 
+> [!NOTE]
+> 如果要使用 [Office 加载项的 Teams 清单 (预览)](../develop/json-manifest-overview.md)，请在 Outlook 快速入门中完成备用快速入门，其中 [包含 Teams 清单 (预览)](../quickstarts/outlook-quickstart-json-manifest.md)，但请在 **“试用”** 部分后跳过所有部分。
+
 ## <a name="configure-the-manifest"></a>配置清单
+
+若要配置清单，请打开所使用的清单类型的选项卡。
+
+# <a name="xml-manifest"></a>[XML 清单](#tab/xmlmanifest)
 
 若要在外接程序中启用追加发送功能，必须在 [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) 的集合中包含`AppendOnSend`该权限。
 
@@ -38,7 +45,7 @@ ms.locfileid: "66712970"
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
       <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
         <Requirements>
-          <bt:Sets DefaultMinVersion="1.3">
+          <bt:Sets DefaultMinVersion="1.9">
             <bt:Set Name="Mailbox" />
           </bt:Sets>
         </Requirements>
@@ -118,6 +125,58 @@ ms.locfileid: "66712970"
       </VersionOverrides>
     </VersionOverrides>
     ```
+
+# <a name="teams-manifest-developer-preview"></a>[Teams 清单 (开发人员预览) ](#tab/jsonmanifest)
+
+1. 打开 manifest.json 文件。
+
+1. 将以下对象添加到“extensions.runtimes”数组。 对于此代码，请注意以下事项。
+
+   - 邮箱要求集的“minVersion”设置为“1.9”，因此无法在不支持此功能的平台和 Office 版本上安装外接程序。 
+   - 运行时的“id”设置为描述性名称“function_command_runtime”。
+   - “code.page”属性设置为将加载函数命令的无 UI HTML 文件的 URL。
+   - “lifetime”属性设置为“short”，这意味着运行时在选择函数命令按钮时启动，并在函数完成时关闭。  (在某些情况下，运行时会在处理程序完成之前关闭。 请参阅 [Office 加载项.) 中的运行时](../testing/runtimes.md)
+   - 有一个操作用于运行名为“appendDisclaimerOnSend”的函数。 将在后面的步骤中创建此函数。
+
+    ```json
+    {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.9"
+                }
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "id": "function_command_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "appendDisclaimerOnSend",
+                "type": "executeFunction",
+                "displayName": "appendDisclaimerOnSend"
+            }
+        ]
+    }
+    ```
+
+1. 在“authorization.permissions.resourceSpecific”数组中，添加以下对象。 请确保它与数组中具有逗号的其他对象分开。
+
+    ```json
+    {
+      "name": "Mailbox.AppendOnSend.User",
+      "type": "Delegated"
+    }
+    ```
+
+---
 
 > [!TIP]
 > 若要详细了解 Outlook 外接程序的清单，请参阅 [Outlook 加载项清单](manifests.md)。

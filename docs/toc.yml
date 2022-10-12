@@ -643,6 +643,11 @@ items:
             href: outlook/contextual-outlook-add-ins.md
           - name: 模块扩展加载项
             href: outlook/extension-module-outlook-add-ins.md
+          - name: 项目多选
+            href: outlook/item-multi-select.md
+            displayName: preview
+          - name: 可固定任务窗格
+            href: outlook/pinnable-taskpane.md
           - name: 适用于 Outlook Mobile 的加载项
             href: outlook/outlook-mobile-addins.md
           - name: 创建联机会议加载项
@@ -666,8 +671,6 @@ items:
               - name: AppSource 选项
                 href: outlook/autolaunch-store-options.md
                 displayName: event-based activation
-          - name: 可固定任务窗格
-            href: outlook/pinnable-taskpane.md
           - name: 共享文件夹和共享邮箱
             href: outlook/delegate-access.md
             displayName: delegate access

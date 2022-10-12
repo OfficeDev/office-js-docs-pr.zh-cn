@@ -1,21 +1,19 @@
 ---
 title: Excel JavaScript API 数据类型核心概念
 description: 了解在 Office 加载项中使用 Excel 数据类型的核心概念。
-ms.date: 09/01/2022
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: a5f742e47d698b215a999b966c424819e182ea49
-ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
+ms.openlocfilehash: b46639bdf44155f9e3de50526ce7eac48c278b12
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "67616019"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541148"
 ---
-# <a name="excel-data-types-core-concepts-preview"></a>Excel 数据类型核心概念（预览版）
-
-[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
+# <a name="excel-data-types-core-concepts"></a>Excel 数据类型核心概念
 
 本文介绍如何使用 [Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md) 来处理数据类型。 它引入了对数据类型开发至关重要的核心概念。
 
@@ -116,7 +114,7 @@ const myEntity: Excel.EntityCellValue = {
 
 ## <a name="web-image-values"></a>Web 图像值
 
-[WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) 对象创建将图像存储为 [实体](#entity-values) 的一部分或作为区域中独立值的功能。此对象提供许多属性，包括 `address`、`altText` 和 `relatedImagesAddress`。
+The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
 
 `basicType` 和 `basicValue`属性定义了如果未满足使用数据类型功能的最低兼容性要求，计算将如何读取 Web 图像数据类型。 在该方案中，此 Web 图像数据类型显示为 **#VALUE!** Excel UI 中的错误。
 

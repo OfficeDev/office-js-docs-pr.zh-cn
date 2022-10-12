@@ -1,22 +1,22 @@
 ---
 title: 在 Outlook 加载项中获取或修改收件人
 description: 了解如何在 Outlook 加载项中获取、设置或添加邮件或约会的收件人。
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc4a76ef89e3bfaf7e884ad2fa4e1595782c62f
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: de47d2ee238ffe55ab0b5ee460096717557e4dba
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958318"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541266"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取、设置或添加收件人
 
-Office JavaScript API 提供异步方法 ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1))、 [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)) 或 [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) 分别以约会或邮件的撰写形式获取、设置或添加收件人。 这些异步方法仅可用于撰写加载项。若要使用这些方法，请确保已适当地为 Outlook 设置外接程序清单以激活撰写窗体中的外接程序，如 [创建撰写窗体的 Outlook 外](compose-scenario.md)接程序中所述。
+Office JavaScript API 提供异步方法 ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1))、 [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)) 或 [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) 分别以约会或邮件的撰写形式获取、设置或添加收件人。 这些异步方法仅可用于撰写加载项。若要使用这些方法，请确保已适当地为 Outlook 设置外接程序清单以激活撰写窗体中的外接程序，如 [创建撰写窗体的 Outlook 外](compose-scenario.md)接程序中所述。 使用 Office 外接程序的 Teams 清单的外接程序不支持激活规则 [ (预览) ](../develop/json-manifest-overview.md)。
 
-部分表示约会或邮件中的收件人的属性在撰写窗体和阅读窗体中可以进行阅读访问。这些属性包括约会的 [optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 和 [requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)，以及邮件的 [cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) 和 [to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)。
+Some of the properties that represent recipients in an appointment or message are available for read access in a compose form and in a read form. These properties include  [optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) for appointments, and [cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), and  [to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) for messages.
 
-在阅读窗体中，你可以直接从父对象访问属性，例如：
+在阅读窗体中，您可以直接从父对象访问属性，例如：
 
 ```js
 item.cc
@@ -34,7 +34,7 @@ item.cc.getAsync
 
 ## <a name="get-recipients"></a>获取收件人
 
-此部分显示的代码示例用于获取正在撰写的约会或邮件的收件人，并显示收件人的电子邮件地址。代码示例假设外接程序清单中有在撰写窗体中为约会或邮件激活外接程序的规则，如下所示。
+This section shows a code sample that gets the recipients of the appointment or message that is being composed, and displays the email addresses of the recipients. The code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment or message, as shown below.
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">

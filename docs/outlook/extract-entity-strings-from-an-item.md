@@ -1,18 +1,21 @@
 ---
 title: 从 Outlook 项中提取实体字符串
 description: 了解如何从 Outlook 加载项中的某个 Outlook 项中提取实体字符串。
-ms.date: 07/07/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ca5540873be2969e15cea1a5773bb9fba850d9a1
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 512999272c720f5b87480c49d60c649bc6a886ad
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958991"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541273"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>从 Outlook 项中提取实体字符串
 
-本文介绍了如何创建“**显示实体**”Outlook 加载项，以从选定 Outlook 项的主题和正文中提取受支持的已知实体的字符串实例。此项可以是约会、电子邮件、会议请求、会议响应或会议取消。
+This article describes how to create a **Display entities** Outlook add-in that extracts string instances of supported well-known entities in the subject and body of the selected Outlook item. This item can be an appointment, email message, or meeting request, response, or cancellation.
+
+> [!NOTE]
+> 本文中介绍的 Outlook 外接程序功能使用激活规则，这些规则在使用 Office 外接程序的 Teams 清单的外接程序中不受支持 [ (预览版) ](../develop/json-manifest-overview.md)。
 
 受支持的实体包括：
 
@@ -22,7 +25,7 @@ ms.locfileid: "66958991"
 
 - **电子邮件地址**：SMTP 电子邮件地址。
 
-- **会议建议**：提及活动等会议建议。请注意，只有邮件（而不是约会）支持提取会议建议。
+- **Meeting suggestion**: A meeting suggestion, such as a reference to an event. Note that only messages but not appointments support extracting meeting suggestions.
 
 - **电话号码**：北美电话号码。
 
@@ -30,11 +33,11 @@ ms.locfileid: "66958991"
 
 - **URL**
 
-大多数这些实体依赖于基于大量数据机器学习的自然语言识别。因此，识别是非确定性的，有时候依赖于 Outlook 项目中的上下文。
+Most of these entities rely on natural language recognition, which is based on machine learning of large amounts of data. This recognition is nondeterministic and sometimes depends on the context in the Outlook item.
 
-无论用户选择查看约会、电子邮件或会议要求、响应或取消，Outlook 均会激活实体外接程序。在初始化期间，示例实体外接程序从当前项读取受支持的实体的所有实例。
+Outlook activates the entities add-in whenever the user selects an appointment, email message, or meeting request, response, or cancellation for viewing. During initialization, the sample entities add-in reads all instances of the supported entities from the current item.
 
-外接程序为用户提供按钮以选择实体类型。当用户选择一个实体时，外接程序在外接程序窗格中显示所选实体的实例。以下各节列出了实体外接程序的 XML 清单及 HTML 和 JavaScript 文件，并突出显示支持各自实体提取的代码。
+The add-in provides buttons for the user to choose a type of entity. When the user selects an entity, the add-in displays instances of the selected entity in the add-in pane. The following sections list the XML manifest, and HTML and JavaScript files of the entities add-in, and highlight the code that supports the respective entity extraction.
 
 ## <a name="xml-manifest"></a>XML 清单
 
@@ -50,7 +53,7 @@ ms.locfileid: "66958991"
 
 这些规则指定 Outlook 应在阅读窗格或阅读检查器中的当前所选项目为约会或邮件（包括电子邮件、会议请求、响应或取消）时激活此加载项。
 
-下面是实体外接程序的清单。它对 Office 外接程序清单使用架构的 1.1 版本。
+The following is the manifest of the entities add-in. It uses version 1.1 of the schema for Office Add-ins manifests.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -96,7 +99,7 @@ xsi:type="MailApp">
 
 ## <a name="html-implementation"></a>HTML 实现
 
-实体外接程序的 HTML 文件为用户指定按钮以选择每种类型的实体，另外还指定另一个按钮以清除显示的实体实例。它包括 JavaScript 文件 default_entities.js，这在下一节的 [JavaScript 实现](#javascript-implementation)中进行介绍。JavaScript 文件包括其中每个按钮的事件处理程序。
+The HTML file of the entities add-in specifies buttons for the user to select each type of entity, and another button to clear displayed instances of an entity. It includes a JavaScript file, default_entities.js, which is described in the next section under [JavaScript implementation](#javascript-implementation). The JavaScript file includes the event handlers for each of the buttons.
 
 请注意，所有 Outlook 外接程序都必须包含 office.js。 下面的 HTML 文件包括内容分发网络 (CDN) 上office.js版本 1.1。
 
@@ -141,7 +144,7 @@ xsi:type="MailApp">
 
 ## <a name="style-sheet"></a>样式表
 
-实体外接程序使用可选 CSS 文件 default_entities.css 指定输出的布局。下面为 CSS 文件的列表。
+The entities add-in uses an optional CSS file, default_entities.css, to specify the layout of the output. The following is a listing of the CSS file.
 
 ```CSS
 {
@@ -251,17 +254,17 @@ function myGetAddresses()
 
 - 表示 [Contact.businessName](/javascript/api/outlook/office.contact#outlook-office-contact-businessname-member) 属性中与联系人关联的公司名称的字符串。
 
-- [Contact.phoneNumbers](/javascript/api/outlook/office.contact#outlook-office-contact-phonenumbers-member) 属性中与联系人关联的电话号码数组。每个电话号码都由一个 [PhoneNumber](/javascript/api/outlook/office.phonenumber) 对象表示。
+- The array of telephone numbers associated with the contact from the [Contact.phoneNumbers](/javascript/api/outlook/office.contact#outlook-office-contact-phonenumbers-member) property. Each telephone number is represented by a [PhoneNumber](/javascript/api/outlook/office.phonenumber) object.
 
 - 对于电话号码数组中的每个 **PhoneNumber** 成员，表示 [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-phonestring-member) 属性中电话号码的字符串。
 
-- [Contact.urls](/javascript/api/outlook/office.contact#outlook-office-contact-urls-member) 属性中与联系人关联的 URL 的数组。每个 URL 都表示为数组成员中的一个字符串。
+- The array of URLs associated with the contact from the [Contact.urls](/javascript/api/outlook/office.contact#outlook-office-contact-urls-member) property. Each URL is represented as a string in an array member.
 
-- [Contact.emailAddresses](/javascript/api/outlook/office.contact#outlook-office-contact-emailaddresses-member) 属性中与联系人关联的电子邮件地址的数组。每个电子邮件地址都表示为数组成员中的一个字符串。
+- The array of email addresses associated with the contact from the [Contact.emailAddresses](/javascript/api/outlook/office.contact#outlook-office-contact-emailaddresses-member) property. Each email address is represented as a string in an array member.
 
-- [Contact.addresses](/javascript/api/outlook/office.contact#outlook-office-contact-addresses-member) 属性中与联系人关联的通信地址的数组。每个通信地址都表示为数组成员中的一个字符串。
+- The array of postal addresses associated with the contact from the [Contact.addresses](/javascript/api/outlook/office.contact#outlook-office-contact-addresses-member) property. Each postal address is represented as a string in an array member.
 
-`myGetContacts` 在 `htmlText` 中形成一个本地 HTML 字符串，以显示每个联系人的数据。以下为相关的 JavaScript 代码。
+`myGetContacts` forms a local HTML string in `htmlText` to display the data for each contact. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the Contact entity on the item.
@@ -327,7 +330,7 @@ function myGetContacts()
 
 ## <a name="extracting-email-addresses"></a>提取电子邮件地址
 
-当用户单击“获取电子邮件地址”按钮时，`myGetEmailAddresses` 事件处理程序从 `_MyEntities` 对象的 [emailAddresses](/javascript/api/outlook/office.entities#outlook-office-entities-emailaddresses-member) 属性获取一组 SMTP 电子邮件地址（如果已提取任何电子邮件地址的话）。提取的每个电子邮件地址都存储为数组中的字符串。`myGetEmailAddresses` 在 `htmlText` 中构成本地 HTML 字符串，以列出提取的电子邮件地址。下面展示了相关 JavaScript 代码。
+When the user clicks the **Get Email Addresses** button, the `myGetEmailAddresses` event handler obtains an array of SMTP email addresses from the [emailAddresses](/javascript/api/outlook/office.entities#outlook-office-entities-emailaddresses-member) property of the `_MyEntities` object, if any was extracted. Each extracted email address is stored as a string in the array. `myGetEmailAddresses` forms a local HTML string in `htmlText` to display the list of extracted email addresses. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the EmailAddress entity on the item.
@@ -352,11 +355,11 @@ function myGetEmailAddresses() {
  > [!NOTE]
  > 只有消息而不支持约会支持 `MeetingSuggestion` 实体类型。
 
-每个提取的会议建议都存储为数组中的一个 [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) 对象。`myGetMeetingSuggestions` 获取有关每个会议建议的更多数据：
+每个提取的会议建议都存储为数组中的一个 [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) 对象。 获取有关每个会议建议的更多数据：
 
 - [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-meetingstring-member) 属性中已识别为会议建议的字符串。
 
-- [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-attendees-member) 属性中会议参与者的数组。每个参与者都由一个 [EmailUser](/javascript/api/outlook/office.emailuser) 对象表示。
+- The array of meeting attendees from the [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-attendees-member) property. Each attendee is represented by an [EmailUser](/javascript/api/outlook/office.emailuser) object.
 
 - 对于每个参与者，[EmailUser.displayName](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-displayname-member) 属性中的名称。
 
@@ -370,7 +373,7 @@ function myGetEmailAddresses() {
 
 - [MeetingSuggestion.end](/javascript/api/outlook/office.meetingsuggestion#outlook-office-meetingsuggestion-end-member) 属性中表示会议建议结束时间的字符串。
 
-`myGetMeetingSuggestions` 在 `htmlText` 中形成一个本地 HTML 字符串，以显示其中每个会议建议的数据。以下是相关的 JavaScript 代码。
+`myGetMeetingSuggestions` forms a local HTML string in `htmlText` to display the data for each of the meeting suggestions. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the MeetingSuggestion entity on the 
@@ -426,7 +429,7 @@ function myGetMeetingSuggestions() {
 
 ## <a name="extracting-phone-numbers"></a>提取电话号码
 
-当用户单击“获取电话号码”按钮时，`myGetPhoneNumbers` 事件处理程序从 `_MyEntities` 对象的 [phoneNumbers](/javascript/api/outlook/office.entities#outlook-office-entities-phonenumbers-member) 属性获取一组电话号码（如果已提取任何电话号码的话）。提取的每个电话号码都存储为数组中的 [PhoneNumber](/javascript/api/outlook/office.phonenumber) 对象。`myGetPhoneNumbers` 获取每个电话号码的更多数据：
+When the user clicks the **Get Phone Numbers** button, the `myGetPhoneNumbers` event handler obtains an array of phone numbers from the [phoneNumbers](/javascript/api/outlook/office.entities#outlook-office-entities-phonenumbers-member) property of the `_MyEntities` object, if any was extracted. Each extracted phone number is stored as a [PhoneNumber](/javascript/api/outlook/office.phonenumber) object in the array. `myGetPhoneNumbers` obtains further data about each phone number:
 
 - [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-type-member) 属性中表示电话号码种类的字符串（例如家庭电话号码）。
 
@@ -434,7 +437,7 @@ function myGetMeetingSuggestions() {
 
 - [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#outlook-office-phonenumber-originalphonestring-member) 属性中最初识别为电话号码的字符串。
 
-`myGetPhoneNumbers` 在 `htmlText` 中形成一个本地 HTML 字符串，以显示每个电话号码的数据。以下是相关的 JavaScript 代码。
+`myGetPhoneNumbers` forms a local HTML string in `htmlText` to display the data for each of the phone numbers. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the phone number entity on the item.
@@ -470,17 +473,17 @@ function myGetPhoneNumbers()
 
 ## <a name="extracting-task-suggestions"></a>提取任务建议
 
-当用户单击“获取任务建议”按钮时，`myGetTaskSuggestions` 事件处理程序从 `_MyEntities` 对象的 [taskSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-tasksuggestions-member) 属性获取一组任务建议（如果已提取任何任务建议的话）。提取每个的任务建议都存储为数组中的 [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) 对象。`myGetTaskSuggestions` 获取每个任务建议的更多数据：
+When the user clicks the **Get Task Suggestions** button, the `myGetTaskSuggestions` event handler obtains an array of task suggestions from the [taskSuggestions](/javascript/api/outlook/office.entities#outlook-office-entities-tasksuggestions-member) property of the `_MyEntities` object, if any was extracted. Each extracted task suggestion is stored as a [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) object in the array. `myGetTaskSuggestions` obtains further data about each task suggestion:
 
 - [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-taskstring-member) 属性中最初识别为任务建议的字符串。
 
-- [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-assignees-member) 属性中任务受托人的数组。每个受托人都由一个 [EmailUser](/javascript/api/outlook/office.emailuser) 对象表示。
+- The array of task assignees from the [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#outlook-office-tasksuggestion-assignees-member) property. Each assignee is represented by an [EmailUser](/javascript/api/outlook/office.emailuser) object.
 
 - 对于每个受托人，[EmailUser.displayName](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-displayname-member) 属性中的名称。
 
 - 对于每个受托人，[EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#outlook-office-emailuser-emailaddress-member) 属性中的 SMTP 地址。
 
-`myGetTaskSuggestions` 在 `htmlText` 中形成一个本地 HTML 字符串，以显示每个任务建议的数据。以下为相关的 JavaScript 代码。
+`myGetTaskSuggestions` forms a local HTML string in `htmlText` to display the data for each task suggestion. The following is the related JavaScript code.
 
 ```js
 // Gets instances of the task suggestion entity on the item.
@@ -528,7 +531,7 @@ function myGetTaskSuggestions()
 
 ## <a name="extracting-urls"></a>提取 URL
 
-当用户单击“获取 URL”按钮时，`myGetUrls` 事件处理程序从 `_MyEntities` 对象的 [urls](/javascript/api/outlook/office.entities#outlook-office-entities-urls-member) 属性获取一组 URL（如果已提取任何 URL 的话）。提取每个的 URL 都存储为数组中的字符串。`myGetUrls` 在 `htmlText` 中构成本地 HTML 字符串，以列出提取的 URL。
+When the user clicks the **Get URLs** button, the `myGetUrls` event handler obtains an array of URLs from the [urls](/javascript/api/outlook/office.entities#outlook-office-entities-urls-member) property of the `_MyEntities` object, if any was extracted. Each extracted URL is stored as a string in the array. `myGetUrls` forms a local HTML string in `htmlText` to display the list of extracted URLs.
 
 ```js
 // Gets instances of the URL entity on the item.
@@ -549,7 +552,7 @@ function myGetUrls()
 
 ## <a name="clearing-displayed-entity-strings"></a>清除显示的实体字符串
 
-最后，实体外接程序指定一个 `myClearEntitiesBox` 事件处理程序，以清除任何显示的字符串。以下是相关的代码。
+Lastly, the entities add-in specifies a  `myClearEntitiesBox` event handler which clears any displayed strings. The following is the related code.
 
 ```js
 // Clears the div with id="entities_box".

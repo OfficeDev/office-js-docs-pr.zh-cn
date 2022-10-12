@@ -1,36 +1,35 @@
 ---
 title: Excel 加载项中的数据类型概述
-description: Excel JavaScript API 中的数据类型使 Office 加载项开发人员能够使用带格式数字值、Web 图像、实体值、实体值中的数组以及作为数据类型的增强型错误。
-ms.date: 05/19/2022
+description: Excel JavaScript API 中的数据类型使 Office 外接程序开发人员能够将格式化的数字值、Web 映像、实体、实体中的数组以及增强的错误作为数据类型进行处理。
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 99694e7302b7aab6b1dfd0a7ec46122dd5bc69d7
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
-ms.translationtype: HT
+ms.openlocfilehash: 2d19eacc23d64f472f32363fc93155b6e023ba04
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628136"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68540975"
 ---
-# <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Excel 加载项中的数据类型概述（预览版）
+# <a name="overview-of-data-types-in-excel-add-ins"></a>Excel 加载项中的数据类型概述
 
-[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
+数据类型将复杂数据结构组织为对象。 这包括格式化的数字值、Web 映像和实体作为 [实体卡](excel-data-types-entity-card.md)。
 
-Excel JavaScript API 中的数据类型使加载项开发人员能够将复杂的数据结构组织为对象，例如带格式数字值、Web 图像和实体值。
+在添加数据类型之前，Excel JavaScript API 已支持字符串、数字、布尔值和错误数据类型。 Excel UI 格式设置层能够向包含四种原始数据类型的单元格添加货币、日期和其他类型的格式设置，但此格式设置层仅控制 Excel UI 中原始数据类型的显示。 即使 Excel UI 中的单元格设置为货币或日期格式，基础数字值也不会更改。 基础值与 Excel UI 中带格式的显示之间的这一差距可能导致加载项计算过程中出现混淆和错误。 数据类型 API 是解决此差距的解决方案。
 
-在添加数据类型之前，Excel JavaScript API 已支持字符串、数字、布尔值和错误数据类型。 Excel UI 格式设置层能够向包含四种原始数据类型的单元格添加货币、日期和其他类型的格式设置，但此格式设置层仅控制 Excel UI 中原始数据类型的显示。 即使 Excel UI 中的单元格设置为货币或日期格式，基础数字值也不会更改。 基础值与 Excel UI 中带格式的显示之间的这一差距可能导致加载项计算过程中出现混淆和错误。 自定义数据类型是解决此差距的解决方案。
+数据类型将 Excel JavaScript API 支持扩展到四个原始数据类型之外， (字符串、数字、布尔值和错误) 包括 [Web 映像](excel-data-types-concepts.md#web-image-values)、 [格式化数字值](excel-data-types-concepts.md#formatted-number-values)、 [实体中的实体](excel-data-types-concepts.md#entity-values)、数组，以及改进 [的错误数据类型](excel-data-types-concepts.md#improved-error-support) 作为灵活的数据结构。 这些类型支持许多 [链接数据类型](https://support.microsoft.com/office/what-linked-data-types-are-available-in-excel-6510ab58-52f6-4368-ba0f-6a76c0190772) 体验，在加载项计算过程中实现了精确和简化，并将 Excel 加载项的潜力扩展到 2 维网格之外。
 
-数据类型将 Excel JavaScript API 支持扩展到四种原始数据类型（字符串、数字、布尔值和错误）之外，将 Web 图像、带格式数字值、实体值、实体值中的数组，以及改进的错误数据类型等灵活的数据结构包括在内。 这些类型支持许多 [链接数据类型](https://support.microsoft.com/office/what-linked-data-types-are-available-in-excel-6510ab58-52f6-4368-ba0f-6a76c0190772) 体验，在加载项计算过程中实现了精确和简化，并将 Excel 加载项的潜力扩展到 2 维网格之外。
+若要了解如何使用数据类型 API，请从 [Excel 数据类型核心概念](excel-data-types-concepts.md) 文章开始。
 
 ## <a name="data-types-and-custom-functions"></a>数据类型和自定义函数
-
-[!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
 
 数据类型增强了自定义函数的功能。 自定义函数接受数据类型作为自定义函数的输入和自定义函数的输出，并且自定义函数对数据类型使用与 Excel JavaScript API 相同的 JSON 架构。 在自定义函数计算和求值时，对此数据类型 JSON 架构进行维护。 如果要详细了解如何将数据类型与自定义函数集成，请参阅[自定义函数和数据类型](custom-functions-data-types-concepts.md)。
 
 ## <a name="see-also"></a>另请参阅
 
 - [Excel 数据类型核心概念](excel-data-types-concepts.md)
+- [使用具有实体值数据类型的卡片](excel-data-types-entity-card.md)
 - [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
 - [自定义函数和数据类型](custom-functions-data-types-concepts.md)
