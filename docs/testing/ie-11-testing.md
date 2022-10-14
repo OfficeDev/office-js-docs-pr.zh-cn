@@ -1,14 +1,14 @@
 ---
 title: Internet Explorer 11 测试
 description: 在 Internet Explorer 11 上测试 Office 加载项。
-ms.date: 05/01/2022
+ms.date: 10/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab904a3b086990cb9b10e2f266ddacafb4cba94
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 887d71e8e054a39c474ef300aeeb588933499ed8
+ms.sourcegitcommit: 5544cf174d145e356e33866e2480bde999514ada
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423326"
+ms.lasthandoff: 10/14/2022
+ms.locfileid: "68574158"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>在 Internet Explorer 11 上测试 Office 加载项
 
@@ -47,6 +47,8 @@ ms.locfileid: "67423326"
 
 - 你的项目是使用 Visual Studio 和 IIS 开发的。 它不是基于node.js的。
 - 你希望在测试中绝对可靠。
+- 不能在开发计算机上使用 Microsoft 365 的 Beta 通道。
+- 你正在 Mac 上进行开发。 
 - 如果出于任何原因，命令行工具不起作用。
 
 ### <a name="switch-via-the-command-line"></a>通过命令行切换
