@@ -4,12 +4,12 @@ description: 了解如何在选择多个消息时激活 Outlook 加载项。
 ms.topic: article
 ms.date: 10/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b77772aa2fc661e4be84c48555e3ddceda224c4
-ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
+ms.openlocfilehash: 9d81d698facfc4535b3945d8cee4c97492fc8a88
+ms.sourcegitcommit: 5544cf174d145e356e33866e2480bde999514ada
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68546436"
+ms.lasthandoff: 10/14/2022
+ms.locfileid: "68574142"
 ---
 # <a name="activate-your-outlook-add-in-on-multiple-messages-preview"></a>在多条消息上激活 Outlook 加载项 (预览版) 
 
@@ -21,7 +21,7 @@ ms.locfileid: "68546436"
 > 项目多选功能仅在预览版中使用 Outlook on Windows 中的 Microsoft 365 订阅。 预览版中的功能不应用于生产外接程序。我们邀请你在测试或开发环境中测试此功能，并通过 GitHub 欢迎你获得有关体验的反馈 (请参阅本页末尾的 **“反馈** ”部分) 。
 
 > [!NOTE]
-> [Teams 清单 (预览版) ](../develop/json-manifest-overview.md)当前不支持项多选功能，但功能组正在努力使此功能可用。
+> [Teams 清单 (预览版) ](../develop/json-manifest-overview.md)目前不支持项目多选功能，但团队正在努力使此功能可用。
 
 ## <a name="prerequisites-to-preview-item-multi-select"></a>预览项目多选的先决条件
 
