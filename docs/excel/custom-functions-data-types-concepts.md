@@ -1,20 +1,20 @@
 ---
 title: 自定义函数和数据类型
 description: 将 Excel 数据类型与自定义函数和 Office 加载项配合使用。
-ms.date: 10/10/2022
+ms.date: 10/17/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-ms.localizationpriority: high
-ms.openlocfilehash: 5dbe42af2edcfc9860ce27dc5c8dbe2ad88b9ecf
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.localizationpriority: medium
+ms.openlocfilehash: 6ea2287dbf83a5acc45f64c6f5071e504e66bbce
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68540989"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607427"
 ---
 # <a name="use-data-types-with-custom-functions-in-excel"></a>在 Excel 中将数据类型与自定义函数配合使用
 
-数据类型扩展了 Excel JavaScript API，以支持原始的四个单元格值类型（字符串、数字、布尔值和错误）以外的数据类型。 数据类型包括支持 Web 图像、带格式数字值、实体值和实体值中的数组。
+数据类型扩展了 Excel JavaScript API，以支持原始的四个单元格值类型（字符串、数字、布尔值和错误）以外的数据类型。 数据类型包括支持 Web 映像、格式化数字值、实体和实体中的数组。
 
 这些数据类型放大了自定义函数的功能，因为自定义函数接受数据类型作为输入值和输出值。 可以通过自定义函数生成数据类型，或将现有数据类型作为函数参数引入计算。 设置数据类型的 JSON 架构后，将在整个计算中维护此架构。
 
@@ -29,23 +29,9 @@ ms.locfileid: "68540989"
 
 ## <a name="enable-data-types-for-custom-functions"></a>为自定义函数启用数据类型
 
-若要使用此功能，需要手动更新 JSON 元数据。 若要进行更多临时测试，可以自定义 Script Lab 设置，而不是手动更新 JSON 元数据。 以下各部分更详细地概述了这些步骤。
-
-### <a name="manually-update-json-metadata"></a>手动更新 JSON 元数据
-
 自定义函数项目包括 JSON 元数据文件。 此 JSON 元数据文件不同于数据类型 API 使用的 JSON 架构。 若要将数据类型与自定义函数集成，必须手动更新自定义函数 JSON 元数据文件，以包括属性 `allowCustomDataForDataTypeAny`。 将此属性设置为 `true`。
 
-For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) for additional details about this property.
-
-### <a name="script-lab-option"></a>脚本实验室选项
-
-除了前面部分中所述的手动 JSON 元数据更新外，还可使用脚本实验室测试自定义函数与数据类型的集成。 若要了解详细信息，请参阅[使用 Script Lab 探索 Office JavaScript API](../overview/explore-with-script-lab.md)。 若要使用 Script Lab 测试此功能，请使用以下步骤更新设置。
-
-1. 打开 Script Lab 的 **代码** 任务窗格。
-1. 在右下角，选择 **设置** 按钮。
-1. 转到 **用户设置** 选项卡，然后输入 `allowCustomDataForDataTypeAny: true`。
-
-![显示在 Script Lab 中为自定义函数启用数据类型的步骤的屏幕截图。](../images/custom-functions-script-lab-data-type.png)
+有关手动 JSON 元数据创建过程的完整说明，请参阅 [手动为自定义函数创建 JSON 元数据](custom-functions-json.md)。 有关此属性的其他详细信息，请参阅 [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany)。
 
 ## <a name="output-a-formatted-number-value"></a>输出格式化的数字值
 
@@ -92,6 +78,10 @@ function getEntityAttribute(value, attribute) {
     }
 }
 ```
+
+## <a name="next-steps"></a>后续步骤
+
+若要试验自定义函数和数据类型，请在 Excel 中安装 [Script Lab](../overview/explore-with-script-lab.md)并试用 [数据类型：](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/16-custom-functions/data-types-custom-functions.yaml)示 **例** 库中的自定义函数代码段。
 
 ## <a name="see-also"></a>另请参阅
 

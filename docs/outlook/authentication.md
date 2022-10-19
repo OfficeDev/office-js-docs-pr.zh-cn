@@ -1,14 +1,14 @@
 ---
 title: Outlook 加载项中的身份验证选项
 description: Outlook 加载项 根据特定场景提供了多种不同的身份验证方法。
-ms.date: 09/03/2021
+ms.date: 10/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 17ab09a1f0cdbf7668fa80080e587dd3d800f2c6
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: d8ae8971c4095e5314885514226cd8f52728fb07
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958360"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607525"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Outlook 加载项中的身份验证选项
 
@@ -19,7 +19,8 @@ Outlook 加载项可以访问 Internet 上任意位置的信息，无论是托�
 单一登录访问令牌为你的加载项提供了进行身份验证和获取访问令牌以调用 [Microsoft Graph API](/graph/overview) 的无缝方法。 由于不需要用户输入其凭据，此功能可以减少摩擦。
 
 > [!NOTE]
-> 目前，Word、Excel、Outlook 和 PowerPoint 支持单一登录 API。 若要详细了解目前支持单一登录 API 的平台，请参阅 [IdentityAPI 要求集](/javascript/api/requirement-sets/common/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何这样做，请参阅 [Exchange Online: 如何为租户启用新式验证](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)。
+> The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
+> If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 如果加载项符合以下情况，请考虑使用 SSO 访问令牌：
 
@@ -29,6 +30,9 @@ Outlook 加载项可以访问 Internet 上任意位置的信息，无论是托�
   - 你控制的非 Microsoft 服务
 
 SSO 身份验证方法使用 [Azure Active Directory 提供的 OAuth2 代表流](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of)。 它要求加载项在[应用程序注册门户](https://apps.dev.microsoft.com/)中进行注册并在其清单中指定任何所需的 Microsoft Graph 作用域。
+
+> [!NOTE]
+> 如果外接程序使用 [Office 外接程序的 Teams 清单 (预览) ](../develop/json-manifest-overview.md)，则有一些清单配置，但未指定 Microsoft Graph 范围。 可以旁加载使用 Teams 清单的已启用 SSO 的加载项，但目前无法以任何其他方式部署。
 
 借助此方法，加载项可以获取作用域为你的服务器后端 API 的访问令牌。 加载项将此令牌用作 `Authorization` 标头中的持有者令牌，来对 API 回调进行身份验证。 此时，服务器可以：
 
@@ -61,7 +65,7 @@ Exchange 用户标识令牌为加载项提供了一种创建用户标识的方�
 
 ## <a name="callback-tokens"></a>回调令牌
 
-回调令牌提供从服务器后端访问用户邮箱的权限，可以使用 [Exchange Web 服务 (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange) 或 [Outlook REST API](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api)。如果加载项考虑使用回调令牌:
+Callback tokens provide access to the user's mailbox from your server back-end, either using [Exchange Web Services (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange), or the [Outlook REST API](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). Consider using callback tokens if your add-in:
 
 - 需要从服务器后端访问用户邮箱。
 

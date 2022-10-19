@@ -1,18 +1,22 @@
 ---
 title: Outlook 外接程序清单
-description: 该清单介绍 Outlook 外接程序如何跨 Outlook 客户端进行集成；其中包括一个示例。
-ms.date: 05/27/2020
+description: 获取 Outlook 外接程序可用的两种清单的概述。
+ms.date: 10/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c09c483519e4d5cd0dce7dda840130698820b6ee
-ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.openlocfilehash: a22b5180fee6b4f9f0663eff54b57510016202a2
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2022
-ms.locfileid: "68466976"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607553"
 ---
 # <a name="outlook-add-in-manifests"></a>Outlook 外接程序清单
 
-An Outlook add-in consists of two components: the XML add-in manifest and a web page supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients. The following is an example.
+Outlook 外接程序由两个组件组成：外接程序清单和 Office 外接程序的 JavaScript 库 (office.js) 支持的 Web 应用。 清单介绍了外接程序如何跨 Outlook 客户端集成。
+
+清单有两种可能的格式：XML 和 JSON。 可以了解 [Office 外接程序的 Teams 清单中的 JSON 清单 (预览) ](../develop/json-manifest-overview.md)。 本文介绍 XML 清单。
+
+下面是 XML 清单的示例。
 
  > [!NOTE]
  > All URL values in the following sample begin with "https://appdemo.contoso.com". This value is a placeholder. In an actual valid manifest, these values would contain valid https web URLs.
@@ -418,7 +422,6 @@ Outlook 加载项指定如下所示的 **\<Hosts\>** 元素：
 - 存在附件
 
 有关激活规则的详细信息和示例，请参阅 [Outlook 外接程序的激活规则](activation-rules.md)。
-
 
 ## <a name="next-steps-add-in-commands"></a>后续步骤：外接程序命令
 

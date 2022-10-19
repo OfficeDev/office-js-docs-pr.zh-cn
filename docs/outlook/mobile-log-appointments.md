@@ -2,14 +2,14 @@
 title: 在 Outlook 移动外接程序中将约会说明记录到外部应用程序
 description: 了解如何设置 Outlook 移动外接程序以将约会笔记和其他详细信息记录到外部应用程序。
 ms.topic: article
-ms.date: 08/11/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 310585d821f12bfd400b7b1eaf780ab756bf5a3f
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: a980b68c603154c42112f525ec6285b740ce38a5
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67320680"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607581"
 ---
 # <a name="log-appointment-notes-to-an-external-application-in-outlook-mobile-add-ins"></a>在 Outlook 移动外接程序中将约会说明记录到外部应用程序
 
@@ -35,6 +35,8 @@ ms.locfileid: "67320680"
 ### <a name="configure-the-manifest"></a>配置清单
 
 若要使用户能够使用外接程序记录约会笔记，必须在父元素`MobileFormFactor`下的清单中配置 [MobileLogEventAppointmentAttendee 扩展点](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee)。 不支持其他外形因素。
+
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 1. 在代码编辑器中，打开快速启动项目。
 
@@ -284,6 +286,8 @@ function logCRMEvent(appointmentEvent) {
 ### <a name="configure-the-manifest"></a>配置清单
 
 若要使用户能够使用外接程序记录约会笔记，必须在父元素`MobileFormFactor`下的清单中配置 [MobileLogEventAppointmentAttendee 扩展点](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee)。 不支持其他外形因素。
+
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 1. 在代码编辑器中，打开快速启动项目。
 

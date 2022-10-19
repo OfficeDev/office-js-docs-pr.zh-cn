@@ -2,14 +2,14 @@
 title: 为联机会议提供商创建 Outlook 加载项
 description: 讨论如何为联机会议服务提供商设置 Outlook 加载项。
 ms.topic: article
-ms.date: 08/11/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e1775d8cf8cc45887dfb1058603c103583d5e5dc
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: f422107d69dd3cdcc9a01feaee0b97dcd7e5e1f3
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67320656"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607574"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>为联机会议提供商创建 Outlook 加载项
 
@@ -24,9 +24,22 @@ ms.locfileid: "67320656"
 
 完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) 门，使用 Office 外接程序的 Yeoman 生成器创建加载项项目。
 
+> [!NOTE]
+> 如果要使用 [Office 加载项的 Teams 清单 (预览)](../develop/json-manifest-overview.md)，请在 Outlook 快速入门中完成备用快速入门，其中 [包含 Teams 清单 (预览)](../quickstarts/outlook-quickstart-json-manifest.md)，但请在 **“试用”** 部分后跳过所有部分。
+
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要使用户能够使用外接程序创建联机会议，必须在清单中配置 **\<VersionOverrides\>** 节点。 如果创建的加载项仅在 Outlook 网页版、Windows 和 Mac 中受支持，请选择 **Windows、Mac、Web** 选项卡以获取指导。 但是，如果外接程序在 Outlook on Android 和 iOS 中也受支持，请选择 **“移动”** 选项卡。
+若要使用户能够使用外接程序创建联机会议，必须配置清单。 标记因两个变量而异：
+
+- 目标平台的类型;移动或非移动。
+- 清单的类型; [Office 加载项的 XML 或 Teams 清单 (预览) ](../develop/json-manifest-overview.md)。
+
+如果外接程序使用 XML 清单，并且外接程序仅在 Outlook 网页版、Windows 和 Mac 中受支持，请选择 **Windows、Mac、Web** 选项卡以获取指导。 但是，如果外接程序在 Outlook on Android 和 iOS 中也受支持，请选择 **“移动”** 选项卡。
+
+如果外接程序使用 Teams 清单 (预览) ， **请选择“Teams 清单 (开发人员预览)** 选项卡。
+
+> [!NOTE]
+> Teams 清单 (预览版) 目前仅在 Outlook on Windows 中受支持。 我们正在努力为其他平台（包括移动平台）提供支持。
 
 # <a name="windows-mac-web"></a>[Windows、Mac、Web](#tab/non-mobile)
 
@@ -194,6 +207,137 @@ ms.locfileid: "67320656"
   </VersionOverrides>
 </VersionOverrides>
 ```
+
+# <a name="teams-manifest-developer-preview"></a>[Teams 清单 (开发人员预览) ](#tab/jsonmanifest)
+
+1. 打开 **manifest.json** 文件。
+
+1. 在“authorization.permissions.resourceSpecific”数组中查找 *第一个* 对象，并将其“name”属性设置为“MailboxItem.ReadWrite.User”。 完成后，它应如下所示。
+
+    ```json
+    {
+        "name": "MailboxItem.ReadWrite.User",
+        "type": "Delegated"
+    }
+    ```
+
+1. 在“validDomains”数组中，将 URL 更改为“https://contoso.com”，这是虚构的联机会议提供程序的 URL。 完成后，数组应如下所示。
+
+    ```json
+    "validDomains": [
+        "https://contoso.com"
+    ],
+    ```
+
+1. 将以下对象添加到“extensions.runtimes”数组。 对于此代码，请注意以下事项。
+
+   - 邮箱要求集的“minVersion”设置为“1.3”，因此运行时不会在不支持此功能的平台和 Office 版本上启动。
+   - 运行时的“id”设置为描述性名称“online_meeting_runtime”。
+   - “code.page”属性设置为将加载函数命令的无 UI HTML 文件的 URL。
+   - “lifetime”属性设置为“short”，这意味着运行时在选择函数命令按钮时启动，并在函数完成时关闭。  (在某些情况下，运行时会在处理程序完成之前关闭。 请参阅 [Office 加载项.) 中的运行时](../testing/runtimes.md)
+   - 有一个操作用于运行名为“insertContosoMeeting”的函数。 将在后面的步骤中创建此函数。
+
+    ```json
+    {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.3"
+                }
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "id": "online_meeting_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://contoso.com/commands.html"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "insertContosoMeeting",
+                "type": "executeFunction",
+                "displayName": "insertContosoMeeting"
+            }
+        ]
+    }
+    ```
+
+1. 将“extensions.ribbons”数组替换为以下内容。 关于此标记，请注意以下几点。
+
+   - 邮箱要求集的“minVersion”设置为“1.3”，因此功能区自定义不会显示在不支持此功能的平台和 Office 版本上。
+   - “contexts”数组指定功能区仅在会议详细信息管理器窗口中可用。
+   - 会议详细信息管理器窗口的默认功能区选项卡 (上将有一个自定义控制组，) 标记为 **Contoso 会议**。
+   - 该组将有一个标记为 **“添加 Contoso 会议”** 的按钮。
+   - 按钮的“actionId”已设置为“insertContosoMeeting”，与在上一步中创建的操作的“ID”匹配。
+
+    ```json
+    "ribbons": [
+      {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.3"
+                }
+            ],
+            "scopes": [
+                "mail"
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "contexts": [
+            "meetingDetailsOrganizer"
+        ],
+        "tabs": [
+            {
+                "builtInTabId": "TabDefault",
+                "groups": [
+                    {
+                        "id": "apptComposeGroup",
+                        "label": "Contoso meeting",
+                        "controls": [
+                            {
+                                "id": "insertMeetingButton",
+                                "type": "button",
+                                "label": "Add a Contoso meeting",
+                                "icons": [
+                                    {
+                                        "size": 16,
+                                        "file": "icon-16.png"
+                                    },
+                                    {
+                                        "size": 32,
+                                        "file": "icon-32.png"
+                                    },
+                                    {
+                                        "size": 64,
+                                        "file": "icon-64_02.png"
+                                    },
+                                    {
+                                        "size": 80,
+                                        "file": "icon-80.png"
+                                    }
+                                ],
+                                "supertip": {
+                                    "title": "Add a Contoso meeting",
+                                    "description": "Add a Contoso meeting to this appointment."
+                                },
+                                "actionId": "insertContosoMeeting",
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+      }
+    ]
+    ```
 
 ---
 

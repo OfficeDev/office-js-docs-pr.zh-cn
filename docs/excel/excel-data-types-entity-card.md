@@ -1,16 +1,16 @@
 ---
 title: Excel JavaScript API 数据类型实体值卡
 description: 了解如何将实体值卡与 Excel 外接程序中的数据类型配合使用。
-ms.date: 10/10/2022
+ms.date: 10/17/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2b3e88953bee54c1efa54a419db2518a1d2518
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: 1cb6c49e0e8cb07afb4b7c78a360be6c2391437a
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68540982"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607567"
 ---
 # <a name="use-cards-with-entity-value-data-types"></a>使用具有实体值数据类型的卡片
 
@@ -32,7 +32,7 @@ ms.locfileid: "68540982"
 以下代码片段显示嵌套在其中的多个数据类型的实体值的 `properties`JSON。
 
 > [!NOTE]
-> 若要了解如何在完整的代码示例中使用此 JSON，请访问 [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) 存储库。
+> 若要在完整示例中试验此 JSON 代码片段，请在 Excel 中打开[Script Lab](../overview/explore-with-script-lab.md)并选择[“数据类型：从示例库中的表中的数据创建实体卡](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml)片”。
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -114,7 +114,7 @@ const entity: Excel.EntityCellValue = {
 在每个卡片部分中，可以指定元素，例如 `layout`， `title`以及 `properties`。 键 `layout` 使用 [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) 该对象并接受该值 `"List"`。 密 `properties` 钥接受字符串数组。 请注意， `properties` 这些值（例如 `"Product ID"`）在前面的 [“卡片属性](#card-properties) ”一文部分中具有相应的数据类型。 分区也可以折叠，并且可以在 Excel UI 中打开实体卡时使用布尔值定义为折叠或未折叠。
 
 > [!NOTE]
-> 若要了解如何在完整的代码示例中使用此 JSON，请访问 [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-values.yaml) 存储库。
+> 若要在完整示例中试验此 JSON 代码片段，请在 Excel 中打开[Script Lab](../overview/explore-with-script-lab.md)并选择[“数据类型：从示例库中的表中的数据创建实体卡](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml)片”。
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -169,7 +169,7 @@ const entity: Excel.EntityCellValue = {
 以下 JSON 代码片段显示一个实体值，该值使用该 `provider` 属性为实体指定数据提供程序属性。
 
 > [!NOTE]
-> 若要了解如何在完整的代码示例中使用此 JSON，请访问 [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/excel/85-preview-apis/data-types-entity-attribution.yaml) 存储库。
+> 若要在完整示例中试验此 JSON 代码片段，请在 Excel 中打开 [Script Lab](../overview/explore-with-script-lab.md)并选择数据类型：示 **例** 库中的 [实体值属性](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml)。
 
 ```TypeScript
 const entity: Excel.EntityCellValue = {
@@ -193,8 +193,13 @@ const entity: Excel.EntityCellValue = {
 
 :::image type="content" source="../images/excel-data-types-entity-card-attribution.png" alt-text="显示实体值数据类型的屏幕截图，其中显示了卡片布局窗口。卡片显示左下角的数据提供程序归因。":::
 
+## <a name="next-steps"></a>后续步骤
+
+在 [OfficeDev/Office-Add-in-samples](https://github.com/OfficeDev/Office-Add-in-samples) 存储库中[试用“创建并浏览 Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) 示例中的数据类型”。 本示例指导你生成并旁加载在工作簿中创建和编辑数据类型的加载项。
+
 ## <a name="see-also"></a>另请参阅
 
 - [ Excel 加载项中的数据类型的概述](excel-data-types-overview.md)
 - [Excel 数据类型核心概念](excel-data-types-concepts.md)
+- [在 Excel 中创建和浏览数据类型](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
 - [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)

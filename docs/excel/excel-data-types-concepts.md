@@ -1,17 +1,17 @@
 ---
 title: Excel JavaScript API 数据类型核心概念
 description: 了解在 Office 加载项中使用 Excel 数据类型的核心概念。
-ms.date: 10/10/2022
+ms.date: 10/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: b46639bdf44155f9e3de50526ce7eac48c278b12
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: 65a69838500733f8be08a15a99baa167a946b82a
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68541148"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607448"
 ---
 # <a name="excel-data-types-core-concepts"></a>Excel 数据类型核心概念
 
@@ -79,6 +79,8 @@ const myDate: Excel.FormattedNumberCellValue = {
 };
 ```
 
+通过打开 [Script Lab](../overview/explore-with-script-lab.md)并查看数据类型：示 **例** 库中的 [格式化数字](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-formatted-number.yaml)片段，开始试验格式化的数字值。
+
 ## <a name="entity-values"></a>实体值
 
 实体值是数据类型的容器，类似于面向对象的编程中的对象。 实体还支持数组作为实体值的属性。 [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) 对象允许加载项定义属性，如 `type`、`text` 和 `properties`。 `properties` 属性使实体值能够定义并包含其他数据类型。
@@ -108,6 +110,8 @@ const myEntity: Excel.EntityCellValue = {
 
 实体值还提供可创建实体的卡片的 `layouts` 属性。 该卡片在 Excel UI 中显示为模式窗口，并且可以显示实体值中包含的其他信息，而不仅显示单元格中可见的信息。 要了解详细信息，请参阅 [使用具有实体值数据类型的卡片](excel-data-types-entity-card.md)。
 
+若要探索实体数据类型，请首先在 Excel [中Script Lab](../overview/explore-with-script-lab.md)并打开[数据类型：从示例库中的表代码段中的数据创建实体卡](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml)。 [数据类型：具有引用](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-references.yaml)和[数据类型的实体值：实体值归属属性](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml)代码片段提供对实体功能的更深入了解。
+
 ### <a name="linked-entities"></a>已链接实体
 
 已链接实体值或 [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) 对象是实体值的一种类型。 这些对象集成外部服务提供的数据，并可以将此数据显示为[实体卡片](excel-data-types-entity-card.md)，例如常规实体值。 通过 Excel UI 提供的[股票和地理位置数据类型](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877)是已链接实体值。
@@ -129,6 +133,8 @@ const myImage: Excel.WebImageCellValue = {
     basicValue: "#VALUE!" // A read-only property. Used as a fallback in incompatible scenarios.
 };
 ```
+
+通过打开 [Script Lab](../overview/explore-with-script-lab.md)并选择 [“数据类型”来](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-web-image.yaml)试用 Web 映像数据类型：示 **例** 库中的 Web 映像片段。
 
 ## <a name="improved-error-support"></a>改进的错误支持
 
@@ -153,9 +159,18 @@ const myImage: Excel.WebImageCellValue = {
 
 每个错误对象都可以通过 `errorSubType` 属性访问枚举，并且此枚举包含有关错误的其他数据。 例如，`BlockedErrorCellValue` 错误对象可以访问 [BlockedErrorCellValueSubType](/javascript/api/excel/excel.blockederrorcellvaluesubtype) 枚举。 `BlockedErrorCellValueSubType` 枚举提供有关导致错误原因的其他数据。
 
+通过查看 [“数据类型”](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-error-values.yaml)了解有关数据类型错误对象的详细信息：在 [Script Lab](../overview/explore-with-script-lab.md)示 **例** 库中设置错误值代码段。
+
+## <a name="next-steps"></a>后续步骤
+
+了解实体数据类型如何将 Excel 外接程序的潜力扩展到具有 [实体值数据类型的“使用卡](excel-data-types-entity-card.md) ”一文的二维网格之外。
+
+使用 [OfficeDev/Office-Add-in-samples](https://github.com/OfficeDev/Office-Add-in-samples) 存储库[中的 Excel 示例中的创建和浏览数据类型](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)，通过生成和旁加载在工作簿中创建和编辑数据类型的外接程序，更深入地试验数据类型。
+
 ## <a name="see-also"></a>另请参阅
 
 - [ Excel 加载项中的数据类型的概述](excel-data-types-overview.md)
 - [使用具有实体值数据类型的卡片](excel-data-types-entity-card.md)
-- [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
+- [在 Excel 中创建和浏览数据类型](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
 - [自定义函数和数据类型](custom-functions-data-types-concepts.md)
+- [Excel JavaScript API 参考](../reference/overview/excel-add-ins-reference-overview.md)
