@@ -2,28 +2,20 @@
 title: 基于事件的 Outlook 外接程序的 AppSource 列表选项
 description: 了解适用于实现基于事件的激活的 Outlook 外接程序的 AppSource 列表选项。
 ms.topic: article
-ms.date: 09/09/2022
+ms.date: 10/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cf99959b31bae665df250941abf88405906acb5c
-ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.openlocfilehash: b8908fde484186fdb9bea9cda4520358278712f6
+ms.sourcegitcommit: d402c37fc3388bd38761fedf203a7d10fce4e899
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2022
-ms.locfileid: "67674716"
+ms.lasthandoff: 10/21/2022
+ms.locfileid: "68664663"
 ---
 # <a name="appsource-listing-options-for-your-event-based-outlook-add-in"></a>基于事件的 Outlook 外接程序的 AppSource 列表选项
 
-加载项必须由组织的管理员部署，最终用户才能访问基于事件的功能。 如果最终用户直接从 [AppSource](https://appsource.microsoft.com) 获取加载项，则限制基于事件的激活。 例如，如果 Contoso 加载项包含`LaunchEvent`在节点下`LaunchEvents`至少定义`LaunchEvent Type`了一个扩展点，则仅当加载项由其组织的管理员为最终用户安装外接程序时才发生自动调用。否则，将阻止自动调用加载项。 请参阅示例加载项清单中的以下摘录。
+加载项必须由组织的管理员部署，最终用户才能访问 [基于事件的激活](autolaunch.md) 功能。 如果最终用户直接从 [AppSource](https://appsource.microsoft.com) 获取加载项，则限制基于事件的激活。 例如，如果 Contoso 外接程序包含基于事件的函数，则仅当加载项由其组织的管理员为最终用户安装外接程序时，才会自动调用加载项。否则，将阻止自动调用加载项。
 
-```xml
-...
-<ExtensionPoint xsi:type="LaunchEvent">
-  <LaunchEvents>
-    <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
-    ...
-```
-
-最终用户或管理员可以通过 AppSource 或应用内 Office 应用商店获取加载项。 如果外接程序的主要方案或工作流需要基于事件的激活，则可能需要限制可用于管理员部署的外接程序。 若要启用此限制，我们可以提供外部测试码 URL。 由于外部测试版代码，只有具有这些特殊 URL 的最终用户才能访问列表。 下面是一个示例 URL。
+最终用户或管理员可以通过 AppSource 或应用内 Office 应用商店获取加载项。 如果外接程序的主要方案或工作流需要基于事件的激活，则可能需要仅将外接程序限制为管理员部署。 若要启用此限制，我们可以在 AppSource 中为加载项提供外部测试码 URL。 由于外部测试版代码，只有具有这些特殊 URL 的最终用户才能访问列表。 下面是一个示例 URL。
 
 `https://appsource.microsoft.com/product/office/WA200002862?flightCodes=EventBasedTest1`
 
@@ -75,7 +67,7 @@ ms.locfileid: "67674716"
 
 同样，当现有加载项更新为基于事件的功能时，管理员会在加载项上看到“更新挂起”状态。 仅当管理员同意应用 **权限和功能** 部分中所述的更改（包括加载项可以自动激活的事件集）时，才会部署更新的加载项。
 
-每次向外接程序添加任何新 `LaunchEvent Type` 内容时，管理员都会在管理门户中看到更新流，并且需要为其他事件提供许可。
+每次向外接程序添加任何新的基于事件的激活函数时，管理员都会在管理门户中看到更新流，并且需要为其他事件提供许可。
 
 ![部署更新后的应用时的“汇报”流。](../images/outlook-deploy-update-flow.png)
 

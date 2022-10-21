@@ -1,18 +1,23 @@
 ---
 title: Outlook 加载项的 Onsend 功能
 description: 提供了一种处理项目或阻止用户进行特定操作的方法，并允许加载项在发送时设置某些属性。
-ms.date: 07/14/2022
+ms.date: 10/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f4507fdf442e55cfa6e1b3310f6009f9c6a0b85d
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: 70da156eb8e0f6def51eb7ec13574c4d3cef462c
+ms.sourcegitcommit: d402c37fc3388bd38761fedf203a7d10fce4e899
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092999"
+ms.lasthandoff: 10/21/2022
+ms.locfileid: "68664656"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Outlook 加载项的 Onsend 功能
 
-The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send. For example, you can use the on-send feature to:
+Outlook 外接程序的“发送”功能提供了一种处理消息或会议项目或阻止用户执行某些操作的方法，并允许加载项在发送时设置某些属性。
+
+> [!NOTE]
+> 使用 Office 加载项的 Teams 清单的外接程序不支持发送功能 [ (预览) ](../develop/json-manifest-overview.md)。 通过使用 [基于事件的激活](autolaunch.md) 并实现 **OnMessageSend** 或 **OnAppointmentSend** 事件的处理程序，或同时实现类似的效果。
+
+例如，使用“发送”功能执行以下操作：
 
 - 防止用户发送敏感信息或将主题行留空。  
 - 将特定的收件人添加到邮件中的“抄送”行中，或添加到会议中的“可选收件人”行中。
@@ -20,6 +25,14 @@ The on-send feature for Outlook add-ins provides a way to handle a message or me
 on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 
 有关 Onsend 功能的限制信息，请参阅本文稍后部分中介绍的[限制](#limitations)。
+
+> [!NOTE]
+> [智能警报](smart-alerts-onmessagesend-walkthrough.md) 是新版本的发送功能。 它在 [要求集 1.12 中](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12) 发布，并引入了 `OnMessageSend` 和 `OnAppointmentSend` 事件。 与发送功能类似，智能警报使加载项能够在发送邮件项之前检查是否满足某些条件。 智能警报将自身与发送功能区分开来，如下所示：
+>
+> - 当你想要为用户提供可选建议而不是必需条件时，它会提供 [发送模式选项](/javascript/api/manifest/launchevent#available-sendmode-options) 。
+> - 它允许在清单的 **SendMode** 属性设置为或`PromptUser`选项时将外接程序发布到 `SoftBlock` AppSource。 若要详细了解如何发布基于事件的外接程序，请参阅 [基于事件的 Outlook 外接程序的 AppSource 列表选项](autolaunch-store-options.md)。
+>
+> 有关智能警报与发送功能之间的差异的详细信息，请参阅 [智能警报与发送功能之间的差异](smart-alerts-onmessagesend-walkthrough.md#differences-between-smart-alerts-and-the-on-send-feature)。 我们通过完成演练来邀请你 [试用智能警报](smart-alerts-onmessagesend-walkthrough.md)。
 
 ## <a name="supported-clients-and-platforms"></a>支持的客户端和平台
 
@@ -64,7 +77,7 @@ on-send 功能是由事件类型 `ItemSend` 触发的，无 UI。
 Onsend 功能目前具有以下限制。
 
 - **如果在发送**&ndash;处理程序中调用 [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1))，则返回错误。
-- **AppSource** &ndash; 无法在 [AppSource](https://appsource.microsoft.com) 中发布使用 Onsend 功能的 Outlook 加载项，因为它们将无法通过 AppSource 验证。 使用 Onsend 功能的加载项应由管理员部署。
+- **AppSource** &ndash; 无法在 [AppSource](https://appsource.microsoft.com) 中发布使用 Onsend 功能的 Outlook 加载项，因为它们将无法通过 AppSource 验证。 使用 Onsend 功能的加载项应由管理员部署。 如果想要将外接程序发布到 AppSource 的选项，请考虑改用智能警报，这是一种较新版本的本地发送功能。 若要详细了解智能警报以及如何部署这些外接程序，请参阅基于事件的 Outlook 外接程序的 Outlook 外接程序和 [AppSource 列表选项](autolaunch-store-options.md)[中的“使用智能警报”以及 OnMessageSend 和 OnAppointmentSend 事件](smart-alerts-onmessagesend-walkthrough.md)。
   
   > [!IMPORTANT]
   > 运行 `npm run validate` 以 [验证外接程序的清单](../testing/troubleshoot-manifest.md)时，你会收到错误：“包含 ItemSend 事件的邮箱加载项无效。 邮箱外接程序清单包含 VersionOverrides 中的 ItemSend 事件，这是不允许的。 出现此消息是因为无法将使用 `ItemSend` 该事件的加载项发布到 AppSource，这是此版本的本地发送功能所必需的。 如果未找到其他验证错误，你仍能够旁加载和运行加载项。

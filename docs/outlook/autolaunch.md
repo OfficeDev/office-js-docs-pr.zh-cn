@@ -2,14 +2,14 @@
 title: 配置 Outlook 外接程序以进行基于事件的激活
 description: 了解如何配置 Outlook 外接程序以进行基于事件的激活。
 ms.topic: article
-ms.date: 09/21/2022
+ms.date: 10/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e38f7e9c9d9f06ec7f427b12c04b30d6abf0112
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: ce2821ed5d226ff2c6a2b3c718d5711689523ac6
+ms.sourcegitcommit: d402c37fc3388bd38761fedf203a7d10fce4e899
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68093006"
+ms.lasthandoff: 10/21/2022
+ms.locfileid: "68664677"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>配置 Outlook 外接程序以进行基于事件的激活
 
@@ -26,21 +26,21 @@ ms.locfileid: "68093006"
 
 下表列出了当前可用的事件以及每个事件支持的客户端。 引发事件时，处理程序会接收一个 `event` 对象，其中可能包含特定于事件类型的详细信息。 “ **说明** ”列包含指向相关对象（如果适用）的链接。
 
-|事件|说明|最低要求集和支持的客户端|
-|---|---|---|
-|`OnNewMessageCompose`|在撰写新消息时 (包括答复、全部答复和转发) 但不包括在编辑时（例如草稿）。|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI |
-|`OnNewAppointmentOrganizer`|在创建新约会时，而不是在编辑现有约会时。|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI |
-|`OnMessageAttachmentsChanged`|在撰写邮件时添加或删除附件。<br><br>特定于事件的数据对象： [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
-|`OnAppointmentAttachmentsChanged`|在撰写约会时添加或删除附件。<br><br>特定于事件的数据对象： [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
-|`OnMessageRecipientsChanged`|在撰写邮件时添加或删除收件人。<br><br>特定于事件的数据对象： [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
-|`OnAppointmentAttendeesChanged`|在撰写约会时添加或删除与会者。<br><br>特定于事件的数据对象： [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
-|`OnAppointmentTimeChanged`|在撰写约会时更改日期/时间。<br><br>特定于事件的数据对象： [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
-|`OnAppointmentRecurrenceChanged`|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间已更改， `OnAppointmentTimeChanged` 也会触发该事件。<br><br>特定于事件的数据对象： [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
-|`OnInfoBarDismissClicked`|在撰写邮件或约会项目时关闭通知。 只会通知添加通知的加载项。<br><br>特定于事件的数据对象： [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
-|`OnMessageSend`|发送消息项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
-|`OnAppointmentSend`|发送约会项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
-|`OnMessageCompose`|撰写新消息时 (包括答复、全部答复和转发) 或编辑草稿。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
-|`OnAppointmentOrganizer`|创建新约会或编辑现有约会时。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
+|事件规范名称</br>和 XML 清单名称|Teams 清单名称|说明|最低要求集和支持的客户端|
+|---|---|---|---|
+|`OnNewMessageCompose`| newMessageComposeCreated |在撰写新消息时 (包括答复、全部答复和转发) 但不包括在编辑时（例如草稿）。|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI |
+|`OnNewAppointmentOrganizer`|newAppointmentOrganizerCreated|在创建新约会时，而不是在编辑现有约会时。|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI |
+|`OnMessageAttachmentsChanged`|messageAttachmentsChanged|在撰写邮件时添加或删除附件。<br><br>特定于事件的数据对象： [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
+|`OnAppointmentAttachmentsChanged`|appointmentAttachmentsChanged|在撰写约会时添加或删除附件。<br><br>特定于事件的数据对象： [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
+|`OnMessageRecipientsChanged`|messageRecipientsChanged|在撰写邮件时添加或删除收件人。<br><br>特定于事件的数据对象： [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
+|`OnAppointmentAttendeesChanged`|appointmentAttendeesChanged|在撰写约会时添加或删除与会者。<br><br>特定于事件的数据对象： [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
+|`OnAppointmentTimeChanged`|appointmentTimeChanged|在撰写约会时更改日期/时间。<br><br>特定于事件的数据对象： [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
+|`OnAppointmentRecurrenceChanged`|appointmentRecurrenceChanged|在撰写约会时添加、更改或删除定期详细信息。 如果日期/时间已更改， `OnAppointmentTimeChanged` 也会触发该事件。<br><br>特定于事件的数据对象： [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
+|`OnInfoBarDismissClicked`|infoBarDismissClicked|在撰写邮件或约会项目时关闭通知。 只会通知添加通知的加载项。<br><br>特定于事件的数据对象： [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Web 浏览器<br>- 新建 Mac UI|
+|`OnMessageSend`|messageSending|发送消息项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
+|`OnAppointmentSend`|appointmentSending|发送约会项时。 若要了解详细信息，请参阅 [智能警报演练](smart-alerts-onmessagesend-walkthrough.md)。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
+|`OnMessageCompose`|messageComposeOpened|撰写新消息时 (包括答复、全部答复和转发) 或编辑草稿。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
+|`OnAppointmentOrganizer`|appointmentOrganizerOpened|创建新约会或编辑现有约会时。|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><br>- Windows<sup>1</sup><br>- Web 浏览器|
 
 > [!NOTE]
 > Outlook on Windows 中基于事件的 <sup>1</sup> 个加载项至少需要Windows 10版本 1903 (内部版本 18362) 或 Windows Server 2019 版本 1903 才能运行。
@@ -49,7 +49,14 @@ ms.locfileid: "68093006"
 
 完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) 门，使用 Office 外接程序的 [Yeoman 生成器](../develop/yeoman-generator-overview.md)创建加载项项目。
 
+> [!NOTE]
+> 如果要使用 [Office 加载项的 Teams 清单 (预览)](../develop/json-manifest-overview.md)，请在 Outlook 快速入门中完成备用快速入门，其中 [包含 Teams 清单 (预览)](../quickstarts/outlook-quickstart-json-manifest.md)，但请在 **“试用”** 部分后跳过所有部分。
+
 ## <a name="configure-the-manifest"></a>配置清单
+
+若要配置清单，请选择所使用的清单类型的选项卡。
+
+# <a name="xml-manifest"></a>[XML 清单](#tab/xmlmanifest)
 
 若要启用基于事件的外接程序激活，必须在清单的节点中`VersionOverridesV1_1`配置 [Runtimes](/javascript/api/manifest/runtimes) 元素和 [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) 扩展点。 目前， `DesktopFormFactor` 是唯一受支持的外形因子。
 
@@ -176,6 +183,91 @@ ms.locfileid: "68093006"
 
 Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页版和使用可引用同一 JavaScript 文件的 HTML 文件。 必须提供对清单节点中的 `Resources` 这两个文件的引用，因为 Outlook 平台最终决定是使用基于 Outlook 客户端的 HTML 还是 JavaScript。 因此，若要配置事件处理，请提供 HTML 在元素中 **\<Runtime\>** 的位置，然后在其 `Override` 子元素中提供 HTML 内联或引用的 JavaScript 文件的位置。
 
+# <a name="teams-manifest-developer-preview"></a>[Teams 清单 (开发人员预览) ](#tab/jsonmanifest)
+
+1. 打开 **manifest.json** 文件。
+
+1. 将以下对象添加到“extensions.runtimes”数组。 关于此标记，请注意以下几点：
+
+   - 邮箱要求集的“minVersion”设置为“1.10”，因为本文前面的表指定这是支持 `OnNewMessageCompose` 和 `OnNewAppointmentCompose` 事件的要求集的最低版本。
+   - 运行时的“id”设置为描述性名称“autorun_runtime”。
+   - “code”属性具有一个子“page”属性，该属性设置为 HTML 文件和一个设置为 JavaScript 文件的子“script”属性。 你将在后续步骤中创建或编辑这些文件。 Office 使用这些值之一，具体取决于平台。
+       - Windows 上的 Office 在仅限 JavaScript 的运行时中执行事件处理程序，该运行时直接加载 JavaScript 文件。
+       - Office on Mac 和 Web 在加载 HTML 文件的浏览器运行时中执行处理程序。 该文件又包含 `<script>` 加载 JavaScript 文件的标记。
+     有关详细信息，请参阅 [Office 加载项中的运行时](../testing/runtimes.md)。
+   - “lifetime”属性设置为“short”，这意味着运行时在触发其中一个事件时启动，并在处理程序完成时关闭。  (在某些情况下，运行时会在处理程序完成之前关闭。 请参阅 [Office 加载项.) 中的运行时](../testing/runtimes.md)
+   - 有两种类型的“操作”可以在运行时中运行。 你将在后面的步骤中创建对应于这些操作的函数。
+
+    ```json
+     {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.10"
+                }
+            ]
+        },
+        "id": "autorun_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html",
+            "script": "https://localhost:3000/launchevent.js"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "onNewMessageComposeHandler",
+                "type": "executeFunction",
+                "displayName": "onNewMessageComposeHandler"
+            },
+            {
+                "id": "onNewAppointmentComposeHandler",
+                "type": "executeFunction",
+                "displayName": "onNewAppointmentComposeHandler"
+            }
+        ]
+    }
+    ```
+
+1. 将以下“autoRunEvents”数组添加为“扩展”数组中对象的属性。
+
+    ```json
+    "autoRunEvents": [
+    
+    ]
+    ```
+
+1. 将以下对象添加到“autoRunEvents”数组。 “events”属性将处理程序映射到本文前面的表中所述的事件。 处理程序名称必须与前面步骤中“操作”数组中对象的“id”属性中使用的名称匹配。
+
+    ```json
+      {
+          "requirements": {
+              "capabilities": [
+                  {
+                      "name": "Mailbox",
+                      "minVersion": "1.10"
+                  }
+              ],
+              "scopes": [
+                  "mail"
+              ]
+          },
+          "events": [
+              {
+                  "type": "newMessageComposeCreated",
+                  "actionId": "onNewMessageComposeHandler"
+              },
+              {
+                  "type": "newAppointmentOrganizerCreated",
+                  "actionId": "onNewAppointmentComposeHandler"
+              }
+          ]
+      }
+    ```
+
+---
+
 > [!TIP]
 >
 > - 若要了解加载项中的运行时，请参阅 [Office 加载项中的运行时](../testing/runtimes.md)。
@@ -294,7 +386,7 @@ Windows 上的 Outlook 使用 JavaScript 文件，而新 Mac UI Outlook 网页�
 
 对加载项中的启动事件处理进行更改时，应注意：
 
-- 如果更新了清单， [请删除加载项](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in)，然后再次旁加载它。 如果在 Windows 上使用 Outlook，请关闭并重新打开它。
+- 如果更新了清单， [请删除加载项](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in)，然后再次旁加载它。 如果使用的是 Windows 上的 Outlook，请关闭并重新打开 Outlook。
 - 如果对清单以外的文件进行了更改，请关闭并重新打开 Windows 上的 Outlook，或刷新运行Outlook 网页版的浏览器选项卡。
 
 实现自己的功能时，可能需要调试代码。 有关如何调试基于事件的外接程序激活的指南，请参阅 [调试基于事件的 Outlook 外接程序](debug-autolaunch.md)。
