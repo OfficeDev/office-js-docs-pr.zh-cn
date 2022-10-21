@@ -2,14 +2,14 @@
 title: 在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件
 description: 了解如何使用基于事件的激活处理 Outlook 外接程序中的发送事件。
 ms.topic: article
-ms.date: 09/09/2022
+ms.date: 10/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cabe56d247a009886939f1738b5f135724c40f1d
-ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.openlocfilehash: f047323be0752023eee0c357f0a2e90627c0b896
+ms.sourcegitcommit: d402c37fc3388bd38761fedf203a7d10fce4e899
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2022
-ms.locfileid: "67674636"
+ms.lasthandoff: 10/21/2022
+ms.locfileid: "68664649"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件
 
@@ -28,7 +28,14 @@ ms.locfileid: "67674636"
 
 完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator)门，使用 Office 外接程序的 [Yeoman 生成器](../develop/yeoman-generator-overview.md)创建加载项项目。
 
+> [!NOTE]
+> 如果要使用 [Office 加载项的 Teams 清单 (预览)](../develop/json-manifest-overview.md)，请在 Outlook 快速入门中完成备用快速入门，其中 [包含 Teams 清单 (预览)](../quickstarts/outlook-quickstart-json-manifest.md)，但请在 **“试用”** 部分后跳过所有部分。
+
 ## <a name="configure-the-manifest"></a>配置清单
+
+若要配置清单，请选择所使用的清单类型的选项卡。
+
+# <a name="xml-manifest"></a>[XML 清单](#tab/xmlmanifest)
 
 1. 在代码编辑器中，打开快速启动项目。
 
@@ -139,6 +146,88 @@ ms.locfileid: "67674636"
 >
 > - 有关可用的 `OnMessageSend` **SendMode** 选项和`OnAppointmentSend`事件，请参阅 [“可用 SendMode”选项](/javascript/api/manifest/launchevent#available-sendmode-options)。
 > - 若要详细了解 Outlook 外接程序的清单，请参阅 [Outlook 加载项清单](manifests.md)。
+
+# <a name="teams-manifest-developer-preview"></a>[Teams 清单 (开发人员预览) ](#tab/jsonmanifest)
+
+1. 打开 **manifest.json** 文件。
+
+1. 将以下对象添加到“extensions.runtimes”数组。 关于此标记，请注意以下几点：
+
+   - 邮箱要求集的“minVersion”设置为“1.12”，因为 [受支持的事件表](autolaunch.md#supported-events) 指定这是支持 `OnMessageSend` 事件的要求集的最低版本。
+   - 运行时的“id”设置为描述性名称“autorun_runtime”。
+   - “code”属性具有一个子“page”属性，该属性设置为 HTML 文件和一个设置为 JavaScript 文件的子“script”属性。 你将在后续步骤中创建或编辑这些文件。 Office 根据平台使用其中一个值或另一个值。
+       - Windows 上的 Office 在仅限 JavaScript 的运行时中执行事件处理程序，该运行时直接加载 JavaScript 文件。
+       - Office on Mac 和 Web 在加载 HTML 文件的浏览器运行时中执行处理程序。 该文件又包含 `<script>` 加载 JavaScript 文件的标记。
+     有关详细信息，请参阅 [Office 加载项中的运行时](../testing/runtimes.md)。
+   - “lifetime”属性设置为“short”，这意味着运行时在事件触发时启动，并在处理程序完成时关闭。  (在某些情况下，运行时会在处理程序完成之前关闭。 请参阅 [Office 加载项.) 中的运行时](../testing/runtimes.md)
+   - 有一个操作可为 `OnMessageSend` 事件运行处理程序。 你将在后面的步骤中创建处理程序函数。
+
+    ```json
+     {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.12"
+                }
+            ]
+        },
+        "id": "autorun_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html",
+            "script": "https://localhost:3000/launchevent.js"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "onMessageSendHandler",
+                "type": "executeFunction",
+                "displayName": "onMessageSendHandler"
+            }
+        ]
+    }
+    ```
+
+1. 将以下“autoRunEvents”数组添加为“扩展”数组中对象的属性。
+
+    ```json
+    "autoRunEvents": [
+    
+    ]
+    ```
+
+1. 将以下对象添加到“autoRunEvents”数组。 关于此代码，请注意以下几点：
+
+   - 事件对象使用事件的 Teams 清单名称“messageSending”为事件 (分配处理程序 `OnMessageSend` 函数，如 [支持的事件表](autolaunch.md#supported-events)) 中所述。 “actionId”中提供的函数名称必须与前面步骤中“actions”数组中对象的“id”属性中使用的名称匹配。
+   - “sendMode”选项设置为“promptUser”。 这意味着，如果消息不符合加载项设置的发送条件，系统会提示用户取消发送或发送。
+
+    ```json
+      {
+          "requirements": {
+              "capabilities": [
+                  {
+                      "name": "Mailbox",
+                      "minVersion": "1.12"
+                  }
+              ],
+              "scopes": [
+                  "mail"
+              ]
+          },
+          "events": [
+            {
+                "type": "messageSending",
+                "actionId": "onMessageSendHandler",
+                "options": {
+                    "sendMode": "promptUser"
+                }
+            }
+          ]
+      }
+    ```
+
+---
 
 ## <a name="implement-event-handling"></a>实现事件处理
 
@@ -297,7 +386,7 @@ ms.locfileid: "67674636"
 
 ![该对话框提醒用户加载项不可用，并为用户提供立即或更高版本发送该项的选项。](../images/outlook-soft-block-promptUser-unavailable.png)
 
-如果使用此 `Block` 选项，则在加载项可用之前，用户无法发送该项。
+如果使用此 `Block` 选项，则在加载项可用之前，用户无法发送该项。  (如果加载项使用 Teams 清单 (预览版) .) ，则 `Block` 不支持此选项
 
 ![提醒用户加载项不可用的对话框。 仅当加载项再次可用时，用户才能发送该项。](../images/outlook-hard-block-unavailable.png)
 
@@ -329,7 +418,7 @@ ms.locfileid: "67674636"
 
 `OnMessageSend`由于基于事件的激活功能支持这些事件和`OnAppointmentSend`事件，因此，由于这些事件而激活的外接程序也适用相同的功能限制。 有关这些限制的说明，请参阅 [基于事件的激活行为和限制](autolaunch.md#event-based-activation-behavior-and-limitations)。
 
-除了这些约束之外，清单中每个实例和`OnAppointmentSend`事件只能声明一个`OnMessageSend`实例。 如果需要多个或`OnAppointmentSend`多个`OnMessageSend`事件，则必须在单独的清单或加载项中声明每个事件。
+除了这些约束之外，清单中每个实例和`OnAppointmentSend`事件只能声明一个`OnMessageSend`实例。 如果需要多个或`OnAppointmentSend`多个`OnMessageSend`事件，则必须在单独的加载项中声明每个事件。
 
 虽然可以使用 event.completed 方法 [的 errorMessage 属性](/javascript/api/office/office.addincommands.eventcompletedoptions) 更改“智能警报”对话框消息以适应外接程序方案，但无法自定义以下内容。
 
@@ -337,6 +426,21 @@ ms.locfileid: "67674636"
 - 消息的格式。 例如，不能更改文本的字号和颜色，也不能插入项目符号列表。
 - 对话框选项。 例如，“ **无论如何发送** ”和 **“不发送** ”选项是固定的，并且取决于所选 [的 SendMode 选项](/javascript/api/manifest/launchevent#available-sendmode-options) 。
 - 基于事件的激活处理和进度信息对话框。 例如，无法更改超时和长时间运行的操作对话框中显示的文本和选项。
+
+## <a name="differences-between-smart-alerts-and-the-on-send-feature"></a>智能警报与发送功能之间的差异
+
+虽然智能警报和 [随发送功能](outlook-on-send-addins.md) 为用户提供了在发送邮件和会议邀请之前改进其消息和会议邀请的机会，但智能警报是一项较新的功能，可让你更灵活地提示用户采取进一步操作。 下表概述了两个功能之间的主要差异。
+
+|属性|智能警报|发送时|
+|-----|-----|-----|
+|**支持的最低要求集**|[邮箱 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
+|**支持的 Outlook 客户端**|-窗户<br>- Web 浏览器 (新式 UI) |-窗户<br>- Web 浏览器 (经典和新式 UI) <br>- Mac (经典和新的 UI)  |
+|**支持的事件**|**XML 清单**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Teams 清单 (预览)**<br>- “messageSending”<br>- “appointmentSending”|**XML 清单**<br>- `ItemSend`<br><br>**Teams 清单 (预览)**<br>- 不支持|
+|**清单扩展属性**|**XML 清单**<br>- `LaunchEvent`<br><br>**Teams 清单 (预览)**<br>- “autoRunEvents”|**XML 清单**<br>- `Events`<br><br>**Teams 清单 (预览)**<br>- 不支持|
+|**支持的发送模式选项**|- 提示用户<br>- 软块<br>- 如果加载项使用 Teams 清单 (预览版) ) ，则不支持阻止 (|阻止|
+|**加载项中支持的最大事件数**|一个 `OnMessageSend` 和一个 `OnAppointmentSend` 事件。|一个 `ItemSend` 事件。|
+|**加载项部署**|如果加载项的属性设置为或`PromptUser`选项，`SoftBlock`则可将其`SendMode`发布到 AppSource。 否则，加载项必须由组织的管理员部署。|加载项无法发布到 AppSource。 它必须由组织的管理员部署。|
+|**加载项安装的其他配置**|将清单上传到Microsoft 365 管理中心后，无需其他配置。|根据组织的合规性标准和使用的 Outlook 客户端，必须将某些邮箱策略配置为安装外接程序。|
 
 ## <a name="see-also"></a>另请参阅
 

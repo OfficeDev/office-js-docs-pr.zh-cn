@@ -2,14 +2,14 @@
 title: 调试基于事件的 Outlook 加载项
 description: 了解如何调试实现基于事件的激活的 Outlook 加载项。
 ms.topic: article
-ms.date: 09/09/2022
+ms.date: 10/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b6a1d9a013b7c8e22632bdd04fb74e06c804a01
-ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.openlocfilehash: e8065c454bbe1587a6e5b7189a4522c229e9aed1
+ms.sourcegitcommit: d402c37fc3388bd38761fedf203a7d10fce4e899
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2022
-ms.locfileid: "67674684"
+ms.lasthandoff: 10/21/2022
+ms.locfileid: "68664670"
 ---
 # <a name="debug-your-event-based-outlook-add-in"></a>调试基于事件的 Outlook 加载项
 
@@ -29,7 +29,10 @@ ms.locfileid: "67674684"
 
 ## <a name="mark-your-add-in-for-debugging"></a>标记加载项以进行调试
 
-1. 设置注册表项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`。 `[Add-in ID]`**\<Id\>** 是加载项清单中。
+1. 设置注册表项 `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`。 替换 `[Add-in ID]` 为清单中的加载项 ID。
+
+    - **XML 清单**：使用根 **\<OfficeApp\>** 元素的元素子元素的值 **\<Id\>**。
+    - **Teams 清单 (预览)**：使用根匿名 `{ ... }` 对象的“id”属性的值。
 
     **使用 Yeoman 生成器创建**：在命令行窗口中，导航到加载项文件夹的根，然后运行以下命令。
 
