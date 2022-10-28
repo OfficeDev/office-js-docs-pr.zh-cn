@@ -1,45 +1,42 @@
 ---
-title: 在 Outlook 外接程序中实现追加发送
-description: 了解如何在 Outlook 加载项中实现追加发送功能。
+title: 在 Outlook 加载项中实现 append-on-send
+description: 了解如何在 Outlook 加载项中实现“发送时追加”功能。
 ms.topic: article
-ms.date: 10/13/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d3e8300a53d08cf484f14cd4fd05adf6382fe3
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: c8239634b6c9ca281255caf89276fb1b454efc84
+ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68541141"
+ms.lasthandoff: 10/28/2022
+ms.locfileid: "68767159"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in"></a>在 Outlook 外接程序中实现追加发送
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>在 Outlook 加载项中实现 append-on-send
 
-本演练结束时，你将拥有一个 Outlook 加载项，该加载项可以在发送消息时插入免责声明。
+在本演练结束时，你将拥有一个 Outlook 加载项，可在发送邮件时插入免责声明。
 
 > [!NOTE]
 > 要求集 1.9 中引入了对此功能的支持。 请查看支持此要求集的[客户端和平台](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)。
 
 ## <a name="set-up-your-environment"></a>设置环境
 
-完成 [Outlook 快速入](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) 门，使用 Office 外接程序的 Yeoman 生成器创建加载项项目。
-
-> [!NOTE]
-> 如果要使用 [Office 加载项的 Teams 清单 (预览)](../develop/json-manifest-overview.md)，请在 Outlook 快速入门中完成备用快速入门，其中 [包含 Teams 清单 (预览)](../quickstarts/outlook-quickstart-json-manifest.md)，但请在 **“试用”** 部分后跳过所有部分。
+完成 [Outlook 快速入门](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) ，该快速入门使用 Office 加载项的 Yeoman 生成器创建外接程序项目。
 
 ## <a name="configure-the-manifest"></a>配置清单
 
-若要配置清单，请打开所使用的清单类型的选项卡。
+若要配置清单，请打开要使用的清单类型的选项卡。
 
 # <a name="xml-manifest"></a>[XML 清单](#tab/xmlmanifest)
 
-若要在外接程序中启用追加发送功能，必须在 [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) 的集合中包含`AppendOnSend`该权限。
+若要在外接程序中启用“发送时追加”功能，必须在 `AppendOnSend` [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) 的集合中包含 权限。
 
-对于此方案，你将运行该函数，而不是在选择 **“执行操作**”按钮时运行`action`函`appendOnSend`数。
+对于此方案，你将运行函数 `action` ，而不是在选择“ **执行操作** ”按钮时运行 `appendOnSend` 函数。
 
-1. 在代码编辑器中，打开快速启动项目。
+1. 在代码编辑器中，打开快速入门项目。
 
-1. 打开位于项目根 **目录的manifest.xml** 文件。
+1. 打开位于项目根目录处的 **manifest.xml** 文件。
 
-1. 选择整个 **\<VersionOverrides\>** 节点 (包括打开和关闭标记) 并将其替换为以下 XML。
+1. 选择整个 **\<VersionOverrides\>** 节点 (包括打开和关闭标记) ，并将其替换为以下 XML。
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -126,17 +123,20 @@ ms.locfileid: "68541141"
     </VersionOverrides>
     ```
 
-# <a name="teams-manifest-developer-preview"></a>[Teams 清单 (开发人员预览) ](#tab/jsonmanifest)
+# <a name="teams-manifest-developer-preview"></a>[Teams 清单 (开发人员预览版) ](#tab/jsonmanifest)
+
+> [!IMPORTANT]
+> Office 外接程序的 Teams 清单尚不支持在发送时追加 [ (预览版) ](../develop/json-manifest-overview.md)。 此选项卡供将来使用。
 
 1. 打开 manifest.json 文件。
 
-1. 将以下对象添加到“extensions.runtimes”数组。 对于此代码，请注意以下事项。
+1. 将以下 对象添加到“extensions.runtimes”数组。 对于此代码，请注意以下事项。
 
-   - 邮箱要求集的“minVersion”设置为“1.9”，因此无法在不支持此功能的平台和 Office 版本上安装外接程序。 
+   - 邮箱要求集的“minVersion”设置为“1.9”，因此无法在不支持此功能的平台和 Office 版本上安装加载项。 
    - 运行时的“id”设置为描述性名称“function_command_runtime”。
    - “code.page”属性设置为将加载函数命令的无 UI HTML 文件的 URL。
-   - “lifetime”属性设置为“short”，这意味着运行时在选择函数命令按钮时启动，并在函数完成时关闭。  (在某些情况下，运行时会在处理程序完成之前关闭。 请参阅 [Office 加载项.) 中的运行时](../testing/runtimes.md)
-   - 有一个操作用于运行名为“appendDisclaimerOnSend”的函数。 将在后面的步骤中创建此函数。
+   - “lifetime”属性设置为“short”，这意味着运行时在选择函数命令按钮时启动，并在函数完成时关闭。  (在某些情况下，运行时在处理程序完成之前关闭。 请参阅 [Office Add-ins.) 中的运行时](../testing/runtimes.md)
+   - 有一个操作可以运行名为“appendDisclaimerOnSend”的函数。 你将在后面的步骤中创建此函数。
 
     ```json
     {
@@ -167,7 +167,7 @@ ms.locfileid: "68541141"
     }
     ```
 
-1. 在“authorization.permissions.resourceSpecific”数组中，添加以下对象。 请确保它与数组中具有逗号的其他对象分开。
+1. 在“authorization.permissions.resourceSpecific”数组中，添加以下 对象。 请确保它与数组中的其他对象之间用逗号分隔。
 
     ```json
     {
@@ -179,20 +179,20 @@ ms.locfileid: "68541141"
 ---
 
 > [!TIP]
-> 若要详细了解 Outlook 外接程序的清单，请参阅 [Outlook 加载项清单](manifests.md)。
+> 若要详细了解 Outlook 外接程序清单，请参阅 [Outlook 外接程序清单](manifests.md)。
 
-## <a name="implement-append-on-send-handling"></a>实现追加发送处理
+## <a name="implement-append-on-send-handling"></a>实现发送时追加处理
 
 接下来，在发送事件上实现追加。
 
 > [!IMPORTANT]
-> 如果外接程序还[使用`ItemSend`它实现发送事件处理](outlook-on-send-addins.md)，则在发送处理程序中调用`AppendOnSendAsync`会返回错误，因为不支持此方案。
+> 如果外接程序还[使用 `ItemSend`实现 on-send 事件处理](outlook-on-send-addins.md)，则发送时处理程序中的调用`AppendOnSendAsync`将返回错误，因为不支持此方案。
 
-对于此方案，你将在用户发送时实现向项目追加免责声明。
+对于此方案，你将实现在用户发送时向项追加免责声明。
 
 1. 在同一快速入门项目中，在代码编辑器中打开文件 **./src/commands/commands.js** 。
 
-1. 在函数之后 `action` ，插入以下 JavaScript 函数。
+1. 在 `action` 函数后面插入以下 JavaScript 函数。
 
     ```js
     function appendDisclaimerOnSend(event) {
@@ -218,7 +218,7 @@ ms.locfileid: "68541141"
     }
     ```
 
-1. 函数下方立即添加以下行以注册函数。
+1. 紧靠在函数下方添加以下行来注册函数。
 
     ```js
     Office.actions.associate("appendDisclaimerOnSend", appendDisclaimerOnSend);
@@ -226,19 +226,19 @@ ms.locfileid: "68541141"
 
 ## <a name="try-it-out"></a>试用
 
-1. 在项目的根目录中运行以下命令。 运行此命令时，如果本地 Web 服务器尚未运行，并且外接程序将旁加载，则会启动该服务器。
+1. 在项目的根目录中运行以下命令。 运行此命令时，如果本地 Web 服务器尚未运行，则本地 Web 服务器将启动，并且加载项将被旁加载。
 
     ```command&nbsp;line
     npm start
     ```
 
-1. 创建新消息，并将其添加到 **To** 行。
+1. 创建新邮件，并将自己添加到 **“To** ”行。
 
-1. 在功能区或溢出菜单中，选择 **“执行操作**”。
+1. 在功能区或溢出菜单中，选择“ **执行操作**”。
 
-1. 发送邮件，然后从 **收件箱** 或 **“已发送邮件”** 文件夹中打开邮件以查看追加的免责声明。
+1. 发送邮件，然后从 **“收件箱”** 或“ **已发送邮件”** 文件夹打开邮件，以查看追加的免责声明。
 
-    ![Outlook 网页版发送时追加免责声明的示例消息。](../images/outlook-web-append-disclaimer.png)
+    ![在Outlook 网页版发送时追加了免责声明的示例消息。](../images/outlook-web-append-disclaimer.png)
 
 ## <a name="see-also"></a>另请参阅
 
