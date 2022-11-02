@@ -4,12 +4,12 @@ description: 了解如何将代码片段从脚本实验室移动到 Yo Office �
 ms.topic: how-to
 ms.date: 04/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 038d25610e5ef5cc3e4cdbedb2d2a184294c673e
-ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
-ms.translationtype: HT
+ms.openlocfilehash: 725ce9b44c55b46e6d0ab0c085973947fcf88201
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2022
-ms.locfileid: "64863293"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810146"
 ---
 # <a name="create-a-standalone-office-add-in-from-your-script-lab-code"></a>从脚本实验室代码创建独立的 Office 外接程序
 
@@ -58,7 +58,7 @@ ms.locfileid: "64863293"
 
 1. 在VS Code中，打开 **/src/taskpane/taskpane.ts** 文件。 如果使用的是 JavaScript 项目，则文件名 **taskpane.js**。
 1. 在“脚本实验室”中，选择 **脚本** 选项卡。
-1. 将 **脚本** 选项卡中的所有代码复制到剪贴板。 将 **taskpane.ts** （或适用于 javaScript 的 **taskpane.js** ）的全部内容替换为复制的代码。
+1. 将 **脚本** 选项卡中的所有代码复制到剪贴板。 将 **JavaScript) 的 taskpane.ts** (或 **taskpane.js** 的全部内容替换为复制的代码。
 
 ### <a name="copy-task-pane-html"></a>复制任务窗格 HTML
 
@@ -174,7 +174,7 @@ ms.locfileid: "64863293"
 1. 在“脚本实验室”任务窗格中，选择 **示例**，然后选择 **基本自定义函数** 示例。
 1. 打开 **/src/functions/functions.ts** 文件。 如果使用的是 JavaScript 项目，则文件名 **functions.js**。
 1. 在“脚本实验室”中，选择 **脚本** 选项卡。
-1. 将 **脚本** 选项卡中的所有代码复制到剪贴板。 将 **functions.ts** （或适用于 javaScript 的 **functions.js** ）顶部的代码粘贴到复制的代码。
+1. 将 **脚本** 选项卡中的所有代码复制到剪贴板。 将代码粘贴到 **functions.ts** (或 **javaScript)** functions.js的顶部，以及复制的代码。
 1. 保存文件。
 
 ## <a name="test-the-standalone-add-in"></a>测试独立加载项

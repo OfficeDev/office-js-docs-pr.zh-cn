@@ -3,12 +3,12 @@ title: 使用运行时日志记录功能调试加载项
 description: 了解如何使用运行时日志记录功能调试加载项。
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cf917915ae875f9a3ea27c85e21c87f847eb4542
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: b89212b859274d4ac52ecb92be4ac995d3a8790b
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423305"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810041"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>使用运行时日志记录功能调试加载项
 
@@ -71,11 +71,11 @@ ms.locfileid: "67423305"
 
 注册表应如下图所示。 若要禁用此功能，请从注册表中删除 `RuntimeLogging`。
 
-![注册表编辑器的屏幕截图，其中包含运行时日志记录注册表项。](../images/runtime-logging-registry.png)
+![包含 RuntimeLogging 注册表项的注册表编辑器的屏幕截图。](../images/runtime-logging-registry.png)
 
 ## <a name="runtime-logging-on-mac"></a>Mac 上的运行时日志记录
 
-1. 确保运行的是 Office 2016 桌面版 **16.27** (19071500) 或更高版本。
+1. 请确保运行的是 Office 2016 桌面版本 **16.27.19071500** 或更高版本。
 
 2. 打开 **终端** 并使用 `defaults` 命令设置运行时日志记录首选项：
 
@@ -85,7 +85,7 @@ ms.locfileid: "67423305"
 
     `<bundle id>` 确定了主机要对哪些运行时日志记录。 `<file_name>` 是要将日志写入的文本文件的名称。
 
-    设置 `<bundle id>` 为以下值之一，为相应的应用程序启用运行时日志记录。
+    设置为 `<bundle id>` 以下值之一，以启用相应应用程序的运行时日志记录。
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
@@ -125,17 +125,17 @@ defaults delete com.microsoft.Word CEFRuntimeLoggingFile
 
 2. 如果没有任何变化，且看不到加载项（加载项对话框中没有显示），请打开日志文件。
 
-3. 在日志文件中搜索你的外接程序 ID（已在清单中定义）。在日志文件中，此 ID 标有 `SolutionId`。
+3. Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`.
 
 ## <a name="known-issues-with-runtime-logging"></a>运行时日志记录已知问题
 
-在日志文件中看到的信息可能很混乱或其分类不正确。例如：
+You might see messages in the log file that are confusing or that are classified incorrectly. For example:
 
 - 后跟 `Unexpected Parsed manifest targeting different host` 的信息 `Medium Current host not in add-in's host list` 是错误分类为错误。
 
 - 如果发现信息 `Unexpected Add-in is missing required manifest fields    DisplayName` 且其不包含 SolutionId，则此错误极可能与你正在调试的外接程序无关。
 
-- 对系统而言，任何 `Monitorable` 信息都会视其为错误。有时这些信息表示清单中的问题，例如一个已跳过但未引起清单运行失败的拼写错误的元素。
+- Any `Monitorable` messages are expected errors from a system point of view. Sometimes they indicate an issue with your manifest, such as a misspelled element that was skipped but didn't cause the manifest to fail.
 
 ## <a name="see-also"></a>另请参阅
 

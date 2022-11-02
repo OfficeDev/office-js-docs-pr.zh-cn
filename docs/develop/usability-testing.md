@@ -1,20 +1,20 @@
 ---
 title: Office 加载项的可用性测试
-description: 了解如何使用实际用户测试外接程序设计。
+description: 了解如何使用真实用户测试外接程序设计。
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b884ae8232360b8778b832b8ded90f3d3a857911
-ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
+ms.openlocfilehash: 49a2af983615779160886961e8269e4588d0fc9e
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "66136326"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810279"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Office 加载项的可用性测试
 
-出色的外接程序设计会考虑到用户行为。因为自己的预想会影响设计决策，所以务必要通过实际用户测试设计来确保客户可正常使用外接程序。
+A great add-in design takes user behaviors into account. Because your own preconceptions influence your design decisions, it’s important to test designs with real users to make sure that your add-ins work well for your customers.
 
-可以使用不同方法运行可用性测试。 对于许多外接程序开发人员而言，远程、未经审阅的可用性研究最为节省时间且最具有成本效益。 一些常用的测试服务使这一点变得简单;下面是一些示例。
+可以使用不同方法运行可用性测试。 对于许多外接程序开发人员而言，远程、未经审阅的可用性研究最为节省时间且最具有成本效益。 几个流行的测试服务使这一点变得容易：下面是一些示例。
 
 - [UserTesting.com](https://www.UserTesting.com)
 - [Optimalworkshop.com](https://www.Optimalworkshop.com)
@@ -22,10 +22,10 @@ ms.locfileid: "66136326"
 
 这些测试服务可帮助你简化测试计划的创建并且不需要寻找参与者或审阅测试。
 
-你只需五名参与者即可发现设计中的大多数可用性问题。在整个开发周期内定期进行小型测试，以确保产品以用户为中心。
+You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
 > [!NOTE]
-> 建议跨多个平台测试加载项的可用性。若要[将加载项发布到 AppSource](/office/dev/store/submit-to-appsource-via-partner-center)，加载项必须适用于[支持已定义方法的所有平台](/javascript/api/requirement-sets)。
+> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to AppSource](/office/dev/store/submit-to-appsource-via-partner-center), it must work on all [platforms that support the methods that you define](/javascript/api/requirement-sets).
 
 ## <a name="1-sign-up-for-a-testing-service"></a>1. 注册测试服务
 
@@ -33,9 +33,9 @@ ms.locfileid: "66136326"
 
 ## <a name="2-develop-your-research-questions"></a>2.制定研究问题
 
-研究问题定义研究的目标并指导测试计划。这些问题将帮助你确定要招募的参与者及其要执行的任务。将研究问题尽可能地具体化。还可以尽量回答较为宽泛的问题。
+Research questions define the objectives of your research and guide your test plan. Your questions will help you identify participants to recruit and the tasks they will perform. Make your research questions as specific as you can. You can also seek to answer broader questions.
 
-下面是一些研究问题的示例。
+下面是研究问题的一些示例。
 
 **具体**
 
@@ -48,7 +48,7 @@ ms.locfileid: "66136326"
 - 用户在单击命令栏中的图标前是否了解他们的含义？
 - 用户能否轻松地找到设置菜单？
 
-获取从发现外接程序到安装并使用外接程序的整个用户操作体验的相关数据至关重要。 考虑解决外接程序用户体验的以下方面的研究问题。
+获取从发现外接程序到安装并使用外接程序的整个用户操作体验的相关数据至关重要。 考虑解决加载项用户体验的以下方面的研究问题。
 
 - 在 AppSource 中查找加载项
 - 选择安装加载项
@@ -62,43 +62,43 @@ ms.locfileid: "66136326"
 
 ## <a name="3-identify-participants-to-target"></a>3.确定所要面向的参与者
 
-通过远程测试服务，你可以控制测试参与者的许多特性。认真考虑想要将哪类用户确定为目标。在数据收集的早期阶段，最好招募各种类型的参与者以识别出较为显著的可用性问题。后面可以选择将类似高级 Office 用户、特定职业或特定年龄段的组确定为目标。
+Remote testing services can give you control over many characteristics of your test participants. Think carefully about what kinds of users you want to target. In your early stages of data collection, it might be better to recruit a wide variety of participants to identify more obvious usability issues. Later, you might choose to target groups like advanced Office users, particular occupations, or specific age ranges.
 
 ## <a name="4-create-the-participant-screener"></a>4.创建参与者筛选器
 
-筛选程序是将向潜在测试参与者提供的问题和要求集，以对其进行测试筛选。请注意 UserTesting.com 等服务的参与者参加测试是想要获得经济收益。如果想要将特定用户从测试排除，那么在筛选程序中加入技巧性问题是个不错的主意。 
+The screener is the set of questions and requirements you will present to prospective test participants to screen them for your test. Keep in mind that participants for services like UserTesting.com have a financial interest in qualifying for your test. It's a good idea to include trick questions in your screener if you want to  exclude certain users from the test. 
 
 例如，想要找出熟悉 GitHub 的参与者，要筛选出对自己进行了不当描述的用户，包括可能的答案列表中的不实之处。
 
 **熟悉下面哪些源代码存储库？**  
- a. SourceShelf  [*拒绝*]  
- b. CodeContainer  [*拒绝*]  
- c. GitHub  [*必选*]  
- d. BitBucket  [*可选*]  
- e. CloudForge  [*可选*]  
+ a. SourceShelf  [*Reject*]  
+ b. CodeContainer  [*Reject*]  
+ c. GitHub  [*Must select*]  
+ d. BitBucket  [*May select*]  
+ e. CloudForge  [*May select*]  
 
 如果计划测试外接程序的实时生成，以下问题可以筛选出可以执行此任务的用户。
 
 **该测试需要安装最新版本的 Microsoft PowerPoint。是否拥有最新版本的 PowerPoint？**  
- a. 是 [*必选*]  
- b. 否 [*拒绝*]  
- c. 不知道 [*拒绝*]  
+ a. Yes [*Must select*]  
+ b. No [*Reject*]  
+ c. I don’t know [*Reject*]  
 
 **此测试要求安装适用于 PowerPoint 的免费加载项，并创建免费帐户以进行使用。是否愿意安装加载项并创建免费帐户？**  
- a. 是 [*必选*]  
- b. 否 [*拒绝*]  
+ a. Yes [*Must select*]  
+ b. No [*Reject*]  
 
 有关详细信息，请参阅[筛选程序问题最佳做法](https://help.usertesting.com/hc/articles/115003370731-Screener-question-best-practices)。
 
 ## <a name="5-create-tasks-and-questions-for-participants"></a>5.创建针对参与者的任务和问题
 
-尝试对要测试的内容设置优先级，以便限制针对参与者的任务和问题数量。一些服务仅在特定时间内向参与者付费，你需要确保不会超过该时间。
+Try to prioritize what you want tested so that you can limit the number of tasks and questions for the participant. Some services pay participants only for a set amount of time, so you want to make sure not to go over.
 
-尽可能地尝试观察参与者行为，而不是向其提问。如果需要询问其行为，询问参与者过去做过什么，而不是询问其在某个场景下会做什么。这样提供的结果往往更为可靠。
+Try to observe participant behaviors instead of asking about them, whenever possible. If you need to ask about behaviors, ask about what participants have done in the past, rather than what they would expect to do in a situation. This tends to give more reliable results.
 
-未经审阅的测试的主要挑战在于确保参与者了解你的任务和方案。你的指示应 *简洁明了*。不可避免的是，如果可能存在混淆，则某些人会感到困惑。
+The main challenge in unmoderated testing is making sure your participants understand your tasks and scenarios. Your directions should be *clear and concise*. Inevitably, if there is potential for confusion, someone will be confused.
 
-在测试期间的任何给定时刻，都不要假设用户会位于其应位于的屏幕上。考虑告诉用户要开始下一个任务他们需要位于哪个屏幕。
+Don't assume that your user will be on the screen they’re supposed to be on at any given point during the test. Consider telling them what screen they need to be on to start the next task.
 
 有关详细信息，请参阅[编写出色任务](https://help.usertesting.com/hc/articles/115003371651-Writing-great-tasks)。
 
@@ -106,36 +106,36 @@ ms.locfileid: "66136326"
 
 可以测试实时加载项，或者可以测试原型。 注意，如果要测试实时加载项，则需要筛选出已安装 Office、愿意安装加载项且愿意注册帐户的参与者（除非你具有可以向参与者提供的登录凭据）。然后需要确保他们成功安装加载项。
 
-通常，逐步指导用户如何安装外接程序需要大约 5 分钟。以下是简洁明了的安装步骤示例。请根据测试的具体情况调整步骤。
+On average, it takes about 5 minutes to walk users through how to install an add-in. The following is an example of clear, concise installation steps. Adjust the steps based on the specifics of your test.
 
-**请按照以下说明安装 (在此处插入外接程序名称，) 外接程序PowerPoint。**
+**请按照以下说明安装 (在此处插入外接程序名称) 适用于 PowerPoint 的外接程序。**
 
 1. 打开 Microsoft PowerPoint。
 1. 选择“**空白演示文稿**”。
-1. 转到“**插入 > 我的外接程序**”。
-1. 在弹出窗口中，选择“**应用商店**”。
+1. 转到 **“插入** > **我的外接程序**”。
+1. 在弹出窗口中，选择“ **应用商店**”。
 1. 在搜索框中键入（外接程序名称）。
 1. 选择（外接程序名称）。
 1. 花费一些时间查看“应用商店”页面以熟悉外接程序。
 1. 选择“**添加**”安装外接程序。
 
-可以以任意基本的交互和外观一致性来测试原型。对于更为复杂的链接和交互性，请考虑使用 [InVision](https://www.invisionapp.com) 等原型制作工具。如果只想测试静态屏幕，可以在线托管图像并向参与者发送相应的 URL，或向其提供指向在线 PowerPoint 演示文稿的链接。 
+You can test a prototype at any level of interaction and visual fidelity. For more complex linking and interactivity, consider a prototyping tool like [InVision](https://www.invisionapp.com). If you just want to test static screens, you can host images online and send participants the corresponding URL, or give them a link to an online PowerPoint presentation. 
 
 ## <a name="7-run-a-pilot-test"></a>7.运行试点测试
 
-正确设置原型和任务/问题列表可能会比较困难。用户可能会对任务感到疑惑，或者对原型不知所措。应通过 1-3 名用户运行试点测试来解决测试格式存在的难以避免的问题。这将有助于确保问题清楚明了、原型得到正确设置并捕获所寻找的数据类型。
+It can be tricky to get the prototype and your task/question list right. Users might be confused by tasks, or might get lost in your prototype. You should run a pilot test with 1-3 users to work out the inevitable issues with the test format. This will help to ensure that your questions are clear, that the prototype is set up correctly, and that you’re capturing the type of data you’re looking for.
 
 ## <a name="8-run-the-test"></a>8.运行测试
 
-指令进行测试后，参与者完成测试后你将获得电子邮件通知。除非你将特定参与者组确定为目标，否则测试通常会在数小时内完成。
+After you order your test, you will get email notifications when participants complete it. Unless you’ve targeted a specific group of participants, the tests are usually completed within a few hours.
 
 ## <a name="9-analyze-results"></a>9.分析结果
 
-在这一部分中，你将尝试分析所收集到的数据。在观看测试视频时，记录用户遇到的问题和成功之处。避免尝试在查看所有结果后才解释数据的含义。
+This is the part where you try to make sense of the data you’ve collected. While watching the test videos, record notes about problems and successes the user has. Avoid trying to interpret the meaning of the data until you have viewed all the results.
 
-单个参与者具有可用性问题不足以作为更改设计的依据。两个或更多参与者遇到同一问题则表明普通人群中的其他用户也会遇到此问题。
+A single participant having a usability issue is not enough to warrant making a change to the design. Two or more participants encountering the same issue suggests that other users in the general population will also encounter that issue.
 
-通常，要谨慎对待使用数据作出结论的方式。不要陷入尝试将数据匹配特定叙述的困境；对数据实际证明、驳斥或者无法提供任何相关见解的内容实事求是。保持开放的心态；用户行为经常会违背设计人员的预期。
+In general, be careful about how you use your data to draw conclusions. Don’t fall into the trap of trying to make the data fit a certain narrative; be honest about what the data actually proves, disproves, or simply fails to provide any insight about. Keep an open mind; user behavior frequently defies designer’s expectations.
 
 ## <a name="see-also"></a>另请参阅
 

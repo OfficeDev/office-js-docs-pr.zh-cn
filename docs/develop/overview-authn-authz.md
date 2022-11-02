@@ -3,12 +3,12 @@ title: Office 加载项中的身份验证和授权概述
 description: 了解 Office 加载项中的身份验证和授权工作原理。
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: b3bab99be6c1218d3caa32fab522cf2d7fcbda44
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
-ms.translationtype: HT
+ms.openlocfilehash: c93e4c36155f582a56f42f5aeb6c567b61df0e1d
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496751"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810321"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Office 加载项中的身份验证和授权概述
 
@@ -102,7 +102,7 @@ function getOneDriveFileNames() {
 
 加载项可以使用作为身份验证提供程序的 [Microsoft 标识平台登录用户](/azure/active-directory/develop)。 登录用户后，可以使用 Microsoft 标识平台向 [Microsoft Graph](/graph) 或其他 Microsoft 托管服务授权加载项。 当 SSO 在 Office 不可用时，使用此方法作为备用登录方法。 此外，在某些方案中，即使在 SSO 可用的情况下，用户也需要单独登录加载项；例如，当你希望他们可以选择使用与当前登录到 Office 的 ID 不同的 ID 登录到该加载项时。
 
-需要注意的是，Microsoft 标识平台不允许其登录页在 iframe 中打开。 当 Office 加载项在 *Office 网页版* 中运行时，任务窗格是一个 iFrame。 这意味着你需要使用通过 Office 对话框 API 打开的对话框打开登录页。 这会影响你使用身份验证帮助程序库的方式。 有关详细信息，请参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
+需要注意的是，Microsoft 标识平台不允许其登录页在 iframe 中打开。 当 Office 加载项在 *Office web 版* 中运行时，任务窗格是 iframe。 这意味着你需要使用通过 Office 对话框 API 打开的对话框打开登录页。 这会影响你使用身份验证帮助程序库的方式。 有关详细信息，请参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
 有关使用 Microsoft 标识平台实现身份验证的信息，请参阅 [Microsoft 标识平台(v2.0)概述](/azure/active-directory/develop/v2-overview)。 该文档包含许多教程和指南，以及指向相关示例和库的链接。 正如[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)中所述，你可能需要调整示例中的代码以在 Office 对话框中运行。
 
@@ -115,7 +115,7 @@ function getOneDriveFileNames() {
 借助 Google、Facebook、领英、SalesForce 和 GitHub 等热门在线服务，开发人员可授权用户访问自己在其他应用中的帐户。 这样，便可在 Office 加载项中添加这些服务。 要概述了解加载项可执行此操作的方法，请参阅[在 Office 加载项中授权外部服务](auth-external-add-ins.md)。
 
 > [!IMPORTANT]
-> 在开始编码之前，请查明数据源是否允许在 iframe 中打开其登录页。 当 Office 加载项在 *Office 网页版* 中运行时，任务窗格是一个 iFrame。 如果数据源不允许在 iframe 中打开其登录页，则需要在使用 Office 对话框 API 打开的对话框中打开登录页。 有关详细信息，请参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
+> 在开始编码之前，请查明数据源是否允许在 iframe 中打开其登录页。 当 Office 加载项在 *Office web 版* 中运行时，任务窗格是 iframe。 如果数据源不允许在 iframe 中打开其登录页，则需要在使用 Office 对话框 API 打开的对话框中打开登录页。 有关详细信息，请参阅[使用 Office 对话框 API 进行身份验证](auth-with-office-dialog-api.md)。
 
 ## <a name="see-also"></a>另请参阅
 

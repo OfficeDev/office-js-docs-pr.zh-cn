@@ -3,19 +3,19 @@ title: 使用应用程序专用 API 模型
 description: 了解 Excel、OneNote 和 Word 加载项基于承诺的 API 模型。
 ms.date: 09/23/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d7cb6f1f47c853d5c6e389c2c81ec2d36d21eb43
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: d24b435318e1f462cd05ba25dbdd7f9a6018715f
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092887"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810174"
 ---
 # <a name="application-specific-api-model"></a>特定于应用程序的 API 模型
 
-本文介绍如何使用 API 模型在 Excel、Word、PowerPoint 和 OneNote 中生成加载项。 本文介绍核心概念，这些概念是使用基于承诺的 API 的基础。
+本文介绍如何使用 API 模型在 Excel、Word、PowerPoint 和 OneNote 中生成外接程序。 本文介绍核心概念，这些概念是使用基于承诺的 API 的基础。
 
 > [!NOTE]
-> Office 2013 客户端不支持此模型。 使用 [API 模型](office-javascript-api-object-model.md) 这些 Office 版本。 有关完整的平台可用性说明，请参阅 [Office 客户端应用程序和平台可用性的 Office 加载项组](/javascript/api/requirement-sets)。
+> Office 2013 和 Outlook 客户端不支持此模型。 使用 [API 模型](office-javascript-api-object-model.md) 这些 Office 版本。 有关完整的平台可用性说明，请参阅 [Office 客户端应用程序和平台可用性的 Office 加载项组](/javascript/api/requirement-sets)。
 
 > [!TIP]
 > 本页中的示例使用 Excel JavaScript API，但这些概念也适用于 OneNote、PowerPoint、Visio 和 Word JavaScript API。
@@ -26,9 +26,9 @@ Office 加载项是显示在 Office 应用程序（如 Excel）中的浏览器�
 
 ## <a name="run-function"></a>*.run 函数
 
-`Excel.run``PowerPoint.run`，`OneNote.run`并`Word.run`执行一个函数，该函数指定要针对 Excel、Word 和 OneNote 执行的操作。 `*.run` 会自动创建可用于与 Office 对象交互的请求上下文。 当 `*.run` ，将做出承诺，并自动发布运行时分配的任何对象。
+`Excel.run`、 `OneNote.run`、 `PowerPoint.run`和 `Word.run` 执行一个函数，该函数指定要对 Excel、Word 和 OneNote 执行的操作。 `*.run` 会自动创建可用于与 Office 对象交互的请求上下文。 当 `*.run` ，将做出承诺，并自动发布运行时分配的任何对象。
 
-以下示例显示了如何使用 `Excel.run`。 OneNote、PowerPoint 和 Word 也使用相同的模式。
+以下示例显示了如何使用 `Excel.run`。 同一模式也用于 OneNote、PowerPoint 和 Word。
 
 ```js
 Excel.run(function (context) {
@@ -45,7 +45,7 @@ Excel.run(function (context) {
 
 ## <a name="request-context"></a>请求上下文
 
-Office 应用程序和外接程序在不同的进程中运行。 由于加载项使用不同的运行时环境，因此需要一个 `RequestContext` 对象才能将加载项连接到 Office 中的对象，例如工作表、区域、段落和表。 调用 `RequestContext` 时，此对象作为 `*.run`。
+Office 应用程序和加载项在不同的进程中运行。 由于加载项使用不同的运行时环境，因此需要一个 `RequestContext` 对象才能将加载项连接到 Office 中的对象，例如工作表、区域、段落和表。 调用 `RequestContext` 时，此对象作为 `*.run`。
 
 ## <a name="proxy-objects"></a>代理对象
 
@@ -155,7 +155,7 @@ someRange.load("format/font/name")
 如果在不 `load()` 参数的情况下调用对象（或集合）上的标量方法，将加载该对象或集合对象的所有标量属性。 加载不需要的数据会降低加载项的加载速度。 应始终显式指定要加载的属性。
 
 > [!IMPORTANT]
-> 无参数 `load` 语句返回的数据量可能超过该服务的大小限制。 为了降低较旧加载项的风险，`load` 不会在明确请求它们之前返回某些属性。 从此类负载操作中排除以下属性。
+> 无参数 `load` 语句返回的数据量可能超过该服务的大小限制。 为了降低较旧加载项的风险，`load` 不会在明确请求它们之前返回某些属性。 从此类加载操作中排除以下属性。
 >
 > * `Excel.Range.numberFormatCategories`
 
@@ -205,7 +205,7 @@ await Excel.run(async (context) => {
 
 ### <a name="some-properties-cannot-be-set-directly"></a>某些属性不能直接设置
 
-尽管可写的属性，但某些属性不能设置。 这些属性是必须将设置为单个对象的父属性的一部分。 这是因为父属性依赖于具有特定逻辑关系的子属性。 必须使用对象文字表示法设置这些父属性来设置整个对象，而不是设置该对象的单个子问题。 PageLayout [中可找到此示例](/javascript/api/excel/excel.pagelayout)。 `zoom`必须使用单个 [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) 对象设置该属性，如下所示。
+尽管可写的属性，但某些属性不能设置。 这些属性是必须将设置为单个对象的父属性的一部分。 这是因为父属性依赖于具有特定逻辑关系的子属性。 必须使用对象文字表示法设置这些父属性来设置整个对象，而不是设置该对象的单个子问题。 PageLayout [中可找到此示例](/javascript/api/excel/excel.pagelayout)。 `zoom`必须使用单个 [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) 对象设置属性，如下所示。
 
 ```js
 // PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
@@ -214,7 +214,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 在上一示例中，***无法*** 直接分配为值`zoom`：`sheet.pageLayout.zoom.scale = 200;`。 该语句会引发错误， `zoom` 加载错误。 即使 `zoom` ，该比例也会生效。 所有上下文操作 `zoom`、刷新加载项中的代理对象并覆盖本地设置的值。
 
-此行为与 [Range.format](application-specific-api-model.md#scalar-and-navigation-properties) 等 [导航属性](/javascript/api/excel/excel.range#excel-excel-range-format-member)。 `format`可以使用对象导航设置属性，如下所示。
+此行为与 [Range.format](application-specific-api-model.md#scalar-and-navigation-properties) 等 [导航属性](/javascript/api/excel/excel.range#excel-excel-range-format-member)。 可以使用对象导航设置 的属性 `format` ，如下所示。
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.

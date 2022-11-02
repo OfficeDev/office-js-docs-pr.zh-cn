@@ -3,12 +3,12 @@ title: Office 加载项 XML 清单
 description: 获取 Office 加载项清单及其用途概述。
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2b429ce54ec03f7c5ba437b16451b0532ea3ce38
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 60368d74cad0d1b8c0562888613d960f52b21a74
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422969"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810223"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Office 加载项 XML 清单
 
@@ -44,7 +44,7 @@ XML 清单文件支持 Office 加载项执行以下操作：
 
 ### <a name="required-elements-by-office-add-in-type"></a>Office 加载项类型的必需元素
 
-| 元素                                                                                      | 内容    | 任务窗格    | Outlook      |
+| 元素                                                                                      | 内容    | 任务窗格    | 邮件<br>(Outlook)      |
 | :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
 | [OfficeApp][]                                                                                | 必需   | 必需     | 必需     |
 | [Id][]                                                                                       | 必需   | 必需     | 必需     |
@@ -107,7 +107,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>关于提交到 AppSource 的最佳做法
 
-确保外接程序 ID 有效且具有唯一 GUID。Web 上提供可用于创建唯一 GUID 的各种 GUID 生成器工具。
+Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
 提交到 AppSource 的加载项还必须包括 [SupportUrl](/javascript/api/manifest/supporturl) 元素。 有关详细信息，请参阅[提交到 AppSource 的应用和加载项的验证策略](/legal/marketplace/certification-policies)。
 
@@ -115,7 +115,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定要在外接程序窗口中打开的域
 
-当在 web 上的 Office 中运行时，任务窗格可以导航到任何 URL。但在桌面平台中，如果加载项尝试转到托管起始页（如清单文件的 [SourceLocation](/javascript/api/manifest/sourcelocation) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 应用程序的加载项窗格外的新浏览器窗口中打开。
+When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office application.
 
 若要重写此（桌面版 Office）操作，请在清单文件的 [AppDomains](/javascript/api/manifest/appdomains) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。 如果加载项尝试转至该列表的域中的 URL，则它将在 Office 网页版和桌面版中的任务窗口中打开。 如果它尝试转至列表之外的域中的 URL，则在桌面版 Office 中，该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
 
@@ -153,12 +153,12 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 可选的 [VersionOverrides](/javascript/api/manifest/versionoverrides) 元素值得特别提及。 它包含支持其他加载项功能的子标记。 其中一些为：
 
 - 自定义 Office 功能区和菜单。
-- 自定义 Office 与在其中运行加载项的嵌入式运行时的工作方式。
+- 自定义 Office 与运行外接程序的嵌入式运行时的工作方式。
 - 配置加载项如何与 Azure Active Directory 和 Microsoft Graph 交互以进行单一登录。
 
 `VersionOverrides` 的一些子代元素具有替代父级 `OfficeApp` 元素值的值。 例如，`VersionOverrides` 中的 `Hosts` 元素替代 `OfficeApp` 中的 `Hosts` 元素。
 
-`VersionOverrides` 元素具有其自己的架构（实际上有四个架构），具体取决于加载项的类型及其使用的功能。这些架构是：
+The `VersionOverrides` element has its own schema, actually four of them, depending on the type of add-in and the features it uses. The schemas are:
 
 - [任务窗格 1.0](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)
 - [内容 1.0](/openspecs/office_file_formats/ms-owemxml/c9cb8dca-e9e7-45a7-86b7-f1f0833ce2c7)
@@ -205,7 +205,7 @@ _\*\* 仅通过 AppSource 分发的加载项才需要 SupportUrl。_
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>清单 v1.1 XML 文件示例和架构
 
-下面各部分展示了内容加载项、任务窗格加载项和 Outlook 加载项的清单 v1.1 XML 文件示例。
+以下部分演示 Outlook) 加载项的内容、任务窗格和邮件 (清单 v1.1 XML 文件的示例。
 
 # <a name="task-pane"></a>[任务窗格](#tab/tabid-1)
 

@@ -3,12 +3,12 @@ title: 开发 Office 加载项
 description: Office 加载项开发简介。
 ms.date: 05/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 012060c2326192329a53c4d6056a1978fe6d60c2
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
-ms.translationtype: HT
+ms.openlocfilehash: 82573d90f9fa22cb524da01226995e861c258b81
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752874"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810020"
 ---
 # <a name="develop-office-add-ins"></a>开发 Office 加载项
 
@@ -23,7 +23,7 @@ ms.locfileid: "65752874"
 
 ### <a name="yeoman-generator"></a>Yeoman 生成器
 
-适用于 Office 加载项的 Yeoman 生成器可用于创建一个 Node.js Office 加载项项目，可通过 Visual Studio Code 或任何其他编辑器进行管理。生成器可以创建用于以下任一应用的 Office 加载项:
+The Yeoman generator for Office Add-ins can be used to create a Node.js Office Add-in project that can be managed with Visual Studio Code or any other editor. The generator can create Office Add-ins for any of the following:
 
 - Excel
 - OneNote
@@ -49,7 +49,7 @@ Office 加载项由两部分组成：
 
 - Web 应用程序，它定义了加载项组件的 UI 和功能，例如任务窗格、内容加载项和对话框。
 
-这些 Web 应用程序可使用 Office JavaScript API 来与其中正在运行加载项的 Office 文档中的内容进行交互。你的加载项还可执行 Web 应用程序通常可实现的其他操作，例如调用外部 Web 服务和简化用户身份验证等等。
+The web application uses the Office JavaScript API to interact with content in the Office document where the add-in is running. Your add-in can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
 
 ### <a name="define-an-add-ins-settings-and-capabilities"></a>定义加载项的设置和功能
 
@@ -83,7 +83,7 @@ Office 加载项可使用 Office JavaScript API 来与其中在运行加载项�
 
 #### <a name="explore-apis-with-script-lab"></a>使用 Script Lab 了解 API
 
-Script Lab 是一款加载项，在 Excel 或 Word 等 Office 程序中工作时，你可用它来了解 Office JavaScript API 和运行代码片段。 该工具通过 [AppSource](https://appsource.microsoft.com/product/office/WA104380862) 免费提供，随附在你的开发工具包中，在你建立希望加载项中拥有的功能原型和验证该功能时非常有用。 在 Script Lab 中，你可访问内置示例库以快速试用 API，甚至还可将示例用作你自己的代码的起点。
+Script Lab 是一款加载项，在 Excel 或 Word 等 Office 程序中工作时，你可用它来了解 Office JavaScript API 和运行代码片段。 该工具通过 AppSource 免费提供，随附在你的开发工具包中，在你建立希望加载项中拥有的功能原型和验证该功能时非常有用。 在 Script Lab 中，你可访问内置示例库以快速试用 API，甚至还可将示例用作你自己的代码的起点。
 
 下面时长一分钟的视频展示了 Script Lab 的实际运行情况。
 
@@ -107,7 +107,7 @@ Office 加载项可使用加载项命令和 HTML 容器（如任务窗格、内�
 
 ## <a name="next-steps"></a>后续步骤
 
-本文概述了创建 Office 加载项的不同方法、介绍了加载项扩展 Office UI 的方法，描述了 API 集,介绍了 Script Lab（一种用来于了解 Office JavaScript API 和建立加载项功能原型的宝贵工具）。现在，你了解这一介绍性信息，请考虑沿着以下学习路径继续你的 Office 加载项之旅。
+This article has outlined the different ways to create Office Add-ins, introduced the ways that an add-in can extend the Office UI, described the API sets, and introduced Script Lab as a valuable tool for exploring Office JavaScript APIs and prototyping add-in functionality. Now that you've explored this introductory information, consider continuing your Office Add-ins journey along the following paths.
 
 ### <a name="create-an-office-add-in"></a>创建 Office 加载项
 

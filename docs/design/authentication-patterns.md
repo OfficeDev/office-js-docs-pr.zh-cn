@@ -1,14 +1,14 @@
 ---
 title: Office 外接程序的身份验证设计准则
 ms.date: 02/09/2021
-description: 了解如何在加载项中直观地设计登录Office注册页面。
+description: 了解如何在 Office 加载项中直观地设计登录或注册页面。
 ms.localizationpriority: medium
-ms.openlocfilehash: 4973ba8f81ff075d7db8021b15fdfe0f8f0683c4
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 45d11d509585a199135889273e6f9a96ce98e691
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496787"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810258"
 ---
 # <a name="authentication-patterns"></a>身份验证模式
 
@@ -29,19 +29,19 @@ ms.locfileid: "64496787"
 
 1. 首先运行 Placemat - 将登录按钮设置为加载项初次运行体验中的明确号召性用语。
 
-    ![Screenshot showing an add-in task pane in an Office application.](../images/add-in-fre-value-placemat.png)
+    ![显示 Office 应用程序中的加载项任务窗格的屏幕截图。](../images/add-in-fre-value-placemat.png)
 
 1. 标识提供者选项对话框 - 显示明确的标识提供者列表，包括用户名和密码表单（如适用）。 身份验证对话框处于打开状态时，加载项 UI 可能会被阻止。
 
-    ![Screenshot showing the Identity Provider Choices dialog in an Office application.](../images/add-in-auth-choices-dialog.png)
+    ![显示 Office 应用程序中的“标识提供者选择”对话框的屏幕截图。](../images/add-in-auth-choices-dialog.png)
 
-1. 身份提供程序登录 - 身份提供程序将拥有其自己的 UI。 Microsoft Azure Active Directory允许自定义登录和访问面板页面，以与服务保持一致的外观。 [了解有关详细信息](/azure/active-directory/fundamentals/customize-branding)。
+1. 身份提供程序登录 - 身份提供程序将拥有其自己的 UI。 Microsoft Azure Active Directory允许自定义登录和访问面板页面，以便与服务保持一致的外观。 [了解详细信息](/azure/active-directory/fundamentals/customize-branding)。
 
-    ![Screenshot showing the Identity Provider Sign-in dialog in an Office application.](../images/add-in-auth-identity-sign-in.png)
+    ![显示 Office 应用程序中的“标识提供者登录”对话框的屏幕截图。](../images/add-in-auth-identity-sign-in.png)
 
 1. 进度 - 表示设置和 UI 加载时的进度。
 
-    ![Screenshot showing a dialog with a progress indicator in an Office application.](../images/add-in-auth-modal-interstitial.png)
+    ![显示 Office 应用程序中带有进度指示器的对话框的屏幕截图。](../images/add-in-auth-modal-interstitial.png)
 
 > [!NOTE]
 > 使用 Microsoft 的标识服务时，你将有机会使用可定制的浅色和深色主题的品牌登录按钮。 了解详细信息。
@@ -49,21 +49,21 @@ ms.locfileid: "64496787"
 ## <a name="single-sign-on-authentication-flow"></a>单Sign-On身份验证流
 
 > [!NOTE]
-> Word、Excel、Outlook 和 PowerPoint 目前支持单一登录 API。 有关单一登录支持的信息，请参阅 [IdentityAPI 要求集](/javascript/api/requirement-sets/common/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
+> Word、Excel、Outlook 和 PowerPoint 目前支持单一登录 API。 有关单一登录支持的详细信息，请参阅 [IdentityAPI 要求集](/javascript/api/requirement-sets/common/identity-api-requirement-sets)。 如果使用的是 Outlook 加载项，请务必为 Microsoft 365 租赁启用新式验证。 若要了解如何执行此操作，请参阅 [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx)（如何为租户启用新式体验）。
 
-使用单一登录实现更流畅的最终用户体验。 Microsoft 帐户或 Office (中的用户标识Microsoft 365) 登录外接程序。 因此，用户只能登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
+使用单一登录实现更流畅的最终用户体验。 Office (Microsoft 帐户或 Microsoft 365 标识) 中的用户标识用于登录到加载项。 因此，用户只登录一次。 这样便使你的客户更容易上手，体验更为顺畅。
 
-1. 在安装外接程序时，用户将看到类似于以下内容的同意窗口：
+1. 安装加载项时，用户将看到类似于以下内容的同意窗口：
 
-    ![Screenshot showing the consent window in an Office application when an add-in is installed.](../images/add-in-auth-SSO-consent-dialog.png)
+    ![显示安装加载项时 Office 应用程序中的同意窗口的屏幕截图。](../images/add-in-auth-SSO-consent-dialog.png)
 
     > [!NOTE]
     > 加载项发布服务器将控制同意窗口中包含的徽标、字符串和权限范围。 这一 UI 由 Microsoft 预配置。
 
 1. 加载项将在用户同意后加载。 它可以提取并显示任何必要的用户自定义信息。
 
-    ![Screenshot showing an Office application with add-in buttons displayed in the ribbon.](../images/add-in-ribbon.png)
+    ![显示 Office 应用程序的屏幕截图，其中加载项按钮显示在功能区中。](../images/add-in-ribbon.png)
 
 ## <a name="see-also"></a>另请参阅
 
-- 详细了解如何 [开发 SSO 加载项](../develop/sso-in-office-add-ins.md)
+- 详细了解 [如何开发 SSO 加载项](../develop/sso-in-office-add-ins.md)

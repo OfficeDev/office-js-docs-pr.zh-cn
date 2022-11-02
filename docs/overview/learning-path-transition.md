@@ -4,18 +4,18 @@ description: 资深 VSTO 加载项开发人员了解 Office Web 加载项资源�
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 676fe794e2d4d813993432fb94c723b9b917789b
-ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.openlocfilehash: bc27177c67028e57030c9baed6b416d0c57c77d1
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "67857520"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810125"
 ---
 # <a name="vsto-add-in-developers-guide"></a>VSTO 加载项开发人员指南
 
-因此，你为在 Windows 上运行的 Office 应用创建了一些 VSTO 加载项，现在正在探索扩展将在 Windows、Mac 上所运行 Office 和 Office 套件联机版的新方式：Office Web 加载项。
+因此，你已经为在 Windows 上运行的 Office 应用程序制作了一些 VSTO 加载项，现在你正在探索扩展将在 Windows、Mac 和 Office 套件的 Web 浏览器版本上运行的 Office 的新方法：Office Web 外接程序。
 
-对 Excel、Word 和其他 Office 应用程序的对象模型的理解将非常有用，因为 Office Web 加载项中的对象模型遵循类似的模式。但是将会有一些挑战：
+Your understanding of the object models for the Excel, Word, and the other Office applications will be a huge help because the object models in Office Web Add-ins follow similar patterns. But there are going to be some challenges:
 
 - 你将使用其他语言（JavaScript 或 TypeScript）而不是 C＃或 Visual Basic .NET。 （还有一种方法，如下所述，可以重复使用 Web 加载项中存在的代码。）
 - Office Web 加载项的部署方式不同于 VSTO 加载项。
@@ -50,7 +50,7 @@ ms.locfileid: "67857520"
 
 ## <a name="step-4-understand-the-javascript-library"></a>步骤 4：了解 JavaScript 库
 
-通过 Microsoft Learn 培训中的本教程获取 Office JavaScript 库的大图： [了解 Office JavaScript API](/training/modules/intro-office-add-ins/3-apis)。
+通过本教程获取 Office JavaScript 库的大图，请参阅 Microsoft Learn 培训： [了解 Office JavaScript API](/training/modules/intro-office-add-ins/3-apis)。
 
 然后，使用 [Script Lab 工具](explore-with-script-lab.md)（一种用于运行和探索 API 的沙箱）来探索 Office JavaScript API。
 
