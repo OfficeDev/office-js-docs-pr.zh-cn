@@ -2,14 +2,14 @@
 title: 在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件
 description: 了解如何使用基于事件的激活处理 Outlook 外接程序中的 on-send 事件。
 ms.topic: article
-ms.date: 10/24/2022
+ms.date: 11/2/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a0fca566862455cd8a3981c1cfffba117145b39f
-ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
+ms.openlocfilehash: 408c3684d325a9cbdd4a3f6e489db636ff52e028
+ms.sourcegitcommit: 9c65c19298bf749836e3db1b7cf5e8c1387a2bf2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2022
-ms.locfileid: "68767166"
+ms.lasthandoff: 11/04/2022
+ms.locfileid: "68842087"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>在 Outlook 外接程序中使用智能警报以及 OnMessageSend 和 OnAppointmentSend 事件
 
@@ -23,6 +23,18 @@ ms.locfileid: "68767166"
 ## <a name="prerequisites"></a>先决条件
 
 事件 `OnMessageSend` 通过基于事件的激活功能提供。 若要了解如何将外接程序配置为使用此功能、使用其他可用事件、调试加载项等，请参阅 [配置 Outlook 外接程序进行基于事件的激活](autolaunch.md)。
+
+### <a name="supported-clients-and-platforms"></a>支持的客户端和平台
+
+下表列出了智能警报功能支持的客户端-服务器组合，包括所需的最低Exchange Server累积更新（如果适用）。 不支持排除的组合。
+
+|Client|Exchange Online|Exchange 2019 本地 (累积更新 12 或更高版本) |Exchange 2016 本地 (累积更新 22 或更高版本)  |
+|-----|-----|-----|-----|
+|**Windows**<br>版本 2206 (内部版本 15330.20196) 或更高版本|是|是|是|
+|**Mac**<br>版本 16.65.827.0 或更高版本|是|不适用|不适用|
+|**Web 浏览器 (新式 UI)**|是|不适用|不适用|
+|**iOS**|不适用|不适用|不适用|
+|**Android**|不适用|不适用|不适用|
 
 ## <a name="set-up-your-environment"></a>设置环境
 
@@ -361,7 +373,7 @@ ms.locfileid: "68767166"
     > 如果加载项未自动旁加载，请按照 [旁加载 Outlook 加载项](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) 中的说明进行测试，在 Outlook 中手动旁加载加载项。
 
 1. 在 Outlook on Windows 中，创建新邮件并设置主题。 在正文中，添加文本，如“嘿，看看这张我的狗的照片！
-1. 发送消息. 此时会弹出一个对话框，其中包含添加附件的建议。
+1. 发送消息。 此时会弹出一个对话框，其中包含添加附件的建议。
 
     ![建议用户包含附件的对话框。](../images/outlook-win-smart-alert.png)
 
